@@ -1,0 +1,74 @@
+version: '3.8'
+
+services:
+  react:
+    container_name: react
+    build:
+      context: ./react
+      target: dev
+    volumes:
+      - ./react:/usr/app
+      - /usr/app/node_modules
+    #depends_on:
+    #  - api
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    env_file:
+      - ./react/.env
+      - ./.env
+    networks:
+       - mynet
+
+  etherpad:
+    container_name: etherpad
+    build:
+      context: ./etherpad/
+      dockerfile: Dockerfile
+    environment:
+      - TITLE=${ETHERPAD_TITLE}
+      - DEFAULT_PAD_TEXT=${ETHERPAD_DEFAULT_PAD_TEXT}
+      - PORT=${ETHERPAD_PORT}
+      - ADMIN_PASSWORD=${ETHERPAD_ADMIN_PASSWORD}
+      - ADMIN_USER=${ETHERPAD_ADMIN_USER}
+      - DB_HOST
+      - DB_PORT
+      - DB_USER
+      - DB_PASSWORD
+      - DB_NAME
+      - DB_CHARSET
+    ports:
+      - "${ETHERPAD_PORT}:${ETHERPAD_PORT}"
+    networks:
+       - mynet
+      
+  mariadb:
+    container_name: mariadb
+    image: mariadb:10.4
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD
+      - MYSQL_DATABASE=${DB_NAME}
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+    command: ["mysqld", "--character-set-server=${DB_CHARSET}", "--collation-server=${DB_CHARSET}_unicode_ci"]
+    networks:
+       - mynet
+
+  nginx:
+    container_name: nginx
+    build: ./nginx
+    depends_on:
+      - react
+      - etherpad
+    restart: always
+    ports:
+      - 80:80
+    networks:
+      - mynet
+
+networks:
+    mynet:
+      
+volumes:
+  postgres_data:
