@@ -52,8 +52,6 @@ export const landingPages = [
 ];
 
 export const UserAreaButton = () => {
-  const navigate = useNavigate();
-
   return (
     <Link
       color='primary'

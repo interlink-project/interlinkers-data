@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import { UserManager, WebStorageStateStore, Log } from 'oidc-client';
 import { IDENTITY_CONFIG, METADATA_OIDC } from '../config';
 import { useNavigate } from 'react-router';
-import jwt_decode from 'jwt-decode';
-import { pick } from 'lodash';
+import axiosInstance, { setAuthHeader } from '../axios';
 
 const initialState = {
   isInitialized: false,
@@ -96,38 +95,42 @@ export const AuthProvider = (props) => {
 
       userManager.events.addAccessTokenExpired(() => {
         console.log('token expired');
-        signinSilent();
+        startSilentRenew();
+        //         signinSilent();
       });
-      const user = await userManager.getUser();
-      if (user && user.profile) {
-        setUser(user.access_token);
-      }
 
-      dispatch({
-        type: 'INITIALIZE',
-      });
+      const user = await userManager.getUser();
+      const init = () =>
+        dispatch({
+          type: 'INITIALIZE',
+        });
+      if (user && user.access_token) {
+        setUser(user.access_token, init);
+      } else {
+        init();
+      }
     };
     initialize();
   }, []);
 
-  const setUser = (token) => {
-    const decoded = jwt_decode(token);
-    const user = pick(decoded, 'given_name', 'family_name', 'email', 'picture', 'preferred_username', 'locale')
-    console.log('decoded', decoded, user, token);
-
-    dispatch({
-      type: 'SET_USER',
-      payload: {
-        user,
-      },
+  const setUser = (access_token, callback) => {
+    setAuthHeader(access_token);
+    axiosInstance.post('/users/me').then(({ data }) => {
+      console.log('RESPONSE FOR ME', data);
+      dispatch({
+        type: 'SET_USER',
+        payload: {
+          user: data,
+        },
+      });
+      callback && callback();
     });
   };
 
   const signinRedirectCallback = (callback) => {
     userManager.signinRedirectCallback().then(async (e) => {
       const user = await userManager.getUser();
-      setUser(user.access_token);
-      callback();
+      setUser(user.access_token, callback);
     });
   };
 
@@ -155,13 +158,14 @@ export const AuthProvider = (props) => {
   };
 
   const isAuthenticated = () => {
-    console.log('isAuthenticated call');
     const oidcStorage = JSON.parse(
       sessionStorage.getItem(
         `oidc.user:${process.env.REACT_APP_AUTH_URL}:${process.env.REACT_APP_IDENTITY_CLIENT_ID}`
       )
     );
     const authenticated = !!oidcStorage && !!oidcStorage.access_token;
+    console.log('isAuthenticated call', oidcStorage);
+
     if (authenticated && !state.user) {
       setUser(oidcStorage.access_token);
     }

@@ -10,11 +10,12 @@ export const IDENTITY_CONFIG = {
   silent_redirect_uri: 'http://localhost/silentRenew',
   post_logout_redirect_uri: 'http://localhost/logoutCallback',
   loadUserInfo: false,
-  automaticSilentRenew: true,
-  revokeAccessTokenOnSignout: true,
-  scope: 'openid profile email',
-  response_type: 'id_token token',
-  webAuthResponseType: "id_token token"
+  automaticSilentRenew: false,
+  revokeAccessTokenOnSignout: false,
+  scope:
+    'openid profile email offline_access',
+  response_type: 'code',
+  webAuthResponseType: 'code',
 };
 
 export const METADATA_OIDC = {
@@ -29,5 +30,4 @@ export const METADATA_OIDC = {
   token_endpoint: `${process.env.REACT_APP_AUTH_URL}/oauth/token`,
   revocation_endpoint: `${process.env.REACT_APP_AUTH_URL}/oauth/revoke`,
   introspection_endpoint: `${process.env.REACT_APP_AUTH_URL}/oauth/introspect`,
-  grant_types_supported: ["authorization_code","client_credentials","refresh_token"]
 };

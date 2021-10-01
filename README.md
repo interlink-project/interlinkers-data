@@ -2,11 +2,17 @@
 
 Main frontend for Interlink project.
 
+### STACK
+- React
+- Etherpad
+- Mariadb
+- Nginx
+
 ## Prerequisites
 
-Use [docker-compose](https://docs.docker.com/compose/install/) to run this project.
-
-Rename *.env.example* file to *.env* and set required data
+- Use [docker-compose](https://docs.docker.com/compose/install/) to run this project.
+- Rename *.env.example* file to *.env* and set required data
+- Run backend locally: <https://github.com/interlink-project/backend>
 
 ## Usage
 

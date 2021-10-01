@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Avatar, Box, Button, Divider, Drawer, Link, Typography } from '@material-ui/core';
+import { Avatar, Box, Divider, Drawer, Link, Typography } from '@material-ui/core';
 import {Dashboard as DashboardIcon, FolderOpen as FolderOpenIcon, HomeRepairService as HomeRepairServiceIcon, Link as LinkIcon, Group as GroupIcon} from '@material-ui/icons';
 
 import useMediaQuery from '@material-ui/core/useMediaQuery';
@@ -318,7 +318,6 @@ const DashboardSidebar = (props) => {
                 >
                   Developer
                 </Link>
-                <Button onClick={() => auth.signinSilent()} />
               </Typography>
             </Box>
           </Box>
