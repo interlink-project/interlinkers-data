@@ -34,10 +34,15 @@ const selectOptions = [
   }
 ];
 
-const InterlinkerBrowseFilter = (props) => {
+const TeamBrowseFilter = (props) => {
   const [inputValue, setInputValue] = useState('');
   const [chips, setChips] = useState([
-    'Demo',
+    'Freelance',
+    'Full Time',
+    'Novice',
+    'Europe',
+    'Android',
+    'Web Developer'
   ]);
 
   const handleInputChange = (event) => {
@@ -82,7 +87,7 @@ const InterlinkerBrowseFilter = (props) => {
             fullWidth
             onChange={handleInputChange}
             onKeyUp={handleInputKeyup}
-            placeholder='Enter a keyword'
+            placeholder='Search team by name'
             value={inputValue}
           />
         </Box>
@@ -130,4 +135,4 @@ const InterlinkerBrowseFilter = (props) => {
   );
 };
 
-export default InterlinkerBrowseFilter;
+export default TeamBrowseFilter;

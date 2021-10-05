@@ -20,6 +20,18 @@ const InterlinkerProfile = Loadable(
   lazy(() => import('../my_pages/dashboard/interlinkers/InterlinkerProfile'))
 );
 
+const TeamBrowse = Loadable(
+  lazy(() => import('../my_pages/dashboard/teams/TeamBrowse'))
+);
+const TeamCreate = Loadable(
+  lazy(() => import('../my_pages/dashboard/teams/TeamCreate'))
+);
+const TeamDetails = Loadable(
+  lazy(() => import('../my_pages/dashboard/teams/TeamDetails'))
+);
+const Editor = Loadable(
+  lazy(() => import('../my_pages/dashboard/Editor'))
+);
 // Dashboard pages
 
 const Account = Loadable(lazy(() => import('../tm_pages/dashboard/Account')));
@@ -94,6 +106,10 @@ export const routes = [
         element: <Overview />,
       },
       {
+        path: 'editor',
+        element: <Editor />,
+      },
+      {
         path: 'interlinkers',
         children: [
           {
@@ -107,6 +123,23 @@ export const routes = [
           {
             path: ':interlinkerId',
             element: <InterlinkerDetails />,
+          },
+        ],
+      },
+      {
+        path: 'teams',
+        children: [
+          {
+            path: 'browse',
+            element: <TeamBrowse />,
+          },
+          {
+            path: 'new',
+            element: <TeamCreate />,
+          },
+          {
+            path: ':teamId',
+            element: <TeamDetails />,
           },
         ],
       },

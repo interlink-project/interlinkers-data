@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "i": "^0.3.7",
-    "jwt-check-expiry": "^1.0.10",
-    "npm": "^7.24.1"
-  }
-}

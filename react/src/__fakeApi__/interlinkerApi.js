@@ -56,7 +56,7 @@ class InterlinkerApi {
       },
     ];
 
-    return Promise.resolve(interlinkers);
+    return interlinkers;
   }
 
   getInterlinker() {

@@ -23,6 +23,8 @@ import NavSection from '../../tm_components/NavSection';
 import Scrollbar from '../../tm_components/Scrollbar';
 import useAuth from '../../hooks/useAuth';
 
+// /dashboard/account
+
 const sections = [
 
   {
@@ -50,7 +52,7 @@ const sections = [
           },
           {
             title: 'Teams',
-            path: '/dashboard/account',
+            path: '/dashboard/teams/browse',
             icon: <GroupIcon fontSize='small' />
           }
         ]
