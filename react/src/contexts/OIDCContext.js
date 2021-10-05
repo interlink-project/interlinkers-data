@@ -4,6 +4,7 @@ import { UserManager, WebStorageStateStore, Log } from 'oidc-client';
 import { IDENTITY_CONFIG, METADATA_OIDC } from '../config';
 import { useNavigate } from 'react-router';
 import axiosInstance, { setAuthHeader } from '../axios';
+import isJwtTokenExpired from 'jwt-check-expiry';
 
 const initialState = {
   isInitialized: false,
@@ -15,14 +16,6 @@ const handlers = {
     ...state,
     isInitialized: true,
   }),
-  LOGIN: (state, action) => {
-    const { user } = action.payload;
-
-    return {
-      ...state,
-      user,
-    };
-  },
   SET_USER: (state, action) => {
     const { user } = action.payload;
 
@@ -35,14 +28,6 @@ const handlers = {
     ...state,
     user: null,
   }),
-  REGISTER: (state, action) => {
-    const { user } = action.payload;
-
-    return {
-      ...state,
-      user,
-    };
-  },
 };
 
 const reducer = (state, action) =>
@@ -84,7 +69,20 @@ export const AuthProvider = (props) => {
       Log.logger = console;
       Log.level = Log.DEBUG;
 
+      const user = await userManager.getUser();
+      const init = () =>
+        dispatch({
+          type: 'INITIALIZE',
+        });
+      if (user && user.access_token && !isJwtTokenExpired(user.access_token)) {
+        setUser(user.access_token, init);
+      } else {
+        init();
+      }
+
+
       userManager.events.addUserLoaded((user) => {
+        console.log("addUserLoaded", user)
         if (window.location.href.indexOf('signin-oidc') !== -1) {
           navigateToScreen();
         }
@@ -95,20 +93,11 @@ export const AuthProvider = (props) => {
 
       userManager.events.addAccessTokenExpired(() => {
         console.log('token expired');
-        startSilentRenew();
-        //         signinSilent();
+        dispatch({
+          type: 'LOGOUT',
+        });
       });
 
-      const user = await userManager.getUser();
-      const init = () =>
-        dispatch({
-          type: 'INITIALIZE',
-        });
-      if (user && user.access_token) {
-        setUser(user.access_token, init);
-      } else {
-        init();
-      }
     };
     initialize();
   }, []);
@@ -163,7 +152,7 @@ export const AuthProvider = (props) => {
         `oidc.user:${process.env.REACT_APP_AUTH_URL}:${process.env.REACT_APP_IDENTITY_CLIENT_ID}`
       )
     );
-    const authenticated = !!oidcStorage && !!oidcStorage.access_token;
+    const authenticated = !!oidcStorage && !!oidcStorage.access_token && !isJwtTokenExpired(oidcStorage.access_token);
     console.log('isAuthenticated call', oidcStorage);
 
     if (authenticated && !state.user) {

@@ -24,4 +24,4 @@ echo "API_KEY=$(cat $FILE)" >>.env
 rm $FILE
 
 # Start react and nginx containers
-docker-compose up -d
+docker-compose up
