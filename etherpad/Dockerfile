@@ -12,7 +12,7 @@ FROM node:14-buster-slim
 #
 # EXAMPLE:
 #   ETHERPAD_PLUGINS="ep_codepad ep_author_neat"
-ARG ETHERPAD_PLUGINS="ep_auth_session ep_disable_change_author_name ep_author_neat2 ep_adminpads2"
+ARG ETHERPAD_PLUGINS="ep_auth_session ep_disable_change_author_name ep_author_neat2 ep_disable_reset_authorship_colours ep_adminpads2 ep_comments_page ep_image_upload ep_authorship_toggle ep_desktop_notifications"
 
 # Control whether abiword will be installed, enabling exports to DOC/PDF/ODT formats.
 # By default, it is not installed.
@@ -89,7 +89,7 @@ RUN { [ -z "${ETHERPAD_PLUGINS}" ] || \
     rm -rf ~/.npm
 
 # Copy the configuration file.
-COPY --chown=etherpad:etherpad ./settings.json.docker "${EP_DIR}"/settings.json
+COPY --chown=etherpad:etherpad ./settings.json "${EP_DIR}"/settings.json
 
 # Fix group permissions
 RUN chmod -R g=u .
