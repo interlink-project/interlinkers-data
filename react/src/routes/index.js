@@ -4,5 +4,4 @@ import { routes as otherRoutes } from './others';
 
 const routes = authRoutes.concat(dashRoutes, otherRoutes);
 
-console.log(routes);
 export default routes;

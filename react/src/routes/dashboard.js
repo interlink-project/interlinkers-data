@@ -4,6 +4,10 @@ import AuthGuard from '../my_components/guards/AuthGuard';
 import DashboardLayout from '../my_components/layouts/DashboardLayout';
 import Loadable from './Loadable';
 
+const CoproductionProcessCreate = Loadable(
+  lazy(() => import('../my_pages/dashboard/processes/CoproductionProcessCreate'))
+);
+
 const InterlinkerBrowse = Loadable(
   lazy(() => import('../my_pages/dashboard/interlinkers/InterlinkerBrowse'))
 );
@@ -108,6 +112,15 @@ export const routes = [
       {
         path: 'editor',
         element: <Editor />,
+      },
+      {
+        path: 'coproductionprocesses',
+        children: [
+          {
+            path: 'new',
+            element: <CoproductionProcessCreate />,
+          },
+        ],
       },
       {
         path: 'interlinkers',

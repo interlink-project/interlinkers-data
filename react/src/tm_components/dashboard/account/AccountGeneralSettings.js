@@ -25,7 +25,7 @@ import countries from './countries';
 
 const AccountGeneralSettings = (props) => {
   const { user } = useAuth();
-
+  
   return (
     <Grid
       container

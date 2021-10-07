@@ -307,20 +307,7 @@ const DashboardSidebar = (props) => {
               >
                 {`${user.given_name} ${user.family_name}`}
               </Typography>
-              <Typography
-                color='textSecondary'
-                variant='body2'
-              >
-                Your role:
-                {' '}
-                <Link
-                  color='primary'
-                  component={RouterLink}
-                  to='/unknown'
-                >
-                  Developer
-                </Link>
-              </Typography>
+              
             </Box>
           </Box>
         </Box>

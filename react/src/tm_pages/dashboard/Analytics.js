@@ -34,7 +34,7 @@ const Analytics = () => {
           py: 8
         }}
       >
-        <Container>
+        <Container maxWidth="xl">
           <Grid
             container
             justifyContent='space-between'
