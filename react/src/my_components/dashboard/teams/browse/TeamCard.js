@@ -17,26 +17,15 @@ import {
   Tooltip,
   Typography,
 } from '@material-ui/core';
-import red from '@material-ui/core/colors/red';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import UsersIcon from '../../../../icons/Users';
+import { getImageUrl } from '../../../../axios';
 
 const TeamCard = (props) => {
   const { team, ...other } = props;
-  const [isLiked, setIsLiked] = useState(team.isLiked);
-  const [likes, setLikes] = useState(team.likes);
-
-  const handleLike = () => {
-    setIsLiked(true);
-    setLikes((prevLikes) => prevLikes + 1);
-  };
-
-  const handleUnlike = () => {
-    setIsLiked(false);
-    setLikes((prevLikes) => prevLikes - 1);
-  };
-
+  
+  if(!team){
+    return null
+  }
   return (
     <Card {...other}>
       <Box sx={{ p: 3 }}>
@@ -57,9 +46,9 @@ const TeamCard = (props) => {
         >
           <Avatar
             alt='Team'
-            src={team.image}
+            src={getImageUrl(team.logotype)}
           >
-            {team.title}
+            {team.name}
           </Avatar>
           <Box sx={{ ml: 2 }}>
             <Link
@@ -68,7 +57,7 @@ const TeamCard = (props) => {
               to='/dashboard/teams/123'
               variant='h6'
             >
-              {team.title}
+              {team.name}
             </Link>
             <Typography
               color='textSecondary'
@@ -82,14 +71,8 @@ const TeamCard = (props) => {
                 to='#'
                 variant='subtitle2'
               >
-                {team.team.name}
+                {team.name}
               </Link>
-              {' '}
-              | Updated
-              {' '}
-              {formatDistanceToNowStrict(team.updatedAt)}
-              {' '}
-              ago
             </Typography>
           </Box>
         </Box>
@@ -134,7 +117,7 @@ const TeamCard = (props) => {
               color='textPrimary'
               variant='subtitle2'
             >
-              {team.status}
+              ss
             </Typography>
           </Grid>
           <Grid item>
@@ -148,7 +131,7 @@ const TeamCard = (props) => {
               color='textPrimary'
               variant='subtitle2'
             >
-              {team.location}
+              ss
             </Typography>
           </Grid>
           <Grid item>
@@ -162,7 +145,7 @@ const TeamCard = (props) => {
               color='textPrimary'
               variant='subtitle2'
             >
-              {team.type}
+              ss
             </Typography>
           </Grid>
         </Grid>
@@ -177,35 +160,7 @@ const TeamCard = (props) => {
           py: 2,
         }}
       >
-        <Box
-          sx={{
-            alignItems: 'center',
-            display: 'flex',
-          }}
-        >
-          {isLiked ? (
-            <Tooltip title='Unlike'>
-              <IconButton
-                onClick={handleUnlike}
-                sx={{ color: red['600'] }}
-              >
-                <FavoriteIcon fontSize='small' />
-              </IconButton>
-            </Tooltip>
-          ) : (
-            <Tooltip title='Like'>
-              <IconButton onClick={handleLike}>
-                <FavoriteBorderIcon fontSize='small' />
-              </IconButton>
-            </Tooltip>
-          )}
-          <Typography
-            color='textSecondary'
-            variant='subtitle2'
-          >
-            {likes}
-          </Typography>
-        </Box>
+        
         <Box
           sx={{
             alignItems: 'center',
@@ -219,14 +174,14 @@ const TeamCard = (props) => {
             sx={{ ml: 1 }}
             variant='subtitle2'
           >
-            {team.team.membersCount}
+            3
           </Typography>
         </Box>
         <Box sx={{ flexGrow: 1 }} />
         <Rating
           readOnly
           size='small'
-          value={team.rating}
+          value={2}
         />
       </Box>
     </Card>

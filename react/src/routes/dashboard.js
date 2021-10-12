@@ -8,6 +8,11 @@ const CoproductionProcessCreate = Loadable(
   lazy(() => import('../my_pages/dashboard/processes/CoproductionProcessCreate'))
 );
 
+const CoproductionProcessProfile = Loadable(
+  lazy(() => import('../my_pages/dashboard/processes/CoproductionProcessProfile'))
+);
+
+
 const InterlinkerBrowse = Loadable(
   lazy(() => import('../my_pages/dashboard/interlinkers/InterlinkerBrowse'))
 );
@@ -119,6 +124,10 @@ export const routes = [
           {
             path: 'new',
             element: <CoproductionProcessCreate />,
+          },
+          {
+            path: ':processId',
+            element: <CoproductionProcessProfile />,
           },
         ],
       },

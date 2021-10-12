@@ -13,6 +13,7 @@ import {
   Divider,
   LinearProgress,
   CardActionArea,
+  CircularProgress,
 } from '@material-ui/core';
 
 import useSettings from '../../hooks/useSettings';
@@ -28,9 +29,28 @@ const Overview = () => {
   const auth = useAuth();
   const { user } = auth;
   const [processes, setProcesses] = useState(null);
+  const [loading, setLoading] = useState(true);
   const mounted = useMounted();
 
+  const getCoproductionProcesses = useCallback(async () => {
+    try {
+      const data = await coproductionprocessApi.getCoproductionProcesses();
+
+      if (mounted.current) {
+        setProcesses(data);
+        setLoading(false)
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  }, [mounted]);
+
+  useEffect(() => {
+    getCoproductionProcesses();
+  }, [getCoproductionProcesses]);
+
   const OverviewCard = ({
+    link,
     title,
     subtitle,
     description,
@@ -38,10 +58,11 @@ const Overview = () => {
     buttonAction,
     component,
   }) => {
+    console.log(link)
     return (
       <Box sx={{ mt: 2 }}>
-        <CardActionArea component={RouterLink} to="">
-          <Card onClick={() => console.log('eooo')}>
+        <CardActionArea component={RouterLink} to={link}>
+          <Card>
             <Box
               sx={{
                 alignItems: 'center',
@@ -53,7 +74,7 @@ const Overview = () => {
               <div>
                 <Typography
                   color='textPrimary'
-                  sx={{ mt: 1, mb: 2 }}
+                  sx={{ mt: 1, mb: 1 }}
                   variant='h5'
                 >
                   {`${title}  `}
@@ -92,21 +113,7 @@ const Overview = () => {
       </Box>
     );
   };
-  const getCoproductionProcesses = useCallback(async () => {
-    try {
-      const data = await coproductionprocessApi.getCoproductionProcesses();
 
-      if (mounted.current) {
-        setProcesses(data);
-      }
-    } catch (err) {
-      console.error(err);
-    }
-  }, [mounted]);
-
-  useEffect(() => {
-    getCoproductionProcesses();
-  }, [getCoproductionProcesses]);
 
   const Phase = ({ title, pr }) => (
     <>
@@ -123,15 +130,18 @@ const Overview = () => {
         spacing={3}
         xs={12}
       >
-        {!pr || pr.length === 0 ? (
+        {loading && <CircularProgress />}
+        {!loading && (!pr || pr.length === 0) && (
           <Grid item xs={12}>
             <Alert severity='info'>Nothing here...</Alert>
           </Grid>
-        ) : (
+        )}
+        {!loading && pr && pr.length > 0 && (
           pr.map((process, i) => (
             <React.Fragment key={`${title}Process${i}`}>
               <Grid item xs={12} md={6} lg={4} xl={3}>
                 <OverviewCard
+                  link={`/dashboard/coproductionprocesses/${process.artefact.id}`}
                   title={process.artefact.name}
                   subtitle={process.artefact.artefact_type}
                   description={truncate(process.artefact.description, {

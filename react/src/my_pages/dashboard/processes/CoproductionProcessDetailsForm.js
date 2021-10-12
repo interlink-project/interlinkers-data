@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
@@ -7,20 +7,28 @@ import {
   Box,
   Button,
   Card,
-  Chip,
   FormHelperText,
-  IconButton,
   TextField,
   Typography,
   ToggleButton,
   ToggleButtonGroup,
+  Autocomplete,
+  Avatar,
 } from '@material-ui/core';
-import PlusIcon from '../../../icons/Plus';
 import QuillEditor from '../../../my_components/QuillEditor';
-
+import { getImageUrl } from '../../../axios';
 const CoproductionProcessDetailsForm = (props) => {
-  const { onBack, onNext, details, setDetails, ...other } = props;
-  const [tag, setTag] = useState('');
+  const {
+    onBack,
+    onNext,
+    details,
+    setDetails,
+    problemDomains,
+    teams,
+    ...other
+  } = props;
+
+  const [teamAvatar, setTeamAvatar] = useState(null);
 
   return (
     <Formik
@@ -36,6 +44,7 @@ const CoproductionProcessDetailsForm = (props) => {
           .required('Required'),
         artefact_type: Yup.string().required('Field is required'),
         keywords: Yup.array(),
+        problemdomains: Yup.array().required('Field is required').min(1),
       })}
       onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
         try {
@@ -68,11 +77,8 @@ const CoproductionProcessDetailsForm = (props) => {
         values,
       }) => (
         <form onSubmit={handleSubmit} {...other}>
-          <Card sx={{ p: 3 }}>
-            <Typography color='textPrimary' variant='h6' sx={{ mb: 3 }}>
-              Coproduction process details
-            </Typography>
-            <Box sx={{ mt: 2 }}>
+          <Box sx={{ mt: 2 }}>
+            <Box>
               <TextField
                 required
                 error={Boolean(touched.name && errors.name)}
@@ -86,173 +92,221 @@ const CoproductionProcessDetailsForm = (props) => {
                 value={values.name}
                 variant='outlined'
               />
-              <Box
-                sx={{
-                  alignItems: 'center',
-                  display: 'flex',
-                  mt: 3,
-                }}
-              >
-                <QuillEditor
-                  required
-                  error={Boolean(touched.description && errors.description)}
-                  label='Description'
-                  name='description'
-                  onChange={(val) => setFieldValue('description', val)}
-                  onClick={() => setFieldTouched('description')}
-                  placeholder='Write here a description'
-                  sx={{ height: 400, width: '100%' }}
-                  value={values.description}
-                />
-              </Box>
-              {Boolean(errors.description) && (
-                <Box sx={{ mt: 2 }}>
-                  <FormHelperText error>{errors.description}</FormHelperText>
-                </Box>
-              )}
-              <Box
-                sx={{
-                  alignItems: 'center',
-                  display: 'flex',
-                  mt: 3,
-                }}
-              >
-                <TextField
-                  fullWidth
-                  label='Keywords'
-                  name='keywords'
-                  onClick={() => setFieldTouched('keywords')}
-                  onKeyPress={(event) => {
-                    if (event.key === 'Enter') {
-                      setFieldValue('keywords', [...values.keywords, tag]);
-                      setTag('');
-                    }
-                  }}
-                  onChange={(event) => setTag(event.target.value)}
-                  value={tag}
-                  variant='outlined'
-                />
-                <IconButton
-                  sx={{ ml: 2 }}
-                  onClick={() => {
-                    if (!tag) {
-                      return;
-                    }
-
-                    setFieldValue('keywords', [...values.keywords, tag]);
-                    setTag('');
-                  }}
-                >
-                  <PlusIcon fontSize='small' />
-                </IconButton>
-              </Box>
-              <Box sx={{ mt: 2 }}>
-                {values.keywords.map((_tag, i) => (
-                  <Chip
-                    onDelete={() => {
-                      const newKeywords = values.keywords.filter(
-                        (t) => t !== _tag
-                      );
-
-                      setFieldValue('keywords', newKeywords);
-                    }}
-                    // eslint-disable-next-line react/no-array-index-key
-                    key={i}
-                    label={_tag}
-                    sx={{
-                      '& + &': {
-                        ml: 1,
-                      },
-                    }}
-                    variant='outlined'
-                  />
-                ))}
-              </Box>
-              {Boolean(touched.keywords && errors.keywords) && (
-                <Box sx={{ mt: 2 }}>
-                  <FormHelperText error>{errors.keywords}</FormHelperText>
-                </Box>
-              )}
-            </Box>
-            <Box
-              sx={{
-                justifyContent: 'center',
-                display: 'flex',
-              }}
-            >
-              <Typography color='textPrimary' variant='overline'>
-                Artefact type
-              </Typography>
             </Box>
             <Box
               sx={{
                 alignItems: 'center',
-                justifyContent: 'center',
                 display: 'flex',
-                mt: 1,
+                mt: 3,
               }}
             >
-              <ToggleButtonGroup
-                exclusive
-                onChange={(event, value) => {
-                  if (value) {
-                    setFieldTouched('artefact_type');
-                    setFieldValue('artefact_type', value);
+              <Autocomplete
+                disablePortal
+                options={teams || []}
+                getOptionLabel={(option) => option.name}
+                onChange={(event, val) => {
+                  if (val) {
+                    setTeamAvatar(val.logotype);
+                    setFieldValue('team_id', val.id);
                   }
                 }}
-                value={values.artefact_type}
                 fullWidth
-                color={
-                  values.artefact_type === 'interlinker'
-                    ? 'primary'
-                    : 'secondary'
-                }
-                label='Artefact type'
-                name='artefact_type'
-                size='large'
-              >
-                <ToggleButton value='interlinker'>Interlinker</ToggleButton>
-                <ToggleButton value='publicservice'>
-                  Public service
-                </ToggleButton>
-              </ToggleButtonGroup>
-              {Boolean(touched.artefact_type && errors.artefact_type) && (
-                <Box sx={{ mt: 2 }}>
-                  <FormHelperText error>{errors.artefact_type}</FormHelperText>
-                </Box>
-              )}
+                disabled={!teams}
+                renderInput={(params) => (
+                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Avatar
+                      alt='Avatar'
+                      src={getImageUrl(teamAvatar)}
+                      sx={{ mr: 2 }}
+                    />
+                    <TextField
+                      {...params}
+                      error={Boolean(touched.team_id && errors.team_id)}
+                      disabled={!teams}
+                      fullWidth
+                      label='Team'
+                      name='team_id'
+                      onClick={() => setFieldTouched('team_id')}
+                      onBlur={handleBlur}
+                      value={values.team_id}
+                      variant='outlined'
+                    />
+                  </Box>
+                )}
+              />
             </Box>
             <Box
               sx={{
+                alignItems: 'center',
                 display: 'flex',
-                mt: 6,
+                mt: 3,
               }}
             >
-              {onBack && (
-                <Button
-                  color='primary'
-                  onClick={onBack}
-                  size='large'
-                  variant='text'
-                >
-                  Previous
-                </Button>
-              )}
-              <Box sx={{ flexGrow: 1 }} />
+              <Autocomplete
+                multiple
+                disablePortal
+                options={problemDomains || []}
+                getOptionLabel={(option) => option.name}
+                onChange={(event, val) => {
+                  setFieldValue(
+                    'problemdomains',
+                    val.map((el) => el.id)
+                  );
+                }}
+                fullWidth
+                filterSelectedOptions
+                disabled={!problemDomains}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    error={Boolean(
+                      touched.problemdomains && errors.problemdomains
+                    )}
+                    disabled={!problemDomains}
+                    fullWidth
+                    label='Problem domains'
+                    name='problemdomains'
+                    onClick={() => setFieldTouched('problemdomains')}
+                    onBlur={handleBlur}
+                    value={values.problemdomains}
+                    variant='outlined'
+                  />
+                )}
+              />
+            </Box>
+            <Box
+              sx={{
+                alignItems: 'center',
+                display: 'flex',
+                mt: 3,
+              }}
+            >
+              <QuillEditor
+                required
+                error={Boolean(touched.description && errors.description)}
+                label='Description'
+                name='description'
+                onChange={(val) => setFieldValue('description', val)}
+                onClick={() => setFieldTouched('description')}
+                placeholder='Write here a description'
+                sx={{ height: 400, width: '100%' }}
+                value={values.description}
+              />
+            </Box>
+            {Boolean(errors.description) && (
+              <Box sx={{ mt: 2 }}>
+                <FormHelperText error>{errors.description}</FormHelperText>
+              </Box>
+            )}
+
+            <Box
+              sx={{
+                alignItems: 'center',
+                display: 'flex',
+                mt: 3,
+              }}
+            >
+              <Autocomplete
+                multiple
+                disablePortal
+                options={['demo', 'demo2', 'demo3']}
+                onChange={(event, val) => {
+                  setFieldValue('keywords', val);
+                }}
+                fullWidth
+                freeSolo
+                filterSelectedOptions
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    error={Boolean(touched.keywords && errors.keywords)}
+                    fullWidth
+                    label='Keywords'
+                    name='keywords'
+                    onClick={() => setFieldTouched('keywords')}
+                    onBlur={handleBlur}
+                    value={values.keywords}
+                    variant='outlined'
+                  />
+                )}
+              />
+            </Box>
+          </Box>
+          <Box
+            sx={{
+              justifyContent: 'center',
+              display: 'flex',
+              mt: 2,
+            }}
+          >
+            <Typography color='textPrimary' variant='overline'>
+              Artefact type
+            </Typography>
+          </Box>
+          <Box
+            sx={{
+              alignItems: 'center',
+              justifyContent: 'center',
+              display: 'flex',
+              mt: 1,
+            }}
+          >
+            <ToggleButtonGroup
+              exclusive
+              onChange={(event, value) => {
+                if (value) {
+                  setFieldTouched('artefact_type');
+                  setFieldValue('artefact_type', value);
+                }
+              }}
+              value={values.artefact_type}
+              fullWidth
+              color={
+                values.artefact_type === 'interlinker' ? 'primary' : 'secondary'
+              }
+              label='Artefact type'
+              name='artefact_type'
+              size='large'
+            >
+              <ToggleButton value='interlinker'>Interlinker</ToggleButton>
+              <ToggleButton value='publicservice'>Public service</ToggleButton>
+            </ToggleButtonGroup>
+            {Boolean(touched.artefact_type && errors.artefact_type) && (
+              <Box sx={{ mt: 2 }}>
+                <FormHelperText error>{errors.artefact_type}</FormHelperText>
+              </Box>
+            )}
+          </Box>
+          <Box
+            sx={{
+              display: 'flex',
+              mt: 6,
+            }}
+          >
+            {onBack && (
               <Button
                 color='primary'
-                disabled={
-                  Object.keys(touched).length === 0 ||
-                  isSubmitting ||
-                  Object.keys(errors).length !== 0
-                }
-                type='submit'
-                variant='contained'
+                onClick={onBack}
+                size='large'
+                variant='text'
               >
-                Next
+                Previous
               </Button>
-            </Box>
-          </Card>
+            )}
+            <Box sx={{ flexGrow: 1 }} />
+            <Button
+              color='primary'
+              disabled={
+                Object.keys(touched).length === 0 ||
+                isSubmitting ||
+                Object.keys(errors).length !== 0
+              }
+              type='submit'
+              variant='contained'
+            >
+              Next
+            </Button>
+          </Box>
         </form>
       )}
     </Formik>

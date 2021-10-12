@@ -47,7 +47,7 @@ const InterlinkerBrowse = () => {
           py: 8
         }}
       >
-        <Container>
+        <Container maxWidth="xl">
           <Grid
             alignItems='center'
             container

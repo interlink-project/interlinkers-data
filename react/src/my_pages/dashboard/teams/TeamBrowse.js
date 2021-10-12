@@ -1,8 +1,8 @@
 import { useCallback, useState, useEffect } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { Box, Breadcrumbs, Button, Container, Grid, Link, Typography } from '@material-ui/core';
-import { teamApi } from '../../../__fakeApi__/teamApi';
+import { Box, Breadcrumbs, Button, CircularProgress, Container, Grid, Link, Typography } from '@material-ui/core';
+import { teamsApi } from '../../../__fakeApi__/teamsApi';
 import { TeamBrowseFilter, TeamBrowseResults } from '../../../my_components/dashboard/teams';
 import useMounted from '../../../hooks/useMounted';
 import useSettings from '../../../hooks/useSettings';
@@ -14,6 +14,7 @@ const TeamBrowse = () => {
   const mounted = useMounted();
   const { settings } = useSettings();
   const [teams, setTeams] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     gtm.push({ event: 'page_view' });
@@ -21,10 +22,11 @@ const TeamBrowse = () => {
 
   const getTeams = useCallback(async () => {
     try {
-      const data = await teamApi.getTeams();
+      const data = await teamsApi.getTeams();
 
       if (mounted.current) {
         setTeams(data);
+        setLoading(false)
       }
     } catch (err) {
       console.error(err);
@@ -34,7 +36,7 @@ const TeamBrowse = () => {
   useEffect(() => {
     getTeams();
   }, [getTeams]);
-
+  
   return (
     <>
       <Helmet>
@@ -47,7 +49,7 @@ const TeamBrowse = () => {
           py: 8
         }}
       >
-        <Container>
+        <Container maxWidth="xl">
           <Grid
             alignItems='center'
             container
@@ -80,9 +82,13 @@ const TeamBrowse = () => {
           <Box sx={{ mt: 3 }}>
             <TeamBrowseFilter />
           </Box>
+          {loading ? 
+          <Box sx={{ display: 'flex', justifyContent: "center", m: 4 }}>
+          <CircularProgress />
+        </Box>: 
           <Box sx={{ mt: 6 }}>
             <TeamBrowseResults teams={teams} />
-          </Box>
+          </Box>}
         </Container>
       </Box>
     </>

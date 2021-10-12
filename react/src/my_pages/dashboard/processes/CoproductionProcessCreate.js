@@ -10,14 +10,41 @@ import {
   CardContent,
   Avatar,
   Button,
+  Stepper,
+  Step,
+  StepLabel,
 } from '@material-ui/core';
 import useSettings from '../../../hooks/useSettings';
 import gtm from '../../../lib/gtm';
 import CoproductionProcessArtefactForm from './CoproductionProcessArtefactForm';
 import CoproductionProcessDetailsForm from './CoproductionProcessDetailsForm';
+import { problemdomainsApi } from '../../../__fakeApi__/problemDomains';
+import { teamsApi } from '../../../__fakeApi__/teamsApi';
+import useMounted from '../../../hooks/useMounted';
 
 const CoproductionProcessCreate = () => {
   const { settings } = useSettings();
+  const mounted = useMounted();
+  const [problemDomains, setProblemDomains] = useState(null);
+  const [teams, setTeams] = useState(null);
+
+  const getData = useCallback(async () => {
+    try {
+      const data = await problemdomainsApi.getProblemDomains();
+      const data2 = await teamsApi.getTeams();
+
+      if (mounted.current) {
+        setProblemDomains(data);
+        setTeams(data2);
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  }, [mounted]);
+
+  useEffect(() => {
+    getData();
+  }, [getData]);
 
   useEffect(() => {
     gtm.push({ event: 'page_view' });
@@ -30,9 +57,9 @@ const CoproductionProcessCreate = () => {
     name: 'Demo',
     description: '<p>demo deasdfasdfasdfsc </p>',
     artefact_type: 'interlinker',
+    team_id: null,
     keywords: ['demo'],
-    problemdomain_id: 'ffff',
-    problemdomain: '',
+    problemdomains: [],
     submit: null,
   });
   const [artefact, setArtefact] = useState({
@@ -77,8 +104,6 @@ const CoproductionProcessCreate = () => {
     setCompleted(true);
   };
 
-  console.log(details, artefact)
-
   return (
     <>
       <Helmet>
@@ -104,8 +129,19 @@ const CoproductionProcessCreate = () => {
               </Typography>
             </Grid>
           </Grid>
+
           <Box sx={{ mt: 3 }}>
-            <div>
+            <Card sx={{ p: 3 }}>
+              <Box sx={{ mt: 3 }}>
+                <Stepper activeStep={activeStep} alternativeLabel>
+                  <Step key={0}>
+                    <StepLabel>General information</StepLabel>
+                  </Step>
+                  <Step key={1}>
+                    <StepLabel>Artefact details</StepLabel>
+                  </Step>
+                </Stepper>
+              </Box>
               {!completed ? (
                 <>
                   {activeStep === 0 && (
@@ -113,6 +149,8 @@ const CoproductionProcessCreate = () => {
                       onNext={handleNext}
                       details={details}
                       setDetails={onDetailsSubmit}
+                      problemDomains={problemDomains}
+                      teams={teams}
                     />
                   )}
                   {activeStep === 1 && (
@@ -126,69 +164,67 @@ const CoproductionProcessCreate = () => {
                   )}
                 </>
               ) : (
-                <Card>
-                  <CardContent>
+                <CardContent>
+                  <Box
+                    sx={{
+                      maxWidth: 450,
+                      mx: 'auto',
+                    }}
+                  >
                     <Box
                       sx={{
-                        maxWidth: 450,
-                        mx: 'auto',
+                        display: 'flex',
+                        justifyContent: 'center',
                       }}
                     >
-                      <Box
+                      <Avatar
                         sx={{
-                          display: 'flex',
-                          justifyContent: 'center',
+                          backgroundColor: 'primary.main',
+                          color: 'primary.contrastText',
                         }}
                       >
-                        <Avatar
-                          sx={{
-                            backgroundColor: 'primary.main',
-                            color: 'primary.contrastText',
-                          }}
-                        >
-                          <StarIcon fontSize='small' />
-                        </Avatar>
-                      </Box>
-                      <Box sx={{ mt: 2 }}>
-                        <Typography
-                          align='center'
-                          color='textPrimary'
-                          variant='h3'
-                        >
-                          You are all done!
-                        </Typography>
-                      </Box>
-                      <Box sx={{ mt: 2 }}>
-                        <Typography
-                          align='center'
-                          color='textSecondary'
-                          variant='subtitle1'
-                        >
-                          Donec ut augue sed nisi ullamcorper posuere sit amet
-                          eu mauris. Ut eget mauris scelerisque.
-                        </Typography>
-                      </Box>
-                      <Box
-                        sx={{
-                          display: 'flex',
-                          justifyContent: 'center',
-                          mt: 2,
-                        }}
-                      >
-                        <Button
-                          color='primary'
-                          component={RouterLink}
-                          to='/dashboard/coproductionprocesses/1'
-                          variant='contained'
-                        >
-                          View coproductionprocess
-                        </Button>
-                      </Box>
+                        <StarIcon fontSize='small' />
+                      </Avatar>
                     </Box>
-                  </CardContent>
-                </Card>
+                    <Box sx={{ mt: 2 }}>
+                      <Typography
+                        align='center'
+                        color='textPrimary'
+                        variant='h3'
+                      >
+                        You are all done!
+                      </Typography>
+                    </Box>
+                    <Box sx={{ mt: 2 }}>
+                      <Typography
+                        align='center'
+                        color='textSecondary'
+                        variant='subtitle1'
+                      >
+                        Donec ut augue sed nisi ullamcorper posuere sit amet eu
+                        mauris. Ut eget mauris scelerisque.
+                      </Typography>
+                    </Box>
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        mt: 2,
+                      }}
+                    >
+                      <Button
+                        color='primary'
+                        component={RouterLink}
+                        to='/dashboard/coproductionprocesses/1'
+                        variant='contained'
+                      >
+                        View coproductionprocess
+                      </Button>
+                    </Box>
+                  </Box>
+                </CardContent>
               )}
-            </div>
+            </Card>
           </Box>
         </Container>
       </Box>

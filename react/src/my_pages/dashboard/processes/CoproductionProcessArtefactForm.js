@@ -16,10 +16,7 @@ import {
   ToggleButtonGroup,
   Autocomplete,
   Grid,
-  Paper,
 } from '@material-ui/core';
-import { problemdomainsApi } from '../../../__fakeApi__/problemDomains';
-import useMounted from '../../../hooks/useMounted';
 
 const CoproductionProcessArtefactForm = (props) => {
   const {
@@ -30,25 +27,6 @@ const CoproductionProcessArtefactForm = (props) => {
     artefact_type,
     ...other
   } = props;
-  console.log(props);
-  const [problemDomains, setProblemDomains] = useState(null);
-  const mounted = useMounted();
-
-  const getProblemDomains = useCallback(async () => {
-    try {
-      const data = await problemdomainsApi.getProblemDomains();
-
-      if (mounted.current) {
-        setProblemDomains(data);
-      }
-    } catch (err) {
-      console.error(err);
-    }
-  }, [mounted]);
-
-  useEffect(() => {
-    getProblemDomains();
-  }, [getProblemDomains]);
 
   const shape =
     artefact_type === 'interlinker'
@@ -63,13 +41,15 @@ const CoproductionProcessArtefactForm = (props) => {
       validationSchema={Yup.object().shape(shape)}
       onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
         try {
+          console.log(values);
+          /*
           setArtefact(values);
           setStatus({ success: true });
           setSubmitting(false);
 
           if (onNext) {
             onNext();
-          }
+          }*/
         } catch (err) {
           setStatus({ success: false });
           setErrors({ submit: err.message });
@@ -89,126 +69,88 @@ const CoproductionProcessArtefactForm = (props) => {
         values,
       }) => (
         <form onSubmit={handleSubmit} {...other}>
-          <Card sx={{ mt: 3, p: 2 }}>
-            <Typography color='textPrimary' variant='h6'>
-              Details of the{' '}
-              {artefact_type === 'interlinker'
-                ? 'interlinker'
-                : 'public service'}
-            </Typography>
-
-            {artefact_type === 'interlinker' ? (
-              <Box sx={{ mt: 2 }}>
-                <Grid container>
-                  <Grid item md={6} xs={12}>
-                    <Box
-                      sx={{
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        display: 'flex',
-                        mt: 3,
-                      }}
-                    >
-                      <ToggleButtonGroup
-                        exclusive
-                        onChange={(event, value) => {
-                          if (value) {
-                            setFieldTouched('nature');
-                            setFieldValue('nature', value);
-                          }
-                        }}
-                        value={values.nature}
-                        fullWidth
-                        label='Nature'
-                        name='nature'
-                        color='standard'
-                        size='medium'
-                      >
-                        <ToggleButton value='software'>Software</ToggleButton>
-                        <ToggleButton value='knowledge'>Knowledge</ToggleButton>
-                      </ToggleButtonGroup>
-                      {Boolean(touched.nature && errors.nature) && (
-                        <Box sx={{ mt: 2 }}>
-                          <FormHelperText error>{errors.nature}</FormHelperText>
-                        </Box>
-                      )}
-                    </Box>
-                  </Grid>
-                  <Grid item md={6} xs={12}>
-                    <Box
-                      sx={{
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        display: 'flex',
-                        mt: 3,
-                      }}
-                    >
-                      <Autocomplete
-                        disablePortal
-                        options={
-                          problemDomains
-                            ? problemDomains.map((el) => {
-                                return {
-                                  label: el.name,
-                                  value: el.id,
-                                };
-                              })
-                            : []
-                        }
-                        fullWidth
-                        renderInput={(params) => (
-                          <TextField
-                            {...params}
-                            error={Boolean(
-                              touched.problemdomain && errors.problemdomain
-                            )}
-                            fullWidth
-                            label='Problem domain'
-                            name='problemdomain'
-                            onClick={() => setFieldTouched('problemdomain')}
-                            onBlur={handleBlur}
-                            onChange={handleChange}
-                            value={values.problemdomain}
-                            variant='outlined'
-                          />
-                        )}
-                      />
-                    </Box>
-                  </Grid>
-                </Grid>
-              </Box>
-            ) : null}
-            <Box
-              sx={{
-                display: 'flex',
-                mt: 6,
-              }}
-            >
-              {onBack && (
-                <Button
-                  color='primary'
-                  onClick={onBack}
-                  size='large'
-                  variant='text'
+          {artefact_type === 'interlinker' ? (
+            <Grid container sx={{ p: 1 }}>
+              <Grid item md={6} xs={12}>
+                <Box
+                  sx={{
+                    justifyContent: 'center',
+                    display: 'flex',
+                    mt: 2,
+                  }}
                 >
-                  Previous
-                </Button>
-              )}
-              <Box sx={{ flexGrow: 1 }} />
+                  <Typography color='textPrimary' variant='overline'>
+                    Nature
+                  </Typography>
+                </Box>
+                <Box
+                  sx={{
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    display: 'flex',
+                    mt: 1,
+                  }}
+                >
+                  <ToggleButtonGroup
+                    exclusive
+                    onChange={(event, value) => {
+                      if (value) {
+                        setFieldTouched('nature');
+                        setFieldValue('nature', value);
+                      }
+                    }}
+                    value={values.nature}
+                    fullWidth
+                    label='Nature'
+                    name='nature'
+                    color='standard'
+                    size='medium'
+                  >
+                    <ToggleButton value='software'>Software</ToggleButton>
+                    <ToggleButton value='knowledge'>Knowledge</ToggleButton>
+                  </ToggleButtonGroup>
+                  {Boolean(touched.nature && errors.nature) && (
+                    <Box sx={{ mt: 2 }}>
+                      <FormHelperText error>{errors.nature}</FormHelperText>
+                    </Box>
+                  )}
+                </Box>
+              </Grid>
+              <Grid item md={6} xs={12} sx={{ p: 2 }}>
+                eo
+              </Grid>
+            </Grid>
+          ) : null}
+          <Box
+            sx={{
+              display: 'flex',
+              mt: 6,
+            }}
+          >
+            {onBack && (
               <Button
                 color='primary'
-                disabled={
-                  Object.keys(touched).length === 0 ||
-                  isSubmitting ||
-                  Object.keys(errors).length !== 0
-                }
-                type='submit'
-                variant='contained'
+                onClick={onBack}
+                size='large'
+                variant='text'
               >
-                Complete
+                Previous
               </Button>
-            </Box>
-          </Card>
+            )}
+            <Box sx={{ flexGrow: 1 }} />
+            <Button
+              color='primary'
+              disabled={
+                Object.keys(touched).length === 0 ||
+                isSubmitting ||
+                Object.keys(errors).length !== 0
+              }
+              type='submit'
+              variant='contained'
+            >
+              Complete
+            </Button>
+          </Box>
         </form>
       )}
     </Formik>

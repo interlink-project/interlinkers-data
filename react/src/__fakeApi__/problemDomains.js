@@ -11,7 +11,7 @@ class ProblemDomainsApi {
     }
     const newparams = searchparams.toString();
     const res = await axiosInstance.get(
-      `problemdomains/${newparams ? `?${newparams}` : ''}`
+      `/problemdomains/${newparams ? `?${newparams}` : ''}`
     );
     console.log('getProblemDomains call', res.data);
     return res.data;
