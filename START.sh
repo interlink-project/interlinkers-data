@@ -5,9 +5,9 @@ docker-compose up -d etherpad mariadb
 # Get line of API_KEY and delete from env file
 FILE=APIKEY.txt
 
-sed '/REACT_APP_API_KEY=/d' .env >.new
-rm .env
-mv .new .env
+sed '/REACT_APP_API_KEY=/d' react/.env > react/.new
+rm react/.env
+mv react/.new react/.env
 rm $FILE 2> /dev/null
 
 # Get APIKEY from etherpad container
@@ -20,7 +20,7 @@ while [ ! -f $FILE ]; do
 done
 
 # Set value into env file
-echo "REACT_APP_API_KEY=$(cat $FILE)" >>.env
+echo "REACT_APP_API_KEY=$(cat $FILE)" >> react/.env
 rm $FILE
 
 # Start react and nginx containers

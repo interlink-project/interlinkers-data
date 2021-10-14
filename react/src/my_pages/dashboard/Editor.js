@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Box, Container } from '@material-ui/core';
+import { Box, Container, Card, CircularProgress } from '@material-ui/core';
 import useAuth from '../../hooks/useAuth';
 import { useCookies } from 'react-cookie';
 import axiosInstance from '../../axios';
@@ -77,9 +77,10 @@ const Editor = () => {
           py: 8,
         }}
       >
-        <Container>
+        <Container maxWidth="xl">
+          <Card>
           {!sessionID ? (
-            'Is loading'
+            <CircularProgress />
           ) : (
             <iframe
               src={`http://localhost/etherpad/auth_session?sessionID=${sessionID}&groupID=${grID}&padName=${padName}`}
@@ -88,6 +89,7 @@ const Editor = () => {
               frameBorder='0'
             />
           )}
+          </Card>
         </Container>
       </Box>
     </>
