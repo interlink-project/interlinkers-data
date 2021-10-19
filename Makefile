@@ -13,7 +13,7 @@ help: ## Show this help
 
 .PHONY: run
 run: ## run "make run"
-	./START.sh
+	docker-compose up --build
 
 #.PHONY: prod
 # prod: ## build and run "make prod"

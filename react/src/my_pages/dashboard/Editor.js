@@ -16,7 +16,7 @@ const Editor = () => {
   const authorMapper = user.email;
   const groupMapper = "sdasdas";
   const padName = 'demopad';
-  const apiKey = process.env.REACT_APP_API_KEY || "ed12bef13e822d07b08bb77c6cf7392f58f17a4f8a80dd1df9636776959c2d1a";
+  const apiKey = process.env.REACT_APP_API_KEY || "7965ea68087fa5f688d1f31b4a07a1bdd8b98a9c54004c1922ae167d61e8a449";
   const [cookies, setCookie] = useCookies(['sessionID']);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const Editor = () => {
         const {
           data: { authorID },
         } = res.data;
-        console.log('authorID', authorID);
+        console.log(name, authorMapper, authorID);
         setGroupID(authorID);
 
         axiosInstance
@@ -39,14 +39,14 @@ const Editor = () => {
             const {
               data: { groupID },
             } = res.data;
-            console.log('groupID', groupID);
+            console.log(groupMapper, groupID);
             setGroupID(groupID);
             axiosInstance
               .get(
                 `http://localhost/etherpad/api/1/createGroupPad?apikey=${apiKey}&groupID=${groupID}&padName=${padName}&text=This is the first sentence in the pad`
               )
               .then(() => {
-                console.log('createGroupPad');
+                console.log('createGroupPad', groupID, padName );
 
                 axiosInstance
                   .get(
@@ -56,8 +56,8 @@ const Editor = () => {
                     const {
                       data: { sessionID },
                     } = res.data;
-                    console.log('sessionID', sessionID);
-                    setCookie('sessionID', sessionID, { path: '/' });
+                    console.log(groupID, authorID, sessionID);
+                    // setCookie('sessionID', sessionID, { path: '/' });
                     setSessionID(sessionID);
                   });
               });

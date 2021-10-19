@@ -10,7 +10,6 @@ import gtm from '../../lib/gtm';
 const platformIcons = {
   Amplify: '/static/icons/amplify.svg',
   Auth0: '/static/icons/auth0.svg',
-  Firebase: '/static/icons/firebase.svg',
   JWT: '/static/icons/jwt.svg'
 };
 

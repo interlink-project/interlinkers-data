@@ -85,10 +85,6 @@ const sections = [
         path: '/docs/authentication/auth0'
       },
       {
-        title: 'Firebase',
-        path: '/docs/authentication/firebase'
-      },
-      {
         title: 'JWT',
         path: '/docs/authentication/jwt'
       }
