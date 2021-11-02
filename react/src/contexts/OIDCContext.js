@@ -104,7 +104,7 @@ export const AuthProvider = (props) => {
 
   const setUser = (access_token, callback) => {
     setAuthHeader(access_token);
-    axiosInstance.post('/users/me').then(({ data }) => {
+    axiosInstance.get('/users/me').then(({ data }) => {
       console.log('RESPONSE FOR ME', data);
       dispatch({
         type: 'SET_USER',
@@ -113,7 +113,11 @@ export const AuthProvider = (props) => {
         },
       });
       callback && callback();
-    });
+    }).catch((e) => {
+      console.error(e)
+      logout()
+    }
+    );
   };
 
   const signinRedirectCallback = (callback) => {
@@ -179,9 +183,9 @@ export const AuthProvider = (props) => {
   const createSigninRequest = () => userManager.createSigninRequest();
 
   const logout = () => {
-    userManager.signoutRedirect({
-      id_token_hint: localStorage.getItem('id_token'),
-    });
+    // userManager.signoutRedirect({
+    //   id_token_hint: localStorage.getItem('id_token'),
+    // });
     userManager.clearStaleState();
     dispatch({ type: 'LOGOUT' });
     navigate('/');

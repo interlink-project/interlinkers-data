@@ -20,7 +20,7 @@ import useSettings from '../../hooks/useSettings';
 import PlusIcon from '../../icons/Plus';
 import useAuth from '../../hooks/useAuth';
 import { Link as RouterLink } from 'react-router-dom';
-import { coproductionprocessApi } from '../../__fakeApi__/processesApi';
+import { coproductionProcessesApi } from '../../__fakeApi__/processesApi';
 import ArrowRightIcon from '@material-ui/icons/ChevronRight';
 import { getImageUrl } from '../../axios';
 
@@ -34,7 +34,7 @@ const Overview = () => {
 
   const getCoproductionProcesses = useCallback(async () => {
     try {
-      const data = await coproductionprocessApi.getCoproductionProcesses();
+      const data = await coproductionProcessesApi.getMulti();
 
       if (mounted.current) {
         setProcesses(data);
@@ -58,7 +58,7 @@ const Overview = () => {
     buttonAction,
     component,
   }) => {
-    console.log(link)
+    
     return (
       <Box sx={{ mt: 2 }}>
         <CardActionArea component={RouterLink} to={link}>
@@ -141,7 +141,7 @@ const Overview = () => {
             <React.Fragment key={`${title}Process${i}`}>
               <Grid item xs={12} md={6} lg={4} xl={3}>
                 <OverviewCard
-                  link={`/dashboard/coproductionprocesses/${process.artefact.id}`}
+                  link={`/dashboard/coproductionprocesses/${process.id}`}
                   title={process.artefact.name}
                   subtitle={process.artefact.artefact_type}
                   description={truncate(process.artefact.description, {
@@ -212,7 +212,7 @@ const Overview = () => {
             <Phase
               title={'Engagement processes'}
               pr={
-                processes && processes.filter((e) => e.phase === 'ENGAGEMENT')
+                processes
               }
             />
             <Phase

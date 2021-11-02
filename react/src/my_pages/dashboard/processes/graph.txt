@@ -1,0 +1,49 @@
+
+  import { Canvas } from 'reaflow';
+
+const getSchema = () => {
+    if (process && process.phaseinstantiations) {
+      const nodes = []
+      const edges = []
+      process.phaseinstantiations.forEach(phaseinstantiation => {
+        nodes.push(
+          {
+            id: phaseinstantiation.id,
+            text: phaseinstantiation.phase.name
+          }
+        ) 
+        phaseinstantiation.activityinstantiations.forEach(activityinstantiation => {
+          nodes.push(
+            {
+              id: activityinstantiation.id,
+              text: activityinstantiation.activity.name
+            }
+          )
+          edges.push(
+            {
+              id: `${phaseinstantiation.id}-${activityinstantiation.id}`,
+              from: phaseinstantiation.id,
+              to: activityinstantiation.id
+            },
+          ) 
+        })
+      })
+      return {
+        nodes: nodes,
+        edges: edges
+      }
+    }
+    return {
+      nodes: [],
+      edges: []
+    }
+
+  }
+
+  const {nodes, edges} = getSchema()
+  <Canvas
+                pannable={false}
+                direction="RIGHT"
+                nodes={nodes}
+                edges={edges}
+              />

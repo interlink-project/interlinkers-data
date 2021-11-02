@@ -22,7 +22,7 @@ const TeamBrowse = () => {
 
   const getTeams = useCallback(async () => {
     try {
-      const data = await teamsApi.getTeams();
+      const data = await teamsApi.getMulti();
 
       if (mounted.current) {
         setTeams(data);

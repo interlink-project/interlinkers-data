@@ -31,7 +31,7 @@ const CoproductionProcessCreate = () => {
   const getData = useCallback(async () => {
     try {
       const data = await problemdomainsApi.getProblemDomains();
-      const data2 = await teamsApi.getTeams();
+      const data2 = await teamsApi.getMulti();
 
       if (mounted.current) {
         setProblemDomains(data);

@@ -1,15 +1,19 @@
 import axiosInstance from '../axios';
+import GeneralApi from "./general"
 
-class CoproductionProcessApi {
-  async getCoproductionProcesses() {
-    const res = await axiosInstance.get('/coproductionprocess/');
-    console.log('getCoproductionProcesses call', res.data);
-    return res.data;
+class CoproductionProcessesApi extends GeneralApi {
+  constructor() {
+    super("coproductionprocesses");
   }
 
-  getCoproductionProcess(id) {
-    return axiosInstance.get(`/coproductionprocess/${id}`).then((res) => res);
+  async getPhases(id) {
+    
+    const res = await axiosInstance.get(
+      `/${this.url}/${id}/phaseinstantiations`
+    );
+    console.log('getPhases call', res.data);
+    return res.data;
   }
 }
 
-export const coproductionprocessApi = new CoproductionProcessApi();
+export const coproductionProcessesApi = new CoproductionProcessesApi();
