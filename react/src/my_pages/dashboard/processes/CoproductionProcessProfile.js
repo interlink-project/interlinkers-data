@@ -1,4 +1,5 @@
 import { useCallback, useState, useEffect } from 'react';
+
 import { Link as RouterLink, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import {
@@ -6,7 +7,6 @@ import {
   Alert,
   Box,
   Button,
-  CircularProgress,
   FormControl,
   InputLabel,
   Select,
@@ -32,19 +32,24 @@ import {
   TableCell,
   TableHead,
   TableRow,
-  TableBody
-
+  TableBody,
+  Skeleton,
+  Menu,
+  CardMedia,
 } from '@material-ui/core';
+import { styled } from '@material-ui/styles';
+import { alpha } from '@material-ui/core';
+import EditIcon from '@material-ui/icons/Edit';
+import ArchiveIcon from '@material-ui/icons/Archive';
+import FileCopyIcon from '@material-ui/icons/FileCopy';
+import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+
 import { LoadingButton } from '@material-ui/lab';
-
-import { LinkPreview } from "@dhaiwat10/react-link-preview";
-
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import AddPhotoIcon from '@material-ui/icons/AddPhotoAlternate';
 import { coproductionProcessesApi } from '../../../__fakeApi__/processesApi';
-import { socialApi } from '../../../__fakeApi__/socialApi';
 import { assetsApi } from '../../../__fakeApi__/assetsApi';
-import { SocialConnections, SocialTimeline } from '../../../tm_components/dashboard/social';
 import useMounted from '../../../hooks/useMounted';
 import DotsVerticalIcon from '../../../icons/DotsVertical';
 import gtm from '../../../lib/gtm';
@@ -54,24 +59,21 @@ import { useTheme } from '@material-ui/styles';
 import MoreVertIcon from '@material-ui/icons/SkipNext';
 import AddIcon from '@material-ui/icons/Add';
 import moment from 'moment'
+import prettyBytes from "pretty-bytes"
 
 const tabs = [
-  { label: 'Timeline', value: 'timeline' },
-  { label: 'Connections', value: 'connections' }
+  { label: 'Guide', value: 'guide' },
+  { label: 'Overview', value: 'overview' }
 ];
 
 const CoproductionProcessProfile = () => {
-  const theme = useTheme();
-
   const mounted = useMounted();
-  const [currentTab, setCurrentTab] = useState('timeline');
+  const [currentTab, setCurrentTab] = useState('guide');
   const [selectedTaskInstantiation, setSelectedTaskInstantiation] = useState(null);
-  const [profile, setProfile] = useState(null);
   const [process, setProcess] = useState(null);
   const [phaseinstantiations, setPhaseInstantiations] = useState(null);
   const [loading, setLoading] = useState(true);
   const [creatingAsset, setCreatingAsset] = useState(false);
-  const [connectedStatus, setConnectedStatus] = useState('not_connected');
   const [phase, setPhase] = useState("");
 
   let { processId } = useParams();
@@ -97,22 +99,6 @@ const CoproductionProcessProfile = () => {
     gtm.push({ event: 'page_view' });
   }, []);
 
-  const getProfile = useCallback(async () => {
-    try {
-      const data = await socialApi.getProfile();
-
-      if (mounted.current) {
-        setProfile(data);
-      }
-    } catch (err) {
-      console.error(err);
-    }
-  }, [mounted]);
-
-  useEffect(() => {
-    getProfile();
-  }, [getProfile]);
-
   const getCoproductionProcess = useCallback(async () => {
     try {
       const [data, phasesData] = await Promise.all([
@@ -123,6 +109,7 @@ const CoproductionProcessProfile = () => {
       if (mounted.current) {
         setProcess(data);
         setPhaseInstantiations(phasesData)
+        setPhase(phasesData[0].phase.name)
         setLoading(false)
       }
     } catch (err) {
@@ -133,12 +120,6 @@ const CoproductionProcessProfile = () => {
   useEffect(() => {
     getCoproductionProcess();
   }, [getCoproductionProcess]);
-
-  const handleConnectToggle = () => {
-    setConnectedStatus((prevConnectedStatus) => (prevConnectedStatus === 'not_connected'
-      ? 'pending'
-      : 'not_connected'));
-  };
 
   const handleTabsChange = (event, value) => {
     setCurrentTab(value);
@@ -173,7 +154,7 @@ const CoproductionProcessProfile = () => {
                 <Avatar aria-label="recipe" src="https://simpatico.hi-iberia.es:4570/servicepedia/assets/logo_simpatico_small.png" />
               }
               title={title}
-              subheader={description + "smdsa kfdms nd,ng dsfng ndsfmgn ndfgndsfmn"}
+              subheader={description}
             />
             <Box sx={{ justifyContent: "space-evenly", p: 2, width: "100%" }}>
               <Button variant="text">
@@ -202,14 +183,107 @@ const CoproductionProcessProfile = () => {
     );
   };
 
-  if (loading) {
-    return <CircularProgress />;
+  const StyledMenu = styled((props) => (
+    <Menu
+      elevation={0}
+      anchorOrigin={{
+        vertical: 'bottom',
+        horizontal: 'right',
+      }}
+      transformOrigin={{
+        vertical: 'top',
+        horizontal: 'right',
+      }}
+      {...props}
+    />
+  ))(({ theme }) => ({
+    '& .MuiPaper-root': {
+      borderRadius: 6,
+      marginTop: theme.spacing(1),
+      minWidth: 180,
+      color:
+        theme.palette.mode === 'light' ? 'rgb(55, 65, 81)' : theme.palette.grey[300],
+      boxShadow:
+        'rgb(255, 255, 255) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px',
+      '& .MuiMenu-list': {
+        padding: '4px 0',
+      },
+      '& .MuiMenuItem-root': {
+        '& .MuiSvgIcon-root': {
+          fontSize: 18,
+          color: theme.palette.text.secondary,
+          marginRight: theme.spacing(1.5),
+        },
+        '&:active': {
+          backgroundColor: alpha(
+            theme.palette.primary.main,
+            theme.palette.action.selectedOpacity,
+          ),
+        },
+      },
+    },
+  }));
+
+
+  const CustomizedMenus = () => {
+    const [anchorEl, setAnchorEl] = useState(null);
+    const ope = Boolean(anchorEl);
+    const handleClick = (event) => {
+      setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+      setAnchorEl(null);
+    };
+
+    return (
+      <div>
+        <Button
+          id="demo-customized-button"
+          aria-controls="demo-customized-menu"
+          aria-haspopup="true"
+          aria-expanded={open ? 'true' : undefined}
+          variant="contained"
+          disableElevation
+          size="small"
+          onClick={handleClick}
+        >
+          <KeyboardArrowDownIcon />
+        </Button>
+        <StyledMenu
+          id="demo-customized-menu"
+          MenuListProps={{
+            'aria-labelledby': 'demo-customized-button',
+          }}
+          anchorEl={anchorEl}
+          open={ope}
+          onClose={handleClose}
+        >
+          <MenuItem onClick={handleClose} disableRipple>
+            <EditIcon />
+            Edit
+          </MenuItem>
+          <MenuItem onClick={handleClose} disableRipple>
+            <FileCopyIcon />
+            Duplicate
+          </MenuItem>
+          <Divider sx={{ my: 0.5 }} />
+          <MenuItem onClick={handleClose} disableRipple>
+            <ArchiveIcon />
+            Archive
+          </MenuItem>
+          <MenuItem onClick={handleClose} disableRipple>
+            <MoreHorizIcon />
+            More
+          </MenuItem>
+        </StyledMenu>
+      </div>
+    );
   }
 
   const getTree = (phaseinstantiation) => phaseinstantiation.activityinstantiations.map((activityinstantiation, i) =>
     <Tree content={<span style={{ fontWeight: "bold" }}>{activityinstantiation.activity.name}</span>} key={activityinstantiation.id} open type="Activity" >
       {activityinstantiation.taskinstantiations.map(taskinstantiation =>
-        <Tree open sx={{mb: 2}} content={
+        <Tree open sx={{ mb: 2 }} content={
           <Alert
             severity={i % 2 ? "warning" : "success"}
             action={
@@ -227,14 +301,18 @@ const CoproductionProcessProfile = () => {
             <Table sx={{ minWidth: 650 }} size="small" aria-label="assets table">
               <TableHead>
                 <TableRow>
+                  <TableCell align="center" width={50}></TableCell>
                   <TableCell align="center">Name</TableCell>
+                  <TableCell align="center">Size</TableCell>
                   <TableCell align="center">Created at</TableCell>
+                  <TableCell align="center">Last modification</TableCell>
                   <TableCell align="center">Actions</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
                 {taskinstantiation.assets.map(asset => {
                   const date = moment(asset.created_at);
+                  const modifiedDate = moment(asset.file_metadata.modified_time);
 
                   return (
                     <TableRow
@@ -242,10 +320,29 @@ const CoproductionProcessProfile = () => {
                       sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                     >
                       <TableCell component="th" scope="row">
-                        {asset.name}
+                        <Avatar
+                          src={asset.file_metadata.icon_link}
+                          sx={{ width: 25, height: 25 }}
+                        />
                       </TableCell>
+                      <TableCell component="th" scope="row">
+                        <Tooltip title={<Card sx={{ minWidth: 200, minHeight: 275 }}><CardMedia
+                          component="img"
+                          image={asset.file_metadata.thumbnail_link}
+                          alt="Asset thumbnail"
+                        /> </Card>} placement="right">
+                          <Button variant="text" rel="noopener noreferrer" href={asset.work_link} target="_blank">{asset.name}</Button>
+                        </Tooltip>
+                      </TableCell>
+                      <TableCell component="th" scope="row">
+                        {asset.file_metadata.size && prettyBytes(parseInt(asset.file_metadata.size))}
+                      </TableCell>
+
                       <TableCell align="center">{date.fromNow()}</TableCell>
-                      <TableCell align="center"><Button variant="text" rel="noopener noreferrer" href={asset.link} target="_blank">Go</Button></TableCell>
+                      <TableCell align="center">{modifiedDate.fromNow()}</TableCell>
+                      <TableCell align="center">  <CustomizedMenus /></TableCell>
+
+
                     </TableRow>
                   )
                 })}
@@ -253,7 +350,7 @@ const CoproductionProcessProfile = () => {
 
             </Table>
           </TableContainer>
-          <Button sx={{ mt: 1 }} variant="outlined" fullWidth startIcon={<AddIcon />} onClick={() => handleClickOpen(taskinstantiation)}>Add asset</Button>
+          <Button sx={{ mt: 1, mb: 2 }} variant="outlined" fullWidth startIcon={<AddIcon />} onClick={() => handleClickOpen(taskinstantiation)}>Add asset</Button>
 
         </Tree>
       )}
@@ -290,7 +387,7 @@ const CoproductionProcessProfile = () => {
   return (
     <>
       <Helmet>
-        <title>Dashboard: Social Profile</title>
+        <title>Dashboard: Coproduction process</title>
       </Helmet>
 
       <Box
@@ -301,7 +398,7 @@ const CoproductionProcessProfile = () => {
       >
 
         <Box
-          style={{ backgroundImage: `url(${profile.cover})` }}
+          style={{ backgroundImage: `url(${""})` }}
           sx={{
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
@@ -358,7 +455,14 @@ const CoproductionProcessProfile = () => {
               position: 'relative'
             }}
           >
-            <Avatar
+            {loading ? <Skeleton variant="circular" sx={{
+              border: (theme) => `4px solid ${theme.palette.background.default}`,
+              height: 120,
+              left: 24,
+              position: 'absolute',
+              top: -60,
+              width: 120
+            }} /> : <Avatar
               src=""
               sx={{
                 border: (theme) => `4px solid ${theme.palette.background.default}`,
@@ -368,7 +472,8 @@ const CoproductionProcessProfile = () => {
                 top: -60,
                 width: 120
               }}
-            />
+            />}
+
             <Box sx={{ ml: '160px' }}>
               <Typography
                 color='textSecondary'
@@ -380,7 +485,7 @@ const CoproductionProcessProfile = () => {
                 color='textPrimary'
                 variant='h5'
               >
-                {process && process.artefact.name}
+                {loading ? <Skeleton /> : process.artefact.name}
               </Typography>
             </Box>
             <Box sx={{ flexGrow: 1 }} />
@@ -394,7 +499,6 @@ const CoproductionProcessProfile = () => {
             >
               <Button
                 color='primary'
-                onClick={handleConnectToggle}
                 size='small'
                 sx={{ ml: 1 }}
                 variant='outlined'
@@ -403,7 +507,6 @@ const CoproductionProcessProfile = () => {
               </Button>
               <Button
                 color='primary'
-                onClick={handleConnectToggle}
                 size='small'
                 sx={{ ml: 1 }}
                 variant='outlined'
@@ -450,26 +553,35 @@ const CoproductionProcessProfile = () => {
 
             <Card sx={{ p: 3, mt: 2 }}>
 
-              <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label">Phase</InputLabel>
-                <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  value={phase}
-                  label="Phase"
-                  sx={{ mb: 2 }}
-                  onChange={(event) => {
-                    setPhase(event.target.value);
-                  }}
-                >
-                  {process && phaseinstantiations && phaseinstantiations.map((phaseinstantiation, i) =>
-                    <MenuItem key={phaseinstantiation.id} value={phaseinstantiation.phase.name}>{phaseinstantiation.phase.name}</MenuItem>
-                  )}
-                </Select>
-              </FormControl>
 
-              {process && phase && phaseinstantiations && getTree(phaseinstantiations.find(el => el.phase.name === phase))}
-              {process && phase && selectedTaskInstantiation && phaseinstantiations && getDialog(phaseinstantiations.find(el => el.phase.name === phase))}
+
+              {loading ? <Skeleton variant="rectangular" width="100%">
+                <div style={{ paddingTop: '57%' }} />
+              </Skeleton> :
+                <>
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">Phase</InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={phase}
+                      label="Phase"
+                      sx={{ mb: 2 }}
+                      onChange={(event) => {
+                        setPhase(event.target.value);
+                      }}
+                    >
+                      {process && phaseinstantiations && phaseinstantiations.map((phaseinstantiation, i) =>
+                        <MenuItem key={phaseinstantiation.id} value={phaseinstantiation.phase.name}>{phaseinstantiation.phase.name}</MenuItem>
+                      )}
+                    </Select>
+                  </FormControl>
+                  {phase && phaseinstantiations && getTree(phaseinstantiations.find(el => el.phase.name === phase))}
+                </>
+              }
+              {process && phase && selectedTaskInstantiation && phaseinstantiations && getDialog(phaseinstantiations.find(el => el.phase.name === phase))
+
+              }
             </Card>
           </Container>
         </Box>
