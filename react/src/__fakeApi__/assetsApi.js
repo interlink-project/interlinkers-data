@@ -7,7 +7,6 @@ class AssetsApi extends GeneralApi {
   }
 
   async create(taskinstantiation_id, interlinkerversion_id) {
-    console.log(taskinstantiation_id, interlinkerversion_id)
     const res = await axiosInstance.post(`/${this.url}`, {
       taskinstantiation_id,
       interlinkerversion_id

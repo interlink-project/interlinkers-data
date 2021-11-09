@@ -12,18 +12,18 @@ const getSchema = () => {
             text: phaseinstantiation.phase.name
           }
         ) 
-        phaseinstantiation.activityinstantiations.forEach(activityinstantiation => {
+        phaseinstantiation.objectiveinstantiations.forEach(objectiveinstantiation => {
           nodes.push(
             {
-              id: activityinstantiation.id,
-              text: activityinstantiation.activity.name
+              id: objectiveinstantiation.id,
+              text: objectiveinstantiation.objective.name
             }
           )
           edges.push(
             {
-              id: `${phaseinstantiation.id}-${activityinstantiation.id}`,
+              id: `${phaseinstantiation.id}-${objectiveinstantiation.id}`,
               from: phaseinstantiation.id,
-              to: activityinstantiation.id
+              to: objectiveinstantiation.id
             },
           ) 
         })

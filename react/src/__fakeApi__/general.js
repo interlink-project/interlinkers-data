@@ -22,8 +22,20 @@ export default class GeneralApi {
   }
 
   async get(id) {
-    const res = await axiosInstance.get(`/${this.url}/${id}`)
-    console.log('get call', res.data);
-    return res.data
+    if (id) {
+      const res = await axiosInstance.get(`/${this.url}/${id}`)
+      console.log('get call', res.data);
+      return res.data
+    }
+
+  }
+
+  async delete(id) {
+    if (id) {
+      const res = await axiosInstance.delete(`/${this.url}/${id}`)
+      console.log('delete call', res.data);
+      return res.data
+    }
+
   }
 }
