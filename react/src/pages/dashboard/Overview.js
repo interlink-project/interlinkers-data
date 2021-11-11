@@ -17,7 +17,8 @@ import {
   CardActionArea,
   Skeleton,
 } from '@material-ui/core';
-
+import SwipeableViews from 'react-swipeable-views';
+import { useTheme } from '@material-ui/styles';
 import useSettings from '../../hooks/useSettings';
 import PlusIcon from '../../icons/Plus';
 import useAuth from '../../hooks/useAuth';
@@ -27,6 +28,31 @@ import ArrowRightIcon from '@material-ui/icons/ChevronRight';
 import { getImageUrl } from '../../axios';
 import "./overview.css"
 
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`full-width-tabpanel-${index}`}
+      aria-labelledby={`full-width-tab-${index}`}
+      {...other}
+    >
+      <Grid
+        container
+        direction="row"
+        justifyContent="flex-start"
+        alignItems="stretch"
+        sx={{ mt: 1, mb: 1 }}
+        spacing={3}
+      >
+        {value === index && children}
+      </Grid>
+    </div>
+  );
+}
+
 const Overview = () => {
   const { settings } = useSettings();
   const auth = useAuth();
@@ -35,10 +61,15 @@ const Overview = () => {
   const [loading, setLoading] = useState(true);
   const mounted = useMounted();
   const [value, setValue] = React.useState(0);
+  const theme = useTheme();
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  const handleChangeIndex = (index) => {
+    setValue(index);
+  };
+
   const getCoproductionProcesses = useCallback(async () => {
     try {
       const data = await coproductionProcessesApi.getMulti();
@@ -149,7 +180,7 @@ const Overview = () => {
               <Skeleton />
             </Typography>
           </div>
-          <Skeleton variant="rectangular" width={210} height={118} />
+          <Skeleton variant="rectangular" width={210} height={90} />
         </Box>
         <Divider />
         <Box
@@ -223,6 +254,7 @@ const Overview = () => {
             </Grid>
           </Grid>
 
+
           <Box sx={{ width: '100%', bgcolor: 'background.paper', mt: 3 }}>
             <Tabs value={value} onChange={handleChange} variant="scrollable"
               scrollButtons="auto"
@@ -233,15 +265,13 @@ const Overview = () => {
               <Tab label="All teams" />
             </Tabs>
           </Box>
-          <Grid
-            container
-            direction="row"
-  justifyContent="flex-start"
-  alignItems="stretch"
-            sx={{ mt: 1 }}
-            spacing={3}
+          <SwipeableViews
+            axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+            index={value}
+            onChangeIndex={handleChangeIndex}
           >
-            {value === 0 && <>
+            <TabPanel value={value} index={0} dir={theme.direction}>
+
 
               {loading && <SkeletonGrid />}
               {!loading && (!processes || processes.length === 0) && (
@@ -251,44 +281,46 @@ const Overview = () => {
               )}
               {!loading && processes && processes.length > 0 && (
                 <>
-                <Grid item xs={12} md={6} lg={4} xl={3} >
+                  <Grid item xs={12} md={6} lg={4} xl={3} >
                     <Card>
-                    
-                    <Button variant="contained" sx={{height: "100%", fontSize: "20px"}}>
-                      New coproduction process
+
+                      <Button variant="contained" sx={{ height: "100%", fontSize: "20px" }}>
+                        New coproduction process
                       </Button>
                     </Card>
                   </Grid>
-                {processes.map((process, i) => (
-                  <Grid item xs={12} md={6} lg={4} xl={3} key={process.id}>
-                    <OverviewCard
-                      link={`/dashboard/coproductionprocesses/${process.id}`}
-                      title={process.artefact.name}
-                      subtitle={process.artefact.artefact_type}
-                      description={truncate(process.artefact.description, {
-                        length: 100,
-                        separator: ' ',
-                      })}
-                      buttonText='action'
-                      component={
-                        <img
-                          src={
-                            getImageUrl(process.artefact.logotype) ||
-                            'https://blogs.oregonstate.edu/acobamo/wp-content/themes/koji/assets/images/default-fallback-image.png'
-                          }
-                          width='80px'
-                          style={{ margin: 7 }}
-                        />
-                      }
-                    />
-                  </Grid>
-                ))}
+                  {processes.map((process, i) => (
+                    <Grid item xs={12} md={6} lg={4} xl={3} key={process.id}>
+                      <OverviewCard
+                        link={`/dashboard/coproductionprocesses/${process.id}`}
+                        title={process.artefact.name}
+                        subtitle={process.artefact.artefact_type}
+                        description={truncate(process.artefact.description, {
+                          length: 100,
+                          separator: ' ',
+                        })}
+                        buttonText='action'
+                        component={
+                          <img
+                            src={
+                              getImageUrl(process.artefact.logotype) ||
+                              'https://blogs.oregonstate.edu/acobamo/wp-content/themes/koji/assets/images/default-fallback-image.png'
+                            }
+                            width='80px'
+                            style={{ margin: 7 }}
+                          />
+                        }
+                      />
+                    </Grid>
+                  ))}
                 </>
               )}
-            </>}
+            </TabPanel>
 
-            {value === 1 && <SkeletonGrid />}
-          </Grid>
+            <TabPanel value={value} index={1} dir={theme.direction}>
+              <SkeletonGrid />
+            </TabPanel>
+          </SwipeableViews>
         </Container>
       </Box>
     </>

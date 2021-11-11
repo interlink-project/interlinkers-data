@@ -23,7 +23,6 @@ const CoproductionProcessDetailsForm = (props) => {
     onNext,
     details,
     setDetails,
-    problemDomains,
     teams,
     ...other
   } = props;
@@ -44,7 +43,6 @@ const CoproductionProcessDetailsForm = (props) => {
           .required('Required'),
         artefact_type: Yup.string().required('Field is required'),
         keywords: Yup.array(),
-        problemdomains: Yup.array().required('Field is required').min(1),
       })}
       onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
         try {
@@ -142,45 +140,6 @@ const CoproductionProcessDetailsForm = (props) => {
                 mt: 3,
               }}
             >
-              <Autocomplete
-                multiple
-                disablePortal
-                options={problemDomains || []}
-                getOptionLabel={(option) => option.name}
-                onChange={(event, val) => {
-                  setFieldValue(
-                    'problemdomains',
-                    val.map((el) => el.id)
-                  );
-                }}
-                fullWidth
-                filterSelectedOptions
-                disabled={!problemDomains}
-                renderInput={(params) => (
-                  <TextField
-                    {...params}
-                    error={Boolean(
-                      touched.problemdomains && errors.problemdomains
-                    )}
-                    disabled={!problemDomains}
-                    fullWidth
-                    label='Problem domains'
-                    name='problemdomains'
-                    onClick={() => setFieldTouched('problemdomains')}
-                    onBlur={handleBlur}
-                    value={values.problemdomains}
-                    variant='outlined'
-                  />
-                )}
-              />
-            </Box>
-            <Box
-              sx={{
-                alignItems: 'center',
-                display: 'flex',
-                mt: 3,
-              }}
-            >
               <QuillEditor
                 required
                 error={Boolean(touched.description && errors.description)}
@@ -267,9 +226,10 @@ const CoproductionProcessDetailsForm = (props) => {
               label='Artefact type'
               name='artefact_type'
               size='large'
-            >
+            >            
+            <ToggleButton value='publicservice'>Public service</ToggleButton>
+
               <ToggleButton value='interlinker'>Interlinker</ToggleButton>
-              <ToggleButton value='publicservice'>Public service</ToggleButton>
             </ToggleButtonGroup>
             {Boolean(touched.artefact_type && errors.artefact_type) && (
               <Box sx={{ mt: 2 }}>

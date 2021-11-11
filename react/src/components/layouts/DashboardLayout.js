@@ -3,6 +3,8 @@ import { Outlet } from 'react-router-dom';
 import { experimentalStyled } from '@material-ui/core/styles';
 import DashboardNavbar from '../navsidebars/DashboardNavbar';
 import DashboardSidebar from '../navsidebars/DashboardSidebar';
+import { useMediaQuery, useTheme } from '@material-ui/core';
+import DashboardMobileAppbar from '../navsidebars/DashboardMobileAppbar';
 
 const DashboardLayoutRoot = experimentalStyled('div')(({ theme }) => ({
   backgroundColor: theme.palette.background.default,
@@ -38,6 +40,8 @@ const DashboardLayoutContent = experimentalStyled('div')({
 
 const DashboardLayout = () => {
   const [isSidebarMobileOpen, setIsSidebarMobileOpen] = useState(false);
+  const theme = useTheme();
+  const onMobile = !useMediaQuery(theme.breakpoints.up('sm'));
 
   return (
     <DashboardLayoutRoot>
@@ -50,9 +54,12 @@ const DashboardLayout = () => {
         <DashboardLayoutContainer>
           <DashboardLayoutContent>
             <Outlet />
+            {onMobile && <DashboardMobileAppbar />}
+            
           </DashboardLayoutContent>
         </DashboardLayoutContainer>
       </DashboardLayoutWrapper>
+
     </DashboardLayoutRoot>
   );
 };

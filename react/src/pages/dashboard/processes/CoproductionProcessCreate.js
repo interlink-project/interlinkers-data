@@ -18,23 +18,19 @@ import useSettings from '../../../hooks/useSettings';
 import gtm from '../../../lib/gtm';
 import CoproductionProcessArtefactForm from './CoproductionProcessArtefactForm';
 import CoproductionProcessDetailsForm from './CoproductionProcessDetailsForm';
-import { problemdomainsApi } from '../../../__fakeApi__/problemDomains';
 import { teamsApi } from '../../../__fakeApi__/teamsApi';
 import useMounted from '../../../hooks/useMounted';
 
 const CoproductionProcessCreate = () => {
   const { settings } = useSettings();
   const mounted = useMounted();
-  const [problemDomains, setProblemDomains] = useState(null);
   const [teams, setTeams] = useState(null);
 
   const getData = useCallback(async () => {
     try {
-      const data = await problemdomainsApi.getProblemDomains();
       const data2 = await teamsApi.getMulti();
 
       if (mounted.current) {
-        setProblemDomains(data);
         setTeams(data2);
       }
     } catch (err) {
@@ -59,7 +55,6 @@ const CoproductionProcessCreate = () => {
     artefact_type: 'interlinker',
     team_id: null,
     keywords: ['demo'],
-    problemdomains: [],
     submit: null,
   });
   const [artefact, setArtefact] = useState({
@@ -149,7 +144,6 @@ const CoproductionProcessCreate = () => {
                       onNext={handleNext}
                       details={details}
                       setDetails={onDetailsSubmit}
-                      problemDomains={problemDomains}
                       teams={teams}
                     />
                   )}
