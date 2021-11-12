@@ -1,6 +1,6 @@
 import { Link as RouterLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { AppBar, Box, IconButton, Toolbar } from '@material-ui/core';
+import { AppBar, Box, IconButton, Toolbar, useMediaQuery, useTheme } from '@material-ui/core';
 import { experimentalStyled } from '@material-ui/core/styles';
 import MenuIcon from '../../icons/Menu';
 import AccountPopover from './AccountPopover';
@@ -25,10 +25,13 @@ const DashboardNavbarRoot = experimentalStyled(AppBar)(({ theme }) => ({
 const DashboardNavbar = (props) => {
   const { onSidebarMobileOpen, ...other } = props;
 
+  const theme = useTheme();
+  const onMobile = !useMediaQuery(theme.breakpoints.up('sm'));
+
   return (
     <DashboardNavbarRoot {...other}>
       <Toolbar sx={{ minHeight: 64 }}>
-        <IconButton
+        {!onMobile && <IconButton
           color='inherit'
           onClick={onSidebarMobileOpen}
           sx={{
@@ -38,7 +41,8 @@ const DashboardNavbar = (props) => {
           }}
         >
           <MenuIcon fontSize='small' />
-        </IconButton>
+        </IconButton>}
+
         <RouterLink to='/'>
           <img
             alt='Components'

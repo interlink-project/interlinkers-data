@@ -1,7 +1,8 @@
 
 import { useState } from 'react';
 import { BottomNavigation, BottomNavigationAction } from '@material-ui/core';
-import { AccountBox, Folder, Dashboard } from '@material-ui/icons';
+import { AccountBox, Folder, Dashboard, Notifications } from '@material-ui/icons';
+import { grey } from '@material-ui/core/colors';
 
 // /dashboard/account
 
@@ -14,6 +15,11 @@ const sections = [{
   title: 'Catalogue',
   path: '/dashboard/catalogue',
   icon: <Folder />,
+},
+{
+  title: 'Notifications',
+  path: '/notifications',
+  icon: <Notifications />,
 },
 {
   title: 'Account',
@@ -33,6 +39,8 @@ const DashboardMobileAppbar = () => {
         setValue(newValue);
       }}
       sx={{
+        borderTop: `1px solid primary.main`,
+        paddingTop: "4px",
         position: "fixed",
         left: "0",
         bottom: "0",

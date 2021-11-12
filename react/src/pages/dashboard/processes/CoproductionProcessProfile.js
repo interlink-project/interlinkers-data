@@ -24,7 +24,6 @@ import { coproductionProcessesApi } from '../../../__fakeApi__/processesApi';
 import useMounted from '../../../hooks/useMounted';
 import DotsVerticalIcon from '../../../icons/DotsVertical';
 import gtm from '../../../lib/gtm';
-import TreeView from "./TreeView"
 import { NavigateNext } from '@material-ui/icons';
 import WorkplanTab from './Workplan';
 import GuideTab from './Guide';
