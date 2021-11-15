@@ -25,9 +25,10 @@ import useMounted from '../../../hooks/useMounted';
 import DotsVerticalIcon from '../../../icons/DotsVertical';
 import gtm from '../../../lib/gtm';
 import { NavigateNext } from '@material-ui/icons';
-import WorkplanTab from './Workplan';
-import GuideTab from './Guide';
-import Gantt from './Gantt';
+import WorkplanTab from './Tabs/Workplan';
+import GuideTab from './Tabs/Guide/Guide';
+import Gantt from './Tabs/Gantt/Gantt';
+import { useNavigate } from 'react-router';
 
 const tabs = [
   { label: 'Overview', value: 'overview' },
@@ -57,13 +58,14 @@ function TabPanel(props) {
 }
 
 const CoproductionProcessProfile = () => {
+  let { processId, tab } = useParams();
+
+  const navigate = useNavigate();
   const mounted = useMounted();
-  const [currentTab, setCurrentTab] = useState("overview");
+  const [currentTab, setCurrentTab] = useState(tab || "overview");
   const [process, setProcess] = useState(null);
   const [processTree, setProcessTree] = useState(null);
   const [loading, setLoading] = useState(true);
-
-  let { processId } = useParams();
 
 
   useEffect(() => {
@@ -89,6 +91,10 @@ const CoproductionProcessProfile = () => {
   useEffect(() => {
     getCoproductionProcess();
   }, [getCoproductionProcess]);
+
+  useEffect(() => {
+    navigate(`/dashboard/coproductionprocesses/${processId}/${currentTab}`);
+  }, [currentTab]);
 
   const handleTabsChange = (event, value) => {
     setCurrentTab(value);
@@ -190,69 +196,76 @@ const CoproductionProcessProfile = () => {
         </Container>
         <Box sx={{ mt: 5 }}>
           <Container maxWidth='xl'>
-            <AppBar position="static" sx={{ color: "white" }}>
-              <Tabs
-                indicatorColor="secondary"
-                onChange={handleTabsChange}
-                value={currentTab}
-                centered
-                textColor="inherit"
-              >
-                {tabs.map((tab) => (
-                  <Tab
-                    key={tab.value}
-                    label={tab.label}
-                    value={tab.value}
-                  />
-                ))}
-              </Tabs>
-            </AppBar>
+            <Grid container>
 
-            <Divider />
-            <Card sx={{ paddingRight: 3, paddingLeft: 3, paddingBottom: 3, paddingTop: 1 }}>
-              {loading ? <Skeleton variant="rectangular" width="100%">
-                <div style={{ paddingTop: '57%' }} />
-              </Skeleton> : <>
-                <TabPanel value={currentTab} index="overview">
-                  <TextField
-                    fullWidth
-                    disabled
-                    id="filled-required"
-                    label="Name of the project"
-                    variant="filled"
-                    sx={{ mt: 2 }}
-                  />
-                  <TextField
-                    fullWidth
-                    disabled
-                    id="filled-required"
-                    label="Short description of the project"
-                    variant="filled"
-                    sx={{ mt: 2 }}
-                  />
-                  <TextField
-                    fullWidth
-                    disabled
-                    id="filled-required"
-                    label="Aim of the project"
-                    variant="filled"
-                    sx={{ mt: 2 }}
-                  />
-                </TabPanel>
-                <TabPanel value={currentTab} index="workplan">
-                  <WorkplanTab coproductionprocess={process} processTree={processTree} />
-                </TabPanel>
-                <TabPanel value={currentTab} index="guide">
-                  <GuideTab coproductionprocess={process} processTree={processTree} />
-                </TabPanel>
-                <TabPanel value={currentTab} index="gantt">
-                  <Gantt processTree={processTree} />
-                </TabPanel>
+              <Grid item xl={2} lg={2} md={2} xs={2}>
+
+                <Tabs
+                  indicatorColor="secondary"
+                  onChange={handleTabsChange}
+                  value={currentTab}
+                  variant="scrollable"
+                  scrollButtons="auto"
+
+                  orientation="vertical"
+                  aria-label="Coproduction tabs"
+                  sx={{ borderRight: 1, borderColor: 'divider' }}
+                >
+                  {tabs.map((tab) => (
+                    <Tab
+                      key={tab.value}
+                      label={tab.label}
+                      value={tab.value}
+                    />
+                  ))}
+                </Tabs>
+
+              </Grid>
+              <Grid item xl={10} lg={10} md={10} xs={10}>
+                {loading ? <Skeleton variant="rectangular" width="100%">
+                  <div style={{ paddingTop: '57%' }} />
+                </Skeleton> : <Card >
+                  <TabPanel value={currentTab} index="overview">
+                    <TextField
+                      fullWidth
+                      disabled
+                      id="filled-required"
+                      label="Name of the project"
+                      variant="filled"
+                      sx={{ mt: 2 }}
+                    />
+                    <TextField
+                      fullWidth
+                      disabled
+                      id="filled-required"
+                      label="Short description of the project"
+                      variant="filled"
+                      sx={{ mt: 2 }}
+                    />
+                    <TextField
+                      fullWidth
+                      disabled
+                      id="filled-required"
+                      label="Aim of the project"
+                      variant="filled"
+                      sx={{ mt: 2 }}
+                    />
+                  </TabPanel>
+                  <TabPanel value={currentTab} index="workplan">
+                    <WorkplanTab coproductionprocess={process} processTree={processTree} />
+                  </TabPanel>
+                  <TabPanel value={currentTab} index="guide">
+                    <GuideTab coproductionprocess={process} processTree={processTree} />
+                  </TabPanel>
+                  <TabPanel value={currentTab} index="gantt">
+                    <Gantt processTree={processTree} />
+                  </TabPanel>
 
 
-              </>}
-
-            </Card>
+                </Card>
+                }
+              </Grid>
+            </Grid>
 
 
           </Container>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 import { Helmet } from 'react-helmet-async';
 import {
@@ -9,7 +9,7 @@ import {
   Select,
   MenuItem,
   SvgIcon,
-  Card,
+  AppBar,
   CardMedia,
   CardHeader,
   CardContent,
@@ -30,7 +30,7 @@ import {
   Divider
 } from '@material-ui/core';
 import SwipeableViews from 'react-swipeable-views';
-import { assetsApi } from '../../../__fakeApi__';
+import { assetsApi } from '../../../../../__fakeApi__';
 
 import {
   TreeItem,
@@ -41,8 +41,8 @@ import { styled } from '@material-ui/styles';
 import { ExpandMore as ExpandMoreIcon, MoreVert as MoreVertIcon } from '@material-ui/icons';
 import { red } from '@material-ui/core/colors';
 import moment from 'moment';
-import Assets from './Assets';
-import { cleanUnderScores} from "../../../utils/cleanUnderscores"
+import Assets from '../Assets';
+import { cleanUnderScores } from "../../../../../utils/cleanUnderscores"
 
 const styles = {
   tabs: {
@@ -141,8 +141,6 @@ const CollapseRecommendedInterlinkers = ({ selectedTask }) => {
 
 const GuideTab = ({ coproductionprocess, processTree }) => {
   const [currentPhase, setCurrentPhase] = useState(processTree ? processTree[0].name : "");
-  const [currentObjective, setCurrentObjective] = useState("");
-  const [currentTask, setCurrentTask] = useState("");
   const [selected, setSelected] = useState([]);
   const [selectedTask, setSelectedTask] = useState("");
 
@@ -160,14 +158,18 @@ const GuideTab = ({ coproductionprocess, processTree }) => {
   };
 
   useEffect(() => {
+    let res = null
     processTree.forEach(phaseinstantiation => {
       phaseinstantiation.objectiveinstantiations.forEach(objectiveinstantiation => {
-        const eo = objectiveinstantiation.taskinstantiations.find(el => el.id === selected)
-        if (eo) {
-          setSelectedTask(eo)
+        const taskselected = objectiveinstantiation.taskinstantiations.find(el => el.id === selected)
+        if (taskselected) {
+          res = taskselected
+          
         }
       })
     });
+    setSelectedTask(res)
+    document.getElementById('assetsDiv') && document.getElementById('assetsDiv').scrollIntoView()
 
   }, [selected]);
 
@@ -251,7 +253,8 @@ const GuideTab = ({ coproductionprocess, processTree }) => {
         <title>Coproduction process workplan</title>
       </Helmet>
       <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
-        {onMobile ? <><Tabs value={index} fullWidth onChange={handleChange} style={styles.tabs}>
+        {onMobile ? <>
+        <Tabs value={index} fullWidth onChange={handleChange} style={styles.tabs}>
           <Tab label="tab n°1" />
           <Tab label="tab n°2" />
           <Tab label="tab n°3" />
@@ -270,19 +273,19 @@ const GuideTab = ({ coproductionprocess, processTree }) => {
             <div style={Object.assign({}, styles.slide, styles.slide3)}>slide n°3</div>
           </SwipeableViews> </> :
           <Grid container>
-            <Grid item xl={2} lg={2} md={2} xs={2}>
+            <Grid item xl={12} lg={12} md={12} xs={12}>
+            <AppBar position="static" sx={{ color: "white" }}>
               <Tabs
                 indicatorColor="secondary"
                 onChange={(event, value) => {
+                  setSelectedTask(null)
                   setCurrentPhase(value);
                 }}
-                scrollButtons='auto'
                 value={currentPhase}
-                variant='scrollable'
+                centered
 
-                orientation="vertical"
+                textColor="inherit"
                 aria-label="Coproduction phases tabs"
-                sx={{ borderRight: 1, borderColor: 'divider' }}
               >
 
                 {processTree.map((phaseinstantiation) => (
@@ -293,8 +296,9 @@ const GuideTab = ({ coproductionprocess, processTree }) => {
                   />
                 ))}
               </Tabs>
+              </AppBar>
             </Grid>
-            <Grid item xl={4} lg={4} md={4} xs={10}>
+            <Grid item xl={6} lg={6} md={6} xs={12}>
               <TreeView
                 aria-label="customized"
                 defaultExpanded={processTree.map(el => el.id) || []}
@@ -332,10 +336,16 @@ const GuideTab = ({ coproductionprocess, processTree }) => {
               </Box>}
             </Grid>
             <Grid item xl={12} lg={12} md={12} xs={12}>
-              {selectedTask && <Box sx={{ p: 2 }}>
-                <Divider />
-                <Assets selectedTask={selectedTask} />
-              </Box>}
+              <div id="assetsDiv">
+                {selectedTask && <Box sx={{ p: 2 }}>
+
+                  <Divider />
+
+                  <Assets selectedTask={selectedTask} />
+
+
+                </Box>}
+              </div>
             </Grid>
 
           </Grid>

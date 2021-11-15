@@ -45,7 +45,7 @@ export const routes = [
         path: '/',
         element: <Overview />,
       },
-      
+
       {
         path: 'coproductionprocesses',
         children: [
@@ -55,7 +55,16 @@ export const routes = [
           },
           {
             path: ':processId',
-            element: <CoproductionProcessProfile />,
+            children: [
+              {
+                path: '/',
+                element: <CoproductionProcessProfile />,
+              },
+              {
+                path: ':tab',
+                element: <CoproductionProcessProfile />,
+              },
+            ]
           },
         ],
       },

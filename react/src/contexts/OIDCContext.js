@@ -157,7 +157,7 @@ export const AuthProvider = (props) => {
       )
     );
     const authenticated = !!oidcStorage && !!oidcStorage.access_token && !isJwtTokenExpired(oidcStorage.access_token);
-    console.log('isAuthenticated call', oidcStorage);
+    // console.log('isAuthenticated call', oidcStorage);
 
     if (authenticated && !state.user) {
       setUser(oidcStorage.access_token);

@@ -16,7 +16,6 @@ import {
   treeItemClasses,
 } from '@material-ui/lab';
 import { styled } from '@material-ui/styles';
-import TransferList from './TransferList';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -95,7 +94,7 @@ const WorkplanTab = ({ coproductionprocess, processTree }) => {
       <Helmet>
         <title>Coproduction process workplan</title>
       </Helmet>
-      <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
+      <Box sx={{ width: '100%', bgcolor: 'background.paper', paddingRight: 3, paddingLeft: 3, paddingBottom: 3, paddingTop: 1}}>
         <TreeView
           aria-label="customized"
           defaultExpanded={processTree.map(el => el.id)}
@@ -114,7 +113,6 @@ const WorkplanTab = ({ coproductionprocess, processTree }) => {
                 <StyledTreeItem key={objective.id} nodeId={objective.id} label={objective.name} sx={{ mt: 2 }} >
                   {objective.taskinstantiations.map(task => (
                     <StyledTreeItem key={task.id} nodeId={task.id} label={task.name} sx={{ mt: 1 }} >
-                      <TransferList />
                     </StyledTreeItem>)
 
                   )}

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Box,
   Grid,
@@ -12,13 +12,15 @@ import {
   Alert,
   alpha,
   IconButton,
-  InputBase
+  InputBase,
+  CardActionArea,
+
 } from '@material-ui/core';
 import { styled } from '@material-ui/styles';
 import { MoreVert as MoreVertIcon, Search as SearchIcon } from '@material-ui/icons';
 import { red } from '@material-ui/core/colors';
 import moment from 'moment';
-import { cleanUnderScores} from "../../../utils/cleanUnderscores"
+import { cleanUnderScores } from "../../../../utils/cleanUnderscores"
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -70,8 +72,33 @@ const Assets = ({ selectedTask }) => {
     return <><Alert severity="warning">No assets yet for this task. Instantiate an interlinker, please.</Alert><AddNewAssetButton /></>
 
   }
+
+  const Asset = ({ asset }) => {
+    const [error, setError] = useState(false)
+
+    return <Card sx={{ maxWidth: 345 }}>
+      <CardHeader
+        avatar={
+          <Avatar aria-label="icon" src={asset.file_metadata.icon_link} sx={{ width: 20, height: 20 }} />
+        }
+        action={
+          <IconButton aria-label="settings">
+            <MoreVertIcon />
+          </IconButton>
+        }
+        title="Asset title"
+        subheader={moment(asset.created_at).fromNow()}
+      />
+      <CardActionArea rel="noopener noreferrer" target="_blank" href={asset.file_metadata.work_link}>
+        <CardMedia>
+          <img style={{ width: "100%" }} src={!error ? asset.file_metadata.thumbnail_link : "https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png"} alt="asset thumbnail" onError={() => setError(true)} />
+        </CardMedia>
+      </CardActionArea>
+
+    </Card>
+  }
   return <>
-    <Typography variant="h6" sx={{m: 3, textAlign: "center"}}>
+    <Typography variant="h6" sx={{ m: 3, textAlign: "center" }}>
       Assets for "{cleanUnderScores(selectedTask.name)}" task
     </Typography>
     <Paper>
@@ -88,26 +115,9 @@ const Assets = ({ selectedTask }) => {
     </Paper>
     <Grid container spacing={1} sx={{ mt: 1 }}>
 
-      {assets.map(asset => <Grid item key={asset.id} xl={2} lg={3} md={3} sm={4}><Card sx={{ maxWidth: 345 }} >
-        <CardHeader
-          avatar={
-            <Avatar aria-label="icon" src={asset.file_metadata.icon_link} sx={{ width: 20, height: 20 }} />
-          }
-          action={
-            <IconButton aria-label="settings">
-              <MoreVertIcon />
-            </IconButton>
-          }
-          title="Asset title"
-          subheader={moment(asset.created_at).fromNow()}
-        />
-        <CardMedia
-          component="img"
-          image={asset.file_metadata.thumbnail_link}
-          alt="Asset thumbnail"
-        />
-
-      </Card></Grid>)}</Grid><AddNewAssetButton /></>
+      {assets.map(asset => <Grid item key={asset.id} xl={2} lg={3} md={3} sm={4}>
+        <Asset asset={asset} />
+      </Grid>)}</Grid><AddNewAssetButton /></>
 }
 
 
