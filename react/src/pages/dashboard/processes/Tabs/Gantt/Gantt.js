@@ -13,44 +13,37 @@ const GanttChart = ({ processTree }) => {
     const final = []
 
     processTree.forEach(phaseinstantiation => {
-      let start = moment();
-      let end = moment().add(3, 'weeks');
-
       if (currentPhase !== phaseinstantiation.name) {
         return
       }
       final.push({
         id: phaseinstantiation.id,
         name: phaseinstantiation.name,
-        start: start.format('YYYY-MM-DD'),
-        end: end.format('YYYY-MM-DD'),
+        start: phaseinstantiation.start_date,
+        end: phaseinstantiation.end_date,
         progress: 20,
         custom_class: 'gantt-phase',
         read_only: true
       })
-      start = end;
-      end = start.add(3, 'days');
       phaseinstantiation.objectiveinstantiations.forEach(objectiveinstantiation => {
 
         final.push({
           id: objectiveinstantiation.id,
           name: objectiveinstantiation.name,
-          start: start.format('YYYY-MM-DD'),
-          end: end.format('YYYY-MM-DD'),
+          start: objectiveinstantiation.start_date,
+          end: objectiveinstantiation.end_date,
           dependencies: phaseinstantiation.id,
           progress: 30,
           custom_class: 'gantt-objective',
           read_only: true
         })
-        start = end;
-        end = start.add(3, 'days');
         objectiveinstantiation.taskinstantiations.forEach(taskinstantiation => {
 
           final.push({
             id: taskinstantiation.id,
             name: taskinstantiation.name,
-            start: start.format('YYYY-MM-DD'),
-            end: end.format('YYYY-MM-DD'),
+            start: taskinstantiation.start_date,
+            end: taskinstantiation.end_date,
             dependencies: objectiveinstantiation.id,
             progress: 80,
             custom_class: 'gantt-task',

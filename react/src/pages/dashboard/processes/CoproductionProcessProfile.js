@@ -25,15 +25,13 @@ import useMounted from '../../../hooks/useMounted';
 import DotsVerticalIcon from '../../../icons/DotsVertical';
 import gtm from '../../../lib/gtm';
 import { NavigateNext } from '@material-ui/icons';
-import WorkplanTab from './Tabs/Workplan';
-import GuideTab from './Tabs/Guide/Guide';
+import WorkplanTab from './Tabs/Workplan/Workplan';
 import Gantt from './Tabs/Gantt/Gantt';
 import { useNavigate } from 'react-router';
 
 const tabs = [
   { label: 'Overview', value: 'overview' },
   { label: 'Workplan', value: 'workplan' },
-  { label: 'Guide', value: 'guide' },
   { label: 'Gantt', value: 'gantt' },
   { label: 'Network', value: 'network' },
   { label: 'Repository', value: 'repository' },
@@ -253,9 +251,6 @@ const CoproductionProcessProfile = () => {
                   </TabPanel>
                   <TabPanel value={currentTab} index="workplan">
                     <WorkplanTab coproductionprocess={process} processTree={processTree} />
-                  </TabPanel>
-                  <TabPanel value={currentTab} index="guide">
-                    <GuideTab coproductionprocess={process} processTree={processTree} />
                   </TabPanel>
                   <TabPanel value={currentTab} index="gantt">
                     <Gantt processTree={processTree} />

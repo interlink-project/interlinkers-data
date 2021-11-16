@@ -142,7 +142,7 @@ const themesOptions = {
       },
       success: {
         contrastText: '#ffffff',
-        main: '#4caf50'
+        main: '#44c949'
       },
       text: {
         primary: '#172b4d',

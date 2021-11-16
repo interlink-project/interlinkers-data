@@ -10,39 +10,25 @@ import {
   MenuItem,
   SvgIcon,
   AppBar,
-  CardMedia,
-  CardHeader,
-  CardContent,
-  Collapse,
   Typography,
-  List,
-  ListItem,
-  ListItemAvatar,
-  ListItemText,
-  Avatar,
-  CircularProgress,
-  Alert,
+  
+  LinearProgress,
   alpha,
   useMediaQuery,
   useTheme,
   IconButton,
-  Button,
-  Divider
+  Divider,
 } from '@material-ui/core';
 import SwipeableViews from 'react-swipeable-views';
-import { assetsApi } from '../../../../../__fakeApi__';
-
 import {
   TreeItem,
   TreeView,
   treeItemClasses,
 } from '@material-ui/lab';
 import { styled } from '@material-ui/styles';
-import { ExpandMore as ExpandMoreIcon, MoreVert as MoreVertIcon } from '@material-ui/icons';
-import { red } from '@material-ui/core/colors';
-import moment from 'moment';
 import Assets from '../Assets';
 import { cleanUnderScores } from "../../../../../utils/cleanUnderscores"
+import SelectedTaskElement from "./SelectedTaskElement"
 
 const styles = {
   tabs: {
@@ -64,86 +50,11 @@ const styles = {
   },
 };
 
-function TabPanel(props) {
-  const { children, value, index, ...other } = props;
 
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`full-width-tabpanel-${index}`}
-      aria-labelledby={`full-width-tab-${index}`}
-      {...other}
-    >
-      {value === index && children}
-    </div>
-  );
-}
-
-const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-  marginLeft: 'auto',
-  transition: theme.transitions.create('transform', {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
-
-const CollapseRecommendedInterlinkers = ({ selectedTask }) => {
-  const [expanded, setExpanded] = useState(false);
-  const [creatingAsset, setCreatingAsset] = useState(false);
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
-
-  const createAsset = async (interlinker) => {
-    setCreatingAsset(true)
-    const data = await assetsApi.create(
-      selectedTask.id,
-      interlinker.last_version.id
-    );
-    console.log(data)
-    setCreatingAsset(false)
-  }
-
-
-  return <><Typography variant="overline" gutterBottom>
-    Recommended interlinkers
-  </Typography>
-
-    <ExpandMore
-      expand={expanded}
-      onClick={handleExpandClick}
-      aria-expanded={expanded}
-      aria-label="show more"
-    >
-      <ExpandMoreIcon />
-    </ExpandMore>
-
-    <Collapse in={expanded} timeout="auto" unmountOnExit>
-
-      <List sx={{ width: '100%' }}>
-        {selectedTask.recommended_interlinkers.map(interlinker => <ListItem key={interlinker.id} sx={{ bgcolor: 'background.default' }} button onClick={() => createAsset(interlinker)}>
-          <ListItemAvatar key={interlinker.id}>
-            <Avatar src={interlinker.logotype} />
-          </ListItemAvatar>
-          <ListItemText primary={cleanUnderScores(interlinker.name)} secondary={`${interlinker.nature === "KN" ? "Knowledge" : "Software"} interlinker`} />
-        </ListItem>)}
-      </List>
-
-      <Button variant="outlined" fullWidth> Search for other interlinkers </Button>
-    </Collapse></>
-
-}
-
-const GuideTab = ({ coproductionprocess, processTree }) => {
+const WorkplanTab = ({ coproductionprocess, processTree }) => {
   const [currentPhase, setCurrentPhase] = useState(processTree ? processTree[0].name : "");
   const [selected, setSelected] = useState([]);
   const [selectedTask, setSelectedTask] = useState("");
-
   const [index, setIndex] = useState(0);
 
   const theme = useTheme();
@@ -164,7 +75,7 @@ const GuideTab = ({ coproductionprocess, processTree }) => {
         const taskselected = objectiveinstantiation.taskinstantiations.find(el => el.id === selected)
         if (taskselected) {
           res = taskselected
-          
+
         }
       })
     });
@@ -222,31 +133,6 @@ const GuideTab = ({ coproductionprocess, processTree }) => {
     },
   }));
 
-
-  function CircularProgressWithLabel(props) {
-    return (
-      <Box sx={{ position: 'relative', display: 'inline-flex' }}>
-        <CircularProgress variant="determinate" {...props} sx={{ color: "primary.contrastText" }} />
-        <Box
-          sx={{
-            top: 0,
-            left: 0,
-            bottom: 0,
-            right: 0,
-            position: 'absolute',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          <Typography variant="caption" component="div" color="primary.contrastText" sx={{ fontWeight: 900 }}>
-            {`${Math.round(props.value)}%`}
-          </Typography>
-        </Box>
-      </Box>
-    );
-  }
-
   return (
     <>
       <Helmet>
@@ -254,11 +140,11 @@ const GuideTab = ({ coproductionprocess, processTree }) => {
       </Helmet>
       <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
         {onMobile ? <>
-        <Tabs value={index} fullWidth onChange={handleChange} style={styles.tabs}>
-          <Tab label="tab n°1" />
-          <Tab label="tab n°2" />
-          <Tab label="tab n°3" />
-        </Tabs>
+          <Tabs value={index} onChange={handleChange} style={styles.tabs}>
+            <Tab label="tab n°1" />
+            <Tab label="tab n°2" />
+            <Tab label="tab n°3" />
+          </Tabs>
           <SwipeableViews index={index} onChangeIndex={handleChangeIndex}>
             <div style={Object.assign({}, styles.slide, styles.slide1)}>slide n°1</div>
             <div style={Object.assign({}, styles.slide, styles.slide2)}>
@@ -274,28 +160,28 @@ const GuideTab = ({ coproductionprocess, processTree }) => {
           </SwipeableViews> </> :
           <Grid container>
             <Grid item xl={12} lg={12} md={12} xs={12}>
-            <AppBar position="static" sx={{ color: "white" }}>
-              <Tabs
-                indicatorColor="secondary"
-                onChange={(event, value) => {
-                  setSelectedTask(null)
-                  setCurrentPhase(value);
-                }}
-                value={currentPhase}
-                centered
+              <AppBar position="static" sx={{ color: "white" }}>
+                <Tabs
+                  indicatorColor="secondary"
+                  onChange={(event, value) => {
+                    setSelectedTask(null)
+                    setCurrentPhase(value);
+                  }}
+                  value={currentPhase}
+                  centered
 
-                textColor="inherit"
-                aria-label="Coproduction phases tabs"
-              >
+                  textColor="inherit"
+                  aria-label="Coproduction phases tabs"
+                >
 
-                {processTree.map((phaseinstantiation) => (
-                  <Tab
-                    key={phaseinstantiation.id}
-                    label={phaseinstantiation.name}
-                    value={phaseinstantiation.name}
-                  />
-                ))}
-              </Tabs>
+                  {processTree.map((phaseinstantiation) => (
+                    <Tab
+                      key={phaseinstantiation.id}
+                      label={phaseinstantiation.name}
+                      value={phaseinstantiation.name}
+                    />
+                  ))}
+                </Tabs>
               </AppBar>
             </Grid>
             <Grid item xl={6} lg={6} md={6} xs={12}>
@@ -311,39 +197,21 @@ const GuideTab = ({ coproductionprocess, processTree }) => {
                   setSelected(nodeIds);
                 }}
               >
-
                 {processTree.find(el => el.name === currentPhase).objectiveinstantiations.map(objectiveinstantiation =>
-                  <StyledTreeItem key={objectiveinstantiation.id} nodeId={objectiveinstantiation.id} label={<p>{cleanUnderScores(objectiveinstantiation.name)}</p>}>
-                    {objectiveinstantiation.taskinstantiations.map(taskinstantiation => (
-                      <StyledTreeItem key={taskinstantiation.id} nodeId={taskinstantiation.id} label={<p>{cleanUnderScores(taskinstantiation.name)}</p>} />))}
+                  <StyledTreeItem key={objectiveinstantiation.id} nodeId={objectiveinstantiation.id} sx={{backgroundColor: "background.paper"}} label={<p>{cleanUnderScores(objectiveinstantiation.name)}{objectiveinstantiation.progress}</p>} >
+                    {objectiveinstantiation.taskinstantiations.sort((a, b) => b.progress - a.progress ).map(taskinstantiation => (
+                      <StyledTreeItem key={taskinstantiation.id} nodeId={taskinstantiation.id} label={<p>{cleanUnderScores(taskinstantiation.name)}<LinearProgress sx={{mt: 1}} color={taskinstantiation.progress < 30 ? "error" : taskinstantiation.progress < 65 ? "warning" : "success"} variant="determinate" value={taskinstantiation.progress} /></p>} />))}
                   </StyledTreeItem>)}
               </TreeView>
             </Grid>
             <Grid item xl={6} lg={6} md={6} xs={12}>
-              {selectedTask && <Box sx={{ p: 2 }}>
-                <Grid container sx={{ mb: 2, p: 2, backgroundColor: "primary.main" }} justifyContent="space-between" alignItems="center"
-                >
-                  <Grid item xl={8} lg={9} md={10} xs={10}>
-                    <Typography variant="h6" sx={{ color: "primary.contrastText" }}>{cleanUnderScores(selectedTask.name)}</Typography>
-                    <Typography paragraph sx={{ color: "primary.contrastText" }}>{selectedTask.description}</Typography>
-                  </Grid>
-                  <Grid item xl={4} lg={3} md={2} xs={2}>
-                    <CircularProgressWithLabel value={40} size={80} sx={{ backgroundColor: "text.secondary", borderRadius: "50%" }} />
-                  </Grid>
-
-                </Grid>
-                <CollapseRecommendedInterlinkers selectedTask={selectedTask} />
-              </Box>}
+              {selectedTask && <SelectedTaskElement selectedTask={selectedTask} />}
             </Grid>
             <Grid item xl={12} lg={12} md={12} xs={12}>
               <div id="assetsDiv">
                 {selectedTask && <Box sx={{ p: 2 }}>
-
                   <Divider />
-
                   <Assets selectedTask={selectedTask} />
-
-
                 </Box>}
               </div>
             </Grid>
@@ -357,4 +225,4 @@ const GuideTab = ({ coproductionprocess, processTree }) => {
   );
 };
 
-export default GuideTab;
+export default WorkplanTab;

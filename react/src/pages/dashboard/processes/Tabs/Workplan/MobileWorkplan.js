@@ -23,7 +23,7 @@ const steps = [
     },
 ];
 
-export default function MobileGuide() {
+export default function MobileWorkplan() {
     const theme = useTheme();
     const [activeStep, setActiveStep] = React.useState(0);
     const maxSteps = steps.length;

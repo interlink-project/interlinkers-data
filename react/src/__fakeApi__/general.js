@@ -21,13 +21,20 @@ export default class GeneralApi {
     return res.data;
   }
 
+  async update(id, data) {
+    if (id) {
+      const res = await axiosInstance.put(`/${this.url}/${id}`, data)
+      console.log('update call', res.data);
+      return res.data
+    }
+  }
+
   async get(id) {
     if (id) {
       const res = await axiosInstance.get(`/${this.url}/${id}`)
       console.log('get call', res.data);
       return res.data
     }
-
   }
 
   async delete(id) {
