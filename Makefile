@@ -18,8 +18,3 @@ run: ## run "make run"
 #.PHONY: prod
 # prod: ## build and run "make prod"
 #	docker-compose -f docker-compose.prod.yml up --build
-
-.PHONY: service
-service: ## build and run specific service "make service etherpad"
-	docker-compose build $(RUN_ARGS)
-	docker-compose up $(RUN_ARGS)

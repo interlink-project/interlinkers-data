@@ -4,16 +4,14 @@ services:
   react:
     container_name: react
     build:
-      context: ./react
+      context: .
       target: dev
     volumes:
-      - ./react:/usr/app
+      - .:/usr/app
       - /usr/app/node_modules
     ports:
       - "80:3000"
     stdin_open: true
-    env_file:
-      - ./react/.env
 
 volumes:
   postgres_data:

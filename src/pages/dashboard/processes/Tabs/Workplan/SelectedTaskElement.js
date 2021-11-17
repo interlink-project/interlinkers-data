@@ -15,16 +15,16 @@ import {
   FormControl,
   TextField
 } from '@material-ui/core';
-import { assetsApi, taskinstantiationsApi } from '../../../../../__fakeApi__';
+import { assetsApi, taskinstantiationsApi } from '__fakeApi__';
 import {
   DesktopDateRangePicker
 } from '@material-ui/lab';
 import { styled } from '@material-ui/styles';
 import { ExpandMore as ExpandMoreIcon } from '@material-ui/icons';
-import { cleanUnderScores } from "../../../../../utils/cleanUnderscores"
-import CircularProgressWithLabel from '../../../../../components/CircularProgress';
+import { cleanUnderScores } from "utils/cleanUnderscores"
+import CircularProgressWithLabel from 'components/CircularProgress';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateTaskinstantiation } from '../../../../../slices/process';
+import { updateTaskinstantiation } from 'slices/process';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;

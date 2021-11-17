@@ -70,15 +70,11 @@ To get a local copy up and running follow these simple example steps.
 1. Rename *.env.example* file to *.env* and set required data
 
 ### Without docker:
-2. Navigate to the path that contains the react application
+2. Install the dependencies
    ```sh
-    cd react
+    npm install
    ```
-3. Install the dependencies
-   ```sh
-    npm i
-   ```
-4. Run the application
+3. Run the application
    ```sh
     npm run start
    ```

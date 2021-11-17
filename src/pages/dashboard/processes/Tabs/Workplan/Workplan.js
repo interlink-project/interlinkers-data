@@ -1,18 +1,16 @@
-import { ToggleButton, ToggleButtonGroup, Grid, AppBar, Tab, Tabs, Stack } from "@material-ui/core";
-import moment from "moment";
+import { ToggleButton, ToggleButtonGroup, Grid, AppBar, Tab, Tabs } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import $ from 'jquery';
-import colorScale from "../../../../../utils/colorScale"
-import { useDispatch, useSelector } from 'react-redux';
+import colorScale from "utils/colorScale"
+import { useSelector } from 'react-redux';
 import TaskDrawer from "./TaskDrawer";
-import { cleanUnderScores } from "../../../../../utils/cleanUnderscores";
-import CircularProgressWithLabel from "../../../../../components/CircularProgress";
+import { cleanUnderScores } from "utils/cleanUnderscores";
+import CircularProgressWithLabel from "components/CircularProgress";
 import CoevaluationDrawer from "./CoevaluationDrawer";
 
 const Workplan = () => {
   const [viewMode, setViewMode] = useState("Week")
   const [loaded, setLoaded] = useState(false)
-
   const [currentPhase, setCurrentPhase] = useState("engage");
   const { phaseinstantiations, objectiveinstantiations, taskinstantiations, updating } = useSelector((state) => state.process);
   

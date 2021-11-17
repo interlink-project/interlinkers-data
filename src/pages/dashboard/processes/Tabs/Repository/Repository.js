@@ -1,5 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
-
+import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import {
   Box,
@@ -10,14 +9,10 @@ import {
   MenuItem,
   SvgIcon,
   AppBar,
-  Typography,
-
   LinearProgress,
   alpha,
   useMediaQuery,
   useTheme,
-  IconButton,
-  Divider,
 } from '@material-ui/core';
 import SwipeableViews from 'react-swipeable-views';
 import {
@@ -27,9 +22,9 @@ import {
 } from '@material-ui/lab';
 import { styled } from '@material-ui/styles';
 import Assets from './Assets';
-import { cleanUnderScores } from "../../../../../utils/cleanUnderscores"
-import { useDispatch, useSelector } from 'react-redux';
-import CircularProgressWithLabel from '../../../../../components/CircularProgress';
+import { cleanUnderScores } from "utils/cleanUnderscores"
+import { useSelector } from 'react-redux';
+import CircularProgressWithLabel from 'components/CircularProgress';
 
 const styles = {
   tabs: {
