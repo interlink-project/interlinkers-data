@@ -22,7 +22,9 @@ import {
 import { styled } from '@material-ui/styles';
 import { ExpandMore as ExpandMoreIcon } from '@material-ui/icons';
 import { cleanUnderScores } from "../../../../../utils/cleanUnderscores"
-import CircularProgressWithLabel from './CircularProgress';
+import CircularProgressWithLabel from '../../../../../components/CircularProgress';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateTaskinstantiation } from '../../../../../slices/process';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -85,20 +87,21 @@ const CollapseRecommendedInterlinkers = ({ selectedTask }) => {
 
 }
 
-const SelectedTaskElement = ({ selectedTask }) => {
+const SelectedTaskElement = ({ selectedTask, onSaved }) => {
   const [dateRange, setDateRange] = useState([null, null]);
   const [progress, setProgress] = useState(0);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    setDateRange([new Date(selectedTask.start_date), new Date(selectedTask.end_date)])
+    setDateRange([selectedTask.start_date ? new Date(selectedTask.start_date) : null, selectedTask.end_date ? new Date(selectedTask.end_date) : null])
     setProgress(selectedTask.progress)
   }, [selectedTask]);
   
-  const dataToSend = () => {
+  const dataToSend = async () => {
     const data = { }
 
-    const start_date = dateRange[0].toISOString().slice(0, 10)
-    const end_date = dateRange[1].toISOString().slice(0, 10)
+    const start_date = dateRange[0] && dateRange[0].toISOString().slice(0, 10)
+    const end_date = dateRange[1] && dateRange[1].toISOString().slice(0, 10)
     if(start_date !== selectedTask.start_date){
       data.start_date = start_date
     }
@@ -109,8 +112,13 @@ const SelectedTaskElement = ({ selectedTask }) => {
     if(progress !== selectedTask.progress){
       data.progress = progress
     }
+
+    if(onSaved){
+      onSaved()
+    }
     
-    taskinstantiationsApi.update(selectedTask.id, data)
+    const updatedData = await taskinstantiationsApi.update(selectedTask.id, data)
+    dispatch(updateTaskinstantiation(updatedData))
   }
 
   return <Box sx={{ p: 2 }}>
@@ -140,7 +148,6 @@ const SelectedTaskElement = ({ selectedTask }) => {
         </React.Fragment>
       )}
     />
-
     <FormControl fullWidth >
 
       <Slider

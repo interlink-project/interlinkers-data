@@ -1,12 +1,6 @@
 import { combineReducers } from '@reduxjs/toolkit';
+import { reducer as processReducer } from '../slices/process';
 
-/*
-import { reducer as mailReducer } from '../slices/mail';
-
-  {mail: mailReducer,}
-*/
-const rootReducer = combineReducers({
-  
-});
+const rootReducer = combineReducers({process: processReducer,});
 
 export default rootReducer;

@@ -20,7 +20,7 @@ import { styled } from '@material-ui/styles';
 import { MoreVert as MoreVertIcon, Search as SearchIcon } from '@material-ui/icons';
 import { red } from '@material-ui/core/colors';
 import moment from 'moment';
-import { cleanUnderScores } from "../../../../utils/cleanUnderscores"
+import { cleanUnderScores } from "../../../../../utils/cleanUnderscores"
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -68,10 +68,6 @@ const Assets = ({ selectedTask }) => {
 
   const { assets } = selectedTask
   const AddNewAssetButton = () => <Button sx={{ mt: 2 }} variant="contained" fullWidth>Add new asset</Button>
-  if (assets.length === 0) {
-    return <><Alert severity="warning">No assets yet for this task. Instantiate an interlinker, please.</Alert><AddNewAssetButton /></>
-
-  }
 
   const Asset = ({ asset }) => {
     const [error, setError] = useState(false)
@@ -98,9 +94,9 @@ const Assets = ({ selectedTask }) => {
     </Card>
   }
   return <>
-    <Typography variant="h6" sx={{ m: 3, textAlign: "center" }}>
-      Assets for "{cleanUnderScores(selectedTask.name)}" task
-    </Typography>
+    <Box sx={{ justifyContent: "center" }} >
+      <Typography variant="h6" sx={{ mb: 2 }}>Assets for {cleanUnderScores(selectedTask.name)} </Typography>
+    </Box>
     <Paper>
       <Search>
 
@@ -114,10 +110,13 @@ const Assets = ({ selectedTask }) => {
       </Search>
     </Paper>
     <Grid container spacing={1} sx={{ mt: 1 }}>
-
-      {assets.map(asset => <Grid item key={asset.id} xl={2} lg={3} md={3} sm={4}>
-        <Asset asset={asset} />
-      </Grid>)}</Grid><AddNewAssetButton /></>
+      {assets.length === 0 ?
+        <Alert severity="warning">No assets yet for this task. Instantiate an interlinker, please.</Alert>
+        : assets.map(asset =>
+          <Grid item key={asset.id} xl={3} lg={4} md={6} sm={6}>
+            <Asset asset={asset} />
+          </Grid>)}
+    </Grid><AddNewAssetButton /></>
 }
 
 

@@ -4,12 +4,12 @@ import {
     Typography,
     CircularProgress,
 } from '@material-ui/core';
-import colorScale from "../../../../../utils/colorScale"
+import colorScale from "../utils/colorScale"
 
-function CircularProgressWithLabel({ size, value }) {
+function CircularProgressWithLabel({ size, value, sx }) {
     // perc2color(value)
     return (
-        <Box sx={{ position: 'relative', display: 'inline-flex' }}>
+        <Box sx={{ position: 'relative', display: 'inline-flex', ...sx }}>
             <CircularProgress variant="determinate" size={size} value={value === 0 ? 100 : value} sx={{ color: colorScale(value / 100).toString(), borderRadius: "50%" }} />
             <Box
                 sx={{

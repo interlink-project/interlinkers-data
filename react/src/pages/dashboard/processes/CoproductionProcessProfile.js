@@ -20,21 +20,21 @@ import {
   TextField,
   Grid
 } from '@material-ui/core';
-import { coproductionProcessesApi } from '../../../__fakeApi__/processesApi';
 import useMounted from '../../../hooks/useMounted';
 import DotsVerticalIcon from '../../../icons/DotsVertical';
 import gtm from '../../../lib/gtm';
 import { NavigateNext } from '@material-ui/icons';
-import WorkplanTab from './Tabs/Workplan/Workplan';
-import Gantt from './Tabs/Gantt/Gantt';
+import Repository from './Tabs/Repository/Repository';
+import Workplan from './Tabs/Workplan/Workplan';
 import { useNavigate } from 'react-router';
+import { useDispatch, useSelector } from 'react-redux';
+import { getProcess } from '../../../slices/process';
 
 const tabs = [
   { label: 'Overview', value: 'overview' },
   { label: 'Workplan', value: 'workplan' },
-  { label: 'Gantt', value: 'gantt' },
-  { label: 'Network', value: 'network' },
   { label: 'Repository', value: 'repository' },
+  { label: 'Network', value: 'network' },
   { label: 'Forum', value: 'forum' },
   { label: 'Settings', value: 'settings' },
 ];
@@ -57,14 +57,12 @@ function TabPanel(props) {
 
 const CoproductionProcessProfile = () => {
   let { processId, tab } = useParams();
-
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const mounted = useMounted();
+  
   const [currentTab, setCurrentTab] = useState(tab || "overview");
-  const [process, setProcess] = useState(null);
-  const [processTree, setProcessTree] = useState(null);
-  const [loading, setLoading] = useState(true);
-
+  const { process, tree, loading } = useSelector((state) => state.process);
 
   useEffect(() => {
     gtm.push({ event: 'page_view' });
@@ -72,14 +70,8 @@ const CoproductionProcessProfile = () => {
 
   const getCoproductionProcess = useCallback(async () => {
     try {
-      const data = await coproductionProcessesApi.get(processId)
-      const treeData = await coproductionProcessesApi.getTree(processId)
-
       if (mounted.current) {
-        setProcess(data);
-        setProcessTree(treeData);
-        setLoading(false)
-
+        dispatch(getProcess(processId))
       }
     } catch (err) {
       console.error(err);
@@ -126,7 +118,7 @@ const CoproductionProcessProfile = () => {
               position: 'relative'
             }}
           >
-            {loading ? <Skeleton variant="circular" sx={{
+            {loading || !process ?  <Skeleton variant="circular" sx={{
               border: (theme) => `4px solid ${theme.palette.background.default}`,
               height: 120,
               left: 24,
@@ -154,7 +146,7 @@ const CoproductionProcessProfile = () => {
                 color='textPrimary'
                 variant='h5'
               >
-                {loading ? <Skeleton /> : process.artefact.name}
+                {loading || !process ?  <Skeleton /> : process.artefact.name}
               </Typography>
             </Box>
             <Box sx={{ flexGrow: 1 }} />
@@ -220,7 +212,7 @@ const CoproductionProcessProfile = () => {
 
               </Grid>
               <Grid item xl={10} lg={10} md={10} xs={10}>
-                {loading ? <Skeleton variant="rectangular" width="100%">
+                {loading || !process ?  <Skeleton variant="rectangular" width="100%">
                   <div style={{ paddingTop: '57%' }} />
                 </Skeleton> : <Card >
                   <TabPanel value={currentTab} index="overview">
@@ -250,10 +242,10 @@ const CoproductionProcessProfile = () => {
                     />
                   </TabPanel>
                   <TabPanel value={currentTab} index="workplan">
-                    <WorkplanTab coproductionprocess={process} processTree={processTree} />
+                    <Workplan processTree={tree} />
                   </TabPanel>
-                  <TabPanel value={currentTab} index="gantt">
-                    <Gantt processTree={processTree} />
+                  <TabPanel value={currentTab} index="repository">
+                    <Repository />
                   </TabPanel>
 
 

@@ -1,228 +1,227 @@
-import { useEffect, useState, useRef } from 'react';
+import { ToggleButton, ToggleButtonGroup, Grid, AppBar, Tab, Tabs, Stack } from "@material-ui/core";
+import moment from "moment";
+import React, { useEffect, useState } from "react";
+import $ from 'jquery';
+import colorScale from "../../../../../utils/colorScale"
+import { useDispatch, useSelector } from 'react-redux';
+import TaskDrawer from "./TaskDrawer";
+import { cleanUnderScores } from "../../../../../utils/cleanUnderscores";
+import CircularProgressWithLabel from "../../../../../components/CircularProgress";
+import CoevaluationDrawer from "./CoevaluationDrawer";
 
-import { Helmet } from 'react-helmet-async';
-import {
-  Box,
-  Grid,
-  Tab,
-  Tabs,
-  Select,
-  MenuItem,
-  SvgIcon,
-  AppBar,
-  Typography,
+const Workplan = () => {
+  const [viewMode, setViewMode] = useState("Week")
+  const [loaded, setLoaded] = useState(false)
+
+  const [currentPhase, setCurrentPhase] = useState("engage");
+  const { phaseinstantiations, objectiveinstantiations, taskinstantiations, updating } = useSelector((state) => state.process);
   
-  LinearProgress,
-  alpha,
-  useMediaQuery,
-  useTheme,
-  IconButton,
-  Divider,
-} from '@material-ui/core';
-import SwipeableViews from 'react-swipeable-views';
-import {
-  TreeItem,
-  TreeView,
-  treeItemClasses,
-} from '@material-ui/lab';
-import { styled } from '@material-ui/styles';
-import Assets from '../Assets';
-import { cleanUnderScores } from "../../../../../utils/cleanUnderscores"
-import SelectedTaskElement from "./SelectedTaskElement"
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [taskId, setTaskId] = useState(null);
+  let selectedTask = null
+  if (taskId) {
+    selectedTask = taskinstantiations.find(task => task.id === taskId)
+  }
 
-const styles = {
-  tabs: {
-    background: '#fff',
-  },
-  slide: {
-    padding: 15,
-    minHeight: 100,
-    color: '#fff',
-  },
-  slide1: {
-    backgroundColor: '#FEA900',
-  },
-  slide2: {
-    backgroundColor: '#B3DC4A',
-  },
-  slide3: {
-    backgroundColor: '#6AC0FF',
-  },
-};
+  const [coevaluationDrawerOpen, setCoevaluationDrawerOpen] = useState(false);
+  const [objectiveId, setObjectiveId] = useState(null);
+  let selectedObjective = null
+  if (objectiveId) {
+    selectedObjective = objectiveinstantiations.find(objective => objective.id === objectiveId)
+  }
+  const getTasks = () => {
+    const final = []
 
+    phaseinstantiations.forEach(phaseinstantiation => {
+      if (currentPhase !== phaseinstantiation.name) {
+        return
+      }
 
-const WorkplanTab = ({ coproductionprocess, processTree }) => {
-  const [currentPhase, setCurrentPhase] = useState(processTree ? processTree[0].name : "");
-  const [selected, setSelected] = useState([]);
-  const [selectedTask, setSelectedTask] = useState("");
-  const [index, setIndex] = useState(0);
+      objectiveinstantiations.filter(el => el.phaseinstantiation_id === phaseinstantiation.id).forEach(objectiveinstantiation => {
+        final.push({
+          id: objectiveinstantiation.id,
+          name: cleanUnderScores(objectiveinstantiation.name),
+          start: objectiveinstantiation.start_date,
+          end: objectiveinstantiation.end_date,
+          progress: objectiveinstantiation.progress,
+          custom_class: 'gantt-objective',
+          read_only: true
+        })
+        taskinstantiations.filter(el => el.objectiveinstantiation_id === objectiveinstantiation.id).forEach(taskinstantiation => {
+          final.push({
+            id: taskinstantiation.id,
+            name: cleanUnderScores(taskinstantiation.name),
+            start: taskinstantiation.start_date,
+            end: taskinstantiation.end_date,
+            dependencies: taskinstantiation.objectiveinstantiation_id,
+            progress: taskinstantiation.progress,
+            custom_class: 'gantt-task',
+            read_only: true
+          })
+        })
+      })
 
-  const theme = useTheme();
-  const onMobile = !useMediaQuery(theme.breakpoints.up('sm'));
+      
 
-  const handleChange = (event, value) => {
-    setIndex(value)
-  };
-
-  const handleChangeIndex = index => {
-    setIndex(index)
-  };
+    })
+    return final.sort((a, b) => a.start_date < b.start_date)
+  }
 
   useEffect(() => {
-    let res = null
-    processTree.forEach(phaseinstantiation => {
-      phaseinstantiation.objectiveinstantiations.forEach(objectiveinstantiation => {
-        const taskselected = objectiveinstantiation.taskinstantiations.find(el => el.id === selected)
-        if (taskselected) {
-          res = taskselected
+    const head = document.head || document.getElementsByTagName('head')[0]
 
+    const script = document.createElement("script");
+    script.src = "https://cdnjs.cloudflare.com/ajax/libs/frappe-gantt/0.5.0/frappe-gantt.min.js";
+    script.async = true;
+    head.appendChild(script);
+
+    const style = document.createElement("link");
+    style.type = "text/css";
+    style.rel = "stylesheet";
+    style.href = "https://cdnjs.cloudflare.com/ajax/libs/frappe-gantt/0.5.0/frappe-gantt.css";
+    head.appendChild(style);
+
+    script.onload = () => setLoaded(true);
+  }, []);
+
+  function stopEvent(event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+
+  useEffect(() => {
+    if (updating) {
+      return
+    }
+    const id = "#gantt"
+    if (loaded) {
+      const props = {
+        header_height: 50,
+        column_width: 30,
+        step: 24,
+        view_modes: ['Quarter Day', 'Half Day', 'Day', 'Week', 'Month'],
+        bar_height: 25,
+        bar_corner_radius: 3,
+        arrow_curve: 10,
+        padding: 22,
+        view_mode: viewMode,
+        date_format: 'YYYY-MM-DD',
+        custom_popup_html: null
+      }
+
+      const readOnly = true
+      if (readOnly) {
+        props.on_view_change = function () {
+          var bars = document.querySelectorAll(id + " .bar-group");
+          for (var i = 0; i < bars.length; i++) {
+            bars[i].addEventListener("mousedown", stopEvent, true);
+          }
+          var handles = document.querySelectorAll(id + " .handle-group");
+          for (var i = 0; i < handles.length; i++) {
+            handles[i].remove();
+          }
         }
-      })
-    });
-    setSelectedTask(res)
-    document.getElementById('assetsDiv') && document.getElementById('assetsDiv').scrollIntoView()
+      }
+      try {
+        new window.Gantt(id, getTasks(), props);
 
-  }, [selected]);
+        $(".gantt-objective").each(function (index1) {
+          const id = $(this).attr("data-id")
+          $(this).on("click", function () {
+            setObjectiveId(id)
+            setCoevaluationDrawerOpen(true)
+          });
+
+          const bar = $(this).children().first().children(".bar").first()
+          const progressBar = $(this).children().first().children(".bar-progress").first()
+          progressBar.css("fill", colorScale(objectiveinstantiations.find(objectiveinstantiation => objectiveinstantiation.id === id).progress / 100).toString())
+          let text = $(this).children().first().children(".bar-label").first()
+
+          text.css("font-weight", "800")
+          text.css("font-size", "15px")
+          text.css("fill", "#282b28")
+
+        })
+
+        $(".gantt-task").each(function (index1) {
+          const id = $(this).attr("data-id")
+
+          $(this).on("click", function () {
+            setTaskId(id)
+            setDrawerOpen(true)
+          });
+          const bar = $(this).children().first().children(".bar").first()
+          const progressBar = $(this).children().first().children(".bar-progress").first()
+          progressBar.css("fill", colorScale(taskinstantiations.find(task => task.id === id).progress / 100).toString())
+
+          let text = $(this).children().first().children(".bar-label").first()
+          text.css("font-weight", "600")
+          text.css("fill", "black")
+
+        })
+
+      } catch (error) {
+        console.log("error", error)
+      }
+
+    }
+
+  }, [loaded, viewMode, currentPhase, taskinstantiations, updating]);
+
+  const separators = ["Quarter Day", "Half Day", "Day", "Week", "Month"]
 
 
-  function MinusSquare(props) {
-    return (
-      <SvgIcon fontSize="inherit" style={{ width: 14, height: 14 }} {...props}>
-        {/* tslint:disable-next-line: max-line-length */}
-        <path d="M22.047 22.074v0 0-20.147 0h-20.12v0 20.147 0h20.12zM22.047 24h-20.12q-.803 0-1.365-.562t-.562-1.365v-20.147q0-.776.562-1.351t1.365-.575h20.147q.776 0 1.351.575t.575 1.351v20.147q0 .803-.575 1.365t-1.378.562v0zM17.873 11.023h-11.826q-.375 0-.669.281t-.294.682v0q0 .401.294 .682t.669.281h11.826q.375 0 .669-.281t.294-.682v0q0-.401-.294-.682t-.669-.281z" />
-      </SvgIcon>
-    );
-  }
-
-  function PlusSquare(props) {
-    return (
-      <SvgIcon fontSize="inherit" style={{ width: 14, height: 14 }} {...props}>
-        {/* tslint:disable-next-line: max-line-length */}
-        <path d="M22.047 22.074v0 0-20.147 0h-20.12v0 20.147 0h20.12zM22.047 24h-20.12q-.803 0-1.365-.562t-.562-1.365v-20.147q0-.776.562-1.351t1.365-.575h20.147q.776 0 1.351.575t.575 1.351v20.147q0 .803-.575 1.365t-1.378.562v0zM17.873 12.977h-4.923v4.896q0 .401-.281.682t-.682.281v0q-.375 0-.669-.281t-.294-.682v-4.896h-4.923q-.401 0-.682-.294t-.281-.669v0q0-.401.281-.682t.682-.281h4.923v-4.896q0-.401.294-.682t.669-.281v0q.401 0 .682.281t.281.682v4.896h4.923q.401 0 .682.281t.281.682v0q0 .375-.281.669t-.682.294z" />
-      </SvgIcon>
-    );
-  }
-
-  function CloseSquare(props) {
-    return (
-      <SvgIcon
-        className="close"
-        fontSize="inherit"
-        style={{ width: 14, height: 14 }}
-        {...props}
-      >
-        {/* tslint:disable-next-line: max-line-length */}
-        <path d="M17.485 17.512q-.281.281-.682.281t-.696-.268l-4.12-4.147-4.12 4.147q-.294.268-.696.268t-.682-.281-.281-.682.294-.669l4.12-4.147-4.12-4.147q-.294-.268-.294-.669t.281-.682.682-.281.696 .268l4.12 4.147 4.12-4.147q.294-.268.696-.268t.682.281 .281.669-.294.682l-4.12 4.147 4.12 4.147q.294.268 .294.669t-.281.682zM22.047 22.074v0 0-20.147 0h-20.12v0 20.147 0h20.12zM22.047 24h-20.12q-.803 0-1.365-.562t-.562-1.365v-20.147q0-.776.562-1.351t1.365-.575h20.147q.776 0 1.351.575t.575 1.351v20.147q0 .803-.575 1.365t-1.378.562v0z" />
-      </SvgIcon>
-    );
-  }
-
-
-  const StyledTreeItem = styled((props) => (
-    <TreeItem {...props} />
-  ))(({ theme }) => ({
-    [`& .${treeItemClasses.iconContainer}`]: {
-      '& .close': {
-        opacity: 0.3,
-      },
-    },
-    [`& .${treeItemClasses.group}`]: {
-      marginLeft: 15,
-      paddingLeft: 18,
-      borderLeft: `1px dashed ${alpha(theme.palette.text.primary, 0.4)}`,
-    },
-  }));
 
   return (
-    <>
-      <Helmet>
-        <title>Coproduction process workplan</title>
-      </Helmet>
-      <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
-        {onMobile ? <>
-          <Tabs value={index} onChange={handleChange} style={styles.tabs}>
-            <Tab label="tab n°1" />
-            <Tab label="tab n°2" />
-            <Tab label="tab n°3" />
+    <Grid container>
+
+      <Grid item xs={12}>
+        <AppBar position="static" sx={{ color: "white" }}>
+          <Tabs
+            indicatorColor="secondary"
+            onChange={(event, value) => {
+              setCurrentPhase(value);
+            }}
+            value={currentPhase}
+            centered
+
+            textColor="inherit"
+            aria-label="Coproduction phases tabs"
+          >
+
+            {phaseinstantiations.map((phaseinstantiation) => (
+              <Tab
+                key={phaseinstantiation.id}
+                label={<>
+                  <p>{phaseinstantiation.name}</p>
+                  <CircularProgressWithLabel value={phaseinstantiation.progress} size={40} sx={{mb: 2}} /></>}
+                value={phaseinstantiation.name}
+              />
+            ))}
           </Tabs>
-          <SwipeableViews index={index} onChangeIndex={handleChangeIndex}>
-            <div style={Object.assign({}, styles.slide, styles.slide1)}>slide n°1</div>
-            <div style={Object.assign({}, styles.slide, styles.slide2)}>
-              slide n°2
-              <Select value={10} autoWidth={false}>
-                <MenuItem value="">
-                  <em>None</em>
-                </MenuItem>
-                <MenuItem value={10}>Ten</MenuItem>
-              </Select>
-            </div>
-            <div style={Object.assign({}, styles.slide, styles.slide3)}>slide n°3</div>
-          </SwipeableViews> </> :
-          <Grid container>
-            <Grid item xl={12} lg={12} md={12} xs={12}>
-              <AppBar position="static" sx={{ color: "white" }}>
-                <Tabs
-                  indicatorColor="secondary"
-                  onChange={(event, value) => {
-                    setSelectedTask(null)
-                    setCurrentPhase(value);
-                  }}
-                  value={currentPhase}
-                  centered
+          <ToggleButtonGroup
+            color="primary"
+            value={viewMode}
+            fullWidth
+            exclusive
+            sx={{ backgroundColor: "white" }}
+            onChange={(event, view_mode) => view_mode !== viewMode && setViewMode(view_mode)}
+          >
+            {separators.map((el, i) => <ToggleButton key={`separatorButton${i}`} value={el}>{el}</ToggleButton>)}
 
-                  textColor="inherit"
-                  aria-label="Coproduction phases tabs"
-                >
-
-                  {processTree.map((phaseinstantiation) => (
-                    <Tab
-                      key={phaseinstantiation.id}
-                      label={phaseinstantiation.name}
-                      value={phaseinstantiation.name}
-                    />
-                  ))}
-                </Tabs>
-              </AppBar>
-            </Grid>
-            <Grid item xl={6} lg={6} md={6} xs={12}>
-              <TreeView
-                aria-label="customized"
-                defaultExpanded={processTree.map(el => el.id) || []}
-                defaultCollapseIcon={<MinusSquare />}
-                defaultExpandIcon={<PlusSquare />}
-                defaultEndIcon={<CloseSquare />}
-                selected={selected}
-                sx={{ flexGrow: 1, overflowY: 'auto', width: "100%" }}
-                onNodeSelect={(event, nodeIds) => {
-                  setSelected(nodeIds);
-                }}
-              >
-                {processTree.find(el => el.name === currentPhase).objectiveinstantiations.map(objectiveinstantiation =>
-                  <StyledTreeItem key={objectiveinstantiation.id} nodeId={objectiveinstantiation.id} sx={{backgroundColor: "background.paper"}} label={<p>{cleanUnderScores(objectiveinstantiation.name)}{objectiveinstantiation.progress}</p>} >
-                    {objectiveinstantiation.taskinstantiations.sort((a, b) => b.progress - a.progress ).map(taskinstantiation => (
-                      <StyledTreeItem key={taskinstantiation.id} nodeId={taskinstantiation.id} label={<p>{cleanUnderScores(taskinstantiation.name)}<LinearProgress sx={{mt: 1}} color={taskinstantiation.progress < 30 ? "error" : taskinstantiation.progress < 65 ? "warning" : "success"} variant="determinate" value={taskinstantiation.progress} /></p>} />))}
-                  </StyledTreeItem>)}
-              </TreeView>
-            </Grid>
-            <Grid item xl={6} lg={6} md={6} xs={12}>
-              {selectedTask && <SelectedTaskElement selectedTask={selectedTask} />}
-            </Grid>
-            <Grid item xl={12} lg={12} md={12} xs={12}>
-              <div id="assetsDiv">
-                {selectedTask && <Box sx={{ p: 2 }}>
-                  <Divider />
-                  <Assets selectedTask={selectedTask} />
-                </Box>}
-              </div>
-            </Grid>
-
-          </Grid>
+          </ToggleButtonGroup>
+        </AppBar>
+      </Grid>
+      <Grid item xs={12}>
+        {!updating &&
+          <div id="gantt" />
         }
-
-      </Box>
-
-    </>
+      </Grid>
+      <TaskDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} task={selectedTask} />
+      <CoevaluationDrawer open={coevaluationDrawerOpen} onClose={() => setCoevaluationDrawerOpen(false)} objective={selectedObjective} />
+        
+    </Grid>
   );
 };
 
-export default WorkplanTab;
+export default Workplan
