@@ -1,20 +1,11 @@
 import { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
 import {
   Box,
   Grid,
-  Tab,
-  Tabs,
-  Select,
-  MenuItem,
   SvgIcon,
-  AppBar,
   LinearProgress,
   alpha,
-  useMediaQuery,
-  useTheme,
 } from '@material-ui/core';
-import SwipeableViews from 'react-swipeable-views';
 import {
   TreeItem,
   TreeView,
@@ -24,54 +15,20 @@ import { styled } from '@material-ui/styles';
 import Assets from './Assets';
 import { cleanUnderScores } from "utils/cleanUnderscores"
 import { useSelector } from 'react-redux';
-import CircularProgressWithLabel from 'components/CircularProgress';
-
-const styles = {
-  tabs: {
-    background: '#fff',
-  },
-  slide: {
-    padding: 15,
-    minHeight: 100,
-    color: '#fff',
-  },
-  slide1: {
-    backgroundColor: '#FEA900',
-  },
-  slide2: {
-    backgroundColor: '#B3DC4A',
-  },
-  slide3: {
-    backgroundColor: '#6AC0FF',
-  },
-};
+import Tabs from "../Tabs";
 
 
 const Repository = () => {
-  const [currentPhase, setCurrentPhase] = useState("engage");
   const [selected, setSelected] = useState([]);
   const [selectedTask, setSelectedTask] = useState("");
-  const [index, setIndex] = useState(0);
-  const { phaseinstantiations, objectiveinstantiations, taskinstantiations } = useSelector((state) => state.process);
-  const [drawerOpen, setDrawerOpen] = useState(false);
+  const { phaseinstantiations, objectiveinstantiations, taskinstantiations, selectedPhaseTab } = useSelector((state) => state.process);
 
-  const currentPhaseObj = phaseinstantiations.find(el => el.name === currentPhase)
-  const theme = useTheme();
-  const onMobile = !useMediaQuery(theme.breakpoints.up('sm'));
-
-  const handleChange = (event, value) => {
-    setIndex(value)
-  };
-
-  const handleChangeIndex = index => {
-    setIndex(index)
-  };
+  const currentPhaseObj = phaseinstantiations.find(el => el.name === selectedPhaseTab)
 
   useEffect(() => {
     const taskselected = taskinstantiations.find(el => el.id === selected)
     if (taskselected) {
       setSelectedTask(taskselected)
-      setDrawerOpen(true)
     }
     // document.getElementById('assetsDiv') && document.getElementById('assetsDiv').scrollIntoView()
 
@@ -127,94 +84,45 @@ const Repository = () => {
   }));
 
   return (
-    <>
-      <Helmet>
-        <title>Coproduction process repository</title>
-      </Helmet>
-      <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
-        {onMobile ? <>
-          <Tabs value={index} onChange={handleChange} style={styles.tabs}>
-            <Tab label="tab n°1" />
-            <Tab label="tab n°2" />
-            <Tab label="tab n°3" />
-          </Tabs>
-          <SwipeableViews index={index} onChangeIndex={handleChangeIndex}>
-            <div style={Object.assign({}, styles.slide, styles.slide1)}>slide n°1</div>
-            <div style={Object.assign({}, styles.slide, styles.slide2)}>
-              slide n°2
-              <Select value={10} autoWidth={false}>
-                <MenuItem value="">
-                  <em>None</em>
-                </MenuItem>
-                <MenuItem value={10}>Ten</MenuItem>
-              </Select>
-            </div>
-            <div style={Object.assign({}, styles.slide, styles.slide3)}>slide n°3</div>
-          </SwipeableViews> </> :
-          <Grid container>
-            <Grid item xl={12} lg={12} md={12} xs={12}>
-              <AppBar position="static" sx={{ color: "white" }}>
-                <Tabs
-                  indicatorColor="secondary"
-                  onChange={(event, value) => {
-                    setSelectedTask(null)
-                    setCurrentPhase(value);
-                  }}
-                  value={currentPhase}
-                  centered
+    <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
 
-                  textColor="inherit"
-                  aria-label="Coproduction phases tabs"
-                >
+      <Grid container>
+        <Grid item xl={12} lg={12} md={12} xs={12}>
+        <Tabs />
+        </Grid>
+        <Grid item xl={4} lg={4} md={6} xs={12}>
+          <TreeView
+            aria-label="customized"
+            defaultExpanded={phaseinstantiations.map(phaseinstantiation => phaseinstantiation.id) || []}
+            defaultCollapseIcon={<MinusSquare />}
+            defaultExpandIcon={<PlusSquare />}
+            defaultEndIcon={<CloseSquare />}
+            selected={selected}
+            sx={{ flexGrow: 1, overflowY: 'auto', width: "100%" }}
+            onNodeSelect={(event, nodeIds) => {
+              setSelected(nodeIds);
 
-                  {phaseinstantiations.map((phaseinstantiation) => (
-                    <Tab
-                      key={phaseinstantiation.id}
-                      label={<>
-                        <p>{phaseinstantiation.name}</p>
-                        <CircularProgressWithLabel value={phaseinstantiation.progress} size={40} sx={{ mb: 2 }} /></>}
-                      value={phaseinstantiation.name}
-                    />
-                  ))}
-                </Tabs>
-              </AppBar>
-            </Grid>
-            <Grid item xl={4} lg={4} md={6} xs={12}>
-              <TreeView
-                aria-label="customized"
-                defaultExpanded={phaseinstantiations.map(phaseinstantiation => phaseinstantiation.id) || []}
-                defaultCollapseIcon={<MinusSquare />}
-                defaultExpandIcon={<PlusSquare />}
-                defaultEndIcon={<CloseSquare />}
-                selected={selected}
-                sx={{ flexGrow: 1, overflowY: 'auto', width: "100%" }}
-                onNodeSelect={(event, nodeIds) => {
-                  setSelected(nodeIds);
+            }}
+          >
+            {objectiveinstantiations.filter(el => el.phaseinstantiation_id === currentPhaseObj.id).map(objectiveinstantiation =>
+              <StyledTreeItem key={objectiveinstantiation.id} nodeId={objectiveinstantiation.id} sx={{ backgroundColor: "background.paper" }} label={<p>{cleanUnderScores(objectiveinstantiation.name)}{objectiveinstantiation.start_date && <LinearProgress sx={{ mt: 1 }} color={objectiveinstantiation.progress < 30 ? "error" : objectiveinstantiation.progress < 65 ? "warning" : "success"} variant="determinate" value={objectiveinstantiation.progress} />}</p>} >
+                {taskinstantiations.filter(el => el.objectiveinstantiation_id === objectiveinstantiation.id).sort((a, b) => b.progress - a.progress).map(taskinstantiation => (
+                  <StyledTreeItem key={taskinstantiation.id} nodeId={taskinstantiation.id} label={<p>{cleanUnderScores(taskinstantiation.name)}{taskinstantiation.start_date && <LinearProgress sx={{ mt: 1 }} color={taskinstantiation.progress < 30 ? "error" : taskinstantiation.progress < 65 ? "warning" : "success"} variant="determinate" value={taskinstantiation.progress} />}</p>} />))}
+              </StyledTreeItem>)}
+          </TreeView>
+        </Grid>
 
-                }}
-              >
-                {objectiveinstantiations.filter(el => el.phaseinstantiation_id === currentPhaseObj.id).map(objectiveinstantiation =>
-                  <StyledTreeItem key={objectiveinstantiation.id} nodeId={objectiveinstantiation.id} sx={{ backgroundColor: "background.paper" }} label={<p>{cleanUnderScores(objectiveinstantiation.name)}{objectiveinstantiation.start_date && <LinearProgress sx={{ mt: 1 }} color={objectiveinstantiation.progress < 30 ? "error" : objectiveinstantiation.progress < 65 ? "warning" : "success"} variant="determinate" value={objectiveinstantiation.progress} />}</p>} >
-                    {taskinstantiations.filter(el => el.objectiveinstantiation_id === objectiveinstantiation.id).sort((a, b) => b.progress - a.progress).map(taskinstantiation => (
-                      <StyledTreeItem key={taskinstantiation.id} nodeId={taskinstantiation.id} label={<p>{cleanUnderScores(taskinstantiation.name)}{taskinstantiation.start_date && <LinearProgress sx={{ mt: 1 }} color={taskinstantiation.progress < 30 ? "error" : taskinstantiation.progress < 65 ? "warning" : "success"} variant="determinate" value={taskinstantiation.progress} />}</p>} />))}
-                  </StyledTreeItem>)}
-              </TreeView>
-            </Grid>
+        <Grid item xl={8} lg={8} md={6} xs={12}>
+          <div id="assetsDiv">
+            {selectedTask && <Box sx={{ p: 2 }}>
+              <Assets selectedTask={selectedTask} />
+            </Box>}
+          </div>
+        </Grid>
 
-            <Grid item xl={8} lg={8} md={6} xs={12}>
-              <div id="assetsDiv">
-                {selectedTask && <Box sx={{ p: 2 }}>
-                  <Assets selectedTask={selectedTask} />
-                </Box>}
-              </div>
-              </Grid>
+      </Grid>
 
-          </Grid>
-        }
-
-      </Box>
-
-    </>
+    </Box>
   );
 };
 

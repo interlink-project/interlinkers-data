@@ -10,6 +10,7 @@ const initialState = {
   taskinstantiations: [],
   objectiveinstantiations: [],
   phaseinstantiations: [],
+  selectedPhaseTab: "engage"
 };
 
 const slice = createSlice({
@@ -46,6 +47,9 @@ const slice = createSlice({
     setUpdating(state, action) {
       state.updating = action.payload;
     },
+    setSelectedPhase(state, action) {
+      state.selectedPhaseTab = action.payload;
+    },
   }
 });
 
@@ -63,6 +67,10 @@ export const updateTaskinstantiation = (data) => async (dispatch) => {
   dispatch(slice.actions.setUpdating(true));
   dispatch(slice.actions.updateTaskinstantiation(data));
   dispatch(slice.actions.setUpdating(false));
+};
+
+export const setSelectedPhaseTab = (data) => async (dispatch) => {
+  dispatch(slice.actions.setSelectedPhase(data));
 };
 
 export default slice;

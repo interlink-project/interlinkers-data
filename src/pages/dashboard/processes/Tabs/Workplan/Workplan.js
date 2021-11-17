@@ -1,19 +1,18 @@
-import { ToggleButton, ToggleButtonGroup, Grid, AppBar, Tab, Tabs } from "@material-ui/core";
+import { ToggleButton, ToggleButtonGroup, Grid } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import $ from 'jquery';
 import colorScale from "utils/colorScale"
 import { useSelector } from 'react-redux';
 import TaskDrawer from "./TaskDrawer";
 import { cleanUnderScores } from "utils/cleanUnderscores";
-import CircularProgressWithLabel from "components/CircularProgress";
+import Tabs from "../Tabs";
 import CoevaluationDrawer from "./CoevaluationDrawer";
 
 const Workplan = () => {
   const [viewMode, setViewMode] = useState("Week")
   const [loaded, setLoaded] = useState(false)
-  const [currentPhase, setCurrentPhase] = useState("engage");
-  const { phaseinstantiations, objectiveinstantiations, taskinstantiations, updating } = useSelector((state) => state.process);
-  
+  const { phaseinstantiations, objectiveinstantiations, taskinstantiations, updating, selectedPhaseTab } = useSelector((state) => state.process);
+
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [taskId, setTaskId] = useState(null);
   let selectedTask = null
@@ -30,37 +29,29 @@ const Workplan = () => {
   const getTasks = () => {
     const final = []
 
-    phaseinstantiations.forEach(phaseinstantiation => {
-      if (currentPhase !== phaseinstantiation.name) {
-        return
-      }
-
-      objectiveinstantiations.filter(el => el.phaseinstantiation_id === phaseinstantiation.id).forEach(objectiveinstantiation => {
+    const phaseinstantiation = phaseinstantiations.find(phaseinstantiation => selectedPhaseTab === phaseinstantiation.name)
+    objectiveinstantiations.filter(el => el.phaseinstantiation_id === phaseinstantiation.id).forEach(objectiveinstantiation => {
+      final.push({
+        id: objectiveinstantiation.id,
+        name: cleanUnderScores(objectiveinstantiation.name),
+        start: objectiveinstantiation.start_date,
+        end: objectiveinstantiation.end_date,
+        progress: objectiveinstantiation.progress,
+        custom_class: 'gantt-objective',
+        read_only: true
+      })
+      taskinstantiations.filter(el => el.objectiveinstantiation_id === objectiveinstantiation.id).forEach(taskinstantiation => {
         final.push({
-          id: objectiveinstantiation.id,
-          name: cleanUnderScores(objectiveinstantiation.name),
-          start: objectiveinstantiation.start_date,
-          end: objectiveinstantiation.end_date,
-          progress: objectiveinstantiation.progress,
-          custom_class: 'gantt-objective',
+          id: taskinstantiation.id,
+          name: cleanUnderScores(taskinstantiation.name),
+          start: taskinstantiation.start_date,
+          end: taskinstantiation.end_date,
+          dependencies: taskinstantiation.objectiveinstantiation_id,
+          progress: taskinstantiation.progress,
+          custom_class: 'gantt-task',
           read_only: true
         })
-        taskinstantiations.filter(el => el.objectiveinstantiation_id === objectiveinstantiation.id).forEach(taskinstantiation => {
-          final.push({
-            id: taskinstantiation.id,
-            name: cleanUnderScores(taskinstantiation.name),
-            start: taskinstantiation.start_date,
-            end: taskinstantiation.end_date,
-            dependencies: taskinstantiation.objectiveinstantiation_id,
-            progress: taskinstantiation.progress,
-            custom_class: 'gantt-task',
-            read_only: true
-          })
-        })
       })
-
-      
-
     })
     return final.sort((a, b) => a.start_date < b.start_date)
   }
@@ -164,7 +155,7 @@ const Workplan = () => {
 
     }
 
-  }, [loaded, viewMode, currentPhase, taskinstantiations, updating]);
+  }, [loaded, viewMode, selectedPhaseTab, taskinstantiations, updating]);
 
   const separators = ["Quarter Day", "Half Day", "Day", "Week", "Month"]
 
@@ -174,41 +165,17 @@ const Workplan = () => {
     <Grid container>
 
       <Grid item xs={12}>
-        <AppBar position="static" sx={{ color: "white" }}>
-          <Tabs
-            indicatorColor="secondary"
-            onChange={(event, value) => {
-              setCurrentPhase(value);
-            }}
-            value={currentPhase}
-            centered
+        <Tabs additionalContent={<ToggleButtonGroup
+          color="primary"
+          value={viewMode}
+          fullWidth
+          exclusive
+          sx={{ backgroundColor: "white" }}
+          onChange={(event, view_mode) => view_mode !== viewMode && setViewMode(view_mode)}
+        >
+          {separators.map((el, i) => <ToggleButton key={`separatorButton${i}`} value={el}>{el}</ToggleButton>)}
 
-            textColor="inherit"
-            aria-label="Coproduction phases tabs"
-          >
-
-            {phaseinstantiations.map((phaseinstantiation) => (
-              <Tab
-                key={phaseinstantiation.id}
-                label={<>
-                  <p>{phaseinstantiation.name}</p>
-                  <CircularProgressWithLabel value={phaseinstantiation.progress} size={40} sx={{mb: 2}} /></>}
-                value={phaseinstantiation.name}
-              />
-            ))}
-          </Tabs>
-          <ToggleButtonGroup
-            color="primary"
-            value={viewMode}
-            fullWidth
-            exclusive
-            sx={{ backgroundColor: "white" }}
-            onChange={(event, view_mode) => view_mode !== viewMode && setViewMode(view_mode)}
-          >
-            {separators.map((el, i) => <ToggleButton key={`separatorButton${i}`} value={el}>{el}</ToggleButton>)}
-
-          </ToggleButtonGroup>
-        </AppBar>
+        </ToggleButtonGroup>} />
       </Grid>
       <Grid item xs={12}>
         {!updating &&
@@ -217,7 +184,7 @@ const Workplan = () => {
       </Grid>
       <TaskDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} task={selectedTask} />
       <CoevaluationDrawer open={coevaluationDrawerOpen} onClose={() => setCoevaluationDrawerOpen(false)} objective={selectedObjective} />
-        
+
     </Grid>
   );
 };

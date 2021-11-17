@@ -18,14 +18,19 @@ import {
   Skeleton,
   Breadcrumbs,
   TextField,
-  Grid
+  Grid,
+
+  useMediaQuery,
+  useTheme,
 } from '@material-ui/core';
 import useMounted from '../../../hooks/useMounted';
 import DotsVerticalIcon from '../../../icons/DotsVertical';
 import gtm from '../../../lib/gtm';
 import { NavigateNext } from '@material-ui/icons';
 import Repository from './Tabs/Repository/Repository';
+import MobileRepository from './Tabs/Repository/MobileRepository';
 import Workplan from './Tabs/Workplan/Workplan';
+import Network from './Tabs/Network';
 import { useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProcess } from '../../../slices/process';
@@ -60,9 +65,13 @@ const CoproductionProcessProfile = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const mounted = useMounted();
-  
+
   const [currentTab, setCurrentTab] = useState(tab || "overview");
   const { process, tree, loading } = useSelector((state) => state.process);
+
+
+  const theme = useTheme();
+  const onMobile = !useMediaQuery(theme.breakpoints.up('sm'));
 
   useEffect(() => {
     gtm.push({ event: 'page_view' });
@@ -90,6 +99,70 @@ const CoproductionProcessProfile = () => {
     setCurrentTab(value);
   };
 
+
+
+  const Tabss = () => <Tabs
+    indicatorColor="secondary"
+    onChange={handleTabsChange}
+    value={currentTab}
+    variant="scrollable"
+    scrollButtons="auto"
+
+    orientation={!onMobile && "vertical"}
+    aria-label="Coproduction tabs"
+  >
+    {tabs.map((tab) => (
+      <Tab
+        key={tab.value}
+        label={tab.label}
+        value={tab.value}
+      />
+    ))}
+  </Tabs>
+
+  const Content = () => <Card >
+    <TabPanel value={currentTab} index="overview">
+      <TextField
+        fullWidth
+        disabled
+        id="filled-required"
+        label="Name of the project"
+        variant="filled"
+        sx={{ mt: 2 }}
+      />
+      <TextField
+        fullWidth
+        disabled
+        id="filled-required"
+        label="Short description of the project"
+        variant="filled"
+        sx={{ mt: 2 }}
+      />
+      <TextField
+        fullWidth
+        disabled
+        id="filled-required"
+        label="Aim of the project"
+        variant="filled"
+        sx={{ mt: 2 }}
+      />
+    </TabPanel>
+    <TabPanel value={currentTab} index="workplan">
+      <Workplan />
+    </TabPanel>
+    <TabPanel value={currentTab} index="repository">
+    <Repository />
+    </TabPanel>
+    <TabPanel value={currentTab} index="network">
+      <Network />
+    </TabPanel>
+
+
+  </Card>
+
+  const ContentSkeleton = () => loading || !process ? <Skeleton variant="rectangular" width="100%">
+    <div style={{ paddingTop: '57%' }} />
+  </Skeleton> : <Content />
   return (
     <>
       <Helmet>
@@ -118,7 +191,7 @@ const CoproductionProcessProfile = () => {
               position: 'relative'
             }}
           >
-            {loading || !process ?  <Skeleton variant="circular" sx={{
+            {loading || !process ? <Skeleton variant="circular" sx={{
               border: (theme) => `4px solid ${theme.palette.background.default}`,
               height: 120,
               left: 24,
@@ -146,7 +219,7 @@ const CoproductionProcessProfile = () => {
                 color='textPrimary'
                 variant='h5'
               >
-                {loading || !process ?  <Skeleton /> : process.artefact.name}
+                {loading || !process ? <Skeleton /> : process.artefact.name}
               </Typography>
             </Box>
             <Box sx={{ flexGrow: 1 }} />
@@ -186,74 +259,21 @@ const CoproductionProcessProfile = () => {
         </Container>
         <Box sx={{ mt: 5 }}>
           <Container maxWidth='xl'>
-            <Grid container>
-
-              <Grid item xl={2} lg={2} md={2} xs={2}>
-
-                <Tabs
-                  indicatorColor="secondary"
-                  onChange={handleTabsChange}
-                  value={currentTab}
-                  variant="scrollable"
-                  scrollButtons="auto"
-
-                  orientation="vertical"
-                  aria-label="Coproduction tabs"
-                  sx={{ borderRight: 1, borderColor: 'divider' }}
-                >
-                  {tabs.map((tab) => (
-                    <Tab
-                      key={tab.value}
-                      label={tab.label}
-                      value={tab.value}
-                    />
-                  ))}
-                </Tabs>
-
+            {onMobile ?
+              <>
+                <Tabss />
+                <ContentSkeleton />
+              </>
+              :
+              <Grid container>
+                <Grid item xl={2} lg={2} md={2} xs={2}>
+                  <Tabss />
+                </Grid>
+                <Grid item xl={10} lg={10} md={10} xs={10}>
+                  <ContentSkeleton />
+                </Grid>
               </Grid>
-              <Grid item xl={10} lg={10} md={10} xs={10}>
-                {loading || !process ?  <Skeleton variant="rectangular" width="100%">
-                  <div style={{ paddingTop: '57%' }} />
-                </Skeleton> : <Card >
-                  <TabPanel value={currentTab} index="overview">
-                    <TextField
-                      fullWidth
-                      disabled
-                      id="filled-required"
-                      label="Name of the project"
-                      variant="filled"
-                      sx={{ mt: 2 }}
-                    />
-                    <TextField
-                      fullWidth
-                      disabled
-                      id="filled-required"
-                      label="Short description of the project"
-                      variant="filled"
-                      sx={{ mt: 2 }}
-                    />
-                    <TextField
-                      fullWidth
-                      disabled
-                      id="filled-required"
-                      label="Aim of the project"
-                      variant="filled"
-                      sx={{ mt: 2 }}
-                    />
-                  </TabPanel>
-                  <TabPanel value={currentTab} index="workplan">
-                    <Workplan processTree={tree} />
-                  </TabPanel>
-                  <TabPanel value={currentTab} index="repository">
-                    <Repository />
-                  </TabPanel>
-
-
-                </Card>
-                }
-              </Grid>
-            </Grid>
-
+            }
 
           </Container>
         </Box>

@@ -1,89 +1,68 @@
-import * as React from 'react';
-import { MobileStepper, Paper, Typography, Button, Box, useTheme } from '@material-ui/core';
-import { KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
+import { useState } from 'react';
+import {
+    Tab,
+    Tabs,
+    Select,
+    MenuItem,
+} from '@material-ui/core';
+import SwipeableViews from 'react-swipeable-views';
 
-const steps = [
-    {
-        label: 'Select campaign settings',
-        description: `For each ad campaign that you create, you can control how much
-              you're willing to spend on clicks and conversions, which networks
-              and geographical locations you want your ads to show on, and more.`,
+const styles = {
+    tabs: {
+        background: '#fff',
     },
-    {
-        label: 'Create an ad group',
-        description:
-            'An ad group contains one or more ads which target a shared set of keywords.',
+    slide: {
+        padding: 15,
+        minHeight: 100,
+        color: '#fff',
     },
-    {
-        label: 'Create an ad',
-        description: `Try out different ad text to see what brings in the most customers,
-              and learn how to enhance your ads using features like ad extensions.
-              If you run into any problems with your ads, find out how to tell if
-              they're running and how to resolve approval issues.`,
+    slide1: {
+        backgroundColor: '#FEA900',
     },
-];
+    slide2: {
+        backgroundColor: '#B3DC4A',
+    },
+    slide3: {
+        backgroundColor: '#6AC0FF',
+    },
+};
 
-export default function MobileWorkplan() {
-    const theme = useTheme();
-    const [activeStep, setActiveStep] = React.useState(0);
-    const maxSteps = steps.length;
 
-    const handleNext = () => {
-        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+const MobileRepository = () => {
+    const [index, setIndex] = useState(0);
+
+
+    const handleChange = (event, value) => {
+        setIndex(value)
     };
 
-    const handleBack = () => {
-        setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    const handleChangeIndex = index => {
+        setIndex(index)
     };
+
 
     return (
-        <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
-            <Paper
-                square
-                elevation={0}
-                sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    height: 50,
-                    pl: 2,
-                    bgcolor: 'background.default',
-                }}
-            >
-                <Typography>{steps[activeStep].label}</Typography>
-            </Paper>
-            <Box sx={{ height: 255, maxWidth: 400, width: '100%', p: 2 }}>
-                {steps[activeStep].description}
-            </Box>
-            <MobileStepper
-                variant="text"
-                steps={maxSteps}
-                position="static"
-                activeStep={activeStep}
-                nextButton={
-                    <Button
-                        size="small"
-                        onClick={handleNext}
-                        disabled={activeStep === maxSteps - 1}
-                    >
-                        Next
-                        {theme.direction === 'rtl' ? (
-                            <KeyboardArrowLeft />
-                        ) : (
-                            <KeyboardArrowRight />
-                        )}
-                    </Button>
-                }
-                backButton={
-                    <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-                        {theme.direction === 'rtl' ? (
-                            <KeyboardArrowRight />
-                        ) : (
-                            <KeyboardArrowLeft />
-                        )}
-                        Back
-                    </Button>
-                }
-            />
-        </Box>
+        <>
+            <Tabs value={index} onChange={handleChange} style={styles.tabs}>
+                <Tab label="tab n°1" />
+                <Tab label="tab n°2" />
+                <Tab label="tab n°3" />
+            </Tabs>
+            <SwipeableViews index={index} onChangeIndex={handleChangeIndex}>
+                <div style={Object.assign({}, styles.slide, styles.slide1)}>slide n°1</div>
+                <div style={Object.assign({}, styles.slide, styles.slide2)}>
+                    slide n°2
+                    <Select value={10} autoWidth={false}>
+                        <MenuItem value="">
+                            <em>None</em>
+                        </MenuItem>
+                        <MenuItem value={10}>Ten</MenuItem>
+                    </Select>
+                </div>
+                <div style={Object.assign({}, styles.slide, styles.slide3)}>slide n°3</div>
+            </SwipeableViews>
+        </>
     );
-}
+};
+
+export default MobileRepository;
