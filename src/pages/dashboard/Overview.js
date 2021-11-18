@@ -23,9 +23,9 @@ import useSettings from '../../hooks/useSettings';
 import PlusIcon from '../../icons/Plus';
 import useAuth from '../../hooks/useAuth';
 import { Link as RouterLink } from 'react-router-dom';
-import { coproductionProcessesApi } from '../../__fakeApi__/processesApi';
+import { coproductionProcessesApi } from '__fakeApi__';
 import ArrowRightIcon from '@material-ui/icons/ChevronRight';
-import { getImageUrl } from '../../axios';
+import { getImageUrl } from '../../axiosInstance';
 import "./overview.css"
 
 function TabPanel(props) {

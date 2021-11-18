@@ -16,11 +16,14 @@ import Assets from './Assets';
 import { cleanUnderScores } from "utils/cleanUnderscores"
 import { useSelector } from 'react-redux';
 import Tabs from "../Tabs";
+import MobileDiscriminator from 'components/MobileDiscriminator';
+import MobileDrawer from 'components/MobileDrawer';
 
 
 const Repository = () => {
   const [selected, setSelected] = useState([]);
   const [selectedTask, setSelectedTask] = useState("");
+  const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
   const { phaseinstantiations, objectiveinstantiations, taskinstantiations, selectedPhaseTab } = useSelector((state) => state.process);
 
   const currentPhaseObj = phaseinstantiations.find(el => el.name === selectedPhaseTab)
@@ -29,6 +32,7 @@ const Repository = () => {
     const taskselected = taskinstantiations.find(el => el.id === selected)
     if (taskselected) {
       setSelectedTask(taskselected)
+      setMobileDrawerOpen(true)
     }
     // document.getElementById('assetsDiv') && document.getElementById('assetsDiv').scrollIntoView()
 
@@ -112,14 +116,17 @@ const Repository = () => {
           </TreeView>
         </Grid>
 
-        <Grid item xl={8} lg={8} md={6} xs={12}>
-          <div id="assetsDiv">
-            {selectedTask && <Box sx={{ p: 2 }}>
-              <Assets selectedTask={selectedTask} />
-            </Box>}
-          </div>
-        </Grid>
-
+        <MobileDiscriminator defaultNode={
+            <Grid item xl={8} lg={8} md={6} xs={12}>
+              <div id="assetsDiv">
+                {selectedTask && <Box sx={{ p: 2 }}>
+                  <Assets selectedTask={selectedTask} />
+                </Box>}
+              </div>
+            </Grid>
+          } onMobileNode={
+            <MobileDrawer open={mobileDrawerOpen} onClose={() => { setMobileDrawerOpen(false)}} content={<Assets selectedTask={selectedTask} />} />
+          } />
       </Grid>
 
     </Box>

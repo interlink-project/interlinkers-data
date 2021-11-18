@@ -66,7 +66,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const Assets = ({ selectedTask }) => {
 
-  const { assets } = selectedTask
+  const { assets = [] } = selectedTask
   const AddNewAssetButton = () => <Button sx={{ mt: 2 }} variant="contained" fullWidth>Add new asset</Button>
 
   const Asset = ({ asset }) => {

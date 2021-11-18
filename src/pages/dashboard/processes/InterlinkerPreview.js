@@ -7,8 +7,8 @@ import {
     DialogTitle,
     DialogContent,
     DialogContentText, Skeleton, Typography, SvgIcon, List, ListItem, ListItemText, ListItemAvatar, Avatar
-} from '@material-ui/core'; import { interlinkersApi } from '../../../__fakeApi__/interlinkersApi';
-import { assetsApi } from '../../../__fakeApi__/assetsApi';
+} from '@material-ui/core'; import { interlinkersApi } from '__fakeApi__';
+import { assetsApi } from '__fakeApi__';
 import useMounted from '../../../hooks/useMounted';
 import { LoadingButton } from '@material-ui/lab';
 

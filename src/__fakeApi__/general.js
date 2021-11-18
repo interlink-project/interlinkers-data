@@ -1,4 +1,4 @@
-import axiosInstance from '../axios';
+import axiosInstance from 'axiosInstance';
 
 export default class GeneralApi {
   constructor(url) {

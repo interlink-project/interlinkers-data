@@ -1,6 +1,10 @@
-import { assetsApi } from './assetsApi';
-import { coproductionProcessesApi } from './processesApi';
-import { teamsApi } from './teamsApi';
-import { taskinstantiationsApi } from './taskinstantiationsApi';
+import { assetsApi } from './coproduction/assetsApi';
+import { coproductionProcessesApi } from './coproduction/coproductionProcessesApi';
+import { taskinstantiationsApi } from './coproduction/taskinstantiationsApi';
+import { phaseinstantiationsApi } from './coproduction/phaseinstantiationsApi';
+import { objectiveinstantiationsApi } from './coproduction/objectiveinstantiationsApi';
 
-export {assetsApi, coproductionProcessesApi, teamsApi, taskinstantiationsApi}
+import { teamsApi } from './teamsApi';
+
+
+export { assetsApi, coproductionProcessesApi, teamsApi, taskinstantiationsApi, phaseinstantiationsApi, objectiveinstantiationsApi }

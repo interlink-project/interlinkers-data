@@ -67,7 +67,7 @@ const CoproductionProcessProfile = () => {
   const mounted = useMounted();
 
   const [currentTab, setCurrentTab] = useState(tab || "overview");
-  const { process, tree, loading } = useSelector((state) => state.process);
+  const { process, loading } = useSelector((state) => state.process);
 
 
   const theme = useTheme();
@@ -108,7 +108,7 @@ const CoproductionProcessProfile = () => {
     variant="scrollable"
     scrollButtons="auto"
 
-    orientation={!onMobile && "vertical"}
+    orientation={onMobile ? "horizontal" : "vertical"}
     aria-label="Coproduction tabs"
   >
     {tabs.map((tab) => (

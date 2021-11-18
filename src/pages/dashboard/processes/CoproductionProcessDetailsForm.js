@@ -16,7 +16,8 @@ import {
   Avatar,
 } from '@material-ui/core';
 import QuillEditor from '../../../components/QuillEditor';
-import { getImageUrl } from '../../../axios';
+import { getImageUrl } from 'axiosInstance';
+
 const CoproductionProcessDetailsForm = (props) => {
   const {
     onBack,

@@ -18,7 +18,7 @@ import {
   Typography,
 } from '@material-ui/core';
 import UsersIcon from '../../../../icons/Users';
-import { getImageUrl } from '../../../../axios';
+import { getImageUrl } from 'axiosInstance';
 
 const TeamCard = (props) => {
   const { team, ...other } = props;

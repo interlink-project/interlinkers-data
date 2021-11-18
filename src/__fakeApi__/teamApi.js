@@ -1,5 +1,5 @@
 import { addDays, subDays, subHours, subMinutes } from 'date-fns';
-import axiosInstance from '../axios';
+import axiosInstance from 'axiosInstance';
 const now = new Date();
 
 class TeamApi {

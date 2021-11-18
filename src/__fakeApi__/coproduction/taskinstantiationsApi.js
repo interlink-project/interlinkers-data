@@ -1,5 +1,5 @@
-import axiosInstance from '../axios';
-import GeneralApi from "./general"
+import axiosInstance from 'axiosInstance';
+import GeneralApi from "../general"
 
 class TaskinstantiationsApi extends GeneralApi {
   constructor() {

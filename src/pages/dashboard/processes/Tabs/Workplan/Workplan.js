@@ -1,5 +1,5 @@
-import { ToggleButton, ToggleButtonGroup, Grid } from "@material-ui/core";
-import React, { useEffect, useState } from "react";
+import { ToggleButton, ToggleButtonGroup, Grid, CircularProgress, Skeleton } from "@material-ui/core";
+import React, { useEffect, useState, useCallback } from "react";
 import $ from 'jquery';
 import colorScale from "utils/colorScale"
 import { useSelector } from 'react-redux';
@@ -7,11 +7,15 @@ import TaskDrawer from "./TaskDrawer";
 import { cleanUnderScores } from "utils/cleanUnderscores";
 import Tabs from "../Tabs";
 import CoevaluationDrawer from "./CoevaluationDrawer";
+import MobileTaskDrawer from "./MobileTaskDrawer";
+import MobileDiscriminator from "components/MobileDiscriminator";
+import useMounted from "hooks/useMounted";
 
 const Workplan = () => {
   const [viewMode, setViewMode] = useState("Week")
   const [loaded, setLoaded] = useState(false)
   const { phaseinstantiations, objectiveinstantiations, taskinstantiations, updating, selectedPhaseTab } = useSelector((state) => state.process);
+  const mounted = useMounted();
 
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [taskId, setTaskId] = useState(null);
@@ -71,6 +75,10 @@ const Workplan = () => {
     head.appendChild(style);
 
     script.onload = () => setLoaded(true);
+
+    return () => {
+      setLoaded(false);
+    };
   }, []);
 
   function stopEvent(event) {
@@ -78,40 +86,9 @@ const Workplan = () => {
     event.stopPropagation();
   }
 
-  useEffect(() => {
-    if (updating) {
-      return
-    }
-    const id = "#gantt"
-    if (loaded) {
-      const props = {
-        header_height: 50,
-        column_width: 30,
-        step: 24,
-        view_modes: ['Quarter Day', 'Half Day', 'Day', 'Week', 'Month'],
-        bar_height: 25,
-        bar_corner_radius: 3,
-        arrow_curve: 10,
-        padding: 22,
-        view_mode: viewMode,
-        date_format: 'YYYY-MM-DD',
-        custom_popup_html: null
-      }
-
-      const readOnly = true
-      if (readOnly) {
-        props.on_view_change = function () {
-          var bars = document.querySelectorAll(id + " .bar-group");
-          for (var i = 0; i < bars.length; i++) {
-            bars[i].addEventListener("mousedown", stopEvent, true);
-          }
-          var handles = document.querySelectorAll(id + " .handle-group");
-          for (var i = 0; i < handles.length; i++) {
-            handles[i].remove();
-          }
-        }
-      }
-      try {
+  const setNewGantt = useCallback(async (id, props) => {
+    try {
+      if (mounted.current) {
         new window.Gantt(id, getTasks(), props);
 
         $(".gantt-objective").each(function (index1) {
@@ -148,16 +125,49 @@ const Workplan = () => {
           text.css("fill", "black")
 
         })
-
-      } catch (error) {
-        console.log("error", error)
       }
-
+    } catch (err) {
+      console.error(err);
     }
+  }, [mounted]);
 
-  }, [loaded, viewMode, selectedPhaseTab, taskinstantiations, updating]);
+  const view_modes = ["Quarter Day", "Half Day", "Day", "Week", "Month"]
 
-  const separators = ["Quarter Day", "Half Day", "Day", "Week", "Month"]
+  useEffect(() => {
+    if (updating || !loaded) {
+      return
+    }
+    const id = "#gantt"
+    const props = {
+      header_height: 50,
+      column_width: 30,
+      step: 24,
+      view_modes: view_modes,
+      bar_height: 25,
+      bar_corner_radius: 3,
+      arrow_curve: 10,
+      padding: 22,
+      view_mode: viewMode,
+      date_format: 'YYYY-MM-DD',
+      custom_popup_html: null
+    }
+    const readOnly = true
+    if (readOnly) {
+      props.on_view_change = function () {
+        var bars = document.querySelectorAll(id + " .bar-group");
+        for (var i = 0; i < bars.length; i++) {
+          bars[i].addEventListener("mousedown", stopEvent, true);
+        }
+        var handles = document.querySelectorAll(id + " .handle-group");
+        for (var i = 0; i < handles.length; i++) {
+          handles[i].remove();
+        }
+      }
+    }
+    setNewGantt(id, props)
+
+  }, [loaded, viewMode, selectedPhaseTab, taskinstantiations, updating, setNewGantt]);
+
 
 
 
@@ -171,20 +181,22 @@ const Workplan = () => {
           fullWidth
           exclusive
           sx={{ backgroundColor: "white" }}
-          onChange={(event, view_mode) => view_mode !== viewMode && setViewMode(view_mode)}
+          onChange={(event, view_mode) => view_mode && view_mode !== viewMode && setViewMode(view_mode)}
         >
-          {separators.map((el, i) => <ToggleButton key={`separatorButton${i}`} value={el}>{el}</ToggleButton>)}
+          {view_modes.map((el, i) => <ToggleButton key={`separatorButton${i}`} value={el}>{el}</ToggleButton>)}
 
         </ToggleButtonGroup>} />
       </Grid>
       <Grid item xs={12}>
-        {!updating &&
+        {updating ? <Skeleton variant="rectangular" width={"100%"} height={"70vh"} />
+ :
           <div id="gantt" />
         }
       </Grid>
-      <TaskDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} task={selectedTask} />
       <CoevaluationDrawer open={coevaluationDrawerOpen} onClose={() => setCoevaluationDrawerOpen(false)} objective={selectedObjective} />
-
+      <MobileDiscriminator
+        defaultNode={<TaskDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} task={selectedTask} />}
+        onMobileNode={<MobileTaskDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} task={selectedTask} />} />
     </Grid>
   );
 };

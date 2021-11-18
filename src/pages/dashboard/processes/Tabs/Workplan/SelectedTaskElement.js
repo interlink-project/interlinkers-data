@@ -15,7 +15,7 @@ import {
   FormControl,
   TextField
 } from '@material-ui/core';
-import { assetsApi, taskinstantiationsApi } from '__fakeApi__';
+import { assetsApi } from '__fakeApi__';
 import {
   DesktopDateRangePicker
 } from '@material-ui/lab';
@@ -112,13 +112,11 @@ const SelectedTaskElement = ({ selectedTask, onSaved }) => {
     if(progress !== selectedTask.progress){
       data.progress = progress
     }
-
+    
+    dispatch(updateTaskinstantiation({id: selectedTask.id, data}))
     if(onSaved){
       onSaved()
     }
-    
-    const updatedData = await taskinstantiationsApi.update(selectedTask.id, data)
-    dispatch(updateTaskinstantiation(updatedData))
   }
 
   return <Box sx={{ p: 2 }}>

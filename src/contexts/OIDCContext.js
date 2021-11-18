@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { UserManager, WebStorageStateStore, Log } from 'oidc-client';
 import { IDENTITY_CONFIG, METADATA_OIDC } from '../config';
 import { useNavigate } from 'react-router';
-import axiosInstance, { setAuthHeader } from '../axios';
+import axiosInstance, { setAuthHeader } from 'axiosInstance';
 import isJwtTokenExpired from 'jwt-check-expiry';
 
 const initialState = {
