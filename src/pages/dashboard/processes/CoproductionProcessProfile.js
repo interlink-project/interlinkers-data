@@ -35,6 +35,7 @@ import { useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProcess } from '../../../slices/process';
 import { red } from '@material-ui/core/colors';
+import OverviewTab from 'pages/dashboard/processes/Tabs/Overview';
 
 const tabs = [
   { label: 'Overview', value: 'overview' },
@@ -138,32 +139,7 @@ const CoproductionProcessProfile = () => {
 
   const Content = () => <Card >
     <TabPanel value={currentTab} index="overview">
-      <div style={{minHeight: "85vh" }}>
-      <TextField
-        fullWidth
-        disabled
-        id="filled-required"
-        label="Name of the project"
-        variant="filled"
-        sx={{ m: 2 }}
-      />
-      <TextField
-        fullWidth
-        disabled
-        id="filled-required"
-        label="Short description of the project"
-        variant="filled"
-        sx={{ m: 2 }}
-      />
-      <TextField
-        fullWidth
-        disabled
-        id="filled-required"
-        label="Aim of the project"
-        variant="filled"
-        sx={{ m: 2 }}
-      />
-      </div>
+      <OverviewTab />
     </TabPanel>
     <TabPanel value={currentTab} index="workplan">
       <Workplan />
@@ -178,9 +154,7 @@ const CoproductionProcessProfile = () => {
 
   </Card>
 
-  const ContentSkeleton = () => loading || !process ? <Skeleton variant="rectangular" width="100%">
-    <div style={{ paddingTop: '57%' }} />
-  </Skeleton> : <Content />
+  const ContentSkeleton = () => loading || !process ? <Skeleton sx={{minHeight: "85vh"}}variant="rectangular" width="100%" />: <Content />
   return (
     <>
       <Helmet>

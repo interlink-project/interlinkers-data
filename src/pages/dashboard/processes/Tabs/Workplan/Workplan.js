@@ -1,4 +1,5 @@
 import { ToggleButton, ToggleButtonGroup, Grid, CircularProgress, Skeleton } from "@material-ui/core";
+import useSettings from 'hooks/useSettings';
 import React, { useEffect, useState, useCallback } from "react";
 import $ from 'jquery';
 import colorScale from "utils/colorScale"
@@ -11,7 +12,10 @@ import MobileTaskDrawer from "./MobileTaskDrawer";
 import MobileDiscriminator from "components/MobileDiscriminator";
 import useMounted from "hooks/useMounted";
 
+
 const Workplan = () => {
+  const { settings } = useSettings();
+
   const [viewMode, setViewMode] = useState("Week")
   const [loaded, setLoaded] = useState(false)
   const { phaseinstantiations, objectiveinstantiations, taskinstantiations, updating, selectedPhaseTab } = useSelector((state) => state.process);
@@ -91,8 +95,20 @@ const Workplan = () => {
       if (mounted.current) {
         new window.Gantt(id, getTasks(), props);
 
+        if(settings.theme === "DARK"){
+          $(".gantt .grid-header").css("fill", "#293142")
+          $(".gantt .grid-row").css("fill", "#1c2531")
+          $(".gantt .grid-row:nth-child(even)").css("fill", "#293142")
+          $(".gantt .tick").css("stroke", "#606060")
+          $(".gantt .upper-text").css("fill", "white")
+          $(".gantt .lower-text").css("fill", "white")
+          
+          
+        }
+
         $(".gantt-objective").each(function (index1) {
           const id = $(this).attr("data-id")
+          const objectiveinstantiation = objectiveinstantiations.find(o => o.id === id)
           $(this).on("click", function () {
             setObjectiveId(id)
             setCoevaluationDrawerOpen(true)
@@ -100,17 +116,28 @@ const Workplan = () => {
 
           const bar = $(this).children().first().children(".bar").first()
           const progressBar = $(this).children().first().children(".bar-progress").first()
-          progressBar.css("fill", colorScale(objectiveinstantiations.find(objectiveinstantiation => objectiveinstantiation.id === id).progress / 100).toString())
+          progressBar.css("fill", colorScale(objectiveinstantiation.progress / 100).toString())
           let text = $(this).children().first().children(".bar-label").first()
 
           text.css("font-weight", "800")
           text.css("font-size", "15px")
-          text.css("fill", "#282b28")
+          
+          if(settings.theme === "DARK"){
+            if(objectiveinstantiation.start_date && objectiveinstantiation.end_date){
+              text.css("fill", "#282b28")
+            }else{
+              text.css("fill", "white")
+            }
+            
+          }else{
+            text.css("fill", "#282b28")
+          }
 
         })
 
         $(".gantt-task").each(function (index1) {
           const id = $(this).attr("data-id")
+          const task = taskinstantiations.find(t => t.id === id)
 
           $(this).on("click", function () {
             setTaskId(id)
@@ -118,13 +145,28 @@ const Workplan = () => {
           });
           const bar = $(this).children().first().children(".bar").first()
           const progressBar = $(this).children().first().children(".bar-progress").first()
-          progressBar.css("fill", colorScale(taskinstantiations.find(task => task.id === id).progress / 100).toString())
+          progressBar.css("fill", colorScale(task.progress / 100).toString())
 
           let text = $(this).children().first().children(".bar-label").first()
           text.css("font-weight", "600")
-          text.css("fill", "black")
+
+          if(settings.theme === "DARK"){
+            if(task.start_date && task.end_date){
+              text.css("fill", "black")
+            }else{
+              text.css("fill", "white")
+            }
+            
+          }else{
+            text.css("fill", "black")
+          }
+          
 
         })
+
+        
+       
+      
       }
     } catch (err) {
       console.error(err);
@@ -180,7 +222,7 @@ const Workplan = () => {
           value={viewMode}
           fullWidth
           exclusive
-          sx={{ backgroundColor: "white" }}
+          sx={{ backgroundColor: "background.paper" }}
           onChange={(event, view_mode) => view_mode && view_mode !== viewMode && setViewMode(view_mode)}
         >
           {view_modes.map((el, i) => <ToggleButton key={`separatorButton${i}`} value={el}>{el}</ToggleButton>)}
