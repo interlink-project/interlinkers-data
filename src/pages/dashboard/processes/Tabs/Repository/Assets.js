@@ -109,14 +109,16 @@ const Assets = ({ selectedTask }) => {
         />
       </Search>
     </Paper>
-    <Grid container spacing={1} sx={{ mt: 1 }}>
-      {assets.length === 0 ?
-        <Alert severity="warning">No assets yet for this task. Instantiate an interlinker, please.</Alert>
-        : assets.map(asset =>
+
+    {assets.length === 0 ?
+      <Alert severity="warning" sx={{mt: 2}}>No assets yet for this task. Instantiate an interlinker, please.</Alert>
+      : <Grid container spacing={1} sx={{ mt: 1 }}>{
+        assets.map(asset =>
           <Grid item key={asset.id} xl={3} lg={4} md={6} sm={6}>
             <Asset asset={asset} />
           </Grid>)}
-    </Grid><AddNewAssetButton /></>
+      </Grid>}
+    <AddNewAssetButton /></>
 }
 
 

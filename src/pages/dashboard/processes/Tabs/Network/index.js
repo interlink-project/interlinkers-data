@@ -16,7 +16,7 @@ const GraphTab = () => {
     });
 
     return (
-        <div style={{ height: '70vh' }}>
+        <div style={{ height: '85vh' }}>
             <Graph
                 data={tolstoy}
                 NodeComponent={Node}

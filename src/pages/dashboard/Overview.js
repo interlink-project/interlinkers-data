@@ -26,8 +26,20 @@ import { Link as RouterLink } from 'react-router-dom';
 import { coproductionProcessesApi } from '__fakeApi__';
 import ArrowRightIcon from '@material-ui/icons/ChevronRight';
 import { getImageUrl } from '../../axiosInstance';
-import "./overview.css"
 
+const sameWidthCards = {
+  xs: 12,
+  md: 6,
+  lg: 4,
+  xl: 3,
+}
+const sameHeightCards = {
+  minHeight: "200px",
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between"
+}
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -99,7 +111,7 @@ const Overview = () => {
 
     return (
       <CardActionArea component={RouterLink} to={link}>
-        <Card>
+        <Card style={sameHeightCards}>
           <Box
             sx={{
               alignItems: 'center',
@@ -153,7 +165,7 @@ const Overview = () => {
 
   const SkeletonCard = () => {
     return (
-      <Card>
+      <Card style={sameHeightCards}>
         <Box
           sx={{
             alignItems: 'center',
@@ -195,17 +207,17 @@ const Overview = () => {
     );
   };
 
-  const SkeletonGrid = () => <><Grid item xs={12} md={6} lg={4} xl={3}>
+  const SkeletonGrid = () => <><Grid item {...sameWidthCards}>
     <SkeletonCard />
-  </Grid><Grid item xs={12} md={6} lg={4} xl={3}>
+  </Grid><Grid item {...sameWidthCards}>
       <SkeletonCard />
-    </Grid><Grid item xs={12} md={6} lg={4} xl={3}>
+    </Grid><Grid item {...sameWidthCards}>
       <SkeletonCard />
-    </Grid><Grid item xs={12} md={6} lg={4} xl={3}>
+    </Grid><Grid item {...sameWidthCards}>
       <SkeletonCard />
-    </Grid><Grid item xs={12} md={6} lg={4} xl={3}>
+    </Grid><Grid item {...sameWidthCards}>
       <SkeletonCard />
-    </Grid><Grid item xs={12} md={6} lg={4} xl={3}>
+    </Grid><Grid item {...sameWidthCards}>
       <SkeletonCard />
     </Grid></>
 
@@ -281,8 +293,8 @@ const Overview = () => {
               )}
               {!loading && processes && processes.length > 0 && (
                 <>
-                  <Grid item xs={12} md={6} lg={4} xl={3} >
-                    <Card>
+                  <Grid item {...sameWidthCards} >
+                    <Card style={sameHeightCards}>
 
                       <Button variant="contained" sx={{ height: "100%", fontSize: "20px" }}>
                         New coproduction process
@@ -290,7 +302,7 @@ const Overview = () => {
                     </Card>
                   </Grid>
                   {processes.map((process, i) => (
-                    <Grid item xs={12} md={6} lg={4} xl={3} key={process.id}>
+                    <Grid item {...sameWidthCards} key={process.id}>
                       <OverviewCard
                         link={`/dashboard/coproductionprocesses/${process.id}`}
                         title={process.artefact.name}

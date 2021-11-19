@@ -16,17 +16,17 @@ import {
   Typography,
   Card,
   Skeleton,
-  Breadcrumbs,
+  CardHeader,
   TextField,
   Grid,
-
   useMediaQuery,
   useTheme,
+  
 } from '@material-ui/core';
 import useMounted from '../../../hooks/useMounted';
 import DotsVerticalIcon from '../../../icons/DotsVertical';
 import gtm from '../../../lib/gtm';
-import { NavigateNext } from '@material-ui/icons';
+import { MoreVert, NavigateNext } from '@material-ui/icons';
 import Repository from './Tabs/Repository/Repository';
 import MobileRepository from './Tabs/Repository/MobileRepository';
 import Workplan from './Tabs/Workplan/Workplan';
@@ -34,6 +34,7 @@ import Network from './Tabs/Network';
 import { useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProcess } from '../../../slices/process';
+import { red } from '@material-ui/core/colors';
 
 const tabs = [
   { label: 'Overview', value: 'overview' },
@@ -71,7 +72,7 @@ const CoproductionProcessProfile = () => {
 
 
   const theme = useTheme();
-  const onMobile = !useMediaQuery(theme.breakpoints.up('sm'));
+  const onMobile = !useMediaQuery(theme.breakpoints.up('md'));
 
   useEffect(() => {
     gtm.push({ event: 'page_view' });
@@ -101,7 +102,21 @@ const CoproductionProcessProfile = () => {
 
 
 
-  const Tabss = () => <Tabs
+  const Tabss = () => <Card sx={{ mr: onMobile ? 0 : 2, mb: onMobile ? 1: 0 }}>
+  <CardHeader
+    avatar={
+      <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+        {process && process.artefact.name[0]}
+      </Avatar>
+    }
+    action={
+      <IconButton aria-label="settings">
+        <MoreVert />
+      </IconButton>
+    }
+    title={process && process.artefact.name}
+    subheader={process && process.artefact.artefact_type}
+  /><Tabs
     indicatorColor="secondary"
     onChange={handleTabsChange}
     value={currentTab}
@@ -116,19 +131,21 @@ const CoproductionProcessProfile = () => {
         key={tab.value}
         label={tab.label}
         value={tab.value}
+        sx={{mb: onMobile ? 0: 1}}
       />
     ))}
-  </Tabs>
+  </Tabs></Card>
 
   const Content = () => <Card >
     <TabPanel value={currentTab} index="overview">
+      <div style={{minHeight: "85vh" }}>
       <TextField
         fullWidth
         disabled
         id="filled-required"
         label="Name of the project"
         variant="filled"
-        sx={{ mt: 2 }}
+        sx={{ m: 2 }}
       />
       <TextField
         fullWidth
@@ -136,7 +153,7 @@ const CoproductionProcessProfile = () => {
         id="filled-required"
         label="Short description of the project"
         variant="filled"
-        sx={{ mt: 2 }}
+        sx={{ m: 2 }}
       />
       <TextField
         fullWidth
@@ -144,8 +161,9 @@ const CoproductionProcessProfile = () => {
         id="filled-required"
         label="Aim of the project"
         variant="filled"
-        sx={{ mt: 2 }}
+        sx={{ m: 2 }}
       />
+      </div>
     </TabPanel>
     <TabPanel value={currentTab} index="workplan">
       <Workplan />
@@ -175,88 +193,6 @@ const CoproductionProcessProfile = () => {
           minHeight: '100%'
         }}
       >
-
-        <Container maxWidth='xl'>
-          <Breadcrumbs
-            separator={<NavigateNext fontSize="small" />}
-            aria-label="breadcrumb"
-          >
-            eo / eo /eo
-          </Breadcrumbs>
-          <Box
-            sx={{
-              alignItems: 'center',
-              display: 'flex',
-              mt: 5,
-              position: 'relative'
-            }}
-          >
-            {loading || !process ? <Skeleton variant="circular" sx={{
-              border: (theme) => `4px solid ${theme.palette.background.default}`,
-              height: 120,
-              left: 24,
-              position: 'absolute',
-              width: 120
-            }} /> : <Avatar
-              src=""
-              sx={{
-                border: (theme) => `4px solid ${theme.palette.background.default}`,
-                height: 120,
-                left: 24,
-                position: 'absolute',
-                width: 120
-              }}
-            />}
-
-            <Box sx={{ ml: '160px' }}>
-              <Typography
-                color='textSecondary'
-                variant='overline'
-              >
-                Coproduction process for
-              </Typography>
-              <Typography
-                color='textPrimary'
-                variant='h5'
-              >
-                {loading || !process ? <Skeleton /> : process.artefact.name}
-              </Typography>
-            </Box>
-            <Box sx={{ flexGrow: 1 }} />
-            <Box
-              sx={{
-                display: {
-                  md: 'block',
-                  xs: 'none'
-                }
-              }}
-            >
-              <Button
-                color='primary'
-                size='small'
-                sx={{ ml: 1 }}
-                variant='outlined'
-              >
-                Edit
-              </Button>
-              <Button
-                color='primary'
-                component={RouterLink}
-                size='small'
-                sx={{ ml: 1 }}
-                to='/dashboard/chat'
-                variant='contained'
-              >
-                Save
-              </Button>
-            </Box>
-            <Tooltip title='More options'>
-              <IconButton sx={{ ml: 1 }}>
-                <DotsVerticalIcon fontSize='small' />
-              </IconButton>
-            </Tooltip>
-          </Box>
-        </Container>
         <Box sx={{ mt: 5 }}>
           <Container maxWidth='xl'>
             {onMobile ?

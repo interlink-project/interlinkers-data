@@ -13,6 +13,14 @@ class CoproductionProcessesApi extends GeneralApi {
       return res.data
     }
   }
+
+  async getTree(id) {
+    if (id) {
+      const res = await axiosInstance.get(`/${this.url}/${id}/tree`)
+      console.log('get tree', res.data);
+      return res.data
+    }
+  }
 }
 
 export const coproductionProcessesApi = new CoproductionProcessesApi();

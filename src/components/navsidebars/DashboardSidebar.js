@@ -150,7 +150,7 @@ const DashboardSidebar = (props) => {
             backgroundColor: 'background.paper',
             height: 'calc(100% - 64px) !important',
             top: '64px !Important',
-            width: 280
+            width: 220
           }
         }}
         variant='permanent'
@@ -168,7 +168,7 @@ const DashboardSidebar = (props) => {
       PaperProps={{
         sx: {
           backgroundColor: 'background.paper',
-          width: 280
+          width: 220
         }
       }}
       variant='temporary'
