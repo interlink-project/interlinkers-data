@@ -1,14 +1,15 @@
 import React from 'react';
-import { colorSwitch } from './helpers';
-import tolstoy from './tolstoy';
+import { colorSwitch, familyMatchChecker } from './helpers';
+import { useSelector } from 'react-redux';
 
 
-const Line = ({ link, ...restProps }) => {
+const Line = ({ link, graph, ...restProps }) => {
     let familyMatch;
+    const { network } = useSelector((state) => state.process);
 
-    tolstoy.nodes.find(obj => {
+    network.nodes.find(obj => {
         if ((obj.id === link.source || obj.id === link.source.id) && obj.family) {
-            familyMatch = obj.family.match(/Tolst|Trubetsk|Volkonsk|Gorchakov/);
+            familyMatch = familyMatchChecker(obj.family);
         }
         return null
     });

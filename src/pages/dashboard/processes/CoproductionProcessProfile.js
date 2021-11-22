@@ -30,7 +30,7 @@ import { MoreVert, NavigateNext } from '@material-ui/icons';
 import Repository from './Tabs/Repository/Repository';
 import MobileRepository from './Tabs/Repository/MobileRepository';
 import Workplan from './Tabs/Workplan/Workplan';
-import Network from './Tabs/Network';
+import Network from './Tabs/Network2';
 import { useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProcess } from '../../../slices/process';

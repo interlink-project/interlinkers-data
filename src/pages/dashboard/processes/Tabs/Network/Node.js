@@ -1,5 +1,5 @@
 import React from 'react';
-import { colorSwitch } from './helpers';
+import { colorSwitch, familyMatchChecker } from './helpers';
 
 
 const fontSize = 14;
@@ -7,7 +7,7 @@ const radius = 10;
 
 const Node = ({ node }) => {
     // colors
-    const familyMatch = node.family.match(/Tolst|Trubetsk|Volkonsk|Gorchakov/);
+    const familyMatch = familyMatchChecker(node.family);
     const stroke = colorSwitch(familyMatch);
 
     // sizes
@@ -18,7 +18,7 @@ const Node = ({ node }) => {
         textY: radius / 2,
     };
     const sizesImg = {
-        radius: 30,
+        radius: 20,
         textSize: fontSize,
         textX: 30 * 1.5,
         textY: 30 / 2,
@@ -53,7 +53,7 @@ const Node = ({ node }) => {
                     x={node.img ? sizesImg.radius + 7 : sizes.radius + 7}
                     y={node.img ? (sizesImg.radius / 2) - sizesImg.textSize : sizes.radius / 2}
                 >
-                    {node.family}
+                    {node.name}
                 </text>
             </g>
         </>

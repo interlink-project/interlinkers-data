@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { coproductionProcessesApi, taskinstantiationsApi, objectiveinstantiationsApi, phaseinstantiationsApi} from '../__fakeApi__';
 import moment from "moment"
+import generateGraph from 'pages/dashboard/processes/Tabs/Network/graph';
 
 const initialState = {
   loading: false,
@@ -10,6 +11,7 @@ const initialState = {
   taskinstantiations: [],
   objectiveinstantiations: [],
   phaseinstantiations: [],
+  network: null,
   selectedPhaseTab: "engage"
 };
 
@@ -109,6 +111,7 @@ const slice = createSlice({
     },
     setProcess(state, action) {
       state.process = action.payload;
+      state.network = generateGraph(state.process);
     },
     setPhaseInstantiations(state, action) {
       state.phaseinstantiations = action.payload.data;

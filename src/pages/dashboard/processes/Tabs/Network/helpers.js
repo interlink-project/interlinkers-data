@@ -4,16 +4,16 @@ export const colorSwitch = (familyMatch) => {
 
     if (familyMatch) {
         switch (familyMatch[0]) {
-        case('Tolst'):
+        case('stakeholder'):
             color = 'seagreen';
             break;
-        case('Trubetsk'):
+        case('main'):
             color = 'salmon';
             break;
-        case('Volkonsk'):
+        case('working'):
             color = 'blue';
             break;
-        case('Gorchakov'):
+        case('other2'):
             color = 'skyblue';
             break;
         default:
@@ -23,3 +23,5 @@ export const colorSwitch = (familyMatch) => {
 
     return color;
 };
+
+export const familyMatchChecker = (str) => str.match(/main|working|stakeholder/);
