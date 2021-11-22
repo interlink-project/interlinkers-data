@@ -62,18 +62,23 @@ const DashboardNavbar = (props) => {
         <Box sx={{ ml: 1 }}>
           <ContentSearch />
         </Box>
-        <Box sx={{ ml: 1 }}>
-          <NotificationsPopover />
-        </Box>
+        {!onMobile &&
+          <>
+            <Box sx={{ ml: 1 }}>
+              <NotificationsPopover />
+            </Box>
+            <Box sx={{ ml: 2 }}>
+              <AccountPopover />
+            </Box>
+          </>
+        }
         {/*
           <Box sx={{ ml: 1 }}>
             <ContactsPopover />
           </Box>
 
         */}
-        <Box sx={{ ml: 2 }}>
-          <AccountPopover />
-        </Box>
+
       </Toolbar>
     </DashboardNavbarRoot>
   );

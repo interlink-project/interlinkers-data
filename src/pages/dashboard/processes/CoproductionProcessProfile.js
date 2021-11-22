@@ -36,6 +36,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getProcess } from '../../../slices/process';
 import { red } from '@material-ui/core/colors';
 import OverviewTab from 'pages/dashboard/processes/Tabs/Overview';
+import MainSkeleton from 'pages/dashboard/processes/Tabs/MainSkeleton';
+import { getImageUrl } from 'axiosInstance';
 
 const tabs = [
   { label: 'Overview', value: 'overview' },
@@ -63,12 +65,11 @@ function TabPanel(props) {
 }
 
 const CoproductionProcessProfile = () => {
-  let { processId, tab } = useParams();
+  let { processId, tab = "overview" } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const mounted = useMounted();
 
-  const [currentTab, setCurrentTab] = useState(tab || "overview");
   const { process, loading } = useSelector((state) => state.process);
 
 
@@ -93,12 +94,8 @@ const CoproductionProcessProfile = () => {
     getCoproductionProcess();
   }, [getCoproductionProcess]);
 
-  useEffect(() => {
-    navigate(`/dashboard/coproductionprocesses/${processId}/${currentTab}`);
-  }, [currentTab]);
-
   const handleTabsChange = (event, value) => {
-    setCurrentTab(value);
+    navigate(`/dashboard/coproductionprocesses/${processId}/${value}`);
   };
 
 
@@ -106,8 +103,8 @@ const CoproductionProcessProfile = () => {
   const Tabss = () => <Card sx={{ mr: onMobile ? 0 : 2, mb: onMobile ? 1: 0 }}>
   <CardHeader
     avatar={
-      <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-        {process && process.artefact.name[0]}
+      <Avatar variant="square" sx={process && !process.logotype && { bgcolor: red[500] }} aria-label="recipe" src={process && process.logotype && getImageUrl(process.logotype)}>
+        {process && !process.logotype && process.name[0]}
       </Avatar>
     }
     action={
@@ -115,12 +112,12 @@ const CoproductionProcessProfile = () => {
         <MoreVert />
       </IconButton>
     }
-    title={process && process.artefact.name}
-    subheader={process && process.artefact.artefact_type}
+    title={process && process.name}
+    subheader={process && process.artefact_type}
   /><Tabs
     indicatorColor="secondary"
     onChange={handleTabsChange}
-    value={currentTab}
+    value={tab}
     variant="scrollable"
     scrollButtons="auto"
 
@@ -138,23 +135,23 @@ const CoproductionProcessProfile = () => {
   </Tabs></Card>
 
   const Content = () => <Card >
-    <TabPanel value={currentTab} index="overview">
+    <TabPanel value={tab} index="overview">
       <OverviewTab />
     </TabPanel>
-    <TabPanel value={currentTab} index="workplan">
+    <TabPanel value={tab} index="workplan">
       <Workplan />
     </TabPanel>
-    <TabPanel value={currentTab} index="repository">
+    <TabPanel value={tab} index="repository">
     <Repository />
     </TabPanel>
-    <TabPanel value={currentTab} index="network">
+    <TabPanel value={tab} index="network">
       <Network />
     </TabPanel>
 
 
   </Card>
 
-  const ContentSkeleton = () => loading || !process ? <Skeleton sx={{minHeight: "85vh"}}variant="rectangular" width="100%" />: <Content />
+  const ContentSkeleton = () => loading || !process ? <MainSkeleton /> : <Content />
   return (
     <>
       <Helmet>
@@ -176,10 +173,10 @@ const CoproductionProcessProfile = () => {
               </>
               :
               <Grid container>
-                <Grid item xl={2} lg={2} md={2} xs={2}>
+                <Grid item xl={2} lg={2} md={3} xs={3}>
                   <Tabss />
                 </Grid>
-                <Grid item xl={10} lg={10} md={10} xs={10}>
+                <Grid item xl={10} lg={10} md={9} xs={9}>
                   <ContentSkeleton />
                 </Grid>
               </Grid>

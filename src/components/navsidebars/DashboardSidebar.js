@@ -17,7 +17,7 @@ const sections = [
     title: 'Platforms',
     items: [
       {
-        title: 'Overview',
+        title: 'My workspace',
         path: '/dashboard',
         icon: <DashboardIcon fontSize='small' />
       },

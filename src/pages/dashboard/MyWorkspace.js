@@ -65,7 +65,7 @@ function TabPanel(props) {
   );
 }
 
-const Overview = () => {
+const MyWorkspace = () => {
   const { settings } = useSettings();
   const auth = useAuth();
   const { user } = auth;
@@ -99,7 +99,7 @@ const Overview = () => {
     getCoproductionProcesses();
   }, [getCoproductionProcesses]);
 
-  const OverviewCard = ({
+  const MyWorkspaceCard = ({
     link,
     title,
     subtitle,
@@ -224,7 +224,7 @@ const Overview = () => {
   return (
     <>
       <Helmet>
-        <title>Dashboard: Overview</title>
+        <title>Dashboard: MyWorkspace</title>
       </Helmet>
       <Box
         sx={{
@@ -240,7 +240,7 @@ const Overview = () => {
             <Grid container justifyContent='space-between' item xs={12}>
               <Grid item>
                 <Typography color='textSecondary' variant='overline'>
-                  Overview
+                  MyWorkspace
                 </Typography>
                 <Typography color='textPrimary' variant='h5'>
                   Welcome, {user.given_name}
@@ -270,7 +270,7 @@ const Overview = () => {
           <Box sx={{ width: '100%', bgcolor: 'background.paper', mt: 3 }}>
             <Tabs value={value} onChange={handleChange} variant="scrollable"
               scrollButtons="auto"
-              aria-label="coproduction processes overview tabs">
+              aria-label="coproduction processes myworkspace tabs">
               <Tab label="My projects" />
               <Tab label="All projects" />
               <Tab label="My teams" />
@@ -303,11 +303,11 @@ const Overview = () => {
                   </Grid>
                   {processes.map((process, i) => (
                     <Grid item {...sameWidthCards} key={process.id}>
-                      <OverviewCard
+                      <MyWorkspaceCard
                         link={`/dashboard/coproductionprocesses/${process.id}`}
-                        title={process.artefact.name}
-                        subtitle={process.artefact.artefact_type}
-                        description={truncate(process.artefact.description, {
+                        title={process.name}
+                        subtitle={process.artefact_type}
+                        description={truncate(process.description, {
                           length: 100,
                           separator: ' ',
                         })}
@@ -315,7 +315,7 @@ const Overview = () => {
                         component={
                           <img
                             src={
-                              getImageUrl(process.artefact.logotype) ||
+                              getImageUrl(process.logotype) ||
                               'https://blogs.oregonstate.edu/acobamo/wp-content/themes/koji/assets/images/default-fallback-image.png'
                             }
                             width='80px'
@@ -339,4 +339,4 @@ const Overview = () => {
   );
 };
 
-export default Overview;
+export default MyWorkspace;

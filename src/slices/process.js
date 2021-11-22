@@ -86,8 +86,7 @@ const slice = createSlice({
   name: 'process',
   initialState,
   reducers: {
-    setProcess(state, action) {
-      state.process = action.payload.data;
+    setProcessTree(state, action) {
 
       const phaseinstantiations = []
       const objectiveinstantiations = []
@@ -95,7 +94,7 @@ const slice = createSlice({
 
       // separate tree into groups
 
-      action.payload.treeData.forEach(phaseinstantiation => {
+      action.payload.forEach(phaseinstantiation => {
         phaseinstantiation.objectiveinstantiations.forEach(objectiveinstantiation => {
           objectiveinstantiation.taskinstantiations.forEach(taskinstantiation => {
             taskinstantiations.push(taskinstantiation)
@@ -108,7 +107,7 @@ const slice = createSlice({
       state.objectiveinstantiations = objectiveinstantiations;
       state.phaseinstantiations = phaseinstantiations;
     },
-    setProcess2(state, action) {
+    setProcess(state, action) {
       state.process = action.payload;
     },
     setPhaseInstantiations(state, action) {
@@ -146,7 +145,6 @@ const slice = createSlice({
     updateProgressOfObjective(state, action) {
       fnUpdateProgressOfObjective(state, action.payload)
     },
-
     updatePhaseInstantiation(state, action) {
       state.phaseinstantiations = state.phaseinstantiations.map(obj => obj.id === action.payload.id ? action.payload : obj);
     },
@@ -156,7 +154,6 @@ const slice = createSlice({
     updateTaskInstantiation(state, action) {
       state.taskinstantiations = state.taskinstantiations.map(obj => obj.id === action.payload.id ? action.payload : obj);
     },
-
     setLoading(state, action) {
       state.loading = action.payload;
     },
@@ -173,10 +170,20 @@ export const { reducer } = slice;
 
 export const getProcess = (processId) => async (dispatch) => {
   dispatch(slice.actions.setLoading(true));
-  const data = await coproductionProcessesApi.get(processId);
-  const treeData = await coproductionProcessesApi.getTree(processId);
-  dispatch(slice.actions.setProcess({ data, treeData }));
+  const [data, treeData] = await Promise.all([coproductionProcessesApi.get(processId), coproductionProcessesApi.getTree(processId)])
+  dispatch(slice.actions.setProcess(data));
+  dispatch(slice.actions.setProcessTree(treeData));
   dispatch(slice.actions.setLoading(false));
+};
+
+export const updateProcess = ({id, data, onSuccess}) => async (dispatch) => {
+  dispatch(slice.actions.setUpdating(true));
+  const updatedData = await coproductionProcessesApi.update(id, data);
+  dispatch(slice.actions.setProcess(updatedData));
+  dispatch(slice.actions.setUpdating(false));
+  if(onSuccess){
+    onSuccess()
+  }
 };
 
 

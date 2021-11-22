@@ -30,7 +30,7 @@ const TeamDetails = Loadable(
   lazy(() => import('../pages/dashboard/teams/TeamDetails'))
 );
 
-const Overview = Loadable(lazy(() => import('../pages/dashboard/Overview')));
+const MyWorkspace = Loadable(lazy(() => import('../pages/dashboard/MyWorkspace')));
 
 export const routes = [
   {
@@ -43,7 +43,7 @@ export const routes = [
     children: [
       {
         path: '/',
-        element: <Overview />,
+        element: <MyWorkspace />,
       },
 
       {
