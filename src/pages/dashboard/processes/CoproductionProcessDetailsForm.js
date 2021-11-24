@@ -42,7 +42,6 @@ const CoproductionProcessDetailsForm = (props) => {
           .min(22, 'Must be at least 15 characters')
           // min 22 bc <p></p> tags are 7 chars
           .required('Required'),
-        artefact_type: Yup.string().required('Field is required'),
         keywords: Yup.array(),
       })}
       onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
@@ -192,82 +191,7 @@ const CoproductionProcessDetailsForm = (props) => {
               />
             </Box>
           </Box>
-          <Box
-            sx={{
-              justifyContent: 'center',
-              display: 'flex',
-              mt: 2,
-            }}
-          >
-            <Typography color='textPrimary' variant='overline'>
-              Artefact type
-            </Typography>
-          </Box>
-          <Box
-            sx={{
-              alignItems: 'center',
-              justifyContent: 'center',
-              display: 'flex',
-              mt: 1,
-            }}
-          >
-            <ToggleButtonGroup
-              exclusive
-              onChange={(event, value) => {
-                if (value) {
-                  setFieldTouched('artefact_type');
-                  setFieldValue('artefact_type', value);
-                }
-              }}
-              value={values.artefact_type}
-              fullWidth
-              color={
-                values.artefact_type === 'interlinker' ? 'primary' : 'secondary'
-              }
-              label='Artefact type'
-              name='artefact_type'
-              size='large'
-            >            
-            <ToggleButton value='publicservice'>Public service</ToggleButton>
-
-              <ToggleButton value='interlinker'>Interlinker</ToggleButton>
-            </ToggleButtonGroup>
-            {Boolean(touched.artefact_type && errors.artefact_type) && (
-              <Box sx={{ mt: 2 }}>
-                <FormHelperText error>{errors.artefact_type}</FormHelperText>
-              </Box>
-            )}
-          </Box>
-          <Box
-            sx={{
-              display: 'flex',
-              mt: 6,
-            }}
-          >
-            {onBack && (
-              <Button
-                color='primary'
-                onClick={onBack}
-                size='large'
-                variant='text'
-              >
-                Previous
-              </Button>
-            )}
-            <Box sx={{ flexGrow: 1 }} />
-            <Button
-              color='primary'
-              disabled={
-                Object.keys(touched).length === 0 ||
-                isSubmitting ||
-                Object.keys(errors).length !== 0
-              }
-              type='submit'
-              variant='contained'
-            >
-              Next
-            </Button>
-          </Box>
+          
         </form>
       )}
     </Formik>

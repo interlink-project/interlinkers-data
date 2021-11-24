@@ -21,7 +21,7 @@ import {
   Grid,
   useMediaQuery,
   useTheme,
-  
+
 } from '@material-ui/core';
 import useMounted from '../../../hooks/useMounted';
 import DotsVerticalIcon from '../../../icons/DotsVertical';
@@ -31,6 +31,7 @@ import Repository from './Tabs/Repository/Repository';
 import MobileRepository from './Tabs/Repository/MobileRepository';
 import Workplan from './Tabs/Workplan/Workplan';
 import Network from './Tabs/Network2';
+import Forum from './Tabs/Forum';
 import { useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProcess } from '../../../slices/process';
@@ -100,39 +101,39 @@ const CoproductionProcessProfile = () => {
 
 
 
-  const Tabss = () => <Card sx={{ mr: onMobile ? 0 : 2, mb: onMobile ? 1: 0 }}>
-  <CardHeader
-    avatar={
-      <Avatar variant="square" sx={process && !process.logotype && { bgcolor: red[500] }} aria-label="recipe" src={process && process.logotype && getImageUrl(process.logotype)}>
-        {process && !process.logotype && process.name[0]}
-      </Avatar>
-    }
-    action={
-      <IconButton aria-label="settings">
-        <MoreVert />
-      </IconButton>
-    }
-    title={process && process.name}
-    subheader={process && process.artefact_type}
-  /><Tabs
-    indicatorColor="secondary"
-    onChange={handleTabsChange}
-    value={tab}
-    variant="scrollable"
-    scrollButtons="auto"
+  const Tabss = () => <Card sx={{ mr: onMobile ? 0 : 2, mb: onMobile ? 1 : 0 }}>
+    <CardHeader
+      avatar={
+        <Avatar variant="square" sx={process && !process.logotype && { bgcolor: red[500] }} aria-label="recipe" src={process && process.logotype && getImageUrl(process.logotype)}>
+          {process && !process.logotype && process.name[0]}
+        </Avatar>
+      }
+      action={
+        <IconButton aria-label="settings">
+          <MoreVert />
+        </IconButton>
+      }
+      title={process && process.name}
+      subheader={process && process.artefact_type}
+    /><Tabs
+      indicatorColor="secondary"
+      onChange={handleTabsChange}
+      value={tab}
+      variant="scrollable"
+      scrollButtons="auto"
 
-    orientation={onMobile ? "horizontal" : "vertical"}
-    aria-label="Coproduction tabs"
-  >
-    {tabs.map((tab) => (
-      <Tab
-        key={tab.value}
-        label={tab.label}
-        value={tab.value}
-        sx={{mb: onMobile ? 0: 1}}
-      />
-    ))}
-  </Tabs></Card>
+      orientation={onMobile ? "horizontal" : "vertical"}
+      aria-label="Coproduction tabs"
+    >
+      {tabs.map((tab) => (
+        <Tab
+          key={tab.value}
+          label={tab.label}
+          value={tab.value}
+          sx={{ mb: onMobile ? 0 : 1 }}
+        />
+      ))}
+    </Tabs></Card>
 
   const Content = () => <Card >
     <TabPanel value={tab} index="overview">
@@ -142,10 +143,13 @@ const CoproductionProcessProfile = () => {
       <Workplan />
     </TabPanel>
     <TabPanel value={tab} index="repository">
-    <Repository />
+      <Repository />
     </TabPanel>
     <TabPanel value={tab} index="network">
       <Network />
+    </TabPanel>
+    <TabPanel value={tab} index="forum">
+      <Forum />
     </TabPanel>
 
 

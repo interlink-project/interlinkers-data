@@ -214,7 +214,7 @@ const Workplan = () => {
 
 
   return (
-    <Grid container>
+    <Grid container style={{overflow: "hidden"}}>
 
       <Grid item xs={12}>
         <Tabs additionalContent={<ToggleButtonGroup

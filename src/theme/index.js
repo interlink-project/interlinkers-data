@@ -39,7 +39,8 @@ const baseOptions = {
           height: '100%'
         },
         '#nprogress .bar': {
-          zIndex: '2000 !important'
+          zIndex: '2000 !important',
+          background: '#d822a3 !important'
         }
       }
     },

@@ -7,22 +7,12 @@ import {
   Grid,
   Typography,
   Card,
-  CardContent,
-  Avatar,
-  Button,
-  Stepper,
-  Step,
-  StepLabel,
 } from '@material-ui/core';
-import useSettings from '../../../hooks/useSettings';
-import gtm from '../../../lib/gtm';
-import CoproductionProcessArtefactForm from './CoproductionProcessArtefactForm';
 import CoproductionProcessDetailsForm from './CoproductionProcessDetailsForm';
 import { teamsApi } from '../../../__fakeApi__/teamsApi';
 import useMounted from '../../../hooks/useMounted';
 
 const CoproductionProcessCreate = () => {
-  const { settings } = useSettings();
   const mounted = useMounted();
   const [teams, setTeams] = useState(null);
 
@@ -42,62 +32,19 @@ const CoproductionProcessCreate = () => {
     getData();
   }, [getData]);
 
-  useEffect(() => {
-    gtm.push({ event: 'page_view' });
-  }, []);
-
-  const [activeStep, setActiveStep] = useState(0);
-  const [completed, setCompleted] = useState(false);
-
   const [details, setDetails] = useState({
     name: 'Demo',
-    description: '<p>demo deasdfasdfasdfsc </p>',
+    description: '<p></p>',
     artefact_type: 'interlinker',
     team_id: null,
     keywords: ['demo'],
     submit: null,
   });
-  const [artefact, setArtefact] = useState({
-    target_stakeholder_groups: [],
-    nature: '',
-    administrative_scope: '',
-    specific_app_domain: [],
-    constraints: [],
-    regulations: [],
-    software_type: '',
-    software_implementation_facts: '',
-    software_customization_facts: '',
-    software_integration_facts: '',
-    knowledge_type: '',
-    knowledge_format: '',
-    // if public service
-    language: '',
-    processing_time: '',
-    location: '',
-    status: '',
-    public_organization: '',
-    output: '',
-    cost: '',
-    submit: null,
-  });
+
   const onDetailsSubmit = useCallback((values) => {
     setDetails(values);
   }, []);
-  const onArtefactSubmit = useCallback((values) => {
-    setArtefact(values);
-  }, []);
 
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
-
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
-
-  const handleComplete = () => {
-    setCompleted(true);
-  };
 
   return (
     <>
@@ -127,97 +74,11 @@ const CoproductionProcessCreate = () => {
 
           <Box sx={{ mt: 3 }}>
             <Card sx={{ p: 3 }}>
-              <Box sx={{ mt: 3 }}>
-                <Stepper activeStep={activeStep} alternativeLabel>
-                  <Step key={0}>
-                    <StepLabel>General information</StepLabel>
-                  </Step>
-                  <Step key={1}>
-                    <StepLabel>Artefact details</StepLabel>
-                  </Step>
-                </Stepper>
-              </Box>
-              {!completed ? (
-                <>
-                  {activeStep === 0 && (
-                    <CoproductionProcessDetailsForm
-                      onNext={handleNext}
-                      details={details}
-                      setDetails={onDetailsSubmit}
-                      teams={teams}
-                    />
-                  )}
-                  {activeStep === 1 && (
-                    <CoproductionProcessArtefactForm
-                      onBack={handleBack}
-                      artefact={artefact}
-                      setArtefact={onArtefactSubmit}
-                      artefact_type={details.artefact_type}
-                      onNext={handleComplete}
-                    />
-                  )}
-                </>
-              ) : (
-                <CardContent>
-                  <Box
-                    sx={{
-                      maxWidth: 450,
-                      mx: 'auto',
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                      }}
-                    >
-                      <Avatar
-                        sx={{
-                          backgroundColor: 'primary.main',
-                          color: 'primary.contrastText',
-                        }}
-                      >
-                        <StarIcon fontSize='small' />
-                      </Avatar>
-                    </Box>
-                    <Box sx={{ mt: 2 }}>
-                      <Typography
-                        align='center'
-                        color='textPrimary'
-                        variant='h3'
-                      >
-                        You are all done!
-                      </Typography>
-                    </Box>
-                    <Box sx={{ mt: 2 }}>
-                      <Typography
-                        align='center'
-                        color='textSecondary'
-                        variant='subtitle1'
-                      >
-                        Donec ut augue sed nisi ullamcorper posuere sit amet eu
-                        mauris. Ut eget mauris scelerisque.
-                      </Typography>
-                    </Box>
-                    <Box
-                      sx={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        mt: 2,
-                      }}
-                    >
-                      <Button
-                        color='primary'
-                        component={RouterLink}
-                        to='/dashboard/coproductionprocesses/1'
-                        variant='contained'
-                      >
-                        View coproductionprocess
-                      </Button>
-                    </Box>
-                  </Box>
-                </CardContent>
-              )}
+              <CoproductionProcessDetailsForm
+                details={details}
+                setDetails={onDetailsSubmit}
+                teams={teams}
+              />
             </Card>
           </Box>
         </Container>
