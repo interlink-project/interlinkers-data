@@ -139,7 +139,8 @@ const themesOptions = {
       mode: 'light',
       primary: {
         contrastText: '#ffffff',
-        main: '#0f97c7'
+        main: '#0f97c7',
+        main2: '#091a22',
       },
       success: {
         contrastText: '#ffffff',
@@ -147,7 +148,8 @@ const themesOptions = {
       },
       text: {
         primary: '#172b4d',
-        secondary: '#6b778c'
+        secondary: '#6b778c',
+        contrastMain2: '#f3f3f3'
       },
       warning: {
         contrastText: '#ffffff',

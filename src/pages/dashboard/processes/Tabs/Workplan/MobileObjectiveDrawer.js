@@ -27,8 +27,8 @@ const Puller = styled(Box)(({ theme }) => ({
   left: 'calc(50% - 15px)',
 }));
 
-function MobileTaskDrawer(props) {
-  const { window, open, onClose, task } = props;
+function MobileObjectiveDrawer(props) {
+  const { window, open, onClose, selectedObjective } = props;
 
   // This is used only for the example
   const container = window !== undefined ? () => window().document.body : undefined;
@@ -86,7 +86,7 @@ function MobileTaskDrawer(props) {
   );
 }
 
-MobileTaskDrawer.propTypes = {
+MobileObjectiveDrawer.propTypes = {
   /**
    * Injected by the documentation to work in an iframe.
    * You won't need it on your project.
@@ -94,4 +94,4 @@ MobileTaskDrawer.propTypes = {
   window: PropTypes.func,
 };
 
-export default MobileTaskDrawer;
+export default MobileObjectiveDrawer;

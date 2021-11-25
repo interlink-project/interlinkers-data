@@ -83,6 +83,7 @@ const CoproductionProcessProfile = () => {
 
   const getCoproductionProcess = useCallback(async () => {
     try {
+      
       if (mounted.current) {
         dispatch(getProcess(processId))
       }
@@ -104,7 +105,7 @@ const CoproductionProcessProfile = () => {
   const Tabss = () => <Card sx={{ mr: onMobile ? 0 : 2, mb: onMobile ? 1 : 0 }}>
     <CardHeader
       avatar={
-        <Avatar variant="square" sx={process && !process.logotype && { bgcolor: red[500] }} aria-label="recipe" src={process && process.logotype && getImageUrl(process.logotype)}>
+        <Avatar variant="square" sx={process && !process.logotype ? { bgcolor: red[500] } : {}} aria-label="recipe" src={process && process.logotype && getImageUrl(process.logotype)}>
           {process && !process.logotype && process.name[0]}
         </Avatar>
       }
@@ -176,14 +177,7 @@ const CoproductionProcessProfile = () => {
                 <ContentSkeleton />
               </>
               :
-              <Grid container>
-                <Grid item xl={2} lg={2} md={3} xs={3}>
-                  <Tabss />
-                </Grid>
-                <Grid item xl={10} lg={10} md={9} xs={9}>
-                  <ContentSkeleton />
-                </Grid>
-              </Grid>
+              <ContentSkeleton />
             }
 
           </Container>

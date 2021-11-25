@@ -73,16 +73,6 @@ function fnUpdateProgressOfPhase(state, id) {
   const phaseinstantiation = state.phaseinstantiations.find(el => el.id === id)
   updateProgressForObject(phaseinstantiation, state, "phaseinstantiation", "objectiveinstantiation")
 }
-function fnUpdateDatesOfObjective(state, id) {
-  const objectiveinstantiation = state.objectiveinstantiations.find(el => el.id === id)
-  updateDatesForObject(objectiveinstantiation, state, "objectiveinstantiation", "taskinstantiation")
-  fnUpdateDatesOfPhase(state, objectiveinstantiation.phaseinstantiation_id)
-}
-function fnUpdateProgressOfObjective(state, id) {
-  const objectiveinstantiation = state.objectiveinstantiations.find(el => el.id === id)
-  updateProgressForObject(objectiveinstantiation, state, "objectiveinstantiation", "taskinstantiation")
-  fnUpdateProgressOfPhase(state, objectiveinstantiation.phaseinstantiation_id)
-}
 
 const slice = createSlice({
   name: 'process',
@@ -122,31 +112,11 @@ const slice = createSlice({
     setTaskInstantiations(state, action) {
       state.taskinstantiations = action.payload.data;
     },
-    setProgressesAndDatesOfAll(state) {
-      // not used
-      state.phaseinstantiations.forEach(phaseinstantiation => {
-        let progress = 0
-        let count = 0
-        state.objectiveinstantiations.filter(el => el.phaseinstantiation_id === phaseinstantiation.id).forEach(objectiveinstantiation => {
-          updateDatesForObject(objectiveinstantiation, state, "objectiveinstantiation", "taskinstantiation")
-          progress += updateProgressForObject(objectiveinstantiation, state, "objectiveinstantiation", "taskinstantiation")
-          count += 1
-        });
-
-        phaseinstantiation.progress = Math.round(progress / count)
-      });
-    },
     updateDatesOfPhase(state, action) {
       fnUpdateDatesOfPhase(state, action.payload)
     },
     updateProgressOfPhase(state, action) {
       fnUpdateProgressOfPhase(state, action.payload)
-    },
-    updateDatesOfObjective(state, action) {
-      fnUpdateDatesOfObjective(state, action.payload)
-    },
-    updateProgressOfObjective(state, action) {
-      fnUpdateProgressOfObjective(state, action.payload)
     },
     updatePhaseInstantiation(state, action) {
       state.phaseinstantiations = state.phaseinstantiations.map(obj => obj.id === action.payload.id ? action.payload : obj);
@@ -189,13 +159,10 @@ export const updateProcess = ({id, data, onSuccess}) => async (dispatch) => {
   }
 };
 
-
-export const updateTaskinstantiation = ({ id, data }) => async (dispatch) => {
+export const updateTaskInstantiation = ({ id, data }) => async (dispatch) => {
   dispatch(slice.actions.setUpdating(true));
   const updatedData = await taskinstantiationsApi.update(id, data)
   dispatch(slice.actions.updateTaskInstantiation(updatedData));
-  dispatch(slice.actions.updateDatesOfObjective(updatedData.objectiveinstantiation_id));
-  dispatch(slice.actions.updateProgressOfObjective(updatedData.objectiveinstantiation_id));
   dispatch(slice.actions.setUpdating(false));
 };
 

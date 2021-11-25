@@ -111,7 +111,7 @@ const Repository = () => {
             {objectiveinstantiations.filter(el => el.phaseinstantiation_id === currentPhaseObj.id).map(objectiveinstantiation =>
               <StyledTreeItem key={objectiveinstantiation.id} nodeId={objectiveinstantiation.id} sx={{ backgroundColor: "background.paper" }} label={<p>{cleanUnderScores(objectiveinstantiation.name)}{objectiveinstantiation.start_date && <LinearProgress sx={{ mt: 1 }} color={objectiveinstantiation.progress < 30 ? "error" : objectiveinstantiation.progress < 65 ? "warning" : "success"} variant="determinate" value={objectiveinstantiation.progress} />}</p>} >
                 {taskinstantiations.filter(el => el.objectiveinstantiation_id === objectiveinstantiation.id).sort((a, b) => b.progress - a.progress).map(taskinstantiation => (
-                  <StyledTreeItem key={taskinstantiation.id} nodeId={taskinstantiation.id} label={<p>{cleanUnderScores(taskinstantiation.name)}{taskinstantiation.start_date && <LinearProgress sx={{ mt: 1 }} color={taskinstantiation.progress < 30 ? "error" : taskinstantiation.progress < 65 ? "warning" : "success"} variant="determinate" value={taskinstantiation.progress} />}</p>} />))}
+                  <StyledTreeItem key={taskinstantiation.id} nodeId={taskinstantiation.id} label={<p>{cleanUnderScores(taskinstantiation.name)}</p>} />))}
               </StyledTreeItem>)}
           </TreeView>
         </Grid>

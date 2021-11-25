@@ -36,7 +36,7 @@ const NavItem = (props) => {
           onClick={handleToggle}
           startIcon={icon}
           sx={{
-            color: 'text.secondary',
+            color: 'inherit',
             fontWeight: 'fontWeightMedium',
             justifyContent: 'flex-start',
             pl: `${paddingLeft}px`,
@@ -73,7 +73,7 @@ const NavItem = (props) => {
         component={path && RouterLink}
         startIcon={icon}
         sx={{
-          color: 'text.secondary',
+          color: 'inherit',
           fontWeight: 'fontWeightMedium',
           justifyContent: 'flex-start',
           textAlign: 'left',

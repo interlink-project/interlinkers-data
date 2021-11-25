@@ -24,7 +24,7 @@ import { ExpandMore as ExpandMoreIcon } from '@material-ui/icons';
 import { cleanUnderScores } from "utils/cleanUnderscores"
 import CircularProgressWithLabel from 'components/CircularProgress';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateTaskinstantiation } from 'slices/process';
+import { updateObjectiveInstantiation } from 'slices/process';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -38,7 +38,7 @@ const ExpandMore = styled((props) => {
 }));
 
 
-const CollapseRecommendedInterlinkers = ({ selectedTask }) => {
+const CollapseRecommendedInterlinkers = ({ selectedObjective }) => {
   const [expanded, setExpanded] = useState(false);
   const [creatingAsset, setCreatingAsset] = useState(false);
 
@@ -49,7 +49,7 @@ const CollapseRecommendedInterlinkers = ({ selectedTask }) => {
   const createAsset = async (interlinker) => {
     setCreatingAsset(true)
     const data = await assetsApi.create(
-      selectedTask.id,
+      selectedObjective.id,
       interlinker.last_version.id
     );
     console.log(data)
@@ -74,7 +74,7 @@ const CollapseRecommendedInterlinkers = ({ selectedTask }) => {
     <Collapse in={expanded} timeout="auto" unmountOnExit>
 
       <List sx={{ width: '100%' }}>
-        {selectedTask.recommended_interlinkers.map(interlinker => <ListItem key={interlinker.id} sx={{ bgcolor: 'background.default' }} button onClick={() => createAsset(interlinker)}>
+        {selectedObjective.recommended_interlinkers.map(interlinker => <ListItem key={interlinker.id} sx={{ bgcolor: 'background.default' }} button onClick={() => createAsset(interlinker)}>
           <ListItemAvatar key={interlinker.id}>
             <Avatar src={interlinker.logotype} />
           </ListItemAvatar>
@@ -87,33 +87,33 @@ const CollapseRecommendedInterlinkers = ({ selectedTask }) => {
 
 }
 
-const SelectedTaskElement = ({ selectedTask, onSaved }) => {
+const SelectedObjectiveElement = ({ selectedObjective, onSaved }) => {
   const [dateRange, setDateRange] = useState([null, null]);
   const [progress, setProgress] = useState(0);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    setDateRange([selectedTask.start_date ? new Date(selectedTask.start_date) : null, selectedTask.end_date ? new Date(selectedTask.end_date) : null])
-    setProgress(selectedTask.progress)
-  }, [selectedTask]);
+    setDateRange([selectedObjective.start_date ? new Date(selectedObjective.start_date) : null, selectedObjective.end_date ? new Date(selectedObjective.end_date) : null])
+    setProgress(selectedObjective.progress)
+  }, [selectedObjective]);
   
   const dataToSend = async () => {
     const data = { }
 
     const start_date = dateRange[0] && dateRange[0].toISOString().slice(0, 10)
     const end_date = dateRange[1] && dateRange[1].toISOString().slice(0, 10)
-    if(start_date !== selectedTask.start_date){
+    if(start_date !== selectedObjective.start_date){
       data.start_date = start_date
     }
-    if(end_date !== selectedTask.end_date){
+    if(end_date !== selectedObjective.end_date){
       data.end_date = end_date
     }
 
-    if(progress !== selectedTask.progress){
+    if(progress !== selectedObjective.progress){
       data.progress = progress
     }
     
-    dispatch(updateTaskinstantiation({id: selectedTask.id, data}))
+    dispatch(updateObjectiveInstantiation({id: selectedObjective.id, data}))
     if(onSaved){
       onSaved()
     }
@@ -123,8 +123,8 @@ const SelectedTaskElement = ({ selectedTask, onSaved }) => {
     <Grid container sx={{ mb: 2, p: 2, backgroundColor: "primary.main" }} justifyContent="space-between" alignItems="center"
     >
       <Grid item xl={8} lg={9} md={10} xs={10}>
-        <Typography variant="h6" sx={{ color: "primary.contrastText" }}>{cleanUnderScores(selectedTask.name)}</Typography>
-        <Typography paragraph sx={{ color: "primary.contrastText" }}>{selectedTask.description}</Typography>
+        <Typography variant="h6" sx={{ color: "primary.contrastText" }}>{cleanUnderScores(selectedObjective.name)}</Typography>
+        <Typography paragraph sx={{ color: "primary.contrastText" }}>{selectedObjective.description}</Typography>
       </Grid>
       <Grid item xl={4} lg={3} md={2} xs={2}>
         <CircularProgressWithLabel value={progress} size={80} />
@@ -133,7 +133,7 @@ const SelectedTaskElement = ({ selectedTask, onSaved }) => {
 
     </Grid>
     <DesktopDateRangePicker
-      startText="Task start"
+      startText="Objective start"
       value={dateRange}
       onChange={(newValue) => {
         setDateRange(newValue);
@@ -150,7 +150,7 @@ const SelectedTaskElement = ({ selectedTask, onSaved }) => {
 
       <Slider
         aria-label="Progress"
-        value={progress || selectedTask.progress}
+        value={progress || selectedObjective.progress}
         valueLabelDisplay="auto"
         onChange={({ target: { value } }) => {
           setProgress(value)
@@ -162,8 +162,7 @@ const SelectedTaskElement = ({ selectedTask, onSaved }) => {
       />
     </FormControl>
     <Button variant="contained" fullWidth onClick={() => dataToSend()}>Save</Button>
-    <CollapseRecommendedInterlinkers selectedTask={selectedTask} />
   </Box>
 }
 
-export default SelectedTaskElement
+export default SelectedObjectiveElement

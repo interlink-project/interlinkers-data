@@ -1,17 +1,15 @@
-import { ToggleButton, ToggleButtonGroup, Grid, CircularProgress, Skeleton } from "@material-ui/core";
+import { ToggleButton, ToggleButtonGroup, Grid, Drawer, Skeleton } from "@material-ui/core";
 import useSettings from 'hooks/useSettings';
 import React, { useEffect, useState, useCallback } from "react";
 import $ from 'jquery';
 import colorScale from "utils/colorScale"
 import { useSelector } from 'react-redux';
-import TaskDrawer from "./TaskDrawer";
 import { cleanUnderScores } from "utils/cleanUnderscores";
 import Tabs from "../Tabs";
-import CoevaluationDrawer from "./CoevaluationDrawer";
-import MobileTaskDrawer from "./MobileTaskDrawer";
+import MobileObjectiveDrawer from "./MobileObjectiveDrawer";
 import MobileDiscriminator from "components/MobileDiscriminator";
 import useMounted from "hooks/useMounted";
-
+import SelectedObjectiveElement from "pages/dashboard/processes/Tabs/Workplan/SelectedObjectiveElement";
 
 const Workplan = () => {
   const { settings } = useSettings();
@@ -21,14 +19,7 @@ const Workplan = () => {
   const { phaseinstantiations, objectiveinstantiations, taskinstantiations, updating, selectedPhaseTab } = useSelector((state) => state.process);
   const mounted = useMounted();
 
-  const [drawerOpen, setDrawerOpen] = useState(false);
-  const [taskId, setTaskId] = useState(null);
-  let selectedTask = null
-  if (taskId) {
-    selectedTask = taskinstantiations.find(task => task.id === taskId)
-  }
-
-  const [coevaluationDrawerOpen, setCoevaluationDrawerOpen] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false)
   const [objectiveId, setObjectiveId] = useState(null);
   let selectedObjective = null
   if (objectiveId) {
@@ -52,10 +43,7 @@ const Workplan = () => {
         final.push({
           id: taskinstantiation.id,
           name: cleanUnderScores(taskinstantiation.name),
-          start: taskinstantiation.start_date,
-          end: taskinstantiation.end_date,
           dependencies: taskinstantiation.objectiveinstantiation_id,
-          progress: taskinstantiation.progress,
           custom_class: 'gantt-task',
           read_only: true
         })
@@ -95,15 +83,15 @@ const Workplan = () => {
       if (mounted.current) {
         new window.Gantt(id, getTasks(), props);
 
-        if(settings.theme === "DARK"){
+        if (settings.theme === "DARK") {
           $(".gantt .grid-header").css("fill", "#293142")
           $(".gantt .grid-row").css("fill", "#1c2531")
           $(".gantt .grid-row:nth-child(even)").css("fill", "#293142")
           $(".gantt .tick").css("stroke", "#606060")
           $(".gantt .upper-text").css("fill", "white")
           $(".gantt .lower-text").css("fill", "white")
-          
-          
+
+
         }
 
         $(".gantt-objective").each(function (index1) {
@@ -111,7 +99,7 @@ const Workplan = () => {
           const objectiveinstantiation = objectiveinstantiations.find(o => o.id === id)
           $(this).on("click", function () {
             setObjectiveId(id)
-            setCoevaluationDrawerOpen(true)
+            setDrawerOpen(true)
           });
 
           const bar = $(this).children().first().children(".bar").first()
@@ -121,15 +109,15 @@ const Workplan = () => {
 
           text.css("font-weight", "800")
           text.css("font-size", "15px")
-          
-          if(settings.theme === "DARK"){
-            if(objectiveinstantiation.start_date && objectiveinstantiation.end_date){
+
+          if (settings.theme === "DARK") {
+            if (objectiveinstantiation.start_date && objectiveinstantiation.end_date) {
               text.css("fill", "#282b28")
-            }else{
+            } else {
               text.css("fill", "white")
             }
-            
-          }else{
+
+          } else {
             text.css("fill", "#282b28")
           }
 
@@ -138,35 +126,19 @@ const Workplan = () => {
         $(".gantt-task").each(function (index1) {
           const id = $(this).attr("data-id")
           const task = taskinstantiations.find(t => t.id === id)
-
-          $(this).on("click", function () {
-            setTaskId(id)
-            setDrawerOpen(true)
-          });
-          const bar = $(this).children().first().children(".bar").first()
-          const progressBar = $(this).children().first().children(".bar-progress").first()
-          progressBar.css("fill", colorScale(task.progress / 100).toString())
-
           let text = $(this).children().first().children(".bar-label").first()
           text.css("font-weight", "600")
 
-          if(settings.theme === "DARK"){
-            if(task.start_date && task.end_date){
-              text.css("fill", "black")
-            }else{
-              text.css("fill", "white")
-            }
-            
-          }else{
+          if (settings.theme === "DARK") {
+            text.css("fill", "white")
+          } else {
             text.css("fill", "black")
           }
-          
-
         })
 
-        
-       
-      
+
+
+
       }
     } catch (err) {
       console.error(err);
@@ -214,7 +186,7 @@ const Workplan = () => {
 
 
   return (
-    <Grid container style={{overflow: "hidden"}}>
+    <Grid container style={{ overflow: "hidden" }}>
 
       <Grid item xs={12}>
         <Tabs additionalContent={<ToggleButtonGroup
@@ -231,14 +203,20 @@ const Workplan = () => {
       </Grid>
       <Grid item xs={12}>
         {updating ? <Skeleton variant="rectangular" width={"100%"} height={"70vh"} />
- :
+          :
           <div id="gantt" />
         }
       </Grid>
-      <CoevaluationDrawer open={coevaluationDrawerOpen} onClose={() => setCoevaluationDrawerOpen(false)} objective={selectedObjective} />
       <MobileDiscriminator
-        defaultNode={<TaskDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} task={selectedTask} />}
-        onMobileNode={<MobileTaskDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} task={selectedTask} />} />
+        defaultNode={
+          <Drawer
+            anchor="right"
+            open={drawerOpen}
+            onClose={() => setDrawerOpen(false)}
+          >
+            <SelectedObjectiveElement selectedObjective={selectedObjective} onSaved={() => setDrawerOpen(false)} />
+          </Drawer>}
+        onMobileNode={<MobileObjectiveDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} selectedObjective={selectedObjective} />} />
     </Grid>
   );
 };

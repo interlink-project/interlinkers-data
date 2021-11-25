@@ -75,7 +75,6 @@ const NavSection = (props) => {
           disableGutters
           disableSticky
           sx={{
-            color: 'text.primary',
             fontSize: '0.75rem',
             lineHeight: 2.5,
             fontWeight: 700,
@@ -98,7 +97,7 @@ const NavSection = (props) => {
 NavSection.propTypes = {
   items: PropTypes.array,
   pathname: PropTypes.string,
-  title: PropTypes.string
+  title: PropTypes.any
 };
 
 export default NavSection;
