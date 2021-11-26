@@ -36,8 +36,8 @@ import { useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProcess } from '../../../slices/process';
 import { red } from '@material-ui/core/colors';
-import OverviewTab from 'pages/dashboard/processes/Tabs/Overview';
-import MainSkeleton from 'pages/dashboard/processes/Tabs/MainSkeleton';
+import OverviewTab from 'pages/dashboard/coproductionprocesses/Tabs/Overview';
+import MainSkeleton from 'pages/dashboard/coproductionprocesses/Tabs/MainSkeleton';
 import { getImageUrl } from 'axiosInstance';
 
 const tabs = [

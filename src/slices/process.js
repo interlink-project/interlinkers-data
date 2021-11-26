@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { coproductionProcessesApi, taskinstantiationsApi, objectiveinstantiationsApi, phaseinstantiationsApi} from '../__fakeApi__';
 import moment from "moment"
-import generateGraph from 'pages/dashboard/processes/Tabs/Network/graph';
+import generateGraph from 'pages/dashboard/coproductionprocesses/Tabs/Network/graph';
 
 const initialState = {
   loading: false,

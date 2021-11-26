@@ -9,7 +9,7 @@ import Tabs from "../Tabs";
 import MobileObjectiveDrawer from "./MobileObjectiveDrawer";
 import MobileDiscriminator from "components/MobileDiscriminator";
 import useMounted from "hooks/useMounted";
-import SelectedObjectiveElement from "pages/dashboard/processes/Tabs/Workplan/SelectedObjectiveElement";
+import SelectedObjectiveElement from "pages/dashboard/coproductionprocesses/Tabs/Workplan/SelectedObjectiveElement";
 
 const Workplan = () => {
   const { settings } = useSettings();

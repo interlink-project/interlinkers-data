@@ -4,10 +4,10 @@ import DashboardLayout from '../components/layouts/DashboardLayout';
 import Loadable from './Loadable';
 
 const CoproductionProcessCreate = Loadable(
-  lazy(() => import('../pages/dashboard/processes/CoproductionProcessCreate'))
+  lazy(() => import('../pages/dashboard/coproductionprocesses/CoproductionProcessCreate'))
 );
 const CoproductionProcessProfile = Loadable(
-  lazy(() => import('../pages/dashboard/processes/CoproductionProcessProfile'))
+  lazy(() => import('../pages/dashboard/coproductionprocesses/CoproductionProcessProfile'))
 );
 
 const InterlinkerBrowse = Loadable(

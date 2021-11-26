@@ -9,7 +9,7 @@ import { updateProcess } from "slices/process";
 import QuillEditor from "components/QuillEditor";
 import $ from 'jquery';
 import { Prompt } from 'react-router-dom'
-import MainSkeleton from "pages/dashboard/processes/Tabs/MainSkeleton";
+import MainSkeleton from "pages/dashboard/coproductionprocesses/Tabs/MainSkeleton";
 import moment from "moment";
 
 
