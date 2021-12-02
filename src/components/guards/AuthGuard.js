@@ -9,13 +9,14 @@ const AuthGuard = (props) => {
   const auth = useAuth();
   const location = useLocation();
   const [requestedLocation, setRequestedLocation] = useState(null);
-  /*
-  if (!auth.isAuthenticated()) {
+  
+  if (!auth.isAuthenticated) {
     auth.signinRedirect();
     return <span>loading</span>;
   }
-  */
-  if (!auth.isAuthenticated()) {
+  /*
+  
+  if (!auth.isAuthenticated) {
     if (location.pathname !== requestedLocation) {
       setRequestedLocation(location.pathname);
     }
@@ -30,6 +31,7 @@ const AuthGuard = (props) => {
     setRequestedLocation(null);
     return <Navigate to={requestedLocation} />;
   }
+  */
 
   return <>{children}</>;
 };

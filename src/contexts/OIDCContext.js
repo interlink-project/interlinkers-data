@@ -1,13 +1,12 @@
-import { createContext, useEffect, useReducer, useState } from 'react';
+import { createContext, useEffect, useReducer } from 'react';
 import PropTypes from 'prop-types';
-import { UserManager, WebStorageStateStore, Log } from 'oidc-client';
-import { IDENTITY_CONFIG, METADATA_OIDC } from '../config';
 import { useNavigate } from 'react-router';
-import axiosInstance, { setAuthHeader } from 'axiosInstance';
+import axiosInstance from 'axiosInstance';
 import isJwtTokenExpired from 'jwt-check-expiry';
 
 const initialState = {
   isInitialized: false,
+  isAuthenticated: false,
   user: null,
 };
 
@@ -22,11 +21,13 @@ const handlers = {
     return {
       ...state,
       user,
+      isAuthenticated: true
     };
   },
   LOGOUT: (state) => ({
     ...state,
     user: null,
+    isAuthenticated: false
   }),
 };
 
@@ -36,16 +37,9 @@ const reducer = (state, action) =>
 const AuthContext = createContext({
   ...initialState,
   platform: 'OIDC',
-  signinRedirectCallback: () => Promise.resolve(),
   logout: () => Promise.resolve(),
-  signoutRedirectCallback: () => Promise.resolve(),
-  isAuthenticated: () => Promise.resolve(),
   signinRedirect: () => Promise.resolve(),
-  signinSilentCallback: () => Promise.resolve(),
-  signinSilent: () => Promise.resolve(),
-  createSigninRequest: () => Promise.resolve(),
   getUser: () => Promise.resolve(),
-  parseJwt: () => Promise.resolve(),
 });
 
 export const AuthProvider = (props) => {
@@ -54,56 +48,19 @@ export const AuthProvider = (props) => {
   const { children } = props;
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const [userManager] = useState(
-    new UserManager({
-      ...IDENTITY_CONFIG,
-      userStore: new WebStorageStateStore({ store: window.sessionStorage }),
-      metadata: {
-        ...METADATA_OIDC,
-      },
-    })
-  );
-
   useEffect(() => {
     const initialize = async () => {
-      Log.logger = console;
-      Log.level = Log.DEBUG;
 
-      const user = await userManager.getUser();
       const init = () =>
         dispatch({
           type: 'INITIALIZE',
         });
-      if (user && user.access_token && !isJwtTokenExpired(user.access_token)) {
-        setUser(user.access_token, init);
-      } else {
-        init();
-      }
-
-
-      userManager.events.addUserLoaded((user) => {
-        console.log("addUserLoaded", user)
-        if (window.location.href.indexOf('signin-oidc') !== -1) {
-          navigateToScreen();
-        }
-      });
-      userManager.events.addSilentRenewError((e) => {
-        console.log('silent renew error', e.message);
-      });
-
-      userManager.events.addAccessTokenExpired(() => {
-        console.log('token expired');
-        dispatch({
-          type: 'LOGOUT',
-        });
-      });
-
+      setUser(init);
     };
     initialize();
   }, []);
 
-  const setUser = (access_token, callback) => {
-    setAuthHeader(access_token);
+  const setUser = (callback) => {
     axiosInstance.get('/users/api/v1/users/me').then(({ data }) => {
       console.log('RESPONSE FOR ME', data);
       dispatch({
@@ -116,24 +73,15 @@ export const AuthProvider = (props) => {
     }).catch((e) => {
       console.error(e)
       logout()
+      callback && callback();
     }
     );
   };
 
-  const signinRedirectCallback = (callback) => {
-    userManager.signinRedirectCallback().then(async (e) => {
-      const user = await userManager.getUser();
-      setUser(user.access_token, callback);
-    });
-  };
-
-  const getUser = async () => {
-    const user = await userManager.getUser();
-    if (!user) {
-      return await userManager.signinRedirectCallback();
-    }
-    return user;
-  };
+  const signinRedirect = () => {
+    // console.log(window.location.pathname)
+    window.location.replace(`/auth/login?redirect_on_callback=${window.location.pathname}`);
+  }
 
   const parseJwt = (token) => {
     const base64Url = token.split('.')[1];
@@ -141,62 +89,11 @@ export const AuthProvider = (props) => {
     return JSON.parse(window.atob(base64));
   };
 
-  const signinRedirect = () => {
-    localStorage.setItem('redirectUri', window.location.pathname);
-    userManager.signinRedirect({});
-  };
-
-  const navigateToScreen = () => {
-    window.location.replace('/dashboard');
-  };
-
-  const isAuthenticated = () => {
-    const oidcStorage = JSON.parse(
-      sessionStorage.getItem(
-        `oidc.user:${process.env.REACT_APP_AUTH_URL}:${process.env.REACT_APP_IDENTITY_CLIENT_ID}`
-      )
-    );
-    const authenticated = !!oidcStorage && !!oidcStorage.access_token && !isJwtTokenExpired(oidcStorage.access_token);
-    // console.log('isAuthenticated call', oidcStorage);
-
-    if (authenticated && !state.user) {
-      setUser(oidcStorage.access_token);
-    }
-    return authenticated;
-  };
-
-  const signinSilent = () => {
-    userManager
-      .signinSilent()
-      .then((user) => {
-        console.log('signed in', user);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-  const signinSilentCallback = () => {
-    userManager.signinSilentCallback();
-  };
-
-  const createSigninRequest = () => userManager.createSigninRequest();
 
   const logout = () => {
-    // userManager.signoutRedirect({
-    //   id_token_hint: localStorage.getItem('id_token'),
-    // });
-    userManager.clearStaleState();
+    localStorage.clear();
     dispatch({ type: 'LOGOUT' });
     navigate('/');
-  };
-
-  const signoutRedirectCallback = () => {
-    userManager.signoutRedirectCallback().then(() => {
-      localStorage.clear();
-      window.location.replace(process.env.REACT_APP_PUBLIC_URL);
-    });
-    userManager.clearStaleState();
   };
 
   return (
@@ -204,15 +101,8 @@ export const AuthProvider = (props) => {
       value={{
         ...state,
         platform: 'OIDC',
-        signinRedirectCallback,
         logout,
-        signoutRedirectCallback,
-        isAuthenticated,
         signinRedirect,
-        signinSilentCallback,
-        signinSilent,
-        createSigninRequest,
-        getUser,
         parseJwt,
       }}
     >

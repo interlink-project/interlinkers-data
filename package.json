@@ -65,7 +65,6 @@
     "npm": "^7.24.1",
     "nprogress": "^0.2.0",
     "numeral": "^2.0.6",
-    "oidc-client": "^1.11.5",
     "pretty-bytes": "^5.6.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
