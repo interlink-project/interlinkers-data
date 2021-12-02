@@ -46,7 +46,7 @@ const TeamCard = (props) => {
         >
           <Avatar
             alt='Team'
-            src={getImageUrl(team.logotype)}
+            src={getImageUrl("users", team.logotype)}
           >
             {team.name}
           </Avatar>

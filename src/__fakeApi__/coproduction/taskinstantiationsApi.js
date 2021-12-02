@@ -3,7 +3,7 @@ import GeneralApi from "../general"
 
 class TaskinstantiationsApi extends GeneralApi {
   constructor() {
-    super("taskinstantiations");
+    super("coproduction/api/v1/taskinstantiations");
   }
 }
 

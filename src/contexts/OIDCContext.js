@@ -104,7 +104,7 @@ export const AuthProvider = (props) => {
 
   const setUser = (access_token, callback) => {
     setAuthHeader(access_token);
-    axiosInstance.get('/users/me').then(({ data }) => {
+    axiosInstance.get('/users/api/v1/users/me').then(({ data }) => {
       console.log('RESPONSE FOR ME', data);
       dispatch({
         type: 'SET_USER',

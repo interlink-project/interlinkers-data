@@ -13,10 +13,10 @@ export const setAuthHeader = (accessToken) => {
   }
 }
 
-export const getImageUrl = (path) => path && `${process.env.REACT_APP_BACKEND_URL}${path}`
+export const getImageUrl = (micro, path) => path && `${process.env.REACT_APP_BACKEND_URL}/${micro}${path}`
 
 const axiosInstance = axios.create({
-  baseURL: `${process.env.REACT_APP_BACKEND_URL}/api/v1/`,
+  baseURL: process.env.REACT_APP_BACKEND_URL,
   timeout: 20000,
   headers: {
     'Content-Type': 'application/json',

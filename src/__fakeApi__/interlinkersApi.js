@@ -3,7 +3,7 @@ import GeneralApi from "./general"
 
 class InterlinkersApi extends GeneralApi {
   constructor() {
-    super("interlinkers");
+    super("catalogue/api/v1/interlinkers");
   }
 }
 

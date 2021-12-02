@@ -3,7 +3,7 @@ import GeneralApi from "../general"
 
 class PhaseinstantiationsApi extends GeneralApi {
   constructor() {
-    super("phaseinstantiations");
+    super("coproduction/api/v1/phaseinstantiations");
   }
 
   async getObjectiveInstantiations(id) {

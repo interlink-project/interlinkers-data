@@ -16,7 +16,7 @@ const Network = () => {
             id: process.id,
             text: process.name,
             icon: {
-                url: getImageUrl(process.logotype),
+                url: getImageUrl("coproduction", process.logotype),
                 height: 35,
                 width: 35
             }
@@ -24,10 +24,10 @@ const Network = () => {
     )
     nodes.push(
         {
-            id: process.team.id,
-            text: process.team.name,
+            id: "process.team_id",
+            text: "process.team.name",
             icon: {
-                url: getImageUrl(process.team.logotype),
+                url: getImageUrl("coproduction", "process.team.logotype"),
                 height: 25,
                 width: 25
             }
@@ -35,13 +35,13 @@ const Network = () => {
     )
     edges.push(
         {
-            id: `${process.id}-${process.team.id}`,
+            id: `${process.id}-${"process.team_id"}`,
             from: process.id,
-            to: process.team.id
+            to: "process.team_id"
         }
     )
 
-
+    /*
     process.team.memberships.forEach(membership => {
         nodes.push(
             {
@@ -56,12 +56,13 @@ const Network = () => {
         )
         edges.push(
             {
-                id: `${process.team.id}-${membership.user.id}`,
-                from: process.team.id,
+                id: `${"process.team_id"}-${membership.user.id}`,
+                from: "process.team_id",
                 to: membership.user.id
             }
         )
     });
+    */
 
     console.log(nodes, edges)
     return <div style={{ height: '85vh' }}>

@@ -3,7 +3,7 @@ import GeneralApi from "./general"
 
 class TeamsApi extends GeneralApi {
   constructor() {
-    super("teams");
+    super("users/api/v1/teams");
   }
 }
 

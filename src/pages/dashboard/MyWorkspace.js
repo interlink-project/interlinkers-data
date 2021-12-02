@@ -315,7 +315,7 @@ const MyWorkspace = () => {
                         component={
                           <img
                             src={
-                              getImageUrl(process.logotype) ||
+                              getImageUrl("coproduction", process.logotype) ||
                               'https://blogs.oregonstate.edu/acobamo/wp-content/themes/koji/assets/images/default-fallback-image.png'
                             }
                             width='80px'

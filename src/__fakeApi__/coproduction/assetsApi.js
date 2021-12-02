@@ -3,7 +3,7 @@ import GeneralApi from "../general"
 
 class AssetsApi extends GeneralApi {
   constructor() {
-    super("assets");
+    super("coproduction/api/v1/assets");
   }
 
   async create(taskinstantiation_id, interlinkerversion_id) {

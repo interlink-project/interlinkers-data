@@ -3,7 +3,7 @@ import GeneralApi from "../general"
 
 class ObjectiveInstantiationsApi extends GeneralApi {
   constructor() {
-    super("objectiveinstantiations");
+    super("coproduction/api/v1/objectiveinstantiations");
   }
 
   async getTaskInstantiations(id) {

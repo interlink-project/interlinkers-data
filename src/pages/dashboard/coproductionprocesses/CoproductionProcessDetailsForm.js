@@ -114,7 +114,7 @@ const CoproductionProcessDetailsForm = (props) => {
                   <Box sx={{ display: 'flex', alignItems: 'center' }}>
                     <Avatar
                       alt='Avatar'
-                      src={getImageUrl(teamAvatar)}
+                      src={getImageUrl("users", teamAvatar)}
                       sx={{ mr: 2 }}
                     />
                     <TextField

@@ -11,8 +11,8 @@ endif
 help: ## Show this help
 	@egrep -h '\s##\s' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
-.PHONY: run
-run: ## run "make run"
+.PHONY: up
+up: ## up "make up"
 	docker-compose up --build
 
 #.PHONY: prod

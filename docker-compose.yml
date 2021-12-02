@@ -3,15 +3,26 @@ version: '3.8'
 services:
   react:
     container_name: react
+    image: 'interlink-frontend'
     build:
       context: .
       target: dev
     volumes:
       - .:/usr/app
       - /usr/app/node_modules
-    ports:
-      - "80:3000"
+    env_file:
+      - .env
+    environment:
+      - REACT_APP_BASE_URI=http://localhost
     stdin_open: true
+    labels:
+      - traefik.enable=true
+      - traefik.constraint-label-stack=${TRAEFIK_TAG?Variable not set}
+      - traefik.http.routers.${STACK_NAME?Variable not set}-react-http.rule=PathPrefix(`/`)
+      - traefik.http.services.${STACK_NAME?Variable not set}-react.loadbalancer.server.port=3000
+    networks:
+      - traefik-public
 
-volumes:
-  postgres_data:
+networks:
+  traefik-public:
+    external: true

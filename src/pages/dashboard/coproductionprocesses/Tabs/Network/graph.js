@@ -5,7 +5,7 @@ const generateGraph = (process) => {
         {
             "id": "main",
             "family": "main",
-            "img": getImageUrl(process.logotype) || "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Leo_Tolstoy%2C_portrait.jpg/1200px-Leo_Tolstoy%2C_portrait.jpg",
+            "img": getImageUrl("coproduction", process.logotype) || "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Leo_Tolstoy%2C_portrait.jpg/1200px-Leo_Tolstoy%2C_portrait.jpg",
             "name": process.name
         },
         {
@@ -21,10 +21,10 @@ const generateGraph = (process) => {
             "img": "",
         },
         {
-            "id": process.team.id,
+            "id": process.team_id,
             "family": "working",
-            "name": process.team.name,
-            "img": getImageUrl(process.team.logotype),
+            "name": "process.team.name",
+            "img": getImageUrl("users", "process.team.logotype"),
         },
     ]
 
@@ -39,13 +39,13 @@ const generateGraph = (process) => {
         },
         {
             "source": "main3",
-            "target": process.team.id,
+            "target": process.team_id,
         },
 
     ]
     const otherNodes = []
     const otherLinks = []
-
+    /*
     process.team.memberships.forEach(membership => {
         otherNodes.push({
             "id": membership.id,
@@ -54,10 +54,11 @@ const generateGraph = (process) => {
             "img": membership.user.picture,
         })
         otherLinks.push({
-            "source": process.team.id,
+            "source": process.team_id,
             "target": membership.id,
         })
     });
+    */
 
     return {
         "nodes": [...initNodes, ...otherNodes],

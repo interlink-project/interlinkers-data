@@ -112,7 +112,7 @@ const ProcessSidebar = (props) => {
                 cursor: 'pointer',
                 height: 48,
                 width: 48
-              }} variant="square" sx={process && !process.logotype ? { bgcolor: red[500] } : {}} aria-label="recipe" src={process && process.logotype && getImageUrl(process.logotype)}>
+              }} variant="square" sx={process && !process.logotype ? { bgcolor: red[500] } : {}} aria-label="recipe" src={process && process.logotype && getImageUrl("coproduction", process.logotype)}>
                 {process && !process.logotype && process.name[0]}
               </Avatar>
 
