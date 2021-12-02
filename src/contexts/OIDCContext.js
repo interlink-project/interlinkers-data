@@ -49,18 +49,7 @@ export const AuthProvider = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    const initialize = async () => {
-
-      const init = () =>
-        dispatch({
-          type: 'INITIALIZE',
-        });
-      setUser(init);
-    };
-    initialize();
-  }, []);
-
-  const setUser = (callback) => {
+    console.log("executing setUser")
     axiosInstance.get('/users/api/v1/users/me').then(({ data }) => {
       console.log('RESPONSE FOR ME', data);
       dispatch({
@@ -69,13 +58,17 @@ export const AuthProvider = (props) => {
           user: data,
         },
       });
-      callback && callback();
     }).catch((e) => {
       console.error(e)
       logout()
-      callback && callback();
     }
-    );
+    ).finally(() => dispatch({
+      type: 'INITIALIZE',
+    }));
+  }, []);
+
+  const setUser = (callback) => {
+
   };
 
   const signinRedirect = () => {
