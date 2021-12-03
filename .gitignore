@@ -23,6 +23,5 @@ yarn-error.log*
 
 
 /example*
-.env
 APIKEY.txt
 node_modules
