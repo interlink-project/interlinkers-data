@@ -60,16 +60,11 @@ export const AuthProvider = (props) => {
       });
     }).catch((e) => {
       console.error(e)
-      logout()
     }
     ).finally(() => dispatch({
       type: 'INITIALIZE',
     }));
   }, []);
-
-  const setUser = (callback) => {
-
-  };
 
   const signinRedirect = () => {
     // console.log(window.location.pathname)
@@ -82,11 +77,9 @@ export const AuthProvider = (props) => {
     return JSON.parse(window.atob(base64));
   };
 
-
   const logout = () => {
     localStorage.clear();
-    dispatch({ type: 'LOGOUT' });
-    navigate('/');
+    window.location.replace(`/auth/logout`);
   };
 
   return (
