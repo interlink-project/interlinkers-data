@@ -11,7 +11,7 @@ import LocalizationProvider from '@material-ui/lab/LocalizationProvider';
 import AdapterDateFns from '@material-ui/lab/AdapterDateFns';
 import StyledEngineProvider from '@material-ui/core/StyledEngineProvider';
 import App from './App';
-import { AuthProvider } from './contexts/OIDCContext';
+import { AuthProvider } from './contexts/CookieContext';
 import { SettingsProvider } from './contexts/SettingsContext';
 import store from './store';
 
