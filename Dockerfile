@@ -16,7 +16,6 @@ RUN npm install react-scripts@3.4.1 -g
 # add app
 COPY . .
 
-
 FROM setup as dev
 CMD ["npm", "start"]
 
@@ -24,7 +23,7 @@ FROM setup as build
 RUN npm run build
 
 
-FROM nginx:1.19.4-alpine AS prd
+FROM nginx:1.19.4-alpine AS prod
 
 WORKDIR /usr/share/nginx/html
 

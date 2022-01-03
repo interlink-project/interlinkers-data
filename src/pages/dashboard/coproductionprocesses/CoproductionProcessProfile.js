@@ -101,12 +101,12 @@ const CoproductionProcessProfile = () => {
   };
 
 
-
+  const logoExists = process && process.logotype
   const Tabss = () => <Card sx={{ mr: onMobile ? 0 : 2, mb: onMobile ? 1 : 0 }}>
     <CardHeader
       avatar={
-        <Avatar variant="square" sx={process && !process.logotype ? { bgcolor: red[500] } : {}} aria-label="recipe" src={process && process.logotype && getImageUrl("coproduction", process.logotype)}>
-          {process && !process.logotype && process.name[0]}
+        <Avatar variant="square" sx={logoExists ? {} : { bgcolor: red[500] }} aria-label="recipe" src={logoExists && getImageUrl("coproduction", process.logotype)}>
+          {process && !logoExists && process.name[0]}
         </Avatar>
       }
       action={

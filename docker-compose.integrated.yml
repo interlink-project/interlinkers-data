@@ -1,11 +1,12 @@
 version: "3.3"
 services:
+
   frontend:
-    image: 'frontendprod:${TAG-latest}'
-    container_name: frontend-prod
+    image: 'frontenddev:${TAG-latest}'
+    container_name: frontend-integrated
     build:
       context: .
-      target: prod
+      target: dev
     volumes:
       - .:/usr/app
       - /usr/app/node_modules
@@ -13,16 +14,11 @@ services:
       - .env
     environment:
       - REACT_APP_BASE_URI=http://localhost
+    stdin_open: true
     labels:
       - traefik.enable=true
       - traefik.docker.network=traefik-public
       - traefik.http.routers.${STACK_NAME?Variable not set}-frontend-http.rule=PathPrefix(`/`)
-      - traefik.http.services.${STACK_NAME?Variable not set}-frontend.loadbalancer.server.port=80
+      - traefik.http.services.${STACK_NAME?Variable not set}-frontend.loadbalancer.server.port=${PORT}
     networks:
       - traefik-public
-    ports:
-      - "80:80"
-
-networks:
-  traefik-public:
-    external: true

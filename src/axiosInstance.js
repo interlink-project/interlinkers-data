@@ -15,7 +15,7 @@ export const setAuthHeader = (accessToken) => {
 }
 */
 
-export const getImageUrl = (micro, path) => path && `${process.env.REACT_APP_BACKEND_URL}/${micro}${path}`
+export const getImageUrl = (micro, path) => path && `/${micro}${path}`
 
 const axiosInstance = axios.create({
   baseURL: process.env.REACT_APP_BACKEND_URL,

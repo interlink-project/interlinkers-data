@@ -1,20 +1,20 @@
 SHELL := /bin/bash
-# include .env
-# export $(shell sed 's/=.*//' .env)
 
-ifeq (service,$(firstword $(MAKECMDGOALS)))
-  RUN_ARGS := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
-  $(eval $(RUN_ARGS):;@:)
-endif
-
-.PHONY: help
-help: ## Show this help
-	@egrep -h '\s##\s' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
+.PHONY: down
+down: ## Stops all containers and removes volumes
+	docker-compose -f docker-compose.yml -f docker-compose.integrated.yml -f docker-compose.solodev.yml down --volumes --remove-orphans
 
 .PHONY: up
-up: ## up "make up"
-	docker-compose up --build
+up: down ## Run containers (restarts them if already running)
+	docker-compose -f docker-compose.yml -f docker-compose.solodev.yml up -d
 
-#.PHONY: prod
-# prod: ## build and run "make prod"
-#	docker-compose -f docker-compose.prod.yml up --build
+.PHONY: build
+build: ## Build containers
+	docker-compose -f docker-compose.yml -f docker-compose.solodev.yml build
+
+.PHONY: prod
+prod: ## Production containers
+	docker-compose -f docker-compose.yml up
+
+.PHONY: upb
+upb: down build up ## Build and run containers
