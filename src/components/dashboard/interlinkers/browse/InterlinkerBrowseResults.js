@@ -15,9 +15,10 @@ import {
 import ViewModuleIcon from '@material-ui/icons/ViewModule';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import InterlinkerCard from './InterlinkerCard';
+import { useSelector } from 'react-redux';
 
 const InterlinkerBrowseResults = (props) => {
-  const { interlinkers, ...other } = props;
+  const { interlinkers } = useSelector((state) => state.catalogue);
   const sortRef = useRef(null);
   const [openSort, setOpenSort] = useState(false);
   const [selectedSort, setSelectedSort] = useState('Most popular');
@@ -41,7 +42,7 @@ const InterlinkerBrowseResults = (props) => {
   };
 
   return (
-    <div {...other}>
+    <div {...props}>
       <Box
         sx={{
           alignItems: 'center',
@@ -153,10 +154,6 @@ const InterlinkerBrowseResults = (props) => {
       </Menu>
     </div>
   );
-};
-
-InterlinkerBrowseResults.propTypes = {
-  interlinkers: PropTypes.array.isRequired
 };
 
 export default InterlinkerBrowseResults;

@@ -2,29 +2,29 @@ import { useCallback, useState, useEffect } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Box, Breadcrumbs, Button, Container, Grid, Link, Typography } from '@material-ui/core';
-import { interlinkerApi } from '../../../__fakeApi__/interlinkerApi';
+import { interlinkersApi } from '__fakeApi__';
 import { InterlinkerBrowseFilter, InterlinkerBrowseResults } from '../../../components/dashboard/interlinkers';
 import useMounted from '../../../hooks/useMounted';
 import useSettings from '../../../hooks/useSettings';
 import ChevronRightIcon from '../../../icons/ChevronRight';
 import PlusIcon from '../../../icons/Plus';
 import gtm from '../../../lib/gtm';
+import { getInterlinkers } from 'slices/catalogue';
+import { useDispatch, useSelector } from 'react-redux';
 
 const InterlinkerBrowse = () => {
   const mounted = useMounted();
   const { settings } = useSettings();
-  const [interlinkers, setInterlinkers] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     gtm.push({ event: 'page_view' });
   }, []);
 
-  const getInterlinkers = useCallback(async () => {
+  const init = useCallback(async () => {
     try {
-      const data = await interlinkerApi.getInterlinkers();
-
       if (mounted.current) {
-        setInterlinkers(data);
+        dispatch(getInterlinkers())
       }
     } catch (err) {
       console.error(err);
@@ -32,8 +32,8 @@ const InterlinkerBrowse = () => {
   }, [mounted]);
 
   useEffect(() => {
-    getInterlinkers();
-  }, [getInterlinkers]);
+    init();
+  }, [init]);
 
   return (
     <>
@@ -81,7 +81,7 @@ const InterlinkerBrowse = () => {
             <InterlinkerBrowseFilter />
           </Box>
           <Box sx={{ mt: 6 }}>
-            <InterlinkerBrowseResults interlinkers={interlinkers} />
+            <InterlinkerBrowseResults />
           </Box>
         </Container>
       </Box>

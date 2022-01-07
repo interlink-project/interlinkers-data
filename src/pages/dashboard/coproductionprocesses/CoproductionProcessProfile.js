@@ -34,7 +34,7 @@ import Network from './Tabs/Network2';
 import Forum from './Tabs/Forum';
 import { useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProcess } from '../../../slices/process';
+import { getProcess } from 'slices/process';
 import { red } from '@material-ui/core/colors';
 import OverviewTab from 'pages/dashboard/coproductionprocesses/Tabs/Overview';
 import MainSkeleton from 'pages/dashboard/coproductionprocesses/Tabs/MainSkeleton';

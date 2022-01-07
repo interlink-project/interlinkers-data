@@ -9,6 +9,7 @@ import {
   Box,
   Card,
   CardMedia,
+  Chip,
   Divider,
   Grid,
   IconButton,
@@ -21,11 +22,16 @@ import red from '@material-ui/core/colors/red';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import UsersIcon from '../../../../icons/Users';
+import { getImageUrl } from 'axiosInstance';
+import { useSelector } from 'react-redux';
 
 const InterlinkerCard = (props) => {
+  const { status } = useSelector((state) => state.catalogue);
   const { interlinker, ...other } = props;
   const [isLiked, setIsLiked] = useState(interlinker.isLiked);
   const [likes, setLikes] = useState(interlinker.likes);
+  const isOn = status[interlinker.backend] && status[interlinker.backend].status === "on"
+  const isSoftware = interlinker.nature === "SW"
 
   const handleLike = () => {
     setIsLiked(true);
@@ -57,7 +63,7 @@ const InterlinkerCard = (props) => {
         >
           <Avatar
             alt='Team'
-            src={interlinker.image}
+            src={getImageUrl("catalogue", interlinker.logotype)}
           >
             {interlinker.title}
           </Avatar>
@@ -68,7 +74,7 @@ const InterlinkerCard = (props) => {
               to='/dashboard/interlinkers/123'
               variant='h6'
             >
-              {interlinker.title}
+              {interlinker.name}
             </Link>
             <Typography
               color='textSecondary'
@@ -82,12 +88,12 @@ const InterlinkerCard = (props) => {
                 to='#'
                 variant='subtitle2'
               >
-                {interlinker.team.name}
+                team name
               </Link>
               {' '}
               | Updated
               {' '}
-              {formatDistanceToNowStrict(interlinker.updatedAt)}
+              {formatDistanceToNowStrict(new Date(interlinker.updated_at || interlinker.created_at))}
               {' '}
               ago
             </Typography>
@@ -96,7 +102,7 @@ const InterlinkerCard = (props) => {
       </Box>
       <Box
         sx={{
-          pb: 2,
+          pb: 1,
           px: 3,
         }}
       >
@@ -104,17 +110,18 @@ const InterlinkerCard = (props) => {
           color='textSecondary'
           variant='body2'
         >
-          {}
+          { }
           {truncate(interlinker.description, {
             length: 200,
             separator: ' ',
           })}
         </Typography>
       </Box>
+      
       <Box
         sx={{
           px: 3,
-          py: 2,
+          pb: 1,
         }}
       >
         <Grid
@@ -125,8 +132,8 @@ const InterlinkerCard = (props) => {
         >
           <Grid item>
             <Typography
-              color='textSecondary'
-              variant='body2'
+              color='textPrimary'
+              variant='subtitle2'
             >
               Status
             </Typography>
@@ -134,38 +141,54 @@ const InterlinkerCard = (props) => {
               color='textPrimary'
               variant='subtitle2'
             >
-              {interlinker.status}
+              <Chip label={isOn ? "on" : "off"} color={isOn ? "success" : "warning"} size="small" />
             </Typography>
           </Grid>
           <Grid item>
             <Typography
-              color='textSecondary'
-              variant='body2'
+              color='textPrimary'
+              variant='subtitle2'
             >
-              Location
+              Nature
             </Typography>
             <Typography
               color='textPrimary'
               variant='subtitle2'
             >
-              {interlinker.location}
+              <Chip label={isSoftware ? "Software" : "Knowledge"} color={isSoftware ? "primary" : "secondary"} size="small" />
+
             </Typography>
           </Grid>
           <Grid item>
             <Typography
-              color='textSecondary'
-              variant='body2'
-            >
-              Type
-            </Typography>
-            <Typography
               color='textPrimary'
               variant='subtitle2'
             >
-              {interlinker.type}
+              Rating
             </Typography>
+            <Rating
+          readOnly
+          size='small'
+          value={5}
+        />
           </Grid>
         </Grid>
+      </Box>
+      <Box
+        sx={{
+          pb: 2,
+          px: 3,
+        }}
+      >
+        <Typography
+          color='textPrimary'
+          variant='subtitle2'
+        >
+          Keywords
+        </Typography>
+        {interlinker.keywords && interlinker.keywords.map(
+          el => <Chip label={el} key={el} size="small" variant="outlined" />
+        )}
       </Box>
       <Divider />
       <Box
@@ -219,15 +242,10 @@ const InterlinkerCard = (props) => {
             sx={{ ml: 1 }}
             variant='subtitle2'
           >
-            {interlinker.team.membersCount}
+            memberscount
           </Typography>
         </Box>
         <Box sx={{ flexGrow: 1 }} />
-        <Rating
-          readOnly
-          size='small'
-          value={interlinker.rating}
-        />
       </Box>
     </Card>
   );
