@@ -23,7 +23,7 @@ const InterlinkerBrowseResults = (props) => {
   const [openSort, setOpenSort] = useState(false);
   const [selectedSort, setSelectedSort] = useState('Most popular');
   const [mode, setMode] = useState('grid');
-
+  
   const handleSortOpen = () => {
     setOpenSort(true);
   };

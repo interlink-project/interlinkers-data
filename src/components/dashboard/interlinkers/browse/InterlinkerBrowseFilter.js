@@ -1,65 +1,46 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Box, Card, Checkbox, Chip, Divider, FormControlLabel, Input } from '@material-ui/core';
 import SearchIcon from '../../../../icons/Search';
 import MultiSelect from '../../../MultiSelect';
+import { getInterlinkers } from 'slices/catalogue';
+import { useDispatch, useSelector } from 'react-redux';
 
 const selectOptions = [
   {
-    label: 'Type',
+    label: 'Nature',
     options: [
-      'Freelance',
-      'Full Time',
-      'Part Time',
-      'Internship'
+      'Software',
+      'Knowledge',
     ]
   },
   {
-    label: 'Level',
-    options: ['Novice', 'Expert']
-  },
-  {
-    label: 'Location',
+    label: 'Status',
     options: [
-      'Africa',
-      'Asia',
-      'Australia',
-      'Europe',
-      'North America',
-      'South America'
+      'On',
+      'Off',
     ]
   },
-  {
-    label: 'Roles',
-    options: ['Android', 'Web Developer', 'iOS']
-  }
 ];
 
 const InterlinkerBrowseFilter = (props) => {
   const [inputValue, setInputValue] = useState('');
-  const [chips, setChips] = useState([
-    'Demo',
-  ]);
+  const dispatch = useDispatch();
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
 
-  const handleInputKeyup = (event) => {
-    if (event.code === 'ENTER' && inputValue) {
-      if (!chips.includes(inputValue)) {
-        setChips((prevChips) => [...prevChips, inputValue]);
-        setInputValue('');
-      }
-    }
-  };
-
-  const handleChipDelete = (chip) => {
-    setChips((prevChips) => prevChips.filter((prevChip) => chip !== prevChip));
-  };
-
   const handleMultiSelectChange = (value) => {
-    setChips(value);
+    console.log(value);
   };
+
+  useEffect(() => {
+    const delayDebounceFn = setTimeout(() => {
+      dispatch(getInterlinkers(inputValue))
+    }, 800)
+
+    return () => clearTimeout(delayDebounceFn)
+  }, [inputValue])
 
   return (
     <Card {...props}>
@@ -81,31 +62,12 @@ const InterlinkerBrowseFilter = (props) => {
             disableUnderline
             fullWidth
             onChange={handleInputChange}
-            onKeyUp={handleInputKeyup}
-            placeholder='Enter a keyword'
+            placeholder='Search by text'
             value={inputValue}
           />
         </Box>
       </Box>
-      <Divider />
-      <Box
-        sx={{
-          alignItems: 'center',
-          display: 'flex',
-          flexWrap: 'wrap',
-          p: 2
-        }}
-      >
-        {chips.map((chip) => (
-          <Chip
-            key={chip}
-            label={chip}
-            onDelete={() => handleChipDelete(chip)}
-            sx={{ m: 1 }}
-            variant='outlined'
-          />
-        ))}
-      </Box>
+      
       <Divider />
       <Box
         sx={{
@@ -121,7 +83,7 @@ const InterlinkerBrowseFilter = (props) => {
             label={option.label}
             onChange={handleMultiSelectChange}
             options={option.options}
-            value={chips}
+            value={[]}
           />
         ))}
 

@@ -7,7 +7,9 @@ import { truncate } from 'lodash';
 import {
   Avatar,
   Box,
+  Button,
   Card,
+  CardActionArea,
   CardMedia,
   Chip,
   Divider,
@@ -24,15 +26,22 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import UsersIcon from '../../../../icons/Users';
 import { getImageUrl } from 'axiosInstance';
 import { useSelector } from 'react-redux';
+import SwipeableTextMobileStepper from './Carousel';
 
 const InterlinkerCard = (props) => {
   const { status } = useSelector((state) => state.catalogue);
   const { interlinker, ...other } = props;
   const [isLiked, setIsLiked] = useState(interlinker.isLiked);
-  const [likes, setLikes] = useState(interlinker.likes);
+  const [likes, setLikes] = useState(interlinker.likes || 0);
   const isOn = status[interlinker.backend] && status[interlinker.backend].status === "on"
   const isSoftware = interlinker.nature === "SW"
-
+  const sameHeightCards = {
+    minHeight: "200px",
+      height: "100%",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-between"
+  }
   const handleLike = () => {
     setIsLiked(true);
     setLikes((prevLikes) => prevLikes + 1);
@@ -42,18 +51,14 @@ const InterlinkerCard = (props) => {
     setIsLiked(false);
     setLikes((prevLikes) => prevLikes - 1);
   };
+  //     <CardActionArea component={RouterLink} to="/">
 
   return (
-    <Card {...other}>
+
+    <Card {...other} style={sameHeightCards}>
       <Box sx={{ p: 3 }}>
-        {/*
-        <CardMedia
-          image={interlinker.image}
-          sx={{
-            backgroundColor: 'background.default',
-            height: 200
-          }}
-        /> */}
+
+
         <Box
           sx={{
             alignItems: 'center',
@@ -64,6 +69,7 @@ const InterlinkerCard = (props) => {
           <Avatar
             alt='Team'
             src={getImageUrl("catalogue", interlinker.logotype)}
+            variant='square'
           >
             {interlinker.title}
           </Avatar>
@@ -73,8 +79,13 @@ const InterlinkerCard = (props) => {
               component={RouterLink}
               to='/dashboard/interlinkers/123'
               variant='h6'
+              title={interlinker.name}
             >
-              {interlinker.name}
+              {truncate(interlinker.name, {
+                length: 100,
+                separator: ' ',
+              })}
+
             </Link>
             <Typography
               color='textSecondary'
@@ -87,11 +98,12 @@ const InterlinkerCard = (props) => {
                 component={RouterLink}
                 to='#'
                 variant='subtitle2'
+                title={"teamname"}
               >
                 team name
               </Link>
               {' '}
-              | Updated
+              | Last update:
               {' '}
               {formatDistanceToNowStrict(new Date(interlinker.updated_at || interlinker.created_at))}
               {' '}
@@ -117,7 +129,7 @@ const InterlinkerCard = (props) => {
           })}
         </Typography>
       </Box>
-      
+
       <Box
         sx={{
           px: 3,
@@ -126,6 +138,7 @@ const InterlinkerCard = (props) => {
       >
         <Grid
           alignItems='center'
+          sx={{ textAlign: "center" }}
           container
           justifyContent='space-between'
           spacing={3}
@@ -134,6 +147,7 @@ const InterlinkerCard = (props) => {
             <Typography
               color='textPrimary'
               variant='subtitle2'
+              sx={{ mb: 1 }}
             >
               Status
             </Typography>
@@ -148,6 +162,7 @@ const InterlinkerCard = (props) => {
             <Typography
               color='textPrimary'
               variant='subtitle2'
+              sx={{ mb: 1 }}
             >
               Nature
             </Typography>
@@ -163,14 +178,28 @@ const InterlinkerCard = (props) => {
             <Typography
               color='textPrimary'
               variant='subtitle2'
+              sx={{ mb: 1 }}
             >
               Rating
             </Typography>
-            <Rating
-          readOnly
-          size='small'
-          value={5}
-        />
+            <Box
+              sx={{
+                alignItems: 'center',
+                display: 'flex',
+              }}
+            >
+              <Rating
+                readOnly
+                size='small'
+                value={1}
+              />
+              <Typography
+                color='textPrimary'
+                sx={{ ml: 1 }}
+              >
+                (0)
+              </Typography>
+            </Box>
           </Grid>
         </Grid>
       </Box>
@@ -183,17 +212,19 @@ const InterlinkerCard = (props) => {
         <Typography
           color='textPrimary'
           variant='subtitle2'
+          sx={{ mb: 1 }}
         >
           Keywords
         </Typography>
-        {interlinker.keywords && interlinker.keywords.map(
-          el => <Chip label={el} key={el} size="small" variant="outlined" />
+        {interlinker.keywords && interlinker.keywords.split(";").map(
+          el => <Chip label={el} key={el} size="small" variant="outlined" sx={{ mr: 1 }} />
         )}
       </Box>
-      <Divider />
+      
       <Box
         sx={{
           alignItems: 'center',
+          textAlign: 'center',
           display: 'flex',
           pl: 2,
           pr: 3,
@@ -236,16 +267,16 @@ const InterlinkerCard = (props) => {
             ml: 2,
           }}
         >
-          <UsersIcon fontSize='small' />
-          <Typography
-            color='textSecondary'
-            sx={{ ml: 1 }}
-            variant='subtitle2'
-          >
-            memberscount
-          </Typography>
+          <Button>Clone</Button>
+
         </Box>
         <Box sx={{ flexGrow: 1 }} />
+        
+
+      </Box>
+      <Box sx={{bottom: 0}}>
+      <SwipeableTextMobileStepper />
+
       </Box>
     </Card>
   );

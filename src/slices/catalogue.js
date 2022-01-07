@@ -28,9 +28,9 @@ const slice = createSlice({
 
 export const { reducer } = slice;
 
-export const getInterlinkers = () => async (dispatch) => {
+export const getInterlinkers = (search, nature) => async (dispatch) => {
   dispatch(slice.actions.setLoading(true));
-  const [interlinkers, status] = await Promise.all([interlinkersApi.getMulti(), interlinkersApi.status()])
+  const [interlinkers, status] = await Promise.all([interlinkersApi.search(search, nature), interlinkersApi.status()])
   dispatch(slice.actions.setInterlinkers({interlinkers, status }));
   dispatch(slice.actions.setLoading(false));
 };
