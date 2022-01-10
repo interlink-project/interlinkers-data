@@ -118,7 +118,7 @@ const InterlinkerBrowseResults = (props) => {
             sm={mode === 'grid' ? 6 : 12}
             xs={12}
           >
-            <InterlinkerCard interlinker={interlinker} />
+            <InterlinkerCard interlinker={interlinker} mode={mode} />
           </Grid>
         ))}
       </Grid>
@@ -140,9 +140,7 @@ const InterlinkerBrowseResults = (props) => {
         {[
           'Most recent',
           'Popular',
-          'Price high',
-          'Price low',
-          'On sale'
+          'Best rated',
         ].map((option) => (
           <MenuItem
             key={option}
