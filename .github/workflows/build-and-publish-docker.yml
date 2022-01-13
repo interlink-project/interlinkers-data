@@ -1,0 +1,27 @@
+name: build-and-publish-docker
+
+on:
+  push:
+    branches:
+      - "build_and_publish_docker"
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build and push Docker Image
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
+          tags: interlinkproject/frontend:latest
+          cache-from: type=registry,ref=interlinkproject/frontend:buildcache
+          cache-to: type=registry,ref=interlinkproject/frontend:buildcache,mode=max
