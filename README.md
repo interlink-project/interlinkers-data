@@ -15,6 +15,8 @@
     <a href="https://interlink-project.eu/"><strong>View Interlink project »</strong></a>
     <br />
     <br />
+    <img src="https://github.com/interlink-project/frontend/actions/workflows/build-and-publish-docker.yml/badge.svg" alt="Docker build and publish status"></img>
+    <br />
     <a href="https://github.com/interlink-project/frontend/issues">Report Bug</a>
     ·
     <a href="https://github.com/interlink-project/frontend/issues">Request Feature</a>
@@ -68,13 +70,17 @@ This frontend is intended to be the graphical interface with which the users of 
 To get a local copy up and running follow these simple example steps.
 
 ### With docker:
-2. Run the application (make up)
+1. Build the images (make up)
    ```sh
-   docker-compose up --build
+   make devbuild
    ```
-   or if images created already (make upb):
+2. Run the containers:
    ```sh
-   docker-compose up
+   make solo
+   ```
+   or if proxy running and want to run the integrated version:
+   ```sh
+   make integrated
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
