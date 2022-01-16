@@ -6,22 +6,20 @@ import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import { getImageUrl } from 'axiosInstance';
 
-// autoPlay(SwipeableViews);
-const AutoPlaySwipeableViews = SwipeableViews;
+// 
+const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
-const MAX_WIDTH = 600
-const HEIGHT = MAX_WIDTH * 3 / 5
-function SwipeableTextMobileStepper({images = []}) {
+function SwipeableTextMobileStepper({ images = [], height = '100%' }) {
     const theme = useTheme();
     const [activeStep, setActiveStep] = React.useState(0);
 
     let imageList = []
-    if(images.length === 0) {
+    if (images.length === 0) {
         imageList = ["https://cdn.dribbble.com/users/308895/screenshots/2598725/no-results.gif"]
     } else {
-        imageList = images.map(el => getImageUrl("catalogue", el)) 
+        imageList = images.map(el => getImageUrl("catalogue", el))
     }
-    
+
     const maxSteps = imageList.length;
 
     const handleNext = () => {
@@ -37,8 +35,8 @@ function SwipeableTextMobileStepper({images = []}) {
     };
 
     return (
-        <Box sx={{ maxWidth: MAX_WIDTH, flexGrow: 1 }}>
-           
+        <Box sx={{ flexGrow: 1 }}>
+
             <AutoPlaySwipeableViews
                 axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                 index={activeStep}
@@ -51,11 +49,11 @@ function SwipeableTextMobileStepper({images = []}) {
                             <Box
                                 component="img"
                                 sx={{
-                                    height: HEIGHT,
+                                    height,
                                     display: 'block',
-                                    maxWidth: MAX_WIDTH,
                                     overflow: 'hidden',
                                     width: '100%',
+                                    objectFit: 'cover'
                                 }}
                                 src={image}
                                 alt={image}
@@ -91,7 +89,7 @@ function SwipeableTextMobileStepper({images = []}) {
                     </Button>
                 }
             />
-            
+
         </Box>
     );
 }

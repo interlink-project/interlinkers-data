@@ -1,5 +1,6 @@
 version: "3.3"
 services:
+
   frontend:
     image: 'frontendprod:${TAG-latest}'
     container_name: frontend-prod
@@ -11,7 +12,8 @@ services:
     env_file:
       - .env
     environment:
-      - REACT_APP_BASE_URI=http://localhost
+      - REACT_APP_BASE_URI=https://${DOMAIN}
+    stdin_open: true
     deploy:
       labels:
         - traefik.enable=true

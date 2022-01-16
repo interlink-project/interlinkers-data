@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { Box, Card, Checkbox, Chip, Divider, FormControlLabel, Input } from '@material-ui/core';
+import React, { useState, useEffect } from 'react';
+import { Box, Card, Checkbox, Chip, Divider, FormControlLabel, Input, Switch } from '@material-ui/core';
 import SearchIcon from '../../../../icons/Search';
 import MultiSelect from '../../../MultiSelect';
 import { getInterlinkers } from 'slices/catalogue';
@@ -67,7 +67,7 @@ const InterlinkerBrowseFilter = (props) => {
           />
         </Box>
       </Box>
-      
+
       <Divider />
       <Box
         sx={{
@@ -78,14 +78,18 @@ const InterlinkerBrowseFilter = (props) => {
         }}
       >
         {selectOptions.map((option) => (
-          <MultiSelect
-            key={option.label}
-            label={option.label}
-            onChange={handleMultiSelectChange}
-            options={option.options}
-            value={[]}
-          />
+          <React.Fragment key={option.label}>
+            <MultiSelect
+              label={option.label}
+              onChange={handleMultiSelectChange}
+              options={option.options}
+              value={[]}
+            />
+            <Divider orientation='vertical' style={{  width: "20px" }} />
+          </React.Fragment>
         ))}
+
+        <FormControlLabel control={<Switch size="small" defaultChecked />} label="Show only liked" />
 
       </Box>
     </Card>

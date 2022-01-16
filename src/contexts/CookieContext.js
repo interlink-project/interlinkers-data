@@ -2,7 +2,6 @@ import { createContext, useEffect, useReducer } from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router';
 import axiosInstance from 'axiosInstance';
-import isJwtTokenExpired from 'jwt-check-expiry';
 
 const initialState = {
   isInitialized: false,
@@ -50,7 +49,7 @@ export const AuthProvider = (props) => {
 
   useEffect(() => {
     console.log("executing setUser")
-    axiosInstance.get('/auth/api/v1/users/me').then(({ data }) => {
+    axiosInstance.get('/auth/api/v1/users/me/').then(({ data }) => {
       console.log('RESPONSE FOR ME', data);
       dispatch({
         type: 'SET_USER',
@@ -67,18 +66,10 @@ export const AuthProvider = (props) => {
   }, []);
 
   const signinRedirect = () => {
-    // console.log(window.location.pathname)
     window.location.replace(`/auth/login?redirect_on_callback=${window.location.pathname}`);
   }
-
-  const parseJwt = (token) => {
-    const base64Url = token.split('.')[1];
-    const base64 = base64Url.replace('-', '+').replace('_', '/');
-    return JSON.parse(window.atob(base64));
-  };
-
+  
   const logout = () => {
-    localStorage.clear();
     window.location.replace(`/auth/logout`);
   };
 
@@ -86,10 +77,9 @@ export const AuthProvider = (props) => {
     <AuthContext.Provider
       value={{
         ...state,
-        platform: 'OIDC',
+        platform: 'Cookie',
         logout,
         signinRedirect,
-        parseJwt,
       }}
     >
       {children}

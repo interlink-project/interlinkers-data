@@ -8,8 +8,9 @@ import {
   Grid,
   Typography,
 } from '@material-ui/core';
-import InterlinkerMetadata from './InterlinkerMetadata';
 import { experimentalStyled } from '@material-ui/core/styles';
+import { getImageUrl } from 'axiosInstance';
+import SwipeableTextMobileStepper from './browse/Carousel';
 
 const MarkdownWrapper = experimentalStyled('div')(({ theme }) => ({
   color: theme.palette.text.primary,
@@ -21,41 +22,24 @@ const MarkdownWrapper = experimentalStyled('div')(({ theme }) => ({
 
 const InterlinkerOverview = (props) => {
   const { interlinker, ...other } = props;
-  const { description, keywords, title } = interlinker;
+  const { description, keywords, name } = interlinker;
 
   return (
-    <Grid
-      container
-      spacing={3}
-      {...other}
-    >
+
+
+    <Card {...other} sx={{height: "100%"}}>
       <Grid
-        item
-        md={3}
-        lg={3}
-        xl={2}
-        xs={12}
-        direction='column'
-        alignItems='center'
-        justify='center'
+        container
+        spacing={3}
+        {...other}
       >
-        <InterlinkerMetadata
-          logo={interlinker.image}
-          title={interlinker.title}
-          budget={interlinker.budget}
-          currency={interlinker.currency}
-          endDate={interlinker.endDate}
-          updatedAt={interlinker.updatedAt}
-        />
-      </Grid>
-      <Grid
-        item
-        md={9}
-        lg={9}
-        xl={10}
-        xs={12}
-      >
-        <Card {...other}>
+        <Grid
+          item
+          xs={12}
+          md={6}
+          lg={6}
+          xl={6}
+        >
           <CardContent>
             <Grid
               container
@@ -76,7 +60,7 @@ const InterlinkerOverview = (props) => {
                   color='textPrimary'
                   variant='subtitle2'
                 >
-                  {title}
+                  {name}
                 </Typography>
                 <Box sx={{ mt: 3 }}>
                   <Typography
@@ -86,7 +70,7 @@ const InterlinkerOverview = (props) => {
                     Keywords
                   </Typography>
                   <Box sx={{ mt: 1 }}>
-                    {keywords.map((tag) => (
+                    {keywords && keywords.split(";").map((tag) => (
                       <Chip
                         key={tag}
                         label={tag}
@@ -109,10 +93,23 @@ const InterlinkerOverview = (props) => {
                 <Markdown source={description} />
               </MarkdownWrapper>
             </Box>
+
           </CardContent>
-        </Card>
+        </Grid>
+        <Grid
+          item
+          md={6}
+          lg={6}
+          xl={6}
+          xs={12}
+        >
+          <Box sx={{ bottom: 0 }}>
+            <SwipeableTextMobileStepper images={interlinker.images} />
+          </Box>
+        </Grid>
       </Grid>
-    </Grid>
+    </Card>
+
   );
 };
 

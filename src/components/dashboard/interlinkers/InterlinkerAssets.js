@@ -22,7 +22,29 @@ const InterlinkerOverview = (props) => {
           mx: -1,
         }}
       >
-        {interlinker.files.map((file) => (
+        {[
+        {
+          id: '5e8dd0721b9e0fab56d7238b',
+          mimeType: 'image/png',
+          name: 'example-interlinker1.jpg',
+          size: 1024 * 1024 * 3,
+          url: '/static/mock-images/interlinkers/interlinker_4.png',
+        },
+        {
+          id: '5e8dd0784431995a30eb2586',
+          mimeType: 'application/zip',
+          name: 'docs.zip',
+          size: 1024 * 1024 * 25,
+          url: '#',
+        },
+        {
+          id: '5e8dd07cbb62749296ecee1c',
+          mimeType: 'image/png',
+          name: 'example-interlinker2.jpg',
+          size: 1024 * 1024 * 2,
+          url: '/static/mock-images/interlinkers/interlinker_1.png',
+        },
+      ].map((file) => (
           <Box
             key={file.url}
             sx={{

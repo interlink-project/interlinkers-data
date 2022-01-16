@@ -12,7 +12,7 @@ services:
     env_file:
       - .env
     environment:
-      - REACT_APP_BASE_URI=http://localhost
+      - REACT_APP_BASE_URI=http://${DOMAIN}
     stdin_open: true
     labels:
       - traefik.enable=true
@@ -21,3 +21,7 @@ services:
       - traefik.http.services.${STACK_NAME?Variable not set}-frontend.loadbalancer.server.port=80
     networks:
       - traefik-public
+
+networks:
+  traefik-public:
+    external: true

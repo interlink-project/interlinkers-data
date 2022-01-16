@@ -13,6 +13,7 @@ import {
   CardMedia,
   Chip,
   Divider,
+  Popover,
   Grid,
   IconButton,
   Link,
@@ -33,6 +34,7 @@ const InterlinkerCard = (props) => {
   const { interlinker, mode, ...other } = props;
   const [isLiked, setIsLiked] = useState(interlinker.isLiked);
   const [likes, setLikes] = useState(interlinker.likes || 0);
+  const [hovered, setHovered] = useState(false);
   const isOn = status[interlinker.backend] && status[interlinker.backend].status === "on"
   const isSoftware = interlinker.nature === "SW"
   const sameHeightCards = {
@@ -53,8 +55,22 @@ const InterlinkerCard = (props) => {
   };
   //     <CardActionArea component={RouterLink} to="/">
 
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const handlePopoverOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handlePopoverClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+
   const GridMode = () => <><Box sx={{ p: 3 }}>
+
     <Box
+
       sx={{
         alignItems: 'center',
         display: 'flex',
@@ -64,7 +80,7 @@ const InterlinkerCard = (props) => {
       }}
     >
       <Avatar
-        alt='Team'
+        alt='Logotype'
         src={getImageUrl("catalogue", interlinker.logotype)}
         variant='square'
       >
@@ -74,7 +90,7 @@ const InterlinkerCard = (props) => {
         <Link
           color='textPrimary'
           component={RouterLink}
-          to='/dashboard/interlinkers/123'
+          to={`/dashboard/interlinkers/${interlinker.id}`}
           variant='h6'
           title={interlinker.name}
         >
@@ -99,8 +115,8 @@ const InterlinkerCard = (props) => {
           >
             team name
           </Link>
-          </Typography>
-          <Typography
+        </Typography>
+        <Typography
           color='textSecondary'
           variant='body2'
         >
@@ -110,34 +126,37 @@ const InterlinkerCard = (props) => {
           {' '}
           ago
         </Typography>
-        
+
       </Box>
-          <Box
-            sx={{
-              alignItems: 'right',
-              display: 'flex',
-            }}
-          >
-            {isLiked ? (
-              <Tooltip title='Unlike'>
-                <IconButton
-                  onClick={handleUnlike}
-                  sx={{ color: red['600'] }}
-                >
-                  <FavoriteIcon fontSize='small' />
-                </IconButton>
-              </Tooltip>
-            ) : (
-              <Tooltip title='Like'>
-                <IconButton onClick={handleLike}>
-                  <FavoriteBorderIcon fontSize='small' />
-                </IconButton>
-              </Tooltip>
-            )}
-        </Box>
+      <Box
+        sx={{
+          alignItems: 'right',
+          display: 'flex',
+        }}
+      >
+        {isLiked ? (
+          <Tooltip title='Unlike'>
+            <IconButton
+              onClick={handleUnlike}
+              sx={{ color: red['600'] }}
+            >
+              <FavoriteIcon fontSize='small' />
+            </IconButton>
+          </Tooltip>
+        ) : (
+          <Tooltip title='Like'>
+            <IconButton onClick={handleLike}>
+              <FavoriteBorderIcon fontSize='small' />
+            </IconButton>
+          </Tooltip>
+        )}
+      </Box>
     </Box>
+    
   </Box>
-    <Box
+  {hovered ? <Box sx={{ bottom: 0 }}>
+      <SwipeableTextMobileStepper images={interlinker.images} height="300px" />
+    </Box> : <><Box
       sx={{
         pb: 1,
         px: 3,
@@ -244,20 +263,21 @@ const InterlinkerCard = (props) => {
       {interlinker.keywords && interlinker.keywords.split(";").map(
         el => <Chip label={el} key={el} size="small" variant="outlined" sx={{ mr: 1 }} />
       )}
-    </Box>
+    </Box></>}
+    
 
+    
 
-    <Box sx={{ bottom: 0 }}>
-      <SwipeableTextMobileStepper images={interlinker.images} />
-    </Box>
   </>
 
   return (
+      <Card {...other} style={sameHeightCards} aria-owns={open ? 'mouse-over-popover' : undefined}
+        aria-haspopup="true"
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}>
+        {mode === "grid" && <GridMode />}
 
-    <Card {...other} style={sameHeightCards}>
-      {mode === "grid" && <GridMode />}
-
-    </Card>
+      </Card>
   );
 };
 

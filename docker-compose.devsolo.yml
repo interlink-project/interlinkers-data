@@ -13,9 +13,7 @@ services:
     env_file:
       - .env
     environment:
-      - REACT_APP_BASE_URI=http://localhost
+      - REACT_APP_BASE_URI=http://${DOMAIN}
     stdin_open: true
     ports:
       - "${SOLODEVPORT}:${PORT}"
-    networks:
-      - default

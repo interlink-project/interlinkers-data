@@ -11,7 +11,6 @@ export { default as InterlinkerDescriptionForm } from './InterlinkerDescriptionF
 export { default as InterlinkerDetailsForm } from './InterlinkerDetailsForm';
 export { default as InterlinkerFileCard } from './InterlinkerFileCard';
 export { default as InterlinkerMembers } from './InterlinkerMembers';
-export { default as InterlinkerMetadata } from './InterlinkerMetadata';
 export { default as InterlinkerOverview } from './InterlinkerOverview';
 export { default as InterlinkerOwnerForm } from './InterlinkerOwnerForm';
 export { default as InterlinkerReviewCard } from './InterlinkerReviewCard';

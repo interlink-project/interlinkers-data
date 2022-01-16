@@ -13,12 +13,21 @@ services:
     env_file:
       - .env
     environment:
-      - REACT_APP_BASE_URI=http://localhost
+      # needed for OIDC but actually it is not being used now (cookie based authentication)
+      - REACT_APP_BASE_URI=http://${DOMAIN}
+    ports:
+      - "${SOLODEVPORT}:${PORT}"
     stdin_open: true
     labels:
       - traefik.enable=true
+      - traefik.http.routers.whoami.entrypoints=web
       - traefik.docker.network=traefik-public
       - traefik.http.routers.${STACK_NAME?Variable not set}-frontend-http.rule=PathPrefix(`/`)
       - traefik.http.services.${STACK_NAME?Variable not set}-frontend.loadbalancer.server.port=${PORT}
     networks:
       - traefik-public
+
+networks:
+  traefik-public:
+    external: true
+

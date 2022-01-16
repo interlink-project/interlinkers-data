@@ -1,21 +1,24 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { interlinkersApi} from '../__fakeApi__';
+import { interlinkersApi } from '../__fakeApi__';
 
 const initialState = {
   loading: false,
   updating: false,
   interlinkers: [],
   status: {},
+  websocket: null
 };
 
 
 const slice = createSlice({
-  name: 'process',
+  name: 'catalogue',
   initialState,
   reducers: {
     setInterlinkers(state, action) {
-      state.interlinkers = action.payload.interlinkers;
-      state.status = action.payload.status;
+      state.interlinkers = action.payload;
+    },
+    setStatus(state, action) {
+      state.status = action.payload;
     },
     setLoading(state, action) {
       state.loading = action.payload;
@@ -30,9 +33,14 @@ export const { reducer } = slice;
 
 export const getInterlinkers = (search, nature) => async (dispatch) => {
   dispatch(slice.actions.setLoading(true));
-  const [interlinkers, status] = await Promise.all([interlinkersApi.search(search, nature), interlinkersApi.status()])
-  dispatch(slice.actions.setInterlinkers({interlinkers, status }));
+  // const [interlinkers, status] = await Promise.all([interlinkersApi.search(search, nature), interlinkersApi.status()])
+  const interlinkers = await interlinkersApi.search(search, nature)
+  dispatch(slice.actions.setInterlinkers(interlinkers));
   dispatch(slice.actions.setLoading(false));
+};
+
+export const setStatus = (status) => async (dispatch) => {
+  dispatch(slice.actions.setStatus(status));
 };
 
 export default slice;
