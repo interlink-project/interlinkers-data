@@ -31,12 +31,12 @@ import SwipeableTextMobileStepper from './Carousel';
 
 const InterlinkerCard = (props) => {
   const { status } = useSelector((state) => state.catalogue);
-  const { interlinker, mode, ...other } = props;
+  const { interlinker, mode, onInterlinkerClick, ...other } = props;
   const [isLiked, setIsLiked] = useState(interlinker.isLiked);
   const [likes, setLikes] = useState(interlinker.likes || 0);
   const [hovered, setHovered] = useState(false);
   const isOn = status[interlinker.backend] && status[interlinker.backend].status === "on"
-  const isSoftware = interlinker.nature === "SW"
+  const isSoftware = interlinker.nature === "softwareinterlinker"
   const sameHeightCards = {
     minHeight: "200px",
     height: "100%",
@@ -55,22 +55,16 @@ const InterlinkerCard = (props) => {
   };
   //     <CardActionArea component={RouterLink} to="/">
 
-  const [anchorEl, setAnchorEl] = useState(null);
-
-  const handlePopoverOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handlePopoverClose = () => {
-    setAnchorEl(null);
-  };
-
-  const open = Boolean(anchorEl);
-
+  const linkProps = onInterlinkerClick ? {
+    onClick: () => onInterlinkerClick(interlinker),
+  } : {
+    component: RouterLink,
+    onClick: onInterlinkerClick,
+    to: `/dashboard/interlinkers/${interlinker.id}`
+  }
   const GridMode = () => <><Box sx={{ p: 3 }}>
 
     <Box
-
       sx={{
         alignItems: 'center',
         display: 'flex',
@@ -89,8 +83,7 @@ const InterlinkerCard = (props) => {
       <Box sx={{ ml: 2 }}>
         <Link
           color='textPrimary'
-          component={RouterLink}
-          to={`/dashboard/interlinkers/${interlinker.id}`}
+          {...linkProps}
           variant='h6'
           title={interlinker.name}
         >
@@ -152,11 +145,9 @@ const InterlinkerCard = (props) => {
         )}
       </Box>
     </Box>
-    
+
   </Box>
-  {hovered ? <Box sx={{ bottom: 0 }}>
-      <SwipeableTextMobileStepper images={interlinker.images} height="300px" />
-    </Box> : <><Box
+    <Box
       sx={{
         pb: 1,
         px: 3,
@@ -263,21 +254,21 @@ const InterlinkerCard = (props) => {
       {interlinker.keywords && interlinker.keywords.split(";").map(
         el => <Chip label={el} key={el} size="small" variant="outlined" sx={{ mr: 1 }} />
       )}
-    </Box></>}
-    
-
-    
-
+    </Box>
+    <Box sx={{ bottom: 0 }}>
+      <SwipeableTextMobileStepper images={interlinker.images} height="300px" />
+    </Box>
   </>
 
   return (
-      <Card {...other} style={sameHeightCards} aria-owns={open ? 'mouse-over-popover' : undefined}
-        aria-haspopup="true"
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}>
-        {mode === "grid" && <GridMode />}
+    <Card {...other} style={sameHeightCards}
+      aria-haspopup="true"
+      // onMouseEnter={() => setHovered(true)}
+      // onMouseLeave={() => setHovered(false)}
+      >
+      {mode === "grid" && <GridMode />}
 
-      </Card>
+    </Card>
   );
 };
 

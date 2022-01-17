@@ -24,33 +24,12 @@
 </div>
 
 
-
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-  </ol>
-</details>
-
-
-
-<!-- ABOUT THE INTERLINKER -->
-## About the Interlinker
+<!-- ABOUT THE COMPONENT -->
+## About the component
 
 ![Screen Shot](images/screenshot.png)
 
-This frontend is intended to be the graphical interface with which the users of the "collaborative environment" defined by the project interact.
+This component is intended to be the graphical interface with which the users of the "collaborative environment" defined by the project interact.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

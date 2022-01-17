@@ -74,168 +74,153 @@ const InterlinkerDetailsForm = (props) => {
           onSubmit={handleSubmit}
           {...other}
         >
-          <Card sx={{ p: 3 }}>
-            <Typography
-              color='textPrimary'
-              variant='h6'
+          <Box sx={{ mt: 2 }}>
+            <TextField
+              error={Boolean(touched.interlinkerName && errors.interlinkerName)}
+              fullWidth
+              helperText={touched.interlinkerName && errors.interlinkerName}
+              label='Interlinker Name'
+              name='interlinkerName'
+              onBlur={handleBlur}
+              onChange={handleChange}
+              value={values.interlinkerName}
+              variant='outlined'
+            />
+            <Box
+              sx={{
+                alignItems: 'center',
+                display: 'flex',
+                mt: 3
+              }}
             >
-              Interlinker details
-            </Typography>
-            <Typography
-              color='textSecondary'
-              variant='body1'
-            >
-              Proin tincidunt lacus sed ante efficitur efficitur.
-              Quisque aliquam fringilla velit sit amet euismod.
-            </Typography>
-            <Box sx={{ mt: 2 }}>
               <TextField
-                error={Boolean(touched.interlinkerName && errors.interlinkerName)}
                 fullWidth
-                helperText={touched.interlinkerName && errors.interlinkerName}
-                label='Interlinker Name'
-                name='interlinkerName'
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.interlinkerName}
+                label='Tags'
+                name='tags'
+                onChange={(event) => setTag(event.target.value)}
+                value={tag}
                 variant='outlined'
               />
-              <Box
-                sx={{
-                  alignItems: 'center',
-                  display: 'flex',
-                  mt: 3
+              <IconButton
+                sx={{ ml: 2 }}
+                onClick={() => {
+                  if (!tag) {
+                    return;
+                  }
+
+                  setFieldValue('tags', [
+                    ...values.tags,
+                    tag
+                  ]);
+                  setTag('');
                 }}
               >
-                <TextField
-                  fullWidth
-                  label='Tags'
-                  name='tags'
-                  onChange={(event) => setTag(event.target.value)}
-                  value={tag}
+                <PlusIcon fontSize='small' />
+              </IconButton>
+            </Box>
+            <Box sx={{ mt: 2 }}>
+              {values.tags.map((_tag, i) => (
+                <Chip
+                  onDelete={() => {
+                    const newTags = values.tags.filter((t) => t !== _tag);
+
+                    setFieldValue('tags', newTags);
+                  }}
+                  // eslint-disable-next-line react/no-array-index-key
+                  key={i}
+                  label={_tag}
+                  sx={{
+                    '& + &': {
+                      ml: 1
+                    }
+                  }}
                   variant='outlined'
                 />
-                <IconButton
-                  sx={{ ml: 2 }}
-                  onClick={() => {
-                    if (!tag) {
-                      return;
-                    }
-
-                    setFieldValue('tags', [
-                      ...values.tags,
-                      tag
-                    ]);
-                    setTag('');
-                  }}
-                >
-                  <PlusIcon fontSize='small' />
-                </IconButton>
-              </Box>
+              ))}
+            </Box>
+            {Boolean(touched.tags && errors.tags) && (
               <Box sx={{ mt: 2 }}>
-                {values.tags.map((_tag, i) => (
-                  <Chip
-                    onDelete={() => {
-                      const newTags = values.tags.filter((t) => t !== _tag);
-
-                      setFieldValue('tags', newTags);
-                    }}
-                    // eslint-disable-next-line react/no-array-index-key
-                    key={i}
-                    label={_tag}
-                    sx={{
-                      '& + &': {
-                        ml: 1
-                      }
-                    }}
-                    variant='outlined'
-                  />
-                ))}
+                <FormHelperText error>
+                  {errors.tags}
+                </FormHelperText>
               </Box>
-              {Boolean(touched.tags && errors.tags) && (
-                <Box sx={{ mt: 2 }}>
-                  <FormHelperText error>
-                    {errors.tags}
-                  </FormHelperText>
-                </Box>
-              )}
-              <Box
-                sx={{
-                  display: 'flex',
-                  mt: 4
-                }}
-              >
-                <Box sx={{ mr: 2 }}>
-                  <MobileDatePicker
-                    label='Start Date'
-                    onAccept={() => setFieldTouched('startDate')}
-                    onChange={(date) => setFieldValue('startDate', date)}
-                    onClose={() => setFieldTouched('startDate')}
-                    renderInput={(inputProps) => (
-                      <TextField
-                        variant='outlined'
-                        {...inputProps}
-                      />
-                    )}
-                    value={values.startDate}
-                  />
-                </Box>
+            )}
+            <Box
+              sx={{
+                display: 'flex',
+                mt: 4
+              }}
+            >
+              <Box sx={{ mr: 2 }}>
                 <MobileDatePicker
-                  label='End Date'
-                  onAccept={() => setFieldTouched('endDate')}
-                  onChange={(date) => setFieldValue('endDate', date)}
-                  onClose={() => setFieldTouched('endDate')}
+                  label='Start Date'
+                  onAccept={() => setFieldTouched('startDate')}
+                  onChange={(date) => setFieldValue('startDate', date)}
+                  onClose={() => setFieldTouched('startDate')}
                   renderInput={(inputProps) => (
                     <TextField
                       variant='outlined'
                       {...inputProps}
                     />
                   )}
-                  value={values.endDate}
+                  value={values.startDate}
                 />
               </Box>
-              {Boolean(touched.startDate && errors.startDate) && (
-                <Box sx={{ mt: 2 }}>
-                  <FormHelperText error>
-                    {errors.startDate}
-                  </FormHelperText>
-                </Box>
-              )}
-              {Boolean(touched.endDate && errors.endDate) && (
-                <Box sx={{ mt: 2 }}>
-                  <FormHelperText error>
-                    {errors.endDate}
-                  </FormHelperText>
-                </Box>
-              )}
+              <MobileDatePicker
+                label='End Date'
+                onAccept={() => setFieldTouched('endDate')}
+                onChange={(date) => setFieldValue('endDate', date)}
+                onClose={() => setFieldTouched('endDate')}
+                renderInput={(inputProps) => (
+                  <TextField
+                    variant='outlined'
+                    {...inputProps}
+                  />
+                )}
+                value={values.endDate}
+              />
             </Box>
-            <Box
-              sx={{
-                display: 'flex',
-                mt: 6
-              }}
-            >
-              {onBack && (
-                <Button
-                  color='primary'
-                  onClick={onBack}
-                  size='large'
-                  variant='text'
-                >
-                  Previous
-                </Button>
-              )}
-              <Box sx={{ flexGrow: 1 }} />
+            {Boolean(touched.startDate && errors.startDate) && (
+              <Box sx={{ mt: 2 }}>
+                <FormHelperText error>
+                  {errors.startDate}
+                </FormHelperText>
+              </Box>
+            )}
+            {Boolean(touched.endDate && errors.endDate) && (
+              <Box sx={{ mt: 2 }}>
+                <FormHelperText error>
+                  {errors.endDate}
+                </FormHelperText>
+              </Box>
+            )}
+          </Box>
+          <Box
+            sx={{
+              display: 'flex',
+              mt: 6
+            }}
+          >
+            {onBack && (
               <Button
                 color='primary'
-                disabled={isSubmitting}
-                type='submit'
-                variant='contained'
+                onClick={onBack}
+                size='large'
+                variant='text'
               >
-                Next
+                Previous
               </Button>
-            </Box>
-          </Card>
+            )}
+            <Box sx={{ flexGrow: 1 }} />
+            <Button
+              color='primary'
+              disabled={isSubmitting}
+              type='submit'
+              variant='contained'
+            >
+              Next
+            </Button>
+          </Box>
         </form>
       )}
     </Formik>

@@ -21,7 +21,7 @@ import { MoreVert as MoreVertIcon, Search as SearchIcon } from '@material-ui/ico
 import { red } from '@material-ui/core/colors';
 import moment from 'moment';
 import { cleanUnderScores } from "../../../../../utils/cleanUnderscores"
-
+import NewAssetModal from "./NewAssetModal"
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -69,6 +69,35 @@ const Assets = ({ selectedTask }) => {
   const { assets = [] } = selectedTask
   const AddNewAssetButton = () => <Button sx={{ mt: 2 }} variant="contained" fullWidth>Add new asset</Button>
 
+  function onMessage(event) {
+    // Check sender origin to be trusted
+    if (event.origin !== "http://localhost") return;
+    const {code, message} = event.data
+    if (code === "asset_created"){
+      console.log("RECEIVED MESSAGE", event.origin, event, code, message)
+    }
+  }
+
+  useEffect(() => {
+    // https://stackoverflow.com/questions/2161388/calling-a-parent-window-function-from-an-iframe
+    if (window.addEventListener) {  // all browsers except IE before version 9
+      window.addEventListener("message", onMessage, false);
+    }
+    else if (window.attachEvent) {
+      window.attachEvent("onmessage", onMessage, false);
+    }
+
+    
+    return () => {
+      if (window.addEventListener) {
+        window.removeEventListener("message", onMessage, false);
+      }
+      else if (window.attachEvent) {
+        window.attachEvent("onmessage", onMessage, false);
+      }
+    }
+  }, []);
+
   const Asset = ({ asset }) => {
     const [error, setError] = useState(false)
 
@@ -111,14 +140,15 @@ const Assets = ({ selectedTask }) => {
     </Paper>
 
     {assets.length === 0 ?
-      <Alert severity="warning" sx={{mt: 2}}>No assets yet for this task. Instantiate an interlinker, please.</Alert>
+      <Alert severity="warning" sx={{ mt: 2 }}>No assets yet for this task. Instantiate an interlinker, please.</Alert>
       : <Grid container spacing={1} sx={{ mt: 1 }}>{
         assets.map(asset =>
           <Grid item key={asset.id} xl={3} lg={4} md={6} sm={6}>
             <Asset asset={asset} />
           </Grid>)}
       </Grid>}
-    <AddNewAssetButton /></>
+    <NewAssetModal />
+    </>
 }
 
 

@@ -17,7 +17,7 @@ import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import InterlinkerCard from './InterlinkerCard';
 import { useSelector } from 'react-redux';
 
-const InterlinkerBrowseResults = (props) => {
+const InterlinkerBrowseResults = ({onInterlinkerClick}) => {
   const { interlinkers } = useSelector((state) => state.catalogue);
   const sortRef = useRef(null);
   const [openSort, setOpenSort] = useState(false);
@@ -42,7 +42,7 @@ const InterlinkerBrowseResults = (props) => {
   };
 
   return (
-    <div {...props}>
+    <div>
       <Box
         sx={{
           alignItems: 'center',
@@ -118,7 +118,7 @@ const InterlinkerBrowseResults = (props) => {
             sm={mode === 'grid' ? 6 : 12}
             xs={12}
           >
-            <InterlinkerCard interlinker={interlinker} mode={mode} />
+            <InterlinkerCard interlinker={interlinker} onInterlinkerClick={onInterlinkerClick} mode={mode} />
           </Grid>
         ))}
       </Grid>

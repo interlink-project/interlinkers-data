@@ -10,12 +10,20 @@ import {
   CardContent,
   Avatar,
   Button,
+  Stepper,
+  Step,
+  StepLabel
 } from '@material-ui/core';
 import useSettings from '../../../hooks/useSettings';
 import gtm from '../../../lib/gtm';
 import InterlinkerDescriptionForm from './Create/InterlinkerDescriptionForm';
 import InterlinkerDetailsForm from './Create/InterlinkerDetailsForm';
-import InterlinkerOwnerForm from './Create/InterlinkerOwnerForm';
+import InterlinkerNatureForm from './Create/InterlinkerNatureForm';
+
+const steps = [
+  'Artefact information',
+  'Interlinker nature specific information',
+];
 
 const InterlinkerCreate = () => {
   const { settings } = useSettings();
@@ -25,6 +33,8 @@ const InterlinkerCreate = () => {
   }, []);
 
   const [activeStep, setActiveStep] = useState(0);
+  const [nature, setNature] = useState(false);
+
   const [completed, setCompleted] = useState(false);
 
   const handleNext = () => {
@@ -39,6 +49,11 @@ const InterlinkerCreate = () => {
     setCompleted(true);
   };
 
+  const handleNatureSelectionNext = (n) => {
+    setNature(n)
+    handleNext()
+  };
+
   return (
     <>
       <Helmet>
@@ -51,7 +66,7 @@ const InterlinkerCreate = () => {
           py: 8,
         }}
       >
-        <Container>
+        <Container maxWidth="xl">
           <Grid
             alignItems='center'
             container
@@ -67,89 +82,99 @@ const InterlinkerCreate = () => {
               </Typography>
             </Grid>
           </Grid>
+
           <Box sx={{ mt: 3 }}>
             <div>
-              {!completed ? (
-                <>
-                  {activeStep === 0 && (
-                    <InterlinkerOwnerForm onNext={handleNext} />
-                  )}
-                  {activeStep === 1 && (
-                    <InterlinkerDetailsForm
-                      onBack={handleBack}
-                      onNext={handleNext}
-                    />
-                  )}
-                  {activeStep === 2 && (
-                    <InterlinkerDescriptionForm
-                      onBack={handleBack}
-                      onComplete={handleComplete}
-                    />
-                  )}
-                </>
-              ) : (
-                <Card>
-                  <CardContent>
-                    <Box
-                      sx={{
-                        maxWidth: 450,
-                        mx: 'auto',
-                      }}
-                    >
+              <Card sx={{ p: 3 }}>
+                <Stepper activeStep={1} alternativeLabel>
+                  {steps.map((label) => (
+                    <Step key={label}>
+                      <StepLabel>{label}</StepLabel>
+                    </Step>
+                  ))}
+                </Stepper>
+                {!completed ? (
+                  <>
+                    {activeStep === 0 && (
+                      <InterlinkerDetailsForm
+                        onNext={handleNext}
+                      />
+                    )}
+                    {activeStep === 1 && (
+                      <InterlinkerNatureForm onBack={handleBack} onNext={handleNatureSelectionNext} nature={nature} />
+                    )}
+                    {activeStep === 2 && (
+                      <InterlinkerDescriptionForm
+                        onBack={handleBack}
+                        onComplete={handleComplete}
+                      />
+                    )}
+                  </>
+                ) : (
+                  <Card>
+                    <CardContent>
                       <Box
                         sx={{
-                          display: 'flex',
-                          justifyContent: 'center',
+                          maxWidth: 450,
+                          mx: 'auto',
                         }}
                       >
-                        <Avatar
+                        <Box
                           sx={{
-                            backgroundColor: 'primary.main',
-                            color: 'primary.contrastText',
+                            display: 'flex',
+                            justifyContent: 'center',
                           }}
                         >
-                          <StarIcon fontSize='small' />
-                        </Avatar>
-                      </Box>
-                      <Box sx={{ mt: 2 }}>
-                        <Typography
-                          align='center'
-                          color='textPrimary'
-                          variant='h3'
+                          <Avatar
+                            sx={{
+                              backgroundColor: 'primary.main',
+                              color: 'primary.contrastText',
+                            }}
+                          >
+                            <StarIcon fontSize='small' />
+                          </Avatar>
+                        </Box>
+                        <Box sx={{ mt: 2 }}>
+                          <Typography
+                            align='center'
+                            color='textPrimary'
+                            variant='h3'
+                          >
+                            You are all done!
+                          </Typography>
+                        </Box>
+                        <Box sx={{ mt: 2 }}>
+                          <Typography
+                            align='center'
+                            color='textSecondary'
+                            variant='subtitle1'
+                          >
+                            Donec ut augue sed nisi ullamcorper posuere sit amet
+                            eu mauris. Ut eget mauris scelerisque.
+                          </Typography>
+                        </Box>
+                        <Box
+                          sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            mt: 2,
+                          }}
                         >
-                          You are all done!
-                        </Typography>
+                          <Button
+                            color='primary'
+                            component={RouterLink}
+                            to='/dashboard/interlinkers/1'
+                            variant='contained'
+                          >
+                            View interlinker
+                          </Button>
+                        </Box>
                       </Box>
-                      <Box sx={{ mt: 2 }}>
-                        <Typography
-                          align='center'
-                          color='textSecondary'
-                          variant='subtitle1'
-                        >
-                          Donec ut augue sed nisi ullamcorper posuere sit amet
-                          eu mauris. Ut eget mauris scelerisque.
-                        </Typography>
-                      </Box>
-                      <Box
-                        sx={{
-                          display: 'flex',
-                          justifyContent: 'center',
-                          mt: 2,
-                        }}
-                      >
-                        <Button
-                          color='primary'
-                          component={RouterLink}
-                          to='/dashboard/interlinkers/1'
-                          variant='contained'
-                        >
-                          View interlinker
-                        </Button>
-                      </Box>
-                    </Box>
-                  </CardContent>
-                </Card>
-              )}
+                    </CardContent>
+                  </Card>
+                )}
+              </Card>
+
             </div>
           </Box>
         </Container>
