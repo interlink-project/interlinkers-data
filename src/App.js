@@ -13,7 +13,7 @@ import gtm from './lib/gtm';
 import routes from './routes/index';
 import { createCustomTheme } from './theme';
 import './translations/i18n';
-import { setStatus } from 'slices/catalogue';
+import { getInterlinkers } from 'slices/catalogue';
 import { useDispatch, useSelector } from 'react-redux';
 
 const App = () => {
@@ -23,6 +23,7 @@ const App = () => {
   const dispatch = useDispatch();
   useScrollReset();
 
+  /*
   const create_websocket = () => {
     return new WebSocket('ws://localhost/catalogue/connect/')
   }
@@ -31,7 +32,7 @@ const App = () => {
 
   useEffect(() => {
     // gtm.initialize(gtmConfig);
-
+    dispatch(getInterlinkers())
     if (false) {
       websocket.onopen = () => {
         // on connecting, do nothing but log it to the console
@@ -61,7 +62,8 @@ const App = () => {
     }
 
   }, [websocket]);
-
+  */
+ 
   const theme = createCustomTheme({
     direction: settings.direction,
     theme: settings.theme

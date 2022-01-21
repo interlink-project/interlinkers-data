@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useEffect, useState } from 'react';
 import {
     Box,
     Button,
@@ -9,19 +9,25 @@ import {
     Step,
     StepLabel,
     DialogTitle,
-    FormControl,
-    FormControlLabel,
-    InputLabel,
-    MenuItem,
+    Card,
+    CardContent,
+    Avatar,
+    Typography,
     Select,
-    Switch
+    Switch,
+    IconButton,
+    CircularProgress
 } from '@material-ui/core';
 import { InterlinkerBrowseFilter, InterlinkerBrowseResults } from 'components/dashboard/interlinkers';
+import { Link as RouterLink } from 'react-router-dom';
+import { getImageUrl } from 'axiosInstance';
+import { ArrowBack, Close } from '@material-ui/icons';
 
 export default function NewAssetModal() {
-    const [open, setOpen] = React.useState(false);
-    const [activeStep, setActiveStep] = React.useState(0);
-    const [selectedInterlinker, setSelectedInterlinker] = React.useState(null);
+    const [open, setOpen] = useState(false);
+    const [loadingInstantiator, setLoadingInstantiator] = useState(true);
+    const [activeStep, _setActiveStep] = useState(0);
+    const [selectedInterlinker, setSelectedInterlinker] = useState(null);
 
     const handleClickOpen = () => {
         setSelectedInterlinker(null)
@@ -33,25 +39,90 @@ export default function NewAssetModal() {
         setOpen(false);
     };
 
+    const setActiveStep = (i) => {
+        if (i === 0) {
+            setSelectedInterlinker(null)
+            setLoadingInstantiator(true)
+        }
+        _setActiveStep(i)
+    }
+
     const handleInterlinkerClick = (interlinker) => {
         console.log(interlinker)
         setSelectedInterlinker(interlinker)
         setActiveStep(1)
     }
 
+    function onMessage(event) {
+        // Check sender origin to be trusted
+        if (event.origin !== "http://localhost") return;
+        const { code, data } = event.data
+
+       
+        if (code === "initialized") {
+            setLoadingInstantiator(false)
+        }
+        if (code === "asset_created") {
+            console.log("RECEIVED MESSAGE", event.origin, event, code, data)
+            /* call POST /coproduction/api/v1/assets/ 
+            {
+                taskinstantiation_id: currentTaskIns,
+                external_id: data.id,
+                interlinker_id: selectedInterlinker.id
+            }
+            */
+            setActiveStep(2)
+            
+        }
+    }
+
+    useEffect(() => {
+        // https://stackoverflow.com/questions/2161388/calling-a-parent-window-function-from-an-iframe
+        if (window.addEventListener) {  // all browsers except IE before version 9
+            window.addEventListener("message", onMessage, false);
+        }
+        else if (window.attachEvent) {
+            window.attachEvent("onmessage", onMessage, false);
+        }
+
+
+        return () => {
+            if (window.addEventListener) {
+                window.removeEventListener("message", onMessage, false);
+            }
+            else if (window.attachEvent) {
+                window.attachEvent("onmessage", onMessage, false);
+            }
+        }
+    }, [selectedInterlinker]);
+
+
     return (
-        <React.Fragment>
+        <>
             <Button sx={{ mt: 2 }} variant="contained" fullWidth onClick={handleClickOpen}>Add new asset</Button>
             <Dialog
                 fullWidth
                 maxWidth="lg"
                 open={open}
-                // onClose={handleClose}
+            // onClose={handleClose}
 
             >
-                <DialogTitle>Asset creation dialog</DialogTitle>
-                <DialogContent style={{ minHeight: "60vh" }} sx={{
+                <DialogTitle sx={{
+                    alignItems: "center",
+                    backgroundColor: 'background.default',
+                }}>
+                    <Box sx={{
+                        justifyContent: "space-between",
+                    }}>
+                        {activeStep > 0 && <IconButton children={<ArrowBack />} onClick={() => setActiveStep(activeStep - 1)} />}
+                        <IconButton children={<Close />} onClick={handleClose} />
 
+                    </Box>
+
+                </DialogTitle>
+
+                <DialogContent style={{ minHeight: "70vh" }} sx={{
+                    alignItems: "center",
                     backgroundColor: 'background.default',
                 }}>
                     {/* <Stepper sx={{ mt: 2}} activeStep={activeStep} alternativeLabel>
@@ -69,16 +140,71 @@ export default function NewAssetModal() {
                         </Box>
                     </>}
 
-                    {activeStep === 1 && <Box sx={{ mt: 2 }}>
-                        <iframe src={`/${selectedInterlinker.backend}/api/v1/assets/instantiator/`} style={{ width: "100%", minHeight: "60vh", border: 0 }}></iframe>
+                    {activeStep === 1 && <Box sx={{ mt: 2}}>
+                        {loadingInstantiator && <CircularProgress />}
+                        <iframe style={{ display: loadingInstantiator ? "none" : "block" }} src={`/${selectedInterlinker.backend}/assets/instantiator/`} style={{ width: "100%", minHeight: "60vh", border: 0 }}></iframe>
+                    </Box>}
+
+                    {activeStep === 2 && <Box
+                        sx={{
+                            maxWidth: 450,
+                            mx: 'auto',
+                            alignItems: "center"
+                        }}
+                    >
+                        <Box
+                            sx={{
+                                display: 'flex',
+                                justifyContent: 'center',
+                            }}
+                        >
+                            <Avatar
+                                src={getImageUrl("catalogue", selectedInterlinker.logotype)}
+                            />
+                        </Box>
+                        <Box sx={{ mt: 2 }}>
+                            <Typography
+                                align='center'
+                                color='textPrimary'
+                                variant='h3'
+                            >
+                                Asset created!
+                            </Typography>
+                        </Box>
+                        <Box sx={{ mt: 2 }}>
+                            <Typography
+                                align='center'
+                                color='textSecondary'
+                                variant='subtitle1'
+                            >
+                                The asset is now accessible for this task.
+                            </Typography>
+                        </Box>
+                        <Box
+                            sx={{
+                                display: 'flex',
+                                justifyContent: 'center',
+                                mt: 2,
+                            }}
+                        >
+                            <Button
+                                color='primary'
+                                variant='contained'
+                            >
+                                Open asset
+                            </Button>
+                            <Button
+                                color='primary'
+                                onClick={handleClose}
+                                variant='text'
+                            >
+                                Dispose this window
+                            </Button>
+                        </Box>
                     </Box>}
 
                 </DialogContent>
-                <DialogActions>
-                    {activeStep === 1 && <Button variant="contained" onClick={() => setActiveStep(0)}>Previous</Button>}
-                    <Button onClick={handleClose}>Close</Button>
-                </DialogActions>
             </Dialog>
-        </React.Fragment>
+        </>
     );
 }

@@ -67,37 +67,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const Assets = ({ selectedTask }) => {
 
   const { assets = [] } = selectedTask
-  const AddNewAssetButton = () => <Button sx={{ mt: 2 }} variant="contained" fullWidth>Add new asset</Button>
-
-  function onMessage(event) {
-    // Check sender origin to be trusted
-    if (event.origin !== "http://localhost") return;
-    const {code, message} = event.data
-    if (code === "asset_created"){
-      console.log("RECEIVED MESSAGE", event.origin, event, code, message)
-    }
-  }
-
-  useEffect(() => {
-    // https://stackoverflow.com/questions/2161388/calling-a-parent-window-function-from-an-iframe
-    if (window.addEventListener) {  // all browsers except IE before version 9
-      window.addEventListener("message", onMessage, false);
-    }
-    else if (window.attachEvent) {
-      window.attachEvent("onmessage", onMessage, false);
-    }
-
-    
-    return () => {
-      if (window.addEventListener) {
-        window.removeEventListener("message", onMessage, false);
-      }
-      else if (window.attachEvent) {
-        window.attachEvent("onmessage", onMessage, false);
-      }
-    }
-  }, []);
-
+  
   const Asset = ({ asset }) => {
     const [error, setError] = useState(false)
 

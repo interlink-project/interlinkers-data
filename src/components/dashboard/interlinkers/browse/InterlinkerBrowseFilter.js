@@ -35,11 +35,19 @@ const InterlinkerBrowseFilter = (props) => {
   };
 
   useEffect(() => {
-    const delayDebounceFn = setTimeout(() => {
-      dispatch(getInterlinkers(inputValue))
-    }, 800)
+    var delayDebounceFn
+    if(inputValue){
+      delayDebounceFn = setTimeout(() => {
+        dispatch(getInterlinkers(inputValue))
+      }, 800)
+    }
+    
 
-    return () => clearTimeout(delayDebounceFn)
+    return () => {
+      if(delayDebounceFn){
+        clearTimeout(delayDebounceFn)
+      }
+    }
   }, [inputValue])
 
   return (

@@ -5,7 +5,6 @@ const initialState = {
   loading: false,
   updating: false,
   interlinkers: [],
-  status: {},
   websocket: null
 };
 
@@ -16,9 +15,6 @@ const slice = createSlice({
   reducers: {
     setInterlinkers(state, action) {
       state.interlinkers = action.payload;
-    },
-    setStatus(state, action) {
-      state.status = action.payload;
     },
     setLoading(state, action) {
       state.loading = action.payload;
@@ -37,10 +33,6 @@ export const getInterlinkers = (search, nature) => async (dispatch) => {
   const interlinkers = await interlinkersApi.search(search, nature)
   dispatch(slice.actions.setInterlinkers(interlinkers));
   dispatch(slice.actions.setLoading(false));
-};
-
-export const setStatus = (status) => async (dispatch) => {
-  dispatch(slice.actions.setStatus(status));
 };
 
 export default slice;

@@ -30,12 +30,11 @@ import { useSelector } from 'react-redux';
 import SwipeableTextMobileStepper from './Carousel';
 
 const InterlinkerCard = (props) => {
-  const { status } = useSelector((state) => state.catalogue);
   const { interlinker, mode, onInterlinkerClick, ...other } = props;
   const [isLiked, setIsLiked] = useState(interlinker.isLiked);
   const [likes, setLikes] = useState(interlinker.likes || 0);
   const [hovered, setHovered] = useState(false);
-  const isOn = status[interlinker.backend] && status[interlinker.backend].status === "on"
+  const isOn = false
   const isSoftware = interlinker.nature === "softwareinterlinker"
   const sameHeightCards = {
     minHeight: "200px",
