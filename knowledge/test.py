@@ -1,7 +1,7 @@
 from pathlib import Path
 import json
 
-error = False
+
 
 class bcolors:
     HEADER = '\033[95m'
@@ -45,6 +45,7 @@ with open("schema.json") as schema_json:
         print(f"################################################################################################{bcolors.ENDC}")
         with open(path_in_str) as json_file:
             data = json.load(json_file)
+            error = False
             for field, properties in schema.items():
                 try:
                     value = data[field]
@@ -62,11 +63,13 @@ with open("schema.json") as schema_json:
                         options = properties["options"]
                         if not value in options:
                             raise OptionsException(field, options, value)
+
                 except Exception as e:
                     error = True
                     print(f"{bcolors.FAIL}ERROR DETECTED:")
                     print(str(e) + bcolors.ENDC)
+            
+            error or print(f"\n{bcolors.OKGREEN}All checks passed!{bcolors.ENDC}")
                     
-if not error:
-    print(f"\n {bcolors.OKGREEN}All checks passed!")
+    
                         
