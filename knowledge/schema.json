@@ -1,0 +1,82 @@
+{
+    "name": {
+        "type": "str",
+        "mandatory": true
+    },
+    "description": {
+        "type": "str",
+        "mandatory": true
+    },
+    "keywords": {
+        "type": "str",
+        "mandatory": true,
+        "helpText": "keywords separated by ';'"
+    },
+    "difficulty": {
+        "type": "str",
+        "mandatory": false,
+        "options": [
+            "very_easy",
+            "easy",
+            "medium",
+            "difficult",
+            "very difficult"
+        ]
+    },
+    "targets": {
+        "type": "list",
+        "mandatory": false,
+        "tree": {
+            "All": {
+                "pas": [
+                    "public_servants",
+                    "politicians"
+                ],
+                "businesses": [
+                    "smes",
+                    "freelancers",
+                    "large_companies",
+                    "private_nonprofit"
+                ],
+                "citizens": [
+                    "potential_end_users",
+                    "expert_citizens"
+                ],
+                "research_organizations": [
+                    "universities",
+                    "other_research_entities"
+                ]
+            }
+        }
+    },
+    "license": {
+        "type": "str",
+        "mandatory": true,
+        "options": [
+            "public_domain",
+            "permissive_licence",
+            "copyleft",
+            "non_commercial_licence",
+            "proprietary_licence"
+        ]
+    },
+    "whyToUseIt": {
+        "type": "str",
+        "mandatory": false
+    },
+    "problemProfiles": {
+        "type": "list",
+        "mandatory": true,
+        "tree": {
+            "enabling_service": [
+                "implementing_software_and_artifact",
+                "operation_service"
+            ],
+            "enhancing_service": [
+                "onboarding_service",
+                "follow_up_service",
+                "external_expert"
+            ]
+        }
+    }
+}
