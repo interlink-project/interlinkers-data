@@ -1,79 +1,98 @@
 {
-    "$schema": "http://json-schema.org/draft-06/schema#",
-    "$ref": "#/definitions/Welcome1",
+    "title": "Schema",
+    "type": "object",
+    "properties": {
+        "name": {
+            "title": "Name",
+            "type": "string"
+        },
+        "description": {
+            "title": "Description",
+            "type": "string"
+        },
+        "tags": {
+            "title": "Tags",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "tasks": {
+            "title": "Tasks",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "keywords": {
+            "title": "Keywords",
+            "type": "string"
+        },
+        "difficulty": {
+            "$ref": "#/definitions/Difficulties"
+        },
+        "targets": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Targets"
+            }
+        },
+        "file": {
+            "title": "File",
+            "type": "string"
+        },
+        "whyToUseIt": {
+            "title": "Whytouseit",
+            "type": "string"
+        },
+        "problemProfiles": {
+            "title": "Problemprofiles",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "required": [
+        "name",
+        "keywords",
+        "difficulty",
+        "targets",
+        "file",
+        "problemProfiles"
+    ],
     "definitions": {
-        "Welcome1": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "keywords": {
-                    "type": "string"
-                },
-                "difficulty": {
-                    "type": "string"
-                },
-                "targets": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "license": {
-                    "type": "string"
-                },
-                "whyToUseIt": {
-                    "type": "string"
-                },
-                "problemProfiles": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "type": {
-                    "type": "string"
-                },
-                "associatedInterlinkers": {
-                    "type": "array",
-                    "items": {}
-                },
-                "administrativeScope": {
-                    "type": "string"
-                },
-                "domain": {
-                    "type": "string"
-                },
-                "softwareinterlinker": {
-                    "type": "string"
-                },
-                "filename": {
-                    "type": "object",
-                    "$ref": "file:knowledge/example_knowledge_interlinker/resources/doc.docx"
-             }
-            },
-            "required": [
-                "administrativeScope",
-                "associatedInterlinkers",
-                "description",
-                "difficulty",
-                "domain",
-                "filename",
-                "keywords",
-                "license",
-                "name",
-                "problemProfiles",
-                "softwareinterlinker",
-                "targets",
-                "type",
-                "whyToUseIt"
-            ],
-            "title": "Welcome1"
+        "Difficulties": {
+            "title": "Difficulties",
+            "description": "An enumeration.",
+            "enum": [
+                "very_easy",
+                "easy",
+                "medium",
+                "difficult",
+                "very_difficult"
+            ]
+        },
+        "Targets": {
+            "title": "Targets",
+            "description": "An enumeration.",
+            "enum": [
+                "all",
+                "all;pas",
+                "all;pas;public_servants",
+                "all;pas;politicians",
+                "all;businesses",
+                "all;businesses;smes",
+                "all;businesses;freelancers",
+                "all;businesses;large_companies",
+                "all;businesses;private_non_profit",
+                "all;citizens",
+                "all;citizens;potential_end_users",
+                "all;citizens;expert_citizens",
+                "all;research_organizations",
+                "all;research_organizations;universities",
+                "all;research_organizations;other_research_entities"
+            ]
         }
     }
 }

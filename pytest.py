@@ -34,7 +34,10 @@ for schema_path in Path(".").glob('**/schema.py'):
                 Schema(**data)
                 # if not valid, raises exception
             except Exception as e:
-                    error = True
-                    print(f"{bcolors.FAIL}ERROR DETECTED:")
-                    # print(traceback.format_exc())
-                    print(str(e) + bcolors.ENDC)
+                error = True
+                print(f"{bcolors.FAIL}ERROR DETECTED:")
+                # print(traceback.format_exc())
+                print(str(e) + bcolors.ENDC)
+    
+    # with open(f'{schema_path.parents[0]}/schema.json', 'w') as f:
+    #    json.dump(Schema.schema(), f)
