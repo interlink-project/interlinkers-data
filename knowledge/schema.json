@@ -1,82 +1,78 @@
 {
-    "name": {
-        "type": "str",
-        "mandatory": true
-    },
-    "description": {
-        "type": "str",
-        "mandatory": true
-    },
-    "keywords": {
-        "type": "str",
-        "mandatory": true,
-        "helpText": "keywords separated by ';'"
-    },
-    "difficulty": {
-        "type": "str",
-        "mandatory": false,
-        "options": [
-            "very_easy",
-            "easy",
-            "medium",
-            "difficult",
-            "very difficult"
-        ]
-    },
-    "targets": {
-        "type": "list",
-        "mandatory": false,
-        "tree": {
-            "all": {
-                "pas": [
-                    "public_servants",
-                    "politicians"
-                ],
-                "businesses": [
-                    "smes",
-                    "freelancers",
-                    "large_companies",
-                    "private_nonprofit"
-                ],
-                "citizens": [
-                    "potential_end_users",
-                    "expert_citizens"
-                ],
-                "research_organizations": [
-                    "universities",
-                    "other_research_entities"
-                ]
-            }
-        }
-    },
-    "license": {
-        "type": "str",
-        "mandatory": true,
-        "options": [
-            "public_domain",
-            "permissive_licence",
-            "copyleft",
-            "non_commercial_licence",
-            "proprietary_licence"
-        ]
-    },
-    "whyToUseIt": {
-        "type": "str",
-        "mandatory": false
-    },
-    "problemProfiles": {
-        "type": "list",
-        "mandatory": true,
-        "tree": {
-            "enabling_service": [
-                "implementing_software_and_artifact",
-                "operation_service"
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome1",
+    "definitions": {
+        "Welcome1": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "keywords": {
+                    "type": "string"
+                },
+                "difficulty": {
+                    "type": "string"
+                },
+                "targets": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "license": {
+                    "type": "string"
+                },
+                "whyToUseIt": {
+                    "type": "string"
+                },
+                "problemProfiles": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "type": {
+                    "type": "string"
+                },
+                "associatedInterlinkers": {
+                    "type": "array",
+                    "items": {}
+                },
+                "administrativeScope": {
+                    "type": "string"
+                },
+                "domain": {
+                    "type": "string"
+                },
+                "softwareinterlinker": {
+                    "type": "string"
+                },
+                "filename": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "administrativeScope",
+                "associatedInterlinkers",
+                "description",
+                "difficulty",
+                "domain",
+                "filename",
+                "keywords",
+                "license",
+                "name",
+                "problemProfiles",
+                "softwareinterlinker",
+                "targets",
+                "type",
+                "whyToUseIt"
             ],
-            "enhancing_service": [
-                "onboarding_service",
-                "follow_up_service",
-                "external_expert"
-            ]
+            "title": "Welcome1"
         }
     }
 }
