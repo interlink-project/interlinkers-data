@@ -15,11 +15,11 @@ class bcolors:
     UNDERLINE = "\033[4m"
 
 
+error = False
+
 # checks for schemas
 for schema_path in Path(".").glob("**/schema.py"):
     str_path = str(schema_path)
-
-    error = False
     Schema = importlib.import_module(
         f"{schema_path.parents[0]}.{schema_path.stem}"
     ).Schema
@@ -51,3 +51,10 @@ for schema_path in Path(".").glob("**/schema.py"):
             )
     with open(f"{schema_path.parents[0]}/schema.json", "w") as f:
         json.dump(Schema.schema(), f, indent=4)
+
+    error or print(
+        f"\n{bcolors.OKGREEN}All checks passed for {schema_path}!{bcolors.ENDC}"
+    )
+
+if error:
+    raise Exception("You should review your changes")
