@@ -16,7 +16,7 @@
     "constraints_and_limitations": "Some text here",
     "regulations_and_standards": "Optional text here",
     "form": "visual_template",
-    "format": "editable_source_documents",
+    "format": "editable_source_document",
     "instructions": "<h2 class=\"fg-white\">",
     "file": "example_knowledge_interlinker/resources/doc.docx"
 }
