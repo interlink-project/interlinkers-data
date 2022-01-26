@@ -13,38 +13,35 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
-def check(schema, data):
-    print(f"{bcolors.OKBLUE}################################################################################################")   
-    print(f"## PROCESSING {bcolors.ENDC}{name}{bcolors.OKBLUE}")     
-    print(f"################################################################################################{bcolors.ENDC}")
-    
-    # If no exception is raised by validate(), the instance is valid.
-    validate(instance=data, schema=schema)    
-
 # checks for schemas
-artefacts_paths = [str(path) for path in Path(".").glob('**/schema.json')]
-for artefacts_path in artefacts_paths:
-    with open(artefacts_path) as schema_json:
+schemas_paths = [str(path) for path in Path(".").glob('**/schema.json')]
+for schema_path in schemas_paths:
+    error = False
+    with open(schema_path) as schema_json:
         schema = json.load(schema_json)
 
         # checks for artefacts to compare with schemas
-        pathlist = Path(".").glob('knowledge/**/metadata.json')
+        pathlist = Path(schema_path.replace("schema.json", "")).glob('**/metadata.json')
+        
         for path in pathlist:
             path_in_str = str(path)
             name = path_in_str.replace("/metadata.json", "")
             
             with open(path_in_str) as json_file:
+                print(f"{bcolors.OKBLUE}################################################################################################")   
+                print(f"## PROCESSING {bcolors.ENDC}{name}{bcolors.OKBLUE}")     
+                print(f"################################################################################################{bcolors.ENDC}")
                 data = json.load(json_file)
-                error = False
+                
                 try:
-                    check(schema, data)
+                    validate(instance=data, schema=schema)    
                 except Exception as e:
                     error = True
                     print(f"{bcolors.FAIL}ERROR DETECTED:")
                     # print(traceback.format_exc())
                     print(str(e) + bcolors.ENDC)
     
-    error or print(f"\n{bcolors.OKGREEN}All checks passed!{bcolors.ENDC}")
+    error or print(f"\n{bcolors.OKGREEN}All checks passed for {schema_path}!{bcolors.ENDC}")
                 
         
                             

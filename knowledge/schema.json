@@ -53,8 +53,9 @@
                     "type": "string"
                 },
                 "filename": {
-                    "type": "string"
-                }
+                    "type": "object",
+                    "$ref": "file:knowledge/example_knowledge_interlinker/resources/doc.docx"
+             }
             },
             "required": [
                 "administrativeScope",
