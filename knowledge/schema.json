@@ -27,7 +27,7 @@
         "type": "list",
         "mandatory": false,
         "tree": {
-            "All": {
+            "all": {
                 "pas": [
                     "public_servants",
                     "politicians"
