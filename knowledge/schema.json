@@ -12,21 +12,11 @@
         },
         "tags": {
             "title": "Tags",
+            "minItems": 1,
             "type": "array",
             "items": {
                 "type": "string"
             }
-        },
-        "tasks": {
-            "title": "Tasks",
-            "type": "array",
-            "items": {
-                "type": "string"
-            }
-        },
-        "keywords": {
-            "title": "Keywords",
-            "type": "string"
         },
         "difficulty": {
             "$ref": "#/definitions/Difficulties"
@@ -37,9 +27,8 @@
                 "$ref": "#/definitions/Targets"
             }
         },
-        "file": {
-            "title": "File",
-            "type": "string"
+        "licence": {
+            "$ref": "#/definitions/Licences"
         },
         "whyToUseIt": {
             "title": "Whytouseit",
@@ -51,16 +40,75 @@
             "items": {
                 "type": "string"
             }
+        },
+        "types": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/InterlinkerTypes"
+            }
+        },
+        "related_interlinkers": {
+            "title": "Related Interlinkers",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "admistrative_scope": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/AdministrativeScopes"
+            }
+        },
+        "domain": {
+            "title": "Domain",
+            "type": "string"
+        },
+        "process": {
+            "title": "Process",
+            "type": "string"
+        },
+        "constraints_and_limitations": {
+            "title": "Constraints And Limitations",
+            "type": "string"
+        },
+        "regulations_and_standards": {
+            "title": "Regulations And Standards",
+            "type": "string"
+        },
+        "overview_text": {
+            "title": "Overview Text",
+            "type": "string"
+        },
+        "file": {
+            "title": "File",
+            "type": "string"
+        },
+        "form": {
+            "$ref": "#/definitions/FormTypes"
+        },
+        "format": {
+            "$ref": "#/definitions/Formats"
+        },
+        "instructions": {
+            "title": "Instructions",
+            "type": "string"
         }
     },
     "required": [
         "name",
-        "keywords",
+        "description",
+        "tags",
         "difficulty",
-        "targets",
+        "licence",
+        "problemProfiles",
+        "constraints_and_limitations",
         "file",
-        "problemProfiles"
+        "form",
+        "format",
+        "instructions"
     ],
+    "additionalProperties": false,
     "definitions": {
         "Difficulties": {
             "title": "Difficulties",
@@ -92,6 +140,64 @@
                 "all;research_organizations",
                 "all;research_organizations;universities",
                 "all;research_organizations;other_research_entities"
+            ]
+        },
+        "Licences": {
+            "title": "Licences",
+            "description": "An enumeration.",
+            "enum": [
+                "public_domain",
+                "permissive",
+                "copyleft",
+                "non_commercial",
+                "propietary"
+            ]
+        },
+        "InterlinkerTypes": {
+            "title": "InterlinkerTypes",
+            "description": "An enumeration.",
+            "enum": [
+                "enabling_services",
+                "enabling_services;implementing_software_and_artifacts",
+                "enabling_services;operation_services",
+                "enhancing_services",
+                "enhancing_services;onboarding_services",
+                "enhancing_services;followup_services",
+                "enhancing_services:external_experts"
+            ]
+        },
+        "AdministrativeScopes": {
+            "title": "AdministrativeScopes",
+            "description": "An enumeration.",
+            "enum": [
+                "eu",
+                "national",
+                "local"
+            ]
+        },
+        "FormTypes": {
+            "title": "FormTypes",
+            "description": "An enumeration.",
+            "enum": [
+                "visual_template",
+                "document_template",
+                "canvas",
+                "best_practices",
+                "guidelines",
+                "checklist",
+                "survey_template",
+                "legal_agreement_template",
+                "other"
+            ]
+        },
+        "Formats": {
+            "title": "Formats",
+            "description": "An enumeration.",
+            "enum": [
+                "pdf",
+                "editable_source_document",
+                "open_document",
+                "structured_format"
             ]
         }
     }

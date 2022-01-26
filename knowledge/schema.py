@@ -1,74 +1,58 @@
-from datetime import datetime
-from enum import Enum
-from typing import List, Optional, Any
-from pydantic import BaseModel
-from pydantic import BaseModel, ValidationError, validator
-from pathlib import Path
 import json
+from enum import Enum
+from pathlib import Path
+
+from base import InterlinkerSchema
+from pydantic import validator
 
 # https://docs.google.com/spreadsheets/d/1tJ2BfX4EOdbBqEbrJWg8a3MENw13vYiPZM_S4wWWgWQ/edit#gid=0
 
 parent = Path(__file__).parents[0]
 
-class Difficulties(Enum):
-    very_easy = 'very_easy'
-    easy = 'easy'
-    medium = 'medium'
-    difficult = 'difficult'
-    very_difficult = 'very_difficult'
 
-class Targets(Enum):
-    all = "all"
-    pas = "all;pas"
-    public_servants = "all;pas;public_servants"
-    politicians = "all;pas;politicians"
-    businesses = "all;businesses"
-    smes = "all;businesses;smes"
-    freelancers = "all;businesses;freelancers"
-    large_companies = "all;businesses;large_companies"
-    private_non_profit = "all;businesses;private_non_profit"
-    citizens = "all;citizens"
-    potential_end_users = "all;citizens;potential_end_users"
-    expert_citizens = "all;citizens;expert_citizens"
-    research_organizations = "all;research_organizations"
-    universities = "all;research_organizations;universities"
-    other_research_entities = "all;research_organizations;other_research_entities"
+class FormTypes(Enum):
+    visual_template = "visual_template"
+    document_template = "document_template"
+    canvas = "canvas"
+    best_practices = "best_practices"
+    guidelines = "guidelines"
+    checklist = "checklist"
+    survey_template = "survey_template"
+    legal_agreement_template = "legal_agreement_template"
+    other = "other"
 
-class ProblemProfiles(str):
-    pass
 
-class Schema(BaseModel):
-    name: str
-    description: Optional[str] = None
-    tags: Optional[List[str]]
-    tasks: Optional[List[str]]
-    keywords: str
-    difficulty: Difficulties
-    targets: List[Targets]
+class Formats(Enum):
+    pdf = "pdf"
+    editable_source_document = "editable_source_document"
+    open_document = "open_document"
+    structured_format = "structured_format"
+
+
+class Schema(InterlinkerSchema):
     file: str
 
-    whyToUseIt: Optional[str]
-    problemProfiles: List[ProblemProfiles]
-    
-    @validator('keywords')
-    def keywords_length(cls, v):
-        minimum = 1
-        if len(v.split(";")) < 1:
-            raise ValueError(f'minimum keywords: {minimum}')
-        return v
-    
-    @validator('file')
+    form: FormTypes
+    # FOR 1
+    # Type of knowledge INTERLINKER: e.g., visual template, document template, canvas, best practices, guidelines, checklist, survey template, legal agreement template
+    # This input will be:
+    # - Shown on the platform interface in the page showing the details of the INTERLINKER
+
+    format: Formats
+    # FOR 1 // COULD BE INFERED
+    # Type of the format used to encode the knowledge of the INTERLINKER
+    # This input will be:
+    # - Shown on the platform interface in the page showing the details of the INTERLINKER
+
+    instructions: str
+    # FOR 1
+    # HTML for the instructions
+
+    @validator("file")
     def file_exists(cls, v):
         file = Path(str(parent) + "/" + v)
-        if file.is_file():
-            return v
-        raise ValueError(f'{file} does not exist. Remember: example_knowledge_interlinker/resources/doc.docx')
-
-
-
-################################################
-## Create JSON schema from pydantic Schema
-################################################
-
-with open(f'{parent}/schema.json', 'w') as f:
-    json.dump(Schema.schema(), f, indent=4)
+        if not file.is_file():
+            raise ValueError(
+                f"{file} does not exist. Example: example_knowledge_interlinker/resources/doc.docx"
+            )
+        return v
