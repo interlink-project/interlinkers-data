@@ -18,5 +18,5 @@
     "form": "visual_template",
     "format": "editable_source_document",
     "instructions": "<h2 class=\"fg-white\">",
-    "file": "example_knowledge_interlinker/resources/doc.docx"
+    "file": "example_knowledge_interlinker/doc.docx"
 }
