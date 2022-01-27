@@ -111,7 +111,7 @@ class InterlinkerSchema(BaseModel, extra=Extra.forbid):
     # - Shown on the platform interface in the page showing the details of the INTERLINKER
     # - Used by the Wizard algorithms for intelligent filtering and recommendation
 
-    admistrative_scopes: Optional[List[AdministrativeScopes]]
+    administrative_scopes: Optional[List[AdministrativeScopes]]
     # FOR 2
     # This field describes the administrative context for which this INTERLINKER is particularly suitable.
     # Multiple values are possible:

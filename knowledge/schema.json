@@ -50,7 +50,7 @@
                 "type": "string"
             }
         },
-        "admistrative_scopes": {
+        "administrative_scopes": {
             "type": "array",
             "items": {
                 "$ref": "#/definitions/AdministrativeScopes"
