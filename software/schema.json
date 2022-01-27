@@ -120,6 +120,11 @@
         "is_subdomain": {
             "title": "Is Subdomain",
             "type": "boolean"
+        },
+        "logotype": {
+            "title": "Logotype",
+            "format": "file-path",
+            "type": "string"
         }
     },
     "required": [
@@ -137,7 +142,8 @@
         "open_in_modal",
         "assets_clonable",
         "path",
-        "is_subdomain"
+        "is_subdomain",
+        "logotype"
     ],
     "additionalProperties": false,
     "definitions": {

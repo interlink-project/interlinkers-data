@@ -77,6 +77,7 @@ class InterlinkerSchema(BaseModel, extra=Extra.forbid):
     # FOR 1
     # Tags that can be used to characterize the INTERLINKER
 
+    ## INTERLINKER SPECIFIC
     difficulty: Difficulties
     # FOR 1
     # Level of difficulty in using the tool

@@ -36,7 +36,7 @@ class Schema(InterlinkerSchema):
 
     path: str
     is_subdomain: bool
-
+    logotype: FilePath
     # if is_subdomain == true:
     #   https://{path}.dev.interlink-project.eu
     #   for example loomio
