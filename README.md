@@ -2,19 +2,31 @@
 
 In here we will indicate the steps to follow to create a BUNDLE for a KNOWLEDGE INTERLINKER that can be imported directly by the INTERLINKER catalogue
 
+The schemas implemented are based on what have been discussed here: 
+
+https://docs.google.com/spreadsheets/d/1tJ2BfX4EOdbBqEbrJWg8a3MENw13vYiPZM_S4wWWgWQ/edit
+
 
 # For users
 The way to add new interlinkers is to create a new directory that follows the structure defined by the example.
  
 The only mandatory element is the existence of the "metadata.json" file in the root of the directory.
 
-Optionally, a directory called "snapshots" can be created to store the images corresponding to the interlinker.
+Optionally, a directory called "snapshots" can be created to store the images corresponding to the interlinker. The order may be important; use digits to orther them (image1, image2, image3...)
 
 ```
 ├── base.py
 ├── knowledge
 │   ├── example_knowledge_interlinker
 │   │   ├── doc.docx
+│   │   ├── metadata.json
+│   │   └── snapshots
+│   │       ├── image1.jpeg
+│   │       └── image2.jpeg
+│   ├── schema.json
+│   └── schema.py
+├── software
+│   ├── googlesuite
 │   │   ├── metadata.json
 │   │   └── snapshots
 │   │       ├── image1.jpeg
@@ -34,14 +46,14 @@ In the case of adding a new knowledge interlinker, the following sections must b
     "description":                  free text
     "tags":                         array of free text
     "difficulty":                   "very_easy", "easy", "medium", "difficult" or "very_difficult"
-    "licence":                      "propietary"
+    "licence":                      "public_domain", "permissive", "copyleft", "non_commercial" or "propietary"
     "whyToUseIt":                   free text
     "problemProfiles":              array of free text
     "related_interlinkers":         array of free text
     "constraints_and_limitations":  free text
     "regulations_and_standards":    optional text
-    "form":                         "visual_template",
-    "format":                       "editable_source_document",
+    "form":                         "visual_template", "document_template", "canvas", "best_practices", "guidelines", "checklist", "survey_template", "legal_agreement_template" or "other"
+    "format":                       "pdf", "editable_source_document", "open_document" or "structured_format"
     "instructions":                 free text
     "file":                         valid path to file
 }
@@ -72,6 +84,8 @@ For example:
     "file": "example_knowledge_interlinker/doc.docx"
 }
 ```
+
+> :warning: **Paths of files are not validated with this method**: Be very careful here!
 
 ## How to validate data
 
@@ -261,6 +275,18 @@ Extends the base with these attributes:
 * form
 * format
 
+### Software interlinker schema
+
+/software/schema.py
+
+Extends the base with these attributes:
+* supported_by
+* deployment_readme
+* path
+* is_subdomain
+* user_manual
+* developer_manual
+
 ## Testing
 
 To test that all the interlinkers (directories) and their metadata are valid, a script called "test.py" is provided, which in addition to validating the metadata, creates a file "schema.json" at the height of "schema.py" that users can use to quickly validate if the metadata is correct, without having to use python at all, as can be seen in "For users" section.
@@ -274,6 +300,9 @@ pip3 install pydantic
 ```sh
 python3 test.py
 ```
+
+![test](images/test.gif)
+
 
 ### Github action to test on versions push
 

@@ -1,0 +1,196 @@
+{
+    "title": "Schema",
+    "type": "object",
+    "properties": {
+        "name": {
+            "title": "Name",
+            "type": "string"
+        },
+        "description": {
+            "title": "Description",
+            "type": "string"
+        },
+        "tags": {
+            "title": "Tags",
+            "minItems": 1,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "difficulty": {
+            "$ref": "#/definitions/Difficulties"
+        },
+        "targets": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Targets"
+            }
+        },
+        "licence": {
+            "$ref": "#/definitions/Licences"
+        },
+        "whyToUseIt": {
+            "title": "Whytouseit",
+            "type": "string"
+        },
+        "problemProfiles": {
+            "title": "Problemprofiles",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "types": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/InterlinkerTypes"
+            }
+        },
+        "related_interlinkers": {
+            "title": "Related Interlinkers",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "admistrative_scope": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/AdministrativeScopes"
+            }
+        },
+        "domain": {
+            "title": "Domain",
+            "type": "string"
+        },
+        "process": {
+            "title": "Process",
+            "type": "string"
+        },
+        "constraints_and_limitations": {
+            "title": "Constraints And Limitations",
+            "type": "string"
+        },
+        "regulations_and_standards": {
+            "title": "Regulations And Standards",
+            "type": "string"
+        },
+        "overview_text": {
+            "title": "Overview Text",
+            "type": "string"
+        },
+        "supported_by": {
+            "$ref": "#/definitions/Supporters"
+        },
+        "deployment_readme": {
+            "title": "Deployment Readme",
+            "type": "string"
+        },
+        "path": {
+            "title": "Path",
+            "type": "string"
+        },
+        "is_subdomain": {
+            "title": "Is Subdomain",
+            "type": "boolean"
+        },
+        "user_manual": {
+            "title": "User Manual",
+            "type": "string"
+        },
+        "developer_manual": {
+            "title": "Developer Manual",
+            "type": "string"
+        }
+    },
+    "required": [
+        "name",
+        "description",
+        "tags",
+        "difficulty",
+        "licence",
+        "problemProfiles",
+        "constraints_and_limitations",
+        "supported_by",
+        "path",
+        "is_subdomain"
+    ],
+    "additionalProperties": false,
+    "definitions": {
+        "Difficulties": {
+            "title": "Difficulties",
+            "description": "An enumeration.",
+            "enum": [
+                "very_easy",
+                "easy",
+                "medium",
+                "difficult",
+                "very_difficult"
+            ]
+        },
+        "Targets": {
+            "title": "Targets",
+            "description": "An enumeration.",
+            "enum": [
+                "all",
+                "all;pas",
+                "all;pas;public_servants",
+                "all;pas;politicians",
+                "all;businesses",
+                "all;businesses;smes",
+                "all;businesses;freelancers",
+                "all;businesses;large_companies",
+                "all;businesses;private_non_profit",
+                "all;citizens",
+                "all;citizens;potential_end_users",
+                "all;citizens;expert_citizens",
+                "all;research_organizations",
+                "all;research_organizations;universities",
+                "all;research_organizations;other_research_entities"
+            ]
+        },
+        "Licences": {
+            "title": "Licences",
+            "description": "An enumeration.",
+            "enum": [
+                "public_domain",
+                "permissive",
+                "copyleft",
+                "non_commercial",
+                "propietary"
+            ]
+        },
+        "InterlinkerTypes": {
+            "title": "InterlinkerTypes",
+            "description": "An enumeration.",
+            "enum": [
+                "enabling_services",
+                "enabling_services;implementing_software_and_artifacts",
+                "enabling_services;operation_services",
+                "enhancing_services",
+                "enhancing_services;onboarding_services",
+                "enhancing_services;followup_services",
+                "enhancing_services:external_experts"
+            ]
+        },
+        "AdministrativeScopes": {
+            "title": "AdministrativeScopes",
+            "description": "An enumeration.",
+            "enum": [
+                "eu",
+                "national",
+                "local"
+            ]
+        },
+        "Supporters": {
+            "title": "Supporters",
+            "description": "An enumeration.",
+            "enum": [
+                "saas",
+                "on_premise",
+                "installed_app"
+            ]
+        }
+    }
+}
