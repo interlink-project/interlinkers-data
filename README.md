@@ -16,6 +16,7 @@ The way to add new interlinkers is to create a new directory that follows the st
  
 * A "metadata.json" file in the root of the directory.
 * Optionally, a directory called "snapshots" can be created to store the images corresponding to the interlinker. The order may be important; use digits to orther them (image1, image2, image3...)
+    * Allowed formats: '.png', '.jpg', '.jpeg', '.tiff', '.bmp', '.gif'
 
 ```
 ├── base.py
