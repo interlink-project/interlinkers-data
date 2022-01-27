@@ -123,7 +123,7 @@ Enter
 https://www.jsonschemavalidator.net/
 
 
-If you want to check metadata for a knowledge interlinker, open /knowledge/schema.json file and copy its content into the left part. Now, copy the metadata.json into the right part.
+If you want to check metadata for a knowledge interlinker, open [/knowledge/schema.json](/knowledge/schema.json) file and copy its content into the left part. Now, copy the metadata.json into the right part.
 
 ![correct](images/correct.png)
 
@@ -138,7 +138,7 @@ Incorrect metadata.json (tags length < 1)
 
 ## What is pydantic?
 
-Pydantic is a useful library for data parsing and validation. It coerces input types to the declared type (using type hints), accumulates all the errors using ValidationError & it’s also well documented making it easily discoverable.
+[Pydantic](https://pydantic-docs.helpmanual.io/) is a useful library for data parsing and validation. It coerces input types to the declared type (using type hints), accumulates all the errors using ValidationError & it’s also well documented making it easily discoverable.
 
 ### Basic examples
 ```yaml
