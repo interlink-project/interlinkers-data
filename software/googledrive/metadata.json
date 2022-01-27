@@ -30,6 +30,6 @@
     "open_in_modal": false,
     "assets_clonable": true,
     "path": "googledrive",
-    "is_subdomain": true,
+    "is_subdomain": false,
     "logotype": "./software/googledrive/logo.png"
 }
