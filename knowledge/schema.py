@@ -22,7 +22,7 @@ class Formats(Enum):
 class SoftwareInterlinkers(Enum):
     googledrive = "googledrive"
     survey = "survey"
-    collaborative_editor = "collaborative_editor"
+    ceditor = "ceditor"
 
 class Schema(InterlinkerSchema):
     file: FilePath

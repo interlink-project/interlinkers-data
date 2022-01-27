@@ -59,7 +59,7 @@ In the case of adding a new knowledge interlinker, the following sections must b
     "format":                       "pdf", "editable_source_document", "open_document" or "structured_format"
     "instructions":                 valid path to HTML or MD file
     "file":                         valid path to file
-    "softwareinterlinker":          "googledrive", "survey", "collaborative_editor"
+    "softwareinterlinker":     "googledrive", "survey", "ceditor"
 }
 ```
 
@@ -113,7 +113,7 @@ For now, there are only these few software interlinkers you could use:
 
         * Set the path of the file attribute to an already existing .doc / .docx document.
 
-    * **softwareinterlinker**: "collaborative_editor"
+    * **softwareinterlinker**: "ceditor"
 
         
 ## How to validate data

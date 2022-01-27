@@ -208,7 +208,7 @@
             "enum": [
                 "googledrive",
                 "survey",
-                "collaborative_editor"
+                "ceditor"
             ]
         }
     }
