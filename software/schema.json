@@ -54,7 +54,7 @@
                 "type": "string"
             }
         },
-        "admistrative_scope": {
+        "admistrative_scopes": {
             "type": "array",
             "items": {
                 "$ref": "#/definitions/AdministrativeScopes"
