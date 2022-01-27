@@ -19,6 +19,7 @@ The way to add new interlinkers is to create a new directory that follows the st
     * Allowed formats: '.png', '.jpg', '.jpeg', '.tiff', '.bmp', '.gif'
 
 ```
+.
 ├── base.py
 ├── knowledge
 │   ├── example_knowledge_interlinker
@@ -28,14 +29,27 @@ The way to add new interlinkers is to create a new directory that follows the st
 │   │   └── snapshots
 │   │       ├── image1.jpeg
 │   │       └── image2.jpeg
+│
+│   ...
+│
 │   ├── schema.json
 │   └── schema.py
 ├── software
-│   ├── googlesuite
+│   ├── ceditor
+│   │   ├── logo.jpeg
 │   │   ├── metadata.json
 │   │   └── snapshots
-│   │       ├── image1.jpeg
-│   │       └── image2.jpeg
+│   │       └── screenshot.png
+│   ├── googledrive
+│   │   ├── logo.png
+│   │   ├── metadata.json
+│   │   └── snapshots
+│   │       ├── docs.png
+│   │       ├── sheets.png
+│   │       └── slides.png
+│
+│   ...
+│
 │   ├── schema.json
 │   └── schema.py
 └── test.py
@@ -60,7 +74,7 @@ In the case of adding a new knowledge interlinker, the following sections must b
     "format":                       "pdf", "editable_source_document", "open_document" or "structured_format"
     "instructions":                 valid path to HTML or MD file
     "file":                         valid path to file
-    "softwareinterlinker":     "googledrive", "survey", "ceditor"
+    "softwareinterlinker":          "googledrive", "survey", "ceditor"
 }
 ```
 
@@ -92,11 +106,11 @@ For example:
 
 For now, there are only these few software interlinkers you could use:
 
-* Google Drive:
+* **Google Drive** (googledrive):
     * **file:** path to a file, such as .docx, .ppt, .xlsx, .pdf... anything that google drive could work with.
     * **softwareinterlinker:** "googledrive"
 
-* Survey
+* **Survey** (survey):
 
     * **file:** go to https://surveyjs.io/create-survey-v2, create a survey and copy the data that appears in the "JSON Editor" tab. Then, create a file with ".json" extension and copy the contents copied. File attribute should point to the path of this file you just created.
 
@@ -104,7 +118,7 @@ For now, there are only these few software interlinkers you could use:
 
     * **softwareinterlinker:** "survey"
 
-* Collaborative editor:
+* **Collaborative editor** (ceditor):
 
     * **file:** you have several options:
     
@@ -136,9 +150,49 @@ Incorrect metadata.json (tags length < 1)
 # For developers
 
 
-## What is pydantic?
+## Testing
+
+To test that all the metadata files are valid, a script called "test.py" is provided, which in addition to validating the metadata, creates a file "schema.json" at the height of "schema.py" that users can use to quickly validate if the metadata is correct, without having to use python at all, as can be seen in "For users" section.
+
+#### Install the dependencies:
+```sh
+pip3 install pydantic
+```
+
+#### Run the script:
+```sh
+python3 test.py
+```
+
+![test](images/test.gif)
+
+
+### Github action to test on versions push
+
+```yaml
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v2 # checkout the repository content to github runner.
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8 #install the python needed
+      - name: Install dependencies and run test script
+        run: |
+          python -m pip install --upgrade pip
+          pip3 install pydantic
+          python test.py
+```
+
+
+## What is pydantic and why should you use it?
 
 [Pydantic](https://pydantic-docs.helpmanual.io/) is a useful library for data parsing and validation. It coerces input types to the declared type (using type hints), accumulates all the errors using ValidationError & it’s also well documented making it easily discoverable.
+
+Working with jsonschema can be very tedious and makes schemas difficult to understand, to modify and maintain. Pydantic makes this process easy and can generate jsonschemas.
 
 ### Basic examples
 ```yaml
@@ -323,41 +377,3 @@ Extends the base with these attributes:
 * assets_clonable
 * path
 * is_subdomain
-
-
-## Testing
-
-To test that all the interlinkers (directories) and their metadata are valid, a script called "test.py" is provided, which in addition to validating the metadata, creates a file "schema.json" at the height of "schema.py" that users can use to quickly validate if the metadata is correct, without having to use python at all, as can be seen in "For users" section.
-
-#### Install the dependencies:
-```sh
-pip3 install pydantic
-```
-
-#### Run the script:
-```sh
-python3 test.py
-```
-
-![test](images/test.gif)
-
-
-### Github action to test on versions push
-
-```yaml
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout repo content
-        uses: actions/checkout@v2 # checkout the repository content to github runner.
-      - name: setup python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8 #install the python needed
-      - name: Install dependencies and run test script
-        run: |
-          python -m pip install --upgrade pip
-          pip3 install pydantic
-          python test.py
-```
