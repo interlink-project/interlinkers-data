@@ -83,7 +83,7 @@
             "$ref": "#/definitions/AuthMethods"
         },
         "deployment_manual": {
-            "title": "Deployment Readme",
+            "title": "Deployment Manual",
             "format": "file-path",
             "type": "string"
         },
