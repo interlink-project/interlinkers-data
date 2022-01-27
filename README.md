@@ -1,5 +1,7 @@
 # Interlinkers data
 
+Status: [![status badge](https://github.com/interlink-project/interlinkers-data/actions/workflows/build-and-publish-docker.yml/badge.svg)](https://github.com/interlink-project/interlinkers-data/actions/workflows/build-and-publish-docker.yml)
+
 In here we will indicate the steps to follow to create a BUNDLE for a KNOWLEDGE INTERLINKER that can be imported directly by the INTERLINKER catalogue
 
 The schemas implemented are based on what have been discussed here: 
