@@ -302,6 +302,8 @@ Extends the base with these attributes:
 * file
 * form
 * format
+* instructions
+* softwareinterlinker
 
 ### Software interlinker schema
 
@@ -309,11 +311,17 @@ Extends the base with these attributes:
 
 Extends the base with these attributes:
 * supported_by
+* auth_method
 * deployment_readme
-* path
-* is_subdomain
 * user_manual
 * developer_manual
+* supports_internationalization
+* is_responsive
+* open_in_modal
+* assets_clonable
+* path
+* is_subdomain
+
 
 ## Testing
 

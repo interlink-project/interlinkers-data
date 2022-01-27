@@ -83,9 +83,39 @@
         "supported_by": {
             "$ref": "#/definitions/Supporters"
         },
+        "auth_method": {
+            "$ref": "#/definitions/AuthMethods"
+        },
         "deployment_readme": {
             "title": "Deployment Readme",
+            "format": "file-path",
             "type": "string"
+        },
+        "user_manual": {
+            "title": "User Manual",
+            "format": "file-path",
+            "type": "string"
+        },
+        "developer_manual": {
+            "title": "Developer Manual",
+            "format": "file-path",
+            "type": "string"
+        },
+        "supports_internationalization": {
+            "title": "Supports Internationalization",
+            "type": "boolean"
+        },
+        "is_responsive": {
+            "title": "Is Responsive",
+            "type": "boolean"
+        },
+        "open_in_modal": {
+            "title": "Open In Modal",
+            "type": "boolean"
+        },
+        "assets_clonable": {
+            "title": "Assets Clonable",
+            "type": "boolean"
         },
         "path": {
             "title": "Path",
@@ -94,14 +124,6 @@
         "is_subdomain": {
             "title": "Is Subdomain",
             "type": "boolean"
-        },
-        "user_manual": {
-            "title": "User Manual",
-            "type": "string"
-        },
-        "developer_manual": {
-            "title": "Developer Manual",
-            "type": "string"
         }
     },
     "required": [
@@ -113,6 +135,11 @@
         "problemProfiles",
         "constraints_and_limitations",
         "supported_by",
+        "auth_method",
+        "supports_internationalization",
+        "is_responsive",
+        "open_in_modal",
+        "assets_clonable",
         "path",
         "is_subdomain"
     ],
@@ -190,6 +217,14 @@
                 "saas",
                 "on_premise",
                 "installed_app"
+            ]
+        },
+        "AuthMethods": {
+            "title": "AuthMethods",
+            "description": "An enumeration.",
+            "enum": [
+                "header",
+                "cookie"
             ]
         }
     }

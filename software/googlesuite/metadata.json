@@ -25,6 +25,11 @@
     "constraints_and_limitations": "Some text here",
     "regulations_and_standards": "Optional text here",
     "supported_by": "saas",
+    "auth_method": "cookie",
+    "supports_internationalization": true,
+    "is_responsive": true,
+    "open_in_modal": false,
+    "assets_clonable": true,
     "path": "googledrive",
     "is_subdomain": true
 }
