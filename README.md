@@ -313,7 +313,7 @@ Extends the base with these attributes:
 Extends the base with these attributes:
 * supported_by
 * auth_method
-* deployment_readme
+* deployment_manual
 * user_manual
 * developer_manual
 * supports_internationalization

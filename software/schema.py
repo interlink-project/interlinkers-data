@@ -21,7 +21,7 @@ class AuthMethods(Enum):
 class Schema(InterlinkerSchema):
     supported_by: Supporters
     auth_method: AuthMethods
-    deployment_readme: Optional[FilePath]
+    deployment_manual: Optional[FilePath]
     user_manual: Optional[FilePath]
     developer_manual: Optional[FilePath]
 
