@@ -47,7 +47,7 @@ In the case of adding a new knowledge interlinker, the following sections must b
 ```yaml
 {
     "name":                         free text
-    "description":                  free text
+    "description":                  free text (could be HTML formatted text)
     "tags":                         array of free text
     "difficulty":                   "very_easy", "easy", "medium", "difficult" or "very_difficult"
     "licence":                      "public_domain", "permissive", "copyleft", "non_commercial" or "propietary"
@@ -68,7 +68,7 @@ For example:
 ```json
 {
     "name": "Example knowledge interlinker",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus sapien, dapibus fringilla dolor sit amet, bibendum aliquam massa. Duis nec faucibus nunc. In sit amet vulputate justo. In dictum turpis eu dolor posuere vehicula.",
+    "description": "<p class=\"fg-white\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus sapien, dapibus fringilla dolor sit amet, bibendum aliquam massa. Duis nec faucibus nunc. In sit amet vulputate justo. In dictum turpis eu dolor posuere vehicula</p>",
     "tags": [
         "skeleton",
         "aim",
