@@ -10,15 +10,15 @@ https://docs.google.com/spreadsheets/d/1tJ2BfX4EOdbBqEbrJWg8a3MENw13vYiPZM_S4wWW
 # For users
 The way to add new interlinkers is to create a new directory that follows the structure defined by the example.
  
-The only mandatory element is the existence of the "metadata.json" file in the root of the directory.
-
-Optionally, a directory called "snapshots" can be created to store the images corresponding to the interlinker. The order may be important; use digits to orther them (image1, image2, image3...)
+* A "metadata.json" file in the root of the directory.
+* Optionally, a directory called "snapshots" can be created to store the images corresponding to the interlinker. The order may be important; use digits to orther them (image1, image2, image3...)
 
 ```
 ├── base.py
 ├── knowledge
 │   ├── example_knowledge_interlinker
 │   │   ├── doc.docx
+│   │   ├── instructions.md
 │   │   ├── metadata.json
 │   │   └── snapshots
 │   │       ├── image1.jpeg
@@ -54,8 +54,9 @@ In the case of adding a new knowledge interlinker, the following sections must b
     "regulations_and_standards":    optional text
     "form":                         "visual_template", "document_template", "canvas", "best_practices", "guidelines", "checklist", "survey_template", "legal_agreement_template" or "other"
     "format":                       "pdf", "editable_source_document", "open_document" or "structured_format"
-    "instructions":                 free text
+    "instructions":                 valid path to HTML or MD file
     "file":                         valid path to file
+    "softwareinterlinker":          "googledrive", "survey", "collaborative_editor"
 }
 ```
 
@@ -80,13 +81,39 @@ For example:
     "regulations_and_standards": "Optional text here",
     "form": "visual_template",
     "format": "editable_source_document",
-    "instructions": "<h2 class=\"fg-white\">",
-    "file": "example_knowledge_interlinker/doc.docx"
+    "instructions": "./knowledge/example_knowledge_interlinker/instructions.md",
+    "file": "./knowledge/example_knowledge_interlinker/doc.docx",
+    "softwareinterlinker": "googledrive"
 }
 ```
 
-> :warning: **Paths of files are not validated with this method**: Be very careful here!
+For now, there are only these few software interlinkers you could use:
 
+* Google Drive:
+    * **file:** path to a file, such as .docx, .ppt, .xlsx, .pdf... anything that google drive could work with.
+    * **softwareinterlinker:** "googledrive"
+
+* Survey
+
+    * **file:** go to https://surveyjs.io/create-survey-v2, create a survey and copy the data that appears in the "JSON Editor" tab. Then, create a file with ".json" extension and copy the contents copied. File attribute should point to the path of this file you just created.
+
+        ![survey creation](images/survey.gif)
+
+    * **softwareinterlinker:** "survey"
+
+* Collaborative editor:
+
+    * **file:** you have several options:
+    
+        * Go to https://yopad.eu, create a pad and download the data as Etherpad / HTML / Microsoft Word or ODF. Then, move that file to the folder and set the path of the file attribute.
+
+            ![pad creation](images/pad.gif)
+
+        * Set the path of the file attribute to an already existing .doc / .docx document.
+
+    * **softwareinterlinker**: "collaborative_editor"
+
+        
 ## How to validate data
 
 Enter
@@ -100,6 +127,8 @@ If you want to check metadata for a knowledge interlinker, open /knowledge/schem
 Incorrect metadata.json (tags length < 1)
 
 ![incorrect](images/incorrect.png)
+
+> :warning: **Paths of files are not validated with this method**: Be very careful here!
 
 # For developers
 
@@ -157,12 +186,11 @@ Override a validator for a given attribute. For example, you can validate that t
 
 ```py
 class Schema(BaseModel):
-    file: str
+    value: str
 
-    @validator("file")
-    def file_exists(cls, v):
-        file = Path(str(parent) + "/" + v)
-        if not file.is_file():
+    @validator("value")
+    def example_value_validator(cls, v):
+        if not value in ["example", "value"]:
             raise ValueError(
                 f"{file} does not exist. Example: example_knowledge_interlinker/resources/doc.docx"
             )
@@ -176,7 +204,7 @@ class Schema(BaseModel):
 class File(BaseModel):
     name: str
     path: str
-    thumbnail: str
+    thumbnail: Optional[str]
 
 class Schema(BaseModel):
     name: str

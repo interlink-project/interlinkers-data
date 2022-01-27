@@ -82,6 +82,7 @@
         },
         "file": {
             "title": "File",
+            "format": "file-path",
             "type": "string"
         },
         "form": {
@@ -92,7 +93,11 @@
         },
         "instructions": {
             "title": "Instructions",
+            "format": "file-path",
             "type": "string"
+        },
+        "softwareinterlinker": {
+            "$ref": "#/definitions/SoftwareInterlinkers"
         }
     },
     "required": [
@@ -106,7 +111,8 @@
         "file",
         "form",
         "format",
-        "instructions"
+        "instructions",
+        "softwareinterlinker"
     ],
     "additionalProperties": false,
     "definitions": {
@@ -198,6 +204,15 @@
                 "editable_source_document",
                 "open_document",
                 "structured_format"
+            ]
+        },
+        "SoftwareInterlinkers": {
+            "title": "SoftwareInterlinkers",
+            "description": "An enumeration.",
+            "enum": [
+                "googledrive",
+                "survey",
+                "collaborative_editor"
             ]
         }
     }

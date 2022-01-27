@@ -1,14 +1,6 @@
-import json
 from enum import Enum
-from pathlib import Path
-
 from base import InterlinkerSchema
-from pydantic import validator
-
-# https://docs.google.com/spreadsheets/d/1tJ2BfX4EOdbBqEbrJWg8a3MENw13vYiPZM_S4wWWgWQ/edit#gid=0
-
-parent = Path(__file__).parents[0]
-
+from pydantic import FilePath as FilePath
 
 class FormTypes(Enum):
     visual_template = "visual_template"
@@ -21,16 +13,19 @@ class FormTypes(Enum):
     legal_agreement_template = "legal_agreement_template"
     other = "other"
 
-
 class Formats(Enum):
     pdf = "pdf"
     editable_source_document = "editable_source_document"
     open_document = "open_document"
     structured_format = "structured_format"
 
+class SoftwareInterlinkers(Enum):
+    googledrive = "googledrive"
+    survey = "survey"
+    collaborative_editor = "collaborative_editor"
 
 class Schema(InterlinkerSchema):
-    file: str
+    file: FilePath
 
     form: FormTypes
     # FOR 1
@@ -44,15 +39,8 @@ class Schema(InterlinkerSchema):
     # This input will be:
     # - Shown on the platform interface in the page showing the details of the INTERLINKER
 
-    instructions: str
+    instructions: FilePath
     # FOR 1
-    # HTML for the instructions
+    # File that contains HTML (.html) or MARKDOWN (.md) file
 
-    @validator("file")
-    def file_exists(cls, v):
-        file = Path(str(parent) + "/" + v)
-        if not file.is_file():
-            raise ValueError(
-                f"{file} does not exist. Example: example_knowledge_interlinker/resources/doc.docx"
-            )
-        return v
+    softwareinterlinker: SoftwareInterlinkers
