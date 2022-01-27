@@ -17,8 +17,7 @@
     ],
     "difficulty": "easy",
     "licence": "propietary",
-    "whyToUseIt": "",
-    "problemProfiles": [
+    "problem_profiles": [
         "example"
     ],
     "related_interlinkers": [],

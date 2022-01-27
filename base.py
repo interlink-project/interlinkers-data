@@ -90,13 +90,7 @@ class InterlinkerSchema(BaseModel, extra=Extra.forbid):
     # Type of licences under which the INTERLINKER is usable.
     # The user should be provided with information that explains the meaning of the different licences, both for software and knowledge.
 
-    whyToUseIt: Optional[str]
-    # FOR 1
-    # Textual field explaining in a clear way which is the problem that this INTERLINKER helps to address, i.e. when the enabler should be used.
-    # This input will be:
-    # - Shown on the platform interface in the page showing the details of the INTERLINKER
-
-    problemProfiles: List[ProblemProfiles]
+    problem_profiles: List[ProblemProfiles]
     # FOR 1
     # List of names of Problem Profiles associated to the INTERLINKER
     # This input will be:

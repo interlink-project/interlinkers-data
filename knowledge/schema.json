@@ -30,12 +30,8 @@
         "licence": {
             "$ref": "#/definitions/Licences"
         },
-        "whyToUseIt": {
-            "title": "Whytouseit",
-            "type": "string"
-        },
-        "problemProfiles": {
-            "title": "Problemprofiles",
+        "problem_profiles": {
+            "title": "Problem Profiles",
             "type": "array",
             "items": {
                 "type": "string"
@@ -106,7 +102,7 @@
         "tags",
         "difficulty",
         "licence",
-        "problemProfiles",
+        "problem_profiles",
         "constraints_and_limitations",
         "file",
         "form",

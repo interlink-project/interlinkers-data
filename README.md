@@ -51,8 +51,7 @@ In the case of adding a new knowledge interlinker, the following sections must b
     "tags":                         array of free text
     "difficulty":                   "very_easy", "easy", "medium", "difficult" or "very_difficult"
     "licence":                      "public_domain", "permissive", "copyleft", "non_commercial" or "propietary"
-    "whyToUseIt":                   free text
-    "problemProfiles":              array of free text
+    "problem_profiles":              array of free text
     "related_interlinkers":         array of free text
     "constraints_and_limitations":  free text
     "regulations_and_standards":    optional text
@@ -76,8 +75,7 @@ For example:
     ],
     "difficulty": "easy",
     "licence": "propietary",
-    "whyToUseIt": "",
-    "problemProfiles": [
+    "problem_profiles": [
         "example"
     ],
     "related_interlinkers": [],
@@ -285,8 +283,7 @@ Defines these attributes:
 * tags
 * difficulty
 * targets
-* whyToUseIt
-* problemProfiles
+* problem_profiles
 * types
 * related_interlinkers
 * administrative_scope
