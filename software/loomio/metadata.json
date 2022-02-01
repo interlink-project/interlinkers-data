@@ -27,7 +27,7 @@
     "is_responsive": true,
     "open_in_modal": false,
     "assets_clonable": false,
-    "path": "https://loomio.dev.interlink-project.eu/api/v1",
+    "path": "loomio",
     "is_subdomain": true,
     "logotype": "./software/loomio/logo.png"
 }
