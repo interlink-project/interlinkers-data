@@ -89,8 +89,18 @@
         },
         "instructions": {
             "title": "Instructions",
-            "format": "file-path",
-            "type": "string"
+            "anyOf": [
+                {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 2083,
+                    "format": "uri"
+                },
+                {
+                    "type": "string",
+                    "format": "file-path"
+                }
+            ]
         },
         "softwareinterlinker": {
             "$ref": "#/definitions/SoftwareInterlinkers"

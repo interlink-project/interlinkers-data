@@ -1,6 +1,7 @@
 from enum import Enum
 from base import InterlinkerSchema
-from pydantic import FilePath as FilePath
+from pydantic import FilePath, HttpUrl
+from typing import Union
 
 class FormTypes(Enum):
     visual_template = "visual_template"
@@ -40,7 +41,7 @@ class Schema(InterlinkerSchema):
     # This input will be:
     # - Shown on the platform interface in the page showing the details of the INTERLINKER
 
-    instructions: FilePath
+    instructions: Union[HttpUrl, FilePath]
     # FOR 1
     # File that contains HTML (.html) or MARKDOWN (.md) file
 
