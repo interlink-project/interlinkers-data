@@ -23,6 +23,7 @@ class SoftwareInterlinkers(Enum):
     googledrive = "googledrive"
     survey = "survey"
     ceditor = "ceditor"
+    externalresourcemanager = "externalresourcemanager"
 
 class Schema(InterlinkerSchema):
     file: FilePath
