@@ -3,8 +3,8 @@ from enum import Enum
 from pathlib import Path
 
 from base import InterlinkerSchema
-from pydantic import FilePath
-from typing import Optional
+from pydantic import FilePath, HttpUrl
+from typing import Optional, Union
 
 parent = Path(__file__).parents[0]
 
@@ -21,9 +21,9 @@ class AuthMethods(Enum):
 class Schema(InterlinkerSchema):
     supported_by: Supporters
     auth_method: AuthMethods
-    deployment_manual: Optional[FilePath]
-    user_manual: Optional[FilePath]
-    developer_manual: Optional[FilePath]
+    deployment_manual: Optional[Union[HttpUrl, FilePath]]
+    user_manual: Optional[Union[HttpUrl, FilePath]]
+    developer_manual: Optional[Union[HttpUrl, FilePath]]
 
     supports_internationalization: bool
     
