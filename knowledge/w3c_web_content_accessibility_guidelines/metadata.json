@@ -1,0 +1,26 @@
+{
+    "name": "W3C Web Content Accessibility Guidelines",
+    "description": "<p>Web Content Accessibility Guidelines (WCAG) aims at explaining how to make the Web content more accessible to the people with disabilities. It generally applies to the public services delivered as Web applications, and refers to the information in a web page of the applciation, including both the content (text, images, sounds, ...) and structure (markup, presentation, styles).</p><br><ul><li>defines a set of guidelines with corresponding testable success criteria across different levels</li><li>based on the accessibility principles: perceivable, operable, understandable, robust.</li></ul>",
+    "tags": [
+        "accessibility",
+        "Web",
+        "UI"
+    ],
+    "difficulty": "medium",
+    "targets": ["all"],
+    "licence": "permissive",
+    "problem_profiles": [
+        "Implement accessible digital public services ", "User interface design"
+    ],
+    "types": ["enabling_services;implementing_software_and_artifacts"],
+    "administrative_scopes": ["eu", "national", "local"],
+    "related_interlinkers": [],
+    "constraints_and_limitations": "Web applications",
+    "regulations_and_standards": "EU Directive 2016/2102 on the accessibility of the websites and mobile applications of public sector bodies",
+    "overview_text": "Textual documents in the form of linked Web pages describing the guidelines and testing success criteria",
+    "form": "guidelines",
+    "format": "structured_format",
+    "instructions": "https://www.w3.org/WAI/WCAG21/quickref/",
+    "file": "./knowledge/w3c_web_content_accessibility_guidelines/data.json",
+    "softwareinterlinker": "externalresourcemanager"
+}
