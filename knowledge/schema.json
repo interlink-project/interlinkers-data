@@ -208,7 +208,8 @@
             "enum": [
                 "googledrive",
                 "survey",
-                "ceditor"
+                "ceditor",
+                "externalresourcemanager"
             ]
         }
     }
