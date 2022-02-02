@@ -55,7 +55,7 @@ The way to add new interlinkers is to create a new directory that follows the st
 └── test.py
 ```
 
-## Adding new interlinker
+## Adding new knowledge interlinker
 
 In the case of adding a new knowledge interlinker, the following sections must be included in the metadata.json:
 
@@ -70,11 +70,17 @@ In the case of adding a new knowledge interlinker, the following sections must b
     "related_interlinkers":         array of free text
     "constraints_and_limitations":  free text
     "regulations_and_standards":    optional text
-    "form":                         "visual_template", "document_template", "canvas", "best_practices", "guidelines", "checklist", "survey_template", "legal_agreement_template" or "other"
-    "format":                       "pdf", "editable_source_document", "open_document" or "structured_format"
+    "representations": [
+        {
+            "form":                  "visual_template", "document_template", "canvas", "best_practices", "guidelines", "checklist", "survey_template", "legal_agreement_template" or "other"
+            "format":                "pdf", "editable_source_document", "open_document" or "structured_format",
+            "file":                  valid path to file
+            "softwareinterlinker":   "googledrive", "survey", "ceditor"
+        }
+        ...
+    ]
     "instructions":                 valid path to HTML or MD file
-    "file":                         valid path to file
-    "softwareinterlinker":          "googledrive", "survey", "ceditor"
+    
 }
 ```
 
@@ -96,15 +102,25 @@ For example:
     "related_interlinkers": [],
     "constraints_and_limitations": "Some text here",
     "regulations_and_standards": "Optional text here",
-    "form": "visual_template",
-    "format": "editable_source_document",
     "instructions": "./knowledge/example_knowledge_interlinker/instructions.md",
-    "file": "./knowledge/example_knowledge_interlinker/doc.docx",
-    "softwareinterlinker": "googledrive"
+    "representations": [
+        {
+            "form": "visual_template",
+            "format": "editable_source_document",
+            "file": "./knowledge/example_knowledge_interlinker/doc.docx",
+            "softwareinterlinker":  "googledrive"
+        },
+        {
+            "form": "visual_template",
+            "format": "pdf",
+            "file": "./knowledge/example_knowledge_interlinker/data.json",
+            "softwareinterlinker":  "externalresourcemanager"
+        }
+    ]
 }
 ```
 
-For now, there are only these few software interlinkers you could use:
+For **representations**, for now, only these software interlinkers are available:
 
 * **Google Drive** (googledrive):
     * **file:** path to a file, such as .docx, .ppt, .xlsx, .pdf... anything that google drive could work with.
@@ -122,11 +138,9 @@ For now, there are only these few software interlinkers you could use:
 
     * **file:** you have several options:
     
-        * Go to https://yopad.eu, create a pad and download the data as Etherpad / HTML / Microsoft Word or ODF. Then, move that file to the folder and set the path of the file attribute.
+        * Go to https://yopad.eu, create a pad (you can import docx files) and download the data as Etherpad / HTML / Microsoft Word or ODF. Then, move that file to the folder and set the path of the file attribute.
 
             ![pad creation](images/pad.gif)
-
-        * Set the path of the file attribute to an already existing .doc / .docx document.
 
     * **softwareinterlinker**: "ceditor"
 
@@ -355,11 +369,13 @@ Defines these attributes:
 /knowledge/schema.py
 
 Extends the base with these attributes:
-* file
-* form
-* format
+
 * instructions
-* softwareinterlinker
+* representations
+    * file
+    * form
+    * format
+    * softwareinterlinker
 
 ### Software interlinker schema
 

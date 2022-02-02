@@ -7,20 +7,33 @@
         "UI"
     ],
     "difficulty": "medium",
-    "targets": ["all"],
+    "targets": [
+        "all"
+    ],
     "licence": "permissive",
     "problem_profiles": [
-        "Implement accessible digital public services ", "User interface design"
+        "Implement accessible digital public services ",
+        "User interface design"
     ],
-    "types": ["enabling_services;implementing_software_and_artifacts"],
-    "administrative_scopes": ["eu", "national", "local"],
+    "types": [
+        "enabling_services;implementing_software_and_artifacts"
+    ],
+    "administrative_scopes": [
+        "eu",
+        "national",
+        "local"
+    ],
     "related_interlinkers": [],
     "constraints_and_limitations": "Web applications",
     "regulations_and_standards": "EU Directive 2016/2102 on the accessibility of the websites and mobile applications of public sector bodies",
     "overview_text": "Textual documents in the form of linked Web pages describing the guidelines and testing success criteria",
-    "form": "guidelines",
-    "format": "structured_format",
     "instructions": "https://www.w3.org/WAI/WCAG21/quickref/",
-    "file": "./knowledge/w3c_web_content_accessibility_guidelines/data.json",
-    "softwareinterlinker": "externalresourcemanager"
+    "representations": [
+        {
+            "form": "guidelines",
+            "format": "structured_format",
+            "file": "./knowledge/w3c_web_content_accessibility_guidelines/data.json",
+            "softwareinterlinker": "externalresourcemanager"
+        }
+    ]
 }

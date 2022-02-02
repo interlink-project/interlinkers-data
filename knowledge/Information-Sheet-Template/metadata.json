@@ -8,22 +8,34 @@
         "INTERLINK"
     ],
     "difficulty": "very_easy",
-    "targets": ["all"],
+    "targets": [
+        "all"
+    ],
     "licence": "public_domain",
     "problem_profiles": [
         "Consent collection"
     ],
-    "types": ["enhancing_services"],
-    "related_interlinkers": ["Consent Form Template"],
-    "administrative_scopes": ["eu"],
+    "types": [
+        "enhancing_services"
+    ],
+    "related_interlinkers": [
+        "Consent Form Template"
+    ],
+    "administrative_scopes": [
+        "eu"
+    ],
     "domain": "",
     "process": "",
     "constraints_and_limitations": "No special constraints apply",
     "regulations_and_standards": "The information sheet is compliant to GDPR norms.",
     "overview_text": "This INTERLINKER is composed by a document that can be downloaded, printed and distributed to participants.",
-    "form": "document_template",
-    "format": "editable_source_document",
     "instructions": "./knowledge/Information-Sheet-Template/instructions.md",
-    "file": "./knowledge/Information-Sheet-Template/resource.docx",
-    "softwareinterlinker": "googledrive"
+    "representations": [
+        {
+            "form": "document_template",
+            "format": "editable_source_document",
+            "file": "./knowledge/Information-Sheet-Template/resource.docx",
+            "softwareinterlinker": "googledrive"
+        }
+    ]
 }

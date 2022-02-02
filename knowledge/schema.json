@@ -76,17 +76,6 @@
             "title": "Overview Text",
             "type": "string"
         },
-        "file": {
-            "title": "File",
-            "format": "file-path",
-            "type": "string"
-        },
-        "form": {
-            "$ref": "#/definitions/FormTypes"
-        },
-        "format": {
-            "$ref": "#/definitions/Formats"
-        },
         "instructions": {
             "title": "Instructions",
             "anyOf": [
@@ -102,8 +91,12 @@
                 }
             ]
         },
-        "softwareinterlinker": {
-            "$ref": "#/definitions/SoftwareInterlinkers"
+        "representations": {
+            "title": "Representations",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Representation"
+            }
         }
     },
     "required": [
@@ -114,11 +107,8 @@
         "licence",
         "problem_profiles",
         "constraints_and_limitations",
-        "file",
-        "form",
-        "format",
         "instructions",
-        "softwareinterlinker"
+        "representations"
     ],
     "additionalProperties": false,
     "definitions": {
@@ -220,6 +210,32 @@
                 "survey",
                 "ceditor",
                 "externalresourcemanager"
+            ]
+        },
+        "Representation": {
+            "title": "Representation",
+            "type": "object",
+            "properties": {
+                "form": {
+                    "$ref": "#/definitions/FormTypes"
+                },
+                "format": {
+                    "$ref": "#/definitions/Formats"
+                },
+                "softwareinterlinker": {
+                    "$ref": "#/definitions/SoftwareInterlinkers"
+                },
+                "file": {
+                    "title": "File",
+                    "format": "file-path",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "form",
+                "format",
+                "softwareinterlinker",
+                "file"
             ]
         }
     }

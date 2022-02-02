@@ -1,7 +1,7 @@
 from enum import Enum
 from base import InterlinkerSchema
-from pydantic import FilePath, HttpUrl
-from typing import Union
+from pydantic import BaseModel, FilePath, HttpUrl
+from typing import Union, List
 
 class FormTypes(Enum):
     visual_template = "visual_template"
@@ -26,9 +26,7 @@ class SoftwareInterlinkers(Enum):
     ceditor = "ceditor"
     externalresourcemanager = "externalresourcemanager"
 
-class Schema(InterlinkerSchema):
-    file: FilePath
-
+class Representation(BaseModel):
     form: FormTypes
     # FOR 1
     # Type of knowledge INTERLINKER: e.g., visual template, document template, canvas, best practices, guidelines, checklist, survey template, legal agreement template
@@ -40,9 +38,12 @@ class Schema(InterlinkerSchema):
     # Type of the format used to encode the knowledge of the INTERLINKER
     # This input will be:
     # - Shown on the platform interface in the page showing the details of the INTERLINKER
+    softwareinterlinker: SoftwareInterlinkers
+    file: FilePath
 
+class Schema(InterlinkerSchema):
     instructions: Union[HttpUrl, FilePath]
     # FOR 1
     # File that contains HTML (.html) or MARKDOWN (.md) file
+    representations: List[Representation]
 
-    softwareinterlinker: SoftwareInterlinkers
