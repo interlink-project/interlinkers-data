@@ -8,24 +8,36 @@
         "design"
     ],
     "difficulty": "easy",
-    "targets": ["all"],
+    "targets": [
+        "all"
+    ],
     "licence": "public_domain",
     "problem_profiles": [
         "Data collection about users and their behavior",
         "Collaborative problem refinement",
         "Ongoing internal co-evaluation"
     ],
-    "types": ["enhancing_services"],
-    "related_interlinkers": ["Focus Group Template Co-production Investigation"],
-    "administrative_scopes": ["eu"],
+    "types": [
+        "enhancing_services"
+    ],
+    "related_interlinkers": [
+        "Focus Group Template Co-production Investigation"
+    ],
+    "administrative_scopes": [
+        "eu"
+    ],
     "domain": "",
     "process": "",
     "constraints_and_limitations": "No special constraints apply",
     "regulations_and_standards": "",
     "overview_text": "This INTERLINKER is composed by a document that can be visualized and/or downloaded to enlarge stakeholders' know-how on methods for problem and context analysis. It contains a part that can be customized to prepare a reserch plan for focus groups.",
-    "form": "guidelines",
-    "format": "editable_source_document",
     "instructions": "./knowledge/Focus-Group-Guidelines/instructions.md",
-    "file": "./knowledge/Focus-Group-Guidelines/resource.docx",
-    "softwareinterlinker": "googledrive"
+    "representations": [
+        {
+            "form": "guidelines",
+            "format": "editable_source_document",
+            "file": "./knowledge/Focus-Group-Guidelines/resource.docx",
+            "softwareinterlinker": "googledrive"
+        }
+    ]
 }
