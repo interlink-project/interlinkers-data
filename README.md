@@ -4,7 +4,7 @@
 
 [![Testing](https://github.com/interlink-project/interlinkers-data/actions/workflows/run-test.yml/badge.svg)](https://github.com/interlink-project/interlinkers-data/actions/workflows/run-test.yml)
 
-In here we will indicate the steps to follow to create a BUNDLE for a KNOWLEDGE INTERLINKER that can be imported directly by the INTERLINKER catalogue
+In here we will indicate the steps to follow to create a BUNDLE for a KNOWLEDGE or SOFTWARE INTERLINKER that can be imported directly by the INTERLINKER catalogue
 
 The schemas implemented are based on what have been discussed here: 
 
@@ -15,7 +15,7 @@ https://docs.google.com/spreadsheets/d/1tJ2BfX4EOdbBqEbrJWg8a3MENw13vYiPZM_S4wWW
 The way to add new interlinkers is to create a new directory that follows the structure defined by the example.
  
 * A "metadata.json" file in the root of the directory.
-* Optionally, a directory called "snapshots" can be created to store the images corresponding to the interlinker. The order may be important; use digits to orther them (image1, image2, image3...)
+* Optionally, a directory called "snapshots" can be created to store the images corresponding to the interlinker. The order is important; use digits to order them (image1, image2, image3...)
     * Allowed formats: '.png', '.jpg', '.jpeg', '.tiff', '.bmp', '.gif'
 
 ```
@@ -57,7 +57,7 @@ The way to add new interlinkers is to create a new directory that follows the st
 
 ## Adding new knowledge interlinker
 
-In the case of adding a new knowledge interlinker, the following sections must be included in the metadata.json:
+In the case of adding a new KNOWLEDGE INTERLINKER, the following sections must be included in the metadata.json:
 
 ```yaml
 {
@@ -151,7 +151,7 @@ Enter
 https://www.jsonschemavalidator.net/
 
 
-If you want to check metadata for a knowledge interlinker, open [/knowledge/schema.json](/knowledge/schema.json) file and copy its content into the left part. Now, copy the metadata.json into the right part.
+If you want to check metadata for a KNOWLEDGE interlinker, open [/knowledge/schema.json](/knowledge/schema.json) file and copy its content into the left part. Now, copy the metadata.json into the right part.
 
 ![correct](images/correct.png)
 
@@ -341,7 +341,7 @@ image
 
 ### Base interlinker schema
 
-This scheme defines the common properties for software and knowledge interlinkers. It is located in the root of the repository with the name of "base.py".
+This scheme defines the common properties for SOFTWARE and KNOWLEDGE INTERLINKERs. It is located in the root of the repository with the name of "base.py".
 
 ./base.py
 
@@ -364,7 +364,7 @@ Defines these attributes:
 
 (Some of them are not required for the first phase, so are marked as optional)
 
-### Knowledge interlinker schema
+### KNOWLEDGE INTERLINKER schema
 
 /knowledge/schema.py
 
@@ -377,7 +377,7 @@ Extends the base with these attributes:
     * format
     * softwareinterlinker
 
-### Software interlinker schema
+### SOFTWARE INTERLINKER schema
 
 /software/schema.py
 
