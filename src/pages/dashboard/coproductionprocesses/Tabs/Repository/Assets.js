@@ -5,23 +5,27 @@ import {
   Paper,
   Button,
   Card,
-  CardMedia,
-  CardHeader,
-  Typography,
+  Skeleton,
   Avatar,
   Alert,
   alpha,
   IconButton,
   InputBase,
   CardActionArea,
-
+  Typography,
+  Menu,
+  MenuItem,
+  ListItemIcon,
+  ListItemText,
+  List,
+  ListItemAvatar,
+  ListItem,
+  ListItemSecondaryAction
 } from '@material-ui/core';
 import { styled } from '@material-ui/styles';
-import { MoreVert as MoreVertIcon, Search as SearchIcon } from '@material-ui/icons';
-import { red } from '@material-ui/core/colors';
+import { MoreVert as MoreVertIcon, Search as SearchIcon, OpenInNew, Edit, CopyAll, Delete } from '@material-ui/icons';
 import moment from 'moment';
-import { cleanUnderScores } from "../../../../../utils/cleanUnderscores"
-import NewAssetModal from "./NewAssetModal"
+import axiosInstance from 'axiosInstance';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -64,41 +68,71 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 
-const Assets = ({ selectedTask }) => {
+const Assets = ({ assets }) => {
 
-  const { assets = [] } = selectedTask
-  
   const Asset = ({ asset }) => {
-    const [error, setError] = useState(false)
+    const [data, setData] = useState(null)
+    const [loading, setLoading] = useState(true)
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+      event.stopPropagation();
+      event.preventDefault();
+      setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+      setAnchorEl(null);
+    };
+    useEffect(async () => {
+      const res = await axiosInstance.get(asset.link)
+      setData(res.data)
+      setLoading(false)
+    }, [])
 
-    return <Card sx={{ maxWidth: 345 }}>
-      <CardHeader
-        avatar={
-          <Avatar aria-label="icon" src={asset.file_metadata.icon_link} sx={{ width: 20, height: 20 }} />
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title="Asset title"
-        subheader={moment(asset.created_at).fromNow()}
+    const MyMenuItem = ({ onClick, text, icon }) => <MenuItem onClick={onClick}>
+      <ListItemIcon>
+        {icon}
+      </ListItemIcon>
+      <ListItemText>{text}</ListItemText>
+    </MenuItem>
+
+    return data ? <CardActionArea onClick={() => window.open(data.viewLink, "_blank")}><ListItem>
+      <ListItemAvatar>
+        <Avatar aria-label="icon" src={data.icon} sx={{ width: 30, height: 30 }} />
+      </ListItemAvatar>
+      <ListItemText
+        primary={data.name}
+        secondary={<Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom> {moment(data.createdAt).fromNow()} </Typography>}
       />
-      <CardActionArea rel="noopener noreferrer" target="_blank" href={asset.file_metadata.work_link}>
-        <CardMedia>
-          <img style={{ width: "100%" }} src={!error ? asset.file_metadata.thumbnail_link : "https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png"} alt="asset thumbnail" onError={() => setError(true)} />
-        </CardMedia>
-      </CardActionArea>
-
-    </Card>
+      <ListItemSecondaryAction>
+        <><IconButton aria-label="settings" id="basic-button"
+          aria-controls="basic-menu"
+          aria-haspopup="true"
+          aria-expanded={open ? 'true' : undefined}
+          onClick={handleClick}
+        >
+          <MoreVertIcon />
+        </IconButton>
+          <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            MenuListProps={{
+              'aria-labelledby': 'basic-button',
+            }}
+          >
+            {data.viewLink && <MyMenuItem onClick={() => window.open(data.viewLink, "_blank")} text="View" icon={<OpenInNew fontSize="small" />} />}
+            {data.editLink && <MyMenuItem onClick={() => window.open(data.editLink, "_blank")} text="Edit" icon={<Edit fontSize="small" />} />}
+            {data.cloneLink && <MyMenuItem onClick={() => window.open(data.viewLink, "_blank")} text="Clone" icon={<CopyAll fontSize="small" />} />}
+            <MyMenuItem onClick={() => window.open(data.viewLink, "_blank")} text="Delete" icon={<Delete fontSize="small" />} />
+          </Menu></>
+      </ListItemSecondaryAction>
+    </ListItem></CardActionArea> : <Skeleton animation="wave" height={60} />
   }
   return <>
-    <Box sx={{ justifyContent: "center" }} >
-      <Typography variant="h6" sx={{ mb: 2 }}>Assets for {cleanUnderScores(selectedTask.name)} </Typography>
-    </Box>
     <Paper>
       <Search>
-
         <SearchIconWrapper>
           <SearchIcon />
         </SearchIconWrapper>
@@ -109,16 +143,16 @@ const Assets = ({ selectedTask }) => {
       </Search>
     </Paper>
 
-    {assets.length === 0 ?
+    {assets && assets.length > 0
+      ?
+      <List dense>
+        {assets.map(asset => <Box key={asset.id}><Asset asset={asset} /></Box>)}
+      </List>
+      :
       <Alert severity="warning" sx={{ mt: 2 }}>No assets yet for this task. Instantiate an interlinker, please.</Alert>
-      : <Grid container spacing={1} sx={{ mt: 1 }}>{
-        assets.map(asset =>
-          <Grid item key={asset.id} xl={3} lg={4} md={6} sm={6}>
-            <Asset asset={asset} />
-          </Grid>)}
-      </Grid>}
-    <NewAssetModal />
-    </>
+    }
+
+  </>
 }
 
 

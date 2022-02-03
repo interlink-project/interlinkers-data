@@ -3,6 +3,9 @@ import AuthGuard from '../components/guards/AuthGuard';
 import DashboardLayout from '../components/layouts/DashboardLayout';
 import Loadable from './Loadable';
 
+const PracticePedia = Loadable(
+  lazy(() => import('../pages/dashboard/PracticePedia'))
+);
 const CoproductionProcessCreate = Loadable(
   lazy(() => import('../pages/dashboard/coproductionprocesses/CoproductionProcessCreate'))
 );
@@ -102,6 +105,13 @@ export const routes = [
           },
         ],
       },
+      {
+        path: 'practicepedia',
+        element: <PracticePedia />,
+      },
+      
     ],
+    
   },
+  
 ];

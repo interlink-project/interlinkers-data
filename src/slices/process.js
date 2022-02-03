@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { coproductionProcessesApi, taskinstantiationsApi, objectiveinstantiationsApi, phaseinstantiationsApi} from '../__fakeApi__';
+import { coproductionProcessesApi, taskinstantiationsApi, objectiveinstantiationsApi, phaseinstantiationsApi, assetsApi} from '../__fakeApi__';
 import moment from "moment"
 import generateGraph from 'pages/dashboard/coproductionprocesses/Tabs/Network/graph';
 
@@ -12,7 +12,10 @@ const initialState = {
   objectiveinstantiations: [],
   phaseinstantiations: [],
   network: null,
-  selectedPhaseTab: "engage"
+  selectedPhaseTab: "engage",
+  selectedTask: {
+    assets: []
+  },
 };
 
 const valid_obj_types = ["taskinstantiation", "objectiveinstantiation", "phaseinstantiation"]
@@ -136,6 +139,9 @@ const slice = createSlice({
     setSelectedPhase(state, action) {
       state.selectedPhaseTab = action.payload;
     },
+    setSelectedTask(state, action) {
+      state.selectedTask = action.payload;
+    },
   }
 });
 
@@ -184,6 +190,17 @@ export const updatePhaseInstantiation = ({ id, data }) => async (dispatch) => {
 
 export const setSelectedPhaseTab = (data) => async (dispatch) => {
   dispatch(slice.actions.setSelectedPhase(data));
+};
+
+export const setSelectedTask = (taskinstantiation) => async (dispatch) => {
+  dispatch(slice.actions.setUpdating(true));
+  const assets = await taskinstantiationsApi.getAssets(taskinstantiation.id);
+  console.log("AQWIIWIQEIQ ", assets)
+  dispatch(slice.actions.setSelectedTask({
+    ...taskinstantiation,
+    assets
+  }));
+  dispatch(slice.actions.setUpdating(false));
 };
 
 export default slice;

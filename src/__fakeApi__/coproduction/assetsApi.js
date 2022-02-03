@@ -6,10 +6,11 @@ class AssetsApi extends GeneralApi {
     super("coproduction/api/v1/assets");
   }
 
-  async create(taskinstantiation_id, interlinkerversion_id) {
+  async create(taskinstantiation_id, interlinker_id, external_id) {
     const res = await axiosInstance.post(`/${this.url}`, {
       taskinstantiation_id,
-      interlinkerversion_id
+      interlinker_id,
+      external_id
     })
     console.log('post call', res, res.data);
     return res.data

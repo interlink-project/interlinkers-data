@@ -22,7 +22,7 @@ const MarkdownWrapper = experimentalStyled('div')(({ theme }) => ({
 
 const InterlinkerOverview = (props) => {
   const { interlinker, ...other } = props;
-  const { description, keywords, name } = interlinker;
+  const { description, tags, name } = interlinker;
 
   return (
 
@@ -67,10 +67,10 @@ const InterlinkerOverview = (props) => {
                     color='textSecondary'
                     variant='overline'
                   >
-                    Keywords
+                    Tags
                   </Typography>
                   <Box sx={{ mt: 1 }}>
-                    {keywords && keywords.split(";").map((tag) => (
+                    {tags && tags.split(";").map((tag) => (
                       <Chip
                         key={tag}
                         label={tag}

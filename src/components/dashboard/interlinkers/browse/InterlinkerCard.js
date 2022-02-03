@@ -250,12 +250,12 @@ const InterlinkerCard = (props) => {
       >
         Keywords
       </Typography>
-      {interlinker.keywords && interlinker.keywords.split(";").map(
+      {interlinker.tags && interlinker.tags.split(";").map(
         el => <Chip label={el} key={el} size="small" variant="outlined" sx={{ mr: 1 }} />
       )}
     </Box>
     <Box sx={{ bottom: 0 }}>
-      <SwipeableTextMobileStepper images={interlinker.images} height="300px" />
+      <SwipeableTextMobileStepper images={interlinker.snapshots} height="300px" />
     </Box>
   </>
 

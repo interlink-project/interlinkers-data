@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Avatar, Box, Divider, Drawer, Link, Typography } from '@material-ui/core';
-import { Dashboard as DashboardIcon, FolderOpen as FolderOpenIcon, HomeRepairService as HomeRepairServiceIcon, Link as LinkIcon, Group as GroupIcon } from '@material-ui/icons';
+import { Beenhere, Dashboard as DashboardIcon, FolderOpen as FolderOpenIcon, HomeRepairService as HomeRepairServiceIcon, Link as LinkIcon, Group as GroupIcon } from '@material-ui/icons';
 
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Logo from '../Logo';
@@ -42,6 +42,11 @@ const sections = [
             icon: <GroupIcon fontSize='small' />
           }
         ]
+      },
+      {
+        title: 'Practicepedia',
+        path: '/dashboard/practicepedia',
+        icon: <Beenhere fontSize='small' />
       },
     ]
   },
