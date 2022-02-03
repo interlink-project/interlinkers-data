@@ -19,7 +19,7 @@
     "auth_method": "cookie",
     "supports_internationalization": true,
     "is_responsive": true,
-    "open_in_modal": false,
+    "open_in_modal": true,
     "assets_clonable": true,
     "path": "externalresourcemanager",
     "is_subdomain": false,
