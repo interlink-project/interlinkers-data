@@ -78,7 +78,9 @@ export default function NewAssetModal({ taskinstantiation, onCreate }) {
 
     async function onMessage(event) {
         // Check sender origin to be trusted
-        if (event.origin !== "http://localhost") return;
+        console.log("listening on", process.env.REACT_APP_COMPLETE_DOMAIN)
+        console.log("received", event, "from", event.origin)
+        if (event.origin !== process.env.REACT_APP_COMPLETE_DOMAIN) return;
         const { code, data } = event.data
 
 

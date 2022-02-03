@@ -13,8 +13,7 @@ services:
     env_file:
       - .env
     environment:
-      # needed for OIDC but actually it is not being used now (cookie based authentication)
-      - REACT_APP_BASE_URI=http://${DOMAIN}
+      - REACT_APP_COMPLETE_DOMAIN=http://${DOMAIN}
     ports:
       - "${SOLODEVPORT}:${PORT}"
     stdin_open: true
