@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { env } from 'configuration'
 import store from 'store'
 
 // https://thedutchlab.com/blog/using-axios-interceptors-for-refreshing-your-api-token
@@ -18,7 +19,8 @@ export const setAuthHeader = (accessToken) => {
 export const getImageUrl = (micro, path) => path && `/${micro}${path}`
 
 const axiosInstance = axios.create({
-  timeout: 20000,
+  baseURL: env.REACT_APP_COMPLETE_DOMAIN,
+  timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
     accept: 'application/json',
