@@ -29,9 +29,8 @@ RUN apk update && apk upgrade && \
     apk add --no-cache bash git openssh
 RUN go get github.com/nrmitchi/runtime-js-env
 
-FROM nginx:1.19.4-alpine AS prod
+FROM nginx:stable-alpine AS prod
 
-WORKDIR /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /usr/app/build /usr/share/nginx/html
 # Copy the runtime-js-env binary
