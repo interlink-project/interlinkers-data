@@ -1,5 +1,7 @@
+import { env } from "configuration";
+
 const warn = (...args) => {
-  if (process.env.NODE_ENV !== 'development') {
+  if (env.NODE_ENV !== 'development') {
     return;
   }
 

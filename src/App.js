@@ -5,7 +5,7 @@ import { CssBaseline, ThemeProvider } from '@material-ui/core';
 
 import RTL from './components/RTL';
 import SplashScreen from './components/SplashScreen';
-import { gtmConfig } from './config';
+import { gtmConfig } from './configuration';
 import useAuth from './hooks/useAuth';
 import useScrollReset from './hooks/useScrollReset';
 import useSettings from './hooks/useSettings';

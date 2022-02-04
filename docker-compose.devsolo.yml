@@ -2,11 +2,11 @@ version: "3.3"
 services:
 
   frontend:
-    image: 'frontenddev:${TAG-latest}'
+    image: 'frontendprod:${TAG-latest}'
     container_name: frontend-solodev
     build:
       context: .
-      target: dev
+      target: prod
     volumes:
       - .:/usr/app
       - /usr/app/node_modules

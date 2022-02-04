@@ -43,11 +43,11 @@ const sections = [
           }
         ]
       },
-      {
+      /*{
         title: 'Practicepedia',
         path: '/dashboard/practicepedia',
         icon: <Beenhere fontSize='small' />
-      },
+      },*/
     ]
   },
 ];

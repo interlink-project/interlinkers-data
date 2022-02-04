@@ -4,14 +4,15 @@ import { UserManager, WebStorageStateStore, Log } from 'oidc-client';
 import { useNavigate } from 'react-router';
 import axiosInstance, { setAuthHeader } from 'axiosInstance';
 import isJwtTokenExpired from 'jwt-check-expiry';
+import { env } from 'configuration';
 
 export const IDENTITY_CONFIG = {
-  authority: process.env.REACT_APP_AUTH_URL,
-  client_id: process.env.REACT_APP_IDENTITY_CLIENT_ID,
-  login: `${process.env.REACT_APP_AUTH_URL}/-/interlink/login`,
-  redirect_uri: `${process.env.REACT_APP_BASE_URI}/callback`,
-  silent_redirect_uri: `${process.env.REACT_APP_BASE_URI}/silentRenew`,
-  post_logout_redirect_uri: `${process.env.REACT_APP_BASE_URI}/logoutCallback`,
+  authority: env.REACT_APP_AUTH_URL,
+  client_id: env.REACT_APP_IDENTITY_CLIENT_ID,
+  login: `${env.REACT_APP_AUTH_URL}/-/interlink/login`,
+  redirect_uri: `${env.REACT_APP_BASE_URI}/callback`,
+  silent_redirect_uri: `${env.REACT_APP_BASE_URI}/silentRenew`,
+  post_logout_redirect_uri: `${env.REACT_APP_BASE_URI}/logoutCallback`,
   loadUserInfo: false,
   automaticSilentRenew: false,
   revokeAccessTokenOnSignout: false,
@@ -22,17 +23,17 @@ export const IDENTITY_CONFIG = {
 };
 
 export const METADATA_OIDC = {
-  issuer: process.env.REACT_APP_AUTH_URL,
+  issuer: env.REACT_APP_AUTH_URL,
 
-  jwks_uri: `${process.env.REACT_APP_AUTH_URL}/jwk`,
-  // end_session_endpoint: `${process.env.REACT_APP_AUTH_URL}/endsession`,
-  userinfo_endpoint: `${process.env.REACT_APP_AUTH_URL}/userinfo`,
+  jwks_uri: `${env.REACT_APP_AUTH_URL}/jwk`,
+  // end_session_endpoint: `${env.REACT_APP_AUTH_URL}/endsession`,
+  userinfo_endpoint: `${env.REACT_APP_AUTH_URL}/userinfo`,
 
-  login: `${process.env.REACT_APP_AUTH_URL}/-/interlink/login`,
-  authorization_endpoint: `${process.env.REACT_APP_AUTH_URL}/oauth/authorize`,
-  token_endpoint: `${process.env.REACT_APP_AUTH_URL}/oauth/token`,
-  revocation_endpoint: `${process.env.REACT_APP_AUTH_URL}/oauth/revoke`,
-  introspection_endpoint: `${process.env.REACT_APP_AUTH_URL}/oauth/introspect`,
+  login: `${env.REACT_APP_AUTH_URL}/-/interlink/login`,
+  authorization_endpoint: `${env.REACT_APP_AUTH_URL}/oauth/authorize`,
+  token_endpoint: `${env.REACT_APP_AUTH_URL}/oauth/token`,
+  revocation_endpoint: `${env.REACT_APP_AUTH_URL}/oauth/revoke`,
+  introspection_endpoint: `${env.REACT_APP_AUTH_URL}/oauth/introspect`,
 };
 
 const initialState = {
@@ -182,7 +183,7 @@ export const AuthProvider = (props) => {
   const isAuthenticated = () => {
     const oidcStorage = JSON.parse(
       sessionStorage.getItem(
-        `oidc.user:${process.env.REACT_APP_AUTH_URL}:${process.env.REACT_APP_IDENTITY_CLIENT_ID}`
+        `oidc.user:${env.REACT_APP_AUTH_URL}:${env.REACT_APP_IDENTITY_CLIENT_ID}`
       )
     );
     const authenticated = !!oidcStorage && !!oidcStorage.access_token && !isJwtTokenExpired(oidcStorage.access_token);
@@ -223,7 +224,7 @@ export const AuthProvider = (props) => {
   const signoutRedirectCallback = () => {
     userManager.signoutRedirectCallback().then(() => {
       localStorage.clear();
-      window.location.replace(process.env.REACT_APP_PUBLIC_URL);
+      window.location.replace(env.REACT_APP_PUBLIC_URL);
     });
     userManager.clearStaleState();
   };

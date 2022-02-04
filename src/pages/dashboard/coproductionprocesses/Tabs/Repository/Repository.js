@@ -5,7 +5,7 @@ import {
   Typography
 } from '@material-ui/core';
 import Assets from './Assets';
-import Tabs from "../Tabs";
+import PhaseTabs from "../PhaseTabs";
 import RepositoryTree from "./RepositoryTree";
 import MobileDiscriminator from 'components/MobileDiscriminator';
 import MobileDrawer from 'components/MobileDrawer';
@@ -37,7 +37,7 @@ const Repository = () => {
 
       <Grid container>
         <Grid item xl={12} lg={12} md={12} xs={12}>
-          <Tabs />
+          <PhaseTabs />
         </Grid>
         <Grid item xl={4} lg={4} md={6} xs={12}>
           <RepositoryTree setSelectedTask={setSelectedTask} loading={loadingAssets} />

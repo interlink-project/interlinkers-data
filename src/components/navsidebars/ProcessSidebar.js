@@ -40,15 +40,16 @@ const ProcessSidebar = (props) => {
           icon: <Dashboard />
         },
         {
-          title: 'Workplan',
-          path: `/dashboard/coproductionprocesses/${processId}/workplan`,
-          icon: <Timeline />
-        },
-        {
           title: 'Repository',
           path: `/dashboard/coproductionprocesses/${processId}/repository`,
           icon: <FolderOpen />
         },
+        /*{
+          title: 'Workplan',
+          path: `/dashboard/coproductionprocesses/${processId}/workplan`,
+          icon: <Timeline />
+        },
+        
         {
           title: 'Network',
           path: `/dashboard/coproductionprocesses/${processId}/network`,
@@ -63,7 +64,7 @@ const ProcessSidebar = (props) => {
           title: 'Settings',
           path: `/dashboard/coproductionprocesses/${processId}/settings`,
           icon: <Settings />
-        }
+        }*/
       ]
     },
   ];

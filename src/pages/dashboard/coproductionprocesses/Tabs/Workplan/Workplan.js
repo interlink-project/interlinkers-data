@@ -5,7 +5,7 @@ import $ from 'jquery';
 import colorScale from "utils/colorScale"
 import { useSelector } from 'react-redux';
 import { cleanUnderScores } from "utils/cleanUnderscores";
-import Tabs from "../Tabs";
+import PhaseTabs from "../PhaseTabs";
 import MobileObjectiveDrawer from "./MobileObjectiveDrawer";
 import MobileDiscriminator from "components/MobileDiscriminator";
 import useMounted from "hooks/useMounted";
@@ -189,7 +189,7 @@ const Workplan = () => {
     <Grid container style={{ overflow: "hidden" }}>
 
       <Grid item xs={12}>
-        <Tabs additionalContent={<ToggleButtonGroup
+        <PhaseTabs additionalContent={<ToggleButtonGroup
           color="primary"
           value={viewMode}
           fullWidth

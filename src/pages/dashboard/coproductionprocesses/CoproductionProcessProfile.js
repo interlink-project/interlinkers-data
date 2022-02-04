@@ -29,6 +29,7 @@ import gtm from '../../../lib/gtm';
 import { MoreVert, NavigateNext } from '@material-ui/icons';
 import Repository from './Tabs/Repository/Repository';
 import MobileRepository from './Tabs/Repository/MobileRepository';
+import TeamTab from './Tabs/Team';
 import Workplan from './Tabs/Workplan/Workplan';
 import Network from './Tabs/Network2';
 import Forum from './Tabs/Forum';
@@ -42,13 +43,16 @@ import { getImageUrl } from 'axiosInstance';
 
 const tabs = [
   { label: 'Overview', value: 'overview' },
-  { label: 'Workplan', value: 'workplan' },
+  { label: 'Team', value: 'team' },
   { label: 'Repository', value: 'repository' },
-  { label: 'Network', value: 'network' },
-  { label: 'Forum', value: 'forum' },
-  { label: 'Settings', value: 'settings' },
+  
 ];
 
+/*{ label: 'Workplan', value: 'workplan' },
+  { label: 'Network', value: 'network' },
+  { label: 'Forum', value: 'forum' },
+  { label: 'Settings', value: 'settings' },*/
+  
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -83,7 +87,7 @@ const CoproductionProcessProfile = () => {
 
   const getCoproductionProcess = useCallback(async () => {
     try {
-      
+
       if (mounted.current) {
         dispatch(getProcess(processId))
       }
@@ -102,7 +106,7 @@ const CoproductionProcessProfile = () => {
 
 
   const logoExists = process && process.logotype
-  const Tabss = () => <Card sx={{ mr: onMobile ? 0 : 2, mb: onMobile ? 1 : 0 }}>
+  const TabsMobile = () => <Card sx={{ mr: onMobile ? 0 : 2, mb: onMobile ? 1 : 0 }}>
     <CardHeader
       avatar={
         <Avatar variant="square" sx={logoExists ? {} : { bgcolor: red[500] }} aria-label="recipe" src={logoExists && getImageUrl("coproduction", process.logotype)}>
@@ -140,6 +144,9 @@ const CoproductionProcessProfile = () => {
     <TabPanel value={tab} index="overview">
       <OverviewTab />
     </TabPanel>
+    <TabPanel value={tab} index="team">
+      <TeamTab />
+    </TabPanel>
     <TabPanel value={tab} index="workplan">
       <Workplan />
     </TabPanel>
@@ -173,7 +180,7 @@ const CoproductionProcessProfile = () => {
           <Container maxWidth='xl'>
             {onMobile ?
               <>
-                <Tabss />
+                <TabsMobile />
                 <ContentSkeleton />
               </>
               :

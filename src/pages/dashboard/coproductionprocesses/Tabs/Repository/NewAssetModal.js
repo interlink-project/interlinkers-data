@@ -16,6 +16,7 @@ import axiosInstance, { getImageUrl } from 'axiosInstance';
 import { ArrowBack, Close } from '@material-ui/icons';
 import { assetsApi } from '__fakeApi__';
 import RepresentationsList from './RepresentationList';
+import { env } from 'configuration';
 
 /*
 import IframeResizer from 'iframe-resizer-react'
@@ -78,9 +79,9 @@ export default function NewAssetModal({ taskinstantiation, onCreate }) {
 
     async function onMessage(event) {
         // Check sender origin to be trusted
-        console.log("listening on", process.env.REACT_APP_COMPLETE_DOMAIN)
+        console.log("listening on", env.REACT_APP_COMPLETE_DOMAIN)
         console.log("received", event, "from", event.origin)
-        if (event.origin !== process.env.REACT_APP_COMPLETE_DOMAIN) return;
+        if (event.origin !== env.REACT_APP_COMPLETE_DOMAIN) return;
         const { code, data } = event.data
 
 

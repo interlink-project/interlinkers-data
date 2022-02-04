@@ -5,7 +5,7 @@ import CircularProgressWithLabel from "components/CircularProgress";
 import { setSelectedPhaseTab } from "slices/process";
 import useMounted from 'hooks/useMounted';
 
-const Tabs = ({ additionalContent }) => {
+const PhaseTabs = ({ additionalContent }) => {
     const { selectedPhaseTab, phaseinstantiations} = useSelector((state) => state.process);
     const dispatch = useDispatch();
     const mounted = useMounted();
@@ -47,4 +47,4 @@ const Tabs = ({ additionalContent }) => {
     );
 };
 
-export default Tabs
+export default PhaseTabs
