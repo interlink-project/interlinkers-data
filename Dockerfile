@@ -41,8 +41,7 @@ EXPOSE 80
 # Add Bash to make life easier.
 RUN apk add --no-cache bash
 
-# Add our startup script
-RUN echo "/runtime-js-env -i /usr/share/nginx/html/index.html && chmod 644 /usr/share/nginx/html/index.html" > /docker-entrypoint.d/docker-nginx-startup-runtime-env.sh
-RUN chmod a+x /docker-entrypoint.d/docker-nginx-startup-runtime-env.sh
+COPY entrypoint.sh .
 
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+ENTRYPOINT ["./entrypoint.sh"]
+CMD ["nginx", "-g", "daemon off;"]
