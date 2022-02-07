@@ -65,17 +65,25 @@ for schema_path in Path(".").glob("**/schema.py"):
 
 
 # Validate coproduction tree
-from tree.test import Phase
+from schemas.schemas import Phase, CoproductionSchema
+import os
 
 print(
         f"\n{bcolors.HEADER}{bcolors.BOLD}Checking coproduction tree{bcolors.ENDC}"
     )
-for phase_data_path in Path("./tree").glob("**/phases/*.json"):
-    with open(str(phase_data_path)) as json_file:
-        print(f"{bcolors.OKBLUE}## PROCESSING {bcolors.ENDC}{phase_data_path}{bcolors.OKBLUE}")
-        Phase(**json.load(json_file))
+
+for schema_metadata_path in Path("./schemas").glob("**/metadata.json"):
+    with open(str(schema_metadata_path)) as json_file:
+        print(f"{bcolors.OKBLUE}## PROCESSING {bcolors.ENDC}{schema_metadata_path}{bcolors.OKBLUE}")
+        parent = str(schema_metadata_path.parents[0])
+        phases = os.listdir(parent + "/phases")
+        CoproductionSchema(**json.load(json_file))
+        for phase in phases:
+            with open(parent + "/phases/" + phase) as phase_metadata:
+                print(phase_metadata)
+                Phase(**json.load(phase_metadata))
         print(
-            f"\n{bcolors.OKGREEN}Phase {phase_data_path} valid!{bcolors.ENDC}"
+            f"\n{bcolors.OKGREEN}Phase {schema_metadata_path} valid!{bcolors.ENDC}"
         )
 # if an exception has been thrown along the execution of the script, exit with error code
 if general_error:

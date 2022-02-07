@@ -1,12 +1,20 @@
 import json
-from enum import Enum
-from typing import List, Literal, Optional, Union
+from typing import List, Optional
 
 from pydantic import BaseModel, Extra, validator
 
+
+class ProblemProfile(BaseModel):
+    id: str
+    name_en: str
+    description_en: str
+    functionality_en: str
+
+
 problem_profiles_ids = []
-with open("tree/problem_profiles.json") as json_file:
+with open("schemas/problem_profiles.json") as json_file:
     for i in json.load(json_file):
+        ProblemProfile(**i)
         problem_profiles_ids.append(i["id"])
 
 
@@ -42,4 +50,9 @@ class Objective(WithProblemProfiles, WithNameAndDesc, extra=Extra.forbid):
 
 
 class Phase(WithNameAndDesc, extra=Extra.forbid):
+    prerequisites: list
     objectives: List[Objective]
+
+class CoproductionSchema(WithNameAndDesc, extra=Extra.forbid):
+    author: str
+    licence: Optional[str]

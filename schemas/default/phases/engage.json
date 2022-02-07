@@ -1,0 +1,148 @@
+{
+    "prerequisites": ["project_start"],
+    "name": [
+        {
+            "locale": "en",
+            "value": "Engage"
+        },
+        {
+            "locale": "es",
+            "value": "Comprometer"
+        }
+    ],
+    "description": [
+        {
+            "locale": "en",
+            "value": ""
+        },
+        {
+            "locale": "es",
+            "value": ""
+        }
+    ],
+    "objectives": [
+        {
+            "name": [
+                {
+                    "locale": "en",
+                    "value": "Identify stakeholders"
+                },
+                {
+                    "locale": "es",
+                    "value": "Identificar stakeholders"
+                }
+            ],
+            "description": [
+                {
+                    "locale": "en",
+                    "value": ""
+                },
+                {
+                    "locale": "es",
+                    "value": ""
+                }
+            ],
+            "problem_profiles": [],
+            "tasks": [
+                {
+                    "name": [
+                        {
+                            "locale": "en",
+                            "value": "Understand the different types of stakeholders and their motivations"
+                        },
+                        {
+                            "locale": "es",
+                            "value": "Entender los diferentes tipos de stakeholders y sus motivaciones"
+                        }
+                    ],
+                    "description": [
+                        {
+                            "locale": "en",
+                            "value": ""
+                        },
+                        {
+                            "locale": "es",
+                            "value": ""
+                        }
+                    ],
+                    "problem_profiles": []
+                },
+                {
+                    "name": [
+                        {
+                            "locale": "en",
+                            "value": "Map stakeholders analyse motivation skills expectations"
+                        },
+                        {
+                            "locale": "es",
+                            "value": "Mapear partes interesadas analizar motivación habilidades expectativas"
+                        }
+                    ],
+                    "description": [
+                        {
+                            "locale": "en",
+                            "value": ""
+                        },
+                        {
+                            "locale": "es",
+                            "value": ""
+                        }
+                    ],
+                    "problem_profiles": [
+                        "UND_PROBLEM_2"
+                    ]
+                },
+                {
+                    "name": [
+                        {
+                            "locale": "en",
+                            "value": "Visually map the network of stakeholders"
+                        },
+                        {
+                            "locale": "es",
+                            "value": "Mapear visualmente la red de partes interesadas"
+                        }
+                    ],
+                    "description": [
+                        {
+                            "locale": "en",
+                            "value": ""
+                        },
+                        {
+                            "locale": "es",
+                            "value": ""
+                        }
+                    ],
+                    "problem_profiles": [
+                        "UND_PROBLEM_2"
+                    ]
+                },
+                {
+                    "name": [
+                        {
+                            "locale": "en",
+                            "value": "Create a contact list of potential network participants"
+                        },
+                        {
+                            "locale": "es",
+                            "value": "Crear una lista de contactos de posibles participantes de la red"
+                        }
+                    ],
+                    "description": [
+                        {
+                            "locale": "en",
+                            "value": ""
+                        },
+                        {
+                            "locale": "es",
+                            "value": ""
+                        }
+                    ],
+                    "problem_profiles": [
+                        "ORG_PROBLEM_4"
+                    ]
+                }
+            ]
+        }
+    ]
+}
