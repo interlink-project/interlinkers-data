@@ -1,24 +1,12 @@
 {
-    "name": [
-        {
-            "locale": "en",
-            "value": "Default schema"
-        },
-        {
-            "locale": "es",
-            "value": "Esquema por defecto"
-        }
-    ],
+    "name": {
+        "en": "Default schema",
+        "es": "Esquema por defecto"
+    },
     "author": "",
     "licence": "",
-    "description": [
-        {
-            "locale": "en",
-            "value": ""
-        },
-        {
-            "locale": "es",
-            "value": ""
-        }
-    ]
+    "description": {
+        "en": "",
+        "es": ""
+    }
 }

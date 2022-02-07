@@ -1,0 +1,93 @@
+{
+    "title": "Phase",
+    "type": "object",
+    "properties": {
+        "name": {
+            "title": "Name",
+            "type": "object"
+        },
+        "description": {
+            "title": "Description",
+            "type": "object"
+        },
+        "prerequisites": {
+            "title": "Prerequisites",
+            "type": "array",
+            "items": {}
+        },
+        "objectives": {
+            "title": "Objectives",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Objective"
+            }
+        }
+    },
+    "required": [
+        "name",
+        "description",
+        "prerequisites",
+        "objectives"
+    ],
+    "additionalProperties": false,
+    "definitions": {
+        "Task": {
+            "title": "Task",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "title": "Name",
+                    "type": "object"
+                },
+                "description": {
+                    "title": "Description",
+                    "type": "object"
+                },
+                "problem_profiles": {
+                    "title": "Problem Profiles",
+                    "type": "array",
+                    "items": {}
+                }
+            },
+            "required": [
+                "name",
+                "description",
+                "problem_profiles"
+            ],
+            "additionalProperties": false
+        },
+        "Objective": {
+            "title": "Objective",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "title": "Name",
+                    "type": "object"
+                },
+                "description": {
+                    "title": "Description",
+                    "type": "object"
+                },
+                "problem_profiles": {
+                    "title": "Problem Profiles",
+                    "type": "array",
+                    "items": {}
+                },
+                "tasks": {
+                    "title": "Tasks",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Task"
+                    }
+                }
+            },
+            "required": [
+                "name",
+                "description",
+                "problem_profiles",
+                "tasks"
+            ],
+            "additionalProperties": false
+        }
+    }
+}

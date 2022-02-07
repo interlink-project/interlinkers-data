@@ -69,6 +69,13 @@ for schema_path in Path("./interlinkers").glob("**/schema.py"):
 from schemas.schemas import Phase, CoproductionSchema
 import os
 
+# convert pydantic schema to jsonschema that non-technical users can use to validate data easily
+with open(f"schemas/metadata_schema.json", "w") as f:
+    json.dump(CoproductionSchema.schema(), f, indent=4)
+
+with open(f"schemas/phase_schema.json", "w") as f:
+    json.dump(Phase.schema(), f, indent=4)
+
 print(
         f"\n{bcolors.HEADER}{bcolors.BOLD}Checking coproduction tree{bcolors.ENDC}"
     )

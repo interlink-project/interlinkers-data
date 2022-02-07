@@ -6,27 +6,26 @@ from pydantic import BaseModel, Extra, validator
 
 class ProblemProfile(BaseModel):
     id: str
-    name_en: str
-    description_en: str
-    functionality_en: str
+    name: dict
+    description: dict
+    functionality: dict
 
 
 problem_profiles_ids = []
-with open("schemas/problem_profiles.json") as json_file:
+with open("problem_profiles.json") as json_file:
     for i in json.load(json_file):
         ProblemProfile(**i)
         problem_profiles_ids.append(i["id"])
 
 
 class WithNameAndDesc(BaseModel):
-    name: list
-    description: list
+    name: dict
+    description: dict
 
     @validator('name', "description")
     def with_languages(cls, v, values, **kwargs):
-        for obj in v:
-            if "locale" not in obj or "value" not in obj:
-                raise ValueError(f'Invalid languages')
+        if "en" not in v:
+            raise ValueError(f'English not detected')
         return v
 
 
@@ -56,3 +55,5 @@ class Phase(WithNameAndDesc, extra=Extra.forbid):
 class CoproductionSchema(WithNameAndDesc, extra=Extra.forbid):
     author: str
     licence: Optional[str]
+
+    name_translations={'en': 'Some article'}
