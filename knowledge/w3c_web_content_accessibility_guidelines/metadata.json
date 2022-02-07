@@ -12,8 +12,8 @@
     ],
     "licence": "permissive",
     "problem_profiles": [
-        "Implement accessible digital public services ",
-        "User interface design"
+        "BUILD_PROBLEM_2",
+        "BUILD_PROBLEM_1"
     ],
     "types": [
         "enabling_services;implementing_software_and_artifacts"

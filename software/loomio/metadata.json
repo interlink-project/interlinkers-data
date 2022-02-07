@@ -10,7 +10,7 @@
     "targets": ["all"],
     "licence": "copyleft",
     "problem_profiles": [
-        "Collaborative problem refinement", "Ideas collection", "Collaborative agree on a service idea", "Ideas crowdsourcing" 
+        "UND_PROBLEM_1", "UND_PROBLEM_5", "DEF_PROBLEM_2"
     ],
     "types": ["enabling_services;operation_services"],
     "related_interlinkers": [],

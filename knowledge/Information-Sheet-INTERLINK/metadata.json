@@ -13,7 +13,7 @@
     ],
     "licence": "public_domain",
     "problem_profiles": [
-        "Consent collection"
+        "ORG_PROBLEM_14"
     ],
     "types": [
         "enhancing_services"

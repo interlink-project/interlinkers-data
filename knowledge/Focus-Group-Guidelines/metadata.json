@@ -13,9 +13,9 @@
     ],
     "licence": "public_domain",
     "problem_profiles": [
-        "Data collection about users and their behavior",
-        "Collaborative problem refinement",
-        "Ongoing internal co-evaluation"
+        "UND_PROBLEM_3",
+        "UND_PROBLEM_1",
+        "VAL_PROBLEM_2"
     ],
     "types": [
         "enhancing_services"
