@@ -29,12 +29,12 @@
     "constraints_and_limitations": "No special constraints apply",
     "regulations_and_standards": "The consent form is compliant to GDPR norms.",
     "overview_text": "This INTERLINKER is composed by a document that can be downloaded, printed and distributed to participants.",
-    "instructions": "./knowledge/Consent-Form-Template/instructions.md",
+    "instructions": "./interlinkers/knowledge/Consent-Form-Template/instructions.md",
     "representations": [
         {
             "form": "document_template",
             "format": "editable_source_document",
-            "file": "./knowledge/Consent-Form-Template/resource.docx",
+            "file": "./interlinkers/knowledge/Consent-Form-Template/resource.docx",
             "softwareinterlinker": "googledrive"
         }
     ]

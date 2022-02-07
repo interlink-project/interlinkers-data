@@ -32,7 +32,7 @@
         {
             "form": "guidelines",
             "format": "structured_format",
-            "file": "./knowledge/w3c_web_content_accessibility_guidelines/data.json",
+            "file": "./interlinkers/knowledge/w3c_web_content_accessibility_guidelines/data.json",
             "softwareinterlinker": "externalresourcemanager"
         }
     ]

@@ -29,5 +29,5 @@
     "assets_clonable": false,
     "path": "loomio",
     "is_subdomain": true,
-    "logotype": "./software/loomio/logo.png"
+    "logotype": "./interlinkers/software/loomio/logo.png"
 }

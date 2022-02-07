@@ -1,5 +1,5 @@
 from enum import Enum
-from base import InterlinkerSchema
+from interlinkers.base import InterlinkerSchema
 from pydantic import BaseModel, FilePath, HttpUrl
 from typing import Union, List
 

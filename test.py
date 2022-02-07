@@ -19,13 +19,14 @@ class bcolors:
 general_error = False
 
 # search for schemas
-for schema_path in Path(".").glob("**/schema.py"):
+for schema_path in Path("./interlinkers").glob("**/schema.py"):
     schema_error = False
     str_path = str(schema_path)
-
+    pat = str(schema_path.parents[0]).replace("/", ".")
+    print(f"{pat}.{schema_path.stem}")
     # schema.py imported dynamically
     Schema = importlib.import_module(
-        f"{schema_path.parents[0]}.{schema_path.stem}"
+        f"{pat}.{schema_path.stem}"
     ).Schema
     parent_path = schema_path.parents[0]
 
@@ -80,7 +81,6 @@ for schema_metadata_path in Path("./schemas").glob("**/metadata.json"):
         CoproductionSchema(**json.load(json_file))
         for phase in phases:
             with open(parent + "/phases/" + phase) as phase_metadata:
-                print(phase_metadata)
                 Phase(**json.load(phase_metadata))
         print(
             f"\n{bcolors.OKGREEN}Phase {schema_metadata_path} valid!{bcolors.ENDC}"

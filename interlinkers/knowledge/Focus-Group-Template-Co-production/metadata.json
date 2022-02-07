@@ -28,12 +28,12 @@
     "constraints_and_limitations": "No special constraints apply",
     "regulations_and_standards": "",
     "overview_text": "This INTERLINKER is composed by a PowerPoint scheleton that can be downloaded, customized and used to facilitate a Focus Group.",
-    "instructions": "./knowledge/Focus-Group-Template-Co-production/instructions.md",
+    "instructions": "./interlinkers/knowledge/Focus-Group-Template-Co-production/instructions.md",
     "representations": [
         {
             "form": "document_template",
             "format": "editable_source_document",
-            "file": "./knowledge/Focus-Group-Template-Co-production/resource.pptx",
+            "file": "./interlinkers/knowledge/Focus-Group-Template-Co-production/resource.pptx",
             "softwareinterlinker": "googledrive"
         }
     ]

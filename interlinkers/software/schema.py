@@ -2,7 +2,7 @@ import json
 from enum import Enum
 from pathlib import Path
 
-from base import InterlinkerSchema
+from interlinkers.base import InterlinkerSchema
 from pydantic import FilePath, HttpUrl
 from typing import Optional, Union
 
