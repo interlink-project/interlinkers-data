@@ -1,0 +1,99 @@
+{
+    "name": [
+        {
+            "locale": "en",
+            "value": "Project start"
+        },
+        {
+            "locale": "es",
+            "value": "Inicio del proyecto"
+        }
+    ],
+    "description": [
+        {
+            "locale": "en",
+            "value": ""
+        },
+        {
+            "locale": "es",
+            "value": ""
+        }
+    ],
+    "objectives": [
+        {
+            "name": [
+                {
+                    "locale": "en",
+                    "value": "Initiate a coproduction endeavour"
+                },
+                {
+                    "locale": "es",
+                    "value": "Iniciar un proyecto de coproducción"
+                }
+            ],
+            "description": [
+                {
+                    "locale": "en",
+                    "value": ""
+                },
+                {
+                    "locale": "es",
+                    "value": ""
+                }
+            ],
+            "problem_profiles": [],
+            "tasks": [
+                {
+                    "name": [
+                        {
+                            "locale": "en",
+                            "value": "Project aim description"
+                        },
+                        {
+                            "locale": "es",
+                            "value": "Descripción de la misión del proyecto"
+                        }
+                    ],
+                    "description": [
+                        {
+                            "locale": "en",
+                            "value": ""
+                        },
+                        {
+                            "locale": "es",
+                            "value": ""
+                        }
+                    ],
+                    "problem_profiles": [
+                        "ORG_PROBLEM_1"
+                    ]
+                },
+                {
+                    "name": [
+                        {
+                            "locale": "en",
+                            "value": "Set the overall initial workplan"
+                        },
+                        {
+                            "locale": "es",
+                            "value": "Establecer el plan de trabajo inicial"
+                        }
+                    ],
+                    "description": [
+                        {
+                            "locale": "en",
+                            "value": ""
+                        },
+                        {
+                            "locale": "es",
+                            "value": ""
+                        }
+                    ],
+                    "problem_profiles": [
+                        "ORG_PROBLEM_2"
+                    ]
+                }
+            ]
+        }
+    ]
+}

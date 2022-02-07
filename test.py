@@ -29,18 +29,14 @@ for schema_path in Path(".").glob("**/schema.py"):
     ).Schema
     parent_path = schema_path.parents[0]
 
+    print(
+        f"\n{bcolors.HEADER}{bcolors.BOLD}Checking {schema_path}{bcolors.ENDC}"
+    )
     # searches for metadata inside the parent directory where schema is located
     for metadata_path in Path(str(parent_path)).glob("**/metadata.json"):
         str_path = str(metadata_path)
         with open(str_path) as json_file:
-            print(
-                f"{bcolors.OKBLUE}################################################################################################"
-            )
-            print(f"## PROCESSING {bcolors.ENDC}{str_path}{bcolors.OKBLUE}")
-            print(
-                f"################################################################################################{bcolors.ENDC}"
-            )
-
+            print(f"{bcolors.OKBLUE}## PROCESSING {bcolors.ENDC}{str_path}{bcolors.OKBLUE}")
             # loads data from metadata.json and validates it
             data = json.load(json_file)
             try:
@@ -67,6 +63,20 @@ for schema_path in Path(".").glob("**/schema.py"):
         f"\n{bcolors.OKGREEN}All checks passed for {schema_path}!{bcolors.ENDC}"
     )
 
+
+# Validate coproduction tree
+from tree.test import Phase
+
+print(
+        f"\n{bcolors.HEADER}{bcolors.BOLD}Checking coproduction tree{bcolors.ENDC}"
+    )
+for phase_data_path in Path("./tree").glob("**/phases/*.json"):
+    with open(str(phase_data_path)) as json_file:
+        print(f"{bcolors.OKBLUE}## PROCESSING {bcolors.ENDC}{phase_data_path}{bcolors.OKBLUE}")
+        Phase(**json.load(json_file))
+        print(
+            f"\n{bcolors.OKGREEN}Phase {phase_data_path} valid!{bcolors.ENDC}"
+        )
 # if an exception has been thrown along the execution of the script, exit with error code
 if general_error:
     sys.exit(1)
