@@ -1,6 +1,7 @@
 from enum import Enum
 from typing import List, Optional
-from pydantic import BaseModel, conlist, Extra
+from pydantic import BaseModel, conlist, Extra, validator
+from problem_profiles import WithProblemProfiles
 
 # https://docs.google.com/spreadsheets/d/1tJ2BfX4EOdbBqEbrJWg8a3MENw13vYiPZM_S4wWWgWQ/edit#gid=0
 
@@ -59,7 +60,7 @@ class AdministrativeScopes(Enum):
     local = "local"
 
 
-class InterlinkerSchema(BaseModel, extra=Extra.forbid):
+class InterlinkerSchema(WithProblemProfiles, extra=Extra.forbid):
     name: str
     # FOR 1
     # A name for the INTERLINKER.

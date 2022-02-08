@@ -2,6 +2,13 @@
     "title": "Schema",
     "type": "object",
     "properties": {
+        "problem_profiles": {
+            "title": "Problem Profiles",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
         "name": {
             "title": "Name",
             "type": "string"
@@ -29,13 +36,6 @@
         },
         "licence": {
             "$ref": "#/definitions/Licences"
-        },
-        "problem_profiles": {
-            "title": "Problem Profiles",
-            "type": "array",
-            "items": {
-                "type": "string"
-            }
         },
         "types": {
             "type": "array",
@@ -158,12 +158,12 @@
         }
     },
     "required": [
+        "problem_profiles",
         "name",
         "description",
         "tags",
         "difficulty",
         "licence",
-        "problem_profiles",
         "constraints_and_limitations",
         "supported_by",
         "auth_method",
