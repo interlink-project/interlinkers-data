@@ -31,7 +31,6 @@ import Repository from './Tabs/Repository/Repository';
 import MobileRepository from './Tabs/Repository/MobileRepository';
 import TeamTab from './Tabs/Team';
 import Workplan from './Tabs/Workplan/Workplan';
-import Network from './Tabs/Network2';
 import Forum from './Tabs/Forum';
 import { useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
@@ -147,20 +146,9 @@ const CoproductionProcessProfile = () => {
     <TabPanel value={tab} index="team">
       <TeamTab />
     </TabPanel>
-    <TabPanel value={tab} index="workplan">
-      <Workplan />
-    </TabPanel>
     <TabPanel value={tab} index="repository">
       <Repository />
     </TabPanel>
-    <TabPanel value={tab} index="network">
-      <Network />
-    </TabPanel>
-    <TabPanel value={tab} index="forum">
-      <Forum />
-    </TabPanel>
-
-
   </Card>
 
   const ContentSkeleton = () => loading || !process ? <MainSkeleton /> : <Content />
@@ -173,7 +161,6 @@ const CoproductionProcessProfile = () => {
       <Box
         sx={{
           backgroundColor: 'background.default',
-          minHeight: '100%'
         }}
       >
         <Box sx={{ mt: 5 }}>

@@ -6,6 +6,16 @@ class InterlinkersApi extends GeneralApi {
     super("catalogue/api/v1/interlinkers");
   }
 
+  async get_by_problem_profiles(problem_profiles) {
+    const res = await axiosInstance.post(
+      `/${this.url}/by_problem_profiles`, {
+        problem_profiles
+      }
+    );
+    console.log('by problem profiles call', res.data);
+    return res.data;
+  }
+
   async search(search, nature) {
     const searchparams = new URLSearchParams();
     if (search) {

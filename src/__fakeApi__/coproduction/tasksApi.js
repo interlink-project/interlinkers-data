@@ -1,9 +1,9 @@
 import axiosInstance from 'axiosInstance';
 import GeneralApi from "../general"
 
-class TaskinstantiationsApi extends GeneralApi {
+class TasksApi extends GeneralApi {
   constructor() {
-    super("coproduction/api/v1/taskinstantiations");
+    super("coproduction/api/v1/tasks");
   }
 
   async getAssets(id) {
@@ -13,4 +13,4 @@ class TaskinstantiationsApi extends GeneralApi {
   }
 }
 
-export const taskinstantiationsApi = new TaskinstantiationsApi();
+export const tasksApi = new TasksApi();

@@ -6,7 +6,7 @@ import { setSelectedPhaseTab } from "slices/process";
 import useMounted from 'hooks/useMounted';
 
 const PhaseTabs = ({ additionalContent }) => {
-    const { selectedPhaseTab, phaseinstantiations} = useSelector((state) => state.process);
+    const { selectedPhaseTab, phases} = useSelector((state) => state.process);
     const dispatch = useDispatch();
     const mounted = useMounted();
 
@@ -32,13 +32,13 @@ const PhaseTabs = ({ additionalContent }) => {
                 aria-label="Coproduction phases tabs"
             >
 
-                {phaseinstantiations.map((phaseinstantiation) => (
+                {phases.map((phase) => (
                     <Tab
-                        key={phaseinstantiation.id}
+                        key={phase.id}
                         label={<>
-                            <p>{phaseinstantiation.name}</p>
-                            <CircularProgressWithLabel value={phaseinstantiation.progress} size={40} sx={{ mb: 2 }} /></>}
-                        value={phaseinstantiation.name}
+                            <p>{phase.name}</p>
+                            <CircularProgressWithLabel value={phase.progress} size={40} sx={{ mb: 2 }} /></>}
+                        value={phase.name}
                     />
                 ))}
             </MuiTabs>

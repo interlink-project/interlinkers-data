@@ -24,7 +24,7 @@ import { ExpandMore as ExpandMoreIcon } from '@material-ui/icons';
 import { cleanUnderScores } from "utils/cleanUnderscores"
 import CircularProgressWithLabel from 'components/CircularProgress';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateObjectiveInstantiation } from 'slices/process';
+import { updateObjective } from 'slices/process';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -113,7 +113,7 @@ const SelectedObjectiveElement = ({ selectedObjective, onSaved }) => {
       data.progress = progress
     }
     
-    dispatch(updateObjectiveInstantiation({id: selectedObjective.id, data}))
+    dispatch(updateObjective({id: selectedObjective.id, data}))
     if(onSaved){
       onSaved()
     }

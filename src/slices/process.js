@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { coproductionProcessesApi, taskinstantiationsApi, objectiveinstantiationsApi, phaseinstantiationsApi, assetsApi} from '../__fakeApi__';
+import { coproductionProcessesApi, tasksApi, objectivesApi, phasesApi, assetsApi} from '../__fakeApi__';
 import moment from "moment"
 import generateGraph from 'pages/dashboard/coproductionprocesses/Tabs/Network/graph';
 
@@ -8,17 +8,17 @@ const initialState = {
   updating: false,
   process: null,
   assets: [],
-  taskinstantiations: [],
-  objectiveinstantiations: [],
-  phaseinstantiations: [],
+  tasks: [],
+  objectives: [],
+  phases: [],
   network: null,
-  selectedPhaseTab: "engage",
+  selectedPhaseTab: "",
   selectedTask: {
     assets: []
   },
 };
 
-const valid_obj_types = ["taskinstantiation", "objectiveinstantiation", "phaseinstantiation"]
+const valid_obj_types = ["task", "objective", "phase"]
 
 const updateDatesForObject = (obj, state, objType, childType) => {
   if (obj && valid_obj_types.includes(objType) && valid_obj_types.includes(childType)) {
@@ -69,12 +69,12 @@ const updateProgressForObject = (obj, state, objType, childType) => {
 
 
 function fnUpdateDatesOfPhase(state, id) {
-  const phaseinstantiation = state.phaseinstantiations.find(el => el.id === id)
-  updateDatesForObject(phaseinstantiation, state, "phaseinstantiation", "objectiveinstantiation")
+  const phase = state.phases.find(el => el.id === id)
+  updateDatesForObject(phase, state, "phase", "objective")
 }
 function fnUpdateProgressOfPhase(state, id) {
-  const phaseinstantiation = state.phaseinstantiations.find(el => el.id === id)
-  updateProgressForObject(phaseinstantiation, state, "phaseinstantiation", "objectiveinstantiation")
+  const phase = state.phases.find(el => el.id === id)
+  updateProgressForObject(phase, state, "phase", "objective")
 }
 
 const slice = createSlice({
@@ -82,38 +82,37 @@ const slice = createSlice({
   initialState,
   reducers: {
     setProcessTree(state, action) {
-
-      const phaseinstantiations = []
-      const objectiveinstantiations = []
-      const taskinstantiations = []
+      const phases = []
+      const objectives = []
+      const tasks = []
 
       // separate tree into groups
-
-      action.payload.forEach(phaseinstantiation => {
-        phaseinstantiation.objectiveinstantiations.forEach(objectiveinstantiation => {
-          objectiveinstantiation.taskinstantiations.forEach(taskinstantiation => {
-            taskinstantiations.push(taskinstantiation)
+      action.payload.forEach(phase => {
+        phase.objectives.forEach(objective => {
+          objective.tasks.forEach(task => {
+            tasks.push(task)
           });
-          objectiveinstantiations.push(objectiveinstantiation)
+          objectives.push(objective)
         });
-        phaseinstantiations.push(phaseinstantiation)
+        phases.push(phase)
       });
-      state.taskinstantiations = taskinstantiations;
-      state.objectiveinstantiations = objectiveinstantiations;
-      state.phaseinstantiations = phaseinstantiations;
+      state.tasks = tasks;
+      state.objectives = objectives;
+      state.phases = phases;
+      state.selectedPhaseTab = phases[0].name
     },
     setProcess(state, action) {
       state.process = action.payload;
       state.network = generateGraph(state.process);
     },
-    setPhaseInstantiations(state, action) {
-      state.phaseinstantiations = action.payload.data;
+    setPhases(state, action) {
+      state.phases = action.payload.data;
     },
-    setObjectiveInstantiations(state, action) {
-      state.objectiveinstantiations = action.payload.data;
+    setObjectives(state, action) {
+      state.objectives = action.payload.data;
     },
-    setTaskInstantiations(state, action) {
-      state.taskinstantiations = action.payload.data;
+    setTasks(state, action) {
+      state.tasks = action.payload.data;
     },
     updateDatesOfPhase(state, action) {
       fnUpdateDatesOfPhase(state, action.payload)
@@ -121,14 +120,14 @@ const slice = createSlice({
     updateProgressOfPhase(state, action) {
       fnUpdateProgressOfPhase(state, action.payload)
     },
-    updatePhaseInstantiation(state, action) {
-      state.phaseinstantiations = state.phaseinstantiations.map(obj => obj.id === action.payload.id ? action.payload : obj);
+    updatePhase(state, action) {
+      state.phases = state.phases.map(obj => obj.id === action.payload.id ? action.payload : obj);
     },
-    updateObjectiveInstantiation(state, action) {
-      state.objectiveinstantiations = state.objectiveinstantiations.map(obj => obj.id === action.payload.id ? action.payload : obj);
+    updateObjective(state, action) {
+      state.objectives = state.objectives.map(obj => obj.id === action.payload.id ? action.payload : obj);
     },
-    updateTaskInstantiation(state, action) {
-      state.taskinstantiations = state.taskinstantiations.map(obj => obj.id === action.payload.id ? action.payload : obj);
+    updateTask(state, action) {
+      state.tasks = state.tasks.map(obj => obj.id === action.payload.id ? action.payload : obj);
     },
     setLoading(state, action) {
       state.loading = action.payload;
@@ -165,26 +164,26 @@ export const updateProcess = ({id, data, onSuccess}) => async (dispatch) => {
   }
 };
 
-export const updateTaskInstantiation = ({ id, data }) => async (dispatch) => {
+export const updateTask = ({ id, data }) => async (dispatch) => {
   dispatch(slice.actions.setUpdating(true));
-  const updatedData = await taskinstantiationsApi.update(id, data)
-  dispatch(slice.actions.updateTaskInstantiation(updatedData));
+  const updatedData = await tasksApi.update(id, data)
+  dispatch(slice.actions.updateTask(updatedData));
   dispatch(slice.actions.setUpdating(false));
 };
 
-export const updateObjectiveInstantiation = ({ id, data }) => async (dispatch) => {
+export const updateObjective = ({ id, data }) => async (dispatch) => {
   dispatch(slice.actions.setUpdating(true));
-  const updatedData = await objectiveinstantiationsApi.update(id, data)
-  dispatch(slice.actions.updateObjectiveInstantiation(updatedData));
-  dispatch(slice.actions.updateDatesOfPhase(updatedData.phaseinstantiation_id));
-  dispatch(slice.actions.updateProgressOfPhase(updatedData.phaseinstantiation_id));
+  const updatedData = await objectivesApi.update(id, data)
+  dispatch(slice.actions.updateObjective(updatedData));
+  dispatch(slice.actions.updateDatesOfPhase(updatedData.phase_id));
+  dispatch(slice.actions.updateProgressOfPhase(updatedData.phase_id));
   dispatch(slice.actions.setUpdating(false));
 };
 
-export const updatePhaseInstantiation = ({ id, data }) => async (dispatch) => {
+export const updatePhase = ({ id, data }) => async (dispatch) => {
   dispatch(slice.actions.setUpdating(true));
-  const updatedData = await phaseinstantiationsApi.update(id, data)
-  dispatch(slice.actions.updatePhaseInstantiation(updatedData));
+  const updatedData = await phasesApi.update(id, data)
+  dispatch(slice.actions.updatePhase(updatedData));
   dispatch(slice.actions.setUpdating(false));
 };
 
@@ -192,12 +191,12 @@ export const setSelectedPhaseTab = (data) => async (dispatch) => {
   dispatch(slice.actions.setSelectedPhase(data));
 };
 
-export const setSelectedTask = (taskinstantiation) => async (dispatch) => {
+export const setSelectedTask = (task) => async (dispatch) => {
   dispatch(slice.actions.setUpdating(true));
-  const assets = await taskinstantiationsApi.getAssets(taskinstantiation.id);
+  const assets = await tasksApi.getAssets(task.id);
   console.log("AQWIIWIQEIQ ", assets)
   dispatch(slice.actions.setSelectedTask({
-    ...taskinstantiation,
+    ...task,
     assets
   }));
   dispatch(slice.actions.setUpdating(false));

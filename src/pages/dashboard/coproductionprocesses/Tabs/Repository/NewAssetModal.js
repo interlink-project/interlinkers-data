@@ -28,7 +28,7 @@ import IframeResizer from 'iframe-resizer-react'
                         />
 
                         */
-export default function NewAssetModal({ taskinstantiation, onCreate }) {
+export default function NewAssetModal({ task, onCreate }) {
     const [open, setOpen] = useState(false);
     const [loadingInstantiator, setLoadingInstantiator] = useState(true);
     const [activeStep, _setActiveStep] = useState(0);
@@ -60,7 +60,7 @@ export default function NewAssetModal({ taskinstantiation, onCreate }) {
 
 
     const onAssetCreate = async (data, interlinker_id) => await assetsApi.create(
-        taskinstantiation.id,
+        task.id,
         interlinker_id,
         data.id || data._id,
     );
@@ -79,8 +79,6 @@ export default function NewAssetModal({ taskinstantiation, onCreate }) {
 
     async function onMessage(event) {
         // Check sender origin to be trusted
-        console.log("listening on", env.REACT_APP_COMPLETE_DOMAIN)
-        console.log("received", event, "from", event.origin)
         if (event.origin !== env.REACT_APP_COMPLETE_DOMAIN) return;
         const { code, data } = event.data
 
@@ -90,7 +88,7 @@ export default function NewAssetModal({ taskinstantiation, onCreate }) {
         }
         if (code === "asset_created") {
             console.log("RECEIVED MESSAGE", event.origin, event, code, data)
-            //taskinstantiation_id, interlinker_id, external_id
+            //task_id, interlinker_id, external_id
             const coproduction_response = await onAssetCreate(data, selectedInterlinker.id)
             // TODO: if fails
             const interlinker_response = await axiosInstance.get(coproduction_response.link)

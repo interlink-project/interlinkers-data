@@ -12,29 +12,30 @@ import {
 import { styled } from '@material-ui/styles';
 import { cleanUnderScores } from "utils/cleanUnderscores"
 import { useDispatch, useSelector } from 'react-redux';
-import { setSelectedTask } from 'slices/process';
 
 
-const RepositoryTree = ({setSelectedTask, loading}) => {
+const RepositoryTree = ({ setSelectedTask, loading }) => {
   const [selectedItem, setSelectedItem] = useState([]);
-  const { phaseinstantiations, objectiveinstantiations, taskinstantiations, selectedPhaseTab } = useSelector((state) => state.process);
-  const currentPhase = phaseinstantiations.find(el => el.name === selectedPhaseTab)
+  const { phases, objectives : allObjectives, tasks : allTasks, selectedPhaseTab } = useSelector((state) => state.process);
+  const currentPhase = phases.find(el => el.name === selectedPhaseTab)
 
+  const objectives = allObjectives.filter(el => el.phase_id === currentPhase.id)
   const dispatch = useDispatch();
 
   useEffect(() => {
+    // TODO: Get current phase form coproduction process and go to corresponding tab
   }, [])
-  
+
   const onSelectedItemChange = (nodeIds) => {
     setSelectedItem(nodeIds)
-    
-    const taskselected = taskinstantiations.find(el => el.id === nodeIds)
+
+    const taskselected = allTasks.find(el => el.id === nodeIds)
     if (taskselected) {
       setSelectedTask(taskselected)
     }
   }
 
- 
+
   function MinusSquare(props) {
     return (
       <SvgIcon fontSize="inherit" style={{ width: 14, height: 14 }} {...props}>
@@ -87,7 +88,7 @@ const RepositoryTree = ({setSelectedTask, loading}) => {
     <TreeView
       disableSelection={loading}
       aria-label="customized"
-      defaultExpanded={phaseinstantiations.map(phaseinstantiation => phaseinstantiation.id) || []}
+      defaultExpanded={objectives.map(objective => objective.id) || []}
       defaultCollapseIcon={<MinusSquare />}
       defaultExpandIcon={<PlusSquare />}
       defaultEndIcon={<CloseSquare />}
@@ -97,10 +98,10 @@ const RepositoryTree = ({setSelectedTask, loading}) => {
         onSelectedItemChange(nodeIds);
       }}
     >
-      {objectiveinstantiations.filter(el => el.phaseinstantiation_id === currentPhase.id).map(objectiveinstantiation =>
-        <StyledTreeItem key={objectiveinstantiation.id} nodeId={objectiveinstantiation.id} sx={{ backgroundColor: "background.paper" }} label={<p>{cleanUnderScores(objectiveinstantiation.name)}{objectiveinstantiation.start_date && <LinearProgress sx={{ mt: 1 }} color={objectiveinstantiation.progress < 30 ? "error" : objectiveinstantiation.progress < 65 ? "warning" : "success"} variant="determinate" value={objectiveinstantiation.progress} />}</p>} >
-          {taskinstantiations.filter(el => el.objectiveinstantiation_id === objectiveinstantiation.id).sort((a, b) => b.progress - a.progress).map(taskinstantiation => (
-            <StyledTreeItem key={taskinstantiation.id} nodeId={taskinstantiation.id} label={<p>{cleanUnderScores(taskinstantiation.name)}</p>} />))}
+      {objectives.map(objective =>
+        <StyledTreeItem key={objective.id} nodeId={objective.id} sx={{ backgroundColor: "background.paper" }} label={<p>{cleanUnderScores(objective.name)}{objective.start_date && <LinearProgress sx={{ mt: 1 }} color={objective.progress < 30 ? "error" : objective.progress < 65 ? "warning" : "success"} variant="determinate" value={objective.progress} />}</p>} >
+          {allTasks.filter(el => el.objective_id === objective.id).sort((a, b) => b.progress - a.progress).map(task => (
+            <StyledTreeItem key={task.id} nodeId={task.id} label={<p>{cleanUnderScores(task.name)}</p>} />))}
         </StyledTreeItem>)}
     </TreeView>
   );

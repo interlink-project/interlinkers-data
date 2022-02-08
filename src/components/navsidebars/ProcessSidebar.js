@@ -44,17 +44,22 @@ const ProcessSidebar = (props) => {
           path: `/dashboard/coproductionprocesses/${processId}/repository`,
           icon: <FolderOpen />
         },
+        {
+          title: 'Team',
+          path: `/dashboard/coproductionprocesses/${processId}/team`,
+          icon: <GroupIcon />
+        },
         /*{
           title: 'Workplan',
           path: `/dashboard/coproductionprocesses/${processId}/workplan`,
           icon: <Timeline />
         },
-        
         {
-          title: 'Network',
-          path: `/dashboard/coproductionprocesses/${processId}/network`,
+          title: 'Workplan',
+          path: `/dashboard/coproductionprocesses/${processId}/workplan`,
           icon: <BubbleChart />
         },
+        
         {
           title: 'Forum',
           path: `/dashboard/coproductionprocesses/${processId}/forum`,

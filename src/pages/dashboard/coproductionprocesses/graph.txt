@@ -2,28 +2,28 @@
   import { Canvas } from 'reaflow';
 
 const getSchema = () => {
-    if (process && process.phaseinstantiations) {
+    if (process && process.phases) {
       const nodes = []
       const edges = []
-      process.phaseinstantiations.forEach(phaseinstantiation => {
+      process.phases.forEach(phase => {
         nodes.push(
           {
-            id: phaseinstantiation.id,
-            text: phaseinstantiation.phase.name
+            id: phase.id,
+            text: phase.phase.name
           }
         ) 
-        phaseinstantiation.objectiveinstantiations.forEach(objectiveinstantiation => {
+        phase.objectives.forEach(objective => {
           nodes.push(
             {
-              id: objectiveinstantiation.id,
-              text: objectiveinstantiation.objective.name
+              id: objective.id,
+              text: objective.objective.name
             }
           )
           edges.push(
             {
-              id: `${phaseinstantiation.id}-${objectiveinstantiation.id}`,
-              from: phaseinstantiation.id,
-              to: objectiveinstantiation.id
+              id: `${phase.id}-${objective.id}`,
+              from: phase.id,
+              to: objective.id
             },
           ) 
         })

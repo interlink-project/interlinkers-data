@@ -6,10 +6,10 @@ class CoproductionProcessesApi extends GeneralApi {
     super("coproduction/api/v1/coproductionprocesses");
   }
 
-  async getPhaseInstantiations(id) {
+  async getPhases(id) {
     if (id) {
-      const res = await axiosInstance.get(`/${this.url}/${id}/phaseinstantiations`)
-      console.log('get phaseinstantiations', res.data);
+      const res = await axiosInstance.get(`/${this.url}/${id}/phases`)
+      console.log('get phases', res.data);
       return res.data
     }
   }

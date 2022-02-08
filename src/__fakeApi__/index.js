@@ -1,11 +1,11 @@
 import { assetsApi } from './coproduction/assetsApi';
 import { coproductionProcessesApi } from './coproduction/coproductionProcessesApi';
-import { taskinstantiationsApi } from './coproduction/taskinstantiationsApi';
-import { phaseinstantiationsApi } from './coproduction/phaseinstantiationsApi';
-import { objectiveinstantiationsApi } from './coproduction/objectiveinstantiationsApi';
+import { tasksApi } from './coproduction/tasksApi';
+import { phasesApi } from './coproduction/phasesApi';
+import { objectivesApi } from './coproduction/objectivesApi';
 import { interlinkersApi } from './catalogue/interlinkersApi';
 
 import { teamsApi } from './teamsApi';
 
 
-export { assetsApi, coproductionProcessesApi, teamsApi, taskinstantiationsApi, phaseinstantiationsApi, objectiveinstantiationsApi, interlinkersApi }
+export { assetsApi, coproductionProcessesApi, teamsApi, tasksApi, phasesApi, objectivesApi, interlinkersApi }

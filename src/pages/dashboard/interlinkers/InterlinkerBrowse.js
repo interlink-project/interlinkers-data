@@ -1,7 +1,7 @@
 import { useCallback, useState, useEffect } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { Box, Breadcrumbs, Button, Container, Grid, Link, Typography } from '@material-ui/core';
+import { Box, Breadcrumbs, Button, CircularProgress, Container, Grid, Link, Typography } from '@material-ui/core';
 import { interlinkersApi } from '__fakeApi__';
 import { InterlinkerBrowseFilter, InterlinkerBrowseResults } from '../../../components/dashboard/interlinkers';
 import useMounted from '../../../hooks/useMounted';
@@ -16,6 +16,7 @@ const InterlinkerBrowse = () => {
   const mounted = useMounted();
   const { settings } = useSettings();
   const dispatch = useDispatch();
+  const { loading } = useSelector((state) => state.catalogue);
 
   useEffect(() => {
     gtm.push({ event: 'page_view' });
@@ -35,6 +36,7 @@ const InterlinkerBrowse = () => {
     init();
   }, [init]);
 
+  console.log(loading)
   return (
     <>
       <Helmet>
@@ -80,9 +82,13 @@ const InterlinkerBrowse = () => {
           <Box sx={{ mt: 3 }}>
             <InterlinkerBrowseFilter />
           </Box>
-          <Box sx={{ mt: 6 }}>
-            <InterlinkerBrowseResults />
-          </Box>
+          {loading ?
+            <Box sx={{ display: 'flex', justifyContent: "center", m: 4 }}>
+              <CircularProgress />
+            </Box> :
+            <Box sx={{ mt: 6 }}>
+              <InterlinkerBrowseResults />
+            </Box>}
         </Container>
       </Box>
     </>

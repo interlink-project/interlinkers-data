@@ -16,34 +16,34 @@ const Workplan = () => {
 
   const [viewMode, setViewMode] = useState("Week")
   const [loaded, setLoaded] = useState(false)
-  const { phaseinstantiations, objectiveinstantiations, taskinstantiations, updating, selectedPhaseTab } = useSelector((state) => state.process);
+  const { phases, objectives, tasks, updating, selectedPhaseTab } = useSelector((state) => state.process);
   const mounted = useMounted();
 
   const [drawerOpen, setDrawerOpen] = useState(false)
   const [objectiveId, setObjectiveId] = useState(null);
   let selectedObjective = null
   if (objectiveId) {
-    selectedObjective = objectiveinstantiations.find(objective => objective.id === objectiveId)
+    selectedObjective = objectives.find(objective => objective.id === objectiveId)
   }
   const getTasks = () => {
     const final = []
 
-    const phaseinstantiation = phaseinstantiations.find(phaseinstantiation => selectedPhaseTab === phaseinstantiation.name)
-    objectiveinstantiations.filter(el => el.phaseinstantiation_id === phaseinstantiation.id).forEach(objectiveinstantiation => {
+    const phase = phases.find(phase => selectedPhaseTab === phase.name)
+    objectives.filter(el => el.phase_id === phase.id).forEach(objective => {
       final.push({
-        id: objectiveinstantiation.id,
-        name: cleanUnderScores(objectiveinstantiation.name),
-        start: objectiveinstantiation.start_date,
-        end: objectiveinstantiation.end_date,
-        progress: objectiveinstantiation.progress,
+        id: objective.id,
+        name: cleanUnderScores(objective.name),
+        start: objective.start_date,
+        end: objective.end_date,
+        progress: objective.progress,
         custom_class: 'gantt-objective',
         read_only: true
       })
-      taskinstantiations.filter(el => el.objectiveinstantiation_id === objectiveinstantiation.id).forEach(taskinstantiation => {
+      tasks.filter(el => el.objective_id === objective.id).forEach(task => {
         final.push({
-          id: taskinstantiation.id,
-          name: cleanUnderScores(taskinstantiation.name),
-          dependencies: taskinstantiation.objectiveinstantiation_id,
+          id: task.id,
+          name: cleanUnderScores(task.name),
+          dependencies: task.objective_id,
           custom_class: 'gantt-task',
           read_only: true
         })
@@ -96,7 +96,7 @@ const Workplan = () => {
 
         $(".gantt-objective").each(function (index1) {
           const id = $(this).attr("data-id")
-          const objectiveinstantiation = objectiveinstantiations.find(o => o.id === id)
+          const objective = objectives.find(o => o.id === id)
           $(this).on("click", function () {
             setObjectiveId(id)
             setDrawerOpen(true)
@@ -104,14 +104,14 @@ const Workplan = () => {
 
           const bar = $(this).children().first().children(".bar").first()
           const progressBar = $(this).children().first().children(".bar-progress").first()
-          progressBar.css("fill", colorScale(objectiveinstantiation.progress / 100).toString())
+          progressBar.css("fill", colorScale(objective.progress / 100).toString())
           let text = $(this).children().first().children(".bar-label").first()
 
           text.css("font-weight", "800")
           text.css("font-size", "15px")
 
           if (settings.theme === "DARK") {
-            if (objectiveinstantiation.start_date && objectiveinstantiation.end_date) {
+            if (objective.start_date && objective.end_date) {
               text.css("fill", "#282b28")
             } else {
               text.css("fill", "white")
@@ -125,7 +125,7 @@ const Workplan = () => {
 
         $(".gantt-task").each(function (index1) {
           const id = $(this).attr("data-id")
-          const task = taskinstantiations.find(t => t.id === id)
+          const task = tasks.find(t => t.id === id)
           let text = $(this).children().first().children(".bar-label").first()
           text.css("font-weight", "600")
 
@@ -180,7 +180,7 @@ const Workplan = () => {
     }
     setNewGantt(id, props)
 
-  }, [loaded, viewMode, selectedPhaseTab, taskinstantiations, updating, setNewGantt]);
+  }, [loaded, viewMode, selectedPhaseTab, tasks, updating, setNewGantt]);
 
 
 

@@ -5,7 +5,7 @@ import { CssBaseline, ThemeProvider } from '@material-ui/core';
 
 import RTL from './components/RTL';
 import SplashScreen from './components/SplashScreen';
-import { gtmConfig } from './configuration';
+import { env, gtmConfig } from './configuration';
 import useAuth from './hooks/useAuth';
 import useScrollReset from './hooks/useScrollReset';
 import useSettings from './hooks/useSettings';
@@ -15,6 +15,7 @@ import { createCustomTheme } from './theme';
 import './translations/i18n';
 import { getInterlinkers } from 'slices/catalogue';
 import { useDispatch, useSelector } from 'react-redux';
+import { Helmet } from 'react-helmet-async';
 
 const App = () => {
   const content = useRoutes(routes);
@@ -63,7 +64,7 @@ const App = () => {
 
   }, [websocket]);
   */
- 
+
   const theme = createCustomTheme({
     direction: settings.direction,
     theme: settings.theme
@@ -74,6 +75,9 @@ const App = () => {
       <RTL direction={settings.direction}>
         <CssBaseline />
         <Toaster position='top-center' />
+        <Helmet>
+          {env.NODE_ENV === "production" && <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"></meta>}
+        </Helmet>
         {auth.isInitialized ? content : <SplashScreen />}
       </RTL>
     </ThemeProvider>

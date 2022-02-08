@@ -1,78 +1,55 @@
+import React, { useState } from 'react';
 
-import { Canvas, Node, Edge, Port, MarkerArrow, Icon } from 'reaflow';
-import { useSelector } from 'react-redux';
-import { Avatar } from '@material-ui/core';
-import { Star } from '@material-ui/icons';
-import { getImageUrl } from 'axiosInstance';
+import ReactFlow, {
+  removeElements,
+  addEdge,
+  MiniMap,
+  Controls,
+  Background,
+} from 'react-flow-renderer';
 
-const Network = () => {
-    const { process } = useSelector((state) => state.process);
+import initialElements from './initial-elements';
 
-    const nodes = []
-    const edges = []
+const onLoad = (reactFlowInstance) => {
+  console.log('flow loaded:', reactFlowInstance);
+  reactFlowInstance.fitView();
+};
 
-    nodes.push(
-        {
-            id: process.id,
-            text: process.name,
-            icon: {
-                url: getImageUrl("coproduction", process.logotype),
-                height: 35,
-                width: 35
-            }
-        }
-    )
-    nodes.push(
-        {
-            id: "process.team_id",
-            text: "process.team.name",
-            icon: {
-                url: getImageUrl("coproduction", "process.team.logotype"),
-                height: 25,
-                width: 25
-            }
-        }
-    )
-    edges.push(
-        {
-            id: `${process.id}-${"process.team_id"}`,
-            from: process.id,
-            to: "process.team_id"
-        }
-    )
+const OverviewFlow = () => {
+  const [elements, setElements] = useState(initialElements);
+  const onElementsRemove = (elementsToRemove) =>
+    setElements((els) => removeElements(elementsToRemove, els));
+  const onConnect = (params) => setElements((els) => addEdge(params, els));
 
-    /*
-    process.team.memberships.forEach(membership => {
-        nodes.push(
-            {
-                id: membership.user.id,
-                text: membership.user.given_name,
-                icon: {
-                    url: membership.user.picture,
-                    height: 20,
-                    width: 20
-                }
-            }
-        )
-        edges.push(
-            {
-                id: `${"process.team_id"}-${membership.user.id}`,
-                from: "process.team_id",
-                to: membership.user.id
-            }
-        )
-    });
-    */
+  return (
+    <ReactFlow
+      elements={elements}
+      onElementsRemove={onElementsRemove}
+      onConnect={onConnect}
+      onLoad={onLoad}
+      snapToGrid={true}
+      snapGrid={[15, 15]}
+    >
+      <MiniMap
+        nodeStrokeColor={(n) => {
+          if (n.style?.background) return n.style.background;
+          if (n.type === 'input') return '#0041d0';
+          if (n.type === 'output') return '#ff0072';
+          if (n.type === 'default') return '#1a192b';
 
-    console.log(nodes, edges)
-    return <div style={{ height: '85vh' }}>
-        < Canvas
-            pannable={false}
-            direction="RIGHT"
-            nodes={nodes}
-            edges={edges}
-            node={<Node icon={<Icon />} onClick={(e, nodeData) => console.log("node clicked", nodeData)} />}
-        />
-    </div>
-}
-export default Network
+          return '#eee';
+        }}
+        nodeColor={(n) => {
+          if (n.style?.background) return n.style.background;
+
+          return '#fff';
+        }}
+        nodeBorderRadius={2}
+      />
+      <Controls />
+      <Background color="#aaa" gap={16} />
+    </ReactFlow>
+  );
+};
+
+export default OverviewFlow;
