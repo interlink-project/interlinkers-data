@@ -6,9 +6,6 @@ import Loadable from './Loadable';
 const PracticePedia = Loadable(
   lazy(() => import('../pages/dashboard/PracticePedia'))
 );
-const CoproductionProcessCreate = Loadable(
-  lazy(() => import('../pages/dashboard/coproductionprocesses/CoproductionProcessCreate'))
-);
 const CoproductionProcessProfile = Loadable(
   lazy(() => import('../pages/dashboard/coproductionprocesses/CoproductionProcessProfile'))
 );
@@ -25,9 +22,6 @@ const InterlinkerDetails = Loadable(
 
 const TeamBrowse = Loadable(
   lazy(() => import('../pages/dashboard/teams/TeamBrowse'))
-);
-const TeamCreate = Loadable(
-  lazy(() => import('../pages/dashboard/teams/TeamCreate'))
 );
 const TeamDetails = Loadable(
   lazy(() => import('../pages/dashboard/teams/TeamDetails'))
@@ -53,10 +47,6 @@ export const routes = [
         path: 'coproductionprocesses',
         children: [
           {
-            path: 'new',
-            element: <CoproductionProcessCreate />,
-          },
-          {
             path: ':processId',
             children: [
               {
@@ -75,7 +65,7 @@ export const routes = [
         path: 'interlinkers',
         children: [
           {
-            path: 'browse',
+            path: '',
             element: <InterlinkerBrowse />,
           },
           {
@@ -92,12 +82,8 @@ export const routes = [
         path: 'teams',
         children: [
           {
-            path: 'browse',
+            path: '',
             element: <TeamBrowse />,
-          },
-          {
-            path: 'new',
-            element: <TeamCreate />,
           },
           {
             path: ':teamId',

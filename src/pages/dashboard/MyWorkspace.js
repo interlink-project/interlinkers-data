@@ -16,6 +16,8 @@ import {
   LinearProgress,
   CardActionArea,
   Skeleton,
+  CardActions,
+  List, ListItemText, ListItem, ListItemAvatar, Avatar
 } from '@material-ui/core';
 import SwipeableViews from 'react-swipeable-views';
 import { useTheme } from '@material-ui/styles';
@@ -23,203 +25,77 @@ import useSettings from '../../hooks/useSettings';
 import PlusIcon from '../../icons/Plus';
 import useAuth from '../../hooks/useAuth';
 import { Link as RouterLink } from 'react-router-dom';
-import { coproductionProcessesApi } from '__fakeApi__';
+import { coproductionProcessesApi, teamsApi } from '__fakeApi__';
 import ArrowRightIcon from '@material-ui/icons/ChevronRight';
 import { getImageUrl } from '../../axiosInstance';
-
-const sameWidthCards = {
-  xs: 12,
-  md: 6,
-  lg: 4,
-  xl: 3,
-}
-const sameHeightCards = {
-  minHeight: "200px",
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between"
-}
-function TabPanel(props) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`full-width-tabpanel-${index}`}
-      aria-labelledby={`full-width-tab-${index}`}
-      {...other}
-    >
-      <Grid
-        container
-        direction="row"
-        justifyContent="flex-start"
-        alignItems="stretch"
-        sx={{ mt: 1, mb: 1 }}
-        spacing={3}
-      >
-        {value === index && children}
-      </Grid>
-    </div>
-  );
-}
+import { Add } from '@material-ui/icons';
+import TeamCreate from './teams/TeamCreate';
+import CoproductionprocessCreate from './coproductionprocesses/CoproductionProcessCreate';
 
 const MyWorkspace = () => {
   const { settings } = useSettings();
   const auth = useAuth();
   const { user } = auth;
-  const [processes, setProcesses] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [processes, setProcesses] = useState([]);
+  const [teams, setTeams] = useState([]);
+  const [loadingProcesses, setLoadingProcesses] = useState(true);
+  const [loadingTeams, setLoadingTeams] = useState(true);
   const mounted = useMounted();
-  const [value, setValue] = React.useState(0);
-  const theme = useTheme();
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-  const handleChangeIndex = (index) => {
-    setValue(index);
-  };
-
-  const getCoproductionProcesses = useCallback(async () => {
+  const getProcessesData = useCallback(async () => {
     try {
-      const data = await coproductionProcessesApi.getMulti();
-
+      const processes_data = await coproductionProcessesApi.getMine();
       if (mounted.current) {
-        setProcesses(data);
-        setLoading(false)
+        setProcesses(processes_data);
+        setLoadingProcesses(false)
       }
     } catch (err) {
       console.error(err);
     }
   }, [mounted]);
 
+
+  const LoadingItems = () => <>{Array(4).fill().map((e, i) => (<React.Fragment key={`${e}-${i}`}>
+    <ListItem alignItems="flex-start" >
+      <ListItemAvatar>
+        <Skeleton animation="wave" variant="circular" width={40} height={40} />
+      </ListItemAvatar>
+      <ListItemText
+        primary={<Skeleton variant="text" />}
+        secondary={
+          <Skeleton variant="text" />
+
+        }
+      />
+    </ListItem>
+  </React.Fragment>))}</>
+
+  const getTeamsData = useCallback(async () => {
+    try {
+      const teams_data = await teamsApi.getMine();
+      if (mounted.current) {
+        setTeams(teams_data);
+        setLoadingTeams(false)
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  }, [mounted]);
+
+  const onTeamCreate = (res2) => {
+    setLoadingTeams(true)
+    getTeamsData()
+  }
+
+  const onProcessCreate = (res2) => {
+    setLoadingProcesses(true)
+    getProcessesData()
+  }
+
   useEffect(() => {
-    getCoproductionProcesses();
-  }, [getCoproductionProcesses]);
-
-  const MyWorkspaceCard = ({
-    link,
-    title,
-    subtitle,
-    description,
-    buttonText,
-    buttonAction,
-    component,
-  }) => {
-
-    return (
-      <CardActionArea component={RouterLink} to={link}>
-        <Card style={sameHeightCards}>
-          <Box
-            sx={{
-              alignItems: 'center',
-              display: 'flex',
-              justifyContent: 'space-between',
-              p: 3,
-            }}
-          >
-            <div>
-              <Typography
-                color='textPrimary'
-                sx={{ mt: 1, mb: 1 }}
-                variant='h5'
-              >
-                {`${title}  `}
-
-                {subtitle && (
-                  <Typography color={subtitle === "interlinker" ? 'primary' : "secondary"} variant='overline'>
-                    ({subtitle})
-                  </Typography>
-                )}
-              </Typography>
-
-              <Typography color='textPrimary' variant='subtitle2'>
-                {description}
-              </Typography>
-            </div>
-            {component || <BarChart />}
-          </Box>
-          <Divider />
-          <Box
-            sx={{
-              px: 3,
-              py: 2,
-            }}
-          >
-            <LinearProgress variant='determinate' value={50} />
-            {/*<Button
-              color='primary'
-              endIcon={<ArrowRightIcon fontSize='small' />}
-              variant='text'
-            >
-              {buttonText}
-            </Button>*/}
-          </Box>
-        </Card>
-      </CardActionArea>
-    );
-  };
-
-
-  const SkeletonCard = () => {
-    return (
-      <Card style={sameHeightCards}>
-        <Box
-          sx={{
-            alignItems: 'center',
-            display: 'flex',
-            justifyContent: 'space-between',
-            p: 3,
-          }}
-        >
-          <div>
-
-            <Typography
-              color='textPrimary'
-              sx={{ mt: 1, mb: 1 }}
-              variant='h5'
-            >
-              <Skeleton />
-
-              <Typography variant='overline'>
-                <Skeleton />
-              </Typography>
-            </Typography>
-
-            <Typography color='textPrimary' variant='subtitle2'>
-              <Skeleton />
-            </Typography>
-          </div>
-          <Skeleton variant="rectangular" width={210} height={90} />
-        </Box>
-        <Divider />
-        <Box
-          sx={{
-            px: 3,
-            py: 2,
-          }}
-        >
-          <Skeleton />
-        </Box>
-      </Card>
-    );
-  };
-
-  const SkeletonGrid = () => <><Grid item {...sameWidthCards}>
-    <SkeletonCard />
-  </Grid><Grid item {...sameWidthCards}>
-      <SkeletonCard />
-    </Grid><Grid item {...sameWidthCards}>
-      <SkeletonCard />
-    </Grid><Grid item {...sameWidthCards}>
-      <SkeletonCard />
-    </Grid><Grid item {...sameWidthCards}>
-      <SkeletonCard />
-    </Grid><Grid item {...sameWidthCards}>
-      <SkeletonCard />
-    </Grid></>
+    getProcessesData();
+    getTeamsData();
+  }, [getProcessesData, getTeamsData]);
 
   return (
     <>
@@ -257,82 +133,89 @@ const MyWorkspace = () => {
                     startIcon={<PlusIcon fontSize='small' />}
                     sx={{ m: 1 }}
                     to='/dashboard/coproductionprocesses/new'
-                    variant='contained'
+                    variant='text'
                   >
-                    New Co-production process
+                    Documentation
                   </Button>
                 </Box>
               </Grid>
             </Grid>
           </Grid>
+          <Grid container spacing={4} sx={{ mt: 2 }}>
+            <Grid item xs={6}>
+              <Typography color='textPrimary' variant='h6' sx={{ mb: 2 }}>Your coproduction processes</Typography>
 
+              <Card>
+                <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
+                  {loadingProcesses && <LoadingItems />}
+                  {processes.map(process => (
+                    <React.Fragment key={process.id}>
+                      <ListItem alignItems="flex-start" button component={RouterLink} to={`/dashboard/coproductionprocesses/${process.id}`}>
+                        <ListItemAvatar>
+                          <Avatar alt={process.name} src={getImageUrl("coproduction", process.logotype)} />
+                        </ListItemAvatar>
+                        <ListItemText
+                          primary={process.name}
+                          secondary={
+                            <Typography
+                              sx={{ display: 'inline' }}
+                              component="span"
+                              variant="body2"
+                              color="text.primary"
+                            >
+                              {process.description}
+                            </Typography>
 
-          <Box sx={{ width: '100%', bgcolor: 'background.paper', mt: 3 }}>
-            <Tabs value={value} onChange={handleChange} variant="scrollable"
-              scrollButtons="auto"
-              aria-label="coproduction processes myworkspace tabs">
-              <Tab label="My projects" />
-              <Tab label="All projects" />
-              <Tab label="My teams" />
-              <Tab label="All teams" />
-            </Tabs>
-          </Box>
-          <SwipeableViews
-            axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-            index={value}
-            onChangeIndex={handleChangeIndex}
-          >
-            <TabPanel value={value} index={0} dir={theme.direction}>
+                          }
+                        />
+                      </ListItem>
+                    </React.Fragment>)
+                  )}
+                </List>
+                <CardActions>
+                  <CoproductionprocessCreate teams={teams} onCreate={onProcessCreate} />
 
+                </CardActions>
+              </Card>
 
-              {loading && <SkeletonGrid />}
-              {!loading && (!processes || processes.length === 0) && (
-                <Grid item xs={12}>
-                  <Alert sx={{ mt: 2 }} severity='info'>Nothing here...</Alert>
-                </Grid>
-              )}
-              {!loading && processes && processes.length > 0 && (
-                <>
-                  <Grid item {...sameWidthCards} >
-                    <Card style={sameHeightCards}>
+            </Grid>
+            <Grid item xs={6}>
+              <Typography color='textPrimary' variant='h6' sx={{ mb: 2 }}>Your teams</Typography>
 
-                      <Button variant="contained" sx={{ height: "100%", fontSize: "20px" }}>
-                        New coproduction process
-                      </Button>
-                    </Card>
-                  </Grid>
-                  {processes.map((process, i) => (
-                    <Grid item {...sameWidthCards} key={process.id}>
-                      <MyWorkspaceCard
-                        link={`/dashboard/coproductionprocesses/${process.id}`}
-                        title={process.name}
-                        subtitle={process.artefact_type}
-                        description={truncate(process.description, {
-                          length: 100,
-                          separator: ' ',
-                        })}
-                        buttonText='action'
-                        component={
-                          <img
-                            src={
-                              getImageUrl("coproduction", process.logotype) ||
-                              'https://blogs.oregonstate.edu/acobamo/wp-content/themes/koji/assets/images/default-fallback-image.png'
-                            }
-                            width='80px'
-                            style={{ margin: 7 }}
-                          />
-                        }
-                      />
-                    </Grid>
-                  ))}
-                </>
-              )}
-            </TabPanel>
+              <Card>
+                <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
+                  {loadingTeams && <LoadingItems />}
+                  {teams.map(team => (
+                    <React.Fragment key={team.id}>
+                      <ListItem alignItems="flex-start" button component={RouterLink} to={`/dashboard/teams/${team.id}`}>
+                        <ListItemAvatar>
+                          <Avatar alt={team.name} src={getImageUrl("coproduction", team.logotype)} />
+                        </ListItemAvatar>
+                        <ListItemText
+                          primary={team.name}
+                          secondary={
+                            <Typography
+                              sx={{ display: 'inline' }}
+                              component="span"
+                              variant="body2"
+                              color="text.primary"
+                            >
+                              {team.description}
+                            </Typography>
 
-            <TabPanel value={value} index={1} dir={theme.direction}>
-              <SkeletonGrid />
-            </TabPanel>
-          </SwipeableViews>
+                          }
+                        />
+                      </ListItem>
+                    </React.Fragment>)
+                  )}
+                </List>
+                <CardActions>
+                  <TeamCreate onCreate={onTeamCreate} />
+                </CardActions>
+              </Card>
+            </Grid>
+
+          </Grid>
         </Container>
       </Box>
     </>

@@ -36,7 +36,6 @@ const InterlinkerBrowse = () => {
     init();
   }, [init]);
 
-  console.log(loading)
   return (
     <>
       <Helmet>

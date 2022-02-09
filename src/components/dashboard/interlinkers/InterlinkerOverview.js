@@ -70,7 +70,7 @@ const InterlinkerOverview = (props) => {
                     Tags
                   </Typography>
                   <Box sx={{ mt: 1 }}>
-                    {tags && tags.split(";").map((tag) => (
+                    {tags.map((tag) => (
                       <Chip
                         key={tag}
                         label={tag}

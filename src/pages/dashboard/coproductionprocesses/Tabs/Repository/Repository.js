@@ -96,7 +96,7 @@ const Repository = () => {
         {selectedTask && <MobileDiscriminator defaultNode={
           <Grid item xl={8} lg={8} md={6} xs={12}>
             <Box sx={{ p: 2 }}>
-              <Button sx={{ mb: 2 }} fullWidth variant="link" onClick={() => setCollapseOpen(!collapseOpen)}><Typography variant="h6" >Assets for {cleanUnderScores(selectedTask.name)} <InfoIcon /></Typography></Button>
+              <Button sx={{ mb: 2 }} fullWidth variant="link" onClick={() => setCollapseOpen(!collapseOpen)}><Typography variant="h6" >{selectedTask.name} <InfoIcon /></Typography></Button>
               <Collapse in={collapseOpen} timeout="auto" unmountOnExit>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mi odio, finibus eget porttitor eu, condimentum nec nibh. Fusce a tellus faucibus, sagittis quam eu, ornare odio. Etiam ac dolor sed elit accumsan vestibulum vel ut sapien. Duis iaculis quam in cursus euismod. Curabitur lacinia eros sit amet arcu luctus gravida. Fusce lacinia quis urna sit amet auctor. Phasellus vitae enim luctus, tempus lectus sed, feugiat elit. Nam quis nibh hendrerit, auctor eros sed, fermentum tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
 

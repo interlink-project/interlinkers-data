@@ -6,6 +6,14 @@ class CoproductionProcessesApi extends GeneralApi {
     super("coproduction/api/v1/coproductionprocesses");
   }
 
+  async getMine() {
+    const res = await axiosInstance.get(
+      `/${this.url}/mine`
+    );
+    console.log('getMine call', res.data);
+    return res.data;
+  }
+
   async getPhases(id) {
     if (id) {
       const res = await axiosInstance.get(`/${this.url}/${id}/phases`)

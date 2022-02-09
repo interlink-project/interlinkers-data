@@ -28,17 +28,17 @@ const sections = [
         children: [
           {
             title: 'Public services',
-            path: '/dashboard/interlinkers/browse',
+            path: '/dashboard/interlinkers',
             icon: <HomeRepairServiceIcon fontSize='small' />
           },
           {
             title: 'Interlinkers',
-            path: '/dashboard/interlinkers/browse',
+            path: '/dashboard/interlinkers',
             icon: <LinkIcon fontSize='small' />
           },
           {
             title: 'Teams',
-            path: '/dashboard/teams/browse',
+            path: '/dashboard/teams',
             icon: <GroupIcon fontSize='small' />
           }
         ]

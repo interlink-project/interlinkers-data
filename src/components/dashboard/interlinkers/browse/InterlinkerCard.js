@@ -250,7 +250,7 @@ const InterlinkerCard = (props) => {
       >
         Keywords
       </Typography>
-      {interlinker.tags && interlinker.tags.split(";").map(
+      {interlinker.tags && interlinker.tags.map(
         el => <Chip label={el} key={el} size="small" variant="outlined" sx={{ mr: 1 }} />
       )}
     </Box>

@@ -3,152 +3,252 @@ import { Link as RouterLink } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import {
   Box,
-  Container,
-  Grid,
-  Typography,
-  Card,
-  CardContent,
-  Avatar,
+  DialogTitle,
+  DialogContentText,
+  DialogContent,
+  DialogActions,
+  Dialog,
+  TextField,
   Button,
+  Input,
+  List,
+  ListItem,
+  ListItemAvatar,
+  IconButton,
+  ListItemText,
+  Avatar,
+  ListItemSecondaryAction,
+  Typography,
+  useTheme,
+  MobileStepper,
+  AvatarGroup
 } from '@material-ui/core';
-import useSettings from '../../../hooks/useSettings';
-import gtm from '../../../lib/gtm';
-import TeamDescriptionForm from './Create/TeamDescriptionForm';
-import TeamDetailsForm from './Create/TeamDetailsForm';
+import { Add, Delete, Folder, KeyboardArrowRight, KeyboardArrowLeft, CheckCircle, Cancel } from '@material-ui/icons';
+import { LoadingButton } from '@material-ui/lab';
+import useAuth from 'hooks/useAuth';
+import { teamsApi, usersApi } from '__fakeApi__';
 
-const TeamCreate = () => {
-  const { settings } = useSettings();
+const TeamCreate = ({ onCreate }) => {
+  const [open, setOpen] = useState(false);
+  const [emailValue, setEmailValue] = useState("");
+  const auth = useAuth();
+  const [selectedUsers, setSelectedUsers] = useState([auth.user]);
+  const [selectedUser, setSelectedUser] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [logotype, setLogotype] = useState(null);
 
-  useEffect(() => {
-    gtm.push({ event: 'page_view' });
-  }, []);
-
+  const theme = useTheme();
   const [activeStep, setActiveStep] = useState(0);
-  const [completed, setCompleted] = useState(false);
 
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  const handleNext = async () => {
+
+    const sendOnCreate = (data) => {
+      if (onCreate) {
+        onCreate(data)
+      }
+      handleClose()
+    }
+
+    if (activeStep < 1) {
+      setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    } else {
+      teamsApi.create({
+        name,
+        description,
+        user_ids: selectedUsers.map(user => user.sub)
+      }).then(res => {
+        if (!logotype) {
+          sendOnCreate(res.data)
+        } else {
+          teamsApi.setFile(res.data.id, "logotype", logotype).then(res2 => {
+            sendOnCreate(res2.data)
+          }).catch(() => {
+            sendOnCreate(res.data)
+          })
+        }
+
+      }).catch(err => console.log(err))
+    }
   };
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
+  const handleFileSelected = (e) => {
+    const files = e.target.files
+    if (files.length > 0) {
+      const file = files[0]
+      if (file) {
+        file.path = URL.createObjectURL(file)
+        setLogotype(file)
+      }
 
-  const handleComplete = () => {
-    setCompleted(true);
+    }
+  }
+
+  const handleClickOpen = () => {
+    setOpen(true);
   };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  useEffect(() => {
+
+    var delayDebounceFn
+    if (emailValue) {
+      setLoading(true)
+      delayDebounceFn = setTimeout(() => {
+        usersApi.get(emailValue).then(res => {
+          if (!selectedUsers.find(user => user.sub === res.data.sub)) {
+
+            setSelectedUser(res.data)
+          }
+        }).catch(() => {
+          setSelectedUser(null)
+        }).finally(() => {
+          setLoading(false)
+        })
+      }, 1000)
+    }
+    return () => clearTimeout(delayDebounceFn)
+  }, [emailValue])
+
+  const deleteUserFromList = (sub) => {
+    setSelectedUsers(selectedUsers.filter(user => user.sub !== sub))
+  }
+
 
   return (
     <>
-      <Helmet>
-        <title>Dashboard: Team Create</title>
-      </Helmet>
-      <Box
-        sx={{
-          backgroundColor: 'background.default',
-          minHeight: '100%',
-          py: 8,
-        }}
-      >
-        <Container>
-          <Grid
-            alignItems='center'
-            container
-            justifyContent='space-between'
-            spacing={3}
-          >
-            <Grid item>
-              <Typography
-                color='textPrimary'
-                variant='h5'
+      <Button fullWidth variant="contained" color='primary' onClick={handleClickOpen}>
+        Create new team
+      </Button>
+      <Dialog open={open} onClose={handleClose}>
+        <DialogTitle>Team creation</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            To create a team, please enter a name and a description. Then, add people to the team.
+          </DialogContentText>
+          {activeStep === 0 && <><Box sx={{ textAlign: "center" }}>
+            <label htmlFor="contained-button-file">
+              <Input inputProps={{ accept: 'image/*' }} id="contained-button-file" type="file" sx={{ display: "none" }} onChange={handleFileSelected} />
+              <IconButton component="span" >
+                <Avatar
+                  src={logotype && logotype.path}
+                  style={{
+                    margin: "10px",
+                    width: "60px",
+                    height: "60px",
+                  }}
+                />
+              </IconButton>
+            </label>
+          </Box><TextField
+              autoFocus
+              margin="dense"
+              id="name"
+              label="Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              type="text"
+              fullWidth
+              variant="standard"
+            />
+            <TextField
+              margin="dense"
+              id="description"
+              label="Description"
+              type="text"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              fullWidth
+              multiline
+              rows={4}
+              variant="standard"
+            />
+          </>}
+
+          {activeStep === 1 && <><List dense>
+            {selectedUsers.map(user => {
+
+              var name = user.given_name + " " + user.family_name
+              const you = user.sub === auth.user.sub
+              if (you) {
+                name += " (you)"
+              }
+              return <ListItem key={user.sub}
               >
-                Create Wizard &amp; Process
-              </Typography>
-            </Grid>
-          </Grid>
-          <Box sx={{ mt: 3 }}>
-            <div>
-              {!completed ? (
-                <>
-                  {activeStep === 0 && (
-                    <TeamDetailsForm
-                      onNext={handleNext}
-                    />
-                  )}
-                  {activeStep === 1 && (
-                    <TeamDescriptionForm
-                      onBack={handleBack}
-                      onComplete={handleComplete}
-                    />
-                  )}
-                </>
-              ) : (
-                <Card>
-                  <CardContent>
-                    <Box
-                      sx={{
-                        maxWidth: 450,
-                        mx: 'auto',
-                      }}
-                    >
-                      <Box
-                        sx={{
-                          display: 'flex',
-                          justifyContent: 'center',
-                        }}
-                      >
-                        <Avatar
-                          sx={{
-                            backgroundColor: 'primary.main',
-                            color: 'primary.contrastText',
-                          }}
-                        >
-                          <StarIcon fontSize='small' />
-                        </Avatar>
-                      </Box>
-                      <Box sx={{ mt: 2 }}>
-                        <Typography
-                          align='center'
-                          color='textPrimary'
-                          variant='h3'
-                        >
-                          You are all done!
-                        </Typography>
-                      </Box>
-                      <Box sx={{ mt: 2 }}>
-                        <Typography
-                          align='center'
-                          color='textSecondary'
-                          variant='subtitle1'
-                        >
-                          Donec ut augue sed nisi ullamcorper posuere sit amet
-                          eu mauris. Ut eget mauris scelerisque.
-                        </Typography>
-                      </Box>
-                      <Box
-                        sx={{
-                          display: 'flex',
-                          justifyContent: 'center',
-                          mt: 2,
-                        }}
-                      >
-                        <Button
-                          color='primary'
-                          component={RouterLink}
-                          to='/dashboard/teams/1'
-                          variant='contained'
-                        >
-                          View team
-                        </Button>
-                      </Box>
-                    </Box>
-                  </CardContent>
-                </Card>
-              )}
-            </div>
-          </Box>
-        </Container>
-      </Box>
+                <ListItemAvatar>
+                  <Avatar src={user.picture} />
+                </ListItemAvatar>
+                <ListItemText
+                  primary={name}
+                  secondary={user.email}
+                />
+                <ListItemSecondaryAction>
+                  {!you && <IconButton edge="end" aria-label="delete" onClick={() => deleteUserFromList(user.sub)}>
+                    <Delete />
+                  </IconButton>}
+
+                </ListItemSecondaryAction>
+              </ListItem>
+            })}
+
+          </List>
+
+            <TextField
+              margin="dense"
+              label="Email Address"
+              type="email"
+              fullWidth
+              variant="standard"
+              value={emailValue}
+              onChange={(e) => {
+                setEmailValue(e.target.value)
+              }}
+            />
+
+            <LoadingButton loading={loading} fullWidth variant="text" color='primary' onClick={() => {
+              setSelectedUsers([...selectedUsers, selectedUser])
+              setSelectedUser(null)
+              setEmailValue("")
+
+            }}
+              disabled={!selectedUser}
+              endIcon={selectedUser ? <CheckCircle /> : emailValue && <Cancel color='error' />}
+              sx={{ mt: 1 }}
+            >Add user</LoadingButton>
+          </>}
+
+
+        </DialogContent>
+        <DialogActions>
+          <MobileStepper
+            variant="dots"
+            steps={2}
+            position="static"
+            activeStep={activeStep}
+            sx={{ flexGrow: 1 }}
+            nextButton={
+              <Button size="small" onClick={handleNext}>
+                {activeStep === 1 ? "Create" : "Next"}
+                <KeyboardArrowRight />
+              </Button>
+            }
+            backButton={
+              <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+                <KeyboardArrowLeft />
+                Back
+              </Button>
+            }
+          />
+
+        </DialogActions>
+      </Dialog>
     </>
   );
 };

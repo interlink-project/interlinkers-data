@@ -5,6 +5,10 @@ export default class GeneralApi {
     this.url = url;
   }
 
+  async create(data) {
+    return axiosInstance.post(`/${this.url}`, data)
+  }
+
   async getMulti(skip = null, limit = null) {
     const searchparams = new URLSearchParams();
     if (skip) {
@@ -15,7 +19,7 @@ export default class GeneralApi {
     }
     const newparams = searchparams.toString();
     const res = await axiosInstance.get(
-      `/${this.url}/${newparams ? `?${newparams}` : ''}`
+      `/${this.url}${newparams ? `?${newparams}` : ''}`
     );
     console.log('getMulti call', res.data);
     return res.data;
@@ -43,6 +47,21 @@ export default class GeneralApi {
       console.log('delete call', res.data);
       return res.data
     }
+  }
 
+  async setFile(id, endpoint, file) {
+    let formData = new FormData();
+    formData.append('file', file);
+    const res = await axiosInstance.post(
+      `/${this.url}/${id}/${endpoint}`,
+      formData,
+      {
+        headers: {
+            "Content-type": "multipart/form-data",
+        },                    
+    }
+    );
+    console.log('setLogotype call', res.data);
+    return res;
   }
 }

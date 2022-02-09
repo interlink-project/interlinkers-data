@@ -2,7 +2,7 @@ import { useCallback, useState, useEffect } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Box, Breadcrumbs, Button, CircularProgress, Container, Grid, Link, Typography } from '@material-ui/core';
-import { teamsApi } from '../../../__fakeApi__/teamsApi';
+import { teamsApi } from '__fakeApi__';
 import { TeamBrowseFilter, TeamBrowseResults } from '../../../components/dashboard/teams';
 import useMounted from '../../../hooks/useMounted';
 import useSettings from '../../../hooks/useSettings';
