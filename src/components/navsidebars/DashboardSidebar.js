@@ -7,7 +7,8 @@ import { Beenhere, Dashboard as DashboardIcon, FolderOpen as FolderOpenIcon, Hom
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Logo from '../Logo';
 import NavSection from '../../components/NavSection';
-import Scrollbar from '../../components/Scrollbar'; import useAuth from '../../hooks/useAuth';
+import Scrollbar from '../../components/Scrollbar'; 
+import useAuth from '../../hooks/useAuth';
 
 // /dashboard/account
 

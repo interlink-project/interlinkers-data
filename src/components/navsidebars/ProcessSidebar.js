@@ -11,17 +11,18 @@ import Scrollbar from '../Scrollbar'; import useAuth from '../../hooks/useAuth';
 import { useDispatch, useSelector } from 'react-redux';
 import { Timeline, Dashboard, BubbleChart, Forum, Settings, FolderOpen } from '@material-ui/icons';
 import { getImageUrl } from 'axiosInstance';
+import { red } from '@material-ui/core/colors';
 // /dashboard/account
 
 
 const ProcessSidebar = (props) => {
   const { onMobileClose, openMobile } = props;
-  const { process } = useSelector((state) => state.process);
+  const { process, loading } = useSelector((state) => state.process);
 
   const location = useLocation();
   const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));
   const processId = location.pathname.replace("/dashboard/coproductionprocesses/", "").split("/")[0]
-  
+
   useEffect(() => {
     if (openMobile && onMobileClose) {
       onMobileClose();
@@ -113,29 +114,36 @@ const ProcessSidebar = (props) => {
               p: 2
             }}
           >
-            <RouterLink to='/dashboard/account'>
-              <Avatar sx={{
-                cursor: 'pointer',
-                height: 48,
-                width: 48
-              }} variant="square" sx={process && !process.logotype ? { bgcolor: red[500] } : {}} aria-label="recipe" src={process && process.logotype && getImageUrl("coproduction", process.logotype)}>
+            {!loading && <Link
+              component={RouterLink}
+              to='#'
+            >
+              <Avatar
+                sx={{
+                  cursor: 'pointer',
+                  height: 48,
+                  width: 48
+                }} variant="square" sx={process && !process.logotype ? { bgcolor: red[500] } : {}} aria-label="recipe" src={process && process.logotype && getImageUrl("coproduction", process.logotype)}>
                 {process && !process.logotype && process.name[0]}
               </Avatar>
+            </Link>}
 
-            </RouterLink>
+
+
+
             <Box sx={{ ml: 2 }}>
-              <Typography
+            {!loading && <Typography
                 color='textPrimary'
                 variant='subtitle2'
               >
                 {process && process.name}
-              </Typography>
+              </Typography>}
 
             </Box>
           </Box>
         </Box>
         <Divider />
-        <Box sx={{ p: 2 }}>
+        <Box sx={{ p: 2 }}>
           {sections.map((section) => (
             <NavSection
               key={section.title}
