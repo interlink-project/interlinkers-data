@@ -31,7 +31,7 @@
         {
             "form": "guidelines",
             "format": "pdf",
-            "file": "./knowledge/it-cloud-enablement-kit/data.json",
+            "file": "./interlinkers/knowledge/it-cloud-enablement-kit/data.json",
             "softwareinterlinker": "externalresourcemanager"
         }
     ]

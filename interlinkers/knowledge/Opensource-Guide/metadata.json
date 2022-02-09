@@ -29,7 +29,7 @@
         {
             "form": "guidelines",
             "format": "structured_format",
-            "file": "./knowledge/Opensource-Guide/data.json",
+            "file": "./interlinkers/knowledge/Opensource-Guide/data.json",
             "softwareinterlinker": "externalresourcemanager"
         }
     ]

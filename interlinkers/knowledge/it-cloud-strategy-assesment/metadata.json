@@ -31,7 +31,7 @@
         {
             "form": "guidelines",
             "format": "editable_source_document",
-            "file": "./knowledge/it-cloud-competences-assesment/data.json",
+            "file": "./interlinkers/knowledge/it-cloud-competences-assesment/data.json",
             "softwareinterlinker": "externalresourcemanager"
         }
     ]

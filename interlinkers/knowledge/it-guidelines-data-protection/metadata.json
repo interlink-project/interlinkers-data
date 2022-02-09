@@ -32,7 +32,7 @@
         {
             "form": "guidelines",
             "format": "pdf",
-            "file": "./knowledge/guidelines-data-protection/data.json",
+            "file": "./interlinkers/knowledge/guidelines-data-protection/data.json",
             "softwareinterlinker": "externalresourcemanager"
         }
     ]

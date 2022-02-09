@@ -32,7 +32,7 @@
         {
             "form": "guidelines",
             "format": "structured_format",
-            "file": "./knowledge/it-guidelines_acquiring_reuse_sw_pa/data.json",
+            "file": "./interlinkers/knowledge/it-guidelines_acquiring_reuse_sw_pa/data.json",
             "softwareinterlinker": "externalresourcemanager"
         }
     ]
