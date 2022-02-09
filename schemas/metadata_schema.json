@@ -1,0 +1,35 @@
+{
+    "title": "CoproductionSchema",
+    "type": "object",
+    "properties": {
+        "name": {
+            "title": "Name",
+            "type": "object"
+        },
+        "description": {
+            "title": "Description",
+            "type": "object"
+        },
+        "author": {
+            "title": "Author",
+            "type": "string"
+        },
+        "licence": {
+            "title": "Licence",
+            "type": "string"
+        },
+        "name_translations": {
+            "title": "Name Translations",
+            "default": {
+                "en": "Some article"
+            },
+            "type": "object"
+        }
+    },
+    "required": [
+        "name",
+        "description",
+        "author"
+    ],
+    "additionalProperties": false
+}

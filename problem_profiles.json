@@ -1,296 +1,632 @@
 [
   {
-    "id": "ORG_PROBLEM_1",
-    "name_en": "Project aim description",
-    "coproduction": ["start.initiate_a_coproduction_endeavour.specify_the_main_aim_of_the_project"],
-    "description_en": "This problem refers to the need to support the initiators of a co-production project to describe the main aim and expected benefit of establishing a collaborative network of stakeholders and engaging them in the co-production process",
-    "functionality_en": "To solve this problem, the following knowledge enablers would be helpful:\n- a template to guide the preparation of the problem description, a tentative list of possible stakeholders, and (brief) draft scenarios. Possible template fields are for example:\nTitle for the co-production initiative\nContext and description\nActual organization of the service\nLimits/challenges of the actual service / initiatives\nFuture/desired scenario\nKey Actors and roles\nRelated initiatives and projects\nAvailable resources and links to other relevant documents\n- examples of template filing  for inspiration"
+      "id": "ORG_PROBLEM_1",
+      "name": {
+          "en": "Project aim description",
+          "es": ""
+      },
+      "description": {
+          "en": "This problem refers to the need to support the initiators of a co-production project to describe the main aim and expected benefit of establishing a collaborative network of stakeholders and engaging them in the co-production process",
+          "es": ""
+      },
+      "functionality": {
+          "en": "To solve this problem, the following knowledge enablers would be helpful:\n- a template to guide the preparation of the problem description, a tentative list of possible stakeholders, and (brief) draft scenarios. Possible template fields are for example:\nTitle for the co-production initiative\nContext and description\nActual organization of the service\nLimits/challenges of the actual service / initiatives\nFuture/desired scenario\nKey Actors and roles\nRelated initiatives and projects\nAvailable resources and links to other relevant documents\n- examples of template filing  for inspiration",
+          "es": ""
+      }
   },
   {
-    "id": "ORG_PROBLEM_2",
-    "name_en": "Workplan and project management",
-    "coproduction": ["start.initiate_a_coproduction_endeavour.set_the_overall_initial_workplan","evaluate.iterative_evaluation_of_viability_and_sustainability.adjust_the_project_workplan"],
-    "description_en": "This item refers to the problem of preparing a workplan that summarizes the coproduction steps, the timeline and the milestones for the collaborative project. The workplan needs to be sharable with the other members of the collaborative network and updatable as the project progresses.",
-    "functionality_en": "Knowledge resources to support the preparation of the workplan should include:\n- a visual template that highlights the (possibly iterative) stages of a co-production process, based on the knowledge distilled in WP2\n- examples of instantiated project workplans for inspiration.\nDifferent workplan templates should be made available to fit different governance models and different application domains. \n\nFor co-production processes of large dimensions and complexity, desired functionalities include software tools that support a dynamic update of the workplan, with the additional management of milestones, tasks status, assignment of activities to people, with functionalities like:\nGantt and milestones representation\ntask management (creation, distribution and monitor)\ntime tracking\nissues management"
+      "id": "ORG_PROBLEM_2",
+      "name": {
+          "en": "Workplan and project management",
+          "es": ""
+      },
+      "description": {
+          "en": "This item refers to the problem of preparing a workplan that summarizes the coproduction steps, the timeline and the milestones for the collaborative project. The workplan needs to be sharable with the other members of the collaborative network and updatable as the project progresses.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "Knowledge resources to support the preparation of the workplan should include:\n- a visual template that highlights the (possibly iterative) stages of a co-production process, based on the knowledge distilled in WP2\n- examples of instantiated project workplans for inspiration.\nDifferent workplan templates should be made available to fit different governance models and different application domains. \n\nFor co-production processes of large dimensions and complexity, desired functionalities include software tools that support a dynamic update of the workplan, with the additional management of milestones, tasks status, assignment of activities to people, with functionalities like:\nGantt and milestones representation\ntask management (creation, distribution and monitor)\ntime tracking\nissues management",
+          "es": ""
+      }
   },
   {
-    "id": "ORG_PROBLEM_3",
-    "name_en": "Registration and authentication",
-    "coproduction": ["engage.define_data_management_plan", "build.service_implementation"],
-    "description_en": "This problem refers to the need to ensure authentication to applications and secure services.",
-    "functionality_en": "The INTERLINKERs solving this problem  need to satisfy eID compliance and GDPR compliance. The following functionalities are envisaged:\nAuthentication\nAuthentication based on OAuth2.0/ OpenID Connect protocol and identity management using external Identity Providers (social, national, eID)\nUser Information\nInformation about the currently authenticated user as of OpenID Connect APIs\nAuthorization/Role management\nCreate  user groups\nAdd user to a group with the specified roles\nChange roles of the user within the group"
+      "id": "ORG_PROBLEM_3",
+      "name": {
+          "en": "Registration and authentication",
+          "es": ""
+      },
+      "description": {
+          "en": "This problem refers to the need to ensure authentication to applications and secure services.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "The INTERLINKERs solving this problem  need to satisfy eID compliance and GDPR compliance. The following functionalities are envisaged:\nAuthentication\nAuthentication based on OAuth2.0/ OpenID Connect protocol and identity management using external Identity Providers (social, national, eID)\nUser Information\nInformation about the currently authenticated user as of OpenID Connect APIs\nAuthorization/Role management\nCreate  user groups\nAdd user to a group with the specified roles\nChange roles of the user within the group",
+          "es": ""
+      }
   },
   {
-    "id": "ORG_PROBLEM_4",
-    "name_en": "Team communication for co-production",
-    "coproduction": ["engage.identify_stakeholders.create_a_contact_list_of_potential_network_participants","engage.engage_stakeholders.communicate_benefit_for_stakeholders"],
-    "description_en": "This problem item addresses the need to develop appropriate strategies for communicating the initiative, to actually contact stakeholders and schedule meetings",
-    "functionality_en": "To solve this problem the following resources should be made available: \n-   guidelines for a communication plan and contact strategy\n- software tools that support the easy preparation and distribution of communication material within the network, and the scheduling of meetings. Useful functionalities for team communication are:\n- email automation for personalization\n- pre-designed templates for newsletters\n- rich text and embedded forms\n- reports on opens and clicks\nUseful functionalities for meeting scheduling are:\n- calendar presentation\n- meeting organization and scheduling\n- meeting participants invitation management\n- share participants time slot availability"
+      "id": "ORG_PROBLEM_4",
+      "name": {
+          "en": "Team communication for co-production",
+          "es": ""
+      },
+      "description": {
+          "en": "This problem item addresses the need to develop appropriate strategies for communicating the initiative, to actually contact stakeholders and schedule meetings",
+          "es": ""
+      },
+      "functionality": {
+          "en": "To solve this problem the following resources should be made available: \n-   guidelines for a communication plan and contact strategy\n- software tools that support the easy preparation and distribution of communication material within the network, and the scheduling of meetings. Useful functionalities for team communication are:\n- email automation for personalization\n- pre-designed templates for newsletters\n- rich text and embedded forms\n- reports on opens and clicks\nUseful functionalities for meeting scheduling are:\n- calendar presentation\n- meeting organization and scheduling\n- meeting participants invitation management\n- share participants time slot availability",
+          "es": ""
+      }
   },
   {
-    "id": "ORG_PROBLEM_5",
-    "name_en": "Stakeholders engagement plan",
-    "coproduction": ["engage.engage_stakeholders.prepare_an_engagement_plan"],
-    "description_en": "This problem refers to the need to support the initiators of a co-production project to plan the active involvement of relevant actors in the co-production team. This problem is related to UND_PROBLEM_2 “Stakeholder mapping” that provides knowledge on how effective and balanced co-production teams can be created, which are the different types of stakeholders, their motivations and potential role in the project.",
-    "functionality_en": "To solve this problem, the following knowledge enablers would be helpful:\n- Digital template (excel file) to describe for the potential stakeholders identified during the \"Stakeholders mapping\" (UND_PROBLEM_2):\n1. the desired or expected level of involvement\n2. potential issues related to their engagement\n3. motivations and barriers that can support finding the best strategy to engage them in the co-production process. \n4. responsible person\n5. timing of engagement during the different stages of the co-production process\n- Example of template filled  for inspiration\nResearch activities in progress within tasks T5.2 and T5.4  will contribute findings that will help further detail methods for stakeholders engagement, as will be documented in Deliverable D5.1 (M12)."
+      "id": "ORG_PROBLEM_5",
+      "name": {
+          "en": "Stakeholders engagement plan",
+          "es": ""
+      },
+      "description": {
+          "en": "This problem refers to the need to support the initiators of a co-production project to plan the active involvement of relevant actors in the co-production team. This problem is related to UND_PROBLEM_2 \u201cStakeholder mapping\u201d that provides knowledge on how effective and balanced co-production teams can be created, which are the different types of stakeholders, their motivations and potential role in the project.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "To solve this problem, the following knowledge enablers would be helpful:\n- Digital template (excel file) to describe for the potential stakeholders identified during the \"Stakeholders mapping\" (UND_PROBLEM_2):\n1. the desired or expected level of involvement\n2. potential issues related to their engagement\n3. motivations and barriers that can support finding the best strategy to engage them in the co-production process. \n4. responsible person\n5. timing of engagement during the different stages of the co-production process\n- Example of template filled  for inspiration\nResearch activities in progress within tasks T5.2 and T5.4  will contribute findings that will help further detail methods for stakeholders engagement, as will be documented in Deliverable D5.1 (M12).",
+          "es": ""
+      }
   },
   {
-    "id": "ORG_PROBLEM_6.1",
-    "name_en": "Document collaboration",
-    "coproduction": [],
-    "description_en": "This problem addresses the need that might emerge at different stages of a coproduction initiative to collaboratively produce and share documents. Tasks may include the need to organize and manage documents among the coproduction team members, share documents among stakeholders, and help multiple people in the team work together on files to achieve a single final version.",
-    "functionality_en": "To solve this problem, software tools are required to support functionalities like: \n- authentication and authorization\n- document creation and editing, track changes\n- document storage (retrieve content, document versioning)\n- management of dedicated repositories for each service co-creation project \n- management of access rights granted only to members of the working group\n- support for different document formats"
+      "id": "ORG_PROBLEM_6.1",
+      "name": {
+          "en": "Document collaboration",
+          "es": ""
+      },
+      "description": {
+          "en": "This problem addresses the need that might emerge at different stages of a coproduction initiative to collaboratively produce and share documents. Tasks may include the need to organize and manage documents among the coproduction team members, share documents among stakeholders, and help multiple people in the team work together on files to achieve a single final version.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "To solve this problem, software tools are required to support functionalities like: \n- authentication and authorization\n- document creation and editing, track changes\n- document storage (retrieve content, document versioning)\n- management of dedicated repositories for each service co-creation project \n- management of access rights granted only to members of the working group\n- support for different document formats",
+          "es": ""
+      }
   },
   {
-    "id": "ORG_PROBLEM_6.2",
-    "name_en": "Data visualization",
-    "coproduction": ["evaluate.coevaluation", "design.problem_exploration.collect_data_about_users_and_their_behavior"],
-    "description_en": "This problem refers to the need of using maps or charts to help the co-production team understand different measurable aspects for a public service, like for example: variables describing the context of the service, KPIs, evaluation variables like usability, acceptance, easy to use, quality of service",
-    "functionality_en": "To support the team in visualizing data, software tools are required to;\nupload large sets of  data \nhandle and manage geographic information\noutput different chart, graph and map types\npossible output in form of report\nvisualize interactive on-line maps/charts\ncreate dashboards"
+      "id": "ORG_PROBLEM_6.2",
+      "name": {
+          "en": "Data visualization",
+          "es": ""
+      },
+      "description": {
+          "en": "This problem refers to the need of using maps or charts to help the co-production team understand different measurable aspects for a public service, like for example: variables describing the context of the service, KPIs, evaluation variables like usability, acceptance, easy to use, quality of service",
+          "es": ""
+      },
+      "functionality": {
+          "en": "To support the team in visualizing data, software tools are required to;\nupload large sets of  data \nhandle and manage geographic information\noutput different chart, graph and map types\npossible output in form of report\nvisualize interactive on-line maps/charts\ncreate dashboards",
+          "es": ""
+      }
   },
   {
-    "id": "ORG_PROBLEM_6.3",
-    "name_en": "Discussion board",
-    "coproduction": ["engage.engage_stakeholders.create_awareness_and_communication"],
-    "description_en": "This problem relates to the need to support open discussion among the coproduction team members. E.g. Discussion forum where the co-creation team can discuss ideas, service features, plan actions.",
-    "functionality_en": "To support the team in online discussions, software tools are required to;\nsupport conversation on threads\nprovide notification of discussions\nmoderate contents\nprovide administrative dashboards\nmanage discussion groups\nsupport polls for decision making"
+      "id": "ORG_PROBLEM_6.3",
+      "name": {
+          "en": "Discussion board",
+          "es": ""
+      },
+      "description": {
+          "en": "This problem relates to the need to support open discussion among the coproduction team members. E.g. Discussion forum where the co-creation team can discuss ideas, service features, plan actions.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "To support the team in online discussions, software tools are required to;\nsupport conversation on threads\nprovide notification of discussions\nmoderate contents\nprovide administrative dashboards\nmanage discussion groups\nsupport polls for decision making",
+          "es": ""
+      }
   },
   {
-    "id": "ORG_PROBLEM_7",
-    "name_en": "Non-Disclosure Agreement Definition (NDA)",
-    "coproduction": ["engage.define_legal_and_ethical_framework.define_a_partnership_agreement"],
-    "description_en": "This problem item addresses the need to support the co-production team in defining an agreement for not disclosing confidential information that they need to share with each other as a necessary part of co-producing a service together.",
-    "functionality_en": "Knowledge enablers solving this problem should  contain descriptive text that explains the rationale and the benefit of preparing and signing a NDA, as well as, templates for guiding the preparation of the agreement, and examples of NDA agreements for the co-production of services.\nThe baseline agreement template should cover:\n- Overall aim and domain of the NDA  agreement\n- Type of agreement: mutual vs non-mutual\n- List of parties involved\n- Definition of what is deemed to be confidential\n- The scope of the confidentiality obligation by the receiving party\n- The exclusions from confidential treatment\n- The term of the agreement\n- Obligations\n- Duration of the agreement"
+      "id": "ORG_PROBLEM_7",
+      "name": {
+          "en": "Non-Disclosure Agreement Definition (NDA)",
+          "es": ""
+      },
+      "description": {
+          "en": "This problem item addresses the need to support the co-production team in defining an agreement for not disclosing confidential information that they need to share with each other as a necessary part of co-producing a service together.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "Knowledge enablers solving this problem should  contain descriptive text that explains the rationale and the benefit of preparing and signing a NDA, as well as, templates for guiding the preparation of the agreement, and examples of NDA agreements for the co-production of services.\nThe baseline agreement template should cover:\n- Overall aim and domain of the NDA  agreement\n- Type of agreement: mutual vs non-mutual\n- List of parties involved\n- Definition of what is deemed to be confidential\n- The scope of the confidentiality obligation by the receiving party\n- The exclusions from confidential treatment\n- The term of the agreement\n- Obligations\n- Duration of the agreement",
+          "es": ""
+      }
   },
   {
-    "id": "ORG_PROBLEM_8",
-    "name_en": "Partnership agreement definition",
-    "coproduction": ["engage.define_legal_and_ethical_framework.define_a_partnership_agreement", "evaluate.team_formation_for_next_step.revise_the_map_of_stakeholders"],
-    "description_en": "This problem item addresses the need for information about good practices, templates and examples for preparing documents that define in a formal way agreements for a collaborative network of stakeholders. This need may emerge during the initial engagement of the stakeholders to write\ndown the terms and general plan for the collaboration. When co-evaluation takes\nplace on the outcome of the collaboration with respect to what was specified in the\npartnership agreement, possible revisions of the document may need to be\nintroduced.",
-    "functionality_en": "Knowledge enablers solving this problem should  contain descriptive text that explains the rationale and the benefit of preparing and signing a partnership agreement, templates for guiding the preparation of the agreement, and examples of successful partnership agreements for the co-production of services.\n\nThe baseline agreement template should cover:\n- Overall aim and domain of the agreement\n- The list of network partners\n- Rules for extending the network of stakeholders after the initial agreement signing\n- Definition of partner roles and levels of commitment\n- Definition of rules of fair play, obligations, rights within the collaborative network\n- Contact persons\n- Advisory board\n- Thematic work groups\n- Dissemination and communication plan\n- Monitoring and evaluation plan\n- Duration\n\nAlternative versions of the agreement template may be required for different governance models (e.g. G2C, C2G, C+G).\nMultilingual versions of the agreement templates should be available"
+      "id": "ORG_PROBLEM_8",
+      "name": {
+          "en": "Partnership agreement definition",
+          "es": ""
+      },
+      "description": {
+          "en": "This problem item addresses the need for information about good practices, templates and examples for preparing documents that define in a formal way agreements for a collaborative network of stakeholders. This need may emerge during the initial engagement of the stakeholders to write\ndown the terms and general plan for the collaboration. When co-evaluation takes\nplace on the outcome of the collaboration with respect to what was specified in the\npartnership agreement, possible revisions of the document may need to be\nintroduced.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "Knowledge enablers solving this problem should  contain descriptive text that explains the rationale and the benefit of preparing and signing a partnership agreement, templates for guiding the preparation of the agreement, and examples of successful partnership agreements for the co-production of services.\n\nThe baseline agreement template should cover:\n- Overall aim and domain of the agreement\n- The list of network partners\n- Rules for extending the network of stakeholders after the initial agreement signing\n- Definition of partner roles and levels of commitment\n- Definition of rules of fair play, obligations, rights within the collaborative network\n- Contact persons\n- Advisory board\n- Thematic work groups\n- Dissemination and communication plan\n- Monitoring and evaluation plan\n- Duration\n\nAlternative versions of the agreement template may be required for different governance models (e.g. G2C, C2G, C+G).\nMultilingual versions of the agreement templates should be available",
+          "es": ""
+      }
   },
   {
-    "id": "ORG_PROBLEM_9",
-    "name_en": "Data Management Plan Definition (DPM)",
-    "coproduction": ["engage.define_data_management_plan"],
-    "description_en": "This problem item refers to the need to describe the data management life cycle for all data sets that are collected, processed or generated by the co-production of public services.",
-    "functionality_en": "Knowledge enablers addressing this problem should include  descriptive text that explains the rationale and the benefit of preparing a Data Management Plan, templates for guiding the preparation of the plan, examples of Data Management Plans.\nThe baseline Data Management Plan template should cover:\nOverall aim and domain of the DMP\nMotivations to collect data \nFlow of data\nPotential impact of data\nThe handling of data during & after the end of the project\nThe types of data\nDefinition of user and supplier preferences concerning data? (ownership, minimalization, responsibility, sharing, archiving, anonymity)\nPolicies for access and sharing\nPolicies and provisions for re-use\n-Plans for archiving data"
+      "id": "ORG_PROBLEM_9",
+      "name": {
+          "en": "Data Management Plan Definition (DPM)",
+          "es": ""
+      },
+      "description": {
+          "en": "This problem item refers to the need to describe the data management life cycle for all data sets that are collected, processed or generated by the co-production of public services.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "Knowledge enablers addressing this problem should include  descriptive text that explains the rationale and the benefit of preparing a Data Management Plan, templates for guiding the preparation of the plan, examples of Data Management Plans.\nThe baseline Data Management Plan template should cover:\nOverall aim and domain of the DMP\nMotivations to collect data \nFlow of data\nPotential impact of data\nThe handling of data during & after the end of the project\nThe types of data\nDefinition of user and supplier preferences concerning data? (ownership, minimalization, responsibility, sharing, archiving, anonymity)\nPolicies for access and sharing\nPolicies and provisions for re-use\n-Plans for archiving data",
+          "es": ""
+      }
   },
   {
-    "id": "ORG_PROBLEM_10",
-    "name_en": "Inform the public",
-    "coproduction": ["engage.engage_stakeholders.engage_citizens_in_the_coproduction_process"],
-    "description_en": "This problem item addresses the need to provide members of the public with the information they need to understand the project, the decision process, and also to understand how public input influenced the decision",
-    "functionality_en": "INTERLINKERs addressing this problem need to  provide information and guidelines on how to reach out to citizens and inform them on the creation of innovative public services. Sample methods to inform the public are for example:\nIn-person methods to inform: public meetings, briefings, telephone contacts\nRemote methods to inform: printed and digital  information (fact sheets, newsletters and bulletins), web sites, information repositories, information hotlines, information kiosks, press and media, social media)\nAll these methods have specific constraints for their application, e.g. preferred number of participants, and contexts they are best suited for, e.g. type of audience or the current phase of the project.  \nActivities within INTERLINK WP5 are currently investigating which methods for informing and engaging the public are best suited for the three project use cases"
+      "id": "ORG_PROBLEM_10",
+      "name": {
+          "en": "Inform the public",
+          "es": ""
+      },
+      "description": {
+          "en": "This problem item addresses the need to provide members of the public with the information they need to understand the project, the decision process, and also to understand how public input influenced the decision",
+          "es": ""
+      },
+      "functionality": {
+          "en": "INTERLINKERs addressing this problem need to  provide information and guidelines on how to reach out to citizens and inform them on the creation of innovative public services. Sample methods to inform the public are for example:\nIn-person methods to inform: public meetings, briefings, telephone contacts\nRemote methods to inform: printed and digital  information (fact sheets, newsletters and bulletins), web sites, information repositories, information hotlines, information kiosks, press and media, social media)\nAll these methods have specific constraints for their application, e.g. preferred number of participants, and contexts they are best suited for, e.g. type of audience or the current phase of the project.  \nActivities within INTERLINK WP5 are currently investigating which methods for informing and engaging the public are best suited for the three project use cases",
+          "es": ""
+      }
   },
   {
-    "id": "ORG_PROBLEM_11",
-    "name_en": "Consensus building and agreement seeking with the public",
-    "coproduction": ["engage.engage_stakeholders.engage_citizens_in_the_coproduction_process"],
-    "description_en": "This problem item addresses the need to provide members of the public with the possibility to actively participate in the decision process, whenever this is desired by the selected governance model.",
-    "functionality_en": "INTERLINKERs addressing this problem need to  provide information and guidelines on how to let public discussion converge and select preferred solutions. Software tools to aid e-voting are also relevant for this problem item. Sample methods for agreement seeking with the public are for example consensus workshops, advisory boards, citizen juries and computer assisted processes that include functionalities like online presentation, interactive polls and Q&A with participants, as well as real time visualization of answers. \nAll these methods have specific constraints for their application, e.g. preferred number of participants, and contexts they are best suited for, e.g. type of audience or the current phase of the project.  \nActivities within INTERLINK WP5 are currently investigating which methods for consensus building and agreement with the public are best suited for the three project use cases."
+      "id": "ORG_PROBLEM_11",
+      "name": {
+          "en": "Consensus building and agreement seeking with the public",
+          "es": ""
+      },
+      "description": {
+          "en": "This problem item addresses the need to provide members of the public with the possibility to actively participate in the decision process, whenever this is desired by the selected governance model.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "INTERLINKERs addressing this problem need to  provide information and guidelines on how to let public discussion converge and select preferred solutions. Software tools to aid e-voting are also relevant for this problem item. Sample methods for agreement seeking with the public are for example consensus workshops, advisory boards, citizen juries and computer assisted processes that include functionalities like online presentation, interactive polls and Q&A with participants, as well as real time visualization of answers. \nAll these methods have specific constraints for their application, e.g. preferred number of participants, and contexts they are best suited for, e.g. type of audience or the current phase of the project.  \nActivities within INTERLINK WP5 are currently investigating which methods for consensus building and agreement with the public are best suited for the three project use cases.",
+          "es": ""
+      }
   },
   {
-    "id": "ORG_PROBLEM_12",
-    "name_en": "Develop a shared language (and value diversity)",
-    "coproduction": ["engage.engage_stakeholders", "design.focus_the_problem_collaboratively.develop_a_shared_language", "buid.service_codelivery"],
-    "description_en": "This problem item addresses the need of providing guidance on how to develop a shared language among the co-production team members to ensure effective codesign and co-production of services. Developing a shared language is crucial to be able for stakeholders to: i) build a common ground for joint action, ii) share, mutually agree on, and understand a longterm research plan and protocol, iii) to ongoingly evaluate the success or failure of decisions",
-    "functionality_en": "Knowledge enablers coping with this problem should  include  descriptive text that explains the rationale and the benefit of developing a shared language and of valuing the diversity of experiences, skills and values that each participant in the co-production process brings. \nThe enablers should propose  activities that the team might perform to create a shared language and value diversity. They should provide guidelines for discussing and exchanging knowledge, to value the knowledge of team members. In co-production processes it is crucial for participants to embrace diversity, to respect different values and knowledge systems."
+      "id": "ORG_PROBLEM_12",
+      "name": {
+          "en": "Develop a shared language (and value diversity)",
+          "es": ""
+      },
+      "description": {
+          "en": "This problem item addresses the need of providing guidance on how to develop a shared language among the co-production team members to ensure effective codesign and co-production of services. Developing a shared language is crucial to be able for stakeholders to: i) build a common ground for joint action, ii) share, mutually agree on, and understand a longterm research plan and protocol, iii) to ongoingly evaluate the success or failure of decisions",
+          "es": ""
+      },
+      "functionality": {
+          "en": "Knowledge enablers coping with this problem should  include  descriptive text that explains the rationale and the benefit of developing a shared language and of valuing the diversity of experiences, skills and values that each participant in the co-production process brings. \nThe enablers should propose  activities that the team might perform to create a shared language and value diversity. They should provide guidelines for discussing and exchanging knowledge, to value the knowledge of team members. In co-production processes it is crucial for participants to embrace diversity, to respect different values and knowledge systems.",
+          "es": ""
+      }
   },
   {
-    "id": "ORG_PROBLEM_13",
-    "name_en": "Loyalty, incentives and rewards",
-    "coproduction": ["engage.engage_stakeholders", "design.ideation", "buid.service_implementation"],
-    "description_en": "Citizen participation in collaborative projects strongly depends on their motivation and their willingness to interact with governmental institutions and provide input on the given task.",
-    "functionality_en": "Enablers related to this problem should provide guidance and tools to track citizens' engagement and reward participation. \nGuidelines and tips on how to monitor citizens' level of engagement and track  activities performed by citizens and other entities engaged in the collaborative process  (e.g. participation in a workshop, submission of ideas on a web portal, attendance to events) \nGuidelines to define the rewarding strategy\nTypes of rewarding mechanisms  that can be used to sustain, encourage participation, according to the type of audience and depending on the tasks\n intrinsic rewarding  (e.g.: fun, self-realization, challenging tasks etc.)\nextrinsic rewarding  (e.g.: financial or non-financial rewards, career improvement, reputation etc.) \nGuidelines and tools to assess and follow-up the user’s engagement and satisfaction level of the public. \nModule to track and follow up the engagement and satisfaction of citizens/participants."
+      "id": "ORG_PROBLEM_13",
+      "name": {
+          "en": "Loyalty, incentives and rewards",
+          "es": ""
+      },
+      "description": {
+          "en": "Citizen participation in collaborative projects strongly depends on their motivation and their willingness to interact with governmental institutions and provide input on the given task.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "Enablers related to this problem should provide guidance and tools to track citizens' engagement and reward participation. \nGuidelines and tips on how to monitor citizens' level of engagement and track  activities performed by citizens and other entities engaged in the collaborative process  (e.g. participation in a workshop, submission of ideas on a web portal, attendance to events) \nGuidelines to define the rewarding strategy\nTypes of rewarding mechanisms  that can be used to sustain, encourage participation, according to the type of audience and depending on the tasks\n intrinsic rewarding  (e.g.: fun, self-realization, challenging tasks etc.)\nextrinsic rewarding  (e.g.: financial or non-financial rewards, career improvement, reputation etc.) \nGuidelines and tools to assess and follow-up the user\u2019s engagement and satisfaction level of the public. \nModule to track and follow up the engagement and satisfaction of citizens/participants.",
+          "es": ""
+      }
   },
   {
-    "id": "ORG_PROBLEM_14",
-    "name_en": "Consent collection",
-    "coproduction": ["engage.engage_stakeholders", "design.ideation", "buid.service_implementation"],
-    "description_en": "At different stages of the co-production process stakeholders (including citizens) are contacted, interviewed, asked for ideas and opinions. It is important to inform them about the context and purpose of the data collection and to gather their consent to be able to use the collected data collected in compliance with data protection regulations.",
-    "functionality_en": "Knowledge enablers coping with this problem should  include  descriptive guidelines that explain the importance of complying with the GDPR at all stages of co-production.\nTemplates for inform sheets and consent forms should be provided for different types of venues and data to be collected. Multilinguality and compliance to different national regulations should be supported."
+      "id": "ORG_PROBLEM_14",
+      "name": {
+          "en": "Consent collection",
+          "es": ""
+      },
+      "description": {
+          "en": "At different stages of the co-production process stakeholders (including citizens) are contacted, interviewed, asked for ideas and opinions. It is important to inform them about the context and purpose of the data collection and to gather their consent to be able to use the collected data collected in compliance with data protection regulations.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "Knowledge enablers coping with this problem should  include  descriptive guidelines that explain the importance of complying with the GDPR at all stages of co-production.\nTemplates for inform sheets and consent forms should be provided for different types of venues and data to be collected. Multilinguality and compliance to different national regulations should be supported.",
+          "es": ""
+      }
   },
   {
-    "id": "UND_PROBLEM_1",
-    "name_en": "Collaborative problem refinement",
-    "coproduction": ["design.problem_exploration"],
-    "description_en": "This item relates to the need of exploring and refining the problem that a service addresses. The service design process is a problem-solving activity and it is important to clearly understand which is the challenge that the team addresses and how more information can be collected to understand how the service should be designed. Guidelines and tools are needed to help teams in discussing initial ideas and assumptions, refine them through structured methods and become aware about the missing information that still needs to be collected.",
-    "functionality_en": "The knowledge enablers solving this problem should include descriptive text  that explains the rationale and the benefit of collecting and discussing ideas to refine the problem/challenge. Enablers should propose activities that the team might perform to refine the challenge concept, guiding the application of structured methods to collect and discuss ideas, such as brainstorming, and activities to elicit initial assumptions,  to agree on ideas and refine them. \nThis enabler should cover:\n- Explanation of  the benefits for defining the challenge and refining the understanding of the problem to be addressed\n- Tips to structure an open discussion that value diversity and knowledge exchange\n- Methods that can be used to discuss and collaboratively refine the idea, such as a structured brainstorming \n- Guidelines on how to conduct a brainstorming for problem refinement\n- Templates that can be used to organize ideas during a brainstorming for problem refinement and identification of missing  information (e.g. Ideas crowdsourcing, data collection through user research,..). \nThese knowledge enablers can be associated to the use of a Software  enabler to perform online brainstorming"
+      "id": "UND_PROBLEM_1",
+      "name": {
+          "en": "Collaborative problem refinement",
+          "es": ""
+      },
+      "description": {
+          "en": "This item relates to the need of exploring and refining the problem that a service addresses. The service design process is a problem-solving activity and it is important to clearly understand which is the challenge that the team addresses and how more information can be collected to understand how the service should be designed. Guidelines and tools are needed to help teams in discussing initial ideas and assumptions, refine them through structured methods and become aware about the missing information that still needs to be collected.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "The knowledge enablers solving this problem should include descriptive text  that explains the rationale and the benefit of collecting and discussing ideas to refine the problem/challenge. Enablers should propose activities that the team might perform to refine the challenge concept, guiding the application of structured methods to collect and discuss ideas, such as brainstorming, and activities to elicit initial assumptions,  to agree on ideas and refine them. \nThis enabler should cover:\n- Explanation of  the benefits for defining the challenge and refining the understanding of the problem to be addressed\n- Tips to structure an open discussion that value diversity and knowledge exchange\n- Methods that can be used to discuss and collaboratively refine the idea, such as a structured brainstorming \n- Guidelines on how to conduct a brainstorming for problem refinement\n- Templates that can be used to organize ideas during a brainstorming for problem refinement and identification of missing  information (e.g. Ideas crowdsourcing, data collection through user research,..). \nThese knowledge enablers can be associated to the use of a Software  enabler to perform online brainstorming",
+          "es": ""
+      }
   },
   {
-    "id": "UND_PROBLEM_2",
-    "name_en": "Stakeholders mapping",
-    "coproduction": ["engage.identify_stakeholders.map_stakeholders_analyse_motivation_skills_expectations", "engage.identify_stakeholders.visually_map_the_network_of_stakeholders"],
-    "description_en": "This problem item relates to the need to support the initiators of the co-production process to identify, select and plan the active involvement of stakeholders in the co-production team. It is important that the initiators of a co-production process understand who are the potential stakeholders, which are their motivations to participate and potential barriers, which skills and expertise they might bring in the project, and which type of support they need to fully contribute to the project.",
-    "functionality_en": "Knowledge for  \"stakeholders mapping\" should include:\nGuidelines that explain the rationale of the process of stakeholders mapping and analysis and that support the team in selecting relevant stakeholders, that is people directly or indirectly affected by the service  or that can influence the service. Different types of stakeholders exist that have diverse motivations to participate, different skills and potential roles to play in the project: public authorities (public servants and politicians, citizens (potential end-users and experts), private business and non-profit organizations (SMEs, freelance, etc). Also different roles should be considered: 1) service end-users, 2) co-production team, 3) Interlink partners\nGuidelines to analyse stakeholders motivations and potential incentives to participate: i) personal, ii) society, iii) financial, iv) governance, iv) research\nTemplates that support the team in \ncreating a stakeholders map, which  is helpful for understanding the complexity of building relationships, realizing which connectors can be crucial for innovation development and why\nin making the network balanced, i.e. by \nensuring inclusiveness, or openness to all who wish to participate\nensuring representativeness, ensuring that the interests of all stakeholders are effectively advocated\nensuring impartiality, or all parties being treated equally\nrecognising gender and cultural differences\nTangible material to facilitate the stakeholders analysis during a brainstorming (cards for people, roles, possible expectations, etc.)"
+      "id": "UND_PROBLEM_2",
+      "name": {
+          "en": "Stakeholders mapping",
+          "es": ""
+      },
+      "description": {
+          "en": "This problem item relates to the need to support the initiators of the co-production process to identify, select and plan the active involvement of stakeholders in the co-production team. It is important that the initiators of a co-production process understand who are the potential stakeholders, which are their motivations to participate and potential barriers, which skills and expertise they might bring in the project, and which type of support they need to fully contribute to the project.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "Knowledge for  \"stakeholders mapping\" should include:\nGuidelines that explain the rationale of the process of stakeholders mapping and analysis and that support the team in selecting relevant stakeholders, that is people directly or indirectly affected by the service  or that can influence the service. Different types of stakeholders exist that have diverse motivations to participate, different skills and potential roles to play in the project: public authorities (public servants and politicians, citizens (potential end-users and experts), private business and non-profit organizations (SMEs, freelance, etc). Also different roles should be considered: 1) service end-users, 2) co-production team, 3) Interlink partners\nGuidelines to analyse stakeholders motivations and potential incentives to participate: i) personal, ii) society, iii) financial, iv) governance, iv) research\nTemplates that support the team in \ncreating a stakeholders map, which  is helpful for understanding the complexity of building relationships, realizing which connectors can be crucial for innovation development and why\nin making the network balanced, i.e. by \nensuring inclusiveness, or openness to all who wish to participate\nensuring representativeness, ensuring that the interests of all stakeholders are effectively advocated\nensuring impartiality, or all parties being treated equally\nrecognising gender and cultural differences\nTangible material to facilitate the stakeholders analysis during a brainstorming (cards for people, roles, possible expectations, etc.)",
+          "es": ""
+      }
   },
   {
-    "id": "UND_PROBLEM_3",
-    "name_en": "Data collection about users and their behavior (user research)",
-    "coproduction": ["design.problem_exploration", "design.sustainability", "sustain.monitoring", "evaluate.coevaluation"],
-    "description_en": "This problem item refers to the need to support teams in collecting data and information about users and their behaviour for different purposes and phases of the co-production process, e.g. to better understand a phenomenon, to improve\nknowledge on citizens' needs toward services, to measure attitudes and\nexpectations, to monitor users satisfaction toward a service or a facility.",
-    "functionality_en": "The enablers addressing this problem item should help select the most appropriate data collection methods according to the specific information goals, explaining their pros and cons. For each method presented (e.g. survey, interviews, etc), guidelines and templates should be provided. \nKnowledge enablers should cover articulated guidelines including:\nMotivations to perform user research, according to the phase of the process and specific needs in terms of data collection, e.g.:\nunderstand a phenomenon\nvalidate an hypothesis\nevaluate a service\nmonitor service quality\nBenefits of collecting data directly from users\nType of data that can be collected and their pro and cons: qualitative vs quantitative \nDescription of the different methods to collect data\nGuidelines to support the team in deciding which is the best method to use to collect data, according to their informative needs, constraints and skills\nThe description of the process that should be followed to define a protocol for data collection\nDescription of how to collect and manage personal information when conducting user studies\nTips on  how to collect data through interviews \nTips on  how to collect data through focus groups \nTips on  how to collect data through online surveys  \nTips on  how to collect data through web data \n\nSpecific templates with already validated dimensions and scales are provided to support the set-up of the user research, such as\nsatisfaction / perceived quality of a service\nintention to use / easy to use scale\nThese knowledge enablers can be associated with the use of Software  tools for surveys."
+      "id": "UND_PROBLEM_3",
+      "name": {
+          "en": "Data collection about users and their behavior (user research)",
+          "es": ""
+      },
+      "description": {
+          "en": "This problem item refers to the need to support teams in collecting data and information about users and their behaviour for different purposes and phases of the co-production process, e.g. to better understand a phenomenon, to improve\nknowledge on citizens' needs toward services, to measure attitudes and\nexpectations, to monitor users satisfaction toward a service or a facility.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "The enablers addressing this problem item should help select the most appropriate data collection methods according to the specific information goals, explaining their pros and cons. For each method presented (e.g. survey, interviews, etc), guidelines and templates should be provided. \nKnowledge enablers should cover articulated guidelines including:\nMotivations to perform user research, according to the phase of the process and specific needs in terms of data collection, e.g.:\nunderstand a phenomenon\nvalidate an hypothesis\nevaluate a service\nmonitor service quality\nBenefits of collecting data directly from users\nType of data that can be collected and their pro and cons: qualitative vs quantitative \nDescription of the different methods to collect data\nGuidelines to support the team in deciding which is the best method to use to collect data, according to their informative needs, constraints and skills\nThe description of the process that should be followed to define a protocol for data collection\nDescription of how to collect and manage personal information when conducting user studies\nTips on  how to collect data through interviews \nTips on  how to collect data through focus groups \nTips on  how to collect data through online surveys  \nTips on  how to collect data through web data \n\nSpecific templates with already validated dimensions and scales are provided to support the set-up of the user research, such as\nsatisfaction / perceived quality of a service\nintention to use / easy to use scale\nThese knowledge enablers can be associated with the use of Software  tools for surveys.",
+          "es": ""
+      }
   },
   {
-    "id": "UND_PROBLEM_4",
-    "name_en": "Identify and understand users of the service (Personas)",
-    "coproduction": ["design.problem_exploration", "design.ideation", "design.service_design"],
-    "description_en": "A co-production team might need help to define the targets of the service and the characteristics of the users of the service and which are their main needs and the challenges they experience.",
-    "functionality_en": "Knowledge enablers addressing this problem should include \nDescriptive text that explains the rationale of clearly identifying the target users of a service and a definition of  “Personas” as a method to identify, understand and empathize with users of a service\nGuidelines on how to identify “Personas” \nGuidelines and templates to use “Personas” during the design process"
+      "id": "UND_PROBLEM_4",
+      "name": {
+          "en": "Identify and understand users of the service (Personas)",
+          "es": ""
+      },
+      "description": {
+          "en": "A co-production team might need help to define the targets of the service and the characteristics of the users of the service and which are their main needs and the challenges they experience.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "Knowledge enablers addressing this problem should include \nDescriptive text that explains the rationale of clearly identifying the target users of a service and a definition of  \u201cPersonas\u201d as a method to identify, understand and empathize with users of a service\nGuidelines on how to identify \u201cPersonas\u201d \nGuidelines and templates to use \u201cPersonas\u201d during the design process",
+          "es": ""
+      }
   },
   {
-    "id": "UND_PROBLEM_5",
-    "name_en": "Ideas crowdsourcing",
-    "coproduction": ["design.ideation"],
-    "description_en": "This problem relates to the need to support the co-creation team to collect ideas from a large set of contributors (e.g. citizens) related to a specific challenge, organize and manage the ideas and eventually evaluate them. Crowdsourcing projects can target both internal and external participants via dedicated tools and platforms, questionnaires, social media, competitions and other methods.",
-    "functionality_en": "The enablers solving this problem should  contain descriptive text that explains the rationale and the benefit of collecting crowdsourced data.\nGuidelines, tips and examples  are to be made available to support the co-creation team to collect ideas from a large set of contributors (e.g. citizens) .\nInformation that should be included:\nDefinition of ideas crowdsourcing\nBenefits of crowdsourcing\nWhen this method can be helpful\nProcess to set-up an ideas crowdsourced initiative\nWhich participants should be involved?\nUnderstand motivations for participation: why do people participate in this kind of activity? Which are their motivations?\nBarriers and challenges in using crowdsourced data\nHow to promote the initiative (channeles, strategies, etc)\nExamples of projects in which crowdsourced data have been used\nMethods that can be used to perform ideas crowdsourcing:\nSW tools\nSocial media\nOnline questionnaire \nPublic workshops\n\nThis knowledge enabler can be associated to the use of software enablers to perform ideas crowdsourcing"
+      "id": "UND_PROBLEM_5",
+      "name": {
+          "en": "Ideas crowdsourcing",
+          "es": ""
+      },
+      "description": {
+          "en": "This problem relates to the need to support the co-creation team to collect ideas from a large set of contributors (e.g. citizens) related to a specific challenge, organize and manage the ideas and eventually evaluate them. Crowdsourcing projects can target both internal and external participants via dedicated tools and platforms, questionnaires, social media, competitions and other methods.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "The enablers solving this problem should  contain descriptive text that explains the rationale and the benefit of collecting crowdsourced data.\nGuidelines, tips and examples  are to be made available to support the co-creation team to collect ideas from a large set of contributors (e.g. citizens) .\nInformation that should be included:\nDefinition of ideas crowdsourcing\nBenefits of crowdsourcing\nWhen this method can be helpful\nProcess to set-up an ideas crowdsourced initiative\nWhich participants should be involved?\nUnderstand motivations for participation: why do people participate in this kind of activity? Which are their motivations?\nBarriers and challenges in using crowdsourced data\nHow to promote the initiative (channeles, strategies, etc)\nExamples of projects in which crowdsourced data have been used\nMethods that can be used to perform ideas crowdsourcing:\nSW tools\nSocial media\nOnline questionnaire \nPublic workshops\n\nThis knowledge enabler can be associated to the use of software enablers to perform ideas crowdsourcing",
+          "es": ""
+      }
   },
   {
-    "id": "UND_PROBLEM_6",
-    "name_en": "Ecosystem mapping",
-    "coproduction": ["design.problem_exploration", "build.service_codelivery"],
-    "description_en": "This problem item refers to the need to map in a synthetic representation all the key roles that can impact on the user, organization and service environment. The ecosystem map is built by first displaying all the entities, and then connecting them based on the type of value they exchange.",
-    "functionality_en": "The knowledge enablers addressing this problem, first of all, include descriptive text that explains the rationale and the benefit of mapping all the entities  involved in the delivery of a service.\nGuidelines should be provided to \nexplain the process that should be followed to map the entities\nillustrate the difference between actors (primary, secondary, etc), organizations, services\nTemplates should be prepared to facilitate\nthe listing of actors and their role\nthe visual representation of the map of actors and their relationships"
+      "id": "UND_PROBLEM_6",
+      "name": {
+          "en": "Ecosystem mapping",
+          "es": ""
+      },
+      "description": {
+          "en": "This problem item refers to the need to map in a synthetic representation all the key roles that can impact on the user, organization and service environment. The ecosystem map is built by first displaying all the entities, and then connecting them based on the type of value they exchange.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "The knowledge enablers addressing this problem, first of all, include descriptive text that explains the rationale and the benefit of mapping all the entities  involved in the delivery of a service.\nGuidelines should be provided to \nexplain the process that should be followed to map the entities\nillustrate the difference between actors (primary, secondary, etc), organizations, services\nTemplates should be prepared to facilitate\nthe listing of actors and their role\nthe visual representation of the map of actors and their relationships",
+          "es": ""
+      }
   },
   {
-    "id": "DEF_PROBLEM_1",
-    "name_en": "Guidelines for (digital) public service design",
-    "coproduction": ["design.service_specification"],
-    "description_en": "Public Administrations and their service providers may require a general introductory guidance on how to approach the design of high-quality public services. The guidelines should refer to the different issues related with the “Service design” problem.",
-    "functionality_en": "The knowledge enablers addressing this problem should be in the form of descriptive text that summarizes the main guidelines related to the design of digital public services. They should provide information on these topics: \nprinciples of citizen-centred design, \nprinciples of service design and of e-government, \naspects of project management, \nrequired expertise for service design,\naccessibility, \nrelevant regulations, \ngood practices for content design, \nlanguage,\nissues related to SEO, \nprinciples of user research, \nguidelines for user interface design."
+      "id": "DEF_PROBLEM_1",
+      "name": {
+          "en": "Guidelines for (digital) public service design",
+          "es": ""
+      },
+      "description": {
+          "en": "Public Administrations and their service providers may require a general introductory guidance on how to approach the design of high-quality public services. The guidelines should refer to the different issues related with the \u201cService design\u201d problem.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "The knowledge enablers addressing this problem should be in the form of descriptive text that summarizes the main guidelines related to the design of digital public services. They should provide information on these topics: \nprinciples of citizen-centred design, \nprinciples of service design and of e-government, \naspects of project management, \nrequired expertise for service design,\naccessibility, \nrelevant regulations, \ngood practices for content design, \nlanguage,\nissues related to SEO, \nprinciples of user research, \nguidelines for user interface design.",
+          "es": ""
+      }
   },
   {
-    "id": "DEF_PROBLEM_2",
-    "name_en": "Brainstorm service ideas",
-    "coproduction": ["design.ideation"],
-    "description_en": "Brainstorming sessions may be useful in different phases of the co-production process. During each phase, the template and materials useful to guide the discussion should be customized to facilitate the organization of the specific event. During the \"ideation\" stage, the co-production team may require specific guidance in organizing and managing a brainstorming to produce service ideas, discuss and select them, through divergent and convergent phases of group discussion.",
-    "functionality_en": "Knowledge enablers addressing this problem  should cover:\nDescriptive guidelines explaining the rationale and the benefit of organizing a brainstorming for discussing service ideas\nWhen it is useful to organize a brainstorming\nA template description of the process that should be followed to organize and manage a brainstorming\nTools and materials that can be used to organize a brainstorming: online vs offline"
+      "id": "DEF_PROBLEM_2",
+      "name": {
+          "en": "Brainstorm service ideas",
+          "es": ""
+      },
+      "description": {
+          "en": "Brainstorming sessions may be useful in different phases of the co-production process. During each phase, the template and materials useful to guide the discussion should be customized to facilitate the organization of the specific event. During the \"ideation\" stage, the co-production team may require specific guidance in organizing and managing a brainstorming to produce service ideas, discuss and select them, through divergent and convergent phases of group discussion.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "Knowledge enablers addressing this problem  should cover:\nDescriptive guidelines explaining the rationale and the benefit of organizing a brainstorming for discussing service ideas\nWhen it is useful to organize a brainstorming\nA template description of the process that should be followed to organize and manage a brainstorming\nTools and materials that can be used to organize a brainstorming: online vs offline",
+          "es": ""
+      }
   },
   {
-    "id": "DEF_PROBLEM_3",
-    "name_en": "Organize a co-design workshop",
-    "coproduction": ["design.ideation", "design.problem_exploration", "design.service_design"],
-    "description_en": "After the understanding of the problem and the brainstorming of the service ideas, the co-production team should elaborate concrete solutions for a given challenge. Co-design workshops are useful at this stage as collective activities organized to discuss design issues and choices. Enablers are required to suggest how the coproduction team can work together and with relevant actors (also considering the map of actors developed thanks to the INTERLINKER “Map of actors”) to start defining the service to be co-designed and co-delivered.",
-    "functionality_en": "Enablers supporting this problem item include descriptive text that explains the rationale and the benefits of performing co-design workshops  as part of a co-production process and template materials to guide organizing and managing the workshop.\nEnablers should cover:\nDefinition of a co-design workshop\nMotivations to carry out a co-design workshop\nTips on how to organize a co-design workshop (e.g. define the topic, define the agenda, choose the data, prepare presentation and material for the workshop, define roles: who is the moderator?\nTips on how to moderate a co-design workshop\nActivities that can be performed during a co-design workshop (using INTERLINKERs such as “Map of the Actors”; “Personas”)\nExamples"
+      "id": "DEF_PROBLEM_3",
+      "name": {
+          "en": "Organize a co-design workshop",
+          "es": ""
+      },
+      "description": {
+          "en": "After the understanding of the problem and the brainstorming of the service ideas, the co-production team should elaborate concrete solutions for a given challenge. Co-design workshops are useful at this stage as collective activities organized to discuss design issues and choices. Enablers are required to suggest how the coproduction team can work together and with relevant actors (also considering the map of actors developed thanks to the INTERLINKER \u201cMap of actors\u201d) to start defining the service to be co-designed and co-delivered.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "Enablers supporting this problem item include descriptive text that explains the rationale and the benefits of performing co-design workshops  as part of a co-production process and template materials to guide organizing and managing the workshop.\nEnablers should cover:\nDefinition of a co-design workshop\nMotivations to carry out a co-design workshop\nTips on how to organize a co-design workshop (e.g. define the topic, define the agenda, choose the data, prepare presentation and material for the workshop, define roles: who is the moderator?\nTips on how to moderate a co-design workshop\nActivities that can be performed during a co-design workshop (using INTERLINKERs such as \u201cMap of the Actors\u201d; \u201cPersonas\u201d)\nExamples",
+          "es": ""
+      }
   },
   {
-    "id": "DEF_PROBLEM_4",
-    "name_en": "Define the interaction among users and service (Scenarios and User Journey)",
-    "coproduction": ["design.service_design"],
-    "description_en": "The co-production team may need guidance on how to define the interaction between the users and the service, reflecting on how a solution might be used by concrete users in a concrete context.",
-    "functionality_en": "Descriptive text that \nexplains the rationale and the benefits of clearly defining the interaction among users and a service before implementing it.\nsuggest tools that can be used to reach this goal, such as “Scenarios”, and “User  Journey”\nFor each method presented:\nbenefit of using it in a design process\nhow to use it\ntemplates\nExamples"
+      "id": "DEF_PROBLEM_4",
+      "name": {
+          "en": "Define the interaction among users and service (Scenarios and User Journey)",
+          "es": ""
+      },
+      "description": {
+          "en": "The co-production team may need guidance on how to define the interaction between the users and the service, reflecting on how a solution might be used by concrete users in a concrete context.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "Descriptive text that \nexplains the rationale and the benefits of clearly defining the interaction among users and a service before implementing it.\nsuggest tools that can be used to reach this goal, such as \u201cScenarios\u201d, and \u201cUser  Journey\u201d\nFor each method presented:\nbenefit of using it in a design process\nhow to use it\ntemplates\nExamples",
+          "es": ""
+      }
   },
   {
-    "id": "DEF_PROBLEM_5",
-    "name_en": "Define requirements and service specifications",
-    "coproduction": ["design.service_specification"],
-    "description_en": "The ideas and service design concepts need to be translated into formal requirements and service specifications to proceed with the implementation of the service. Guidance may be needed on how to collect, structure and communicate requirements and all the service specifications that clarify the objective of the service and how it should be developed",
-    "functionality_en": "The knowledge enablers addressing this problem item should provide descriptive text that \nexplains the rationale and the benefits of clearly defining how a system /service should work\nillustrates different approaches for specifying system requirements and service specification and the pros and cons of the different approaches\nexplains how to select the best approach based on the task, team composition and other factors \ncontains guidelines and templates on how requirements can be represented\ncontains guidelines and templates on how service specifications can be represented"
+      "id": "DEF_PROBLEM_5",
+      "name": {
+          "en": "Define requirements and service specifications",
+          "es": ""
+      },
+      "description": {
+          "en": "The ideas and service design concepts need to be translated into formal requirements and service specifications to proceed with the implementation of the service. Guidance may be needed on how to collect, structure and communicate requirements and all the service specifications that clarify the objective of the service and how it should be developed",
+          "es": ""
+      },
+      "functionality": {
+          "en": "The knowledge enablers addressing this problem item should provide descriptive text that \nexplains the rationale and the benefits of clearly defining how a system /service should work\nillustrates different approaches for specifying system requirements and service specification and the pros and cons of the different approaches\nexplains how to select the best approach based on the task, team composition and other factors \ncontains guidelines and templates on how requirements can be represented\ncontains guidelines and templates on how service specifications can be represented",
+          "es": ""
+      }
   },
   {
-    "id": "DEF_PROBLEM_6",
-    "name_en": "Content design",
-    "coproduction": ["design.service_specification.content_design"],
-    "description_en": "When defining a new public service, the co-production team needs to prepare adequate content. Guidance is needed on how to select and use the most appropriate language according to the users of the digital service and their skills.",
-    "functionality_en": "Enablers addressing this problem item should provide guidelines and  operational tools to create content, review it collaboratively and define the correct tone of voice with which to address users.\nExamples and templates to provide guidance in the good practice of using a shared approach to the creation and management of textual and multimedia content are required."
+      "id": "DEF_PROBLEM_6",
+      "name": {
+          "en": "Content design",
+          "es": ""
+      },
+      "description": {
+          "en": "When defining a new public service, the co-production team needs to prepare adequate content. Guidance is needed on how to select and use the most appropriate language according to the users of the digital service and their skills.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "Enablers addressing this problem item should provide guidelines and  operational tools to create content, review it collaboratively and define the correct tone of voice with which to address users.\nExamples and templates to provide guidance in the good practice of using a shared approach to the creation and management of textual and multimedia content are required.",
+          "es": ""
+      }
   },
   {
-    "id": "BUILD_PROBLEM_1",
-    "name_en": "User interface design",
-    "coproduction": ["design.service_specification", "build.technical_implementation"],
-    "description_en": "The implementation of the user interface should guarantee usability. Coproduction team members involved in the interface design should be aware of good practices for interface design in the domain of public services.",
-    "functionality_en": "Knowledge resources addressing this problem items should include:\nGuidelines and templates on User Interface Design\nGuidelines and templates to design usable UI"
+      "id": "BUILD_PROBLEM_1",
+      "name": {
+          "en": "User interface design",
+          "es": ""
+      },
+      "description": {
+          "en": "The implementation of the user interface should guarantee usability. Coproduction team members involved in the interface design should be aware of good practices for interface design in the domain of public services.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "Knowledge resources addressing this problem items should include:\nGuidelines and templates on User Interface Design\nGuidelines and templates to design usable UI",
+          "es": ""
+      }
   },
   {
-    "id": "BUILD_PROBLEM_2",
-    "name_en": "Implement accessible digital public services",
-    "coproduction": ["design.service_design", "build.technical_implementation", "build.service_implementation"],
-    "description_en": "When the public services are provided digitally in the form of Web sites or mobile applications, it is necessary that the service may be easily used by different categories of users, especially considering the people with disabilities. The services should be provided in a multi-channel manner, maximizing the\nexploitation by potentially any group of users or by the agents acting on their\nbehalf, and providing clear statements regarding the accessibility limits in the\ncurrent implementation.",
-    "functionality_en": "The functionalities expected to address this problem include in particular:\nthe proper ways to design, organize, structure and implement accessible user interfaces;\nrealization of reusable accessible general purpose components;\nthe ways to evaluate and certify the accessibility requirements compliance according to the existing normative regulations."
+      "id": "BUILD_PROBLEM_2",
+      "name": {
+          "en": "Implement accessible digital public services",
+          "es": ""
+      },
+      "description": {
+          "en": "When the public services are provided digitally in the form of Web sites or mobile applications, it is necessary that the service may be easily used by different categories of users, especially considering the people with disabilities. The services should be provided in a multi-channel manner, maximizing the\nexploitation by potentially any group of users or by the agents acting on their\nbehalf, and providing clear statements regarding the accessibility limits in the\ncurrent implementation.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "The functionalities expected to address this problem include in particular:\nthe proper ways to design, organize, structure and implement accessible user interfaces;\nrealization of reusable accessible general purpose components;\nthe ways to evaluate and certify the accessibility requirements compliance according to the existing normative regulations.",
+          "es": ""
+      }
   },
   {
-    "id": "BUILD_PROBLEM_3",
-    "name_en": "Open Source Software Licensing",
-    "coproduction": ["build.technical_implementation", "build.service_implementation"],
-    "description_en": "The EU and national legislation promote the use and adoption of Open Source software solutions as a way to reduce the development cost, to avoid the lock-in effect and to foster the adoption driven by Open Source communities. In other terms, Open Source is an enabler for the reusability principles underlying the European Interoperability Framework. Facing this problem, it is necessary to facilitate the selection, development, and maintenance of the Open Source software products.",
-    "functionality_en": "The functionalities expected to address this problem include in particular:\nUnderstanding different types of Open Source licenses, their limits and applicability;\nthe proper ways to manage the acquisition of the software products ensuring appropriate licensing;\nmethodological approach to the development of Open Source software in order to foster active public community and reuse;\nproper ways to maintain and support the evolution of the Open Source software solutions."
+      "id": "BUILD_PROBLEM_3",
+      "name": {
+          "en": "Open Source Software Licensing",
+          "es": ""
+      },
+      "description": {
+          "en": "The EU and national legislation promote the use and adoption of Open Source software solutions as a way to reduce the development cost, to avoid the lock-in effect and to foster the adoption driven by Open Source communities. In other terms, Open Source is an enabler for the reusability principles underlying the European Interoperability Framework. Facing this problem, it is necessary to facilitate the selection, development, and maintenance of the Open Source software products.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "The functionalities expected to address this problem include in particular:\nUnderstanding different types of Open Source licenses, their limits and applicability;\nthe proper ways to manage the acquisition of the software products ensuring appropriate licensing;\nmethodological approach to the development of Open Source software in order to foster active public community and reuse;\nproper ways to maintain and support the evolution of the Open Source software solutions.",
+          "es": ""
+      }
   },
   {
-    "id": "BUILD_PROBLEM_4",
-    "name_en": "Implementing Interoperable Digital Public Services",
-    "coproduction": ["build.technical_implementation", "build.service_implementation"],
-    "description_en": "European Interoperability Framework requires digital services to achieve an appropriate level of technical interoperability. When it comes to the implementation, it refers to the usage of standard communication protocols and data formats in order to guarantee the usage of the service in machine-to-machine communications, to facilitate software integration and re-use.",
-    "functionality_en": "The functionalities expected to address this problem include in particular:\nidentify, select, and implement appropriate interoperability patterns for interacting with the service;\ndesign and definition of suitable service interfaces (APIs) following the API-first approach;\ndocumentation and publishing of the interfaces."
+      "id": "BUILD_PROBLEM_4",
+      "name": {
+          "en": "Implementing Interoperable Digital Public Services",
+          "es": ""
+      },
+      "description": {
+          "en": "European Interoperability Framework requires digital services to achieve an appropriate level of technical interoperability. When it comes to the implementation, it refers to the usage of standard communication protocols and data formats in order to guarantee the usage of the service in machine-to-machine communications, to facilitate software integration and re-use.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "The functionalities expected to address this problem include in particular:\nidentify, select, and implement appropriate interoperability patterns for interacting with the service;\ndesign and definition of suitable service interfaces (APIs) following the API-first approach;\ndocumentation and publishing of the interfaces.",
+          "es": ""
+      }
   },
   {
-    "id": "BUILD_PROBLEM_5",
-    "name_en": "Implementing Secure and Trusted Digital Public Services",
-    "coproduction": ["build.technical_implementation", "build.service_implementation"],
-    "description_en": "Digital public services should ensure that the interactions with these services takes place in a secure and trustworthy environment, following the principle of security by design. Access control, user identification, data management should be made compliant with the corresponding regulations, including e.g., the Regulation and Directive for data protection, Regulation on electronic identification, etc.",
-    "functionality_en": "The functionalities expected to address this problem include in particular:\nimplementing secure communication protocols for service interaction;\nimplementation of the trusted and protected user identification and authentication;\nimplementation of secure storage of personal data;\nguarantee transparent, informed, and controllable management of personal data in line with GDPR requirements;\nguarantee security in operations (audit, monitoring, incident handling)."
+      "id": "BUILD_PROBLEM_5",
+      "name": {
+          "en": "Implementing Secure and Trusted Digital Public Services",
+          "es": ""
+      },
+      "description": {
+          "en": "Digital public services should ensure that the interactions with these services takes place in a secure and trustworthy environment, following the principle of security by design. Access control, user identification, data management should be made compliant with the corresponding regulations, including e.g., the Regulation and Directive for data protection, Regulation on electronic identification, etc.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "The functionalities expected to address this problem include in particular:\nimplementing secure communication protocols for service interaction;\nimplementation of the trusted and protected user identification and authentication;\nimplementation of secure storage of personal data;\nguarantee transparent, informed, and controllable management of personal data in line with GDPR requirements;\nguarantee security in operations (audit, monitoring, incident handling).",
+          "es": ""
+      }
   },
   {
-    "id": "BUILD_PROBLEM_6",
-    "name_en": "Engage and incentivise citizen participation to the implementation and co-delivery of public services",
-    "coproduction": ["build.technical_implementation", "build.service_implementation"],
-    "description_en": "One of the objectives for the open, transparent, and interoperable public services is to make them citizen-centric and enable the participation of citizens to the execution, improvement and evolution of the service. To achieve this, it is necessary to incentivise and make more attractive such participation and collaboration. A wide range of techniques, ranging from gamification, to feedback, and to rewards may apply",
-    "functionality_en": "The functionalities expected to address this problem include in particular:\nDefine the incentives, rewards, policies, and appropriate mechanisms for continuous end user engagement\nAdopt and implement gamification techniques for sustainable participation;\nImplement the solutions to monitor, collect, and certify the end user actions and contributions."
+      "id": "BUILD_PROBLEM_6",
+      "name": {
+          "en": "Engage and incentivise citizen participation to the implementation and co-delivery of public services",
+          "es": ""
+      },
+      "description": {
+          "en": "One of the objectives for the open, transparent, and interoperable public services is to make them citizen-centric and enable the participation of citizens to the execution, improvement and evolution of the service. To achieve this, it is necessary to incentivise and make more attractive such participation and collaboration. A wide range of techniques, ranging from gamification, to feedback, and to rewards may apply",
+          "es": ""
+      },
+      "functionality": {
+          "en": "The functionalities expected to address this problem include in particular:\nDefine the incentives, rewards, policies, and appropriate mechanisms for continuous end user engagement\nAdopt and implement gamification techniques for sustainable participation;\nImplement the solutions to monitor, collect, and certify the end user actions and contributions.",
+          "es": ""
+      }
   },
   {
-    "id": "BUILD_PROBLEM_7",
-    "name_en": "Cloud-ready digital public services",
-    "coproduction": ["build.technical_implementation", "build.service_implementation"],
-    "description_en": "In line with the Cloud-first principle promoted by EU Cloud Strategy, it is requested that the digital public services, when implemented as software solutions, adopt Cloud architectures and Cloud solutions to ensure their compatibility, portability, and scalability. In these settings, it is important to define and realize a proper Cloud strategy for the service implementation, appropriate Cloud-native architectures, different types of Cloud providers, as well as appropriate Cloud technologies and enablers.",
-    "functionality_en": "The functionalities expected to address this problem include in particular:\nIdentify and apply the appropriate Cloud adoption strategy for PA\nIdentify and apply the appropriate Cloud migration strategy for PA software\nImplementation of the new digital services following Cloud-native architectures\nAdoption and usage of Cloud technologies and solutions for the service development and provisioning"
+      "id": "BUILD_PROBLEM_7",
+      "name": {
+          "en": "Cloud-ready digital public services",
+          "es": ""
+      },
+      "description": {
+          "en": "In line with the Cloud-first principle promoted by EU Cloud Strategy, it is requested that the digital public services, when implemented as software solutions, adopt Cloud architectures and Cloud solutions to ensure their compatibility, portability, and scalability. In these settings, it is important to define and realize a proper Cloud strategy for the service implementation, appropriate Cloud-native architectures, different types of Cloud providers, as well as appropriate Cloud technologies and enablers.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "The functionalities expected to address this problem include in particular:\nIdentify and apply the appropriate Cloud adoption strategy for PA\nIdentify and apply the appropriate Cloud migration strategy for PA software\nImplementation of the new digital services following Cloud-native architectures\nAdoption and usage of Cloud technologies and solutions for the service development and provisioning",
+          "es": ""
+      }
   },
   {
-    "id": "BUILD_PROBLEM_8",
-    "name_en": "Re-use of CEF Building Blocks",
-    "coproduction": ["build.technical_implementation"],
-    "description_en": "Building Blocks are endorsed by the European Commission and ensure that digital services will be fully compatible with others on the market and become interoperable, EU-compliant final products. In the CEF approach definition, a Building Block is an open and reusable digital solution. The implementation of new public services should take advantage of CEF Building Blocks as much as possible.",
-    "functionality_en": "This problem is addressed by providing guidance on how to develop digital services in compliance  with EU regulations and CEF principles. Currently, there are eight Building Blocks: Big Data Test Infrastructure, Context Broker, eArchiving, eDelivery, eID, eInvoicing, eSignature and eTranslation. Information and reference to the Connecting Europe Facility (CEF) should be provided and given proper visibility and promotion."
+      "id": "BUILD_PROBLEM_8",
+      "name": {
+          "en": "Re-use of CEF Building Blocks",
+          "es": ""
+      },
+      "description": {
+          "en": "Building Blocks are endorsed by the European Commission and ensure that digital services will be fully compatible with others on the market and become interoperable, EU-compliant final products. In the CEF approach definition, a Building Block is an open and reusable digital solution. The implementation of new public services should take advantage of CEF Building Blocks as much as possible.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "This problem is addressed by providing guidance on how to develop digital services in compliance  with EU regulations and CEF principles. Currently, there are eight Building Blocks: Big Data Test Infrastructure, Context Broker, eArchiving, eDelivery, eID, eInvoicing, eSignature and eTranslation. Information and reference to the Connecting Europe Facility (CEF) should be provided and given proper visibility and promotion.",
+          "es": ""
+      }
   },
   {
-    "id": "BUILD_PROBLEM_9",
-    "name_en": "Collaborative knowledge sharing on public processes and services",
-    "coproduction": ["build.service_implementation"],
-    "description_en": "This problem item addresses the need of a digital service that supports the collaborative creation of effective descriptions of public services or processes that can be useful (i) for the daily work of people who provide information about the services to the public, (ii) for citizens and other end-users of the services, (iii) for other PAs that would like to replicate the services or the processes at their local level. The domain problem considered here encompasses the following user tasks: 1) Co-creation and co-delivery of information of public utility, e.g. ● creation and sharing of knowledge on public services ● creation and sharing of good practices on public services and processes ● collaborative process of information creation to ensure quality descriptions and active participation of all the stakeholders involved in the delivery of information ● collaborative process of information enrichment with citizens involvement 2) Structuring of information according to standard classifications and data models for public services and process descriptions 3) In some case the need may also be to co-create information that augments and better explains existing information sources and is shown in overlay 4) Monitoring of quality of information service",
-    "functionality_en": "In brief, the expected functionalities to solve the problem are the following:\n- Repository of shareable documents\n- Templates for creating good descriptions\n- Authentication\n- Manage access and edit rights of different user groups\n- Add annotations to web document parts or terms\n- Browse, search and filter through available documents, templates and annotations\n- Edit, comment and revise templates, document parts or annotations\n- Resolve comments and approve revisions and annotations\n- Versioning of documents\n- Underlying database\n- Multilinguality\n- Monitor the access to service descriptions\n- Customizable graphical layout to align with PA corporate image"
+      "id": "BUILD_PROBLEM_9",
+      "name": {
+          "en": "Collaborative knowledge sharing on public processes and services",
+          "es": ""
+      },
+      "description": {
+          "en": "This problem item addresses the need of a digital service that supports the collaborative creation of effective descriptions of public services or processes that can be useful (i) for the daily work of people who provide information about the services to the public, (ii) for citizens and other end-users of the services, (iii) for other PAs that would like to replicate the services or the processes at their local level. The domain problem considered here encompasses the following user tasks: 1) Co-creation and co-delivery of information of public utility, e.g. \u25cf creation and sharing of knowledge on public services \u25cf creation and sharing of good practices on public services and processes \u25cf collaborative process of information creation to ensure quality descriptions and active participation of all the stakeholders involved in the delivery of information \u25cf collaborative process of information enrichment with citizens involvement 2) Structuring of information according to standard classifications and data models for public services and process descriptions 3) In some case the need may also be to co-create information that augments and better explains existing information sources and is shown in overlay 4) Monitoring of quality of information service",
+          "es": ""
+      },
+      "functionality": {
+          "en": "In brief, the expected functionalities to solve the problem are the following:\n- Repository of shareable documents\n- Templates for creating good descriptions\n- Authentication\n- Manage access and edit rights of different user groups\n- Add annotations to web document parts or terms\n- Browse, search and filter through available documents, templates and annotations\n- Edit, comment and revise templates, document parts or annotations\n- Resolve comments and approve revisions and annotations\n- Versioning of documents\n- Underlying database\n- Multilinguality\n- Monitor the access to service descriptions\n- Customizable graphical layout to align with PA corporate image",
+          "es": ""
+      }
   },
   {
-    "id": "VAL_PROBLEM_1",
-    "name_en": "Define the evaluation criteria and KPIs",
-    "coproduction": ["evaluate.define_evaluation_criteria"],
-    "description_en": "Defining the evaluation criteria for a service to be co-delivered is a crucial step to monitor the quality of the co-designed and co-delivered service. Enablers addressing this problem should support the team in finding the most appropriate criteria, agree on them and use them in the evaluation of the service co-delivered",
-    "functionality_en": "The knowledge enablers supporting this problem item should include: \nGuidelines for the selection of KPIs for co-produced public services\nGuidelines on how to define the evaluation criteria according to the type of service \nSet of standard criteria templates that might be used to evaluate the service, like for example acceptance, usability, trust, quality of service:\nevaluation dimensions defined for digital services and summarized in standard evaluation questionnaires\nExamples of KPIs and evaluation criteria set by significant Use Cases"
+      "id": "VAL_PROBLEM_1",
+      "name": {
+          "en": "Define the evaluation criteria and KPIs",
+          "es": ""
+      },
+      "description": {
+          "en": "Defining the evaluation criteria for a service to be co-delivered is a crucial step to monitor the quality of the co-designed and co-delivered service. Enablers addressing this problem should support the team in finding the most appropriate criteria, agree on them and use them in the evaluation of the service co-delivered",
+          "es": ""
+      },
+      "functionality": {
+          "en": "The knowledge enablers supporting this problem item should include: \nGuidelines for the selection of KPIs for co-produced public services\nGuidelines on how to define the evaluation criteria according to the type of service \nSet of standard criteria templates that might be used to evaluate the service, like for example acceptance, usability, trust, quality of service:\nevaluation dimensions defined for digital services and summarized in standard evaluation questionnaires\nExamples of KPIs and evaluation criteria set by significant Use Cases",
+          "es": ""
+      }
   },
   {
-    "id": "VAL_PROBLEM_2",
-    "name_en": "Ongoing internal co-evaluation (Go-no go)",
-    "coproduction": ["evaluate.iterative_evaluation_of_viability_and_sustainability"],
-    "description_en": "This problem profile refers to the reflection strategy that supports the coproduction team in iteratively evaluating whether the service is feasible and viable in the longer run (sustainable) or not, and hence deciding if it is worth continuing the co-production effort. Enablers in this category should provide support to the team during different stages of the project, supporting them in reflecting and continuously evaluating the process and the outcomes of the collaborative process",
-    "functionality_en": "The enablers addressing this problem should provide guidance and tools on co-evaluation activities according to the stage of the process to be evaluated and should include:\nenablers for internal assessment of resources\nenablers for checking which are the competencies required for addressing the next phases of the process \nenablers to check competencies and skills internal to the group \n….\nMore detailed specifications for the desired knowledge and functionalities to solve this problem profile will be elaborated as research in WP2 on the governance models and co-production process progresses."
+      "id": "VAL_PROBLEM_2",
+      "name": {
+          "en": "Ongoing internal co-evaluation (Go-no go)",
+          "es": ""
+      },
+      "description": {
+          "en": "This problem profile refers to the reflection strategy that supports the coproduction team in iteratively evaluating whether the service is feasible and viable in the longer run (sustainable) or not, and hence deciding if it is worth continuing the co-production effort. Enablers in this category should provide support to the team during different stages of the project, supporting them in reflecting and continuously evaluating the process and the outcomes of the collaborative process",
+          "es": ""
+      },
+      "functionality": {
+          "en": "The enablers addressing this problem should provide guidance and tools on co-evaluation activities according to the stage of the process to be evaluated and should include:\nenablers for internal assessment of resources\nenablers for checking which are the competencies required for addressing the next phases of the process \nenablers to check competencies and skills internal to the group \n\u2026.\nMore detailed specifications for the desired knowledge and functionalities to solve this problem profile will be elaborated as research in WP2 on the governance models and co-production process progresses.",
+          "es": ""
+      }
   },
   {
-    "id": "VAL_PROBLEM_3",
-    "name_en": "Develop and test a proof of concept",
-    "coproduction": ["design.prototype"],
-    "description_en": "This problem addresses the need to validate a concept of a service or to verify the assumptions about a final product before developing it. Different types of proof of concepts can be used, according to the stage of service development and the type of service, whether it is a digital service or not.",
-    "functionality_en": "Enablers addressing this problem should provide guidance on the different approaches to develop and test a proof of concept, in which situations they could be useful, and  on how to use the insights coming from the test to improve the service before developing and co-delivering it.\nDescriptive text explaining what is a proof of concepts, which are the different types of proof of concepts that can be realized\nExamples and Templates of experience scenarios\nExamples andTemplates of Pen & paper mock-ups\nExamples and Templates of  Low-fidelity prototypes\nExamples of  MVP (minimum version of product)\nDescriptive text explaining how these artefacts might be used to validate and refine a concept of a new service"
+      "id": "VAL_PROBLEM_3",
+      "name": {
+          "en": "Develop and test a proof of concept",
+          "es": ""
+      },
+      "description": {
+          "en": "This problem addresses the need to validate a concept of a service or to verify the assumptions about a final product before developing it. Different types of proof of concepts can be used, according to the stage of service development and the type of service, whether it is a digital service or not.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "Enablers addressing this problem should provide guidance on the different approaches to develop and test a proof of concept, in which situations they could be useful, and  on how to use the insights coming from the test to improve the service before developing and co-delivering it.\nDescriptive text explaining what is a proof of concepts, which are the different types of proof of concepts that can be realized\nExamples and Templates of experience scenarios\nExamples andTemplates of Pen & paper mock-ups\nExamples and Templates of  Low-fidelity prototypes\nExamples of  MVP (minimum version of product)\nDescriptive text explaining how these artefacts might be used to validate and refine a concept of a new service",
+          "es": ""
+      }
   },
   {
-    "id": "VAL_PROBLEM_4",
-    "name_en": "Test the digital service with experts",
-    "coproduction": ["design.prototype"],
-    "description_en": "This problem addresses the need to perform an early evaluation of the digital service leveraging experts without involving end users.",
-    "functionality_en": "Enablers to support this problem item should include guidelines on how to conduct an Heuristic Evaluation (also Expert evaluation) and templates with the heuristics (principles) to follow to perform the test. The test can be conducted with early mock-ups as well with functioning systems."
+      "id": "VAL_PROBLEM_4",
+      "name": {
+          "en": "Test the digital service with experts",
+          "es": ""
+      },
+      "description": {
+          "en": "This problem addresses the need to perform an early evaluation of the digital service leveraging experts without involving end users.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "Enablers to support this problem item should include guidelines on how to conduct an Heuristic Evaluation (also Expert evaluation) and templates with the heuristics (principles) to follow to perform the test. The test can be conducted with early mock-ups as well with functioning systems.",
+          "es": ""
+      }
   },
   {
-    "id": "VAL_PROBLEM_5",
-    "name_en": "Monitoring and ongoing evaluation of the co-delivered service",
-    "coproduction": ["sustain.monitoring"],
-    "description_en": "This problem addresses the need to continuously monitor the service co-delivered in order to keep work on track, regularly review progress, make adjustments and changes if necessary.",
-    "functionality_en": "Enablers should provide guidance and tools  on how to monitor and evaluate services co-delivered.\nGuidelines on how to monitor services co-delivery \nSteps to follow to set up a monitoring process:\nReview the indicators you are going to measure, also according with KPIs (like number of users, users' satisfaction, other dimensions specifically related to co-production, ….)\nDecide if indicators should be measured through qualitative or quantitative methods\nCollect and analyse data\nList of tools that can be used to monitor the quality of the service co-delivered\nUse data to implement changes and improve service co-delivery"
+      "id": "VAL_PROBLEM_5",
+      "name": {
+          "en": "Monitoring and ongoing evaluation of the co-delivered service",
+          "es": ""
+      },
+      "description": {
+          "en": "This problem addresses the need to continuously monitor the service co-delivered in order to keep work on track, regularly review progress, make adjustments and changes if necessary.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "Enablers should provide guidance and tools  on how to monitor and evaluate services co-delivered.\nGuidelines on how to monitor services co-delivery \nSteps to follow to set up a monitoring process:\nReview the indicators you are going to measure, also according with KPIs (like number of users, users' satisfaction, other dimensions specifically related to co-production, \u2026.)\nDecide if indicators should be measured through qualitative or quantitative methods\nCollect and analyse data\nList of tools that can be used to monitor the quality of the service co-delivered\nUse data to implement changes and improve service co-delivery",
+          "es": ""
+      }
   }
 ]

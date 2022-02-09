@@ -1,0 +1,40 @@
+{
+    "name": "Focus Group Template Co-production Investigation",
+    "description": "<p class=\"fg-white\">This resource provides a skeleton to organize a focus group to investigate the co-production practices in a given organization. It addresses a series of questions about previous or current collaboration practices, the dynamics of collaboration (timeline, people, tools, communication channels), current KPIs, critical aspects and  desiderata.</p>",
+    "tags": [
+        "focus group",
+        "template",
+        "understand"
+    ],
+    "difficulty": "easy",
+    "targets": [
+        "all"
+    ],
+    "licence": "public_domain",
+    "problem_profiles": [
+        "VAL_PROBLEM_2"
+    ],
+    "types": [
+        "enhancing_services"
+    ],
+    "related_interlinkers": [
+        "Focus Group Guidelines"
+    ],
+    "administrative_scopes": [
+        "eu"
+    ],
+    "domain": "",
+    "process": "",
+    "constraints_and_limitations": "No special constraints apply",
+    "regulations_and_standards": "",
+    "overview_text": "This INTERLINKER is composed by a PowerPoint scheleton that can be downloaded, customized and used to facilitate a Focus Group.",
+    "instructions": "./interlinkers/knowledge/Focus-Group-Template-Co-production/instructions.md",
+    "representations": [
+        {
+            "form": "document_template",
+            "format": "editable_source_document",
+            "file": "./interlinkers/knowledge/Focus-Group-Template-Co-production/resource.pptx",
+            "softwareinterlinker": "googledrive"
+        }
+    ]
+}

@@ -1,0 +1,446 @@
+{
+    "prerequisites": [
+        "project_start", "engage"
+    ],
+    "name": {
+        "en": "Design",
+        "es": ""
+    },
+    "description": {
+        "en": "",
+        "es": ""
+    },
+    "objectives": [
+        {
+            "name": {
+                "en": "Focus the problem collaboratively",
+                "es": ""
+            },
+            "description": {
+                "en": "",
+                "es": ""
+            },
+            " problem_profiles": [],
+            "tasks": [
+                {
+                    "name": {
+                        "en": "Develop a shared language",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    " problem_profiles": [
+                        "ORG_PROBLEM_12"
+                    ]
+                },
+                {
+                    "name": {
+                        "en": "Collaboratively problem refinement",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    " problem_profiles": []
+                },
+                {
+                    "name": {
+                        "en": "Ideas collection for problem exploration and refinement",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    " problem_profiles": []
+                },{
+                    "name": {
+                        "en": "Sketch an initial idea of the service",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    " problem_profiles": []
+                },
+                {
+                    "name": {
+                        "en": "Collaborative agree on a service idea",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    " problem_profiles": []
+                },
+                {
+                    "name": {
+                        "en": "Define requirements and constraints for the service",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    " problem_profiles": []
+                }
+            ]
+        },
+        {
+            "name": {
+                "en": "Problem exploration",
+                "es": ""
+            },
+            "description": {
+                "en": "",
+                "es": ""
+            },
+            " problem_profiles": [
+                "UND_PROBLEM_1",
+                "UND_PROBLEM_3",
+                "UND_PROBLEM_4",
+                "UND_PROBLEM_6",
+                "DEF_PROBLEM_3"
+            ],
+            "tasks": [
+                {
+                    "name": {
+                        "en": "Collect data about users and their behavior",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    " problem_profiles": [
+                        "ORG_PROBLEM_6.2"
+                    ]
+                },
+                {
+                    "name": {
+                        "en": "Ecosystem mapping",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    " problem_profiles": []
+                }
+            ]
+        },
+        {
+            "name": {
+                "en": "Ideation",
+                "es": ""
+            },
+            "description": {
+                "en": "",
+                "es": ""
+            },
+            " problem_profiles": [
+                "ORG_PROBLEM_13", 
+                "ORG_PROBLEM_14",
+                "UND_PROBLEM_4",
+                "UND_PROBLEM_5",
+                "DEF_PROBLEM_2",
+                "DEF_PROBLEM_3"
+            ],
+            "tasks": [
+                {
+                    "name": {
+                        "en": "Engage relevant actors in the design",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    " problem_profiles": []
+                },
+                {
+                    "name": {
+                        "en": "Organize a braistorming",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    " problem_profiles": []
+                },
+                {
+                    "name": {
+                        "en": "Ideas crowdsourcing",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    " problem_profiles": []
+                }
+            ]
+        },
+        {
+            "name": {
+                "en": "Service design",
+                "es": ""
+            },
+            "description": {
+                "en": "",
+                "es": ""
+            },
+            " problem_profiles": [
+                "UND_PROBLEM_4",
+                "DEF_PROBLEM_3",
+                "DEF_PROBLEM_4",
+                "BUILD_PROBLEM_2"
+            ],
+            "tasks": [
+                {
+                    "name": {
+                        "en": "Define personas",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    " problem_profiles": []
+                },
+                {
+                    "name": {
+                        "en": "Define scenarios",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    " problem_profiles": []
+                },
+                {
+                    "name": {
+                        "en": "Define user journeys",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    " problem_profiles": []
+                }
+            ]
+        },
+        {
+            "name": {
+                "en": "Service specification",
+                "es": ""
+            },
+            "description": {
+                "en": "",
+                "es": ""
+            },
+            " problem_profiles": [
+                "DEF_PROBLEM_1",
+                "DEF_PROBLEM_5",
+                "BUILD_PROBLEM_1"
+            ],
+            "tasks": [
+                {
+                    "name": {
+                        "en": "Consider eu guidelines for public service developement",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    " problem_profiles": []
+                },
+                {
+                    "name": {
+                        "en": "User interface design",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    " problem_profiles": []
+                },
+                {
+                    "name": {
+                        "en": "Content design",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    " problem_profiles": [
+                        "DEF_PROBLEM_6"
+                    ]
+                },
+                {
+                    "name": {
+                        "en": "Service specification definition",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    " problem_profiles": []
+                },
+                {
+                    "name": {
+                        "en": "Data model design",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    " problem_profiles": []
+                },
+                {
+                    "name": {
+                        "en": "Software architecture and api design",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    " problem_profiles": []
+                }
+            ]
+        },
+        {
+            "name": {
+                "en": "Prototype",
+                "es": ""
+            },
+            "description": {
+                "en": "",
+                "es": ""
+            },
+            " problem_profiles": [
+                "VAL_PROBLEM_3",
+                "VAL_PROBLEM_4"
+            ],
+            "tasks": [
+                {
+                    "name": {
+                        "en": "Experience scenarios",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    " problem_profiles": []
+                },
+                {
+                    "name": {
+                        "en": "Mockups and lowfi prototypes",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    " problem_profiles": []
+                },
+                {
+                    "name": {
+                        "en": "Perform an heuristic evaluation",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    " problem_profiles": []
+                },
+                {
+                    "name": {
+                        "en": "Perform a test with users",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    " problem_profiles": []
+                }
+            ]
+        },
+        {
+            "name": {
+                "en": "Sustainability",
+                "es": ""
+            },
+            "description": {
+                "en": "",
+                "es": ""
+            },
+            " problem_profiles": [
+                "UND_PROBLEM_3"
+            ],
+            "tasks": [
+                {
+                    "name": {
+                        "en": "Evaluation of codesign",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    " problem_profiles": []
+                },
+                {
+                    "name": {
+                        "en": "Refine the preliminary business model",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    " problem_profiles": []
+                },
+                {
+                    "name": {
+                        "en": "Feasibility analysis",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    " problem_profiles": []
+                },
+                {
+                    "name": {
+                        "en": "Understand motivations and incentives",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    " problem_profiles": []
+                }
+            ]
+        }
+    ]
+}

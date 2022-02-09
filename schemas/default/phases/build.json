@@ -1,0 +1,132 @@
+{
+    "prerequisites": [
+        "design", "project_start", "engage"
+    ],
+    "name": {
+        "en": "Build",
+        "es": ""
+    },
+    "description": {
+        "en": "",
+        "es": ""
+    },
+    "objectives": [
+        {
+            "name": {
+                "en": "Technical implementation",
+                "es": ""
+            },
+            "description": {
+                "en": "",
+                "es": ""
+            },
+            "problem_profiles": [],
+            "tasks": [
+                {
+                    "name": {
+                        "en": "Technical implementation",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    "problem_profiles": [
+                        "BUILD_PROBLEM_2",
+                        "BUILD_PROBLEM_3",
+                        "BUILD_PROBLEM_4",
+                        "BUILD_PROBLEM_5",
+                        "BUILD_PROBLEM_6",
+                        "BUILD_PROBLEM_7",
+                        "BUILD_PROBLEM_8"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": {
+                "en": "Service implementation",
+                "es": ""
+            },
+            "description": {
+                "en": "",
+                "es": ""
+            },
+            "problem_profiles": [
+                "ORG_PROBLEM_13",
+                "ORG_PROBLEM_14"
+            ],
+            "tasks": [
+                {
+                    "name": {
+                        "en": "Service implementation",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    "problem_profiles": [
+                        "BUILD_PROBLEM_2",
+                        "BUILD_PROBLEM_3",
+                        "BUILD_PROBLEM_4",
+                        "BUILD_PROBLEM_5",
+                        "BUILD_PROBLEM_6",
+                        "BUILD_PROBLEM_7",
+                        "BUILD_PROBLEM_9"
+
+                    ]
+                }
+            ]
+        },
+        {
+            "name": {
+                "en": "Service codelivery",
+                "es": ""
+            },
+            "description": {
+                "en": "",
+                "es": ""
+            },
+            "problem_profiles": [
+                "ORG_PROBLEM_12",
+                "UND_PROBLEM_6"
+            ],
+            "tasks": [
+                {
+                    "name": {
+                        "en": "Identify all the actors engaged in the codelivery their role and responsability",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    "problem_profiles": []
+                },
+                {
+                    "name": {
+                        "en": "Coordinate the actors involved in the codelivery of the service",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    "problem_profiles": []
+                },
+                {
+                    "name": {
+                        "en": "Guarantee transparent communication about the service codelivered",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    "problem_profiles": []
+                }
+            ]
+        }
+    ]
+}

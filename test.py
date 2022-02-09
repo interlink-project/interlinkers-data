@@ -2,45 +2,31 @@ import importlib
 import json
 from pathlib import Path
 import sys
-
-class bcolors:
-    HEADER = "\033[95m"
-    OKBLUE = "\033[94m"
-    OKCYAN = "\033[96m"
-    OKGREEN = "\033[92m"
-    WARNING = "\033[93m"
-    FAIL = "\033[91m"
-    ENDC = "\033[0m"
-    BOLD = "\033[1m"
-    UNDERLINE = "\033[4m"
-
+from colors import bcolors
 
 # boolean to know if an exception have occurred somewhere
 general_error = False
 
 # search for schemas
-for schema_path in Path(".").glob("**/schema.py"):
+for schema_path in Path("./interlinkers").glob("**/schema.py"):
     schema_error = False
     str_path = str(schema_path)
-
+    pat = str(schema_path.parents[0]).replace("/", ".")
+    print(f"{pat}.{schema_path.stem}")
     # schema.py imported dynamically
     Schema = importlib.import_module(
-        f"{schema_path.parents[0]}.{schema_path.stem}"
+        f"{pat}.{schema_path.stem}"
     ).Schema
     parent_path = schema_path.parents[0]
 
+    print(
+        f"\n{bcolors.HEADER}{bcolors.BOLD}Checking {schema_path}{bcolors.ENDC}"
+    )
     # searches for metadata inside the parent directory where schema is located
     for metadata_path in Path(str(parent_path)).glob("**/metadata.json"):
         str_path = str(metadata_path)
         with open(str_path) as json_file:
-            print(
-                f"{bcolors.OKBLUE}################################################################################################"
-            )
-            print(f"## PROCESSING {bcolors.ENDC}{str_path}{bcolors.OKBLUE}")
-            print(
-                f"################################################################################################{bcolors.ENDC}"
-            )
-
+            print(f"{bcolors.OKBLUE}## PROCESSING {bcolors.ENDC}{str_path}{bcolors.OKBLUE}")
             # loads data from metadata.json and validates it
             data = json.load(json_file)
             try:
@@ -67,6 +53,34 @@ for schema_path in Path(".").glob("**/schema.py"):
         f"\n{bcolors.OKGREEN}All checks passed for {schema_path}!{bcolors.ENDC}"
     )
 
+
+# Validate coproduction tree
+from schemas.schemas import Phase, CoproductionSchema
+import os
+
+# convert pydantic schema to jsonschema that non-technical users can use to validate data easily
+with open(f"schemas/metadata_schema.json", "w") as f:
+    json.dump(CoproductionSchema.schema(), f, indent=4)
+
+with open(f"schemas/phase_schema.json", "w") as f:
+    json.dump(Phase.schema(), f, indent=4)
+
+print(
+        f"\n{bcolors.HEADER}{bcolors.BOLD}Checking coproduction tree{bcolors.ENDC}"
+    )
+
+for schema_metadata_path in Path("./schemas").glob("**/metadata.json"):
+    with open(str(schema_metadata_path)) as json_file:
+        print(f"{bcolors.OKBLUE}## PROCESSING {bcolors.ENDC}{schema_metadata_path}{bcolors.OKBLUE}")
+        parent = str(schema_metadata_path.parents[0])
+        phases = os.listdir(parent + "/phases")
+        CoproductionSchema(**json.load(json_file))
+        for phase in phases:
+            with open(parent + "/phases/" + phase) as phase_metadata:
+                Phase(**json.load(phase_metadata))
+        print(
+            f"\n{bcolors.OKGREEN}Phase {schema_metadata_path} valid!{bcolors.ENDC}"
+        )
 # if an exception has been thrown along the execution of the script, exit with error code
 if general_error:
     sys.exit(1)

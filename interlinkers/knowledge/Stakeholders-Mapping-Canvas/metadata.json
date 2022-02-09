@@ -1,0 +1,41 @@
+{
+    "name": "Stakeholders Mapping Canvas",
+    "description": "<p class=\"fg-white\">This resource supports the identification and selection of the stakeholders to engage in a co-production team.</p>",
+    "tags": [
+        "stakeholders mapping",
+        "canvas",
+        "understand"
+    ],
+    "difficulty": "easy",
+    "targets": [
+        "all"
+    ],
+    "licence": "public_domain",
+    "problem_profiles": [
+        "UND_PROBLEM_2"
+    ],
+    "types": [
+        "enhancing_services"
+    ],
+    "related_interlinkers": [
+        "Stakeholders Mapping Guidelines",
+        "Stakeholders Analysis Template"
+    ],
+    "administrative_scopes": [
+        "eu"
+    ],
+    "domain": "",
+    "process": "",
+    "constraints_and_limitations": "No special constraints apply",
+    "regulations_and_standards": "",
+    "overview_text": "This INTERLINKER is composed by a PowerPoint scheleton that can be downloaded, customized and used to facilitate discussions for stakeholders mapping.",
+    "instructions": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/instructions.md",
+    "representations": [
+        {
+            "form": "document_template",
+            "format": "editable_source_document",
+            "file": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/resource.pptx",
+            "softwareinterlinker": "googledrive"
+        }
+    ]
+}
