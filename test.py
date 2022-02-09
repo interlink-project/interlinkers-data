@@ -71,11 +71,12 @@ print(
 
 for schema_metadata_path in Path("./schemas").glob("**/metadata.json"):
     with open(str(schema_metadata_path)) as json_file:
-        print(f"{bcolors.OKBLUE}## PROCESSING {bcolors.ENDC}{schema_metadata_path}{bcolors.OKBLUE}")
+        print(f"{bcolors.OKBLUE}## PROCESSING {bcolors.ENDC}{schema_metadata_path}")
         parent = str(schema_metadata_path.parents[0])
         phases = os.listdir(parent + "/phases")
         CoproductionSchema(**json.load(json_file))
         for phase in phases:
+            print(f"\t{bcolors.OKCYAN}## PROCESSING {bcolors.ENDC}{phase}")
             with open(parent + "/phases/" + phase) as phase_metadata:
                 Phase(**json.load(phase_metadata))
         print(
