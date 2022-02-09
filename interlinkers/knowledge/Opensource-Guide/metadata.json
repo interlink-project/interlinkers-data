@@ -24,7 +24,7 @@
     "constraints_and_limitations": "No special constraints apply",
     "regulations_and_standards": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en",
     "overview_text": "Textual documents in the form of linked Web pages describing the guidelines and testing success criteria",
-    "instructions":"",
+    "instructions":"https://opensource.guide/",
     "representations": [
         {
             "form": "guidelines",

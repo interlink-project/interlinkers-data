@@ -1,0 +1,2 @@
+# How to use this INTERLINKER
+This interlink gives you the possibility to validate your o your team competencies in cloud computing. Checking the cloud computing competencies is a fundamental step n order to handle the switch between a premises service solution to a cloud service solution.

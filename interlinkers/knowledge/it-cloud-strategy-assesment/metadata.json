@@ -26,7 +26,7 @@
     "constraints_and_limitations": "No special constraints apply",
     "regulations_and_standards": "",
     "overview_text": "Questionaire in google calc format",
-    "instructions":"",
+    "instructions":"./interlinkers/knowledge/it-cloud-competences-assesment/instructions.md",
     "representations": [
         {
             "form": "guidelines",

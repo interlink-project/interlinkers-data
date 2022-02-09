@@ -24,7 +24,7 @@
     "constraints_and_limitations": "No special constraints apply",
     "regulations_and_standards": "",
     "overview_text": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
-    "instructions":"",
+    "instructions":"./interlinkers/knowledge/it-pa-minimum-security-measures/instructions.md",
     "representations": [
         {
             "form": "guidelines",

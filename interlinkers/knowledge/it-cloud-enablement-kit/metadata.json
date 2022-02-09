@@ -26,7 +26,7 @@
     "constraints_and_limitations": "No special constraints apply",
     "regulations_and_standards": "",
     "overview_text": "PDF document",
-    "instructions":"",
+    "instructions":"./interlinkers/knowledge/it-cloud-enablement-kit/instructions.json",
     "representations": [
         {
             "form": "guidelines",

@@ -1,0 +1,2 @@
+# How to use this INTERLINKER
+When a public administration decides to reuse software developed by other organizations, it must set up a correct management strategy for the new product. This interlinker specifies the guidelines to use.

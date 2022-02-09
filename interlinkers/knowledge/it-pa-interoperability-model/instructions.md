@@ -1,0 +1,2 @@
+# How to use this INTERLINKER
+It is important for a public administration to design and develop interoperable services. This interlinker describes the interoperability policies to be adopted in the Italian context.

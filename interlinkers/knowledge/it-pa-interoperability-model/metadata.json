@@ -29,12 +29,12 @@
     "constraints_and_limitations": "No special constraints apply",
     "regulations_and_standards": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en",
     "overview_text": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
-    "instructions":"",
+    "instructions":"./interlinkers/knowledge/it-guidelines-data-protection/instructions.md",
     "representations": [
         {
             "form": "guidelines",
             "format": "structured_format",
-            "file": "./knowledge/it-guidelines-data-protection/data.json",
+            "file": "./interlinkers/knowledge/it-guidelines-data-protection/data.json",
             "softwareinterlinker": "externalresourcemanager"
         }
     ]
