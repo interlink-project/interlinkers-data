@@ -70,10 +70,6 @@
                 "en": "",
                 "es": ""
             },
-            "problem_profiles": [
-                "UND_PROBLEM_3",
-                "VAL_PROBLEM_5"
-            ],
             "tasks": [
                 {
                     "name": {
