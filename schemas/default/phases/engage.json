@@ -31,11 +31,13 @@
                         "en": "",
                         "es": ""
                     },
-                    "problem_profiles": []
+                    "problem_profiles": [
+                        "UND_PROBLEM_2"
+                    ]
                 },
                 {
                     "name": {
-                        "en": "Map stakeholders analyse motivation skills expectations",
+                        "en": "Map stakeholders, analyse motivationM skills, expectations",
                         "es": "Mapear partes interesadas analizar motivación habilidades expectativas"
                     },
                     "description": {
@@ -73,6 +75,165 @@
                     ]
                 }
             ]
-        }
+        },
+        {
+            "name": {
+                "en": "Engage stakeholders",
+                "es": ""
+            },
+            "description": {
+                "en": "",
+                "es": ""
+            },
+            "problem_profiles": [
+                "ORG_PROBLEM_12",
+                "ORG_PROBLEM_13",
+                "ORG_PROBLEM_14"
+            ],
+            "tasks": [
+                {
+                    "name": {
+                        "en": "Prepare an engagement plan",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    "problem_profiles": [
+                        "ORG_PROBLEM_5"
+                    ]
+                },
+                {
+                    "name": {
+                        "en": "Create awareness and communication",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    "problem_profiles": [
+                        "ORG_PROBLEM_4",
+                        "ORG_PROBLEM_6.3"
+                    ]
+                },
+                {
+                    "name": {
+                        "en": "Communicate benefit for stakeholders",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    "problem_profiles": [
+                        "ORG_PROBLEM_4"
+                    ]
+                },
+                {
+                    "name": {
+                        "en": "Engage citizens in the co-production process",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    "problem_profiles": [
+                        "ORG_PROBLEM_10",
+                        "ORG_PROBLEM_11"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": {
+                "en": "Define legal and ethical framework",
+                "es": ""
+            },
+            "description": {
+                "en": "",
+                "es": ""
+            },
+            "problem_profiles": [],
+            "tasks": [
+                {
+                    "name": {
+                        "en": "Define a non-disclosure agreement (NDA)",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    "problem_profiles": []
+                },
+                {
+                    "name": {
+                        "en": "Define a partnership agreement",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    "problem_profiles": [
+                        "ORG_PROBLEM_7",
+                        "ORG_PROBLEM_8"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": {
+                "en": "Define data management plan",
+                "es": ""
+            },
+            "description": {
+                "en": "",
+                "es": ""
+            },
+            "problem_profiles": [
+                "ORG_PROBLEM_3",
+                "ORG_PROBLEM_9"
+            ],
+            "tasks": [
+                {
+                    "name": {
+                        "en": "Clarify the purpose for data collection",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    "problem_profiles": []
+                },
+                {
+                    "name": {
+                        "en": "Understand how the data flows",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    "problem_profiles": []
+                },
+                {
+                    "name": {
+                        "en": "Be aware of data impact",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    "problem_profiles": []
+                }
+            ]
+        }   
+
     ]
 }

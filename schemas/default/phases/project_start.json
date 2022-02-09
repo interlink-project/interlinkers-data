@@ -22,7 +22,7 @@
             "tasks": [
                 {
                     "name": {
-                        "en": "Project aim description",
+                        "en": "Specify the main aim of the project",
                         "es": "Descripción de la misión del proyecto"
                     },
                     "description": {

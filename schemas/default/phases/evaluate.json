@@ -1,0 +1,164 @@
+{
+    "prerequisites": [
+        "project_start"
+    ],
+    "name": {
+        "en": "Evaluate",
+        "es": ""
+    },
+    "description": {
+        "en": "",
+        "es": ""
+    },
+    "objectives": [
+        {
+            "name": {
+                "en": "Define evaluation creiteria",
+                "es": ""
+            },
+            "description": {
+                "en": "",
+                "es": ""
+            },
+            "problem_profiles": [
+                "VAL_PROBLEM_1"
+            ],
+            "tasks": [
+                {
+                    "name": {
+                        "en": "Set evaluation criteria",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    "problem_profiles": []
+                },
+                {
+                    "name": {
+                        "en": "Define KPIs",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    "problem_profiles": []
+                }
+            ]
+        },
+        {
+            "name": {
+                "en": "Iterative evaluation of viability and sustainability",
+                "es": ""
+            },
+            "description": {
+                "en": "",
+                "es": ""
+            },
+            "problem_profiles": [
+                "ORG_PROBLEM_2",
+                "VAL_PROBLEM_2"
+            ],
+            "tasks": [
+                {
+                    "name": {
+                        "en": "Define preliminary ideas for sustainability business model",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    "problem_profiles": []
+                },
+                {
+                    "name": {
+                        "en": "Adjust the project workplan",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    "problem_profiles": []
+                }
+            ]
+        },
+        {
+            "name": {
+                "en": "Co-evaluation",
+                "es": ""
+            },
+            "description": {
+                "en": "",
+                "es": ""
+            },
+            "problem_profiles": [
+                "ORG_PROBLEM_6.2", "UND_PROBLEM_3"
+            ],
+            "tasks": [
+                {
+                    "name": {
+                        "en": "Get feedback from funders and stakeholders",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    "problem_profiles": []
+                },
+                {
+                    "name": {
+                        "en": "Usability acceptance ease of use evaluation",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    "problem_profiles": []
+                }
+            ]
+        },
+        {
+            "name": {
+                "en": "Team formation for next step",
+                "es": ""
+            },
+            "description": {
+                "en": "",
+                "es": ""
+            },
+            "problem_profiles": [
+                "ORG_PROBLEM_8"
+            ],
+            "tasks": [
+                {
+                    "name": {
+                        "en": "Revise the map of stakeholders",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    "problem_profiles": []
+                },
+                {
+                    "name": {
+                        "en": "Revise engagement methods",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    "problem_profiles": []
+                }
+            ]
+        }
+    ]
+}

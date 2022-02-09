@@ -1,0 +1,92 @@
+{
+    "prerequisites": [
+        "build", "engage", "design", "project_start"
+    ],
+    "name": {
+        "en": "Sustain",
+        "es": ""
+    },
+    "description": {
+        "en": "",
+        "es": ""
+    },
+    "objectives": [
+        {
+            "name": {
+                "en": "Handover",
+                "es": ""
+            },
+            "description": {
+                "en": "",
+                "es": ""
+            },
+            "problem_profiles": [],
+            "tasks": [
+                {
+                    "name": {
+                        "en": "Handover",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    "problem_profiles": [
+                        "ORG_PROBLEM_7"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": {
+                "en": "Maintenance",
+                "es": ""
+            },
+            "description": {
+                "en": "",
+                "es": ""
+            },
+            "problem_profiles": [],
+            "tasks": [
+                {
+                    "name": {
+                        "en": "Task distribution for maintenance, contracts regulation, data management archiving",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    "problem_profiles": []
+                }
+            ]
+        },
+        {
+            "name": {
+                "en": "Monitoring",
+                "es": ""
+            },
+            "description": {
+                "en": "",
+                "es": ""
+            },
+            "problem_profiles": [
+                "UND_PROBLEM_3",
+                "VAL_PROBLEM_5"
+            ],
+            "tasks": [
+                {
+                    "name": {
+                        "en": "Monitoring ongoing evaluation, periodic evaluations with stakeholders",
+                        "es": ""
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    "problem_profiles": []
+                }
+            ]
+        }
+    ]
+}
