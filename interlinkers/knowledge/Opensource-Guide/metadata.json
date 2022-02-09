@@ -13,15 +13,18 @@
         "BUILD_PROBLEM_3"
     ],
     "types": [
-        "DIGITALTEXTUAL_GUIDELINES_AND_BEST_PRACTICES_FOR_SOFTWARE_LICENSING",
-        "DIGITAL_TEXTUAL_GUIDELINES_AND_BEST_PRACTICES_FOR_OSS_DEVELOPMENT_AND_MAINTENANCE"
+        "enabling_services",
+        "enabling_services;implementing_software_and_artifacts"
     ],
     "administrative_scopes": [
-        "eu"
+        "eu",
+        "national",
+        "local"
     ],
     "constraints_and_limitations": "No special constraints apply",
     "regulations_and_standards": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en",
     "overview_text": "Textual documents in the form of linked Web pages describing the guidelines and testing success criteria",
+    "instructions":"",
     "representations": [
         {
             "form": "guidelines",

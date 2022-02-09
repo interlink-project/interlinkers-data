@@ -15,10 +15,10 @@
         "BUILD_PROBLEM_3"
     ],
     "types": [
-        "DIGITAL_TEXTUAL_GUIDELINES_AND_BEST_PRACTICES_FOR_OSS_DEVELOPMENT_AND_MAINTENANCE"
+      "enabling_services",
+      "enabling_services;implementing_software_and_artifacts"
     ],
     "administrative_scopes": [
-        "it",
         "national",
         "local"
     ],
@@ -26,10 +26,11 @@
     "constraints_and_limitations": "No special constraints apply",
     "regulations_and_standards": "",
     "overview_text": "Questionaire in google calc format",
+    "instructions":"",
     "representations": [
         {
             "form": "guidelines",
-            "format": "google calc format",
+            "format": "editable_source_document",
             "file": "./knowledge/it-cloud-competences-assesment/data.json",
             "softwareinterlinker": "externalresourcemanager"
         }
