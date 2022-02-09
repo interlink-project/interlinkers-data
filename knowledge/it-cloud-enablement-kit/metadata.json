@@ -1,0 +1,37 @@
+{
+    "name": "Cloud Enablement Kit (in Italian)",
+    "description": "<p>This resource describes the Cloud Enablement strategy outlined by AGID and Team Digitale (in Italian). </p>",
+    "tags": [
+        "cloud", 
+        "services",
+        "security"
+    ],
+    "difficulty": "difficult",
+    "targets": [
+        "all"
+    ],
+    "licence": "permissive",
+    "problem_profiles": [
+        "BUILD_PROBLEM_3"
+    ],
+    "types": [
+        "DIGITAL_TEXTUAL_GUIDELINES_AND_BEST_PRACTICES_FOR_OSS_DEVELOPMENT_AND_MAINTENANCE"
+    ],
+    "administrative_scopes": [
+        "it",
+        "national",
+        "local"
+    ],
+    "related_interlinkers": [],
+    "constraints_and_limitations": "No special constraints apply",
+    "regulations_and_standards": "",
+    "overview_text": "PDF document",
+    "representations": [
+        {
+            "form": "guidelines",
+            "format": "pdf",
+            "file": "./knowledge/it-cloud-enablement-kit/data.json",
+            "softwareinterlinker": "externalresourcemanager"
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "name": "Open Source guides",
+    "description": "<p class=\"fg-white\">a collection of resources for individuals, communities, and companies who want to learn how to run and contribute to an open source project.</p>",
+    "tags": [
+        "open source software"
+    ],
+    "difficulty": "very_easy",
+    "targets": [
+        "all"
+    ],
+    "licence": "public_domain",
+    "problem_profiles": [
+        "BUILD_PROBLEM_3"
+    ],
+    "types": [
+        "DIGITALTEXTUAL_GUIDELINES_AND_BEST_PRACTICES_FOR_SOFTWARE_LICENSING",
+        "DIGITAL_TEXTUAL_GUIDELINES_AND_BEST_PRACTICES_FOR_OSS_DEVELOPMENT_AND_MAINTENANCE"
+    ],
+    "administrative_scopes": [
+        "eu"
+    ],
+    "constraints_and_limitations": "No special constraints apply",
+    "regulations_and_standards": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en",
+    "overview_text": "Textual documents in the form of linked Web pages describing the guidelines and testing success criteria",
+    "representations": [
+        {
+            "form": "guidelines",
+            "format": "structured_format",
+            "file": "./knowledge/Opensource-Guide/data.json",
+            "softwareinterlinker": "externalresourcemanager"
+        }
+    ]
+}

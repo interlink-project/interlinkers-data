@@ -1,0 +1,37 @@
+{
+    "name": "EDPB Data Protection Guidelines",
+    "description": "<p>These Guidelines give general guidance on the obligation of Data Protection by Design and by Default (henceforth “DPbDD”) set forth in Article 25 in the GDPR.</p>",
+    "tags": [
+        "GDPR", 
+        "privacy",
+        "security"
+    ],
+    "difficulty": "difficult",
+    "targets": [
+        "all"
+    ],
+    "licence": "permissive",
+    "problem_profiles": [
+        "BUILD_PROBLEM_3"
+    ],
+    "types": [
+        "DIGITAL_TEXTUAL_GUIDELINES_AND_BEST_PRACTICES_FOR_OSS_DEVELOPMENT_AND_MAINTENANCE"
+    ],
+    "administrative_scopes": [
+        "eu",
+        "national",
+        "local"
+    ],
+    "related_interlinkers": [],
+    "constraints_and_limitations": "No special constraints apply",
+    "regulations_and_standards": "<ul><li>Article 70 (1e) of the Regulation 2016/679/EU of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC], (hereinafter \"GDPR\")</li> <li>EEA Agreement and in particular to Annex XI and Protocol 37 thereof, as amended by the Decision of the EEA joint Committee No 154/2018 of 6 July 2018,</li><li>Article 12 and Article 22 of its Rules of Procedure</li></ul>",
+    "overview_text": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
+    "representations": [
+        {
+            "form": "guidelines",
+            "format": "pdf",
+            "file": "./knowledge/guidelines-data-protection/data.json",
+            "softwareinterlinker": "externalresourcemanager"
+        }
+    ]
+}

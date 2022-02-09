@@ -1,0 +1,35 @@
+{
+    "name": "AgID Minimum Security Measures for Public Administration. ",
+    "description": "<p>This resource describes the minimum ICT security measures issued by AgID aim at countering the most frequent cyber threats to the Italian public administration.</p>",
+    "tags": [
+        "security"
+    ],
+    "difficulty": "difficult",
+    "targets": [
+        "all"
+    ],
+    "licence": "permissive",
+    "problem_profiles": [
+        "BUILD_PROBLEM_3"
+    ],
+    "types": [
+        "DIGITAL_TEXTUAL_GUIDELINES_AND_BEST_PRACTICES_FOR_OSS_DEVELOPMENT_AND_MAINTENANCE"
+    ],
+    "administrative_scopes": [
+        "it",
+        "national",
+        "local"
+    ],
+    "related_interlinkers": [],
+    "constraints_and_limitations": "No special constraints apply",
+    "regulations_and_standards": "",
+    "overview_text": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
+    "representations": [
+        {
+            "form": "guidelines",
+            "format": "structured_format",
+            "file": "./knowledge/it-pa-minimum-security-measures/data.json",
+            "softwareinterlinker": "externalresourcemanager"
+        }
+    ]
+}
