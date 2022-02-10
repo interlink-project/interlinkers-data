@@ -57,6 +57,7 @@ const CoproductionprocessCreate = ({ teams = [], onCreate }) => {
     if (activeStep < 1) {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     } else {
+      setLoading(true)
       coproductionProcessesApi.create({
         name,
         description,
@@ -64,15 +65,18 @@ const CoproductionprocessCreate = ({ teams = [], onCreate }) => {
       }).then(res => {
         if (!logotype) {
           sendOnCreate(res.data)
+          setLoading(false)
         } else {
           coproductionProcessesApi.setFile(res.data.id, "logotype", logotype).then(res2 => {
             sendOnCreate(res2.data)
           }).catch(() => {
             sendOnCreate(res.data)
-          })
+          }).finally(() => setLoading(false))
         }
 
-      }).catch(err => console.log(err))
+      }).catch(err => { 
+        console.log(err)
+        setLoading(false) })
     }
   };
 
@@ -165,8 +169,8 @@ const CoproductionprocessCreate = ({ teams = [], onCreate }) => {
               justifyContent="center"
             >
 
-              {team && <AvatarGroup max={6}>
-                <Avatar src={getImageUrl("coproduction", team.logotype)} />
+              {team && <AvatarGroup max={4} sx={{m: 1, p:1}}>
+              <Avatar src={getImageUrl("coproduction", team.logotype)} />
                 {team && team.memberships.map(member => <Avatar key={member.id} src={member.picture} />)}
 
               </AvatarGroup>}
@@ -202,10 +206,10 @@ const CoproductionprocessCreate = ({ teams = [], onCreate }) => {
             activeStep={activeStep}
             sx={{ flexGrow: 1 }}
             nextButton={
-              <Button size="small" onClick={handleNext} disabled={activeStep === 1 && !teamId}>
+              <LoadingButton loading={loading} size="small" onClick={handleNext} disabled={activeStep === 1 && !teamId}>
                 {activeStep === 1 ? "Create" : "Next"}
                 <KeyboardArrowRight />
-              </Button>
+              </LoadingButton>
             }
             backButton={
               <Button size="small" onClick={handleBack} disabled={activeStep === 0}>

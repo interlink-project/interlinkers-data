@@ -36,14 +36,14 @@ const ProcessSidebar = (props) => {
       title: "",
       items: [
         {
-          title: 'Overview',
-          path: `/dashboard/coproductionprocesses/${processId}/overview`,
-          icon: <Dashboard />
-        },
-        {
           title: 'Repository',
           path: `/dashboard/coproductionprocesses/${processId}/repository`,
           icon: <FolderOpen />
+        },
+        {
+          title: 'Overview',
+          path: `/dashboard/coproductionprocesses/${processId}/overview`,
+          icon: <Dashboard />
         },
         {
           title: 'Team',

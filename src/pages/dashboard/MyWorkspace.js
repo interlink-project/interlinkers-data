@@ -150,7 +150,7 @@ const MyWorkspace = () => {
                   {loadingProcesses && <LoadingItems />}
                   {processes.map(process => (
                     <React.Fragment key={process.id}>
-                      <ListItem alignItems="flex-start" button component={RouterLink} to={`/dashboard/coproductionprocesses/${process.id}`}>
+                      <ListItem alignItems="flex-start" button component={RouterLink} to={`/dashboard/coproductionprocesses/${process.id}/repository`}>
                         <ListItemAvatar>
                           <Avatar alt={process.name} src={getImageUrl("coproduction", process.logotype)} />
                         </ListItemAvatar>

@@ -41,10 +41,9 @@ import MainSkeleton from 'pages/dashboard/coproductionprocesses/Tabs/MainSkeleto
 import { getImageUrl } from 'axiosInstance';
 
 const tabs = [
+  { label: 'Repository', value: 'repository' },
   { label: 'Overview', value: 'overview' },
   { label: 'Team', value: 'team' },
-  { label: 'Repository', value: 'repository' },
-  
 ];
 
 /*{ label: 'Workplan', value: 'workplan' },
@@ -69,7 +68,7 @@ function TabPanel(props) {
 }
 
 const CoproductionProcessProfile = () => {
-  let { processId, tab = "overview" } = useParams();
+  let { processId, tab = "repository" } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const mounted = useMounted();
@@ -140,15 +139,16 @@ const CoproductionProcessProfile = () => {
     </Tabs></Card>
 
   const Content = () => <Card >
+    <TabPanel value={tab} index="repository">
+      <Repository />
+    </TabPanel>
     <TabPanel value={tab} index="overview">
       <OverviewTab />
     </TabPanel>
     <TabPanel value={tab} index="team">
       <TeamTab />
     </TabPanel>
-    <TabPanel value={tab} index="repository">
-      <Repository />
-    </TabPanel>
+    
   </Card>
 
   const ContentSkeleton = () => loading || !process ? <MainSkeleton /> : <Content />
