@@ -1,4 +1,3 @@
 pydantic
-slugify
-unicode
+python3-slugify
 # jsonschema
