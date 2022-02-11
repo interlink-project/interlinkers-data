@@ -1,6 +1,12 @@
 {
-    "name": "Open Source guides",
-    "description": "<p class=\"fg-white\">a collection of resources for individuals, communities, and companies who want to learn how to run and contribute to an open source project.</p>",
+    "name": {
+        "en": "Open Source guides",
+        "es": ""
+    },
+    "description": {
+        "en": "<p class=\"fg-white\">a collection of resources for individuals, communities, and companies who want to learn how to run and contribute to an open source project.</p>",
+        "es": ""
+    },
     "tags": [
         "open source software"
     ],
@@ -21,16 +27,27 @@
         "national",
         "local"
     ],
-    "constraints_and_limitations": "No special constraints apply",
-    "regulations_and_standards": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en",
-    "overview_text": "Textual documents in the form of linked Web pages describing the guidelines and testing success criteria",
-    "instructions":"https://opensource.guide/",
+    "constraints_and_limitations": {
+        "en": "No special constraints apply",
+        "es": ""
+    },
+    "regulations_and_standards": {
+        "en": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en",
+        "es": ""
+    },
+    "overview_text": {
+        "en": "Textual documents in the form of linked Web pages describing the guidelines and testing success criteria",
+        "es": ""
+    },
+    "instructions": "https://opensource.guide/",
     "representations": [
         {
             "form": "guidelines",
             "format": "structured_format",
             "file": "./interlinkers/knowledge/Opensource-Guide/data.json",
-            "softwareinterlinker": "externalresourcemanager"
+            "softwareinterlinker": "externalresourcemanager",
+            "language": "en"
         }
-    ]
+    ],
+    "reference": "open-source-guides"
 }

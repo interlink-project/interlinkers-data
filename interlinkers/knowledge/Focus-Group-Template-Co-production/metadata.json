@@ -1,6 +1,12 @@
 {
-    "name": "Focus Group Template Co-production Investigation",
-    "description": "<p class=\"fg-white\">This resource provides a skeleton to organize a focus group to investigate the co-production practices in a given organization. It addresses a series of questions about previous or current collaboration practices, the dynamics of collaboration (timeline, people, tools, communication channels), current KPIs, critical aspects and  desiderata.</p>",
+    "name": {
+        "en": "Focus Group Template Co-production Investigation",
+        "es": ""
+    },
+    "description": {
+        "en": "<p class=\"fg-white\">This resource provides a skeleton to organize a focus group to investigate the co-production practices in a given organization. It addresses a series of questions about previous or current collaboration practices, the dynamics of collaboration (timeline, people, tools, communication channels), current KPIs, critical aspects and  desiderata.</p>",
+        "es": ""
+    },
     "tags": [
         "focus group",
         "template",
@@ -25,16 +31,27 @@
     ],
     "domain": "",
     "process": "",
-    "constraints_and_limitations": "No special constraints apply",
-    "regulations_and_standards": "",
-    "overview_text": "This INTERLINKER is composed by a PowerPoint scheleton that can be downloaded, customized and used to facilitate a Focus Group.",
+    "constraints_and_limitations": {
+        "en": "No special constraints apply",
+        "es": ""
+    },
+    "regulations_and_standards": {
+        "en": "",
+        "es": ""
+    },
+    "overview_text": {
+        "en": "This INTERLINKER is composed by a PowerPoint scheleton that can be downloaded, customized and used to facilitate a Focus Group.",
+        "es": ""
+    },
     "instructions": "./interlinkers/knowledge/Focus-Group-Template-Co-production/instructions.md",
     "representations": [
         {
             "form": "document_template",
             "format": "editable_source_document",
             "file": "./interlinkers/knowledge/Focus-Group-Template-Co-production/resource.pptx",
-            "softwareinterlinker": "googledrive"
+            "softwareinterlinker": "googledrive",
+            "language": "en"
         }
-    ]
+    ],
+    "reference": "focus-group-template-co-production-investigation"
 }

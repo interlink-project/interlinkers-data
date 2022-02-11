@@ -61,14 +61,14 @@ class AdministrativeScopes(Enum):
 
 
 class InterlinkerSchema(WithProblemProfiles, extra=Extra.forbid):
-    name: str
+    name: dict
     # FOR 1
     # A name for the INTERLINKER.
     # This input will be:
     # - Shown on the platform interface in the page showing the details of the INTERLINKER
     # - Used for searching/browsing the catalogue of INTERLINKERS by name
 
-    description: str
+    description: dict
     # FOR 1
     # Textual description of the INTERLINKER, its functionality, usage, etc.
     # This input will be:
@@ -126,7 +126,7 @@ class InterlinkerSchema(WithProblemProfiles, extra=Extra.forbid):
     # FOR 2
     # This field describes the governance model for which the INTERLINKER is particularly suitable.
 
-    constraints_and_limitations: str
+    constraints_and_limitations: dict
     # FOR 1
     # Specific requirements and properties constraining the usage and exploitation of the INTERLINKER
     # This input will be:
@@ -134,7 +134,7 @@ class InterlinkerSchema(WithProblemProfiles, extra=Extra.forbid):
     # - (To be decided) Shown on the platform interface in the page showing the details of the INTERLINKER
     # - (To be decided) Used by the Wizard algorithms for intelligent filtering and recommendation
 
-    regulations_and_standards: Optional[str]
+    regulations_and_standards: Optional[dict]
     # FOR 1
     # Legal and technical context where the INTERLINKER operates, as a set of relevant, normative acts, policies, standards, and specification the INTERLINKER adheres to.
     # This input will be:
@@ -146,6 +146,7 @@ class InterlinkerSchema(WithProblemProfiles, extra=Extra.forbid):
     # In the initial specification of INTERLINKERS this field will be defined as textual, to allow for more freedom in the description.
     # To be further evaluated which types of standard classifications will be used as reference for a more constrained filling of this field.
 
-    overview_text: Optional[str]
+    overview_text: Optional[dict]
     # FOR 2
     # Explanation of what is made available for user interaction.
+    reference: str

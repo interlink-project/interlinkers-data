@@ -1,6 +1,6 @@
 {
     "prerequisites": [
-        "design", "project_start", "engage"
+        "phase-design"
     ],
     "name": {
         "en": "Build",

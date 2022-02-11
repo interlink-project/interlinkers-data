@@ -1,6 +1,12 @@
 {
-    "name": " AgID guidelines for the development of secure software (in Italian)",
-    "description": "<p>This resource describes the guidelines for the development of secure software in the public administration</p>",
+    "name": {
+        "en": " AgID guidelines for the development of secure software (in Italian)",
+        "es": ""
+    },
+    "description": {
+        "en": "<p>This resource describes the guidelines for the development of secure software in the public administration</p>",
+        "es": ""
+    },
     "tags": [
         "security"
     ],
@@ -21,16 +27,27 @@
         "local"
     ],
     "related_interlinkers": [],
-    "constraints_and_limitations": "No special constraints apply",
-    "regulations_and_standards": "",
-    "overview_text": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
-    "instructions":"./interlinkers/knowledge/it-pa-guidelines-for-secure-software/instructions.md",
+    "constraints_and_limitations": {
+        "en": "No special constraints apply",
+        "es": ""
+    },
+    "regulations_and_standards": {
+        "en": "",
+        "es": ""
+    },
+    "overview_text": {
+        "en": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
+        "es": ""
+    },
+    "instructions": "./interlinkers/knowledge/it-pa-guidelines-for-secure-software/instructions.md",
     "representations": [
         {
             "form": "guidelines",
             "format": "structured_format",
             "file": "./interlinkers/knowledge/it-pa-guidelines-for-secure-software/data.json",
-            "softwareinterlinker": "externalresourcemanager"
+            "softwareinterlinker": "externalresourcemanager",
+            "language": "en"
         }
-    ]
+    ],
+    "reference": "agid-guidelines-for-the-development-of-secure-software-in-italian"
 }

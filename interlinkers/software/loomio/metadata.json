@@ -1,23 +1,48 @@
 {
-    "name": "Loomio",
-    "description": "<p>Loomio is an Open Source solution that offers a workspace for conversation, sharing information and opinions, making proposals, deciding actions and achieving outcomes. With Loomio it is possible to</p><ul><li>start and organize discussions and keep record of participation and involvement;</li><li>manage collaborative decisions through different forms of polls, surveys, etc;</li><li>enable collaborating voting around ideas and proposal under discussion.</li></ul>",
+    "name": {
+        "en": "Loomio",
+        "es": ""
+    },
+    "description": {
+        "en": "<p>Loomio is an Open Source solution that offers a workspace for conversation, sharing information and opinions, making proposals, deciding actions and achieving outcomes. With Loomio it is possible to</p><ul><li>start and organize discussions and keep record of participation and involvement;</li><li>manage collaborative decisions through different forms of polls, surveys, etc;</li><li>enable collaborating voting around ideas and proposal under discussion.</li></ul>",
+        "es": ""
+    },
     "tags": [
         "decision making",
         "idea management",
         "voting"
     ],
     "difficulty": "medium",
-    "targets": ["all"],
+    "targets": [
+        "all"
+    ],
     "licence": "copyleft",
     "problem_profiles": [
-        "UND_PROBLEM_1", "UND_PROBLEM_5", "DEF_PROBLEM_2"
+        "UND_PROBLEM_1",
+        "UND_PROBLEM_5",
+        "DEF_PROBLEM_2"
     ],
-    "types": ["enabling_services;operation_services"],
+    "types": [
+        "enabling_services;operation_services"
+    ],
     "related_interlinkers": [],
-    "administrative_scopes": ["eu", "national", "local"],
-    "constraints_and_limitations": "None",
-    "regulations_and_standards": "None",
-    "overview_text": "Web-based tool for collaborative decision making, discussion. and idea management",
+    "administrative_scopes": [
+        "eu",
+        "national",
+        "local"
+    ],
+    "constraints_and_limitations": {
+        "en": "None",
+        "es": ""
+    },
+    "regulations_and_standards": {
+        "en": "None",
+        "es": ""
+    },
+    "overview_text": {
+        "en": "Web-based tool for collaborative decision making, discussion. and idea management",
+        "es": ""
+    },
     "supported_by": "on_premise",
     "auth_method": "header",
     "deployment_manual": "https://github.com/interlink-project/interlink-loomio",
@@ -29,5 +54,6 @@
     "assets_clonable": false,
     "path": "loomio",
     "is_subdomain": true,
-    "logotype": "./interlinkers/software/loomio/logo.png"
+    "logotype": "./interlinkers/software/loomio/logo.png",
+    "reference": "loomio"
 }

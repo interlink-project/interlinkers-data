@@ -1,8 +1,14 @@
 {
-    "name": "EDPB Data Protection Guidelines",
-    "description": "<p>These Guidelines give general guidance on the obligation of Data Protection by Design and by Default (henceforth “DPbDD”) set forth in Article 25 in the GDPR.</p>",
+    "name": {
+        "en": "EDPB Data Protection Guidelines",
+        "es": ""
+    },
+    "description": {
+        "en": "<p>These Guidelines give general guidance on the obligation of Data Protection by Design and by Default (henceforth \u201cDPbDD\u201d) set forth in Article 25 in the GDPR.</p>",
+        "es": ""
+    },
     "tags": [
-        "GDPR", 
+        "GDPR",
         "privacy",
         "security"
     ],
@@ -24,16 +30,27 @@
         "local"
     ],
     "related_interlinkers": [],
-    "constraints_and_limitations": "No special constraints apply",
-    "regulations_and_standards": "<ul><li>Article 70 (1e) of the Regulation 2016/679/EU of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC], (hereinafter \"GDPR\")</li> <li>EEA Agreement and in particular to Annex XI and Protocol 37 thereof, as amended by the Decision of the EEA joint Committee No 154/2018 of 6 July 2018,</li><li>Article 12 and Article 22 of its Rules of Procedure</li></ul>",
-    "overview_text": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
-    "instructions":"./interlinkers/knowledge/it-guidelines-data-protection/instructions.md",
+    "constraints_and_limitations": {
+        "en": "No special constraints apply",
+        "es": ""
+    },
+    "regulations_and_standards": {
+        "en": "<ul><li>Article 70 (1e) of the Regulation 2016/679/EU of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC], (hereinafter \"GDPR\")</li> <li>EEA Agreement and in particular to Annex XI and Protocol 37 thereof, as amended by the Decision of the EEA joint Committee No 154/2018 of 6 July 2018,</li><li>Article 12 and Article 22 of its Rules of Procedure</li></ul>",
+        "es": ""
+    },
+    "overview_text": {
+        "en": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
+        "es": ""
+    },
+    "instructions": "./interlinkers/knowledge/it-guidelines-data-protection/instructions.md",
     "representations": [
         {
             "form": "guidelines",
             "format": "pdf",
             "file": "./interlinkers/knowledge/it-guidelines-data-protection/data.json",
-            "softwareinterlinker": "externalresourcemanager"
+            "softwareinterlinker": "externalresourcemanager",
+            "language": "en"
         }
-    ]
+    ],
+    "reference": "edpb-data-protection-guidelines"
 }

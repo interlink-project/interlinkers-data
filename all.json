@@ -646,11 +646,10 @@
             "phases": [
                 {
                     "prerequisites": [
-                        "project_start",
-                        "engage"
+                        "phase-build"
                     ],
                     "name": {
-                        "en": "Design",
+                        "en": "Sustain",
                         "es": ""
                     },
                     "description": {
@@ -660,7 +659,7 @@
                     "objectives": [
                         {
                             "name": {
-                                "en": "Focus the problem collaboratively",
+                                "en": "Handover",
                                 "es": ""
                             },
                             "description": {
@@ -671,7 +670,7 @@
                             "tasks": [
                                 {
                                     "name": {
-                                        "en": "Develop a shared language",
+                                        "en": "Handover",
                                         "es": ""
                                     },
                                     "description": {
@@ -679,69 +678,48 @@
                                         "es": ""
                                     },
                                     "problem_profiles": [
-                                        "ORG_PROBLEM_12"
-                                    ]
-                                },
-                                {
-                                    "name": {
-                                        "en": "Collaboratively problem refinement",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": []
-                                },
-                                {
-                                    "name": {
-                                        "en": "Ideas collection for problem exploration and refinement",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": []
-                                },
-                                {
-                                    "name": {
-                                        "en": "Sketch an initial idea of the service",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": []
-                                },
-                                {
-                                    "name": {
-                                        "en": "Collaborative agree on a service idea",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": []
-                                },
-                                {
-                                    "name": {
-                                        "en": "Define requirements and constraints for the service",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": []
+                                        "ORG_PROBLEM_7"
+                                    ],
+                                    "reference": "objective-handover"
                                 }
-                            ]
+                            ],
+                            "reference": "objective-handover"
                         },
                         {
                             "name": {
-                                "en": "Problem exploration",
+                                "en": "Maintenance",
+                                "es": ""
+                            },
+                            "description": {
+                                "en": "",
+                                "es": ""
+                            },
+                            "problem_profiles": [],
+                            "tasks": [
+                                {
+                                    "name": {
+                                        "en": "Task distribution for maintenance, contracts regulation, data management archiving",
+                                        "es": ""
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "reference": "objective-task-distribution-for-maintenance-contracts-regulation-data-management-archiving"
+                                }
+                            ],
+                            "prerequisites": [
+                                {
+                                    "objective": "objective-handover",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-maintenance"
+                        },
+                        {
+                            "name": {
+                                "en": "Monitoring",
                                 "es": ""
                             },
                             "description": {
@@ -749,348 +727,361 @@
                                 "es": ""
                             },
                             "problem_profiles": [
-                                "UND_PROBLEM_1",
                                 "UND_PROBLEM_3",
-                                "UND_PROBLEM_4",
-                                "UND_PROBLEM_6",
-                                "DEF_PROBLEM_3"
+                                "VAL_PROBLEM_5"
                             ],
                             "tasks": [
                                 {
                                     "name": {
-                                        "en": "Collect data about users and their behavior",
+                                        "en": "Monitoring ongoing evaluation, periodic evaluations with stakeholders",
                                         "es": ""
                                     },
                                     "description": {
                                         "en": "",
                                         "es": ""
                                     },
-                                    "problem_profiles": [
-                                        "ORG_PROBLEM_6.2"
-                                    ]
-                                },
-                                {
-                                    "name": {
-                                        "en": "Ecosystem mapping",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": []
+                                    "problem_profiles": [],
+                                    "reference": "objective-monitoring-ongoing-evaluation-periodic-evaluations-with-stakeholders"
                                 }
-                            ]
-                        },
-                        {
-                            "name": {
-                                "en": "Ideation",
-                                "es": ""
-                            },
-                            "description": {
-                                "en": "",
-                                "es": ""
-                            },
-                            "problem_profiles": [
-                                "ORG_PROBLEM_13",
-                                "ORG_PROBLEM_14",
-                                "UND_PROBLEM_4",
-                                "UND_PROBLEM_5",
-                                "DEF_PROBLEM_2",
-                                "DEF_PROBLEM_3"
                             ],
-                            "tasks": [
+                            "prerequisites": [
                                 {
-                                    "name": {
-                                        "en": "Engage relevant actors in the design",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": []
-                                },
-                                {
-                                    "name": {
-                                        "en": "Organize a braistorming",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": []
-                                },
-                                {
-                                    "name": {
-                                        "en": "Ideas crowdsourcing",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": []
+                                    "objective": "objective-maintenance",
+                                    "status": "completed"
                                 }
-                            ]
-                        },
-                        {
-                            "name": {
-                                "en": "Service design",
-                                "es": ""
-                            },
-                            "description": {
-                                "en": "",
-                                "es": ""
-                            },
-                            "problem_profiles": [
-                                "UND_PROBLEM_4",
-                                "DEF_PROBLEM_3",
-                                "DEF_PROBLEM_4",
-                                "BUILD_PROBLEM_2"
                             ],
-                            "tasks": [
-                                {
-                                    "name": {
-                                        "en": "Define personas",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": []
-                                },
-                                {
-                                    "name": {
-                                        "en": "Define scenarios",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": []
-                                },
-                                {
-                                    "name": {
-                                        "en": "Define user journeys",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": []
-                                }
-                            ]
-                        },
-                        {
-                            "name": {
-                                "en": "Service specification",
-                                "es": ""
-                            },
-                            "description": {
-                                "en": "",
-                                "es": ""
-                            },
-                            "problem_profiles": [
-                                "DEF_PROBLEM_1",
-                                "DEF_PROBLEM_5",
-                                "BUILD_PROBLEM_1"
-                            ],
-                            "tasks": [
-                                {
-                                    "name": {
-                                        "en": "Consider eu guidelines for public service developement",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": []
-                                },
-                                {
-                                    "name": {
-                                        "en": "User interface design",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": []
-                                },
-                                {
-                                    "name": {
-                                        "en": "Content design",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [
-                                        "DEF_PROBLEM_6"
-                                    ]
-                                },
-                                {
-                                    "name": {
-                                        "en": "Service specification definition",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": []
-                                },
-                                {
-                                    "name": {
-                                        "en": "Data model design",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": []
-                                },
-                                {
-                                    "name": {
-                                        "en": "Software architecture and api design",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": []
-                                }
-                            ]
-                        },
-                        {
-                            "name": {
-                                "en": "Prototype",
-                                "es": ""
-                            },
-                            "description": {
-                                "en": "",
-                                "es": ""
-                            },
-                            "problem_profiles": [
-                                "VAL_PROBLEM_3",
-                                "VAL_PROBLEM_4"
-                            ],
-                            "tasks": [
-                                {
-                                    "name": {
-                                        "en": "Experience scenarios",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": []
-                                },
-                                {
-                                    "name": {
-                                        "en": "Mockups and lowfi prototypes",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": []
-                                },
-                                {
-                                    "name": {
-                                        "en": "Perform an heuristic evaluation",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": []
-                                },
-                                {
-                                    "name": {
-                                        "en": "Perform a test with users",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": []
-                                }
-                            ]
-                        },
-                        {
-                            "name": {
-                                "en": "Sustainability",
-                                "es": ""
-                            },
-                            "description": {
-                                "en": "",
-                                "es": ""
-                            },
-                            "problem_profiles": [
-                                "UND_PROBLEM_3"
-                            ],
-                            "tasks": [
-                                {
-                                    "name": {
-                                        "en": "Evaluation of codesign",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": []
-                                },
-                                {
-                                    "name": {
-                                        "en": "Refine the preliminary business model",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": []
-                                },
-                                {
-                                    "name": {
-                                        "en": "Feasibility analysis",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": []
-                                },
-                                {
-                                    "name": {
-                                        "en": "Understand motivations and incentives",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": []
-                                }
-                            ]
+                            "reference": "objective-monitoring"
                         }
-                    ]
+                    ],
+                    "reference": "phase-sustain"
+                },
+                {
+                    "prerequisites": [
+                        "phase-project_start"
+                    ],
+                    "name": {
+                        "en": "Engage",
+                        "es": "Comprometer"
+                    },
+                    "description": {
+                        "en": "",
+                        "es": ""
+                    },
+                    "objectives": [
+                        {
+                            "name": {
+                                "en": "Identify stakeholders",
+                                "es": "Identificar stakeholders"
+                            },
+                            "description": {
+                                "en": "",
+                                "es": ""
+                            },
+                            "problem_profiles": [],
+                            "tasks": [
+                                {
+                                    "name": {
+                                        "en": "Understand the different types of stakeholders and their motivations",
+                                        "es": "Entender los diferentes tipos de stakeholders y sus motivaciones"
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [
+                                        "UND_PROBLEM_2"
+                                    ],
+                                    "reference": "objective-understand-the-different-types-of-stakeholders-and-their-motivations"
+                                },
+                                {
+                                    "name": {
+                                        "en": "Map stakeholders, analyse motivationM skills, expectations",
+                                        "es": "Mapear partes interesadas analizar motivaci\u00f3n habilidades expectativas"
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [
+                                        "UND_PROBLEM_2"
+                                    ],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-understand-the-different-types-of-stakeholders-and-their-motivations",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-map-stakeholders-analyse-motivationm-skills-expectations"
+                                },
+                                {
+                                    "name": {
+                                        "en": "Visually map the network of stakeholders",
+                                        "es": "Mapear visualmente la red de partes interesadas"
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [
+                                        "UND_PROBLEM_2"
+                                    ],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-map-stakeholders-analyse-motivationm-skills-expectations",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-visually-map-the-network-of-stakeholders"
+                                },
+                                {
+                                    "name": {
+                                        "en": "Create a contact list of potential network participants",
+                                        "es": "Crear una lista de contactos de posibles participantes de la red"
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [
+                                        "ORG_PROBLEM_4"
+                                    ],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-visually-map-the-network-of-stakeholders",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-create-a-contact-list-of-potential-network-participants"
+                                }
+                            ],
+                            "reference": "objective-identify-stakeholders"
+                        },
+                        {
+                            "name": {
+                                "en": "Engage stakeholders",
+                                "es": ""
+                            },
+                            "description": {
+                                "en": "",
+                                "es": ""
+                            },
+                            "problem_profiles": [
+                                "ORG_PROBLEM_12",
+                                "ORG_PROBLEM_13",
+                                "ORG_PROBLEM_14"
+                            ],
+                            "tasks": [
+                                {
+                                    "name": {
+                                        "en": "Prepare an engagement plan",
+                                        "es": ""
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [
+                                        "ORG_PROBLEM_5"
+                                    ],
+                                    "reference": "objective-prepare-an-engagement-plan"
+                                },
+                                {
+                                    "name": {
+                                        "en": "Create awareness and communication",
+                                        "es": ""
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [
+                                        "ORG_PROBLEM_4",
+                                        "ORG_PROBLEM_6.3"
+                                    ],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-prepare-an-engagement-plan",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-create-awareness-and-communication"
+                                },
+                                {
+                                    "name": {
+                                        "en": "Communicate benefit for stakeholders",
+                                        "es": ""
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [
+                                        "ORG_PROBLEM_4"
+                                    ],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-create-awareness-and-communication",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-communicate-benefit-for-stakeholders"
+                                },
+                                {
+                                    "name": {
+                                        "en": "Engage citizens in the co-production process",
+                                        "es": ""
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [
+                                        "ORG_PROBLEM_10",
+                                        "ORG_PROBLEM_11"
+                                    ],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-communicate-benefit-for-stakeholders",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-engage-citizens-in-the-co-production-process"
+                                }
+                            ],
+                            "prerequisites": [
+                                {
+                                    "objective": "objective-identify-stakeholders",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-engage-stakeholders"
+                        },
+                        {
+                            "name": {
+                                "en": "Define legal and ethical framework",
+                                "es": ""
+                            },
+                            "description": {
+                                "en": "",
+                                "es": ""
+                            },
+                            "problem_profiles": [],
+                            "tasks": [
+                                {
+                                    "name": {
+                                        "en": "Define a non-disclosure agreement (NDA)",
+                                        "es": ""
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "reference": "objective-define-a-non-disclosure-agreement-nda"
+                                },
+                                {
+                                    "name": {
+                                        "en": "Define a partnership agreement",
+                                        "es": ""
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [
+                                        "ORG_PROBLEM_7",
+                                        "ORG_PROBLEM_8"
+                                    ],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-define-a-non-disclosure-agreement-nda",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-define-a-partnership-agreement"
+                                }
+                            ],
+                            "prerequisites": [
+                                {
+                                    "objective": "objective-engage-stakeholders",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-define-legal-and-ethical-framework"
+                        },
+                        {
+                            "name": {
+                                "en": "Define data management plan",
+                                "es": ""
+                            },
+                            "description": {
+                                "en": "",
+                                "es": ""
+                            },
+                            "problem_profiles": [
+                                "ORG_PROBLEM_3",
+                                "ORG_PROBLEM_9"
+                            ],
+                            "tasks": [
+                                {
+                                    "name": {
+                                        "en": "Clarify the purpose for data collection",
+                                        "es": ""
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "reference": "objective-clarify-the-purpose-for-data-collection"
+                                },
+                                {
+                                    "name": {
+                                        "en": "Understand how the data flows",
+                                        "es": ""
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-clarify-the-purpose-for-data-collection",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-understand-how-the-data-flows"
+                                },
+                                {
+                                    "name": {
+                                        "en": "Be aware of data impact",
+                                        "es": ""
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-understand-how-the-data-flows",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-be-aware-of-data-impact"
+                                }
+                            ],
+                            "prerequisites": [
+                                {
+                                    "objective": "objective-define-legal-and-ethical-framework",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-define-data-management-plan"
+                        }
+                    ],
+                    "reference": "phase-engage"
                 },
                 {
                     "prerequisites": [],
@@ -1125,7 +1116,8 @@
                                     },
                                     "problem_profiles": [
                                         "ORG_PROBLEM_1"
-                                    ]
+                                    ],
+                                    "reference": "objective-specify-the-main-aim-of-the-project"
                                 },
                                 {
                                     "name": {
@@ -1138,19 +1130,28 @@
                                     },
                                     "problem_profiles": [
                                         "ORG_PROBLEM_2"
-                                    ]
+                                    ],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-specify-the-main-aim-of-the-project",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-set-the-overall-initial-workplan"
                                 }
-                            ]
+                            ],
+                            "reference": "objective-initiate-a-coproduction-endeavour"
                         }
-                    ]
+                    ],
+                    "reference": "phase-project-start"
                 },
                 {
                     "prerequisites": [
-                        "project_start"
+                        "phase-engage"
                     ],
                     "name": {
-                        "en": "Engage",
-                        "es": "Comprometer"
+                        "en": "Design",
+                        "es": ""
                     },
                     "description": {
                         "en": "",
@@ -1159,8 +1160,8 @@
                     "objectives": [
                         {
                             "name": {
-                                "en": "Identify stakeholders",
-                                "es": "Identificar stakeholders"
+                                "en": "Focus the problem collaboratively",
+                                "es": ""
                             },
                             "description": {
                                 "en": "",
@@ -1170,61 +1171,114 @@
                             "tasks": [
                                 {
                                     "name": {
-                                        "en": "Understand the different types of stakeholders and their motivations",
-                                        "es": "Entender los diferentes tipos de stakeholders y sus motivaciones"
+                                        "en": "Develop a shared language",
+                                        "es": ""
                                     },
                                     "description": {
                                         "en": "",
                                         "es": ""
                                     },
                                     "problem_profiles": [
-                                        "UND_PROBLEM_2"
-                                    ]
+                                        "ORG_PROBLEM_12"
+                                    ],
+                                    "reference": "objective-develop-a-shared-language"
                                 },
                                 {
                                     "name": {
-                                        "en": "Map stakeholders, analyse motivationM skills, expectations",
-                                        "es": "Mapear partes interesadas analizar motivaci\u00f3n habilidades expectativas"
+                                        "en": "Collaboratively problem refinement",
+                                        "es": ""
                                     },
                                     "description": {
                                         "en": "",
                                         "es": ""
                                     },
-                                    "problem_profiles": [
-                                        "UND_PROBLEM_2"
-                                    ]
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-develop-a-shared-language",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-collaboratively-problem-refinement"
                                 },
                                 {
                                     "name": {
-                                        "en": "Visually map the network of stakeholders",
-                                        "es": "Mapear visualmente la red de partes interesadas"
+                                        "en": "Ideas collection for problem exploration and refinement",
+                                        "es": ""
                                     },
                                     "description": {
                                         "en": "",
                                         "es": ""
                                     },
-                                    "problem_profiles": [
-                                        "UND_PROBLEM_2"
-                                    ]
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-collaboratively-problem-refinement",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-ideas-collection-for-problem-exploration-and-refinement"
                                 },
                                 {
                                     "name": {
-                                        "en": "Create a contact list of potential network participants",
-                                        "es": "Crear una lista de contactos de posibles participantes de la red"
+                                        "en": "Sketch an initial idea of the service",
+                                        "es": ""
                                     },
                                     "description": {
                                         "en": "",
                                         "es": ""
                                     },
-                                    "problem_profiles": [
-                                        "ORG_PROBLEM_4"
-                                    ]
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-ideas-collection-for-problem-exploration-and-refinement",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-sketch-an-initial-idea-of-the-service"
+                                },
+                                {
+                                    "name": {
+                                        "en": "Collaborative agree on a service idea",
+                                        "es": ""
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-sketch-an-initial-idea-of-the-service",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-collaborative-agree-on-a-service-idea"
+                                },
+                                {
+                                    "name": {
+                                        "en": "Define requirements and constraints for the service",
+                                        "es": ""
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-collaborative-agree-on-a-service-idea",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-define-requirements-and-constraints-for-the-service"
                                 }
-                            ]
+                            ],
+                            "reference": "objective-focus-the-problem-collaboratively"
                         },
                         {
                             "name": {
-                                "en": "Engage stakeholders",
+                                "en": "Problem exploration",
                                 "es": ""
                             },
                             "description": {
@@ -1232,108 +1286,132 @@
                                 "es": ""
                             },
                             "problem_profiles": [
-                                "ORG_PROBLEM_12",
+                                "UND_PROBLEM_1",
+                                "UND_PROBLEM_3",
+                                "UND_PROBLEM_4",
+                                "UND_PROBLEM_6",
+                                "DEF_PROBLEM_3"
+                            ],
+                            "tasks": [
+                                {
+                                    "name": {
+                                        "en": "Collect data about users and their behavior",
+                                        "es": ""
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [
+                                        "ORG_PROBLEM_6.2"
+                                    ],
+                                    "reference": "objective-collect-data-about-users-and-their-behavior"
+                                },
+                                {
+                                    "name": {
+                                        "en": "Ecosystem mapping",
+                                        "es": ""
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-collect-data-about-users-and-their-behavior",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-ecosystem-mapping"
+                                }
+                            ],
+                            "prerequisites": [
+                                {
+                                    "objective": "objective-focus-the-problem-collaboratively",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-problem-exploration"
+                        },
+                        {
+                            "name": {
+                                "en": "Ideation",
+                                "es": ""
+                            },
+                            "description": {
+                                "en": "",
+                                "es": ""
+                            },
+                            "problem_profiles": [
                                 "ORG_PROBLEM_13",
-                                "ORG_PROBLEM_14"
+                                "ORG_PROBLEM_14",
+                                "UND_PROBLEM_4",
+                                "UND_PROBLEM_5",
+                                "DEF_PROBLEM_2",
+                                "DEF_PROBLEM_3"
                             ],
                             "tasks": [
                                 {
                                     "name": {
-                                        "en": "Prepare an engagement plan",
+                                        "en": "Engage relevant actors in the design",
                                         "es": ""
                                     },
                                     "description": {
                                         "en": "",
                                         "es": ""
                                     },
-                                    "problem_profiles": [
-                                        "ORG_PROBLEM_5"
-                                    ]
+                                    "problem_profiles": [],
+                                    "reference": "objective-engage-relevant-actors-in-the-design"
                                 },
                                 {
                                     "name": {
-                                        "en": "Create awareness and communication",
+                                        "en": "Organize a braistorming",
                                         "es": ""
                                     },
                                     "description": {
                                         "en": "",
                                         "es": ""
                                     },
-                                    "problem_profiles": [
-                                        "ORG_PROBLEM_4",
-                                        "ORG_PROBLEM_6.3"
-                                    ]
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-engage-relevant-actors-in-the-design",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-organize-a-braistorming"
                                 },
                                 {
                                     "name": {
-                                        "en": "Communicate benefit for stakeholders",
+                                        "en": "Ideas crowdsourcing",
                                         "es": ""
                                     },
                                     "description": {
                                         "en": "",
                                         "es": ""
                                     },
-                                    "problem_profiles": [
-                                        "ORG_PROBLEM_4"
-                                    ]
-                                },
-                                {
-                                    "name": {
-                                        "en": "Engage citizens in the co-production process",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [
-                                        "ORG_PROBLEM_10",
-                                        "ORG_PROBLEM_11"
-                                    ]
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-organize-a-braistorming",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-ideas-crowdsourcing"
                                 }
-                            ]
+                            ],
+                            "prerequisites": [
+                                {
+                                    "objective": "objective-problem-exploration",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-ideation"
                         },
                         {
                             "name": {
-                                "en": "Define legal and ethical framework",
-                                "es": ""
-                            },
-                            "description": {
-                                "en": "",
-                                "es": ""
-                            },
-                            "problem_profiles": [],
-                            "tasks": [
-                                {
-                                    "name": {
-                                        "en": "Define a non-disclosure agreement (NDA)",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": []
-                                },
-                                {
-                                    "name": {
-                                        "en": "Define a partnership agreement",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [
-                                        "ORG_PROBLEM_7",
-                                        "ORG_PROBLEM_8"
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "name": {
-                                "en": "Define data management plan",
+                                "en": "Service design",
                                 "es": ""
                             },
                             "description": {
@@ -1341,52 +1419,380 @@
                                 "es": ""
                             },
                             "problem_profiles": [
-                                "ORG_PROBLEM_3",
-                                "ORG_PROBLEM_9"
+                                "UND_PROBLEM_4",
+                                "DEF_PROBLEM_3",
+                                "DEF_PROBLEM_4",
+                                "BUILD_PROBLEM_2"
                             ],
                             "tasks": [
                                 {
                                     "name": {
-                                        "en": "Clarify the purpose for data collection",
+                                        "en": "Define personas",
                                         "es": ""
                                     },
                                     "description": {
                                         "en": "",
                                         "es": ""
                                     },
-                                    "problem_profiles": []
+                                    "problem_profiles": [],
+                                    "reference": "objective-define-personas"
                                 },
                                 {
                                     "name": {
-                                        "en": "Understand how the data flows",
+                                        "en": "Define scenarios",
                                         "es": ""
                                     },
                                     "description": {
                                         "en": "",
                                         "es": ""
                                     },
-                                    "problem_profiles": []
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-define-personas",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-define-scenarios"
                                 },
                                 {
                                     "name": {
-                                        "en": "Be aware of data impact",
+                                        "en": "Define user journeys",
                                         "es": ""
                                     },
                                     "description": {
                                         "en": "",
                                         "es": ""
                                     },
-                                    "problem_profiles": []
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-define-scenarios",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-define-user-journeys"
                                 }
-                            ]
+                            ],
+                            "prerequisites": [
+                                {
+                                    "objective": "objective-ideation",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-service-design"
+                        },
+                        {
+                            "name": {
+                                "en": "Service specification",
+                                "es": ""
+                            },
+                            "description": {
+                                "en": "",
+                                "es": ""
+                            },
+                            "problem_profiles": [
+                                "DEF_PROBLEM_1",
+                                "DEF_PROBLEM_5",
+                                "BUILD_PROBLEM_1"
+                            ],
+                            "tasks": [
+                                {
+                                    "name": {
+                                        "en": "Consider eu guidelines for public service developement",
+                                        "es": ""
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "reference": "objective-consider-eu-guidelines-for-public-service-developement"
+                                },
+                                {
+                                    "name": {
+                                        "en": "User interface design",
+                                        "es": ""
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-consider-eu-guidelines-for-public-service-developement",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-user-interface-design"
+                                },
+                                {
+                                    "name": {
+                                        "en": "Content design",
+                                        "es": ""
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [
+                                        "DEF_PROBLEM_6"
+                                    ],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-user-interface-design",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-content-design"
+                                },
+                                {
+                                    "name": {
+                                        "en": "Service specification definition",
+                                        "es": ""
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-content-design",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-service-specification-definition"
+                                },
+                                {
+                                    "name": {
+                                        "en": "Data model design",
+                                        "es": ""
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-service-specification-definition",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-data-model-design"
+                                },
+                                {
+                                    "name": {
+                                        "en": "Software architecture and api design",
+                                        "es": ""
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-data-model-design",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-software-architecture-and-api-design"
+                                }
+                            ],
+                            "prerequisites": [
+                                {
+                                    "objective": "objective-service-design",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-service-specification"
+                        },
+                        {
+                            "name": {
+                                "en": "Prototype",
+                                "es": ""
+                            },
+                            "description": {
+                                "en": "",
+                                "es": ""
+                            },
+                            "problem_profiles": [
+                                "VAL_PROBLEM_3",
+                                "VAL_PROBLEM_4"
+                            ],
+                            "tasks": [
+                                {
+                                    "name": {
+                                        "en": "Experience scenarios",
+                                        "es": ""
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "reference": "objective-experience-scenarios"
+                                },
+                                {
+                                    "name": {
+                                        "en": "Mockups and lowfi prototypes",
+                                        "es": ""
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-experience-scenarios",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-mockups-and-lowfi-prototypes"
+                                },
+                                {
+                                    "name": {
+                                        "en": "Perform an heuristic evaluation",
+                                        "es": ""
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-mockups-and-lowfi-prototypes",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-perform-an-heuristic-evaluation"
+                                },
+                                {
+                                    "name": {
+                                        "en": "Perform a test with users",
+                                        "es": ""
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-perform-an-heuristic-evaluation",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-perform-a-test-with-users"
+                                }
+                            ],
+                            "prerequisites": [
+                                {
+                                    "objective": "objective-service-specification",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-prototype"
+                        },
+                        {
+                            "name": {
+                                "en": "Sustainability",
+                                "es": ""
+                            },
+                            "description": {
+                                "en": "",
+                                "es": ""
+                            },
+                            "problem_profiles": [
+                                "UND_PROBLEM_3"
+                            ],
+                            "tasks": [
+                                {
+                                    "name": {
+                                        "en": "Evaluation of codesign",
+                                        "es": ""
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "reference": "objective-evaluation-of-codesign"
+                                },
+                                {
+                                    "name": {
+                                        "en": "Refine the preliminary business model",
+                                        "es": ""
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-evaluation-of-codesign",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-refine-the-preliminary-business-model"
+                                },
+                                {
+                                    "name": {
+                                        "en": "Feasibility analysis",
+                                        "es": ""
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-refine-the-preliminary-business-model",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-feasibility-analysis"
+                                },
+                                {
+                                    "name": {
+                                        "en": "Understand motivations and incentives",
+                                        "es": ""
+                                    },
+                                    "description": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-feasibility-analysis",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-understand-motivations-and-incentives"
+                                }
+                            ],
+                            "prerequisites": [
+                                {
+                                    "objective": "objective-prototype",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-sustainability"
                         }
-                    ]
+                    ],
+                    "reference": "phase-design"
                 },
                 {
                     "prerequisites": [
-                        "design",
-                        "project_start",
-                        "engage"
+                        "phase-design"
                     ],
                     "name": {
                         "en": "Build",
@@ -1425,9 +1831,11 @@
                                         "BUILD_PROBLEM_6",
                                         "BUILD_PROBLEM_7",
                                         "BUILD_PROBLEM_8"
-                                    ]
+                                    ],
+                                    "reference": "objective-technical-implementation"
                                 }
-                            ]
+                            ],
+                            "reference": "objective-technical-implementation"
                         },
                         {
                             "name": {
@@ -1460,9 +1868,17 @@
                                         "BUILD_PROBLEM_6",
                                         "BUILD_PROBLEM_7",
                                         "BUILD_PROBLEM_9"
-                                    ]
+                                    ],
+                                    "reference": "objective-service-implementation"
                                 }
-                            ]
+                            ],
+                            "prerequisites": [
+                                {
+                                    "objective": "objective-technical-implementation",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-service-implementation"
                         },
                         {
                             "name": {
@@ -1487,7 +1903,8 @@
                                         "en": "",
                                         "es": ""
                                     },
-                                    "problem_profiles": []
+                                    "problem_profiles": [],
+                                    "reference": "objective-identify-all-the-actors-engaged-in-the-codelivery-their-role-and-responsability"
                                 },
                                 {
                                     "name": {
@@ -1498,7 +1915,14 @@
                                         "en": "",
                                         "es": ""
                                     },
-                                    "problem_profiles": []
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-identify-all-the-actors-engaged-in-the-codelivery-their-role-and-responsability",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-coordinate-the-actors-involved-in-the-codelivery-of-the-service"
                                 },
                                 {
                                     "name": {
@@ -1509,110 +1933,30 @@
                                         "en": "",
                                         "es": ""
                                     },
-                                    "problem_profiles": []
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-coordinate-the-actors-involved-in-the-codelivery-of-the-service",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-guarantee-transparent-communication-about-the-service-codelivered"
                                 }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "prerequisites": [
-                        "build",
-                        "engage",
-                        "design",
-                        "project_start"
-                    ],
-                    "name": {
-                        "en": "Sustain",
-                        "es": ""
-                    },
-                    "description": {
-                        "en": "",
-                        "es": ""
-                    },
-                    "objectives": [
-                        {
-                            "name": {
-                                "en": "Handover",
-                                "es": ""
-                            },
-                            "description": {
-                                "en": "",
-                                "es": ""
-                            },
-                            "problem_profiles": [],
-                            "tasks": [
-                                {
-                                    "name": {
-                                        "en": "Handover",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [
-                                        "ORG_PROBLEM_7"
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "name": {
-                                "en": "Maintenance",
-                                "es": ""
-                            },
-                            "description": {
-                                "en": "",
-                                "es": ""
-                            },
-                            "problem_profiles": [],
-                            "tasks": [
-                                {
-                                    "name": {
-                                        "en": "Task distribution for maintenance, contracts regulation, data management archiving",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": []
-                                }
-                            ]
-                        },
-                        {
-                            "name": {
-                                "en": "Monitoring",
-                                "es": ""
-                            },
-                            "description": {
-                                "en": "",
-                                "es": ""
-                            },
-                            "problem_profiles": [
-                                "UND_PROBLEM_3",
-                                "VAL_PROBLEM_5"
                             ],
-                            "tasks": [
+                            "prerequisites": [
                                 {
-                                    "name": {
-                                        "en": "Monitoring ongoing evaluation, periodic evaluations with stakeholders",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": []
+                                    "objective": "objective-service-implementation",
+                                    "status": "completed"
                                 }
-                            ]
+                            ],
+                            "reference": "objective-service-codelivery"
                         }
-                    ]
+                    ],
+                    "reference": "phase-build"
                 },
                 {
                     "prerequisites": [
-                        "project_start"
+                        "phase-project_start"
                     ],
                     "name": {
                         "en": "Evaluate",
@@ -1645,7 +1989,8 @@
                                         "en": "",
                                         "es": ""
                                     },
-                                    "problem_profiles": []
+                                    "problem_profiles": [],
+                                    "reference": "objective-set-evaluation-criteria"
                                 },
                                 {
                                     "name": {
@@ -1656,9 +2001,17 @@
                                         "en": "",
                                         "es": ""
                                     },
-                                    "problem_profiles": []
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-set-evaluation-criteria",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-define-kpis"
                                 }
-                            ]
+                            ],
+                            "reference": "objective-define-evaluation-creiteria"
                         },
                         {
                             "name": {
@@ -1683,7 +2036,8 @@
                                         "en": "",
                                         "es": ""
                                     },
-                                    "problem_profiles": []
+                                    "problem_profiles": [],
+                                    "reference": "objective-define-preliminary-ideas-for-sustainability-business-model"
                                 },
                                 {
                                     "name": {
@@ -1694,9 +2048,23 @@
                                         "en": "",
                                         "es": ""
                                     },
-                                    "problem_profiles": []
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-define-preliminary-ideas-for-sustainability-business-model",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-adjust-the-project-workplan"
                                 }
-                            ]
+                            ],
+                            "prerequisites": [
+                                {
+                                    "objective": "objective-define-evaluation-creiteria",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-iterative-evaluation-of-viability-and-sustainability"
                         },
                         {
                             "name": {
@@ -1721,7 +2089,8 @@
                                         "en": "",
                                         "es": ""
                                     },
-                                    "problem_profiles": []
+                                    "problem_profiles": [],
+                                    "reference": "objective-get-feedback-from-funders-and-stakeholders"
                                 },
                                 {
                                     "name": {
@@ -1732,9 +2101,23 @@
                                         "en": "",
                                         "es": ""
                                     },
-                                    "problem_profiles": []
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-get-feedback-from-funders-and-stakeholders",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-usability-acceptance-ease-of-use-evaluation"
                                 }
-                            ]
+                            ],
+                            "prerequisites": [
+                                {
+                                    "objective": "objective-iterative-evaluation-of-viability-and-sustainability",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-co-evaluation"
                         },
                         {
                             "name": {
@@ -1758,7 +2141,8 @@
                                         "en": "",
                                         "es": ""
                                     },
-                                    "problem_profiles": []
+                                    "problem_profiles": [],
+                                    "reference": "objective-revise-the-map-of-stakeholders"
                                 },
                                 {
                                     "name": {
@@ -1769,11 +2153,26 @@
                                         "en": "",
                                         "es": ""
                                     },
-                                    "problem_profiles": []
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-revise-the-map-of-stakeholders",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-revise-engagement-methods"
                                 }
-                            ]
+                            ],
+                            "prerequisites": [
+                                {
+                                    "objective": "objective-co-evaluation",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-team-formation-for-next-step"
                         }
-                    ]
+                    ],
+                    "reference": "phase-evaluate"
                 }
             ]
         }
@@ -1781,33 +2180,14 @@
     "interlinkers": {
         "software": [
             {
-                "name": "Collaborative editor",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus sapien, dapibus fringilla dolor sit amet, bibendum aliquam massa. Duis nec faucibus nunc. In sit amet vulputate justo. In dictum turpis eu dolor posuere vehicula. Sed turpis risus, vestibulum sed aliquam id, tempus nec dolor. Nulla facilisi. Suspendisse tempor pulvinar dignissim. Nulla dui ante, finibus in bibendum vel, dignissim nec risus. Nullam gravida nisi quis purus porttitor, sed hendrerit ante tristique. Donec eget augue vitae purus vehicula vehicula non sit amet lacus. Quisque porta nisi pharetra, fringilla felis id, porta arcu. Mauris vel elementum tortor. Ut sed magna id enim finibus molestie eu vitae leo. Mauris at sem elit. Fusce viverra accumsan orci et feugiat. Mauris ullamcorper molestie massa ac faucibus. Integer sit amet tellus tortor. Vivamus bibendum at libero at aliquet. Proin consectetur, erat et vulputate tincidunt, tortor quam euismod elit, id efficitur sem sapien tempus dolor. Aliquam a molestie risus. Nunc rutrum rutrum felis, in malesuada dolor porttitor nec. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc condimentum porta magna sed pharetra. In non quam dolor.",
-                "tags": [
-                    "document",
-                    "collaborative",
-                    "editor",
-                    "etherpad"
-                ],
-                "difficulty": "easy",
-                "licence": "propietary",
-                "problem_profiles": [],
-                "related_interlinkers": [],
-                "constraints_and_limitations": "Some text here",
-                "regulations_and_standards": "Optional text here",
-                "supported_by": "installed_app",
-                "auth_method": "cookie",
-                "supports_internationalization": true,
-                "is_responsive": true,
-                "open_in_modal": false,
-                "assets_clonable": true,
-                "path": "ceditor",
-                "is_subdomain": false,
-                "logotype": "./interlinkers/software/ceditor/logo.jpeg"
-            },
-            {
-                "name": "Loomio",
-                "description": "<p>Loomio is an Open Source solution that offers a workspace for conversation, sharing information and opinions, making proposals, deciding actions and achieving outcomes. With Loomio it is possible to</p><ul><li>start and organize discussions and keep record of participation and involvement;</li><li>manage collaborative decisions through different forms of polls, surveys, etc;</li><li>enable collaborating voting around ideas and proposal under discussion.</li></ul>",
+                "name": {
+                    "en": "Loomio",
+                    "es": ""
+                },
+                "description": {
+                    "en": "<p>Loomio is an Open Source solution that offers a workspace for conversation, sharing information and opinions, making proposals, deciding actions and achieving outcomes. With Loomio it is possible to</p><ul><li>start and organize discussions and keep record of participation and involvement;</li><li>manage collaborative decisions through different forms of polls, surveys, etc;</li><li>enable collaborating voting around ideas and proposal under discussion.</li></ul>",
+                    "es": ""
+                },
                 "tags": [
                     "decision making",
                     "idea management",
@@ -1832,8 +2212,14 @@
                     "national",
                     "local"
                 ],
-                "constraints_and_limitations": "None",
-                "regulations_and_standards": "None",
+                "constraints_and_limitations": {
+                    "en": "None",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "None",
+                    "es": ""
+                },
                 "overview_text": "Web-based tool for collaborative decision making, discussion. and idea management",
                 "supported_by": "on_premise",
                 "auth_method": "header",
@@ -1846,36 +2232,94 @@
                 "assets_clonable": false,
                 "path": "loomio",
                 "is_subdomain": true,
-                "logotype": "./interlinkers/software/loomio/logo.png"
+                "logotype": "./interlinkers/software/loomio/logo.png",
+                "reference": "loomio"
             },
             {
-                "name": "Survey creator",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus sapien, dapibus fringilla dolor sit amet, bibendum aliquam massa. Duis nec faucibus nunc. In sit amet vulputate justo. In dictum turpis eu dolor posuere vehicula. Sed turpis risus, vestibulum sed aliquam id, tempus nec dolor. Nulla facilisi. Suspendisse tempor pulvinar dignissim. Nulla dui ante, finibus in bibendum vel, dignissim nec risus. Nullam gravida nisi quis purus porttitor, sed hendrerit ante tristique. Donec eget augue vitae purus vehicula vehicula non sit amet lacus. Quisque porta nisi pharetra, fringilla felis id, porta arcu. Mauris vel elementum tortor. Ut sed magna id enim finibus molestie eu vitae leo. Mauris at sem elit. Fusce viverra accumsan orci et feugiat. Mauris ullamcorper molestie massa ac faucibus. Integer sit amet tellus tortor. Vivamus bibendum at libero at aliquet. Proin consectetur, erat et vulputate tincidunt, tortor quam euismod elit, id efficitur sem sapien tempus dolor. Aliquam a molestie risus. Nunc rutrum rutrum felis, in malesuada dolor porttitor nec. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc condimentum porta magna sed pharetra. In non quam dolor.",
+                "name": {
+                    "en": "Collaborative editor",
+                    "es": ""
+                },
+                "description": {
+                    "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus sapien, dapibus fringilla dolor sit amet, bibendum aliquam massa. Duis nec faucibus nunc. In sit amet vulputate justo. In dictum turpis eu dolor posuere vehicula. Sed turpis risus, vestibulum sed aliquam id, tempus nec dolor. Nulla facilisi. Suspendisse tempor pulvinar dignissim. Nulla dui ante, finibus in bibendum vel, dignissim nec risus. Nullam gravida nisi quis purus porttitor, sed hendrerit ante tristique. Donec eget augue vitae purus vehicula vehicula non sit amet lacus. Quisque porta nisi pharetra, fringilla felis id, porta arcu. Mauris vel elementum tortor. Ut sed magna id enim finibus molestie eu vitae leo. Mauris at sem elit. Fusce viverra accumsan orci et feugiat. Mauris ullamcorper molestie massa ac faucibus. Integer sit amet tellus tortor. Vivamus bibendum at libero at aliquet. Proin consectetur, erat et vulputate tincidunt, tortor quam euismod elit, id efficitur sem sapien tempus dolor. Aliquam a molestie risus. Nunc rutrum rutrum felis, in malesuada dolor porttitor nec. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc condimentum porta magna sed pharetra. In non quam dolor.",
+                    "es": ""
+                },
                 "tags": [
-                    "survey",
-                    "question",
-                    "poll",
-                    "vote"
+                    "document",
+                    "collaborative",
+                    "editor",
+                    "etherpad"
                 ],
                 "difficulty": "easy",
                 "licence": "propietary",
                 "problem_profiles": [],
                 "related_interlinkers": [],
-                "constraints_and_limitations": "Some text here",
-                "regulations_and_standards": "Optional text here",
-                "supported_by": "saas",
+                "constraints_and_limitations": {
+                    "en": "Some text here",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "Optional text here",
+                    "es": ""
+                },
+                "supported_by": "installed_app",
                 "auth_method": "cookie",
                 "supports_internationalization": true,
                 "is_responsive": true,
                 "open_in_modal": false,
                 "assets_clonable": true,
-                "path": "survey",
+                "path": "ceditor",
                 "is_subdomain": false,
-                "logotype": "./interlinkers/software/survey/logo.png"
+                "logotype": "./interlinkers/software/ceditor/logo.jpeg",
+                "reference": "collaborative-editor"
             },
             {
-                "name": "Google Drive",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus sapien, dapibus fringilla dolor sit amet, bibendum aliquam massa. Duis nec faucibus nunc. In sit amet vulputate justo. In dictum turpis eu dolor posuere vehicula. Sed turpis risus, vestibulum sed aliquam id, tempus nec dolor. Nulla facilisi. Suspendisse tempor pulvinar dignissim. Nulla dui ante, finibus in bibendum vel, dignissim nec risus. Nullam gravida nisi quis purus porttitor, sed hendrerit ante tristique. Donec eget augue vitae purus vehicula vehicula non sit amet lacus. Quisque porta nisi pharetra, fringilla felis id, porta arcu. Mauris vel elementum tortor. Ut sed magna id enim finibus molestie eu vitae leo. Mauris at sem elit. Fusce viverra accumsan orci et feugiat. Mauris ullamcorper molestie massa ac faucibus. Integer sit amet tellus tortor. Vivamus bibendum at libero at aliquet. Proin consectetur, erat et vulputate tincidunt, tortor quam euismod elit, id efficitur sem sapien tempus dolor. Aliquam a molestie risus. Nunc rutrum rutrum felis, in malesuada dolor porttitor nec. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc condimentum porta magna sed pharetra. In non quam dolor.",
+                "name": {
+                    "en": "External resource manager",
+                    "es": ""
+                },
+                "description": {
+                    "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus sapien, dapibus fringilla dolor sit amet, bibendum aliquam massa. Duis nec faucibus nunc. In sit amet vulputate justo. In dictum turpis eu dolor posuere vehicula. Sed turpis risus, vestibulum sed aliquam id, tempus nec dolor. Nulla facilisi. Suspendisse tempor pulvinar dignissim. Nulla dui ante, finibus in bibendum vel, dignissim nec risus. Nullam gravida nisi quis purus porttitor, sed hendrerit ante tristique. Donec eget augue vitae purus vehicula vehicula non sit amet lacus. Quisque porta nisi pharetra, fringilla felis id, porta arcu. Mauris vel elementum tortor. Ut sed magna id enim finibus molestie eu vitae leo. Mauris at sem elit. Fusce viverra accumsan orci et feugiat. Mauris ullamcorper molestie massa ac faucibus. Integer sit amet tellus tortor. Vivamus bibendum at libero at aliquet. Proin consectetur, erat et vulputate tincidunt, tortor quam euismod elit, id efficitur sem sapien tempus dolor. Aliquam a molestie risus. Nunc rutrum rutrum felis, in malesuada dolor porttitor nec. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc condimentum porta magna sed pharetra. In non quam dolor.",
+                    "es": ""
+                },
+                "tags": [
+                    "external",
+                    "link",
+                    "share",
+                    "report"
+                ],
+                "difficulty": "easy",
+                "licence": "propietary",
+                "problem_profiles": [],
+                "related_interlinkers": [],
+                "constraints_and_limitations": {
+                    "en": "Some text here",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "Optional text here",
+                    "es": ""
+                },
+                "supported_by": "installed_app",
+                "auth_method": "cookie",
+                "supports_internationalization": true,
+                "is_responsive": true,
+                "open_in_modal": true,
+                "assets_clonable": true,
+                "path": "externalresourcemanager",
+                "is_subdomain": false,
+                "logotype": "./interlinkers/software/externalresourcemanager/logo.png",
+                "reference": "external-resource-manager"
+            },
+            {
+                "name": {
+                    "en": "Google Drive",
+                    "es": ""
+                },
+                "description": {
+                    "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus sapien, dapibus fringilla dolor sit amet, bibendum aliquam massa. Duis nec faucibus nunc. In sit amet vulputate justo. In dictum turpis eu dolor posuere vehicula. Sed turpis risus, vestibulum sed aliquam id, tempus nec dolor. Nulla facilisi. Suspendisse tempor pulvinar dignissim. Nulla dui ante, finibus in bibendum vel, dignissim nec risus. Nullam gravida nisi quis purus porttitor, sed hendrerit ante tristique. Donec eget augue vitae purus vehicula vehicula non sit amet lacus. Quisque porta nisi pharetra, fringilla felis id, porta arcu. Mauris vel elementum tortor. Ut sed magna id enim finibus molestie eu vitae leo. Mauris at sem elit. Fusce viverra accumsan orci et feugiat. Mauris ullamcorper molestie massa ac faucibus. Integer sit amet tellus tortor. Vivamus bibendum at libero at aliquet. Proin consectetur, erat et vulputate tincidunt, tortor quam euismod elit, id efficitur sem sapien tempus dolor. Aliquam a molestie risus. Nunc rutrum rutrum felis, in malesuada dolor porttitor nec. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc condimentum porta magna sed pharetra. In non quam dolor.",
+                    "es": ""
+                },
                 "tags": [
                     "document",
                     "slide",
@@ -1894,8 +2338,14 @@
                 "licence": "propietary",
                 "problem_profiles": [],
                 "related_interlinkers": [],
-                "constraints_and_limitations": "Some text here",
-                "regulations_and_standards": "Optional text here",
+                "constraints_and_limitations": {
+                    "en": "Some text here",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "Optional text here",
+                    "es": ""
+                },
                 "supported_by": "saas",
                 "auth_method": "cookie",
                 "supports_internationalization": true,
@@ -1904,38 +2354,58 @@
                 "assets_clonable": true,
                 "path": "googledrive",
                 "is_subdomain": false,
-                "logotype": "./interlinkers/software/googledrive/logo.png"
+                "logotype": "./interlinkers/software/googledrive/logo.png",
+                "reference": "google-drive"
             },
             {
-                "name": "External resource manager",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus sapien, dapibus fringilla dolor sit amet, bibendum aliquam massa. Duis nec faucibus nunc. In sit amet vulputate justo. In dictum turpis eu dolor posuere vehicula. Sed turpis risus, vestibulum sed aliquam id, tempus nec dolor. Nulla facilisi. Suspendisse tempor pulvinar dignissim. Nulla dui ante, finibus in bibendum vel, dignissim nec risus. Nullam gravida nisi quis purus porttitor, sed hendrerit ante tristique. Donec eget augue vitae purus vehicula vehicula non sit amet lacus. Quisque porta nisi pharetra, fringilla felis id, porta arcu. Mauris vel elementum tortor. Ut sed magna id enim finibus molestie eu vitae leo. Mauris at sem elit. Fusce viverra accumsan orci et feugiat. Mauris ullamcorper molestie massa ac faucibus. Integer sit amet tellus tortor. Vivamus bibendum at libero at aliquet. Proin consectetur, erat et vulputate tincidunt, tortor quam euismod elit, id efficitur sem sapien tempus dolor. Aliquam a molestie risus. Nunc rutrum rutrum felis, in malesuada dolor porttitor nec. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc condimentum porta magna sed pharetra. In non quam dolor.",
+                "name": {
+                    "en": "Survey creator",
+                    "es": ""
+                },
+                "description": {
+                    "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus sapien, dapibus fringilla dolor sit amet, bibendum aliquam massa. Duis nec faucibus nunc. In sit amet vulputate justo. In dictum turpis eu dolor posuere vehicula. Sed turpis risus, vestibulum sed aliquam id, tempus nec dolor. Nulla facilisi. Suspendisse tempor pulvinar dignissim. Nulla dui ante, finibus in bibendum vel, dignissim nec risus. Nullam gravida nisi quis purus porttitor, sed hendrerit ante tristique. Donec eget augue vitae purus vehicula vehicula non sit amet lacus. Quisque porta nisi pharetra, fringilla felis id, porta arcu. Mauris vel elementum tortor. Ut sed magna id enim finibus molestie eu vitae leo. Mauris at sem elit. Fusce viverra accumsan orci et feugiat. Mauris ullamcorper molestie massa ac faucibus. Integer sit amet tellus tortor. Vivamus bibendum at libero at aliquet. Proin consectetur, erat et vulputate tincidunt, tortor quam euismod elit, id efficitur sem sapien tempus dolor. Aliquam a molestie risus. Nunc rutrum rutrum felis, in malesuada dolor porttitor nec. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc condimentum porta magna sed pharetra. In non quam dolor.",
+                    "es": ""
+                },
                 "tags": [
-                    "external",
-                    "link",
-                    "share",
-                    "report"
+                    "survey",
+                    "question",
+                    "poll",
+                    "vote"
                 ],
                 "difficulty": "easy",
                 "licence": "propietary",
                 "problem_profiles": [],
                 "related_interlinkers": [],
-                "constraints_and_limitations": "Some text here",
-                "regulations_and_standards": "Optional text here",
-                "supported_by": "installed_app",
+                "constraints_and_limitations": {
+                    "en": "Some text here",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "Optional text here",
+                    "es": ""
+                },
+                "supported_by": "saas",
                 "auth_method": "cookie",
                 "supports_internationalization": true,
                 "is_responsive": true,
-                "open_in_modal": true,
+                "open_in_modal": false,
                 "assets_clonable": true,
-                "path": "externalresourcemanager",
+                "path": "survey",
                 "is_subdomain": false,
-                "logotype": "./interlinkers/software/externalresourcemanager/logo.png"
+                "logotype": "./interlinkers/software/survey/logo.png",
+                "reference": "survey-creator"
             }
         ],
         "knowledge": [
             {
-                "name": "AgID Minimum Security Measures for Public Administration. ",
-                "description": "<p>This resource describes the minimum ICT security measures issued by AgID aim at countering the most frequent cyber threats to the Italian public administration.</p>",
+                "name": {
+                    "en": " AgID guidelines for the development of secure software (in Italian)",
+                    "es": ""
+                },
+                "description": {
+                    "en": "<p>This resource describes the guidelines for the development of secure software in the public administration</p>",
+                    "es": ""
+                },
                 "tags": [
                     "security"
                 ],
@@ -1956,217 +2426,39 @@
                     "local"
                 ],
                 "related_interlinkers": [],
-                "constraints_and_limitations": "No special constraints apply",
-                "regulations_and_standards": "",
-                "overview_text": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
-                "instructions": "./interlinkers/knowledge/it-pa-minimum-security-measures/instructions.md",
-                "representations": [
-                    {
-                        "form": "guidelines",
-                        "format": "structured_format",
-                        "file": "./interlinkers/knowledge/it-pa-minimum-security-measures/data.json",
-                        "softwareinterlinker": "externalresourcemanager"
-                    }
-                ]
-            },
-            {
-                "name": " AgID guidelines for the development of secure software (in Italian)",
-                "description": "<p>This resource describes the guidelines for the development of secure software in the public administration</p>",
-                "tags": [
-                    "security"
-                ],
-                "difficulty": "difficult",
-                "targets": [
-                    "all"
-                ],
-                "licence": "permissive",
-                "problem_profiles": [
-                    "BUILD_PROBLEM_3"
-                ],
-                "types": [
-                    "enabling_services",
-                    "enabling_services;implementing_software_and_artifacts"
-                ],
-                "administrative_scopes": [
-                    "national",
-                    "local"
-                ],
-                "related_interlinkers": [],
-                "constraints_and_limitations": "No special constraints apply",
-                "regulations_and_standards": "",
-                "overview_text": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
+                "constraints_and_limitations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
+                    "es": ""
+                },
                 "instructions": "./interlinkers/knowledge/it-pa-guidelines-for-secure-software/instructions.md",
                 "representations": [
                     {
                         "form": "guidelines",
                         "format": "structured_format",
                         "file": "./interlinkers/knowledge/it-pa-guidelines-for-secure-software/data.json",
-                        "softwareinterlinker": "externalresourcemanager"
+                        "softwareinterlinker": "externalresourcemanager",
+                        "language": "en"
                     }
-                ]
+                ],
+                "reference": "agid-guidelines-for-the-development-of-secure-software-in-italian"
             },
             {
-                "name": "Cloud Enablement Kit (in Italian)",
-                "description": "<p>This resource describes the Cloud Enablement strategy outlined by AGID and Team Digitale (in Italian). </p>",
-                "tags": [
-                    "cloud",
-                    "services",
-                    "security"
-                ],
-                "difficulty": "difficult",
-                "targets": [
-                    "all"
-                ],
-                "licence": "permissive",
-                "problem_profiles": [
-                    "BUILD_PROBLEM_3"
-                ],
-                "types": [
-                    "enabling_services",
-                    "enabling_services;implementing_software_and_artifacts"
-                ],
-                "administrative_scopes": [
-                    "national",
-                    "local"
-                ],
-                "related_interlinkers": [],
-                "constraints_and_limitations": "No special constraints apply",
-                "regulations_and_standards": "",
-                "overview_text": "PDF document",
-                "instructions": "./interlinkers/knowledge/it-cloud-enablement-kit/instructions.md",
-                "representations": [
-                    {
-                        "form": "guidelines",
-                        "format": "pdf",
-                        "file": "./interlinkers/knowledge/it-cloud-enablement-kit/data.json",
-                        "softwareinterlinker": "externalresourcemanager"
-                    }
-                ]
-            },
-            {
-                "name": "W3C Web Content Accessibility Guidelines",
-                "description": "<p>Web Content Accessibility Guidelines (WCAG) aims at explaining how to make the Web content more accessible to the people with disabilities. It generally applies to the public services delivered as Web applications, and refers to the information in a web page of the applciation, including both the content (text, images, sounds, ...) and structure (markup, presentation, styles).</p><br><ul><li>defines a set of guidelines with corresponding testable success criteria across different levels</li><li>based on the accessibility principles: perceivable, operable, understandable, robust.</li></ul>",
-                "tags": [
-                    "accessibility",
-                    "Web",
-                    "UI"
-                ],
-                "difficulty": "medium",
-                "targets": [
-                    "all"
-                ],
-                "licence": "permissive",
-                "problem_profiles": [
-                    "BUILD_PROBLEM_2",
-                    "BUILD_PROBLEM_1"
-                ],
-                "types": [
-                    "enabling_services;implementing_software_and_artifacts"
-                ],
-                "administrative_scopes": [
-                    "eu",
-                    "national",
-                    "local"
-                ],
-                "related_interlinkers": [],
-                "constraints_and_limitations": "Web applications",
-                "regulations_and_standards": "EU Directive 2016/2102 on the accessibility of the websites and mobile applications of public sector bodies",
-                "overview_text": "Textual documents in the form of linked Web pages describing the guidelines and testing success criteria",
-                "instructions": "https://www.w3.org/WAI/WCAG21/quickref/",
-                "representations": [
-                    {
-                        "form": "guidelines",
-                        "format": "structured_format",
-                        "file": "./interlinkers/knowledge/w3c_web_content_accessibility_guidelines/data.json",
-                        "softwareinterlinker": "externalresourcemanager"
-                    }
-                ]
-            },
-            {
-                "name": "Stakeholders Mapping Canvas",
-                "description": "<p class=\"fg-white\">This resource supports the identification and selection of the stakeholders to engage in a co-production team.</p>",
-                "tags": [
-                    "stakeholders mapping",
-                    "canvas",
-                    "understand"
-                ],
-                "difficulty": "easy",
-                "targets": [
-                    "all"
-                ],
-                "licence": "public_domain",
-                "problem_profiles": [
-                    "UND_PROBLEM_2"
-                ],
-                "types": [
-                    "enhancing_services"
-                ],
-                "related_interlinkers": [
-                    "Stakeholders Mapping Guidelines",
-                    "Stakeholders Analysis Template"
-                ],
-                "administrative_scopes": [
-                    "eu"
-                ],
-                "domain": "",
-                "process": "",
-                "constraints_and_limitations": "No special constraints apply",
-                "regulations_and_standards": "",
-                "overview_text": "This INTERLINKER is composed by a PowerPoint scheleton that can be downloaded, customized and used to facilitate discussions for stakeholders mapping.",
-                "instructions": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/instructions.md",
-                "representations": [
-                    {
-                        "form": "document_template",
-                        "format": "editable_source_document",
-                        "file": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/resource.pptx",
-                        "softwareinterlinker": "googledrive"
-                    }
-                ]
-            },
-            {
-                "name": "Information Sheet for INTERLINK project",
-                "description": "<p class=\"fg-white\">Information on the INTERLINK project to be distributed to participants. It provides background on research activities.</p>",
-                "tags": [
-                    "privacy management",
-                    "research activities",
-                    "co-production project participants",
-                    "INTERLINK"
-                ],
-                "difficulty": "very_easy",
-                "targets": [
-                    "all"
-                ],
-                "licence": "public_domain",
-                "problem_profiles": [
-                    "ORG_PROBLEM_14"
-                ],
-                "types": [
-                    "enhancing_services"
-                ],
-                "related_interlinkers": [
-                    "Consent Form for INTERLINK project"
-                ],
-                "administrative_scopes": [
-                    "eu"
-                ],
-                "domain": "",
-                "process": "",
-                "constraints_and_limitations": "No special constraints apply",
-                "regulations_and_standards": "The information sheet is compliant to GDPR norms.",
-                "overview_text": "This INTERLINKER is composed by a document that can be downloaded, printed and distributed to participants.",
-                "instructions": "./interlinkers/knowledge/Information-Sheet-INTERLINK/instructions.md",
-                "representations": [
-                    {
-                        "form": "document_template",
-                        "format": "editable_source_document",
-                        "file": "./interlinkers/knowledge/Information-Sheet-INTERLINK/resource.docx",
-                        "softwareinterlinker": "googledrive"
-                    }
-                ]
-            },
-            {
-                "name": "EDPB Data Protection Guidelines",
-                "description": "<p>These Guidelines give general guidance on the obligation of Data Protection by Design and by Default (henceforth \u201cDPbDD\u201d) set forth in Article 25 in the GDPR.</p>",
+                "name": {
+                    "en": "EDPB Data Protection Guidelines",
+                    "es": ""
+                },
+                "description": {
+                    "en": "<p>These Guidelines give general guidance on the obligation of Data Protection by Design and by Default (henceforth \u201cDPbDD\u201d) set forth in Article 25 in the GDPR.</p>",
+                    "es": ""
+                },
                 "tags": [
                     "GDPR",
                     "privacy",
@@ -2190,22 +2482,39 @@
                     "local"
                 ],
                 "related_interlinkers": [],
-                "constraints_and_limitations": "No special constraints apply",
-                "regulations_and_standards": "<ul><li>Article 70 (1e) of the Regulation 2016/679/EU of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC], (hereinafter \"GDPR\")</li> <li>EEA Agreement and in particular to Annex XI and Protocol 37 thereof, as amended by the Decision of the EEA joint Committee No 154/2018 of 6 July 2018,</li><li>Article 12 and Article 22 of its Rules of Procedure</li></ul>",
-                "overview_text": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
+                "constraints_and_limitations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "<ul><li>Article 70 (1e) of the Regulation 2016/679/EU of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC], (hereinafter \"GDPR\")</li> <li>EEA Agreement and in particular to Annex XI and Protocol 37 thereof, as amended by the Decision of the EEA joint Committee No 154/2018 of 6 July 2018,</li><li>Article 12 and Article 22 of its Rules of Procedure</li></ul>",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
+                    "es": ""
+                },
                 "instructions": "./interlinkers/knowledge/it-guidelines-data-protection/instructions.md",
                 "representations": [
                     {
                         "form": "guidelines",
                         "format": "pdf",
                         "file": "./interlinkers/knowledge/it-guidelines-data-protection/data.json",
-                        "softwareinterlinker": "externalresourcemanager"
+                        "softwareinterlinker": "externalresourcemanager",
+                        "language": "en"
                     }
-                ]
+                ],
+                "reference": "edpb-data-protection-guidelines"
             },
             {
-                "name": "Consent Form Template",
-                "description": "<p class=\"fg-white\">Template to prepare a form to collect consent from participants engaged in research activities about the use of their personal data</p>",
+                "name": {
+                    "en": "Information Sheet Template",
+                    "es": ""
+                },
+                "description": {
+                    "en": "<p class=\"fg-white\">Template to guide the preparation of an information sheet to be distributed to participants to project activities. It provides background on research objectives.</p>",
+                    "es": ""
+                },
                 "tags": [
                     "privacy management",
                     "research activities",
@@ -2224,29 +2533,155 @@
                     "enhancing_services"
                 ],
                 "related_interlinkers": [
-                    "Information Sheet Template"
+                    "Consent Form Template"
                 ],
                 "administrative_scopes": [
                     "eu"
                 ],
                 "domain": "",
                 "process": "",
-                "constraints_and_limitations": "No special constraints apply",
-                "regulations_and_standards": "The consent form is compliant to GDPR norms.",
-                "overview_text": "This INTERLINKER is composed by a document that can be downloaded, printed and distributed to participants.",
-                "instructions": "./interlinkers/knowledge/Consent-Form-Template/instructions.md",
+                "constraints_and_limitations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "The information sheet is compliant to GDPR norms.",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "This INTERLINKER is composed by a document that can be downloaded, printed and distributed to participants.",
+                    "es": ""
+                },
+                "instructions": "./interlinkers/knowledge/Information-Sheet-Template/instructions.md",
                 "representations": [
                     {
                         "form": "document_template",
                         "format": "editable_source_document",
-                        "file": "./interlinkers/knowledge/Consent-Form-Template/resource.docx",
-                        "softwareinterlinker": "googledrive"
+                        "file": "./interlinkers/knowledge/Information-Sheet-Template/resource.docx",
+                        "softwareinterlinker": "googledrive",
+                        "language": "en"
                     }
-                ]
+                ],
+                "reference": "information-sheet-template"
             },
             {
-                "name": "AgID Cloud computing competence evalution template",
-                "description": "<p>This resource contains a questionnaire to check the level of knowledge and competence in cloud computing </p>",
+                "name": {
+                    "en": "Open Source guides",
+                    "es": ""
+                },
+                "description": {
+                    "en": "<p class=\"fg-white\">a collection of resources for individuals, communities, and companies who want to learn how to run and contribute to an open source project.</p>",
+                    "es": ""
+                },
+                "tags": [
+                    "open source software"
+                ],
+                "difficulty": "very_easy",
+                "targets": [
+                    "all"
+                ],
+                "licence": "public_domain",
+                "problem_profiles": [
+                    "BUILD_PROBLEM_3"
+                ],
+                "types": [
+                    "enabling_services",
+                    "enabling_services;implementing_software_and_artifacts"
+                ],
+                "administrative_scopes": [
+                    "eu",
+                    "national",
+                    "local"
+                ],
+                "constraints_and_limitations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "Textual documents in the form of linked Web pages describing the guidelines and testing success criteria",
+                    "es": ""
+                },
+                "instructions": "https://opensource.guide/",
+                "representations": [
+                    {
+                        "form": "guidelines",
+                        "format": "structured_format",
+                        "file": "./interlinkers/knowledge/Opensource-Guide/data.json",
+                        "softwareinterlinker": "externalresourcemanager",
+                        "language": "en"
+                    }
+                ],
+                "reference": "open-source-guides"
+            },
+            {
+                "name": {
+                    "en": "W3C Web Content Accessibility Guidelines",
+                    "es": ""
+                },
+                "description": {
+                    "en": "<p>Web Content Accessibility Guidelines (WCAG) aims at explaining how to make the Web content more accessible to the people with disabilities. It generally applies to the public services delivered as Web applications, and refers to the information in a web page of the applciation, including both the content (text, images, sounds, ...) and structure (markup, presentation, styles).</p><br><ul><li>defines a set of guidelines with corresponding testable success criteria across different levels</li><li>based on the accessibility principles: perceivable, operable, understandable, robust.</li></ul>",
+                    "es": ""
+                },
+                "tags": [
+                    "accessibility",
+                    "Web",
+                    "UI"
+                ],
+                "difficulty": "medium",
+                "targets": [
+                    "all"
+                ],
+                "licence": "permissive",
+                "problem_profiles": [
+                    "BUILD_PROBLEM_2",
+                    "BUILD_PROBLEM_1"
+                ],
+                "types": [
+                    "enabling_services;implementing_software_and_artifacts"
+                ],
+                "administrative_scopes": [
+                    "eu",
+                    "national",
+                    "local"
+                ],
+                "related_interlinkers": [],
+                "constraints_and_limitations": {
+                    "en": "Web applications",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "EU Directive 2016/2102 on the accessibility of the websites and mobile applications of public sector bodies",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "Textual documents in the form of linked Web pages describing the guidelines and testing success criteria",
+                    "es": ""
+                },
+                "instructions": "https://www.w3.org/WAI/WCAG21/quickref/",
+                "representations": [
+                    {
+                        "form": "guidelines",
+                        "format": "structured_format",
+                        "file": "./interlinkers/knowledge/w3c_web_content_accessibility_guidelines/data.json",
+                        "softwareinterlinker": "externalresourcemanager",
+                        "language": "en"
+                    }
+                ],
+                "reference": "w3c-web-content-accessibility-guidelines"
+            },
+            {
+                "name": {
+                    "en": "AgID Cloud computing migration strategy evalution template",
+                    "es": ""
+                },
+                "description": {
+                    "en": "<p>This resource contains a questionnaire to check the cloud computing migration strategy  </p>",
+                    "es": ""
+                },
                 "tags": [
                     "cloud",
                     "services",
@@ -2269,29 +2704,45 @@
                     "local"
                 ],
                 "related_interlinkers": [],
-                "constraints_and_limitations": "No special constraints apply",
-                "regulations_and_standards": "",
-                "overview_text": "Questionaire in google calc format",
+                "constraints_and_limitations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "Questionaire in google calc format",
+                    "es": ""
+                },
                 "instructions": "./interlinkers/knowledge/it-cloud-competences-assesment/instructions.md",
                 "representations": [
                     {
                         "form": "guidelines",
                         "format": "editable_source_document",
                         "file": "./interlinkers/knowledge/it-cloud-competences-assesment/data.json",
-                        "softwareinterlinker": "externalresourcemanager"
+                        "softwareinterlinker": "externalresourcemanager",
+                        "language": "en"
                     }
-                ]
+                ],
+                "reference": "agid-cloud-computing-migration-strategy-evalution-template"
             },
             {
-                "name": "Guidelines on the acquisition and reuse of software for public administrations",
-                "description": "<p>This resource aims at explaining how to acquire and reuse software in PA context.</p>",
+                "name": {
+                    "en": "AgID Cloud computing competence evalution template",
+                    "es": ""
+                },
+                "description": {
+                    "en": "<p>This resource contains a questionnaire to check the level of knowledge and competence in cloud computing </p>",
+                    "es": ""
+                },
                 "tags": [
-                    "open source",
-                    "public administration",
-                    "reuse",
-                    "acquisition"
+                    "cloud",
+                    "services",
+                    "security"
                 ],
-                "difficulty": "difficult",
+                "difficulty": "medium",
                 "targets": [
                     "all"
                 ],
@@ -2308,22 +2759,96 @@
                     "local"
                 ],
                 "related_interlinkers": [],
-                "constraints_and_limitations": "No special constraints apply",
-                "regulations_and_standards": "",
-                "overview_text": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
-                "instructions": "./interlinkers/knowledge/it-guidelines_acquiring_reuse_sw_pa/instructions.md",
+                "constraints_and_limitations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "Questionaire in google calc format",
+                    "es": ""
+                },
+                "instructions": "./interlinkers/knowledge/it-cloud-competences-assesment/instructions.md",
                 "representations": [
                     {
                         "form": "guidelines",
-                        "format": "structured_format",
-                        "file": "./interlinkers/knowledge/it-guidelines_acquiring_reuse_sw_pa/data.json",
-                        "softwareinterlinker": "externalresourcemanager"
+                        "format": "editable_source_document",
+                        "file": "./interlinkers/knowledge/it-cloud-competences-assesment/data.json",
+                        "softwareinterlinker": "externalresourcemanager",
+                        "language": "en"
                     }
-                ]
+                ],
+                "reference": "agid-cloud-computing-competence-evalution-template"
             },
             {
-                "name": "Italian PA interoperablity model ",
-                "description": "<p>This resource describes the guidelines for technical interoperability for PA and related operational documents: interaction patterns, interoperability profiles, implementation recommendations (in Italian). </p>",
+                "name": {
+                    "en": "Focus Group Template Co-production Investigation",
+                    "es": ""
+                },
+                "description": {
+                    "en": "<p class=\"fg-white\">This resource provides a skeleton to organize a focus group to investigate the co-production practices in a given organization. It addresses a series of questions about previous or current collaboration practices, the dynamics of collaboration (timeline, people, tools, communication channels), current KPIs, critical aspects and  desiderata.</p>",
+                    "es": ""
+                },
+                "tags": [
+                    "focus group",
+                    "template",
+                    "understand"
+                ],
+                "difficulty": "easy",
+                "targets": [
+                    "all"
+                ],
+                "licence": "public_domain",
+                "problem_profiles": [
+                    "VAL_PROBLEM_2"
+                ],
+                "types": [
+                    "enhancing_services"
+                ],
+                "related_interlinkers": [
+                    "Focus Group Guidelines"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "domain": "",
+                "process": "",
+                "constraints_and_limitations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "This INTERLINKER is composed by a PowerPoint scheleton that can be downloaded, customized and used to facilitate a Focus Group.",
+                    "es": ""
+                },
+                "instructions": "./interlinkers/knowledge/Focus-Group-Template-Co-production/instructions.md",
+                "representations": [
+                    {
+                        "form": "document_template",
+                        "format": "editable_source_document",
+                        "file": "./interlinkers/knowledge/Focus-Group-Template-Co-production/resource.pptx",
+                        "softwareinterlinker": "googledrive",
+                        "language": "en"
+                    }
+                ],
+                "reference": "focus-group-template-co-production-investigation"
+            },
+            {
+                "name": {
+                    "en": "Italian PA interoperablity model ",
+                    "es": ""
+                },
+                "description": {
+                    "en": "<p>This resource describes the guidelines for technical interoperability for PA and related operational documents: interaction patterns, interoperability profiles, implementation recommendations (in Italian). </p>",
+                    "es": ""
+                },
                 "tags": [
                     "open source",
                     "software",
@@ -2349,98 +2874,39 @@
                     "local"
                 ],
                 "related_interlinkers": [],
-                "constraints_and_limitations": "No special constraints apply",
-                "regulations_and_standards": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en",
-                "overview_text": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
+                "constraints_and_limitations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
+                    "es": ""
+                },
                 "instructions": "./interlinkers/knowledge/it-guidelines-data-protection/instructions.md",
                 "representations": [
                     {
                         "form": "guidelines",
                         "format": "structured_format",
                         "file": "./interlinkers/knowledge/it-guidelines-data-protection/data.json",
-                        "softwareinterlinker": "externalresourcemanager"
+                        "softwareinterlinker": "externalresourcemanager",
+                        "language": "en"
                     }
-                ]
+                ],
+                "reference": "italian-pa-interoperablity-model"
             },
             {
-                "name": "Open Source guides",
-                "description": "<p class=\"fg-white\">a collection of resources for individuals, communities, and companies who want to learn how to run and contribute to an open source project.</p>",
-                "tags": [
-                    "open source software"
-                ],
-                "difficulty": "very_easy",
-                "targets": [
-                    "all"
-                ],
-                "licence": "public_domain",
-                "problem_profiles": [
-                    "BUILD_PROBLEM_3"
-                ],
-                "types": [
-                    "enabling_services",
-                    "enabling_services;implementing_software_and_artifacts"
-                ],
-                "administrative_scopes": [
-                    "eu",
-                    "national",
-                    "local"
-                ],
-                "constraints_and_limitations": "No special constraints apply",
-                "regulations_and_standards": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en",
-                "overview_text": "Textual documents in the form of linked Web pages describing the guidelines and testing success criteria",
-                "instructions": "https://opensource.guide/",
-                "representations": [
-                    {
-                        "form": "guidelines",
-                        "format": "structured_format",
-                        "file": "./interlinkers/knowledge/Opensource-Guide/data.json",
-                        "softwareinterlinker": "externalresourcemanager"
-                    }
-                ]
-            },
-            {
-                "name": "Focus Group Template Co-production Investigation",
-                "description": "<p class=\"fg-white\">This resource provides a skeleton to organize a focus group to investigate the co-production practices in a given organization. It addresses a series of questions about previous or current collaboration practices, the dynamics of collaboration (timeline, people, tools, communication channels), current KPIs, critical aspects and  desiderata.</p>",
-                "tags": [
-                    "focus group",
-                    "template",
-                    "understand"
-                ],
-                "difficulty": "easy",
-                "targets": [
-                    "all"
-                ],
-                "licence": "public_domain",
-                "problem_profiles": [
-                    "VAL_PROBLEM_2"
-                ],
-                "types": [
-                    "enhancing_services"
-                ],
-                "related_interlinkers": [
-                    "Focus Group Guidelines"
-                ],
-                "administrative_scopes": [
-                    "eu"
-                ],
-                "domain": "",
-                "process": "",
-                "constraints_and_limitations": "No special constraints apply",
-                "regulations_and_standards": "",
-                "overview_text": "This INTERLINKER is composed by a PowerPoint scheleton that can be downloaded, customized and used to facilitate a Focus Group.",
-                "instructions": "./interlinkers/knowledge/Focus-Group-Template-Co-production/instructions.md",
-                "representations": [
-                    {
-                        "form": "document_template",
-                        "format": "editable_source_document",
-                        "file": "./interlinkers/knowledge/Focus-Group-Template-Co-production/resource.pptx",
-                        "softwareinterlinker": "googledrive"
-                    }
-                ]
-            },
-            {
-                "name": "Focus Group Guidelines",
-                "description": "<p class=\"fg-white\">Instructions on how to set up a research activity based on focus groups, for a co-production project.</p>",
+                "name": {
+                    "en": "Focus Group Guidelines",
+                    "es": ""
+                },
+                "description": {
+                    "en": "<p class=\"fg-white\">Instructions on how to set up a research activity based on focus groups, for a co-production project.</p>",
+                    "es": ""
+                },
                 "tags": [
                     "focus group",
                     "guidelines",
@@ -2468,22 +2934,319 @@
                 ],
                 "domain": "",
                 "process": "",
-                "constraints_and_limitations": "No special constraints apply",
-                "regulations_and_standards": "",
-                "overview_text": "This INTERLINKER is composed by a document that can be visualized and/or downloaded to enlarge stakeholders' know-how on methods for problem and context analysis. It contains a part that can be customized to prepare a reserch plan for focus groups.",
+                "constraints_and_limitations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "This INTERLINKER is composed by a document that can be visualized and/or downloaded to enlarge stakeholders' know-how on methods for problem and context analysis. It contains a part that can be customized to prepare a reserch plan for focus groups.",
+                    "es": ""
+                },
                 "instructions": "./interlinkers/knowledge/Focus-Group-Guidelines/instructions.md",
                 "representations": [
                     {
                         "form": "guidelines",
                         "format": "editable_source_document",
                         "file": "./interlinkers/knowledge/Focus-Group-Guidelines/resource.docx",
-                        "softwareinterlinker": "googledrive"
+                        "softwareinterlinker": "googledrive",
+                        "language": "en"
                     }
-                ]
+                ],
+                "reference": "focus-group-guidelines"
             },
             {
-                "name": "Consent Form for INTERLINK project",
-                "description": "<p class=\"fg-white\">Form to collect consent from participants engaged in INTERLINK research activities about the use of their personal data</p>",
+                "name": {
+                    "en": "Guidelines on the acquisition and reuse of software for public administrations",
+                    "es": ""
+                },
+                "description": {
+                    "en": "<p>This resource aims at explaining how to acquire and reuse software in PA context.</p>",
+                    "es": ""
+                },
+                "tags": [
+                    "open source",
+                    "public administration",
+                    "reuse",
+                    "acquisition"
+                ],
+                "difficulty": "difficult",
+                "targets": [
+                    "all"
+                ],
+                "licence": "permissive",
+                "problem_profiles": [
+                    "BUILD_PROBLEM_3"
+                ],
+                "types": [
+                    "enabling_services",
+                    "enabling_services;implementing_software_and_artifacts"
+                ],
+                "administrative_scopes": [
+                    "national",
+                    "local"
+                ],
+                "related_interlinkers": [],
+                "constraints_and_limitations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
+                    "es": ""
+                },
+                "instructions": "./interlinkers/knowledge/it-guidelines_acquiring_reuse_sw_pa/instructions.md",
+                "representations": [
+                    {
+                        "form": "guidelines",
+                        "format": "structured_format",
+                        "file": "./interlinkers/knowledge/it-guidelines_acquiring_reuse_sw_pa/data.json",
+                        "softwareinterlinker": "externalresourcemanager",
+                        "language": "en"
+                    }
+                ],
+                "reference": "guidelines-on-the-acquisition-and-reuse-of-software-for-public-administrations"
+            },
+            {
+                "name": {
+                    "en": "Stakeholders Mapping Canvas",
+                    "es": ""
+                },
+                "description": {
+                    "en": "<p class=\"fg-white\">This resource supports the identification and selection of the stakeholders to engage in a co-production team.</p>",
+                    "es": ""
+                },
+                "tags": [
+                    "stakeholders mapping",
+                    "canvas",
+                    "understand"
+                ],
+                "difficulty": "easy",
+                "targets": [
+                    "all"
+                ],
+                "licence": "public_domain",
+                "problem_profiles": [
+                    "UND_PROBLEM_2"
+                ],
+                "types": [
+                    "enhancing_services"
+                ],
+                "related_interlinkers": [
+                    "Stakeholders Mapping Guidelines",
+                    "Stakeholders Analysis Template"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "domain": "",
+                "process": "",
+                "constraints_and_limitations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "This INTERLINKER is composed by a PowerPoint scheleton that can be downloaded, customized and used to facilitate discussions for stakeholders mapping.",
+                    "es": ""
+                },
+                "instructions": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/instructions.md",
+                "representations": [
+                    {
+                        "form": "document_template",
+                        "format": "editable_source_document",
+                        "file": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/resource.pptx",
+                        "softwareinterlinker": "googledrive",
+                        "language": "en"
+                    }
+                ],
+                "reference": "stakeholders-mapping-canvas"
+            },
+            {
+                "name": {
+                    "en": "Cloud Enablement Kit (in Italian)",
+                    "es": ""
+                },
+                "description": {
+                    "en": "<p>This resource describes the Cloud Enablement strategy outlined by AGID and Team Digitale (in Italian). </p>",
+                    "es": ""
+                },
+                "tags": [
+                    "cloud",
+                    "services",
+                    "security"
+                ],
+                "difficulty": "difficult",
+                "targets": [
+                    "all"
+                ],
+                "licence": "permissive",
+                "problem_profiles": [
+                    "BUILD_PROBLEM_3"
+                ],
+                "types": [
+                    "enabling_services",
+                    "enabling_services;implementing_software_and_artifacts"
+                ],
+                "administrative_scopes": [
+                    "national",
+                    "local"
+                ],
+                "related_interlinkers": [],
+                "constraints_and_limitations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "PDF document",
+                    "es": ""
+                },
+                "instructions": "./interlinkers/knowledge/it-cloud-enablement-kit/instructions.md",
+                "representations": [
+                    {
+                        "form": "guidelines",
+                        "format": "pdf",
+                        "file": "./interlinkers/knowledge/it-cloud-enablement-kit/data.json",
+                        "softwareinterlinker": "externalresourcemanager",
+                        "language": "en"
+                    }
+                ],
+                "reference": "cloud-enablement-kit-in-italian"
+            },
+            {
+                "name": {
+                    "en": "Consent Form Template",
+                    "es": ""
+                },
+                "description": {
+                    "en": "<p class=\"fg-white\">Template to prepare a form to collect consent from participants engaged in research activities about the use of their personal data</p>",
+                    "es": ""
+                },
+                "tags": [
+                    "privacy management",
+                    "research activities",
+                    "co-production project participants",
+                    "INTERLINK"
+                ],
+                "difficulty": "very_easy",
+                "targets": [
+                    "all"
+                ],
+                "licence": "public_domain",
+                "problem_profiles": [
+                    "ORG_PROBLEM_14"
+                ],
+                "types": [
+                    "enhancing_services"
+                ],
+                "related_interlinkers": [
+                    "Information Sheet Template"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "domain": "",
+                "process": "",
+                "constraints_and_limitations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "The consent form is compliant to GDPR norms.",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "This INTERLINKER is composed by a document that can be downloaded, printed and distributed to participants.",
+                    "es": ""
+                },
+                "instructions": "./interlinkers/knowledge/Consent-Form-Template/instructions.md",
+                "representations": [
+                    {
+                        "form": "document_template",
+                        "format": "editable_source_document",
+                        "file": "./interlinkers/knowledge/Consent-Form-Template/resource.docx",
+                        "softwareinterlinker": "googledrive",
+                        "language": "en"
+                    }
+                ],
+                "reference": "consent-form-template"
+            },
+            {
+                "name": {
+                    "en": "AgID Minimum Security Measures for Public Administration. ",
+                    "es": ""
+                },
+                "description": {
+                    "en": "<p>This resource describes the minimum ICT security measures issued by AgID aim at countering the most frequent cyber threats to the Italian public administration.</p>",
+                    "es": ""
+                },
+                "tags": [
+                    "security"
+                ],
+                "difficulty": "difficult",
+                "targets": [
+                    "all"
+                ],
+                "licence": "permissive",
+                "problem_profiles": [
+                    "BUILD_PROBLEM_3"
+                ],
+                "types": [
+                    "enabling_services",
+                    "enabling_services;implementing_software_and_artifacts"
+                ],
+                "administrative_scopes": [
+                    "national",
+                    "local"
+                ],
+                "related_interlinkers": [],
+                "constraints_and_limitations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
+                    "es": ""
+                },
+                "instructions": "./interlinkers/knowledge/it-pa-minimum-security-measures/instructions.md",
+                "representations": [
+                    {
+                        "form": "guidelines",
+                        "format": "structured_format",
+                        "file": "./interlinkers/knowledge/it-pa-minimum-security-measures/data.json",
+                        "softwareinterlinker": "externalresourcemanager",
+                        "language": "en"
+                    }
+                ],
+                "reference": "agid-minimum-security-measures-for-public-administration"
+            },
+            {
+                "name": {
+                    "en": "Consent Form for INTERLINK project",
+                    "es": ""
+                },
+                "description": {
+                    "en": "<p class=\"fg-white\">Form to collect consent from participants engaged in INTERLINK research activities about the use of their personal data</p>",
+                    "es": ""
+                },
                 "tags": [
                     "privacy management",
                     "research activities",
@@ -2509,22 +3272,39 @@
                 ],
                 "domain": "",
                 "process": "",
-                "constraints_and_limitations": "No special constraints apply",
-                "regulations_and_standards": "The consent form is compliant to GDPR norms.",
-                "overview_text": "This INTERLINKER is composed by a document that can be downloaded, printed and distributed to participants.",
+                "constraints_and_limitations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "The consent form is compliant to GDPR norms.",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "This INTERLINKER is composed by a document that can be downloaded, printed and distributed to participants.",
+                    "es": ""
+                },
                 "instructions": "./interlinkers/knowledge/Consent-Form-INTERLINK/instructions.md",
                 "representations": [
                     {
                         "form": "document_template",
                         "format": "editable_source_document",
                         "file": "./interlinkers/knowledge/Consent-Form-INTERLINK/resource.docx",
-                        "softwareinterlinker": "googledrive"
+                        "softwareinterlinker": "googledrive",
+                        "language": "en"
                     }
-                ]
+                ],
+                "reference": "consent-form-for-interlink-project"
             },
             {
-                "name": "Information Sheet Template",
-                "description": "<p class=\"fg-white\">Template to guide the preparation of an information sheet to be distributed to participants to project activities. It provides background on research objectives.</p>",
+                "name": {
+                    "en": "Information Sheet for INTERLINK project",
+                    "es": ""
+                },
+                "description": {
+                    "en": "<p class=\"fg-white\">Information on the INTERLINK project to be distributed to participants. It provides background on research activities.</p>",
+                    "es": ""
+                },
                 "tags": [
                     "privacy management",
                     "research activities",
@@ -2543,63 +3323,36 @@
                     "enhancing_services"
                 ],
                 "related_interlinkers": [
-                    "Consent Form Template"
+                    "Consent Form for INTERLINK project"
                 ],
                 "administrative_scopes": [
                     "eu"
                 ],
                 "domain": "",
                 "process": "",
-                "constraints_and_limitations": "No special constraints apply",
-                "regulations_and_standards": "The information sheet is compliant to GDPR norms.",
-                "overview_text": "This INTERLINKER is composed by a document that can be downloaded, printed and distributed to participants.",
-                "instructions": "./interlinkers/knowledge/Information-Sheet-Template/instructions.md",
+                "constraints_and_limitations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "The information sheet is compliant to GDPR norms.",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "This INTERLINKER is composed by a document that can be downloaded, printed and distributed to participants.",
+                    "es": ""
+                },
+                "instructions": "./interlinkers/knowledge/Information-Sheet-INTERLINK/instructions.md",
                 "representations": [
                     {
                         "form": "document_template",
                         "format": "editable_source_document",
-                        "file": "./interlinkers/knowledge/Information-Sheet-Template/resource.docx",
-                        "softwareinterlinker": "googledrive"
+                        "file": "./interlinkers/knowledge/Information-Sheet-INTERLINK/resource.docx",
+                        "softwareinterlinker": "googledrive",
+                        "language": "en"
                     }
-                ]
-            },
-            {
-                "name": "AgID Cloud computing migration strategy evalution template",
-                "description": "<p>This resource contains a questionnaire to check the cloud computing migration strategy  </p>",
-                "tags": [
-                    "cloud",
-                    "services",
-                    "security"
                 ],
-                "difficulty": "medium",
-                "targets": [
-                    "all"
-                ],
-                "licence": "permissive",
-                "problem_profiles": [
-                    "BUILD_PROBLEM_3"
-                ],
-                "types": [
-                    "enabling_services",
-                    "enabling_services;implementing_software_and_artifacts"
-                ],
-                "administrative_scopes": [
-                    "national",
-                    "local"
-                ],
-                "related_interlinkers": [],
-                "constraints_and_limitations": "No special constraints apply",
-                "regulations_and_standards": "",
-                "overview_text": "Questionaire in google calc format",
-                "instructions": "./interlinkers/knowledge/it-cloud-competences-assesment/instructions.md",
-                "representations": [
-                    {
-                        "form": "guidelines",
-                        "format": "editable_source_document",
-                        "file": "./interlinkers/knowledge/it-cloud-competences-assesment/data.json",
-                        "softwareinterlinker": "externalresourcemanager"
-                    }
-                ]
+                "reference": "information-sheet-for-interlink-project"
             }
         ]
     }

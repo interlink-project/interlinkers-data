@@ -1,11 +1,17 @@
 {
-    "name": "Italian PA interoperablity model ",
-    "description": "<p>This resource describes the guidelines for technical interoperability for PA and related operational documents: interaction patterns, interoperability profiles, implementation recommendations (in Italian). </p>",
+    "name": {
+        "en": "Italian PA interoperablity model ",
+        "es": ""
+    },
+    "description": {
+        "en": "<p>This resource describes the guidelines for technical interoperability for PA and related operational documents: interaction patterns, interoperability profiles, implementation recommendations (in Italian). </p>",
+        "es": ""
+    },
     "tags": [
-        "open source", 
+        "open source",
         "software",
         "interoperability",
-        "public administration", 
+        "public administration",
         "reuse",
         "acquisition"
     ],
@@ -26,16 +32,27 @@
         "local"
     ],
     "related_interlinkers": [],
-    "constraints_and_limitations": "No special constraints apply",
-    "regulations_and_standards": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en",
-    "overview_text": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
-    "instructions":"./interlinkers/knowledge/it-guidelines-data-protection/instructions.md",
+    "constraints_and_limitations": {
+        "en": "No special constraints apply",
+        "es": ""
+    },
+    "regulations_and_standards": {
+        "en": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en",
+        "es": ""
+    },
+    "overview_text": {
+        "en": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
+        "es": ""
+    },
+    "instructions": "./interlinkers/knowledge/it-guidelines-data-protection/instructions.md",
     "representations": [
         {
             "form": "guidelines",
             "format": "structured_format",
             "file": "./interlinkers/knowledge/it-guidelines-data-protection/data.json",
-            "softwareinterlinker": "externalresourcemanager"
+            "softwareinterlinker": "externalresourcemanager",
+            "language": "en"
         }
-    ]
+    ],
+    "reference": "italian-pa-interoperablity-model"
 }

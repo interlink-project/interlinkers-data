@@ -1,9 +1,15 @@
 {
-    "name": "Guidelines on the acquisition and reuse of software for public administrations",
-    "description": "<p>This resource aims at explaining how to acquire and reuse software in PA context.</p>",
+    "name": {
+        "en": "Guidelines on the acquisition and reuse of software for public administrations",
+        "es": ""
+    },
+    "description": {
+        "en": "<p>This resource aims at explaining how to acquire and reuse software in PA context.</p>",
+        "es": ""
+    },
     "tags": [
-        "open source", 
-        "public administration", 
+        "open source",
+        "public administration",
         "reuse",
         "acquisition"
     ],
@@ -24,16 +30,27 @@
         "local"
     ],
     "related_interlinkers": [],
-    "constraints_and_limitations": "No special constraints apply",
-    "regulations_and_standards": "",
-    "overview_text": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
-    "instructions":"./interlinkers/knowledge/it-guidelines_acquiring_reuse_sw_pa/instructions.md",
+    "constraints_and_limitations": {
+        "en": "No special constraints apply",
+        "es": ""
+    },
+    "regulations_and_standards": {
+        "en": "",
+        "es": ""
+    },
+    "overview_text": {
+        "en": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
+        "es": ""
+    },
+    "instructions": "./interlinkers/knowledge/it-guidelines_acquiring_reuse_sw_pa/instructions.md",
     "representations": [
         {
             "form": "guidelines",
             "format": "structured_format",
             "file": "./interlinkers/knowledge/it-guidelines_acquiring_reuse_sw_pa/data.json",
-            "softwareinterlinker": "externalresourcemanager"
+            "softwareinterlinker": "externalresourcemanager",
+            "language": "en"
         }
-    ]
+    ],
+    "reference": "guidelines-on-the-acquisition-and-reuse-of-software-for-public-administrations"
 }

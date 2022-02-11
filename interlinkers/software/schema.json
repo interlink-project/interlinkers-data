@@ -11,11 +11,11 @@
         },
         "name": {
             "title": "Name",
-            "type": "string"
+            "type": "object"
         },
         "description": {
             "title": "Description",
-            "type": "string"
+            "type": "object"
         },
         "tags": {
             "title": "Tags",
@@ -66,14 +66,18 @@
         },
         "constraints_and_limitations": {
             "title": "Constraints And Limitations",
-            "type": "string"
+            "type": "object"
         },
         "regulations_and_standards": {
             "title": "Regulations And Standards",
-            "type": "string"
+            "type": "object"
         },
         "overview_text": {
             "title": "Overview Text",
+            "type": "object"
+        },
+        "reference": {
+            "title": "Reference",
             "type": "string"
         },
         "supported_by": {
@@ -165,6 +169,7 @@
         "difficulty",
         "licence",
         "constraints_and_limitations",
+        "reference",
         "supported_by",
         "auth_method",
         "supports_internationalization",

@@ -1,6 +1,6 @@
 {
     "prerequisites": [
-        "project_start"
+        "phase-project_start"
     ],
     "name": {
         "en": "Evaluate",
