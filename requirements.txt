@@ -1,3 +1,2 @@
 pydantic
-python3-slugify
-# jsonschema
+python-slugify
