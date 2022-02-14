@@ -1969,7 +1969,7 @@
                     "objectives": [
                         {
                             "name": {
-                                "en": "Define evaluation creiteria",
+                                "en": "Define evaluation criteria",
                                 "es": ""
                             },
                             "description": {
@@ -2011,7 +2011,7 @@
                                     "reference": "objective-define-kpis"
                                 }
                             ],
-                            "reference": "objective-define-evaluation-creiteria"
+                            "reference": "objective-define-evaluation-criteria"
                         },
                         {
                             "name": {
@@ -2060,7 +2060,7 @@
                             ],
                             "prerequisites": [
                                 {
-                                    "objective": "objective-define-evaluation-creiteria",
+                                    "objective": "objective-define-evaluation-criteria",
                                     "status": "completed"
                                 }
                             ],
