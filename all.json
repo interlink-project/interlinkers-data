@@ -1391,7 +1391,7 @@
                                 },
                                 {
                                     "name": {
-                                        "en": "Map stakeholders, analyse motivationM skills, expectations",
+                                        "en": "Map stakeholders, analyse motivation, skills, expectations",
                                         "es": "Mapear partes interesadas analizar motivaci\u00f3n habilidades expectativas"
                                     },
                                     "description": {
@@ -1407,7 +1407,7 @@
                                             "status": "completed"
                                         }
                                     ],
-                                    "reference": "objective-map-stakeholders-analyse-motivationm-skills-expectations"
+                                    "reference": "objective-map-stakeholders-analyse-motivation-skills-expectations"
                                 },
                                 {
                                     "name": {
@@ -1423,7 +1423,7 @@
                                     ],
                                     "prerequisites": [
                                         {
-                                            "objective": "objective-map-stakeholders-analyse-motivationm-skills-expectations",
+                                            "objective": "objective-map-stakeholders-analyse-motivation-skills-expectations",
                                             "status": "completed"
                                         }
                                     ],
