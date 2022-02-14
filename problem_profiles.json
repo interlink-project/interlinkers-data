@@ -628,5 +628,20 @@
           "en": "Enablers should provide guidance and tools  on how to monitor and evaluate services co-delivered.\nGuidelines on how to monitor services co-delivery \nSteps to follow to set up a monitoring process:\nReview the indicators you are going to measure, also according with KPIs (like number of users, users' satisfaction, other dimensions specifically related to co-production, \u2026.)\nDecide if indicators should be measured through qualitative or quantitative methods\nCollect and analyse data\nList of tools that can be used to monitor the quality of the service co-delivered\nUse data to implement changes and improve service co-delivery",
           "es": ""
       }
+  },
+  {
+      "id": "SUS_PROBLEM_1",
+      "name": {
+          "en": "Define a sustainability / business plan",
+          "es": ""
+      },
+      "description": {
+          "en": "This problem addresses the need to review and refine the business model and market reach plan associated to a co-produced service.",
+          "es": ""
+      },
+      "functionality": {
+          "en": "Enablers should provide guidance and tools on how to define suitable business models and effective business plans that would allow to put in practice the deviced business models.",
+          "es": ""
+      }
   }
 ]
