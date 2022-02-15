@@ -1,0 +1,57 @@
+{
+    "name": {
+        "en": "Business Model Canvas",
+        "es": ""
+    },
+    "description": {
+        "en": "<p class=\"fg-white\">This canvas can be used collaboratively, for instance, during a brainstorming or a focus group, to reflect on the the most suitable business model associated to a co-produced service..</p>",
+        "es": ""
+    },
+    "tags": [
+        "model",
+        "canvas",
+        "business"
+    ],
+    "difficulty": "easy",
+    "targets": [
+        "all"
+    ],
+    "licence": "public_domain",
+    "problem_profiles": [
+        "SUS_PROBLEM_1"
+    ],
+    "types": [
+        "enhancing_services"
+    ],
+    "related_interlinkers": [
+        "Business Plan Template"
+    ],
+    "administrative_scopes": [
+        "eu"
+    ],
+    "domain": "",
+    "process": "",
+    "constraints_and_limitations": {
+        "en": "No special constraints apply",
+        "es": ""
+    },
+    "regulations_and_standards": {
+        "en": "",
+        "es": ""
+    },
+    "overview_text": {
+        "en": "This INTERLINKER is composed by a PowerPoint scheleton that can be downloaded, customized and used to facilitate discussions for business models.",
+        "es": ""
+    },
+    "instructions": "./interlinkers/knowledge/Business-Model-Canvas/instructions.md",
+    "representations": [
+        {
+            "form": "document_template",
+            "format": "editable_source_document",
+            "file": "./interlinkers/knowledge/Business-Model-Canvas/resource.pptx",
+            "softwareinterlinker": "googledrive",
+            "language": "en"
+        }
+    ],
+    "reference": "business-model-canvas"
+}

@@ -629,6 +629,21 @@
                 "en": "Enablers should provide guidance and tools  on how to monitor and evaluate services co-delivered.\nGuidelines on how to monitor services co-delivery \nSteps to follow to set up a monitoring process:\nReview the indicators you are going to measure, also according with KPIs (like number of users, users' satisfaction, other dimensions specifically related to co-production, \u2026.)\nDecide if indicators should be measured through qualitative or quantitative methods\nCollect and analyse data\nList of tools that can be used to monitor the quality of the service co-delivered\nUse data to implement changes and improve service co-delivery",
                 "es": ""
             }
+        },
+        {
+            "id": "SUS_PROBLEM_1",
+            "name": {
+                "en": "Define a sustainability / business plan",
+                "es": ""
+            },
+            "description": {
+                "en": "This problem addresses the need to review and refine the business model and market reach plan associated to a co-produced service.",
+                "es": ""
+            },
+            "functionality": {
+                "en": "Enablers should provide guidance and tools on how to define suitable business models and effective business plans that would allow to put in practice the deviced business models.",
+                "es": ""
+            }
         }
     ],
     "schemas": [
@@ -1391,7 +1406,7 @@
                                 },
                                 {
                                     "name": {
-                                        "en": "Map stakeholders, analyse motivationM skills, expectations",
+                                        "en": "Map stakeholders, analyse motivation, skills, expectations",
                                         "es": "Mapear partes interesadas analizar motivaci\u00f3n habilidades expectativas"
                                     },
                                     "description": {
@@ -1407,7 +1422,7 @@
                                             "status": "completed"
                                         }
                                     ],
-                                    "reference": "objective-map-stakeholders-analyse-motivationm-skills-expectations"
+                                    "reference": "objective-map-stakeholders-analyse-motivation-skills-expectations"
                                 },
                                 {
                                     "name": {
@@ -1423,7 +1438,7 @@
                                     ],
                                     "prerequisites": [
                                         {
-                                            "objective": "objective-map-stakeholders-analyse-motivationm-skills-expectations",
+                                            "objective": "objective-map-stakeholders-analyse-motivation-skills-expectations",
                                             "status": "completed"
                                         }
                                     ],
@@ -1969,7 +1984,7 @@
                     "objectives": [
                         {
                             "name": {
-                                "en": "Define evaluation creiteria",
+                                "en": "Define evaluation criteria",
                                 "es": ""
                             },
                             "description": {
@@ -2011,7 +2026,7 @@
                                     "reference": "objective-define-kpis"
                                 }
                             ],
-                            "reference": "objective-define-evaluation-creiteria"
+                            "reference": "objective-define-evaluation-criteria"
                         },
                         {
                             "name": {
@@ -2060,7 +2075,7 @@
                             ],
                             "prerequisites": [
                                 {
-                                    "objective": "objective-define-evaluation-creiteria",
+                                    "objective": "objective-define-evaluation-criteria",
                                     "status": "completed"
                                 }
                             ],
@@ -3071,6 +3086,63 @@
             },
             {
                 "name": {
+                    "en": "Business Plan Template",
+                    "es": ""
+                },
+                "description": {
+                    "en": "<p class=\"fg-white\">This canvas can be edited collaboratively by the co-producing team to ellaborate the business plan for a co-produced service..</p>",
+                    "es": ""
+                },
+                "tags": [
+                    "template",
+                    "canvas",
+                    "business"
+                ],
+                "difficulty": "easy",
+                "targets": [
+                    "all"
+                ],
+                "licence": "public_domain",
+                "problem_profiles": [
+                    "SUS_PROBLEM_1"
+                ],
+                "types": [
+                    "enhancing_services"
+                ],
+                "related_interlinkers": [
+                    "Business Model Canvas"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "domain": "",
+                "process": "",
+                "constraints_and_limitations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "This INTERLINKER is composed by a Word scheleton that can be downloaded, customized and used to co-edit a whole business plan for a co-produced service.",
+                    "es": ""
+                },
+                "instructions": "./interlinkers/knowledge/Business-Plan-Template/instructions.md",
+                "representations": [
+                    {
+                        "form": "document_template",
+                        "format": "editable_source_document",
+                        "file": "./interlinkers/knowledge/Business-Plan-Template/resource.docx",
+                        "softwareinterlinker": "googledrive",
+                        "language": "en"
+                    }
+                ],
+                "reference": "business-plan-template"
+            },
+            {
+                "name": {
                     "en": "Focus Group Template Co-production Investigation",
                     "es": ""
                 },
@@ -3125,6 +3197,63 @@
                     }
                 ],
                 "reference": "focus-group-template-co-production-investigation"
+            },
+            {
+                "name": {
+                    "en": "Business Model Canvas",
+                    "es": ""
+                },
+                "description": {
+                    "en": "<p class=\"fg-white\">This canvas can be used collaboratively, for instance, during a brainstorming or a focus group, to reflect on the the most suitable business model associated to a co-produced service..</p>",
+                    "es": ""
+                },
+                "tags": [
+                    "model",
+                    "canvas",
+                    "business"
+                ],
+                "difficulty": "easy",
+                "targets": [
+                    "all"
+                ],
+                "licence": "public_domain",
+                "problem_profiles": [
+                    "SUS_PROBLEM_1"
+                ],
+                "types": [
+                    "enhancing_services"
+                ],
+                "related_interlinkers": [
+                    "Business Plan Template"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "domain": "",
+                "process": "",
+                "constraints_and_limitations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "This INTERLINKER is composed by a PowerPoint scheleton that can be downloaded, customized and used to facilitate discussions for business models.",
+                    "es": ""
+                },
+                "instructions": "./interlinkers/knowledge/Business-Model-Canvas/instructions.md",
+                "representations": [
+                    {
+                        "form": "document_template",
+                        "format": "editable_source_document",
+                        "file": "./interlinkers/knowledge/Business-Model-Canvas/resource.pptx",
+                        "softwareinterlinker": "googledrive",
+                        "language": "en"
+                    }
+                ],
+                "reference": "business-model-canvas"
             },
             {
                 "name": {
