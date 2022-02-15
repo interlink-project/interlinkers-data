@@ -35,7 +35,6 @@ const reducer = (state, action) =>
 
 const AuthContext = createContext({
   ...initialState,
-  platform: 'OIDC',
   logout: () => Promise.resolve(),
   signinRedirect: () => Promise.resolve(),
   getUser: () => Promise.resolve(),
