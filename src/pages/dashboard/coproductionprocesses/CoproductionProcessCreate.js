@@ -32,7 +32,6 @@ import { LoadingButton } from '@material-ui/lab';
 import useAuth from 'hooks/useAuth';
 import { coproductionProcessesApi, usersApi } from '__fakeApi__';
 import { getImageUrl } from 'axiosInstance';
-import TeamCreate from '../teams/TeamCreate';
 
 const CoproductionprocessCreate = ({ teams = [], onCreate }) => {
   const [open, setOpen] = useState(false);
@@ -112,16 +111,24 @@ const CoproductionprocessCreate = ({ teams = [], onCreate }) => {
 
   const team = teams.find(team => team.id === teamId)
 
+  const isDisabled = () => {
+    if (activeStep === 0 && (!name || !description)){
+      return true
+    }
+    if (activeStep === 1 && !teamId){
+      return true
+    }
+  }
   return (
     <>
       <Button fullWidth variant="contained" color='primary' onClick={handleClickOpen}>
-        Create new coproductionprocess
+        Create new co-production process
       </Button>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Coproductionprocess creation</DialogTitle>
+        <DialogTitle>Co-production process creation</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            To create a coproductionprocess, please enter a name and a description. Then, add a team to the coproductionprocess.
+            Please enter a name and a description. Then, add a team to the coproductionprocess.
           </DialogContentText>
           {activeStep === 0 && <><Box sx={{ textAlign: "center" }}>
             <label htmlFor="contained-button-file">
@@ -190,10 +197,6 @@ const CoproductionprocessCreate = ({ teams = [], onCreate }) => {
 
               </Select>
             </FormControl>
-
-            {!teamId && <><Divider flexItem sx={{ m: 3 }}>
-              Or create a new team...
-            </Divider><TeamCreate /></>}
           </>}
 
 
@@ -206,7 +209,7 @@ const CoproductionprocessCreate = ({ teams = [], onCreate }) => {
             activeStep={activeStep}
             sx={{ flexGrow: 1 }}
             nextButton={
-              <LoadingButton loading={loading} size="small" onClick={handleNext} disabled={activeStep === 1 && !teamId}>
+              <LoadingButton loading={loading} size="small" onClick={handleNext} disabled={isDisabled()}>
                 {activeStep === 1 ? "Create" : "Next"}
                 <KeyboardArrowRight />
               </LoadingButton>

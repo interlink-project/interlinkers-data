@@ -125,32 +125,18 @@ const MyWorkspace = () => {
                   Here&apos;s what&apos;s happening today
                 </Typography>
               </Grid>
-              <Grid item>
-                <Box sx={{ m: -1 }}>
-                  <Button
-                    color='primary'
-                    component={RouterLink}
-                    startIcon={<PlusIcon fontSize='small' />}
-                    sx={{ m: 1 }}
-                    to='/dashboard/coproductionprocesses/new'
-                    variant='text'
-                  >
-                    Documentation
-                  </Button>
-                </Box>
-              </Grid>
             </Grid>
           </Grid>
           <Grid container spacing={4} sx={{ mt: 2 }}>
             <Grid item xs={6}>
-              <Typography color='textPrimary' variant='h6' sx={{ mb: 2 }}>Your coproduction processes</Typography>
+              <Typography color='textPrimary' variant='h6' sx={{ mb: 2 }}>Your co-production processes</Typography>
 
               <Card>
                 <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
                   {loadingProcesses && <LoadingItems />}
                   {processes.map(process => (
                     <React.Fragment key={process.id}>
-                      <ListItem alignItems="flex-start" button component={RouterLink} to={`/dashboard/coproductionprocesses/${process.id}/repository`}>
+                      <ListItem alignItems="flex-start" button component={RouterLink} to={`/dashboard/coproductionprocesses/${process.id}/overview`}>
                         <ListItemAvatar>
                           <Avatar alt={process.name} src={getImageUrl("coproduction", process.logotype)} />
                         </ListItemAvatar>

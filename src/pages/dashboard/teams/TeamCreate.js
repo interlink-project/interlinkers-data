@@ -121,6 +121,11 @@ const TeamCreate = ({ onCreate }) => {
     setSelectedUsers(selectedUsers.filter(user => user.sub !== sub))
   }
 
+  const isDisabled = () => {
+    if (activeStep === 0 && (!name || !description)){
+      return true
+    }
+  }
 
   return (
     <>
@@ -234,7 +239,7 @@ const TeamCreate = ({ onCreate }) => {
             activeStep={activeStep}
             sx={{ flexGrow: 1 }}
             nextButton={
-              <Button size="small" onClick={handleNext}>
+              <Button size="small" onClick={handleNext} disabled={isDisabled()}>
                 {activeStep === 1 ? "Create" : "Next"}
                 <KeyboardArrowRight />
               </Button>

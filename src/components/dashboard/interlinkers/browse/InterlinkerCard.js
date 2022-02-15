@@ -34,7 +34,7 @@ const InterlinkerCard = (props) => {
   const [isLiked, setIsLiked] = useState(interlinker.isLiked);
   const [likes, setLikes] = useState(interlinker.likes || 0);
   const [hovered, setHovered] = useState(false);
-  const isOn = false
+  const isOn = true
   const isSoftware = interlinker.nature === "softwareinterlinker"
   const sameHeightCards = {
     minHeight: "200px",

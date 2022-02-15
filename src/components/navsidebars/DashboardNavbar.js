@@ -1,12 +1,12 @@
 import { Link as RouterLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { AppBar, Box, IconButton, Toolbar, useMediaQuery, useTheme } from '@material-ui/core';
+import { AppBar, Box, IconButton, Toolbar, useMediaQuery, useTheme, MenuItem, Typography } from '@material-ui/core';
 import { experimentalStyled } from '@material-ui/core/styles';
 import MenuIcon from '../../icons/Menu';
 import AccountPopover from './AccountPopover';
-import ContentSearch from './ContentSearch';
 import NotificationsPopover from './NotificationsPopover';
 import SettingsPopover from './SettingsPopover';
+import SearchAppBar from './Search';
 
 const DashboardNavbarRoot = experimentalStyled(AppBar)(({ theme }) => ({
   ...(theme.palette.mode === 'light' && {
@@ -50,6 +50,15 @@ const DashboardNavbar = (props) => {
             height='40px'
           />
         </RouterLink>
+        <MenuItem component={RouterLink} to='/dashboard' selected>
+                  <Typography textAlign="center" variant="button">Workspace</Typography>
+                </MenuItem>
+                <MenuItem component={RouterLink} to='/dashboard/interlinkers' >
+                  <Typography textAlign="center" variant="button">Interlinkers</Typography>
+                </MenuItem>
+                <MenuItem component={RouterLink} to='/dashboard' disabled>
+                  <Typography textAlign="center" variant="button">Public services</Typography>
+                </MenuItem>
         <Box
           sx={{
             flexGrow: 1,
@@ -60,13 +69,15 @@ const DashboardNavbar = (props) => {
           <SettingsPopover />
         </Box>
         <Box sx={{ ml: 1 }}>
-          <ContentSearch />
+          <SearchAppBar />
         </Box>
         {!onMobile &&
           <>
+          {/*
             <Box sx={{ ml: 1 }}>
               <NotificationsPopover />
             </Box>
+          */}
             <Box sx={{ ml: 2 }}>
               <AccountPopover />
             </Box>

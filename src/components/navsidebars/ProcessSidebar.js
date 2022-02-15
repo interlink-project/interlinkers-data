@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { Link as RouterLink, useLocation, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Avatar, Box, Divider, Drawer, Link, Typography } from '@material-ui/core';
-import { Dashboard as DashboardIcon, FolderOpen as FolderOpenIcon, HomeRepairService as HomeRepairServiceIcon, Link as LinkIcon, Group as GroupIcon } from '@material-ui/icons';
+import { Avatar, Box, Divider, Drawer, Link, Typography, Button } from '@material-ui/core';
+import { Dashboard as DashboardIcon, FolderOpen as FolderOpenIcon, HomeRepairService as HomeRepairServiceIcon, Link as LinkIcon, Group as GroupIcon, ArrowBack } from '@material-ui/icons';
 
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Logo from '../Logo';
@@ -36,14 +36,14 @@ const ProcessSidebar = (props) => {
       title: "",
       items: [
         {
-          title: 'Repository',
-          path: `/dashboard/coproductionprocesses/${processId}/repository`,
-          icon: <FolderOpen />
-        },
-        {
           title: 'Overview',
           path: `/dashboard/coproductionprocesses/${processId}/overview`,
           icon: <Dashboard />
+        },
+        {
+          title: 'Guide',
+          path: `/dashboard/coproductionprocesses/${processId}/guide`,
+          icon: <FolderOpen />
         },
         {
           title: 'Team',
@@ -113,31 +113,17 @@ const ProcessSidebar = (props) => {
               overflow: 'hidden',
               p: 2
             }}
+            component={RouterLink}
+            to='/dashboard'
           >
-            {!loading && <Link
-              component={RouterLink}
-              to='#'
-            >
-              <Avatar
-                sx={{
-                  cursor: 'pointer',
-                  height: 48,
-                  width: 48
-                }} variant="square" sx={process && !process.logotype ? { bgcolor: red[500] } : {}} aria-label="recipe" src={process && process.logotype && getImageUrl("coproduction", process.logotype)}>
-                {process && !process.logotype && process.name[0]}
-              </Avatar>
-            </Link>}
-
-
-
-
+            <ArrowBack />
             <Box sx={{ ml: 2 }}>
-            {!loading && <Typography
+              <Typography
                 color='textPrimary'
                 variant='subtitle2'
               >
-                {process && process.name}
-              </Typography>}
+                Go back
+              </Typography>
 
             </Box>
           </Box>
@@ -171,8 +157,7 @@ const ProcessSidebar = (props) => {
             backgroundColor: 'background.paper',
             height: 'calc(100% - 64px) !important',
             top: '64px !Important',
-            width: 420,
-            paddingLeft: '220px',
+            width: 220,
             zIndex: 0
           }
         }}

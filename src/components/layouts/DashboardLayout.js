@@ -22,7 +22,7 @@ const DashboardLayoutWrapper = experimentalStyled('div')(({ theme }) => ({
   overflow: 'hidden',
   paddingTop: '64px',
   [theme.breakpoints.up('lg')]: {
-    paddingLeft: '420px'
+    paddingLeft: '240px'
   }
 }));
 
@@ -31,9 +31,6 @@ const DashboardLayoutWrapper2 = experimentalStyled('div')(({ theme }) => ({
   flex: '1 1 auto',
   overflow: 'hidden',
   paddingTop: '64px',
-  [theme.breakpoints.up('lg')]: {
-    paddingLeft: '220px'
-  }
 }));
 
 const DashboardLayoutContainer = experimentalStyled('div')({
@@ -70,10 +67,6 @@ const DashboardLayout = () => {
   return (
     <DashboardLayoutRoot>
       <DashboardNavbar onSidebarMobileOpen={() => setIsSidebarMobileOpen(true)} />
-      <DashboardSidebar
-        onMobileClose={() => setIsSidebarMobileOpen(false)}
-        openMobile={isSidebarMobileOpen}
-      />
       {coproductionProcessLocation && <ProcessSidebar
         onMobileClose={() => setIsSidebarMobileOpen(false)}
         openMobile={isSidebarMobileOpen}

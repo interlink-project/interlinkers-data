@@ -128,8 +128,8 @@ const OverviewTab = () => {
                         <MoreVert />
                     </IconButton>
                 }
-                title={`Metadata of '${process.name}' coproduction process`}
-                subheader={`Created: ${moment(process.created_at).format("LL")} | Last update: ${moment(process.updated_at).format("LLL")}`}
+                title={`Metadata of '${process.name}' co-production process`}
+                subheader={`Created: ${moment(process.created_at).format("LL")} ` + (process.updated_at ? `| Last update: ${moment(process.updated_at).format("LLL")}` : "")}
             />
             <Menu
                 id="long-menu"

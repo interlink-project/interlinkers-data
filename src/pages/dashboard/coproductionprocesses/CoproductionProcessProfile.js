@@ -1,6 +1,6 @@
 import { useCallback, useState, useEffect } from 'react';
 
-import { Link as RouterLink, useParams } from 'react-router-dom';
+import { Link, Link as RouterLink, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import {
   Avatar,
@@ -15,10 +15,10 @@ import {
   Tooltip,
   Typography,
   Card,
+  TabClassKey,
   Skeleton,
   CardHeader,
-  TextField,
-  Grid,
+  Breadcrumbs,
   useMediaQuery,
   useTheme,
 
@@ -26,7 +26,7 @@ import {
 import useMounted from '../../../hooks/useMounted';
 import DotsVerticalIcon from '../../../icons/DotsVertical';
 import gtm from '../../../lib/gtm';
-import { MoreVert, NavigateNext } from '@material-ui/icons';
+import { Grain, Home, MoreVert, NavigateNext, Whatshot } from '@material-ui/icons';
 import Repository from './Tabs/Repository/Repository';
 import MobileRepository from './Tabs/Repository/MobileRepository';
 import TeamTab from './Tabs/Team';
@@ -102,7 +102,6 @@ const CoproductionProcessProfile = () => {
     navigate(`/dashboard/coproductionprocesses/${processId}/${value}`);
   };
 
-
   const logoExists = process && process.logotype
   const TabsMobile = () => <Card sx={{ mr: onMobile ? 0 : 2, mb: onMobile ? 1 : 0 }}>
     <CardHeader
@@ -118,7 +117,8 @@ const CoproductionProcessProfile = () => {
       }
       title={process && process.name}
       subheader={process && process.artefact_type}
-    /><Tabs
+    />
+    <Tabs
       indicatorColor="secondary"
       onChange={handleTabsChange}
       value={tab}
@@ -139,14 +139,15 @@ const CoproductionProcessProfile = () => {
     </Tabs></Card>
 
   const Content = () => <>
-    <TabPanel value={tab} index="repository">
-      <Card>
-        <Repository />
-      </Card>
-    </TabPanel>
+
     <TabPanel value={tab} index="overview">
       <Card >
         <OverviewTab />
+      </Card>
+    </TabPanel>
+    <TabPanel value={tab} index="guide">
+      <Card>
+        <Repository />
       </Card>
     </TabPanel>
     <TabPanel value={tab} index="team">
@@ -159,7 +160,7 @@ const CoproductionProcessProfile = () => {
   return (
     <>
       <Helmet>
-        <title>Dashboard: Coproduction process</title>
+        <title>Dashboard: Co-production process</title>
       </Helmet>
 
       <Box
@@ -175,7 +176,27 @@ const CoproductionProcessProfile = () => {
                 <ContentSkeleton />
               </>
               :
-              <ContentSkeleton />
+              <>
+                <Breadcrumbs aria-label="breadcrumb" sx={{mb: 2}}>
+                <Typography
+                    sx={{ display: 'flex', alignItems: 'center' }}
+                    color="text.primary"
+                    variant="h5"
+                  >
+                    <Grain sx={{ mr: 0.5 }} fontSize="inherit" />
+                    Workspace
+                  </Typography>
+                  <Typography
+                    sx={{ display: 'flex', alignItems: 'center' }}
+                    color="text.primary"
+                    variant="h5"
+                  >
+                    {logoExists && <Avatar sx={{ mr: 0.5, height: "30px", width: "30px" }} src={getImageUrl("coproduction", process.logotype)} />}
+                   { process && process.name}
+                  </Typography>
+                </Breadcrumbs>
+                <ContentSkeleton />
+              </>
             }
 
           </Container>
