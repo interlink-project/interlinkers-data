@@ -175,7 +175,7 @@ const TeamCreate = ({ onCreate }) => {
           {activeStep === 1 && <><List dense>
             {selectedUsers.map(user => {
 
-              var name = user.given_name + " " + user.family_name
+              var name = user.full_name
               const you = user.sub === auth.user.sub
               if (you) {
                 name += " (you)"

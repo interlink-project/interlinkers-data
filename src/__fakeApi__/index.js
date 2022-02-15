@@ -5,6 +5,8 @@ import { phasesApi } from './coproduction/phasesApi';
 import { objectivesApi } from './coproduction/objectivesApi';
 import { interlinkersApi } from './catalogue/interlinkersApi';
 import { teamsApi } from './coproduction/teamsApi';
+import { aclsApi } from './coproduction/aclApi';
+import { rolesApi } from './coproduction/rolesApi';
 import { usersApi } from './users';
 
-export { assetsApi, coproductionProcessesApi, teamsApi, usersApi, tasksApi, phasesApi, objectivesApi, interlinkersApi }
+export { assetsApi, aclsApi, rolesApi, coproductionProcessesApi, teamsApi, usersApi, tasksApi, phasesApi, objectivesApi, interlinkersApi }

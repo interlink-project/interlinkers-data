@@ -50,7 +50,7 @@ const tabs = [
   { label: 'Network', value: 'network' },
   { label: 'Forum', value: 'forum' },
   { label: 'Settings', value: 'settings' },*/
-  
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -138,18 +138,22 @@ const CoproductionProcessProfile = () => {
       ))}
     </Tabs></Card>
 
-  const Content = () => <Card >
+  const Content = () => <>
     <TabPanel value={tab} index="repository">
-      <Repository />
+      <Card>
+        <Repository />
+      </Card>
     </TabPanel>
     <TabPanel value={tab} index="overview">
-      <OverviewTab />
+      <Card >
+        <OverviewTab />
+      </Card>
     </TabPanel>
     <TabPanel value={tab} index="team">
       <TeamTab />
     </TabPanel>
-    
-  </Card>
+  </>
+
 
   const ContentSkeleton = () => loading || !process ? <MainSkeleton /> : <Content />
   return (

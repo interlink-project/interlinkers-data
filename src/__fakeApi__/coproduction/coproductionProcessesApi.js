@@ -6,6 +6,14 @@ class CoproductionProcessesApi extends GeneralApi {
     super("coproduction/api/v1/coproductionprocesses");
   }
 
+  async addTeam(id, team_id) {
+    if (id) {
+      const res = await axiosInstance.post(`/${this.url}/${id}/add_team`, {team_id})
+      console.log('add team', res.data);
+      return res.data
+    }
+  }
+
   async getMine() {
     const res = await axiosInstance.get(
       `/${this.url}/mine`

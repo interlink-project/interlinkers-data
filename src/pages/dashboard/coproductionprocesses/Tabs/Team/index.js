@@ -1,48 +1,33 @@
-import { Paper, Table, TableCell, TableContainer, TableHead, TableRow, TableBody } from '@material-ui/core';
+import { Avatar, Divider, Select, AvatarGroup, Paper, Table, TableCell, TableContainer, TableHead, TableRow, TableBody, IconButton, Typography, Collapse, Box, MenuItem, CircularProgress } from '@material-ui/core';
 import * as React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import PermissionsTable from './PermissionsTable';
+import TeamsTable from './TeamsTable';
+import { aclsApi } from '__fakeApi__';
 
-function createData(name, calories, fat, carbs, protein) {
-    return { name, calories, fat, carbs, protein };
-}
+export default function TeamsTab() {
+    const { process, updating } = useSelector((state) => state.process);
+    const [loading, setLoading] = React.useState(false)
+    const [acl, setAcl] = React.useState(null)
 
-const rows = [
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    createData('Eclair', 262, 16.0, 24, 6.0),
-    createData('Cupcake', 305, 3.7, 67, 4.3),
-    createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
+    const updateAcl = async () => {
+        const acl = await aclsApi.get(process.acl_id);
+        setAcl(acl)
+        setLoading(false)
+    }
 
-export default function TeamTable() {
-    return (
-        <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                <TableHead>
-                    <TableRow>
-                        <TableCell>Dessert (100g serving)</TableCell>
-                        <TableCell align="right">Calories</TableCell>
-                        <TableCell align="right">Fat&nbsp;(g)</TableCell>
-                        <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-                        <TableCell align="right">Protein&nbsp;(g)</TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {rows.map((row) => (
-                        <TableRow
-                            key={row.name}
-                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                        >
-                            <TableCell component="th" scope="row">
-                                {row.name}
-                            </TableCell>
-                            <TableCell align="right">{row.calories}</TableCell>
-                            <TableCell align="right">{row.fat}</TableCell>
-                            <TableCell align="right">{row.carbs}</TableCell>
-                            <TableCell align="right">{row.protein}</TableCell>
-                        </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
-        </TableContainer>
-    );
+    React.useEffect(() => {
+        if (process.acl_id) {
+            setLoading(true)
+            updateAcl()
+        }
+    }, [process])
+
+    return acl ? (
+        <React.Fragment>
+            <TeamsTable acl={acl} onChanges={updateAcl} />
+            <Divider sx={{ my: 2 }} />
+            <PermissionsTable acl={acl} onChanges={updateAcl} />
+        </React.Fragment>) : <CircularProgress />
+        ;
 }

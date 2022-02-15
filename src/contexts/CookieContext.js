@@ -49,7 +49,7 @@ export const AuthProvider = (props) => {
 
   useEffect(() => {
     console.log("executing setUser")
-    axiosInstance.get('/auth/api/v1/users/me/').then(({ data }) => {
+    axiosInstance.get('/auth/api/v1/users/me').then(({ data }) => {
       console.log('RESPONSE FOR ME', data);
       dispatch({
         type: 'SET_USER',

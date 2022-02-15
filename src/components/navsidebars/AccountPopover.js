@@ -78,7 +78,7 @@ const AccountPopover = () => {
             color='textPrimary'
             variant='subtitle2'
           >
-            {user.given_name} {user.family_name}
+            {user.full_name}
           </Typography>
           <Typography
             color='textSecondary'
