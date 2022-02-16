@@ -88,7 +88,7 @@ For example:
 ```json
 {
     "name": "Example knowledge interlinker",
-    "description": "<p class=\"fg-white\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus sapien, dapibus fringilla dolor sit amet, bibendum aliquam massa. Duis nec faucibus nunc. In sit amet vulputate justo. In dictum turpis eu dolor posuere vehicula</p>",
+    "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus sapien, dapibus fringilla dolor sit amet, bibendum aliquam massa. Duis nec faucibus nunc. In sit amet vulputate justo. In dictum turpis eu dolor posuere vehicula</p>",
     "tags": [
         "skeleton",
         "aim",
