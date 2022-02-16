@@ -6,6 +6,22 @@ class InterlinkersApi extends GeneralApi {
     super("catalogue/api/v1/interlinkers");
   }
 
+  async getSoftwareInterlinkers(skip = null, limit = null) {
+    const searchparams = new URLSearchParams();
+    if (skip) {
+      searchparams.set('skip', skip);
+    }
+    if (limit) {
+      searchparams.set('limit', limit);
+    }
+    const newparams = searchparams.toString();
+    const res = await axiosInstance.get(
+      `/${this.url}/software${newparams ? `?${newparams}` : ''}`
+    );
+    console.log('getSoftware call', res.data);
+    return res.data;
+  }
+
   async get_by_problem_profiles(problem_profiles) {
     const res = await axiosInstance.post(
       `/${this.url}/by_problem_profiles`, {

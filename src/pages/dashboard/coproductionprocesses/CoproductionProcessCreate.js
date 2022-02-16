@@ -31,6 +31,7 @@ import { Add, Delete, Folder, KeyboardArrowRight, KeyboardArrowLeft, CheckCircle
 import { LoadingButton } from '@material-ui/lab';
 import useAuth from 'hooks/useAuth';
 import { coproductionProcessesApi, usersApi } from '__fakeApi__';
+import useMounted from 'hooks/useMounted';
 
 const CoproductionprocessCreate = ({ teams = [], onCreate }) => {
   const [open, setOpen] = useState(false);
@@ -44,6 +45,7 @@ const CoproductionprocessCreate = ({ teams = [], onCreate }) => {
 
   const theme = useTheme();
   const [activeStep, setActiveStep] = useState(0);
+  const mounted = useMounted();
 
   const handleNext = async () => {
     const sendOnCreate = (data) => {
@@ -101,11 +103,16 @@ const CoproductionprocessCreate = ({ teams = [], onCreate }) => {
 
   const handleClose = () => {
     setOpen(false);
-    setName("")
-    setDescription("")
-    setLogotype(null)
-    setTeamId('')
-    setActiveStep(0)
+    // avoid seeing how data is cleared
+    setTimeout(() => {
+      if(mounted){
+        setName("")
+        setDescription("")
+        setLogotype(null)
+        setTeamId('')
+        setActiveStep(0)
+      }
+    }, 1000);    
   };
 
 
@@ -131,9 +138,6 @@ const CoproductionprocessCreate = ({ teams = [], onCreate }) => {
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Co-production process creation</DialogTitle>
         <DialogContent>
-          <DialogContentText>
-            Please enter a name and a description. Then, add a team to the coproductionprocess.
-          </DialogContentText>
           {activeStep === 0 && <><Box sx={{ textAlign: "center" }}>
             <label htmlFor="contained-button-file">
               <Input inputProps={{ accept: 'image/*' }} id="contained-button-file" type="file" sx={{ display: "none" }} onChange={handleFileSelected} />

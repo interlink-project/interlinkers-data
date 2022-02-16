@@ -10,12 +10,13 @@ import NavSection from '../NavSection';
 import Scrollbar from '../Scrollbar'; import useAuth from '../../hooks/useAuth';
 import { useDispatch, useSelector } from 'react-redux';
 import { Timeline, Dashboard, BubbleChart, Forum, Settings, FolderOpen } from '@material-ui/icons';
-// /dashboard/account
+import { useNavigate } from 'react-router';
 
 
 const ProcessSidebar = (props) => {
   const { onMobileClose, openMobile } = props;
   const { process, loading } = useSelector((state) => state.process);
+  const navigate = useNavigate();
 
   const location = useLocation();
   const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));
@@ -102,29 +103,8 @@ const ProcessSidebar = (props) => {
           </RouterLink>
         </Box>
         <Box sx={{ p: 2 }}>
-          <Box
-            sx={{
-              alignItems: 'center',
-              backgroundColor: 'background.default',
-              borderRadius: 1,
-              display: 'flex',
-              overflow: 'hidden',
-              p: 2
-            }}
-            component={RouterLink}
-            to='/dashboard'
-          >
-            <ArrowBack />
-            <Box sx={{ ml: 2 }}>
-              <Typography
-                color='textPrimary'
-                variant='subtitle2'
-              >
-                Go back
-              </Typography>
-
-            </Box>
-          </Box>
+          <Button startIcon={<ArrowBack />} variant="outlined" fullWidth size="large" onClick={() => navigate("/dashboard")}>
+          </Button>
         </Box>
         <Divider />
         <Box sx={{ p: 2 }}>

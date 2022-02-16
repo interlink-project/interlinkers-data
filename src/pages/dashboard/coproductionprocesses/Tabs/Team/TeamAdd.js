@@ -16,7 +16,8 @@ import {
   MenuItem,
   FormControl,
   Avatar,
-  Input
+  Input,
+  Alert
 
 } from '@material-ui/core';
 import { coproductionProcessesApi, teamsApi } from '__fakeApi__';
@@ -29,7 +30,7 @@ const TeamAdd = ({ currentTeams, onChanges }) => {
   const [loading, setLoading] = useState(false);
   const [teams, setTeams] = useState([]);
   const mounted = useMounted();
-  const [selectedTeamId, setSelectedTeamId] = useState([]);
+  const [selectedTeamId, setSelectedTeamId] = useState(null);
   const { process } = useSelector((state) => state.process);
 
   const handleChange = (event) => {
@@ -82,7 +83,7 @@ const TeamAdd = ({ currentTeams, onChanges }) => {
         <DialogTitle>Add team</DialogTitle>
         <DialogContent>
 
-          <FormControl sx={{ m: 1, width: 300 }}>
+          {teams.length > 1 ? <FormControl sx={{ m: 1, width: 300 }}>
             <Select
               value={selectedTeamId}
               onChange={handleChange}
@@ -96,11 +97,12 @@ const TeamAdd = ({ currentTeams, onChanges }) => {
                 </MenuItem>
               ))}
             </Select>
-          </FormControl>
+          </FormControl> : <Alert severity="warning">There are no more teams!</Alert>
+          }
         </DialogContent>
         <DialogActions>
 
-          <Button fullWidth onClick={handleAdd}>Add</Button>
+          <Button fullWidth onClick={handleAdd} disabled={!selectedTeamId}>Add</Button>
         </DialogActions>
       </Dialog>
     </>

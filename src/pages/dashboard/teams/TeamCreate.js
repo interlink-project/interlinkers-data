@@ -94,12 +94,15 @@ const TeamCreate = ({ onCreate }) => {
 
   const handleClose = () => {
     setOpen(false);
-    setName("")
-    setDescription("")
-    setLogotype(null)
-    setSelectedUser(null)
-    setSelectedUsers([])
-    setActiveStep(0)
+    // avoid seeing how data is cleared
+    setTimeout(() => {
+      setName("")
+      setDescription("")
+      setLogotype(null)
+      setSelectedUser(null)
+      setSelectedUsers([])
+      setActiveStep(0)
+    }, 1000);    
   };
 
   useEffect(() => {

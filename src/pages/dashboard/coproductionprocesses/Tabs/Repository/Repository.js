@@ -1,11 +1,11 @@
 import {
-  Avatar, Box, Button, Collapse, Grid, List,
+  Avatar, Box, Button, Collapse, Grid, Menu, MenuItem,
   ToggleButton,
   ToggleButtonGroup, alpha,
   CircularProgress, Paper, Typography, InputBase,
-  Divider, Stack, Card, CardContent, CardMedia, CardActionArea, CardActions
+  Divider, Stack, Card, CardContent, CardMedia, CardActionArea, CardActions, CardHeader
 } from '@material-ui/core';
-import { Info as InfoIcon, KeyboardArrowDown, KeyboardArrowUp, Search as SearchIcon } from '@material-ui/icons';
+import { Check, Info as InfoIcon, KeyboardArrowDown, KeyboardArrowUp, Search as SearchIcon } from '@material-ui/icons';
 import { styled } from '@material-ui/styles';
 import MobileDiscriminator from 'components/MobileDiscriminator';
 import MobileDrawer from 'components/MobileDrawer';
@@ -73,10 +73,17 @@ const sameHeightCards = {
 const Repository = () => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
   const [selectedTask, setSelectedTask] = useState(null)
-  const [assets, setAssets] = useState(null)
+
+
+  const [assets, setAssets] = useState([])
   const [recommendedInterlinkers, setRecommendedInterlinkers] = useState([])
   const [loadingTaskInfo, setLoadingTaskInfo] = useState(false)
   const [collapseOpen, setCollapseOpen] = useState(false)
+  const [softwareInterlinkers, setSoftwareInterlinkers] = useState([])
+
+  // new asset modal
+  const [selectedInterlinker, setSelectedInterlinker] = useState(null)
+  const [openNewAsset, setOpenNewAsset] = useState(false);
 
   const updateAssets = async () => {
     const assets = await tasksApi.getAssets(selectedTask.id);
@@ -94,6 +101,12 @@ const Repository = () => {
     }
   }, [selectedTask])
 
+  useEffect(() => {
+    interlinkersApi.getSoftwareInterlinkers().then(res => {
+      setSoftwareInterlinkers(res)
+    })
+  }, [])
+
   const dispatch = useDispatch();
 
   const handleChange = (event, newStatus) => {
@@ -105,8 +118,16 @@ const Repository = () => {
     }))
   };
 
-  var SafeHTMLElement = ({ data }) => <div dangerouslySetInnerHTML={html`${data}`} />;
+  var SafeHTMLElement = ({ data }) => <div dangerouslySetInnerHTML={html(data.split())} />;
 
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   return (
     <Box sx={{ width: '100%', bgcolor: 'background.paper', minHeight: '85vh' }}>
 
@@ -144,24 +165,26 @@ const Repository = () => {
                   <ToggleButton value="finished">Finished <FinishedIcon /></ToggleButton>
                 </ToggleButtonGroup>
 
-                <Typography variant="h6" sx={{ mt: 2, mb: 1 }}>Recommended interlinkers:</Typography>
+                <Divider sx={{mt: 1}} />
+              </Collapse>
+              <Box>
+                <Box sx={{ mt: 2 }}>
                 {loadingTaskInfo ?
                   <CircularProgress /> : <Grid container spacing={3} justifyContent="flex-start">
 
                     {recommendedInterlinkers.map(interlinker => (
                       <Grid item xs={12} md={6} lg={4} xl={3} key={interlinker.id}                       >
                         <Card style={sameHeightCards}>
-                          <CardActionArea>
-
-                            <CardContent>
-                              <Typography gutterBottom variant="subtitle1" component="div">
-                                {interlinker.name}
-                                <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>{moment(interlinker.created_at).format("LL")}</Typography>
-                              </Typography>
-                              <Typography variant="body2" color="text.secondary">
+                          <CardActionArea onClick={() => {
+                            setSelectedInterlinker(interlinker);
+                            setOpenNewAsset(true)
+                          }}>
+                            {/*avatar={<Check />} */}
+                            <CardHeader sx={{px: 2, pt: 2, pb: 0}} title={interlinker.name} subheader={moment(interlinker.created_at).format("LL")}  />
+                              
+                              <Typography sx={{px: 2}} variant="body2" color="text.secondary">
                                 <SafeHTMLElement data={interlinker.description} />
                               </Typography>
-                            </CardContent>
                             <CardMedia
                               sx={{
                                 bottom: 0,
@@ -177,25 +200,58 @@ const Repository = () => {
                       </Grid>
                     ))}
                   </Grid>}
-              </Collapse>
-              {!collapseOpen && <Box><Box sx={{ mt: 3 }}>
 
-<Paper>
-  <Search>
-    <SearchIconWrapper>
-      <SearchIcon />
-    </SearchIconWrapper>
-    <StyledInputBase
-      placeholder="Search…"
-      inputProps={{ 'aria-label': 'search' }}
-    />
-  </Search>
-</Paper>
-{!loadingTaskInfo && <Assets assets={assets} />}
+                  <Divider sx={{my: 2}} />
+                 {/* <Paper>
+                    <Search>
+                      <SearchIconWrapper>
+                        <SearchIcon />
+                      </SearchIconWrapper>
+                      <StyledInputBase
+                        placeholder="Search…"
+                        inputProps={{ 'aria-label': 'search' }}
+                      />
+                    </Search>
+                  </Paper>*/} 
+                  
+                  <Assets assets={assets} />
 
-</Box>
-<NewAssetModal task={selectedTask} onCreate={updateAssets} /></Box>}
-              
+                </Box>
+
+                {selectedInterlinker && openNewAsset && <NewAssetModal open={openNewAsset} setOpen={setOpenNewAsset} selectedInterlinker={selectedInterlinker} task={selectedTask} onCreate={updateAssets} />}
+
+                <Button
+                  id="basic-button"
+                  aria-controls={open ? 'basic-menu' : undefined}
+                  aria-haspopup="true"
+                  aria-expanded={open ? 'true' : undefined}
+                  onClick={handleClick}
+                  variant="contained"
+                  fullWidth
+                  endIcon={<KeyboardArrowDown />}
+                >
+                  Add new empty asset
+                </Button>
+                <Menu
+                  id="basic-menu"
+                  anchorEl={anchorEl}
+                  open={open}
+                  onClose={handleClose}
+                  MenuListProps={{
+                    'aria-labelledby': 'basic-button',
+                  }}
+                >
+                  {softwareInterlinkers.map(si =>
+                    <MenuItem key={si.id} onClick={() => {
+                      setSelectedInterlinker(si);
+                      setOpenNewAsset(true)
+                    }
+                    }>
+                      <Avatar src={si.logotype} sx={{ mr: 2, height: "20px", width: "20px" }} />{si.name}
+                    </MenuItem>)}
+                </Menu>
+              </Box>
+
             </Box>
           </Grid>
         } onMobileNode={
