@@ -41,8 +41,7 @@
                         "es": ""
                     },
                     "description": {
-                        "en": "Refine with the collaboration of the stakeholders network the problem to be addressed. 
-Service design is a problem-solving activity and it is important to clearly understand which is the challenge that the team addresses and how more information can be collected to understand how the service should be designed. Organize focus groups to discuss initial ideas and assumptions, refine them through structured methods and become aware about the missing information that still needs to be collected.",
+                        "en": "Refine with the collaboration of the stakeholders network the problem to be addressed. Service design is a problem-solving activity and it is important to clearly understand which is the challenge that the team addresses and how more information can be collected to understand how the service should be designed. Organize focus groups to discuss initial ideas and assumptions, refine them through structured methods and become aware about the missing information that still needs to be collected.",
                         "es": ""
                     },
                     "problem_profiles": []
@@ -63,8 +62,7 @@ Service design is a problem-solving activity and it is important to clearly unde
                         "es": ""
                     },
                     "description": {
-                        "en": "Draft an initial description (or multiple optional descriptions) of the potential service: what it does, who benefits from the service, who helps delivering it.
-Use description templates to facilitate your task.",
+                        "en": "Draft an initial description (or multiple optional descriptions) of the potential service: what it does, who benefits from the service, who helps delivering it. Use description templates to facilitate your task.",
                         "es": ""
                     },
                     "problem_profiles": []
@@ -116,11 +114,7 @@ Use description templates to facilitate your task.",
                         "es": ""
                     },
                     "description": {
-                        "en": "Gather all the relevant information about the service that will be produced to put the right processes in place.  It’s advisable to establish different types of consultation depending on the groups targeted:
-- Consult users about desired outcomes of the service
-- Consult service providers about the solutions that can give in response to the service demanded
-- Ask public authorities about the implications (organizational, regulatory, etc.) that affect to the service delivery
-Organize focus groups, interviews or surveys to elicit the desired data.",
+                        "en": "Gather all the relevant information about the service that will be produced to put the right processes in place.  It\u2019s advisable to establish different types of consultation depending on the groups targeted:\r\n\\n- Consult users about desired outcomes of the service\r\n- Consult service providers about the solutions that can give in response to the service demanded\r\n- Ask public authorities about the implications (organizational, regulatory, etc.) that affect to the service delivery\r\nOrganize focus groups, interviews or surveys to elicit the desired data.",
                         "es": ""
                     },
                     "problem_profiles": [
@@ -335,8 +329,7 @@ Organize focus groups, interviews or surveys to elicit the desired data.",
                 "es": ""
             },
             "description": {
-                "en": "How to show and tell in which way the service is expected to work?
-Validate the concept of your service or verify the assumptions about your final product before developing it. Different types of proof of concepts can be used, according to the stage of service development and the type of service, whether it is a digital service or not.",
+                "en": "How to show and tell in which way the service is expected to work?\r\nValidate the concept of your service or verify the assumptions about your final product before developing it. Different types of proof of concepts can be used, according to the stage of service development and the type of service, whether it is a digital service or not.",
                 "es": ""
             },
             "problem_profiles": [
@@ -350,8 +343,7 @@ Validate the concept of your service or verify the assumptions about your final 
                         "es": ""
                     },
                     "description": {
-                        "en": "Analyse and visualise how the system changes or evolves according to specific scenarios and their dynamics.
-System scenarios introduce a dynamic level of analysis, applying the lense of time and showing the possible variations that could take place. In this way, system scenarios provide a deeper level of analysis of the system, directed at understanding system dynamics and relations between actors in various conditions.",
+                        "en": "Analyse and visualise how the system changes or evolves according to specific scenarios and their dynamics.\r\nSystem scenarios introduce a dynamic level of analysis, applying the lense of time and showing the possible variations that could take place. In this way, system scenarios provide a deeper level of analysis of the system, directed at understanding system dynamics and relations between actors in various conditions.",
                         "es": ""
                     },
                     "problem_profiles": []
@@ -384,9 +376,7 @@ System scenarios introduce a dynamic level of analysis, applying the lense of ti
                         "es": ""
                     },
                     "description": {
-                        "en": "If lowfi prototypes allow a good representation of what the service will be and allow to simulate interaction flows, conduct controlled evaluation experiments with potential end users. 
-Do they understand the language of the interface mockups? Are major functionalities in place? Are there unexpected interaction paths?
-Also very small experiments, may provide extremely valuable input at this stage.",
+                        "en": "If lowfi prototypes allow a good representation of what the service will be and allow to simulate interaction flows, conduct controlled evaluation experiments with potential end users. \r\nDo they understand the language of the interface mockups? Are major functionalities in place? Are there unexpected interaction paths?\r\nAlso very small experiments, may provide extremely valuable input at this stage.",
                         "es": ""
                     },
                     "problem_profiles": []
@@ -412,8 +402,7 @@ Also very small experiments, may provide extremely valuable input at this stage.
                         "es": ""
                     },
                     "description": {
-                        "en": "Is the design output satisfactory?
-Follow the proposed checklist to understand if you are done with design or whether an iterative refinement cycle is recommended.",
+                        "en": "Is the design output satisfactory?\r\nFollow the proposed checklist to understand if you are done with design or whether an iterative refinement cycle is recommended.",
                         "es": ""
                     },
                     "problem_profiles": []
@@ -424,8 +413,7 @@ Follow the proposed checklist to understand if you are done with design or wheth
                         "es": ""
                     },
                     "description": {
-                        "en": "How much funding is needed? Where does the money come from? What are the sources of funding / support necessary to keep it running after implementation?
-Follow the proposed checklist for an intermediate evaluation of financial sustainability.",
+                        "en": "How much funding is needed? Where does the money come from? What are the sources of funding \/ support necessary to keep it running after implementation?\r\nFollow the proposed checklist for an intermediate evaluation of financial sustainability.",
                         "es": ""
                     },
                     "problem_profiles": []
@@ -436,8 +424,7 @@ Follow the proposed checklist for an intermediate evaluation of financial sustai
                         "es": ""
                     },
                     "description": {
-                        "en": "Are all technical skills and resources available to proceed with development? 
-Follow the proposed checklist for an intermediate evaluation of technical sustainabiity.",
+                        "en": "Are all technical skills and resources available to proceed with development? \r\nFollow the proposed checklist for an intermediate evaluation of technical sustainabiity.",
                         "es": ""
                     },
                     "problem_profiles": []
@@ -448,8 +435,7 @@ Follow the proposed checklist for an intermediate evaluation of technical sustai
                         "es": ""
                     },
                     "description": {
-                        "en": "What are the incentives for those who can provide support / funding and for those developing / maintaining them?
-Stop and reflect on how stakeholders collaboration in co-creation went so far. Follow the proposed checklist to understand whether further incentives and supportive measures are needed to ensure productive development and co-delivery phases.",
+                        "en": "What are the incentives for those who can provide support \/ funding and for those developing \/ maintaining them?\r\nStop and reflect on how stakeholders collaboration in co-creation went so far. Follow the proposed checklist to understand whether further incentives and supportive measures are needed to ensure productive development and co-delivery phases.",
                         "es": ""
                     },
                     "problem_profiles": []
