@@ -24,9 +24,6 @@ import {
 import red from '@material-ui/core/colors/red';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import UsersIcon from '../../../../icons/Users';
-import { getImageUrl } from 'axiosInstance';
-import { useSelector } from 'react-redux';
 import SwipeableTextMobileStepper from './Carousel';
 
 const InterlinkerCard = (props) => {
@@ -74,7 +71,7 @@ const InterlinkerCard = (props) => {
     >
       <Avatar
         alt='Logotype'
-        src={getImageUrl("catalogue", interlinker.logotype)}
+        src={interlinker.logotype}
         variant='square'
       >
         {interlinker.title}

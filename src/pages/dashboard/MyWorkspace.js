@@ -27,10 +27,10 @@ import useAuth from '../../hooks/useAuth';
 import { Link as RouterLink } from 'react-router-dom';
 import { coproductionProcessesApi, teamsApi } from '__fakeApi__';
 import ArrowRightIcon from '@material-ui/icons/ChevronRight';
-import { getImageUrl } from '../../axiosInstance';
 import { Add } from '@material-ui/icons';
 import TeamCreate from './teams/TeamCreate';
 import CoproductionprocessCreate from './coproductionprocesses/CoproductionProcessCreate';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const MyWorkspace = () => {
   const { settings } = useSettings();
@@ -41,6 +41,7 @@ const MyWorkspace = () => {
   const [loadingProcesses, setLoadingProcesses] = useState(true);
   const [loadingTeams, setLoadingTeams] = useState(true);
   const mounted = useMounted();
+  const navigate = useNavigate();
 
   const getProcessesData = useCallback(async () => {
     try {
@@ -88,8 +89,7 @@ const MyWorkspace = () => {
   }
 
   const onProcessCreate = (res2) => {
-    setLoadingProcesses(true)
-    getProcessesData()
+    navigate(`/dashboard/coproductionprocesses/${res2.id}`)
   }
 
   useEffect(() => {
@@ -138,7 +138,7 @@ const MyWorkspace = () => {
                     <React.Fragment key={process.id}>
                       <ListItem alignItems="flex-start" button component={RouterLink} to={`/dashboard/coproductionprocesses/${process.id}/overview`}>
                         <ListItemAvatar>
-                          <Avatar alt={process.name} src={getImageUrl("coproduction", process.logotype)} />
+                          <Avatar alt={process.name} src={process.logotype} />
                         </ListItemAvatar>
                         <ListItemText
                           primary={process.name}
@@ -173,9 +173,9 @@ const MyWorkspace = () => {
                   {loadingTeams && <LoadingItems />}
                   {teams.map(team => (
                     <React.Fragment key={team.id}>
-                      <ListItem alignItems="flex-start" button component={RouterLink} to={`/dashboard/teams/${team.id}`}>
+                      <ListItem alignItems="flex-start">
                         <ListItemAvatar>
-                          <Avatar alt={team.name} src={getImageUrl("coproduction", team.logotype)} />
+                          <Avatar alt={team.name} src={team.logotype} />
                         </ListItemAvatar>
                         <ListItemText
                           primary={team.name}

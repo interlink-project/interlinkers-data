@@ -118,7 +118,7 @@ const SettingsPopover = () => {
             ))}
           </TextField>{' '}
         </Box>
-        <Box sx={{ p: 2 }}>
+        {/* <Box sx={{ p: 2 }}>
           <FormControlLabel
             control={
               <Switch
@@ -149,7 +149,7 @@ const SettingsPopover = () => {
               </div>
             }
           />
-        </Box>{' '}
+          </Box> */}
         <Box
           sx={{
             p: 2,

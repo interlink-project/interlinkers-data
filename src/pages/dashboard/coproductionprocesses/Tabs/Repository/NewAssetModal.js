@@ -12,7 +12,7 @@ import {
     AvatarGroup
 } from '@material-ui/core';
 import { InterlinkerBrowseFilter, InterlinkerBrowseResults } from 'components/dashboard/interlinkers';
-import axiosInstance, { getImageUrl } from 'axiosInstance';
+import axiosInstance from 'axiosInstance';
 import { ArrowBack, Close } from '@material-ui/icons';
 import { assetsApi } from '__fakeApi__';
 import RepresentationsList from './RepresentationList';

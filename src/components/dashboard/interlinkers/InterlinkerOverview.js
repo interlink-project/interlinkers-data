@@ -9,7 +9,6 @@ import {
   Typography,
 } from '@material-ui/core';
 import { experimentalStyled } from '@material-ui/core/styles';
-import { getImageUrl } from 'axiosInstance';
 import SwipeableTextMobileStepper from './browse/Carousel';
 
 const MarkdownWrapper = experimentalStyled('div')(({ theme }) => ({

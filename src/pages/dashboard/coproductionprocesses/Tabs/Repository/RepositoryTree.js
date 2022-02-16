@@ -15,7 +15,7 @@ import {
 import { styled } from '@material-ui/styles';
 import { cleanUnderScores } from "utils/cleanUnderscores"
 import { useDispatch, useSelector } from 'react-redux';
-import { Check, Loop } from '@material-ui/icons';
+import { InProgressIcon, FinishedIcon, FinishedIconButton } from './Icons';
 
 
 
@@ -109,14 +109,8 @@ const RepositoryTree = ({ setSelectedTask, loading }) => {
           {allTasks.filter(el => el.objective_id === objective.id).sort((a, b) => b.progress - a.progress).map(task => (
             <StyledTreeItem key={task.id} nodeId={task.id} label={
             <p >
-                <IconButton size="small">
-                <Loop fontSize="small" sx={{color: "#f0ad4e"}} />
-        </IconButton>
-              <IconButton size="small">
-              <Check fontSize="small" sx={{color: "#22bb33"}} />
-              </IconButton>
-              
-              {"    "}
+              {task.status === "finished" && <FinishedIconButton />}
+              {task.status === "in_progress" && <InProgressIcon />}
               {cleanUnderScores(task.name)}</p>} />
             ))}
         </StyledTreeItem>)}

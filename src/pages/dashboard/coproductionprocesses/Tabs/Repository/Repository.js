@@ -1,11 +1,11 @@
 import {
   Avatar, Box, Button, Collapse, Grid, List,
-  ListItem,
-  ListItemAvatar, alpha,
+  ToggleButton,
+  ToggleButtonGroup, alpha,
   CircularProgress, Paper, Typography, InputBase,
   Divider, Stack, Card, CardContent, CardMedia, CardActionArea, CardActions
 } from '@material-ui/core';
-import { Info as InfoIcon, Search as SearchIcon } from '@material-ui/icons';
+import { Info as InfoIcon, KeyboardArrowDown, KeyboardArrowUp, Search as SearchIcon } from '@material-ui/icons';
 import { styled } from '@material-ui/styles';
 import MobileDiscriminator from 'components/MobileDiscriminator';
 import MobileDrawer from 'components/MobileDrawer';
@@ -17,8 +17,12 @@ import PhaseTabs from "../PhaseTabs";
 import Assets from './Assets';
 import NewAssetModal from './NewAssetModal';
 import RepositoryTree from "./RepositoryTree";
-import { getImageUrl } from "axiosInstance"
 import { truncate } from 'lodash';
+import { FinishedIcon, InProgressIcon } from './Icons';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateTask } from 'slices/process';
+
+var html = require('react-escape-html');
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -71,7 +75,7 @@ const Repository = () => {
   const [selectedTask, setSelectedTask] = useState(null)
   const [assets, setAssets] = useState(null)
   const [recommendedInterlinkers, setRecommendedInterlinkers] = useState([])
-  const [loadingAssets, setLoadingAssets] = useState(false)
+  const [loadingTaskInfo, setLoadingTaskInfo] = useState(false)
   const [collapseOpen, setCollapseOpen] = useState(false)
 
   const updateAssets = async () => {
@@ -80,15 +84,28 @@ const Repository = () => {
     console.log(selectedTask)
     const interlinkers = await interlinkersApi.get_by_problem_profiles(selectedTask.problem_profiles);
     setRecommendedInterlinkers(interlinkers)
-    setLoadingAssets(false)
+    setLoadingTaskInfo(false)
   }
 
   useEffect(() => {
     if (selectedTask) {
-      setLoadingAssets(true)
+      setLoadingTaskInfo(true)
       updateAssets()
     }
   }, [selectedTask])
+
+  const dispatch = useDispatch();
+
+  const handleChange = (event, newStatus) => {
+    dispatch(updateTask({
+      id: selectedTask.id,
+      data: {
+        status: newStatus
+      }
+    }))
+  };
+
+  var SafeHTMLElement = ({ data }) => <div dangerouslySetInnerHTML={html`${data}`} />;
 
   return (
     <Box sx={{ width: '100%', bgcolor: 'background.paper', minHeight: '85vh' }}>
@@ -98,7 +115,7 @@ const Repository = () => {
           <PhaseTabs />
         </Grid>
         <Grid item xl={4} lg={4} md={6} xs={12}>
-          <RepositoryTree setSelectedTask={setSelectedTask} loading={loadingAssets} />
+          <RepositoryTree setSelectedTask={setSelectedTask} loading={loadingTaskInfo} />
         </Grid>
 
         {selectedTask && <MobileDiscriminator defaultNode={
@@ -107,70 +124,78 @@ const Repository = () => {
               <Button sx={{ mb: 2 }} fullWidth variant="outlined" onClick={() => setCollapseOpen(!collapseOpen)}>
                 <Stack spacing={2}>
                   <Typography variant="h6" >{selectedTask.name}</Typography>
-                  <Divider> <InfoIcon /></Divider>
+                  <Divider> {!collapseOpen ? <KeyboardArrowDown /> : <KeyboardArrowUp />}</Divider>
                 </Stack>
               </Button>
               <Collapse in={collapseOpen} timeout="auto" unmountOnExit>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mi odio, finibus eget porttitor eu, condimentum nec nibh. Fusce a tellus faucibus, sagittis quam eu, ornare odio. Etiam ac dolor sed elit accumsan vestibulum vel ut sapien. Duis iaculis quam in cursus euismod. Curabitur lacinia eros sit amet arcu luctus gravida. Fusce lacinia quis urna sit amet auctor. Phasellus vitae enim luctus, tempus lectus sed, feugiat elit. Nam quis nibh hendrerit, auctor eros sed, fermentum tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
 
-                Nam vehicula nunc in odio consequat, eget volutpat lectus tincidunt. In auctor pretium hendrerit. Morbi congue dolor in arcu lobortis sagittis. Donec elementum lorem ac ligula faucibus volutpat. Cras sit amet nulla tortor. Morbi posuere posuere massa pellentesque rhoncus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Quisque sed dapibus mi. Nam et ornare mauris. Nulla venenatis, augue id consequat accumsan, dolor turpis finibus eros, ac feugiat diam est sed nulla. Morbi nec eros ac erat condimentum tempus. Praesent ipsum magna, sodales id tempor vitae, viverra sed dui. Quisque eu enim a nisl tempor fermentum a vitae ipsum. Donec nisi velit, sodales varius viverra sed, finibus et libero.
+                <Typography variant="h6">Description:</Typography>
+                {selectedTask.description || "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mi odio, finibus eget porttitor eu, condimentum nec nibh. Fusce a tellus faucibus, sagittis quam eu, ornare odio. Etiam ac dolor sed elit accumsan vestibulum vel ut sapien. Duis iaculis quam in cursus euismod. Curabitur lacinia eros sit amet arcu luctus gravida. Fusce lacinia quis urna sit amet auctor. Phasellus vitae enim luctus, tempus lectus sed, feugiat elit. Nam quis nibh hendrerit, auctor eros sed, fermentum tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam vehicula nunc in odio consequat, eget volutpat lectus tincidunt."}
+                <Typography variant="h6" sx={{ mt: 2 }}>Status:</Typography>
+                <ToggleButtonGroup
+                  color="primary"
+                  value={selectedTask.status}
+                  exclusive
+                  fullWidth
+                  onChange={handleChange}
+                >
+                  <ToggleButton value="awaiting">Awaiting</ToggleButton>
+                  <ToggleButton value="in_progress">In progress <InProgressIcon /></ToggleButton>
+                  <ToggleButton value="finished">Finished <FinishedIcon /></ToggleButton>
+                </ToggleButtonGroup>
 
+                <Typography variant="h6" sx={{ mt: 2, mb: 1 }}>Recommended interlinkers:</Typography>
+                {loadingTaskInfo ?
+                  <CircularProgress /> : <Grid container spacing={3} justifyContent="flex-start">
 
-                <Divider sx={{ my: 3 }}><Typography sx={{ fontSize: 14 }} color="text.secondary">Here are the interlinkers you would like to use </Typography></Divider>
-                <Grid container spacing={3} justifyContent="center">
-                  {loadingAssets ? 
-                   <CircularProgress />:
-                  recommendedInterlinkers.map(interlinker => (
-                  <Grid item xs={12} md={6} lg={4} xl={3} key={interlinker.id}>
-                    <Card style={sameHeightCards}>
-                      <CardActionArea>
+                    {recommendedInterlinkers.map(interlinker => (
+                      <Grid item xs={12} md={6} lg={4} xl={3} key={interlinker.id}                       >
+                        <Card style={sameHeightCards}>
+                          <CardActionArea>
 
-                        <CardContent>
-                          <Typography gutterBottom variant="h6" component="div">
-                            {interlinker.name}
-                            <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom> {interlinker.nature} </Typography>
-                          </Typography>
-                          <Typography variant="body2" color="text.secondary">
-                            {truncate(interlinker.description, {
-                              length: 100,
-                              separator: ' ',
-                            })}
-                          </Typography>
-                        </CardContent>
-                        <CardMedia
-                          sx={{
-                            bottom: 0,
-                            maxHeight: "200px"
-                        }}
-                          component="img"
-                          image={interlinker.snapshots && getImageUrl("catalogue", interlinker.snapshots[0])}
-                          alt="green iguana"
-                        />
-                      </CardActionArea>
-                    </Card>
+                            <CardContent>
+                              <Typography gutterBottom variant="subtitle1" component="div">
+                                {interlinker.name}
+                                <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>{moment(interlinker.created_at).format("LL")}</Typography>
+                              </Typography>
+                              <Typography variant="body2" color="text.secondary">
+                                <SafeHTMLElement data={interlinker.description} />
+                              </Typography>
+                            </CardContent>
+                            <CardMedia
+                              sx={{
+                                bottom: 0,
+                                maxHeight: "200px"
+                              }}
+                              component="img"
+                              image={interlinker.snapshots[0]}
+                              alt="green iguana"
+                            />
+                          </CardActionArea>
+                        </Card>
 
-                  </Grid>
-                  ))}
-                </Grid>
+                      </Grid>
+                    ))}
+                  </Grid>}
               </Collapse>
+              {!collapseOpen && <Box><Box sx={{ mt: 3 }}>
 
-              <Box sx={{ mt: 3 }}>
+<Paper>
+  <Search>
+    <SearchIconWrapper>
+      <SearchIcon />
+    </SearchIconWrapper>
+    <StyledInputBase
+      placeholder="Search…"
+      inputProps={{ 'aria-label': 'search' }}
+    />
+  </Search>
+</Paper>
+{!loadingTaskInfo && <Assets assets={assets} />}
 
-                <Paper>
-                  <Search>
-                    <SearchIconWrapper>
-                      <SearchIcon />
-                    </SearchIconWrapper>
-                    <StyledInputBase
-                      placeholder="Search…"
-                      inputProps={{ 'aria-label': 'search' }}
-                    />
-                  </Search>
-                </Paper>
-                {!loadingAssets && <Assets assets={assets} />}
-
-              </Box>
-              <NewAssetModal task={selectedTask} onCreate={updateAssets} />
+</Box>
+<NewAssetModal task={selectedTask} onCreate={updateAssets} /></Box>}
+              
             </Box>
           </Grid>
         } onMobileNode={

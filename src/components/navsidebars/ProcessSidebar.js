@@ -10,8 +10,6 @@ import NavSection from '../NavSection';
 import Scrollbar from '../Scrollbar'; import useAuth from '../../hooks/useAuth';
 import { useDispatch, useSelector } from 'react-redux';
 import { Timeline, Dashboard, BubbleChart, Forum, Settings, FolderOpen } from '@material-ui/icons';
-import { getImageUrl } from 'axiosInstance';
-import { red } from '@material-ui/core/colors';
 // /dashboard/account
 
 

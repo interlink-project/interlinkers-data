@@ -4,8 +4,6 @@ import { Box, MobileStepper, Paper, Typography, Button } from '@material-ui/core
 import { KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
-import { getImageUrl } from 'axiosInstance';
-
 // 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -17,7 +15,7 @@ function SwipeableTextMobileStepper({ images = [], height = '100%' }) {
     if (images.length === 0) {
         imageList = ["https://cdn.dribbble.com/users/308895/screenshots/2598725/no-results.gif"]
     } else {
-        imageList = images.map(el => getImageUrl("catalogue", el))
+        imageList = images
     }
 
     const maxSteps = imageList.length;

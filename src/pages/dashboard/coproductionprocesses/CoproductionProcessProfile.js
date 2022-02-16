@@ -38,7 +38,6 @@ import { getProcess } from 'slices/process';
 import { red } from '@material-ui/core/colors';
 import OverviewTab from 'pages/dashboard/coproductionprocesses/Tabs/Overview';
 import MainSkeleton from 'pages/dashboard/coproductionprocesses/Tabs/MainSkeleton';
-import { getImageUrl } from 'axiosInstance';
 
 const tabs = [
   { label: 'Repository', value: 'repository' },
@@ -68,7 +67,7 @@ function TabPanel(props) {
 }
 
 const CoproductionProcessProfile = () => {
-  let { processId, tab = "repository" } = useParams();
+  let { processId, tab = "overview" } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const mounted = useMounted();
@@ -106,7 +105,7 @@ const CoproductionProcessProfile = () => {
   const TabsMobile = () => <Card sx={{ mr: onMobile ? 0 : 2, mb: onMobile ? 1 : 0 }}>
     <CardHeader
       avatar={
-        <Avatar variant="square" sx={logoExists ? {} : { bgcolor: red[500] }} aria-label="recipe" src={logoExists && getImageUrl("coproduction", process.logotype)}>
+        <Avatar variant="square" sx={logoExists ? {} : { bgcolor: red[500] }} aria-label="recipe" src={logoExists && process.logotype}>
           {process && !logoExists && process.name[0]}
         </Avatar>
       }
@@ -177,8 +176,8 @@ const CoproductionProcessProfile = () => {
               </>
               :
               <>
-                <Breadcrumbs aria-label="breadcrumb" sx={{mb: 2}}>
-                <Typography
+                <Breadcrumbs aria-label="breadcrumb" sx={{ mb: 2 }}>
+                  <Typography
                     sx={{ display: 'flex', alignItems: 'center' }}
                     color="text.primary"
                     variant="h5"
@@ -191,9 +190,10 @@ const CoproductionProcessProfile = () => {
                     color="text.primary"
                     variant="h5"
                   >
-                    {logoExists && <Avatar sx={{ mr: 0.5, height: "30px", width: "30px" }} src={getImageUrl("coproduction", process.logotype)} />}
-                   { process && process.name}
+                    {process ? (logoExists && <Avatar sx={{ mr: 0.5, height: "30px", width: "30px" }} src={process.logotype} />): <Skeleton sx={{mr: 0.5}} variant="circular" width={30} height={30} />}
+                    {process ? process.name : <Skeleton variant="rectangular" width={210} />}
                   </Typography>
+
                 </Breadcrumbs>
                 <ContentSkeleton />
               </>

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { coproductionProcessesApi, tasksApi, objectivesApi, phasesApi, assetsApi} from '../__fakeApi__';
+import { coproductionProcessesApi, tasksApi, objectivesApi, phasesApi, assetsApi } from '../__fakeApi__';
 import moment from "moment"
 import generateGraph from 'pages/dashboard/coproductionprocesses/Tabs/Network/graph';
 
@@ -98,8 +98,18 @@ const slice = createSlice({
       });
       state.tasks = tasks;
       state.objectives = objectives;
-      state.phases = phases;
-      state.selectedPhaseTab = phases[0].name
+
+
+      function compare(a, b) {
+        if (a.prerequisites_ids.length === 0) {
+          return -1
+        }
+        return !a.prerequisites_ids.includes(b.id) ? 1 : 0
+      }
+
+      const orderedPhases = [...phases].sort(compare)
+      state.phases = orderedPhases;
+      state.selectedPhaseTab = orderedPhases[0].name
     },
     setProcess(state, action) {
       state.process = action.payload;
@@ -138,9 +148,6 @@ const slice = createSlice({
     setSelectedPhase(state, action) {
       state.selectedPhaseTab = action.payload;
     },
-    setSelectedTask(state, action) {
-      state.selectedTask = action.payload;
-    },
   }
 });
 
@@ -154,12 +161,12 @@ export const getProcess = (processId) => async (dispatch) => {
   dispatch(slice.actions.setLoading(false));
 };
 
-export const updateProcess = ({id, data, onSuccess}) => async (dispatch) => {
+export const updateProcess = ({ id, data, onSuccess }) => async (dispatch) => {
   dispatch(slice.actions.setUpdating(true));
   const updatedData = await coproductionProcessesApi.update(id, data);
   dispatch(slice.actions.setProcess(updatedData));
   dispatch(slice.actions.setUpdating(false));
-  if(onSuccess){
+  if (onSuccess) {
     onSuccess()
   }
 };
@@ -189,17 +196,6 @@ export const updatePhase = ({ id, data }) => async (dispatch) => {
 
 export const setSelectedPhaseTab = (data) => async (dispatch) => {
   dispatch(slice.actions.setSelectedPhase(data));
-};
-
-export const setSelectedTask = (task) => async (dispatch) => {
-  dispatch(slice.actions.setUpdating(true));
-  const assets = await tasksApi.getAssets(task.id);
-  console.log("AQWIIWIQEIQ ", assets)
-  dispatch(slice.actions.setSelectedTask({
-    ...task,
-    assets
-  }));
-  dispatch(slice.actions.setUpdating(false));
 };
 
 export default slice;

@@ -94,6 +94,12 @@ const TeamCreate = ({ onCreate }) => {
 
   const handleClose = () => {
     setOpen(false);
+    setName("")
+    setDescription("")
+    setLogotype(null)
+    setSelectedUser(null)
+    setSelectedUsers([])
+    setActiveStep(0)
   };
 
   useEffect(() => {

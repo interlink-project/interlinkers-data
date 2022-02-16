@@ -20,14 +20,7 @@ const PhaseTabs = ({ additionalContent }) => {
         }
       }, [mounted]);
     
-      function compare( a, b ) {
-          if (a.prerequisites_ids.length === 0){
-              return -1
-          }
-          return !a.prerequisites_ids.includes(b.id) ? 1 : 0
-      }
-
-      const orderedPhases = [...phases].sort(compare)
+      
     return (
         <AppBar position="static" sx={{ color: "white" }}>
             <MuiTabs
@@ -40,7 +33,7 @@ const PhaseTabs = ({ additionalContent }) => {
                 aria-label="Coproduction phases tabs"
             >
 
-                {orderedPhases.map((phase) => (
+                {phases.map((phase) => (
                     <Tab
                         key={phase.id}
                         label={<>

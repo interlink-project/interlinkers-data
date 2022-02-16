@@ -27,7 +27,6 @@ import useSettings from 'hooks/useSettings';
 import ShareIcon from 'icons/Share';
 import gtm from 'lib/gtm';
 import { useParams } from 'react-router-dom';
-import { getImageUrl } from 'axiosInstance';
 import Markdown from 'react-markdown/with-html';
 import { experimentalStyled } from '@material-ui/core/styles';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -160,10 +159,7 @@ const renderers = {
 const tabs = [
   { label: 'Overview', value: 'overview' },
   { label: 'Documentation', value: 'documentation' },
-  { label: 'Assets', value: 'assets' },
   { label: 'Reviews', value: 'reviews' },
-  { label: 'Activity', value: 'activity' },
-  { label: 'Applicants', value: 'applicants' },
 ];
 
 const InterlinkerDetails = () => {
@@ -232,7 +228,7 @@ const InterlinkerDetails = () => {
           >
               <Avatar
                 alt='Logotype'
-                src={getImageUrl("catalogue", interlinker.logotype)}
+                src={interlinker.logotype}
                 variant='square'
               >
                 {interlinker.name}
@@ -327,84 +323,7 @@ const InterlinkerDetails = () => {
                 },
               ]} />
             )}
-            {currentTab === 'activity' && (
-              <InterlinkerActivities activities={[
-                {
-                  id: '5e8dd0828d628e6f40abdfe8',
-                  createdAt: subMinutes(now, 23).getTime(),
-                  description: 'has uploaded a new file',
-                  subject: 'Interlinker author',
-                  type: 'upload_file',
-                },
-                {
-                  id: '5e8dd0893a6725f2bb603617',
-                  createdAt: subHours(now, 2).getTime(),
-                  description: 'joined team as a Front-End Developer',
-                  subject: 'Adrian Stefan',
-                  type: 'join_team',
-                },
-                {
-                  id: '5e8dd08f44603e3300b75cf1',
-                  createdAt: subHours(now, 9).getTime(),
-                  description: 'joined team as a Full Stack Developer',
-                  subject: 'Alexndru Robert',
-                  type: 'join_team',
-                },
-                {
-                  id: '5e8dd0960f3f0fe04e64d8f4',
-                  createdAt: subDays(now, 2).getTime(),
-                  description: 'raised the interlinker budget',
-                  subject: 'Interlinker author',
-                  type: 'price_change',
-                },
-                {
-                  id: '5e8dd09db94421c502c53d13',
-                  createdAt: subDays(now, 4).getTime(),
-                  description: 'created',
-                  subject: 'Contest',
-                  type: 'contest_created',
-                },
-              ]} />
-            )}
-            {currentTab === 'applicants' && (
-              <InterlinkerApplicants applicants={[
-                {
-                  id: '5e887a62195cc5aef7e8ca5d',
-                  avatar: '/static/mock-images/avatars/avatar-marcus_finn.png',
-                  commonConnections: 12,
-                  cover: '/static/mock-images/covers/cover_2.jpg',
-                  name: 'Marcus Finn',
-                  skills: [
-                    'User Experience',
-                    'FrontEnd development',
-                    'HTML5',
-                    'VueJS',
-                    'ReactJS',
-                  ],
-                },
-                {
-                  id: '5e887ac47eed253091be10cb',
-                  avatar: '/static/mock-images/avatars/avatar-carson_darrin.png',
-                  commonConnections: 5,
-                  cover: '/static/mock-images/covers/cover_3.jpg',
-                  name: 'Carson Darrin',
-                  skills: [
-                    'User Interface',
-                    'FullStack development',
-                    'Angular',
-                    'ExpressJS',
-                  ],
-                },
-                {
-                  id: '5e86809283e28b96d2d38537',
-                  avatar: '/static/mock-images/avatars/avatar-jane_rotanson.png',
-                  commonConnections: 17,
-                  cover: '/static/mock-images/covers/cover_1.jpg',
-                  name: 'Jane Rotanson',
-                  skills: ['BackEnd development', 'Firebase', 'MongoDB', 'ExpressJS'],
-                },
-              ]} />
-            )}
+            
           </Box>
         </Container>
       </Box>

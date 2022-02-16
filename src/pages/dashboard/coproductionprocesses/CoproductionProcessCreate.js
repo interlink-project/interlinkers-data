@@ -31,7 +31,6 @@ import { Add, Delete, Folder, KeyboardArrowRight, KeyboardArrowLeft, CheckCircle
 import { LoadingButton } from '@material-ui/lab';
 import useAuth from 'hooks/useAuth';
 import { coproductionProcessesApi, usersApi } from '__fakeApi__';
-import { getImageUrl } from 'axiosInstance';
 
 const CoproductionprocessCreate = ({ teams = [], onCreate }) => {
   const [open, setOpen] = useState(false);
@@ -41,6 +40,7 @@ const CoproductionprocessCreate = ({ teams = [], onCreate }) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [logotype, setLogotype] = useState(null);
+  const [teamId, setTeamId] = useState('');
 
   const theme = useTheme();
   const [activeStep, setActiveStep] = useState(0);
@@ -101,9 +101,13 @@ const CoproductionprocessCreate = ({ teams = [], onCreate }) => {
 
   const handleClose = () => {
     setOpen(false);
+    setName("")
+    setDescription("")
+    setLogotype(null)
+    setTeamId('')
+    setActiveStep(0)
   };
 
-  const [teamId, setTeamId] = useState('');
 
   const handleChange = (event) => {
     setTeamId(event.target.value);
@@ -177,7 +181,7 @@ const CoproductionprocessCreate = ({ teams = [], onCreate }) => {
             >
 
               {team && <AvatarGroup max={4} sx={{m: 1, p:1}}>
-              <Avatar src={getImageUrl("coproduction", team.logotype)} />
+              <Avatar src={team.logotype} />
                 {team && team.memberships.map(member => <Avatar key={member.id} src={member.picture} />)}
 
               </AvatarGroup>}

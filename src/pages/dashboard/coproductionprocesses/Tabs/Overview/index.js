@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { TextField as MuiTextField, Alert, Grid, Box, Stack, Button, Typography, IconButton, Menu, MenuItem, Paper, MenuList, ListItemIcon, ListItemText, Divider, CardHeader } from "@material-ui/core";
+import { TextField as MuiTextField, Alert, Grid, Box, Stack, Button, Typography, IconButton, Menu, MenuItem, Paper, MenuList, ListItemIcon, ListItemText, Divider, CardHeader, Avatar, Input } from "@material-ui/core";
 import { useDispatch, useSelector } from 'react-redux';
 import { Save, MoreVert, ContentCopy, ContentCut, Cloud, ContentPaste, Delete, Add, Edit, Share } from '@material-ui/icons';
 
@@ -12,24 +12,6 @@ import { Prompt } from 'react-router-dom'
 import MainSkeleton from "pages/dashboard/coproductionprocesses/Tabs/MainSkeleton";
 import moment from "moment";
 
-
-const options = [
-    'None',
-    'Atria',
-    'Callisto',
-    'Dione',
-    'Ganymede',
-    'Hangouts Call',
-    'Luna',
-    'Oberon',
-    'Phobos',
-    'Pyxis',
-    'Sedna',
-    'Titania',
-    'Triton',
-    'Umbriel',
-];
-
 const ITEM_HEIGHT = 48;
 
 const OverviewTab = () => {
@@ -38,6 +20,7 @@ const OverviewTab = () => {
     const { process, updating } = useSelector((state) => state.process);
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
+    const [logotype, setLogotype] = useState(null);
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -73,6 +56,18 @@ const OverviewTab = () => {
             submit: null
         })
     }, [editMode, process]);
+
+    const handleFileSelected = (e) => {
+        const files = e.target.files
+        if (files.length > 0) {
+            const file = files[0]
+            if (file) {
+                file.path = URL.createObjectURL(file)
+                setLogotype(file)
+            }
+
+        }
+    }
 
     const QuillField = (props) => <>
         <Typography variant="overline" display="block" gutterBottom color="primary">
@@ -128,8 +123,51 @@ const OverviewTab = () => {
                         <MoreVert />
                     </IconButton>
                 }
-                title={`Metadata of '${process.name}' co-production process`}
-                subheader={`Created: ${moment(process.created_at).format("LL")} ` + (process.updated_at ? `| Last update: ${moment(process.updated_at).format("LLL")}` : "")}
+                avatar={
+                    editMode ? <label htmlFor="contained-button-file">
+                        <Input inputProps={{ accept: 'image/*' }} id="contained-button-file" type="file" sx={{ display: "none" }} onChange={handleFileSelected} />
+                        <IconButton component="span" color="inherit">
+                            <div style={{
+                                width: "100px",
+                                height: "100px",
+                                position: "relative"
+                            }}>
+                                <Avatar
+                                    src={logotype ? logotype.path : process.logotype}
+                                    variant="rounded"
+                                    style={{
+                                        width: "100px",
+                                        height: "100px",
+                                        position: "absolute"
+                                    }}
+                                />
+                                <Edit style={{
+                                    width: "50%",
+                                    height: "50%",
+                                    position: "absolute",
+                                    top: "50%",
+                                    transform: "translateY(-50%)"
+                                }} />
+                            </div>
+
+
+                        </IconButton>
+                    </label> : <Avatar
+                        src={process.logotype && process.logotype}
+                        variant="rounded"
+                        style={{
+                            margin: "10px",
+                            width: "100px",
+                            height: "100px",
+                        }}
+                    />
+                }
+                title={
+                    <Stack justifyContent="center">
+                        <Typography variant="subtitle1"><b>Created:</b> {moment(process.created_at).format("LL")}</Typography>
+                        <Typography variant="subtitle1">{process.updated_at && `Last update: ${moment(process.updated_at).format("LLL")}`}</Typography>
+                    </Stack>
+                }
             />
             <Menu
                 id="long-menu"
@@ -147,7 +185,7 @@ const OverviewTab = () => {
                 }}
             >
                 <MenuList>
-                    <MenuItem onClick={() => {setEditMode(true); handleClose()}}>
+                    <MenuItem onClick={() => { setEditMode(true); handleClose() }}>
                         <ListItemIcon>
                             <Edit fontSize="small" />
                         </ListItemIcon>
@@ -195,6 +233,7 @@ const OverviewTab = () => {
                     })}
                 onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
                     try {
+                        console.log(values)
                         dispatch(updateProcess({
                             id: process.id,
                             data: values,
@@ -218,19 +257,22 @@ const OverviewTab = () => {
                     handleBlur,
                     handleChange,
                     handleSubmit,
+                    submitForm,
                     isSubmitting,
                     setFieldValue,
                     setFieldTouched,
                     resetForm,
                     touched,
+                    isValid,
                     values
                 }) => (
                     <Form>
                         <PromptIfDirty />
-                        <Grid container sx={{ width: "96%", ml: 2, justifyContent: "center" }} spacing={2} >
+                        <Grid container sx={{ width: "96%", ml: 2 }} direction="row" justifyContent="center" spacing={2} >
                             <Grid item xs={12}>
                                 <TextField label="NAME OF THE PROJECT" helperText={touched.name && errors.name} error={Boolean(touched.name && errors.name)} value={values.name} onBlur={handleBlur} onChange={handleChange} name="name" />
                             </Grid>
+
                             <Grid item xs={12}>
                                 <TextField label="SHORT DESCRIPTION OF THE PROJECT" multiline helperText={touched.description && errors.description} error={Boolean(touched.description && errors.description)} value={values.description} onBlur={handleBlur} onChange={handleChange} name="description" />
                             </Grid>
@@ -262,8 +304,9 @@ const OverviewTab = () => {
 
                         </Grid>
                         {editMode && <Stack direction="row" spacing={2} sx={{ justifyContent: "center", mt: 3, mb: 2 }}>
-                            <Button variant="text" disabled={isSubmitting} color="error" startIcon={<Delete />} onClick={() => { resetForm(); setEditMode(false) }}> Cancel</Button>
-                            <Button variant="contained" disabled={isSubmitting} color="success" startIcon={<Save />} type='submit'> Save</Button>  </Stack>}
+                            <Button variant="text" disabled={isSubmitting} color="error" startIcon={<Delete />} onClick={() => { setEditMode(false); resetForm(); setLogotype(null);  }}> Cancel</Button>
+                            <Button variant="contained" disabled={isSubmitting} color="success" startIcon={<Save />} onClick={submitForm} disabled={!isValid}>Save</Button>
+                        </Stack>}
                     </Form>
                 )}
             </Formik>

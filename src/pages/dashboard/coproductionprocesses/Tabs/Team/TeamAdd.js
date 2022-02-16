@@ -22,7 +22,6 @@ import {
 import { coproductionProcessesApi, teamsApi } from '__fakeApi__';
 import useMounted from 'hooks/useMounted';
 import { styled } from '@material-ui/styles';
-import { getImageUrl } from 'axiosInstance';
 import { useSelector } from 'react-redux';
 
 const TeamAdd = ({ currentTeams, onChanges }) => {
@@ -92,7 +91,7 @@ const TeamAdd = ({ currentTeams, onChanges }) => {
             >
               {teams.map((team) => currentTeams.findIndex(t => t.id === team.id) < 0 && (
                 <MenuItem key={team.id} value={team.id}>
-                  <Avatar src={getImageUrl("coproduction", team.logotype)} sx={{ mr: 2, width: "30px", height: "30px" }} />
+                  <Avatar src={team.logotype} sx={{ mr: 2, width: "30px", height: "30px" }} />
                   {team.name}
                 </MenuItem>
               ))}
