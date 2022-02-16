@@ -6,7 +6,9 @@
         "es": "Comprometer"
     },
     "description": {
-        "en": "",
+        "en": "Which stakeholders should be involved in your co-production process? How to communicate with them about your project goals and the benefits of participation?
+Learn about the value of involving stakeholders. Use the available knowledge tools to understand who are the stakeholders to involve in your project and the role they can have. 
+Exploit communication templates to raise awareness, invite stakeholders, and create a lively network of motivated contributors. Define partnership agreements and make sure shared information is protected. Plan together the next steps and create working groups. ",
         "es": ""
     },
     "objectives": [
@@ -16,18 +18,20 @@
                 "es": "Identificar stakeholders"
             },
             "description": {
-                "en": "",
+                "en": "The identification of key actors  is the first step to start your  process of co-production. According to the type of project, the goals and the level of citizen involvement, different questions are to be answered.
+What different  types of stakeholders enter into play in the initiative to be co-produced? What are their motivations and skills to participate in the project? What is their position in the network? How to contact them?
+Follow the specific tasks to get the complete picture.",
                 "es": ""
             },
             "problem_profiles": [],
             "tasks": [
                 {
                     "name": {
-                        "en": "Understand the different types of stakeholders and their motivations",
+                        "en": "Understand the different types of stakeholders",
                         "es": "Entender los diferentes tipos de stakeholders y sus motivaciones"
                     },
                     "description": {
-                        "en": "",
+                        "en": "Usually different actors are engaged in co-production to create a new service or customizing an already existing service: public bodies, private companies, SMEs, citizens. Each actor brings specific needs and competences in relation to the service and has different motivations to participate in a project. Learn about the different types of stakeholders and which of them can add value to your co-production process",
                         "es": ""
                     },
                     "problem_profiles": [
@@ -40,7 +44,7 @@
                         "es": "Mapear partes interesadas analizar motivación habilidades expectativas"
                     },
                     "description": {
-                        "en": "",
+                        "en": "Mapping the stakeholders is crucial to have a clear view of which roles stakeholders can play in different stages of innovation, what their level of commitment and strategic importance could be. Analyse the complexity of building relationships, realizing which connectors can be crucial for innovation development in your project.",
                         "es": ""
                     },
                     "problem_profiles": [
@@ -53,7 +57,8 @@
                         "es": "Mapear visualmente la red de partes interesadas"
                     },
                     "description": {
-                        "en": "",
+                        "en": "Is your network balanced and inclusive?
+Create a Stakeholder Map, where the ecosystem of stakeholders involved in a customer experience is visualized.",
                         "es": ""
                     },
                     "problem_profiles": [
@@ -66,7 +71,7 @@
                         "es": "Crear una lista de contactos de posibles participantes de la red"
                     },
                     "description": {
-                        "en": "",
+                        "en": "Write down the list of participants, aside the co-production team, who may be interested in observing the progress of the co-production project and have the opportunity to emit opinions and take part in some decision processes. ",
                         "es": ""
                     },
                     "problem_profiles": [
@@ -81,7 +86,9 @@
                 "es": ""
             },
             "description": {
-                "en": "",
+                "en": "Stakeholder engagement is about figuring out how to effectively communicate, collaborate, and interact with key people who have positive or negative influence, and may impact the success of your project.
+
+To reach this objective you should carefully prepare an engagement plan, create awareness and communication material tailored to your audience, understand how to communicate benefit for stakeholders and, whenever this is forseen in your project, understand how to engage citizens in the co-production process. ",
                 "es": ""
             },
             "problem_profiles": [
@@ -96,7 +103,8 @@
                         "es": ""
                     },
                     "description": {
-                        "en": "",
+                        "en": "Create an effective engagement plan which allows you to reach to the types and numbers of stakeholders sufficient to ensure that the co-produced service is well targeted. 
+An engagement plan is usally composed of three parts: the identification of your project’s stakeholders; the planning of effective means for interacting with each stakeholder, and protocols for accurately documenting your work for the sake of transparency, accountability and evaluation of the process.",
                         "es": ""
                     },
                     "problem_profiles": [
@@ -109,7 +117,7 @@
                         "es": ""
                     },
                     "description": {
-                        "en": "",
+                        "en": "Ensure that relevant stakeholders are aware of the initiative in order to ensure their participation. Awareness-raising is a process that seeks to inform and educate people about a topic or issue with the intention of influencing their attitudes, behaviours and beliefs towards the achievement of a defined purpose or goal.",
                         "es": ""
                     },
                     "problem_profiles": [
@@ -123,7 +131,8 @@
                         "es": ""
                     },
                     "description": {
-                        "en": "",
+                        "en": "Clearly communicate the benefits of service co-production to your network of stakeholders and citizens.
+Participants need to understand why their participation matters, what they can gain individually and as a group.",
                         "es": ""
                     },
                     "problem_profiles": [
@@ -136,7 +145,7 @@
                         "es": ""
                     },
                     "description": {
-                        "en": "",
+                        "en": "Provide members of the public with the information they need to understand the project, the decision process, and also how public input can influence decisions, the design of the service and the way it is delivered. ",
                         "es": ""
                     },
                     "problem_profiles": [
@@ -152,7 +161,8 @@
                 "es": ""
             },
             "description": {
-                "en": "",
+                "en": "The complexity of legal regulations can sometime make it difficult for governments to take up ICTs to co-produce and can cause significant delays in the deployment of solutions.
+Follow the guidelines offered here to prepare the financial, technical, and legal agreements that ensure viability to your co-production project.",
                 "es": ""
             },
             "problem_profiles": [],
@@ -163,7 +173,7 @@
                         "es": ""
                     },
                     "description": {
-                        "en": "",
+                        "en": "You should consider whether your collaborative network of stakeholders needs a formal  agreement for not disclosing the confidential information that is shared as part of co-producing a service together.",
                         "es": ""
                     },
                     "problem_profiles": []
@@ -174,7 +184,9 @@
                         "es": ""
                     },
                     "description": {
-                        "en": "",
+                        "en": "Participants should clearly understand their role in the co-production effort, their responsabilities, their rights. 
+You might wish to write down the terms and general plan for the collaboration, to give to the initiative a more formal structure, visibility and political support. 
+Guidelines and examples of partnership agreements may help you decide which is the most suitable solution for your case.",
                         "es": ""
                     },
                     "problem_profiles": [
@@ -190,7 +202,8 @@
                 "es": ""
             },
             "description": {
-                "en": "",
+                "en": "Make sure data that is collected and processed during the co-production process is managed according to the GDPR and EU best practices.
+Prepare a data management plan to guide you throughout the project life time and beyond.",
                 "es": ""
             },
             "problem_profiles": [
@@ -204,7 +217,8 @@
                         "es": ""
                     },
                     "description": {
-                        "en": "",
+                        "en": "Which data will be collected during co-production? 
+Start your data management plan by making an inventory of data sources and types.",
                         "es": ""
                     },
                     "problem_profiles": []
@@ -215,7 +229,8 @@
                         "es": ""
                     },
                     "description": {
-                        "en": "",
+                        "en": "From whom and for which purpose is data accessed? 
+Understand where data can be securely stored and whether data is to be further transferred.",
                         "es": ""
                     },
                     "problem_profiles": []
@@ -226,7 +241,8 @@
                         "es": ""
                     },
                     "description": {
-                        "en": "",
+                        "en": "Consider which are users' and suppliers' preferences concerning data.
+Reflect on aspects of ownership, minimalization, responsibility, sharing, archiving, anonymity.",
                         "es": ""
                     },
                     "problem_profiles": []
