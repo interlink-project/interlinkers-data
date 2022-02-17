@@ -1,0 +1,16 @@
+{
+    "reference": "hackathon",
+    "name": {
+        "en": "Hackathon creation process",
+        "es": "Esquema para la creación de un Hackathon"
+    },
+    "author": "",
+    "licence": "",
+    "description": {
+        "en": "",
+        "es": ""
+    },
+    "tags": [
+        "hackathon"
+    ]
+}

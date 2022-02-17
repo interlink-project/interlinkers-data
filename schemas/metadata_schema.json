@@ -10,6 +10,17 @@
             "title": "Description",
             "type": "object"
         },
+        "reference": {
+            "title": "Reference",
+            "type": "string"
+        },
+        "tags": {
+            "title": "Tags",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
         "author": {
             "title": "Author",
             "type": "string"
@@ -29,6 +40,8 @@
     "required": [
         "name",
         "description",
+        "reference",
+        "tags",
         "author"
     ],
     "additionalProperties": false

@@ -29,6 +29,8 @@ class Phase(WithNameAndDesc, extra=Extra.forbid):
 
 
 class CoproductionSchema(WithNameAndDesc, extra=Extra.forbid):
+    reference: str
+    tags: List[str]
     author: str
     licence: Optional[str]
 

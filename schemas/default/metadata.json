@@ -1,4 +1,5 @@
 {
+    "reference": "default",
     "name": {
         "en": "Default schema",
         "es": "Esquema por defecto"
@@ -8,5 +9,6 @@
     "description": {
         "en": "",
         "es": ""
-    }
+    },
+    "tags": ["default"]
 }
