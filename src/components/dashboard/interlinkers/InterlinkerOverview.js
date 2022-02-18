@@ -10,6 +10,7 @@ import {
 } from '@material-ui/core';
 import { experimentalStyled } from '@material-ui/core/styles';
 import SwipeableTextMobileStepper from './browse/Carousel';
+import { SafeHTMLElement } from 'utils/safeHTML';
 
 const MarkdownWrapper = experimentalStyled('div')(({ theme }) => ({
   color: theme.palette.text.primary,
@@ -21,92 +22,78 @@ const MarkdownWrapper = experimentalStyled('div')(({ theme }) => ({
 
 const InterlinkerOverview = (props) => {
   const { interlinker, ...other } = props;
-  const { description, tags, name } = interlinker;
+  const { description, tags, name, problemprofiles, representations } = interlinker;
+
+  const Element = ({ title, obj, xs = 12, md = 12, lg = 12, xl = 12 }) => <Grid item xs={12} md={md} lg={lg} xl={xl}     sx={{ mb: 2 }}
+  ><Typography
+    color='textSecondary'
+    variant='overline'
+  >
+    {title}
+  </Typography>
+    {obj}
+  </Grid>
+
 
   return (
+    <Card sx={{ height: "100%" }}>
+      <CardContent>
 
-
-    <Card {...other} sx={{height: "100%"}}>
-      <Grid
-        container
-        spacing={3}
-        {...other}
-      >
         <Grid
-          item
-          xs={12}
-          md={6}
-          lg={6}
-          xl={6}
+          container
         >
-          <CardContent>
-            <Grid
-              container
-              spacing={3}
+          <Grid
+            container
+            item
+            xs={12}
+            md={6}
+            lg={8}
+            xl={8}
+          >
+            <Element title="Interlinker Name" obj={<Typography
+              color='textPrimary'
+              variant='subtitle2'
             >
-              <Grid
-                item
-                md={6}
-                xs={12}
-              >
-                <Typography
-                  color='textSecondary'
-                  variant='overline'
-                >
-                  Interlinker Name
-                </Typography>
-                <Typography
-                  color='textPrimary'
-                  variant='subtitle2'
-                >
-                  {name}
-                </Typography>
-                <Box sx={{ mt: 3 }}>
-                  <Typography
-                    color='textSecondary'
-                    variant='overline'
-                  >
-                    Tags
-                  </Typography>
-                  <Box sx={{ mt: 1 }}>
-                    {tags.map((tag) => (
-                      <Chip
-                        key={tag}
-                        label={tag}
-                        variant='outlined'
-                      />
-                    ))}
-                  </Box>
-                </Box>
-              </Grid>
-            </Grid>
-            <Box sx={{ mt: 3 }}>
-              <Typography
-                color='textSecondary'
-                sx={{ mb: 2 }}
-                variant='overline'
-              >
-                Description
-              </Typography>
-              <MarkdownWrapper>
-                <Markdown source={description} />
-              </MarkdownWrapper>
-            </Box>
+              {name}
+            </Typography>} />
 
-          </CardContent>
+            <Element title="Tags" obj={<Box sx={{ mt: 1 }} md={6} lg={6} >
+              {tags.map((tag) => (
+                <Chip
+                  key={tag}
+                  label={tag}
+                  variant='outlined'
+                />
+              ))}
+            </Box>} />
+
+            <Element title="Problem profiles" md={6} lg={6} obj={<Box sx={{ mt: 1 }}>
+              {problemprofiles.map((problem) => (
+                <Chip
+                  key={problem.id}
+                  label={problem.name}
+                  variant='outlined'
+                />
+              ))}
+            </Box>} />
+
+            <Element title="Description" obj={<SafeHTMLElement data={description} />} />
+
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            md={6}
+            lg={4}
+            xl={4}
+          >
+            <Box sx={{ bottom: 0 }}>
+              <SwipeableTextMobileStepper images={interlinker.images} />
+            </Box>
+          </Grid>
         </Grid>
-        <Grid
-          item
-          md={6}
-          lg={6}
-          xl={6}
-          xs={12}
-        >
-          <Box sx={{ bottom: 0 }}>
-            <SwipeableTextMobileStepper images={interlinker.images} />
-          </Box>
-        </Grid>
-      </Grid>
+      </CardContent>
+
     </Card>
 
   );

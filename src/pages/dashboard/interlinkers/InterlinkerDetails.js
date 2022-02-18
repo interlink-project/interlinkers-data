@@ -25,8 +25,6 @@ import {
 import useMounted from 'hooks/useMounted';
 import useSettings from 'hooks/useSettings';
 import ShareIcon from 'icons/Share';
-import gtm from 'lib/gtm';
-import { useParams } from 'react-router-dom';
 import Markdown from 'react-markdown/with-html';
 import { experimentalStyled } from '@material-ui/core/styles';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -162,42 +160,8 @@ const tabs = [
   { label: 'Reviews', value: 'reviews' },
 ];
 
-const InterlinkerDetails = () => {
-  const mounted = useMounted();
-  const { settings } = useSettings();
+const InterlinkerDetails = ({ interlinker }) => {
   const [currentTab, setCurrentTab] = useState('overview');
-  const [interlinker, setInterlinker] = useState(null);
-  const [isApplicationOpen, setIsApplicationOpen] = useState(false);
-
-  const params = useParams()
-
-  useEffect(() => {
-    gtm.push({ event: 'page_view' });
-  }, []);
-
-  const getInterlinker = useCallback(async () => {
-    try {
-      const data = await interlinkersApi.get(params.interlinkerId);
-
-      if (mounted.current) {
-        setInterlinker(data);
-      }
-    } catch (err) {
-      console.error(err);
-    }
-  }, [mounted]);
-
-  useEffect(() => {
-    getInterlinker();
-  }, [getInterlinker]);
-
-  const handleApplyModalOpen = () => {
-    setIsApplicationOpen(true);
-  };
-
-  const handleApplyModalClose = () => {
-    setIsApplicationOpen(false);
-  };
 
   const handleTabsChange = (event, value) => {
     setCurrentTab(value);
@@ -219,38 +183,38 @@ const InterlinkerDetails = () => {
           py: 8,
         }}
       >
-        <Container maxWidth="xl">
+        <Container maxWidth="lg">
           <Grid
             container
             justifyContent='center'
             alignItems='center'
             spacing={3}
           >
-              <Avatar
-                alt='Logotype'
-                src={interlinker.logotype}
-                variant='square'
+            <Avatar
+              alt='Logotype'
+              src={interlinker.logotype}
+              variant='square'
+            >
+              {interlinker.name}
+            </Avatar>
+            <Box sx={{ ml: 2 }}>
+              <Typography
+                color='textPrimary'
+                variant='h5'
               >
                 {interlinker.name}
-              </Avatar>
-              <Box sx={{ ml: 2 }}>
-                <Typography
-                  color='textPrimary'
-                  variant='h5'
-                >
-                  {interlinker.name}
-                </Typography>
-              </Box>
-              <Box>
-                <Button
-                  color='primary'
-                  startIcon={<ShareIcon fontSize='small' />}
-                  sx={{ m: 1 }}
-                  variant='text'
-                >
-                  Share
-                </Button>
-              </Box>
+              </Typography>
+            </Box>
+            <Box>
+              <Button
+                color='primary'
+                startIcon={<ShareIcon fontSize='small' />}
+                sx={{ m: 1 }}
+                variant='text'
+              >
+                Share
+              </Button>
+            </Box>
           </Grid>
           <Box sx={{ mt: 3 }}>
             <Tabs
@@ -271,18 +235,18 @@ const InterlinkerDetails = () => {
             </Tabs>
           </Box>
           <Divider />
-          <Box sx={{ mt: 3}} >
+          <Box sx={{ mt: 3 }} >
             {currentTab === 'overview' && (
               <InterlinkerOverview interlinker={interlinker} />
             )}
             {currentTab === 'documentation' && (
               <MarkdownWrapper>
-              <Markdown
-                escapeHtml
-                renderers={renderers}
-                source={interlinker.documentation}
-              />
-            </MarkdownWrapper>
+                <Markdown
+                  escapeHtml
+                  renderers={renderers}
+                  source={interlinker.documentation}
+                />
+              </MarkdownWrapper>
             )}
             {currentTab === 'assets' && (
               <InterlinkerAssets interlinker={interlinker} />
@@ -323,17 +287,10 @@ const InterlinkerDetails = () => {
                 },
               ]} />
             )}
-            
+
           </Box>
         </Container>
       </Box>
-      {/* <InterlinkerApplicationModal
-        authorAvatar={interlinker.author.avatar}
-        authorName={interlinker.author.name}
-        onApply={handleApplyModalClose}
-        onClose={handleApplyModalClose}
-        open={isApplicationOpen}
-      />*/}
 
     </>
   );

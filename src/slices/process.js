@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { coproductionProcessesApi, tasksApi, objectivesApi, phasesApi, assetsApi } from '../__fakeApi__';
+import { coproductionProcessesApi, coproductionSchemasApi, tasksApi, objectivesApi, phasesApi, assetsApi } from '../__fakeApi__';
 import moment from "moment"
 import generateGraph from 'pages/dashboard/coproductionprocesses/Tabs/Network/graph';
+import { comparePrerequisites } from 'utils/comparePrerequisites';
 
 const initialState = {
   loading: false,
@@ -86,30 +87,27 @@ const slice = createSlice({
       const objectives = []
       const tasks = []
 
-      // separate tree into groups
-      action.payload.forEach(phase => {
-        phase.objectives.forEach(objective => {
-          objective.tasks.forEach(task => {
-            tasks.push(task)
+      console.log(action)
+      if (action.payload) {
+        // separate tree into groups
+        action.payload.forEach(phase => {
+          phase.objectives.forEach(objective => {
+            objective.tasks.forEach(task => {
+              tasks.push(task)
+            });
+            objectives.push(objective)
           });
-          objectives.push(objective)
+          phases.push(phase)
         });
-        phases.push(phase)
-      });
-      state.tasks = tasks;
-      state.objectives = objectives;
+        state.tasks = tasks;
+        state.objectives = objectives;
 
 
-      function compare(a, b) {
-        if (a.prerequisites_ids.length === 0) {
-          return -1
-        }
-        return !a.prerequisites_ids.includes(b.id) ? 1 : 0
+        const orderedPhases = [...phases].sort(comparePrerequisites)
+        state.phases = orderedPhases;
+        state.selectedPhaseTab = orderedPhases.length > 0 ? orderedPhases[0].name : ""
       }
 
-      const orderedPhases = [...phases].sort(compare)
-      state.phases = orderedPhases;
-      state.selectedPhaseTab = orderedPhases[0].name
     },
     setProcess(state, action) {
       state.process = action.payload;
@@ -153,9 +151,17 @@ const slice = createSlice({
 
 export const { reducer } = slice;
 
+export const setProcess = (data) => async (dispatch) => {
+  const treeData = await coproductionProcessesApi.getTree(data.id)
+  dispatch(slice.actions.setProcess(data));
+  dispatch(slice.actions.setProcessTree(treeData));
+};
+
+
 export const getProcess = (processId) => async (dispatch) => {
   dispatch(slice.actions.setLoading(true));
-  const [data, treeData] = await Promise.all([coproductionProcessesApi.get(processId), coproductionProcessesApi.getTree(processId)])
+  const data = await coproductionProcessesApi.get(processId)
+  const treeData = await coproductionProcessesApi.getTree(processId)
   dispatch(slice.actions.setProcess(data));
   dispatch(slice.actions.setProcessTree(treeData));
   dispatch(slice.actions.setLoading(false));

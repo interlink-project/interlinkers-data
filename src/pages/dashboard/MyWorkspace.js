@@ -110,7 +110,7 @@ const MyWorkspace = () => {
           px: 2,
         }}
       >
-        <Container maxWidth='xl'>
+        <Container maxWidth='lg'>
 
           <Grid container spacing={3}>
             <Grid container justifyContent='space-between' item xs={12}>

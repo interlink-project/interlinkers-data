@@ -1,7 +1,7 @@
 import { useCallback, useState, useEffect } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { Box, Breadcrumbs, Button, CircularProgress, Container, Grid, Link, Typography } from '@material-ui/core';
+import { Box, Breadcrumbs, Button, CircularProgress, Container, Dialog, DialogTitle, Grid, Link, Typography } from '@material-ui/core';
 import { interlinkersApi } from '__fakeApi__';
 import { InterlinkerBrowseFilter, InterlinkerBrowseResults } from '../../../components/dashboard/interlinkers';
 import useMounted from '../../../hooks/useMounted';
@@ -11,12 +11,23 @@ import PlusIcon from '../../../icons/Plus';
 import gtm from '../../../lib/gtm';
 import { getInterlinkers } from 'slices/catalogue';
 import { useDispatch, useSelector } from 'react-redux';
+import InterlinkerDetails from './InterlinkerDetails';
 
 const InterlinkerBrowse = () => {
   const mounted = useMounted();
   const { settings } = useSettings();
   const dispatch = useDispatch();
   const { loading } = useSelector((state) => state.catalogue);
+  const [open, setOpen] = useState(false);
+  const [interlinker, setInterlinker] = useState(null);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   useEffect(() => {
     gtm.push({ event: 'page_view' });
@@ -86,8 +97,17 @@ const InterlinkerBrowse = () => {
               <CircularProgress />
             </Box> :
             <Box sx={{ mt: 6 }}>
-              <InterlinkerBrowseResults />
+              <InterlinkerBrowseResults onInterlinkerClick={(i) => {
+                setInterlinker(i)
+                handleClickOpen()
+              }} />
+              <Dialog fullWidth={true}
+                maxWidth="lg" onClose={handleClose} open={interlinker && open}>
+                <InterlinkerDetails interlinker={interlinker} />
+              </Dialog>
             </Box>}
+
+
         </Container>
       </Box>
     </>

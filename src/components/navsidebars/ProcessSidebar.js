@@ -2,14 +2,13 @@ import { useEffect } from 'react';
 import { Link as RouterLink, useLocation, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Avatar, Box, Divider, Drawer, Link, Typography, Button } from '@material-ui/core';
-import { Dashboard as DashboardIcon, FolderOpen as FolderOpenIcon, HomeRepairService as HomeRepairServiceIcon, Link as LinkIcon, Group as GroupIcon, ArrowBack } from '@material-ui/icons';
+import { Timeline, Dashboard, BubbleChart, Forum, Settings, FolderOpen, AccountTree, Group as GroupIcon, ArrowBack } from '@material-ui/icons';
 
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Logo from '../Logo';
 import NavSection from '../NavSection';
 import Scrollbar from '../Scrollbar'; import useAuth from '../../hooks/useAuth';
 import { useDispatch, useSelector } from 'react-redux';
-import { Timeline, Dashboard, BubbleChart, Forum, Settings, FolderOpen } from '@material-ui/icons';
 import { useNavigate } from 'react-router';
 
 
@@ -40,9 +39,14 @@ const ProcessSidebar = (props) => {
           icon: <Dashboard />
         },
         {
+          title: 'Metadata',
+          path: `/dashboard/coproductionprocesses/${processId}/metadata`,
+          icon: <FolderOpen />
+        },
+        {
           title: 'Guide',
           path: `/dashboard/coproductionprocesses/${processId}/guide`,
-          icon: <FolderOpen />
+          icon: <AccountTree />
         },
         {
           title: 'Team',
@@ -135,7 +139,7 @@ const ProcessSidebar = (props) => {
             backgroundColor: 'background.paper',
             height: 'calc(100% - 64px) !important',
             top: '64px !Important',
-            width: 220,
+            width: 240,
             zIndex: 0
           }
         }}
@@ -155,7 +159,7 @@ const ProcessSidebar = (props) => {
         sx: {
           backgroundColor: 'background.paper',
           width: 440,
-          paddingLeft: '220px',
+          paddingLeft: '240px',
           zIndex: 0
         }
       }}

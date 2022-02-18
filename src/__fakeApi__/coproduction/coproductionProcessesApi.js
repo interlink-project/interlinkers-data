@@ -14,28 +14,28 @@ class CoproductionProcessesApi extends GeneralApi {
     }
   }
 
-  async getMine() {
-    const res = await axiosInstance.get(
-      `/${this.url}/mine`
-    );
-    console.log('getMine call', res.data);
-    return res.data;
-  }
-
-  async getPhases(id) {
-    if (id) {
-      const res = await axiosInstance.get(`/${this.url}/${id}/phases`)
-      console.log('get phases', res.data);
-      return res.data
-    }
-  }
-
   async getTree(id) {
     if (id) {
       const res = await axiosInstance.get(`/${this.url}/${id}/tree`)
       console.log('get tree', res.data);
       return res.data
     }
+  }
+
+  async setSchema(id, coproductionschema_id) {
+    if (id) {
+      const res = await axiosInstance.post(`/${this.url}/${id}/set_schema`, {coproductionschema_id})
+      console.log('set schema', res.data);
+      return res.data
+    }
+  }
+
+  async getMine() {
+    const res = await axiosInstance.get(
+      `/${this.url}/mine`
+    );
+    console.log('getMine call', res.data);
+    return res.data;
   }
 }
 

@@ -28,6 +28,7 @@ import DotsVerticalIcon from '../../../icons/DotsVertical';
 import gtm from '../../../lib/gtm';
 import { Grain, Home, MoreVert, NavigateNext, Whatshot } from '@material-ui/icons';
 import Repository from './Tabs/Repository/Repository';
+import CreateSchema from './Tabs/Repository/CreateSchema';
 import MobileRepository from './Tabs/Repository/MobileRepository';
 import TeamTab from './Tabs/Team';
 import Workplan from './Tabs/Workplan/Workplan';
@@ -38,10 +39,12 @@ import { getProcess } from 'slices/process';
 import { red } from '@material-ui/core/colors';
 import OverviewTab from 'pages/dashboard/coproductionprocesses/Tabs/Overview';
 import MainSkeleton from 'pages/dashboard/coproductionprocesses/Tabs/MainSkeleton';
+import MetadataTab from './Tabs/Metadata';
 
 const tabs = [
-  { label: 'Repository', value: 'repository' },
   { label: 'Overview', value: 'overview' },
+  { label: 'Metadata', value: 'metadata' },
+  { label: 'Repository', value: 'repository' },
   { label: 'Team', value: 'team' },
 ];
 
@@ -144,9 +147,14 @@ const CoproductionProcessProfile = () => {
         <OverviewTab />
       </Card>
     </TabPanel>
+    <TabPanel value={tab} index="metadata">
+      <Card >
+        <MetadataTab />
+      </Card>
+    </TabPanel>
     <TabPanel value={tab} index="guide">
-      <Card>
-        <Repository />
+      <Card sx={{mb: 2}}>
+        {process.phases_count > 0 ? <Repository /> : <CreateSchema />}
       </Card>
     </TabPanel>
     <TabPanel value={tab} index="team">
@@ -190,7 +198,7 @@ const CoproductionProcessProfile = () => {
                     color="text.primary"
                     variant="h5"
                   >
-                    {process ? (logoExists && <Avatar sx={{ mr: 0.5, height: "30px", width: "30px" }} src={process.logotype} />): <Skeleton sx={{mr: 0.5}} variant="circular" width={30} height={30} />}
+                    {process ? (logoExists && <Avatar sx={{ mr: 0.5, height: "30px", width: "30px" }} src={process.logotype} />) : <Skeleton sx={{ mr: 0.5 }} variant="circular" width={30} height={30} />}
                     {process ? process.name : <Skeleton variant="rectangular" width={210} />}
                   </Typography>
 
