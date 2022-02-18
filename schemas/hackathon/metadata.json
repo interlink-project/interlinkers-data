@@ -1,12 +1,12 @@
 {
     "reference": "hackathon",
-    "name": {
+    "name_translations": {
         "en": "Hackathon creation process",
         "es": "Esquema para la creación de un Hackathon"
     },
     "author": "",
     "licence": "",
-    "description": {
+    "description_translations": {
         "en": "",
         "es": ""
     },

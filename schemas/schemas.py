@@ -5,10 +5,10 @@ from pydantic import BaseModel, Extra, validator
 
 
 class WithNameAndDesc(BaseModel):
-    name: dict
-    description: dict
+    name_translations: dict
+    description_translations: dict
 
-    @validator('name', "description")
+    @validator('name_translations', "description_translations")
     def with_languages(cls, v, values, **kwargs):
         if "en" not in v:
             raise ValueError(f'English not detected')
@@ -33,5 +33,3 @@ class CoproductionSchema(WithNameAndDesc, extra=Extra.forbid):
     tags: List[str]
     author: str
     licence: Optional[str]
-
-    name_translations = {'en': 'Some article'}

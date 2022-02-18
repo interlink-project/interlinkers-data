@@ -2,12 +2,12 @@
     "title": "Phase",
     "type": "object",
     "properties": {
-        "name": {
-            "title": "Name",
+        "name_translations": {
+            "title": "Name Translations",
             "type": "object"
         },
-        "description": {
-            "title": "Description",
+        "description_translations": {
+            "title": "Description Translations",
             "type": "object"
         },
         "prerequisites": {
@@ -24,8 +24,8 @@
         }
     },
     "required": [
-        "name",
-        "description",
+        "name_translations",
+        "description_translations",
         "prerequisites",
         "objectives"
     ],
@@ -35,12 +35,12 @@
             "title": "Task",
             "type": "object",
             "properties": {
-                "name": {
-                    "title": "Name",
+                "name_translations": {
+                    "title": "Name Translations",
                     "type": "object"
                 },
-                "description": {
-                    "title": "Description",
+                "description_translations": {
+                    "title": "Description Translations",
                     "type": "object"
                 },
                 "problem_profiles": {
@@ -50,8 +50,8 @@
                 }
             },
             "required": [
-                "name",
-                "description",
+                "name_translations",
+                "description_translations",
                 "problem_profiles"
             ],
             "additionalProperties": false
@@ -60,12 +60,12 @@
             "title": "Objective",
             "type": "object",
             "properties": {
-                "name": {
-                    "title": "Name",
+                "name_translations": {
+                    "title": "Name Translations",
                     "type": "object"
                 },
-                "description": {
-                    "title": "Description",
+                "description_translations": {
+                    "title": "Description Translations",
                     "type": "object"
                 },
                 "problem_profiles": {
@@ -82,8 +82,8 @@
                 }
             },
             "required": [
-                "name",
-                "description",
+                "name_translations",
+                "description_translations",
                 "problem_profiles",
                 "tasks"
             ],

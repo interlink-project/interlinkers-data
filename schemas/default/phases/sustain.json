@@ -2,32 +2,32 @@
     "prerequisites": [
         "phase-build"
     ],
-    "name": {
+    "name_translations": {
         "en": "Sustain",
         "es": ""
     },
-    "description": {
+    "description_translations": {
         "en": "",
         "es": ""
     },
     "objectives": [
         {
-            "name": {
+            "name_translations": {
                 "en": "Handover",
                 "es": ""
             },
-            "description": {
+            "description_translations": {
                 "en": "",
                 "es": ""
             },
             "problem_profiles": [],
             "tasks": [
                 {
-                    "name": {
+                    "name_translations": {
                         "en": "Handover",
                         "es": ""
                     },
-                    "description": {
+                    "description_translations": {
                         "en": "",
                         "es": ""
                     },
@@ -38,22 +38,22 @@
             ]
         },
         {
-            "name": {
+            "name_translations": {
                 "en": "Maintenance",
                 "es": ""
             },
-            "description": {
+            "description_translations": {
                 "en": "",
                 "es": ""
             },
             "problem_profiles": [],
             "tasks": [
                 {
-                    "name": {
+                    "name_translations": {
                         "en": "Task distribution for maintenance, contracts regulation, data management archiving",
                         "es": ""
                     },
-                    "description": {
+                    "description_translations": {
                         "en": "",
                         "es": ""
                     },
@@ -62,11 +62,11 @@
             ]
         },
         {
-            "name": {
+            "name_translations": {
                 "en": "Monitoring",
                 "es": ""
             },
-            "description": {
+            "description_translations": {
                 "en": "",
                 "es": ""
             },
@@ -76,11 +76,11 @@
             ],
             "tasks": [
                 {
-                    "name": {
+                    "name_translations": {
                         "en": "Monitoring ongoing evaluation, periodic evaluations with stakeholders",
                         "es": ""
                     },
-                    "description": {
+                    "description_translations": {
                         "en": "",
                         "es": ""
                     },

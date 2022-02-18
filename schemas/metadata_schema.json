@@ -2,12 +2,12 @@
     "title": "CoproductionSchema",
     "type": "object",
     "properties": {
-        "name": {
-            "title": "Name",
+        "name_translations": {
+            "title": "Name Translations",
             "type": "object"
         },
-        "description": {
-            "title": "Description",
+        "description_translations": {
+            "title": "Description Translations",
             "type": "object"
         },
         "reference": {
@@ -28,18 +28,11 @@
         "licence": {
             "title": "Licence",
             "type": "string"
-        },
-        "name_translations": {
-            "title": "Name Translations",
-            "default": {
-                "en": "Some article"
-            },
-            "type": "object"
         }
     },
     "required": [
-        "name",
-        "description",
+        "name_translations",
+        "description_translations",
         "reference",
         "tags",
         "author"

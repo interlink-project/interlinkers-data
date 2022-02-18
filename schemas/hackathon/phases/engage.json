@@ -1,32 +1,32 @@
 {
     "prerequisites": [
     ],
-    "name": {
+    "name_translations": {
         "en": "Engage",
         "es": "Comprometer"
     },
-    "description": {
+    "description_translations": {
         "en": "Which stakeholders should be involved in your co-production process? How to communicate with them about your project goals and the benefits of participation?\r\nLearn about the value of involving stakeholders. Use the available knowledge tools to understand who are the stakeholders to involve in your project and the role they can have. \r\nExploit communication templates to raise awareness, invite stakeholders, and create a lively network of motivated contributors. Define partnership agreements and make sure shared information is protected. Plan together the next steps and create working groups. ",
         "es": ""
     },
     "objectives": [
         {
-            "name": {
+            "name_translations": {
                 "en": "Demo objective",
                 "es": "Identificar stakeholders"
             },
-            "description": {
+            "description_translations": {
                 "en": "The identification of key actors  is the first step to start your  process of co-production. According to the type of project, the goals and the level of citizen involvement, different questions are to be answered.\r\nWhat different  types of stakeholders enter into play in the initiative to be co-produced? What are their motivations and skills to participate in the project? What is their position in the network? How to contact them?\r\nFollow the specific tasks to get the complete picture.",
                 "es": ""
             },
             "problem_profiles": [],
             "tasks": [
                 {
-                    "name": {
+                    "name_translations": {
                         "en": "Understand the different types of stakeholders",
                         "es": "Entender los diferentes tipos de stakeholders y sus motivaciones"
                     },
-                    "description": {
+                    "description_translations": {
                         "en": "Usually different actors are engaged in co-production to create a new service or customizing an already existing service: public bodies, private companies, SMEs, citizens. Each actor brings specific needs and competences in relation to the service and has different motivations to participate in a project. Learn about the different types of stakeholders and which of them can add value to your co-production process",
                         "es": ""
                     },
@@ -37,11 +37,11 @@
             ]
         },
         {
-            "name": {
+            "name_translations": {
                 "en": "Engage stakeholders",
                 "es": ""
             },
-            "description": {
+            "description_translations": {
                 "en": "Stakeholder engagement is about figuring out how to effectively communicate, collaborate, and interact with key people who have positive or negative influence, and may impact the success of your project.\r\nTo reach this objective you should carefully prepare an engagement plan, create awareness and communication material tailored to your audience, understand how to communicate benefit for stakeholders and, whenever this is forseen in your project, understand how to engage citizens in the co-production process. ",
                 "es": ""
             },
@@ -52,11 +52,11 @@
             ],
             "tasks": [
                 {
-                    "name": {
+                    "name_translations": {
                         "en": "Prepare an engagement plan",
                         "es": ""
                     },
-                    "description": {
+                    "description_translations": {
                         "en": "Create an effective engagement plan which allows you to reach to the types and numbers of stakeholders sufficient to ensure that the co-produced service is well targeted. \r\nAn engagement plan is usually composed of three parts: the identification of your project\u2019s stakeholders; the planning of effective means for interacting with each stakeholder, and protocols for accurately documenting your work for the sake of transparency, accountability and evaluation of the process.",
                         "es": ""
                     },
@@ -65,11 +65,11 @@
                     ]
                 },
                 {
-                    "name": {
+                    "name_translations": {
                         "en": "Create awareness and communication",
                         "es": ""
                     },
-                    "description": {
+                    "description_translations": {
                         "en": "Ensure that relevant stakeholders are aware of the initiative in order to ensure their participation. Awareness-raising is a process that seeks to inform and educate people about a topic or issue with the intention of influencing their attitudes, behaviours and beliefs towards the achievement of a defined purpose or goal.",
                         "es": ""
                     },
@@ -79,11 +79,11 @@
                     ]
                 },
                 {
-                    "name": {
+                    "name_translations": {
                         "en": "Communicate benefit for stakeholders",
                         "es": ""
                     },
-                    "description": {
+                    "description_translations": {
                         "en": "Clearly communicate the benefits of service co-production to your network of stakeholders and citizens.\r\nParticipants need to understand why their participation matters, what they can gain individually and as a group.",
                         "es": ""
                     },
@@ -92,11 +92,11 @@
                     ]
                 },
                 {
-                    "name": {
+                    "name_translations": {
                         "en": "Engage citizens in the co-production process",
                         "es": ""
                     },
-                    "description": {
+                    "description_translations": {
                         "en": "Provide members of the public with the information they need to understand the project, the decision process, and also how public input can influence decisions, the design of the service and the way it is delivered. ",
                         "es": ""
                     },

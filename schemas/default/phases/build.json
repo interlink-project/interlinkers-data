@@ -2,32 +2,32 @@
     "prerequisites": [
         "phase-design"
     ],
-    "name": {
+    "name_translations": {
         "en": "Build",
         "es": ""
     },
-    "description": {
+    "description_translations": {
         "en": "Browse the catalogue of INTERLINKERs to find reusable building blocks for the implementation of your service. Monitor development advancement in the project workplan. Stop and reflect on the process so far with the co-evaluation checklists that help verify compliance with standards and regulations. Use incentives and reward tools made available by the INTERLINK platform to sustain stakeholders\u2019 and citizens\u2019 contribution to service delivery. Monitor quality of service and citizens\u2019 satisfaction with carefully prepared surveys. Stop and reflect on how co-delivery is going with the co-evaluation checklists.",
         "es": ""
     },
     "objectives": [
         {
-            "name": {
+            "name_translations": {
                 "en": "Technical implementation",
                 "es": ""
             },
-            "description": {
+            "description_translations": {
                 "en": "Service implementation is not possible if an environment for its depoyment and maintenance is not thought in advance. Independently on whether your envisioned co-produced service will be a piece of software or a bundle of digital resources, identify, select and make ready the development and deployment environments for your solution. Important to clearly specify and test the technical constraints within which the delivered service will be hosted.",
                 "es": ""
             },
             "problem_profiles": [],
             "tasks": [
                 {
-                    "name": {
+                    "name_translations": {
                         "en": "Technical implementation",
                         "es": ""
                     },
-                    "description": {
+                    "description_translations": {
                         "en": "Identify the dependencies and environment needed for the service co-production and co-delivery. Configure and deploy (if not already available) the dependencies and environment. Document the progress towards realizing the technical aspects associated to the co-produced service. ",
                         "es": ""
                     },
@@ -44,11 +44,11 @@
             ]
         },
         {
-            "name": {
+            "name_translations": {
                 "en": "Service implementation",
                 "es": ""
             },
-            "description": {
+            "description_translations": {
                 "en": "Depending on the nature of the co-produced service, you main adopt different tools and mechanisms to realize a given co-produced service. Realizing a co-produced service might entail programming, using graphical design tools, 3D modelling and fabrication and so on. Register progress achieved during the realization of the implementation of the co-produced service, upload progress reports, cross-link with repositories where progress is being realized, document the co-produced service API or the kit and\/or resources generated to realize the service. Acknowledge and trace the contributions of different co-production team members or external contributors. Reuse existing INTERLINKERs (software and knowledge) and add on top of them, browse through them in the Catalogue, do not reinvent the wheel!",
                 "es": ""
             },
@@ -58,11 +58,11 @@
             ],
             "tasks": [
                 {
-                    "name": {
+                    "name_translations": {
                         "en": "Service implementation",
                         "es": ""
                     },
-                    "description": {
+                    "description_translations": {
                         "en": "Departing from the service design specification generated in DESIGN phase, implement or build the service functionality. Provide an accessible and inclusive mechanism to aid future consumption of the service. ",
                         "es": ""
                     },
@@ -80,11 +80,11 @@
             ]
         },
         {
-            "name": {
+            "name_translations": {
                 "en": "Service codelivery",
                 "es": ""
             },
-            "description": {
+            "description_translations": {
                 "en": "Release the co-produced service. Ensure that is operational in a 24x7 basis.  Provide support to accomodate enhancements or fixes. Establish fluid mechanisms between service co-deliverers and consumers. Monitor fulfilment of obligations and responsabilities of distinct codeliverers.",
                 "es": ""
             },
@@ -94,33 +94,33 @@
             ],
             "tasks": [
                 {
-                    "name": {
+                    "name_translations": {
                         "en": "Identify all the actors engaged in the codelivery their role and responsability",
                         "es": ""
                     },
-                    "description": {
+                    "description_translations": {
                         "en": "Create a map of actors taking responsability for the service continous delivery: release, maintenance, support and exploitation. Assign roles and responsabilities to the different actors. Valorize co-delivery activities so that codelivery contributions can be traced and assessed. Define a service delivery model canvas. ",
                         "es": ""
                     },
                     "problem_profiles": []
                 },
                 {
-                    "name": {
+                    "name_translations": {
                         "en": "Coordinate the actors involved in the codelivery of the service",
                         "es": ""
                     },
-                    "description": {
+                    "description_translations": {
                         "en": "Organize activities among co-deliverers according to their roles and responsabilities. Ensure quality of service is maintained in the cooperative activities involved in service codelivery. Launch satisfaction and quality of service assessement surveys. ",
                         "es": ""
                     },
                     "problem_profiles": []
                 },
                 {
-                    "name": {
+                    "name_translations": {
                         "en": "Guarantee transparent communication about the service codelivered",
                         "es": ""
                     },
-                    "description": {
+                    "description_translations": {
                         "en": "Ensure fluid and responsive communication among co-deliverers team and more importantly among those consuming and reusing the delivered service and the co-delivery team. Establish a web-based communication mechanism which allows to trace the communication with all actors. ",
                         "es": ""
                     },

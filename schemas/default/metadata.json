@@ -1,12 +1,12 @@
 {
     "reference": "default",
-    "name": {
+    "name_translations": {
         "en": "Default schema",
         "es": "Esquema por defecto"
     },
     "author": "",
     "licence": "",
-    "description": {
+    "description_translations": {
         "en": "",
         "es": ""
     },
