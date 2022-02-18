@@ -649,13 +649,13 @@
     "schemas": [
         {
             "reference": "default",
-            "name": {
+            "name_translations": {
                 "en": "Default schema",
                 "es": "Esquema por defecto"
             },
             "author": "",
             "licence": "",
-            "description": {
+            "description_translations": {
                 "en": "",
                 "es": ""
             },
@@ -665,677 +665,143 @@
             "phases": [
                 {
                     "prerequisites": [
-                        "phase-engage"
+                        "phase-build"
                     ],
-                    "name": {
-                        "en": "Design",
+                    "name_translations": {
+                        "en": "Sustain",
                         "es": ""
                     },
-                    "description": {
-                        "en": "Follow the guidelines to discuss together, in a balanced and inclusive way, issues, beneficiaries, and priorities for the service to be designed. Find useful resources to conduct interviews, surveys and focus groups for a deeper understanding of stakeholders\u2019 and citizens\u2019 needs and requirements. Use the proposed material to organize service design workshops and develop mockups. Stop and reflect on the process so far with the co-evaluation checklists.",
+                    "description_translations": {
+                        "en": "",
                         "es": ""
                     },
                     "objectives": [
                         {
-                            "name": {
-                                "en": "Focus the problem collaboratively",
+                            "name_translations": {
+                                "en": "Handover",
                                 "es": ""
                             },
-                            "description": {
-                                "en": "Clearly define the problem to be addresses by the co-production team and agree on it. This  is an important step towards creating an effective and efficient solution. Different resources can be useful to this end: tips on how to create and share a common language among team members, resources to guide collaborative discussions, tools for ideas collection.",
+                            "description_translations": {
+                                "en": "",
                                 "es": ""
                             },
                             "problem_profiles": [],
                             "tasks": [
                                 {
-                                    "name": {
-                                        "en": "Develop a shared language",
+                                    "name_translations": {
+                                        "en": "Handover",
                                         "es": ""
                                     },
-                                    "description": {
-                                        "en": "Develop a shared language among the team members and encourage communication and ideas sharing with all the stakeholders. Developing a shared language is crucial to be able for stakeholders to: i) build a common ground for joint action, ii) share, mutually agree on, and understand a longterm research plan and protocol, iii) to ongoingly evaluate the success or failure of decisions.",
+                                    "description_translations": {
+                                        "en": "",
                                         "es": ""
                                     },
                                     "problem_profiles": [
-                                        "ORG_PROBLEM_12"
+                                        "ORG_PROBLEM_7"
                                     ],
-                                    "reference": "objective-develop-a-shared-language"
-                                },
-                                {
-                                    "name": {
-                                        "en": "Collaboratively problem refinement",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "Refine with the collaboration of the stakeholders network the problem to be addressed. Service design is a problem-solving activity and it is important to clearly understand which is the challenge that the team addresses and how more information can be collected to understand how the service should be designed. Organize focus groups to discuss initial ideas and assumptions, refine them through structured methods and become aware about the missing information that still needs to be collected.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "prerequisites": [
-                                        {
-                                            "objective": "objective-develop-a-shared-language",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "objective-collaboratively-problem-refinement"
-                                },
-                                {
-                                    "name": {
-                                        "en": "Ideas collection for problem exploration and refinement",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "In case of need, enlarge the collection of ideas about the various aspects of the problem by launching a discussion forum.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "prerequisites": [
-                                        {
-                                            "objective": "objective-collaboratively-problem-refinement",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "objective-ideas-collection-for-problem-exploration-and-refinement"
-                                },
-                                {
-                                    "name": {
-                                        "en": "Sketch an initial idea of the service",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "Draft an initial description (or multiple optional descriptions) of the potential service: what it does, who benefits from the service, who helps delivering it. Use description templates to facilitate your task.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "prerequisites": [
-                                        {
-                                            "objective": "objective-ideas-collection-for-problem-exploration-and-refinement",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "objective-sketch-an-initial-idea-of-the-service"
-                                },
-                                {
-                                    "name": {
-                                        "en": "Collaborative agree on a service idea",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "Go back to your network of stakeholders to validate the service idea by means of a focus group or a poll.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "prerequisites": [
-                                        {
-                                            "objective": "objective-sketch-an-initial-idea-of-the-service",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "objective-collaborative-agree-on-a-service-idea"
-                                },
-                                {
-                                    "name": {
-                                        "en": "Define requirements and constraints for the service",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "The ideas and service design concepts need to be translated into formal requirements to proceed with the implementation of the service. Follow the guidelines on how to collect, structure and communicate requirements and all the service specifications that clarify the objective of the service and how it should be developed. Use stardard representation formalism for requirements descriptions, as for example the Volere Requirements Specification template.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "prerequisites": [
-                                        {
-                                            "objective": "objective-collaborative-agree-on-a-service-idea",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "objective-define-requirements-and-constraints-for-the-service"
+                                    "reference": "objective-handover"
                                 }
                             ],
-                            "reference": "objective-focus-the-problem-collaboratively"
+                            "reference": "objective-handover"
                         },
                         {
-                            "name": {
-                                "en": "Problem exploration",
+                            "name_translations": {
+                                "en": "Maintenance",
                                 "es": ""
                             },
-                            "description": {
-                                "en": "Before actually designing how the service will look like, deeply explore the problem context, to gather factual data about users, organizations, needs and their relationships.",
+                            "description_translations": {
+                                "en": "",
+                                "es": ""
+                            },
+                            "problem_profiles": [],
+                            "tasks": [
+                                {
+                                    "name_translations": {
+                                        "en": "Task distribution for maintenance, contracts regulation, data management archiving",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "reference": "objective-task-distribution-for-maintenance-contracts-regulation-data-management-archiving"
+                                }
+                            ],
+                            "prerequisites": [
+                                {
+                                    "objective": "objective-handover",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-maintenance"
+                        },
+                        {
+                            "name_translations": {
+                                "en": "Monitoring",
+                                "es": ""
+                            },
+                            "description_translations": {
+                                "en": "",
                                 "es": ""
                             },
                             "problem_profiles": [
-                                "UND_PROBLEM_1",
                                 "UND_PROBLEM_3",
-                                "UND_PROBLEM_4",
-                                "UND_PROBLEM_6",
-                                "DEF_PROBLEM_3"
+                                "VAL_PROBLEM_5"
                             ],
                             "tasks": [
                                 {
-                                    "name": {
-                                        "en": "Collect data about users and their behavior",
+                                    "name_translations": {
+                                        "en": "Monitoring ongoing evaluation, periodic evaluations with stakeholders",
                                         "es": ""
                                     },
-                                    "description": {
-                                        "en": "Gather all the relevant information about the service that will be produced to put the right processes in place.  It\u2019s advisable to establish different types of consultation depending on the groups targeted:\r\n\\n- Consult users about desired outcomes of the service\r\n- Consult service providers about the solutions that can give in response to the service demanded\r\n- Ask public authorities about the implications (organizational, regulatory, etc.) that affect to the service delivery\r\nOrganize focus groups, interviews or surveys to elicit the desired data.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [
-                                        "ORG_PROBLEM_6.2"
-                                    ],
-                                    "reference": "objective-collect-data-about-users-and-their-behavior"
-                                },
-                                {
-                                    "name": {
-                                        "en": "Ecosystem mapping",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "Map in a synthetic representation all the key roles that can impact on the user, organization and service environment. The ecosystem map is built by first displaying all the entities, and then connecting them based on the type of value they exchange.",
+                                    "description_translations": {
+                                        "en": "",
                                         "es": ""
                                     },
                                     "problem_profiles": [],
-                                    "prerequisites": [
-                                        {
-                                            "objective": "objective-collect-data-about-users-and-their-behavior",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "objective-ecosystem-mapping"
+                                    "reference": "objective-monitoring-ongoing-evaluation-periodic-evaluations-with-stakeholders"
                                 }
                             ],
                             "prerequisites": [
                                 {
-                                    "objective": "objective-focus-the-problem-collaboratively",
+                                    "objective": "objective-maintenance",
                                     "status": "completed"
                                 }
                             ],
-                            "reference": "objective-problem-exploration"
-                        },
-                        {
-                            "name": {
-                                "en": "Ideation",
-                                "es": ""
-                            },
-                            "description": {
-                                "en": "Ideation is the preliminary phase of service design in which the design team is created, the collected data are reviewed, and futher ideas are sougth if necessary.",
-                                "es": ""
-                            },
-                            "problem_profiles": [
-                                "ORG_PROBLEM_13",
-                                "ORG_PROBLEM_14",
-                                "UND_PROBLEM_4",
-                                "UND_PROBLEM_5",
-                                "DEF_PROBLEM_2",
-                                "DEF_PROBLEM_3"
-                            ],
-                            "tasks": [
-                                {
-                                    "name": {
-                                        "en": "Engage relevant actors in the design",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "Create a core group of stakeholders to proceed with the actual ideation of the service. Provide appropriate communication, motivational statements, and workplan information about the next steps of service co-creation.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "reference": "objective-engage-relevant-actors-in-the-design"
-                                },
-                                {
-                                    "name": {
-                                        "en": "Organize a braistorming",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "Organize and manage a brainstorming to review the data collected about the service ecosystem and to produce service ideas, discuss and select them, through divergent and convergent phases of group discussion.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "prerequisites": [
-                                        {
-                                            "objective": "objective-engage-relevant-actors-in-the-design",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "objective-organize-a-braistorming"
-                                },
-                                {
-                                    "name": {
-                                        "en": "Ideas crowdsourcing",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "Collect ideas from a large set of contributors (e.g. citizens) related to a specific challenge, organize and manage the ideas and eventually evaluate them. Crowdsourcing projects can target both internal and external participants via dedicated tools and platforms, questionnaires, social media, competitions and other methods.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "prerequisites": [
-                                        {
-                                            "objective": "objective-organize-a-braistorming",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "objective-ideas-crowdsourcing"
-                                }
-                            ],
-                            "prerequisites": [
-                                {
-                                    "objective": "objective-problem-exploration",
-                                    "status": "completed"
-                                }
-                            ],
-                            "reference": "objective-ideation"
-                        },
-                        {
-                            "name": {
-                                "en": "Service design",
-                                "es": ""
-                            },
-                            "description": {
-                                "en": "After the understanding of the problem and the brainstorming of the service ideas, elaborate concrete solutions for your challenge. Co-design workshops are useful at this stage as collective activities organized to discuss design issues and choices. Work together with relevant actors to start defining the service to be co-designed and co-delivered.",
-                                "es": ""
-                            },
-                            "problem_profiles": [
-                                "UND_PROBLEM_4",
-                                "DEF_PROBLEM_3",
-                                "DEF_PROBLEM_4",
-                                "BUILD_PROBLEM_2"
-                            ],
-                            "tasks": [
-                                {
-                                    "name": {
-                                        "en": "Define personas",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "Reflect on the service beneficiary behavior, needs and expectations. Personas are fictional characters who embody the archetype of your customer, beneficiary or financing supporter. They are created through exhaustive observation of the customer segment and the drawing together of their shared characteristics, behaviors, motivations, interests, etc. It is a useful tool to focus on getting to know who you are designing for.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "reference": "objective-define-personas"
-                                },
-                                {
-                                    "name": {
-                                        "en": "Define scenarios",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "Write scenarios. To explain and collaboratively describe the envisioned service, scenarios can be used to reflect on the users experience. A user scenario is a story that describes, in an  narrative manner, how the user is going to interact with the service during a specific situation. Writing user scenarios requires to identify a specific context in which the action takes place, as well as characters and needs that defines the attitude of the user. ",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "prerequisites": [
-                                        {
-                                            "objective": "objective-define-personas",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "objective-define-scenarios"
-                                },
-                                {
-                                    "name": {
-                                        "en": "Define user journeys",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "Describe the encounters between the user and the organization, service or product. Tell the story from the user\u2019s point of view, and try to depict how the user\u2019s expectations intersect with the organization\u2019s offer. It is a useful strategic tool that keeps the customers, beneficiaries and providers at the center of design decisions, highlighting pain points and opportunities for the organization to create a better user experience and an effective service.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "prerequisites": [
-                                        {
-                                            "objective": "objective-define-scenarios",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "objective-define-user-journeys"
-                                }
-                            ],
-                            "prerequisites": [
-                                {
-                                    "objective": "objective-ideation",
-                                    "status": "completed"
-                                }
-                            ],
-                            "reference": "objective-service-design"
-                        },
-                        {
-                            "name": {
-                                "en": "Service specification",
-                                "es": ""
-                            },
-                            "description": {
-                                "en": "The ideas and service design concepts need to be translated into formal requirements and service specifications to proceed with the implementation of the service. Follow the guidelines to collect, structure and communicate requirements and all the service specifications that clarify the objective of the service and how it should be developed.",
-                                "es": ""
-                            },
-                            "problem_profiles": [
-                                "DEF_PROBLEM_1",
-                                "DEF_PROBLEM_5",
-                                "BUILD_PROBLEM_1"
-                            ],
-                            "tasks": [
-                                {
-                                    "name": {
-                                        "en": "Consider eu guidelines for public service developement",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "Consult good practices for interface design and public services development. Reflect, in your specific use case, on how to make sure the services are provided in a multi-channel manner, maximizing the exploitation by potentially any group of users or by the agents acting on their behalf, and providing clear statements regarding the accessibility limits in the current implementation.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "reference": "objective-consider-eu-guidelines-for-public-service-developement"
-                                },
-                                {
-                                    "name": {
-                                        "en": "User interface design",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "Proceed with the design of the user interface of the service through the preparation of initial sketches and mockups. Ensure the design of the user interface follows the guidelines on usability and accessibility. ",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "prerequisites": [
-                                        {
-                                            "objective": "objective-consider-eu-guidelines-for-public-service-developement",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "objective-user-interface-design"
-                                },
-                                {
-                                    "name": {
-                                        "en": "Content design",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "Prepare adequate content for the new/enhanced public service. Follow the guidelines on how to select and use the most appropriate language according to the users of the digital service and their skills.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [
-                                        "DEF_PROBLEM_6"
-                                    ],
-                                    "prerequisites": [
-                                        {
-                                            "objective": "objective-user-interface-design",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "objective-content-design"
-                                },
-                                {
-                                    "name": {
-                                        "en": "Service specification definition",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "Possibly use standard specification formalisms for describing your service. INTERLINK suggests you to have a look at EU standards like the Service Offering Canvas. By filling out this structured, visual classification of digital services, you can describe how stakeholder needs are met. The result is a consolidated view that drives service orientation and awareness of needs and how services are to be consumed. SOC specifications can be shared and compared with other similar services at the EU level.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "prerequisites": [
-                                        {
-                                            "objective": "objective-content-design",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "objective-service-specification-definition"
-                                },
-                                {
-                                    "name": {
-                                        "en": "Data model design",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "Aid the following steps of service implementation by defining a  Data Model that explains: the conceptual organization of the service, its logical organization in terms of components, and the physical level of database implementations required. ",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "prerequisites": [
-                                        {
-                                            "objective": "objective-service-specification-definition",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "objective-data-model-design"
-                                },
-                                {
-                                    "name": {
-                                        "en": "Software architecture and api design",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "Create a document that describes the software architecture of the digital system underneath the service and the APIs design.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "prerequisites": [
-                                        {
-                                            "objective": "objective-data-model-design",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "objective-software-architecture-and-api-design"
-                                }
-                            ],
-                            "prerequisites": [
-                                {
-                                    "objective": "objective-service-design",
-                                    "status": "completed"
-                                }
-                            ],
-                            "reference": "objective-service-specification"
-                        },
-                        {
-                            "name": {
-                                "en": "Prototype",
-                                "es": ""
-                            },
-                            "description": {
-                                "en": "How to show and tell in which way the service is expected to work?\r\nValidate the concept of your service or verify the assumptions about your final product before developing it. Different types of proof of concepts can be used, according to the stage of service development and the type of service, whether it is a digital service or not.",
-                                "es": ""
-                            },
-                            "problem_profiles": [
-                                "VAL_PROBLEM_3",
-                                "VAL_PROBLEM_4"
-                            ],
-                            "tasks": [
-                                {
-                                    "name": {
-                                        "en": "Experience scenarios",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "Analyse and visualise how the system changes or evolves according to specific scenarios and their dynamics.\r\nSystem scenarios introduce a dynamic level of analysis, applying the lense of time and showing the possible variations that could take place. In this way, system scenarios provide a deeper level of analysis of the system, directed at understanding system dynamics and relations between actors in various conditions.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "reference": "objective-experience-scenarios"
-                                },
-                                {
-                                    "name": {
-                                        "en": "Mockups and lowfi prototypes",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "Iteratively discuss and evaluate mockups and lowfi prototypes within the enlarged design team. Set up a discussion forum, a method for e-voting and evaluation surveys to digitally facilitate this step.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "prerequisites": [
-                                        {
-                                            "objective": "objective-experience-scenarios",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "objective-mockups-and-lowfi-prototypes"
-                                },
-                                {
-                                    "name": {
-                                        "en": "Perform an heuristic evaluation",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "Test the design of the digital service with experts. Follow the guidelines on how to conduct an Heuristic Evaluation (also called Expert evaluation) and use the templates with the heuristics (principles) to follow when performing the test. The test can be conducted with early mock-ups as well with functioning early prototypes.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "prerequisites": [
-                                        {
-                                            "objective": "objective-mockups-and-lowfi-prototypes",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "objective-perform-an-heuristic-evaluation"
-                                },
-                                {
-                                    "name": {
-                                        "en": "Perform a test with users",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "If lowfi prototypes allow a good representation of what the service will be and allow to simulate interaction flows, conduct controlled evaluation experiments with potential end users. \r\nDo they understand the language of the interface mockups? Are major functionalities in place? Are there unexpected interaction paths?\r\nAlso very small experiments, may provide extremely valuable input at this stage.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "prerequisites": [
-                                        {
-                                            "objective": "objective-perform-an-heuristic-evaluation",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "objective-perform-a-test-with-users"
-                                }
-                            ],
-                            "prerequisites": [
-                                {
-                                    "objective": "objective-service-specification",
-                                    "status": "completed"
-                                }
-                            ],
-                            "reference": "objective-prototype"
-                        },
-                        {
-                            "name": {
-                                "en": "Sustainability",
-                                "es": ""
-                            },
-                            "description": {
-                                "en": "Before further going deep into the development of your service. Stop and reflect about the design results obtained so far and about the actual feasibility and sustainability of what you are about to implement.",
-                                "es": ""
-                            },
-                            "problem_profiles": [
-                                "UND_PROBLEM_3"
-                            ],
-                            "tasks": [
-                                {
-                                    "name": {
-                                        "en": "Evaluation of codesign",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "Is the design output satisfactory?\r\nFollow the proposed checklist to understand if you are done with design or whether an iterative refinement cycle is recommended.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "reference": "objective-evaluation-of-codesign"
-                                },
-                                {
-                                    "name": {
-                                        "en": "Refine the preliminary business model",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "How much funding is needed? Where does the money come from? What are the sources of funding / support necessary to keep it running after implementation?\r\nFollow the proposed checklist for an intermediate evaluation of financial sustainability.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "prerequisites": [
-                                        {
-                                            "objective": "objective-evaluation-of-codesign",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "objective-refine-the-preliminary-business-model"
-                                },
-                                {
-                                    "name": {
-                                        "en": "Feasibility analysis",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "Are all technical skills and resources available to proceed with development? \r\nFollow the proposed checklist for an intermediate evaluation of technical sustainabiity.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "prerequisites": [
-                                        {
-                                            "objective": "objective-refine-the-preliminary-business-model",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "objective-feasibility-analysis"
-                                },
-                                {
-                                    "name": {
-                                        "en": "Understand motivations and incentives",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "What are the incentives for those who can provide support / funding and for those developing / maintaining them?\r\nStop and reflect on how stakeholders collaboration in co-creation went so far. Follow the proposed checklist to understand whether further incentives and supportive measures are needed to ensure productive development and co-delivery phases.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "prerequisites": [
-                                        {
-                                            "objective": "objective-feasibility-analysis",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "objective-understand-motivations-and-incentives"
-                                }
-                            ],
-                            "prerequisites": [
-                                {
-                                    "objective": "objective-prototype",
-                                    "status": "completed"
-                                }
-                            ],
-                            "reference": "objective-sustainability"
+                            "reference": "objective-monitoring"
                         }
                     ],
-                    "reference": "phase-design"
+                    "reference": "phase-sustain"
                 },
                 {
                     "prerequisites": [],
-                    "name": {
+                    "name_translations": {
                         "en": "Engage",
                         "es": "Comprometer"
                     },
-                    "description": {
+                    "description_translations": {
                         "en": "Which stakeholders should be involved in your co-production process? How to communicate with them about your project goals and the benefits of participation?\r\nLearn about the value of involving stakeholders. Use the available knowledge tools to understand who are the stakeholders to involve in your project and the role they can have. \r\nExploit communication templates to raise awareness, invite stakeholders, and create a lively network of motivated contributors. Define partnership agreements and make sure shared information is protected. Plan together the next steps and create working groups. ",
                         "es": ""
                     },
                     "objectives": [
                         {
-                            "name": {
+                            "name_translations": {
                                 "en": "Identify stakeholders",
                                 "es": "Identificar stakeholders"
                             },
-                            "description": {
+                            "description_translations": {
                                 "en": "The identification of key actors  is the first step to start your  process of co-production. According to the type of project, the goals and the level of citizen involvement, different questions are to be answered.\r\nWhat different  types of stakeholders enter into play in the initiative to be co-produced? What are their motivations and skills to participate in the project? What is their position in the network? How to contact them?\r\nFollow the specific tasks to get the complete picture.",
                                 "es": ""
                             },
                             "problem_profiles": [],
                             "tasks": [
                                 {
-                                    "name": {
+                                    "name_translations": {
                                         "en": "Understand the different types of stakeholders",
                                         "es": "Entender los diferentes tipos de stakeholders y sus motivaciones"
                                     },
-                                    "description": {
+                                    "description_translations": {
                                         "en": "Usually different actors are engaged in co-production to create a new service or customizing an already existing service: public bodies, private companies, SMEs, citizens. Each actor brings specific needs and competences in relation to the service and has different motivations to participate in a project. Learn about the different types of stakeholders and which of them can add value to your co-production process",
                                         "es": ""
                                     },
@@ -1345,11 +811,11 @@
                                     "reference": "objective-understand-the-different-types-of-stakeholders"
                                 },
                                 {
-                                    "name": {
+                                    "name_translations": {
                                         "en": "Map stakeholders, analyse motivation, skills, expectations",
                                         "es": "Mapear partes interesadas analizar motivaci\u00f3n habilidades expectativas"
                                     },
-                                    "description": {
+                                    "description_translations": {
                                         "en": "Mapping the stakeholders is crucial to have a clear view of which roles stakeholders can play in different stages of innovation, what their level of commitment and strategic importance could be. Analyse the complexity of building relationships, realizing which connectors can be crucial for innovation development in your project.",
                                         "es": ""
                                     },
@@ -1365,11 +831,11 @@
                                     "reference": "objective-map-stakeholders-analyse-motivation-skills-expectations"
                                 },
                                 {
-                                    "name": {
+                                    "name_translations": {
                                         "en": "Visually map the network of stakeholders",
                                         "es": "Mapear visualmente la red de partes interesadas"
                                     },
-                                    "description": {
+                                    "description_translations": {
                                         "en": "Is your network balanced and inclusive?\r\nCreate a Stakeholder Map, where the ecosystem of stakeholders involved in a customer experience is visualized.",
                                         "es": ""
                                     },
@@ -1385,11 +851,11 @@
                                     "reference": "objective-visually-map-the-network-of-stakeholders"
                                 },
                                 {
-                                    "name": {
+                                    "name_translations": {
                                         "en": "Create a contact list of potential network participants",
                                         "es": "Crear una lista de contactos de posibles participantes de la red"
                                     },
-                                    "description": {
+                                    "description_translations": {
                                         "en": "Write down the list of participants, aside the co-production team, who may be interested in observing the progress of the co-production project and have the opportunity to emit opinions and take part in some decision processes. ",
                                         "es": ""
                                     },
@@ -1408,11 +874,11 @@
                             "reference": "objective-identify-stakeholders"
                         },
                         {
-                            "name": {
+                            "name_translations": {
                                 "en": "Engage stakeholders",
                                 "es": ""
                             },
-                            "description": {
+                            "description_translations": {
                                 "en": "Stakeholder engagement is about figuring out how to effectively communicate, collaborate, and interact with key people who have positive or negative influence, and may impact the success of your project.\r\nTo reach this objective you should carefully prepare an engagement plan, create awareness and communication material tailored to your audience, understand how to communicate benefit for stakeholders and, whenever this is forseen in your project, understand how to engage citizens in the co-production process. ",
                                 "es": ""
                             },
@@ -1423,11 +889,11 @@
                             ],
                             "tasks": [
                                 {
-                                    "name": {
+                                    "name_translations": {
                                         "en": "Prepare an engagement plan",
                                         "es": ""
                                     },
-                                    "description": {
+                                    "description_translations": {
                                         "en": "Create an effective engagement plan which allows you to reach to the types and numbers of stakeholders sufficient to ensure that the co-produced service is well targeted. \r\nAn engagement plan is usually composed of three parts: the identification of your project\u2019s stakeholders; the planning of effective means for interacting with each stakeholder, and protocols for accurately documenting your work for the sake of transparency, accountability and evaluation of the process.",
                                         "es": ""
                                     },
@@ -1437,11 +903,11 @@
                                     "reference": "objective-prepare-an-engagement-plan"
                                 },
                                 {
-                                    "name": {
+                                    "name_translations": {
                                         "en": "Create awareness and communication",
                                         "es": ""
                                     },
-                                    "description": {
+                                    "description_translations": {
                                         "en": "Ensure that relevant stakeholders are aware of the initiative in order to ensure their participation. Awareness-raising is a process that seeks to inform and educate people about a topic or issue with the intention of influencing their attitudes, behaviours and beliefs towards the achievement of a defined purpose or goal.",
                                         "es": ""
                                     },
@@ -1458,11 +924,11 @@
                                     "reference": "objective-create-awareness-and-communication"
                                 },
                                 {
-                                    "name": {
+                                    "name_translations": {
                                         "en": "Communicate benefit for stakeholders",
                                         "es": ""
                                     },
-                                    "description": {
+                                    "description_translations": {
                                         "en": "Clearly communicate the benefits of service co-production to your network of stakeholders and citizens.\r\nParticipants need to understand why their participation matters, what they can gain individually and as a group.",
                                         "es": ""
                                     },
@@ -1478,11 +944,11 @@
                                     "reference": "objective-communicate-benefit-for-stakeholders"
                                 },
                                 {
-                                    "name": {
+                                    "name_translations": {
                                         "en": "Engage citizens in the co-production process",
                                         "es": ""
                                     },
-                                    "description": {
+                                    "description_translations": {
                                         "en": "Provide members of the public with the information they need to understand the project, the decision process, and also how public input can influence decisions, the design of the service and the way it is delivered. ",
                                         "es": ""
                                     },
@@ -1508,22 +974,22 @@
                             "reference": "objective-engage-stakeholders"
                         },
                         {
-                            "name": {
+                            "name_translations": {
                                 "en": "Define legal and ethical framework",
                                 "es": ""
                             },
-                            "description": {
+                            "description_translations": {
                                 "en": "The complexity of legal regulations can sometime make it difficult for governments to take up ICTs to co-produce and can cause significant delays in the deployment of solutions.\r\nFollow the guidelines offered here to prepare the financial, technical, and legal agreements that ensure viability to your co-production project.",
                                 "es": ""
                             },
                             "problem_profiles": [],
                             "tasks": [
                                 {
-                                    "name": {
+                                    "name_translations": {
                                         "en": "Define a non-disclosure agreement (NDA)",
                                         "es": ""
                                     },
-                                    "description": {
+                                    "description_translations": {
                                         "en": "You should consider whether your collaborative network of stakeholders needs a formal  agreement for not disclosing the confidential information that is shared as part of co-producing a service together.",
                                         "es": ""
                                     },
@@ -1531,11 +997,11 @@
                                     "reference": "objective-define-a-non-disclosure-agreement-nda"
                                 },
                                 {
-                                    "name": {
+                                    "name_translations": {
                                         "en": "Define a partnership agreement",
                                         "es": ""
                                     },
-                                    "description": {
+                                    "description_translations": {
                                         "en": "Participants should clearly understand their role in the co-production effort, their responsabilities, their rights. \r\nYou might wish to write down the terms and general plan for the collaboration, to give to the initiative a more formal structure, visibility and political support. \r\nGuidelines and examples of partnership agreements may help you decide which is the most suitable solution for your case.",
                                         "es": ""
                                     },
@@ -1561,11 +1027,11 @@
                             "reference": "objective-define-legal-and-ethical-framework"
                         },
                         {
-                            "name": {
+                            "name_translations": {
                                 "en": "Define data management plan",
                                 "es": ""
                             },
-                            "description": {
+                            "description_translations": {
                                 "en": "Make sure data that is collected and processed during the co-production process is managed according to the GDPR and EU best practices.\r\nPrepare a data management plan to guide you throughout the project life time and beyond.",
                                 "es": ""
                             },
@@ -1575,11 +1041,11 @@
                             ],
                             "tasks": [
                                 {
-                                    "name": {
+                                    "name_translations": {
                                         "en": "Clarify the purpose for data collection",
                                         "es": ""
                                     },
-                                    "description": {
+                                    "description_translations": {
                                         "en": "Which data will be collected during co-production? \r\nStart your data management plan by making an inventory of data sources and types.",
                                         "es": ""
                                     },
@@ -1587,11 +1053,11 @@
                                     "reference": "objective-clarify-the-purpose-for-data-collection"
                                 },
                                 {
-                                    "name": {
+                                    "name_translations": {
                                         "en": "Understand how the data flows",
                                         "es": ""
                                     },
-                                    "description": {
+                                    "description_translations": {
                                         "en": "From whom and for which purpose is data accessed? \r\nUnderstand where data can be securely stored and whether data is to be further transferred.",
                                         "es": ""
                                     },
@@ -1605,11 +1071,11 @@
                                     "reference": "objective-understand-how-the-data-flows"
                                 },
                                 {
-                                    "name": {
+                                    "name_translations": {
                                         "en": "Be aware of data impact",
                                         "es": ""
                                     },
-                                    "description": {
+                                    "description_translations": {
                                         "en": "Consider which are users' and suppliers' preferences concerning data.\r\nReflect on aspects of ownership, minimalization, responsibility, sharing, archiving, anonymity.",
                                         "es": ""
                                     },
@@ -1636,34 +1102,679 @@
                 },
                 {
                     "prerequisites": [
+                        "phase-engage"
+                    ],
+                    "name_translations": {
+                        "en": "Design",
+                        "es": ""
+                    },
+                    "description_translations": {
+                        "en": "Follow the guidelines to discuss together, in a balanced and inclusive way, issues, beneficiaries, and priorities for the service to be designed. Find useful resources to conduct interviews, surveys and focus groups for a deeper understanding of stakeholders\u2019 and citizens\u2019 needs and requirements. Use the proposed material to organize service design workshops and develop mockups. Stop and reflect on the process so far with the co-evaluation checklists.",
+                        "es": ""
+                    },
+                    "objectives": [
+                        {
+                            "name_translations": {
+                                "en": "Focus the problem collaboratively",
+                                "es": ""
+                            },
+                            "description_translations": {
+                                "en": "Clearly define the problem to be addresses by the co-production team and agree on it. This  is an important step towards creating an effective and efficient solution. Different resources can be useful to this end: tips on how to create and share a common language among team members, resources to guide collaborative discussions, tools for ideas collection.",
+                                "es": ""
+                            },
+                            "problem_profiles": [],
+                            "tasks": [
+                                {
+                                    "name_translations": {
+                                        "en": "Develop a shared language",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Develop a shared language among the team members and encourage communication and ideas sharing with all the stakeholders. Developing a shared language is crucial to be able for stakeholders to: i) build a common ground for joint action, ii) share, mutually agree on, and understand a longterm research plan and protocol, iii) to ongoingly evaluate the success or failure of decisions.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [
+                                        "ORG_PROBLEM_12"
+                                    ],
+                                    "reference": "objective-develop-a-shared-language"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Collaboratively problem refinement",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Refine with the collaboration of the stakeholders network the problem to be addressed. Service design is a problem-solving activity and it is important to clearly understand which is the challenge that the team addresses and how more information can be collected to understand how the service should be designed. Organize focus groups to discuss initial ideas and assumptions, refine them through structured methods and become aware about the missing information that still needs to be collected.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-develop-a-shared-language",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-collaboratively-problem-refinement"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Ideas collection for problem exploration and refinement",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "In case of need, enlarge the collection of ideas about the various aspects of the problem by launching a discussion forum.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-collaboratively-problem-refinement",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-ideas-collection-for-problem-exploration-and-refinement"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Sketch an initial idea of the service",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Draft an initial description (or multiple optional descriptions) of the potential service: what it does, who benefits from the service, who helps delivering it. Use description templates to facilitate your task.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-ideas-collection-for-problem-exploration-and-refinement",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-sketch-an-initial-idea-of-the-service"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Collaborative agree on a service idea",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Go back to your network of stakeholders to validate the service idea by means of a focus group or a poll.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-sketch-an-initial-idea-of-the-service",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-collaborative-agree-on-a-service-idea"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Define requirements and constraints for the service",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "The ideas and service design concepts need to be translated into formal requirements to proceed with the implementation of the service. Follow the guidelines on how to collect, structure and communicate requirements and all the service specifications that clarify the objective of the service and how it should be developed. Use stardard representation formalism for requirements descriptions, as for example the Volere Requirements Specification template.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-collaborative-agree-on-a-service-idea",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-define-requirements-and-constraints-for-the-service"
+                                }
+                            ],
+                            "reference": "objective-focus-the-problem-collaboratively"
+                        },
+                        {
+                            "name_translations": {
+                                "en": "Problem exploration",
+                                "es": ""
+                            },
+                            "description_translations": {
+                                "en": "Before actually designing how the service will look like, deeply explore the problem context, to gather factual data about users, organizations, needs and their relationships.",
+                                "es": ""
+                            },
+                            "problem_profiles": [
+                                "UND_PROBLEM_1",
+                                "UND_PROBLEM_3",
+                                "UND_PROBLEM_4",
+                                "UND_PROBLEM_6",
+                                "DEF_PROBLEM_3"
+                            ],
+                            "tasks": [
+                                {
+                                    "name_translations": {
+                                        "en": "Collect data about users and their behavior",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Gather all the relevant information about the service that will be produced to put the right processes in place.  It\u2019s advisable to establish different types of consultation depending on the groups targeted:\r\n\\n- Consult users about desired outcomes of the service\r\n- Consult service providers about the solutions that can give in response to the service demanded\r\n- Ask public authorities about the implications (organizational, regulatory, etc.) that affect to the service delivery\r\nOrganize focus groups, interviews or surveys to elicit the desired data.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [
+                                        "ORG_PROBLEM_6.2"
+                                    ],
+                                    "reference": "objective-collect-data-about-users-and-their-behavior"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Ecosystem mapping",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Map in a synthetic representation all the key roles that can impact on the user, organization and service environment. The ecosystem map is built by first displaying all the entities, and then connecting them based on the type of value they exchange.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-collect-data-about-users-and-their-behavior",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-ecosystem-mapping"
+                                }
+                            ],
+                            "prerequisites": [
+                                {
+                                    "objective": "objective-focus-the-problem-collaboratively",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-problem-exploration"
+                        },
+                        {
+                            "name_translations": {
+                                "en": "Ideation",
+                                "es": ""
+                            },
+                            "description_translations": {
+                                "en": "Ideation is the preliminary phase of service design in which the design team is created, the collected data are reviewed, and futher ideas are sougth if necessary.",
+                                "es": ""
+                            },
+                            "problem_profiles": [
+                                "ORG_PROBLEM_13",
+                                "ORG_PROBLEM_14",
+                                "UND_PROBLEM_4",
+                                "UND_PROBLEM_5",
+                                "DEF_PROBLEM_2",
+                                "DEF_PROBLEM_3"
+                            ],
+                            "tasks": [
+                                {
+                                    "name_translations": {
+                                        "en": "Engage relevant actors in the design",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Create a core group of stakeholders to proceed with the actual ideation of the service. Provide appropriate communication, motivational statements, and workplan information about the next steps of service co-creation.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "reference": "objective-engage-relevant-actors-in-the-design"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Organize a braistorming",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Organize and manage a brainstorming to review the data collected about the service ecosystem and to produce service ideas, discuss and select them, through divergent and convergent phases of group discussion.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-engage-relevant-actors-in-the-design",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-organize-a-braistorming"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Ideas crowdsourcing",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Collect ideas from a large set of contributors (e.g. citizens) related to a specific challenge, organize and manage the ideas and eventually evaluate them. Crowdsourcing projects can target both internal and external participants via dedicated tools and platforms, questionnaires, social media, competitions and other methods.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-organize-a-braistorming",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-ideas-crowdsourcing"
+                                }
+                            ],
+                            "prerequisites": [
+                                {
+                                    "objective": "objective-problem-exploration",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-ideation"
+                        },
+                        {
+                            "name_translations": {
+                                "en": "Service design",
+                                "es": ""
+                            },
+                            "description_translations": {
+                                "en": "After the understanding of the problem and the brainstorming of the service ideas, elaborate concrete solutions for your challenge. Co-design workshops are useful at this stage as collective activities organized to discuss design issues and choices. Work together with relevant actors to start defining the service to be co-designed and co-delivered.",
+                                "es": ""
+                            },
+                            "problem_profiles": [
+                                "UND_PROBLEM_4",
+                                "DEF_PROBLEM_3",
+                                "DEF_PROBLEM_4",
+                                "BUILD_PROBLEM_2"
+                            ],
+                            "tasks": [
+                                {
+                                    "name_translations": {
+                                        "en": "Define personas",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Reflect on the service beneficiary behavior, needs and expectations. Personas are fictional characters who embody the archetype of your customer, beneficiary or financing supporter. They are created through exhaustive observation of the customer segment and the drawing together of their shared characteristics, behaviors, motivations, interests, etc. It is a useful tool to focus on getting to know who you are designing for.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "reference": "objective-define-personas"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Define scenarios",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Write scenarios. To explain and collaboratively describe the envisioned service, scenarios can be used to reflect on the users experience. A user scenario is a story that describes, in an  narrative manner, how the user is going to interact with the service during a specific situation. Writing user scenarios requires to identify a specific context in which the action takes place, as well as characters and needs that defines the attitude of the user. ",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-define-personas",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-define-scenarios"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Define user journeys",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Describe the encounters between the user and the organization, service or product. Tell the story from the user\u2019s point of view, and try to depict how the user\u2019s expectations intersect with the organization\u2019s offer. It is a useful strategic tool that keeps the customers, beneficiaries and providers at the center of design decisions, highlighting pain points and opportunities for the organization to create a better user experience and an effective service.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-define-scenarios",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-define-user-journeys"
+                                }
+                            ],
+                            "prerequisites": [
+                                {
+                                    "objective": "objective-ideation",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-service-design"
+                        },
+                        {
+                            "name_translations": {
+                                "en": "Service specification",
+                                "es": ""
+                            },
+                            "description_translations": {
+                                "en": "The ideas and service design concepts need to be translated into formal requirements and service specifications to proceed with the implementation of the service. Follow the guidelines to collect, structure and communicate requirements and all the service specifications that clarify the objective of the service and how it should be developed.",
+                                "es": ""
+                            },
+                            "problem_profiles": [
+                                "DEF_PROBLEM_1",
+                                "DEF_PROBLEM_5",
+                                "BUILD_PROBLEM_1"
+                            ],
+                            "tasks": [
+                                {
+                                    "name_translations": {
+                                        "en": "Consider eu guidelines for public service developement",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Consult good practices for interface design and public services development. Reflect, in your specific use case, on how to make sure the services are provided in a multi-channel manner, maximizing the exploitation by potentially any group of users or by the agents acting on their behalf, and providing clear statements regarding the accessibility limits in the current implementation.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "reference": "objective-consider-eu-guidelines-for-public-service-developement"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "User interface design",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Proceed with the design of the user interface of the service through the preparation of initial sketches and mockups. Ensure the design of the user interface follows the guidelines on usability and accessibility. ",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-consider-eu-guidelines-for-public-service-developement",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-user-interface-design"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Content design",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Prepare adequate content for the new/enhanced public service. Follow the guidelines on how to select and use the most appropriate language according to the users of the digital service and their skills.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [
+                                        "DEF_PROBLEM_6"
+                                    ],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-user-interface-design",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-content-design"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Service specification definition",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Possibly use standard specification formalisms for describing your service. INTERLINK suggests you to have a look at EU standards like the Service Offering Canvas. By filling out this structured, visual classification of digital services, you can describe how stakeholder needs are met. The result is a consolidated view that drives service orientation and awareness of needs and how services are to be consumed. SOC specifications can be shared and compared with other similar services at the EU level.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-content-design",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-service-specification-definition"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Data model design",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Aid the following steps of service implementation by defining a  Data Model that explains: the conceptual organization of the service, its logical organization in terms of components, and the physical level of database implementations required. ",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-service-specification-definition",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-data-model-design"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Software architecture and api design",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Create a document that describes the software architecture of the digital system underneath the service and the APIs design.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-data-model-design",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-software-architecture-and-api-design"
+                                }
+                            ],
+                            "prerequisites": [
+                                {
+                                    "objective": "objective-service-design",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-service-specification"
+                        },
+                        {
+                            "name_translations": {
+                                "en": "Prototype",
+                                "es": ""
+                            },
+                            "description_translations": {
+                                "en": "How to show and tell in which way the service is expected to work?\r\nValidate the concept of your service or verify the assumptions about your final product before developing it. Different types of proof of concepts can be used, according to the stage of service development and the type of service, whether it is a digital service or not.",
+                                "es": ""
+                            },
+                            "problem_profiles": [
+                                "VAL_PROBLEM_3",
+                                "VAL_PROBLEM_4"
+                            ],
+                            "tasks": [
+                                {
+                                    "name_translations": {
+                                        "en": "Experience scenarios",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Analyse and visualise how the system changes or evolves according to specific scenarios and their dynamics.\r\nSystem scenarios introduce a dynamic level of analysis, applying the lense of time and showing the possible variations that could take place. In this way, system scenarios provide a deeper level of analysis of the system, directed at understanding system dynamics and relations between actors in various conditions.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "reference": "objective-experience-scenarios"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Mockups and lowfi prototypes",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Iteratively discuss and evaluate mockups and lowfi prototypes within the enlarged design team. Set up a discussion forum, a method for e-voting and evaluation surveys to digitally facilitate this step.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-experience-scenarios",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-mockups-and-lowfi-prototypes"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Perform an heuristic evaluation",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Test the design of the digital service with experts. Follow the guidelines on how to conduct an Heuristic Evaluation (also called Expert evaluation) and use the templates with the heuristics (principles) to follow when performing the test. The test can be conducted with early mock-ups as well with functioning early prototypes.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-mockups-and-lowfi-prototypes",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-perform-an-heuristic-evaluation"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Perform a test with users",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "If lowfi prototypes allow a good representation of what the service will be and allow to simulate interaction flows, conduct controlled evaluation experiments with potential end users. \r\nDo they understand the language of the interface mockups? Are major functionalities in place? Are there unexpected interaction paths?\r\nAlso very small experiments, may provide extremely valuable input at this stage.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-perform-an-heuristic-evaluation",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-perform-a-test-with-users"
+                                }
+                            ],
+                            "prerequisites": [
+                                {
+                                    "objective": "objective-service-specification",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-prototype"
+                        },
+                        {
+                            "name_translations": {
+                                "en": "Sustainability",
+                                "es": ""
+                            },
+                            "description_translations": {
+                                "en": "Before further going deep into the development of your service. Stop and reflect about the design results obtained so far and about the actual feasibility and sustainability of what you are about to implement.",
+                                "es": ""
+                            },
+                            "problem_profiles": [
+                                "UND_PROBLEM_3"
+                            ],
+                            "tasks": [
+                                {
+                                    "name_translations": {
+                                        "en": "Evaluation of codesign",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Is the design output satisfactory?\r\nFollow the proposed checklist to understand if you are done with design or whether an iterative refinement cycle is recommended.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "reference": "objective-evaluation-of-codesign"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Refine the preliminary business model",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "How much funding is needed? Where does the money come from? What are the sources of funding / support necessary to keep it running after implementation?\r\nFollow the proposed checklist for an intermediate evaluation of financial sustainability.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-evaluation-of-codesign",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-refine-the-preliminary-business-model"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Feasibility analysis",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Are all technical skills and resources available to proceed with development? \r\nFollow the proposed checklist for an intermediate evaluation of technical sustainabiity.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-refine-the-preliminary-business-model",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-feasibility-analysis"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Understand motivations and incentives",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "What are the incentives for those who can provide support / funding and for those developing / maintaining them?\r\nStop and reflect on how stakeholders collaboration in co-creation went so far. Follow the proposed checklist to understand whether further incentives and supportive measures are needed to ensure productive development and co-delivery phases.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-feasibility-analysis",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-understand-motivations-and-incentives"
+                                }
+                            ],
+                            "prerequisites": [
+                                {
+                                    "objective": "objective-prototype",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-sustainability"
+                        }
+                    ],
+                    "reference": "phase-design"
+                },
+                {
+                    "prerequisites": [
                         "phase-design"
                     ],
-                    "name": {
+                    "name_translations": {
                         "en": "Build",
                         "es": ""
                     },
-                    "description": {
+                    "description_translations": {
                         "en": "Browse the catalogue of INTERLINKERs to find reusable building blocks for the implementation of your service. Monitor development advancement in the project workplan. Stop and reflect on the process so far with the co-evaluation checklists that help verify compliance with standards and regulations. Use incentives and reward tools made available by the INTERLINK platform to sustain stakeholders\u2019 and citizens\u2019 contribution to service delivery. Monitor quality of service and citizens\u2019 satisfaction with carefully prepared surveys. Stop and reflect on how co-delivery is going with the co-evaluation checklists.",
                         "es": ""
                     },
                     "objectives": [
                         {
-                            "name": {
+                            "name_translations": {
                                 "en": "Technical implementation",
                                 "es": ""
                             },
-                            "description": {
+                            "description_translations": {
                                 "en": "Service implementation is not possible if an environment for its depoyment and maintenance is not thought in advance. Independently on whether your envisioned co-produced service will be a piece of software or a bundle of digital resources, identify, select and make ready the development and deployment environments for your solution. Important to clearly specify and test the technical constraints within which the delivered service will be hosted.",
                                 "es": ""
                             },
                             "problem_profiles": [],
                             "tasks": [
                                 {
-                                    "name": {
+                                    "name_translations": {
                                         "en": "Technical implementation",
                                         "es": ""
                                     },
-                                    "description": {
+                                    "description_translations": {
                                         "en": "Identify the dependencies and environment needed for the service co-production and co-delivery. Configure and deploy (if not already available) the dependencies and environment. Document the progress towards realizing the technical aspects associated to the co-produced service. ",
                                         "es": ""
                                     },
@@ -1682,11 +1793,11 @@
                             "reference": "objective-technical-implementation"
                         },
                         {
-                            "name": {
+                            "name_translations": {
                                 "en": "Service implementation",
                                 "es": ""
                             },
-                            "description": {
+                            "description_translations": {
                                 "en": "Depending on the nature of the co-produced service, you main adopt different tools and mechanisms to realize a given co-produced service. Realizing a co-produced service might entail programming, using graphical design tools, 3D modelling and fabrication and so on. Register progress achieved during the realization of the implementation of the co-produced service, upload progress reports, cross-link with repositories where progress is being realized, document the co-produced service API or the kit and/or resources generated to realize the service. Acknowledge and trace the contributions of different co-production team members or external contributors. Reuse existing INTERLINKERs (software and knowledge) and add on top of them, browse through them in the Catalogue, do not reinvent the wheel!",
                                 "es": ""
                             },
@@ -1696,11 +1807,11 @@
                             ],
                             "tasks": [
                                 {
-                                    "name": {
+                                    "name_translations": {
                                         "en": "Service implementation",
                                         "es": ""
                                     },
-                                    "description": {
+                                    "description_translations": {
                                         "en": "Departing from the service design specification generated in DESIGN phase, implement or build the service functionality. Provide an accessible and inclusive mechanism to aid future consumption of the service. ",
                                         "es": ""
                                     },
@@ -1725,11 +1836,11 @@
                             "reference": "objective-service-implementation"
                         },
                         {
-                            "name": {
+                            "name_translations": {
                                 "en": "Service codelivery",
                                 "es": ""
                             },
-                            "description": {
+                            "description_translations": {
                                 "en": "Release the co-produced service. Ensure that is operational in a 24x7 basis.  Provide support to accomodate enhancements or fixes. Establish fluid mechanisms between service co-deliverers and consumers. Monitor fulfilment of obligations and responsabilities of distinct codeliverers.",
                                 "es": ""
                             },
@@ -1739,11 +1850,11 @@
                             ],
                             "tasks": [
                                 {
-                                    "name": {
+                                    "name_translations": {
                                         "en": "Identify all the actors engaged in the codelivery their role and responsability",
                                         "es": ""
                                     },
-                                    "description": {
+                                    "description_translations": {
                                         "en": "Create a map of actors taking responsability for the service continous delivery: release, maintenance, support and exploitation. Assign roles and responsabilities to the different actors. Valorize co-delivery activities so that codelivery contributions can be traced and assessed. Define a service delivery model canvas. ",
                                         "es": ""
                                     },
@@ -1751,11 +1862,11 @@
                                     "reference": "objective-identify-all-the-actors-engaged-in-the-codelivery-their-role-and-responsability"
                                 },
                                 {
-                                    "name": {
+                                    "name_translations": {
                                         "en": "Coordinate the actors involved in the codelivery of the service",
                                         "es": ""
                                     },
-                                    "description": {
+                                    "description_translations": {
                                         "en": "Organize activities among co-deliverers according to their roles and responsabilities. Ensure quality of service is maintained in the cooperative activities involved in service codelivery. Launch satisfaction and quality of service assessement surveys. ",
                                         "es": ""
                                     },
@@ -1769,11 +1880,11 @@
                                     "reference": "objective-coordinate-the-actors-involved-in-the-codelivery-of-the-service"
                                 },
                                 {
-                                    "name": {
+                                    "name_translations": {
                                         "en": "Guarantee transparent communication about the service codelivered",
                                         "es": ""
                                     },
-                                    "description": {
+                                    "description_translations": {
                                         "en": "Ensure fluid and responsive communication among co-deliverers team and more importantly among those consuming and reusing the delivered service and the co-delivery team. Establish a web-based communication mechanism which allows to trace the communication with all actors. ",
                                         "es": ""
                                     },
@@ -1797,129 +1908,18 @@
                         }
                     ],
                     "reference": "phase-build"
-                },
-                {
-                    "prerequisites": [
-                        "phase-build"
-                    ],
-                    "name": {
-                        "en": "Sustain",
-                        "es": ""
-                    },
-                    "description": {
-                        "en": "",
-                        "es": ""
-                    },
-                    "objectives": [
-                        {
-                            "name": {
-                                "en": "Handover",
-                                "es": ""
-                            },
-                            "description": {
-                                "en": "",
-                                "es": ""
-                            },
-                            "problem_profiles": [],
-                            "tasks": [
-                                {
-                                    "name": {
-                                        "en": "Handover",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [
-                                        "ORG_PROBLEM_7"
-                                    ],
-                                    "reference": "objective-handover"
-                                }
-                            ],
-                            "reference": "objective-handover"
-                        },
-                        {
-                            "name": {
-                                "en": "Maintenance",
-                                "es": ""
-                            },
-                            "description": {
-                                "en": "",
-                                "es": ""
-                            },
-                            "problem_profiles": [],
-                            "tasks": [
-                                {
-                                    "name": {
-                                        "en": "Task distribution for maintenance, contracts regulation, data management archiving",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "reference": "objective-task-distribution-for-maintenance-contracts-regulation-data-management-archiving"
-                                }
-                            ],
-                            "prerequisites": [
-                                {
-                                    "objective": "objective-handover",
-                                    "status": "completed"
-                                }
-                            ],
-                            "reference": "objective-maintenance"
-                        },
-                        {
-                            "name": {
-                                "en": "Monitoring",
-                                "es": ""
-                            },
-                            "description": {
-                                "en": "",
-                                "es": ""
-                            },
-                            "problem_profiles": [
-                                "UND_PROBLEM_3",
-                                "VAL_PROBLEM_5"
-                            ],
-                            "tasks": [
-                                {
-                                    "name": {
-                                        "en": "Monitoring ongoing evaluation, periodic evaluations with stakeholders",
-                                        "es": ""
-                                    },
-                                    "description": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "reference": "objective-monitoring-ongoing-evaluation-periodic-evaluations-with-stakeholders"
-                                }
-                            ],
-                            "prerequisites": [
-                                {
-                                    "objective": "objective-maintenance",
-                                    "status": "completed"
-                                }
-                            ],
-                            "reference": "objective-monitoring"
-                        }
-                    ],
-                    "reference": "phase-sustain"
                 }
             ]
         },
         {
             "reference": "hackathon",
-            "name": {
+            "name_translations": {
                 "en": "Hackathon creation process",
                 "es": "Esquema para la creaci\u00f3n de un Hackathon"
             },
             "author": "",
             "licence": "",
-            "description": {
+            "description_translations": {
                 "en": "",
                 "es": ""
             },
@@ -1929,32 +1929,32 @@
             "phases": [
                 {
                     "prerequisites": [],
-                    "name": {
+                    "name_translations": {
                         "en": "Engage",
                         "es": "Comprometer"
                     },
-                    "description": {
+                    "description_translations": {
                         "en": "Which stakeholders should be involved in your co-production process? How to communicate with them about your project goals and the benefits of participation?\r\nLearn about the value of involving stakeholders. Use the available knowledge tools to understand who are the stakeholders to involve in your project and the role they can have. \r\nExploit communication templates to raise awareness, invite stakeholders, and create a lively network of motivated contributors. Define partnership agreements and make sure shared information is protected. Plan together the next steps and create working groups. ",
                         "es": ""
                     },
                     "objectives": [
                         {
-                            "name": {
+                            "name_translations": {
                                 "en": "Demo objective",
                                 "es": "Identificar stakeholders"
                             },
-                            "description": {
+                            "description_translations": {
                                 "en": "The identification of key actors  is the first step to start your  process of co-production. According to the type of project, the goals and the level of citizen involvement, different questions are to be answered.\r\nWhat different  types of stakeholders enter into play in the initiative to be co-produced? What are their motivations and skills to participate in the project? What is their position in the network? How to contact them?\r\nFollow the specific tasks to get the complete picture.",
                                 "es": ""
                             },
                             "problem_profiles": [],
                             "tasks": [
                                 {
-                                    "name": {
+                                    "name_translations": {
                                         "en": "Understand the different types of stakeholders",
                                         "es": "Entender los diferentes tipos de stakeholders y sus motivaciones"
                                     },
-                                    "description": {
+                                    "description_translations": {
                                         "en": "Usually different actors are engaged in co-production to create a new service or customizing an already existing service: public bodies, private companies, SMEs, citizens. Each actor brings specific needs and competences in relation to the service and has different motivations to participate in a project. Learn about the different types of stakeholders and which of them can add value to your co-production process",
                                         "es": ""
                                     },
@@ -1967,11 +1967,11 @@
                             "reference": "objective-demo-objective"
                         },
                         {
-                            "name": {
+                            "name_translations": {
                                 "en": "Engage stakeholders",
                                 "es": ""
                             },
-                            "description": {
+                            "description_translations": {
                                 "en": "Stakeholder engagement is about figuring out how to effectively communicate, collaborate, and interact with key people who have positive or negative influence, and may impact the success of your project.\r\nTo reach this objective you should carefully prepare an engagement plan, create awareness and communication material tailored to your audience, understand how to communicate benefit for stakeholders and, whenever this is forseen in your project, understand how to engage citizens in the co-production process. ",
                                 "es": ""
                             },
@@ -1982,11 +1982,11 @@
                             ],
                             "tasks": [
                                 {
-                                    "name": {
+                                    "name_translations": {
                                         "en": "Prepare an engagement plan",
                                         "es": ""
                                     },
-                                    "description": {
+                                    "description_translations": {
                                         "en": "Create an effective engagement plan which allows you to reach to the types and numbers of stakeholders sufficient to ensure that the co-produced service is well targeted. \r\nAn engagement plan is usually composed of three parts: the identification of your project\u2019s stakeholders; the planning of effective means for interacting with each stakeholder, and protocols for accurately documenting your work for the sake of transparency, accountability and evaluation of the process.",
                                         "es": ""
                                     },
@@ -1996,11 +1996,11 @@
                                     "reference": "objective-prepare-an-engagement-plan"
                                 },
                                 {
-                                    "name": {
+                                    "name_translations": {
                                         "en": "Create awareness and communication",
                                         "es": ""
                                     },
-                                    "description": {
+                                    "description_translations": {
                                         "en": "Ensure that relevant stakeholders are aware of the initiative in order to ensure their participation. Awareness-raising is a process that seeks to inform and educate people about a topic or issue with the intention of influencing their attitudes, behaviours and beliefs towards the achievement of a defined purpose or goal.",
                                         "es": ""
                                     },
@@ -2017,11 +2017,11 @@
                                     "reference": "objective-create-awareness-and-communication"
                                 },
                                 {
-                                    "name": {
+                                    "name_translations": {
                                         "en": "Communicate benefit for stakeholders",
                                         "es": ""
                                     },
-                                    "description": {
+                                    "description_translations": {
                                         "en": "Clearly communicate the benefits of service co-production to your network of stakeholders and citizens.\r\nParticipants need to understand why their participation matters, what they can gain individually and as a group.",
                                         "es": ""
                                     },
@@ -2037,11 +2037,11 @@
                                     "reference": "objective-communicate-benefit-for-stakeholders"
                                 },
                                 {
-                                    "name": {
+                                    "name_translations": {
                                         "en": "Engage citizens in the co-production process",
                                         "es": ""
                                     },
-                                    "description": {
+                                    "description_translations": {
                                         "en": "Provide members of the public with the information they need to understand the project, the decision process, and also how public input can influence decisions, the design of the service and the way it is delivered. ",
                                         "es": ""
                                     },
@@ -2074,44 +2074,6 @@
     ],
     "interlinkers": {
         "software": [
-            {
-                "name": {
-                    "en": "Collaborative editor",
-                    "es": ""
-                },
-                "description": {
-                    "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus sapien, dapibus fringilla dolor sit amet, bibendum aliquam massa. Duis nec faucibus nunc. In sit amet vulputate justo. In dictum turpis eu dolor posuere vehicula. Sed turpis risus, vestibulum sed aliquam id, tempus nec dolor. Nulla facilisi. Suspendisse tempor pulvinar dignissim. Nulla dui ante, finibus in bibendum vel, dignissim nec risus. Nullam gravida nisi quis purus porttitor, sed hendrerit ante tristique. Donec eget augue vitae purus vehicula vehicula non sit amet lacus. Quisque porta nisi pharetra, fringilla felis id, porta arcu. Mauris vel elementum tortor. Ut sed magna id enim finibus molestie eu vitae leo. Mauris at sem elit. Fusce viverra accumsan orci et feugiat. Mauris ullamcorper molestie massa ac faucibus. Integer sit amet tellus tortor. Vivamus bibendum at libero at aliquet. Proin consectetur, erat et vulputate tincidunt, tortor quam euismod elit, id efficitur sem sapien tempus dolor. Aliquam a molestie risus. Nunc rutrum rutrum felis, in malesuada dolor porttitor nec. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc condimentum porta magna sed pharetra. In non quam dolor.",
-                    "es": ""
-                },
-                "tags": [
-                    "document",
-                    "collaborative",
-                    "editor",
-                    "etherpad"
-                ],
-                "difficulty": "easy",
-                "licence": "propietary",
-                "problem_profiles": [],
-                "related_interlinkers": [],
-                "constraints_and_limitations": {
-                    "en": "Some text here",
-                    "es": ""
-                },
-                "regulations_and_standards": {
-                    "en": "Optional text here",
-                    "es": ""
-                },
-                "supported_by": "installed_app",
-                "auth_method": "cookie",
-                "supports_internationalization": true,
-                "is_responsive": true,
-                "open_in_modal": false,
-                "assets_clonable": true,
-                "path": "ceditor",
-                "is_subdomain": false,
-                "logotype": "./interlinkers/software/ceditor/logo.jpeg",
-                "reference": "collaborative-editor"
-            },
             {
                 "name": {
                     "en": "Loomio",
@@ -2173,7 +2135,7 @@
             },
             {
                 "name": {
-                    "en": "Survey creator",
+                    "en": "Collaborative editor",
                     "es": ""
                 },
                 "description": {
@@ -2181,10 +2143,10 @@
                     "es": ""
                 },
                 "tags": [
-                    "survey",
-                    "question",
-                    "poll",
-                    "vote"
+                    "document",
+                    "collaborative",
+                    "editor",
+                    "etherpad"
                 ],
                 "difficulty": "easy",
                 "licence": "propietary",
@@ -2198,16 +2160,54 @@
                     "en": "Optional text here",
                     "es": ""
                 },
-                "supported_by": "saas",
+                "supported_by": "installed_app",
                 "auth_method": "cookie",
                 "supports_internationalization": true,
                 "is_responsive": true,
                 "open_in_modal": false,
                 "assets_clonable": true,
-                "path": "survey",
+                "path": "ceditor",
                 "is_subdomain": false,
-                "logotype": "./interlinkers/software/survey/logo.png",
-                "reference": "survey-creator"
+                "logotype": "./interlinkers/software/ceditor/logo.jpeg",
+                "reference": "collaborative-editor"
+            },
+            {
+                "name": {
+                    "en": "External resource manager",
+                    "es": ""
+                },
+                "description": {
+                    "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus sapien, dapibus fringilla dolor sit amet, bibendum aliquam massa. Duis nec faucibus nunc. In sit amet vulputate justo. In dictum turpis eu dolor posuere vehicula. Sed turpis risus, vestibulum sed aliquam id, tempus nec dolor. Nulla facilisi. Suspendisse tempor pulvinar dignissim. Nulla dui ante, finibus in bibendum vel, dignissim nec risus. Nullam gravida nisi quis purus porttitor, sed hendrerit ante tristique. Donec eget augue vitae purus vehicula vehicula non sit amet lacus. Quisque porta nisi pharetra, fringilla felis id, porta arcu. Mauris vel elementum tortor. Ut sed magna id enim finibus molestie eu vitae leo. Mauris at sem elit. Fusce viverra accumsan orci et feugiat. Mauris ullamcorper molestie massa ac faucibus. Integer sit amet tellus tortor. Vivamus bibendum at libero at aliquet. Proin consectetur, erat et vulputate tincidunt, tortor quam euismod elit, id efficitur sem sapien tempus dolor. Aliquam a molestie risus. Nunc rutrum rutrum felis, in malesuada dolor porttitor nec. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc condimentum porta magna sed pharetra. In non quam dolor.",
+                    "es": ""
+                },
+                "tags": [
+                    "external",
+                    "link",
+                    "share",
+                    "report"
+                ],
+                "difficulty": "easy",
+                "licence": "propietary",
+                "problem_profiles": [],
+                "related_interlinkers": [],
+                "constraints_and_limitations": {
+                    "en": "Some text here",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "Optional text here",
+                    "es": ""
+                },
+                "supported_by": "installed_app",
+                "auth_method": "cookie",
+                "supports_internationalization": true,
+                "is_responsive": true,
+                "open_in_modal": true,
+                "assets_clonable": true,
+                "path": "externalresourcemanager",
+                "is_subdomain": false,
+                "logotype": "./interlinkers/software/externalresourcemanager/logo.png",
+                "reference": "external-resource-manager"
             },
             {
                 "name": {
@@ -2257,7 +2257,7 @@
             },
             {
                 "name": {
-                    "en": "External resource manager",
+                    "en": "Survey creator",
                     "es": ""
                 },
                 "description": {
@@ -2265,10 +2265,10 @@
                     "es": ""
                 },
                 "tags": [
-                    "external",
-                    "link",
-                    "share",
-                    "report"
+                    "survey",
+                    "question",
+                    "poll",
+                    "vote"
                 ],
                 "difficulty": "easy",
                 "licence": "propietary",
@@ -2282,72 +2282,19 @@
                     "en": "Optional text here",
                     "es": ""
                 },
-                "supported_by": "installed_app",
+                "supported_by": "saas",
                 "auth_method": "cookie",
                 "supports_internationalization": true,
                 "is_responsive": true,
-                "open_in_modal": true,
+                "open_in_modal": false,
                 "assets_clonable": true,
-                "path": "externalresourcemanager",
+                "path": "survey",
                 "is_subdomain": false,
-                "logotype": "./interlinkers/software/externalresourcemanager/logo.png",
-                "reference": "external-resource-manager"
+                "logotype": "./interlinkers/software/survey/logo.png",
+                "reference": "survey-creator"
             }
         ],
         "knowledge": [
-            {
-                "name": {
-                    "en": "AgID Minimum Security Measures for Public Administration. ",
-                    "es": ""
-                },
-                "description": {
-                    "en": "<p>This resource describes the minimum ICT security measures issued by AgID aim at countering the most frequent cyber threats to the Italian public administration.</p>",
-                    "es": ""
-                },
-                "tags": [
-                    "security"
-                ],
-                "difficulty": "difficult",
-                "targets": [
-                    "all"
-                ],
-                "licence": "permissive",
-                "problem_profiles": [
-                    "BUILD_PROBLEM_3"
-                ],
-                "types": [
-                    "enabling_services",
-                    "enabling_services;implementing_software_and_artifacts"
-                ],
-                "administrative_scopes": [
-                    "national",
-                    "local"
-                ],
-                "related_interlinkers": [],
-                "constraints_and_limitations": {
-                    "en": "No special constraints apply",
-                    "es": ""
-                },
-                "regulations_and_standards": {
-                    "en": "",
-                    "es": ""
-                },
-                "overview_text": {
-                    "en": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
-                    "es": ""
-                },
-                "instructions": "./interlinkers/knowledge/it-pa-minimum-security-measures/instructions.md",
-                "representations": [
-                    {
-                        "form": "guidelines",
-                        "format": "structured_format",
-                        "file": "./interlinkers/knowledge/it-pa-minimum-security-measures/data.json",
-                        "softwareinterlinker": "externalresourcemanager",
-                        "language": "en"
-                    }
-                ],
-                "reference": "agid-minimum-security-measures-for-public-administration"
-            },
             {
                 "name": {
                     "en": " AgID guidelines for the development of secure software (in Italian)",
@@ -2400,233 +2347,6 @@
                     }
                 ],
                 "reference": "agid-guidelines-for-the-development-of-secure-software-in-italian"
-            },
-            {
-                "name": {
-                    "en": "Cloud Enablement Kit (in Italian)",
-                    "es": ""
-                },
-                "description": {
-                    "en": "<p>This resource describes the Cloud Enablement strategy outlined by AGID and Team Digitale (in Italian). </p>",
-                    "es": ""
-                },
-                "tags": [
-                    "cloud",
-                    "services",
-                    "security"
-                ],
-                "difficulty": "difficult",
-                "targets": [
-                    "all"
-                ],
-                "licence": "permissive",
-                "problem_profiles": [
-                    "BUILD_PROBLEM_3"
-                ],
-                "types": [
-                    "enabling_services",
-                    "enabling_services;implementing_software_and_artifacts"
-                ],
-                "administrative_scopes": [
-                    "national",
-                    "local"
-                ],
-                "related_interlinkers": [],
-                "constraints_and_limitations": {
-                    "en": "No special constraints apply",
-                    "es": ""
-                },
-                "regulations_and_standards": {
-                    "en": "",
-                    "es": ""
-                },
-                "overview_text": {
-                    "en": "PDF document",
-                    "es": ""
-                },
-                "instructions": "./interlinkers/knowledge/it-cloud-enablement-kit/instructions.md",
-                "representations": [
-                    {
-                        "form": "guidelines",
-                        "format": "pdf",
-                        "file": "./interlinkers/knowledge/it-cloud-enablement-kit/data.json",
-                        "softwareinterlinker": "externalresourcemanager",
-                        "language": "en"
-                    }
-                ],
-                "reference": "cloud-enablement-kit-in-italian"
-            },
-            {
-                "name": {
-                    "en": "W3C Web Content Accessibility Guidelines",
-                    "es": ""
-                },
-                "description": {
-                    "en": "<p>Web Content Accessibility Guidelines (WCAG) aims at explaining how to make the Web content more accessible to the people with disabilities. It generally applies to the public services delivered as Web applications, and refers to the information in a web page of the applciation, including both the content (text, images, sounds, ...) and structure (markup, presentation, styles).</p><br><ul><li>defines a set of guidelines with corresponding testable success criteria across different levels</li><li>based on the accessibility principles: perceivable, operable, understandable, robust.</li></ul>",
-                    "es": ""
-                },
-                "tags": [
-                    "accessibility",
-                    "Web",
-                    "UI"
-                ],
-                "difficulty": "medium",
-                "targets": [
-                    "all"
-                ],
-                "licence": "permissive",
-                "problem_profiles": [
-                    "BUILD_PROBLEM_2",
-                    "BUILD_PROBLEM_1"
-                ],
-                "types": [
-                    "enabling_services;implementing_software_and_artifacts"
-                ],
-                "administrative_scopes": [
-                    "eu",
-                    "national",
-                    "local"
-                ],
-                "related_interlinkers": [],
-                "constraints_and_limitations": {
-                    "en": "Web applications",
-                    "es": ""
-                },
-                "regulations_and_standards": {
-                    "en": "EU Directive 2016/2102 on the accessibility of the websites and mobile applications of public sector bodies",
-                    "es": ""
-                },
-                "overview_text": {
-                    "en": "Textual documents in the form of linked Web pages describing the guidelines and testing success criteria",
-                    "es": ""
-                },
-                "instructions": "https://www.w3.org/WAI/WCAG21/quickref/",
-                "representations": [
-                    {
-                        "form": "guidelines",
-                        "format": "structured_format",
-                        "file": "./interlinkers/knowledge/w3c_web_content_accessibility_guidelines/data.json",
-                        "softwareinterlinker": "externalresourcemanager",
-                        "language": "en"
-                    }
-                ],
-                "reference": "w3c-web-content-accessibility-guidelines"
-            },
-            {
-                "name": {
-                    "en": "Stakeholders Mapping Canvas",
-                    "es": ""
-                },
-                "description": {
-                    "en": "<p>This resource supports the identification and selection of the stakeholders to engage in a co-production team.</p>",
-                    "es": ""
-                },
-                "tags": [
-                    "stakeholders mapping",
-                    "canvas",
-                    "understand"
-                ],
-                "difficulty": "easy",
-                "targets": [
-                    "all"
-                ],
-                "licence": "public_domain",
-                "problem_profiles": [
-                    "UND_PROBLEM_2"
-                ],
-                "types": [
-                    "enhancing_services"
-                ],
-                "related_interlinkers": [
-                    "Stakeholders Mapping Guidelines",
-                    "Stakeholders Analysis Template"
-                ],
-                "administrative_scopes": [
-                    "eu"
-                ],
-                "domain": "",
-                "process": "",
-                "constraints_and_limitations": {
-                    "en": "No special constraints apply",
-                    "es": ""
-                },
-                "regulations_and_standards": {
-                    "en": "",
-                    "es": ""
-                },
-                "overview_text": {
-                    "en": "This INTERLINKER is composed by a PowerPoint scheleton that can be downloaded, customized and used to facilitate discussions for stakeholders mapping.",
-                    "es": ""
-                },
-                "instructions": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/instructions.md",
-                "representations": [
-                    {
-                        "form": "document_template",
-                        "format": "editable_source_document",
-                        "file": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/resource.pptx",
-                        "softwareinterlinker": "googledrive",
-                        "language": "en"
-                    }
-                ],
-                "reference": "stakeholders-mapping-canvas"
-            },
-            {
-                "name": {
-                    "en": "Information Sheet for INTERLINK project",
-                    "es": ""
-                },
-                "description": {
-                    "en": "<p>Information on the INTERLINK project to be distributed to participants. It provides background on research activities.</p>",
-                    "es": ""
-                },
-                "tags": [
-                    "privacy management",
-                    "research activities",
-                    "co-production project participants",
-                    "INTERLINK"
-                ],
-                "difficulty": "very_easy",
-                "targets": [
-                    "all"
-                ],
-                "licence": "public_domain",
-                "problem_profiles": [
-                    "ORG_PROBLEM_14"
-                ],
-                "types": [
-                    "enhancing_services"
-                ],
-                "related_interlinkers": [
-                    "Consent Form for INTERLINK project"
-                ],
-                "administrative_scopes": [
-                    "eu"
-                ],
-                "domain": "",
-                "process": "",
-                "constraints_and_limitations": {
-                    "en": "No special constraints apply",
-                    "es": ""
-                },
-                "regulations_and_standards": {
-                    "en": "The information sheet is compliant to GDPR norms.",
-                    "es": ""
-                },
-                "overview_text": {
-                    "en": "This INTERLINKER is composed by a document that can be downloaded, printed and distributed to participants.",
-                    "es": ""
-                },
-                "instructions": "./interlinkers/knowledge/Information-Sheet-INTERLINK/instructions.md",
-                "representations": [
-                    {
-                        "form": "document_template",
-                        "format": "editable_source_document",
-                        "file": "./interlinkers/knowledge/Information-Sheet-INTERLINK/resource.docx",
-                        "softwareinterlinker": "googledrive",
-                        "language": "en"
-                    }
-                ],
-                "reference": "information-sheet-for-interlink-project"
             },
             {
                 "name": {
@@ -2686,11 +2406,11 @@
             },
             {
                 "name": {
-                    "en": "Consent Form Template",
+                    "en": "Information Sheet Template",
                     "es": ""
                 },
                 "description": {
-                    "en": "<p>Template to prepare a form to collect consent from participants engaged in research activities about the use of their personal data</p>",
+                    "en": "<p>Template to guide the preparation of an information sheet to be distributed to participants to project activities. It provides background on research objectives.</p>",
                     "es": ""
                 },
                 "tags": [
@@ -2711,7 +2431,7 @@
                     "enhancing_services"
                 ],
                 "related_interlinkers": [
-                    "Information Sheet Template"
+                    "Consent Form Template"
                 ],
                 "administrative_scopes": [
                     "eu"
@@ -2723,193 +2443,24 @@
                     "es": ""
                 },
                 "regulations_and_standards": {
-                    "en": "The consent form is compliant to GDPR norms.",
+                    "en": "The information sheet is compliant to GDPR norms.",
                     "es": ""
                 },
                 "overview_text": {
                     "en": "This INTERLINKER is composed by a document that can be downloaded, printed and distributed to participants.",
                     "es": ""
                 },
-                "instructions": "./interlinkers/knowledge/Consent-Form-Template/instructions.md",
+                "instructions": "./interlinkers/knowledge/Information-Sheet-Template/instructions.md",
                 "representations": [
                     {
                         "form": "document_template",
                         "format": "editable_source_document",
-                        "file": "./interlinkers/knowledge/Consent-Form-Template/resource.docx",
+                        "file": "./interlinkers/knowledge/Information-Sheet-Template/resource.docx",
                         "softwareinterlinker": "googledrive",
                         "language": "en"
                     }
                 ],
-                "reference": "consent-form-template"
-            },
-            {
-                "name": {
-                    "en": "AgID Cloud computing competence evalution template",
-                    "es": ""
-                },
-                "description": {
-                    "en": "<p>This resource contains a questionnaire to check the level of knowledge and competence in cloud computing </p>",
-                    "es": ""
-                },
-                "tags": [
-                    "cloud",
-                    "services",
-                    "security"
-                ],
-                "difficulty": "medium",
-                "targets": [
-                    "all"
-                ],
-                "licence": "permissive",
-                "problem_profiles": [
-                    "BUILD_PROBLEM_3"
-                ],
-                "types": [
-                    "enabling_services",
-                    "enabling_services;implementing_software_and_artifacts"
-                ],
-                "administrative_scopes": [
-                    "national",
-                    "local"
-                ],
-                "related_interlinkers": [],
-                "constraints_and_limitations": {
-                    "en": "No special constraints apply",
-                    "es": ""
-                },
-                "regulations_and_standards": {
-                    "en": "",
-                    "es": ""
-                },
-                "overview_text": {
-                    "en": "Questionaire in google calc format",
-                    "es": ""
-                },
-                "instructions": "./interlinkers/knowledge/it-cloud-competences-assesment/instructions.md",
-                "representations": [
-                    {
-                        "form": "guidelines",
-                        "format": "editable_source_document",
-                        "file": "./interlinkers/knowledge/it-cloud-competences-assesment/data.json",
-                        "softwareinterlinker": "externalresourcemanager",
-                        "language": "en"
-                    }
-                ],
-                "reference": "agid-cloud-computing-competence-evalution-template"
-            },
-            {
-                "name": {
-                    "en": "Guidelines on the acquisition and reuse of software for public administrations",
-                    "es": ""
-                },
-                "description": {
-                    "en": "<p>This resource aims at explaining how to acquire and reuse software in PA context.</p>",
-                    "es": ""
-                },
-                "tags": [
-                    "open source",
-                    "public administration",
-                    "reuse",
-                    "acquisition"
-                ],
-                "difficulty": "difficult",
-                "targets": [
-                    "all"
-                ],
-                "licence": "permissive",
-                "problem_profiles": [
-                    "BUILD_PROBLEM_3"
-                ],
-                "types": [
-                    "enabling_services",
-                    "enabling_services;implementing_software_and_artifacts"
-                ],
-                "administrative_scopes": [
-                    "national",
-                    "local"
-                ],
-                "related_interlinkers": [],
-                "constraints_and_limitations": {
-                    "en": "No special constraints apply",
-                    "es": ""
-                },
-                "regulations_and_standards": {
-                    "en": "",
-                    "es": ""
-                },
-                "overview_text": {
-                    "en": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
-                    "es": ""
-                },
-                "instructions": "./interlinkers/knowledge/it-guidelines_acquiring_reuse_sw_pa/instructions.md",
-                "representations": [
-                    {
-                        "form": "guidelines",
-                        "format": "structured_format",
-                        "file": "./interlinkers/knowledge/it-guidelines_acquiring_reuse_sw_pa/data.json",
-                        "softwareinterlinker": "externalresourcemanager",
-                        "language": "en"
-                    }
-                ],
-                "reference": "guidelines-on-the-acquisition-and-reuse-of-software-for-public-administrations"
-            },
-            {
-                "name": {
-                    "en": "Italian PA interoperablity model ",
-                    "es": ""
-                },
-                "description": {
-                    "en": "<p>This resource describes the guidelines for technical interoperability for PA and related operational documents: interaction patterns, interoperability profiles, implementation recommendations (in Italian). </p>",
-                    "es": ""
-                },
-                "tags": [
-                    "open source",
-                    "software",
-                    "interoperability",
-                    "public administration",
-                    "reuse",
-                    "acquisition"
-                ],
-                "difficulty": "difficult",
-                "targets": [
-                    "all"
-                ],
-                "licence": "permissive",
-                "problem_profiles": [
-                    "BUILD_PROBLEM_3"
-                ],
-                "types": [
-                    "enabling_services",
-                    "enabling_services;implementing_software_and_artifacts"
-                ],
-                "administrative_scopes": [
-                    "national",
-                    "local"
-                ],
-                "related_interlinkers": [],
-                "constraints_and_limitations": {
-                    "en": "No special constraints apply",
-                    "es": ""
-                },
-                "regulations_and_standards": {
-                    "en": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en",
-                    "es": ""
-                },
-                "overview_text": {
-                    "en": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
-                    "es": ""
-                },
-                "instructions": "./interlinkers/knowledge/it-guidelines-data-protection/instructions.md",
-                "representations": [
-                    {
-                        "form": "guidelines",
-                        "format": "structured_format",
-                        "file": "./interlinkers/knowledge/it-guidelines-data-protection/data.json",
-                        "softwareinterlinker": "externalresourcemanager",
-                        "language": "en"
-                    }
-                ],
-                "reference": "italian-pa-interoperablity-model"
+                "reference": "information-sheet-template"
             },
             {
                 "name": {
@@ -2963,6 +2514,117 @@
                     }
                 ],
                 "reference": "open-source-guides"
+            },
+            {
+                "name": {
+                    "en": "W3C Web Content Accessibility Guidelines",
+                    "es": ""
+                },
+                "description": {
+                    "en": "<p>Web Content Accessibility Guidelines (WCAG) aims at explaining how to make the Web content more accessible to the people with disabilities. It generally applies to the public services delivered as Web applications, and refers to the information in a web page of the applciation, including both the content (text, images, sounds, ...) and structure (markup, presentation, styles).</p><br><ul><li>defines a set of guidelines with corresponding testable success criteria across different levels</li><li>based on the accessibility principles: perceivable, operable, understandable, robust.</li></ul>",
+                    "es": ""
+                },
+                "tags": [
+                    "accessibility",
+                    "Web",
+                    "UI"
+                ],
+                "difficulty": "medium",
+                "targets": [
+                    "all"
+                ],
+                "licence": "permissive",
+                "problem_profiles": [
+                    "BUILD_PROBLEM_2",
+                    "BUILD_PROBLEM_1"
+                ],
+                "types": [
+                    "enabling_services;implementing_software_and_artifacts"
+                ],
+                "administrative_scopes": [
+                    "eu",
+                    "national",
+                    "local"
+                ],
+                "related_interlinkers": [],
+                "constraints_and_limitations": {
+                    "en": "Web applications",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "EU Directive 2016/2102 on the accessibility of the websites and mobile applications of public sector bodies",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "Textual documents in the form of linked Web pages describing the guidelines and testing success criteria",
+                    "es": ""
+                },
+                "instructions": "https://www.w3.org/WAI/WCAG21/quickref/",
+                "representations": [
+                    {
+                        "form": "guidelines",
+                        "format": "structured_format",
+                        "file": "./interlinkers/knowledge/w3c_web_content_accessibility_guidelines/data.json",
+                        "softwareinterlinker": "externalresourcemanager",
+                        "language": "en"
+                    }
+                ],
+                "reference": "w3c-web-content-accessibility-guidelines"
+            },
+            {
+                "name": {
+                    "en": "AgID Cloud computing migration strategy evalution template",
+                    "es": ""
+                },
+                "description": {
+                    "en": "<p>This resource contains a questionnaire to check the cloud computing migration strategy  </p>",
+                    "es": ""
+                },
+                "tags": [
+                    "cloud",
+                    "services",
+                    "security"
+                ],
+                "difficulty": "medium",
+                "targets": [
+                    "all"
+                ],
+                "licence": "permissive",
+                "problem_profiles": [
+                    "BUILD_PROBLEM_3"
+                ],
+                "types": [
+                    "enabling_services",
+                    "enabling_services;implementing_software_and_artifacts"
+                ],
+                "administrative_scopes": [
+                    "national",
+                    "local"
+                ],
+                "related_interlinkers": [],
+                "constraints_and_limitations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "Questionaire in google calc format",
+                    "es": ""
+                },
+                "instructions": "./interlinkers/knowledge/it-cloud-competences-assesment/instructions.md",
+                "representations": [
+                    {
+                        "form": "guidelines",
+                        "format": "editable_source_document",
+                        "file": "./interlinkers/knowledge/it-cloud-competences-assesment/data.json",
+                        "softwareinterlinker": "externalresourcemanager",
+                        "language": "en"
+                    }
+                ],
+                "reference": "agid-cloud-computing-migration-strategy-evalution-template"
             },
             {
                 "name": {
@@ -3023,6 +2685,61 @@
             },
             {
                 "name": {
+                    "en": "AgID Cloud computing competence evalution template",
+                    "es": ""
+                },
+                "description": {
+                    "en": "<p>This resource contains a questionnaire to check the level of knowledge and competence in cloud computing </p>",
+                    "es": ""
+                },
+                "tags": [
+                    "cloud",
+                    "services",
+                    "security"
+                ],
+                "difficulty": "medium",
+                "targets": [
+                    "all"
+                ],
+                "licence": "permissive",
+                "problem_profiles": [
+                    "BUILD_PROBLEM_3"
+                ],
+                "types": [
+                    "enabling_services",
+                    "enabling_services;implementing_software_and_artifacts"
+                ],
+                "administrative_scopes": [
+                    "national",
+                    "local"
+                ],
+                "related_interlinkers": [],
+                "constraints_and_limitations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "Questionaire in google calc format",
+                    "es": ""
+                },
+                "instructions": "./interlinkers/knowledge/it-cloud-competences-assesment/instructions.md",
+                "representations": [
+                    {
+                        "form": "guidelines",
+                        "format": "editable_source_document",
+                        "file": "./interlinkers/knowledge/it-cloud-competences-assesment/data.json",
+                        "softwareinterlinker": "externalresourcemanager",
+                        "language": "en"
+                    }
+                ],
+                "reference": "agid-cloud-computing-competence-evalution-template"
+            },
+            {
+                "name": {
                     "en": "Focus Group Template Co-production Investigation",
                     "es": ""
                 },
@@ -3080,60 +2797,61 @@
             },
             {
                 "name": {
-                    "en": "Business Model Canvas",
+                    "en": "Italian PA interoperablity model ",
                     "es": ""
                 },
                 "description": {
-                    "en": "This canvas can be used collaboratively, for instance, during a brainstorming or a focus group, to reflect on the the most suitable business model associated to a co-produced service.",
+                    "en": "<p>This resource describes the guidelines for technical interoperability for PA and related operational documents: interaction patterns, interoperability profiles, implementation recommendations (in Italian). </p>",
                     "es": ""
                 },
                 "tags": [
-                    "model",
-                    "canvas",
-                    "business"
+                    "open source",
+                    "software",
+                    "interoperability",
+                    "public administration",
+                    "reuse",
+                    "acquisition"
                 ],
-                "difficulty": "easy",
+                "difficulty": "difficult",
                 "targets": [
                     "all"
                 ],
-                "licence": "public_domain",
+                "licence": "permissive",
                 "problem_profiles": [
-                    "SUS_PROBLEM_1"
+                    "BUILD_PROBLEM_3"
                 ],
                 "types": [
-                    "enhancing_services"
-                ],
-                "related_interlinkers": [
-                    "Business Plan Template"
+                    "enabling_services",
+                    "enabling_services;implementing_software_and_artifacts"
                 ],
                 "administrative_scopes": [
-                    "eu"
+                    "national",
+                    "local"
                 ],
-                "domain": "",
-                "process": "",
+                "related_interlinkers": [],
                 "constraints_and_limitations": {
                     "en": "No special constraints apply",
                     "es": ""
                 },
                 "regulations_and_standards": {
-                    "en": "",
+                    "en": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en",
                     "es": ""
                 },
                 "overview_text": {
-                    "en": "This INTERLINKER is composed by a PowerPoint scheleton that can be downloaded, customized and used to facilitate discussions for business models.",
+                    "en": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
                     "es": ""
                 },
-                "instructions": "./interlinkers/knowledge/Business-Model-Canvas/instructions.md",
+                "instructions": "./interlinkers/knowledge/it-guidelines-data-protection/instructions.md",
                 "representations": [
                     {
-                        "form": "document_template",
-                        "format": "editable_source_document",
-                        "file": "./interlinkers/knowledge/Business-Model-Canvas/resource.pptx",
-                        "softwareinterlinker": "googledrive",
+                        "form": "guidelines",
+                        "format": "structured_format",
+                        "file": "./interlinkers/knowledge/it-guidelines-data-protection/data.json",
+                        "softwareinterlinker": "externalresourcemanager",
                         "language": "en"
                     }
                 ],
-                "reference": "business-model-canvas"
+                "reference": "italian-pa-interoperablity-model"
             },
             {
                 "name": {
@@ -3197,6 +2915,343 @@
             },
             {
                 "name": {
+                    "en": "Business Model Canvas",
+                    "es": ""
+                },
+                "description": {
+                    "en": "This canvas can be used collaboratively, for instance, during a brainstorming or a focus group, to reflect on the the most suitable business model associated to a co-produced service.",
+                    "es": ""
+                },
+                "tags": [
+                    "model",
+                    "canvas",
+                    "business"
+                ],
+                "difficulty": "easy",
+                "targets": [
+                    "all"
+                ],
+                "licence": "public_domain",
+                "problem_profiles": [
+                    "SUS_PROBLEM_1"
+                ],
+                "types": [
+                    "enhancing_services"
+                ],
+                "related_interlinkers": [
+                    "Business Plan Template"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "domain": "",
+                "process": "",
+                "constraints_and_limitations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "This INTERLINKER is composed by a PowerPoint scheleton that can be downloaded, customized and used to facilitate discussions for business models.",
+                    "es": ""
+                },
+                "instructions": "./interlinkers/knowledge/Business-Model-Canvas/instructions.md",
+                "representations": [
+                    {
+                        "form": "document_template",
+                        "format": "editable_source_document",
+                        "file": "./interlinkers/knowledge/Business-Model-Canvas/resource.pptx",
+                        "softwareinterlinker": "googledrive",
+                        "language": "en"
+                    }
+                ],
+                "reference": "business-model-canvas"
+            },
+            {
+                "name": {
+                    "en": "Guidelines on the acquisition and reuse of software for public administrations",
+                    "es": ""
+                },
+                "description": {
+                    "en": "<p>This resource aims at explaining how to acquire and reuse software in PA context.</p>",
+                    "es": ""
+                },
+                "tags": [
+                    "open source",
+                    "public administration",
+                    "reuse",
+                    "acquisition"
+                ],
+                "difficulty": "difficult",
+                "targets": [
+                    "all"
+                ],
+                "licence": "permissive",
+                "problem_profiles": [
+                    "BUILD_PROBLEM_3"
+                ],
+                "types": [
+                    "enabling_services",
+                    "enabling_services;implementing_software_and_artifacts"
+                ],
+                "administrative_scopes": [
+                    "national",
+                    "local"
+                ],
+                "related_interlinkers": [],
+                "constraints_and_limitations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
+                    "es": ""
+                },
+                "instructions": "./interlinkers/knowledge/it-guidelines_acquiring_reuse_sw_pa/instructions.md",
+                "representations": [
+                    {
+                        "form": "guidelines",
+                        "format": "structured_format",
+                        "file": "./interlinkers/knowledge/it-guidelines_acquiring_reuse_sw_pa/data.json",
+                        "softwareinterlinker": "externalresourcemanager",
+                        "language": "en"
+                    }
+                ],
+                "reference": "guidelines-on-the-acquisition-and-reuse-of-software-for-public-administrations"
+            },
+            {
+                "name": {
+                    "en": "Stakeholders Mapping Canvas",
+                    "es": ""
+                },
+                "description": {
+                    "en": "<p>This resource supports the identification and selection of the stakeholders to engage in a co-production team.</p>",
+                    "es": ""
+                },
+                "tags": [
+                    "stakeholders mapping",
+                    "canvas",
+                    "understand"
+                ],
+                "difficulty": "easy",
+                "targets": [
+                    "all"
+                ],
+                "licence": "public_domain",
+                "problem_profiles": [
+                    "UND_PROBLEM_2"
+                ],
+                "types": [
+                    "enhancing_services"
+                ],
+                "related_interlinkers": [
+                    "Stakeholders Mapping Guidelines",
+                    "Stakeholders Analysis Template"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "domain": "",
+                "process": "",
+                "constraints_and_limitations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "This INTERLINKER is composed by a PowerPoint scheleton that can be downloaded, customized and used to facilitate discussions for stakeholders mapping.",
+                    "es": ""
+                },
+                "instructions": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/instructions.md",
+                "representations": [
+                    {
+                        "form": "document_template",
+                        "format": "editable_source_document",
+                        "file": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/resource.pptx",
+                        "softwareinterlinker": "googledrive",
+                        "language": "en"
+                    }
+                ],
+                "reference": "stakeholders-mapping-canvas"
+            },
+            {
+                "name": {
+                    "en": "Cloud Enablement Kit (in Italian)",
+                    "es": ""
+                },
+                "description": {
+                    "en": "<p>This resource describes the Cloud Enablement strategy outlined by AGID and Team Digitale (in Italian). </p>",
+                    "es": ""
+                },
+                "tags": [
+                    "cloud",
+                    "services",
+                    "security"
+                ],
+                "difficulty": "difficult",
+                "targets": [
+                    "all"
+                ],
+                "licence": "permissive",
+                "problem_profiles": [
+                    "BUILD_PROBLEM_3"
+                ],
+                "types": [
+                    "enabling_services",
+                    "enabling_services;implementing_software_and_artifacts"
+                ],
+                "administrative_scopes": [
+                    "national",
+                    "local"
+                ],
+                "related_interlinkers": [],
+                "constraints_and_limitations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "PDF document",
+                    "es": ""
+                },
+                "instructions": "./interlinkers/knowledge/it-cloud-enablement-kit/instructions.md",
+                "representations": [
+                    {
+                        "form": "guidelines",
+                        "format": "pdf",
+                        "file": "./interlinkers/knowledge/it-cloud-enablement-kit/data.json",
+                        "softwareinterlinker": "externalresourcemanager",
+                        "language": "en"
+                    }
+                ],
+                "reference": "cloud-enablement-kit-in-italian"
+            },
+            {
+                "name": {
+                    "en": "Consent Form Template",
+                    "es": ""
+                },
+                "description": {
+                    "en": "<p>Template to prepare a form to collect consent from participants engaged in research activities about the use of their personal data</p>",
+                    "es": ""
+                },
+                "tags": [
+                    "privacy management",
+                    "research activities",
+                    "co-production project participants",
+                    "INTERLINK"
+                ],
+                "difficulty": "very_easy",
+                "targets": [
+                    "all"
+                ],
+                "licence": "public_domain",
+                "problem_profiles": [
+                    "ORG_PROBLEM_14"
+                ],
+                "types": [
+                    "enhancing_services"
+                ],
+                "related_interlinkers": [
+                    "Information Sheet Template"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "domain": "",
+                "process": "",
+                "constraints_and_limitations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "The consent form is compliant to GDPR norms.",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "This INTERLINKER is composed by a document that can be downloaded, printed and distributed to participants.",
+                    "es": ""
+                },
+                "instructions": "./interlinkers/knowledge/Consent-Form-Template/instructions.md",
+                "representations": [
+                    {
+                        "form": "document_template",
+                        "format": "editable_source_document",
+                        "file": "./interlinkers/knowledge/Consent-Form-Template/resource.docx",
+                        "softwareinterlinker": "googledrive",
+                        "language": "en"
+                    }
+                ],
+                "reference": "consent-form-template"
+            },
+            {
+                "name": {
+                    "en": "AgID Minimum Security Measures for Public Administration. ",
+                    "es": ""
+                },
+                "description": {
+                    "en": "<p>This resource describes the minimum ICT security measures issued by AgID aim at countering the most frequent cyber threats to the Italian public administration.</p>",
+                    "es": ""
+                },
+                "tags": [
+                    "security"
+                ],
+                "difficulty": "difficult",
+                "targets": [
+                    "all"
+                ],
+                "licence": "permissive",
+                "problem_profiles": [
+                    "BUILD_PROBLEM_3"
+                ],
+                "types": [
+                    "enabling_services",
+                    "enabling_services;implementing_software_and_artifacts"
+                ],
+                "administrative_scopes": [
+                    "national",
+                    "local"
+                ],
+                "related_interlinkers": [],
+                "constraints_and_limitations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards": {
+                    "en": "",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
+                    "es": ""
+                },
+                "instructions": "./interlinkers/knowledge/it-pa-minimum-security-measures/instructions.md",
+                "representations": [
+                    {
+                        "form": "guidelines",
+                        "format": "structured_format",
+                        "file": "./interlinkers/knowledge/it-pa-minimum-security-measures/data.json",
+                        "softwareinterlinker": "externalresourcemanager",
+                        "language": "en"
+                    }
+                ],
+                "reference": "agid-minimum-security-measures-for-public-administration"
+            },
+            {
+                "name": {
                     "en": "Consent Form for INTERLINK project",
                     "es": ""
                 },
@@ -3255,11 +3310,11 @@
             },
             {
                 "name": {
-                    "en": "Information Sheet Template",
+                    "en": "Information Sheet for INTERLINK project",
                     "es": ""
                 },
                 "description": {
-                    "en": "<p>Template to guide the preparation of an information sheet to be distributed to participants to project activities. It provides background on research objectives.</p>",
+                    "en": "<p>Information on the INTERLINK project to be distributed to participants. It provides background on research activities.</p>",
                     "es": ""
                 },
                 "tags": [
@@ -3280,7 +3335,7 @@
                     "enhancing_services"
                 ],
                 "related_interlinkers": [
-                    "Consent Form Template"
+                    "Consent Form for INTERLINK project"
                 ],
                 "administrative_scopes": [
                     "eu"
@@ -3299,72 +3354,17 @@
                     "en": "This INTERLINKER is composed by a document that can be downloaded, printed and distributed to participants.",
                     "es": ""
                 },
-                "instructions": "./interlinkers/knowledge/Information-Sheet-Template/instructions.md",
+                "instructions": "./interlinkers/knowledge/Information-Sheet-INTERLINK/instructions.md",
                 "representations": [
                     {
                         "form": "document_template",
                         "format": "editable_source_document",
-                        "file": "./interlinkers/knowledge/Information-Sheet-Template/resource.docx",
+                        "file": "./interlinkers/knowledge/Information-Sheet-INTERLINK/resource.docx",
                         "softwareinterlinker": "googledrive",
                         "language": "en"
                     }
                 ],
-                "reference": "information-sheet-template"
-            },
-            {
-                "name": {
-                    "en": "AgID Cloud computing migration strategy evalution template",
-                    "es": ""
-                },
-                "description": {
-                    "en": "<p>This resource contains a questionnaire to check the cloud computing migration strategy  </p>",
-                    "es": ""
-                },
-                "tags": [
-                    "cloud",
-                    "services",
-                    "security"
-                ],
-                "difficulty": "medium",
-                "targets": [
-                    "all"
-                ],
-                "licence": "permissive",
-                "problem_profiles": [
-                    "BUILD_PROBLEM_3"
-                ],
-                "types": [
-                    "enabling_services",
-                    "enabling_services;implementing_software_and_artifacts"
-                ],
-                "administrative_scopes": [
-                    "national",
-                    "local"
-                ],
-                "related_interlinkers": [],
-                "constraints_and_limitations": {
-                    "en": "No special constraints apply",
-                    "es": ""
-                },
-                "regulations_and_standards": {
-                    "en": "",
-                    "es": ""
-                },
-                "overview_text": {
-                    "en": "Questionaire in google calc format",
-                    "es": ""
-                },
-                "instructions": "./interlinkers/knowledge/it-cloud-competences-assesment/instructions.md",
-                "representations": [
-                    {
-                        "form": "guidelines",
-                        "format": "editable_source_document",
-                        "file": "./interlinkers/knowledge/it-cloud-competences-assesment/data.json",
-                        "softwareinterlinker": "externalresourcemanager",
-                        "language": "en"
-                    }
-                ],
-                "reference": "agid-cloud-computing-migration-strategy-evalution-template"
+                "reference": "information-sheet-for-interlink-project"
             }
         ]
     }

@@ -36,7 +36,7 @@ for schema_metadata_path in Path("./schemas").glob("**/metadata.json"):
                 #             "status": "completed"
                 #         }]
 
-                last_phase = "phase-" + slugify(phasejson["name"]["en"])
+                last_phase = "phase-" + slugify(phasejson["name_translations"]["en"])
                 phasejson["reference"] = last_phase
 
                 last_objective = "" 
@@ -47,7 +47,7 @@ for schema_metadata_path in Path("./schemas").glob("**/metadata.json"):
                             "objective": last_objective,
                             "status": "completed"
                         }]
-                    last_objective = "objective-" +slugify(objs["name"]["en"])
+                    last_objective = "objective-" +slugify(objs["name_translations"]["en"])
                     objs["reference"] = last_objective
                 
                     last_task = "" 
@@ -58,7 +58,7 @@ for schema_metadata_path in Path("./schemas").glob("**/metadata.json"):
                                 "objective": last_task,
                                 "status": "completed"
                             }]
-                        last_task = "objective-" +slugify(task["name"]["en"])
+                        last_task = "objective-" +slugify(task["name_translations"]["en"])
                         task["reference"] = last_task
                 schema_metadata["phases"].append(phasejson)
         dicts["schemas"].append(schema_metadata)
