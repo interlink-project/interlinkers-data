@@ -5,9 +5,9 @@ from colors import bcolors
 
 class ProblemProfile(BaseModel):
     id: str
-    name: dict
-    description: dict
-    functionality: dict
+    name_translations: dict
+    description_translations: dict
+    functionality_translations: dict
 
 
 problem_profiles_ids = []

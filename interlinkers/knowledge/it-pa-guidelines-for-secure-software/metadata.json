@@ -1,9 +1,9 @@
 {
-    "name": {
+    "name_translations": {
         "en": " AgID guidelines for the development of secure software (in Italian)",
         "es": ""
     },
-    "description": {
+    "description_translations": {
         "en": "<p>This resource describes the guidelines for the development of secure software in the public administration</p>",
         "es": ""
     },
@@ -27,11 +27,11 @@
         "local"
     ],
     "related_interlinkers": [],
-    "constraints_and_limitations": {
+    "constraints_and_limitations_translations": {
         "en": "No special constraints apply",
         "es": ""
     },
-    "regulations_and_standards": {
+    "regulations_and_standards_translations": {
         "en": "",
         "es": ""
     },
@@ -41,7 +41,8 @@
     },
     "instructions": "./interlinkers/knowledge/it-pa-guidelines-for-secure-software/instructions.md",
     "representations": [
-        {
+        {"title": "",
+            "description": "",
             "form": "guidelines",
             "format": "structured_format",
             "file": "./interlinkers/knowledge/it-pa-guidelines-for-secure-software/data.json",

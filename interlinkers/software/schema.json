@@ -9,12 +9,12 @@
                 "type": "string"
             }
         },
-        "name": {
-            "title": "Name",
+        "name_translations": {
+            "title": "Name Translations",
             "type": "object"
         },
-        "description": {
-            "title": "Description",
+        "description_translations": {
+            "title": "Description Translations",
             "type": "object"
         },
         "tags": {
@@ -64,12 +64,12 @@
             "title": "Process",
             "type": "string"
         },
-        "constraints_and_limitations": {
-            "title": "Constraints And Limitations",
+        "constraints_and_limitations_translations": {
+            "title": "Constraints And Limitations Translations",
             "type": "object"
         },
-        "regulations_and_standards": {
-            "title": "Regulations And Standards",
+        "regulations_and_standards_translations": {
+            "title": "Regulations And Standards Translations",
             "type": "object"
         },
         "overview_text": {
@@ -163,12 +163,12 @@
     },
     "required": [
         "problem_profiles",
-        "name",
-        "description",
+        "name_translations",
+        "description_translations",
         "tags",
         "difficulty",
         "licence",
-        "constraints_and_limitations",
+        "constraints_and_limitations_translations",
         "reference",
         "supported_by",
         "auth_method",

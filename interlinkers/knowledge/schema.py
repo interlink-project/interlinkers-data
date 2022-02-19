@@ -27,6 +27,8 @@ class SoftwareInterlinkers(Enum):
     externalresourcemanager = "externalresourcemanager"
 
 class Representation(BaseModel):
+    title: str
+    description: str
     language: str
     form: FormTypes
     # FOR 1

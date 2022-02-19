@@ -1,9 +1,9 @@
 {
-    "name": {
+    "name_translations": {
         "en": "AgID Cloud computing competence evalution template",
         "es": ""
     },
-    "description": {
+    "description_translations": {
         "en": "<p>This resource contains a questionnaire to check the level of knowledge and competence in cloud computing </p>",
         "es": ""
     },
@@ -29,11 +29,11 @@
         "local"
     ],
     "related_interlinkers": [],
-    "constraints_and_limitations": {
+    "constraints_and_limitations_translations": {
         "en": "No special constraints apply",
         "es": ""
     },
-    "regulations_and_standards": {
+    "regulations_and_standards_translations": {
         "en": "",
         "es": ""
     },
@@ -43,7 +43,8 @@
     },
     "instructions": "./interlinkers/knowledge/it-cloud-competences-assesment/instructions.md",
     "representations": [
-        {
+        {"title": "",
+            "description": "",
             "form": "guidelines",
             "format": "editable_source_document",
             "file": "./interlinkers/knowledge/it-cloud-competences-assesment/data.json",

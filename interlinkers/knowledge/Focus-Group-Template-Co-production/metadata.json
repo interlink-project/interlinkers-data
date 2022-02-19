@@ -1,9 +1,9 @@
 {
-    "name": {
+    "name_translations": {
         "en": "Focus Group Template Co-production Investigation",
         "es": ""
     },
-    "description": {
+    "description_translations": {
         "en": "<p>This resource provides a skeleton to organize a focus group to investigate the co-production practices in a given organization. It addresses a series of questions about previous or current collaboration practices, the dynamics of collaboration (timeline, people, tools, communication channels), current KPIs, critical aspects and  desiderata.</p>",
         "es": ""
     },
@@ -31,11 +31,11 @@
     ],
     "domain": "",
     "process": "",
-    "constraints_and_limitations": {
+    "constraints_and_limitations_translations": {
         "en": "No special constraints apply",
         "es": ""
     },
-    "regulations_and_standards": {
+    "regulations_and_standards_translations": {
         "en": "",
         "es": ""
     },
@@ -45,7 +45,8 @@
     },
     "instructions": "./interlinkers/knowledge/Focus-Group-Template-Co-production/instructions.md",
     "representations": [
-        {
+        {"title": "",
+            "description": "",
             "form": "document_template",
             "format": "editable_source_document",
             "file": "./interlinkers/knowledge/Focus-Group-Template-Co-production/resource.pptx",

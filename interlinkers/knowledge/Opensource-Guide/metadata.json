@@ -1,9 +1,9 @@
 {
-    "name": {
+    "name_translations": {
         "en": "Open Source guides",
         "es": ""
     },
-    "description": {
+    "description_translations": {
         "en": "<p>A collection of resources for individuals, communities, and companies who want to learn how to run and contribute to an open source project.</p>",
         "es": ""
     },
@@ -27,11 +27,11 @@
         "national",
         "local"
     ],
-    "constraints_and_limitations": {
+    "constraints_and_limitations_translations": {
         "en": "No special constraints apply",
         "es": ""
     },
-    "regulations_and_standards": {
+    "regulations_and_standards_translations": {
         "en": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en",
         "es": ""
     },
@@ -41,7 +41,8 @@
     },
     "instructions": "https://opensource.guide/",
     "representations": [
-        {
+        {"title": "",
+            "description": "",
             "form": "guidelines",
             "format": "structured_format",
             "file": "./interlinkers/knowledge/Opensource-Guide/data.json",

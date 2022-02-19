@@ -1,9 +1,9 @@
 {
-    "name": {
+    "name_translations": {
         "en": "Consent Form for INTERLINK project",
         "es": ""
     },
-    "description": {
+    "description_translations": {
         "en": "<p>Form to collect consent from participants engaged in INTERLINK research activities about the use of their personal data</p>",
         "es": ""
     },
@@ -32,11 +32,11 @@
     ],
     "domain": "",
     "process": "",
-    "constraints_and_limitations": {
+    "constraints_and_limitations_translations": {
         "en": "No special constraints apply",
         "es": ""
     },
-    "regulations_and_standards": {
+    "regulations_and_standards_translations": {
         "en": "The consent form is compliant to GDPR norms.",
         "es": ""
     },
@@ -46,7 +46,8 @@
     },
     "instructions": "./interlinkers/knowledge/Consent-Form-INTERLINK/instructions.md",
     "representations": [
-        {
+        {"title": "",
+            "description": "",
             "form": "document_template",
             "format": "editable_source_document",
             "file": "./interlinkers/knowledge/Consent-Form-INTERLINK/resource.docx",

@@ -1,9 +1,9 @@
 {
-    "name": {
+    "name_translations": {
         "en": "Business Model Canvas",
         "es": ""
     },
-    "description": {
+    "description_translations": {
         "en": "This canvas can be used collaboratively, for instance, during a brainstorming or a focus group, to reflect on the the most suitable business model associated to a co-produced service.",
         "es": ""
     },
@@ -31,11 +31,11 @@
     ],
     "domain": "",
     "process": "",
-    "constraints_and_limitations": {
+    "constraints_and_limitations_translations": {
         "en": "No special constraints apply",
         "es": ""
     },
-    "regulations_and_standards": {
+    "regulations_and_standards_translations": {
         "en": "",
         "es": ""
     },
@@ -46,6 +46,8 @@
     "instructions": "./interlinkers/knowledge/Business-Model-Canvas/instructions.md",
     "representations": [
         {
+            "title": "",
+            "description": "",
             "form": "document_template",
             "format": "editable_source_document",
             "file": "./interlinkers/knowledge/Business-Model-Canvas/resource.pptx",

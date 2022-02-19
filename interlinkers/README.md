@@ -68,10 +68,12 @@ In the case of adding a new KNOWLEDGE INTERLINKER, the following sections must b
     "licence":                      "public_domain", "permissive", "copyleft", "non_commercial" or "propietary"
     "problem_profiles":              array of free text
     "related_interlinkers":         array of free text
-    "constraints_and_limitations":  free text
-    "regulations_and_standards":    optional text
+    "constraints_and_limitations_translations":  free text
+    "regulations_and_standards_translations":    optional text
     "representations": [
         {
+            "title":                 optional text
+            "description":           optional text
             "form":                  "visual_template", "document_template", "canvas", "best_practices", "guidelines", "checklist", "survey_template", "legal_agreement_template" or "other"
             "format":                "pdf", "editable_source_document", "open_document" or "structured_format",
             "file":                  valid path to file
@@ -100,17 +102,21 @@ For example:
         "example"
     ],
     "related_interlinkers": [],
-    "constraints_and_limitations": "Some text here",
-    "regulations_and_standards": "Optional text here",
+    "constraints_and_limitations_translations": "Some text here",
+    "regulations_and_standards_translations": "Optional text here",
     "instructions": "./knowledge/example_knowledge_interlinker/instructions.md",
     "representations": [
         {
+            "title": "Google drive document",
+            "description": "Example interlinker but using google drive",
             "form": "visual_template",
             "format": "editable_source_document",
             "file": "./knowledge/example_knowledge_interlinker/doc.docx",
             "softwareinterlinker":  "googledrive"
         },
         {
+            "title": "External resource ",
+            "description": "Example interlinker but using external resource",
             "form": "visual_template",
             "format": "pdf",
             "file": "./knowledge/example_knowledge_interlinker/data.json",
@@ -358,8 +364,8 @@ Defines these attributes:
 * administrative_scope
 * domain
 * process
-* constraints_and_limitations
-* regulations_and_standards
+* constraints_and_limitations_translations
+* regulations_and_standards_translations
 * overview_text
 
 (Some of them are not required for the first phase, so are marked as optional)

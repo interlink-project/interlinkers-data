@@ -1,9 +1,9 @@
 {
-    "name": {
+    "name_translations": {
         "en": "Focus Group Guidelines",
         "es": ""
     },
-    "description": {
+    "description_translations": {
         "en": "<p>Instructions on how to set up a research activity based on focus groups, for a co-production project.</p>",
         "es": ""
     },
@@ -34,11 +34,11 @@
     ],
     "domain": "",
     "process": "",
-    "constraints_and_limitations": {
+    "constraints_and_limitations_translations": {
         "en": "No special constraints apply",
         "es": ""
     },
-    "regulations_and_standards": {
+    "regulations_and_standards_translations": {
         "en": "",
         "es": ""
     },
@@ -48,7 +48,8 @@
     },
     "instructions": "./interlinkers/knowledge/Focus-Group-Guidelines/instructions.md",
     "representations": [
-        {
+        {"title": "",
+            "description": "",
             "form": "guidelines",
             "format": "editable_source_document",
             "file": "./interlinkers/knowledge/Focus-Group-Guidelines/resource.docx",
