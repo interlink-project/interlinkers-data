@@ -51,9 +51,19 @@
     "supports_internationalization": true,
     "is_responsive": true,
     "open_in_modal": false,
-    "assets_clonable": false,
-    "path": "loomio",
-    "is_subdomain": true,
+    "endpoint": {
+        "domain": "",
+        "path": "loomio",
+        "is_subdomain": true,
+        "api_path": "/api/v1/assets"
+    },
+    "capabilities": {
+        "instantiate": true,
+        "clone": false,
+        "view": true,
+        "edit": true,
+        "delete": true
+    },
     "logotype": "./interlinkers/software/loomio/logo.png",
     "reference": "loomio"
 }

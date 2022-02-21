@@ -143,17 +143,11 @@
             "title": "Open In Modal",
             "type": "boolean"
         },
-        "assets_clonable": {
-            "title": "Assets Clonable",
-            "type": "boolean"
+        "endpoint": {
+            "$ref": "#/definitions/Endpoint"
         },
-        "path": {
-            "title": "Path",
-            "type": "string"
-        },
-        "is_subdomain": {
-            "title": "Is Subdomain",
-            "type": "boolean"
+        "capabilities": {
+            "$ref": "#/definitions/Capabilities"
         },
         "logotype": {
             "title": "Logotype",
@@ -175,9 +169,8 @@
         "supports_internationalization",
         "is_responsive",
         "open_in_modal",
-        "assets_clonable",
-        "path",
-        "is_subdomain",
+        "endpoint",
+        "capabilities",
         "logotype"
     ],
     "additionalProperties": false,
@@ -262,6 +255,62 @@
             "enum": [
                 "header",
                 "cookie"
+            ]
+        },
+        "Endpoint": {
+            "title": "Endpoint",
+            "type": "object",
+            "properties": {
+                "domain": {
+                    "title": "Domain",
+                    "type": "string"
+                },
+                "path": {
+                    "title": "Path",
+                    "type": "string"
+                },
+                "is_subdomain": {
+                    "title": "Is Subdomain",
+                    "type": "boolean"
+                },
+                "api_path": {
+                    "title": "Api Path",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "domain",
+                "path",
+                "is_subdomain",
+                "api_path"
+            ]
+        },
+        "Capabilities": {
+            "title": "Capabilities",
+            "type": "object",
+            "properties": {
+                "instantiate": {
+                    "title": "Instantiate",
+                    "type": "boolean"
+                },
+                "view": {
+                    "title": "View",
+                    "type": "boolean"
+                },
+                "edit": {
+                    "title": "Edit",
+                    "type": "boolean"
+                },
+                "delete": {
+                    "title": "Delete",
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "instantiate",
+                "view",
+                "edit",
+                "delete"
             ]
         }
     }

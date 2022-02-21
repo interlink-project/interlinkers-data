@@ -3,7 +3,7 @@ from enum import Enum
 from pathlib import Path
 
 from interlinkers.base import InterlinkerSchema
-from pydantic import FilePath, HttpUrl
+from pydantic import FilePath, HttpUrl, BaseModel
 from typing import Optional, Union
 
 parent = Path(__file__).parents[0]
@@ -17,6 +17,17 @@ class AuthMethods(Enum):
     header = "header"
     cookie = "cookie"
 
+class Endpoint(BaseModel):
+    domain: str
+    path: str
+    is_subdomain: bool
+    api_path: str
+
+class Capabilities(BaseModel):
+    instantiate: bool
+    view: bool
+    edit: bool
+    delete: bool
 
 class Schema(InterlinkerSchema):
     supported_by: Supporters
@@ -31,11 +42,9 @@ class Schema(InterlinkerSchema):
     # GUI is responsive
     open_in_modal: bool
     # assets for specific interlinkers may be opened on a modal, not in a new tab
-    assets_clonable: bool
-    # exposes an /assets/{id}/clone/ API endpoint?
-
-    path: str
-    is_subdomain: bool
+    
+    endpoint: Endpoint
+    capabilities: Capabilities
     logotype: FilePath
     # if is_subdomain == true:
     #   https://{path}.dev.interlink-project.eu

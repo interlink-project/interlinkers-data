@@ -30,9 +30,19 @@
     "supports_internationalization": true,
     "is_responsive": true,
     "open_in_modal": true,
-    "assets_clonable": true,
-    "path": "externalresourcemanager",
-    "is_subdomain": false,
+    "endpoint": {
+        "domain": "",
+        "path": "externalresourcemanager",
+        "is_subdomain": false,
+        "api_path": "/assets"
+    },
+    "capabilities": {
+        "instantiate": true,
+        "clone": true,
+        "view": true,
+        "edit": true,
+        "delete": true
+    },
     "logotype": "./interlinkers/software/externalresourcemanager/logo.png",
     "reference": "external-resource-manager"
 }
