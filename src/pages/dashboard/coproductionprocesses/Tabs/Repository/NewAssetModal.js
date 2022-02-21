@@ -145,7 +145,7 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
                     {selectedInterlinker.nature === "softwareinterlinker" &&
                         <>
                             {loadingInstantiator && <CircularProgress />}
-                            <iframe style={{ display: loadingInstantiator ? "none" : "block" }} src={`${selectedInterlinker.backend}/assets/instantiate`} style={{ width: "100%", minHeight: "60vh", border: 0 }}></iframe>
+                            <iframe style={{ display: loadingInstantiator ? "none" : "block" }} src={`${selectedInterlinker.backend}/instantiate`} style={{ width: "100%", minHeight: "60vh", border: 0 }}></iframe>
                         </>
                     }
                     {selectedInterlinker.nature === "knowledgeinterlinker" &&
