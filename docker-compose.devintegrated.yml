@@ -2,7 +2,7 @@ version: "3.3"
 services:
 
   frontend:
-    image: 'frontenddev:${TAG-latest}'
+    image: 'frontenddev'
     container_name: frontend-integrated
     build:
       context: .
