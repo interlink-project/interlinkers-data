@@ -665,443 +665,6 @@
             "phases": [
                 {
                     "prerequisites": [
-                        "phase-build"
-                    ],
-                    "name_translations": {
-                        "en": "Sustain",
-                        "es": ""
-                    },
-                    "description_translations": {
-                        "en": "",
-                        "es": ""
-                    },
-                    "objectives": [
-                        {
-                            "name_translations": {
-                                "en": "Handover",
-                                "es": ""
-                            },
-                            "description_translations": {
-                                "en": "",
-                                "es": ""
-                            },
-                            "problem_profiles": [],
-                            "tasks": [
-                                {
-                                    "name_translations": {
-                                        "en": "Handover",
-                                        "es": ""
-                                    },
-                                    "description_translations": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [
-                                        "ORG_PROBLEM_7"
-                                    ],
-                                    "reference": "objective-handover"
-                                }
-                            ],
-                            "reference": "objective-handover"
-                        },
-                        {
-                            "name_translations": {
-                                "en": "Maintenance",
-                                "es": ""
-                            },
-                            "description_translations": {
-                                "en": "",
-                                "es": ""
-                            },
-                            "problem_profiles": [],
-                            "tasks": [
-                                {
-                                    "name_translations": {
-                                        "en": "Task distribution for maintenance, contracts regulation, data management archiving",
-                                        "es": ""
-                                    },
-                                    "description_translations": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "reference": "objective-task-distribution-for-maintenance-contracts-regulation-data-management-archiving"
-                                }
-                            ],
-                            "prerequisites": [
-                                {
-                                    "objective": "objective-handover",
-                                    "status": "completed"
-                                }
-                            ],
-                            "reference": "objective-maintenance"
-                        },
-                        {
-                            "name_translations": {
-                                "en": "Monitoring",
-                                "es": ""
-                            },
-                            "description_translations": {
-                                "en": "",
-                                "es": ""
-                            },
-                            "problem_profiles": [
-                                "UND_PROBLEM_3",
-                                "VAL_PROBLEM_5"
-                            ],
-                            "tasks": [
-                                {
-                                    "name_translations": {
-                                        "en": "Monitoring ongoing evaluation, periodic evaluations with stakeholders",
-                                        "es": ""
-                                    },
-                                    "description_translations": {
-                                        "en": "",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "reference": "objective-monitoring-ongoing-evaluation-periodic-evaluations-with-stakeholders"
-                                }
-                            ],
-                            "prerequisites": [
-                                {
-                                    "objective": "objective-maintenance",
-                                    "status": "completed"
-                                }
-                            ],
-                            "reference": "objective-monitoring"
-                        }
-                    ],
-                    "reference": "phase-sustain"
-                },
-                {
-                    "prerequisites": [],
-                    "name_translations": {
-                        "en": "Engage",
-                        "es": "Comprometer"
-                    },
-                    "description_translations": {
-                        "en": "Which stakeholders should be involved in your co-production process? How to communicate with them about your project goals and the benefits of participation?\r\nLearn about the value of involving stakeholders. Use the available knowledge tools to understand who are the stakeholders to involve in your project and the role they can have. \r\nExploit communication templates to raise awareness, invite stakeholders, and create a lively network of motivated contributors. Define partnership agreements and make sure shared information is protected. Plan together the next steps and create working groups. ",
-                        "es": ""
-                    },
-                    "objectives": [
-                        {
-                            "name_translations": {
-                                "en": "Identify stakeholders",
-                                "es": "Identificar stakeholders"
-                            },
-                            "description_translations": {
-                                "en": "The identification of key actors  is the first step to start your  process of co-production. According to the type of project, the goals and the level of citizen involvement, different questions are to be answered.\r\nWhat different  types of stakeholders enter into play in the initiative to be co-produced? What are their motivations and skills to participate in the project? What is their position in the network? How to contact them?\r\nFollow the specific tasks to get the complete picture.",
-                                "es": ""
-                            },
-                            "problem_profiles": [],
-                            "tasks": [
-                                {
-                                    "name_translations": {
-                                        "en": "Understand the different types of stakeholders",
-                                        "es": "Entender los diferentes tipos de stakeholders y sus motivaciones"
-                                    },
-                                    "description_translations": {
-                                        "en": "Usually different actors are engaged in co-production to create a new service or customizing an already existing service: public bodies, private companies, SMEs, citizens. Each actor brings specific needs and competences in relation to the service and has different motivations to participate in a project. Learn about the different types of stakeholders and which of them can add value to your co-production process",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [
-                                        "UND_PROBLEM_2"
-                                    ],
-                                    "reference": "objective-understand-the-different-types-of-stakeholders"
-                                },
-                                {
-                                    "name_translations": {
-                                        "en": "Map stakeholders, analyse motivation, skills, expectations",
-                                        "es": "Mapear partes interesadas analizar motivaci\u00f3n habilidades expectativas"
-                                    },
-                                    "description_translations": {
-                                        "en": "Mapping the stakeholders is crucial to have a clear view of which roles stakeholders can play in different stages of innovation, what their level of commitment and strategic importance could be. Analyse the complexity of building relationships, realizing which connectors can be crucial for innovation development in your project.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [
-                                        "UND_PROBLEM_2"
-                                    ],
-                                    "prerequisites": [
-                                        {
-                                            "objective": "objective-understand-the-different-types-of-stakeholders",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "objective-map-stakeholders-analyse-motivation-skills-expectations"
-                                },
-                                {
-                                    "name_translations": {
-                                        "en": "Visually map the network of stakeholders",
-                                        "es": "Mapear visualmente la red de partes interesadas"
-                                    },
-                                    "description_translations": {
-                                        "en": "Is your network balanced and inclusive?\r\nCreate a Stakeholder Map, where the ecosystem of stakeholders involved in a customer experience is visualized.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [
-                                        "UND_PROBLEM_2"
-                                    ],
-                                    "prerequisites": [
-                                        {
-                                            "objective": "objective-map-stakeholders-analyse-motivation-skills-expectations",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "objective-visually-map-the-network-of-stakeholders"
-                                },
-                                {
-                                    "name_translations": {
-                                        "en": "Create a contact list of potential network participants",
-                                        "es": "Crear una lista de contactos de posibles participantes de la red"
-                                    },
-                                    "description_translations": {
-                                        "en": "Write down the list of participants, aside the co-production team, who may be interested in observing the progress of the co-production project and have the opportunity to emit opinions and take part in some decision processes. ",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [
-                                        "ORG_PROBLEM_4"
-                                    ],
-                                    "prerequisites": [
-                                        {
-                                            "objective": "objective-visually-map-the-network-of-stakeholders",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "objective-create-a-contact-list-of-potential-network-participants"
-                                }
-                            ],
-                            "reference": "objective-identify-stakeholders"
-                        },
-                        {
-                            "name_translations": {
-                                "en": "Engage stakeholders",
-                                "es": ""
-                            },
-                            "description_translations": {
-                                "en": "Stakeholder engagement is about figuring out how to effectively communicate, collaborate, and interact with key people who have positive or negative influence, and may impact the success of your project.\r\nTo reach this objective you should carefully prepare an engagement plan, create awareness and communication material tailored to your audience, understand how to communicate benefit for stakeholders and, whenever this is forseen in your project, understand how to engage citizens in the co-production process. ",
-                                "es": ""
-                            },
-                            "problem_profiles": [
-                                "ORG_PROBLEM_12",
-                                "ORG_PROBLEM_13",
-                                "ORG_PROBLEM_14"
-                            ],
-                            "tasks": [
-                                {
-                                    "name_translations": {
-                                        "en": "Prepare an engagement plan",
-                                        "es": ""
-                                    },
-                                    "description_translations": {
-                                        "en": "Create an effective engagement plan which allows you to reach to the types and numbers of stakeholders sufficient to ensure that the co-produced service is well targeted. \r\nAn engagement plan is usually composed of three parts: the identification of your project\u2019s stakeholders; the planning of effective means for interacting with each stakeholder, and protocols for accurately documenting your work for the sake of transparency, accountability and evaluation of the process.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [
-                                        "ORG_PROBLEM_5"
-                                    ],
-                                    "reference": "objective-prepare-an-engagement-plan"
-                                },
-                                {
-                                    "name_translations": {
-                                        "en": "Create awareness and communication",
-                                        "es": ""
-                                    },
-                                    "description_translations": {
-                                        "en": "Ensure that relevant stakeholders are aware of the initiative in order to ensure their participation. Awareness-raising is a process that seeks to inform and educate people about a topic or issue with the intention of influencing their attitudes, behaviours and beliefs towards the achievement of a defined purpose or goal.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [
-                                        "ORG_PROBLEM_4",
-                                        "ORG_PROBLEM_6.3"
-                                    ],
-                                    "prerequisites": [
-                                        {
-                                            "objective": "objective-prepare-an-engagement-plan",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "objective-create-awareness-and-communication"
-                                },
-                                {
-                                    "name_translations": {
-                                        "en": "Communicate benefit for stakeholders",
-                                        "es": ""
-                                    },
-                                    "description_translations": {
-                                        "en": "Clearly communicate the benefits of service co-production to your network of stakeholders and citizens.\r\nParticipants need to understand why their participation matters, what they can gain individually and as a group.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [
-                                        "ORG_PROBLEM_4"
-                                    ],
-                                    "prerequisites": [
-                                        {
-                                            "objective": "objective-create-awareness-and-communication",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "objective-communicate-benefit-for-stakeholders"
-                                },
-                                {
-                                    "name_translations": {
-                                        "en": "Engage citizens in the co-production process",
-                                        "es": ""
-                                    },
-                                    "description_translations": {
-                                        "en": "Provide members of the public with the information they need to understand the project, the decision process, and also how public input can influence decisions, the design of the service and the way it is delivered. ",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [
-                                        "ORG_PROBLEM_10",
-                                        "ORG_PROBLEM_11"
-                                    ],
-                                    "prerequisites": [
-                                        {
-                                            "objective": "objective-communicate-benefit-for-stakeholders",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "objective-engage-citizens-in-the-co-production-process"
-                                }
-                            ],
-                            "prerequisites": [
-                                {
-                                    "objective": "objective-identify-stakeholders",
-                                    "status": "completed"
-                                }
-                            ],
-                            "reference": "objective-engage-stakeholders"
-                        },
-                        {
-                            "name_translations": {
-                                "en": "Define legal and ethical framework",
-                                "es": ""
-                            },
-                            "description_translations": {
-                                "en": "The complexity of legal regulations can sometime make it difficult for governments to take up ICTs to co-produce and can cause significant delays in the deployment of solutions.\r\nFollow the guidelines offered here to prepare the financial, technical, and legal agreements that ensure viability to your co-production project.",
-                                "es": ""
-                            },
-                            "problem_profiles": [],
-                            "tasks": [
-                                {
-                                    "name_translations": {
-                                        "en": "Define a non-disclosure agreement (NDA)",
-                                        "es": ""
-                                    },
-                                    "description_translations": {
-                                        "en": "You should consider whether your collaborative network of stakeholders needs a formal  agreement for not disclosing the confidential information that is shared as part of co-producing a service together.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "reference": "objective-define-a-non-disclosure-agreement-nda"
-                                },
-                                {
-                                    "name_translations": {
-                                        "en": "Define a partnership agreement",
-                                        "es": ""
-                                    },
-                                    "description_translations": {
-                                        "en": "Participants should clearly understand their role in the co-production effort, their responsabilities, their rights. \r\nYou might wish to write down the terms and general plan for the collaboration, to give to the initiative a more formal structure, visibility and political support. \r\nGuidelines and examples of partnership agreements may help you decide which is the most suitable solution for your case.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [
-                                        "ORG_PROBLEM_7",
-                                        "ORG_PROBLEM_8"
-                                    ],
-                                    "prerequisites": [
-                                        {
-                                            "objective": "objective-define-a-non-disclosure-agreement-nda",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "objective-define-a-partnership-agreement"
-                                }
-                            ],
-                            "prerequisites": [
-                                {
-                                    "objective": "objective-engage-stakeholders",
-                                    "status": "completed"
-                                }
-                            ],
-                            "reference": "objective-define-legal-and-ethical-framework"
-                        },
-                        {
-                            "name_translations": {
-                                "en": "Define data management plan",
-                                "es": ""
-                            },
-                            "description_translations": {
-                                "en": "Make sure data that is collected and processed during the co-production process is managed according to the GDPR and EU best practices.\r\nPrepare a data management plan to guide you throughout the project life time and beyond.",
-                                "es": ""
-                            },
-                            "problem_profiles": [
-                                "ORG_PROBLEM_3",
-                                "ORG_PROBLEM_9"
-                            ],
-                            "tasks": [
-                                {
-                                    "name_translations": {
-                                        "en": "Clarify the purpose for data collection",
-                                        "es": ""
-                                    },
-                                    "description_translations": {
-                                        "en": "Which data will be collected during co-production? \r\nStart your data management plan by making an inventory of data sources and types.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "reference": "objective-clarify-the-purpose-for-data-collection"
-                                },
-                                {
-                                    "name_translations": {
-                                        "en": "Understand how the data flows",
-                                        "es": ""
-                                    },
-                                    "description_translations": {
-                                        "en": "From whom and for which purpose is data accessed? \r\nUnderstand where data can be securely stored and whether data is to be further transferred.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "prerequisites": [
-                                        {
-                                            "objective": "objective-clarify-the-purpose-for-data-collection",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "objective-understand-how-the-data-flows"
-                                },
-                                {
-                                    "name_translations": {
-                                        "en": "Be aware of data impact",
-                                        "es": ""
-                                    },
-                                    "description_translations": {
-                                        "en": "Consider which are users' and suppliers' preferences concerning data.\r\nReflect on aspects of ownership, minimalization, responsibility, sharing, archiving, anonymity.",
-                                        "es": ""
-                                    },
-                                    "problem_profiles": [],
-                                    "prerequisites": [
-                                        {
-                                            "objective": "objective-understand-how-the-data-flows",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "objective-be-aware-of-data-impact"
-                                }
-                            ],
-                            "prerequisites": [
-                                {
-                                    "objective": "objective-define-legal-and-ethical-framework",
-                                    "status": "completed"
-                                }
-                            ],
-                            "reference": "objective-define-data-management-plan"
-                        }
-                    ],
-                    "reference": "phase-engage"
-                },
-                {
-                    "prerequisites": [
                         "phase-engage"
                     ],
                     "name_translations": {
@@ -1746,6 +1309,332 @@
                     "reference": "phase-design"
                 },
                 {
+                    "prerequisites": [],
+                    "name_translations": {
+                        "en": "Engage",
+                        "es": "Comprometer"
+                    },
+                    "description_translations": {
+                        "en": "Which stakeholders should be involved in your co-production process? How to communicate with them about your project goals and the benefits of participation?\r\nLearn about the value of involving stakeholders. Use the available knowledge tools to understand who are the stakeholders to involve in your project and the role they can have. \r\nExploit communication templates to raise awareness, invite stakeholders, and create a lively network of motivated contributors. Define partnership agreements and make sure shared information is protected. Plan together the next steps and create working groups. ",
+                        "es": ""
+                    },
+                    "objectives": [
+                        {
+                            "name_translations": {
+                                "en": "Identify stakeholders",
+                                "es": "Identificar stakeholders"
+                            },
+                            "description_translations": {
+                                "en": "The identification of key actors  is the first step to start your  process of co-production. According to the type of project, the goals and the level of citizen involvement, different questions are to be answered.\r\nWhat different  types of stakeholders enter into play in the initiative to be co-produced? What are their motivations and skills to participate in the project? What is their position in the network? How to contact them?\r\nFollow the specific tasks to get the complete picture.",
+                                "es": ""
+                            },
+                            "problem_profiles": [],
+                            "tasks": [
+                                {
+                                    "name_translations": {
+                                        "en": "Understand the different types of stakeholders",
+                                        "es": "Entender los diferentes tipos de stakeholders y sus motivaciones"
+                                    },
+                                    "description_translations": {
+                                        "en": "Usually different actors are engaged in co-production to create a new service or customizing an already existing service: public bodies, private companies, SMEs, citizens. Each actor brings specific needs and competences in relation to the service and has different motivations to participate in a project. Learn about the different types of stakeholders and which of them can add value to your co-production process",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [
+                                        "UND_PROBLEM_2"
+                                    ],
+                                    "reference": "objective-understand-the-different-types-of-stakeholders"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Map stakeholders, analyse motivation, skills, expectations",
+                                        "es": "Mapear partes interesadas analizar motivaci\u00f3n habilidades expectativas"
+                                    },
+                                    "description_translations": {
+                                        "en": "Mapping the stakeholders is crucial to have a clear view of which roles stakeholders can play in different stages of innovation, what their level of commitment and strategic importance could be. Analyse the complexity of building relationships, realizing which connectors can be crucial for innovation development in your project.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [
+                                        "UND_PROBLEM_2"
+                                    ],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-understand-the-different-types-of-stakeholders",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-map-stakeholders-analyse-motivation-skills-expectations"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Visually map the network of stakeholders",
+                                        "es": "Mapear visualmente la red de partes interesadas"
+                                    },
+                                    "description_translations": {
+                                        "en": "Is your network balanced and inclusive?\r\nCreate a Stakeholder Map, where the ecosystem of stakeholders involved in a customer experience is visualized.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [
+                                        "UND_PROBLEM_2"
+                                    ],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-map-stakeholders-analyse-motivation-skills-expectations",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-visually-map-the-network-of-stakeholders"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Create a contact list of potential network participants",
+                                        "es": "Crear una lista de contactos de posibles participantes de la red"
+                                    },
+                                    "description_translations": {
+                                        "en": "Write down the list of participants, aside the co-production team, who may be interested in observing the progress of the co-production project and have the opportunity to emit opinions and take part in some decision processes. ",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [
+                                        "ORG_PROBLEM_4"
+                                    ],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-visually-map-the-network-of-stakeholders",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-create-a-contact-list-of-potential-network-participants"
+                                }
+                            ],
+                            "reference": "objective-identify-stakeholders"
+                        },
+                        {
+                            "name_translations": {
+                                "en": "Engage stakeholders",
+                                "es": ""
+                            },
+                            "description_translations": {
+                                "en": "Stakeholder engagement is about figuring out how to effectively communicate, collaborate, and interact with key people who have positive or negative influence, and may impact the success of your project.\r\nTo reach this objective you should carefully prepare an engagement plan, create awareness and communication material tailored to your audience, understand how to communicate benefit for stakeholders and, whenever this is forseen in your project, understand how to engage citizens in the co-production process. ",
+                                "es": ""
+                            },
+                            "problem_profiles": [
+                                "ORG_PROBLEM_12",
+                                "ORG_PROBLEM_13",
+                                "ORG_PROBLEM_14"
+                            ],
+                            "tasks": [
+                                {
+                                    "name_translations": {
+                                        "en": "Prepare an engagement plan",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Create an effective engagement plan which allows you to reach to the types and numbers of stakeholders sufficient to ensure that the co-produced service is well targeted. \r\nAn engagement plan is usually composed of three parts: the identification of your project\u2019s stakeholders; the planning of effective means for interacting with each stakeholder, and protocols for accurately documenting your work for the sake of transparency, accountability and evaluation of the process.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [
+                                        "ORG_PROBLEM_5"
+                                    ],
+                                    "reference": "objective-prepare-an-engagement-plan"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Create awareness and communication",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Ensure that relevant stakeholders are aware of the initiative in order to ensure their participation. Awareness-raising is a process that seeks to inform and educate people about a topic or issue with the intention of influencing their attitudes, behaviours and beliefs towards the achievement of a defined purpose or goal.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [
+                                        "ORG_PROBLEM_4",
+                                        "ORG_PROBLEM_6.3"
+                                    ],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-prepare-an-engagement-plan",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-create-awareness-and-communication"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Communicate benefit for stakeholders",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Clearly communicate the benefits of service co-production to your network of stakeholders and citizens.\r\nParticipants need to understand why their participation matters, what they can gain individually and as a group.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [
+                                        "ORG_PROBLEM_4"
+                                    ],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-create-awareness-and-communication",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-communicate-benefit-for-stakeholders"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Engage citizens in the co-production process",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Provide members of the public with the information they need to understand the project, the decision process, and also how public input can influence decisions, the design of the service and the way it is delivered. ",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [
+                                        "ORG_PROBLEM_10",
+                                        "ORG_PROBLEM_11"
+                                    ],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-communicate-benefit-for-stakeholders",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-engage-citizens-in-the-co-production-process"
+                                }
+                            ],
+                            "prerequisites": [
+                                {
+                                    "objective": "objective-identify-stakeholders",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-engage-stakeholders"
+                        },
+                        {
+                            "name_translations": {
+                                "en": "Define legal and ethical framework",
+                                "es": ""
+                            },
+                            "description_translations": {
+                                "en": "The complexity of legal regulations can sometime make it difficult for governments to take up ICTs to co-produce and can cause significant delays in the deployment of solutions.\r\nFollow the guidelines offered here to prepare the financial, technical, and legal agreements that ensure viability to your co-production project.",
+                                "es": ""
+                            },
+                            "problem_profiles": [],
+                            "tasks": [
+                                {
+                                    "name_translations": {
+                                        "en": "Define a non-disclosure agreement (NDA)",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "You should consider whether your collaborative network of stakeholders needs a formal  agreement for not disclosing the confidential information that is shared as part of co-producing a service together.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "reference": "objective-define-a-non-disclosure-agreement-nda"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Define a partnership agreement",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Participants should clearly understand their role in the co-production effort, their responsabilities, their rights. \r\nYou might wish to write down the terms and general plan for the collaboration, to give to the initiative a more formal structure, visibility and political support. \r\nGuidelines and examples of partnership agreements may help you decide which is the most suitable solution for your case.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [
+                                        "ORG_PROBLEM_7",
+                                        "ORG_PROBLEM_8"
+                                    ],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-define-a-non-disclosure-agreement-nda",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-define-a-partnership-agreement"
+                                }
+                            ],
+                            "prerequisites": [
+                                {
+                                    "objective": "objective-engage-stakeholders",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-define-legal-and-ethical-framework"
+                        },
+                        {
+                            "name_translations": {
+                                "en": "Define data management plan",
+                                "es": ""
+                            },
+                            "description_translations": {
+                                "en": "Make sure data that is collected and processed during the co-production process is managed according to the GDPR and EU best practices.\r\nPrepare a data management plan to guide you throughout the project life time and beyond.",
+                                "es": ""
+                            },
+                            "problem_profiles": [
+                                "ORG_PROBLEM_3",
+                                "ORG_PROBLEM_9"
+                            ],
+                            "tasks": [
+                                {
+                                    "name_translations": {
+                                        "en": "Clarify the purpose for data collection",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Which data will be collected during co-production? \r\nStart your data management plan by making an inventory of data sources and types.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "reference": "objective-clarify-the-purpose-for-data-collection"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Understand how the data flows",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "From whom and for which purpose is data accessed? \r\nUnderstand where data can be securely stored and whether data is to be further transferred.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-clarify-the-purpose-for-data-collection",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-understand-how-the-data-flows"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Be aware of data impact",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Consider which are users' and suppliers' preferences concerning data.\r\nReflect on aspects of ownership, minimalization, responsibility, sharing, archiving, anonymity.",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "objective": "objective-understand-how-the-data-flows",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "objective-be-aware-of-data-impact"
+                                }
+                            ],
+                            "prerequisites": [
+                                {
+                                    "objective": "objective-define-legal-and-ethical-framework",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-define-data-management-plan"
+                        }
+                    ],
+                    "reference": "phase-engage"
+                },
+                {
                     "prerequisites": [
                         "phase-design"
                     ],
@@ -1908,6 +1797,117 @@
                         }
                     ],
                     "reference": "phase-build"
+                },
+                {
+                    "prerequisites": [
+                        "phase-build"
+                    ],
+                    "name_translations": {
+                        "en": "Sustain",
+                        "es": ""
+                    },
+                    "description_translations": {
+                        "en": "",
+                        "es": ""
+                    },
+                    "objectives": [
+                        {
+                            "name_translations": {
+                                "en": "Handover",
+                                "es": ""
+                            },
+                            "description_translations": {
+                                "en": "",
+                                "es": ""
+                            },
+                            "problem_profiles": [],
+                            "tasks": [
+                                {
+                                    "name_translations": {
+                                        "en": "Handover",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [
+                                        "ORG_PROBLEM_7"
+                                    ],
+                                    "reference": "objective-handover"
+                                }
+                            ],
+                            "reference": "objective-handover"
+                        },
+                        {
+                            "name_translations": {
+                                "en": "Maintenance",
+                                "es": ""
+                            },
+                            "description_translations": {
+                                "en": "",
+                                "es": ""
+                            },
+                            "problem_profiles": [],
+                            "tasks": [
+                                {
+                                    "name_translations": {
+                                        "en": "Task distribution for maintenance, contracts regulation, data management archiving",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "reference": "objective-task-distribution-for-maintenance-contracts-regulation-data-management-archiving"
+                                }
+                            ],
+                            "prerequisites": [
+                                {
+                                    "objective": "objective-handover",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-maintenance"
+                        },
+                        {
+                            "name_translations": {
+                                "en": "Monitoring",
+                                "es": ""
+                            },
+                            "description_translations": {
+                                "en": "",
+                                "es": ""
+                            },
+                            "problem_profiles": [
+                                "UND_PROBLEM_3",
+                                "VAL_PROBLEM_5"
+                            ],
+                            "tasks": [
+                                {
+                                    "name_translations": {
+                                        "en": "Monitoring ongoing evaluation, periodic evaluations with stakeholders",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "",
+                                        "es": ""
+                                    },
+                                    "problem_profiles": [],
+                                    "reference": "objective-monitoring-ongoing-evaluation-periodic-evaluations-with-stakeholders"
+                                }
+                            ],
+                            "prerequisites": [
+                                {
+                                    "objective": "objective-maintenance",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-monitoring"
+                        }
+                    ],
+                    "reference": "phase-sustain"
                 }
             ]
         },
@@ -2076,6 +2076,57 @@
         "software": [
             {
                 "name_translations": {
+                    "en": "Collaborative editor",
+                    "es": ""
+                },
+                "description_translations": {
+                    "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus sapien, dapibus fringilla dolor sit amet, bibendum aliquam massa. Duis nec faucibus nunc. In sit amet vulputate justo. In dictum turpis eu dolor posuere vehicula. Sed turpis risus, vestibulum sed aliquam id, tempus nec dolor. Nulla facilisi. Suspendisse tempor pulvinar dignissim. Nulla dui ante, finibus in bibendum vel, dignissim nec risus. Nullam gravida nisi quis purus porttitor, sed hendrerit ante tristique. Donec eget augue vitae purus vehicula vehicula non sit amet lacus. Quisque porta nisi pharetra, fringilla felis id, porta arcu. Mauris vel elementum tortor. Ut sed magna id enim finibus molestie eu vitae leo. Mauris at sem elit. Fusce viverra accumsan orci et feugiat. Mauris ullamcorper molestie massa ac faucibus. Integer sit amet tellus tortor. Vivamus bibendum at libero at aliquet. Proin consectetur, erat et vulputate tincidunt, tortor quam euismod elit, id efficitur sem sapien tempus dolor. Aliquam a molestie risus. Nunc rutrum rutrum felis, in malesuada dolor porttitor nec. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc condimentum porta magna sed pharetra. In non quam dolor.",
+                    "es": ""
+                },
+                "tags": [
+                    "document",
+                    "collaborative",
+                    "editor",
+                    "etherpad"
+                ],
+                "difficulty": "easy",
+                "licence": "propietary",
+                "problem_profiles": [],
+                "related_interlinkers": [],
+                "constraints_and_limitations_translations": {
+                    "en": "Some text here",
+                    "es": ""
+                },
+                "regulations_and_standards_translations": {
+                    "en": "Optional text here",
+                    "es": ""
+                },
+                "supported_by": [
+                    "on_premise"
+                ],
+                "supports_internationalization": true,
+                "is_responsive": true,
+                "integration": {
+                    "domain": "",
+                    "path": "ceditor",
+                    "service_name": "ceditor",
+                    "is_subdomain": false,
+                    "api_path": "/assets",
+                    "auth_method": "cookie",
+                    "capabilities": {
+                        "instantiate": true,
+                        "clone": true,
+                        "view": true,
+                        "edit": false,
+                        "delete": true,
+                        "open_in_modal": false
+                    }
+                },
+                "logotype": "./interlinkers/software/ceditor/logo.jpeg",
+                "reference": "collaborative-editor"
+            },
+            {
+                "name_translations": {
                     "en": "Loomio",
                     "es": ""
                 },
@@ -2148,7 +2199,7 @@
             },
             {
                 "name_translations": {
-                    "en": "Collaborative editor",
+                    "en": "Survey creator",
                     "es": ""
                 },
                 "description_translations": {
@@ -2156,10 +2207,10 @@
                     "es": ""
                 },
                 "tags": [
-                    "document",
-                    "collaborative",
-                    "editor",
-                    "etherpad"
+                    "survey",
+                    "question",
+                    "poll",
+                    "vote"
                 ],
                 "difficulty": "easy",
                 "licence": "propietary",
@@ -2174,14 +2225,14 @@
                     "es": ""
                 },
                 "supported_by": [
-                    "on_premise"
+                    "saas"
                 ],
                 "supports_internationalization": true,
                 "is_responsive": true,
                 "integration": {
                     "domain": "",
-                    "path": "ceditor",
-                    "service_name": "ceditor",
+                    "path": "survey",
+                    "service_name": "survey",
                     "is_subdomain": false,
                     "api_path": "/assets",
                     "auth_method": "cookie",
@@ -2189,64 +2240,13 @@
                         "instantiate": true,
                         "clone": true,
                         "view": true,
-                        "edit": false,
+                        "edit": true,
                         "delete": true,
                         "open_in_modal": false
                     }
                 },
-                "logotype": "./interlinkers/software/ceditor/logo.jpeg",
-                "reference": "collaborative-editor"
-            },
-            {
-                "name_translations": {
-                    "en": "External resource manager",
-                    "es": ""
-                },
-                "description_translations": {
-                    "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus sapien, dapibus fringilla dolor sit amet, bibendum aliquam massa. Duis nec faucibus nunc. In sit amet vulputate justo. In dictum turpis eu dolor posuere vehicula. Sed turpis risus, vestibulum sed aliquam id, tempus nec dolor. Nulla facilisi. Suspendisse tempor pulvinar dignissim. Nulla dui ante, finibus in bibendum vel, dignissim nec risus. Nullam gravida nisi quis purus porttitor, sed hendrerit ante tristique. Donec eget augue vitae purus vehicula vehicula non sit amet lacus. Quisque porta nisi pharetra, fringilla felis id, porta arcu. Mauris vel elementum tortor. Ut sed magna id enim finibus molestie eu vitae leo. Mauris at sem elit. Fusce viverra accumsan orci et feugiat. Mauris ullamcorper molestie massa ac faucibus. Integer sit amet tellus tortor. Vivamus bibendum at libero at aliquet. Proin consectetur, erat et vulputate tincidunt, tortor quam euismod elit, id efficitur sem sapien tempus dolor. Aliquam a molestie risus. Nunc rutrum rutrum felis, in malesuada dolor porttitor nec. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc condimentum porta magna sed pharetra. In non quam dolor.",
-                    "es": ""
-                },
-                "tags": [
-                    "external",
-                    "link",
-                    "share",
-                    "report"
-                ],
-                "difficulty": "easy",
-                "licence": "propietary",
-                "problem_profiles": [],
-                "related_interlinkers": [],
-                "constraints_and_limitations_translations": {
-                    "en": "Some text here",
-                    "es": ""
-                },
-                "regulations_and_standards_translations": {
-                    "en": "Optional text here",
-                    "es": ""
-                },
-                "supported_by": [
-                    "on_premise"
-                ],
-                "supports_internationalization": true,
-                "is_responsive": true,
-                "integration": {
-                    "domain": "",
-                    "path": "externalresourcemanager",
-                    "service_name": "externalresourcemanager",
-                    "is_subdomain": false,
-                    "api_path": "/assets",
-                    "auth_method": "cookie",
-                    "capabilities": {
-                        "instantiate": true,
-                        "clone": true,
-                        "view": true,
-                        "edit": false,
-                        "delete": true,
-                        "open_in_modal": false
-                    }
-                },
-                "logotype": "./interlinkers/software/externalresourcemanager/logo.png",
-                "reference": "external-resource-manager"
+                "logotype": "./interlinkers/software/survey/logo.png",
+                "reference": "survey-creator"
             },
             {
                 "name_translations": {
@@ -2309,7 +2309,7 @@
             },
             {
                 "name_translations": {
-                    "en": "Survey creator",
+                    "en": "External resource manager",
                     "es": ""
                 },
                 "description_translations": {
@@ -2317,10 +2317,10 @@
                     "es": ""
                 },
                 "tags": [
-                    "survey",
-                    "question",
-                    "poll",
-                    "vote"
+                    "external",
+                    "link",
+                    "share",
+                    "report"
                 ],
                 "difficulty": "easy",
                 "licence": "propietary",
@@ -2335,14 +2335,14 @@
                     "es": ""
                 },
                 "supported_by": [
-                    "saas"
+                    "on_premise"
                 ],
                 "supports_internationalization": true,
                 "is_responsive": true,
                 "integration": {
                     "domain": "",
-                    "path": "survey",
-                    "service_name": "survey",
+                    "path": "externalresourcemanager",
+                    "service_name": "externalresourcemanager",
                     "is_subdomain": false,
                     "api_path": "/assets",
                     "auth_method": "cookie",
@@ -2350,16 +2350,71 @@
                         "instantiate": true,
                         "clone": true,
                         "view": true,
-                        "edit": true,
+                        "edit": false,
                         "delete": true,
                         "open_in_modal": false
                     }
                 },
-                "logotype": "./interlinkers/software/survey/logo.png",
-                "reference": "survey-creator"
+                "logotype": "./interlinkers/software/externalresourcemanager/logo.png",
+                "reference": "external-resource-manager"
             }
         ],
         "knowledge": [
+            {
+                "name_translations": {
+                    "en": "AgID Minimum Security Measures for Public Administration. ",
+                    "es": ""
+                },
+                "description_translations": {
+                    "en": "<p>This resource describes the minimum ICT security measures issued by AgID aim at countering the most frequent cyber threats to the Italian public administration.</p>",
+                    "es": ""
+                },
+                "tags": [
+                    "security"
+                ],
+                "difficulty": "difficult",
+                "targets": [
+                    "all"
+                ],
+                "licence": "permissive",
+                "problem_profiles": [
+                    "BUILD_PROBLEM_3"
+                ],
+                "types": [
+                    "enabling_services",
+                    "enabling_services;implementing_software_and_artifacts"
+                ],
+                "administrative_scopes": [
+                    "national",
+                    "local"
+                ],
+                "related_interlinkers": [],
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards_translations": {
+                    "en": "",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
+                    "es": ""
+                },
+                "instructions": "./interlinkers/knowledge/it-pa-minimum-security-measures/instructions.md",
+                "representations": [
+                    {
+                        "title": "",
+                        "description": "",
+                        "form": "guidelines",
+                        "format": "structured_format",
+                        "file": "./interlinkers/knowledge/it-pa-minimum-security-measures/data.json",
+                        "softwareinterlinker": "externalresourcemanager",
+                        "language": "en"
+                    }
+                ],
+                "reference": "agid-minimum-security-measures-for-public-administration"
+            },
             {
                 "name_translations": {
                     "en": " AgID guidelines for the development of secure software (in Italian)",
@@ -2417,16 +2472,16 @@
             },
             {
                 "name_translations": {
-                    "en": "EDPB Data Protection Guidelines",
+                    "en": "Cloud Enablement Kit (in Italian)",
                     "es": ""
                 },
                 "description_translations": {
-                    "en": "<p>These Guidelines give general guidance on the obligation of Data Protection by Design and by Default (henceforth \u201cDPbDD\u201d) set forth in Article 25 in the GDPR.</p>",
+                    "en": "<p>This resource describes the Cloud Enablement strategy outlined by AGID and Team Digitale (in Italian). </p>",
                     "es": ""
                 },
                 "tags": [
-                    "GDPR",
-                    "privacy",
+                    "cloud",
+                    "services",
                     "security"
                 ],
                 "difficulty": "difficult",
@@ -2442,7 +2497,6 @@
                     "enabling_services;implementing_software_and_artifacts"
                 ],
                 "administrative_scopes": [
-                    "eu",
                     "national",
                     "local"
                 ],
@@ -2452,141 +2506,26 @@
                     "es": ""
                 },
                 "regulations_and_standards_translations": {
-                    "en": "<ul><li>Article 70 (1e) of the Regulation 2016/679/EU of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC], (hereinafter \"GDPR\")</li> <li>EEA Agreement and in particular to Annex XI and Protocol 37 thereof, as amended by the Decision of the EEA joint Committee No 154/2018 of 6 July 2018,</li><li>Article 12 and Article 22 of its Rules of Procedure</li></ul>",
+                    "en": "",
                     "es": ""
                 },
                 "overview_text": {
-                    "en": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
+                    "en": "PDF document",
                     "es": ""
                 },
-                "instructions": "./interlinkers/knowledge/it-guidelines-data-protection/instructions.md",
+                "instructions": "./interlinkers/knowledge/it-cloud-enablement-kit/instructions.md",
                 "representations": [
                     {
                         "title": "",
                         "description": "",
                         "form": "guidelines",
                         "format": "pdf",
-                        "file": "./interlinkers/knowledge/it-guidelines-data-protection/data.json",
+                        "file": "./interlinkers/knowledge/it-cloud-enablement-kit/data.json",
                         "softwareinterlinker": "externalresourcemanager",
                         "language": "en"
                     }
                 ],
-                "reference": "edpb-data-protection-guidelines"
-            },
-            {
-                "name_translations": {
-                    "en": "Information Sheet Template",
-                    "es": ""
-                },
-                "description_translations": {
-                    "en": "<p>Template to guide the preparation of an information sheet to be distributed to participants to project activities. It provides background on research objectives.</p>",
-                    "es": ""
-                },
-                "tags": [
-                    "privacy management",
-                    "research activities",
-                    "co-production project participants",
-                    "INTERLINK"
-                ],
-                "difficulty": "very_easy",
-                "targets": [
-                    "all"
-                ],
-                "licence": "public_domain",
-                "problem_profiles": [
-                    "ORG_PROBLEM_14"
-                ],
-                "types": [
-                    "enhancing_services"
-                ],
-                "related_interlinkers": [
-                    "Consent Form Template"
-                ],
-                "administrative_scopes": [
-                    "eu"
-                ],
-                "domain": "",
-                "process": "",
-                "constraints_and_limitations_translations": {
-                    "en": "No special constraints apply",
-                    "es": ""
-                },
-                "regulations_and_standards_translations": {
-                    "en": "The information sheet is compliant to GDPR norms.",
-                    "es": ""
-                },
-                "overview_text": {
-                    "en": "This INTERLINKER is composed by a document that can be downloaded, printed and distributed to participants.",
-                    "es": ""
-                },
-                "instructions": "./interlinkers/knowledge/Information-Sheet-Template/instructions.md",
-                "representations": [
-                    {
-                        "title": "",
-                        "description": "",
-                        "form": "document_template",
-                        "format": "editable_source_document",
-                        "file": "./interlinkers/knowledge/Information-Sheet-Template/resource.docx",
-                        "softwareinterlinker": "googledrive",
-                        "language": "en"
-                    }
-                ],
-                "reference": "information-sheet-template"
-            },
-            {
-                "name_translations": {
-                    "en": "Open Source guides",
-                    "es": ""
-                },
-                "description_translations": {
-                    "en": "<p>A collection of resources for individuals, communities, and companies who want to learn how to run and contribute to an open source project.</p>",
-                    "es": ""
-                },
-                "tags": [
-                    "open source software"
-                ],
-                "difficulty": "very_easy",
-                "targets": [
-                    "all"
-                ],
-                "licence": "public_domain",
-                "problem_profiles": [
-                    "BUILD_PROBLEM_3"
-                ],
-                "types": [
-                    "enabling_services",
-                    "enabling_services;implementing_software_and_artifacts"
-                ],
-                "administrative_scopes": [
-                    "eu",
-                    "national",
-                    "local"
-                ],
-                "constraints_and_limitations_translations": {
-                    "en": "No special constraints apply",
-                    "es": ""
-                },
-                "regulations_and_standards_translations": {
-                    "en": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en",
-                    "es": ""
-                },
-                "overview_text": {
-                    "en": "Textual documents in the form of linked Web pages describing the guidelines and testing success criteria",
-                    "es": ""
-                },
-                "instructions": "https://opensource.guide/",
-                "representations": [
-                    {
-                        "title": "",
-                        "description": "",
-                        "form": "guidelines",
-                        "format": "structured_format",
-                        "file": "./interlinkers/knowledge/Opensource-Guide/data.json",
-                        "softwareinterlinker": "externalresourcemanager",
-                        "language": "en"
-                    }
-                ],
-                "reference": "open-source-guides"
+                "reference": "cloud-enablement-kit-in-italian"
             },
             {
                 "name_translations": {
@@ -2648,11 +2587,249 @@
             },
             {
                 "name_translations": {
-                    "en": "AgID Cloud computing migration strategy evalution template",
+                    "en": "Stakeholders Mapping Canvas",
                     "es": ""
                 },
                 "description_translations": {
-                    "en": "<p>This resource contains a questionnaire to check the cloud computing migration strategy  </p>",
+                    "en": "<p>This resource supports the identification and selection of the stakeholders to engage in a co-production team.</p>",
+                    "es": ""
+                },
+                "tags": [
+                    "stakeholders mapping",
+                    "canvas",
+                    "understand"
+                ],
+                "difficulty": "easy",
+                "targets": [
+                    "all"
+                ],
+                "licence": "public_domain",
+                "problem_profiles": [
+                    "UND_PROBLEM_2"
+                ],
+                "types": [
+                    "enhancing_services"
+                ],
+                "related_interlinkers": [
+                    "Stakeholders Mapping Guidelines",
+                    "Stakeholders Analysis Template"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "domain": "",
+                "process": "",
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards_translations": {
+                    "en": "",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "This INTERLINKER is composed by a PowerPoint scheleton that can be downloaded, customized and used to facilitate discussions for stakeholders mapping.",
+                    "es": ""
+                },
+                "instructions": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/instructions.md",
+                "representations": [
+                    {
+                        "title": "",
+                        "description": "",
+                        "form": "document_template",
+                        "format": "editable_source_document",
+                        "file": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/resource.pptx",
+                        "softwareinterlinker": "googledrive",
+                        "language": "en"
+                    }
+                ],
+                "reference": "stakeholders-mapping-canvas"
+            },
+            {
+                "name_translations": {
+                    "en": "Information Sheet for INTERLINK project",
+                    "es": ""
+                },
+                "description_translations": {
+                    "en": "<p>Information on the INTERLINK project to be distributed to participants. It provides background on research activities.</p>",
+                    "es": ""
+                },
+                "tags": [
+                    "privacy management",
+                    "research activities",
+                    "co-production project participants",
+                    "INTERLINK"
+                ],
+                "difficulty": "very_easy",
+                "targets": [
+                    "all"
+                ],
+                "licence": "public_domain",
+                "problem_profiles": [
+                    "ORG_PROBLEM_14"
+                ],
+                "types": [
+                    "enhancing_services"
+                ],
+                "related_interlinkers": [
+                    "Consent Form for INTERLINK project"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "domain": "",
+                "process": "",
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards_translations": {
+                    "en": "The information sheet is compliant to GDPR norms.",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "This INTERLINKER is composed by a document that can be downloaded, printed and distributed to participants.",
+                    "es": ""
+                },
+                "instructions": "./interlinkers/knowledge/Information-Sheet-INTERLINK/instructions.md",
+                "representations": [
+                    {
+                        "title": "",
+                        "description": "",
+                        "form": "document_template",
+                        "format": "editable_source_document",
+                        "file": "./interlinkers/knowledge/Information-Sheet-INTERLINK/resource.docx",
+                        "softwareinterlinker": "googledrive",
+                        "language": "en"
+                    }
+                ],
+                "reference": "information-sheet-for-interlink-project"
+            },
+            {
+                "name_translations": {
+                    "en": "EDPB Data Protection Guidelines",
+                    "es": ""
+                },
+                "description_translations": {
+                    "en": "<p>These Guidelines give general guidance on the obligation of Data Protection by Design and by Default (henceforth \u201cDPbDD\u201d) set forth in Article 25 in the GDPR.</p>",
+                    "es": ""
+                },
+                "tags": [
+                    "GDPR",
+                    "privacy",
+                    "security"
+                ],
+                "difficulty": "difficult",
+                "targets": [
+                    "all"
+                ],
+                "licence": "permissive",
+                "problem_profiles": [
+                    "BUILD_PROBLEM_3"
+                ],
+                "types": [
+                    "enabling_services",
+                    "enabling_services;implementing_software_and_artifacts"
+                ],
+                "administrative_scopes": [
+                    "eu",
+                    "national",
+                    "local"
+                ],
+                "related_interlinkers": [],
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards_translations": {
+                    "en": "<ul><li>Article 70 (1e) of the Regulation 2016/679/EU of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC], (hereinafter \"GDPR\")</li> <li>EEA Agreement and in particular to Annex XI and Protocol 37 thereof, as amended by the Decision of the EEA joint Committee No 154/2018 of 6 July 2018,</li><li>Article 12 and Article 22 of its Rules of Procedure</li></ul>",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
+                    "es": ""
+                },
+                "instructions": "./interlinkers/knowledge/it-guidelines-data-protection/instructions.md",
+                "representations": [
+                    {
+                        "title": "",
+                        "description": "",
+                        "form": "guidelines",
+                        "format": "pdf",
+                        "file": "./interlinkers/knowledge/it-guidelines-data-protection/data.json",
+                        "softwareinterlinker": "externalresourcemanager",
+                        "language": "en"
+                    }
+                ],
+                "reference": "edpb-data-protection-guidelines"
+            },
+            {
+                "name_translations": {
+                    "en": "Consent Form Template",
+                    "es": ""
+                },
+                "description_translations": {
+                    "en": "<p>Template to prepare a form to collect consent from participants engaged in research activities about the use of their personal data</p>",
+                    "es": ""
+                },
+                "tags": [
+                    "privacy management",
+                    "research activities",
+                    "co-production project participants",
+                    "INTERLINK"
+                ],
+                "difficulty": "very_easy",
+                "targets": [
+                    "all"
+                ],
+                "licence": "public_domain",
+                "problem_profiles": [
+                    "ORG_PROBLEM_14"
+                ],
+                "types": [
+                    "enhancing_services"
+                ],
+                "related_interlinkers": [
+                    "Information Sheet Template"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "domain": "",
+                "process": "",
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards_translations": {
+                    "en": "The consent form is compliant to GDPR norms.",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "This INTERLINKER is composed by a document that can be downloaded, printed and distributed to participants.",
+                    "es": ""
+                },
+                "instructions": "./interlinkers/knowledge/Consent-Form-Template/instructions.md",
+                "representations": [
+                    {
+                        "title": "",
+                        "description": "",
+                        "form": "document_template",
+                        "format": "editable_source_document",
+                        "file": "./interlinkers/knowledge/Consent-Form-Template/resource.docx",
+                        "softwareinterlinker": "googledrive",
+                        "language": "en"
+                    }
+                ],
+                "reference": "consent-form-template"
+            },
+            {
+                "name_translations": {
+                    "en": "AgID Cloud computing competence evalution template",
+                    "es": ""
+                },
+                "description_translations": {
+                    "en": "<p>This resource contains a questionnaire to check the level of knowledge and competence in cloud computing </p>",
                     "es": ""
                 },
                 "tags": [
@@ -2701,7 +2878,180 @@
                         "language": "en"
                     }
                 ],
-                "reference": "agid-cloud-computing-migration-strategy-evalution-template"
+                "reference": "agid-cloud-computing-competence-evalution-template"
+            },
+            {
+                "name_translations": {
+                    "en": "Guidelines on the acquisition and reuse of software for public administrations",
+                    "es": ""
+                },
+                "description_translations": {
+                    "en": "<p>This resource aims at explaining how to acquire and reuse software in PA context.</p>",
+                    "es": ""
+                },
+                "tags": [
+                    "open source",
+                    "public administration",
+                    "reuse",
+                    "acquisition"
+                ],
+                "difficulty": "difficult",
+                "targets": [
+                    "all"
+                ],
+                "licence": "permissive",
+                "problem_profiles": [
+                    "BUILD_PROBLEM_3"
+                ],
+                "types": [
+                    "enabling_services",
+                    "enabling_services;implementing_software_and_artifacts"
+                ],
+                "administrative_scopes": [
+                    "national",
+                    "local"
+                ],
+                "related_interlinkers": [],
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards_translations": {
+                    "en": "",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
+                    "es": ""
+                },
+                "instructions": "./interlinkers/knowledge/it-guidelines_acquiring_reuse_sw_pa/instructions.md",
+                "representations": [
+                    {
+                        "title": "",
+                        "description": "",
+                        "form": "guidelines",
+                        "format": "structured_format",
+                        "file": "./interlinkers/knowledge/it-guidelines_acquiring_reuse_sw_pa/data.json",
+                        "softwareinterlinker": "externalresourcemanager",
+                        "language": "en"
+                    }
+                ],
+                "reference": "guidelines-on-the-acquisition-and-reuse-of-software-for-public-administrations"
+            },
+            {
+                "name_translations": {
+                    "en": "Italian PA interoperablity model ",
+                    "es": ""
+                },
+                "description_translations": {
+                    "en": "<p>This resource describes the guidelines for technical interoperability for PA and related operational documents: interaction patterns, interoperability profiles, implementation recommendations (in Italian). </p>",
+                    "es": ""
+                },
+                "tags": [
+                    "open source",
+                    "software",
+                    "interoperability",
+                    "public administration",
+                    "reuse",
+                    "acquisition"
+                ],
+                "difficulty": "difficult",
+                "targets": [
+                    "all"
+                ],
+                "licence": "permissive",
+                "problem_profiles": [
+                    "BUILD_PROBLEM_3"
+                ],
+                "types": [
+                    "enabling_services",
+                    "enabling_services;implementing_software_and_artifacts"
+                ],
+                "administrative_scopes": [
+                    "national",
+                    "local"
+                ],
+                "related_interlinkers": [],
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards_translations": {
+                    "en": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
+                    "es": ""
+                },
+                "instructions": "./interlinkers/knowledge/it-guidelines-data-protection/instructions.md",
+                "representations": [
+                    {
+                        "title": "",
+                        "description": "",
+                        "form": "guidelines",
+                        "format": "structured_format",
+                        "file": "./interlinkers/knowledge/it-guidelines-data-protection/data.json",
+                        "softwareinterlinker": "externalresourcemanager",
+                        "language": "en"
+                    }
+                ],
+                "reference": "italian-pa-interoperablity-model"
+            },
+            {
+                "name_translations": {
+                    "en": "Open Source guides",
+                    "es": ""
+                },
+                "description_translations": {
+                    "en": "<p>A collection of resources for individuals, communities, and companies who want to learn how to run and contribute to an open source project.</p>",
+                    "es": ""
+                },
+                "tags": [
+                    "open source software"
+                ],
+                "difficulty": "very_easy",
+                "targets": [
+                    "all"
+                ],
+                "licence": "public_domain",
+                "problem_profiles": [
+                    "BUILD_PROBLEM_3"
+                ],
+                "types": [
+                    "enabling_services",
+                    "enabling_services;implementing_software_and_artifacts"
+                ],
+                "administrative_scopes": [
+                    "eu",
+                    "national",
+                    "local"
+                ],
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards_translations": {
+                    "en": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "Textual documents in the form of linked Web pages describing the guidelines and testing success criteria",
+                    "es": ""
+                },
+                "instructions": "https://opensource.guide/",
+                "representations": [
+                    {
+                        "title": "",
+                        "description": "",
+                        "form": "guidelines",
+                        "format": "structured_format",
+                        "file": "./interlinkers/knowledge/Opensource-Guide/data.json",
+                        "softwareinterlinker": "externalresourcemanager",
+                        "language": "en"
+                    }
+                ],
+                "reference": "open-source-guides"
             },
             {
                 "name_translations": {
@@ -2764,63 +3114,6 @@
             },
             {
                 "name_translations": {
-                    "en": "AgID Cloud computing competence evalution template",
-                    "es": ""
-                },
-                "description_translations": {
-                    "en": "<p>This resource contains a questionnaire to check the level of knowledge and competence in cloud computing </p>",
-                    "es": ""
-                },
-                "tags": [
-                    "cloud",
-                    "services",
-                    "security"
-                ],
-                "difficulty": "medium",
-                "targets": [
-                    "all"
-                ],
-                "licence": "permissive",
-                "problem_profiles": [
-                    "BUILD_PROBLEM_3"
-                ],
-                "types": [
-                    "enabling_services",
-                    "enabling_services;implementing_software_and_artifacts"
-                ],
-                "administrative_scopes": [
-                    "national",
-                    "local"
-                ],
-                "related_interlinkers": [],
-                "constraints_and_limitations_translations": {
-                    "en": "No special constraints apply",
-                    "es": ""
-                },
-                "regulations_and_standards_translations": {
-                    "en": "",
-                    "es": ""
-                },
-                "overview_text": {
-                    "en": "Questionaire in google calc format",
-                    "es": ""
-                },
-                "instructions": "./interlinkers/knowledge/it-cloud-competences-assesment/instructions.md",
-                "representations": [
-                    {
-                        "title": "",
-                        "description": "",
-                        "form": "guidelines",
-                        "format": "editable_source_document",
-                        "file": "./interlinkers/knowledge/it-cloud-competences-assesment/data.json",
-                        "softwareinterlinker": "externalresourcemanager",
-                        "language": "en"
-                    }
-                ],
-                "reference": "agid-cloud-computing-competence-evalution-template"
-            },
-            {
-                "name_translations": {
                     "en": "Focus Group Template Co-production Investigation",
                     "es": ""
                 },
@@ -2880,63 +3173,62 @@
             },
             {
                 "name_translations": {
-                    "en": "Italian PA interoperablity model ",
+                    "en": "Business Model Canvas",
                     "es": ""
                 },
                 "description_translations": {
-                    "en": "<p>This resource describes the guidelines for technical interoperability for PA and related operational documents: interaction patterns, interoperability profiles, implementation recommendations (in Italian). </p>",
+                    "en": "This canvas can be used collaboratively, for instance, during a brainstorming or a focus group, to reflect on the the most suitable business model associated to a co-produced service.",
                     "es": ""
                 },
                 "tags": [
-                    "open source",
-                    "software",
-                    "interoperability",
-                    "public administration",
-                    "reuse",
-                    "acquisition"
+                    "model",
+                    "canvas",
+                    "business"
                 ],
-                "difficulty": "difficult",
+                "difficulty": "easy",
                 "targets": [
                     "all"
                 ],
-                "licence": "permissive",
+                "licence": "public_domain",
                 "problem_profiles": [
-                    "BUILD_PROBLEM_3"
+                    "SUS_PROBLEM_1"
                 ],
                 "types": [
-                    "enabling_services",
-                    "enabling_services;implementing_software_and_artifacts"
+                    "enhancing_services"
+                ],
+                "related_interlinkers": [
+                    "Business Plan Template"
                 ],
                 "administrative_scopes": [
-                    "national",
-                    "local"
+                    "eu"
                 ],
-                "related_interlinkers": [],
+                "domain": "",
+                "process": "",
                 "constraints_and_limitations_translations": {
                     "en": "No special constraints apply",
                     "es": ""
                 },
                 "regulations_and_standards_translations": {
-                    "en": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en",
+                    "en": "",
                     "es": ""
                 },
                 "overview_text": {
-                    "en": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
+                    "en": "This INTERLINKER is composed by a PowerPoint scheleton that can be downloaded, customized and used to facilitate discussions for business models.",
                     "es": ""
                 },
-                "instructions": "./interlinkers/knowledge/it-guidelines-data-protection/instructions.md",
+                "instructions": "./interlinkers/knowledge/Business-Model-Canvas/instructions.md",
                 "representations": [
                     {
                         "title": "",
                         "description": "",
-                        "form": "guidelines",
-                        "format": "structured_format",
-                        "file": "./interlinkers/knowledge/it-guidelines-data-protection/data.json",
-                        "softwareinterlinker": "externalresourcemanager",
+                        "form": "document_template",
+                        "format": "editable_source_document",
+                        "file": "./interlinkers/knowledge/Business-Model-Canvas/resource.pptx",
+                        "softwareinterlinker": "googledrive",
                         "language": "en"
                     }
                 ],
-                "reference": "italian-pa-interoperablity-model"
+                "reference": "business-model-canvas"
             },
             {
                 "name_translations": {
@@ -3002,355 +3294,6 @@
             },
             {
                 "name_translations": {
-                    "en": "Business Model Canvas",
-                    "es": ""
-                },
-                "description_translations": {
-                    "en": "This canvas can be used collaboratively, for instance, during a brainstorming or a focus group, to reflect on the the most suitable business model associated to a co-produced service.",
-                    "es": ""
-                },
-                "tags": [
-                    "model",
-                    "canvas",
-                    "business"
-                ],
-                "difficulty": "easy",
-                "targets": [
-                    "all"
-                ],
-                "licence": "public_domain",
-                "problem_profiles": [
-                    "SUS_PROBLEM_1"
-                ],
-                "types": [
-                    "enhancing_services"
-                ],
-                "related_interlinkers": [
-                    "Business Plan Template"
-                ],
-                "administrative_scopes": [
-                    "eu"
-                ],
-                "domain": "",
-                "process": "",
-                "constraints_and_limitations_translations": {
-                    "en": "No special constraints apply",
-                    "es": ""
-                },
-                "regulations_and_standards_translations": {
-                    "en": "",
-                    "es": ""
-                },
-                "overview_text": {
-                    "en": "This INTERLINKER is composed by a PowerPoint scheleton that can be downloaded, customized and used to facilitate discussions for business models.",
-                    "es": ""
-                },
-                "instructions": "./interlinkers/knowledge/Business-Model-Canvas/instructions.md",
-                "representations": [
-                    {
-                        "title": "",
-                        "description": "",
-                        "form": "document_template",
-                        "format": "editable_source_document",
-                        "file": "./interlinkers/knowledge/Business-Model-Canvas/resource.pptx",
-                        "softwareinterlinker": "googledrive",
-                        "language": "en"
-                    }
-                ],
-                "reference": "business-model-canvas"
-            },
-            {
-                "name_translations": {
-                    "en": "Guidelines on the acquisition and reuse of software for public administrations",
-                    "es": ""
-                },
-                "description_translations": {
-                    "en": "<p>This resource aims at explaining how to acquire and reuse software in PA context.</p>",
-                    "es": ""
-                },
-                "tags": [
-                    "open source",
-                    "public administration",
-                    "reuse",
-                    "acquisition"
-                ],
-                "difficulty": "difficult",
-                "targets": [
-                    "all"
-                ],
-                "licence": "permissive",
-                "problem_profiles": [
-                    "BUILD_PROBLEM_3"
-                ],
-                "types": [
-                    "enabling_services",
-                    "enabling_services;implementing_software_and_artifacts"
-                ],
-                "administrative_scopes": [
-                    "national",
-                    "local"
-                ],
-                "related_interlinkers": [],
-                "constraints_and_limitations_translations": {
-                    "en": "No special constraints apply",
-                    "es": ""
-                },
-                "regulations_and_standards_translations": {
-                    "en": "",
-                    "es": ""
-                },
-                "overview_text": {
-                    "en": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
-                    "es": ""
-                },
-                "instructions": "./interlinkers/knowledge/it-guidelines_acquiring_reuse_sw_pa/instructions.md",
-                "representations": [
-                    {
-                        "title": "",
-                        "description": "",
-                        "form": "guidelines",
-                        "format": "structured_format",
-                        "file": "./interlinkers/knowledge/it-guidelines_acquiring_reuse_sw_pa/data.json",
-                        "softwareinterlinker": "externalresourcemanager",
-                        "language": "en"
-                    }
-                ],
-                "reference": "guidelines-on-the-acquisition-and-reuse-of-software-for-public-administrations"
-            },
-            {
-                "name_translations": {
-                    "en": "Stakeholders Mapping Canvas",
-                    "es": ""
-                },
-                "description_translations": {
-                    "en": "<p>This resource supports the identification and selection of the stakeholders to engage in a co-production team.</p>",
-                    "es": ""
-                },
-                "tags": [
-                    "stakeholders mapping",
-                    "canvas",
-                    "understand"
-                ],
-                "difficulty": "easy",
-                "targets": [
-                    "all"
-                ],
-                "licence": "public_domain",
-                "problem_profiles": [
-                    "UND_PROBLEM_2"
-                ],
-                "types": [
-                    "enhancing_services"
-                ],
-                "related_interlinkers": [
-                    "Stakeholders Mapping Guidelines",
-                    "Stakeholders Analysis Template"
-                ],
-                "administrative_scopes": [
-                    "eu"
-                ],
-                "domain": "",
-                "process": "",
-                "constraints_and_limitations_translations": {
-                    "en": "No special constraints apply",
-                    "es": ""
-                },
-                "regulations_and_standards_translations": {
-                    "en": "",
-                    "es": ""
-                },
-                "overview_text": {
-                    "en": "This INTERLINKER is composed by a PowerPoint scheleton that can be downloaded, customized and used to facilitate discussions for stakeholders mapping.",
-                    "es": ""
-                },
-                "instructions": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/instructions.md",
-                "representations": [
-                    {
-                        "title": "",
-                        "description": "",
-                        "form": "document_template",
-                        "format": "editable_source_document",
-                        "file": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/resource.pptx",
-                        "softwareinterlinker": "googledrive",
-                        "language": "en"
-                    }
-                ],
-                "reference": "stakeholders-mapping-canvas"
-            },
-            {
-                "name_translations": {
-                    "en": "Cloud Enablement Kit (in Italian)",
-                    "es": ""
-                },
-                "description_translations": {
-                    "en": "<p>This resource describes the Cloud Enablement strategy outlined by AGID and Team Digitale (in Italian). </p>",
-                    "es": ""
-                },
-                "tags": [
-                    "cloud",
-                    "services",
-                    "security"
-                ],
-                "difficulty": "difficult",
-                "targets": [
-                    "all"
-                ],
-                "licence": "permissive",
-                "problem_profiles": [
-                    "BUILD_PROBLEM_3"
-                ],
-                "types": [
-                    "enabling_services",
-                    "enabling_services;implementing_software_and_artifacts"
-                ],
-                "administrative_scopes": [
-                    "national",
-                    "local"
-                ],
-                "related_interlinkers": [],
-                "constraints_and_limitations_translations": {
-                    "en": "No special constraints apply",
-                    "es": ""
-                },
-                "regulations_and_standards_translations": {
-                    "en": "",
-                    "es": ""
-                },
-                "overview_text": {
-                    "en": "PDF document",
-                    "es": ""
-                },
-                "instructions": "./interlinkers/knowledge/it-cloud-enablement-kit/instructions.md",
-                "representations": [
-                    {
-                        "title": "",
-                        "description": "",
-                        "form": "guidelines",
-                        "format": "pdf",
-                        "file": "./interlinkers/knowledge/it-cloud-enablement-kit/data.json",
-                        "softwareinterlinker": "externalresourcemanager",
-                        "language": "en"
-                    }
-                ],
-                "reference": "cloud-enablement-kit-in-italian"
-            },
-            {
-                "name_translations": {
-                    "en": "Consent Form Template",
-                    "es": ""
-                },
-                "description_translations": {
-                    "en": "<p>Template to prepare a form to collect consent from participants engaged in research activities about the use of their personal data</p>",
-                    "es": ""
-                },
-                "tags": [
-                    "privacy management",
-                    "research activities",
-                    "co-production project participants",
-                    "INTERLINK"
-                ],
-                "difficulty": "very_easy",
-                "targets": [
-                    "all"
-                ],
-                "licence": "public_domain",
-                "problem_profiles": [
-                    "ORG_PROBLEM_14"
-                ],
-                "types": [
-                    "enhancing_services"
-                ],
-                "related_interlinkers": [
-                    "Information Sheet Template"
-                ],
-                "administrative_scopes": [
-                    "eu"
-                ],
-                "domain": "",
-                "process": "",
-                "constraints_and_limitations_translations": {
-                    "en": "No special constraints apply",
-                    "es": ""
-                },
-                "regulations_and_standards_translations": {
-                    "en": "The consent form is compliant to GDPR norms.",
-                    "es": ""
-                },
-                "overview_text": {
-                    "en": "This INTERLINKER is composed by a document that can be downloaded, printed and distributed to participants.",
-                    "es": ""
-                },
-                "instructions": "./interlinkers/knowledge/Consent-Form-Template/instructions.md",
-                "representations": [
-                    {
-                        "title": "",
-                        "description": "",
-                        "form": "document_template",
-                        "format": "editable_source_document",
-                        "file": "./interlinkers/knowledge/Consent-Form-Template/resource.docx",
-                        "softwareinterlinker": "googledrive",
-                        "language": "en"
-                    }
-                ],
-                "reference": "consent-form-template"
-            },
-            {
-                "name_translations": {
-                    "en": "AgID Minimum Security Measures for Public Administration. ",
-                    "es": ""
-                },
-                "description_translations": {
-                    "en": "<p>This resource describes the minimum ICT security measures issued by AgID aim at countering the most frequent cyber threats to the Italian public administration.</p>",
-                    "es": ""
-                },
-                "tags": [
-                    "security"
-                ],
-                "difficulty": "difficult",
-                "targets": [
-                    "all"
-                ],
-                "licence": "permissive",
-                "problem_profiles": [
-                    "BUILD_PROBLEM_3"
-                ],
-                "types": [
-                    "enabling_services",
-                    "enabling_services;implementing_software_and_artifacts"
-                ],
-                "administrative_scopes": [
-                    "national",
-                    "local"
-                ],
-                "related_interlinkers": [],
-                "constraints_and_limitations_translations": {
-                    "en": "No special constraints apply",
-                    "es": ""
-                },
-                "regulations_and_standards_translations": {
-                    "en": "",
-                    "es": ""
-                },
-                "overview_text": {
-                    "en": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
-                    "es": ""
-                },
-                "instructions": "./interlinkers/knowledge/it-pa-minimum-security-measures/instructions.md",
-                "representations": [
-                    {
-                        "title": "",
-                        "description": "",
-                        "form": "guidelines",
-                        "format": "structured_format",
-                        "file": "./interlinkers/knowledge/it-pa-minimum-security-measures/data.json",
-                        "softwareinterlinker": "externalresourcemanager",
-                        "language": "en"
-                    }
-                ],
-                "reference": "agid-minimum-security-measures-for-public-administration"
-            },
-            {
-                "name_translations": {
                     "en": "Consent Form for INTERLINK project",
                     "es": ""
                 },
@@ -3411,11 +3354,11 @@
             },
             {
                 "name_translations": {
-                    "en": "Information Sheet for INTERLINK project",
+                    "en": "Information Sheet Template",
                     "es": ""
                 },
                 "description_translations": {
-                    "en": "<p>Information on the INTERLINK project to be distributed to participants. It provides background on research activities.</p>",
+                    "en": "<p>Template to guide the preparation of an information sheet to be distributed to participants to project activities. It provides background on research objectives.</p>",
                     "es": ""
                 },
                 "tags": [
@@ -3436,7 +3379,7 @@
                     "enhancing_services"
                 ],
                 "related_interlinkers": [
-                    "Consent Form for INTERLINK project"
+                    "Consent Form Template"
                 ],
                 "administrative_scopes": [
                     "eu"
@@ -3455,19 +3398,76 @@
                     "en": "This INTERLINKER is composed by a document that can be downloaded, printed and distributed to participants.",
                     "es": ""
                 },
-                "instructions": "./interlinkers/knowledge/Information-Sheet-INTERLINK/instructions.md",
+                "instructions": "./interlinkers/knowledge/Information-Sheet-Template/instructions.md",
                 "representations": [
                     {
                         "title": "",
                         "description": "",
                         "form": "document_template",
                         "format": "editable_source_document",
-                        "file": "./interlinkers/knowledge/Information-Sheet-INTERLINK/resource.docx",
+                        "file": "./interlinkers/knowledge/Information-Sheet-Template/resource.docx",
                         "softwareinterlinker": "googledrive",
                         "language": "en"
                     }
                 ],
-                "reference": "information-sheet-for-interlink-project"
+                "reference": "information-sheet-template"
+            },
+            {
+                "name_translations": {
+                    "en": "AgID Cloud computing migration strategy evalution template",
+                    "es": ""
+                },
+                "description_translations": {
+                    "en": "<p>This resource contains a questionnaire to check the cloud computing migration strategy  </p>",
+                    "es": ""
+                },
+                "tags": [
+                    "cloud",
+                    "services",
+                    "security"
+                ],
+                "difficulty": "medium",
+                "targets": [
+                    "all"
+                ],
+                "licence": "permissive",
+                "problem_profiles": [
+                    "BUILD_PROBLEM_3"
+                ],
+                "types": [
+                    "enabling_services",
+                    "enabling_services;implementing_software_and_artifacts"
+                ],
+                "administrative_scopes": [
+                    "national",
+                    "local"
+                ],
+                "related_interlinkers": [],
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards_translations": {
+                    "en": "",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "Questionaire in google calc format",
+                    "es": ""
+                },
+                "instructions": "./interlinkers/knowledge/it-cloud-competences-assesment/instructions.md",
+                "representations": [
+                    {
+                        "title": "",
+                        "description": "",
+                        "form": "guidelines",
+                        "format": "editable_source_document",
+                        "file": "./interlinkers/knowledge/it-cloud-competences-assesment/data.json",
+                        "softwareinterlinker": "externalresourcemanager",
+                        "language": "en"
+                    }
+                ],
+                "reference": "agid-cloud-computing-migration-strategy-evalution-template"
             }
         ]
     }
