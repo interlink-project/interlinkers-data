@@ -31,6 +31,7 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
     const [loadingInstantiator, setLoadingInstantiator] = useState(true);
     const [activeStep, _setActiveStep] = useState(0);
     const [result, setResult] = useState(null);
+    const [link, setLink] = useState("");
 
     const handleClose = () => {
         setOpen(false);
@@ -74,6 +75,7 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
             console.log("RECEIVED MESSAGE", event.origin, event, code, data)
             //task_id, interlinker_id, external_id
             const coproduction_response = await onAssetCreate(data, selectedInterlinker.id)
+            setLink(coproduction_response.link)
             // TODO: if fails
             const interlinker_response = await axiosInstance.get(coproduction_response.link)
             onFinish(interlinker_response.data)
@@ -220,7 +222,7 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
                             color='primary'
                             variant='contained'
                             onClick={() => {
-                                window.open(result.viewLink, "_blank")
+                                window.open(link + "/view", "_blank")
                                 handleClose()
                             }}
                         >

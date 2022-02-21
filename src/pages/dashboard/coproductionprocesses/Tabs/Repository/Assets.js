@@ -56,7 +56,7 @@ const Asset = ({ asset }) => {
     <ListItemText>{text}</ListItemText>
   </MenuItem>
 
-  return data ? <ListItem button onClick={() => window.open(data.viewLink, "_blank")} >
+  return data ? <ListItem button onClick={() => window.open(asset.link + "/view", "_blank")} >
     <ListItemAvatar>
       <Avatar aria-label="icon" src={data.icon} sx={{ width: 30, height: 30 }} />
     </ListItemAvatar>
