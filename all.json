@@ -2076,6 +2076,55 @@
         "software": [
             {
                 "name_translations": {
+                    "en": "Collaborative editor",
+                    "es": ""
+                },
+                "description_translations": {
+                    "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus sapien, dapibus fringilla dolor sit amet, bibendum aliquam massa. Duis nec faucibus nunc. In sit amet vulputate justo. In dictum turpis eu dolor posuere vehicula. Sed turpis risus, vestibulum sed aliquam id, tempus nec dolor. Nulla facilisi. Suspendisse tempor pulvinar dignissim. Nulla dui ante, finibus in bibendum vel, dignissim nec risus. Nullam gravida nisi quis purus porttitor, sed hendrerit ante tristique. Donec eget augue vitae purus vehicula vehicula non sit amet lacus. Quisque porta nisi pharetra, fringilla felis id, porta arcu. Mauris vel elementum tortor. Ut sed magna id enim finibus molestie eu vitae leo. Mauris at sem elit. Fusce viverra accumsan orci et feugiat. Mauris ullamcorper molestie massa ac faucibus. Integer sit amet tellus tortor. Vivamus bibendum at libero at aliquet. Proin consectetur, erat et vulputate tincidunt, tortor quam euismod elit, id efficitur sem sapien tempus dolor. Aliquam a molestie risus. Nunc rutrum rutrum felis, in malesuada dolor porttitor nec. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc condimentum porta magna sed pharetra. In non quam dolor.",
+                    "es": ""
+                },
+                "tags": [
+                    "document",
+                    "collaborative",
+                    "editor",
+                    "etherpad"
+                ],
+                "difficulty": "easy",
+                "licence": "propietary",
+                "problem_profiles": [],
+                "related_interlinkers": [],
+                "constraints_and_limitations_translations": {
+                    "en": "Some text here",
+                    "es": ""
+                },
+                "regulations_and_standards_translations": {
+                    "en": "Optional text here",
+                    "es": ""
+                },
+                "supported_by": "installed_app",
+                "auth_method": "cookie",
+                "supports_internationalization": true,
+                "endpoint": {
+                    "domain": "",
+                    "path": "ceditor",
+                    "is_subdomain": false,
+                    "service_name": "ceditor",
+                    "api_path": "/assets"
+                },
+                "capabilities": {
+                    "instantiate": true,
+                    "clone": true,
+                    "view": true,
+                    "edit": false,
+                    "delete": true
+                },
+                "is_responsive": true,
+                "open_in_modal": false,
+                "logotype": "./interlinkers/software/ceditor/logo.jpeg",
+                "reference": "collaborative-editor"
+            },
+            {
+                "name_translations": {
                     "en": "Loomio",
                     "es": ""
                 },
@@ -2146,58 +2195,6 @@
             },
             {
                 "name_translations": {
-                    "en": "Collaborative editor",
-                    "es": ""
-                },
-                "description_translations": {
-                    "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus sapien, dapibus fringilla dolor sit amet, bibendum aliquam massa. Duis nec faucibus nunc. In sit amet vulputate justo. In dictum turpis eu dolor posuere vehicula. Sed turpis risus, vestibulum sed aliquam id, tempus nec dolor. Nulla facilisi. Suspendisse tempor pulvinar dignissim. Nulla dui ante, finibus in bibendum vel, dignissim nec risus. Nullam gravida nisi quis purus porttitor, sed hendrerit ante tristique. Donec eget augue vitae purus vehicula vehicula non sit amet lacus. Quisque porta nisi pharetra, fringilla felis id, porta arcu. Mauris vel elementum tortor. Ut sed magna id enim finibus molestie eu vitae leo. Mauris at sem elit. Fusce viverra accumsan orci et feugiat. Mauris ullamcorper molestie massa ac faucibus. Integer sit amet tellus tortor. Vivamus bibendum at libero at aliquet. Proin consectetur, erat et vulputate tincidunt, tortor quam euismod elit, id efficitur sem sapien tempus dolor. Aliquam a molestie risus. Nunc rutrum rutrum felis, in malesuada dolor porttitor nec. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc condimentum porta magna sed pharetra. In non quam dolor.",
-                    "es": ""
-                },
-                "tags": [
-                    "document",
-                    "collaborative",
-                    "editor",
-                    "etherpad"
-                ],
-                "difficulty": "easy",
-                "licence": "propietary",
-                "problem_profiles": [],
-                "related_interlinkers": [],
-                "constraints_and_limitations_translations": {
-                    "en": "Some text here",
-                    "es": ""
-                },
-                "overview_text": {
-                    "en": "Web-based tool for collaborative decision making, discussion. and idea management",
-                    "es": ""
-                },
-                "supported_by": "on_premise",
-                "auth_method": "header",
-                "deployment_manual": "https://github.com/interlink-project/interlink-loomio",
-                "user_manual": "https://help.loomio.org/en/user_manual/",
-                "developer_manual": "https://github.com/loomio/loomio",
-                "supports_internationalization": true,
-                "is_responsive": true,
-                "open_in_modal": false,
-                "endpoint": {
-                    "domain": "",
-                    "path": "ceditor",
-                    "is_subdomain": false,
-                    "service_name": "ceditor",
-                    "api_path": "/assets"
-                },
-                "capabilities": {
-                    "instantiate": true,
-                    "clone": false,
-                    "view": true,
-                    "edit": true,
-                    "delete": true
-                },
-                "logotype": "./interlinkers/software/loomio/logo.png",
-                "reference": "loomio"
-            },
-            {
-                "name_translations": {
                     "en": "Survey creator",
                     "es": ""
                 },
@@ -2231,8 +2228,8 @@
                 "endpoint": {
                     "domain": "",
                     "path": "survey",
+                    "service_name": "survey",
                     "is_subdomain": false,
-                    "service_name": "externalresourcemanager",
                     "api_path": "/assets"
                 },
                 "capabilities": {
@@ -2304,7 +2301,7 @@
             },
             {
                 "name_translations": {
-                    "en": "Survey creator",
+                    "en": "External resource manager",
                     "es": ""
                 },
                 "description_translations": {
@@ -2336,9 +2333,9 @@
                 "open_in_modal": true,
                 "endpoint": {
                     "domain": "",
-                    "path": "survey",
-                    "service_name": "survey",
+                    "path": "externalresourcemanager",
                     "is_subdomain": false,
+                    "service_name": "externalresourcemanager",
                     "api_path": "/assets"
                 },
                 "capabilities": {
@@ -2355,11 +2352,11 @@
         "knowledge": [
             {
                 "name_translations": {
-                    "en": " AgID guidelines for the development of secure software (in Italian)",
+                    "en": "AgID Minimum Security Measures for Public Administration. ",
                     "es": ""
                 },
                 "description_translations": {
-                    "en": "<p>This resource describes the guidelines for the development of secure software in the public administration</p>",
+                    "en": "<p>This resource describes the minimum ICT security measures issued by AgID aim at countering the most frequent cyber threats to the Italian public administration.</p>",
                     "es": ""
                 },
                 "tags": [
@@ -2410,11 +2407,11 @@
             },
             {
                 "name_translations": {
-                    "en": "EDPB Data Protection Guidelines",
+                    "en": " AgID guidelines for the development of secure software (in Italian)",
                     "es": ""
                 },
                 "description_translations": {
-                    "en": "<p>These Guidelines give general guidance on the obligation of Data Protection by Design and by Default (henceforth \u201cDPbDD\u201d) set forth in Article 25 in the GDPR.</p>",
+                    "en": "<p>This resource describes the guidelines for the development of secure software in the public administration</p>",
                     "es": ""
                 },
                 "tags": [
@@ -2433,7 +2430,6 @@
                     "enabling_services;implementing_software_and_artifacts"
                 ],
                 "administrative_scopes": [
-                    "eu",
                     "national",
                     "local"
                 ],
@@ -2443,21 +2439,21 @@
                     "es": ""
                 },
                 "regulations_and_standards_translations": {
-                    "en": "<ul><li>Article 70 (1e) of the Regulation 2016/679/EU of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC], (hereinafter \"GDPR\")</li> <li>EEA Agreement and in particular to Annex XI and Protocol 37 thereof, as amended by the Decision of the EEA joint Committee No 154/2018 of 6 July 2018,</li><li>Article 12 and Article 22 of its Rules of Procedure</li></ul>",
+                    "en": "",
                     "es": ""
                 },
                 "overview_text": {
                     "en": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
                     "es": ""
                 },
-                "instructions": "./interlinkers/knowledge/it-guidelines-data-protection/instructions.md",
+                "instructions": "./interlinkers/knowledge/it-pa-guidelines-for-secure-software/instructions.md",
                 "representations": [
                     {
                         "title": "",
                         "description": "",
                         "form": "guidelines",
-                        "format": "pdf",
-                        "file": "./interlinkers/knowledge/it-guidelines-data-protection/data.json",
+                        "format": "structured_format",
+                        "file": "./interlinkers/knowledge/it-pa-guidelines-for-secure-software/data.json",
                         "softwareinterlinker": "externalresourcemanager",
                         "language": "en"
                     }
@@ -2466,11 +2462,11 @@
             },
             {
                 "name_translations": {
-                    "en": "Open Source guides",
+                    "en": "Cloud Enablement Kit (in Italian)",
                     "es": ""
                 },
                 "description_translations": {
-                    "en": "<p>A collection of resources for individuals, communities, and companies who want to learn how to run and contribute to an open source project.</p>",
+                    "en": "<p>This resource describes the Cloud Enablement strategy outlined by AGID and Team Digitale (in Italian). </p>",
                     "es": ""
                 },
                 "tags": [
@@ -2494,12 +2490,13 @@
                     "national",
                     "local"
                 ],
+                "related_interlinkers": [],
                 "constraints_and_limitations_translations": {
                     "en": "No special constraints apply",
                     "es": ""
                 },
                 "regulations_and_standards_translations": {
-                    "en": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en",
+                    "en": "",
                     "es": ""
                 },
                 "overview_text": {
@@ -2580,11 +2577,11 @@
             },
             {
                 "name_translations": {
-                    "en": "AgID Cloud computing migration strategy evalution template",
+                    "en": "Stakeholders Mapping Canvas",
                     "es": ""
                 },
                 "description_translations": {
-                    "en": "<p>This resource contains a questionnaire to check the cloud computing migration strategy  </p>",
+                    "en": "<p>This resource supports the identification and selection of the stakeholders to engage in a co-production team.</p>",
                     "es": ""
                 },
                 "tags": [
@@ -2610,7 +2607,8 @@
                 "administrative_scopes": [
                     "eu"
                 ],
-                "related_interlinkers": [],
+                "domain": "",
+                "process": "",
                 "constraints_and_limitations_translations": {
                     "en": "No special constraints apply",
                     "es": ""
@@ -2628,7 +2626,7 @@
                     {
                         "title": "",
                         "description": "",
-                        "form": "guidelines",
+                        "form": "document_template",
                         "format": "editable_source_document",
                         "file": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/resource.pptx",
                         "softwareinterlinker": "googledrive",
@@ -2639,11 +2637,11 @@
             },
             {
                 "name_translations": {
-                    "en": "Business Plan Template",
+                    "en": "Information Sheet for INTERLINK project",
                     "es": ""
                 },
                 "description_translations": {
-                    "en": "<p>This canvas can be edited collaboratively by the co-producing team to ellaborate the business plan for a co-produced service..</p>",
+                    "en": "<p>Information on the INTERLINK project to be distributed to participants. It provides background on research activities.</p>",
                     "es": ""
                 },
                 "tags": [
@@ -2676,7 +2674,7 @@
                     "es": ""
                 },
                 "regulations_and_standards_translations": {
-                    "en": "",
+                    "en": "The information sheet is compliant to GDPR norms.",
                     "es": ""
                 },
                 "overview_text": {
@@ -2699,11 +2697,11 @@
             },
             {
                 "name_translations": {
-                    "en": "AgID Cloud computing competence evalution template",
+                    "en": "EDPB Data Protection Guidelines",
                     "es": ""
                 },
                 "description_translations": {
-                    "en": "<p>This resource contains a questionnaire to check the level of knowledge and competence in cloud computing </p>",
+                    "en": "<p>These Guidelines give general guidance on the obligation of Data Protection by Design and by Default (henceforth \u201cDPbDD\u201d) set forth in Article 25 in the GDPR.</p>",
                     "es": ""
                 },
                 "tags": [
@@ -2734,7 +2732,7 @@
                     "es": ""
                 },
                 "regulations_and_standards_translations": {
-                    "en": "",
+                    "en": "<ul><li>Article 70 (1e) of the Regulation 2016/679/EU of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC], (hereinafter \"GDPR\")</li> <li>EEA Agreement and in particular to Annex XI and Protocol 37 thereof, as amended by the Decision of the EEA joint Committee No 154/2018 of 6 July 2018,</li><li>Article 12 and Article 22 of its Rules of Procedure</li></ul>",
                     "es": ""
                 },
                 "overview_text": {
@@ -2757,11 +2755,11 @@
             },
             {
                 "name_translations": {
-                    "en": "Focus Group Template Co-production Investigation",
+                    "en": "Consent Form Template",
                     "es": ""
                 },
                 "description_translations": {
-                    "en": "<p>This resource provides a skeleton to organize a focus group to investigate the co-production practices in a given organization. It addresses a series of questions about previous or current collaboration practices, the dynamics of collaboration (timeline, people, tools, communication channels), current KPIs, critical aspects and  desiderata.</p>",
+                    "en": "<p>Template to prepare a form to collect consent from participants engaged in research activities about the use of their personal data</p>",
                     "es": ""
                 },
                 "tags": [
@@ -2794,7 +2792,7 @@
                     "es": ""
                 },
                 "regulations_and_standards_translations": {
-                    "en": "",
+                    "en": "The consent form is compliant to GDPR norms.",
                     "es": ""
                 },
                 "overview_text": {
@@ -2817,11 +2815,11 @@
             },
             {
                 "name_translations": {
-                    "en": "Italian PA interoperablity model ",
+                    "en": "AgID Cloud computing competence evalution template",
                     "es": ""
                 },
                 "description_translations": {
-                    "en": "<p>This resource describes the guidelines for technical interoperability for PA and related operational documents: interaction patterns, interoperability profiles, implementation recommendations (in Italian). </p>",
+                    "en": "<p>This resource contains a questionnaire to check the level of knowledge and competence in cloud computing </p>",
                     "es": ""
                 },
                 "tags": [
@@ -2851,7 +2849,7 @@
                     "es": ""
                 },
                 "regulations_and_standards_translations": {
-                    "en": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en",
+                    "en": "",
                     "es": ""
                 },
                 "overview_text": {
@@ -2874,11 +2872,11 @@
             },
             {
                 "name_translations": {
-                    "en": "Focus Group Guidelines",
+                    "en": "Guidelines on the acquisition and reuse of software for public administrations",
                     "es": ""
                 },
                 "description_translations": {
-                    "en": "<p>Instructions on how to set up a research activity based on focus groups, for a co-production project.</p>",
+                    "en": "<p>This resource aims at explaining how to acquire and reuse software in PA context.</p>",
                     "es": ""
                 },
                 "tags": [
@@ -2903,8 +2901,7 @@
                     "national",
                     "local"
                 ],
-                "domain": "",
-                "process": "",
+                "related_interlinkers": [],
                 "constraints_and_limitations_translations": {
                     "en": "No special constraints apply",
                     "es": ""
@@ -2933,11 +2930,11 @@
             },
             {
                 "name_translations": {
-                    "en": "Business Model Canvas",
+                    "en": "Italian PA interoperablity model ",
                     "es": ""
                 },
                 "description_translations": {
-                    "en": "This canvas can be used collaboratively, for instance, during a brainstorming or a focus group, to reflect on the the most suitable business model associated to a co-produced service.",
+                    "en": "<p>This resource describes the guidelines for technical interoperability for PA and related operational documents: interaction patterns, interoperability profiles, implementation recommendations (in Italian). </p>",
                     "es": ""
                 },
                 "tags": [
@@ -2964,14 +2961,13 @@
                     "national",
                     "local"
                 ],
-                "domain": "",
-                "process": "",
+                "related_interlinkers": [],
                 "constraints_and_limitations_translations": {
                     "en": "No special constraints apply",
                     "es": ""
                 },
                 "regulations_and_standards_translations": {
-                    "en": "",
+                    "en": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en",
                     "es": ""
                 },
                 "overview_text": {
@@ -2983,10 +2979,10 @@
                     {
                         "title": "",
                         "description": "",
-                        "form": "document_template",
-                        "format": "editable_source_document",
-                        "file": "./interlinkers/knowledge/Business-Model-Canvas/resource.pptx",
-                        "softwareinterlinker": "googledrive",
+                        "form": "guidelines",
+                        "format": "structured_format",
+                        "file": "./interlinkers/knowledge/it-guidelines-data-protection/data.json",
+                        "softwareinterlinker": "externalresourcemanager",
                         "language": "en"
                     }
                 ],
@@ -2994,11 +2990,11 @@
             },
             {
                 "name_translations": {
-                    "en": "Guidelines on the acquisition and reuse of software for public administrations",
+                    "en": "Open Source guides",
                     "es": ""
                 },
                 "description_translations": {
-                    "en": "<p>This resource aims at explaining how to acquire and reuse software in PA context.</p>",
+                    "en": "<p>A collection of resources for individuals, communities, and companies who want to learn how to run and contribute to an open source project.</p>",
                     "es": ""
                 },
                 "tags": [
@@ -3021,13 +3017,12 @@
                     "national",
                     "local"
                 ],
-                "related_interlinkers": [],
                 "constraints_and_limitations_translations": {
                     "en": "No special constraints apply",
                     "es": ""
                 },
                 "regulations_and_standards_translations": {
-                    "en": "",
+                    "en": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en",
                     "es": ""
                 },
                 "overview_text": {
@@ -3050,11 +3045,11 @@
             },
             {
                 "name_translations": {
-                    "en": "Stakeholders Mapping Canvas",
+                    "en": "Business Plan Template",
                     "es": ""
                 },
                 "description_translations": {
-                    "en": "<p>This resource supports the identification and selection of the stakeholders to engage in a co-production team.</p>",
+                    "en": "<p>This canvas can be edited collaboratively by the co-producing team to ellaborate the business plan for a co-produced service..</p>",
                     "es": ""
                 },
                 "tags": [
@@ -3109,11 +3104,11 @@
             },
             {
                 "name_translations": {
-                    "en": "Cloud Enablement Kit (in Italian)",
+                    "en": "Focus Group Template Co-production Investigation",
                     "es": ""
                 },
                 "description_translations": {
-                    "en": "<p>This resource describes the Cloud Enablement strategy outlined by AGID and Team Digitale (in Italian). </p>",
+                    "en": "<p>This resource provides a skeleton to organize a focus group to investigate the co-production practices in a given organization. It addresses a series of questions about previous or current collaboration practices, the dynamics of collaboration (timeline, people, tools, communication channels), current KPIs, critical aspects and  desiderata.</p>",
                     "es": ""
                 },
                 "tags": [
@@ -3138,7 +3133,8 @@
                 "administrative_scopes": [
                     "eu"
                 ],
-                "related_interlinkers": [],
+                "domain": "",
+                "process": "",
                 "constraints_and_limitations_translations": {
                     "en": "No special constraints apply",
                     "es": ""
@@ -3156,10 +3152,10 @@
                     {
                         "title": "",
                         "description": "",
-                        "form": "guidelines",
-                        "format": "pdf",
-                        "file": "./interlinkers/knowledge/it-cloud-enablement-kit/data.json",
-                        "softwareinterlinker": "externalresourcemanager",
+                        "form": "document_template",
+                        "format": "editable_source_document",
+                        "file": "./interlinkers/knowledge/Focus-Group-Template-Co-production/resource.pptx",
+                        "softwareinterlinker": "googledrive",
                         "language": "en"
                     }
                 ],
@@ -3167,11 +3163,11 @@
             },
             {
                 "name_translations": {
-                    "en": "Consent Form Template",
+                    "en": "Business Model Canvas",
                     "es": ""
                 },
                 "description_translations": {
-                    "en": "<p>Template to prepare a form to collect consent from participants engaged in research activities about the use of their personal data</p>",
+                    "en": "This canvas can be used collaboratively, for instance, during a brainstorming or a focus group, to reflect on the the most suitable business model associated to a co-produced service.",
                     "es": ""
                 },
                 "tags": [
@@ -3203,7 +3199,7 @@
                     "es": ""
                 },
                 "regulations_and_standards_translations": {
-                    "en": "The consent form is compliant to GDPR norms.",
+                    "en": "",
                     "es": ""
                 },
                 "overview_text": {
@@ -3226,11 +3222,11 @@
             },
             {
                 "name_translations": {
-                    "en": "AgID Minimum Security Measures for Public Administration. ",
+                    "en": "Focus Group Guidelines",
                     "es": ""
                 },
                 "description_translations": {
-                    "en": "<p>This resource describes the minimum ICT security measures issued by AgID aim at countering the most frequent cyber threats to the Italian public administration.</p>",
+                    "en": "<p>Instructions on how to set up a research activity based on focus groups, for a co-production project.</p>",
                     "es": ""
                 },
                 "tags": [
@@ -3258,7 +3254,8 @@
                 "administrative_scopes": [
                     "eu"
                 ],
-                "related_interlinkers": [],
+                "domain": "",
+                "process": "",
                 "constraints_and_limitations_translations": {
                     "en": "No special constraints apply",
                     "es": ""
@@ -3347,11 +3344,11 @@
             },
             {
                 "name_translations": {
-                    "en": "Information Sheet for INTERLINK project",
+                    "en": "Information Sheet Template",
                     "es": ""
                 },
                 "description_translations": {
-                    "en": "<p>Information on the INTERLINK project to be distributed to participants. It provides background on research activities.</p>",
+                    "en": "<p>Template to guide the preparation of an information sheet to be distributed to participants to project activities. It provides background on research objectives.</p>",
                     "es": ""
                 },
                 "tags": [
