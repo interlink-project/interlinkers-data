@@ -25,24 +25,24 @@
         "en": "Optional text here",
         "es": ""
     },
-    "supported_by": "installed_app",
-    "auth_method": "cookie",
+    "supported_by": ["on_premise"],
     "supports_internationalization": true,
     "is_responsive": true,
-    "open_in_modal": true,
-    "endpoint": {
+    "integration": {
         "domain": "",
         "path": "externalresourcemanager",
-        "is_subdomain": false,
         "service_name": "externalresourcemanager",
-        "api_path": "/assets"
-    },
-    "capabilities": {
-        "instantiate": true,
-        "clone": true,
-        "view": true,
-        "edit": true,
-        "delete": true
+        "is_subdomain": false,
+        "api_path": "/assets",
+        "auth_method": "cookie",
+        "capabilities": {
+            "instantiate": true,
+            "clone": true,
+            "view": true,
+            "edit": false,
+            "delete": true,
+            "open_in_modal": false
+        }
     },
     "logotype": "./interlinkers/software/externalresourcemanager/logo.png",
     "reference": "external-resource-manager"

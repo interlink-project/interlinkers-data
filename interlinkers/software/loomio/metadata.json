@@ -43,27 +43,27 @@
         "en": "Web-based tool for collaborative decision making, discussion. and idea management",
         "es": ""
     },
-    "supported_by": "on_premise",
-    "auth_method": "header",
     "deployment_manual": "https://github.com/interlink-project/interlink-loomio",
     "user_manual": "https://help.loomio.org/en/user_manual/",
     "developer_manual": "https://github.com/loomio/loomio",
+    "supported_by": ["on_premise"],
     "supports_internationalization": true,
     "is_responsive": true,
-    "open_in_modal": false,
-    "endpoint": {
+    "integration": {
         "domain": "",
         "path": "loomio",
-        "is_subdomain": true,
         "service_name": "loomio",
-        "api_path": "/api/v1/assets"
-    },
-    "capabilities": {
-        "instantiate": true,
-        "clone": false,
-        "view": true,
-        "edit": true,
-        "delete": true
+        "is_subdomain": true,
+        "api_path": "/api/v1/assets",
+        "auth_method": "header",
+        "capabilities": {
+            "instantiate": true,
+            "clone": false,
+            "view": true,
+            "edit": false,
+            "delete": true,
+            "open_in_modal": false
+        }
     },
     "logotype": "./interlinkers/software/loomio/logo.png",
     "reference": "loomio"

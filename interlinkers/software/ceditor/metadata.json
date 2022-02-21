@@ -25,25 +25,25 @@
         "en": "Optional text here",
         "es": ""
     },
-    "supported_by": "installed_app",
-    "auth_method": "cookie",
+    "supported_by": ["on_premise"],
     "supports_internationalization": true,
-    "endpoint": {
+    "is_responsive": true,
+    "integration": {
         "domain": "",
         "path": "ceditor",
-        "is_subdomain": false,
         "service_name": "ceditor",
-        "api_path": "/assets"
+        "is_subdomain": false,
+        "api_path": "/assets",
+        "auth_method": "cookie",
+        "capabilities": {
+            "instantiate": true,
+            "clone": true,
+            "view": true,
+            "edit": false,
+            "delete": true,
+            "open_in_modal": false
+        }
     },
-    "capabilities": {
-        "instantiate": true,
-        "clone": true,
-        "view": true,
-        "edit": false,
-        "delete": true
-    },
-    "is_responsive": true,
-    "open_in_modal": false,
     "logotype": "./interlinkers/software/ceditor/logo.jpeg",
     "reference": "collaborative-editor"
 }

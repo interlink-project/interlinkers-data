@@ -80,11 +80,16 @@
             "title": "Reference",
             "type": "string"
         },
-        "supported_by": {
-            "$ref": "#/definitions/Supporters"
+        "logotype": {
+            "title": "Logotype",
+            "format": "file-path",
+            "type": "string"
         },
-        "auth_method": {
-            "$ref": "#/definitions/AuthMethods"
+        "supported_by": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Supporters"
+            }
         },
         "deployment_manual": {
             "title": "Deployment Manual",
@@ -139,20 +144,8 @@
             "title": "Is Responsive",
             "type": "boolean"
         },
-        "open_in_modal": {
-            "title": "Open In Modal",
-            "type": "boolean"
-        },
-        "endpoint": {
-            "$ref": "#/definitions/Endpoint"
-        },
-        "capabilities": {
-            "$ref": "#/definitions/Capabilities"
-        },
-        "logotype": {
-            "title": "Logotype",
-            "format": "file-path",
-            "type": "string"
+        "integration": {
+            "$ref": "#/definitions/Integration"
         }
     },
     "required": [
@@ -165,13 +158,8 @@
         "constraints_and_limitations_translations",
         "reference",
         "supported_by",
-        "auth_method",
         "supports_internationalization",
-        "is_responsive",
-        "open_in_modal",
-        "endpoint",
-        "capabilities",
-        "logotype"
+        "is_responsive"
     ],
     "additionalProperties": false,
     "definitions": {
@@ -249,6 +237,39 @@
                 "installed_app"
             ]
         },
+        "Capabilities": {
+            "title": "Capabilities",
+            "type": "object",
+            "properties": {
+                "instantiate": {
+                    "title": "Instantiate",
+                    "type": "boolean"
+                },
+                "view": {
+                    "title": "View",
+                    "type": "boolean"
+                },
+                "edit": {
+                    "title": "Edit",
+                    "type": "boolean"
+                },
+                "delete": {
+                    "title": "Delete",
+                    "type": "boolean"
+                },
+                "open_in_modal": {
+                    "title": "Open In Modal",
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "instantiate",
+                "view",
+                "edit",
+                "delete",
+                "open_in_modal"
+            ]
+        },
         "AuthMethods": {
             "title": "AuthMethods",
             "description": "An enumeration.",
@@ -257,8 +278,8 @@
                 "cookie"
             ]
         },
-        "Endpoint": {
-            "title": "Endpoint",
+        "Integration": {
+            "title": "Integration",
             "type": "object",
             "properties": {
                 "service_name": {
@@ -280,6 +301,12 @@
                 "api_path": {
                     "title": "Api Path",
                     "type": "string"
+                },
+                "capabilities": {
+                    "$ref": "#/definitions/Capabilities"
+                },
+                "auth_method": {
+                    "$ref": "#/definitions/AuthMethods"
                 }
             },
             "required": [
@@ -287,35 +314,9 @@
                 "domain",
                 "path",
                 "is_subdomain",
-                "api_path"
-            ]
-        },
-        "Capabilities": {
-            "title": "Capabilities",
-            "type": "object",
-            "properties": {
-                "instantiate": {
-                    "title": "Instantiate",
-                    "type": "boolean"
-                },
-                "view": {
-                    "title": "View",
-                    "type": "boolean"
-                },
-                "edit": {
-                    "title": "Edit",
-                    "type": "boolean"
-                },
-                "delete": {
-                    "title": "Delete",
-                    "type": "boolean"
-                }
-            },
-            "required": [
-                "instantiate",
-                "view",
-                "edit",
-                "delete"
+                "api_path",
+                "capabilities",
+                "auth_method"
             ]
         }
     }
