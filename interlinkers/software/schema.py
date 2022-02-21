@@ -18,6 +18,7 @@ class AuthMethods(Enum):
     cookie = "cookie"
 
 class Endpoint(BaseModel):
+    service_name: str
     domain: str
     path: str
     is_subdomain: bool

@@ -42,6 +42,7 @@
         "domain": "",
         "path": "googledrive",
         "is_subdomain": false,
+        "service_name": "googledrive",
         "api_path": "/assets"
     },
     "capabilities": {

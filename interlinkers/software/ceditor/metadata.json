@@ -32,6 +32,7 @@
         "domain": "",
         "path": "ceditor",
         "is_subdomain": false,
+        "service_name": "ceditor",
         "api_path": "/assets"
     },
     "capabilities": {

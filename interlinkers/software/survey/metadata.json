@@ -33,6 +33,7 @@
     "endpoint": {
         "domain": "",
         "path": "survey",
+        "service_name": "survey",
         "is_subdomain": false,
         "api_path": "/assets"
     },

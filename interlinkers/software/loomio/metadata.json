@@ -55,6 +55,7 @@
         "domain": "",
         "path": "loomio",
         "is_subdomain": true,
+        "service_name": "loomio",
         "api_path": "/api/v1/assets"
     },
     "capabilities": {

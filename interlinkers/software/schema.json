@@ -261,6 +261,10 @@
             "title": "Endpoint",
             "type": "object",
             "properties": {
+                "service_name": {
+                    "title": "Service Name",
+                    "type": "string"
+                },
                 "domain": {
                     "title": "Domain",
                     "type": "string"
@@ -279,6 +283,7 @@
                 }
             },
             "required": [
+                "service_name",
                 "domain",
                 "path",
                 "is_subdomain",

@@ -34,6 +34,7 @@
         "domain": "",
         "path": "externalresourcemanager",
         "is_subdomain": false,
+        "service_name": "externalresourcemanager",
         "api_path": "/assets"
     },
     "capabilities": {
