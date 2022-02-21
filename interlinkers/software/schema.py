@@ -24,6 +24,7 @@ class Capabilities(BaseModel):
     edit: bool
     delete: bool
     open_in_modal: bool
+    shortcut: bool
 
 class Integration(BaseModel):
     service_name: str

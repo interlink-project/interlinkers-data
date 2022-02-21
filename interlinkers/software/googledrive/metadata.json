@@ -49,7 +49,8 @@
             "view": true,
             "edit": false,
             "delete": true,
-            "open_in_modal": false
+            "open_in_modal": false,
+            "shortcut": true
         }
     },
     "logotype": "./interlinkers/software/googledrive/logo.png",
