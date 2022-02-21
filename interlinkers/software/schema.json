@@ -260,6 +260,10 @@
                 "open_in_modal": {
                     "title": "Open In Modal",
                     "type": "boolean"
+                },
+                "shortcut": {
+                    "title": "Shortcut",
+                    "type": "boolean"
                 }
             },
             "required": [
@@ -267,7 +271,8 @@
                 "view",
                 "edit",
                 "delete",
-                "open_in_modal"
+                "open_in_modal",
+                "shortcut"
             ]
         },
         "AuthMethods": {

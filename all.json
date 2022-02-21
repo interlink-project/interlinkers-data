@@ -2119,7 +2119,8 @@
                         "view": true,
                         "edit": false,
                         "delete": true,
-                        "open_in_modal": false
+                        "open_in_modal": false,
+                        "shortcut": true
                     }
                 },
                 "logotype": "./interlinkers/software/ceditor/logo.jpeg",
@@ -2191,7 +2192,8 @@
                         "view": true,
                         "edit": false,
                         "delete": true,
-                        "open_in_modal": false
+                        "open_in_modal": false,
+                        "shortcut": true
                     }
                 },
                 "logotype": "./interlinkers/software/loomio/logo.png",
@@ -2242,7 +2244,8 @@
                         "view": true,
                         "edit": true,
                         "delete": true,
-                        "open_in_modal": false
+                        "open_in_modal": false,
+                        "shortcut": true
                     }
                 },
                 "logotype": "./interlinkers/software/survey/logo.png",
@@ -2301,7 +2304,8 @@
                         "view": true,
                         "edit": false,
                         "delete": true,
-                        "open_in_modal": false
+                        "open_in_modal": false,
+                        "shortcut": true
                     }
                 },
                 "logotype": "./interlinkers/software/googledrive/logo.png",
@@ -2352,7 +2356,8 @@
                         "view": true,
                         "edit": false,
                         "delete": true,
-                        "open_in_modal": false
+                        "open_in_modal": false,
+                        "shortcut": true
                     }
                 },
                 "logotype": "./interlinkers/software/externalresourcemanager/logo.png",
