@@ -2119,7 +2119,7 @@
                         "view": true,
                         "edit": false,
                         "delete": true,
-                        "open_in_modal": false,
+                        "open_in_modal": true,
                         "shortcut": true
                     }
                 },
@@ -2244,7 +2244,7 @@
                         "view": true,
                         "edit": true,
                         "delete": true,
-                        "open_in_modal": false,
+                        "open_in_modal": true,
                         "shortcut": true
                     }
                 },
@@ -2304,7 +2304,7 @@
                         "view": true,
                         "edit": false,
                         "delete": true,
-                        "open_in_modal": false,
+                        "open_in_modal": true,
                         "shortcut": true
                     }
                 },
@@ -2356,7 +2356,7 @@
                         "view": true,
                         "edit": false,
                         "delete": true,
-                        "open_in_modal": false,
+                        "open_in_modal": true,
                         "shortcut": true
                     }
                 },
