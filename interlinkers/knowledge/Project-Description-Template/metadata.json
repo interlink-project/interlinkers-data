@@ -1,0 +1,52 @@
+{
+    "name_translations": {
+        "en": "Template for project description",
+        "es": ""
+    },
+    "description_translations": {
+        "en": "<p>Template for preparing a project description that synthetically summarizes the goals and major aspects of a co-production initiative. </p>",
+        "es": ""
+    },
+    "tags": [
+        "project start"
+    ],
+    "difficulty": "easy",
+    "targets": [
+        "all"
+    ],
+    "licence": "permissive",
+    "problem_profiles": [
+        "ORG_PROBLEM_1"
+    ],
+    "types": [
+        "enabling_services"
+    ],
+    "administrative_scopes": [
+        "eu"
+    ],
+    "related_interlinkers": [],
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply",
+        "es": ""
+    },
+    "regulations_and_standards_translations": {
+        "en": "",
+        "es": ""
+    },
+    "overview_text": {
+        "en": "Textual document",
+        "es": ""
+    },
+    "instructions": "",
+    "representations": [
+        {"title": "",
+            "description": "",
+            "form": "document_template",
+            "format": "editable_source_document",
+            "file": "./interlinkers/knowledge/Project-Description-Template/resource.docx",
+            "softwareinterlinker": "googledrive",
+            "language": "en"
+        }
+    ],
+    "reference": "Project description template"
+}
