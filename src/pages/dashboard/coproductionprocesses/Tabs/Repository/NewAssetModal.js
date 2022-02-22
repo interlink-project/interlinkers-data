@@ -33,6 +33,9 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
     const [result, setResult] = useState(null);
     const [link, setLink] = useState("");
 
+    const open_in_modal = selectedInterlinker.nature === "softwareinterlinker" && selectedInterlinker.integration && selectedInterlinker.integration.open_in_modal
+    console.log(selectedInterlinker.integration)
+
     const handleClose = () => {
         setOpen(false);
     };
@@ -90,6 +93,9 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
         else if (window.attachEvent) {
             window.attachEvent("onmessage", onMessage, false);
         }
+        if (!open_in_modal) {
+            window.open(`${selectedInterlinker.backend}/instantiate`)
+        }
 
 
         return () => {
@@ -103,7 +109,7 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
     }, [selectedInterlinker]);
 
     const getHeight = () => {
-        if(activeStep === 0){
+        if (activeStep === 0) {
             return selectedInterlinker.nature === "softwareinterlinker" ? "70vh" : "50vh"
         }
         return "40vh"
@@ -144,11 +150,14 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
                         )}
                 </Stepper>*/}
                 {activeStep === 0 && <Box>
-                    {selectedInterlinker.nature === "softwareinterlinker" &&
+                    {open_in_modal &&
                         <>
                             {loadingInstantiator && <CircularProgress />}
                             <iframe style={{ display: loadingInstantiator ? "none" : "block" }} src={`${selectedInterlinker.backend}/instantiate`} style={{ width: "100%", minHeight: "60vh", border: 0 }}></iframe>
                         </>
+                    }
+                    {!open_in_modal &&
+                        <CircularProgress />
                     }
                     {selectedInterlinker.nature === "knowledgeinterlinker" &&
                         <Box
