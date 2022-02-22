@@ -8,7 +8,7 @@
         "es": ""
     },
     "tags": [
-        "project start"
+        "project initiation"
     ],
     "difficulty": "easy",
     "targets": [
@@ -37,7 +37,7 @@
         "en": "Textual document",
         "es": ""
     },
-    "instructions": "",
+    "instructions": "./interlinkers/knowledge/Project-Description-Template/instructions.md",
     "representations": [
         {"title": "",
             "description": "",
