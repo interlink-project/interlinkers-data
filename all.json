@@ -3299,6 +3299,62 @@
             },
             {
                 "name_translations": {
+                    "en": "Model for Personas (in italian)",
+                    "es": ""
+                },
+                "description_translations": {
+                    "en": "<p>This resource provides a model for persona outlined by AGID and Team Digitale (in Italian).</p>",
+                    "es": ""
+                },
+                "tags": [
+                    "services"
+                ],
+                "difficulty": "easy",
+                "targets": [
+                    "all"
+                ],
+                "licence": "public_domain",
+                "problem_profiles": [
+                    "VAL_PROBLEM_2"
+                ],
+                "types": [
+                    "enhancing_services"
+                ],
+                "related_interlinkers": [],
+                "administrative_scopes": [
+                    "national",
+                    "local"
+                ],
+                "domain": "",
+                "process": "",
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply",
+                    "es": ""
+                },
+                "regulations_and_standards_translations": {
+                    "en": "",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "This INTERLINKER is composed by a PowerPoint scheleton that can be downloaded, customized and used to facilitate PERSONA in the scenarios.",
+                    "es": ""
+                },
+                "instructions": "./interlinkers/knowledge/it-agid-personas/instructions.md",
+                "representations": [
+                    {
+                        "title": "",
+                        "description": "",
+                        "form": "document_template",
+                        "format": "editable_source_document",
+                        "file": "./interlinkers/knowledge/it-agid-personas/resource.pptx",
+                        "softwareinterlinker": "googledrive",
+                        "language": "en"
+                    }
+                ],
+                "reference": "it-agid-personas"
+            },
+            {
+                "name_translations": {
                     "en": "Consent Form for INTERLINK project",
                     "es": ""
                 },
