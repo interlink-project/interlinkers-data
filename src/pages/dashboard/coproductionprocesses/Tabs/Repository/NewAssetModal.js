@@ -64,9 +64,10 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
 
     async function onMessage(event) {
         // Check sender origin to be trusted
-        if (event.origin !== env.REACT_APP_COMPLETE_DOMAIN) return;
+        console.log(event.origin, env)
+        if (event.origin.length > 0 && event.origin.includes(env.DOMAIN)) return;
         const { code, data } = event.data
-
+        console.log(code)
 
         if (code === "initialized") {
             setLoadingInstantiator(false)

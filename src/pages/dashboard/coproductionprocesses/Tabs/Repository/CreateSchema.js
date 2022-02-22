@@ -28,6 +28,7 @@ import {
 } from '@material-ui/lab';
 import { comparePrerequisites } from 'utils/comparePrerequisites';
 import useMounted from 'hooks/useMounted';
+import { LoadingButton } from '@material-ui/lab';
 
 const sameHeightCards = {
     minHeight: "200px",
@@ -66,9 +67,10 @@ const CreateSchema = () => {
 
 
     const submit = async (coproductionschema_id) => {
+        setLoading(coproductionschema_id)
         coproductionProcessesApi.setSchema(process.id, coproductionschema_id).then(process => {
             setCoproductionProcess(process)
-        });
+        }).finally(() => setLoading(coproductionschema_id));
     }
 
     return (
@@ -102,7 +104,7 @@ const CreateSchema = () => {
                                 })}
 
                             </TreeView>
-                            <Button variant="contained" fullWidth onClick={() => submit(schema.id)}>Use this schema</Button>
+                            <LoadingButton loading={loading === schema.id} variant="contained" fullWidth onClick={() => submit(schema.id)}>Use this schema</LoadingButton>
 
                         </Card>
 
