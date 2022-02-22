@@ -66,16 +66,15 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
         // Check sender origin to be trusted
         console.log(event.origin, env)
         if (event.origin.length > 0 && event.origin.includes(env.DOMAIN)) return;
-        const { code, data } = event.data
-        console.log(code)
+        const { code, message } = event.data
+        console.log(code, message)
 
         if (code === "initialized") {
             setLoadingInstantiator(false)
         }
         if (code === "asset_created") {
-            console.log("RECEIVED MESSAGE", event.origin, event, code, data)
             //task_id, interlinker_id, external_id
-            const coproduction_response = await onAssetCreate(data, selectedInterlinker.id)
+            const coproduction_response = await onAssetCreate(message, selectedInterlinker.id)
             setLink(coproduction_response.link)
             // TODO: if fails
             const interlinker_response = await axiosInstance.get(coproduction_response.link)

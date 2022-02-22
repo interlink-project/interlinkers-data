@@ -179,7 +179,6 @@ const RightPart = ({selectedTask}) => {
                                                         }}
                                                         component="img"
                                                         image={interlinker.snapshots[0]}
-                                                        alt="green iguana"
                                                     />
                                                 </CardActionArea>
                                             </Card>
@@ -232,6 +231,7 @@ const RightPart = ({selectedTask}) => {
                                 <MenuItem key={si.id} onClick={() => {
                                     setSelectedInterlinker(si);
                                     setOpenNewAsset(true)
+                                    handleClose()
                                 }
                                 }>
                                     <Avatar src={si.logotype} sx={{ mr: 2, height: "20px", width: "20px" }} />{si.name}
