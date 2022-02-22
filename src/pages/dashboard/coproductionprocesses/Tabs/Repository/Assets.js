@@ -1,36 +1,21 @@
-import React, { useEffect, useState } from 'react';
 import {
-  Box,
-  Grid,
-  Paper,
-  Button,
-  Card,
-  Skeleton,
-  Avatar,
-  Alert,
-  alpha,
-  IconButton,
-  InputBase,
-  CardActionArea,
-  Typography,
-  Menu,
-  MenuItem,
-  ListItemIcon,
-  ListItemText,
-  List,
-  ListItemAvatar,
-  ListItem,
-  ListItemSecondaryAction
+  Alert, Avatar, Box, IconButton, List, ListItem, ListItemAvatar, ListItemIcon, ListItemSecondaryAction, ListItemText, Menu,
+  MenuItem, Skeleton, Typography
 } from '@material-ui/core';
-import { MoreVert as MoreVertIcon, Search as SearchIcon, OpenInNew, Edit, CopyAll, Delete, Share } from '@material-ui/icons';
-import moment from 'moment';
+import { CopyAll, Delete, Edit, MoreVert as MoreVertIcon, Share } from '@material-ui/icons';
 import axiosInstance from 'axiosInstance';
+import moment from 'moment';
+import React, { useEffect, useState } from 'react';
+import useAuth from 'hooks/useAuth';
 
 const Asset = ({ asset }) => {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(true)
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+
+  const auth = useAuth();
+  const { user } = auth;
 
   const handleClick = (event) => {
     event.stopPropagation();
@@ -42,11 +27,18 @@ const Asset = ({ asset }) => {
     setAnchorEl(null);
   };
 
-  useEffect(async () => {
-    console.log("REFRESH")
-    const res = await axiosInstance.get(asset.link)
-    setData(res.data)
-    setLoading(false)
+  useEffect(() => {
+    axiosInstance.get(asset.link, {
+      headers:
+      {
+        'Authorization': "Bearer " + user.access_token
+      }
+    }).then((res) => {
+      setData(res.data)
+      setLoading(false)
+    }
+    )
+
   }, [])
 
   const MyMenuItem = ({ onClick, text, icon }) => <MenuItem onClick={onClick}>
@@ -82,10 +74,10 @@ const Asset = ({ asset }) => {
             'aria-labelledby': 'basic-button',
           }}
         >
-          {data.editLink && <MyMenuItem onClick={() => {window.open(data.editLink, "_blank"); setAnchorEl(null);}} text="Edit" icon={<Edit fontSize="small" />} />}
-          {data.cloneLink && <MyMenuItem onClick={() => {}} text="Clone" icon={<CopyAll fontSize="small" />} />}
-          <MyMenuItem onClick={() => {}} text="Delete" icon={<Delete fontSize="small" />} />
-          <MyMenuItem onClick={() => {}} text="Share" icon={<Share fontSize="small" />} />
+          {data.editLink && <MyMenuItem onClick={() => { window.open(data.editLink, "_blank"); setAnchorEl(null); }} text="Edit" icon={<Edit fontSize="small" />} />}
+          {data.cloneLink && <MyMenuItem onClick={() => { }} text="Clone" icon={<CopyAll fontSize="small" />} />}
+          <MyMenuItem onClick={() => { }} text="Delete" icon={<Delete fontSize="small" />} />
+          <MyMenuItem onClick={() => { }} text="Share" icon={<Share fontSize="small" />} />
         </Menu></>
     </ListItemSecondaryAction>
   </ListItem> : <Skeleton animation="wave" height={60} />

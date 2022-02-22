@@ -12,16 +12,26 @@ import {
     Typography
 } from '@material-ui/core';
 import axiosInstance from 'axiosInstance';
+import useAuth from 'hooks/useAuth';
 
 const RepresentationItem = ({ representation, checked, onCheck }) => {
     const labelId = `checkbox-for-${representation.id}`;
     const [data, setData] = useState(null)
     const [loading, setLoading] = useState(true)
+    const auth = useAuth();
+    const { user } = auth;
 
     const updateData = async () => {
-        const res = await axiosInstance.get(representation.link)
-        setData(res.data)
-        setLoading(false)
+        axiosInstance.get(representation.link, {
+            headers:
+            {
+                'Authorization': "Bearer " + user.access_token
+            }
+        }).then((res) => {
+                setData(res.data)
+                setLoading(false)
+            }
+        )
     }
     useEffect(() => {
         updateData()
@@ -84,8 +94,8 @@ export default function RepresentationsList({ representations, onAssetCreate, on
     }
 
     return <>
-        <Typography sx={{textAlign: "center"}} variant="h5">Possible representations for this interlinker</Typography>
-        <List dense sx={{ mt:2, width: '100%', bgcolor: 'background.paper' }}>
+        <Typography sx={{ textAlign: "center" }} variant="h5">Possible representations for this interlinker</Typography>
+        <List dense sx={{ mt: 2, width: '100%', bgcolor: 'background.paper' }}>
             {representations.map(representation => <RepresentationItem key={representation.id} representation={representation} checked={checkedRepresentations.indexOf(representation.id) !== -1} onCheck={handleToggle} />)}
         </List>
         <Button disabled={loading || checkedRepresentations.length === 0} sx={{ mt: 2 }} fullWidth variant="contained" onClick={() => clone()}>Clone</Button>
