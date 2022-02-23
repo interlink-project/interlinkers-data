@@ -41,14 +41,14 @@
 		"en": "This INTERLINKER is composed by a pdf containing guidelines.",
 		"es": ""
 	},
-	"instructions": "",
+	"instructions": "./interlinkers/knowledge/Stakeholder-Types-Guidelines/instructions.md",
 	"representations": [
 		{
 			"title": "",
 			"description": "",
 			"form": "guidelines",
 			"format": "pdf",
-			"file": "./interlinkers/knowledge/Stakeholder-Types-Guidelines/resource.pptx",
+			"file": "./interlinkers/knowledge/Stakeholder-Types-Guidelines/resource.pdf",
 			"softwareinterlinker": "googledrive",
 			"language": "en"
 		}
