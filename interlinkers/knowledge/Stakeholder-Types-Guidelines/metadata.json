@@ -1,0 +1,57 @@
+{
+	"name_translations": {
+		"en": "Stakeholder types guidelines",
+		"es": ""
+	},
+	"description_translations": {
+		"en": "<p>Guidelines to understand which are the different types of stakeholder, their  motivations, skills, expectations toward the project</p>",
+		"es": ""
+	},
+	"tags": [
+		"services", 
+		"stakeholder mappping"
+	],
+	"difficulty": "easy",
+	"targets": [
+		"all"
+	],
+	"licence": "public_domain",
+	"problem_profiles": [
+		"UND_PROBLEM_2",
+		"UND_PROBLEM_4"
+	],
+	"types": [
+		"enhancing_services"
+	],
+	"related_interlinkers": [],
+	"administrative_scopes": [
+		"eu"
+	],
+	"domain": "",
+	"process": "",
+	"constraints_and_limitations_translations": {
+		"en": "No special constraints apply",
+		"es": ""
+	},
+	"regulations_and_standards_translations": {
+		"en": "",
+		"es": ""
+	},
+	"overview_text": {
+		"en": "This INTERLINKER is composed by a pdf containing guidelines.",
+		"es": ""
+	},
+	"instructions": "",
+	"representations": [
+		{
+			"title": "",
+			"description": "",
+			"form": "guidelines",
+			"format": "pdf",
+			"file": "./interlinkers/knowledge/Stakeholder-Types-Guidelines/resource.pptx",
+			"softwareinterlinker": "googledrive",
+			"language": "en"
+		}
+	],
+	"reference": "Understand the different types of stakeholders"
+}
