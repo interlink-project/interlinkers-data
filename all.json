@@ -2354,7 +2354,7 @@
                         "instantiate": true,
                         "clone": true,
                         "view": true,
-                        "edit": false,
+                        "edit": true,
                         "delete": true,
                         "open_in_modal": true,
                         "shortcut": true
