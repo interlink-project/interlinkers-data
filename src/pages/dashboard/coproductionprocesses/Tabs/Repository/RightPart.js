@@ -154,7 +154,7 @@ const RightPart = ({ selectedTask }) => {
                         </ToggleButtonGroup>
 
                         {loadingTaskInfo ?
-                            <CircularProgress /> : <Grid sx={{mt: 1}} container spacing={3} justifyContent="flex-start">
+                            <CircularProgress /> : <Grid sx={{ mt: 1 }} container spacing={3} justifyContent="flex-start">
 
                                 {recommendedInterlinkers.map(interlinker => (
                                     <Grid item xs={12} md={6} lg={4} xl={3} key={interlinker.id}                       >
@@ -205,27 +205,27 @@ const RightPart = ({ selectedTask }) => {
                       </Search>
                     </Paper>*/}
 
-                            <Assets assets={assets} />
+                            <Assets assets={assets} onChange={updateAssets} />
 
                         </Box>
 
                         {selectedInterlinker && openNewAsset && <NewAssetModal open={openNewAsset} setOpen={setOpenNewAsset} selectedInterlinker={selectedInterlinker} task={selectedTask} onCreate={updateAssets} />}
 
-                        <Box sx={{textAlign: "center", width: "100%"}}>
-                        <Button
-                            id="basic-button"
-                            aria-controls={open ? 'basic-menu' : undefined}
-                            aria-haspopup="true"
-                            aria-expanded={open ? 'true' : undefined}
-                            onClick={handleClick}
-                            variant="contained"
-                            sx={{mt: 3}}
-                            endIcon={<KeyboardArrowDown />}
-                        >
-                            Add new empty asset
-                        </Button>
+                        <Box sx={{ textAlign: "center", width: "100%" }}>
+                            <Button
+                                id="basic-button"
+                                aria-controls={open ? 'basic-menu' : undefined}
+                                aria-haspopup="true"
+                                aria-expanded={open ? 'true' : undefined}
+                                onClick={handleClick}
+                                variant="contained"
+                                sx={{ mt: 3 }}
+                                endIcon={<KeyboardArrowDown />}
+                            >
+                                Add new empty asset
+                            </Button>
                         </Box>
-                       
+
                         <Menu
                             id="basic-menu"
                             anchorEl={anchorEl}
@@ -250,7 +250,7 @@ const RightPart = ({ selectedTask }) => {
                 </Box>
             </Grid>
         } onMobileNode={
-            <MobileDrawer open={mobileDrawerOpen} onClose={() => { setMobileDrawerOpen(false) }} content={<Assets assets={assets} />} />
+            <MobileDrawer open={mobileDrawerOpen} onClose={() => { setMobileDrawerOpen(false) }} content={<Assets assets={assets} onChange={updateAssets} />} />
         } />
     );
 };
