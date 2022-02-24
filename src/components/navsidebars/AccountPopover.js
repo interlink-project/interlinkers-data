@@ -16,11 +16,12 @@ import {
 import CogIcon from '../../icons/Cog';
 import UserIcon from '../../icons/User';
 import useAuth from '../../hooks/useAuth';
+import { Login } from '@material-ui/icons';
 
 const AccountPopover = () => {
   const anchorRef = useRef(null);
   const auth = useAuth();
-  const { user } = auth;
+  const { user, isAuthenticated } = auth;
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -41,7 +42,7 @@ const AccountPopover = () => {
     }
   };
 
-  return (
+  return isAuthenticated ? (
     <>
       <Box
         component={ButtonBase}
@@ -138,7 +139,17 @@ const AccountPopover = () => {
         </Box>
       </Popover>
     </>
-  );
+  ) : <Box
+    component={ButtonBase}
+    sx={{
+      alignItems: 'center',
+      display: 'flex',
+    }}
+    onClick={() => auth.signinRedirect()}
+  >
+    <Typography sx={{ mr: 1 }} variant="overline">Log in</Typography>
+    <Login />
+  </Box>;
 };
 
 export default AccountPopover;

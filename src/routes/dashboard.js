@@ -33,9 +33,7 @@ export const routes = [
   {
     path: 'dashboard',
     element: (
-      <AuthGuard>
-        <DashboardLayout />
-      </AuthGuard>
+      <DashboardLayout />
     ),
     children: [
       {
@@ -95,9 +93,9 @@ export const routes = [
         path: 'practicepedia',
         element: <PracticePedia />,
       },
-      
+
     ],
-    
+
   },
-  
+
 ];

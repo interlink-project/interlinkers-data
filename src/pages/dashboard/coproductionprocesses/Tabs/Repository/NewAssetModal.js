@@ -1,40 +1,21 @@
-import { useEffect, useState } from 'react';
 import {
-    Box,
-    Button,
-    Dialog,
+    Avatar, AvatarGroup, Box,
+    Button, CircularProgress, Dialog,
     DialogContent,
-    DialogTitle,
-    Avatar,
-    Typography,
-    IconButton,
-    CircularProgress,
-    AvatarGroup
+    DialogTitle, IconButton, Typography
 } from '@material-ui/core';
-import axiosInstance from 'axiosInstance';
 import { ArrowBack, Close } from '@material-ui/icons';
+import { env } from 'configuration';
+import { useEffect, useState } from 'react';
 import { assetsApi } from '__fakeApi__';
 import RepresentationsList from './RepresentationList';
-import { env } from 'configuration';
 
-/*
-import IframeResizer from 'iframe-resizer-react'
- <IframeResizer
-                            log
-                            src={`${selectedInterlinker.backend}/assets/instantiate`}
-                            autoResize
-                            style={{ width: '1px', minWidth: '100%', border: 0, display: loadingInstantiator ? "none" : "block" }}
-                        />
-
-                        */
 export default function NewAssetModal({ open, setOpen, selectedInterlinker, task, onCreate }) {
     const [loadingInstantiator, setLoadingInstantiator] = useState(true);
     const [activeStep, _setActiveStep] = useState(0);
-    const [result, setResult] = useState(null);
-    const [link, setLink] = useState("");
+    const [assetData, setAssetData] = useState(null);
 
     const open_in_modal = selectedInterlinker.nature === "softwareinterlinker" && selectedInterlinker.integration && selectedInterlinker.integration.open_in_modal
-    console.log(selectedInterlinker.integration)
 
     const handleClose = () => {
         setOpen(false);
@@ -47,9 +28,10 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
         _setActiveStep(i)
     }
 
-    const onAssetCreate = async (data, interlinker_id) => await assetsApi.create(
+    const onAssetCreate = async (data, softwareinterlinker_id, knowledgeinterlinker_id) => await assetsApi.create(
         task.id,
-        interlinker_id,
+        softwareinterlinker_id,
+        knowledgeinterlinker_id,
         data.id || data._id,
     );
 
@@ -60,7 +42,7 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
         } else {
             data = result
         }
-        setResult(data)
+        setAssetData(data)
         setActiveStep(1)
         onCreate()
     }
@@ -76,12 +58,11 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
             setLoadingInstantiator(false)
         }
         if (code === "asset_created") {
-            //task_id, interlinker_id, external_id
-            const coproduction_response = await onAssetCreate(message, selectedInterlinker.id)
-            setLink(coproduction_response.link)
+            //task_id, interlinker_id, external_asset_id
+            const coproduction_asset = await onAssetCreate(message, selectedInterlinker.id, null)
             // TODO: if fails
-            const interlinker_response = await axiosInstance.get(coproduction_response.link)
-            onFinish(interlinker_response.data)
+            const interlinker_asset = await assetsApi.getExternal(coproduction_asset.id)
+            onFinish({ ...coproduction_asset, ...interlinker_asset })
         }
     }
 
@@ -93,7 +74,7 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
         else if (window.attachEvent) {
             window.attachEvent("onmessage", onMessage, false);
         }
-        if (!open_in_modal) {
+        if (selectedInterlinker.nature === "softwareinterlinker" && !open_in_modal) {
             window.open(`${selectedInterlinker.backend}/instantiate`)
         }
 
@@ -115,7 +96,7 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
         return "40vh"
     }
 
-    const variousAssetsInstantiated = Array.isArray(result)
+    const variousAssetsInstantiated = Array.isArray(assetData)
 
     return (
         <Dialog
@@ -150,15 +131,17 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
                         )}
                 </Stepper>*/}
                 {activeStep === 0 && <Box>
-                    {open_in_modal &&
+                    {/* If software interlinker */}
+                    {selectedInterlinker.nature === "softwareinterlinker" && open_in_modal &&
                         <>
                             {loadingInstantiator && <CircularProgress />}
                             <iframe style={{ display: loadingInstantiator ? "none" : "block" }} src={`${selectedInterlinker.backend}/instantiate`} style={{ width: "100%", minHeight: "60vh", border: 0 }}></iframe>
                         </>
                     }
-                    {!open_in_modal &&
+                    {selectedInterlinker.nature === "softwareinterlinker" && !open_in_modal &&
                         <CircularProgress />
                     }
+                    {/* If knowledge interlinker */}
                     {selectedInterlinker.nature === "knowledgeinterlinker" &&
                         <Box
                             sx={{
@@ -166,7 +149,7 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
                                 transform: 'translate(-50%, -50%)', p: 10
                             }}
                         >
-                            <RepresentationsList representations={selectedInterlinker.representations} onAssetCreate={onAssetCreate} onFinish={onFinish} />
+                            <RepresentationsList knowledgeinterlinker={selectedInterlinker} onAssetCreate={onAssetCreate} onFinish={onFinish} />
                         </Box>
                     }
                 </Box>}
@@ -186,10 +169,10 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
                         {variousAssetsInstantiated
                             ?
                             <AvatarGroup max={4}>
-                                {result.map((el, i) => <Avatar key={`result${i}`} src={el.icon} />)}
+                                {assetData.map((el, i) => <Avatar key={`result${i}`} src={el.icon} />)}
                             </AvatarGroup>
 
-                            : <Avatar src={result.icon} />
+                            : <Avatar src={assetData.icon} />
                         }
 
                     </Box>
@@ -202,7 +185,7 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
                             {variousAssetsInstantiated ?
                                 "Assets created!"
                                 :
-                                <>Asset '{result.name}' created!</>
+                                <>Asset '{assetData.name}' created!</>
                             }
                         </Typography>
                     </Box>
@@ -231,7 +214,7 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
                             color='primary'
                             variant='contained'
                             onClick={() => {
-                                window.open(link + "/view", "_blank")
+                                window.open(assetData.link + "/view", "_blank")
                                 handleClose()
                             }}
                         >

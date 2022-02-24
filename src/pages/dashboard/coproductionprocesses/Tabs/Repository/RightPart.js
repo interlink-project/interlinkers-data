@@ -22,6 +22,7 @@ import { FinishedIcon, InProgressIcon } from './Icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateTask } from 'slices/process';
 import { SafeHTMLElement } from 'utils/safeHTML';
+import { green } from '@material-ui/core/colors';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -69,7 +70,7 @@ const sameHeightCards = {
     flexDirection: "column",
     justifyContent: "space-between"
 }
-const RightPart = ({selectedTask}) => {
+const RightPart = ({ selectedTask }) => {
     const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
 
 
@@ -152,42 +153,46 @@ const RightPart = ({selectedTask}) => {
                             <ToggleButton value="finished">Finished <FinishedIcon /></ToggleButton>
                         </ToggleButtonGroup>
 
-                        <Divider sx={{ mt: 1 }} />
+                        {loadingTaskInfo ?
+                            <CircularProgress /> : <Grid sx={{mt: 1}} container spacing={3} justifyContent="flex-start">
+
+                                {recommendedInterlinkers.map(interlinker => (
+                                    <Grid item xs={12} md={6} lg={4} xl={3} key={interlinker.id}                       >
+                                        <Card style={sameHeightCards}>
+                                            <CardActionArea onClick={() => {
+                                                setSelectedInterlinker(interlinker);
+                                                setOpenNewAsset(true)
+                                            }}>
+
+                                                <CardHeader
+                                                    avatar={assets.find(el => el.knowledgeinterlinker_id === interlinker.id || el.softwareinterlinker_id === interlinker.id) && <Check style={{ color: green[500] }} />}
+                                                    sx={{ px: 2, pt: 2, pb: 0 }}
+                                                    title={interlinker.name}
+                                                    subheader={moment(interlinker.created_at).format("LL")} />
+
+                                                <Typography sx={{ px: 2 }} variant="body2" color="text.secondary">
+                                                    <SafeHTMLElement data={interlinker.description} />
+                                                </Typography>
+                                                <CardMedia
+                                                    sx={{
+                                                        bottom: 0,
+                                                        maxHeight: "200px"
+                                                    }}
+                                                    component="img"
+                                                    image={interlinker.snapshots[0]}
+                                                />
+                                            </CardActionArea>
+                                        </Card>
+
+                                    </Grid>
+                                ))}
+                            </Grid>}
+
+                        <Divider sx={{ my: 2 }} />
                     </Collapse>
                     <Box>
                         <Box sx={{ mt: 2 }}>
-                            {loadingTaskInfo ?
-                                <CircularProgress /> : <Grid container spacing={3} justifyContent="flex-start">
 
-                                    {recommendedInterlinkers.map(interlinker => (
-                                        <Grid item xs={12} md={6} lg={4} xl={3} key={interlinker.id}                       >
-                                            <Card style={sameHeightCards}>
-                                                <CardActionArea onClick={() => {
-                                                    setSelectedInterlinker(interlinker);
-                                                    setOpenNewAsset(true)
-                                                }}>
-                                                    {/*avatar={<Check />} */}
-                                                    <CardHeader sx={{ px: 2, pt: 2, pb: 0 }} title={interlinker.name} subheader={moment(interlinker.created_at).format("LL")} />
-
-                                                    <Typography sx={{ px: 2 }} variant="body2" color="text.secondary">
-                                                        <SafeHTMLElement data={interlinker.description} />
-                                                    </Typography>
-                                                    <CardMedia
-                                                        sx={{
-                                                            bottom: 0,
-                                                            maxHeight: "200px"
-                                                        }}
-                                                        component="img"
-                                                        image={interlinker.snapshots[0]}
-                                                    />
-                                                </CardActionArea>
-                                            </Card>
-
-                                        </Grid>
-                                    ))}
-                                </Grid>}
-
-                            <Divider sx={{ my: 2 }} />
                             {/* <Paper>
                       <Search>
                         <SearchIconWrapper>
@@ -206,6 +211,7 @@ const RightPart = ({selectedTask}) => {
 
                         {selectedInterlinker && openNewAsset && <NewAssetModal open={openNewAsset} setOpen={setOpenNewAsset} selectedInterlinker={selectedInterlinker} task={selectedTask} onCreate={updateAssets} />}
 
+                        <Box sx={{textAlign: "center", width: "100%"}}>
                         <Button
                             id="basic-button"
                             aria-controls={open ? 'basic-menu' : undefined}
@@ -213,11 +219,13 @@ const RightPart = ({selectedTask}) => {
                             aria-expanded={open ? 'true' : undefined}
                             onClick={handleClick}
                             variant="contained"
-                            fullWidth
+                            sx={{mt: 3}}
                             endIcon={<KeyboardArrowDown />}
                         >
                             Add new empty asset
                         </Button>
+                        </Box>
+                       
                         <Menu
                             id="basic-menu"
                             anchorEl={anchorEl}

@@ -1,36 +1,23 @@
-import { useEffect, useState } from 'react';
 import {
     Avatar,
     List,
     ListItem,
-    ListItemAvatar,
-    ListItemText,
-    ListItemSecondaryAction,
-    Checkbox,
-    Skeleton,
-    Button,
-    Typography
+    ListItemAvatar, ListItemSecondaryAction, ListItemText, Skeleton, Typography
 } from '@material-ui/core';
-import axiosInstance from 'axiosInstance';
-import useAuth from 'hooks/useAuth';
+import { LoadingButton } from '@material-ui/lab';
+import { useEffect, useState } from 'react';
+import { representationsApi } from '__fakeApi__';
 
 const RepresentationItem = ({ representation, checked, onCheck }) => {
     const labelId = `checkbox-for-${representation.id}`;
     const [data, setData] = useState(null)
     const [loading, setLoading] = useState(true)
-    const auth = useAuth();
-    const { user } = auth;
 
     const updateData = async () => {
-        axiosInstance.get(representation.link, {
-            headers:
-            {
-                'Authorization': "Bearer " + user.access_token
-            }
-        }).then((res) => {
-                setData(res.data)
-                setLoading(false)
-            }
+        representationsApi.getExternal(representation.id).then((res) => {
+            setData(res)
+            setLoading(false)
+        }
         )
     }
     useEffect(() => {
@@ -49,17 +36,18 @@ const RepresentationItem = ({ representation, checked, onCheck }) => {
                 src={data.icon}
             />
         </ListItemAvatar>
-        <ListItemText id={labelId} primary={data.name} secondary={data.interlinker_name} />
+        <ListItemText id={labelId} primary={data.name} secondary={data.created_date} />
         <ListItemSecondaryAction>
         </ListItemSecondaryAction>
     </ListItem> : <Skeleton animation="wave" height={60} />
 }
 
 
-export default function RepresentationsList({ representations, onAssetCreate, onFinish }) {
+export default function RepresentationsList({ knowledgeinterlinker, onAssetCreate, onFinish }) {
     const [checkedRepresentations, setCheckedRepresentations] = useState([]);
     const [loading, setLoading] = useState(false);
 
+    const {representations = []} = knowledgeinterlinker
     const handleToggle = (value) => () => {
         const currentIndex = checkedRepresentations.indexOf(value);
         const newChecked = [...checkedRepresentations];
@@ -82,10 +70,9 @@ export default function RepresentationsList({ representations, onAssetCreate, on
         }
         checkedRepresentations.forEach(async (repr_id, i) => {
             const representation = representations.find(el => el.id === repr_id)
-            let interlinker_response = await axiosInstance.post(representation.link + "/clone")
-            const coproduction_response = await onAssetCreate(interlinker_response.data, representation.softwareinterlinker_id)
-            interlinker_response = await axiosInstance.get(coproduction_response.link)
-            results.push(interlinker_response.data)
+            const interlinker_response = await representationsApi.clone(representation.id)
+            const coproduction_response = await onAssetCreate(interlinker_response, representation.softwareinterlinker_id, knowledgeinterlinker.id)
+            results.push({ ...coproduction_response, ...interlinker_response })
             if (i === checkedRepresentations.length - 1) {
                 sendResults()
             }
@@ -98,6 +85,6 @@ export default function RepresentationsList({ representations, onAssetCreate, on
         <List dense sx={{ mt: 2, width: '100%', bgcolor: 'background.paper' }}>
             {representations.map(representation => <RepresentationItem key={representation.id} representation={representation} checked={checkedRepresentations.indexOf(representation.id) !== -1} onCheck={handleToggle} />)}
         </List>
-        <Button disabled={loading || checkedRepresentations.length === 0} sx={{ mt: 2 }} fullWidth variant="contained" onClick={() => clone()}>Clone</Button>
+        <LoadingButton loading={loading} disabled={checkedRepresentations.length === 0} sx={{ mt: 2 }} fullWidth variant="contained" onClick={() => clone()}>Clone</LoadingButton>
     </>
 }
