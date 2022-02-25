@@ -107,7 +107,7 @@ const Assets = ({ assets, onChange }) => {
       </TableBody>
     </Table>
       :
-      <Alert severity="warning" sx={{ my: 2 }}>No assets yet for this task. Instantiate an interlinker, please.</Alert>
+      <Alert severity="info" sx={{ my: 2 }}>No assets yet for this task.</Alert>
     }
   </>
 }

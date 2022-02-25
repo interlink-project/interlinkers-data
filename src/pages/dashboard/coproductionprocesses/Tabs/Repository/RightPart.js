@@ -2,7 +2,7 @@ import {
     Avatar, Box, Button, Collapse, Grid, Menu, MenuItem,
     ToggleButton,
     ToggleButtonGroup, alpha,
-    CircularProgress, Paper, Typography, InputBase,
+    CircularProgress, Alert, Typography, InputBase,
     Divider, Stack, Card, CardContent, CardMedia, CardActionArea, CardActions, CardHeader
 } from '@material-ui/core';
 import { Check, Info as InfoIcon, KeyboardArrowDown, KeyboardArrowUp, Search as SearchIcon } from '@material-ui/icons';
@@ -73,7 +73,6 @@ const sameHeightCards = {
 const RightPart = ({ selectedTask }) => {
     const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
 
-
     const [assets, setAssets] = useState([])
     const [recommendedInterlinkers, setRecommendedInterlinkers] = useState([])
     const [loadingTaskInfo, setLoadingTaskInfo] = useState(false)
@@ -83,6 +82,9 @@ const RightPart = ({ selectedTask }) => {
     // new asset modal
     const [selectedInterlinker, setSelectedInterlinker] = useState(null)
     const [openNewAsset, setOpenNewAsset] = useState(false);
+
+    // status
+    const [status, setStatus] = useState(selectedTask ? selectedTask.status : "awaiting");
 
     const updateAssets = async () => {
         const assets = await tasksApi.getAssets(selectedTask.id);
@@ -109,12 +111,11 @@ const RightPart = ({ selectedTask }) => {
     const dispatch = useDispatch();
 
     const handleChange = (event, newStatus) => {
-        dispatch(updateTask({
-            id: selectedTask.id,
-            data: {
-                status: newStatus
-            }
-        }))
+        tasksApi.update(selectedTask.id, {
+            status: newStatus
+        }).then((res) => {
+            setStatus(newStatus)
+        })
     };
 
     const [anchorEl, setAnchorEl] = useState(null);
@@ -138,12 +139,13 @@ const RightPart = ({ selectedTask }) => {
                     </Button>
                     <Collapse in={collapseOpen} timeout="auto" unmountOnExit>
 
-                        <Typography variant="h6">Description:</Typography>
+                        <Typography variant="h6">Description of the task:</Typography>
                         {selectedTask.description || "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mi odio, finibus eget porttitor eu, condimentum nec nibh. Fusce a tellus faucibus, sagittis quam eu, ornare odio. Etiam ac dolor sed elit accumsan vestibulum vel ut sapien. Duis iaculis quam in cursus euismod. Curabitur lacinia eros sit amet arcu luctus gravida. Fusce lacinia quis urna sit amet auctor. Phasellus vitae enim luctus, tempus lectus sed, feugiat elit. Nam quis nibh hendrerit, auctor eros sed, fermentum tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam vehicula nunc in odio consequat, eget volutpat lectus tincidunt."}
-                        <Typography variant="h6" sx={{ mt: 2 }}>Status:</Typography>
+                        <Typography variant="h6" sx={{ mt: 2 }}>Current status of the task:</Typography>
                         <ToggleButtonGroup
-                            color="primary"
-                            value={selectedTask.status}
+                            sx={{ mt: 1 }}
+                            color={status === "finished" ? "success" : status === "in_progress" ? "warning" : "primary"}
+                            value={status}
                             exclusive
                             fullWidth
                             onChange={handleChange}
@@ -152,9 +154,9 @@ const RightPart = ({ selectedTask }) => {
                             <ToggleButton value="in_progress">In progress <InProgressIcon /></ToggleButton>
                             <ToggleButton value="finished">Finished <FinishedIcon /></ToggleButton>
                         </ToggleButtonGroup>
-
+                        <Typography variant="h6" sx={{ mt: 2, mb: 1 }}>Recommended interlinkers for this task:</Typography>
                         {loadingTaskInfo ?
-                            <CircularProgress /> : <Grid sx={{ mt: 1 }} container spacing={3} justifyContent="flex-start">
+                            <CircularProgress /> : recommendedInterlinkers.length === 0 ? <Alert severity="warning">No recommended interlinkers found</Alert> : <Grid container spacing={3} justifyContent="flex-start">
 
                                 {recommendedInterlinkers.map(interlinker => (
                                     <Grid item xs={12} md={6} lg={4} xl={3} key={interlinker.id}                       >
@@ -204,6 +206,7 @@ const RightPart = ({ selectedTask }) => {
                         />
                       </Search>
                     </Paper>*/}
+                            <Typography sx={{ mb: 1 }} variant="h6">Current assets:</Typography>
 
                             <Assets assets={assets} onChange={updateAssets} />
 
@@ -219,7 +222,7 @@ const RightPart = ({ selectedTask }) => {
                                 aria-expanded={open ? 'true' : undefined}
                                 onClick={handleClick}
                                 variant="contained"
-                                sx={{ mt: 3 }}
+                                sx={{ mt: 2 }}
                                 endIcon={<KeyboardArrowDown />}
                             >
                                 Add new empty asset

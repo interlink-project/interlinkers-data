@@ -42,12 +42,13 @@ const OverviewTab = () => {
                     <Typography variant="h6" sx={{ my: 2, textAlign: "center" }}>
                         Recent activity
                     </Typography>
-                    {warnings.map((warning, i) => <Alert key={warning + i.toString()} severity="warning" sx={{mb: 2}}>{warning}</Alert>)}
+                    {/* {warnings.map((warning, i) => <Alert key={warning + i.toString()} severity="warning" sx={{mb: 2}}>{warning}</Alert>)}
                     <div id="chart"></div>
                     <Divider />
                     <Typography variant="h6" sx={{ my: 2, textAlign: "center" }}>
                         Top contributors
-                    </Typography>
+                    </Typography>*/}
+                    
                     
                     <Divider />
                     
@@ -56,7 +57,7 @@ const OverviewTab = () => {
                     <Typography variant="h6" sx={{ my: 2, textAlign: "center", }}>
                         Recent assets
                     </Typography>
-                    <TableContainer sx={{ height: "100%", overflowY: 'scroll',}}>
+                    {/* <TableContainer sx={{ height: "100%", overflowY: 'scroll',}}>
                     <Table sx={{ minWidth: 650 }} aria-label="simple table">
                         <TableHead>
                             <TableRow>
@@ -82,7 +83,8 @@ const OverviewTab = () => {
                             ))}
                         </TableBody>
                     </Table>
-                    </TableContainer>
+                    </TableContainer> */}
+                    
                     
                 </Grid>
             </Grid>

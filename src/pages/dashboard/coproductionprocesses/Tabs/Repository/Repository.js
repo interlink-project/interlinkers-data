@@ -15,7 +15,6 @@ const Repository = () => {
           <PhaseTabs />
         </Grid>
         <Grid item xl={4} lg={4} md={6} xs={12}>
-          <AppBar position="fixed" />
           <RepositoryTree setSelectedTask={setSelectedTask} loading={false} />
         </Grid>
 
