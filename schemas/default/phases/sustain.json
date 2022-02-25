@@ -4,31 +4,57 @@
     ],
     "name_translations": {
         "en": "Sustain",
-        "es": ""
+        "es": "Sostener"
     },
     "description_translations": {
-        "en": "",
+        "en": "Define the business models to ensure sustainability of the co-produced service. Create business plans and exploitation agreements that will foster the adoption of your co-produced service by third party PAs, companies and stakeholders. Continous maintenance and monotoring is needed for responsive, accesible, widely adopted services as INTERLINK ambitions.",
         "es": ""
     },
     "objectives": [
         {
             "name_translations": {
                 "en": "Handover",
-                "es": ""
+                "es": "Entrega"
             },
             "description_translations": {
-                "en": "",
+                "en": "Optinally delegate service deployment from own on premise to Cloud-based to external hosting provider infrastructure. Agree on contract, costs, responsabilities and benefits for third party take over of service delivery ",
                 "es": ""
             },
             "problem_profiles": [],
             "tasks": [
                 {
                     "name_translations": {
-                        "en": "Handover",
-                        "es": ""
+                        "en": "Business model specification",
+                        "es": "Especificaci\u00F3n de Modelo de Negocio"
                     },
                     "description_translations": {
-                        "en": "",
+                        "en": "Co-production team defines one to many business models with their associated business plans which can be negotiated with third party adopters of the service, who want to take over execution, maintenance and monitoring, but where exploitation between co-producers and adopters needs to be clarified.",
+                        "es": ""
+                    },
+                    "problem_profiles": [
+                        "ORG_PROBLEM_7"
+                    ]
+                },
+                {
+                    "name_translations": {
+                        "en": "Exploitation agreement",
+                        "es": "Acuerdo de Explotaci\u00F3n"
+                    },
+                    "description_translations": {
+                        "en": "Before a third party adopter may take over a co-produced service an exploitation agreement must be produced and signed by the involved parties. ",
+                        "es": ""
+                    },
+                    "problem_profiles": [
+                        "ORG_PROBLEM_7"
+                    ]
+                },
+                {
+                    "name_translations": {
+                        "en": "Handover",
+                        "es": "Entrega"
+                    },
+                    "description_translations": {
+                        "en": "Provide documentation for third party take over of service maintenane and monitoring. Agreement on contract to regulate transfer of runnning responsability to third party and sharing of revenues among those that co-produced the service and third parties who may optionally host the service. Customization of the delivered service to target customers (translations, content adaptations and so on) ",
                         "es": ""
                     },
                     "problem_profiles": [
@@ -40,10 +66,10 @@
         {
             "name_translations": {
                 "en": "Maintenance",
-                "es": ""
+                "es": "Mantenimiento"
             },
             "description_translations": {
-                "en": "",
+                "en": "Ensure the deployed service is continously operative and responsive to new customer demands who may make the service further adopted and more useful. This responsability may be shared by co-production team and third parties who may have taken over the service. ",
                 "es": ""
             },
             "problem_profiles": [],
@@ -51,10 +77,10 @@
                 {
                     "name_translations": {
                         "en": "Task distribution for maintenance, contracts regulation, data management archiving",
-                        "es": ""
+                        "es": "Distribuci\u00F3n de tareas para el mantenimiento, regulaci\u00F3n de contratos, archivo de la gesti\u00F3n de datos"
                     },
                     "description_translations": {
-                        "en": "",
+                        "en": "If service depoyment was delegated or is still carried out by co-production team, task distribution among those responsible for maintenance must be ensured. Regularly contract monitoring and maintenance activities will need to be carried out to ensure 24x7 operation.",
                         "es": ""
                     },
                     "problem_profiles": []
@@ -64,10 +90,10 @@
         {
             "name_translations": {
                 "en": "Monitoring",
-                "es": ""
+                "es": "Monitorizaci\u00F3n"
             },
             "description_translations": {
-                "en": "",
+                "en": "Monitor that the service is fulfilling its originally set objectives by tracking a set of KPIs inferred from usage or polling customers.  ",
                 "es": ""
             },
             "problem_profiles": [
@@ -78,10 +104,10 @@
                 {
                     "name_translations": {
                         "en": "Monitoring ongoing evaluation, periodic evaluations with stakeholders",
-                        "es": ""
+                        "es": "Seguimiento de la evaluaci\u00F3n continua, evaluaciones peri\u00F3dicas con las partes interesadas"
                     },
                     "description_translations": {
-                        "en": "",
+                        "en": "Analyse logs gathered by the delivered service. Analyse surveys\/questionnaires filled in by stakeholders. ",
                         "es": ""
                     },
                     "problem_profiles": []
