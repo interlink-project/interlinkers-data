@@ -41,7 +41,8 @@
     },
     "instructions": "https://opensource.guide/",
     "representations": [
-        {"title": "",
+        {
+            "title": "",
             "description": "",
             "form": "guidelines",
             "format": "structured_format",

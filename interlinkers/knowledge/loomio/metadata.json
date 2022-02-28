@@ -1,0 +1,59 @@
+{
+    "name_translations": {
+        "en": "Loomio",
+        "es": ""
+    },
+    "description_translations": {
+        "en": "<p>Loomio is an Open Source solution that offers a workspace for conversation, sharing information and opinions, making proposals, deciding actions and achieving outcomes. With Loomio it is possible to</p><ul><li>start and organize discussions and keep record of participation and involvement;</li><li>manage collaborative decisions through different forms of polls, surveys, etc;</li><li>enable collaborating voting around ideas and proposal under discussion.</li></ul>",
+        "es": ""
+    },
+    "tags": [
+        "decision making",
+        "idea management",
+        "voting"
+    ],
+    "difficulty": "medium",
+    "targets": [
+        "all"
+    ],
+    "licence": "copyleft",
+    "problem_profiles": [
+        "UND_PROBLEM_1",
+        "UND_PROBLEM_5",
+        "DEF_PROBLEM_2"
+    ],
+    "types": [
+        "enabling_services;operation_services"
+    ],
+    "related_interlinkers": [],
+    "administrative_scopes": [
+        "eu",
+        "national",
+        "local"
+    ],
+    "constraints_and_limitations_translations": {
+        "en": "None",
+        "es": ""
+    },
+    "regulations_and_standards_translations": {
+        "en": "None",
+        "es": ""
+    },
+    "overview_text": {
+        "en": "Web-based tool for collaborative decision making, discussion. and idea management",
+        "es": ""
+    },
+    "instructions": "./interlinkers/knowledge/loomio/instructions.html",
+    "representations": [
+        {
+            "title": "",
+            "description": "",
+            "form": "guidelines",
+            "format": "structured_format",
+            "file": "./interlinkers/knowledge/loomio/data.json",
+            "softwareinterlinker": "externalresourcemanager",
+            "language": "en"
+        }
+    ],
+    "reference": "loomio"
+}
