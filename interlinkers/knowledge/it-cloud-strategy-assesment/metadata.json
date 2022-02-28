@@ -41,16 +41,19 @@
         "en": "Questionaire in google calc format",
         "es": ""
     },
-    "instructions": "./interlinkers/knowledge/it-cloud-competences-assesment/instructions.md",
-    "representations": [
-        {"title": "",
-            "description": "",
-            "form": "guidelines",
-            "format": "editable_source_document",
-            "file": "./interlinkers/knowledge/it-cloud-competences-assesment/data.json",
-            "softwareinterlinker": "externalresourcemanager",
-            "language": "en"
-        }
-    ],
+    "representations": {
+        "en": [
+            {
+                "instructions": "./interlinkers/knowledge/it-cloud-competences-assesment/instructions.md",
+                "title": "",
+                "description": "",
+                "form": "guidelines",
+                "format": "editable_source_document",
+                "file": "./interlinkers/knowledge/it-cloud-competences-assesment/data.json",
+                "softwareinterlinker": "externalresourcemanager"
+            }
+        ],
+        "es": []
+    },
     "reference": "agid-cloud-computing-migration-strategy-evalution-template"
 }

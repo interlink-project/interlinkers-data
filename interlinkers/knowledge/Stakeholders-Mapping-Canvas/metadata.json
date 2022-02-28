@@ -44,16 +44,19 @@
         "en": "This INTERLINKER is composed by a PowerPoint scheleton that can be downloaded, customized and used to facilitate discussions for stakeholders mapping.",
         "es": ""
     },
-    "instructions": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/instructions.md",
-    "representations": [
-        {"title": "",
-            "description": "",
-            "form": "document_template",
-            "format": "editable_source_document",
-            "file": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/resource.pptx",
-            "softwareinterlinker": "googledrive",
-            "language": "en"
-        }
-    ],
+    "representations": {
+        "en": [
+            {
+                "title": "",
+                "description": "",
+                "form": "document_template",
+                "format": "editable_source_document",
+                "file": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/resource.pptx",
+                "softwareinterlinker": "googledrive",
+                "instructions": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/instructions.md"
+            }
+        ],
+        "es": []
+    },
     "reference": "stakeholders-mapping-canvas"
 }

@@ -8,7 +8,7 @@
         "es": ""
     },
     "tags": [
-       "services"
+        "services"
     ],
     "difficulty": "easy",
     "targets": [
@@ -21,10 +21,9 @@
     "types": [
         "enhancing_services"
     ],
-    "related_interlinkers": [
-    ],
+    "related_interlinkers": [],
     "administrative_scopes": [
-       "national",
+        "national",
         "local"
     ],
     "domain": "",
@@ -41,16 +40,19 @@
         "en": "This INTERLINKER is composed by a PowerPoint scheleton that can be downloaded, customized and used to facilitate PERSONA in the scenarios.",
         "es": ""
     },
-    "instructions": "./interlinkers/knowledge/it-agid-personas/instructions.md",
-    "representations": [
-        {"title": "",
-            "description": "",
-            "form": "document_template",
-            "format": "editable_source_document",
-            "file": "./interlinkers/knowledge/it-agid-personas/resource.pptx",
-            "softwareinterlinker": "googledrive",
-            "language": "en"
-        }
-    ],
+    "representations": {
+        "en": [
+            {
+                "instructions": "./interlinkers/knowledge/it-agid-personas/instructions.md",
+                "title": "",
+                "description": "",
+                "form": "document_template",
+                "format": "editable_source_document",
+                "file": "./interlinkers/knowledge/it-agid-personas/resource.pptx",
+                "softwareinterlinker": "googledrive"
+            }
+        ],
+        "es": []
+    },
     "reference": "it-agid-personas"
 }

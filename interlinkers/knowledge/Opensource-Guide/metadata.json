@@ -39,17 +39,19 @@
         "en": "Textual documents in the form of linked Web pages describing the guidelines and testing success criteria",
         "es": ""
     },
-    "instructions": "https://opensource.guide/",
-    "representations": [
-        {
-            "title": "",
-            "description": "",
-            "form": "guidelines",
-            "format": "structured_format",
-            "file": "./interlinkers/knowledge/Opensource-Guide/data.json",
-            "softwareinterlinker": "externalresourcemanager",
-            "language": "en"
-        }
-    ],
+    "representations": {
+        "en": [
+            {
+                "instructions": "https://opensource.guide/",
+                "title": "",
+                "description": "",
+                "form": "guidelines",
+                "format": "structured_format",
+                "file": "./interlinkers/knowledge/Opensource-Guide/data.json",
+                "softwareinterlinker": "externalresourcemanager"
+            }
+        ],
+        "es": []
+    },
     "reference": "open-source-guides"
 }

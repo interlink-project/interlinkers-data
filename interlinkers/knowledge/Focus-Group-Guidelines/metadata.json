@@ -46,16 +46,19 @@
         "en": "This INTERLINKER is composed by a document that can be visualized and/or downloaded to enlarge stakeholders' know-how on methods for problem and context analysis. It contains a part that can be customized to prepare a reserch plan for focus groups.",
         "es": ""
     },
-    "instructions": "./interlinkers/knowledge/Focus-Group-Guidelines/instructions.md",
-    "representations": [
-        {"title": "",
-            "description": "",
-            "form": "guidelines",
-            "format": "editable_source_document",
-            "file": "./interlinkers/knowledge/Focus-Group-Guidelines/resource.docx",
-            "softwareinterlinker": "googledrive",
-            "language": "en"
-        }
-    ],
+    "representations": {
+        "en": [
+            {
+                "instructions": "./interlinkers/knowledge/Focus-Group-Guidelines/instructions.md",
+                "title": "",
+                "description": "",
+                "form": "guidelines",
+                "format": "editable_source_document",
+                "file": "./interlinkers/knowledge/Focus-Group-Guidelines/resource.docx",
+                "softwareinterlinker": "googledrive"
+            }
+        ],
+        "es": []
+    },
     "reference": "focus-group-guidelines"
 }

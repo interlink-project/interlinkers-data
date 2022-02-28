@@ -43,16 +43,19 @@
         "en": "This INTERLINKER is composed by a PowerPoint scheleton that can be downloaded, customized and used to facilitate a Focus Group.",
         "es": ""
     },
-    "instructions": "./interlinkers/knowledge/Focus-Group-Template-Co-production/instructions.md",
-    "representations": [
-        {"title": "",
-            "description": "",
-            "form": "document_template",
-            "format": "editable_source_document",
-            "file": "./interlinkers/knowledge/Focus-Group-Template-Co-production/resource.pptx",
-            "softwareinterlinker": "googledrive",
-            "language": "en"
-        }
-    ],
+    "representations": {
+        "en": [
+            {
+                "instructions": "./interlinkers/knowledge/Focus-Group-Template-Co-production/instructions.md",
+                "title": "",
+                "description": "",
+                "form": "document_template",
+                "format": "editable_source_document",
+                "file": "./interlinkers/knowledge/Focus-Group-Template-Co-production/resource.pptx",
+                "softwareinterlinker": "googledrive"
+            }
+        ],
+        "es": []
+    },
     "reference": "focus-group-template-co-production-investigation"
 }

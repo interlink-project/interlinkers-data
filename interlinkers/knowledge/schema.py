@@ -1,7 +1,7 @@
 from enum import Enum
 from interlinkers.base import InterlinkerSchema
 from pydantic import BaseModel, FilePath, HttpUrl, validator
-from typing import Union, List
+from typing import Dict, Optional, Union, List
 
 class FormTypes(Enum):
     visual_template = "visual_template"
@@ -29,7 +29,8 @@ class SoftwareInterlinkers(Enum):
 class Representation(BaseModel):
     title: str
     description: str
-    language: str
+    instructions: Union[HttpUrl, FilePath]
+    # language: str
     form: FormTypes
     # FOR 1
     # Type of knowledge INTERLINKER: e.g., visual template, document template, canvas, best practices, guidelines, checklist, survey template, legal agreement template
@@ -45,7 +46,5 @@ class Representation(BaseModel):
     file: FilePath
 
 class Schema(InterlinkerSchema):
-    instructions: Union[HttpUrl, FilePath]
-    # FOR 1
-    # File that contains HTML (.html) or MARKDOWN (.md) file
-    representations: List[Representation]
+    representations: Dict[str, Optional[List[Representation]]]
+   

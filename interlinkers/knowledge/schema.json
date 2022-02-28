@@ -80,26 +80,14 @@
             "title": "Reference",
             "type": "string"
         },
-        "instructions": {
-            "title": "Instructions",
-            "anyOf": [
-                {
-                    "type": "string",
-                    "minLength": 1,
-                    "maxLength": 2083,
-                    "format": "uri"
-                },
-                {
-                    "type": "string",
-                    "format": "file-path"
-                }
-            ]
-        },
         "representations": {
             "title": "Representations",
-            "type": "array",
-            "items": {
-                "$ref": "#/definitions/Representation"
+            "type": "object",
+            "additionalProperties": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/definitions/Representation"
+                }
             }
         }
     },
@@ -112,7 +100,6 @@
         "licence",
         "constraints_and_limitations_translations",
         "reference",
-        "instructions",
         "representations"
     ],
     "additionalProperties": false,
@@ -229,9 +216,20 @@
                     "title": "Description",
                     "type": "string"
                 },
-                "language": {
-                    "title": "Language",
-                    "type": "string"
+                "instructions": {
+                    "title": "Instructions",
+                    "anyOf": [
+                        {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 2083,
+                            "format": "uri"
+                        },
+                        {
+                            "type": "string",
+                            "format": "file-path"
+                        }
+                    ]
                 },
                 "form": {
                     "$ref": "#/definitions/FormTypes"
@@ -251,7 +249,7 @@
             "required": [
                 "title",
                 "description",
-                "language",
+                "instructions",
                 "form",
                 "format",
                 "softwareinterlinker",

@@ -41,16 +41,19 @@
         "en": "PDF document",
         "es": ""
     },
-    "instructions": "./interlinkers/knowledge/it-cloud-enablement-kit/instructions.md",
-    "representations": [
-        {"title": "",
-            "description": "",
-            "form": "guidelines",
-            "format": "pdf",
-            "file": "./interlinkers/knowledge/it-cloud-enablement-kit/data.json",
-            "softwareinterlinker": "externalresourcemanager",
-            "language": "en"
-        }
-    ],
+    "representations": {
+        "en": [
+            {
+                "instructions": "./interlinkers/knowledge/it-cloud-enablement-kit/instructions.md",
+                "title": "",
+                "description": "",
+                "form": "guidelines",
+                "format": "pdf",
+                "file": "./interlinkers/knowledge/it-cloud-enablement-kit/data.json",
+                "softwareinterlinker": "externalresourcemanager"
+            }
+        ],
+        "es": []
+    },
     "reference": "cloud-enablement-kit-in-italian"
 }

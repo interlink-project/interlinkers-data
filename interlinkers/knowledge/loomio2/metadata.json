@@ -43,17 +43,19 @@
         "en": "Web-based tool for collaborative decision making, discussion. and idea management",
         "es": ""
     },
-    "instructions": "./interlinkers/knowledge/loomio/instructions.html",
-    "representations": [
-        {
-            "title": "",
-            "description": "",
-            "form": "guidelines",
-            "format": "structured_format",
-            "file": "./interlinkers/knowledge/loomio/data.json",
-            "softwareinterlinker": "externalresourcemanager",
-            "language": "en"
-        }
-    ],
+    "representations": {
+        "en": [
+            {
+                "instructions": "./interlinkers/knowledge/loomio2/instructions.html",
+                "title": "",
+                "description": "",
+                "form": "document_template",
+                "format": "editable_source_document",
+                "file": "./interlinkers/knowledge/loomio2/resource.pdf",
+                "softwareinterlinker": "googledrive"
+            }
+        ],
+        "es": []
+    },
     "reference": "loomio"
 }

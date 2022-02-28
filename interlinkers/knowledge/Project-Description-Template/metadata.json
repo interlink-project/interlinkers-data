@@ -37,16 +37,19 @@
         "en": "Textual document",
         "es": ""
     },
-    "instructions": "./interlinkers/knowledge/Project-Description-Template/instructions.md",
-    "representations": [
-        {"title": "",
-            "description": "",
-            "form": "document_template",
-            "format": "editable_source_document",
-            "file": "./interlinkers/knowledge/Project-Description-Template/resource.docx",
-            "softwareinterlinker": "googledrive",
-            "language": "en"
-        }
-    ],
+    "representations": {
+        "en": [
+            {
+                "instructions": "./interlinkers/knowledge/Project-Description-Template/instructions.md",
+                "title": "",
+                "description": "",
+                "form": "document_template",
+                "format": "editable_source_document",
+                "file": "./interlinkers/knowledge/Project-Description-Template/resource.docx",
+                "softwareinterlinker": "googledrive"
+            }
+        ],
+        "es": []
+    },
     "reference": "Project description template"
 }

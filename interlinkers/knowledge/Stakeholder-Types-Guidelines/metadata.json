@@ -8,7 +8,7 @@
 		"es": ""
 	},
 	"tags": [
-		"services", 
+		"services",
 		"stakeholder mappping"
 	],
 	"difficulty": "easy",
@@ -41,17 +41,19 @@
 		"en": "This INTERLINKER is composed by a pdf containing guidelines.",
 		"es": ""
 	},
-	"instructions": "./interlinkers/knowledge/Stakeholder-Types-Guidelines/instructions.md",
-	"representations": [
-		{
-			"title": "",
-			"description": "",
-			"form": "guidelines",
-			"format": "pdf",
-			"file": "./interlinkers/knowledge/Stakeholder-Types-Guidelines/resource.pdf",
-			"softwareinterlinker": "googledrive",
-			"language": "en"
-		}
-	],
+	"representations": {
+		"en": [
+			{
+				"title": "",
+				"instructions": "./interlinkers/knowledge/Stakeholder-Types-Guidelines/instructions.md",
+				"description": "",
+				"form": "guidelines",
+				"format": "pdf",
+				"file": "./interlinkers/knowledge/Stakeholder-Types-Guidelines/resource.pdf",
+				"softwareinterlinker": "googledrive"
+			}
+		],
+		"es": []
+	},
 	"reference": "Understand the different types of stakeholders"
 }

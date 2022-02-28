@@ -42,16 +42,19 @@
         "en": "Textual documents in the form of linked Web pages describing the guidelines and testing success criteria",
         "es": ""
     },
-    "instructions": "https://www.w3.org/WAI/WCAG21/quickref/",
-    "representations": [
-        {"title": "",
-            "description": "",
-            "form": "guidelines",
-            "format": "structured_format",
-            "file": "./interlinkers/knowledge/w3c_web_content_accessibility_guidelines/data.json",
-            "softwareinterlinker": "externalresourcemanager",
-            "language": "en"
-        }
-    ],
+    "representations": {
+        "en": [
+            {
+                "title": "",
+                "description": "",
+                "form": "guidelines",
+                "format": "structured_format",
+                "file": "./interlinkers/knowledge/w3c_web_content_accessibility_guidelines/data.json",
+                "softwareinterlinker": "externalresourcemanager",
+                "instructions": "https://www.w3.org/WAI/WCAG21/quickref/"
+            }
+        ],
+        "es": []
+    },
     "reference": "w3c-web-content-accessibility-guidelines"
 }

@@ -43,17 +43,19 @@
         "en": "This INTERLINKER is composed by a Word scheleton that can be downloaded, customized and used to co-edit a whole business plan for a co-produced service.",
         "es": ""
     },
-    "instructions": "./interlinkers/knowledge/Business-Plan-Template/instructions.md",
-    "representations": [
-        {
-            "title": "",
-            "description": "",
-            "form": "document_template",
-            "format": "editable_source_document",
-            "file": "./interlinkers/knowledge/Business-Plan-Template/resource.docx",
-            "softwareinterlinker": "googledrive",
-            "language": "en"
-        }
-    ],
+    "representations": {
+        "en": [
+            {
+                "instructions": "./interlinkers/knowledge/Business-Plan-Template/instructions.md",
+                "title": "",
+                "description": "",
+                "form": "document_template",
+                "format": "editable_source_document",
+                "file": "./interlinkers/knowledge/Business-Plan-Template/resource.docx",
+                "softwareinterlinker": "googledrive"
+            }
+        ],
+        "es": []
+    },
     "reference": "business-plan-template"
 }

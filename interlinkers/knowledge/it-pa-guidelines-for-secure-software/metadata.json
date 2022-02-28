@@ -39,16 +39,19 @@
         "en": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
         "es": ""
     },
-    "instructions": "./interlinkers/knowledge/it-pa-guidelines-for-secure-software/instructions.md",
-    "representations": [
-        {"title": "",
-            "description": "",
-            "form": "guidelines",
-            "format": "structured_format",
-            "file": "./interlinkers/knowledge/it-pa-guidelines-for-secure-software/data.json",
-            "softwareinterlinker": "externalresourcemanager",
-            "language": "en"
-        }
-    ],
+    "representations": {
+        "en": [
+            {
+                "instructions": "./interlinkers/knowledge/it-pa-guidelines-for-secure-software/instructions.md",
+                "title": "",
+                "description": "",
+                "form": "guidelines",
+                "format": "structured_format",
+                "file": "./interlinkers/knowledge/it-pa-guidelines-for-secure-software/data.json",
+                "softwareinterlinker": "externalresourcemanager"
+            }
+        ],
+        "es": []
+    },
     "reference": "agid-guidelines-for-the-development-of-secure-software-in-italian"
 }

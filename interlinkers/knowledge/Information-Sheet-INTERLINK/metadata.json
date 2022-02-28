@@ -44,16 +44,19 @@
         "en": "This INTERLINKER is composed by a document that can be downloaded, printed and distributed to participants.",
         "es": ""
     },
-    "instructions": "./interlinkers/knowledge/Information-Sheet-INTERLINK/instructions.md",
-    "representations": [
-        {"title": "",
-            "description": "",
-            "form": "document_template",
-            "format": "editable_source_document",
-            "file": "./interlinkers/knowledge/Information-Sheet-INTERLINK/resource.docx",
-            "softwareinterlinker": "googledrive",
-            "language": "en"
-        }
-    ],
+    "representations": {
+        "en": [
+            {
+                "instructions": "./interlinkers/knowledge/Information-Sheet-INTERLINK/instructions.md",
+                "title": "",
+                "description": "",
+                "form": "document_template",
+                "format": "editable_source_document",
+                "file": "./interlinkers/knowledge/Information-Sheet-INTERLINK/resource.docx",
+                "softwareinterlinker": "googledrive"
+            }
+        ],
+        "es": []
+    },
     "reference": "information-sheet-for-interlink-project"
 }

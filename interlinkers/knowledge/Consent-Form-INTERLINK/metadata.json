@@ -44,16 +44,19 @@
         "en": "This INTERLINKER is composed by a document that can be downloaded, printed and distributed to participants.",
         "es": ""
     },
-    "instructions": "./interlinkers/knowledge/Consent-Form-INTERLINK/instructions.md",
-    "representations": [
-        {"title": "",
-            "description": "",
-            "form": "document_template",
-            "format": "editable_source_document",
-            "file": "./interlinkers/knowledge/Consent-Form-INTERLINK/resource.docx",
-            "softwareinterlinker": "googledrive",
-            "language": "en"
-        }
-    ],
+    "representations": {
+        "en": [
+            {
+                "instructions": "./interlinkers/knowledge/Consent-Form-INTERLINK/instructions.md",
+                "title": "",
+                "description": "",
+                "form": "document_template",
+                "format": "editable_source_document",
+                "file": "./interlinkers/knowledge/Consent-Form-INTERLINK/resource.docx",
+                "softwareinterlinker": "googledrive"
+            }
+        ],
+        "es": []
+    },
     "reference": "consent-form-for-interlink-project"
 }

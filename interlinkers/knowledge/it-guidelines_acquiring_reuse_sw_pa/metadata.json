@@ -42,16 +42,19 @@
         "en": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
         "es": ""
     },
-    "instructions": "./interlinkers/knowledge/it-guidelines_acquiring_reuse_sw_pa/instructions.md",
-    "representations": [
-        {"title": "",
-            "description": "",
-            "form": "guidelines",
-            "format": "structured_format",
-            "file": "./interlinkers/knowledge/it-guidelines_acquiring_reuse_sw_pa/data.json",
-            "softwareinterlinker": "externalresourcemanager",
-            "language": "en"
-        }
-    ],
+    "representations": {
+        "en": [
+            {
+                "instructions": "./interlinkers/knowledge/it-guidelines_acquiring_reuse_sw_pa/instructions.md",
+                "title": "",
+                "description": "",
+                "form": "guidelines",
+                "format": "structured_format",
+                "file": "./interlinkers/knowledge/it-guidelines_acquiring_reuse_sw_pa/data.json",
+                "softwareinterlinker": "externalresourcemanager"
+            }
+        ],
+        "es": []
+    },
     "reference": "guidelines-on-the-acquisition-and-reuse-of-software-for-public-administrations"
 }
