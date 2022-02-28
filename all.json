@@ -2120,7 +2120,7 @@
                     "es": ""
                 },
                 "description_translations": {
-                    "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus sapien, dapibus fringilla dolor sit amet, bibendum aliquam massa. Duis nec faucibus nunc. In sit amet vulputate justo. In dictum turpis eu dolor posuere vehicula. Sed turpis risus, vestibulum sed aliquam id, tempus nec dolor. Nulla facilisi. Suspendisse tempor pulvinar dignissim. Nulla dui ante, finibus in bibendum vel, dignissim nec risus. Nullam gravida nisi quis purus porttitor, sed hendrerit ante tristique. Donec eget augue vitae purus vehicula vehicula non sit amet lacus. Quisque porta nisi pharetra, fringilla felis id, porta arcu. Mauris vel elementum tortor. Ut sed magna id enim finibus molestie eu vitae leo. Mauris at sem elit. Fusce viverra accumsan orci et feugiat. Mauris ullamcorper molestie massa ac faucibus. Integer sit amet tellus tortor. Vivamus bibendum at libero at aliquet. Proin consectetur, erat et vulputate tincidunt, tortor quam euismod elit, id efficitur sem sapien tempus dolor. Aliquam a molestie risus. Nunc rutrum rutrum felis, in malesuada dolor porttitor nec. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc condimentum porta magna sed pharetra. In non quam dolor.",
+                    "en": "This interlinker uses etherpad, an open source online editor, to provide collaborative editing in really real-time",
                     "es": ""
                 },
                 "tags": [
@@ -2357,7 +2357,7 @@
                     "es": ""
                 },
                 "description_translations": {
-                    "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus sapien, dapibus fringilla dolor sit amet, bibendum aliquam massa. Duis nec faucibus nunc. In sit amet vulputate justo. In dictum turpis eu dolor posuere vehicula. Sed turpis risus, vestibulum sed aliquam id, tempus nec dolor. Nulla facilisi. Suspendisse tempor pulvinar dignissim. Nulla dui ante, finibus in bibendum vel, dignissim nec risus. Nullam gravida nisi quis purus porttitor, sed hendrerit ante tristique. Donec eget augue vitae purus vehicula vehicula non sit amet lacus. Quisque porta nisi pharetra, fringilla felis id, porta arcu. Mauris vel elementum tortor. Ut sed magna id enim finibus molestie eu vitae leo. Mauris at sem elit. Fusce viverra accumsan orci et feugiat. Mauris ullamcorper molestie massa ac faucibus. Integer sit amet tellus tortor. Vivamus bibendum at libero at aliquet. Proin consectetur, erat et vulputate tincidunt, tortor quam euismod elit, id efficitur sem sapien tempus dolor. Aliquam a molestie risus. Nunc rutrum rutrum felis, in malesuada dolor porttitor nec. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc condimentum porta magna sed pharetra. In non quam dolor.",
+                    "en": "This interlinker allows to create references to external resources, such as web pages or direct link to resources allocated in other services.",
                     "es": ""
                 },
                 "tags": [
@@ -2450,8 +2450,8 @@
                     "en": [
                         {
                             "instructions": "./interlinkers/knowledge/it-pa-minimum-security-measures/instructions.md",
-                            "title": "",
-                            "description": "",
+                            "title": "Default",
+                            "description": "Default representation",
                             "form": "guidelines",
                             "format": "structured_format",
                             "file": "./interlinkers/knowledge/it-pa-minimum-security-measures/data.json",
@@ -2507,8 +2507,8 @@
                     "en": [
                         {
                             "instructions": "./interlinkers/knowledge/it-pa-guidelines-for-secure-software/instructions.md",
-                            "title": "",
-                            "description": "",
+                            "title": "Default",
+                            "description": "Default representation",
                             "form": "guidelines",
                             "format": "structured_format",
                             "file": "./interlinkers/knowledge/it-pa-guidelines-for-secure-software/data.json",
@@ -2568,8 +2568,8 @@
                     "en": [
                         {
                             "instructions": "./interlinkers/knowledge/loomio2/instructions.html",
-                            "title": "",
-                            "description": "",
+                            "title": "Default",
+                            "description": "Default representation",
                             "form": "document_template",
                             "format": "editable_source_document",
                             "file": "./interlinkers/knowledge/loomio2/resource.pdf",
@@ -2627,8 +2627,8 @@
                     "en": [
                         {
                             "instructions": "./interlinkers/knowledge/it-cloud-enablement-kit/instructions.md",
-                            "title": "",
-                            "description": "",
+                            "title": "Default",
+                            "description": "Default representation",
                             "form": "guidelines",
                             "format": "pdf",
                             "file": "./interlinkers/knowledge/it-cloud-enablement-kit/data.json",
@@ -2686,8 +2686,8 @@
                 "representations": {
                     "en": [
                         {
-                            "title": "",
-                            "description": "",
+                            "title": "Default",
+                            "description": "Default representation",
                             "form": "guidelines",
                             "format": "structured_format",
                             "file": "./interlinkers/knowledge/w3c_web_content_accessibility_guidelines/data.json",
@@ -2748,8 +2748,8 @@
                 "representations": {
                     "en": [
                         {
-                            "title": "",
-                            "description": "",
+                            "title": "Default",
+                            "description": "Default representation",
                             "form": "document_template",
                             "format": "editable_source_document",
                             "file": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/resource.pptx",
@@ -2811,8 +2811,8 @@
                     "en": [
                         {
                             "instructions": "./interlinkers/knowledge/Information-Sheet-INTERLINK/instructions.md",
-                            "title": "",
-                            "description": "",
+                            "title": "Default",
+                            "description": "Default representation",
                             "form": "document_template",
                             "format": "editable_source_document",
                             "file": "./interlinkers/knowledge/Information-Sheet-INTERLINK/resource.docx",
@@ -2871,8 +2871,8 @@
                     "en": [
                         {
                             "instructions": "./interlinkers/knowledge/it-guidelines-data-protection/instructions.md",
-                            "title": "",
-                            "description": "",
+                            "title": "Default",
+                            "description": "Default representation",
                             "form": "guidelines",
                             "format": "pdf",
                             "file": "./interlinkers/knowledge/it-guidelines-data-protection/data.json",
@@ -2933,8 +2933,8 @@
                     "en": [
                         {
                             "instructions": "./interlinkers/knowledge/Consent-Form-Template/instructions.md",
-                            "title": "",
-                            "description": "",
+                            "title": "Default",
+                            "description": "Default representation",
                             "form": "document_template",
                             "format": "editable_source_document",
                             "file": "./interlinkers/knowledge/Consent-Form-Template/resource.docx",
@@ -2992,8 +2992,8 @@
                     "en": [
                         {
                             "instructions": "./interlinkers/knowledge/it-cloud-competences-assesment/instructions.md",
-                            "title": "",
-                            "description": "",
+                            "title": "Default",
+                            "description": "Default representation",
                             "form": "guidelines",
                             "format": "editable_source_document",
                             "file": "./interlinkers/knowledge/it-cloud-competences-assesment/data.json",
@@ -3052,8 +3052,8 @@
                     "en": [
                         {
                             "instructions": "./interlinkers/knowledge/it-guidelines_acquiring_reuse_sw_pa/instructions.md",
-                            "title": "",
-                            "description": "",
+                            "title": "Default",
+                            "description": "Default representation",
                             "form": "guidelines",
                             "format": "structured_format",
                             "file": "./interlinkers/knowledge/it-guidelines_acquiring_reuse_sw_pa/data.json",
@@ -3114,8 +3114,8 @@
                     "en": [
                         {
                             "instructions": "./interlinkers/knowledge/it-guidelines-data-protection/instructions.md",
-                            "title": "",
-                            "description": "",
+                            "title": "Default",
+                            "description": "Default representation",
                             "form": "guidelines",
                             "format": "structured_format",
                             "file": "./interlinkers/knowledge/it-guidelines-data-protection/data.json",
@@ -3171,8 +3171,8 @@
                     "en": [
                         {
                             "instructions": "https://opensource.guide/",
-                            "title": "",
-                            "description": "",
+                            "title": "Default",
+                            "description": "Default representation",
                             "form": "guidelines",
                             "format": "structured_format",
                             "file": "./interlinkers/knowledge/Opensource-Guide/data.json",
@@ -3291,8 +3291,8 @@
                     "en": [
                         {
                             "instructions": "./interlinkers/knowledge/Business-Plan-Template/instructions.md",
-                            "title": "",
-                            "description": "",
+                            "title": "Default",
+                            "description": "Default representation",
                             "form": "document_template",
                             "format": "editable_source_document",
                             "file": "./interlinkers/knowledge/Business-Plan-Template/resource.docx",
@@ -3352,8 +3352,8 @@
                     "en": [
                         {
                             "instructions": "./interlinkers/knowledge/Focus-Group-Template-Co-production/instructions.md",
-                            "title": "",
-                            "description": "",
+                            "title": "Default",
+                            "description": "Default representation",
                             "form": "document_template",
                             "format": "editable_source_document",
                             "file": "./interlinkers/knowledge/Focus-Group-Template-Co-production/resource.pptx",
@@ -3413,8 +3413,8 @@
                     "en": [
                         {
                             "instructions": "./interlinkers/knowledge/Business-Model-Canvas/instructions.md",
-                            "title": "",
-                            "description": "",
+                            "title": "Default",
+                            "description": "Default representation",
                             "form": "document_template",
                             "format": "editable_source_document",
                             "file": "./interlinkers/knowledge/Business-Model-Canvas/resource.pptx",
@@ -3477,8 +3477,8 @@
                     "en": [
                         {
                             "instructions": "./interlinkers/knowledge/Focus-Group-Guidelines/instructions.md",
-                            "title": "",
-                            "description": "",
+                            "title": "Default",
+                            "description": "Default representation",
                             "form": "guidelines",
                             "format": "editable_source_document",
                             "file": "./interlinkers/knowledge/Focus-Group-Guidelines/resource.docx",
@@ -3535,8 +3535,8 @@
                     "en": [
                         {
                             "instructions": "./interlinkers/knowledge/it-agid-personas/instructions.md",
-                            "title": "",
-                            "description": "",
+                            "title": "Default",
+                            "description": "Default representation",
                             "form": "document_template",
                             "format": "editable_source_document",
                             "file": "./interlinkers/knowledge/it-agid-personas/resource.pptx",
@@ -3597,8 +3597,8 @@
                     "en": [
                         {
                             "instructions": "./interlinkers/knowledge/Consent-Form-INTERLINK/instructions.md",
-                            "title": "",
-                            "description": "",
+                            "title": "Default",
+                            "description": "Default representation",
                             "form": "document_template",
                             "format": "editable_source_document",
                             "file": "./interlinkers/knowledge/Consent-Form-INTERLINK/resource.docx",
@@ -3659,8 +3659,8 @@
                     "en": [
                         {
                             "instructions": "./interlinkers/knowledge/Information-Sheet-Template/instructions.md",
-                            "title": "",
-                            "description": "",
+                            "title": "Default",
+                            "description": "Default representation",
                             "form": "document_template",
                             "format": "editable_source_document",
                             "file": "./interlinkers/knowledge/Information-Sheet-Template/resource.docx",
@@ -3714,8 +3714,8 @@
                     "en": [
                         {
                             "instructions": "./interlinkers/knowledge/Project-Description-Template/instructions.md",
-                            "title": "",
-                            "description": "",
+                            "title": "Default",
+                            "description": "Default representation",
                             "form": "document_template",
                             "format": "editable_source_document",
                             "file": "./interlinkers/knowledge/Project-Description-Template/resource.docx",
@@ -3773,8 +3773,8 @@
                     "en": [
                         {
                             "instructions": "./interlinkers/knowledge/it-cloud-competences-assesment/instructions.md",
-                            "title": "",
-                            "description": "",
+                            "title": "Default",
+                            "description": "Default representation",
                             "form": "guidelines",
                             "format": "editable_source_document",
                             "file": "./interlinkers/knowledge/it-cloud-competences-assesment/data.json",
