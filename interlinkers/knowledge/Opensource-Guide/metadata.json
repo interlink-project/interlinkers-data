@@ -43,8 +43,8 @@
         "en": [
             {
                 "instructions": "https://opensource.guide/",
-                "title": "",
-                "description": "",
+                "title": "Default",
+                "description": "Default representation",
                 "form": "guidelines",
                 "format": "structured_format",
                 "file": "./interlinkers/knowledge/Opensource-Guide/data.json",

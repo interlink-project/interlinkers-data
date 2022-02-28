@@ -50,8 +50,8 @@
         "en": [
             {
                 "instructions": "./interlinkers/knowledge/Focus-Group-Guidelines/instructions.md",
-                "title": "",
-                "description": "",
+                "title": "Default",
+                "description": "Default representation",
                 "form": "guidelines",
                 "format": "editable_source_document",
                 "file": "./interlinkers/knowledge/Focus-Group-Guidelines/resource.docx",

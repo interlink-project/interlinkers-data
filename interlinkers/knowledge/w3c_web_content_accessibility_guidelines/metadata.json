@@ -45,8 +45,8 @@
     "representations": {
         "en": [
             {
-                "title": "",
-                "description": "",
+                "title": "Default",
+                "description": "Default representation",
                 "form": "guidelines",
                 "format": "structured_format",
                 "file": "./interlinkers/knowledge/w3c_web_content_accessibility_guidelines/data.json",

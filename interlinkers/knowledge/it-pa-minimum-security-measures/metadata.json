@@ -43,8 +43,8 @@
         "en": [
             {
                 "instructions": "./interlinkers/knowledge/it-pa-minimum-security-measures/instructions.md",
-                "title": "",
-                "description": "",
+                "title": "Default",
+                "description": "Default representation",
                 "form": "guidelines",
                 "format": "structured_format",
                 "file": "./interlinkers/knowledge/it-pa-minimum-security-measures/data.json",

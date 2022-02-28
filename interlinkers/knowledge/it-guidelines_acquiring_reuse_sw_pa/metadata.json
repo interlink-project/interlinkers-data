@@ -46,8 +46,8 @@
         "en": [
             {
                 "instructions": "./interlinkers/knowledge/it-guidelines_acquiring_reuse_sw_pa/instructions.md",
-                "title": "",
-                "description": "",
+                "title": "Default",
+                "description": "Default representation",
                 "form": "guidelines",
                 "format": "structured_format",
                 "file": "./interlinkers/knowledge/it-guidelines_acquiring_reuse_sw_pa/data.json",

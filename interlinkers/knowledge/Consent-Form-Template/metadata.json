@@ -48,8 +48,8 @@
         "en": [
             {
                 "instructions": "./interlinkers/knowledge/Consent-Form-Template/instructions.md",
-                "title": "",
-                "description": "",
+                "title": "Default",
+                "description": "Default representation",
                 "form": "document_template",
                 "format": "editable_source_document",
                 "file": "./interlinkers/knowledge/Consent-Form-Template/resource.docx",
