@@ -43,12 +43,10 @@
     },
     "logotype": "./interlinkers/software/survey/logo.png",
     "reference": "survey-creator",
-    "tags_translations": {
-        "en": [
-            "survey",
-            "question",
-            "poll",
-            "vote"
-        ]
-    }
+    "tags_translations": [
+        "survey",
+        "question",
+        "poll",
+        "vote"
+    ]
 }

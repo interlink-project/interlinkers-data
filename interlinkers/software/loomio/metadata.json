@@ -65,11 +65,9 @@
     },
     "logotype": "./interlinkers/software/loomio/logo.png",
     "reference": "loomio",
-    "tags_translations": {
-        "en": [
-            "decision making",
-            "idea management",
-            "voting"
-        ]
-    }
+    "tags_translations": [
+        "decision making",
+        "idea management",
+        "voting"
+    ]
 }
