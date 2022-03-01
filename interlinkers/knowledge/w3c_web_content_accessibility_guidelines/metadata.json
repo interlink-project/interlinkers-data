@@ -12,11 +12,9 @@
         "Web",
         "UI"
     ],
-    "difficulty": "medium",
     "targets": [
         "all"
     ],
-    "licence": "permissive",
     "problem_profiles": [
         "BUILD_PROBLEM_2",
         "BUILD_PROBLEM_1"
@@ -38,20 +36,21 @@
         "en": "EU Directive 2016/2102 on the accessibility of the websites and mobile applications of public sector bodies",
         "es": ""
     },
-    "overview_text": {
-        "en": "Textual documents in the form of linked Web pages describing the guidelines and testing success criteria",
-        "es": ""
-    },
     "representations": {
         "en": [
             {
-                "title": "Default",
                 "description": "Default representation",
                 "form": "guidelines",
                 "format": "structured_format",
                 "file": "./interlinkers/knowledge/w3c_web_content_accessibility_guidelines/data.json",
                 "softwareinterlinker": "externalresourcemanager",
-                "instructions": "https://www.w3.org/WAI/WCAG21/quickref/"
+                "instructions": "https://www.w3.org/WAI/WCAG21/quickref/",
+                "name": "W3C Web Content Accessibility Guidelines",
+                "extra_tags": [],
+                "difficulty": "medium",
+                "extra_targets": [],
+                "licence": "permissive",
+                "reference": "w3c-web-content-accessibility-guidelines"
             }
         ],
         "es": []

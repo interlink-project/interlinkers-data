@@ -25,17 +25,11 @@
                 "type": "string"
             }
         },
-        "difficulty": {
-            "$ref": "#/definitions/Difficulties"
-        },
         "targets": {
             "type": "array",
             "items": {
                 "$ref": "#/definitions/Targets"
             }
-        },
-        "licence": {
-            "$ref": "#/definitions/Licences"
         },
         "types": {
             "type": "array",
@@ -146,6 +140,12 @@
         },
         "integration": {
             "$ref": "#/definitions/Integration"
+        },
+        "difficulty": {
+            "$ref": "#/definitions/Difficulties"
+        },
+        "licence": {
+            "$ref": "#/definitions/Licences"
         }
     },
     "required": [
@@ -153,27 +153,16 @@
         "name_translations",
         "description_translations",
         "tags",
-        "difficulty",
-        "licence",
         "constraints_and_limitations_translations",
         "reference",
         "supported_by",
         "supports_internationalization",
-        "is_responsive"
+        "is_responsive",
+        "difficulty",
+        "licence"
     ],
     "additionalProperties": false,
     "definitions": {
-        "Difficulties": {
-            "title": "Difficulties",
-            "description": "An enumeration.",
-            "enum": [
-                "very_easy",
-                "easy",
-                "medium",
-                "difficult",
-                "very_difficult"
-            ]
-        },
         "Targets": {
             "title": "Targets",
             "description": "An enumeration.",
@@ -193,17 +182,6 @@
                 "all;research_organizations",
                 "all;research_organizations;universities",
                 "all;research_organizations;other_research_entities"
-            ]
-        },
-        "Licences": {
-            "title": "Licences",
-            "description": "An enumeration.",
-            "enum": [
-                "public_domain",
-                "permissive",
-                "copyleft",
-                "non_commercial",
-                "propietary"
             ]
         },
         "InterlinkerTypes": {
@@ -322,6 +300,28 @@
                 "api_path",
                 "capabilities",
                 "auth_method"
+            ]
+        },
+        "Difficulties": {
+            "title": "Difficulties",
+            "description": "An enumeration.",
+            "enum": [
+                "very_easy",
+                "easy",
+                "medium",
+                "difficult",
+                "very_difficult"
+            ]
+        },
+        "Licences": {
+            "title": "Licences",
+            "description": "An enumeration.",
+            "enum": [
+                "public_domain",
+                "permissive",
+                "copyleft",
+                "non_commercial",
+                "propietary"
             ]
         }
     }

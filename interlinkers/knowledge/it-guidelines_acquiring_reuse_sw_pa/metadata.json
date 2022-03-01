@@ -13,11 +13,9 @@
         "reuse",
         "acquisition"
     ],
-    "difficulty": "difficult",
     "targets": [
         "all"
     ],
-    "licence": "permissive",
     "problem_profiles": [
         "BUILD_PROBLEM_3"
     ],
@@ -38,20 +36,21 @@
         "en": "",
         "es": ""
     },
-    "overview_text": {
-        "en": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
-        "es": ""
-    },
     "representations": {
         "en": [
             {
                 "instructions": "./interlinkers/knowledge/it-guidelines_acquiring_reuse_sw_pa/instructions.md",
-                "title": "Default",
                 "description": "Default representation",
                 "form": "guidelines",
                 "format": "structured_format",
                 "file": "./interlinkers/knowledge/it-guidelines_acquiring_reuse_sw_pa/data.json",
-                "softwareinterlinker": "externalresourcemanager"
+                "softwareinterlinker": "externalresourcemanager",
+                "name": "Guidelines on the acquisition and reuse of software for public administrations",
+                "extra_tags": [],
+                "difficulty": "difficult",
+                "extra_targets": [],
+                "licence": "permissive",
+                "reference": "guidelines-on-the-acquisition-and-reuse-of-software-for-public-administrations"
             }
         ],
         "es": []

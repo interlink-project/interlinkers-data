@@ -12,11 +12,9 @@
         "canvas",
         "business"
     ],
-    "difficulty": "easy",
     "targets": [
         "all"
     ],
-    "licence": "public_domain",
     "problem_profiles": [
         "SUS_PROBLEM_1"
     ],
@@ -39,20 +37,21 @@
         "en": "",
         "es": ""
     },
-    "overview_text": {
-        "en": "This INTERLINKER is composed by a PowerPoint scheleton that can be downloaded, customized and used to facilitate discussions for business models.",
-        "es": ""
-    },
     "representations": {
         "en": [
             {
                 "instructions": "./interlinkers/knowledge/Business-Model-Canvas/instructions.md",
-                "title": "Default",
                 "description": "Default representation",
                 "form": "document_template",
                 "format": "editable_source_document",
                 "file": "./interlinkers/knowledge/Business-Model-Canvas/resource.pptx",
-                "softwareinterlinker": "googledrive"
+                "softwareinterlinker": "googledrive",
+                "name": "Business Model Canvas",
+                "extra_tags": [],
+                "difficulty": "easy",
+                "extra_targets": [],
+                "licence": "public_domain",
+                "reference": "business-model-canvas"
             }
         ],
         "es": []

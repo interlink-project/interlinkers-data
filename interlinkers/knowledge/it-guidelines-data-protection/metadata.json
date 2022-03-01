@@ -12,11 +12,9 @@
         "privacy",
         "security"
     ],
-    "difficulty": "difficult",
     "targets": [
         "all"
     ],
-    "licence": "permissive",
     "problem_profiles": [
         "BUILD_PROBLEM_3"
     ],
@@ -38,20 +36,21 @@
         "en": "<ul><li>Article 70 (1e) of the Regulation 2016/679/EU of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC], (hereinafter \"GDPR\")</li> <li>EEA Agreement and in particular to Annex XI and Protocol 37 thereof, as amended by the Decision of the EEA joint Committee No 154/2018 of 6 July 2018,</li><li>Article 12 and Article 22 of its Rules of Procedure</li></ul>",
         "es": ""
     },
-    "overview_text": {
-        "en": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
-        "es": ""
-    },
     "representations": {
         "en": [
             {
                 "instructions": "./interlinkers/knowledge/it-guidelines-data-protection/instructions.md",
-                "title": "Default",
                 "description": "Default representation",
                 "form": "guidelines",
                 "format": "pdf",
                 "file": "./interlinkers/knowledge/it-guidelines-data-protection/data.json",
-                "softwareinterlinker": "externalresourcemanager"
+                "softwareinterlinker": "externalresourcemanager",
+                "name": "EDPB Data Protection Guidelines",
+                "extra_tags": [],
+                "difficulty": "difficult",
+                "extra_targets": [],
+                "licence": "permissive",
+                "reference": "edpb-data-protection-guidelines"
             }
         ],
         "es": []

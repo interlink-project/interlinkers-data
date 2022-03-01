@@ -12,11 +12,9 @@
         "idea management",
         "voting"
     ],
-    "difficulty": "medium",
     "targets": [
         "all"
     ],
-    "licence": "copyleft",
     "problem_profiles": [
         "UND_PROBLEM_1",
         "UND_PROBLEM_5",
@@ -39,20 +37,21 @@
         "en": "None",
         "es": ""
     },
-    "overview_text": {
-        "en": "Web-based tool for collaborative decision making, discussion. and idea management",
-        "es": ""
-    },
     "representations": {
         "en": [
             {
                 "instructions": "./interlinkers/knowledge/loomio2/instructions.html",
-                "title": "Default",
                 "description": "Default representation",
                 "form": "document_template",
                 "format": "editable_source_document",
                 "file": "./interlinkers/knowledge/loomio2/resource.pdf",
-                "softwareinterlinker": "googledrive"
+                "softwareinterlinker": "googledrive",
+                "name": "Loomio2",
+                "extra_tags": [],
+                "difficulty": "medium",
+                "extra_targets": [],
+                "licence": "copyleft",
+                "reference": "loomio2"
             }
         ],
         "es": []

@@ -13,11 +13,9 @@
         "co-production project participants",
         "INTERLINK"
     ],
-    "difficulty": "very_easy",
     "targets": [
         "all"
     ],
-    "licence": "public_domain",
     "problem_profiles": [
         "ORG_PROBLEM_14"
     ],
@@ -40,20 +38,21 @@
         "en": "The information sheet is compliant to GDPR norms.",
         "es": ""
     },
-    "overview_text": {
-        "en": "This INTERLINKER is composed by a document that can be downloaded, printed and distributed to participants.",
-        "es": ""
-    },
     "representations": {
         "en": [
             {
                 "instructions": "./interlinkers/knowledge/Information-Sheet-INTERLINK/instructions.md",
-                "title": "Default",
                 "description": "Default representation",
                 "form": "document_template",
                 "format": "editable_source_document",
                 "file": "./interlinkers/knowledge/Information-Sheet-INTERLINK/resource.docx",
-                "softwareinterlinker": "googledrive"
+                "softwareinterlinker": "googledrive",
+                "name": "Information Sheet for INTERLINK project",
+                "extra_tags": [],
+                "difficulty": "very_easy",
+                "extra_targets": [],
+                "licence": "public_domain",
+                "reference": "information-sheet-for-interlink-project"
             }
         ],
         "es": []

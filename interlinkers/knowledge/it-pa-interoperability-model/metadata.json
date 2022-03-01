@@ -15,11 +15,9 @@
         "reuse",
         "acquisition"
     ],
-    "difficulty": "difficult",
     "targets": [
         "all"
     ],
-    "licence": "permissive",
     "problem_profiles": [
         "BUILD_PROBLEM_3"
     ],
@@ -40,20 +38,21 @@
         "en": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en",
         "es": ""
     },
-    "overview_text": {
-        "en": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
-        "es": ""
-    },
     "representations": {
         "en": [
             {
                 "instructions": "./interlinkers/knowledge/it-guidelines-data-protection/instructions.md",
-                "title": "Default",
                 "description": "Default representation",
                 "form": "guidelines",
                 "format": "structured_format",
                 "file": "./interlinkers/knowledge/it-guidelines-data-protection/data.json",
-                "softwareinterlinker": "externalresourcemanager"
+                "softwareinterlinker": "externalresourcemanager",
+                "name": "Italian PA interoperablity model ",
+                "extra_tags": [],
+                "difficulty": "difficult",
+                "extra_targets": [],
+                "licence": "permissive",
+                "reference": "italian-pa-interoperablity-model"
             }
         ],
         "es": []

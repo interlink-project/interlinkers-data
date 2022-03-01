@@ -2,7 +2,7 @@ import json
 from enum import Enum
 from pathlib import Path
 
-from interlinkers.base import InterlinkerSchema
+from interlinkers.base import InterlinkerSchema, Difficulties, Licences
 from pydantic import FilePath, HttpUrl, BaseModel
 from typing import Optional, Union, List
 
@@ -49,4 +49,12 @@ class Schema(InterlinkerSchema):
     
     integration: Optional[Integration] 
     
-    
+    ## INTERLINKER SPECIFIC
+    difficulty: Difficulties
+    # FOR 1
+    # Level of difficulty in using the tool
+
+    licence: Licences
+    # FOR 1
+    # Type of licences under which the INTERLINKER is usable.
+    # The user should be provided with information that explains the meaning of the different licences, both for software and knowledge.

@@ -12,11 +12,9 @@
         "canvas",
         "understand"
     ],
-    "difficulty": "easy",
     "targets": [
         "all"
     ],
-    "licence": "public_domain",
     "problem_profiles": [
         "UND_PROBLEM_2"
     ],
@@ -40,20 +38,21 @@
         "en": "",
         "es": ""
     },
-    "overview_text": {
-        "en": "This INTERLINKER is composed by a PowerPoint scheleton that can be downloaded, customized and used to facilitate discussions for stakeholders mapping.",
-        "es": ""
-    },
     "representations": {
         "en": [
             {
-                "title": "Default",
                 "description": "Default representation",
                 "form": "document_template",
                 "format": "editable_source_document",
                 "file": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/resource.pptx",
                 "softwareinterlinker": "googledrive",
-                "instructions": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/instructions.md"
+                "instructions": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/instructions.md",
+                "name": "Stakeholders Mapping Canvas",
+                "extra_tags": [],
+                "difficulty": "easy",
+                "extra_targets": [],
+                "licence": "public_domain",
+                "reference": "stakeholders-mapping-canvas"
             }
         ],
         "es": []

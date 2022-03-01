@@ -10,11 +10,9 @@
     "tags": [
         "security"
     ],
-    "difficulty": "difficult",
     "targets": [
         "all"
     ],
-    "licence": "permissive",
     "problem_profiles": [
         "BUILD_PROBLEM_3"
     ],
@@ -35,20 +33,21 @@
         "en": "",
         "es": ""
     },
-    "overview_text": {
-        "en": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
-        "es": ""
-    },
     "representations": {
         "en": [
             {
                 "instructions": "./interlinkers/knowledge/it-pa-minimum-security-measures/instructions.md",
-                "title": "Default",
                 "description": "Default representation",
                 "form": "guidelines",
                 "format": "structured_format",
                 "file": "./interlinkers/knowledge/it-pa-minimum-security-measures/data.json",
-                "softwareinterlinker": "externalresourcemanager"
+                "softwareinterlinker": "externalresourcemanager",
+                "name": "AgID Minimum Security Measures for Public Administration. ",
+                "extra_tags": [],
+                "difficulty": "difficult",
+                "extra_targets": [],
+                "licence": "permissive",
+                "reference": "agid-minimum-security-measures-for-public-administration"
             }
         ],
         "es": []

@@ -12,11 +12,9 @@
         "services",
         "security"
     ],
-    "difficulty": "medium",
     "targets": [
         "all"
     ],
-    "licence": "permissive",
     "problem_profiles": [
         "BUILD_PROBLEM_3"
     ],
@@ -37,20 +35,21 @@
         "en": "",
         "es": ""
     },
-    "overview_text": {
-        "en": "Questionaire in google calc format",
-        "es": ""
-    },
     "representations": {
         "en": [
             {
                 "instructions": "./interlinkers/knowledge/it-cloud-competences-assesment/instructions.md",
-                "title": "Default",
                 "description": "Default representation",
                 "form": "guidelines",
                 "format": "editable_source_document",
                 "file": "./interlinkers/knowledge/it-cloud-competences-assesment/data.json",
-                "softwareinterlinker": "externalresourcemanager"
+                "softwareinterlinker": "externalresourcemanager",
+                "name": "AgID Cloud computing migration strategy evalution template",
+                "extra_tags": [],
+                "difficulty": "medium",
+                "extra_targets": [],
+                "licence": "permissive",
+                "reference": "agid-cloud-computing-migration-strategy-evalution-template"
             }
         ],
         "es": []

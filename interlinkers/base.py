@@ -1,7 +1,8 @@
 from enum import Enum
 from typing import List, Optional
-from pydantic import BaseModel, conlist, Extra, validator
+
 from problem_profiles import WithProblemProfiles
+from pydantic import BaseModel, Extra, conlist, validator
 
 # https://docs.google.com/spreadsheets/d/1tJ2BfX4EOdbBqEbrJWg8a3MENw13vYiPZM_S4wWWgWQ/edit#gid=0
 
@@ -78,19 +79,9 @@ class InterlinkerSchema(WithProblemProfiles, extra=Extra.forbid):
     # FOR 1
     # Tags that can be used to characterize the INTERLINKER
 
-    ## INTERLINKER SPECIFIC
-    difficulty: Difficulties
-    # FOR 1
-    # Level of difficulty in using the tool
-
     targets: Optional[List[Targets]]
     # FOR 2
     # List of stakeholders, if applicable, that will be engaged in using this INTERLINKER.
-
-    licence: Licences
-    # FOR 1
-    # Type of licences under which the INTERLINKER is usable.
-    # The user should be provided with information that explains the meaning of the different licences, both for software and knowledge.
 
     problem_profiles: List[ProblemProfiles]
     # FOR 1

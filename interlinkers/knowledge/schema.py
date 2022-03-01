@@ -1,7 +1,7 @@
 from enum import Enum
-from interlinkers.base import InterlinkerSchema
 from pydantic import BaseModel, FilePath, HttpUrl, validator
 from typing import Dict, Optional, Union, List
+from interlinkers.base import InterlinkerSchema, Difficulties, Licences
 
 class FormTypes(Enum):
     visual_template = "visual_template"
@@ -27,8 +27,10 @@ class SoftwareInterlinkers(Enum):
     externalresourcemanager = "externalresourcemanager"
 
 class Representation(BaseModel):
-    title: str
+    name: str
     description: str
+    difficulty: str
+    licence: str
     instructions: Union[HttpUrl, FilePath]
     # language: str
     form: FormTypes
@@ -44,6 +46,9 @@ class Representation(BaseModel):
     # - Shown on the platform interface in the page showing the details of the INTERLINKER
     softwareinterlinker: SoftwareInterlinkers
     file: FilePath
+
+    difficulty: Difficulties
+    licence: Licences
 
 class Schema(InterlinkerSchema):
     representations: Dict[str, Optional[List[Representation]]]

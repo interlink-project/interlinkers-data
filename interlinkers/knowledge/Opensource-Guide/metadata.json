@@ -10,11 +10,9 @@
     "tags": [
         "open source software"
     ],
-    "difficulty": "very_easy",
     "targets": [
         "all"
     ],
-    "licence": "public_domain",
     "problem_profiles": [
         "BUILD_PROBLEM_3"
     ],
@@ -35,20 +33,21 @@
         "en": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en",
         "es": ""
     },
-    "overview_text": {
-        "en": "Textual documents in the form of linked Web pages describing the guidelines and testing success criteria",
-        "es": ""
-    },
     "representations": {
         "en": [
             {
                 "instructions": "https://opensource.guide/",
-                "title": "Default",
                 "description": "Default representation",
                 "form": "guidelines",
                 "format": "structured_format",
                 "file": "./interlinkers/knowledge/Opensource-Guide/data.json",
-                "softwareinterlinker": "externalresourcemanager"
+                "softwareinterlinker": "externalresourcemanager",
+                "name": "Open Source guides",
+                "extra_tags": [],
+                "difficulty": "very_easy",
+                "extra_targets": [],
+                "licence": "public_domain",
+                "reference": "open-source-guides"
             }
         ],
         "es": []
