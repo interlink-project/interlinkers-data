@@ -43,10 +43,12 @@
     },
     "logotype": "./interlinkers/software/ceditor/logo.jpeg",
     "reference": "collaborative-editor",
-    "tags_translations": [
-        "document",
-        "collaborative",
-        "editor",
-        "etherpad"
-    ]
+    "tags_translations": {
+        "en": [
+            "document",
+            "collaborative",
+            "editor",
+            "etherpad"
+        ]
+    }
 }

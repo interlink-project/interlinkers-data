@@ -43,18 +43,20 @@
     },
     "logotype": "./interlinkers/software/googledrive/logo.png",
     "reference": "google-drive",
-    "tags_translations": [
-        "document",
-        "slide",
-        "sheets",
-        "form",
-        "jamboard",
-        "site",
-        "paint",
-        "draw",
-        "collaboration",
-        "excel",
-        "word",
-        "powerpoint"
-    ]
+    "tags_translations": {
+        "en": [
+            "document",
+            "slide",
+            "sheets",
+            "form",
+            "jamboard",
+            "site",
+            "paint",
+            "draw",
+            "collaboration",
+            "excel",
+            "word",
+            "powerpoint"
+        ]
+    }
 }

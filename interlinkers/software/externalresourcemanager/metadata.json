@@ -43,10 +43,12 @@
     },
     "logotype": "./interlinkers/software/externalresourcemanager/logo.png",
     "reference": "external-resource-manager",
-    "tags_translations": [
-        "external",
-        "link",
-        "share",
-        "report"
-    ]
+    "tags_translations": {
+        "en": [
+            "external",
+            "link",
+            "share",
+            "report"
+        ]
+    }
 }
