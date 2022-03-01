@@ -14,18 +14,3 @@ export const THEMES = {
     key: "NATURE"
   },
 };
-
-export const LANGUAGES = [
-  {
-    label: 'English',
-    value: 'en',
-  },
-  {
-    label: 'Euskera',
-    value: 'eu',
-  },
-  {
-    label: 'Castellano',
-    value: 'es',
-  },
-];

@@ -1,23 +1,37 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Card, Checkbox, Chip, Divider, FormControlLabel, Input, Switch } from '@material-ui/core';
+import { Box, Card, Checkbox, MenuItem, Divider, FormControlLabel, Input, Select, Switch, FormControl } from '@material-ui/core';
 import SearchIcon from '../../../../icons/Search';
 import MultiSelect from '../../../MultiSelect';
 import { getInterlinkers } from 'slices/catalogue';
 import { useDispatch, useSelector } from 'react-redux';
 
-const selectOptions = [
+const multiselectOptions = [
   {
     label: 'Nature',
     options: [
       'Software',
       'Knowledge',
+      'Best practice'
     ]
   },
   {
-    label: 'Status',
+    label: 'Creator',
     options: [
-      'On',
-      'Off',
+      'Official',
+      'Team',
+      'Particular',
+    ]
+  },
+];
+
+
+const selectOptions = [
+  {
+    label: 'Creation date',
+    options: [
+      'Last week',
+      'Last month',
+      'Last year',
     ]
   },
 ];
@@ -85,7 +99,7 @@ const InterlinkerBrowseFilter = (props) => {
           p: 1
         }}
       >
-        {selectOptions.map((option) => (
+        {multiselectOptions.map((option) => (
           <React.Fragment key={option.label}>
             <MultiSelect
               label={option.label}
@@ -96,9 +110,19 @@ const InterlinkerBrowseFilter = (props) => {
             <Divider orientation='vertical' style={{  width: "20px" }} />
           </React.Fragment>
         ))}
-
-        <FormControlLabel control={<Switch size="small" defaultChecked />} label="Show only liked" />
-
+        {selectOptions.map((option) => (
+          <FormControl variant="standard" key={option.label}>
+            <Select
+              label={option.label}
+              placeholder={option.label}
+              onChange={handleMultiSelectChange}
+              value={null}
+            >
+            { option.options.map((opt) => <MenuItem value={opt}>{opt}</MenuItem>) }
+            </Select>
+            <Divider orientation='vertical' style={{  width: "20px" }} />
+          </FormControl>
+        ))}
       </Box>
     </Card>
   );

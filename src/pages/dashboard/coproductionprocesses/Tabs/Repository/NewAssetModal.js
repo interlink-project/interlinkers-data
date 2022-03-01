@@ -2,18 +2,19 @@ import {
     Avatar, AvatarGroup, Box,
     Button, CircularProgress, Dialog,
     DialogContent,
-    DialogTitle, IconButton, Typography
+    DialogTitle, IconButton, Typography, DialogActions
 } from '@material-ui/core';
 import { ArrowBack, Close } from '@material-ui/icons';
 import { env } from 'configuration';
 import { useEffect, useState } from 'react';
-import { assetsApi } from '__fakeApi__';
-import RepresentationsList from './RepresentationList';
+import { assetsApi, knowledgeInterlinkersApi } from '__fakeApi__';
+import InterlinkerDetails from "../../../interlinkers/InterlinkerDetails"
 
 export default function NewAssetModal({ open, setOpen, selectedInterlinker, task, onCreate }) {
     const [loadingInstantiator, setLoadingInstantiator] = useState(true);
     const [activeStep, _setActiveStep] = useState(0);
     const [assetData, setAssetData] = useState(null);
+    const [loading, setLoading] = useState(false);
 
     const open_in_modal = selectedInterlinker.nature === "softwareinterlinker" && selectedInterlinker.integration && selectedInterlinker.integration.open_in_modal
 
@@ -22,7 +23,7 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
     };
 
     const setActiveStep = (i) => {
-        if (i === 0) {
+        if (i === 1) {
             setLoadingInstantiator(true)
         }
         _setActiveStep(i)
@@ -43,7 +44,7 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
             data = result
         }
         setAssetData(data)
-        setActiveStep(1)
+        setActiveStep(2)
         onCreate()
     }
 
@@ -68,16 +69,18 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
 
     useEffect(() => {
         // https://stackoverflow.com/questions/2161388/calling-a-parent-window-function-from-an-iframe
-        if (window.addEventListener) {  // all browsers except IE before version 9
-            window.addEventListener("message", onMessage, false);
-        }
-        else if (window.attachEvent) {
-            window.attachEvent("onmessage", onMessage, false);
-        }
-        if (selectedInterlinker.nature === "softwareinterlinker" && !open_in_modal) {
-            window.open(`${selectedInterlinker.backend}/instantiate`)
-        }
 
+        if (activeStep === 1) {
+            if (window.addEventListener) {  // all browsers except IE before version 9
+                window.addEventListener("message", onMessage, false);
+            }
+            else if (window.attachEvent) {
+                window.attachEvent("onmessage", onMessage, false);
+            }
+            if (selectedInterlinker.nature === "softwareinterlinker" && !open_in_modal) {
+                window.open(`${selectedInterlinker.backend}/instantiate`)
+            }
+        }
 
         return () => {
             if (window.addEventListener) {
@@ -87,10 +90,13 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
                 window.attachEvent("onmessage", onMessage, false);
             }
         }
-    }, [selectedInterlinker]);
+    }, [activeStep, selectedInterlinker]);
 
     const getHeight = () => {
         if (activeStep === 0) {
+            return "70vh"
+        }
+        if (activeStep === 1) {
             return selectedInterlinker.nature === "softwareinterlinker" ? "70vh" : "50vh"
         }
         return "40vh"
@@ -130,7 +136,12 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
                         </Step>
                         )}
                 </Stepper>*/}
+
                 {activeStep === 0 && <Box>
+                    <InterlinkerDetails interlinker={selectedInterlinker} />
+                </Box>}
+
+                {activeStep === 1 && <Box>
                     {/* If software interlinker */}
                     {selectedInterlinker.nature === "softwareinterlinker" && open_in_modal &&
                         <>
@@ -149,12 +160,20 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
                                 transform: 'translate(-50%, -50%)', p: 10
                             }}
                         >
-                            <RepresentationsList knowledgeinterlinker={selectedInterlinker} onAssetCreate={onAssetCreate} onFinish={onFinish} />
+
+                            <Button variant="contained" onClick={async () => {
+                                const interlinker_asset = await knowledgeInterlinkersApi.instantiate(selectedInterlinker.id)
+                                const coproduction_asset = await onAssetCreate(interlinker_asset, selectedInterlinker.softwareinterlinker_id, selectedInterlinker.id)
+                                // TODO: if fails
+                                onFinish({ ...coproduction_asset, ...interlinker_asset })
+                            }}>
+                                Proceed
+                            </Button>
                         </Box>
                     }
                 </Box>}
 
-                {activeStep === 1 && <Box
+                {activeStep === 2 && <Box
                     style={{
                         position: 'absolute', left: '50%', top: '50%',
                         transform: 'translate(-50%, -50%)'
@@ -230,8 +249,12 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
                         </Button>
                     </Box>
                 </Box>}
-
             </DialogContent>
+            {activeStep === 0 && <DialogActions>
+                <Button sx={{ my: 2, mx: 4 }} autoFocus fullWidth variant="contained" onClick={() => setActiveStep(1)}>
+                    Instantiate interlinker
+                </Button>
+            </DialogActions>}
         </Dialog>
     );
 }

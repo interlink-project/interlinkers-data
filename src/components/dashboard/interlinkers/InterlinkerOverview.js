@@ -87,8 +87,8 @@ const InterlinkerOverview = (props) => {
             lg={4}
             xl={4}
           >
-            <Box sx={{ bottom: 0 }}>
-              <SwipeableTextMobileStepper images={interlinker.images} />
+            <Box sx={{ bottom: 0, width: "100%", height: "100%" }}>
+              <SwipeableTextMobileStepper images={interlinker.snapshots} />
             </Box>
           </Grid>
         </Grid>

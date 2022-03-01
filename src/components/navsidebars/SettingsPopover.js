@@ -10,7 +10,8 @@ import {
   Popover,
   IconButton,
 } from '@material-ui/core';
-import { THEMES, LANGUAGES } from '../../constants';
+import { THEMES } from '../../constants';
+import { LANGUAGES } from 'translations/i18n';
 import useSettings from '../../hooks/useSettings';
 import AdjustmentsIcon from '../../icons/Adjustments';
 

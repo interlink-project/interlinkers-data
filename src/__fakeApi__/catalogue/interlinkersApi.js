@@ -6,27 +6,19 @@ class InterlinkersApi extends GeneralApi {
     super("catalogue/api/v1/interlinkers");
   }
 
-  async getSoftwareInterlinkers(skip = null, limit = null) {
-    const searchparams = new URLSearchParams();
-    if (skip) {
-      searchparams.set('skip', skip);
-    }
-    if (limit) {
-      searchparams.set('limit', limit);
-    }
-    const newparams = searchparams.toString();
-    const res = await axiosInstance.get(
-      `/${this.url}/software${newparams ? `?${newparams}` : ''}`
-    );
-    console.log('getSoftware call', res.data);
-    return res.data;
+  async create(task_id, interlinker_id, external_representation_id) {
+    const res = await axiosInstance.post(`/${this.url}`, {
+      task_id,
+      interlinker_id,
+      external_representation_id
+    })
+    console.log('post call', res, res.data);
+    return res.data
   }
 
   async get_by_problem_profiles(problem_profiles) {
     const res = await axiosInstance.post(
-      `/${this.url}/by_problem_profiles`, {
-        problem_profiles
-      }
+      `/${this.url}/by_problem_profiles`, problem_profiles
     );
     console.log('by problem profiles call', res.data);
     return res.data;
@@ -42,7 +34,7 @@ class InterlinkersApi extends GeneralApi {
     }
     const newparams = searchparams.toString();
     const res = await axiosInstance.get(
-      `/${this.url}/${newparams ? `?${newparams}` : ''}`
+      `/${this.url}${newparams ? `?${newparams}` : ''}`
     );
     console.log('search call', res.data);
     return res.data;

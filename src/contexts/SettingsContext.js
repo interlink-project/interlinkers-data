@@ -1,12 +1,12 @@
 import { createContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { THEMES } from '../constants';
-import { setLanguage } from '../translations/i18n';
+import { getInitialLanguage, setLanguage } from '../translations/i18n';
 
 const initialSettings = {
   direction: 'ltr',
   theme: THEMES.LIGHT.key,
-  language: 'en',
+  language: getInitialLanguage(),
 };
 
 export const restoreSettings = () => {

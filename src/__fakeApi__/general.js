@@ -20,7 +20,7 @@ export default class GeneralApi {
     const newparams = searchparams.toString();
     const res = await axiosInstance.get(
       `/${this.url}${newparams ? `?${newparams}` : ''}`
-    );
+      );
     console.log('getMulti call', res.data);
     return res.data;
   }

@@ -12,7 +12,7 @@ import MobileDrawer from 'components/MobileDrawer';
 import moment from 'moment';
 import { useEffect, useState } from 'react';
 import { cleanUnderScores } from 'utils/cleanUnderscores';
-import { interlinkersApi, tasksApi } from '__fakeApi__';
+import { interlinkersApi, softwareInterlinkersApi, tasksApi } from '__fakeApi__';
 import PhaseTabs from "../PhaseTabs";
 import Assets from './Assets';
 import NewAssetModal from './NewAssetModal';
@@ -103,7 +103,7 @@ const RightPart = ({ selectedTask }) => {
     }, [selectedTask])
 
     useEffect(() => {
-        interlinkersApi.getSoftwareInterlinkers().then(res => {
+        softwareInterlinkersApi.getMulti().then(res => {
             setSoftwareInterlinkers(res)
         })
     }, [])

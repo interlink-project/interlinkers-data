@@ -1,20 +1,6 @@
 import axios from 'axios'
 import { env } from 'configuration'
-import store from 'store'
-
-// https://thedutchlab.com/blog/using-axios-interceptors-for-refreshing-your-api-token
-
-/*
-export const getAccessToken = () => store.get('accessToken')
-
-export const setAuthHeader = (accessToken) => {
-  if (accessToken) {
-    axiosInstance.defaults.headers.Authorization = `Bearer ${accessToken}`
-  } else {
-    delete axiosInstance.defaults.headers.Authorization
-  }
-}
-*/
+import { getInitialLanguage } from 'translations/i18n'
 
 export const getImageUrl = (micro, path) => path && `/${micro}${path}`
 
@@ -24,8 +10,16 @@ const axiosInstance = axios.create({
   headers: {
     'Content-Type': 'application/json',
     accept: 'application/json',
-    // 'Accept-Language': store.get('language', 'es'),
+    // 'Accept-Language': getInitialLanguage(),
   },
 })
+
+axiosInstance.interceptors.request.use(
+  config => {
+    config.headers["Accept-Language"] = getInitialLanguage();
+    console.log("2", config)
+    return config;
+  },  
+);
 
 export default axiosInstance
