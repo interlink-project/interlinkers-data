@@ -1,0 +1,46 @@
+{
+    "targets": [
+        "all"
+    ],
+    "problem_profiles": [
+        "UND_PROBLEM_1",
+        "DEF_PROBLEM_1",
+        "DEF_PROBLEM_5"
+    ],
+    "types": [
+        "enabling_services"
+    ],
+    "administrative_scopes": [
+        "eu"
+    ],
+    "related_interlinkers": [],
+    "reference": "guidelines-for-co-design-service",
+    "form": "guidelines",
+    "format": "structured_format",
+    "softwareinterlinker": "googledrive",
+    "difficulty": "easy",
+    "licence": "permissive",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/it-workshop-service-design/instructions.md"
+    },
+    "tags_translations": {
+        "en": [
+            "services"
+        ]
+    },
+    "name_translations": {
+        "en": "Guidelines for co-design of service"
+    },
+    "description_translations": {
+        "en": "<p>This resource describes the guidelines for the designing of a service in the public administration</p>"
+    },
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "regulations_and_standards_translations": {
+        "en": ""
+    },
+    "file_translations": {
+        "en": "./interlinkers/knowledge/it-workshop-service-design/resource.xlsx"
+    }
+}
