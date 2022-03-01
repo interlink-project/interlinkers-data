@@ -1,15 +1,4 @@
 {
-    "name_translations": {
-        "en": "Template for project description",
-        "es": ""
-    },
-    "description_translations": {
-        "en": "<p>Template for preparing a project description that synthetically summarizes the goals and major aspects of a co-production initiative. </p>",
-        "es": ""
-    },
-    "tags": [
-        "project initiation"
-    ],
     "targets": [
         "all"
     ],
@@ -23,32 +12,33 @@
         "eu"
     ],
     "related_interlinkers": [],
+    "reference": "template-for-project-description",
+    "form": "document_template",
+    "format": "editable_source_document",
+    "softwareinterlinker": "googledrive",
+    "difficulty": "easy",
+    "licence": "permissive",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/Project-Description-Template/instructions.md"
+    },
+    "tags_translations": {
+        "en": [
+            "project initiation"
+        ]
+    },
+    "name_translations": {
+        "en": "Template for project description"
+    },
+    "description_translations": {
+        "en": "<p>Template for preparing a project description that synthetically summarizes the goals and major aspects of a co-production initiative. </p>"
+    },
     "constraints_and_limitations_translations": {
-        "en": "No special constraints apply",
-        "es": ""
+        "en": "No special constraints apply"
     },
     "regulations_and_standards_translations": {
-        "en": "",
-        "es": ""
+        "en": ""
     },
-    "representations": {
-        "en": [
-            {
-                "instructions": "./interlinkers/knowledge/Project-Description-Template/instructions.md",
-                "description": "Default representation",
-                "form": "document_template",
-                "format": "editable_source_document",
-                "file": "./interlinkers/knowledge/Project-Description-Template/resource.docx",
-                "softwareinterlinker": "googledrive",
-                "name": "Template for project description",
-                "extra_tags": [],
-                "difficulty": "easy",
-                "extra_targets": [],
-                "licence": "permissive",
-                "reference": "template-for-project-description"
-            }
-        ],
-        "es": []
-    },
-    "reference": "Project description template"
+    "file_translations": {
+        "en": "./interlinkers/knowledge/Project-Description-Template/resource.docx"
+    }
 }

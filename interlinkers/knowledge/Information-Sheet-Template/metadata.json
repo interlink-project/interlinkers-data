@@ -1,18 +1,4 @@
 {
-    "name_translations": {
-        "en": "Information Sheet Template",
-        "es": ""
-    },
-    "description_translations": {
-        "en": "<p>Template to guide the preparation of an information sheet to be distributed to participants to project activities. It provides background on research objectives.</p>",
-        "es": ""
-    },
-    "tags": [
-        "privacy management",
-        "research activities",
-        "co-production project participants",
-        "INTERLINK"
-    ],
     "targets": [
         "all"
     ],
@@ -30,32 +16,36 @@
     ],
     "domain": "",
     "process": "",
+    "reference": "information-sheet-template",
+    "form": "document_template",
+    "format": "editable_source_document",
+    "softwareinterlinker": "googledrive",
+    "difficulty": "very_easy",
+    "licence": "public_domain",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/Information-Sheet-Template/instructions.md"
+    },
+    "tags_translations": {
+        "en": [
+            "privacy management",
+            "research activities",
+            "co-production project participants",
+            "INTERLINK"
+        ]
+    },
+    "name_translations": {
+        "en": "Information Sheet Template"
+    },
+    "description_translations": {
+        "en": "<p>Template to guide the preparation of an information sheet to be distributed to participants to project activities. It provides background on research objectives.</p>"
+    },
     "constraints_and_limitations_translations": {
-        "en": "No special constraints apply",
-        "es": ""
+        "en": "No special constraints apply"
     },
     "regulations_and_standards_translations": {
-        "en": "The information sheet is compliant to GDPR norms.",
-        "es": ""
+        "en": "The information sheet is compliant to GDPR norms."
     },
-    "representations": {
-        "en": [
-            {
-                "instructions": "./interlinkers/knowledge/Information-Sheet-Template/instructions.md",
-                "description": "Default representation",
-                "form": "document_template",
-                "format": "editable_source_document",
-                "file": "./interlinkers/knowledge/Information-Sheet-Template/resource.docx",
-                "softwareinterlinker": "googledrive",
-                "name": "Information Sheet Template",
-                "extra_tags": [],
-                "difficulty": "very_easy",
-                "extra_targets": [],
-                "licence": "public_domain",
-                "reference": "information-sheet-template"
-            }
-        ],
-        "es": []
-    },
-    "reference": "information-sheet-template"
+    "file_translations": {
+        "en": "./interlinkers/knowledge/Information-Sheet-Template/resource.docx"
+    }
 }

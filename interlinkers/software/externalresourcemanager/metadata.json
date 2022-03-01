@@ -7,12 +7,6 @@
         "en": "This interlinker allows to create references to external resources, such as web pages or direct link to resources allocated in other services.",
         "es": ""
     },
-    "tags": [
-        "external",
-        "link",
-        "share",
-        "report"
-    ],
     "difficulty": "easy",
     "licence": "propietary",
     "problem_profiles": [],
@@ -25,7 +19,9 @@
         "en": "Optional text here",
         "es": ""
     },
-    "supported_by": ["on_premise"],
+    "supported_by": [
+        "on_premise"
+    ],
     "supports_internationalization": true,
     "is_responsive": true,
     "integration": {
@@ -46,5 +42,13 @@
         }
     },
     "logotype": "./interlinkers/software/externalresourcemanager/logo.png",
-    "reference": "external-resource-manager"
+    "reference": "external-resource-manager",
+    "tags_translations": {
+        "en": [
+            "external",
+            "link",
+            "share",
+            "report"
+        ]
+    }
 }

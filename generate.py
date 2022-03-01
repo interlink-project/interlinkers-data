@@ -67,29 +67,15 @@ for schema_metadata_path in Path("./schemas").glob("**/metadata.json"):
 # search for schemas
 for interlinker_metadata_path in Path("./interlinkers/knowledge").glob("**/metadata.json"):
     with open(str(interlinker_metadata_path)) as json_file:
-        interlinker_metadata = json.load(json_file)
-        """
-        interlinker_metadata["representations"]["en"][0]["name"] = interlinker_metadata["name_translations"]["en"]
-        interlinker_metadata["representations"]["en"][0]["extra_tags"] = []
-        interlinker_metadata["representations"]["en"][0]["difficulty"] = interlinker_metadata["difficulty"]
-        interlinker_metadata["representations"]["en"][0]["extra_targets"] = []
-        interlinker_metadata["representations"]["en"][0]["licence"] = interlinker_metadata["licence"]
-        interlinker_metadata["representations"]["en"][0]["reference"] = slugify(interlinker_metadata["name_translations"]["en"])
-      
-
-        del interlinker_metadata["representations"]["en"][0]["title"]
-        del interlinker_metadata["difficulty"]
-        del interlinker_metadata["licence"]
-        del interlinker_metadata["overview_text"]
-
-        with open(interlinker_metadata_path, "w") as f:
-            json.dump(interlinker_metadata, f, indent=4)
-        """
+        interlinker_metadata = json.load(json_file)                   
         dicts["interlinkers"]["knowledge"].append(interlinker_metadata)
 
 for interlinker_metadata_path in Path("./interlinkers/software").glob("**/metadata.json"):
     with open(str(interlinker_metadata_path)) as json_file:
         interlinker_metadata = json.load(json_file)
+        interlinker_metadata["tags_translations"] = interlinker_metadata["tags_translations"]["en"]
+        with open(interlinker_metadata_path, "w") as f:
+            json.dump(interlinker_metadata, f, indent=4)
         dicts["interlinkers"]["software"].append(interlinker_metadata)
 
 with open(f"all.json", "w") as f:

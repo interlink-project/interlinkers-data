@@ -1,7 +1,9 @@
 from enum import Enum
-from pydantic import BaseModel, FilePath, HttpUrl, validator
-from typing import Dict, Optional, Union, List
-from interlinkers.base import InterlinkerSchema, Difficulties, Licences
+from typing import Dict, Union
+
+from interlinkers.base import Difficulties, InterlinkerSchema, Licences
+from pydantic import FilePath, HttpUrl, conlist
+
 
 class FormTypes(Enum):
     visual_template = "visual_template"
@@ -14,11 +16,13 @@ class FormTypes(Enum):
     legal_agreement_template = "legal_agreement_template"
     other = "other"
 
+
 class Formats(Enum):
     pdf = "pdf"
     editable_source_document = "editable_source_document"
     open_document = "open_document"
     structured_format = "structured_format"
+
 
 class SoftwareInterlinkers(Enum):
     googledrive = "googledrive"
@@ -26,12 +30,11 @@ class SoftwareInterlinkers(Enum):
     ceditor = "ceditor"
     externalresourcemanager = "externalresourcemanager"
 
-class Representation(BaseModel):
-    name: str
-    description: str
+
+class Schema(InterlinkerSchema):
     difficulty: str
     licence: str
-    instructions: Union[HttpUrl, FilePath]
+    instructions_translations:  Dict[str,  Union[HttpUrl, FilePath]]
     # language: str
     form: FormTypes
     # FOR 1
@@ -45,11 +48,7 @@ class Representation(BaseModel):
     # This input will be:
     # - Shown on the platform interface in the page showing the details of the INTERLINKER
     softwareinterlinker: SoftwareInterlinkers
-    file: FilePath
+    file_translations:  Dict[str,  FilePath]
 
     difficulty: Difficulties
     licence: Licences
-
-class Schema(InterlinkerSchema):
-    representations: Dict[str, Optional[List[Representation]]]
-   

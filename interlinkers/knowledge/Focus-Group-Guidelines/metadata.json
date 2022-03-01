@@ -1,18 +1,4 @@
 {
-    "name_translations": {
-        "en": "Focus Group Guidelines",
-        "es": ""
-    },
-    "description_translations": {
-        "en": "<p>Instructions on how to set up a research activity based on focus groups, for a co-production project.</p>",
-        "es": ""
-    },
-    "tags": [
-        "focus group",
-        "guidelines",
-        "understand",
-        "design"
-    ],
     "targets": [
         "all"
     ],
@@ -32,32 +18,36 @@
     ],
     "domain": "",
     "process": "",
+    "reference": "focus-group-guidelines",
+    "form": "guidelines",
+    "format": "editable_source_document",
+    "softwareinterlinker": "googledrive",
+    "difficulty": "easy",
+    "licence": "public_domain",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/Focus-Group-Guidelines/instructions.md"
+    },
+    "tags_translations": {
+        "en": [
+            "focus group",
+            "guidelines",
+            "understand",
+            "design"
+        ]
+    },
+    "name_translations": {
+        "en": "Focus Group Guidelines"
+    },
+    "description_translations": {
+        "en": "<p>Instructions on how to set up a research activity based on focus groups, for a co-production project.</p>"
+    },
     "constraints_and_limitations_translations": {
-        "en": "No special constraints apply",
-        "es": ""
+        "en": "No special constraints apply"
     },
     "regulations_and_standards_translations": {
-        "en": "",
-        "es": ""
+        "en": ""
     },
-    "representations": {
-        "en": [
-            {
-                "instructions": "./interlinkers/knowledge/Focus-Group-Guidelines/instructions.md",
-                "description": "Default representation",
-                "form": "guidelines",
-                "format": "editable_source_document",
-                "file": "./interlinkers/knowledge/Focus-Group-Guidelines/resource.docx",
-                "softwareinterlinker": "googledrive",
-                "name": "Focus Group Guidelines",
-                "extra_tags": [],
-                "difficulty": "easy",
-                "extra_targets": [],
-                "licence": "public_domain",
-                "reference": "focus-group-guidelines"
-            }
-        ],
-        "es": []
-    },
-    "reference": "focus-group-guidelines"
+    "file_translations": {
+        "en": "./interlinkers/knowledge/Focus-Group-Guidelines/resource.docx"
+    }
 }

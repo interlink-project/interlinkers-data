@@ -7,12 +7,6 @@
         "en": "This interlinker uses etherpad, an open source online editor, to provide collaborative editing in really real-time",
         "es": ""
     },
-    "tags": [
-        "document",
-        "collaborative",
-        "editor",
-        "etherpad"
-    ],
     "difficulty": "easy",
     "licence": "propietary",
     "problem_profiles": [],
@@ -25,7 +19,9 @@
         "en": "Optional text here",
         "es": ""
     },
-    "supported_by": ["on_premise"],
+    "supported_by": [
+        "on_premise"
+    ],
     "supports_internationalization": true,
     "is_responsive": true,
     "integration": {
@@ -46,5 +42,13 @@
         }
     },
     "logotype": "./interlinkers/software/ceditor/logo.jpeg",
-    "reference": "collaborative-editor"
+    "reference": "collaborative-editor",
+    "tags_translations": {
+        "en": [
+            "document",
+            "collaborative",
+            "editor",
+            "etherpad"
+        ]
+    }
 }

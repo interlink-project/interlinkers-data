@@ -1,17 +1,4 @@
 {
-    "name_translations": {
-        "en": "W3C Web Content Accessibility Guidelines",
-        "es": ""
-    },
-    "description_translations": {
-        "en": "<p>Web Content Accessibility Guidelines (WCAG) aims at explaining how to make the Web content more accessible to the people with disabilities. It generally applies to the public services delivered as Web applications, and refers to the information in a web page of the applciation, including both the content (text, images, sounds, ...) and structure (markup, presentation, styles).</p><br><ul><li>defines a set of guidelines with corresponding testable success criteria across different levels</li><li>based on the accessibility principles: perceivable, operable, understandable, robust.</li></ul>",
-        "es": ""
-    },
-    "tags": [
-        "accessibility",
-        "Web",
-        "UI"
-    ],
     "targets": [
         "all"
     ],
@@ -28,32 +15,35 @@
         "local"
     ],
     "related_interlinkers": [],
+    "reference": "w3c-web-content-accessibility-guidelines",
+    "form": "guidelines",
+    "format": "structured_format",
+    "softwareinterlinker": "externalresourcemanager",
+    "difficulty": "medium",
+    "licence": "permissive",
+    "instructions_translations": {
+        "en": "https://www.w3.org/WAI/WCAG21/quickref/"
+    },
+    "tags_translations": {
+        "en": [
+            "accessibility",
+            "Web",
+            "UI"
+        ]
+    },
+    "name_translations": {
+        "en": "W3C Web Content Accessibility Guidelines"
+    },
+    "description_translations": {
+        "en": "<p>Web Content Accessibility Guidelines (WCAG) aims at explaining how to make the Web content more accessible to the people with disabilities. It generally applies to the public services delivered as Web applications, and refers to the information in a web page of the applciation, including both the content (text, images, sounds, ...) and structure (markup, presentation, styles).</p><br><ul><li>defines a set of guidelines with corresponding testable success criteria across different levels</li><li>based on the accessibility principles: perceivable, operable, understandable, robust.</li></ul>"
+    },
     "constraints_and_limitations_translations": {
-        "en": "Web applications",
-        "es": ""
+        "en": "Web applications"
     },
     "regulations_and_standards_translations": {
-        "en": "EU Directive 2016/2102 on the accessibility of the websites and mobile applications of public sector bodies",
-        "es": ""
+        "en": "EU Directive 2016/2102 on the accessibility of the websites and mobile applications of public sector bodies"
     },
-    "representations": {
-        "en": [
-            {
-                "description": "Default representation",
-                "form": "guidelines",
-                "format": "structured_format",
-                "file": "./interlinkers/knowledge/w3c_web_content_accessibility_guidelines/data.json",
-                "softwareinterlinker": "externalresourcemanager",
-                "instructions": "https://www.w3.org/WAI/WCAG21/quickref/",
-                "name": "W3C Web Content Accessibility Guidelines",
-                "extra_tags": [],
-                "difficulty": "medium",
-                "extra_targets": [],
-                "licence": "permissive",
-                "reference": "w3c-web-content-accessibility-guidelines"
-            }
-        ],
-        "es": []
-    },
-    "reference": "w3c-web-content-accessibility-guidelines"
+    "file_translations": {
+        "en": "./interlinkers/knowledge/w3c_web_content_accessibility_guidelines/data.json"
+    }
 }

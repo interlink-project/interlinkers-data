@@ -1,17 +1,4 @@
 {
-    "name_translations": {
-        "en": "AgID Cloud computing competence evalution template",
-        "es": ""
-    },
-    "description_translations": {
-        "en": "<p>This resource contains a questionnaire to check the level of knowledge and competence in cloud computing </p>",
-        "es": ""
-    },
-    "tags": [
-        "cloud",
-        "services",
-        "security"
-    ],
     "targets": [
         "all"
     ],
@@ -27,32 +14,35 @@
         "local"
     ],
     "related_interlinkers": [],
+    "reference": "agid-cloud-computing-competence-evalution-template",
+    "form": "guidelines",
+    "format": "editable_source_document",
+    "softwareinterlinker": "externalresourcemanager",
+    "difficulty": "medium",
+    "licence": "permissive",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/it-cloud-competences-assesment/instructions.md"
+    },
+    "tags_translations": {
+        "en": [
+            "cloud",
+            "services",
+            "security"
+        ]
+    },
+    "name_translations": {
+        "en": "AgID Cloud computing competence evalution template"
+    },
+    "description_translations": {
+        "en": "<p>This resource contains a questionnaire to check the level of knowledge and competence in cloud computing </p>"
+    },
     "constraints_and_limitations_translations": {
-        "en": "No special constraints apply",
-        "es": ""
+        "en": "No special constraints apply"
     },
     "regulations_and_standards_translations": {
-        "en": "",
-        "es": ""
+        "en": ""
     },
-    "representations": {
-        "en": [
-            {
-                "instructions": "./interlinkers/knowledge/it-cloud-competences-assesment/instructions.md",
-                "description": "Default representation",
-                "form": "guidelines",
-                "format": "editable_source_document",
-                "file": "./interlinkers/knowledge/it-cloud-competences-assesment/data.json",
-                "softwareinterlinker": "externalresourcemanager",
-                "name": "AgID Cloud computing competence evalution template",
-                "extra_tags": [],
-                "difficulty": "medium",
-                "extra_targets": [],
-                "licence": "permissive",
-                "reference": "agid-cloud-computing-competence-evalution-template"
-            }
-        ],
-        "es": []
-    },
-    "reference": "agid-cloud-computing-competence-evalution-template"
+    "file_translations": {
+        "en": "./interlinkers/knowledge/it-cloud-competences-assesment/data.json"
+    }
 }

@@ -1,15 +1,4 @@
 {
-    "name_translations": {
-        "en": "Open Source guides",
-        "es": ""
-    },
-    "description_translations": {
-        "en": "<p>A collection of resources for individuals, communities, and companies who want to learn how to run and contribute to an open source project.</p>",
-        "es": ""
-    },
-    "tags": [
-        "open source software"
-    ],
     "targets": [
         "all"
     ],
@@ -25,32 +14,33 @@
         "national",
         "local"
     ],
+    "reference": "open-source-guides",
+    "form": "guidelines",
+    "format": "structured_format",
+    "softwareinterlinker": "externalresourcemanager",
+    "difficulty": "very_easy",
+    "licence": "public_domain",
+    "instructions_translations": {
+        "en": "https://opensource.guide/"
+    },
+    "tags_translations": {
+        "en": [
+            "open source software"
+        ]
+    },
+    "name_translations": {
+        "en": "Open Source guides"
+    },
+    "description_translations": {
+        "en": "<p>A collection of resources for individuals, communities, and companies who want to learn how to run and contribute to an open source project.</p>"
+    },
     "constraints_and_limitations_translations": {
-        "en": "No special constraints apply",
-        "es": ""
+        "en": "No special constraints apply"
     },
     "regulations_and_standards_translations": {
-        "en": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en",
-        "es": ""
+        "en": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en"
     },
-    "representations": {
-        "en": [
-            {
-                "instructions": "https://opensource.guide/",
-                "description": "Default representation",
-                "form": "guidelines",
-                "format": "structured_format",
-                "file": "./interlinkers/knowledge/Opensource-Guide/data.json",
-                "softwareinterlinker": "externalresourcemanager",
-                "name": "Open Source guides",
-                "extra_tags": [],
-                "difficulty": "very_easy",
-                "extra_targets": [],
-                "licence": "public_domain",
-                "reference": "open-source-guides"
-            }
-        ],
-        "es": []
-    },
-    "reference": "open-source-guides"
+    "file_translations": {
+        "en": "./interlinkers/knowledge/Opensource-Guide/data.json"
+    }
 }

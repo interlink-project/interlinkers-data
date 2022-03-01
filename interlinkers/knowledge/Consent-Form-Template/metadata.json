@@ -1,18 +1,4 @@
 {
-    "name_translations": {
-        "en": "Consent Form Template",
-        "es": ""
-    },
-    "description_translations": {
-        "en": "<p>Template to prepare a form to collect consent from participants engaged in research activities about the use of their personal data</p>",
-        "es": ""
-    },
-    "tags": [
-        "privacy management",
-        "research activities",
-        "co-production project participants",
-        "INTERLINK"
-    ],
     "targets": [
         "all"
     ],
@@ -30,32 +16,36 @@
     ],
     "domain": "",
     "process": "",
+    "reference": "consent-form-template",
+    "form": "document_template",
+    "format": "editable_source_document",
+    "softwareinterlinker": "googledrive",
+    "difficulty": "very_easy",
+    "licence": "public_domain",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/Consent-Form-Template/instructions.md"
+    },
+    "tags_translations": {
+        "en": [
+            "privacy management",
+            "research activities",
+            "co-production project participants",
+            "INTERLINK"
+        ]
+    },
+    "name_translations": {
+        "en": "Consent Form Template"
+    },
+    "description_translations": {
+        "en": "<p>Template to prepare a form to collect consent from participants engaged in research activities about the use of their personal data</p>"
+    },
     "constraints_and_limitations_translations": {
-        "en": "No special constraints apply",
-        "es": ""
+        "en": "No special constraints apply"
     },
     "regulations_and_standards_translations": {
-        "en": "The consent form is compliant to GDPR norms.",
-        "es": ""
+        "en": "The consent form is compliant to GDPR norms."
     },
-    "representations": {
-        "en": [
-            {
-                "instructions": "./interlinkers/knowledge/Consent-Form-Template/instructions.md",
-                "description": "Default representation",
-                "form": "document_template",
-                "format": "editable_source_document",
-                "file": "./interlinkers/knowledge/Consent-Form-Template/resource.docx",
-                "softwareinterlinker": "googledrive",
-                "name": "Consent Form Template",
-                "extra_tags": [],
-                "difficulty": "very_easy",
-                "extra_targets": [],
-                "licence": "public_domain",
-                "reference": "consent-form-template"
-            }
-        ],
-        "es": []
-    },
-    "reference": "consent-form-template"
+    "file_translations": {
+        "en": "./interlinkers/knowledge/Consent-Form-Template/resource.docx"
+    }
 }

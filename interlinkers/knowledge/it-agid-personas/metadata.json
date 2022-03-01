@@ -1,15 +1,4 @@
 {
-    "name_translations": {
-        "en": "Model for Personas (in italian)",
-        "es": ""
-    },
-    "description_translations": {
-        "en": "<p>This resource provides a model for persona outlined by AGID and Team Digitale (in Italian).</p>",
-        "es": ""
-    },
-    "tags": [
-        "services"
-    ],
     "targets": [
         "all"
     ],
@@ -26,32 +15,33 @@
     ],
     "domain": "",
     "process": "",
+    "reference": "model-for-personas-in-italian",
+    "form": "document_template",
+    "format": "editable_source_document",
+    "softwareinterlinker": "googledrive",
+    "difficulty": "easy",
+    "licence": "public_domain",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/it-agid-personas/instructions.md"
+    },
+    "tags_translations": {
+        "en": [
+            "services"
+        ]
+    },
+    "name_translations": {
+        "en": "Model for Personas (in italian)"
+    },
+    "description_translations": {
+        "en": "<p>This resource provides a model for persona outlined by AGID and Team Digitale (in Italian).</p>"
+    },
     "constraints_and_limitations_translations": {
-        "en": "No special constraints apply",
-        "es": ""
+        "en": "No special constraints apply"
     },
     "regulations_and_standards_translations": {
-        "en": "",
-        "es": ""
+        "en": ""
     },
-    "representations": {
-        "en": [
-            {
-                "instructions": "./interlinkers/knowledge/it-agid-personas/instructions.md",
-                "description": "Default representation",
-                "form": "document_template",
-                "format": "editable_source_document",
-                "file": "./interlinkers/knowledge/it-agid-personas/resource.pptx",
-                "softwareinterlinker": "googledrive",
-                "name": "Model for Personas (in italian)",
-                "extra_tags": [],
-                "difficulty": "easy",
-                "extra_targets": [],
-                "licence": "public_domain",
-                "reference": "model-for-personas-in-italian"
-            }
-        ],
-        "es": []
-    },
-    "reference": "it-agid-personas"
+    "file_translations": {
+        "en": "./interlinkers/knowledge/it-agid-personas/resource.pptx"
+    }
 }

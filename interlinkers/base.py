@@ -1,8 +1,7 @@
 from enum import Enum
-from typing import List, Optional
-
+from typing import Dict, List, Optional
+from pydantic import BaseModel, conlist, Extra, validator
 from problem_profiles import WithProblemProfiles
-from pydantic import BaseModel, Extra, conlist, validator
 
 # https://docs.google.com/spreadsheets/d/1tJ2BfX4EOdbBqEbrJWg8a3MENw13vYiPZM_S4wWWgWQ/edit#gid=0
 
@@ -75,13 +74,44 @@ class InterlinkerSchema(WithProblemProfiles, extra=Extra.forbid):
     # This input will be:
     # - Shown on the platform interface in the page showing the details of the INTERLINKER
 
-    tags: conlist(str, min_items=1)
+    constraints_and_limitations_translations: dict
+    # FOR 1
+    # Specific requirements and properties constraining the usage and exploitation of the INTERLINKER
+    # This input will be:
+    # - Shown to technical users of the platform to explain how the INTERLINKER can be used as a Building Block for Public Services
+    # - (To be decided) Shown on the platform interface in the page showing the details of the INTERLINKER
+    # - (To be decided) Used by the Wizard algorithms for intelligent filtering and recommendation
+
+    regulations_and_standards_translations: Optional[dict]
+    # FOR 1
+    # Legal and technical context where the INTERLINKER operates, as a set of relevant, normative acts, policies, standards, and specification the INTERLINKER adheres to.
+    # This input will be:
+    # - Shown to technical users of the platform to explain how the INTERLINKER adheres to national and EU standards
+    # - (To be decided) Shown on the platform interface in the page showing the details of the INTERLINKER
+    # - (To be decided) Used by the Wizard algorithms for intelligent filtering and recommendation
+    #
+    # Possible values:
+    # In the initial specification of INTERLINKERS this field will be defined as textual, to allow for more freedom in the description.
+    # To be further evaluated which types of standard classifications will be used as reference for a more constrained filling of this field.
+
+    tags_translations: Dict[str,  conlist(str, min_items=1)]
     # FOR 1
     # Tags that can be used to characterize the INTERLINKER
+
+
+    ## INTERLINKER SPECIFIC
+    difficulty: Difficulties
+    # FOR 1
+    # Level of difficulty in using the tool
 
     targets: Optional[List[Targets]]
     # FOR 2
     # List of stakeholders, if applicable, that will be engaged in using this INTERLINKER.
+
+    licence: Licences
+    # FOR 1
+    # Type of licences under which the INTERLINKER is usable.
+    # The user should be provided with information that explains the meaning of the different licences, both for software and knowledge.
 
     problem_profiles: List[ProblemProfiles]
     # FOR 1
@@ -116,26 +146,6 @@ class InterlinkerSchema(WithProblemProfiles, extra=Extra.forbid):
     process: Optional[str]
     # FOR 2
     # This field describes the governance model for which the INTERLINKER is particularly suitable.
-
-    constraints_and_limitations_translations: dict
-    # FOR 1
-    # Specific requirements and properties constraining the usage and exploitation of the INTERLINKER
-    # This input will be:
-    # - Shown to technical users of the platform to explain how the INTERLINKER can be used as a Building Block for Public Services
-    # - (To be decided) Shown on the platform interface in the page showing the details of the INTERLINKER
-    # - (To be decided) Used by the Wizard algorithms for intelligent filtering and recommendation
-
-    regulations_and_standards_translations: Optional[dict]
-    # FOR 1
-    # Legal and technical context where the INTERLINKER operates, as a set of relevant, normative acts, policies, standards, and specification the INTERLINKER adheres to.
-    # This input will be:
-    # - Shown to technical users of the platform to explain how the INTERLINKER adheres to national and EU standards
-    # - (To be decided) Shown on the platform interface in the page showing the details of the INTERLINKER
-    # - (To be decided) Used by the Wizard algorithms for intelligent filtering and recommendation
-    #
-    # Possible values:
-    # In the initial specification of INTERLINKERS this field will be defined as textual, to allow for more freedom in the description.
-    # To be further evaluated which types of standard classifications will be used as reference for a more constrained filling of this field.
 
     overview_text: Optional[dict]
     # FOR 2

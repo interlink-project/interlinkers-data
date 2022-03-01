@@ -1,17 +1,4 @@
 {
-    "name_translations": {
-        "en": "Stakeholders Mapping Canvas",
-        "es": ""
-    },
-    "description_translations": {
-        "en": "<p>This resource supports the identification and selection of the stakeholders to engage in a co-production team.</p>",
-        "es": ""
-    },
-    "tags": [
-        "stakeholders mapping",
-        "canvas",
-        "understand"
-    ],
     "targets": [
         "all"
     ],
@@ -30,32 +17,35 @@
     ],
     "domain": "",
     "process": "",
+    "reference": "stakeholders-mapping-canvas",
+    "form": "document_template",
+    "format": "editable_source_document",
+    "softwareinterlinker": "googledrive",
+    "difficulty": "easy",
+    "licence": "public_domain",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/instructions.md"
+    },
+    "tags_translations": {
+        "en": [
+            "stakeholders mapping",
+            "canvas",
+            "understand"
+        ]
+    },
+    "name_translations": {
+        "en": "Stakeholders Mapping Canvas"
+    },
+    "description_translations": {
+        "en": "<p>This resource supports the identification and selection of the stakeholders to engage in a co-production team.</p>"
+    },
     "constraints_and_limitations_translations": {
-        "en": "No special constraints apply",
-        "es": ""
+        "en": "No special constraints apply"
     },
     "regulations_and_standards_translations": {
-        "en": "",
-        "es": ""
+        "en": ""
     },
-    "representations": {
-        "en": [
-            {
-                "description": "Default representation",
-                "form": "document_template",
-                "format": "editable_source_document",
-                "file": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/resource.pptx",
-                "softwareinterlinker": "googledrive",
-                "instructions": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/instructions.md",
-                "name": "Stakeholders Mapping Canvas",
-                "extra_tags": [],
-                "difficulty": "easy",
-                "extra_targets": [],
-                "licence": "public_domain",
-                "reference": "stakeholders-mapping-canvas"
-            }
-        ],
-        "es": []
-    },
-    "reference": "stakeholders-mapping-canvas"
+    "file_translations": {
+        "en": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/resource.pptx"
+    }
 }

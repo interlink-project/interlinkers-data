@@ -7,11 +7,6 @@
         "en": "<p>Loomio is an Open Source solution that offers a workspace for conversation, sharing information and opinions, making proposals, deciding actions and achieving outcomes. With Loomio it is possible to</p><ul><li>start and organize discussions and keep record of participation and involvement;</li><li>manage collaborative decisions through different forms of polls, surveys, etc;</li><li>enable collaborating voting around ideas and proposal under discussion.</li></ul>",
         "es": ""
     },
-    "tags": [
-        "decision making",
-        "idea management",
-        "voting"
-    ],
     "difficulty": "medium",
     "targets": [
         "all"
@@ -46,7 +41,9 @@
     "deployment_manual": "https://github.com/interlink-project/interlink-loomio",
     "user_manual": "https://help.loomio.org/en/user_manual/",
     "developer_manual": "https://github.com/loomio/loomio",
-    "supported_by": ["on_premise"],
+    "supported_by": [
+        "on_premise"
+    ],
     "supports_internationalization": true,
     "is_responsive": true,
     "integration": {
@@ -67,5 +64,12 @@
         }
     },
     "logotype": "./interlinkers/software/loomio/logo.png",
-    "reference": "loomio"
+    "reference": "loomio",
+    "tags_translations": {
+        "en": [
+            "decision making",
+            "idea management",
+            "voting"
+        ]
+    }
 }

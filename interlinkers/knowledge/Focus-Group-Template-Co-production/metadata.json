@@ -1,17 +1,4 @@
 {
-    "name_translations": {
-        "en": "Focus Group Template Co-production Investigation",
-        "es": ""
-    },
-    "description_translations": {
-        "en": "<p>This resource provides a skeleton to organize a focus group to investigate the co-production practices in a given organization. It addresses a series of questions about previous or current collaboration practices, the dynamics of collaboration (timeline, people, tools, communication channels), current KPIs, critical aspects and  desiderata.</p>",
-        "es": ""
-    },
-    "tags": [
-        "focus group",
-        "template",
-        "understand"
-    ],
     "targets": [
         "all"
     ],
@@ -29,32 +16,35 @@
     ],
     "domain": "",
     "process": "",
+    "reference": "focus-group-template-co-production-investigation",
+    "form": "document_template",
+    "format": "editable_source_document",
+    "softwareinterlinker": "googledrive",
+    "difficulty": "easy",
+    "licence": "public_domain",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/Focus-Group-Template-Co-production/instructions.md"
+    },
+    "tags_translations": {
+        "en": [
+            "focus group",
+            "template",
+            "understand"
+        ]
+    },
+    "name_translations": {
+        "en": "Focus Group Template Co-production Investigation"
+    },
+    "description_translations": {
+        "en": "<p>This resource provides a skeleton to organize a focus group to investigate the co-production practices in a given organization. It addresses a series of questions about previous or current collaboration practices, the dynamics of collaboration (timeline, people, tools, communication channels), current KPIs, critical aspects and  desiderata.</p>"
+    },
     "constraints_and_limitations_translations": {
-        "en": "No special constraints apply",
-        "es": ""
+        "en": "No special constraints apply"
     },
     "regulations_and_standards_translations": {
-        "en": "",
-        "es": ""
+        "en": ""
     },
-    "representations": {
-        "en": [
-            {
-                "instructions": "./interlinkers/knowledge/Focus-Group-Template-Co-production/instructions.md",
-                "description": "Default representation",
-                "form": "document_template",
-                "format": "editable_source_document",
-                "file": "./interlinkers/knowledge/Focus-Group-Template-Co-production/resource.pptx",
-                "softwareinterlinker": "googledrive",
-                "name": "Focus Group Template Co-production Investigation",
-                "extra_tags": [],
-                "difficulty": "easy",
-                "extra_targets": [],
-                "licence": "public_domain",
-                "reference": "focus-group-template-co-production-investigation"
-            }
-        ],
-        "es": []
-    },
-    "reference": "focus-group-template-co-production-investigation"
+    "file_translations": {
+        "en": "./interlinkers/knowledge/Focus-Group-Template-Co-production/resource.pptx"
+    }
 }

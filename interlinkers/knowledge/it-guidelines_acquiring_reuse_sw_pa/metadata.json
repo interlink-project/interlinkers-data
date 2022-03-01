@@ -1,18 +1,4 @@
 {
-    "name_translations": {
-        "en": "Guidelines on the acquisition and reuse of software for public administrations",
-        "es": ""
-    },
-    "description_translations": {
-        "en": "<p>This resource aims at explaining how to acquire and reuse software in PA context.</p>",
-        "es": ""
-    },
-    "tags": [
-        "open source",
-        "public administration",
-        "reuse",
-        "acquisition"
-    ],
     "targets": [
         "all"
     ],
@@ -28,32 +14,36 @@
         "local"
     ],
     "related_interlinkers": [],
+    "reference": "guidelines-on-the-acquisition-and-reuse-of-software-for-public-administrations",
+    "form": "guidelines",
+    "format": "structured_format",
+    "softwareinterlinker": "externalresourcemanager",
+    "difficulty": "difficult",
+    "licence": "permissive",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/it-guidelines_acquiring_reuse_sw_pa/instructions.md"
+    },
+    "tags_translations": {
+        "en": [
+            "open source",
+            "public administration",
+            "reuse",
+            "acquisition"
+        ]
+    },
+    "name_translations": {
+        "en": "Guidelines on the acquisition and reuse of software for public administrations"
+    },
+    "description_translations": {
+        "en": "<p>This resource aims at explaining how to acquire and reuse software in PA context.</p>"
+    },
     "constraints_and_limitations_translations": {
-        "en": "No special constraints apply",
-        "es": ""
+        "en": "No special constraints apply"
     },
     "regulations_and_standards_translations": {
-        "en": "",
-        "es": ""
+        "en": ""
     },
-    "representations": {
-        "en": [
-            {
-                "instructions": "./interlinkers/knowledge/it-guidelines_acquiring_reuse_sw_pa/instructions.md",
-                "description": "Default representation",
-                "form": "guidelines",
-                "format": "structured_format",
-                "file": "./interlinkers/knowledge/it-guidelines_acquiring_reuse_sw_pa/data.json",
-                "softwareinterlinker": "externalresourcemanager",
-                "name": "Guidelines on the acquisition and reuse of software for public administrations",
-                "extra_tags": [],
-                "difficulty": "difficult",
-                "extra_targets": [],
-                "licence": "permissive",
-                "reference": "guidelines-on-the-acquisition-and-reuse-of-software-for-public-administrations"
-            }
-        ],
-        "es": []
-    },
-    "reference": "guidelines-on-the-acquisition-and-reuse-of-software-for-public-administrations"
+    "file_translations": {
+        "en": "./interlinkers/knowledge/it-guidelines_acquiring_reuse_sw_pa/data.json"
+    }
 }

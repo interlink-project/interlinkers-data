@@ -1,17 +1,4 @@
 {
-    "name_translations": {
-        "en": "Loomio2",
-        "es": ""
-    },
-    "description_translations": {
-        "en": "<p>Loomio is an Open Source solution that offers a workspace for conversation, sharing information and opinions, making proposals, deciding actions and achieving outcomes. With Loomio it is possible to</p><ul><li>start and organize discussions and keep record of participation and involvement;</li><li>manage collaborative decisions through different forms of polls, surveys, etc;</li><li>enable collaborating voting around ideas and proposal under discussion.</li></ul>",
-        "es": ""
-    },
-    "tags": [
-        "decision making",
-        "idea management",
-        "voting"
-    ],
     "targets": [
         "all"
     ],
@@ -29,32 +16,35 @@
         "national",
         "local"
     ],
+    "reference": "loomio2",
+    "form": "document_template",
+    "format": "editable_source_document",
+    "softwareinterlinker": "googledrive",
+    "difficulty": "medium",
+    "licence": "copyleft",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/loomio2/instructions.html"
+    },
+    "tags_translations": {
+        "en": [
+            "decision making",
+            "idea management",
+            "voting"
+        ]
+    },
+    "name_translations": {
+        "en": "Loomio2"
+    },
+    "description_translations": {
+        "en": "<p>Loomio is an Open Source solution that offers a workspace for conversation, sharing information and opinions, making proposals, deciding actions and achieving outcomes. With Loomio it is possible to</p><ul><li>start and organize discussions and keep record of participation and involvement;</li><li>manage collaborative decisions through different forms of polls, surveys, etc;</li><li>enable collaborating voting around ideas and proposal under discussion.</li></ul>"
+    },
     "constraints_and_limitations_translations": {
-        "en": "None",
-        "es": ""
+        "en": "None"
     },
     "regulations_and_standards_translations": {
-        "en": "None",
-        "es": ""
+        "en": "None"
     },
-    "representations": {
-        "en": [
-            {
-                "instructions": "./interlinkers/knowledge/loomio2/instructions.html",
-                "description": "Default representation",
-                "form": "document_template",
-                "format": "editable_source_document",
-                "file": "./interlinkers/knowledge/loomio2/resource.pdf",
-                "softwareinterlinker": "googledrive",
-                "name": "Loomio2",
-                "extra_tags": [],
-                "difficulty": "medium",
-                "extra_targets": [],
-                "licence": "copyleft",
-                "reference": "loomio2"
-            }
-        ],
-        "es": []
-    },
-    "reference": "loomio"
+    "file_translations": {
+        "en": "./interlinkers/knowledge/loomio2/resource.pdf"
+    }
 }

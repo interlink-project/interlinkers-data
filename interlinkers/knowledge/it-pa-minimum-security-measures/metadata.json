@@ -1,15 +1,4 @@
 {
-    "name_translations": {
-        "en": "AgID Minimum Security Measures for Public Administration. ",
-        "es": ""
-    },
-    "description_translations": {
-        "en": "<p>This resource describes the minimum ICT security measures issued by AgID aim at countering the most frequent cyber threats to the Italian public administration.</p>",
-        "es": ""
-    },
-    "tags": [
-        "security"
-    ],
     "targets": [
         "all"
     ],
@@ -25,32 +14,33 @@
         "local"
     ],
     "related_interlinkers": [],
+    "reference": "agid-minimum-security-measures-for-public-administration",
+    "form": "guidelines",
+    "format": "structured_format",
+    "softwareinterlinker": "externalresourcemanager",
+    "difficulty": "difficult",
+    "licence": "permissive",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/it-pa-minimum-security-measures/instructions.md"
+    },
+    "tags_translations": {
+        "en": [
+            "security"
+        ]
+    },
+    "name_translations": {
+        "en": "AgID Minimum Security Measures for Public Administration. "
+    },
+    "description_translations": {
+        "en": "<p>This resource describes the minimum ICT security measures issued by AgID aim at countering the most frequent cyber threats to the Italian public administration.</p>"
+    },
     "constraints_and_limitations_translations": {
-        "en": "No special constraints apply",
-        "es": ""
+        "en": "No special constraints apply"
     },
     "regulations_and_standards_translations": {
-        "en": "",
-        "es": ""
+        "en": ""
     },
-    "representations": {
-        "en": [
-            {
-                "instructions": "./interlinkers/knowledge/it-pa-minimum-security-measures/instructions.md",
-                "description": "Default representation",
-                "form": "guidelines",
-                "format": "structured_format",
-                "file": "./interlinkers/knowledge/it-pa-minimum-security-measures/data.json",
-                "softwareinterlinker": "externalresourcemanager",
-                "name": "AgID Minimum Security Measures for Public Administration. ",
-                "extra_tags": [],
-                "difficulty": "difficult",
-                "extra_targets": [],
-                "licence": "permissive",
-                "reference": "agid-minimum-security-measures-for-public-administration"
-            }
-        ],
-        "es": []
-    },
-    "reference": "agid-minimum-security-measures-for-public-administration"
+    "file_translations": {
+        "en": "./interlinkers/knowledge/it-pa-minimum-security-measures/data.json"
+    }
 }

@@ -1,17 +1,4 @@
 {
-    "name_translations": {
-        "en": "Cloud Enablement Kit (in Italian)",
-        "es": ""
-    },
-    "description_translations": {
-        "en": "<p>This resource describes the Cloud Enablement strategy outlined by AGID and Team Digitale (in Italian). </p>",
-        "es": ""
-    },
-    "tags": [
-        "cloud",
-        "services",
-        "security"
-    ],
     "targets": [
         "all"
     ],
@@ -27,32 +14,35 @@
         "local"
     ],
     "related_interlinkers": [],
+    "reference": "cloud-enablement-kit-in-italian",
+    "form": "guidelines",
+    "format": "pdf",
+    "softwareinterlinker": "externalresourcemanager",
+    "difficulty": "difficult",
+    "licence": "permissive",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/it-cloud-enablement-kit/instructions.md"
+    },
+    "tags_translations": {
+        "en": [
+            "cloud",
+            "services",
+            "security"
+        ]
+    },
+    "name_translations": {
+        "en": "Cloud Enablement Kit (in Italian)"
+    },
+    "description_translations": {
+        "en": "<p>This resource describes the Cloud Enablement strategy outlined by AGID and Team Digitale (in Italian). </p>"
+    },
     "constraints_and_limitations_translations": {
-        "en": "No special constraints apply",
-        "es": ""
+        "en": "No special constraints apply"
     },
     "regulations_and_standards_translations": {
-        "en": "",
-        "es": ""
+        "en": ""
     },
-    "representations": {
-        "en": [
-            {
-                "instructions": "./interlinkers/knowledge/it-cloud-enablement-kit/instructions.md",
-                "description": "Default representation",
-                "form": "guidelines",
-                "format": "pdf",
-                "file": "./interlinkers/knowledge/it-cloud-enablement-kit/data.json",
-                "softwareinterlinker": "externalresourcemanager",
-                "name": "Cloud Enablement Kit (in Italian)",
-                "extra_tags": [],
-                "difficulty": "difficult",
-                "extra_targets": [],
-                "licence": "permissive",
-                "reference": "cloud-enablement-kit-in-italian"
-            }
-        ],
-        "es": []
-    },
-    "reference": "cloud-enablement-kit-in-italian"
+    "file_translations": {
+        "en": "./interlinkers/knowledge/it-cloud-enablement-kit/data.json"
+    }
 }
