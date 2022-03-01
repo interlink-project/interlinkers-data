@@ -2562,6 +2562,51 @@
                     "all"
                 ],
                 "problem_profiles": [
+                    "ORG_PROBLEM_1",
+                    "UND_PROBLEM_2"
+                ],
+                "types": [
+                    "enabling_services"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "related_interlinkers": [],
+                "reference": "user-journey-template",
+                "form": "document_template",
+                "format": "editable_source_document",
+                "softwareinterlinker": "googledrive",
+                "difficulty": "easy",
+                "licence": "permissive",
+                "instructions_translations": {
+                    "en": "./interlinkers/knowledge/it-user-journey/instructions.md"
+                },
+                "tags_translations": {
+                    "en": [
+                        "services"
+                    ]
+                },
+                "name_translations": {
+                    "en": "Template for user journey"
+                },
+                "description_translations": {
+                    "en": "<p>Template for preparing a user journey. </p>"
+                },
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "regulations_and_standards_translations": {
+                    "en": ""
+                },
+                "file_translations": {
+                    "en": "./interlinkers/knowledge/it-user-journey/resource.xlsx"
+                }
+            },
+            {
+                "targets": [
+                    "all"
+                ],
+                "problem_profiles": [
                     "BUILD_PROBLEM_3"
                 ],
                 "types": [
@@ -3048,6 +3093,97 @@
                 },
                 "file_translations": {
                     "en": "./interlinkers/knowledge/Opensource-Guide/data.json"
+                }
+            },
+            {
+                "targets": [
+                    "all"
+                ],
+                "problem_profiles": [
+                    "ORG_PROBLEM_1",
+                    "UND_PROBLEM_2"
+                ],
+                "types": [
+                    "enabling_services"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "related_interlinkers": [],
+                "reference": "template-for-use-scenarios",
+                "form": "document_template",
+                "format": "editable_source_document",
+                "softwareinterlinker": "googledrive",
+                "difficulty": "easy",
+                "licence": "permissive",
+                "instructions_translations": {
+                    "en": "./interlinkers/knowledge/it-use-scenarios/instructions.md"
+                },
+                "tags_translations": {
+                    "en": [
+                        "services"
+                    ]
+                },
+                "name_translations": {
+                    "en": "Template for use case scenarios"
+                },
+                "description_translations": {
+                    "en": "<p>Template for preparing a use scenarios. </p>"
+                },
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "regulations_and_standards_translations": {
+                    "en": ""
+                },
+                "file_translations": {
+                    "en": "./interlinkers/knowledge/it-use-scenarios/resource.xlsx"
+                }
+            },
+            {
+                "targets": [
+                    "all"
+                ],
+                "problem_profiles": [
+                    "UND_PROBLEM_1",
+                    "DEF_PROBLEM_1",
+                    "DEF_PROBLEM_5"
+                ],
+                "types": [
+                    "enabling_services"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "related_interlinkers": [],
+                "reference": "guidelines-for-co-design-service",
+                "form": "guidelines",
+                "format": "structured_format",
+                "softwareinterlinker": "googledrive",
+                "difficulty": "easy",
+                "licence": "permissive",
+                "instructions_translations": {
+                    "en": "./interlinkers/knowledge/it-workshop-service-design/instructions.md"
+                },
+                "tags_translations": {
+                    "en": [
+                        "services"
+                    ]
+                },
+                "name_translations": {
+                    "en": "Guidelines for co-design of service"
+                },
+                "description_translations": {
+                    "en": "<p>This resource describes the guidelines for the designing of a service in the public administration</p>"
+                },
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "regulations_and_standards_translations": {
+                    "en": ""
+                },
+                "file_translations": {
+                    "en": "./interlinkers/knowledge/it-workshop-service-design/resource.pptx"
                 }
             },
             {
