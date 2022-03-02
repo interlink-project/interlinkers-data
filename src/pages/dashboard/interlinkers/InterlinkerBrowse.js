@@ -1,18 +1,16 @@
-import { useCallback, useState, useEffect } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+import { Box, Button, CircularProgress, Container, Dialog, DialogContent, DialogTitle, Grid, Typography } from '@material-ui/core';
+import { useCallback, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Box, Button, CircularProgress, Container, Dialog, DialogTitle, Grid, DialogContent, Typography, Avatar, Stack } from '@material-ui/core';
-import { interlinkersApi } from '__fakeApi__';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link as RouterLink } from 'react-router-dom';
+import { getInterlinkers } from 'slices/catalogue';
 import { InterlinkerBrowseFilter, InterlinkerBrowseResults } from '../../../components/dashboard/interlinkers';
 import useMounted from '../../../hooks/useMounted';
 import useSettings from '../../../hooks/useSettings';
-import ChevronRightIcon from '../../../icons/ChevronRight';
 import PlusIcon from '../../../icons/Plus';
 import gtm from '../../../lib/gtm';
-import { getInterlinkers } from 'slices/catalogue';
-import { useDispatch, useSelector } from 'react-redux';
 import InterlinkerDetails from './InterlinkerDetails';
-import { Share } from '@material-ui/icons';
+import InterlinkerHeader from './InterlinkerHeader';
 
 const InterlinkerBrowse = () => {
   const mounted = useMounted();
@@ -113,29 +111,7 @@ const InterlinkerBrowse = () => {
                 }}
 
                 >
-                  <Stack direction='row' style={{justifyContent: "center", alignItems: "center",}} sx={{ py: 1}} spacing={3}> 
-                    {interlinker.logotype && <Avatar
-                      alt='Logotype'
-                      src={interlinker.logotype}
-                      variant='square'
-                    >
-                      {interlinker.name}
-                    </Avatar>}
-
-                    <Typography
-                      color='textPrimary'
-                      variant='h5'
-                    >
-                      {interlinker.name}
-                    </Typography>
-                    <Button
-                      color='primary'
-                      startIcon={<Share fontSize='small' />}
-                      variant='text'
-                    >
-                      Share
-                    </Button>
-                  </Stack>
+                  <InterlinkerHeader interlinker={interlinker} />
 
                 </DialogTitle>
                 }

@@ -48,15 +48,6 @@ const InterlinkerReviewCard = (props) => {
               color='textSecondary'
               variant='body2'
             >
-              | For
-              {' '}
-              <Link
-                color='textPrimary'
-                variant='subtitle2'
-              >
-                Low Budget
-              </Link>
-              {' '}
               |
               {' '}
               {formatDistanceToNowStrict(createdAt)}

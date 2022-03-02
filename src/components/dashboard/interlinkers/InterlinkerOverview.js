@@ -1,36 +1,25 @@
-import PropTypes from 'prop-types';
-import Markdown from 'react-markdown/with-html';
 import {
   Box,
   Card,
   CardContent,
   Chip,
   Grid,
-  Typography,
+  Typography
 } from '@material-ui/core';
-import { experimentalStyled } from '@material-ui/core/styles';
-import SwipeableTextMobileStepper from './browse/Carousel';
+import PropTypes from 'prop-types';
 import { SafeHTMLElement } from 'utils/safeHTML';
-
-const MarkdownWrapper = experimentalStyled('div')(({ theme }) => ({
-  color: theme.palette.text.primary,
-  fontFamily: theme.typography.fontFamily,
-  '& p': {
-    marginBottom: theme.spacing(2),
-  },
-}));
 
 const InterlinkerOverview = (props) => {
   const { interlinker, ...other } = props;
   const { description, tags, name, problemprofiles, representations } = interlinker;
 
-  const Element = ({ title, obj, xs = 12, md = 12, lg = 12, xl = 12 }) => <Grid item xs={12} md={md} lg={lg} xl={xl}     sx={{ mb: 2 }}
+  const Element = ({ title, obj, xs = 12, md = 12, lg = 12, xl = 12 }) => <Grid item xs={12} md={md} lg={lg} xl={xl} sx={{ mb: 2 }}
   ><Typography
     color='textSecondary'
     variant='overline'
   >
-    {title}
-  </Typography>
+      {title}
+    </Typography>
     {obj}
   </Grid>
 
@@ -47,8 +36,8 @@ const InterlinkerOverview = (props) => {
             item
             xs={12}
             md={6}
-            lg={8}
-            xl={8}
+            lg={6}
+            xl={6}
           >
             <Element title="Interlinker Name" obj={<Typography
               color='textPrimary'
@@ -84,16 +73,13 @@ const InterlinkerOverview = (props) => {
             item
             xs={12}
             md={6}
-            lg={4}
-            xl={4}
+            lg={6}
+            xl={6}
           >
-            <Box sx={{ bottom: 0, width: "100%", height: "100%" }}>
-              <SwipeableTextMobileStepper images={interlinker.snapshots} />
-            </Box>
+            <SafeHTMLElement data={interlinker.instructions} />
           </Grid>
         </Grid>
       </CardContent>
-
     </Card>
 
   );

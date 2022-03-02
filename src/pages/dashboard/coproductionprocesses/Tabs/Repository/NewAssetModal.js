@@ -1,20 +1,46 @@
 import {
     Avatar, AvatarGroup, Box,
-    Button, CircularProgress, Dialog,
-    DialogContent,
-    DialogTitle, IconButton, Typography, DialogActions
+    Button, CircularProgress as MuiCircularProgress, Dialog, DialogActions, DialogContent,
+    DialogTitle, Grid, IconButton, Typography
 } from '@material-ui/core';
 import { ArrowBack, Close } from '@material-ui/icons';
+import { LoadingButton } from '@material-ui/lab';
 import { env } from 'configuration';
+import InterlinkerHeader from 'pages/dashboard/interlinkers/InterlinkerHeader';
 import { useEffect, useState } from 'react';
 import { assetsApi, knowledgeInterlinkersApi } from '__fakeApi__';
-import InterlinkerDetails from "../../../interlinkers/InterlinkerDetails"
+import InterlinkerDetails from "../../../interlinkers/InterlinkerDetails";
 
+const CircularProgress = ({ text = "Waiting for response...", onCancel = null }) => (
+    <Box
+        style={{
+            position: 'absolute', left: '50%', top: '50%',
+            transform: 'translate(-50%, -50%)'
+        }}
+    >
+        <Grid container justifyContent="center" style={{ textAlign: "center" }}>
+            <Grid item xs={12}>
+                <Typography variant="h5">
+                    {text}
+                </Typography>
+            </Grid>
+            <Grid item xs={12} sx={{ mt: 3 }}>
+                <MuiCircularProgress />
+            </Grid>
+            {onCancel && <Grid item xs={12} sx={{ mt: 3 }}>
+                <Button color="error" onClick={onCancel}>
+                    Cancel
+                </Button>
+            </Grid>}
+
+        </Grid>
+    </Box>
+)
 export default function NewAssetModal({ open, setOpen, selectedInterlinker, task, onCreate }) {
     const [loadingInstantiator, setLoadingInstantiator] = useState(true);
     const [activeStep, _setActiveStep] = useState(0);
     const [assetData, setAssetData] = useState(null);
-    const [loading, setLoading] = useState(false);
+    const [loadingKnowledgeInstantiation, setLoadingKnowledgeInstantiation] = useState(false);
 
     const open_in_modal = selectedInterlinker.nature === "softwareinterlinker" && selectedInterlinker.integration && selectedInterlinker.integration.open_in_modal
 
@@ -102,8 +128,6 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
         return "40vh"
     }
 
-    const variousAssetsInstantiated = Array.isArray(assetData)
-
     return (
         <Dialog
             fullWidth
@@ -115,20 +139,26 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
             <DialogTitle sx={{
                 alignItems: "center",
                 backgroundColor: 'background.default',
+                pb: 0
             }}>
-                <Box sx={{
-                    justifyContent: "space-between",
-                }}>
-                    {activeStep > 0 && <IconButton children={<ArrowBack />} onClick={() => setActiveStep(activeStep - 1)} />}
-                    <IconButton children={<Close />} onClick={handleClose} />
 
-                </Box>
+                <Grid container spacing={2}>
+                    <Grid item xs={1}>
+                        {activeStep > 0 && <IconButton children={<ArrowBack />} onClick={() => setActiveStep(activeStep - 1)} />}
+                    </Grid>
+                    <Grid item xs={10}>
+                        <InterlinkerHeader interlinker={selectedInterlinker} />
+                    </Grid>
+                    <Grid item xs={1} style={{ textAlign: "right" }}>
+                        <IconButton children={<Close />} onClick={handleClose} />
+                    </Grid>
+                </Grid>
 
             </DialogTitle>
 
             <DialogContent style={{ minHeight: getHeight() }} sx={{
                 alignItems: "center",
-                backgroundColor: 'background.default',
+                backgroundColor: 'background.default'
             }}>
                 {/* <Stepper sx={{ mt: 2}} activeStep={activeStep} alternativeLabel>
                         {['Select interlinker', 'Instantiate'].map((label, index) => <Step key={label}>
@@ -145,30 +175,34 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
                     {/* If software interlinker */}
                     {selectedInterlinker.nature === "softwareinterlinker" && open_in_modal &&
                         <>
-                            {loadingInstantiator && <CircularProgress />}
+                            {loadingInstantiator && <CircularProgress text="Loading instantiator..." />}
                             <iframe style={{ display: loadingInstantiator ? "none" : "block" }} src={`${selectedInterlinker.backend}/instantiate`} style={{ width: "100%", minHeight: "60vh", border: 0 }}></iframe>
                         </>
                     }
                     {selectedInterlinker.nature === "softwareinterlinker" && !open_in_modal &&
-                        <CircularProgress />
+                        <CircularProgress onCancel={() => setActiveStep(0)} />
                     }
                     {/* If knowledge interlinker */}
                     {selectedInterlinker.nature === "knowledgeinterlinker" &&
                         <Box
                             sx={{
                                 position: 'absolute', left: '50%', top: '50%', width: "100%",
-                                transform: 'translate(-50%, -50%)', p: 10
+                                transform: 'translate(-50%, -50%)', p: 10,
+                                textAlign: 'center'
                             }}
                         >
-
-                            <Button variant="contained" onClick={async () => {
+                            <Typography variant="h5">Are you sure you want to instantiate this interlinker?</Typography>
+                            <LoadingButton loading={loadingKnowledgeInstantiation} color="success" size="large" sx={{mt: 2}} onClick={async () => {
+                                setLoadingKnowledgeInstantiation(true)
                                 const interlinker_asset = await knowledgeInterlinkersApi.instantiate(selectedInterlinker.id)
                                 const coproduction_asset = await onAssetCreate(interlinker_asset, selectedInterlinker.softwareinterlinker_id, selectedInterlinker.id)
+                                setLoadingKnowledgeInstantiation(false)
+
                                 // TODO: if fails
                                 onFinish({ ...coproduction_asset, ...interlinker_asset })
                             }}>
                                 Proceed
-                            </Button>
+                            </LoadingButton>
                         </Box>
                     }
                 </Box>}
@@ -185,15 +219,7 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
                             justifyContent: 'center',
                         }}
                     >
-                        {variousAssetsInstantiated
-                            ?
-                            <AvatarGroup max={4}>
-                                {assetData.map((el, i) => <Avatar key={`result${i}`} src={el.icon} />)}
-                            </AvatarGroup>
-
-                            : <Avatar src={assetData.icon} />
-                        }
-
+                        <Avatar src={assetData.icon} />
                     </Box>
                     <Box sx={{ mt: 2 }}>
                         <Typography
@@ -201,11 +227,7 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
                             color='textPrimary'
                             variant='h3'
                         >
-                            {variousAssetsInstantiated ?
-                                "Assets created!"
-                                :
-                                <>Asset '{assetData.name}' created!</>
-                            }
+                            Asset '{assetData.name}' created!
                         </Typography>
                     </Box>
                     <Box sx={{ mt: 2 }}>
@@ -214,12 +236,7 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
                             color='textSecondary'
                             variant='subtitle1'
                         >
-                            {variousAssetsInstantiated ?
-                                "The assets are now accessible for this task."
-                                :
-                                <>The asset is now accessible for this task.</>
-                            }
-
+                            The asset is now accessible for this task.
                         </Typography>
                     </Box>
                     <Box
@@ -229,7 +246,7 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
                             mt: 2,
                         }}
                     >
-                        {!variousAssetsInstantiated && <Button
+                        <Button
                             color='primary'
                             variant='contained'
                             onClick={() => {
@@ -238,7 +255,7 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
                             }}
                         >
                             Open asset
-                        </Button>}
+                        </Button>
 
                         <Button
                             color='primary'
