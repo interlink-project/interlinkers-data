@@ -1,5 +1,5 @@
 import axiosInstance from 'axiosInstance';
-import GeneralApi from "../general"
+import GeneralApi, { removeEmpty } from "../general"
 
 class InterlinkersApi extends GeneralApi {
   constructor() {
@@ -16,27 +16,16 @@ class InterlinkersApi extends GeneralApi {
     return res.data
   }
 
-  async get_by_problem_profiles(problem_profiles) {
+  async getByProblemProfiles(page, size, problem_profiles) {
     const res = await axiosInstance.post(
-      `/${this.url}/by_problem_profiles`, problem_profiles
+      `/${this.url}/by_problem_profiles`, problem_profiles, {
+        params: removeEmpty({
+          page,
+          size
+        })
+      } 
     );
     console.log('by problem profiles call', res.data);
-    return res.data;
-  }
-
-  async search(search, nature) {
-    const searchparams = new URLSearchParams();
-    if (search) {
-      searchparams.set('search', search);
-    }
-    if (nature) {
-      searchparams.set('nature', nature);
-    }
-    const newparams = searchparams.toString();
-    const res = await axiosInstance.get(
-      `/${this.url}${newparams ? `?${newparams}` : ''}`
-    );
-    console.log('search call', res.data);
     return res.data;
   }
 

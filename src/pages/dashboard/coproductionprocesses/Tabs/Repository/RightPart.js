@@ -90,8 +90,8 @@ const RightPart = ({ selectedTask }) => {
         const assets = await tasksApi.getAssets(selectedTask.id);
         setAssets(assets)
         console.log(selectedTask)
-        const interlinkers = await interlinkersApi.get_by_problem_profiles(selectedTask.problem_profiles);
-        setRecommendedInterlinkers(interlinkers)
+        const interlinkers = await interlinkersApi.getByProblemProfiles(null, null, selectedTask.problem_profiles);
+        setRecommendedInterlinkers(interlinkers.items)
         setLoadingTaskInfo(false)
     }
 
@@ -104,7 +104,7 @@ const RightPart = ({ selectedTask }) => {
 
     useEffect(() => {
         softwareInterlinkersApi.getMulti().then(res => {
-            setSoftwareInterlinkers(res)
+            setSoftwareInterlinkers(res.items)
         })
     }, [])
 
@@ -181,7 +181,7 @@ const RightPart = ({ selectedTask }) => {
                                                         maxHeight: "200px"
                                                     }}
                                                     component="img"
-                                                    image={interlinker.snapshots[0]}
+                                                    image={interlinker.snapshots_links && interlinker.snapshots_links[0]}
                                                 />
                                             </CardActionArea>
                                         </Card>

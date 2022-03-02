@@ -3,9 +3,9 @@ import { Share } from '@material-ui/icons';
 
 
 const InterlinkerHeader = ({ interlinker }) => <Stack direction='row' style={{ justifyContent: "center", alignItems: "center", }} sx={{ py: 1 }} spacing={3}>
-    {interlinker.logotype && <Avatar
+    {interlinker.logotype_link && <Avatar
         alt='Logotype'
-        src={interlinker.logotype}
+        src={interlinker.logotype_link}
         variant='square'
     >
         {interlinker.name}

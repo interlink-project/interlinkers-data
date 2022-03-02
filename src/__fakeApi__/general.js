@@ -1,5 +1,9 @@
 import axiosInstance from 'axiosInstance';
 
+export function removeEmpty(obj) {
+  return Object.fromEntries(Object.entries(obj).filter(([_, v]) => v != null));
+}
+
 export default class GeneralApi {
   constructor(url) {
     this.url = url;
@@ -9,18 +13,12 @@ export default class GeneralApi {
     return axiosInstance.post(`/${this.url}`, data)
   }
 
-  async getMulti(skip = null, limit = null) {
-    const searchparams = new URLSearchParams();
-    if (skip) {
-      searchparams.set('skip', skip);
-    }
-    if (limit) {
-      searchparams.set('limit', limit);
-    }
-    const newparams = searchparams.toString();
+  async getMulti(params = {}) {
     const res = await axiosInstance.get(
-      `/${this.url}${newparams ? `?${newparams}` : ''}`
-      );
+      `/${this.url}`, {
+        params: removeEmpty(params)
+      }
+    );
     console.log('getMulti call', res.data);
     return res.data;
   }

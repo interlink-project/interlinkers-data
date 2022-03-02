@@ -50,17 +50,17 @@ const MultiSelect = (props) => {
         PaperProps={{ style: { width: 250 } }}
       >
         {options.map((option) => (
-          <MenuItem key={option}>
+          <MenuItem key={option.value}>
             <FormControlLabel
               control={(
                 <Checkbox
-                  checked={value.indexOf(option) > -1}
+                  checked={value.indexOf(option.value) > -1}
                   color='primary'
                   onChange={handleOptionToggle}
-                  value={option}
+                  value={option.value}
                 />
               )}
-              label={option}
+              label={option.label}
             />
           </MenuItem>
         ))}

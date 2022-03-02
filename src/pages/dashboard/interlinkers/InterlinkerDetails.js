@@ -70,7 +70,7 @@ const InterlinkerDetails = ({ interlinker }) => {
         )}
         {currentTab === 'snapshots' && (
           <Card>
-            <SwipeableTextMobileStepper images={interlinker.snapshots} />
+            <SwipeableTextMobileStepper images={interlinker.snapshots_links} />
           </Card>
         )}
         {currentTab === 'assets' && (

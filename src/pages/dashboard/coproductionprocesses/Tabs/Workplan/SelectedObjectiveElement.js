@@ -76,7 +76,7 @@ const CollapseRecommendedInterlinkers = ({ selectedObjective }) => {
       <List sx={{ width: '100%' }}>
         {selectedObjective.recommended_interlinkers.map(interlinker => <ListItem key={interlinker.id} sx={{ bgcolor: 'background.default' }} button onClick={() => createAsset(interlinker)}>
           <ListItemAvatar key={interlinker.id}>
-            <Avatar src={interlinker.logotype} />
+            <Avatar src={interlinker.logotype_link} />
           </ListItemAvatar>
           <ListItemText primary={cleanUnderScores(interlinker.name)} secondary={`${interlinker.nature === "KN" ? "Knowledge" : "Software"} interlinker`} />
         </ListItem>)}

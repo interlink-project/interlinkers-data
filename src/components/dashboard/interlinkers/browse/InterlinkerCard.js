@@ -27,12 +27,11 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import SwipeableTextMobileStepper from './Carousel';
 
-const InterlinkerCard = (props) => {
-  const { interlinker, mode, onInterlinkerClick, ...other } = props;
+const InterlinkerCard = ({ interlinker, mode, onInterlinkerClick }) => {
   const [isLiked, setIsLiked] = useState(interlinker.isLiked);
   const [likes, setLikes] = useState(interlinker.likes || 0);
   const [hovered, setHovered] = useState(false);
-  const isOn = true
+  const isOfficial = true
   const isSoftware = interlinker.nature === "softwareinterlinker"
   const sameHeightCards = {
     minHeight: "200px",
@@ -41,6 +40,7 @@ const InterlinkerCard = (props) => {
     flexDirection: "column",
     justifyContent: "space-between"
   }
+
   const handleLike = () => {
     setIsLiked(true);
     setLikes((prevLikes) => prevLikes + 1);
@@ -70,13 +70,13 @@ const InterlinkerCard = (props) => {
         mt: 2,
       }}
     >
-      <Avatar
+      {interlinker.logotype_link && <Avatar
         alt='Logotype'
-        src={interlinker.logotype}
+        src={interlinker.logotype_link}
         variant='square'
       >
         {interlinker.title}
-      </Avatar>
+      </Avatar>}
       <Box sx={{ ml: 2 }}>
         <Link
           color='textPrimary'
@@ -103,7 +103,7 @@ const InterlinkerCard = (props) => {
             variant='subtitle2'
             title={"teamname"}
           >
-            team name
+            Interlink platform
           </Link>
         </Typography>
         <Typography
@@ -181,13 +181,13 @@ const InterlinkerCard = (props) => {
             variant='subtitle2'
             sx={{ mb: 1 }}
           >
-            Status
+            Creator
           </Typography>
           <Typography
             color='textPrimary'
             variant='subtitle2'
           >
-            <Chip label={isOn ? "on" : "off"} color={isOn ? "success" : "warning"} size="small" />
+            <Chip label={isOfficial ? "Official" : "Community"} color={isOfficial ? "success" : "warning"} size="small" />
           </Typography>
         </Grid>
         <Grid item>
@@ -223,7 +223,7 @@ const InterlinkerCard = (props) => {
             <Rating
               readOnly
               size='small'
-              value={1}
+              value={null}
             />
             <Typography
               color='textPrimary'
@@ -253,12 +253,12 @@ const InterlinkerCard = (props) => {
       )}
     </Box>
     <Box sx={{ bottom: 0 }}>
-      <SwipeableTextMobileStepper images={interlinker.snapshots} height="300px" />
+      <SwipeableTextMobileStepper images={interlinker.snapshots_links} height="300px" />
     </Box>
   </>
 
   return (
-    <Card {...other} style={sameHeightCards}
+    <Card style={sameHeightCards}
       aria-haspopup="true"
       // onMouseEnter={() => setHovered(true)}
       // onMouseLeave={() => setHovered(false)}

@@ -4,7 +4,6 @@ export { default as InterlinkerApplicantCard } from './applicants/InterlinkerApp
 export { default as InterlinkerApplicants } from './applicants/InterlinkerApplicants';
 export { default as InterlinkerApplicationModal } from './applicants/InterlinkerApplicationModal';
 export { default as InterlinkerBrowseFilter } from './browse/InterlinkerBrowseFilter';
-export { default as InterlinkerBrowseResults } from './browse/InterlinkerBrowseResults';
 export { default as InterlinkerCard } from './browse/InterlinkerCard';
 export { default as InterlinkerCreateWizard } from './InterlinkerCreateWizard';
 export { default as InterlinkerDescriptionForm } from './InterlinkerDescriptionForm';
