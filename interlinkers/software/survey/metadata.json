@@ -41,23 +41,23 @@
             "shortcut": true
         },
         "capabilities_translations": {
-            "instantiate": {
+            "instantiate_text_translations": {
                 "en": "Create a survey",
                 "es": "Crear una encuesta"
             },
-            "clone": {
+            "clone_text_translations": {
                 "en": "Clone survey",
                 "es": "Clonar encuesta"
             },
-            "view": {
+            "view_text_translations": {
                 "en": "Open survey",
                 "es": "Abrir encuesta"
             },
-            "edit": {
+            "edit_text_translations": {
                 "en": "Edit survey questions",
                 "es": "Editar preguntas de la encuesta"
             },
-            "delete": {
+            "delete_text_translations": {
                 "en": "Delete survey",
                 "es": "Eliminar encuesta"
             }

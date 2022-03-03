@@ -63,15 +63,15 @@
             "shortcut": true
         },
         "capabilities_translations": {
-            "instantiate": {
+            "instantiate_text_translations": {
                 "en": "Create a discussion thread in Loomio",
                 "es": "Crear un hilo en Loomio"
             },
-            "view": {
+            "view_text_translations": {
                 "en": "Open thread in Loomio",
                 "es": "Abrir hilo en Loomio"
             },
-            "delete": {
+            "delete_text_translations": {
                 "en": "Delete Loomio thread",
                 "es": "Eliminar hilo de Loomio"
             }

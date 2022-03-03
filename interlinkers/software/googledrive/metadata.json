@@ -41,19 +41,19 @@
             "shortcut": true
         },
         "capabilities_translations": {
-            "instantiate": {
+            "instantiate_text_translations": {
                 "en": "Create a Google Drive document",
                 "es": "Crear documento de Google Drive"
             },
-            "clone": {
+            "clone_text_translations": {
                 "en": "Clone document",
                 "es": "Clonar documento"
             },
-            "view": {
+            "view_text_translations": {
                 "en": "Open document",
                 "es": "Abrir documento"
             },
-            "delete": {
+            "delete_text_translations": {
                 "en": "Delete document",
                 "es": "Eliminar documento"
             }

@@ -287,45 +287,42 @@
             "title": "CapabilitiesTranslations",
             "type": "object",
             "properties": {
-                "instantiate": {
-                    "title": "Instantiate",
+                "instantiate_text_translations": {
+                    "title": "Instantiate Text Translations",
                     "type": "object",
                     "additionalProperties": {
                         "type": "string"
                     }
                 },
-                "view": {
-                    "title": "View",
+                "view_text_translations": {
+                    "title": "View Text Translations",
                     "type": "object",
                     "additionalProperties": {
                         "type": "string"
                     }
                 },
-                "clone": {
-                    "title": "Clone",
+                "clone_text_translations": {
+                    "title": "Clone Text Translations",
                     "type": "object",
                     "additionalProperties": {
                         "type": "string"
                     }
                 },
-                "edit": {
-                    "title": "Edit",
+                "edit_text_translations": {
+                    "title": "Edit Text Translations",
                     "type": "object",
                     "additionalProperties": {
                         "type": "string"
                     }
                 },
-                "delete": {
-                    "title": "Delete",
+                "delete_text_translations": {
+                    "title": "Delete Text Translations",
                     "type": "object",
                     "additionalProperties": {
                         "type": "string"
                     }
                 }
-            },
-            "required": [
-                "edit"
-            ]
+            }
         },
         "AuthMethods": {
             "title": "AuthMethods",

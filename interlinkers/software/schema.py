@@ -31,11 +31,11 @@ class Capabilities(BaseModel):
     shortcut: bool
 
 class CapabilitiesTranslations(BaseModel):
-    instantiate: Optional[Dict[str, str]]
-    view: Optional[Dict[str, str]]
-    clone: Optional[Dict[str, str]]
-    edit: Optional[Dict[str, str]]
-    delete: Optional[Dict[str, str]]
+    instantiate_text_translations: Optional[Dict[str, str]]
+    view_text_translations: Optional[Dict[str, str]]
+    clone_text_translations: Optional[Dict[str, str]]
+    edit_text_translations: Optional[Dict[str, str]]
+    delete_text_translations: Optional[Dict[str, str]]
 
 class Integration(BaseModel):
     service_name: str

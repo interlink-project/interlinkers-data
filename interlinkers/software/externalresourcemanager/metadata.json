@@ -41,23 +41,23 @@
             "shortcut": true
         },
         "capabilities_translations": {
-            "instantiate": {
+            "instantiate_text_translations": {
                 "en": "Reference an external resource",
                 "es": "Referenciar un recurso externo"
             },
-            "clone": {
+            "clone_text_translations": {
                 "en": "Clone reference",
                 "es": "Clonar referencia"
             },
-            "view": {
+            "view_text_translations": {
                 "en": "Open reference",
                 "es": "Abrir referencia"
             },
-            "edit": {
+            "edit_text_translations": {
                 "en": "Edit reference",
                 "es": "Editar referencia"
             },
-            "delete": {
+            "delete_text_translations": {
                 "en": "Delete reference",
                 "es": "Eliminar referencia"
             }
