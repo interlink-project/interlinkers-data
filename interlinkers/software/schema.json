@@ -322,10 +322,7 @@
                         "type": "string"
                     }
                 }
-            },
-            "required": [
-                "edit"
-            ]
+            }
         },
         "AuthMethods": {
             "title": "AuthMethods",
