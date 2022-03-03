@@ -7,7 +7,7 @@ import { autoPlay } from 'react-swipeable-views-utils';
 // 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
-function SwipeableTextMobileStepper({ images = [], height = '100%' }) {
+function SwipeableTextMobileStepper({ images = [], height = '100%', objectFit="cover"}) {
     const theme = useTheme();
     const [activeStep, setActiveStep] = React.useState(0);
 
@@ -48,10 +48,11 @@ function SwipeableTextMobileStepper({ images = [], height = '100%' }) {
                                 component="img"
                                 sx={{
                                     height,
+                                    maxHeight: "700px",
                                     display: 'block',
                                     overflow: 'hidden',
                                     width: '100%',
-                                    objectFit: 'cover'
+                                    objectFit
                                 }}
                                 src={image}
                                 alt={image}

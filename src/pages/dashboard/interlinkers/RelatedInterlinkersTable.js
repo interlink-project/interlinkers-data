@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import { alpha, Box, Table, Toolbar, Switch, Typography, Paper, Checkbox, FormControlLabel, IconButton, Tooltip, TableSortLabel, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow, Rating } from '@material-ui/core';
 import { visuallyHidden } from '@material-ui/utils';
 import { Delete, FilterList } from '@material-ui/icons';
+import { interlinkersApi } from "__fakeApi__"
+import useMounted from 'hooks/useMounted';
+import { SafeHTMLElement } from 'utils/safeHTML';
 
 function descendingComparator(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
@@ -36,10 +39,10 @@ function stableSort(array, comparator) {
 
 const headCells = [
     {
-        id: 'title',
+        id: 'name',
         numeric: false,
         disablePadding: true,
-        label: 'Title',
+        label: 'Name',
     },
     {
         id: 'description',
@@ -148,13 +151,36 @@ RelatedInterlinkersTableToolbar.propTypes = {
     numSelected: PropTypes.number.isRequired,
 };
 
-export default function RelatedInterlinkersTable({ representations = [] }) {
+export default function RelatedInterlinkersTable({ interlinker }) {
     const [order, setOrder] = React.useState('asc');
     const [orderBy, setOrderBy] = React.useState('calories');
     const [selected, setSelected] = React.useState([]);
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
+    const [interlinkers, setInterlinkers] = React.useState([])
+    const [total, setTotal] = React.useState(0)
+    const [loading, setLoading] = React.useState(true)
+    const mounted = useMounted();
+
+    const getRelatedInterlinkers = React.useCallback(async () => {
+        setLoading(true)
+        try {
+            const data = await interlinkersApi.getRelated(page + 1, rowsPerPage, interlinker.id);
+            if (mounted.current) {
+                setInterlinkers(data.items);
+                setTotal(data.total)
+                setLoading(false)
+            }
+        } catch (err) {
+            console.error(err);
+        }
+
+    }, [page, mounted]);
+
+    React.useEffect(() => {
+        getRelatedInterlinkers()
+    }, [])
     const handleRequestSort = (event, property) => {
         const isAsc = orderBy === property && order === 'asc';
         setOrder(isAsc ? 'desc' : 'asc');
@@ -163,7 +189,7 @@ export default function RelatedInterlinkersTable({ representations = [] }) {
 
     const handleSelectAllClick = (event) => {
         if (event.target.checked) {
-            const newSelecteds = representations.map((n) => n.name);
+            const newSelecteds = interlinkers.map((n) => n.name);
             setSelected(newSelecteds);
             return;
         }
@@ -196,14 +222,14 @@ export default function RelatedInterlinkersTable({ representations = [] }) {
 
     const handleChangeRowsPerPage = (event) => {
         setRowsPerPage(parseInt(event.target.value, 10));
-        setPage(0);
+        setPage(1);
     };
 
     const isSelected = (name) => selected.indexOf(name) !== -1;
 
     // Avoid a layout jump when reaching the last page with empty rows.
     const emptyRows =
-        page > 0 ? Math.max(0, (1 + page) * rowsPerPage - representations.length) : 0;
+        page > 0 ? Math.max(0, (1 + page) * rowsPerPage - total) : 0;
 
     return (
         <Box sx={{ width: '100%' }}>
@@ -221,12 +247,12 @@ export default function RelatedInterlinkersTable({ representations = [] }) {
                             orderBy={orderBy}
                             onSelectAllClick={handleSelectAllClick}
                             onRequestSort={handleRequestSort}
-                            rowCount={representations.length}
+                            rowCount={total}
                         />
                         <TableBody>
                             {/* if you don't need to support IE11, you can replace the `stableSort` call with:
                  rows.slice().sort(getComparator(order, orderBy)) */}
-                            {stableSort(representations, getComparator(order, orderBy))
+                            {stableSort(interlinkers, getComparator(order, orderBy))
                                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                 .map((row, index) => {
                                     const isItemSelected = isSelected(row.name);
@@ -247,16 +273,16 @@ export default function RelatedInterlinkersTable({ representations = [] }) {
                                                 scope="row"
                                                 padding="none"
                                             >
-                                                {row.title}
+                                                {row.name}
                                             </TableCell>
                                             <TableCell>
-                                                {row.description}
+                                                <SafeHTMLElement data={row.description} />
                                             </TableCell>
                                             <TableCell>{row.language}</TableCell>
                                             <TableCell>{row.created_at}</TableCell>
                                             <TableCell>{row.format}</TableCell>
                                             <TableCell>
-                                                <Rating value={row.rating} />
+                                                <Rating readOnly value={row.rating} />
                                             </TableCell>
                                         </TableRow>
                                     );
@@ -276,7 +302,7 @@ export default function RelatedInterlinkersTable({ representations = [] }) {
                 <TablePagination
                     rowsPerPageOptions={[5, 10, 25]}
                     component="div"
-                    count={representations.length}
+                    count={total}
                     rowsPerPage={rowsPerPage}
                     page={page}
                     onPageChange={handleChangePage}

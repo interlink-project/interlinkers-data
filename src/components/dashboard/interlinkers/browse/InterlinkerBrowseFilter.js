@@ -143,14 +143,14 @@ const InterlinkerBrowseFilter = ({ onFiltersChange }) => {
               options={multiselect.options}
               value={getValues(multiselect.label)}
             />
-            <Divider orientation='vertical' flexItem style={{ width: "20px" }} />
+            <Divider orientation='vertical' flexItem sx={{ mx: 2 }} />
           </React.Fragment>
         ))}
 
         <Typography variant="body2" sx={{ mx: 1 }}><b>Minimum rating:</b></Typography>
         <Rating value={1} />
-        <Divider orientation='vertical' flexItem style={{ width: "20px" }} />
-        <Typography variant="body2" sx={{ mx: 1 }}><b>Order by:</b></Typography>
+        <Divider orientation='vertical' flexItem sx={{ mx: 2 }} />
+        <Typography variant="body2" sx={{ mr: 1 }}><b>Order by:</b></Typography>
         <Select
           labelId={selectOptions.label}
           label={selectOptions.label}

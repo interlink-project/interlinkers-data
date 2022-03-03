@@ -13,9 +13,6 @@ const CoproductionProcessProfile = Loadable(
 const InterlinkerBrowse = Loadable(
   lazy(() => import('../pages/dashboard/interlinkers/InterlinkerBrowse'))
 );
-const InterlinkerCreate = Loadable(
-  lazy(() => import('../pages/dashboard/interlinkers/InterlinkerCreate'))
-);
 const InterlinkerDetails = Loadable(
   lazy(() => import('../pages/dashboard/interlinkers/InterlinkerDetails'))
 );
@@ -65,10 +62,6 @@ export const routes = [
           {
             path: '',
             element: <InterlinkerBrowse />,
-          },
-          {
-            path: 'new',
-            element: <InterlinkerCreate />,
           },
           {
             path: ':interlinkerId',

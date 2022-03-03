@@ -29,6 +29,19 @@ class InterlinkersApi extends GeneralApi {
     return res.data;
   }
 
+  async getRelated(page, size, id) {
+    const res = await axiosInstance.get(
+      `/${this.url}/${id}/related`, {
+        params: removeEmpty({
+          page,
+          size
+        })
+      } 
+    );
+    console.log('related call', res.data);
+    return res.data;
+  }
+
   async status() {
     const res = await axiosInstance.get(`/catalogue/interlinkers_status`)
     console.log('status call', res.data);

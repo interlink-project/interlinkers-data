@@ -59,7 +59,8 @@ const InterlinkerCard = ({ interlinker, mode, onInterlinkerClick }) => {
     onClick: onInterlinkerClick,
     to: `/dashboard/interlinkers/${interlinker.id}`
   }
-  const GridMode = () => <><Box sx={{ p: 3 }}>
+  const GridMode = () => <>
+  <Box sx={{ p: 3, pb: 1 }}>
 
     <Box
       sx={{
@@ -67,7 +68,7 @@ const InterlinkerCard = ({ interlinker, mode, onInterlinkerClick }) => {
         display: 'flex',
         textAlign: 'center',
         justifyContent: 'space-between',
-        mt: 2,
+        mt: 1,
       }}
     >
       {interlinker.logotype_link && <Avatar
@@ -154,7 +155,6 @@ const InterlinkerCard = ({ interlinker, mode, onInterlinkerClick }) => {
         color='textSecondary'
         variant='body2'
       >
-        { }
         {<SafeHTMLElement data={truncate(interlinker.description, {
           length: 200,
           separator: ' ',

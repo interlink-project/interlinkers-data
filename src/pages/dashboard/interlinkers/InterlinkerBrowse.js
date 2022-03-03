@@ -30,7 +30,6 @@ const InterlinkerBrowse = () => {
 
   const sortRef = useRef(null);
   const [openSort, setOpenSort] = useState(false);
-  const [selectedSort, setSelectedSort] = useState('Most popular');
   const [mode, setMode] = useState('grid');
 
   const pagesCount = Math.round(total / size)
@@ -179,20 +178,6 @@ const InterlinkerBrowse = () => {
                     display: 'flex'
                   }}
                 >
-                  <Button
-                    color='primary'
-                    onClick={handleSortOpen}
-                    ref={sortRef}
-                    sx={{
-                      textTransform: 'none',
-                      letterSpacing: 0,
-                      mr: 2
-                    }}
-                    variant='text'
-                  >
-                    {selectedSort}
-                    <ArrowDropDown fontSize='small' />
-                  </Button>
                   <ToggleButtonGroup
                     exclusive
                     onChange={handleModeChange}
@@ -205,25 +190,7 @@ const InterlinkerBrowse = () => {
                   </ToggleButtonGroup>
                 </Box>
               </Box>
-              <Menu
-                anchorEl={sortRef.current}
-                elevation={1}
-                onClose={handleSortClose}
-                open={openSort}
-              >
-                {[
-                  'Most recent',
-                  'Popular',
-                  'Best rated',
-                ].map((option) => (
-                  <MenuItem
-                    key={option}
-                    onClick={() => handleSortSelect(option)}
-                  >
-                    <ListItemText primary={option} />
-                  </MenuItem>
-                ))}
-              </Menu>
+              
               
               <Grid
                 container

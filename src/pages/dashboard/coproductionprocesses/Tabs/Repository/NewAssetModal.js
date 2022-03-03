@@ -147,7 +147,7 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
                         {activeStep > 0 && <IconButton children={<ArrowBack />} onClick={() => setActiveStep(activeStep - 1)} />}
                     </Grid>
                     <Grid item xs={10}>
-                        <InterlinkerHeader interlinker={selectedInterlinker} />
+                        {activeStep === 0 && <InterlinkerHeader interlinker={selectedInterlinker} />}
                     </Grid>
                     <Grid item xs={1} style={{ textAlign: "right" }}>
                         <IconButton children={<Close />} onClick={handleClose} />

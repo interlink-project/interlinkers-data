@@ -10,7 +10,6 @@ import {
     Typography
   } from '@material-ui/core';
   import {
-    InterlinkerAssets,
     InterlinkerOverview,
     InterlinkerReviews
   } from 'components/dashboard/interlinkers';
@@ -85,9 +84,6 @@ import {
               )}
               {currentTab === 'related' && (
                 <RelatedInterlinkersTable interlinker={interlinker} />
-              )}
-              {currentTab === 'assets' && (
-                <InterlinkerAssets interlinker={interlinker} />
               )}
               {currentTab === 'reviews' && (
                 <InterlinkerReviews reviews={[

@@ -3,7 +3,6 @@ import {
   Tabs
 } from '@material-ui/core';
 import {
-  InterlinkerAssets,
   InterlinkerOverview,
   InterlinkerReviews
 } from 'components/dashboard/interlinkers';
@@ -70,11 +69,8 @@ const InterlinkerDetails = ({ interlinker }) => {
         )}
         {currentTab === 'snapshots' && (
           <Card>
-            <SwipeableTextMobileStepper images={interlinker.snapshots_links} />
+            <SwipeableTextMobileStepper images={interlinker.snapshots_links} objectFit="contain" />
           </Card>
-        )}
-        {currentTab === 'assets' && (
-          <InterlinkerAssets interlinker={interlinker} />
         )}
         {currentTab === 'reviews' && (
           <InterlinkerReviews reviews={[
