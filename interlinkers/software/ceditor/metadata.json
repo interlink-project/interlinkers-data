@@ -39,6 +39,24 @@
             "delete": true,
             "open_in_modal": true,
             "shortcut": true
+        },
+        "capabilities_translations": {
+            "instantiate": {
+                "en": "Create an Etherpad document",
+                "es": "Crear documento de Etherpad"
+            },
+            "clone": {
+                "en": "Clone document",
+                "es": "Clonar documento"
+            },
+            "view": {
+                "en": "Open document",
+                "es": "Abrir documento"
+            },
+            "delete": {
+                "en": "Delete document",
+                "es": "Eliminar documento"
+            }
         }
     },
     "logotype": "./interlinkers/software/ceditor/logo.jpeg",

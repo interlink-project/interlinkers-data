@@ -61,6 +61,20 @@
             "delete": true,
             "open_in_modal": false,
             "shortcut": true
+        },
+        "capabilities_translations": {
+            "instantiate": {
+                "en": "Create a discussion thread in Loomio",
+                "es": "Crear un hilo en Loomio"
+            },
+            "view": {
+                "en": "Open thread in Loomio",
+                "es": "Abrir hilo en Loomio"
+            },
+            "delete": {
+                "en": "Delete Loomio thread",
+                "es": "Eliminar hilo de Loomio"
+            }
         }
     },
     "logotype": "./interlinkers/software/loomio/logo.png",

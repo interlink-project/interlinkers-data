@@ -39,6 +39,24 @@
             "delete": true,
             "open_in_modal": true,
             "shortcut": true
+        },
+        "capabilities_translations": {
+            "instantiate": {
+                "en": "Create a Google Drive document",
+                "es": "Crear documento de Google Drive"
+            },
+            "clone": {
+                "en": "Clone document",
+                "es": "Clonar documento"
+            },
+            "view": {
+                "en": "Open document",
+                "es": "Abrir documento"
+            },
+            "delete": {
+                "en": "Delete document",
+                "es": "Eliminar documento"
+            }
         }
     },
     "logotype": "./interlinkers/software/googledrive/logo.png",

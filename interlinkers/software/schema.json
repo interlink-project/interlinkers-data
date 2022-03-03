@@ -252,6 +252,10 @@
                     "title": "View",
                     "type": "boolean"
                 },
+                "clone": {
+                    "title": "Clone",
+                    "type": "boolean"
+                },
                 "edit": {
                     "title": "Edit",
                     "type": "boolean"
@@ -272,10 +276,55 @@
             "required": [
                 "instantiate",
                 "view",
+                "clone",
                 "edit",
                 "delete",
                 "open_in_modal",
                 "shortcut"
+            ]
+        },
+        "CapabilitiesTranslations": {
+            "title": "CapabilitiesTranslations",
+            "type": "object",
+            "properties": {
+                "instantiate": {
+                    "title": "Instantiate",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "view": {
+                    "title": "View",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "clone": {
+                    "title": "Clone",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "edit": {
+                    "title": "Edit",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "delete": {
+                    "title": "Delete",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "edit"
             ]
         },
         "AuthMethods": {
@@ -313,6 +362,9 @@
                 "capabilities": {
                     "$ref": "#/definitions/Capabilities"
                 },
+                "capabilities_translations": {
+                    "$ref": "#/definitions/CapabilitiesTranslations"
+                },
                 "auth_method": {
                     "$ref": "#/definitions/AuthMethods"
                 }
@@ -324,6 +376,7 @@
                 "is_subdomain",
                 "api_path",
                 "capabilities",
+                "capabilities_translations",
                 "auth_method"
             ]
         }

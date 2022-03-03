@@ -39,6 +39,28 @@
             "delete": true,
             "open_in_modal": true,
             "shortcut": true
+        },
+        "capabilities_translations": {
+            "instantiate": {
+                "en": "Create a survey",
+                "es": "Crear una encuesta"
+            },
+            "clone": {
+                "en": "Clone survey",
+                "es": "Clonar encuesta"
+            },
+            "view": {
+                "en": "Open survey",
+                "es": "Abrir encuesta"
+            },
+            "edit": {
+                "en": "Edit survey questions",
+                "es": "Editar preguntas de la encuesta"
+            },
+            "delete": {
+                "en": "Delete survey",
+                "es": "Eliminar encuesta"
+            }
         }
     },
     "logotype": "./interlinkers/software/survey/logo.png",

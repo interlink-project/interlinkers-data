@@ -24,11 +24,18 @@ class AuthMethods(Enum):
 class Capabilities(BaseModel):
     instantiate: bool
     view: bool
+    clone: bool
     edit: bool
     delete: bool
     open_in_modal: bool
     shortcut: bool
 
+class CapabilitiesTranslations(BaseModel):
+    instantiate: Optional[Dict[str, str]]
+    view: Optional[Dict[str, str]]
+    clone: Optional[Dict[str, str]]
+    edit: Optional[Dict[str, str]]
+    delete: Optional[Dict[str, str]]
 
 class Integration(BaseModel):
     service_name: str
@@ -37,8 +44,8 @@ class Integration(BaseModel):
     is_subdomain: bool
     api_path: str
     capabilities: Capabilities
+    capabilities_translations: CapabilitiesTranslations
     auth_method: AuthMethods
-
 
 class Schema(InterlinkerSchema):
     logotype: Optional[FilePath]

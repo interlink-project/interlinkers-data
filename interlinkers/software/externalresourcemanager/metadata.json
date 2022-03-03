@@ -39,6 +39,28 @@
             "delete": true,
             "open_in_modal": true,
             "shortcut": true
+        },
+        "capabilities_translations": {
+            "instantiate": {
+                "en": "Reference an external resource",
+                "es": "Referenciar un recurso externo"
+            },
+            "clone": {
+                "en": "Clone reference",
+                "es": "Clonar referencia"
+            },
+            "view": {
+                "en": "Open reference",
+                "es": "Abrir referencia"
+            },
+            "edit": {
+                "en": "Edit reference",
+                "es": "Editar referencia"
+            },
+            "delete": {
+                "en": "Delete reference",
+                "es": "Eliminar referencia"
+            }
         }
     },
     "logotype": "./interlinkers/software/externalresourcemanager/logo.png",
