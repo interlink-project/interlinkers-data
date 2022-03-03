@@ -1,168 +1,97 @@
-import React, { useState, useEffect} from 'react';
 import {
-  Box,
-  Grid,
-  Collapse,
-  Typography,
-  List,
-  ListItem,
-  ListItemAvatar,
-  ListItemText,
-  Avatar,
-  IconButton,
-  Button,
-  Slider,
-  FormControl,
-  TextField
+  Alert,
+  Box, Button, TextField, ToggleButton, ToggleButtonGroup, Typography
 } from '@material-ui/core';
-import { assetsApi } from '__fakeApi__';
 import {
   DesktopDateRangePicker
 } from '@material-ui/lab';
-import { styled } from '@material-ui/styles';
-import { ExpandMore as ExpandMoreIcon } from '@material-ui/icons';
-import { cleanUnderScores } from "utils/cleanUnderscores"
-import CircularProgressWithLabel from 'components/CircularProgress';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { updateObjective } from 'slices/process';
+import { FinishedIcon, InProgressIcon } from '../Repository/Icons';
 
-const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-  marginLeft: 'auto',
-  transition: theme.transitions.create('transform', {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
-
-
-const CollapseRecommendedInterlinkers = ({ selectedObjective }) => {
-  const [expanded, setExpanded] = useState(false);
-  const [creatingAsset, setCreatingAsset] = useState(false);
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
-
-  const createAsset = async (interlinker) => {
-    setCreatingAsset(true)
-    const data = await assetsApi.create(
-      selectedObjective.id,
-      interlinker.last_version.id
-    );
-    console.log(data)
-    setCreatingAsset(false)
-  }
-
-
-  return <><Typography variant="overline" gutterBottom>
-    Recommended interlinkers
-  </Typography>
-
-
-    <ExpandMore
-      expand={expanded}
-      onClick={handleExpandClick}
-      aria-expanded={expanded}
-      aria-label="show more"
-    >
-      <ExpandMoreIcon />
-    </ExpandMore>
-
-    <Collapse in={expanded} timeout="auto" unmountOnExit>
-
-      <List sx={{ width: '100%' }}>
-        {selectedObjective.recommended_interlinkers.map(interlinker => <ListItem key={interlinker.id} sx={{ bgcolor: 'background.default' }} button onClick={() => createAsset(interlinker)}>
-          <ListItemAvatar key={interlinker.id}>
-            <Avatar src={interlinker.logotype_link} />
-          </ListItemAvatar>
-          <ListItemText primary={cleanUnderScores(interlinker.name)} secondary={`${interlinker.nature === "KN" ? "Knowledge" : "Software"} interlinker`} />
-        </ListItem>)}
-      </List>
-
-      <Button variant="outlined" fullWidth> Search for other interlinkers </Button>
-    </Collapse></>
-
-}
-
-const SelectedObjectiveElement = ({ selectedObjective, onSaved }) => {
+const Selected = ({ element, onSave }) => {
   const [dateRange, setDateRange] = useState([null, null]);
   const [progress, setProgress] = useState(0);
+  const [editMode, setEditMode] = useState(false);
+  
   const dispatch = useDispatch();
 
   useEffect(() => {
-    setDateRange([selectedObjective.start_date ? new Date(selectedObjective.start_date) : null, selectedObjective.end_date ? new Date(selectedObjective.end_date) : null])
-    setProgress(selectedObjective.progress)
-  }, [selectedObjective]);
-  
+    setDateRange([element.start_date ? new Date(element.start_date) : null, element.end_date ? new Date(element.end_date) : null])
+    setProgress(element.progress)
+  }, [element]);
+
   const dataToSend = async () => {
-    const data = { }
+    const data = {}
 
     const start_date = dateRange[0] && dateRange[0].toISOString().slice(0, 10)
     const end_date = dateRange[1] && dateRange[1].toISOString().slice(0, 10)
-    if(start_date !== selectedObjective.start_date){
+    if (start_date !== element.start_date) {
       data.start_date = start_date
     }
-    if(end_date !== selectedObjective.end_date){
+    if (end_date !== element.end_date) {
       data.end_date = end_date
     }
 
-    if(progress !== selectedObjective.progress){
+    if (progress !== element.progress) {
       data.progress = progress
     }
-    
-    dispatch(updateObjective({id: selectedObjective.id, data}))
-    if(onSaved){
-      onSaved()
+
+    dispatch(updateObjective({ id: element.id, data }))
+    if (onSave) {
+      onSave()
     }
   }
 
+  /*
+    const handleChange = (event, newStatus) => {
+        tasksApi.update(selectedTask.id, {
+            status: newStatus
+        }).then((res) => {
+            setStatus(newStatus)
+        })
+    }; */
+
   return <Box sx={{ p: 2 }}>
-    <Grid container sx={{ mb: 2, p: 2, backgroundColor: "primary.main" }} justifyContent="space-between" alignItems="center"
+    {element.description || "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mi odio, finibus eget porttitor eu, condimentum nec nibh. Fusce a tellus faucibus, sagittis quam eu, ornare odio. Etiam ac dolor sed elit accumsan vestibulum vel ut sapien. Duis iaculis quam in cursus euismod. Curabitur lacinia eros sit amet arcu luctus gravida. Fusce lacinia quis urna sit amet auctor. Phasellus vitae enim luctus, tempus lectus sed, feugiat elit. Nam quis nibh hendrerit, auctor eros sed, fermentum tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam vehicula nunc in odio consequat, eget volutpat lectus tincidunt."}
+    <Typography variant="h6" sx={{ mt: 2 }}>Current status of the task:</Typography>
+    <ToggleButtonGroup
+      sx={{ mt: 1 }}
+      color={status === "finished" ? "success" : status === "in_progress" ? "warning" : "primary"}
+      value={status}
+      exclusive
+      fullWidth
+    // onChange={handleChange}
     >
-      <Grid item xl={8} lg={9} md={10} xs={10}>
-        <Typography variant="h6" sx={{ color: "primary.contrastText" }}>{cleanUnderScores(selectedObjective.name)}</Typography>
-        <Typography paragraph sx={{ color: "primary.contrastText" }}>{selectedObjective.description}</Typography>
-      </Grid>
-      <Grid item xl={4} lg={3} md={2} xs={2}>
-        <CircularProgressWithLabel value={progress} size={80} />
-      </Grid>
-
-
-    </Grid>
-    <DesktopDateRangePicker
-      startText="Objective start"
-      value={dateRange}
-      onChange={(newValue) => {
-        setDateRange(newValue);
-      }}
-      renderInput={(startProps, endProps) => (
-        <React.Fragment>
-          <TextField {...startProps} />
-          <Box sx={{ mx: 2 }}> to </Box>
-          <TextField {...endProps} />
-        </React.Fragment>
-      )}
-    />
-    <FormControl fullWidth >
-
-      <Slider
-        aria-label="Progress"
-        value={progress || selectedObjective.progress}
-        valueLabelDisplay="auto"
-        onChange={({ target: { value } }) => {
-          setProgress(value)
+      <ToggleButton value="awaiting">Awaiting</ToggleButton>
+      <ToggleButton value="in_progress">In progress <InProgressIcon /></ToggleButton>
+      <ToggleButton value="finished">Finished <FinishedIcon /></ToggleButton>
+    </ToggleButtonGroup>
+    {editMode ? <Box sx={{ my: 3, justifyContent: "center", textAlign: "center" }}>
+      <DesktopDateRangePicker
+        startText="Objective start"
+        value={dateRange}
+        onChange={(newValue) => {
+          setDateRange(newValue);
         }}
-        step={5}
-        marks
-        min={0}
-        max={100}
+
+        renderInput={(startProps, endProps) => (
+          <React.Fragment>
+            <TextField {...startProps} />
+            <Box sx={{ mx: 2 }}> to </Box>
+            <TextField {...endProps} />
+          </React.Fragment>
+        )}
       />
-    </FormControl>
-    <Button variant="contained" fullWidth onClick={() => dataToSend()}>Save</Button>
+    </Box> : <Box sx={{my: 2}}>
+    <Typography variant="h6" sx={{ mt: 2 }}>Time planification:</Typography>
+  {dateRange[0] !== null ? JSON.stringify(dateRange) : <Alert severity="warning">Not set</Alert>}
+    </Box>}
+    
+    <Button variant="contained" fullWidth onClick={() => setEditMode(true)}>Edit</Button>
+    <Button variant="outlined" sx={{mt: 2}} fullWidth color="error">Delete</Button>
   </Box>
 }
 
-export default SelectedObjectiveElement
+export default Selected

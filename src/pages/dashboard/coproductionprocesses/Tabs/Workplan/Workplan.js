@@ -1,4 +1,4 @@
-import { ToggleButton, ToggleButtonGroup, Grid, Drawer, Skeleton } from "@material-ui/core";
+import { ToggleButton, ToggleButtonGroup, Grid, Drawer, Skeleton, Dialog, DialogTitle } from "@material-ui/core";
 import useSettings from 'hooks/useSettings';
 import React, { useEffect, useState, useCallback } from "react";
 import $ from 'jquery';
@@ -20,11 +20,8 @@ const Workplan = () => {
   const mounted = useMounted();
 
   const [drawerOpen, setDrawerOpen] = useState(false)
-  const [objectiveId, setObjectiveId] = useState(null);
-  let selectedObjective = null
-  if (objectiveId) {
-    selectedObjective = objectives.find(objective => objective.id === objectiveId)
-  }
+  const [clickedElement, setClickedElement] = useState(null);
+  
   const getTasks = () => {
     const final = []
 
@@ -98,7 +95,7 @@ const Workplan = () => {
           const id = $(this).attr("data-id")
           const objective = objectives.find(o => o.id === id)
           $(this).on("click", function () {
-            setObjectiveId(id)
+            setClickedElement({...objective, type: "objective"})
             setDrawerOpen(true)
           });
 
@@ -126,6 +123,11 @@ const Workplan = () => {
         $(".gantt-task").each(function (index1) {
           const id = $(this).attr("data-id")
           const task = tasks.find(t => t.id === id)
+          $(this).on("click", function () {
+            setClickedElement({...task, type: "task"})
+            setDrawerOpen(true)
+          });
+
           let text = $(this).children().first().children(".bar-label").first()
           text.css("font-weight", "600")
 
@@ -207,16 +209,11 @@ const Workplan = () => {
           <div id="gantt" />
         }
       </Grid>
-      <MobileDiscriminator
-        defaultNode={
-          <Drawer
-            anchor="right"
-            open={drawerOpen}
-            onClose={() => setDrawerOpen(false)}
-          >
-            <SelectedObjectiveElement selectedObjective={selectedObjective} onSaved={() => setDrawerOpen(false)} />
-          </Drawer>}
-        onMobileNode={<MobileObjectiveDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} selectedObjective={selectedObjective} />} />
+      <Dialog onClose={() => setDrawerOpen(false)} open={drawerOpen}>
+            <DialogTitle>{clickedElement && clickedElement.name}</DialogTitle>
+            <SelectedObjectiveElement element={clickedElement} onSave={() => setDrawerOpen(false)} />
+
+          </Dialog>
     </Grid>
   );
 };

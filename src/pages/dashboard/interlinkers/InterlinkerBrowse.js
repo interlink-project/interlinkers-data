@@ -165,12 +165,9 @@ const InterlinkerBrowse = () => {
                     }
                   }}
                   variant='h6'
-                >
-                  Showing
+                > {total}
                   {' '}
-                  {interlinkers.length} of {total}
-                  {' '}
-                  interlinkers
+                  interlinkers found
                 </Typography>
                 <Box
                   sx={{

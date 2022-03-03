@@ -17,7 +17,7 @@ const GraphTab = () => {
     const { network } = useSelector((state) => state.process);
 
     return (
-        <div style={{ height: '83vh' }}>
+        <div style={{ height: '87vh' }}>
             {network && network.nodes && network.links && <Graph
                 data={deepCopy(network)}
                 NodeComponent={Node}

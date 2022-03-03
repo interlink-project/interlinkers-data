@@ -44,7 +44,8 @@ import MetadataTab from './Tabs/Metadata';
 const tabs = [
   { label: 'Overview', value: 'overview' },
   { label: 'Metadata', value: 'metadata' },
-  { label: 'Repository', value: 'repository' },
+  { label: 'Workplan', value: 'workplan' },
+  { label: 'Guide', value: 'guide' },
   { label: 'Team', value: 'team' },
 ];
 
@@ -105,7 +106,7 @@ const CoproductionProcessProfile = () => {
   };
 
   const logoExists = process && process.logotype
-  const TabsMobile = () => <Card sx={{ mr: onMobile ? 0 : 2, mb: onMobile ? 1 : 0 }}>
+  const TabsMobile = () => <Card sx={{ mb: onMobile ? 1 : 0 }}>
     <CardHeader
       avatar={
         <Avatar variant="square" sx={logoExists ? {} : { bgcolor: red[500] }} aria-label="recipe" src={logoExists && process.logotype}>
@@ -124,11 +125,8 @@ const CoproductionProcessProfile = () => {
       indicatorColor="secondary"
       onChange={handleTabsChange}
       value={tab}
-      variant="scrollable"
-      scrollButtons="auto"
-
-      orientation={onMobile ? "horizontal" : "vertical"}
       aria-label="Coproduction tabs"
+      centered
     >
       {tabs.map((tab) => (
         <Tab
@@ -152,8 +150,13 @@ const CoproductionProcessProfile = () => {
         <MetadataTab />
       </Card>
     </TabPanel>
+    <TabPanel value={tab} index="workplan">
+      <Card sx={{ mb: 2 }}>
+      {process.phases_count > 0 ? <Workplan /> : <CreateSchema />}
+      </Card>
+    </TabPanel>
     <TabPanel value={tab} index="guide">
-      <Card sx={{mb: 2}}>
+      <Card sx={{ mb: 2 }}>
         {process.phases_count > 0 ? <Repository /> : <CreateSchema />}
       </Card>
     </TabPanel>
@@ -177,35 +180,9 @@ const CoproductionProcessProfile = () => {
       >
         <Box sx={{ mt: 5 }}>
           <Container maxWidth='xl'>
-            {onMobile ?
-              <>
-                <TabsMobile />
-                <ContentSkeleton />
-              </>
-              :
-              <>
-                <Breadcrumbs aria-label="breadcrumb" sx={{ mb: 2 }}>
-                  <Typography
-                    sx={{ display: 'flex', alignItems: 'center' }}
-                    color="text.primary"
-                    variant="h5"
-                  >
-                    <Grain sx={{ mr: 0.5 }} fontSize="inherit" />
-                    Workspace
-                  </Typography>
-                  <Typography
-                    sx={{ display: 'flex', alignItems: 'center' }}
-                    color="text.primary"
-                    variant="h5"
-                  >
-                    {process ? (logoExists && <Avatar sx={{ mr: 0.5, height: "30px", width: "30px" }} src={process.logotype} />) : <Skeleton sx={{ mr: 0.5 }} variant="circular" width={30} height={30} />}
-                    {process ? process.name : <Skeleton variant="rectangular" width={210} />}
-                  </Typography>
 
-                </Breadcrumbs>
-                <ContentSkeleton />
-              </>
-            }
+            {onMobile && <TabsMobile />}
+            <ContentSkeleton />
 
           </Container>
         </Box>

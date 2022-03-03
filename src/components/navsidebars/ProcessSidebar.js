@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Link as RouterLink, useLocation, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Avatar, Box, Divider, Drawer, Link, Typography, Button } from '@material-ui/core';
+import { Avatar, Box, Divider, Drawer, Link, Typography, Button, Grid, Stack } from '@material-ui/core';
 import { Timeline, Dashboard, BubbleChart, Forum, Settings, FolderOpen, AccountTree, Group as GroupIcon, ArrowBack } from '@material-ui/icons';
 
 import useMediaQuery from '@material-ui/core/useMediaQuery';
@@ -10,6 +10,7 @@ import NavSection from '../NavSection';
 import Scrollbar from '../Scrollbar'; import useAuth from '../../hooks/useAuth';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
+import { red } from '@material-ui/core/colors';
 
 
 const ProcessSidebar = (props) => {
@@ -27,7 +28,6 @@ const ProcessSidebar = (props) => {
     }
   }, [location.pathname]);
 
-
   const sections = [
 
     {
@@ -39,9 +39,9 @@ const ProcessSidebar = (props) => {
           icon: <Dashboard />
         },
         {
-          title: 'Metadata',
-          path: `/dashboard/coproductionprocesses/${processId}/metadata`,
-          icon: <FolderOpen />
+          title: 'Workplan',
+          path: `/dashboard/coproductionprocesses/${processId}/workplan`,
+          icon: <Timeline />
         },
         {
           title: 'Guide',
@@ -53,11 +53,12 @@ const ProcessSidebar = (props) => {
           path: `/dashboard/coproductionprocesses/${processId}/team`,
           icon: <GroupIcon />
         },
-        /*{
-          title: 'Workplan',
-          path: `/dashboard/coproductionprocesses/${processId}/workplan`,
-          icon: <Timeline />
+        {
+          title: 'Project details',
+          path: `/dashboard/coproductionprocesses/${processId}/metadata`,
+          icon: <Settings />
         },
+        /*{
         {
           title: 'Workplan',
           path: `/dashboard/coproductionprocesses/${processId}/workplan`,
@@ -106,10 +107,17 @@ const ProcessSidebar = (props) => {
             />
           </RouterLink>
         </Box>
-        <Box sx={{ p: 2 }}>
-          <Button startIcon={<ArrowBack />} variant="outlined" fullWidth size="large" onClick={() => navigate("/dashboard")}>
-          </Button>
-        </Box>
+        <Stack
+          direction="column"
+          justifyContent="center"
+          alignItems="center"
+          spacing={1}
+          sx={{p: 3}}
+        >
+          {process && <Avatar variant="rounded" sx={{ width: "80px", height: "80px" }} src={process.logotype} />}
+          {process && <Typography>{process.name}</Typography>}
+          <Button startIcon={<ArrowBack />} variant="outlined" fullWidth size="large" onClick={() => navigate("/dashboard")} />
+        </Stack>
         <Divider />
         <Box sx={{ p: 2 }}>
           {sections.map((section) => (

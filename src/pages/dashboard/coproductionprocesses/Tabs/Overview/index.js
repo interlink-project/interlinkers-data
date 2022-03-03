@@ -36,7 +36,7 @@ const OverviewTab = () => {
       ]
       
     return (
-        <Box style={{ minHeight: "83vh", backgroundColor: "background.default" }}>
+        <Box style={{ minHeight: "87vh", backgroundColor: "background.default" }}>
             <Grid container justifyContent="center" spacing={3} sx={{ height: "100%"}}>
                 <Grid item xs={12} md={6}>
                     <Typography variant="h6" sx={{ my: 2, textAlign: "center" }}>

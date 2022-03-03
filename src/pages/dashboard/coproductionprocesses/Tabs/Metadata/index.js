@@ -105,7 +105,7 @@ const MetadataTab = () => {
     }
 
     return (
-        <Box style={{ minHeight: "83vh", backgroundColor: "background.default" }}>
+        <Box style={{ minHeight: "87vh", backgroundColor: "background.default" }}>
 
 
             {editMode && <Alert severity="warning" sx={{ width: '100%' }}>

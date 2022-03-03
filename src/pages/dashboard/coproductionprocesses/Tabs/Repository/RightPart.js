@@ -110,14 +110,6 @@ const RightPart = ({ selectedTask }) => {
 
     const dispatch = useDispatch();
 
-    const handleChange = (event, newStatus) => {
-        tasksApi.update(selectedTask.id, {
-            status: newStatus
-        }).then((res) => {
-            setStatus(newStatus)
-        })
-    };
-
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -133,28 +125,12 @@ const RightPart = ({ selectedTask }) => {
                 <Box sx={{ p: 2 }}>
                     <Button sx={{ mb: 2 }} fullWidth variant="outlined" onClick={() => setCollapseOpen(!collapseOpen)}>
                         <Stack spacing={2}>
-                            <Typography variant="h6" >{selectedTask.name}</Typography>
+                            <Typography variant="h6" >Recommended interlinkers</Typography>
                             <Divider> {!collapseOpen ? <KeyboardArrowDown /> : <KeyboardArrowUp />}</Divider>
                         </Stack>
                     </Button>
                     <Collapse in={collapseOpen} timeout="auto" unmountOnExit>
 
-                        <Typography variant="h6">Description of the task:</Typography>
-                        {selectedTask.description || "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mi odio, finibus eget porttitor eu, condimentum nec nibh. Fusce a tellus faucibus, sagittis quam eu, ornare odio. Etiam ac dolor sed elit accumsan vestibulum vel ut sapien. Duis iaculis quam in cursus euismod. Curabitur lacinia eros sit amet arcu luctus gravida. Fusce lacinia quis urna sit amet auctor. Phasellus vitae enim luctus, tempus lectus sed, feugiat elit. Nam quis nibh hendrerit, auctor eros sed, fermentum tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam vehicula nunc in odio consequat, eget volutpat lectus tincidunt."}
-                        <Typography variant="h6" sx={{ mt: 2 }}>Current status of the task:</Typography>
-                        <ToggleButtonGroup
-                            sx={{ mt: 1 }}
-                            color={status === "finished" ? "success" : status === "in_progress" ? "warning" : "primary"}
-                            value={status}
-                            exclusive
-                            fullWidth
-                            onChange={handleChange}
-                        >
-                            <ToggleButton value="awaiting">Awaiting</ToggleButton>
-                            <ToggleButton value="in_progress">In progress <InProgressIcon /></ToggleButton>
-                            <ToggleButton value="finished">Finished <FinishedIcon /></ToggleButton>
-                        </ToggleButtonGroup>
-                        <Typography variant="h6" sx={{ mt: 2, mb: 1 }}>Recommended interlinkers for this task:</Typography>
                         {loadingTaskInfo ?
                             <CircularProgress /> : recommendedInterlinkers.length === 0 ? <Alert severity="warning">No recommended interlinkers found</Alert> : <Grid container spacing={3} justifyContent="flex-start">
 
