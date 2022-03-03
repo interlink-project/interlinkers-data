@@ -2157,19 +2157,19 @@
                         "shortcut": true
                     },
                     "capabilities_translations": {
-                        "instantiate": {
+                        "instantiate_text_translations": {
                             "en": "Create an Etherpad document",
                             "es": "Crear documento de Etherpad"
                         },
-                        "clone": {
+                        "clone_text_translations": {
                             "en": "Clone document",
                             "es": "Clonar documento"
                         },
-                        "view": {
+                        "view_text_translations": {
                             "en": "Open document",
                             "es": "Abrir documento"
                         },
-                        "delete": {
+                        "delete_text_translations": {
                             "en": "Delete document",
                             "es": "Eliminar documento"
                         }
@@ -2251,15 +2251,15 @@
                         "shortcut": true
                     },
                     "capabilities_translations": {
-                        "instantiate": {
+                        "instantiate_text_translations": {
                             "en": "Create a discussion thread in Loomio",
                             "es": "Crear un hilo en Loomio"
                         },
-                        "view": {
+                        "view_text_translations": {
                             "en": "Open thread in Loomio",
                             "es": "Abrir hilo en Loomio"
                         },
-                        "delete": {
+                        "delete_text_translations": {
                             "en": "Delete Loomio thread",
                             "es": "Eliminar hilo de Loomio"
                         }
@@ -2318,23 +2318,23 @@
                         "shortcut": true
                     },
                     "capabilities_translations": {
-                        "instantiate": {
+                        "instantiate_text_translations": {
                             "en": "Create a survey",
                             "es": "Crear una encuesta"
                         },
-                        "clone": {
+                        "clone_text_translations": {
                             "en": "Clone survey",
                             "es": "Clonar encuesta"
                         },
-                        "view": {
+                        "view_text_translations": {
                             "en": "Open survey",
                             "es": "Abrir encuesta"
                         },
-                        "edit": {
+                        "edit_text_translations": {
                             "en": "Edit survey questions",
                             "es": "Editar preguntas de la encuesta"
                         },
-                        "delete": {
+                        "delete_text_translations": {
                             "en": "Delete survey",
                             "es": "Eliminar encuesta"
                         }
@@ -2394,19 +2394,19 @@
                         "shortcut": true
                     },
                     "capabilities_translations": {
-                        "instantiate": {
+                        "instantiate_text_translations": {
                             "en": "Create a Google Drive document",
                             "es": "Crear documento de Google Drive"
                         },
-                        "clone": {
+                        "clone_text_translations": {
                             "en": "Clone document",
                             "es": "Clonar documento"
                         },
-                        "view": {
+                        "view_text_translations": {
                             "en": "Open document",
                             "es": "Abrir documento"
                         },
-                        "delete": {
+                        "delete_text_translations": {
                             "en": "Delete document",
                             "es": "Eliminar documento"
                         }
@@ -2474,23 +2474,23 @@
                         "shortcut": true
                     },
                     "capabilities_translations": {
-                        "instantiate": {
+                        "instantiate_text_translations": {
                             "en": "Reference an external resource",
                             "es": "Referenciar un recurso externo"
                         },
-                        "clone": {
+                        "clone_text_translations": {
                             "en": "Clone reference",
                             "es": "Clonar referencia"
                         },
-                        "view": {
+                        "view_text_translations": {
                             "en": "Open reference",
                             "es": "Abrir referencia"
                         },
-                        "edit": {
+                        "edit_text_translations": {
                             "en": "Edit reference",
                             "es": "Editar referencia"
                         },
-                        "delete": {
+                        "delete_text_translations": {
                             "en": "Delete reference",
                             "es": "Eliminar referencia"
                         }
