@@ -57,7 +57,8 @@ const AssetRow = ({ asset, onChange }) => {
     <TableCell align="center">
       <Avatar src={data.creator_id} sx={{ height: "20px", width: "20px" }} />
     </TableCell>
-    <TableCell align="center"><><IconButton aria-label="settings" id="basic-button"
+    <TableCell align="center">
+      <IconButton aria-label="settings" id="basic-button"
       aria-controls="basic-menu"
       aria-haspopup="true"
       aria-expanded={open ? 'true' : undefined}
@@ -79,8 +80,11 @@ const AssetRow = ({ asset, onChange }) => {
         {asset.capabilities.delete && <MyMenuItem onClick={() => { assetsApi.delete(asset.id).then(() =>{ onChange && onChange();  setAnchorEl(null); }); }} text="Delete" icon={<Delete fontSize="small" />} />}
         <MyMenuItem text="Share" onClick={() => { }} icon={<Share fontSize="small" />} />
         {loading && <CircularProgress />}
-      </Menu></></TableCell>
-  </TableRow> : <Skeleton animation="wave" height={60} />
+      </Menu>
+      </TableCell>
+  </TableRow>
+  : 
+  <Skeleton animation="wave" height={60} />
 }
 
 const Assets = ({ assets, onChange }) => {

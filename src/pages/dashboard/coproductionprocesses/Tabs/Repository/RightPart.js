@@ -201,7 +201,7 @@ const RightPart = ({ selectedTask }) => {
                                 sx={{ mt: 2 }}
                                 endIcon={<KeyboardArrowDown />}
                             >
-                                Add new empty asset
+                                Initiate procedure
                             </Button>
                         </Box>
 
@@ -221,7 +221,7 @@ const RightPart = ({ selectedTask }) => {
                                     handleClose()
                                 }
                                 }>
-                                    <Avatar src={si.logotype} sx={{ mr: 2, height: "20px", width: "20px" }} />{si.name}
+                                    <Avatar src={si.logotype_link} sx={{ mr: 2, height: "20px", width: "20px" }} />{si.integration.instantiate_text}
                                 </MenuItem>)}
                         </Menu>
                     </Box>
