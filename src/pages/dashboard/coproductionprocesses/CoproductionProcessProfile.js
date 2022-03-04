@@ -25,7 +25,6 @@ import {
 } from '@material-ui/core';
 import useMounted from '../../../hooks/useMounted';
 import DotsVerticalIcon from '../../../icons/DotsVertical';
-import gtm from '../../../lib/gtm';
 import { Grain, Home, MoreVert, NavigateNext, Whatshot } from '@material-ui/icons';
 import Repository from './Tabs/Repository/Repository';
 import CreateSchema from './Tabs/Repository/CreateSchema';
@@ -77,14 +76,9 @@ const CoproductionProcessProfile = () => {
   const mounted = useMounted();
 
   const { process, loading } = useSelector((state) => state.process);
-
-
+  
   const theme = useTheme();
   const onMobile = !useMediaQuery(theme.breakpoints.up('md'));
-
-  useEffect(() => {
-    gtm.push({ event: 'page_view' });
-  }, []);
 
   const getCoproductionProcess = useCallback(async () => {
     try {

@@ -5,11 +5,10 @@ import { CssBaseline, ThemeProvider } from '@material-ui/core';
 
 import RTL from './components/RTL';
 import SplashScreen from './components/SplashScreen';
-import { env, gtmConfig } from './configuration';
+import { env } from './configuration';
 import useAuth from './hooks/useAuth';
 import useScrollReset from './hooks/useScrollReset';
 import useSettings from './hooks/useSettings';
-import gtm from './lib/gtm';
 import routes from './routes/index';
 import { createCustomTheme } from './theme';
 import './translations/i18n';

@@ -9,7 +9,6 @@ import { InterlinkerBrowseFilter, InterlinkerCard } from '../../../components/da
 import useMounted from '../../../hooks/useMounted';
 import useSettings from '../../../hooks/useSettings';
 import PlusIcon from '../../../icons/Plus';
-import gtm from '../../../lib/gtm';
 import InterlinkerDetails from './InterlinkerDetails';
 import InterlinkerHeader from './InterlinkerHeader';
 
@@ -84,11 +83,6 @@ const InterlinkerBrowse = () => {
     setOpen(false);
   };
 
-  useEffect(() => {
-    gtm.push({ event: 'page_view' });
-  }, []);
-
-
   return (
     <>
       <Helmet>
@@ -117,7 +111,7 @@ const InterlinkerBrowse = () => {
               </Typography>
             </Grid>
             <Grid item>
-              <Box sx={{ m: -1 }}>
+              {/* <Box sx={{ m: -1 }}>
                 <Button
                   color='primary'
                   component={RouterLink}
@@ -128,7 +122,7 @@ const InterlinkerBrowse = () => {
                 >
                   New Interlinker
                 </Button>
-              </Box>
+      </Box>*/}
             </Grid>
           </Grid>
           <Box sx={{ mt: 3 }}>

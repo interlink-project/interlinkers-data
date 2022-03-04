@@ -24,7 +24,6 @@ import {
 import useMounted from '../../../hooks/useMounted';
 import useSettings from '../../../hooks/useSettings';
 import ShareIcon from '../../../icons/Share';
-import gtm from '../../../lib/gtm';
 
 const tabs = [
   { label: 'Overview', value: 'overview' },
@@ -40,10 +39,6 @@ const TeamDetails = () => {
   const [currentTab, setCurrentTab] = useState('overview');
   const [team, setTeam] = useState(null);
   const [isApplicationOpen, setIsApplicationOpen] = useState(false);
-
-  useEffect(() => {
-    gtm.push({ event: 'page_view' });
-  }, []);
 
   const getTeam = useCallback(async () => {
     try {

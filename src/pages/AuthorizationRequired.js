@@ -4,15 +4,10 @@ import { Helmet } from 'react-helmet-async';
 import { Box, Button, Container, Typography } from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
-import gtm from '../lib/gtm';
 
 const AuthorizationRequired = () => {
   const theme = useTheme();
   const mobileDevice = useMediaQuery(theme.breakpoints.down('sm'));
-
-  useEffect(() => {
-    gtm.push({ event: 'page_view' });
-  }, []);
 
   return (
     <>

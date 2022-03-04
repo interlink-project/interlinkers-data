@@ -1,53 +1,40 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link as RouterLink } from 'react-router-dom';
 import {
   AppBar,
   Box,
+  ButtonBase,
   Divider,
   IconButton,
   Link,
   Toolbar,
+  Typography
 } from '@material-ui/core';
+import { Login } from '@material-ui/icons';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
 import MenuIcon from '../../icons/Menu';
 import Logo from '../Logo';
 
 export const landingPages = [
   {
     name: 'Project',
-    link: '',
+    link: '/',
   },
   {
-    name: 'Pilots',
-    link: '',
+    name: 'INTERLINK platform',
+    link: '/platform',
   },
   {
-    name: 'Partners',
-    link: '',
+    name: 'Co-production',
+    link: '/coprod',
   },
   {
-    name: 'News',
-    link: '',
+    name: 'Catalogue',
+    link: '/catal',
   },
   {
-    name: 'Media',
-    link: '',
-  },
-  {
-    name: 'Contacts',
-    link: '',
-  },
-  {
-    name: 'Browse',
-    link: '/browse',
-  },
-  {
-    name: 'Blog',
-    link: '/blog',
-  },
-  {
-    name: 'Contact',
-    link: '/contact',
+    name: 'About',
+    link: '/about',
   },
 ];
 
@@ -67,7 +54,9 @@ export const UserAreaButton = () => {
 
 const MainNavbar = (props) => {
   const { onSidebarMobileOpen } = props;
+  const navigate = useNavigate();
 
+  let location = useLocation();
   return (
     <AppBar
       elevation={0}
@@ -113,7 +102,7 @@ const MainNavbar = (props) => {
           {landingPages.map((el, i) => (
             <React.Fragment key={`sidebarItem${i}`}>
               <Link
-                color='textSecondary'
+                color={location.pathname === el.link ? 'primary' : 'textSecondary'}
                 component={RouterLink}
                 to={el.link}
                 underline='none'
@@ -121,16 +110,27 @@ const MainNavbar = (props) => {
               >
                 {el.name}
               </Link>
-              <Divider
+              {true && <Divider
                 orientation='vertical'
                 sx={{
                   height: 32,
                   mx: 2,
                 }}
-              />
+              />}
+
             </React.Fragment>
           ))}
-          <UserAreaButton />
+          <Box
+            component={ButtonBase}
+            sx={{
+              alignItems: 'center',
+              display: 'flex',
+            }}
+            onClick={() => navigate("/dashboard")}
+          >
+            <Typography sx={{ mr: 1 }} variant="overline">Dashboard</Typography>
+            <Login />
+          </Box>
         </Box>
       </Toolbar>
       <Divider />

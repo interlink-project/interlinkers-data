@@ -9,7 +9,6 @@ import dracula from 'react-syntax-highlighter/dist/cjs/styles/prism/dracula';
 import { Container } from '@material-ui/core';
 import { experimentalStyled } from '@material-ui/core/styles';
 import useSettings from '../hooks/useSettings';
-import gtm from '../lib/gtm';
 
 const MarkdownWrapper = experimentalStyled('div')(({ theme }) => ({
   color: theme.palette.text.primary,
@@ -136,10 +135,6 @@ const Docs = () => {
   const { pathname } = useLocation();
   const { settings } = useSettings();
   const [file, setFile] = useState(null);
-
-  useEffect(() => {
-    gtm.push({ event: 'page_view' });
-  }, [file]);
 
   useEffect(() => {
     const getFile = async () => {

@@ -33,6 +33,7 @@ const HomeHero = (props) => {
       sx={{
         backgroundColor: 'background.paper',
         pt: 6,
+        pb: 4
       }}
       {...props}
     >
@@ -45,6 +46,7 @@ const HomeHero = (props) => {
           px: {
             md: '130px !important',
           },
+          py: 5
         }}
       >
         {/*
@@ -65,16 +67,15 @@ const HomeHero = (props) => {
         */}
 
         <img
-          alt='Components'
-          src='/static/logo-interlink.svg'
+          alt='Logo'
+          src='/static/graphics/logo-dark.png'
         />
         <Typography
           align='center'
-          color='textSecondary'
-          variant='body1'
-          sx={{ py: 3 }}
+          variant='h5'
+          sx={{ my: 5 }}
         >
-          {t('landing-headerdescription')}
+          The collaboration portal to co-produce better and more inclusive public services
         </Typography>
         <Button
           color='primary'
@@ -86,7 +87,7 @@ const HomeHero = (props) => {
           Go to dashboard
         </Button>
       </Container>
-      <Container
+      {/* <Container
         maxWidth='lg'
         sx={{
           width: '100%',
@@ -111,21 +112,7 @@ const HomeHero = (props) => {
               variant='rectangular'
             />
           ) : null}
-          {/*
-            <img
-              alt="Hero"
-              src="https://lh5.googleusercontent.com/I4B5fj1joyomFqCvQDJSs69Qz1yR6LmwlpcJ3DtORUtEjHnurD5bf6C0W26vYv6gFBVPn-ddCjkvtU8BULPOjxZIeTr8VyqR1GYSokyY5tLaZxYeuGH2Q_cpf4vAhPnZmhfwj6o"
-              style={{
-                maxWidth: "100%",
-                zIndex: 20,
-                position: "absolute",
-                bottom: 0,
-                left: 0,
-                right: 0,
-                top: 20,
-              }}
-            />
-            */}
+          
           <img
             alt='Shapes 1'
             src='/static/home/shapes_1.svg'
@@ -151,7 +138,7 @@ const HomeHero = (props) => {
             }}
           />
         </Box>
-      </Container>
+      </Container>*/}
     </Box>
   );
 };

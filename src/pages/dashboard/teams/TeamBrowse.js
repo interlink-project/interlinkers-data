@@ -8,17 +8,12 @@ import useMounted from '../../../hooks/useMounted';
 import useSettings from '../../../hooks/useSettings';
 import ChevronRightIcon from '../../../icons/ChevronRight';
 import PlusIcon from '../../../icons/Plus';
-import gtm from '../../../lib/gtm';
 
 const TeamBrowse = () => {
   const mounted = useMounted();
   const { settings } = useSettings();
   const [teams, setTeams] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    gtm.push({ event: 'page_view' });
-  }, []);
 
   const getTeams = useCallback(async () => {
     try {
