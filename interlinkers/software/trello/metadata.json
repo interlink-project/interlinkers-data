@@ -1,0 +1,33 @@
+{
+    "name": "Trello",
+    "description": "<p>Trello is a collaboration tool that organizes your projects into boards. In one glance, Trello tells you what's being worked on, who's working on what, and where something is in a process.</p>",
+    "tags": [
+        "project management",
+        "task management",
+        "team working"
+    ],
+    "difficulty": "easy",
+    "targets": ["all"],
+    "licence": "propietary",
+    "problem_profiles": [
+        "ORG_PROBLEM_2"
+    ],
+    "types": ["enabling_services", "enhancing_services"],
+    "related_interlinkers": [],
+    "administrative_scopes": ["eu", "national", "local"],
+    "constraints_and_limitations": "None",
+    "regulations_and_standards": "None",
+    "overview_text": "Web-based tool for project and task management",
+    "supported_by": "on_premise",
+    "auth_method": "header",
+    "deployment_manual": "none",
+    "user_manual": "https://trello.com/guide",
+    "developer_manual": "https://developer.atlassian.com/cloud/trello/",
+    "supports_internationalization": true,
+    "is_responsive": true,
+    "open_in_modal": false,
+    "assets_clonable": false,
+    "path": "https://trello.com",
+    "is_subdomain": true,
+    "logotype": "./interlinkers/software/trello/logo.png"
+}

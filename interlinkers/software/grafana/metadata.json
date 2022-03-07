@@ -1,0 +1,32 @@
+{
+    "name": "Grafana",
+    "description": "<p>Multi-platform open source analytics and interactive visualization web application. It provides charts, graphs, and alerts for the web when connected to supported data sources. </p>",
+    "tags": [
+        "ANALYSIS",
+        "DASHBOARD"
+    ],
+    "difficulty": "medium",
+    "targets": [
+        "all"
+    ],
+    "licence": "public_domain",
+    "problem_profiles": [
+        "ORG_PROBLEM_6","ORG_PROBLEM_6_2" 
+    ],
+    "types": ["enabling_services"],
+    "related_interlinkers": ["Open API specification"],
+    "administrative_scopes": ["eu", "national", "local"],
+    "constraints_and_limitations": "None",
+    "regulations_and_standards": "None",
+    "overview_text": "Dashboard data visualization tool",
+    "supported_by": "saas",
+    "auth_method": "header",
+    "developer_manual" : "https://grafana.com/docs/",
+    "supports_internationalization": true,
+    "is_responsive": true,
+    "open_in_modal": false,
+    "assets_clonable": false,
+    "path": "https://grafana.com/",
+    "is_subdomain": true,
+    "logotype": "./interlinkers/software/grafana/logo.svg"
+}

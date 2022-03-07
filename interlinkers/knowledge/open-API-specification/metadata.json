@@ -1,0 +1,37 @@
+{
+    "name": "Open API specification",
+    "description": "<p>A RFC document which specifyes the open API.</p>",
+    "tags": [
+        "OPEN API",
+        "SERVICE"
+    ],
+    "difficulty": "medium",
+    "targets": [
+        "all;pas", "all;businesses", "all;research_organizations"
+    ],
+    "licence": "public_domain",
+    "problem_profiles": [
+        "BUILD_PROBLEM_2"
+    ],
+    "types": [
+        "enabling_services"
+    ],
+    "administrative_scopes": [
+        "eu",
+        "national",
+        "local"
+    ],
+    "related_interlinkers": [],
+    "constraints_and_limitations": "No special constraints apply",
+    "regulations_and_standards": "",
+    "overview_text": "Textual documents in the form of linked Web pages describing the guidelines for the acquisition and reuse of software for italian public administrations",
+    "instructions":"./interlinkers/knowledge/it-pa-minimum-security-measures/instructions.md",
+    "representations": [
+        {
+            "form": "guidelines",
+            "format": "structured_format",
+            "file": "./interlinkers/knowledge/open-API-specification/data.json",
+            "softwareinterlinker": "externalresourcemanager"
+        }
+    ]
+}
