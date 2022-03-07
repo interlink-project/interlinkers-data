@@ -31,6 +31,5 @@
     "user_manual": "https://www.w3.org/WAI/test-evaluate/tools/selecting/",
     "supports_internationalization": false,
     "is_responsive": false,
-    "logotype": "https://www.w3.org/WAI/ER/tools/img/wai.png",
     "reference":"html-tools"
 }
