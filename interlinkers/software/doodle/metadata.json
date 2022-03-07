@@ -27,5 +27,5 @@
     "supported_by": ["saas"],
     "supports_internationalization": true,
     "is_responsive": true,
-    "reference": "calendar-tool",
+    "reference": "calendar-tool"
 }
