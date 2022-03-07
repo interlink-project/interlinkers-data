@@ -1,12 +1,18 @@
 {
-    "name": "Keycloak",
-    "description": "<p>Keycloak provides user federation, strong authentication, user management, fine-grained authorization</p>",
-    "tags": [
+    "name_translations": {
+      "en":"Keycloak"
+    },
+    "description_translations": {
+      "en":"<p>Keycloak provides user federation, strong authentication, user management, fine-grained authorization</p>"
+    },
+    "tags_translations": {
+      "en" : [
         "authentication",
         "ssl",
         "openid", 
         "security"
-    ],
+      ]
+    },
     "difficulty": "difficult",
     "targets": ["all;pas", "all;research_organizations", "all;businesses"],
     "licence": "public_domain",
@@ -16,19 +22,18 @@
     "types": ["enabling_services", "enhancing_services"],
     "related_interlinkers": [],
     "administrative_scopes": ["eu", "national", "local"],
-    "constraints_and_limitations": "None",
-    "regulations_and_standards": "None",
-    "overview_text": "Web-based tool for project and task management",
-    "supported_by": "on_premise",
-    "auth_method": "header",
+    "constraints_and_limitations_translations": {
+      "en": "None"
+    },
+    "regulations_and_standards_translations": {
+      "en":"None"
+    },
+    "supported_by": ["on_premise"],
     "deployment_manual": "https://www.keycloak.org/guides#server",
     "user_manual": "https://www.keycloak.org/guides#getting-started",
     "developer_manual": "https://www.keycloak.org/docs/latest/server_development/index.html",
     "supports_internationalization": false,
     "is_responsive": false,
-    "open_in_modal": false,
-    "assets_clonable": false,
-    "path": "https://www.keycloak.org/",
-    "is_subdomain": false,
-    "logotype": "./interlinkers/software/keycloak/logo.png"
+    "logotype": "./interlinkers/software/keycloak/logo.png",
+    "reference" : "user-authentication-authorization"
 }

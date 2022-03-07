@@ -1,11 +1,17 @@
 {
-    "name": "OS2 API Manager",
-    "description": "<p>WSO2 API Manager is a complete platform for building, integrating, and exposing your digital services as managed APIs in the cloud, on-premise, and hybrid architectures to drive your digital transformation strategy. It allows API developers to design, publish, and manage the lifecycle of APIs and API product managers to create API products from one or more APIs.</p>",
-    "tags": [
+    "name_translations": {
+      "en" : "OS2 API Manager"
+    },
+    "description_translations": {
+      "en" : "<p>WSO2 API Manager is a complete platform for building, integrating, and exposing your digital services as managed APIs in the cloud, on-premise, and hybrid architectures to drive your digital transformation strategy. It allows API developers to design, publish, and manage the lifecycle of APIs and API product managers to create API products from one or more APIs.</p>"
+    },
+    "tags_translations": {
+      "en" : [
         "OPEN API",
         "API MANAGEMENT",
         "SERVICES"
-    ],
+      ]
+    },
     "difficulty": "medium",
     "targets": [
         "all;pas", "all;businesses", "all;research_organizations"
@@ -17,17 +23,16 @@
     "types": ["enabling_services"],
     "related_interlinkers": ["Open API specification"],
     "administrative_scopes": ["eu", "national", "local"],
-    "constraints_and_limitations": "None",
-    "regulations_and_standards": "Open API",
-    "overview_text": "OS2 tools allowing API developers to design, publish, and manage the lifecycle of APIs and API product managers to create API products from one or more APIs",
-    "supported_by": "saas",
-    "auth_method": "header",
+    "constraints_and_limitations_translations": {
+      "en" : "None"
+    },
+    "regulations_and_standards_translations": {
+      "en" : "Open API"
+    },
+    "supported_by": ["saas", "on_premise"],
     "developer_manual" : "https://apim.docs.wso2.com/en/latest/",
     "supports_internationalization": false,
     "is_responsive": true,
-    "open_in_modal": false,
-    "assets_clonable": false,
-    "path": "https://wso2.com/api-manager/",
-    "is_subdomain": true,
-    "logotype": "https://wso2.cachefly.net/wso2/sites/all/2020-theme/images/wso2-logo.svg"
+    "logotype": "https://wso2.cachefly.net/wso2/sites/all/2020-theme/images/wso2-logo.svg",
+    "reference":"api-manager"
 }

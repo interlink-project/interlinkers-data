@@ -1,25 +1,31 @@
 {
-    "name": "Doodle",
-    "description": "<p>Online calendar tool for time management and coordinating meetings</p>",
-    "tags": [
+    "name_translations": {
+      "en":"Doodle"
+    },
+    "description_translations": {
+      "en":"<p>Online calendar tool for time management and coordinating meetings</p>"
+    },
+    "tags_translations": {
+      "en" :[
         "survey",
         "time",
         "task"
-    ],
+      ]
+    }
+  	,
     "difficulty": "easy",
     "licence": "propietary",
     "problem_profiles": ["ORG_PROBLEM_4"
     ],
     "related_interlinkers": [],
-    "constraints_and_limitations": "none",
-    "regulations_and_standards": "none",
-    "supported_by": "saas",
-    "auth_method": "cookie",
+    "constraints_and_limitations_translations": {
+      "en": "none"
+    },
+    "regulations_and_standards_translations": {
+      "en": "none"
+    },
+    "supported_by": ["saas"],
     "supports_internationalization": true,
     "is_responsive": true,
-    "open_in_modal": false,
-    "assets_clonable": true,
-    "path": "doodle",
-    "is_subdomain": false,
-    "logotype": "./interlinkers/software/doodle/logo.png"
+    "reference": "calendar-tool",
 }

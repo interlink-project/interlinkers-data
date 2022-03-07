@@ -1,12 +1,18 @@
 {
-    "name": "Markup Validation Service",
-    "description": "<p>This validator checks the markup validity of Web documents in HTML, XHTML, SMIL, MathML, etc.</p>",
-    "tags": [
+    "name_translations": {
+      "en": "Markup Validation Service"
+    },
+    "description_translations": {
+      "en": "<p>This validator checks the markup validity of Web documents in HTML, XHTML, SMIL, MathML, etc.</p>"
+    },
+    "tags_translations": {
+      "en": [
         "HTML",
         "XHTML",
         "SMIL",
         "MathML"
-    ],
+       ]
+    },
     "difficulty": "easy",
     "targets": ["all"],
     "licence": "propietary",
@@ -16,17 +22,16 @@
     "types": ["enabling_services"],
     "related_interlinkers": [],
     "administrative_scopes": ["eu", "national", "local"],
-    "constraints_and_limitations": "None",
-    "regulations_and_standards": "None",
-    "overview_text": "Web-based tool for markup lamguage validation.",
-    "supported_by": "saas",
-    "auth_method": "header",
+    "constraints_and_limitations_translations": {
+      "en": "None"
+    },
+    "regulations_and_standards_translations": {
+      "en": "None"
+    },
+    "supported_by": ["saas"],
     "user_manual": "http://validator.w3.org/docs/help.html",
     "supports_internationalization": false,
     "is_responsive": false,
-    "open_in_modal": false,
-    "assets_clonable": false,
-    "path": "http://validator.w3.org/",
-    "is_subdomain": true,
-    "logotype": ""
+	"reference":"html-tools"
+      
 }
