@@ -1,0 +1,36 @@
+{
+  "targets": ["all"],
+  "problem_profiles": ["UND_PROBLEM_3", "UND_PROBLEM_1", "VAL_PROBLEM_2"],
+  "types": ["enhancing_services"],
+  "related_interlinkers": ["Business Plan Template", "Business Model Canvas"],
+  "administrative_scopes": ["eu"],
+  "domain": "",
+  "process": "",
+  "reference": "collaborative-problem-refinement",
+  "form": "document_template",
+  "format": "editable_source_document",
+  "softwareinterlinker": "googledrive",
+  "difficulty": "medium",
+  "licence": "public_domain",
+  "instructions_translations": {
+    "en": "./interlinkers/knowledge/Collaborative-Problem-Refinement/instructions.md"
+  },
+  "tags_translations": {
+    "en": ["problem", "refinements"]
+  },
+  "name_translations": {
+    "en": "Collaborative problem refinement"
+  },
+  "description_translations": {
+    "en": "<p>This resource will support you to refine the problem to be addresses by the co-production team as an important step to creating an effective and efficient solution.</p>"
+  },
+  "constraints_and_limitations_translations": {
+    "en": "No special constraints apply"
+  },
+  "regulations_and_standards_translations": {
+    "en": ""
+  },
+  "file_translations": {
+    "en": "./interlinkers/knowledge/Collaborative-Problem-Refinement/resource.pptx"
+  }
+}

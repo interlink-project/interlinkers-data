@@ -1,2 +1,5 @@
 # How to use this INTERLINKER
-The interlinker is composed by guidelines to identify types of stakeholders.
+Guidelines to understand which are the
+different types of stakeholder, their
+motivations, skills, expectations toward the
+project
