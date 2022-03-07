@@ -39,7 +39,7 @@
       "en":"./interlinkers/knowledge/eidas-standard/instructions.md"}
     ,
     "file_translations": {
-            "en": "./interlinkers/knowledge-standard/eidas/data.json"
+            "en": "./interlinkers/knowledge/eidas-standard/data.json"
     }
     
 }
