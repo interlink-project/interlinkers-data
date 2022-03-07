@@ -33,6 +33,5 @@
     "developer_manual" : "https://apim.docs.wso2.com/en/latest/",
     "supports_internationalization": false,
     "is_responsive": true,
-    "logotype": "https://wso2.cachefly.net/wso2/sites/all/2020-theme/images/wso2-logo.svg",
     "reference":"api-manager"
 }
