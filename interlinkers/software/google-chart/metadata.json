@@ -18,7 +18,7 @@
       ],
       "licence": "propietary",
       "problem_profiles": [
-          "ORG_PROBLEM_6_2" 
+          "ORG_PROBLEM_6.2" 
       ],
       "types": ["enabling_services"],
       "related_interlinkers": [],
