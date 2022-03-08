@@ -30,7 +30,7 @@ const HomePlatform = () => {
         <HomeRow
           title="INTERLINKERS"
           text={[
-            "INTERLINK facilitates sharing and re-use of knowledge, software and services.</b><br />INTERLINKERs are pieces of knowledge or software that your team can re-use and customize to deliver services. They are digital building blocks that solve problems that a team of stakeholders might encounter during the whole process: guidelines, best practices, templates, examples and re-usable software support the whole co-production life-cycle, from the initial phase of network development to the final co-delivery and monitoring of the service. These resources help the collaborative design of new solutions that put user needs at the center."
+            "INTERLINK facilitates sharing and re-use of knowledge, software and services.", "INTERLINKERs are pieces of knowledge or software that your team can re-use and customize to deliver services.", "They are digital building blocks that solve problems that a team of stakeholders might encounter during the whole process: guidelines, best practices, templates, examples and re-usable software support the whole co-production life-cycle, from the initial phase of network development to the final co-delivery and monitoring of the service.", "These resources help the collaborative design of new solutions that put user needs at the center."
           ]}
           extra2={<img style={{ width: "100%", height: "auto" }} src="/static/graphics/figure5.png" />}
         />

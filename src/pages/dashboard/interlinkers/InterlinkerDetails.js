@@ -31,6 +31,7 @@ const InterlinkerDetails = ({ interlinker }) => {
   const common = [
     { label: 'Overview', value: 'overview' },
     { label: 'Reviews', value: 'reviews' },
+    { label: 'Instructions', value: 'instructions' },
     { label: 'Snapshots', value: 'snapshots' },
     { label: 'Related interlinkers', value: 'related' },
   ]
@@ -60,42 +61,25 @@ const InterlinkerDetails = ({ interlinker }) => {
         </Tabs>
         <Divider />
       
-      <Box sx={{ mt: 3 }} >
+      <Box sx={{ mt: 3}} >
         {currentTab === 'overview' && (
           <InterlinkerOverview interlinker={interlinker} />
+        )}
+        {currentTab === 'instructions' && (
+          <Card sx={{p: 3, height: "100%" }}>
+            <SafeHTMLElement data={interlinker.instructions} />
+          </Card>
         )}
         {currentTab === 'related' && (
           <RelatedInterlinkersTable interlinker={interlinker} />
         )}
         {currentTab === 'snapshots' && (
           <Card>
-            <SwipeableTextMobileStepper images={interlinker.snapshots_links} objectFit="contain" />
+            <SwipeableTextMobileStepper height="60vh" images={interlinker.snapshots_links} objectFit="contain" />
           </Card>
         )}
         {currentTab === 'reviews' && (
-          <InterlinkerReviews reviews={[
-            {
-              id: '5f0366cd843161f193ebadd4',
-              author: {
-                avatar: '/static/mock-images/avatars/avatar-marcus_finn.png',
-                name: 'Marcus Finn',
-              },
-              comment: 'Great information.',
-              createdAt: subHours(now, 2).getTime(),
-              value: 5,
-            },
-            {
-              id: 'to33twsyjphcfj55y3t07261',
-              author: {
-                avatar: '/static/mock-images/avatars/avatar-miron_vitold.png',
-                name: 'Miron Vitold',
-              },
-              comment:
-                "Not the best for this kind of task.",
-              createdAt: subHours(now, 2).getTime(),
-              value: 2,
-            },
-          ]} />
+          <InterlinkerReviews interlinker={interlinker} />
         )}
 
       </Box>

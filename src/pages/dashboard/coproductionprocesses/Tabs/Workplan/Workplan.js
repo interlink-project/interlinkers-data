@@ -1,15 +1,13 @@
-import { ToggleButton, ToggleButtonGroup, Grid, Drawer, Skeleton, Dialog, DialogTitle } from "@material-ui/core";
+import { Grid, Skeleton, ToggleButton, ToggleButtonGroup } from "@material-ui/core";
+import { TreeItemDialog } from "components/dashboard/tree";
+import useMounted from "hooks/useMounted";
 import useSettings from 'hooks/useSettings';
-import React, { useEffect, useState, useCallback } from "react";
 import $ from 'jquery';
-import colorScale from "utils/colorScale"
+import React, { useCallback, useEffect, useState } from "react";
 import { useSelector } from 'react-redux';
 import { cleanUnderScores } from "utils/cleanUnderscores";
+import colorScale from "utils/colorScale";
 import PhaseTabs from "../PhaseTabs";
-import MobileObjectiveDrawer from "./MobileObjectiveDrawer";
-import MobileDiscriminator from "components/MobileDiscriminator";
-import useMounted from "hooks/useMounted";
-import SelectedObjectiveElement from "pages/dashboard/coproductionprocesses/Tabs/Workplan/SelectedObjectiveElement";
 
 const Workplan = () => {
   const { settings } = useSettings();
@@ -21,15 +19,26 @@ const Workplan = () => {
 
   const [drawerOpen, setDrawerOpen] = useState(false)
   const [clickedElement, setClickedElement] = useState(null);
-  
+
   const getTasks = () => {
     const final = []
 
     const phase = phases.find(phase => selectedPhaseTab === phase.name)
+    final.push({
+      id: phase.id,
+      name: phase.name,
+      start: phase.start_date,
+      end: phase.end_date,
+      progress: phase.progress,
+      custom_class: 'gantt-phase',
+      read_only: true
+    })
     objectives.filter(el => el.phase_id === phase.id).forEach(objective => {
+      
       final.push({
         id: objective.id,
-        name: cleanUnderScores(objective.name),
+        name: objective.name,
+        dependencies: phase.id,
         start: objective.start_date,
         end: objective.end_date,
         progress: objective.progress,
@@ -39,7 +48,7 @@ const Workplan = () => {
       tasks.filter(el => el.objective_id === objective.id).forEach(task => {
         final.push({
           id: task.id,
-          name: cleanUnderScores(task.name),
+          name: task.name,
           dependencies: task.objective_id,
           custom_class: 'gantt-task',
           read_only: true
@@ -75,7 +84,8 @@ const Workplan = () => {
     event.stopPropagation();
   }
 
-  const setNewGantt = useCallback(async (id, props) => {
+  const setNewGantt = (id, props) => {
+    console.log("setting new gantt", loaded, viewMode, selectedPhaseTab, tasks, updating, setNewGantt)
     try {
       if (mounted.current) {
         new window.Gantt(id, getTasks(), props);
@@ -91,11 +101,36 @@ const Workplan = () => {
 
         }
 
+        $(".gantt-phase").each(function (index1) {
+          const id = $(this).attr("data-id")
+          const phase = phases.find(p => p.id === id)
+          $(this).on("click", function () {
+            setClickedElement({ ...phase, type: "phase" })
+            setDrawerOpen(true)
+          });
+          let text = $(this).children().first().children(".bar-label").first()
+
+          text.css("font-weight", "800")
+          text.css("font-size", "20px")
+
+          if (settings.theme === "DARK") {
+            if (phase.start_date && phase.end_date) {
+              text.css("fill", "#282b28")
+            } else {
+              text.css("fill", "white")
+            }
+
+          } else {
+            text.css("fill", "#282b28")
+          }
+
+        })
+      
         $(".gantt-objective").each(function (index1) {
           const id = $(this).attr("data-id")
           const objective = objectives.find(o => o.id === id)
           $(this).on("click", function () {
-            setClickedElement({...objective, type: "objective"})
+            setClickedElement({ ...objective, type: "objective" })
             setDrawerOpen(true)
           });
 
@@ -124,7 +159,7 @@ const Workplan = () => {
           const id = $(this).attr("data-id")
           const task = tasks.find(t => t.id === id)
           $(this).on("click", function () {
-            setClickedElement({...task, type: "task"})
+            setClickedElement({ ...task, type: "task" })
             setDrawerOpen(true)
           });
 
@@ -137,17 +172,13 @@ const Workplan = () => {
             text.css("fill", "black")
           }
         })
-
-
-
-
       }
     } catch (err) {
       console.error(err);
     }
-  }, [mounted]);
+  }
 
-  const view_modes = ["Quarter Day", "Half Day", "Day", "Week", "Month"]
+  const view_modes = ["Day", "Week", "Month", "Year"]
 
   useEffect(() => {
     if (updating || !loaded) {
@@ -165,7 +196,10 @@ const Workplan = () => {
       padding: 22,
       view_mode: viewMode,
       date_format: 'YYYY-MM-DD',
-      custom_popup_html: null
+      custom_popup_html: null,
+      on_click: function (task) {
+        console.log(task);
+      },
     }
     const readOnly = true
     if (readOnly) {
@@ -189,9 +223,10 @@ const Workplan = () => {
 
   return (
     <Grid container style={{ overflow: "hidden" }}>
-
+      {clickedElement && <TreeItemDialog element={clickedElement} onSave={() => setDrawerOpen(false)} open={drawerOpen} setOpen={setDrawerOpen} />}
       <Grid item xs={12}>
-        <PhaseTabs additionalContent={<ToggleButtonGroup
+        <PhaseTabs />
+        <ToggleButtonGroup
           color="primary"
           value={viewMode}
           fullWidth
@@ -201,7 +236,7 @@ const Workplan = () => {
         >
           {view_modes.map((el, i) => <ToggleButton key={`separatorButton${i}`} value={el}>{el}</ToggleButton>)}
 
-        </ToggleButtonGroup>} />
+        </ToggleButtonGroup>
       </Grid>
       <Grid item xs={12}>
         {updating ? <Skeleton variant="rectangular" width={"100%"} height={"70vh"} />
@@ -209,11 +244,6 @@ const Workplan = () => {
           <div id="gantt" />
         }
       </Grid>
-      <Dialog onClose={() => setDrawerOpen(false)} open={drawerOpen}>
-            <DialogTitle>{clickedElement && clickedElement.name}</DialogTitle>
-            <SelectedObjectiveElement element={clickedElement} onSave={() => setDrawerOpen(false)} />
-
-          </Dialog>
     </Grid>
   );
 };

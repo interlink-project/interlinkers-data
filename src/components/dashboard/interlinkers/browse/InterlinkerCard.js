@@ -71,13 +71,13 @@ const InterlinkerCard = ({ interlinker, mode, onInterlinkerClick }) => {
         mt: 1,
       }}
     >
-      {interlinker.logotype_link && <Avatar
+      {interlinker.logotype_link ? <Avatar
         alt='Logotype'
         src={interlinker.logotype_link}
         variant='square'
       >
         {interlinker.title}
-      </Avatar>}
+      </Avatar> : <div></div>}
       <Box sx={{ ml: 2 }}>
         <Link
           color='textPrimary'

@@ -53,6 +53,8 @@ const tabs = [
   { label: 'Forum', value: 'forum' },
   { label: 'Settings', value: 'settings' },*/
 
+
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -69,14 +71,77 @@ function TabPanel(props) {
   );
 }
 
+const Content = ({ tab, process }) => <>
+
+  <TabPanel value={tab} index="overview">
+    <Card >
+      <OverviewTab coproductionprocess={process} />
+    </Card>
+  </TabPanel>
+  <TabPanel value={tab} index="metadata">
+    <Card >
+      <MetadataTab />
+    </Card>
+  </TabPanel>
+  <TabPanel value={tab} index="workplan">
+    <Card sx={{ mb: 2 }}>
+      {process.phases_count > 0 ? <Workplan /> : <CreateSchema />}
+    </Card>
+  </TabPanel>
+  <TabPanel value={tab} index="guide">
+    <Card sx={{ mb: 2 }}>
+      {process.phases_count > 0 ? <Repository /> : <CreateSchema />}
+    </Card>
+  </TabPanel>
+  <TabPanel value={tab} index="team">
+    <TeamTab />
+  </TabPanel>
+</>
+
+const TabsMobile = ({ tab, process }) => {
+  const logoExists = process && process.logotype
+  const navigate = useNavigate();
+
+  return process && <Card sx={{ mb: 1 }}>
+    <CardHeader
+      avatar={
+        <Avatar variant="square" sx={logoExists ? {} : { bgcolor: red[500] }} aria-label="recipe" src={logoExists && process.logotype}>
+          {process && !logoExists && process.name[0]}
+        </Avatar>
+      }
+      action={
+        <IconButton aria-label="settings">
+          <MoreVert />
+        </IconButton>
+      }
+      title={process && process.name}
+      subheader={process && process.artefact_type}
+    />
+    <Tabs
+      indicatorColor="secondary"
+      onChange={(value) => navigate(`/dashboard/coproductionprocesses/${process.id}/${value}`)}
+      value={tab}
+      aria-label="Coproduction tabs"
+      centered
+    >
+      {tabs.map((tab) => (
+        <Tab
+          key={tab.value}
+          label={tab.label}
+          value={tab.value}
+        />
+      ))}
+    </Tabs>
+  </Card>
+}
+
 const CoproductionProcessProfile = () => {
   let { processId, tab = "overview" } = useParams();
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const mounted = useMounted();
 
   const { process, loading } = useSelector((state) => state.process);
-  
+
   const theme = useTheme();
   const onMobile = !useMediaQuery(theme.breakpoints.up('md'));
 
@@ -95,72 +160,7 @@ const CoproductionProcessProfile = () => {
     getCoproductionProcess();
   }, [getCoproductionProcess]);
 
-  const handleTabsChange = (event, value) => {
-    navigate(`/dashboard/coproductionprocesses/${processId}/${value}`);
-  };
 
-  const logoExists = process && process.logotype
-  const TabsMobile = () => <Card sx={{ mb: onMobile ? 1 : 0 }}>
-    <CardHeader
-      avatar={
-        <Avatar variant="square" sx={logoExists ? {} : { bgcolor: red[500] }} aria-label="recipe" src={logoExists && process.logotype}>
-          {process && !logoExists && process.name[0]}
-        </Avatar>
-      }
-      action={
-        <IconButton aria-label="settings">
-          <MoreVert />
-        </IconButton>
-      }
-      title={process && process.name}
-      subheader={process && process.artefact_type}
-    />
-    <Tabs
-      indicatorColor="secondary"
-      onChange={handleTabsChange}
-      value={tab}
-      aria-label="Coproduction tabs"
-      centered
-    >
-      {tabs.map((tab) => (
-        <Tab
-          key={tab.value}
-          label={tab.label}
-          value={tab.value}
-          sx={{ mb: onMobile ? 0 : 1 }}
-        />
-      ))}
-    </Tabs></Card>
-
-  const Content = () => <>
-
-    <TabPanel value={tab} index="overview">
-      <Card >
-        <OverviewTab />
-      </Card>
-    </TabPanel>
-    <TabPanel value={tab} index="metadata">
-      <Card >
-        <MetadataTab />
-      </Card>
-    </TabPanel>
-    <TabPanel value={tab} index="workplan">
-      <Card sx={{ mb: 2 }}>
-      {process.phases_count > 0 ? <Workplan /> : <CreateSchema />}
-      </Card>
-    </TabPanel>
-    <TabPanel value={tab} index="guide">
-      <Card sx={{ mb: 2 }}>
-        {process.phases_count > 0 ? <Repository /> : <CreateSchema />}
-      </Card>
-    </TabPanel>
-    <TabPanel value={tab} index="team">
-      <TeamTab />
-    </TabPanel>
-  </>
-
-
-  const ContentSkeleton = () => loading || !process ? <MainSkeleton /> : <Content />
   return (
     <>
       <Helmet>
@@ -174,10 +174,8 @@ const CoproductionProcessProfile = () => {
       >
         <Box sx={{ mt: 5 }}>
           <Container maxWidth='xl'>
-
-            {onMobile && <TabsMobile />}
-            <ContentSkeleton />
-
+            {onMobile && <TabsMobile tab={tab} process={process} />}
+            {loading || !process ? <MainSkeleton /> : <Content tab={tab} process={process} />}
           </Container>
         </Box>
       </Box>

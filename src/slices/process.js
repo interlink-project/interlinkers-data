@@ -178,6 +178,7 @@ export const updateProcess = ({ id, data, onSuccess }) => async (dispatch) => {
 };
 
 export const updateTask = ({ id, data }) => async (dispatch) => {
+  console.log("UPDATING", id, "WITH", data)
   dispatch(slice.actions.setUpdating(true));
   const updatedData = await tasksApi.update(id, data)
   dispatch(slice.actions.updateTask(updatedData));

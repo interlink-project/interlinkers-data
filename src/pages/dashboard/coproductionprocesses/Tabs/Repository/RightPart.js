@@ -1,28 +1,16 @@
-import {
-    Avatar, Box, Button, Collapse, Grid, Menu, MenuItem,
-    ToggleButton,
-    ToggleButtonGroup, alpha,
-    CircularProgress, Alert, Typography, InputBase,
-    Divider, Stack, Card, CardContent, CardMedia, CardActionArea, CardActions, CardHeader
-} from '@material-ui/core';
-import { Check, Info as InfoIcon, KeyboardArrowDown, KeyboardArrowUp, Search as SearchIcon } from '@material-ui/icons';
+import { Alert, alpha, Avatar, Box, Button, Card, CardActionArea, CardHeader, CardMedia, CircularProgress, Collapse, Divider, Grid, InputBase, Menu, MenuItem, Stack, Typography } from '@material-ui/core';
+import { green } from '@material-ui/core/colors';
+import { Check, KeyboardArrowDown, KeyboardArrowUp } from '@material-ui/icons';
 import { styled } from '@material-ui/styles';
+import { AssetsTable } from 'components/dashboard/assets';
 import MobileDiscriminator from 'components/MobileDiscriminator';
 import MobileDrawer from 'components/MobileDrawer';
 import moment from 'moment';
 import { useEffect, useState } from 'react';
-import { cleanUnderScores } from 'utils/cleanUnderscores';
-import { interlinkersApi, softwareInterlinkersApi, tasksApi } from '__fakeApi__';
-import PhaseTabs from "../PhaseTabs";
-import Assets from './Assets';
-import NewAssetModal from './NewAssetModal';
-import RepositoryTree from "./RepositoryTree";
-import { truncate } from 'lodash';
-import { FinishedIcon, InProgressIcon } from './Icons';
-import { useDispatch, useSelector } from 'react-redux';
-import { updateTask } from 'slices/process';
+import { useDispatch } from 'react-redux';
 import { SafeHTMLElement } from 'utils/safeHTML';
-import { green } from '@material-ui/core/colors';
+import { assetsApi, interlinkersApi, softwareInterlinkersApi, tasksApi } from '__fakeApi__';
+import NewAssetModal from './NewAssetModal';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -87,8 +75,8 @@ const RightPart = ({ selectedTask }) => {
     const [status, setStatus] = useState(selectedTask ? selectedTask.status : "awaiting");
 
     const updateAssets = async () => {
-        const assets = await tasksApi.getAssets(selectedTask.id);
-        setAssets(assets)
+        const assets = await assetsApi.getMulti({task_id: selectedTask.id});
+        setAssets(assets.items)
         console.log(selectedTask)
         const interlinkers = await interlinkersApi.getByProblemProfiles(null, null, selectedTask.problem_profiles);
         setRecommendedInterlinkers(interlinkers.items)
@@ -103,8 +91,8 @@ const RightPart = ({ selectedTask }) => {
     }, [selectedTask])
 
     useEffect(() => {
-        softwareInterlinkersApi.getMulti().then(res => {
-            setSoftwareInterlinkers(res.items)
+        softwareInterlinkersApi.getIntegrated().then(res => {
+            setSoftwareInterlinkers(res)
         })
     }, [])
 
@@ -184,7 +172,7 @@ const RightPart = ({ selectedTask }) => {
                     </Paper>*/}
                             <Typography sx={{ mb: 1 }} variant="h6">Current assets:</Typography>
 
-                            <Assets assets={assets} onChange={updateAssets} />
+                            <AssetsTable assets={assets} onChange={updateAssets} />
 
                         </Box>
 
@@ -229,7 +217,7 @@ const RightPart = ({ selectedTask }) => {
                 </Box>
             </Grid>
         } onMobileNode={
-            <MobileDrawer open={mobileDrawerOpen} onClose={() => { setMobileDrawerOpen(false) }} content={<Assets assets={assets} onChange={updateAssets} />} />
+            <MobileDrawer open={mobileDrawerOpen} onClose={() => { setMobileDrawerOpen(false) }} content={<AssetsTable assets={assets} onChange={updateAssets} />} />
         } />
     );
 };

@@ -7,7 +7,7 @@ import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 import { assetsApi } from '__fakeApi__';
 
-const AssetRow = ({ asset, onChange }) => {
+const AssetRow = ({ asset, onChange, actions }) => {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(true)
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -58,14 +58,15 @@ const AssetRow = ({ asset, onChange }) => {
       <Avatar src={data.creator_id} sx={{ height: "20px", width: "20px" }} />
     </TableCell>
     <TableCell align="center">
-      <IconButton aria-label="settings" id="basic-button"
+      {actions ||  <IconButton aria-label="settings" id="basic-button"
       aria-controls="basic-menu"
       aria-haspopup="true"
       aria-expanded={open ? 'true' : undefined}
       onClick={handleClick}
     >
       <MoreVertIcon />
-    </IconButton>
+    </IconButton>}
+     
       <Menu
         id="basic-menu"
         anchorEl={anchorEl}
@@ -75,10 +76,11 @@ const AssetRow = ({ asset, onChange }) => {
           'aria-labelledby': 'basic-button',
         }}
       >
-        {asset.capabilities.edit && <MyMenuItem onClick={() => { window.open(data.editLink, "_blank"); setAnchorEl(null); }} text="Edit" icon={<Edit fontSize="small" />} />}
+        {asset.capabilities.edit && <MyMenuItem onClick={() => { window.open(asset.link + "/edit", "_blank"); setAnchorEl(null); }} text="Edit" icon={<Edit fontSize="small" />} />}
         {asset.capabilities.clone && <MyMenuItem onClick={() => { assetsApi.clone(asset.id).then(() => {onChange && onChange();  setAnchorEl(null); }) }} text="Clone" icon={<CopyAll fontSize="small" />} />}
         {asset.capabilities.delete && <MyMenuItem onClick={() => { assetsApi.delete(asset.id).then(() =>{ onChange && onChange();  setAnchorEl(null); }); }} text="Delete" icon={<Delete fontSize="small" />} />}
-        <MyMenuItem text="Share" onClick={() => { }} icon={<Share fontSize="small" />} />
+        {asset.capabilities.clone && <MyMenuItem onClick={() => { }} text="Publish" icon={<Share fontSize="small" />} />}
+        {/* <MyMenuItem text="Share" onClick={() => { }} icon={<Share fontSize="small" />} /> */}
         {loading && <CircularProgress />}
       </Menu>
       </TableCell>
@@ -87,7 +89,7 @@ const AssetRow = ({ asset, onChange }) => {
   <Skeleton animation="wave" height={60} />
 }
 
-const Assets = ({ assets, onChange }) => {
+const Assets = ({ assets, onChange = () => {}, actions }) => {
 
   useEffect(() => {
     console.log("REFRESH PRINC")
@@ -106,12 +108,12 @@ const Assets = ({ assets, onChange }) => {
       </TableHead>
       <TableBody>
         {assets.map((asset) => (
-          <AssetRow asset={asset} onChange={onChange} />
+          <AssetRow asset={asset} onChange={onChange} actions={actions} />
         ))}
       </TableBody>
     </Table>
       :
-      <Alert severity="info" sx={{ my: 2 }}>No assets yet for this task.</Alert>
+      <Alert severity="info" sx={{ my: 2 }}>No assets yet</Alert>
     }
   </>
 }

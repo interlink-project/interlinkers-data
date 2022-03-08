@@ -11,42 +11,76 @@ import { SafeHTMLElement } from 'utils/safeHTML';
 
 const InterlinkerOverview = (props) => {
   const { interlinker, ...other } = props;
-  const { description, tags, name, problemprofiles, representations } = interlinker;
+  const { description, tags, name, problemprofiles } = interlinker;
 
-  const Element = ({ title, obj, xs = 12, md = 12, lg = 12, xl = 12 }) => <Grid item xs={12} md={md} lg={lg} xl={xl} sx={{ mb: 2 }}
-  ><Typography
-    color='textSecondary'
-    variant='overline'
-  >
-      {title}
-    </Typography>
-    {obj}
-  </Grid>
 
+  const isSoftware = interlinker.nature === "softwareinterlinker"
+  const isOfficial = !interlinker.creator_id
 
   return (
     <Card sx={{ height: "100%" }}>
       <CardContent>
 
-        <Grid
-          container
-        >
-          <Grid
-            container
-            item
-            xs={12}
-            md={6}
-            lg={6}
-            xl={6}
+        <Grid container spacing={3}>
+
+          <Grid item xs={12} md={6} lg={6} xl={6} 
           >
-            <Element title="Interlinker Name" obj={<Typography
+            <Typography
+              color='textSecondary'
+              variant='overline'
+            >
+              Name
+            </Typography>
+            <Typography
               color='textPrimary'
               variant='subtitle2'
             >
               {name}
-            </Typography>} />
+            </Typography>
+          </Grid>
+          
 
-            <Element title="Tags" obj={<Box sx={{ mt: 1 }} md={6} lg={6} >
+          <Grid item xs={12} md={3} lg={3} xl={3} 
+          >
+            <Typography
+              color='textSecondary'
+              variant='overline'
+            >
+              Nature
+            </Typography>
+            <br></br>
+            <Chip label={isSoftware ? "Software" : "Knowledge"} color={isSoftware ? "primary" : "secondary"} size="small" />
+          </Grid>
+          <Grid item xs={12} md={3} lg={3} xl={3} 
+          >
+            <Typography
+              color='textSecondary'
+              variant='overline'
+            >
+              Creator
+            </Typography>
+            <br></br>
+            <Chip label={isOfficial ? "Official" : "Community"} color={isOfficial ? "success" : "warning"} size="small" />
+          </Grid>
+          <Grid item xs={12} md={6} lg={6} xl={6} 
+          >
+            <Typography
+              color='textSecondary'
+              variant='overline'
+            >
+              Description
+            </Typography>
+            <SafeHTMLElement data={description} />
+          </Grid>
+          <Grid item xs={12} md={6} lg={6} xl={6} 
+          >
+            <Typography
+              color='textSecondary'
+              variant='overline'
+            >
+              Tags
+            </Typography>
+            <Box sx={{ mt: 1 }} md={6} lg={6} >
               {tags.map((tag) => (
                 <Chip
                   key={tag}
@@ -54,9 +88,17 @@ const InterlinkerOverview = (props) => {
                   variant='outlined'
                 />
               ))}
-            </Box>} />
-
-            <Element title="Problem profiles" md={6} lg={6} obj={<Box sx={{ mt: 1 }}>
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={6} lg={6} xl={6} 
+          >
+            <Typography
+              color='textSecondary'
+              variant='overline'
+            >
+              Problem profiles
+            </Typography>
+            <Box sx={{ mt: 1 }}>
               {problemprofiles.map((problem) => (
                 <Chip
                   key={problem.id}
@@ -64,20 +106,9 @@ const InterlinkerOverview = (props) => {
                   variant='outlined'
                 />
               ))}
-            </Box>} />
-
-            <Element title="Description" obj={<SafeHTMLElement data={description} />} />
-
+            </Box>
           </Grid>
-          <Grid
-            item
-            xs={12}
-            md={6}
-            lg={6}
-            xl={6}
-          >
-            <SafeHTMLElement data={interlinker.instructions} />
-          </Grid>
+          
         </Grid>
       </CardContent>
     </Card>

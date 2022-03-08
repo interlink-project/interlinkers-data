@@ -74,7 +74,7 @@ const HomeCoproduction = () => {
       <Helmet>
         <title>Interlink</title>
       </Helmet>
-      <Container sx={{ px: 20, py: 10 }} maxWidth="lg">
+      <Container sx={{ px: {xs: 2, lg: 20} , py: {xs: 2, lg: 10} }} maxWidth="lg">
         <Typography
           align='center'
           color='textPrimary'

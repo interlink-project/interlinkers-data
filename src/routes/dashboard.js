@@ -17,13 +17,6 @@ const InterlinkerDetails = Loadable(
   lazy(() => import('../pages/dashboard/interlinkers/InterlinkerDetails'))
 );
 
-const TeamBrowse = Loadable(
-  lazy(() => import('../pages/dashboard/teams/TeamBrowse'))
-);
-const TeamDetails = Loadable(
-  lazy(() => import('../pages/dashboard/teams/TeamDetails'))
-);
-
 const MyWorkspace = Loadable(lazy(() => import('../pages/dashboard/MyWorkspace')));
 
 export const routes = [
@@ -66,19 +59,6 @@ export const routes = [
           {
             path: ':interlinkerId',
             element: <InterlinkerDetails />,
-          },
-        ],
-      },
-      {
-        path: 'teams',
-        children: [
-          {
-            path: '',
-            element: <TeamBrowse />,
-          },
-          {
-            path: ':teamId',
-            element: <TeamDetails />,
           },
         ],
       },

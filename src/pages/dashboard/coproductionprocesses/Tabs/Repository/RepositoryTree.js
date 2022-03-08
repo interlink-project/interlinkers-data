@@ -8,6 +8,9 @@ import {
   IconButton
 } from '@material-ui/core';
 import {
+  AcUnit
+} from '@material-ui/icons';
+import {
   TreeItem,
   TreeView,
   treeItemClasses,
@@ -15,9 +18,8 @@ import {
 import { styled } from '@material-ui/styles';
 import { cleanUnderScores } from "utils/cleanUnderscores"
 import { useDispatch, useSelector } from 'react-redux';
-import { InProgressIcon, FinishedIcon, FinishedIconButton } from './Icons';
-
-
+import { InProgressIcon, FinishedIcon } from 'components/dashboard/assets';
+import { statusIcon } from 'components/dashboard/assets/Icons';
 
 function MinusSquare(props) {
   return (
@@ -69,7 +71,7 @@ const StyledTreeItem = styled((props) => (
 
 const RepositoryTree = ({ setSelectedTask, loading }) => {
   const [selectedItem, setSelectedItem] = useState([]);
-  const { phases, objectives : allObjectives, tasks : allTasks, selectedPhaseTab } = useSelector((state) => state.process);
+  const { phases, objectives: allObjectives, tasks: allTasks, selectedPhaseTab } = useSelector((state) => state.process);
   const currentPhase = phases.find(el => el.name === selectedPhaseTab)
 
   const objectives = allObjectives.filter(el => el.phase_id === currentPhase.id)
@@ -88,6 +90,16 @@ const RepositoryTree = ({ setSelectedTask, loading }) => {
     }
   }
 
+  const Icon = (status) => {
+    if (status === "finished") {
+      return <FinishedIcon />
+    }
+    else if (status === "in_progress") {
+      return <InProgressIcon />
+    }
+
+    return null
+  }
 
 
   return (
@@ -107,12 +119,12 @@ const RepositoryTree = ({ setSelectedTask, loading }) => {
       {objectives.map(objective =>
         <StyledTreeItem key={objective.id} nodeId={objective.id} sx={{ backgroundColor: "background.paper" }} label={<p>{cleanUnderScores(objective.name)}{objective.start_date && <LinearProgress sx={{ mt: 1 }} color={objective.progress < 30 ? "error" : objective.progress < 65 ? "warning" : "success"} variant="determinate" value={objective.progress} />}</p>} >
           {allTasks.filter(el => el.objective_id === objective.id).sort((a, b) => b.progress - a.progress).map(task => (
-            <StyledTreeItem key={task.id} nodeId={task.id} label={
-            <p >
-              {task.status === "finished" && <FinishedIconButton />}
-              {task.status === "in_progress" && <InProgressIcon />}
-              {cleanUnderScores(task.name)}</p>} />
-            ))}
+            <StyledTreeItem icon={<Icon status={task.status} />} key={task.id} nodeId={task.id} label={
+              <p>
+                {statusIcon(task.status)}
+                {task.name}
+              </p>} />
+          ))}
         </StyledTreeItem>)}
     </TreeView>
   );

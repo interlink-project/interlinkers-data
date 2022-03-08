@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardActions, CardContent, CardMedia, Container, Divider, Grid, Link, Typography } from '@material-ui/core';
+import { Box, Button, Card, CardActions, CardContent, CardMedia, Container, Divider, Grid, Link, Stack, Typography } from '@material-ui/core';
 import { HomeRow } from 'components/home';
 import { Helmet } from 'react-helmet-async';
 
@@ -37,14 +37,31 @@ const HomeAbout = () => {
         <title>Interlink</title>
       </Helmet>
       <div>
-        <HomeRow
-          title="COLLABORATION and RE-USE"
-          text={[
-            "INTERLINK in an European Project that aims to overcome the barriers preventing administrations to reuse and share services with private partners (including citizens) by developing a novel collaborative governance model that merges the enthusiasm and flexibility of grassroot initiatives with the legitimacy and accountability granted by top-down e-government frameworks.",
-            "The INTERLINK multidisciplinary consortium will deliver the new governance model and Interlinkers within a technological framework and operational platform based on an open software system leveraging on mobile communications, facilitating the co-production of services between PAs and private stakeholders. The solution will be customised, deployed and evaluated on three use-cases (MEF, VARAM and Zaragoza). Lessons learned in the three use-cases will be generalized to deliver a reusable solution across Europe."
-          ]}
-          extra2={<img style={{ width: "100%", height: "auto" }} src="/static/graphics/logo-visual.png" />}
-        />
+        <Container maxWidth="lg" sx={{my: 2}}>
+          
+          <Grid container alignItems="center" justifyContent="center" spacing={3} sx={{my: 4}}>
+          
+          <Grid item md={8}> 
+          <Typography variant="h3" sx={{textAlign: "center", mb: 3}}>
+            COLLABORATION and RE-USE
+          </Typography>
+          <Typography variant="body1">
+              INTERLINK in an European Project that aims to overcome the barriers preventing administrations to reuse and share services with private partners (including citizens) by developing a novel collaborative governance model that merges the enthusiasm and flexibility of grassroot initiatives with the legitimacy and accountability granted by top-down e-government frameworks.
+            </Typography>
+
+              <Typography variant="body1" sx={{mt: 2}}>
+                The INTERLINK multidisciplinary consortium will deliver the new governance model and Interlinkers within a technological framework and operational platform based on an open software system leveraging on mobile communications, facilitating the co-production of services between PAs and private stakeholders. The solution will be customised, deployed and evaluated on three use-cases (MEF, VARAM and Zaragoza). Lessons learned in the three use-cases will be generalized to deliver a reusable solution across Europe.
+              </Typography>
+            </Grid>
+            <Grid item md={4}>
+              <img style={{ width: "100%", height: "auto" }} src="/static/graphics/logo-visual.png" />
+
+            </Grid>
+          </Grid>
+
+        </Container>
+
+
         <Divider />
         <Box
           sx={{
@@ -66,8 +83,9 @@ const HomeAbout = () => {
           <Grid
             container
             spacing={3}
+            sx={{ pb: 4 }}
           >
-            
+
             {pilots.map(pilot => <Grid
               key={pilot.name}
               item
@@ -85,10 +103,10 @@ const HomeAbout = () => {
                     {pilot.name}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                  {pilot.description}
+                    {pilot.description}
                   </Typography>
                 </CardContent>
-                <CardActions sx={{justifyContent: "center"}}>
+                <CardActions sx={{ justifyContent: "center" }}>
                   <Button size="small" onClick={() => window.open(pilot.link, "_blank")}>Download the brochure</Button>
                 </CardActions>
               </Card>

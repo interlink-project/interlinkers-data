@@ -1,34 +1,16 @@
+import { Box, Card, CardHeader, Grid, Typography } from '@material-ui/core';
+import { ChevronRight, ExpandMore } from '@material-ui/icons';
 import {
-    Avatar, Box, Button, Collapse, Grid, Menu, MenuItem,
-    ToggleButton,
-    ToggleButtonGroup, alpha,
-    CircularProgress, Paper, Typography, InputBase,
-    Divider, Stack, Card, CardContent, CardMedia, CardActionArea, CardActions, CardHeader
-} from '@material-ui/core';
-import { Check, ChevronRight, ExpandMore, Info as InfoIcon, KeyboardArrowDown, KeyboardArrowUp, Search as SearchIcon } from '@material-ui/icons';
-import { styled } from '@material-ui/styles';
-import MobileDiscriminator from 'components/MobileDiscriminator';
-import MobileDrawer from 'components/MobileDrawer';
-import moment from 'moment';
-import { useCallback, useEffect, useState } from 'react';
-import { cleanUnderScores } from 'utils/cleanUnderscores';
-import { coproductionProcessesApi, interlinkersApi, tasksApi } from '__fakeApi__';
-import PhaseTabs from "../PhaseTabs";
-import Assets from './Assets';
-import NewAssetModal from './NewAssetModal';
-import RepositoryTree from "./RepositoryTree";
-import { truncate } from 'lodash';
-import { FinishedIcon, InProgressIcon } from './Icons';
-import { useDispatch, useSelector } from 'react-redux';
-import { setProcess, updateTask } from 'slices/process';
-import { coproductionSchemasApi } from '__fakeApi__/coproduction/coproductionSchemasApi';
-import {
-    TreeItem,
-    TreeView,
+    LoadingButton, TreeItem,
+    TreeView
 } from '@material-ui/lab';
-import { comparePrerequisites } from 'utils/comparePrerequisites';
 import useMounted from 'hooks/useMounted';
-import { LoadingButton } from '@material-ui/lab';
+import { useCallback, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setProcess } from 'slices/process';
+import { comparePrerequisites } from 'utils/comparePrerequisites';
+import { coproductionProcessesApi } from '__fakeApi__';
+import { coproductionSchemasApi } from '__fakeApi__/coproduction/coproductionSchemasApi';
 
 const sameHeightCards = {
     minHeight: "200px",

@@ -267,7 +267,7 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
                     </Box>
                 </Box>}
             </DialogContent>
-            {activeStep === 0 && <DialogActions>
+            {activeStep === 0 && <DialogActions sx={{bgcolor: "background.default"}}> 
                 <Button sx={{ my: 2, mx: 4 }} autoFocus fullWidth variant="contained" onClick={() => setActiveStep(1)}>
                     Instantiate interlinker
                 </Button>

@@ -166,8 +166,7 @@ const ProcessSidebar = (props) => {
       PaperProps={{
         sx: {
           backgroundColor: 'background.paper',
-          width: 440,
-          paddingLeft: '240px',
+          width: 220,
           zIndex: 0
         }
       }}

@@ -5,14 +5,13 @@ import { Avatar, Box, Card, CardHeader, Link, Rating, Typography } from '@materi
 import getInitials from '../../../utils/getInitials';
 
 const InterlinkerReviewCard = (props) => {
-  const { authorAvatar, authorName, comment, createdAt, value, ...other } = props;
+  const { user_id, title, text, value, createdAt } = props;
 
   return (
-    <Card {...other}>
+    <Card>
       <CardHeader
         avatar={(
-          <Avatar src={authorAvatar}>
-            {getInitials(authorName)}
+          <Avatar>
           </Avatar>
         )}
         disableTypography
@@ -63,7 +62,7 @@ const InterlinkerReviewCard = (props) => {
             to='#'
             variant='subtitle2'
           >
-            {authorName}
+            {user_id}
           </Link>
         )}
       />
@@ -77,7 +76,7 @@ const InterlinkerReviewCard = (props) => {
           color='textSecondary'
           variant='body1'
         >
-          {comment}
+          {text}
         </Typography>
       </Box>
     </Card>

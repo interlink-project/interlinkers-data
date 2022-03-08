@@ -42,25 +42,27 @@ const MainSidebar = (props) => {
         <RouterLink to='/'>
           <Logo />
         </RouterLink>
-        {landingPages.map((el, i) => (
-          <React.Fragment key={`sidebarItem${i}`}>
-            <Link
-              color='textSecondary'
-              component={RouterLink}
-              to={el.link}
-              underline='none'
-              variant='body1'
-            >
-              {el.name}
-            </Link>
-            <Divider
-              sx={{
-                height: 32,
-                mx: 2,
-              }}
-            />
-          </React.Fragment>
-        ))}
+        <Box sx={{ mt: 3 }}>
+          {landingPages.map((el, i) => (
+            <React.Fragment key={`sidebarItem${i}`}>
+              <Link
+                color={location.pathname === el.link ? 'primary' : 'textSecondary'}
+                component={RouterLink}
+                to={el.link}
+                underline='none'
+                variant='body1'
+              >
+                {el.name}
+              </Link>
+              <Divider
+                sx={{
+                  my: 1
+                }}
+              />
+            </React.Fragment>
+          ))}
+        </Box>
+
 
         <UserAreaButton />
       </Box>
