@@ -9,25 +9,31 @@ import {
   DesktopDateRangePicker
 } from '@material-ui/lab';
 import { FinishedIcon, InProgressIcon } from 'components/dashboard/assets';
+import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { updateObjective, updateTask } from 'slices/process';
+import { updateObjective, updatePhase, updateTask } from 'slices/process';
 import { statusText, statusIcon } from '../assets/Icons';
 
-const TreeItemDialog = ({ element, onSave, open, setOpen }) => {
-  const [dateRange, setDateRange] = useState([null, null]);
+const TreeItemDialog = ({ element, onSave = null, onClose }) => {
+  const [dateRange, setDateRange] = useState([element.start_date ? new Date(element.start_date) : null, element.end_date ? new Date(element.end_date) : null]);
   const [status, setStatus] = useState(element.status);
   const [name, setName] = useState(element.name);
   const [description, setDescription] = useState(element.description);
-  const [editMode, setEditMode] = useState(false);
+  const [editMode, _setEditMode] = useState(false);
 
+  const setEditMode = (bool) => {
+    if(!bool){
+      setName(element.name)
+      setDescription(element.description)
+      setStatus(element.status)
+      setDateRange([element.start_date ? new Date(element.start_date) : null, element.end_date ? new Date(element.end_date) : null])
+    }
+    _setEditMode(bool)
+  }
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    setDateRange([element.start_date ? new Date(element.start_date) : null, element.end_date ? new Date(element.end_date) : null])
-  }, [element]);
-
-  const dataToSend = async () => {
+  const saveData = () => {
     const data = {}
 
     const start_date = dateRange[0] && dateRange[0].toISOString().slice(0, 10)
@@ -49,24 +55,22 @@ const TreeItemDialog = ({ element, onSave, open, setOpen }) => {
     }
 
     if (element.type === "task") {
+      console.log({ id: element.id, data })
       dispatch(updateTask({ id: element.id, data }))
-
-
     }
     else if (element.type === "objective") {
       dispatch(updateObjective({ id: element.id, data }))
-
+    }
+    else if (element.type === "phase") {
+      dispatch(updatePhase({ id: element.id, data }))
     }
     if (onSave) {
       onSave()
     }
+    onClose()
   }
 
-  const handleChange = (event, newStatus) => {
-    setStatus(newStatus)
-  };
-
-  return <Dialog onClose={() => setOpen(false)} open={open}>
+  return <Dialog onClose={onClose} open fullWidth>
     <Box sx={{ p: 2 }}>
 
       <Typography variant="h6" sx={{ mt: 2 }}>
@@ -78,30 +82,36 @@ const TreeItemDialog = ({ element, onSave, open, setOpen }) => {
       <Typography variant="h6" sx={{ mt: 2 }}>
         Name
       </Typography>
-      {editMode ? <TextField variant="standard" fullWidth value={name} /> : name}
+      {editMode ? <TextField onChange={(event) => {
+    setName(event.target.value);
+  }} variant="standard" fullWidth value={name} /> : name}
       <Typography variant="h6" sx={{ mt: 2 }}>
         Description
       </Typography>
-      {editMode ? <TextField multiline fullWidth variant="standard" value={description} /> : description}
+      {editMode ? <TextField onChange={(event) => {
+    setDescription(event.target.value);
+  }} multiline fullWidth variant="standard" value={description} /> : description}
       <Typography variant="h6" sx={{ mt: 2 }}>Current status of the task:</Typography>
-      {editMode ? <ToggleButtonGroup
+      {editMode && element.type === "task" ? <ToggleButtonGroup
         sx={{ mt: 1 }}
         color={status === "finished" ? "success" : status === "in_progress" ? "warning" : "primary"}
         value={status}
         exclusive
         fullWidth
-        onChange={handleChange}
+        onChange={(event, newStatus) => {
+          setStatus(newStatus)
+        }}
       >
         <ToggleButton value="awaiting">Awaiting</ToggleButton>
         <ToggleButton value="in_progress">In progress <InProgressIcon /></ToggleButton>
         <ToggleButton value="finished">Finished <FinishedIcon /></ToggleButton>
-      </ToggleButtonGroup> : <>
-      {statusText(status)}
-      {statusIcon(status)}
-      </>
+      </ToggleButtonGroup> : <div style={{alignItems: "center"}}>
+        {statusText(status)}
+        {statusIcon(status)}
+      </div>
       }
       <Typography variant="h6" sx={{ mt: 2 }}>Time planification:</Typography>
-      {editMode ? <Box sx={{ mt: 2, justifyContent: "center", textAlign: "center" }}>
+      {editMode && element.type === "task" ? <Box justifyContent="center" sx={{ mt: 2 }}>
         <DesktopDateRangePicker
           startText="Start date"
           endText="End date"
@@ -120,12 +130,16 @@ const TreeItemDialog = ({ element, onSave, open, setOpen }) => {
           )}
         />
       </Box> : <Box sx={{ my: 2 }}>
-        {dateRange[0] !== null ? JSON.stringify(dateRange) : <Alert severity="warning">Not set</Alert>}
+        {dateRange[0] !== null ? <>
+          <b>Start:  </b>{moment(dateRange[0]).format("LL")}
+          <br />
+          <b>End:  </b>{moment(dateRange[1]).format("LL")}
+        </> : <Alert severity="warning">Not set</Alert>}
       </Box>}
 
       <CardActions sx={{ justifyContent: "center" }}>
         <Button sx={{ mt: 2 }} size="small" variant="outlined" onClick={() => setEditMode(!editMode)} color={editMode ? "error" : "primary"}>{editMode ? "Discard changes" : "Edit"}</Button>
-        {editMode && <Button sx={{ mt: 2 }} variant="contained" onClick={dataToSend} color="primary" size="small">Save</Button>}
+        {editMode && <Button sx={{ mt: 2 }} variant="contained" onClick={saveData} color="primary" size="small">Save</Button>}
 
       </CardActions>
     </Box>

@@ -43,22 +43,23 @@ const DashboardNavbar = (props) => {
           <MenuIcon fontSize='small' />
         </IconButton>}
 
-        <RouterLink to='/'>
+        {!onMobile && <RouterLink to='/'>
           <img
             alt='Components'
             src='/static/logo-interlink-white.svg'
             height='40px'
           />
-        </RouterLink>
+        </RouterLink>}
+
         <MenuItem component={RouterLink} to='/dashboard' selected>
-                  <Typography textAlign="center" variant="button">Workspace</Typography>
-                </MenuItem>
-                <MenuItem component={RouterLink} to='/dashboard/interlinkers' >
-                  <Typography textAlign="center" variant="button">Interlinkers</Typography>
-                </MenuItem>
-                <MenuItem component={RouterLink} to='/dashboard' disabled>
-                  <Typography textAlign="center" variant="button">Public services</Typography>
-                </MenuItem>
+          <Typography textAlign="center" variant="button">Workspace</Typography>
+        </MenuItem>
+        <MenuItem component={RouterLink} to='/dashboard/interlinkers' >
+          <Typography textAlign="center" variant="button">Interlinkers</Typography>
+        </MenuItem>
+        <MenuItem component={RouterLink} to='/dashboard' disabled>
+          <Typography textAlign="center" variant="button">Public services</Typography>
+        </MenuItem>
         <Box
           sx={{
             flexGrow: 1,
@@ -73,7 +74,7 @@ const DashboardNavbar = (props) => {
         </Box>
         {!onMobile &&
           <>
-          {/*
+            {/*
             <Box sx={{ ml: 1 }}>
               <NotificationsPopover />
             </Box>

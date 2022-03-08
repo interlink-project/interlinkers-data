@@ -9,6 +9,79 @@ import { cleanUnderScores } from "utils/cleanUnderscores";
 import colorScale from "utils/colorScale";
 import PhaseTabs from "../PhaseTabs";
 
+const view_modes = ["Day", "Week", "Month", "Year"]
+
+
+const setNewGantt = (id, props, tasks, darkMode, onClick) => {
+  document.getElementById("gantt").innerHTML = "";
+  console.log("SETTING NEW")
+  new window.Gantt(id, tasks, props);
+
+  if (darkMode) {
+    $(".gantt .grid-header").css("fill", "#293142")
+    $(".gantt .grid-row").css("fill", "#1c2531")
+    $(".gantt .grid-row:nth-child(even)").css("fill", "#293142")
+    $(".gantt .tick").css("stroke", "#606060")
+    $(".gantt .upper-text").css("fill", "white")
+    $(".gantt .lower-text").css("fill", "white")
+  }
+
+  $(".gantt-phase").each(function (index1) {
+    const id = $(this).attr("data-id")
+    $(this).on("click", function () {
+      onClick(id, "phase")
+    });
+    let text = $(this).children().first().children(".bar-label").first()
+
+    text.css("font-weight", "800")
+    text.css("font-size", "20px")
+    if (darkMode) {
+      text.css("fill", "white")
+    } else {
+      text.css("fill", "#282b28")
+    }
+
+  })
+
+  $(".gantt-objective").each(function (index1) {
+    const id = $(this).attr("data-id")
+    $(this).on("click", function () {
+      onClick(id, "objective")
+    });
+
+    const progressBar = $(this).children().first().children(".bar-progress").first()
+    progressBar.css("fill", "green")
+    let text = $(this).children().first().children(".bar-label").first()
+
+    text.css("font-weight", "800")
+    text.css("font-size", "15px")
+
+    if (darkMode) {
+      text.css("fill", "white")
+    } else {
+      text.css("fill", "#282b28")
+    }
+
+  })
+
+  $(".gantt-task").each(function (index1) {
+    const id = $(this).attr("data-id")
+    $(this).on("click", function () {
+      onClick(id, "task")
+    });
+
+    let text = $(this).children().first().children(".bar-label").first()
+    text.css("font-weight", "600")
+
+    if (darkMode) {
+      text.css("fill", "white")
+    } else {
+      text.css("fill", "black")
+    }
+  })
+
+}
+
 const Workplan = () => {
   const { settings } = useSettings();
 
@@ -17,8 +90,21 @@ const Workplan = () => {
   const { phases, objectives, tasks, updating, selectedPhaseTab } = useSelector((state) => state.process);
   const mounted = useMounted();
 
-  const [drawerOpen, setDrawerOpen] = useState(false)
   const [clickedElement, setClickedElement] = useState(null);
+
+  const getElement = (id, type) => {
+    let obj = {}
+    if (type === "phase") {
+      obj = phases.find(el => el.id === id)
+    }
+    else if (type === "objective") {
+      obj = objectives.find(el => el.id === id)
+    }
+    else if (type === "task") {
+      obj = tasks.find(el => el.id === id)
+    }
+    return {...obj, type}
+  }
 
   const getTasks = () => {
     const final = []
@@ -34,12 +120,12 @@ const Workplan = () => {
       read_only: true
     })
     objectives.filter(el => el.phase_id === phase.id).forEach(objective => {
-      
+
       final.push({
         id: objective.id,
         name: objective.name,
         dependencies: phase.id,
-        start: objective.start_date,
+        start: objective.start_date || phase.start_date,
         end: objective.end_date,
         progress: objective.progress,
         custom_class: 'gantt-objective',
@@ -50,12 +136,15 @@ const Workplan = () => {
           id: task.id,
           name: task.name,
           dependencies: task.objective_id,
+          start: task.start_date || objective.start_date,
+          end: task.end_date,
           custom_class: 'gantt-task',
           read_only: true
         })
       })
     })
-    return final.sort((a, b) => a.start_date < b.start_date)
+    return final
+    // .sort((a, b) => a.start_date < b.start_date)
   }
 
   useEffect(() => {
@@ -84,102 +173,6 @@ const Workplan = () => {
     event.stopPropagation();
   }
 
-  const setNewGantt = (id, props) => {
-    console.log("setting new gantt", loaded, viewMode, selectedPhaseTab, tasks, updating, setNewGantt)
-    try {
-      if (mounted.current) {
-        new window.Gantt(id, getTasks(), props);
-
-        if (settings.theme === "DARK") {
-          $(".gantt .grid-header").css("fill", "#293142")
-          $(".gantt .grid-row").css("fill", "#1c2531")
-          $(".gantt .grid-row:nth-child(even)").css("fill", "#293142")
-          $(".gantt .tick").css("stroke", "#606060")
-          $(".gantt .upper-text").css("fill", "white")
-          $(".gantt .lower-text").css("fill", "white")
-
-
-        }
-
-        $(".gantt-phase").each(function (index1) {
-          const id = $(this).attr("data-id")
-          const phase = phases.find(p => p.id === id)
-          $(this).on("click", function () {
-            setClickedElement({ ...phase, type: "phase" })
-            setDrawerOpen(true)
-          });
-          let text = $(this).children().first().children(".bar-label").first()
-
-          text.css("font-weight", "800")
-          text.css("font-size", "20px")
-
-          if (settings.theme === "DARK") {
-            if (phase.start_date && phase.end_date) {
-              text.css("fill", "#282b28")
-            } else {
-              text.css("fill", "white")
-            }
-
-          } else {
-            text.css("fill", "#282b28")
-          }
-
-        })
-      
-        $(".gantt-objective").each(function (index1) {
-          const id = $(this).attr("data-id")
-          const objective = objectives.find(o => o.id === id)
-          $(this).on("click", function () {
-            setClickedElement({ ...objective, type: "objective" })
-            setDrawerOpen(true)
-          });
-
-          const bar = $(this).children().first().children(".bar").first()
-          const progressBar = $(this).children().first().children(".bar-progress").first()
-          progressBar.css("fill", colorScale(objective.progress / 100).toString())
-          let text = $(this).children().first().children(".bar-label").first()
-
-          text.css("font-weight", "800")
-          text.css("font-size", "15px")
-
-          if (settings.theme === "DARK") {
-            if (objective.start_date && objective.end_date) {
-              text.css("fill", "#282b28")
-            } else {
-              text.css("fill", "white")
-            }
-
-          } else {
-            text.css("fill", "#282b28")
-          }
-
-        })
-
-        $(".gantt-task").each(function (index1) {
-          const id = $(this).attr("data-id")
-          const task = tasks.find(t => t.id === id)
-          $(this).on("click", function () {
-            setClickedElement({ ...task, type: "task" })
-            setDrawerOpen(true)
-          });
-
-          let text = $(this).children().first().children(".bar-label").first()
-          text.css("font-weight", "600")
-
-          if (settings.theme === "DARK") {
-            text.css("fill", "white")
-          } else {
-            text.css("fill", "black")
-          }
-        })
-      }
-    } catch (err) {
-      console.error(err);
-    }
-  }
-
-  const view_modes = ["Day", "Week", "Month", "Year"]
-
   useEffect(() => {
     if (updating || !loaded) {
       return
@@ -197,9 +190,6 @@ const Workplan = () => {
       view_mode: viewMode,
       date_format: 'YYYY-MM-DD',
       custom_popup_html: null,
-      on_click: function (task) {
-        console.log(task);
-      },
     }
     const readOnly = true
     if (readOnly) {
@@ -214,16 +204,15 @@ const Workplan = () => {
         }
       }
     }
-    setNewGantt(id, props)
+    setNewGantt(id, props, getTasks(), settings.theme === "DARK", (id, type) => {
+      setClickedElement(getElement(id, type));
+    })
 
-  }, [loaded, viewMode, selectedPhaseTab, tasks, updating, setNewGantt]);
-
-
-
+  }, [loaded, viewMode, selectedPhaseTab, updating, setNewGantt]);
 
   return (
     <Grid container style={{ overflow: "hidden" }}>
-      {clickedElement && <TreeItemDialog element={clickedElement} onSave={() => setDrawerOpen(false)} open={drawerOpen} setOpen={setDrawerOpen} />}
+      {clickedElement && <TreeItemDialog element={clickedElement} onClose={() => setClickedElement(null)} />}
       <Grid item xs={12}>
         <PhaseTabs />
         <ToggleButtonGroup
@@ -239,10 +228,8 @@ const Workplan = () => {
         </ToggleButtonGroup>
       </Grid>
       <Grid item xs={12}>
-        {updating ? <Skeleton variant="rectangular" width={"100%"} height={"70vh"} />
-          :
-          <div id="gantt" />
-        }
+        {updating || !loaded && <Skeleton variant="rectangular" width={"100%"} height={"70vh"} />}
+        <div id="gantt" />
       </Grid>
     </Grid>
   );

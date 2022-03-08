@@ -16,7 +16,6 @@ import {
   treeItemClasses,
 } from '@material-ui/lab';
 import { styled } from '@material-ui/styles';
-import { cleanUnderScores } from "utils/cleanUnderscores"
 import { useDispatch, useSelector } from 'react-redux';
 import { InProgressIcon, FinishedIcon } from 'components/dashboard/assets';
 import { statusIcon } from 'components/dashboard/assets/Icons';
@@ -117,11 +116,10 @@ const RepositoryTree = ({ setSelectedTask, loading }) => {
       }}
     >
       {objectives.map(objective =>
-        <StyledTreeItem key={objective.id} nodeId={objective.id} sx={{ backgroundColor: "background.paper" }} label={<p>{cleanUnderScores(objective.name)}{objective.start_date && <LinearProgress sx={{ mt: 1 }} color={objective.progress < 30 ? "error" : objective.progress < 65 ? "warning" : "success"} variant="determinate" value={objective.progress} />}</p>} >
+        <StyledTreeItem key={objective.id} nodeId={objective.id} sx={{ backgroundColor: "background.paper" }} label={<p>{objective.name}</p>} >
           {allTasks.filter(el => el.objective_id === objective.id).sort((a, b) => b.progress - a.progress).map(task => (
-            <StyledTreeItem icon={<Icon status={task.status} />} key={task.id} nodeId={task.id} label={
-              <p>
-                {statusIcon(task.status)}
+            <StyledTreeItem icon={statusIcon(task.status)} key={task.id} nodeId={task.id} label={
+              <p style={{alignItems: "center"}}>
                 {task.name}
               </p>} />
           ))}

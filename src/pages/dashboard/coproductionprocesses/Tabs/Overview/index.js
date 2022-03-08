@@ -4,21 +4,29 @@ import React, { useEffect, useState } from "react";
 import { fetchJsFromCDN } from "utils/fetchFromCDN";
 import { assetsApi } from "__fakeApi__";
 
+const dateToUnix = (dateStr) => Math.floor(new Date(dateStr).getTime() / 1000)
+
 const OverviewTab = ({ coproductionprocess }) => {
     const [assets, setAssets] = useState([])
     useEffect(() => {
         assetsApi.getMulti({ coproductionprocess_id: coproductionprocess.id }).then((res) => {
             setAssets(res.items)
             fetchJsFromCDN('https://cdnjs.cloudflare.com/ajax/libs/frappe-charts/2.0.0-rc20/frappe-charts.min.umd.js', ['frappe']).then(([frappe]) => {
-                let heatmap = new frappe.Chart("#chart", {
+                new frappe.Chart("#chart", {
                     type: 'heatmap',
-                    title: "Monthly Distribution",
                     data: {
-                        dataPoints: {
-                            '1645182204': 8,
-                        },
+                        dataPoints: res.items.reduce((total, el) => {
+                            const unix = dateToUnix(el.created_at)
+                            if (unix in total){
+                                total[unix] = total[unix] + 1
+                                return total
+                            }else{
+                                total[unix] = 1
+                                return total
+                            }
+                         }, {})
                     },
-                    countLabel: 'contributions',
+                    countLabel: 'assets created',
                     discreteDomains: 0,
                     colors: ['#ebedf0', '#c0ddf9', '#73b3f3', '#3886e1', '#17459e'],
                 });
@@ -28,25 +36,11 @@ const OverviewTab = ({ coproductionprocess }) => {
 
     }, [])
 
-    function createData(date, action, user, role) {
-        return { date, action, user, role };
-    }
-
-    const rows = [
-        createData(new Date(), "Created X asset", "Julen Badiola", "Administrator"),
-        createData(new Date("18-10-1999"), "Updated Y asset", "Julen Badiola", "Administrator"),
-    ];
-
-    const warnings = [
-        "Some process metadata has not been entered yet",
-        "Process schema has not been selected yet"
-    ]
-
     return (
         <Box style={{ backgroundColor: "background.default", justifyContent: "center" }}>
 
             <Typography variant="h5" sx={{ my: 2, textAlign: "center" }} color="textSecondary">
-                Recent activity
+                Activity within the project
             </Typography>
             {/* {warnings.map((warning, i) => <Alert key={warning + i.toString()} severity="warning" sx={{mb: 2}}>{warning}</Alert>)}
                     
