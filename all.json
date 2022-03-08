@@ -2188,6 +2188,56 @@
             },
             {
                 "name_translations": {
+                    "en": "OS2 API Manager"
+                },
+                "description_translations": {
+                    "en": "<p>WSO2 API Manager is a complete platform for building, integrating, and exposing your digital services as managed APIs in the cloud, on-premise, and hybrid architectures to drive your digital transformation strategy. It allows API developers to design, publish, and manage the lifecycle of APIs and API product managers to create API products from one or more APIs.</p>"
+                },
+                "tags_translations": {
+                    "en": [
+                        "OPEN API",
+                        "API MANAGEMENT",
+                        "SERVICES"
+                    ]
+                },
+                "difficulty": "medium",
+                "targets": [
+                    "all;pas",
+                    "all;businesses",
+                    "all;research_organizations"
+                ],
+                "licence": "public_domain",
+                "problem_profiles": [
+                    "BUILD_PROBLEM_4"
+                ],
+                "types": [
+                    "enabling_services"
+                ],
+                "related_interlinkers": [
+                    "Open API specification"
+                ],
+                "administrative_scopes": [
+                    "eu",
+                    "national",
+                    "local"
+                ],
+                "constraints_and_limitations_translations": {
+                    "en": "None"
+                },
+                "regulations_and_standards_translations": {
+                    "en": "Open API"
+                },
+                "supported_by": [
+                    "saas",
+                    "on_premise"
+                ],
+                "developer_manual": "https://apim.docs.wso2.com/en/latest/",
+                "supports_internationalization": false,
+                "is_responsive": true,
+                "reference": "api-manager"
+            },
+            {
+                "name_translations": {
                     "en": "Loomio",
                     "es": ""
                 },
@@ -2274,6 +2324,236 @@
                         "voting"
                     ]
                 }
+            },
+            {
+                "name_translations": {
+                    "en": "Google Chart"
+                },
+                "description_translations": {
+                    "en": "<p>Google Charts is a Java Script library providing a way to visualize data on your website (from simple line charts to complex hierarchical tree maps)</p>"
+                },
+                "tags_translations": {
+                    "en": [
+                        "ANALYSIS",
+                        "GRAPH",
+                        "JAVASCRIPT"
+                    ]
+                },
+                "difficulty": "medium",
+                "targets": [
+                    "all;research_organizations",
+                    "all;businesses",
+                    "all;pas"
+                ],
+                "licence": "propietary",
+                "problem_profiles": [
+                    "ORG_PROBLEM_6.2"
+                ],
+                "types": [
+                    "enabling_services"
+                ],
+                "related_interlinkers": [],
+                "administrative_scopes": [
+                    "eu",
+                    "national",
+                    "local"
+                ],
+                "constraints_and_limitations_translations": {
+                    "en": "None"
+                },
+                "regulations_and_standards_translations": {
+                    "en": "None"
+                },
+                "supported_by": [
+                    "on_premise"
+                ],
+                "deployment_manual": "https://developers.google.com/chart/interactive/docs",
+                "supports_internationalization": false,
+                "is_responsive": true,
+                "logotype": "./interlinkers/software/google-chart/logo.png",
+                "reference": "graph-js-library"
+            },
+            {
+                "name_translations": {
+                    "en": "Grafana"
+                },
+                "description_translations": {
+                    "en": "<p>Multi-platform open source analytics and interactive visualization web application. It provides charts, graphs, and alerts for the web when connected to supported data sources. </p>"
+                },
+                "tags_translations": {
+                    "en": [
+                        "ANALYSIS",
+                        "DASHBOARD"
+                    ]
+                },
+                "difficulty": "medium",
+                "targets": [
+                    "all"
+                ],
+                "licence": "public_domain",
+                "problem_profiles": [
+                    "ORG_PROBLEM_6.2"
+                ],
+                "types": [
+                    "enabling_services"
+                ],
+                "related_interlinkers": [
+                    "Open API specification"
+                ],
+                "administrative_scopes": [
+                    "eu",
+                    "national",
+                    "local"
+                ],
+                "constraints_and_limitations_translations": {
+                    "en": "None"
+                },
+                "regulations_and_standards_translations": {
+                    "en": "None"
+                },
+                "supported_by": [
+                    "saas",
+                    "on_premise"
+                ],
+                "developer_manual": "https://grafana.com/docs/",
+                "supports_internationalization": true,
+                "is_responsive": true,
+                "logotype": "./interlinkers/software/grafana/logo.svg",
+                "reference": "dashboard"
+            },
+            {
+                "name_translations": {
+                    "en": "Keycloak"
+                },
+                "description_translations": {
+                    "en": "<p>Keycloak provides user federation, strong authentication, user management, fine-grained authorization</p>"
+                },
+                "tags_translations": {
+                    "en": [
+                        "authentication",
+                        "ssl",
+                        "openid",
+                        "security"
+                    ]
+                },
+                "difficulty": "difficult",
+                "targets": [
+                    "all;pas",
+                    "all;research_organizations",
+                    "all;businesses"
+                ],
+                "licence": "public_domain",
+                "problem_profiles": [
+                    "ORG_PROBLEM_3"
+                ],
+                "types": [
+                    "enabling_services",
+                    "enhancing_services"
+                ],
+                "related_interlinkers": [],
+                "administrative_scopes": [
+                    "eu",
+                    "national",
+                    "local"
+                ],
+                "constraints_and_limitations_translations": {
+                    "en": "None"
+                },
+                "regulations_and_standards_translations": {
+                    "en": "None"
+                },
+                "supported_by": [
+                    "on_premise"
+                ],
+                "deployment_manual": "https://www.keycloak.org/guides#server",
+                "user_manual": "https://www.keycloak.org/guides#getting-started",
+                "developer_manual": "https://www.keycloak.org/docs/latest/server_development/index.html",
+                "supports_internationalization": false,
+                "is_responsive": false,
+                "reference": "user-authentication-authorization"
+            },
+            {
+                "name_translations": {
+                    "en": "Trello"
+                },
+                "description_translations": {
+                    "en": "<p>Trello is a collaboration tool that organizes your projects into boards. In one glance, Trello tells you what's being worked on, who's working on what, and where something is in a process.</p>"
+                },
+                "tags_translations": {
+                    "en": [
+                        "project management",
+                        "task management",
+                        "team working"
+                    ]
+                },
+                "difficulty": "easy",
+                "targets": [
+                    "all"
+                ],
+                "licence": "propietary",
+                "problem_profiles": [
+                    "ORG_PROBLEM_2"
+                ],
+                "types": [
+                    "enabling_services",
+                    "enhancing_services"
+                ],
+                "related_interlinkers": [],
+                "administrative_scopes": [
+                    "eu",
+                    "national",
+                    "local"
+                ],
+                "constraints_and_limitations_translations": {
+                    "en": "None"
+                },
+                "regulations_and_standards_translations": {
+                    "en": "None"
+                },
+                "supported_by": [
+                    "on_premise",
+                    "saas"
+                ],
+                "user_manual": "https://trello.com/guide",
+                "developer_manual": "https://developer.atlassian.com/cloud/trello/",
+                "supports_internationalization": true,
+                "is_responsive": true,
+                "logotype": "./interlinkers/software/trello/logo.png",
+                "reference": "project-management"
+            },
+            {
+                "name_translations": {
+                    "en": "Mailchimp"
+                },
+                "description_translations": {
+                    "en": "<p>Marketing automation platform and email marketing service[6] for managing mailing lists and creating email marketing campaigns to send to customers.</p>"
+                },
+                "tags_translations": {
+                    "en": [
+                        "marketing",
+                        "newsletter",
+                        "email"
+                    ]
+                },
+                "difficulty": "easy",
+                "licence": "propietary",
+                "problem_profiles": [
+                    "ORG_PROBLEM_4"
+                ],
+                "related_interlinkers": [],
+                "constraints_and_limitations_translations": {
+                    "en": "none"
+                },
+                "regulations_and_standards_translations": {
+                    "en": "none"
+                },
+                "supported_by": [
+                    "saas"
+                ],
+                "supports_internationalization": true,
+                "is_responsive": true,
+                "logotype": "./interlinkers/software/mailchimp/logo.png",
+                "reference": "email-marketing"
             },
             {
                 "name_translations": {
@@ -2433,6 +2713,85 @@
             },
             {
                 "name_translations": {
+                    "en": "Doodle"
+                },
+                "description_translations": {
+                    "en": "<p>Online calendar tool for time management and coordinating meetings</p>"
+                },
+                "tags_translations": {
+                    "en": [
+                        "survey",
+                        "time",
+                        "task"
+                    ]
+                },
+                "difficulty": "easy",
+                "licence": "propietary",
+                "problem_profiles": [
+                    "ORG_PROBLEM_4"
+                ],
+                "related_interlinkers": [],
+                "constraints_and_limitations_translations": {
+                    "en": "none"
+                },
+                "regulations_and_standards_translations": {
+                    "en": "none"
+                },
+                "supported_by": [
+                    "saas"
+                ],
+                "supports_internationalization": true,
+                "is_responsive": true,
+                "reference": "calendar-tool"
+            },
+            {
+                "name_translations": {
+                    "en": "Markup Validation Service"
+                },
+                "description_translations": {
+                    "en": "<p>This validator checks the markup validity of Web documents in HTML, XHTML, SMIL, MathML, etc.</p>"
+                },
+                "tags_translations": {
+                    "en": [
+                        "HTML",
+                        "XHTML",
+                        "SMIL",
+                        "MathML"
+                    ]
+                },
+                "difficulty": "easy",
+                "targets": [
+                    "all"
+                ],
+                "licence": "propietary",
+                "problem_profiles": [
+                    "BUILD_PROBLEM_2"
+                ],
+                "types": [
+                    "enabling_services"
+                ],
+                "related_interlinkers": [],
+                "administrative_scopes": [
+                    "eu",
+                    "national",
+                    "local"
+                ],
+                "constraints_and_limitations_translations": {
+                    "en": "None"
+                },
+                "regulations_and_standards_translations": {
+                    "en": "None"
+                },
+                "supported_by": [
+                    "saas"
+                ],
+                "user_manual": "http://validator.w3.org/docs/help.html",
+                "supports_internationalization": false,
+                "is_responsive": false,
+                "reference": "html-tools"
+            },
+            {
+                "name_translations": {
                     "en": "External resource manager",
                     "es": ""
                 },
@@ -2506,6 +2865,51 @@
                         "report"
                     ]
                 }
+            },
+            {
+                "name_translations": {
+                    "en": "Accessibility Tools"
+                },
+                "description_translations": {
+                    "en": "<p>Web accessibility evaluation tools are software programs or online services that help you determine if web content meets accessibility guidelines. This page provides a list of evaluation tools that you can filter to find ones that match your particular needs.</p>"
+                },
+                "tags_translations": {
+                    "en": [
+                        "ACCESSIBILITY",
+                        "HTML5",
+                        "CSS"
+                    ]
+                },
+                "difficulty": "easy",
+                "targets": [
+                    "all"
+                ],
+                "licence": "propietary",
+                "problem_profiles": [
+                    "BUILD_PROBLEM_2"
+                ],
+                "types": [
+                    "enabling_services"
+                ],
+                "related_interlinkers": [],
+                "administrative_scopes": [
+                    "eu",
+                    "national",
+                    "local"
+                ],
+                "constraints_and_limitations_translations": {
+                    "en": "None"
+                },
+                "regulations_and_standards_translations": {
+                    "en": "None"
+                },
+                "supported_by": [
+                    "saas"
+                ],
+                "user_manual": "https://www.w3.org/WAI/test-evaluate/tools/selecting/",
+                "supports_internationalization": false,
+                "is_responsive": false,
+                "reference": "html-tools"
             }
         ],
         "knowledge": [
@@ -2606,56 +3010,6 @@
                     "all"
                 ],
                 "problem_profiles": [
-                    "UND_PROBLEM_1",
-                    "UND_PROBLEM_5",
-                    "DEF_PROBLEM_2"
-                ],
-                "types": [
-                    "enabling_services;operation_services"
-                ],
-                "related_interlinkers": [],
-                "administrative_scopes": [
-                    "eu",
-                    "national",
-                    "local"
-                ],
-                "reference": "loomio2",
-                "form": "document_template",
-                "format": "editable_source_document",
-                "softwareinterlinker": "googledrive",
-                "difficulty": "medium",
-                "licence": "copyleft",
-                "instructions_translations": {
-                    "en": "./interlinkers/knowledge/loomio2/instructions.html"
-                },
-                "tags_translations": {
-                    "en": [
-                        "decision making",
-                        "idea management",
-                        "voting"
-                    ]
-                },
-                "name_translations": {
-                    "en": "Loomio2"
-                },
-                "description_translations": {
-                    "en": "<p>Loomio is an Open Source solution that offers a workspace for conversation, sharing information and opinions, making proposals, deciding actions and achieving outcomes. With Loomio it is possible to</p><ul><li>start and organize discussions and keep record of participation and involvement;</li><li>manage collaborative decisions through different forms of polls, surveys, etc;</li><li>enable collaborating voting around ideas and proposal under discussion.</li></ul>"
-                },
-                "constraints_and_limitations_translations": {
-                    "en": "None"
-                },
-                "regulations_and_standards_translations": {
-                    "en": "None"
-                },
-                "file_translations": {
-                    "en": "./interlinkers/knowledge/loomio2/resource.pdf"
-                }
-            },
-            {
-                "targets": [
-                    "all"
-                ],
-                "problem_profiles": [
                     "ORG_PROBLEM_1",
                     "UND_PROBLEM_2"
                 ],
@@ -2742,6 +3096,51 @@
                 },
                 "file_translations": {
                     "en": "./interlinkers/knowledge/it-cloud-enablement-kit/data.json"
+                }
+            },
+            {
+                "name_translations": {
+                    "en": "eIDAS standard"
+                },
+                "description_translations": {
+                    "en": "<p>The eIDAS solution allows citizens from Member States to prove and verify their identification when accessing on-line services in other Member States. It allows citizens to authenticate themselves by using their eIDs and connecting with their Identity Provider (IdP) from their country. </p>"
+                },
+                "tags_translations": {
+                    "en": [
+                        "security"
+                    ]
+                },
+                "difficulty": "medium",
+                "targets": [
+                    "all;pas",
+                    "all;businesses",
+                    "all;research_organizations"
+                ],
+                "licence": "permissive",
+                "problem_profiles": [
+                    "BUILD_PROBLEM_3"
+                ],
+                "types": [
+                    "enabling_services"
+                ],
+                "reference": "",
+                "form": "guidelines",
+                "softwareinterlinker": "externalresourcemanager",
+                "administrative_scopes": [
+                    "eu",
+                    "national",
+                    "local"
+                ],
+                "related_interlinkers": [],
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "format": "structured_format",
+                "instructions_translations": {
+                    "en": "./interlinkers/knowledge/eidas-standard/instructions.md"
+                },
+                "file_translations": {
+                    "en": "./interlinkers/knowledge/eidas-standard/data.json"
                 }
             },
             {
@@ -3041,6 +3440,55 @@
                 },
                 "file_translations": {
                     "en": "./interlinkers/knowledge/it-cloud-competences-assesment/data.json"
+                }
+            },
+            {
+                "name_translations": {
+                    "en": "Open API specification"
+                },
+                "description_translations": {
+                    "en": "<p>A RFC document which specifyes the open API.</p>"
+                },
+                "tags_translations": {
+                    "en": [
+                        "OPEN API",
+                        "SERVICE"
+                    ]
+                },
+                "difficulty": "medium",
+                "targets": [
+                    "all;pas",
+                    "all;businesses",
+                    "all;research_organizations"
+                ],
+                "licence": "public_domain",
+                "problem_profiles": [
+                    "BUILD_PROBLEM_2"
+                ],
+                "types": [
+                    "enabling_services"
+                ],
+                "administrative_scopes": [
+                    "eu",
+                    "national",
+                    "local"
+                ],
+                "related_interlinkers": [],
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "regulations_and_standards_translations": {
+                    "en": ""
+                },
+                "reference": "",
+                "form": "guidelines",
+                "softwareinterlinker": "externalresourcemanager",
+                "instructions_translations": {
+                    "en": "./interlinkers/knowledge/it-pa-minimum-security-measures/instructions.md"
+                },
+                "format": "structured_format",
+                "file_translations": {
+                    "en": "./interlinkers/knowledge/open-API-specification/data.json"
                 }
             },
             {
@@ -3770,6 +4218,58 @@
                 },
                 "file_translations": {
                     "en": "./interlinkers/knowledge/it-cloud-competences-assesment/data.json"
+                }
+            },
+            {
+                "targets": [
+                    "all"
+                ],
+                "problem_profiles": [
+                    "UND_PROBLEM_3",
+                    "UND_PROBLEM_1",
+                    "VAL_PROBLEM_2"
+                ],
+                "types": [
+                    "enhancing_services"
+                ],
+                "related_interlinkers": [
+                    "Business Plan Template",
+                    "Business Model Canvas"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "domain": "",
+                "process": "",
+                "reference": "collaborative-problem-refinement",
+                "form": "document_template",
+                "format": "editable_source_document",
+                "softwareinterlinker": "googledrive",
+                "difficulty": "medium",
+                "licence": "public_domain",
+                "instructions_translations": {
+                    "en": "./interlinkers/knowledge/Collaborative-Problem-Refinement/instructions.md"
+                },
+                "tags_translations": {
+                    "en": [
+                        "problem",
+                        "refinements"
+                    ]
+                },
+                "name_translations": {
+                    "en": "Collaborative problem refinement"
+                },
+                "description_translations": {
+                    "en": "<p>This resource will support you to refine the problem to be addresses by the co-production team as an important step to creating an effective and efficient solution.</p>"
+                },
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "regulations_and_standards_translations": {
+                    "en": ""
+                },
+                "file_translations": {
+                    "en": "./interlinkers/knowledge/Collaborative-Problem-Refinement/resource.pptx"
                 }
             }
         ]
