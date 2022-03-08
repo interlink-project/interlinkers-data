@@ -34,5 +34,6 @@
     "developer_manual": "https://www.keycloak.org/docs/latest/server_development/index.html",
     "supports_internationalization": false,
     "is_responsive": false,
-    "reference" : "user-authentication-authorization"
+    "reference" : "user-authentication-authorization",
+    "logotype": "./interlinkers/software/keycloak/logo.png"
 }

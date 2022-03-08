@@ -33,5 +33,7 @@
     "developer_manual" : "https://apim.docs.wso2.com/en/latest/",
     "supports_internationalization": false,
     "is_responsive": true,
-    "reference":"api-manager"
+    "reference":"api-manager",
+    "logotype": "./interlinkers/software/os2-api-Manager/logo.jpeg"
+
 }

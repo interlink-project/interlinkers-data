@@ -33,6 +33,6 @@
     "developer_manual" : "https://grafana.com/docs/",
     "supports_internationalization": true,
     "is_responsive": true,
-    "logotype": "./interlinkers/software/grafana/logo.svg",
+    "logotype": "./interlinkers/software/grafana/logo.png",
     "reference" : "dashboard"
 }
