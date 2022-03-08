@@ -2234,7 +2234,8 @@
                 "developer_manual": "https://apim.docs.wso2.com/en/latest/",
                 "supports_internationalization": false,
                 "is_responsive": true,
-                "reference": "api-manager"
+                "reference": "api-manager",
+                "logotype": "./interlinkers/software/os2-api-Manager/logo.jpeg"
             },
             {
                 "name_translations": {
@@ -2418,7 +2419,7 @@
                 "developer_manual": "https://grafana.com/docs/",
                 "supports_internationalization": true,
                 "is_responsive": true,
-                "logotype": "./interlinkers/software/grafana/logo.svg",
+                "logotype": "./interlinkers/software/grafana/logo.png",
                 "reference": "dashboard"
             },
             {
@@ -2470,7 +2471,8 @@
                 "developer_manual": "https://www.keycloak.org/docs/latest/server_development/index.html",
                 "supports_internationalization": false,
                 "is_responsive": false,
-                "reference": "user-authentication-authorization"
+                "reference": "user-authentication-authorization",
+                "logotype": "./interlinkers/software/keycloak/logo.png"
             },
             {
                 "name_translations": {
@@ -2620,7 +2622,7 @@
                         }
                     }
                 },
-                "logotype": "./interlinkers/software/survey/logo.png",
+                "logotype": "./interlinkers/software/survey/logo.jpeg",
                 "reference": "survey-creator",
                 "tags_translations": {
                     "en": [
