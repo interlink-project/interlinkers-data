@@ -1,4 +1,4 @@
-import { AppBar, Box, Grid } from '@material-ui/core';
+import { AppBar, Box, Grid, Divider } from '@material-ui/core';
 import { useState } from 'react';
 import PhaseTabs from "../PhaseTabs";
 import RepositoryTree from "./RepositoryTree";
@@ -17,7 +17,6 @@ const Repository = () => {
         <Grid item xl={4} lg={4} md={6} xs={12}>
           <RepositoryTree setSelectedTask={setSelectedTask} loading={false} />
         </Grid>
-
         <RightPart selectedTask={selectedTask} />
       </Grid>
 

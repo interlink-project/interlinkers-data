@@ -3,6 +3,7 @@ import { green } from '@material-ui/core/colors';
 import { Check, KeyboardArrowDown, KeyboardArrowUp } from '@material-ui/icons';
 import { styled } from '@material-ui/styles';
 import { AssetsTable } from 'components/dashboard/assets';
+import { TreeItemData } from 'components/dashboard/tree';
 import MobileDiscriminator from 'components/MobileDiscriminator';
 import MobileDrawer from 'components/MobileDrawer';
 import moment from 'moment';
@@ -64,18 +65,16 @@ const RightPart = ({ selectedTask }) => {
     const [assets, setAssets] = useState([])
     const [recommendedInterlinkers, setRecommendedInterlinkers] = useState([])
     const [loadingTaskInfo, setLoadingTaskInfo] = useState(false)
-    const [collapseOpen, setCollapseOpen] = useState(false)
+    const [recommendedInterlinkersOpen, setrecommendedInterlinkersOpen] = useState(false)
+    const [taskInfoOpen, setTaskInfoOpen] = useState(true)
     const [softwareInterlinkers, setSoftwareInterlinkers] = useState([])
 
     // new asset modal
     const [selectedInterlinker, setSelectedInterlinker] = useState(null)
     const [openNewAsset, setOpenNewAsset] = useState(false);
 
-    // status
-    const [status, setStatus] = useState(selectedTask ? selectedTask.status : "awaiting");
-
     const updateAssets = async () => {
-        const assets = await assetsApi.getMulti({task_id: selectedTask.id});
+        const assets = await assetsApi.getMulti({ task_id: selectedTask.id });
         setAssets(assets.items)
         console.log(selectedTask)
         const interlinkers = await interlinkersApi.getByProblemProfiles(null, null, selectedTask.problem_profiles);
@@ -111,13 +110,22 @@ const RightPart = ({ selectedTask }) => {
         selectedTask && <MobileDiscriminator defaultNode={
             <Grid item xl={8} lg={8} md={6} xs={12}>
                 <Box sx={{ p: 2 }}>
-                    <Button sx={{ mb: 2 }} fullWidth variant="outlined" onClick={() => setCollapseOpen(!collapseOpen)}>
+                    <Button sx={{ mb: 2 }} fullWidth variant="outlined" onClick={() => setTaskInfoOpen(!taskInfoOpen)}>
                         <Stack spacing={2}>
-                            <Typography variant="h6" >Recommended interlinkers</Typography>
-                            <Divider> {!collapseOpen ? <KeyboardArrowDown /> : <KeyboardArrowUp />}</Divider>
+                            <Typography variant="h6" >Information about the task</Typography>
+                            <Divider> {!taskInfoOpen ? <KeyboardArrowDown /> : <KeyboardArrowUp />}</Divider>
                         </Stack>
                     </Button>
-                    <Collapse in={collapseOpen} timeout="auto" unmountOnExit>
+                    <Collapse in={taskInfoOpen} timeout="auto" unmountOnExit>
+                        <TreeItemData type="task" element={selectedTask} />
+                    </Collapse>
+                    <Button sx={{ mb: 2 }} fullWidth variant="outlined" onClick={() => setrecommendedInterlinkersOpen(!recommendedInterlinkersOpen)}>
+                        <Stack spacing={2}>
+                            <Typography variant="h6" >Recommended interlinkers</Typography>
+                            <Divider> {!recommendedInterlinkersOpen ? <KeyboardArrowDown /> : <KeyboardArrowUp />}</Divider>
+                        </Stack>
+                    </Button>
+                    <Collapse in={recommendedInterlinkersOpen} timeout="auto" unmountOnExit>
 
                         {loadingTaskInfo ?
                             <CircularProgress /> : recommendedInterlinkers.length === 0 ? <Alert severity="warning">No recommended interlinkers found</Alert> : <Grid container spacing={3} justifyContent="flex-start">

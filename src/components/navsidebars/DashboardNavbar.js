@@ -50,8 +50,7 @@ const DashboardNavbar = (props) => {
             height='40px'
           />
         </RouterLink>}
-
-        <MenuItem component={RouterLink} to='/dashboard' selected>
+        <MenuItem sx={{ml: 2}} component={RouterLink} to='/dashboard' selected>
           <Typography textAlign="center" variant="button">Workspace</Typography>
         </MenuItem>
         <MenuItem component={RouterLink} to='/dashboard/interlinkers' >

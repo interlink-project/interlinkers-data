@@ -170,8 +170,8 @@ const themesOptions = {
     },
     palette: {
       background: {
-        default: '#171c24',
-        paper: '#222b36'
+        default: '#1c2531',
+        paper: '#293142'
       },
       divider: 'rgba(145, 158, 171, 0.24)',
       error: {
@@ -181,7 +181,7 @@ const themesOptions = {
       mode: 'dark',
       primary: {
         contrastText: '#ffffff',
-        main: '#688eff'
+        main: '#0f97c7'
       },
       success: {
         contrastText: '#ffffff',
@@ -198,46 +198,6 @@ const themesOptions = {
     },
     shadows: darkShadows
   },
-  [THEMES.NATURE.key]: {
-    components: {
-      MuiTableCell: {
-        styleOverrides: {
-          root: {
-            borderBottom: '1px solid rgba(145, 158, 171, 0.24)'
-          }
-        }
-      }
-    },
-    palette: {
-      background: {
-        default: '#1c2531',
-        paper: '#293142'
-      },
-      divider: 'rgba(145, 158, 171, 0.24)',
-      error: {
-        contrastText: '#ffffff',
-        main: '#f44336'
-      },
-      mode: 'dark',
-      primary: {
-        contrastText: '#ffffff',
-        main: '#01ab56'
-      },
-      success: {
-        contrastText: '#ffffff',
-        main: '#4caf50'
-      },
-      text: {
-        primary: '#ffffff',
-        secondary: '#919eab'
-      },
-      warning: {
-        contrastText: '#ffffff',
-        main: '#ff9800'
-      }
-    },
-    shadows: darkShadows
-  }
 };
 
 export const createCustomTheme = (config = {}) => {

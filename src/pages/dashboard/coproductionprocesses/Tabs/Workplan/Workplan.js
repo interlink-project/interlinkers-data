@@ -136,7 +136,7 @@ const Workplan = () => {
           id: task.id,
           name: task.name,
           dependencies: task.objective_id,
-          start: task.start_date || objective.start_date,
+          start: task.start_date || objective.start_date || phase.start_date,
           end: task.end_date,
           custom_class: 'gantt-task',
           read_only: true
@@ -212,7 +212,7 @@ const Workplan = () => {
 
   return (
     <Grid container style={{ overflow: "hidden" }}>
-      {clickedElement && <TreeItemDialog element={clickedElement} onClose={() => setClickedElement(null)} />}
+      {clickedElement && <TreeItemDialog type={clickedElement.type} element={clickedElement} onClose={() => setClickedElement(null)} />}
       <Grid item xs={12}>
         <PhaseTabs />
         <ToggleButtonGroup

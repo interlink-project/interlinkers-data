@@ -110,13 +110,13 @@ const RepositoryTree = ({ setSelectedTask, loading }) => {
       defaultExpandIcon={<PlusSquare />}
       defaultEndIcon={<CloseSquare />}
       selected={selectedItem}
-      sx={{ flexGrow: 1, overflowY: 'auto', width: "100%" }}
+      sx={{ flexGrow: 1, overflowY: 'auto', width: "100%", bgcolor: "primary.main" }}
       onNodeSelect={(event, nodeIds, moreinfo) => {
         onSelectedItemChange(nodeIds);
       }}
     >
       {objectives.map(objective =>
-        <StyledTreeItem key={objective.id} nodeId={objective.id} sx={{ backgroundColor: "background.paper" }} label={<p>{objective.name}</p>} >
+        <StyledTreeItem icon={statusIcon(objective.status)} key={objective.id} nodeId={objective.id} sx={{ backgroundColor: "background.paper" }} label={<p>{objective.name}</p>} >
           {allTasks.filter(el => el.objective_id === objective.id).sort((a, b) => b.progress - a.progress).map(task => (
             <StyledTreeItem icon={statusIcon(task.status)} key={task.id} nodeId={task.id} label={
               <p style={{alignItems: "center"}}>

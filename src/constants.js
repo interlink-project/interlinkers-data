@@ -9,8 +9,4 @@ export const THEMES = {
     label:  () => i18n.t('DARK'),
     key: "DARK"
   },
-  NATURE: {
-    label:  () => i18n.t('NATURE'),
-    key: "NATURE"
-  },
 };

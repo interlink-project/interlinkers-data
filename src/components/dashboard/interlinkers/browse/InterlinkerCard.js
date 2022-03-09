@@ -3,7 +3,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { formatDistanceToNowStrict } from 'date-fns';
 import { truncate } from 'lodash';
-import { SafeHTMLElement } from 'utils/safeHTML';
+import { HTMLtoText } from 'utils/safeHTML';
 
 import {
   Avatar,
@@ -155,10 +155,10 @@ const InterlinkerCard = ({ interlinker, mode, onInterlinkerClick }) => {
         color='textSecondary'
         variant='body2'
       >
-        {<SafeHTMLElement data={truncate(interlinker.description, {
+        {HTMLtoText(truncate(interlinker.description, {
           length: 200,
           separator: ' ',
-        })} />}
+        }))}
       </Typography>
     </Box>
 
