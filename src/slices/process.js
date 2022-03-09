@@ -21,7 +21,8 @@ const initialState = {
 
 const valid_obj_types = ["task", "objective", "phase"]
 
-const updateDatesForObject = (obj, state, objType, childType) => {
+const updateDatesForObject = (state, id, objType, childType) => {
+  const obj = state[`${objType}s`].find(el => el.id === id)
   if (obj && valid_obj_types.includes(objType) && valid_obj_types.includes(childType)) {
     let start_date = null
     let end_date = null
@@ -50,32 +51,24 @@ const updateDatesForObject = (obj, state, objType, childType) => {
   throw Error("Invalid object or objTypes");
 }
 
-const updateProgressForObject = (obj, state, objType, childType) => {
+const updateProgressForObject = (state, id, objType, childType) => {
+  const obj = state[`${objType}s`].find(el => el.id === id)
   if (obj && valid_obj_types.includes(objType) && valid_obj_types.includes(childType)) {
-    let progress = 0
-    let count = 0
-
-    state[`${childType}s`].filter(el => el[`${objType}_id`] === obj.id).forEach(child => {
-      progress += child.progress
-      count += 1
-    })
-
-    const tot = Math.round(progress / count)
-    obj.progress = tot
-    return tot
+    let statuses = state[`${childType}s`].filter(el => el[`${objType}_id`] === obj.id).map(child => child.status)
+    let status;
+    if (statuses.every(child => child.status === "awaiting")){
+      status = "awaiting"
+    }
+    else if(statuses.every(child => child.status === "finished")){
+      status = "finished"
+    }
+    else {
+      status = "in_progress"
+    }
+    return status
   }
   console.error(obj, objType, childType)
   throw Error("Invalid object or objTypes");
-}
-
-
-function fnUpdateDatesOfPhase(state, id) {
-  const phase = state.phases.find(el => el.id === id)
-  updateDatesForObject(phase, state, "phase", "objective")
-}
-function fnUpdateProgressOfPhase(state, id) {
-  const phase = state.phases.find(el => el.id === id)
-  updateProgressForObject(phase, state, "phase", "objective")
 }
 
 const slice = createSlice({
@@ -111,31 +104,20 @@ const slice = createSlice({
     },
     setProcess(state, action) {
       state.process = action.payload;
-      state.network = generateGraph(state.process);
-    },
-    setPhases(state, action) {
-      state.phases = action.payload.data;
-    },
-    setObjectives(state, action) {
-      state.objectives = action.payload.data;
-    },
-    setTasks(state, action) {
-      state.tasks = action.payload.data;
-    },
-    updateDatesOfPhase(state, action) {
-      fnUpdateDatesOfPhase(state, action.payload)
-    },
-    updateProgressOfPhase(state, action) {
-      fnUpdateProgressOfPhase(state, action.payload)
+      // state.network = generateGraph(state.process);
     },
     updatePhase(state, action) {
       state.phases = state.phases.map(obj => obj.id === action.payload.id ? action.payload : obj);
     },
     updateObjective(state, action) {
       state.objectives = state.objectives.map(obj => obj.id === action.payload.id ? action.payload : obj);
+      // updateDatesForObject(state, action.payload.phase_id, "phase", "objective")
+      // updateProgressForObject(state, action.payload.phase_id, "phase", "objective")
     },
     updateTask(state, action) {
       state.tasks = state.tasks.map(obj => obj.id === action.payload.id ? action.payload : obj);
+      // updateDatesForObject(state, action.payload.objective_id, "objective", "task")
+      // updateProgressForObject(state, action.payload.objective_id, "objective", "task")
     },
     setLoading(state, action) {
       state.loading = action.payload;
@@ -178,10 +160,15 @@ export const updateProcess = ({ id, data, onSuccess }) => async (dispatch) => {
 };
 
 export const updateTask = ({ id, data }) => async (dispatch) => {
-  console.log("UPDATING", id, "WITH", data)
   dispatch(slice.actions.setUpdating(true));
   const updatedData = await tasksApi.update(id, data)
   dispatch(slice.actions.updateTask(updatedData));
+  // update parent objective
+  const updatedObjectiveData = await objectivesApi.get(updatedData.objective_id)
+  dispatch(slice.actions.updateObjective(updatedObjectiveData));
+  // update parent phase
+  const updatedPhaseData = await phasesApi.get(updatedObjectiveData.phase_id)
+  dispatch(slice.actions.updatePhase(updatedPhaseData));
   dispatch(slice.actions.setUpdating(false));
 };
 
@@ -189,10 +176,12 @@ export const updateObjective = ({ id, data }) => async (dispatch) => {
   dispatch(slice.actions.setUpdating(true));
   const updatedData = await objectivesApi.update(id, data)
   dispatch(slice.actions.updateObjective(updatedData));
-  dispatch(slice.actions.updateDatesOfPhase(updatedData.phase_id));
-  dispatch(slice.actions.updateProgressOfPhase(updatedData.phase_id));
+  // update parent phase
+  // const updatedPhaseData = await phasesApi.get(updatedData.phase_id)
+  // dispatch(slice.actions.updatePhase(updatedPhaseData));
   dispatch(slice.actions.setUpdating(false));
 };
+
 
 export const updatePhase = ({ id, data }) => async (dispatch) => {
   dispatch(slice.actions.setUpdating(true));

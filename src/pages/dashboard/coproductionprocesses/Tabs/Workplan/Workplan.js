@@ -8,14 +8,15 @@ import { useSelector } from 'react-redux';
 import { cleanUnderScores } from "utils/cleanUnderscores";
 import colorScale from "utils/colorScale";
 import PhaseTabs from "../PhaseTabs";
+import Gantt from "./FrappeGantt"
+import "./FrappeGantt.css"
 
 const view_modes = ["Day", "Week", "Month", "Year"]
 
 
 const setNewGantt = (id, props, tasks, darkMode, onClick) => {
   document.getElementById("gantt").innerHTML = "";
-  console.log("SETTING NEW")
-  new window.Gantt(id, tasks, props);
+  new Gantt(id, tasks, props);
 
   if (darkMode) {
     $(".gantt .grid-header").css("fill", "#293142")
@@ -31,16 +32,6 @@ const setNewGantt = (id, props, tasks, darkMode, onClick) => {
     $(this).on("click", function () {
       onClick(id, "phase")
     });
-    let text = $(this).children().first().children(".bar-label").first()
-
-    text.css("font-weight", "800")
-    text.css("font-size", "20px")
-    if (darkMode) {
-      text.css("fill", "white")
-    } else {
-      text.css("fill", "#282b28")
-    }
-
   })
 
   $(".gantt-objective").each(function (index1) {
@@ -48,20 +39,6 @@ const setNewGantt = (id, props, tasks, darkMode, onClick) => {
     $(this).on("click", function () {
       onClick(id, "objective")
     });
-
-    const progressBar = $(this).children().first().children(".bar-progress").first()
-    progressBar.css("fill", "green")
-    let text = $(this).children().first().children(".bar-label").first()
-
-    text.css("font-weight", "800")
-    text.css("font-size", "15px")
-
-    if (darkMode) {
-      text.css("fill", "white")
-    } else {
-      text.css("fill", "#282b28")
-    }
-
   })
 
   $(".gantt-task").each(function (index1) {
@@ -69,15 +46,6 @@ const setNewGantt = (id, props, tasks, darkMode, onClick) => {
     $(this).on("click", function () {
       onClick(id, "task")
     });
-
-    let text = $(this).children().first().children(".bar-label").first()
-    text.css("font-weight", "600")
-
-    if (darkMode) {
-      text.css("fill", "white")
-    } else {
-      text.css("fill", "black")
-    }
   })
 
 }
@@ -86,7 +54,6 @@ const Workplan = () => {
   const { settings } = useSettings();
 
   const [viewMode, setViewMode] = useState("Week")
-  const [loaded, setLoaded] = useState(false)
   const { phases, objectives, tasks, updating, selectedPhaseTab } = useSelector((state) => state.process);
   const mounted = useMounted();
 
@@ -106,6 +73,24 @@ const Workplan = () => {
     return {...obj, type}
   }
 
+  const getClasses = (element) => {
+    let classes = ""
+    if(element.status === "in_progress"){
+      classes += " in_progress"
+    }
+    if(element.status === "finished"){
+      classes += " finished"
+    }
+    if(element.status === "awaiting"){
+      classes += " awaiting"
+    }
+    if(element.start_date){
+      classes += " timed"
+    }
+    
+    return classes
+  }
+
   const getTasks = () => {
     const final = []
 
@@ -116,7 +101,7 @@ const Workplan = () => {
       start: phase.start_date,
       end: phase.end_date,
       progress: phase.progress,
-      custom_class: 'gantt-phase',
+      custom_class: 'gantt-phase' + getClasses(phase),
       read_only: true
     })
     objectives.filter(el => el.phase_id === phase.id).forEach(objective => {
@@ -128,7 +113,7 @@ const Workplan = () => {
         start: objective.start_date || phase.start_date,
         end: objective.end_date,
         progress: objective.progress,
-        custom_class: 'gantt-objective',
+        custom_class: 'gantt-objective' + getClasses(objective),
         read_only: true
       })
       tasks.filter(el => el.objective_id === objective.id).forEach(task => {
@@ -138,7 +123,7 @@ const Workplan = () => {
           dependencies: task.objective_id,
           start: task.start_date || objective.start_date || phase.start_date,
           end: task.end_date,
-          custom_class: 'gantt-task',
+          custom_class: 'gantt-task' + getClasses(task),
           read_only: true
         })
       })
@@ -147,34 +132,13 @@ const Workplan = () => {
     // .sort((a, b) => a.start_date < b.start_date)
   }
 
-  useEffect(() => {
-    const head = document.head || document.getElementsByTagName('head')[0]
-
-    const script = document.createElement("script");
-    script.src = "https://cdnjs.cloudflare.com/ajax/libs/frappe-gantt/0.5.0/frappe-gantt.min.js";
-    script.async = true;
-    head.appendChild(script);
-
-    const style = document.createElement("link");
-    style.type = "text/css";
-    style.rel = "stylesheet";
-    style.href = "https://cdnjs.cloudflare.com/ajax/libs/frappe-gantt/0.5.0/frappe-gantt.css";
-    head.appendChild(style);
-
-    script.onload = () => setLoaded(true);
-
-    return () => {
-      setLoaded(false);
-    };
-  }, []);
-
   function stopEvent(event) {
     event.preventDefault();
     event.stopPropagation();
   }
 
   useEffect(() => {
-    if (updating || !loaded) {
+    if (updating) {
       return
     }
     const id = "#gantt"
@@ -208,7 +172,7 @@ const Workplan = () => {
       setClickedElement(getElement(id, type));
     })
 
-  }, [loaded, viewMode, selectedPhaseTab, updating, setNewGantt]);
+  }, [viewMode, selectedPhaseTab, updating, setNewGantt]);
 
   return (
     <Grid container style={{ overflow: "hidden" }}>
@@ -228,7 +192,7 @@ const Workplan = () => {
         </ToggleButtonGroup>
       </Grid>
       <Grid item xs={12}>
-        {updating || !loaded && <Skeleton variant="rectangular" width={"100%"} height={"70vh"} />}
+        {updating && <Skeleton variant="rectangular" width={"100%"} height={"70vh"} />}
         <div id="gantt" />
       </Grid>
     </Grid>

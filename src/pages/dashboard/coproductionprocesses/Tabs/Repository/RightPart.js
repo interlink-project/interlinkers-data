@@ -1,4 +1,4 @@
-import { Alert, alpha, Avatar, Box, Button, Card, CardActionArea, CardHeader, CardMedia, CircularProgress, Collapse, Divider, Grid, InputBase, Menu, MenuItem, Stack, Typography } from '@material-ui/core';
+import { Alert, alpha, Avatar, Paper, Box, Button, Card, CardActionArea, CardActions, CardHeader, CardMedia, CircularProgress, Collapse, Divider, Grid, InputBase, Menu, MenuItem, Stack, Typography } from '@material-ui/core';
 import { green } from '@material-ui/core/colors';
 import { Check, KeyboardArrowDown, KeyboardArrowUp } from '@material-ui/icons';
 import { styled } from '@material-ui/styles';
@@ -9,7 +9,7 @@ import MobileDrawer from 'components/MobileDrawer';
 import moment from 'moment';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { SafeHTMLElement } from 'utils/safeHTML';
+import { HTMLtoText } from 'utils/safeHTML';
 import { assetsApi, interlinkersApi, softwareInterlinkersApi, tasksApi } from '__fakeApi__';
 import NewAssetModal from './NewAssetModal';
 
@@ -58,6 +58,54 @@ const sameHeightCards = {
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between"
+}
+
+const RecommendedInterlinkerCard = ({ interlinker, assets, onClick }) => {
+    const [isShown, setIsShown] = useState(false);
+
+    return <>
+        <CardActionArea style={sameHeightCards} onClick={onClick}>
+            <Card onMouseEnter={() => setIsShown(true)} onMouseLeave={() => setIsShown(false)} sx={{ height: "100%" }}>
+
+
+                <CardHeader
+                    avatar={assets.find(el => el.knowledgeinterlinker_id === interlinker.id || el.softwareinterlinker_id === interlinker.id) && <Avatar src={interlinker.logotype_link} />}
+                    sx={{ px: 2, pt: 2, pb: 0 }}
+                    title={interlinker.name}
+                    subheader={interlinker.nature} />
+
+                <Typography sx={{ p: 2 }} variant="body2" color="text.secondary">
+                    {HTMLtoText(interlinker.description)}
+                </Typography>
+
+
+                <CardActions sx={{
+                    position: "absolute",
+                    bottom: 0
+                }}>
+                    {assets.find(el => el.knowledgeinterlinker_id === interlinker.id || el.softwareinterlinker_id === interlinker.id) && <Check style={{ color: green[500] }} />}
+                </CardActions>
+            </Card>
+        </CardActionArea>
+        {isShown && interlinker.snapshots_links && interlinker.snapshots_links[0] && (
+            <Card style={{
+                position: "fixed",
+                bottom: 30,
+                left: 30,
+                zIndex: 99999,
+                width: "40%",
+                height: "auto"
+            }} 
+            onMouseEnter={() => setIsShown(true)} onMouseLeave={() => setIsShown(false)} sx={{ height: "100%" }}
+            >
+                <img style={{
+                width: "100%",
+                height: "auto"
+                }} src={interlinker.snapshots_links[0]} />
+            </Card>
+
+        )}
+    </>
 }
 const RightPart = ({ selectedTask }) => {
     const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
@@ -131,33 +179,11 @@ const RightPart = ({ selectedTask }) => {
                             <CircularProgress /> : recommendedInterlinkers.length === 0 ? <Alert severity="warning">No recommended interlinkers found</Alert> : <Grid container spacing={3} justifyContent="flex-start">
 
                                 {recommendedInterlinkers.map(interlinker => (
-                                    <Grid item xs={12} md={6} lg={4} xl={3} key={interlinker.id}                       >
-                                        <Card style={sameHeightCards}>
-                                            <CardActionArea onClick={() => {
-                                                setSelectedInterlinker(interlinker);
-                                                setOpenNewAsset(true)
-                                            }}>
-
-                                                <CardHeader
-                                                    avatar={assets.find(el => el.knowledgeinterlinker_id === interlinker.id || el.softwareinterlinker_id === interlinker.id) && <Check style={{ color: green[500] }} />}
-                                                    sx={{ px: 2, pt: 2, pb: 0 }}
-                                                    title={interlinker.name}
-                                                    subheader={moment(interlinker.created_at).format("LL")} />
-
-                                                <Typography sx={{ px: 2 }} variant="body2" color="text.secondary">
-                                                    <SafeHTMLElement data={interlinker.description} />
-                                                </Typography>
-                                                <CardMedia
-                                                    sx={{
-                                                        bottom: 0,
-                                                        maxHeight: "200px"
-                                                    }}
-                                                    component="img"
-                                                    image={interlinker.snapshots_links && interlinker.snapshots_links[0]}
-                                                />
-                                            </CardActionArea>
-                                        </Card>
-
+                                    <Grid item xs={12} md={6} lg={4} xl={3} key={interlinker.id}>
+                                        <RecommendedInterlinkerCard assets={assets} onClick={() => {
+                                            setSelectedInterlinker(interlinker);
+                                            setOpenNewAsset(true)
+                                        }} interlinker={interlinker} />
                                     </Grid>
                                 ))}
                             </Grid>}
