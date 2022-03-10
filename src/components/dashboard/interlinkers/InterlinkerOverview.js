@@ -8,14 +8,11 @@ import {
 } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import { SafeHTMLElement } from 'utils/safeHTML';
+import { OfficialityChip, NatureChip } from '../assets/Icons';
 
 const InterlinkerOverview = (props) => {
   const { interlinker, ...other } = props;
   const { description, tags, name, problemprofiles } = interlinker;
-
-
-  const isSoftware = interlinker.nature === "softwareinterlinker"
-  const isOfficial = !interlinker.creator_id
 
   return (
     <Card sx={{ height: "100%" }}>
@@ -49,7 +46,7 @@ const InterlinkerOverview = (props) => {
               Nature
             </Typography>
             <br></br>
-            <Chip label={isSoftware ? "Software" : "Knowledge"} color={isSoftware ? "primary" : "secondary"} size="small" />
+            <OfficialityChip />
           </Grid>
           <Grid item xs={12} md={3} lg={3} xl={3} 
           >
@@ -60,7 +57,7 @@ const InterlinkerOverview = (props) => {
               Creator
             </Typography>
             <br></br>
-            <Chip label={isOfficial ? "Official" : "Community"} color={isOfficial ? "success" : "warning"} size="small" />
+            <NatureChip nature={interlinker.nature} />
           </Grid>
           <Grid item xs={12} md={6} lg={6} xl={6} 
           >

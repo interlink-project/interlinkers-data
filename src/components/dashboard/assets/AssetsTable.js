@@ -90,10 +90,6 @@ const AssetRow = ({ asset, onChange, actions }) => {
 }
 
 const Assets = ({ assets, onChange = () => {}, actions }) => {
-
-  useEffect(() => {
-    console.log("REFRESH PRINC")
-  }, [])
   return <>
     {assets.length > 0 ? <Table sx={{ minWidth: 650 }} aria-label="assets table" size="small">
       <TableHead>

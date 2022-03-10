@@ -10,9 +10,10 @@ import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { updateObjective, updatePhase, updateTask } from 'slices/process';
+import { HTMLtoText } from 'utils/safeHTML';
 import { statusText, statusIcon } from '../assets/Icons';
 
-const TreeItemData = ({ element, type, onSave = null }) => {
+const TreeItemData = ({ element, type, onSave = null, showType = true}) => {
   const [dateRange, setDateRange] = useState([element.start_date ? new Date(element.start_date) : null, element.end_date ? new Date(element.end_date) : null]);
   const [status, setStatus] = useState(element.status);
   const [name, setName] = useState(element.name);
@@ -26,16 +27,15 @@ const TreeItemData = ({ element, type, onSave = null }) => {
     setDateRange([element.start_date ? new Date(element.start_date) : null, element.end_date ? new Date(element.end_date) : null])
   }
 
-  useEffect(() => {
-    restart()
-  }, [element])
-
   const setEditMode = (bool) => {
-    if (!bool) {
-      restart()
-    }
+    restart()
     _setEditMode(bool)
   }
+
+  useEffect(() => {
+    setEditMode(false)
+  }, [element])
+
   const dispatch = useDispatch();
 
   const saveData = () => {
@@ -76,14 +76,14 @@ const TreeItemData = ({ element, type, onSave = null }) => {
   }
 
   return <>
-    {type && <><Typography variant="h6" sx={{ mt: 2 }}>
+    {type && showType && <><Typography variant="h6">
       Type
     </Typography>
       {type === "task" && "Task"}
       {type === "objective" && "Objective"}
       {type === "phase" && "Phase"}</>}
 
-    <Typography variant="h6" sx={{ mt: 2 }}>
+    <Typography variant="h6" sx={showType ? { mt: 2 } : {}}>
       Name
     </Typography>
     {editMode ? <TextField onChange={(event) => {
@@ -94,7 +94,9 @@ const TreeItemData = ({ element, type, onSave = null }) => {
     </Typography>
     {editMode ? <TextField onChange={(event) => {
       setDescription(event.target.value);
-    }} multiline fullWidth variant="standard" value={description} /> : description}
+    }} multiline fullWidth variant="standard" value={description} /> :<p style={{
+      whiteSpace: 'pre-wrap'
+      }}>{description}</p>}
     <Typography variant="h6" sx={{ mt: 2 }}>Current status of the task:</Typography>
     {editMode ? <>
       {type === "task" ? <ToggleButtonGroup
@@ -127,7 +129,7 @@ const TreeItemData = ({ element, type, onSave = null }) => {
           onChange={(newValue) => {
             setDateRange(newValue);
           }}
-          
+
           renderInput={(startProps, endProps) => (
             <Stack spacing={3} direction="row" sx={{ width: "100%", alignItems: "center", justifyContent: "center" }} >
               <TextField {...startProps} />

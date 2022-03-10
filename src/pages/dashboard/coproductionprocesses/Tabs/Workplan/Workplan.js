@@ -192,8 +192,7 @@ const Workplan = () => {
         </ToggleButtonGroup>
       </Grid>
       <Grid item xs={12}>
-        {updating && <Skeleton variant="rectangular" width={"100%"} height={"70vh"} />}
-        <div id="gantt" />
+        {updating ? <Skeleton variant="rectangular" width={"100%"} height={"70vh"} /> : <div id="gantt" />}
       </Grid>
     </Grid>
   );

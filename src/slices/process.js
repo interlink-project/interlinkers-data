@@ -8,15 +8,13 @@ const initialState = {
   loading: false,
   updating: false,
   process: null,
-  assets: [],
   tasks: [],
   objectives: [],
   phases: [],
-  network: null,
   selectedPhaseTab: "",
-  selectedTask: {
-    assets: []
-  },
+  selectedTask: null,
+  network: null,
+  
 };
 
 const valid_obj_types = ["task", "objective", "phase"]
@@ -102,9 +100,15 @@ const slice = createSlice({
       }
 
     },
+    setSelectedTask(state, action) {
+      state.selectedTask = action.payload;
+    },
     setProcess(state, action) {
       state.process = action.payload;
       // state.network = generateGraph(state.process);
+      // TODO: set tab depending on progress
+      console.log("SETTING SELECTED TASK NULL")
+      state.selectedTask = null
     },
     updatePhase(state, action) {
       state.phases = state.phases.map(obj => obj.id === action.payload.id ? action.payload : obj);
@@ -118,6 +122,9 @@ const slice = createSlice({
       state.tasks = state.tasks.map(obj => obj.id === action.payload.id ? action.payload : obj);
       // updateDatesForObject(state, action.payload.objective_id, "objective", "task")
       // updateProgressForObject(state, action.payload.objective_id, "objective", "task")
+      if (state.selectedTask.id === action.payload.id){
+        state.selectedTask = action.payload
+      }
     },
     setLoading(state, action) {
       state.loading = action.payload;
@@ -127,11 +134,17 @@ const slice = createSlice({
     },
     setSelectedPhase(state, action) {
       state.selectedPhaseTab = action.payload;
+      state.selectedTask = null
     },
   }
 });
 
 export const { reducer } = slice;
+
+export const setSelectedTask = (data) => async (dispatch) => {
+  dispatch(slice.actions.setSelectedTask(data));
+};
+
 
 export const setProcess = (data) => async (dispatch) => {
   const treeData = await coproductionProcessesApi.getTree(data.id)
@@ -181,7 +194,6 @@ export const updateObjective = ({ id, data }) => async (dispatch) => {
   // dispatch(slice.actions.updatePhase(updatedPhaseData));
   dispatch(slice.actions.setUpdating(false));
 };
-
 
 export const updatePhase = ({ id, data }) => async (dispatch) => {
   dispatch(slice.actions.setUpdating(true));

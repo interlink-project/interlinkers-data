@@ -26,13 +26,13 @@ import red from '@material-ui/core/colors/red';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import SwipeableTextMobileStepper from './Carousel';
+import { NatureChip, OfficialityChip } from 'components/dashboard/assets/Icons';
 
 const InterlinkerCard = ({ interlinker, mode, onInterlinkerClick }) => {
   const [isLiked, setIsLiked] = useState(interlinker.isLiked);
   const [likes, setLikes] = useState(interlinker.likes || 0);
   const [hovered, setHovered] = useState(false);
-  const isOfficial = true
-  const isSoftware = interlinker.nature === "softwareinterlinker"
+  
   const sameHeightCards = {
     minHeight: "200px",
     height: "100%",
@@ -187,7 +187,7 @@ const InterlinkerCard = ({ interlinker, mode, onInterlinkerClick }) => {
             color='textPrimary'
             variant='subtitle2'
           >
-            <Chip label={isOfficial ? "Official" : "Community"} color={isOfficial ? "success" : "warning"} size="small" />
+            <OfficialityChip />
           </Typography>
         </Grid>
         <Grid item>
@@ -202,8 +202,7 @@ const InterlinkerCard = ({ interlinker, mode, onInterlinkerClick }) => {
             color='textPrimary'
             variant='subtitle2'
           >
-            <Chip label={isSoftware ? "Software" : "Knowledge"} color={isSoftware ? "primary" : "secondary"} size="small" />
-
+            <NatureChip nature={interlinker.nature} />
           </Typography>
         </Grid>
         <Grid item>

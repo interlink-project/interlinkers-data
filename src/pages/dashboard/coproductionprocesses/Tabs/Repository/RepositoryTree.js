@@ -1,24 +1,76 @@
-import { useEffect, useState } from 'react';
 import {
-  SvgIcon,
-  LinearProgress,
-  alpha,
-  Chip,
-  Menu,
-  IconButton
+  alpha, SvgIcon, Typography
 } from '@material-ui/core';
 import {
-  AcUnit
-} from '@material-ui/icons';
-import {
-  TreeItem,
-  TreeView,
-  treeItemClasses,
+  TreeItem, treeItemClasses, TreeView, useTreeItem
 } from '@material-ui/lab';
 import { styled } from '@material-ui/styles';
-import { useDispatch, useSelector } from 'react-redux';
-import { InProgressIcon, FinishedIcon } from 'components/dashboard/assets';
 import { statusIcon } from 'components/dashboard/assets/Icons';
+import { useEffect, useState, forwardRef } from 'react';
+import { useSelector } from 'react-redux';
+import clsx from 'clsx';
+
+const CustomContent = forwardRef(function CustomContent(props, ref) {
+  const {
+    classes,
+    className,
+    label,
+    nodeId,
+    icon: iconProp,
+    expansionIcon,
+    displayIcon,
+  } = props;
+
+  const {
+    disabled,
+    expanded,
+    selected,
+    focused,
+    handleExpansion,
+    handleSelection,
+    preventSelection,
+  } = useTreeItem(nodeId);
+
+  const icon = iconProp || expansionIcon || displayIcon;
+
+  const handleMouseDown = (event) => {
+    preventSelection(event);
+  };
+
+  const handleExpansionClick = (event) => {
+    handleExpansion(event);
+  };
+
+  const handleSelectionClick = (event) => {
+    handleSelection(event);
+  };
+
+  return (
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+    <div
+      className={clsx(className, classes.root, {
+        [classes.expanded]: expanded,
+        [classes.selected]: selected,
+        [classes.focused]: focused,
+        [classes.disabled]: disabled,
+      })}
+      onMouseDown={handleMouseDown}
+      ref={ref}
+    >
+      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
+      <div onClick={handleExpansionClick} className={classes.iconContainer}>
+        {icon}
+      </div>
+      <Typography
+        onClick={handleSelectionClick}
+        component="div"
+        className={classes.label}
+      >
+        {label}
+      </Typography>
+    </div>
+  );
+});
 
 function MinusSquare(props) {
   return (
@@ -54,7 +106,7 @@ function CloseSquare(props) {
 
 
 const StyledTreeItem = styled((props) => (
-  <TreeItem {...props} />
+  <TreeItem ContentComponent={CustomContent} {...props} />
 ))(({ theme }) => ({
   [`& .${treeItemClasses.iconContainer}`]: {
     '& .close': {
@@ -69,57 +121,46 @@ const StyledTreeItem = styled((props) => (
 }));
 
 const RepositoryTree = ({ setSelectedTask, loading }) => {
-  const [selectedItem, setSelectedItem] = useState([]);
+  const { selectedTask } = useSelector((state) => state.process);
+
+  const [selectedItem, setSelectedItem] = useState(selectedTask && selectedTask.id);
   const { phases, objectives: allObjectives, tasks: allTasks, selectedPhaseTab } = useSelector((state) => state.process);
   const currentPhase = phases.find(el => el.name === selectedPhaseTab)
 
   const objectives = allObjectives.filter(el => el.phase_id === currentPhase.id)
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    // TODO: Get current phase form coproduction process and go to corresponding tab
-  }, [])
-
-  const onSelectedItemChange = (nodeIds) => {
+  const onSelectedItemChange = (event, nodeIds) => {
+    event.stopPropagation();
+    event.preventDefault()
     setSelectedItem(nodeIds)
+    console.log(nodeIds)
 
     const taskselected = allTasks.find(el => el.id === nodeIds)
+    // if the selection is a task
     if (taskselected) {
       setSelectedTask(taskselected)
     }
   }
 
-  const Icon = (status) => {
-    if (status === "finished") {
-      return <FinishedIcon />
-    }
-    else if (status === "in_progress") {
-      return <InProgressIcon />
-    }
-
-    return null
-  }
-
-
   return (
     <TreeView
       disableSelection={loading}
       aria-label="customized"
-      defaultExpanded={objectives.map(objective => objective.id) || []}
+      defaultExpanded={allObjectives.concat(allTasks).map(objective => objective.id) || []}
       defaultCollapseIcon={<MinusSquare />}
       defaultExpandIcon={<PlusSquare />}
       defaultEndIcon={<CloseSquare />}
       selected={selectedItem}
       sx={{ flexGrow: 1, overflowY: 'auto', width: "100%", bgcolor: "primary.main" }}
       onNodeSelect={(event, nodeIds, moreinfo) => {
-        onSelectedItemChange(nodeIds);
+        onSelectedItemChange(event, nodeIds);
       }}
     >
       {objectives.map(objective =>
         <StyledTreeItem icon={statusIcon(objective.status)} key={objective.id} nodeId={objective.id} sx={{ backgroundColor: "background.paper" }} label={<p>{objective.name}</p>} >
           {allTasks.filter(el => el.objective_id === objective.id).sort((a, b) => b.progress - a.progress).map(task => (
             <StyledTreeItem icon={statusIcon(task.status)} key={task.id} nodeId={task.id} label={
-              <p style={{alignItems: "center"}}>
+              <p style={{ alignItems: "center" }}>
                 {task.name}
               </p>} />
           ))}

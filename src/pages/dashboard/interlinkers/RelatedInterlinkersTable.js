@@ -1,11 +1,13 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { alpha, Box, Table, Toolbar, Switch, Typography, Paper, Checkbox, FormControlLabel, IconButton, Tooltip, TableSortLabel, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow, Rating } from '@material-ui/core';
+import { alpha, Box, Table, Toolbar, Avatar, Typography, Paper, Checkbox, FormControlLabel, IconButton, Tooltip, TableSortLabel, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow, Rating, Stack } from '@material-ui/core';
 import { visuallyHidden } from '@material-ui/utils';
 import { Delete, FilterList } from '@material-ui/icons';
 import { interlinkersApi } from "__fakeApi__"
 import useMounted from 'hooks/useMounted';
 import { SafeHTMLElement } from 'utils/safeHTML';
+import moment from "moment"
+import { NatureChip } from 'components/dashboard/assets/Icons';
 
 function descendingComparator(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
@@ -40,44 +42,32 @@ function stableSort(array, comparator) {
 const headCells = [
     {
         id: 'name',
-        numeric: false,
-        disablePadding: true,
         label: 'Name',
     },
     {
+        id: 'nature',
+        label: 'Nature',
+    },
+    {
         id: 'description',
-        numeric: false,
-        disablePadding: true,
         label: 'Description',
     },
     {
-        id: 'language',
-        numeric: false,
-        disablePadding: false,
-        label: 'Language',
+        id: 'languages',
+        label: 'Languages',
     },
     {
         id: 'created_at',
-        numeric: false,
-        disablePadding: false,
         label: 'Created at',
     },
     {
-        id: 'format',
-        numeric: false,
-        disablePadding: false,
-        label: 'Format',
-    },
-    {
         id: 'rating',
-        numeric: true,
-        disablePadding: false,
         label: 'Rating',
     },
 ];
 
 function RelatedInterlinkersTableHead(props) {
-    const { onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort } =
+    const { order, orderBy, onRequestSort } =
         props;
     const createSortHandler = (property) => (event) => {
         onRequestSort(event, property);
@@ -89,7 +79,6 @@ function RelatedInterlinkersTableHead(props) {
                 {headCells.map((headCell) => (
                     <TableCell
                         key={headCell.id}
-                        padding={headCell.disablePadding ? 'none' : 'normal'}
                         sortDirection={orderBy === headCell.id ? order : false}
                     >
                         <TableSortLabel
@@ -118,37 +107,6 @@ RelatedInterlinkersTableHead.propTypes = {
     order: PropTypes.oneOf(['asc', 'desc']).isRequired,
     orderBy: PropTypes.string.isRequired,
     rowCount: PropTypes.number.isRequired,
-};
-
-const RelatedInterlinkersTableToolbar = ({ numSelected }) => {
-    return (<Toolbar
-        sx={{
-            pl: { sm: 2 },
-            pr: { xs: 1, sm: 1 },
-            bgcolor: (theme) =>
-                alpha(theme.palette.primary.main, theme.palette.action.activatedOpacity),
-
-        }}
-    >
-        <Typography
-            sx={{ flex: '1 1 100%' }}
-            color="inherit"
-            variant="subtitle1"
-            component="div"
-        >
-            {numSelected} selected
-        </Typography>
-        <Tooltip title="Delete">
-            <IconButton>
-                <Delete />
-            </IconButton>
-        </Tooltip>
-    </Toolbar>
-    );
-};
-
-RelatedInterlinkersTableToolbar.propTypes = {
-    numSelected: PropTypes.number.isRequired,
 };
 
 export default function RelatedInterlinkersTable({ interlinker }) {
@@ -181,6 +139,7 @@ export default function RelatedInterlinkersTable({ interlinker }) {
     React.useEffect(() => {
         getRelatedInterlinkers()
     }, [])
+
     const handleRequestSort = (event, property) => {
         const isAsc = orderBy === property && order === 'asc';
         setOrder(isAsc ? 'desc' : 'asc');
@@ -194,26 +153,6 @@ export default function RelatedInterlinkersTable({ interlinker }) {
             return;
         }
         setSelected([]);
-    };
-
-    const handleClick = (event, name) => {
-        const selectedIndex = selected.indexOf(name);
-        let newSelected = [];
-
-        if (selectedIndex === -1) {
-            newSelected = newSelected.concat(selected, name);
-        } else if (selectedIndex === 0) {
-            newSelected = newSelected.concat(selected.slice(1));
-        } else if (selectedIndex === selected.length - 1) {
-            newSelected = newSelected.concat(selected.slice(0, -1));
-        } else if (selectedIndex > 0) {
-            newSelected = newSelected.concat(
-                selected.slice(0, selectedIndex),
-                selected.slice(selectedIndex + 1),
-            );
-        }
-
-        setSelected(newSelected);
     };
 
     const handleChangePage = (event, newPage) => {
@@ -234,7 +173,6 @@ export default function RelatedInterlinkersTable({ interlinker }) {
     return (
         <Box sx={{ width: '100%' }}>
             <Paper sx={{ width: '100%', mb: 2 }}>
-                {false && <RelatedInterlinkersTableToolbar numSelected={selected.length} />}
                 <TableContainer>
                     <Table
                         sx={{ minWidth: 750 }}
@@ -271,16 +209,22 @@ export default function RelatedInterlinkersTable({ interlinker }) {
                                                 component="th"
                                                 id={labelId}
                                                 scope="row"
-                                                padding="none"
                                             >
-                                                {row.name}
+                                                <Stack sx={{ alignItems: "center", textAlign: "center" }}>
+                                                    <Avatar src={row.logotype_link} sx={{ width: "30px", height: "30px" }} />
+                                                    <Typography variant="overline">
+                                                        {row.name}
+                                                    </Typography>
+                                                </Stack>
+
                                             </TableCell>
+                                            <TableCell><NatureChip nature={row.nature} /></TableCell>
                                             <TableCell>
                                                 <SafeHTMLElement data={row.description} />
                                             </TableCell>
                                             <TableCell>{row.language}</TableCell>
-                                            <TableCell>{row.created_at}</TableCell>
-                                            <TableCell>{row.format}</TableCell>
+                                            <TableCell>{moment(row.created_at).format("LL")}</TableCell>
+
                                             <TableCell>
                                                 <Rating readOnly value={row.rating} />
                                             </TableCell>

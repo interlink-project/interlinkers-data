@@ -1,4 +1,4 @@
-import { Alert, alpha, Avatar, Paper, Box, Button, Card, CardActionArea, CardActions, CardHeader, CardMedia, CircularProgress, Collapse, Divider, Grid, InputBase, Menu, MenuItem, Stack, Typography } from '@material-ui/core';
+import { Alert, alpha, Avatar, Box, Button, Card, CardActionArea, CardActions, CardHeader, CircularProgress, Collapse, Divider, Grid, InputBase, Menu, MenuItem, Stack, Typography } from '@material-ui/core';
 import { green } from '@material-ui/core/colors';
 import { Check, KeyboardArrowDown, KeyboardArrowUp } from '@material-ui/icons';
 import { styled } from '@material-ui/styles';
@@ -6,11 +6,10 @@ import { AssetsTable } from 'components/dashboard/assets';
 import { TreeItemData } from 'components/dashboard/tree';
 import MobileDiscriminator from 'components/MobileDiscriminator';
 import MobileDrawer from 'components/MobileDrawer';
-import moment from 'moment';
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { HTMLtoText } from 'utils/safeHTML';
-import { assetsApi, interlinkersApi, softwareInterlinkersApi, tasksApi } from '__fakeApi__';
+import { assetsApi, interlinkersApi, softwareInterlinkersApi } from '__fakeApi__';
 import NewAssetModal from './NewAssetModal';
 
 const Search = styled('div')(({ theme }) => ({
@@ -107,7 +106,9 @@ const RecommendedInterlinkerCard = ({ interlinker, assets, onClick }) => {
         )}
     </>
 }
-const RightPart = ({ selectedTask }) => {
+const RightPart = () => {
+    const { selectedTask } = useSelector((state) => state.process);
+
     const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
 
     const [assets, setAssets] = useState([])
@@ -131,6 +132,7 @@ const RightPart = ({ selectedTask }) => {
     }
 
     useEffect(() => {
+        console.log("CHANGED", selectedTask)
         if (selectedTask) {
             setLoadingTaskInfo(true)
             updateAssets()
@@ -142,8 +144,6 @@ const RightPart = ({ selectedTask }) => {
             setSoftwareInterlinkers(res)
         })
     }, [])
-
-    const dispatch = useDispatch();
 
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
@@ -165,7 +165,7 @@ const RightPart = ({ selectedTask }) => {
                         </Stack>
                     </Button>
                     <Collapse in={taskInfoOpen} timeout="auto" unmountOnExit>
-                        <TreeItemData type="task" element={selectedTask} />
+                        <TreeItemData type="task" element={selectedTask} showType={false} />
                     </Collapse>
                     <Button sx={{ mb: 2 }} fullWidth variant="outlined" onClick={() => setrecommendedInterlinkersOpen(!recommendedInterlinkersOpen)}>
                         <Stack spacing={2}>
