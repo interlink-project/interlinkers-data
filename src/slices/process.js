@@ -122,7 +122,7 @@ const slice = createSlice({
       state.tasks = state.tasks.map(obj => obj.id === action.payload.id ? action.payload : obj);
       // updateDatesForObject(state, action.payload.objective_id, "objective", "task")
       // updateProgressForObject(state, action.payload.objective_id, "objective", "task")
-      if (state.selectedTask.id === action.payload.id){
+      if (state.selectedTask && state.selectedTask.id === action.payload.id){
         state.selectedTask = action.payload
       }
     },
