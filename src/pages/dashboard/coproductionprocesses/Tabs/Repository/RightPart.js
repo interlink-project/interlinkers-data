@@ -1,8 +1,9 @@
-import { Alert, alpha, Avatar, Box, Button, Card, CardActionArea, CardActions, CardHeader, CircularProgress, Collapse, Divider, Grid, InputBase, Menu, MenuItem, Stack, Typography } from '@material-ui/core';
+import { Alert, alpha, Avatar, Box, Button, Card, CardActionArea, CardActions, CardHeader, CircularProgress, Collapse, Divider, Grid, InputBase, Menu, MenuItem, Stack, Typography, Paper } from '@material-ui/core';
 import { green } from '@material-ui/core/colors';
 import { Check, KeyboardArrowDown, KeyboardArrowUp } from '@material-ui/icons';
 import { styled } from '@material-ui/styles';
 import { AssetsTable } from 'components/dashboard/assets';
+import { NatureChip } from 'components/dashboard/assets/Icons';
 import { TreeItemData } from 'components/dashboard/tree';
 import MobileDiscriminator from 'components/MobileDiscriminator';
 import MobileDrawer from 'components/MobileDrawer';
@@ -68,10 +69,10 @@ const RecommendedInterlinkerCard = ({ interlinker, assets, onClick }) => {
 
 
                 <CardHeader
-                    avatar={assets.find(el => el.knowledgeinterlinker_id === interlinker.id || el.softwareinterlinker_id === interlinker.id) && <Avatar src={interlinker.logotype_link} />}
                     sx={{ px: 2, pt: 2, pb: 0 }}
+                    avatar={interlinker.logotype_link && <Avatar src={interlinker.logotype_link} />}
                     title={interlinker.name}
-                    subheader={interlinker.nature} />
+                    subheader={<NatureChip nature={interlinker.nature} />} />
 
                 <Typography sx={{ p: 2 }} variant="body2" color="text.secondary">
                     {HTMLtoText(interlinker.description)}
@@ -94,12 +95,12 @@ const RecommendedInterlinkerCard = ({ interlinker, assets, onClick }) => {
                 zIndex: 99999,
                 width: "40%",
                 height: "auto"
-            }} 
-            onMouseEnter={() => setIsShown(true)} onMouseLeave={() => setIsShown(false)} sx={{ height: "100%" }}
+            }}
+                onMouseEnter={() => setIsShown(true)} onMouseLeave={() => setIsShown(false)} sx={{ height: "100%" }}
             >
                 <img style={{
-                width: "100%",
-                height: "auto"
+                    width: "100%",
+                    height: "auto"
                 }} src={interlinker.snapshots_links[0]} />
             </Card>
 
@@ -107,7 +108,7 @@ const RecommendedInterlinkerCard = ({ interlinker, assets, onClick }) => {
     </>
 }
 const RightPart = () => {
-    const { selectedTask } = useSelector((state) => state.process);
+    const { selectedTreeItem } = useSelector((state) => state.process);
 
     const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
 
@@ -115,29 +116,27 @@ const RightPart = () => {
     const [recommendedInterlinkers, setRecommendedInterlinkers] = useState([])
     const [loadingTaskInfo, setLoadingTaskInfo] = useState(false)
     const [recommendedInterlinkersOpen, setrecommendedInterlinkersOpen] = useState(false)
-    const [taskInfoOpen, setTaskInfoOpen] = useState(true)
+    const [treeItemInfoOpen, setTreeItemInfoOpen] = useState(true)
     const [softwareInterlinkers, setSoftwareInterlinkers] = useState([])
 
     // new asset modal
     const [selectedInterlinker, setSelectedInterlinker] = useState(null)
     const [openNewAsset, setOpenNewAsset] = useState(false);
 
-    const updateAssets = async () => {
-        const assets = await assetsApi.getMulti({ task_id: selectedTask.id });
+    const updateTaskInfo = async () => {
+        const assets = await assetsApi.getMulti({ task_id: selectedTreeItem.id });
         setAssets(assets.items)
-        console.log(selectedTask)
-        const interlinkers = await interlinkersApi.getByProblemProfiles(null, null, selectedTask.problem_profiles);
+        const interlinkers = await interlinkersApi.getByProblemProfiles(null, null, selectedTreeItem.problem_profiles);
         setRecommendedInterlinkers(interlinkers.items)
         setLoadingTaskInfo(false)
     }
 
     useEffect(() => {
-        console.log("CHANGED", selectedTask)
-        if (selectedTask) {
+        if (selectedTreeItem && selectedTreeItem.type === "task") {
             setLoadingTaskInfo(true)
-            updateAssets()
+            updateTaskInfo()
         }
-    }, [selectedTask])
+    }, [selectedTreeItem])
 
     useEffect(() => {
         softwareInterlinkersApi.getIntegrated().then(res => {
@@ -153,105 +152,112 @@ const RightPart = () => {
     const handleClose = () => {
         setAnchorEl(null);
     };
+
+    const isTask = selectedTreeItem && selectedTreeItem.type === "task"
     return (
 
-        selectedTask && <MobileDiscriminator defaultNode={
+        selectedTreeItem && <MobileDiscriminator defaultNode={
+            
             <Grid item xl={8} lg={8} md={6} xs={12}>
+                <Paper sx={{height: "100%"}}>
                 <Box sx={{ p: 2 }}>
-                    <Button sx={{ mb: 2 }} fullWidth variant="outlined" onClick={() => setTaskInfoOpen(!taskInfoOpen)}>
+                    <Button sx={{ mb: 2 }} fullWidth variant="outlined" onClick={() => setTreeItemInfoOpen(!treeItemInfoOpen)}>
                         <Stack spacing={2}>
-                            <Typography variant="h6" >Information about the task</Typography>
-                            <Divider> {!taskInfoOpen ? <KeyboardArrowDown /> : <KeyboardArrowUp />}</Divider>
+                            <Typography variant="h6" >Information about the {selectedTreeItem.type}</Typography>
+                            <Divider> {!treeItemInfoOpen ? <KeyboardArrowDown /> : <KeyboardArrowUp />}</Divider>
                         </Stack>
                     </Button>
-                    <Collapse in={taskInfoOpen} timeout="auto" unmountOnExit>
-                        <TreeItemData type="task" element={selectedTask} showType={false} />
-                    </Collapse>
-                    <Button sx={{ mb: 2 }} fullWidth variant="outlined" onClick={() => setrecommendedInterlinkersOpen(!recommendedInterlinkersOpen)}>
-                        <Stack spacing={2}>
-                            <Typography variant="h6" >Recommended interlinkers</Typography>
-                            <Divider> {!recommendedInterlinkersOpen ? <KeyboardArrowDown /> : <KeyboardArrowUp />}</Divider>
-                        </Stack>
-                    </Button>
-                    <Collapse in={recommendedInterlinkersOpen} timeout="auto" unmountOnExit>
+                    <Collapse in={treeItemInfoOpen} timeout="auto" unmountOnExit>
+                            <TreeItemData type={selectedTreeItem.type} element={selectedTreeItem} showType={false} />
+                        </Collapse>
+                    {isTask && <>
+                        
+                        <Button sx={{ my: 2 }} fullWidth variant="outlined" onClick={() => setrecommendedInterlinkersOpen(!recommendedInterlinkersOpen)}>
+                            <Stack spacing={2}>
+                                <Typography variant="h6" >Recommended interlinkers</Typography>
+                                <Divider> {!recommendedInterlinkersOpen ? <KeyboardArrowDown /> : <KeyboardArrowUp />}</Divider>
+                            </Stack>
+                        </Button>
+                        <Collapse in={recommendedInterlinkersOpen} timeout="auto" unmountOnExit>
 
-                        {loadingTaskInfo ?
-                            <CircularProgress /> : recommendedInterlinkers.length === 0 ? <Alert severity="warning">No recommended interlinkers found</Alert> : <Grid container spacing={3} justifyContent="flex-start">
+                            {loadingTaskInfo ?
+                                <CircularProgress /> : recommendedInterlinkers.length === 0 ? <Alert severity="warning">No recommended interlinkers found</Alert> : <Grid container spacing={3} justifyContent="flex-start">
 
-                                {recommendedInterlinkers.map(interlinker => (
-                                    <Grid item xs={12} md={6} lg={4} xl={3} key={interlinker.id}>
-                                        <RecommendedInterlinkerCard assets={assets} onClick={() => {
-                                            setSelectedInterlinker(interlinker);
-                                            setOpenNewAsset(true)
-                                        }} interlinker={interlinker} />
-                                    </Grid>
-                                ))}
-                            </Grid>}
+                                    {recommendedInterlinkers.map(interlinker => (
+                                        <Grid item xs={12} md={6} lg={3} xl={3} key={interlinker.id}>
+                                            <RecommendedInterlinkerCard assets={assets} onClick={() => {
+                                                setSelectedInterlinker(interlinker);
+                                                setOpenNewAsset(true)
+                                            }} interlinker={interlinker} />
+                                        </Grid>
+                                    ))}
+                                </Grid>}
 
-                        <Divider sx={{ my: 2 }} />
-                    </Collapse>
-                    <Box>
-                        <Box sx={{ mt: 2 }}>
+                            <Divider sx={{ my: 2 }} />
+                        </Collapse>
+                        <Box>
+                            <Box sx={{ mt: 2 }}>
 
-                            {/* <Paper>
-                      <Search>
-                        <SearchIconWrapper>
-                          <SearchIcon />
-                        </SearchIconWrapper>
-                        <StyledInputBase
-                          placeholder="Search…"
-                          inputProps={{ 'aria-label': 'search' }}
-                        />
-                      </Search>
-                    </Paper>*/}
-                            <Typography sx={{ mb: 1 }} variant="h6">Current assets:</Typography>
+                                {/* <Paper>
+                  <Search>
+                    <SearchIconWrapper>
+                      <SearchIcon />
+                    </SearchIconWrapper>
+                    <StyledInputBase
+                      placeholder="Search…"
+                      inputProps={{ 'aria-label': 'search' }}
+                    />
+                  </Search>
+                </Paper>*/}
+                                <Typography sx={{ mb: 1 }} variant="h6">Current assets:</Typography>
 
-                            <AssetsTable assets={assets} onChange={updateAssets} />
+                                <AssetsTable assets={assets} onChange={updateTaskInfo} />
 
-                        </Box>
+                            </Box>
 
-                        {selectedInterlinker && openNewAsset && <NewAssetModal open={openNewAsset} setOpen={setOpenNewAsset} selectedInterlinker={selectedInterlinker} task={selectedTask} onCreate={updateAssets} />}
+                            {selectedInterlinker && openNewAsset && <NewAssetModal open={openNewAsset} setOpen={setOpenNewAsset} selectedInterlinker={selectedInterlinker} task={selectedTreeItem} onCreate={updateTaskInfo} />}
 
-                        <Box sx={{ textAlign: "center", width: "100%" }}>
-                            <Button
-                                id="basic-button"
-                                aria-controls={open ? 'basic-menu' : undefined}
-                                aria-haspopup="true"
-                                aria-expanded={open ? 'true' : undefined}
-                                onClick={handleClick}
-                                variant="contained"
-                                sx={{ mt: 2 }}
-                                endIcon={<KeyboardArrowDown />}
+                            <Box sx={{ textAlign: "center", width: "100%" }}>
+                                <Button
+                                    id="basic-button"
+                                    aria-controls={open ? 'basic-menu' : undefined}
+                                    aria-haspopup="true"
+                                    aria-expanded={open ? 'true' : undefined}
+                                    onClick={handleClick}
+                                    variant="contained"
+                                    sx={{ mt: 2 }}
+                                    endIcon={<KeyboardArrowDown />}
+                                >
+                                    Initiate procedure
+                                </Button>
+                            </Box>
+
+                            <Menu
+                                id="basic-menu"
+                                anchorEl={anchorEl}
+                                open={open}
+                                onClose={handleClose}
+                                MenuListProps={{
+                                    'aria-labelledby': 'basic-button',
+                                }}
                             >
-                                Initiate procedure
-                            </Button>
+                                {softwareInterlinkers.map(si =>
+                                    <MenuItem key={si.id} onClick={() => {
+                                        setSelectedInterlinker(si);
+                                        setOpenNewAsset(true)
+                                        handleClose()
+                                    }
+                                    }>
+                                        <Avatar src={si.logotype_link} sx={{ mr: 2, height: "20px", width: "20px" }} />{si.integration.instantiate_text}
+                                    </MenuItem>)}
+                            </Menu>
                         </Box>
-
-                        <Menu
-                            id="basic-menu"
-                            anchorEl={anchorEl}
-                            open={open}
-                            onClose={handleClose}
-                            MenuListProps={{
-                                'aria-labelledby': 'basic-button',
-                            }}
-                        >
-                            {softwareInterlinkers.map(si =>
-                                <MenuItem key={si.id} onClick={() => {
-                                    setSelectedInterlinker(si);
-                                    setOpenNewAsset(true)
-                                    handleClose()
-                                }
-                                }>
-                                    <Avatar src={si.logotype_link} sx={{ mr: 2, height: "20px", width: "20px" }} />{si.integration.instantiate_text}
-                                </MenuItem>)}
-                        </Menu>
-                    </Box>
-
+                    </>}
                 </Box>
+                </Paper>
             </Grid>
         } onMobileNode={
-            <MobileDrawer open={mobileDrawerOpen} onClose={() => { setMobileDrawerOpen(false) }} content={<AssetsTable assets={assets} onChange={updateAssets} />} />
+            <MobileDrawer open={mobileDrawerOpen} onClose={() => { setMobileDrawerOpen(false) }} content={<AssetsTable assets={assets} onChange={updateTaskInfo} />} />
         } />
     );
 };

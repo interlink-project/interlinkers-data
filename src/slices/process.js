@@ -12,7 +12,7 @@ const initialState = {
   objectives: [],
   phases: [],
   selectedPhaseTab: "",
-  selectedTask: null,
+  selectedTreeItem: null,
   network: null,
   
 };
@@ -97,33 +97,40 @@ const slice = createSlice({
         const orderedPhases = [...phases].sort(comparePrerequisites)
         state.phases = orderedPhases;
         state.selectedPhaseTab = orderedPhases.length > 0 ? orderedPhases[0].name : ""
+        state.selectedTreeItem = orderedPhases.length > 0 ? orderedPhases[0] : null
       }
 
     },
-    setSelectedTask(state, action) {
-      state.selectedTask = action.payload;
+    setSelectedTreeItem(state, action) {
+      state.selectedTreeItem = action.payload;
     },
     setProcess(state, action) {
       state.process = action.payload;
       // state.network = generateGraph(state.process);
       // TODO: set tab depending on progress
       console.log("SETTING SELECTED TASK NULL")
-      state.selectedTask = null
+      state.selectedTreeItem = null
     },
     updatePhase(state, action) {
       state.phases = state.phases.map(obj => obj.id === action.payload.id ? action.payload : obj);
+      if (state.selectedTreeItem && state.selectedTreeItem.id === action.payload.id){
+        state.selectedTreeItem = {...action.payload, type: "phase"}
+      }
     },
     updateObjective(state, action) {
       state.objectives = state.objectives.map(obj => obj.id === action.payload.id ? action.payload : obj);
       // updateDatesForObject(state, action.payload.phase_id, "phase", "objective")
       // updateProgressForObject(state, action.payload.phase_id, "phase", "objective")
+      if (state.selectedTreeItem && state.selectedTreeItem.id === action.payload.id){
+        state.selectedTreeItem = {...action.payload, type: "objective"}
+      }
     },
     updateTask(state, action) {
       state.tasks = state.tasks.map(obj => obj.id === action.payload.id ? action.payload : obj);
       // updateDatesForObject(state, action.payload.objective_id, "objective", "task")
       // updateProgressForObject(state, action.payload.objective_id, "objective", "task")
-      if (state.selectedTask && state.selectedTask.id === action.payload.id){
-        state.selectedTask = action.payload
+      if (state.selectedTreeItem && state.selectedTreeItem.id === action.payload.id){
+        state.selectedTreeItem = {...action.payload, type: "task"}
       }
     },
     setLoading(state, action) {
@@ -134,15 +141,15 @@ const slice = createSlice({
     },
     setSelectedPhase(state, action) {
       state.selectedPhaseTab = action.payload;
-      state.selectedTask = null
+      state.selectedTreeItem = null
     },
   }
 });
 
 export const { reducer } = slice;
 
-export const setSelectedTask = (data) => async (dispatch) => {
-  dispatch(slice.actions.setSelectedTask(data));
+export const setSelectedTreeItem = (data) => async (dispatch) => {
+  dispatch(slice.actions.setSelectedTreeItem(data));
 };
 
 

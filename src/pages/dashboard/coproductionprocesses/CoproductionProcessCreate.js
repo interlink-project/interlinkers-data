@@ -123,7 +123,7 @@ const CoproductionprocessCreate = ({ teams = [], onCreate }) => {
   const team = teams.find(team => team.id === teamId)
 
   const isDisabled = () => {
-    if (activeStep === 0 && (!name || !description)){
+    if (activeStep === 0 && (!name)){
       return true
     }
     if (activeStep === 1 && !teamId){
@@ -135,7 +135,7 @@ const CoproductionprocessCreate = ({ teams = [], onCreate }) => {
       <Button fullWidth variant="contained" color='primary' onClick={handleClickOpen}>
         Create new co-production process
       </Button>
-      <Dialog open={open} onClose={handleClose}>
+      <Dialog open={open} onClose={handleClose} fullWidth>
         <DialogTitle>Co-production process creation</DialogTitle>
         <DialogContent>
           {activeStep === 0 && <><Box sx={{ textAlign: "center" }}>
@@ -178,6 +178,9 @@ const CoproductionprocessCreate = ({ teams = [], onCreate }) => {
           </>}
 
           {activeStep === 1 && <>
+          <Typography>
+            Now you must select the main team of the process. Later you will be able to add additional users / teams to the process.
+          </Typography>
             <Box
               display="flex"
               alignItems="center"

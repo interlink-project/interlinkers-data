@@ -1,7 +1,8 @@
 import {
   Alert,
-  Box, Button, CardActions, Stack, TextField, ToggleButton, ToggleButtonGroup, Typography
+  Box, Button, CardActions, IconButton, Stack, TextField, ToggleButton, ToggleButtonGroup, Typography
 } from '@material-ui/core';
+import { Edit } from '@material-ui/icons';
 import {
   DesktopDateRangePicker
 } from '@material-ui/lab';
@@ -13,7 +14,7 @@ import { updateObjective, updatePhase, updateTask } from 'slices/process';
 import { HTMLtoText } from 'utils/safeHTML';
 import { statusText, statusIcon } from '../assets/Icons';
 
-const TreeItemData = ({ element, type, onSave = null, showType = true}) => {
+const TreeItemData = ({ element, type, onSave = null, showType = true }) => {
   const [dateRange, setDateRange] = useState([element.start_date ? new Date(element.start_date) : null, element.end_date ? new Date(element.end_date) : null]);
   const [status, setStatus] = useState(element.status);
   const [name, setName] = useState(element.name);
@@ -60,8 +61,7 @@ const TreeItemData = ({ element, type, onSave = null, showType = true}) => {
     }
 
     if (type === "task") {
-      console.log({ id: element.id, data })
-      dispatch(updateTask({ id: element.id, data }))
+      dispatch(updateTask({ id: element.id, data}))
     }
     else if (type === "objective") {
       dispatch(updateObjective({ id: element.id, data }))
@@ -76,13 +76,20 @@ const TreeItemData = ({ element, type, onSave = null, showType = true}) => {
   }
 
   return <>
-    {type && showType && <><Typography variant="h6">
-      Type
-    </Typography>
+    {type && showType && <>
+      <Typography variant="h6">
+        Type
+      </Typography>
       {type === "task" && "Task"}
       {type === "objective" && "Objective"}
       {type === "phase" && "Phase"}</>}
-
+    {!editMode && <IconButton onClick={() => setEditMode(true)} sx={{
+      position: "relative",
+      right: 0,
+      float: "right"
+    }}>
+      <Edit />
+    </IconButton>}
     <Typography variant="h6" sx={showType ? { mt: 2 } : {}}>
       Name
     </Typography>
@@ -94,10 +101,11 @@ const TreeItemData = ({ element, type, onSave = null, showType = true}) => {
     </Typography>
     {editMode ? <TextField onChange={(event) => {
       setDescription(event.target.value);
-    }} multiline fullWidth variant="standard" value={description} /> :<p style={{
-      whiteSpace: 'pre-wrap'
-      }}>{description}</p>}
-    <Typography variant="h6" sx={{ mt: 2 }}>Current status of the task:</Typography>
+    }} multiline fullWidth variant="standard" value={description} /> : <p style={{
+      whiteSpace: 'pre-wrap',
+      marginTop: 0
+    }}>{description}</p>}
+    <Typography variant="h6" sx={{ mt: 2 }}>Current status of the {type}:</Typography>
     {editMode ? <>
       {type === "task" ? <ToggleButtonGroup
         sx={{ mt: 1 }}
@@ -145,11 +153,10 @@ const TreeItemData = ({ element, type, onSave = null, showType = true}) => {
       </> : <Alert severity="warning">Not set</Alert>}
     </Box>}
 
-    <CardActions sx={{ justifyContent: "center" }}>
-      <Button sx={{ mt: 2 }} size="small" variant="outlined" onClick={() => setEditMode(!editMode)} color={editMode ? "error" : "primary"}>{editMode ? "Discard changes" : "Edit"}</Button>
-      {editMode && <Button sx={{ mt: 2 }} variant="contained" onClick={saveData} color="primary" size="small">Save</Button>}
-
-    </CardActions>
+    {editMode && <CardActions sx={{ justifyContent: "center" }}>
+      <Button sx={{ mt: 2 }} size="small" variant="outlined" onClick={() => setEditMode(false)} color="error">Discard changes</Button>
+      <Button sx={{ mt: 2 }} variant="contained" onClick={saveData} color="primary" size="small">Save</Button>
+    </CardActions>}
   </>
 
 }

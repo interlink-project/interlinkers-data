@@ -31,7 +31,7 @@ const CustomContent = forwardRef(function CustomContent(props, ref) {
     preventSelection,
   } = useTreeItem(nodeId);
 
-  const icon = iconProp || expansionIcon || displayIcon;
+  const icon = expansionIcon || displayIcon;
 
   const handleMouseDown = (event) => {
     preventSelection(event);
@@ -61,6 +61,7 @@ const CustomContent = forwardRef(function CustomContent(props, ref) {
       <div onClick={handleExpansionClick} className={classes.iconContainer}>
         {icon}
       </div>
+      {iconProp}
       <Typography
         onClick={handleSelectionClick}
         component="div"
@@ -120,25 +121,34 @@ const StyledTreeItem = styled((props) => (
   },
 }));
 
-const RepositoryTree = ({ setSelectedTask, loading }) => {
-  const { selectedTask } = useSelector((state) => state.process);
+const RepositoryTree = ({ setSelectedTreeItem, loading }) => {
+  const { selectedTreeItem } = useSelector((state) => state.process);
 
-  const [selectedItem, setSelectedItem] = useState(selectedTask && selectedTask.id);
   const { phases, objectives: allObjectives, tasks: allTasks, selectedPhaseTab } = useSelector((state) => state.process);
-  const currentPhase = phases.find(el => el.name === selectedPhaseTab)
-
+  const currentPhase = selectedPhaseTab ? phases.find(el => el.name === selectedPhaseTab) : phases[0]
+  if(!currentPhase){
+    return "Loading"
+  }
   const objectives = allObjectives.filter(el => el.phase_id === currentPhase.id)
 
   const onSelectedItemChange = (event, nodeIds) => {
-    event.stopPropagation();
-    event.preventDefault()
-    setSelectedItem(nodeIds)
-    console.log(nodeIds)
+    // if the selection is a phase
+    if (currentPhase.id === nodeIds) {
+      setSelectedTreeItem({...currentPhase, type: "phase"})
+      return
+    }
 
     const taskselected = allTasks.find(el => el.id === nodeIds)
     // if the selection is a task
     if (taskselected) {
-      setSelectedTask(taskselected)
+      setSelectedTreeItem({...taskselected, type: "task"})
+      return
+    }
+    const objectiveselected = allObjectives.find(el => el.id === nodeIds)
+    // if the selection is a task
+    if (objectiveselected) {
+      setSelectedTreeItem({...objectiveselected, type: "objective"})
+      return
     }
   }
 
@@ -146,25 +156,28 @@ const RepositoryTree = ({ setSelectedTask, loading }) => {
     <TreeView
       disableSelection={loading}
       aria-label="customized"
-      defaultExpanded={allObjectives.concat(allTasks).map(objective => objective.id) || []}
+      defaultExpanded={allObjectives.concat(allTasks).concat([currentPhase]).map(el => el.id) || []}
       defaultCollapseIcon={<MinusSquare />}
       defaultExpandIcon={<PlusSquare />}
       defaultEndIcon={<CloseSquare />}
-      selected={selectedItem}
-      sx={{ flexGrow: 1, overflowY: 'auto', width: "100%", bgcolor: "primary.main" }}
+      selected={selectedTreeItem && selectedTreeItem.id || ""}
+      sx={{ flexGrow: 1, overflowY: 'auto', width: "100%", height: "100%" }}
       onNodeSelect={(event, nodeIds, moreinfo) => {
         onSelectedItemChange(event, nodeIds);
       }}
     >
-      {objectives.map(objective =>
-        <StyledTreeItem icon={statusIcon(objective.status)} key={objective.id} nodeId={objective.id} sx={{ backgroundColor: "background.paper" }} label={<p>{objective.name}</p>} >
-          {allTasks.filter(el => el.objective_id === objective.id).sort((a, b) => b.progress - a.progress).map(task => (
-            <StyledTreeItem icon={statusIcon(task.status)} key={task.id} nodeId={task.id} label={
-              <p style={{ alignItems: "center" }}>
-                {task.name}
-              </p>} />
-          ))}
-        </StyledTreeItem>)}
+      <StyledTreeItem icon={statusIcon(currentPhase.status)} key={currentPhase.id} nodeId={currentPhase.id} sx={{ backgroundColor: "background.paper" }} label={<p>{currentPhase.name}</p>} >
+
+        {objectives.map(objective =>
+          <StyledTreeItem icon={statusIcon(objective.status)} key={objective.id} nodeId={objective.id} sx={{ backgroundColor: "background.paper" }} label={<p>{objective.name}</p>} >
+            {allTasks.filter(el => el.objective_id === objective.id).sort((a, b) => b.progress - a.progress).map(task => (
+              <StyledTreeItem icon={statusIcon(task.status)} key={task.id} nodeId={task.id} label={
+                <p style={{ alignItems: "center" }}>
+                  {task.name}
+                </p>} />
+            ))}
+          </StyledTreeItem>)}
+      </StyledTreeItem>
     </TreeView>
   );
 };

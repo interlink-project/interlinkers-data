@@ -8,7 +8,8 @@ const dateToUnix = (dateStr) => Math.floor(new Date(dateStr).getTime() / 1000)
 
 const OverviewTab = ({ coproductionprocess }) => {
     const [assets, setAssets] = useState([])
-    useEffect(() => {
+    
+    /*useEffect(() => {
         assetsApi.getMulti({ coproductionprocess_id: coproductionprocess.id }).then((res) => {
             setAssets(res.items)
             fetchJsFromCDN('https://cdnjs.cloudflare.com/ajax/libs/frappe-charts/2.0.0-rc20/frappe-charts.min.umd.js', ['frappe']).then(([frappe]) => {
@@ -34,14 +35,14 @@ const OverviewTab = ({ coproductionprocess }) => {
         })
 
 
-    }, [])
+    }, [])*/
 
     return (
         <Box style={{ backgroundColor: "background.default", justifyContent: "center" }}>
 
-            <Typography variant="h5" sx={{ my: 2, textAlign: "center" }} color="textSecondary">
+            {/* <Typography variant="h5" sx={{ my: 2, textAlign: "center" }} color="textSecondary">
                 Activity within the project
-            </Typography>
+    </Typography> */}
             {/* {warnings.map((warning, i) => <Alert key={warning + i.toString()} severity="warning" sx={{mb: 2}}>{warning}</Alert>)}
                     
                     <Divider />

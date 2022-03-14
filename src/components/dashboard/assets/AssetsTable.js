@@ -2,10 +2,11 @@ import {
   Alert, Avatar, CircularProgress, IconButton, ListItemIcon, ListItemText, Menu,
   MenuItem, Skeleton, Table, TableBody, TableCell, TableHead, TableRow
 } from '@material-ui/core';
-import { CopyAll, Delete, Edit, MoreVert as MoreVertIcon, Share } from '@material-ui/icons';
+import { CopyAll, Delete, Download, Edit, MoreVert as MoreVertIcon, Share } from '@material-ui/icons';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 import { assetsApi } from '__fakeApi__';
+import { InterlinkerReference } from '../interlinkers';
 
 const AssetRow = ({ asset, onChange, actions }) => {
   const [data, setData] = useState(null)
@@ -55,7 +56,7 @@ const AssetRow = ({ asset, onChange, actions }) => {
       {moment(data.updated_at || data.created_at).fromNow()}
     </TableCell>
     <TableCell align="center">
-      <Avatar src={data.creator_id} sx={{ height: "20px", width: "20px" }} />
+      {asset.interlinker_data && <InterlinkerReference interlinker={asset.interlinker_data} />}
     </TableCell>
     <TableCell align="center">
       {actions ||  <IconButton aria-label="settings" id="basic-button"
@@ -80,6 +81,7 @@ const AssetRow = ({ asset, onChange, actions }) => {
         {asset.capabilities.clone && <MyMenuItem onClick={() => { assetsApi.clone(asset.id).then(() => {onChange && onChange();  setAnchorEl(null); }) }} text="Clone" icon={<CopyAll fontSize="small" />} />}
         {asset.capabilities.delete && <MyMenuItem onClick={() => { assetsApi.delete(asset.id).then(() =>{ onChange && onChange();  setAnchorEl(null); }); }} text="Delete" icon={<Delete fontSize="small" />} />}
         {asset.capabilities.clone && <MyMenuItem onClick={() => { }} text="Publish" icon={<Share fontSize="small" />} />}
+        {asset.capabilities.download && <MyMenuItem onClick={() => { window.open(asset.link + "/download", "_blank"); setAnchorEl(null); }}  text="Download" icon={<Download fontSize="small" />} />}
         {/* <MyMenuItem text="Share" onClick={() => { }} icon={<Share fontSize="small" />} /> */}
         {loading && <CircularProgress />}
       </Menu>
@@ -98,7 +100,7 @@ const Assets = ({ assets, onChange = () => {}, actions }) => {
           <TableCell align="center">Name</TableCell>
           <TableCell align="center">Created</TableCell>
           <TableCell align="center">Updated</TableCell>
-          <TableCell align="center">Users</TableCell>
+          <TableCell align="center">Interlinker</TableCell>
           <TableCell align="center">Actions</TableCell>
         </TableRow>
       </TableHead>

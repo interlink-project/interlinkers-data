@@ -95,39 +95,42 @@ const Workplan = () => {
     const final = []
 
     const phase = phases.find(phase => selectedPhaseTab === phase.name)
-    final.push({
-      id: phase.id,
-      name: phase.name,
-      start: phase.start_date,
-      end: phase.end_date,
-      progress: phase.progress,
-      custom_class: 'gantt-phase' + getClasses(phase),
-      read_only: true
-    })
-    objectives.filter(el => el.phase_id === phase.id).forEach(objective => {
-
+    if(phase){
       final.push({
-        id: objective.id,
-        name: objective.name,
-        dependencies: phase.id,
-        start: objective.start_date || phase.start_date,
-        end: objective.end_date,
-        progress: objective.progress,
-        custom_class: 'gantt-objective' + getClasses(objective),
+        id: phase.id,
+        name: phase.name,
+        start: phase.start_date,
+        end: phase.end_date,
+        progress: phase.progress,
+        custom_class: 'gantt-phase' + getClasses(phase),
         read_only: true
       })
-      tasks.filter(el => el.objective_id === objective.id).forEach(task => {
+      objectives.filter(el => el.phase_id === phase.id).forEach(objective => {
+  
         final.push({
-          id: task.id,
-          name: task.name,
-          dependencies: task.objective_id,
-          start: task.start_date || objective.start_date || phase.start_date,
-          end: task.end_date,
-          custom_class: 'gantt-task' + getClasses(task),
+          id: objective.id,
+          name: objective.name,
+          dependencies: phase.id,
+          start: objective.start_date || phase.start_date,
+          end: objective.end_date,
+          progress: objective.progress,
+          custom_class: 'gantt-objective' + getClasses(objective),
           read_only: true
         })
+        tasks.filter(el => el.objective_id === objective.id).forEach(task => {
+          final.push({
+            id: task.id,
+            name: task.name,
+            dependencies: task.objective_id,
+            start: task.start_date || objective.start_date || phase.start_date,
+            end: task.end_date,
+            custom_class: 'gantt-task' + getClasses(task),
+            read_only: true
+          })
+        })
       })
-    })
+    }
+    
     return final
     // .sort((a, b) => a.start_date < b.start_date)
   }

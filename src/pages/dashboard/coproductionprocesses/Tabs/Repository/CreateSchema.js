@@ -1,4 +1,4 @@
-import { Box, Card, CardHeader, Grid, Typography } from '@material-ui/core';
+import { Box, Card, CardHeader, Grid, Rating, Typography, Stack } from '@material-ui/core';
 import { ChevronRight, ExpandMore } from '@material-ui/icons';
 import {
     LoadingButton, TreeItem,
@@ -57,28 +57,38 @@ const CreateSchema = () => {
 
     return (
 
-        <Box sx={{ p: 2 }}>
-            <Typography variant="h6" sx={{ mb: 2 }}>Select a schema to use in your project:</Typography>
-
+        <Box sx={{ p: 2, minHeight: '87vh' }}>
+            <Box sx={{textAlign: "center"}}>
+            <Typography variant="h4" sx={{ mb: 2 }}>Schema selection</Typography>
+            <Typography variant="subtitle1" sx={{ mb: 4 }}>An schema contains a set of phases, objectives and tasks predefined. Those items could (and should) be edited in order to adapt the workplan of your project.</Typography>
+            </Box>
             <Grid container spacing={3} justifyContent="flex-start">
                 {schemas.map(schema => (
                     <Grid item xs={12} md={6} lg={4} xl={3} key={schema.id}                       >
                         <Card style={sameHeightCards}>
-                            <CardHeader title={schema.name} subheader={schema.description}>
+                            <CardHeader sx={{textAlign: "center"}} title={schema.name} subheader={
+                            <Stack direction="row"
+                                justifyContent="center"
+                                alignItems="center"
+                                spacing={2}
+                                >
+                                <Rating size="small" readOnly value={0} />
+                                (0)
+                            </Stack>}>
 
                             </CardHeader>
                             <TreeView
                                 aria-label="file system navigator"
                                 defaultCollapseIcon={<ExpandMore />}
                                 defaultExpandIcon={<ChevronRight />}
-                                sx={{ height: 240, flexGrow: 1, overflowY: 'auto' }}
+                                sx={{ flexGrow: 1, overflowY: 'auto', mb: 2 }}
                             >
                                 {schema.phasemetadatas.sort(comparePrerequisites).map((phasemetadata) => {
-                                    return <TreeItem key={phasemetadata.id} nodeId={phasemetadata.id} label={phasemetadata.name}>
+                                    return <TreeItem key={phasemetadata.id} nodeId={phasemetadata.id} label={<p><b>Phase</b>: {phasemetadata.name}</p>}>
                                         {phasemetadata.objectivemetadatas.map((objectivemetadata) => {
-                                            return <TreeItem key={objectivemetadata.id} nodeId={objectivemetadata.id} label={objectivemetadata.name}>
+                                            return <TreeItem key={objectivemetadata.id} nodeId={objectivemetadata.id} label={<p><b>Objective</b>: {objectivemetadata.name}</p>}>
                                                 {objectivemetadata.taskmetadatas.map((taskmetadata) => {
-                                                    return <TreeItem key={taskmetadata.id} nodeId={taskmetadata.id} label={taskmetadata.name} />
+                                                    return <TreeItem key={taskmetadata.id} nodeId={taskmetadata.id} label={<p><b>Task</b>: {taskmetadata.name}</p>} />
                                                 })}
                                             </TreeItem>
                                         })}

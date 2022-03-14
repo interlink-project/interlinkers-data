@@ -84,7 +84,6 @@ const ProcessSidebar = (props) => {
         display: 'flex',
         flexDirection: 'column',
         height: '100%',
-        color: "text.secondary"
       }}
     >
       <Scrollbar options={{ suppressScrollX: true }}>
@@ -115,7 +114,7 @@ const ProcessSidebar = (props) => {
           sx={{p: 3}}
         >
           {process && <Avatar variant="rounded" sx={{ width: "80px", height: "80px" }} src={process.logotype} />}
-          {process && <Typography>{process.name}</Typography>}
+          {process && <Typography sx={{textAlign: "center"}} variant="h6">{process.name}</Typography>}
           <Button startIcon={<ArrowBack />} variant="outlined" fullWidth size="large" onClick={() => navigate("/dashboard")} />
         </Stack>
         <Divider />
@@ -127,7 +126,8 @@ const ProcessSidebar = (props) => {
               sx={{
                 '& + &': {
                   mt: 3
-                }
+                },
+                color: "text.secondary"
               }}
               {...section}
             />

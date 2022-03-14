@@ -43,6 +43,8 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
     const [loadingKnowledgeInstantiation, setLoadingKnowledgeInstantiation] = useState(false);
 
     const open_in_modal = selectedInterlinker.nature === "softwareinterlinker" && selectedInterlinker.integration && selectedInterlinker.integration.open_in_modal
+    const sftinterlinker = selectedInterlinker.nature === "softwareinterlinker" ? selectedInterlinker : selectedInterlinker.softwareinterlinker
+    const downloadable = sftinterlinker && sftinterlinker.integration && sftinterlinker.integration.download
 
     const handleClose = () => {
         setOpen(false);
@@ -268,9 +270,13 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
                 </Box>}
             </DialogContent>
             {activeStep === 0 && <DialogActions sx={{bgcolor: "background.default"}}> 
+            {downloadable && <Button sx={{ my: 2, mx: 4 }} autoFocus fullWidth variant="contained" color="warning" onClick={() => window.open(selectedInterlinker.link + "/download", "_blank")}>
+                    Download
+                </Button>}
                 <Button sx={{ my: 2, mx: 4 }} autoFocus fullWidth variant="contained" onClick={() => setActiveStep(1)}>
-                    Instantiate interlinker
+                    Launch interlinker
                 </Button>
+                
             </DialogActions>}
         </Dialog>
     );
