@@ -3,9 +3,10 @@ from enum import Enum
 from pathlib import Path
 
 from interlinkers.base import InterlinkerSchema, Difficulties, Licences
-from pydantic import FilePath, HttpUrl, BaseModel, conlist, validator
+from pydantic import FilePath, HttpUrl, BaseModel, Field
+from typing_extensions import Annotated
 
-from typing import Optional, Union, List, Dict
+from typing import Literal, Optional, Union, List, Dict
 
 parent = Path(__file__).parents[0]
 
@@ -27,6 +28,7 @@ class Capabilities(BaseModel):
     clone: bool
     edit: bool
     delete: bool
+    download: bool
     open_in_modal: bool
     shortcut: bool
 
@@ -36,8 +38,10 @@ class CapabilitiesTranslations(BaseModel):
     clone_text_translations: Optional[Dict[str, str]]
     edit_text_translations: Optional[Dict[str, str]]
     delete_text_translations: Optional[Dict[str, str]]
+    download_text_translations: Optional[Dict[str, str]]
 
-class Integration(BaseModel):
+class InternalIntegration(BaseModel):
+    type: str = "internal"
     service_name: str
     domain: str
     path: str
@@ -46,6 +50,11 @@ class Integration(BaseModel):
     capabilities: Capabilities
     capabilities_translations: CapabilitiesTranslations
     auth_method: AuthMethods
+
+class ExternalIntegration(BaseModel):
+    type: str = "external"
+    redirect: str
+    result: Optional[str]
 
 class Schema(InterlinkerSchema):
     logotype: Optional[FilePath]
@@ -59,7 +68,7 @@ class Schema(InterlinkerSchema):
     supports_internationalization: bool
     is_responsive: bool
 
-    integration: Optional[Integration]
+    integration: Union[InternalIntegration, ExternalIntegration]
 
     # INTERLINKER SPECIFIC
     difficulty: Difficulties

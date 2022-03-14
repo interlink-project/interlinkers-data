@@ -32,6 +32,11 @@
     "user_manual": "http://validator.w3.org/docs/help.html",
     "supports_internationalization": false,
     "is_responsive": false,
-	  "reference":"html-tools"
+	  "reference":"html-tools",
+    "integration": {
+      "type": "external",
+      "redirect": "https://validator.w3.org/about.html",
+      "result": ""
+    }
       
 }

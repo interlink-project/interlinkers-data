@@ -34,5 +34,10 @@
     "supports_internationalization": true,
     "is_responsive": true,
     "logotype": "./interlinkers/software/trello/logo.png",
-    "reference":"project-management"
+    "reference":"project-management",
+    "integration": {
+        "type": "external",
+        "redirect": "https://trello.com/es",
+        "result": "externalresourcemanager"
+      }
 }

@@ -35,5 +35,10 @@
     "supports_internationalization": false,
     "is_responsive": false,
     "reference" : "user-authentication-authorization",
-    "logotype": "./interlinkers/software/keycloak/logo.png"
+    "logotype": "./interlinkers/software/keycloak/logo.png",
+    "integration": {
+      "type": "external",
+      "redirect": "https://www.keycloak.org/",
+      "result": ""
+    }
 }

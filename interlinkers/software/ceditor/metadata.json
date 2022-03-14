@@ -25,6 +25,7 @@
     "supports_internationalization": true,
     "is_responsive": true,
     "integration": {
+        "type": "internal",
         "domain": "",
         "path": "ceditor",
         "service_name": "ceditor",
@@ -37,6 +38,7 @@
             "view": true,
             "edit": false,
             "delete": true,
+            "download": false,
             "open_in_modal": true,
             "shortcut": true
         },

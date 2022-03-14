@@ -25,6 +25,7 @@
     "supports_internationalization": true,
     "is_responsive": true,
     "integration": {
+        "type": "internal",
         "domain": "",
         "path": "externalresourcemanager",
         "service_name": "externalresourcemanager",
@@ -37,6 +38,7 @@
             "view": true,
             "edit": true,
             "delete": true,
+            "download": false,
             "open_in_modal": true,
             "shortcut": true
         },

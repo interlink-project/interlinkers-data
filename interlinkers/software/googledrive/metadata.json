@@ -25,6 +25,7 @@
     "supports_internationalization": true,
     "is_responsive": true,
     "integration": {
+        "type": "internal",
         "domain": "",
         "path": "googledrive",
         "service_name": "googledrive",
@@ -37,6 +38,7 @@
             "view": true,
             "edit": false,
             "delete": true,
+            "download": true,
             "open_in_modal": true,
             "shortcut": true
         },
@@ -56,6 +58,10 @@
             "delete_text_translations": {
                 "en": "Delete document",
                 "es": "Eliminar documento"
+            },
+            "download_text_translations": {
+                "en": "Download document",
+                "es": "Descargar documento"
             }
         }
     },

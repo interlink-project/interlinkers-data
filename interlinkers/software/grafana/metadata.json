@@ -34,5 +34,10 @@
     "supports_internationalization": true,
     "is_responsive": true,
     "logotype": "./interlinkers/software/grafana/logo.png",
-    "reference" : "dashboard"
+    "reference" : "dashboard",
+    "integration": {
+      "type": "external",
+      "redirect": "https://grafana.com/",
+      "result": "externalresourcemanager"
+    }
 }

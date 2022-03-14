@@ -25,6 +25,7 @@
     "supports_internationalization": true,
     "is_responsive": true,
     "integration": {
+        "type": "internal",
         "domain": "",
         "path": "survey",
         "service_name": "survey",
@@ -37,6 +38,7 @@
             "view": true,
             "edit": true,
             "delete": true,
+            "download": true,
             "open_in_modal": true,
             "shortcut": true
         },
@@ -60,6 +62,10 @@
             "delete_text_translations": {
                 "en": "Delete survey",
                 "es": "Eliminar encuesta"
+            },
+            "download_text_translations": {
+                "en": "Download survey JSON",
+                "es": "Descargar JSON de la encuesta"
             }
         }
     },

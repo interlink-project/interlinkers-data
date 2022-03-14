@@ -28,5 +28,10 @@
     "supports_internationalization": true,
     "is_responsive": true,
     "reference": "calendar-tool",
-    "logotype": "./interlinkers/software/doodle/logo.png"
+    "logotype": "./interlinkers/software/doodle/logo.png",
+    "integration": {
+      "type": "external",
+      "redirect": "https://doodle.com/es/",
+      "result": "externalresourcemanager"
+    }
 }

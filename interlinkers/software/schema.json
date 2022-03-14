@@ -148,7 +148,15 @@
             "type": "boolean"
         },
         "integration": {
-            "$ref": "#/definitions/Integration"
+            "title": "Integration",
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/InternalIntegration"
+                },
+                {
+                    "$ref": "#/definitions/ExternalIntegration"
+                }
+            ]
         }
     },
     "required": [
@@ -162,7 +170,8 @@
         "reference",
         "supported_by",
         "supports_internationalization",
-        "is_responsive"
+        "is_responsive",
+        "integration"
     ],
     "additionalProperties": false,
     "definitions": {
@@ -264,6 +273,10 @@
                     "title": "Delete",
                     "type": "boolean"
                 },
+                "download": {
+                    "title": "Download",
+                    "type": "boolean"
+                },
                 "open_in_modal": {
                     "title": "Open In Modal",
                     "type": "boolean"
@@ -279,6 +292,7 @@
                 "clone",
                 "edit",
                 "delete",
+                "download",
                 "open_in_modal",
                 "shortcut"
             ]
@@ -321,6 +335,13 @@
                     "additionalProperties": {
                         "type": "string"
                     }
+                },
+                "download_text_translations": {
+                    "title": "Download Text Translations",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 }
             }
         },
@@ -332,10 +353,15 @@
                 "cookie"
             ]
         },
-        "Integration": {
-            "title": "Integration",
+        "InternalIntegration": {
+            "title": "InternalIntegration",
             "type": "object",
             "properties": {
+                "type": {
+                    "title": "Type",
+                    "default": "internal",
+                    "type": "string"
+                },
                 "service_name": {
                     "title": "Service Name",
                     "type": "string"
@@ -375,6 +401,28 @@
                 "capabilities",
                 "capabilities_translations",
                 "auth_method"
+            ]
+        },
+        "ExternalIntegration": {
+            "title": "ExternalIntegration",
+            "type": "object",
+            "properties": {
+                "type": {
+                    "title": "Type",
+                    "default": "external",
+                    "type": "string"
+                },
+                "redirect": {
+                    "title": "Redirect",
+                    "type": "string"
+                },
+                "result": {
+                    "title": "Result",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "redirect"
             ]
         }
     }

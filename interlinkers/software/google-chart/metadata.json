@@ -34,5 +34,11 @@
       "supports_internationalization": false,
       "is_responsive": true,
       "logotype": "./interlinkers/software/google-chart/logo.png",
-      "reference": "graph-js-library"
+      "reference": "graph-js-library",
+      "integration": {
+        "type": "external",
+        "redirect": "https://developers.google.com/chart",
+        "result": ""
+      }
+
   }

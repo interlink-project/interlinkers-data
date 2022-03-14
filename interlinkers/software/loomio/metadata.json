@@ -47,6 +47,7 @@
     "supports_internationalization": true,
     "is_responsive": true,
     "integration": {
+        "type": "internal",
         "domain": "",
         "path": "loomio",
         "service_name": "loomio",
@@ -59,6 +60,7 @@
             "view": true,
             "edit": false,
             "delete": true,
+            "download": false,
             "open_in_modal": false,
             "shortcut": true
         },
