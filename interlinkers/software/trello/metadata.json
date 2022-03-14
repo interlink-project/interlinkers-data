@@ -36,7 +36,7 @@
     "reference":"project-management",
     "integration": {
         "type": "externalintegration",
-        "redirect": "https://trello.com/es",
+        "redirection": "https://trello.com/es",
         "result": "externalresourcemanager"
       }
 }

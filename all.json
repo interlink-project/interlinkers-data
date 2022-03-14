@@ -2162,7 +2162,7 @@
                 "reference": "graph-js-library",
                 "integration": {
                     "type": "externalintegration",
-                    "redirect": "https://developers.google.com/chart",
+                    "redirection": "https://developers.google.com/chart",
                     "result": ""
                 }
             },
@@ -2375,7 +2375,7 @@
                 "reference": "html-tools",
                 "integration": {
                     "type": "externalintegration",
-                    "redirect": "https://validator.w3.org/about.html",
+                    "redirection": "https://validator.w3.org/about.html",
                     "result": ""
                 }
             },
@@ -2425,7 +2425,7 @@
                 "reference": "dashboard",
                 "integration": {
                     "type": "externalintegration",
-                    "redirect": "https://grafana.com/",
+                    "redirection": "https://grafana.com/",
                     "result": "externalresourcemanager"
                 }
             },
@@ -2463,7 +2463,7 @@
                 "reference": "email-marketing",
                 "integration": {
                     "type": "externalintegration",
-                    "redirect": "https://mailchimp.com/es/",
+                    "redirection": "https://mailchimp.com/es/",
                     "result": ""
                 }
             },
@@ -2516,7 +2516,7 @@
                 "logotype": "./interlinkers/software/os2-api-Manager/logo.jpeg",
                 "integration": {
                     "type": "externalintegration",
-                    "redirect": "https://wso2.com/api-manager/",
+                    "redirection": "https://wso2.com/api-manager/",
                     "result": ""
                 }
             },
@@ -2646,7 +2646,7 @@
                 "reference": "project-management",
                 "integration": {
                     "type": "externalintegration",
-                    "redirect": "https://trello.com/es",
+                    "redirection": "https://trello.com/es",
                     "result": "externalresourcemanager"
                 }
             },
@@ -2868,7 +2868,7 @@
                 "logotype": "./interlinkers/software/keycloak/logo.png",
                 "integration": {
                     "type": "externalintegration",
-                    "redirect": "https://www.keycloak.org/",
+                    "redirection": "https://www.keycloak.org/",
                     "result": ""
                 }
             },
@@ -2917,7 +2917,7 @@
                 "reference": "html-tools",
                 "integration": {
                     "type": "externalintegration",
-                    "redirect": "https://www.w3.org/WAI/ER/tools/",
+                    "redirection": "https://www.w3.org/WAI/ER/tools/",
                     "result": ""
                 }
             },
@@ -2955,7 +2955,7 @@
                 "logotype": "./interlinkers/software/doodle/logo.png",
                 "integration": {
                     "type": "externalintegration",
-                    "redirect": "https://doodle.com/es/",
+                    "redirection": "https://doodle.com/es/",
                     "result": "externalresourcemanager"
                 }
             }

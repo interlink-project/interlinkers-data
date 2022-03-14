@@ -410,8 +410,8 @@
                 "type": {
                     "$ref": "#/definitions/IntegrationTypes"
                 },
-                "redirect": {
-                    "title": "Redirect",
+                "redirection": {
+                    "title": "Redirection",
                     "type": "string"
                 },
                 "result": {
@@ -421,7 +421,7 @@
             },
             "required": [
                 "type",
-                "redirect"
+                "redirection"
             ]
         }
     }

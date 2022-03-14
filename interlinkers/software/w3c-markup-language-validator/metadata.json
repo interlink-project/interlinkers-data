@@ -34,7 +34,7 @@
 	  "reference":"html-tools",
     "integration": {
       "type": "externalintegration",
-      "redirect": "https://validator.w3.org/about.html",
+      "redirection": "https://validator.w3.org/about.html",
       "result": ""
     }
       

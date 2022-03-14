@@ -37,7 +37,7 @@
     "logotype": "./interlinkers/software/keycloak/logo.png",
     "integration": {
       "type": "externalintegration",
-      "redirect": "https://www.keycloak.org/",
+      "redirection": "https://www.keycloak.org/",
       "result": ""
     }
 }

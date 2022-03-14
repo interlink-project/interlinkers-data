@@ -56,7 +56,7 @@ class InternalIntegration(BaseModel):
 
 class ExternalIntegration(BaseModel):
     type: IntegrationTypes
-    redirect: str
+    redirection: str
     result: Optional[str]
 
 class Schema(InterlinkerSchema):

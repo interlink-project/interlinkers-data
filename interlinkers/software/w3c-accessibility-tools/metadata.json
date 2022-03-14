@@ -33,7 +33,7 @@
     "reference":"html-tools",
     "integration": {
         "type": "externalintegration",
-        "redirect": "https://www.w3.org/WAI/ER/tools/",
+        "redirection": "https://www.w3.org/WAI/ER/tools/",
         "result": ""
       }
 }

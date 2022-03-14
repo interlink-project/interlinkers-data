@@ -30,7 +30,7 @@
     "logotype": "./interlinkers/software/doodle/logo.png",
     "integration": {
       "type": "externalintegration",
-      "redirect": "https://doodle.com/es/",
+      "redirection": "https://doodle.com/es/",
       "result": "externalresourcemanager"
     }
 }

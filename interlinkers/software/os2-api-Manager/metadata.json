@@ -47,7 +47,7 @@
   "logotype": "./interlinkers/software/os2-api-Manager/logo.jpeg",
   "integration": {
     "type": "externalintegration",
-    "redirect": "https://wso2.com/api-manager/",
+    "redirection": "https://wso2.com/api-manager/",
     "result": ""
   }
 }

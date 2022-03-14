@@ -36,7 +36,7 @@
     "reference" : "dashboard",
     "integration": {
       "type": "externalintegration",
-      "redirect": "https://grafana.com/",
+      "redirection": "https://grafana.com/",
       "result": "externalresourcemanager"
     }
 }
