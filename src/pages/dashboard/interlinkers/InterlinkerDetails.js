@@ -1,5 +1,5 @@
 import {
-  Box, Card, CardContent, Chip, Divider, Grid, Tab, Tabs, Typography
+  Box, Card, CardContent, Chip, Divider, Grid, Tab, Tabs, Typography, Button
 } from '@material-ui/core';
 import { NatureChip, OfficialityChip } from 'components/dashboard/assets/Icons';
 import {
@@ -30,9 +30,9 @@ const InterlinkerDetails = ({ interlinker }) => {
 
   const common = [
     { label: 'Overview', value: 'overview' },
-    { label: 'Reviews', value: 'reviews' },
     { label: 'Instructions', value: 'instructions' },
-    { label: 'Snapshots', value: 'snapshots' },
+    { label: 'Preview', value: 'preview' },
+    { label: 'Reviews', value: 'reviews' },
     { label: 'Related interlinkers', value: 'related' },
   ]
   const tabs = isKnowledge ? [
@@ -165,6 +165,9 @@ const InterlinkerDetails = ({ interlinker }) => {
                   </Typography>
                   <Box sx={{ mt: 1 }}>
                     <InterlinkerReference interlinker={softwareinterlinker} />
+
+
+
                   </Box>
                 </Grid>}
               </Grid>
@@ -177,13 +180,18 @@ const InterlinkerDetails = ({ interlinker }) => {
             <SafeHTMLElement data={interlinker.instructions} />
           </Card>
         )}
+        {currentTab === 'preview' && (
+          <Card sx={{ p: 3, height: "100%", justifyContent: "center" }}>
+
+            <SwipeableTextMobileStepper height="50vh" images={interlinker.snapshots_links} objectFit="contain" />
+            {softwareinterlinker.integration.download && <Button sx={{mt: 2}} variant="contained" onClick={() => window.open(link + "/download", "_blank")}>
+              {softwareinterlinker.integration.download_text}
+            </Button>}
+
+          </Card>
+        )}
         {currentTab === 'related' && (
           <RelatedInterlinkersTable interlinker={interlinker} />
-        )}
-        {currentTab === 'snapshots' && (
-          <Card>
-            <SwipeableTextMobileStepper height="60vh" images={interlinker.snapshots_links} objectFit="contain" />
-          </Card>
         )}
         {currentTab === 'reviews' && (
           <InterlinkerReviews interlinker={interlinker} />

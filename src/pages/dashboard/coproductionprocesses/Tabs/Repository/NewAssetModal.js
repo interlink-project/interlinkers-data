@@ -43,8 +43,7 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
     const [loadingKnowledgeInstantiation, setLoadingKnowledgeInstantiation] = useState(false);
 
     const open_in_modal = selectedInterlinker.nature === "softwareinterlinker" && selectedInterlinker.integration && selectedInterlinker.integration.open_in_modal
-    const sftinterlinker = selectedInterlinker.nature === "softwareinterlinker" ? selectedInterlinker : selectedInterlinker.softwareinterlinker
-    const downloadable = sftinterlinker && sftinterlinker.integration && sftinterlinker.integration.download
+    const downloadable = selectedInterlinker.nature === "knowledgeinterlinker" && selectedInterlinker.softwareinterlinker.integration && selectedInterlinker.softwareinterlinker.integration.download
 
     const handleClose = () => {
         setOpen(false);

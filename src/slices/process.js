@@ -141,7 +141,7 @@ const slice = createSlice({
     },
     setSelectedPhase(state, action) {
       state.selectedPhaseTab = action.payload;
-      state.selectedTreeItem = null
+      state.selectedTreeItem = state.phases.find(phase => phase.name === action.payload)
     },
   }
 });
