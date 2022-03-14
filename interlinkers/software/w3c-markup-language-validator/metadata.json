@@ -20,7 +20,6 @@
         "BUILD_PROBLEM_2" 
     ],
     "types": ["enabling_services"],
-    "related_interlinkers": [],
     "administrative_scopes": ["eu", "national", "local"],
     "constraints_and_limitations_translations": {
       "en": "None"
@@ -34,7 +33,7 @@
     "is_responsive": false,
 	  "reference":"html-tools",
     "integration": {
-      "type": "external",
+      "type": "externalintegration",
       "redirect": "https://validator.w3.org/about.html",
       "result": ""
     }

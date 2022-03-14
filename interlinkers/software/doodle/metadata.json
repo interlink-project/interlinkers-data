@@ -17,7 +17,6 @@
     "licence": "propietary",
     "problem_profiles": ["ORG_PROBLEM_4"
     ],
-    "related_interlinkers": [],
     "constraints_and_limitations_translations": {
       "en": "none"
     },
@@ -30,7 +29,7 @@
     "reference": "calendar-tool",
     "logotype": "./interlinkers/software/doodle/logo.png",
     "integration": {
-      "type": "external",
+      "type": "externalintegration",
       "redirect": "https://doodle.com/es/",
       "result": "externalresourcemanager"
     }

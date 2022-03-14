@@ -21,7 +21,6 @@
           "ORG_PROBLEM_6.2" 
       ],
       "types": ["enabling_services"],
-      "related_interlinkers": [],
       "administrative_scopes": ["eu", "national", "local"],
       "constraints_and_limitations_translations":  {
         "en": "None"
@@ -36,7 +35,7 @@
       "logotype": "./interlinkers/software/google-chart/logo.png",
       "reference": "graph-js-library",
       "integration": {
-        "type": "external",
+        "type": "externalintegration",
         "redirect": "https://developers.google.com/chart",
         "result": ""
       }

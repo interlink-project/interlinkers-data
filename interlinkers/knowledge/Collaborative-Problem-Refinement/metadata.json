@@ -2,7 +2,6 @@
   "targets": ["all"],
   "problem_profiles": ["UND_PROBLEM_3", "UND_PROBLEM_1", "VAL_PROBLEM_2"],
   "types": ["enhancing_services"],
-  "related_interlinkers": ["Business Plan Template", "Business Model Canvas"],
   "administrative_scopes": ["eu"],
   "domain": "",
   "process": "",

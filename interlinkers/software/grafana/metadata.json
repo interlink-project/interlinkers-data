@@ -20,7 +20,6 @@
         "ORG_PROBLEM_6.2" 
     ],
     "types": ["enabling_services"],
-    "related_interlinkers": ["Open API specification"],
     "administrative_scopes": ["eu", "national", "local"],
     "constraints_and_limitations_translations": {
       "en": "None"
@@ -36,7 +35,7 @@
     "logotype": "./interlinkers/software/grafana/logo.png",
     "reference" : "dashboard",
     "integration": {
-      "type": "external",
+      "type": "externalintegration",
       "redirect": "https://grafana.com/",
       "result": "externalresourcemanager"
     }

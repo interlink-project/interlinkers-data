@@ -20,7 +20,6 @@
         "ORG_PROBLEM_2"
     ],
     "types": ["enabling_services", "enhancing_services"],
-    "related_interlinkers": [],
     "administrative_scopes": ["eu", "national", "local"],
     "constraints_and_limitations_translations": {
         "en": "None"
@@ -36,7 +35,7 @@
     "logotype": "./interlinkers/software/trello/logo.png",
     "reference":"project-management",
     "integration": {
-        "type": "external",
+        "type": "externalintegration",
         "redirect": "https://trello.com/es",
         "result": "externalresourcemanager"
       }

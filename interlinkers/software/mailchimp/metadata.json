@@ -16,7 +16,6 @@
     "licence": "propietary",
     "problem_profiles": ["ORG_PROBLEM_4"
     ],
-    "related_interlinkers": [],
     "constraints_and_limitations_translations": {
         "en" : "none"
     },
@@ -29,7 +28,7 @@
     "logotype": "./interlinkers/software/mailchimp/logo.png",
     "reference": "email-marketing",
     "integration": {
-        "type": "external",
+        "type": "externalintegration",
         "redirect": "https://mailchimp.com/es/",
         "result": ""
       }

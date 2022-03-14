@@ -12,7 +12,6 @@
     "administrative_scopes": [
         "eu"
     ],
-    "related_interlinkers": [],
     "reference": "user-journey-template",
     "form": "document_template",
     "format": "editable_source_document",

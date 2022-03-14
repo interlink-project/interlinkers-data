@@ -21,6 +21,9 @@ class AuthMethods(Enum):
     header = "header"
     cookie = "cookie"
 
+class IntegrationTypes(Enum):
+    internal = "internalintegration"
+    external = "externalintegration"
 
 class Capabilities(BaseModel):
     instantiate: bool
@@ -41,7 +44,7 @@ class CapabilitiesTranslations(BaseModel):
     download_text_translations: Optional[Dict[str, str]]
 
 class InternalIntegration(BaseModel):
-    type: str = "internal"
+    type: IntegrationTypes
     service_name: str
     domain: str
     path: str
@@ -52,7 +55,7 @@ class InternalIntegration(BaseModel):
     auth_method: AuthMethods
 
 class ExternalIntegration(BaseModel):
-    type: str = "external"
+    type: IntegrationTypes
     redirect: str
     result: Optional[str]
 

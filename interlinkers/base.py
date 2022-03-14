@@ -126,13 +126,6 @@ class InterlinkerSchema(WithProblemProfiles, extra=Extra.forbid):
     # This input will be:
     # - Used internally by the INTERLINK platform to describe how the INTERLINKER relates to the standard classifications introduced by the CEF Service Offering Canvas (SOC)
 
-    related_interlinkers: Optional[List[str]]
-    # FOR 1
-    # List of related INTERLINKERS and dependency INTERLINKERS.
-    # This input will be:
-    # - Shown on the platform interface in the page showing the details of the INTERLINKER
-    # - Used by the Wizard algorithms for intelligent filtering and recommendation
-
     administrative_scopes: Optional[List[AdministrativeScopes]]
     # FOR 2
     # This field describes the administrative context for which this INTERLINKER is particularly suitable.

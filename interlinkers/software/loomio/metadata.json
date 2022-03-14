@@ -20,7 +20,6 @@
     "types": [
         "enabling_services;operation_services"
     ],
-    "related_interlinkers": [],
     "administrative_scopes": [
         "eu",
         "national",
@@ -47,7 +46,7 @@
     "supports_internationalization": true,
     "is_responsive": true,
     "integration": {
-        "type": "internal",
+        "type": "internalintegration",
         "domain": "",
         "path": "loomio",
         "service_name": "loomio",

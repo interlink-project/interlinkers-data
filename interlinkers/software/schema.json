@@ -54,13 +54,6 @@
                 "$ref": "#/definitions/InterlinkerTypes"
             }
         },
-        "related_interlinkers": {
-            "title": "Related Interlinkers",
-            "type": "array",
-            "items": {
-                "type": "string"
-            }
-        },
         "administrative_scopes": {
             "type": "array",
             "items": {
@@ -249,6 +242,14 @@
                 "installed_app"
             ]
         },
+        "IntegrationTypes": {
+            "title": "IntegrationTypes",
+            "description": "An enumeration.",
+            "enum": [
+                "internalintegration",
+                "externalintegration"
+            ]
+        },
         "Capabilities": {
             "title": "Capabilities",
             "type": "object",
@@ -358,9 +359,7 @@
             "type": "object",
             "properties": {
                 "type": {
-                    "title": "Type",
-                    "default": "internal",
-                    "type": "string"
+                    "$ref": "#/definitions/IntegrationTypes"
                 },
                 "service_name": {
                     "title": "Service Name",
@@ -393,6 +392,7 @@
                 }
             },
             "required": [
+                "type",
                 "service_name",
                 "domain",
                 "path",
@@ -408,9 +408,7 @@
             "type": "object",
             "properties": {
                 "type": {
-                    "title": "Type",
-                    "default": "external",
-                    "type": "string"
+                    "$ref": "#/definitions/IntegrationTypes"
                 },
                 "redirect": {
                     "title": "Redirect",
@@ -422,6 +420,7 @@
                 }
             },
             "required": [
+                "type",
                 "redirect"
             ]
         }

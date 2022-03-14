@@ -25,9 +25,6 @@
   "types": [
     "enabling_services"
   ],
-  "related_interlinkers": [
-    "Open API specification"
-  ],
   "administrative_scopes": [
     "eu",
     "national",
@@ -49,7 +46,7 @@
   "reference": "api-manager",
   "logotype": "./interlinkers/software/os2-api-Manager/logo.jpeg",
   "integration": {
-    "type": "external",
+    "type": "externalintegration",
     "redirect": "https://wso2.com/api-manager/",
     "result": ""
   }

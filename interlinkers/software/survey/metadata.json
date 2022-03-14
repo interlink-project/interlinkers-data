@@ -10,7 +10,6 @@
     "difficulty": "easy",
     "licence": "propietary",
     "problem_profiles": [],
-    "related_interlinkers": [],
     "constraints_and_limitations_translations": {
         "en": "Some text here",
         "es": ""
@@ -25,7 +24,7 @@
     "supports_internationalization": true,
     "is_responsive": true,
     "integration": {
-        "type": "internal",
+        "type": "internalintegration",
         "domain": "",
         "path": "survey",
         "service_name": "survey",
