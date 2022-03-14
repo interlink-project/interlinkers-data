@@ -2236,7 +2236,7 @@
                 "logotype": "./interlinkers/software/os2-api-Manager/logo.jpeg",
                 "integration": {
                     "type": "externalintegration",
-                    "redirection": "https://developers.google.com/chart",
+                    "redirection": "https://wso2.com/api-manager/",
                     "result": ""
                 }
             },
@@ -2378,7 +2378,7 @@
                 "reference": "graph-js-library",
                 "integration": {
                     "type": "externalintegration",
-                    "redirect": "https://developers.google.com/chart",
+                    "redirection": "https://developers.google.com/chart",
                     "result": ""
                 }
             },
@@ -2428,7 +2428,7 @@
                 "reference": "dashboard",
                 "integration": {
                     "type": "externalintegration",
-                    "redirect": "https://grafana.com/",
+                    "redirection": "https://grafana.com/",
                     "result": "externalresourcemanager"
                 }
             },
@@ -2484,7 +2484,7 @@
                 "logotype": "./interlinkers/software/keycloak/logo.png",
                 "integration": {
                     "type": "externalintegration",
-                    "redirection": "https://validator.w3.org/about.html",
+                    "redirection": "https://www.keycloak.org/",
                     "result": ""
                 }
             },
@@ -2537,7 +2537,7 @@
                 "reference": "project-management",
                 "integration": {
                     "type": "externalintegration",
-                    "redirection": "https://grafana.com/",
+                    "redirection": "https://trello.com/es",
                     "result": "externalresourcemanager"
                 }
             },
@@ -2581,60 +2581,7 @@
             },
             {
                 "name_translations": {
-                    "en": "OS2 API Manager"
-                },
-                "description_translations": {
-                    "en": "<p>WSO2 API Manager is a complete platform for building, integrating, and exposing your digital services as managed APIs in the cloud, on-premise, and hybrid architectures to drive your digital transformation strategy. It allows API developers to design, publish, and manage the lifecycle of APIs and API product managers to create API products from one or more APIs.</p>"
-                },
-                "tags_translations": {
-                    "en": [
-                        "OPEN API",
-                        "API MANAGEMENT",
-                        "SERVICES"
-                    ]
-                },
-                "difficulty": "medium",
-                "targets": [
-                    "all;pas",
-                    "all;businesses",
-                    "all;research_organizations"
-                ],
-                "licence": "public_domain",
-                "problem_profiles": [
-                    "BUILD_PROBLEM_4"
-                ],
-                "types": [
-                    "enabling_services"
-                ],
-                "administrative_scopes": [
-                    "eu",
-                    "national",
-                    "local"
-                ],
-                "constraints_and_limitations_translations": {
-                    "en": "None"
-                },
-                "regulations_and_standards_translations": {
-                    "en": "Open API"
-                },
-                "supported_by": [
-                    "saas",
-                    "on_premise"
-                ],
-                "developer_manual": "https://apim.docs.wso2.com/en/latest/",
-                "supports_internationalization": false,
-                "is_responsive": true,
-                "reference": "api-manager",
-                "logotype": "./interlinkers/software/os2-api-Manager/logo.jpeg",
-                "integration": {
-                    "type": "externalintegration",
-                    "redirection": "https://wso2.com/api-manager/",
-                    "result": ""
-                }
-            },
-            {
-                "name_translations": {
-                    "en": "External resource manager",
+                    "en": "Survey creator",
                     "es": ""
                 },
                 "description_translations": {
@@ -2711,44 +2658,6 @@
                         "poll",
                         "vote"
                     ]
-                },
-                "difficulty": "easy",
-                "targets": [
-                    "all"
-                ],
-                "licence": "propietary",
-                "problem_profiles": [
-                    "ORG_PROBLEM_2"
-                ],
-                "types": [
-                    "enabling_services",
-                    "enhancing_services"
-                ],
-                "administrative_scopes": [
-                    "eu",
-                    "national",
-                    "local"
-                ],
-                "constraints_and_limitations_translations": {
-                    "en": "None"
-                },
-                "regulations_and_standards_translations": {
-                    "en": "None"
-                },
-                "supported_by": [
-                    "on_premise",
-                    "saas"
-                ],
-                "user_manual": "https://trello.com/guide",
-                "developer_manual": "https://developer.atlassian.com/cloud/trello/",
-                "supports_internationalization": true,
-                "is_responsive": true,
-                "logotype": "./interlinkers/software/trello/logo.png",
-                "reference": "project-management",
-                "integration": {
-                    "type": "externalintegration",
-                    "redirection": "https://trello.com/es",
-                    "result": "externalresourcemanager"
                 }
             },
             {
@@ -2870,7 +2779,7 @@
                 "logotype": "./interlinkers/software/doodle/logo.png",
                 "integration": {
                     "type": "externalintegration",
-                    "redirect": "https://doodle.com/es/",
+                    "redirection": "https://doodle.com/es/",
                     "result": "externalresourcemanager"
                 }
             },
@@ -2920,7 +2829,7 @@
                 "reference": "html-tools",
                 "integration": {
                     "type": "externalintegration",
-                    "redirect": "https://validator.w3.org/about.html",
+                    "redirection": "https://validator.w3.org/about.html",
                     "result": ""
                 }
             },
@@ -2999,46 +2908,6 @@
                         "share",
                         "report"
                     ]
-                },
-                "difficulty": "difficult",
-                "targets": [
-                    "all;pas",
-                    "all;research_organizations",
-                    "all;businesses"
-                ],
-                "licence": "public_domain",
-                "problem_profiles": [
-                    "ORG_PROBLEM_3"
-                ],
-                "types": [
-                    "enabling_services",
-                    "enhancing_services"
-                ],
-                "administrative_scopes": [
-                    "eu",
-                    "national",
-                    "local"
-                ],
-                "constraints_and_limitations_translations": {
-                    "en": "None"
-                },
-                "regulations_and_standards_translations": {
-                    "en": "None"
-                },
-                "supported_by": [
-                    "on_premise"
-                ],
-                "deployment_manual": "https://www.keycloak.org/guides#server",
-                "user_manual": "https://www.keycloak.org/guides#getting-started",
-                "developer_manual": "https://www.keycloak.org/docs/latest/server_development/index.html",
-                "supports_internationalization": false,
-                "is_responsive": false,
-                "reference": "user-authentication-authorization",
-                "logotype": "./interlinkers/software/keycloak/logo.png",
-                "integration": {
-                    "type": "externalintegration",
-                    "redirection": "https://www.keycloak.org/",
-                    "result": ""
                 }
             },
             {
@@ -3088,44 +2957,6 @@
                     "type": "externalintegration",
                     "redirection": "https://www.w3.org/WAI/ER/tools/",
                     "result": ""
-                }
-            },
-            {
-                "name_translations": {
-                    "en": "Doodle"
-                },
-                "description_translations": {
-                    "en": "<p>Online calendar tool for time management and coordinating meetings</p>"
-                },
-                "tags_translations": {
-                    "en": [
-                        "survey",
-                        "time",
-                        "task"
-                    ]
-                },
-                "difficulty": "easy",
-                "licence": "propietary",
-                "problem_profiles": [
-                    "ORG_PROBLEM_4"
-                ],
-                "constraints_and_limitations_translations": {
-                    "en": "none"
-                },
-                "regulations_and_standards_translations": {
-                    "en": "none"
-                },
-                "supported_by": [
-                    "saas"
-                ],
-                "supports_internationalization": true,
-                "is_responsive": true,
-                "reference": "calendar-tool",
-                "logotype": "./interlinkers/software/doodle/logo.png",
-                "integration": {
-                    "type": "externalintegration",
-                    "redirection": "https://doodle.com/es/",
-                    "result": "externalresourcemanager"
                 }
             }
         ],
