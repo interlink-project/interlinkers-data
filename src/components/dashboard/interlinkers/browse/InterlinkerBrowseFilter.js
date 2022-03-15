@@ -60,29 +60,29 @@ const InterlinkerBrowseFilter = ({ onFiltersChange }) => {
   const [selectedNatures, setSelectedNatures] = useState(allNatures);
   const [selectedCreators, setSelectedCreators] = useState(allCreators);
   const [minimumRating, setMinimumRating] = useState(0);
-  const dispatch = useDispatch();
   const didMount = useRef(false);
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
 
+  const update = () => onFiltersChange({
+    search: inputValue || null,
+    nature: selectedNatures !== allNatures ? selectedNatures : null,
+    creator: selectedCreators !== allCreators ? selectedCreators : null,
+    rating: minimumRating || null
+  })
+
+  useEffect(() => {
+    update()
+  }, [selectedNatures, selectedCreators, minimumRating])
+
   const handleMultiSelectChange = (value, type) => {
     if (type === "Nature") {
       setSelectedNatures(value)
-      onFiltersChange({
-        search: inputValue,
-        nature: value,
-        creator: selectedCreators
-      })
     }
     if (type === "Creator") {
       setSelectedCreators(value)
-      onFiltersChange({
-        search: inputValue,
-        nature: selectedNatures,
-        creator: value
-      })
     }
 
   };
@@ -91,17 +91,12 @@ const InterlinkerBrowseFilter = ({ onFiltersChange }) => {
     var delayDebounceFn
     if (didMount.current) {
       delayDebounceFn = setTimeout(() => {
-        onFiltersChange({
-          search: inputValue,
-          nature: selectedNatures !== allNatures ? selectedNatures : null,
-          creator: selectedCreators !== allCreators ? selectedCreators : null
-        })
+        update()
       }, 800)
     }
     else {
       didMount.current = true
     }
-    
     return () => {
       if (delayDebounceFn) {
         clearTimeout(delayDebounceFn)
@@ -168,9 +163,9 @@ const InterlinkerBrowseFilter = ({ onFiltersChange }) => {
         ))}
 
         <Typography variant="body2" sx={{ mx: 1 }}><b>Minimum rating:</b></Typography>
-        <Rating value={1} />
+        <Rating value={minimumRating} onChange={(e, value) => setMinimumRating(value)} />
         <Divider orientation='vertical' flexItem sx={{ mx: 2 }} />
-        <Typography variant="body2" sx={{ mr: 1 }}><b>Order by:</b></Typography>
+        {/*<Typography variant="body2" sx={{ mr: 1 }}><b>Order by:</b></Typography>
         <Select
           labelId={selectOptions.label}
           label={selectOptions.label}
@@ -179,7 +174,7 @@ const InterlinkerBrowseFilter = ({ onFiltersChange }) => {
           sx={{ width: "100px", height: "40px" }}
         >
           {selectOptions.options.map((opt) => <MenuItem key={opt.value} value={opt.value}>{opt.label}</MenuItem>)}
-        </Select>
+        </Select>*/}
       </Box>
     </Card>
   );

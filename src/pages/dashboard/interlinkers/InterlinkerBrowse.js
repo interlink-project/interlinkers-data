@@ -52,7 +52,7 @@ const InterlinkerBrowse = () => {
   const [params, setParams] = useState({});
   const [loadedRows, setLoadedRows] = useState([]);
 
-  const hasNextPage = loadedRows.length <= total
+  const hasNextPage = loadedRows.length < total
 
   
   useEffect(() => {
@@ -60,7 +60,6 @@ const InterlinkerBrowse = () => {
   }, [params])
 
   const loadServerRows = async (params) => {
-    console.log("eject")
     setLoading(true);
     try {
       interlinkersApi.getMulti({ page: page + 1, size, ...params }).then(res => {
@@ -78,13 +77,15 @@ const InterlinkerBrowse = () => {
   };
 
   const handleOnRowsScrollEnd = async () => {
-    console.log(page, hasNextPage)
+    console.log(hasNextPage, loadedRows.length, "/", total)
     if (hasNextPage) {
       loadServerRows();
     }
   };
 
   const onFiltersChange = (params) => {
+    setPage(0)
+    setLoadedRows([])
     setParams(params)
   }
 
