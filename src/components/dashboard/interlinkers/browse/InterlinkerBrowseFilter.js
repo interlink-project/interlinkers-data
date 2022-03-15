@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Box, Card, Rating, MenuItem, Divider, InputLabel, Input, Select, Typography, FormControl } from '@material-ui/core';
 import SearchIcon from '../../../../icons/Search';
 import MultiSelect from '../../../MultiSelect';
@@ -59,7 +59,9 @@ const InterlinkerBrowseFilter = ({ onFiltersChange }) => {
   const [inputValue, setInputValue] = useState('');
   const [selectedNatures, setSelectedNatures] = useState(allNatures);
   const [selectedCreators, setSelectedCreators] = useState(allCreators);
+  const [minimumRating, setMinimumRating] = useState(0);
   const dispatch = useDispatch();
+  const didMount = useRef(false);
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -68,20 +70,38 @@ const InterlinkerBrowseFilter = ({ onFiltersChange }) => {
   const handleMultiSelectChange = (value, type) => {
     if (type === "Nature") {
       setSelectedNatures(value)
-      onFiltersChange(inputValue, value, selectedCreators)
+      onFiltersChange({
+        search: inputValue,
+        nature: value,
+        creator: selectedCreators
+      })
     }
     if (type === "Creator") {
       setSelectedCreators(value)
-      onFiltersChange(inputValue, selectedNatures, value)
+      onFiltersChange({
+        search: inputValue,
+        nature: selectedNatures,
+        creator: value
+      })
     }
 
   };
 
   useEffect(() => {
     var delayDebounceFn
-    delayDebounceFn = setTimeout(() => {
-      onFiltersChange(inputValue || null, selectedNatures !== allNatures ? selectedNatures : null, selectedCreators !== allCreators ? selectedCreators : null)
-    }, 800)
+    if (didMount.current) {
+      delayDebounceFn = setTimeout(() => {
+        onFiltersChange({
+          search: inputValue,
+          nature: selectedNatures !== allNatures ? selectedNatures : null,
+          creator: selectedCreators !== allCreators ? selectedCreators : null
+        })
+      }, 800)
+    }
+    else {
+      didMount.current = true
+    }
+    
     return () => {
       if (delayDebounceFn) {
         clearTimeout(delayDebounceFn)

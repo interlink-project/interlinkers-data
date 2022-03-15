@@ -14,6 +14,7 @@ export default class GeneralApi {
   }
 
   async getMulti(params = {}) {
+    console.log("GETTING WITH", removeEmpty(params))
     const res = await axiosInstance.get(
       `/${this.url}`, {
         params: removeEmpty(params)

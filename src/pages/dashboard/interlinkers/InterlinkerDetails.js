@@ -165,9 +165,6 @@ const InterlinkerDetails = ({ interlinker }) => {
                   </Typography>
                   <Box sx={{ mt: 1 }}>
                     <InterlinkerReference interlinker={softwareinterlinker} />
-
-
-
                   </Box>
                 </Grid>}
               </Grid>
@@ -184,7 +181,7 @@ const InterlinkerDetails = ({ interlinker }) => {
           <Card sx={{ p: 3, height: "100%", justifyContent: "center" }}>
 
             <SwipeableTextMobileStepper height="50vh" images={interlinker.snapshots_links} objectFit="contain" />
-            {softwareinterlinker.integration.download && <Button sx={{mt: 2}} variant="contained" onClick={() => window.open(link + "/download", "_blank")}>
+            {softwareinterlinker && softwareinterlinker.integration.download && <Button sx={{mt: 2}} variant="contained" onClick={() => window.open(link + "/download", "_blank")}>
               {softwareinterlinker.integration.download_text}
             </Button>}
 

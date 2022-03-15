@@ -222,13 +222,13 @@ const InterlinkerCard = ({ interlinker, mode, onInterlinkerClick }) => {
             <Rating
               readOnly
               size='small'
-              value={null}
+              value={interlinker.rating}
             />
             <Typography
               color='textPrimary'
               sx={{ ml: 1 }}
             >
-              (0)
+              ({interlinker.ratings_count})
             </Typography>
           </Box>
         </Grid>

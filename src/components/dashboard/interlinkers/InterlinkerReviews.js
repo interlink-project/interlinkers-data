@@ -1,43 +1,41 @@
 import PropTypes from 'prop-types';
-import { Box, Card, CardContent, Grid, Paper, Rating, TextField, Typography } from '@material-ui/core';
+import { Box, Button, Card, CardContent, Grid, Paper, Rating, TextField, Typography, Stack, CircularProgress, Dialog } from '@material-ui/core';
 import InterlinkerReviewCard from './InterlinkerReviewCard';
 import { useEffect, useState } from 'react';
 import axiosInstance from 'axiosInstance';
 import { ratingsApi } from '__fakeApi__/catalogue/ratingsApi';
+import { LoadingButton } from '@material-ui/lab';
+import useAuth from 'hooks/useAuth';
 
-/* [
-            {
-              id: '5f0366cd843161f193ebadd4',
-              author: {
-                avatar: '/static/mock-images/avatars/avatar-marcus_finn.png',
-                name: 'Marcus Finn',
-              },
-              comment: 'Great information.',
-              createdAt: subHours(now, 2).getTime(),
-              value: 5,
-            },
-            {
-              id: 'to33twsyjphcfj55y3t07261',
-              author: {
-                avatar: '/static/mock-images/avatars/avatar-miron_vitold.png',
-                name: 'Miron Vitold',
-              },
-              comment:
-                "Not the best for this kind of task.",
-              createdAt: subHours(now, 2).getTime(),
-              value: 2,
-            },
-          ]
-          */
 const InterlinkerRatings = ({ interlinker }) => {
   const [loading, setLoading] = useState(true)
   const [ratings, setRatings] = useState([])
 
-  useEffect(() => {
-    ratingsApi.getMulti(interlinker.id).then((res) => { 
-      setLoading(false); 
-      setRatings(res) 
+  const [newCommentDialog, _setNewCommentDialog] = useState(false)
+  const [title, setTitle] = useState("")
+  const [text, setText] = useState("")
+  const [value, setValue] = useState(5)
+  const auth = useAuth();
+
+  const { user, isAuthenticated } = auth
+
+  const setNewCommentDialog = (bool) => {
+    setTitle("")
+    setText("")
+    setValue("")
+    _setNewCommentDialog(bool)
+  }
+
+  const update = () => {
+    setLoading(true)
+    ratingsApi.getMulti(interlinker.id).then((res) => {
+      setLoading(false);
+      setRatings(res.items)
+      setNewCommentDialog(false)
     })
+  }
+  useEffect(() => {
+    update()
   }, [])
 
   const rating = ratings.reduce((acc, rating) => acc + rating.value, 0) / ratings.length;
@@ -66,7 +64,7 @@ const InterlinkerRatings = ({ interlinker }) => {
                   display: 'flex'
                 }}
               >
-                <Rating value={rating} readOnly />
+                <Rating value={rating} precision={0.5} readOnly />
                 <Typography
                   color='textPrimary'
                   sx={{ ml: 2 }}
@@ -89,29 +87,48 @@ const InterlinkerRatings = ({ interlinker }) => {
           </Grid>
         </CardContent>
       </Card>
-      {ratings.map((rating) => (
+      {isAuthenticated && <Button variant="text" fullWidth onClick={() => setNewCommentDialog(true)} sx={{ mt: 1 }}>Rate this interlinker</Button>}
+
+      {loading ? <CircularProgress /> : ratings.map((rating) => (
         <Box
           key={rating.id}
           sx={{ mt: 2 }}
         >
           <InterlinkerReviewCard
-            authorAvatar={rating.author.avatar}
-            authorName={rating.author.name}
-            comment={rating.comment}
-            createdAt={rating.createdAt}
+            authorAvatar={rating.user.picture}
+            authorName={rating.user.full_name}
+            title={rating.title}
+            comment={rating.text}
+            createdAt={rating.created_at}
             value={rating.value}
           />
         </Box>
       ))}
-      <Paper sx={{ mt: 2, p: 3 }}>
-        <TextField
-          fullWidth
-          label="Write a comment here..."
-          multiline
-          rows={2}
-          variant="standard"
-        />
-      </Paper>
+      <Dialog open={newCommentDialog} onClose={() => setNewCommentDialog(false)} fullWidth >
+        <Stack spacing={3} direction="column" sx={{ p: 3 }}>
+          <TextField
+            fullWidth
+            label="Comment title"
+            variant="standard"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+          <TextField
+            fullWidth
+            label="Comment body"
+            multiline
+            rows={3}
+            variant="standard"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+          />
+          <Rating value={value} onChange={(event, newValue) => {
+            setValue(newValue);
+          }} />
+          <LoadingButton loading={loading} variant="contained" size="small" onClick={() => ratingsApi.create(title, text, value, interlinker.id).then(update)}> Send</LoadingButton>
+        </Stack>
+
+      </Dialog>
 
     </div>
   );

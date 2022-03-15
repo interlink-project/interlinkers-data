@@ -8,7 +8,7 @@ class RatingsApi extends GeneralApi {
 
   async getMulti(artefact_id, params = {}) {
     const res = await axiosInstance.get(
-      `/catalogue/api/v1/interlinkers/${artefact_id}/ratings`, {
+      `/${this.url}?artefact_id=${artefact_id}`, {
         params: removeEmpty(params)
       }
     );

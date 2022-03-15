@@ -3,7 +3,7 @@ import {
     Button, CircularProgress as MuiCircularProgress, Dialog, DialogActions, DialogContent,
     DialogTitle, Grid, IconButton, Typography
 } from '@material-ui/core';
-import { ArrowBack, Close } from '@material-ui/icons';
+import { ArrowBack, Close, DoubleArrow, Download } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import { env } from 'configuration';
 import InterlinkerHeader from 'pages/dashboard/interlinkers/InterlinkerHeader';
@@ -193,7 +193,7 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
                             }}
                         >
                             <Typography variant="h5">Are you sure you want to instantiate this interlinker?</Typography>
-                            <LoadingButton loading={loadingKnowledgeInstantiation} color="success" size="large" sx={{mt: 2}} onClick={async () => {
+                            <LoadingButton loading={loadingKnowledgeInstantiation} color="success" size="large" sx={{ mt: 2 }} onClick={async () => {
                                 setLoadingKnowledgeInstantiation(true)
                                 const interlinker_asset = await knowledgeInterlinkersApi.instantiate(selectedInterlinker.id)
                                 const coproduction_asset = await onAssetCreate(interlinker_asset, selectedInterlinker.softwareinterlinker_id, selectedInterlinker.id)
@@ -268,14 +268,13 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
                     </Box>
                 </Box>}
             </DialogContent>
-            {activeStep === 0 && <DialogActions sx={{bgcolor: "background.default"}}> 
-            {downloadable && <Button sx={{ my: 2, mx: 4 }} autoFocus fullWidth variant="contained" color="warning" onClick={() => window.open(selectedInterlinker.link + "/download", "_blank")}>
-                    Download
+            {activeStep === 0 && <DialogActions sx={{ bgcolor: "background.default", justifyContent: "center" }}>
+                {downloadable && <Button startIcon={<Download />} sx={{ my: 2, mx: 4 }} autoFocus variant="outlined" color="warning" onClick={() => window.open(selectedInterlinker.link + "/download", "_blank")}>
+                    Download locally as resource not related to project (for features exploration)
                 </Button>}
-                <Button sx={{ my: 2, mx: 4 }} autoFocus fullWidth variant="contained" onClick={() => setActiveStep(1)}>
-                    Launch interlinker
+                <Button startIcon={<DoubleArrow />} sx={{ my: 2, mx: 4 }} autoFocus variant="contained" onClick={() => setActiveStep(1)}>
+                    Instantiate as resource to use in project
                 </Button>
-                
             </DialogActions>}
         </Dialog>
     );

@@ -1,70 +1,47 @@
-import { Link as RouterLink } from 'react-router-dom';
+import { Avatar, Box, Card, CardHeader, IconButton, Link, Rating, Typography } from '@material-ui/core';
+import { Edit } from '@material-ui/icons';
+import moment from "moment";
 import PropTypes from 'prop-types';
-import { formatDistanceToNowStrict } from 'date-fns';
-import { Avatar, Box, Card, CardHeader, Link, Rating, Typography } from '@material-ui/core';
-import getInitials from '../../../utils/getInitials';
+import { useState } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 
 const InterlinkerReviewCard = (props) => {
-  const { user_id, title, text, value, createdAt } = props;
+  const { authorAvatar, title, authorName, comment, createdAt, value } = props;
+  const [editMode, _setEditMode] = useState(false);
 
   return (
     <Card>
+      <IconButton onClick={() => _setEditMode(true)} sx={{
+              position: "relative",
+              right: "10px",
+              top: "10px",
+              float: "right"
+            }}>
+              <Edit />
+            </IconButton>
       <CardHeader
         avatar={(
-          <Avatar>
-          </Avatar>
+          <Avatar src={authorAvatar} />
         )}
         disableTypography
-        subheader={(
-          <Box
-            sx={{
-              alignItems: 'center',
-              display: 'flex',
-              flexWrap: 'wrap',
-              mt: 1
-            }}
+        subheader={
+          <Typography
+            color='textSecondary'
+            variant='body2'
+            sx={{ ml: 1 }}
           >
-            <Box
-              sx={{
-                alignItems: 'center',
-                display: 'flex',
-                mr: 1
-              }}
-            >
-              <Rating
-                readOnly
-                value={value}
-              />
-              <Typography
-                color='textPrimary'
-                sx={{ ml: 1 }}
-                variant='subtitle2'
-              >
-                {value}
-              </Typography>
-            </Box>
-            <Typography
-              color='textSecondary'
-              variant='body2'
-            >
-              |
-              {' '}
-              {formatDistanceToNowStrict(createdAt)}
-              {' '}
-              ago
-            </Typography>
-          </Box>
-        )}
-        title={(
-          <Link
+            {moment(createdAt).fromNow()}
+          </Typography>}
+        title={
+          <><Typography
             color='textPrimary'
-            component={RouterLink}
-            to='#'
+            sx={{ ml: 1 }}
             variant='subtitle2'
           >
-            {user_id}
-          </Link>
-        )}
+            {authorName}
+          </Typography>
+            
+          </>}
       />
       <Box
         sx={{
@@ -72,11 +49,21 @@ const InterlinkerReviewCard = (props) => {
           px: 3
         }}
       >
+        <Rating
+          readOnly
+          value={value}
+        />
+        <Typography
+          color='textSecondary'
+          variant='h6'
+        >
+          {title}
+        </Typography>
         <Typography
           color='textSecondary'
           variant='body1'
         >
-          {text}
+          {comment}
         </Typography>
       </Box>
     </Card>
@@ -86,8 +73,9 @@ const InterlinkerReviewCard = (props) => {
 InterlinkerReviewCard.propTypes = {
   authorAvatar: PropTypes.string.isRequired,
   authorName: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   comment: PropTypes.string.isRequired,
-  createdAt: PropTypes.number.isRequired,
+  createdAt: PropTypes.string.isRequired,
   value: PropTypes.number.isRequired
 };
 
