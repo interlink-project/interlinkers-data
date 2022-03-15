@@ -2839,7 +2839,7 @@
                     "es": ""
                 },
                 "description_translations": {
-                    "en": "This interlinker allows to create references to external resources, such as web pages or direct link to resources allocated in other services.",
+                    "en": "This interlinker allows to create references to external resources, such as web pages or including links to resources allocated in other services.",
                     "es": ""
                 },
                 "difficulty": "easy",
