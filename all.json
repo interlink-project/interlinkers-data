@@ -2279,6 +2279,7 @@
                         "view": true,
                         "edit": true,
                         "delete": true,
+                        "download": false,
                         "preview": true,
                         "open_in_modal": true,
                         "shortcut": true
@@ -2791,6 +2792,7 @@
                         "view": true,
                         "edit": false,
                         "delete": true,
+                        "download": true,
                         "preview": true,
                         "open_in_modal": true,
                         "shortcut": true
@@ -2812,9 +2814,13 @@
                             "en": "Delete document",
                             "es": "Eliminar documento"
                         },
-                        "preview_text_translations": {
+                        "download_text_translations": {
                             "en": "Download document",
                             "es": "Descargar documento"
+                        },
+                        "preview_text_translations": {
+                            "en": "Preview document",
+                            "es": "Ver documento"
                         }
                     }
                 },
@@ -2914,6 +2920,7 @@
                         "view": true,
                         "edit": false,
                         "delete": true,
+                        "download": false,
                         "preview": true,
                         "open_in_modal": true,
                         "shortcut": true
