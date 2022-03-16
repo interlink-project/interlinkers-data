@@ -37,7 +37,7 @@
             "view": true,
             "edit": false,
             "delete": true,
-            "download": false,
+            "preview": false,
             "open_in_modal": true,
             "shortcut": true
         },

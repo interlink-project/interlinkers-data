@@ -37,7 +37,7 @@
             "view": true,
             "edit": false,
             "delete": true,
-            "download": true,
+            "preview": true,
             "open_in_modal": true,
             "shortcut": true
         },
@@ -58,9 +58,9 @@
                 "en": "Delete survey",
                 "es": "Eliminar encuesta"
             },
-            "download_text_translations": {
-                "en": "Download survey JSON",
-                "es": "Descargar JSON de la encuesta"
+            "preview_text_translations": {
+                "en": "Preview survey",
+                "es": "Ver la encuesta propuesta"
             }
         }
     },

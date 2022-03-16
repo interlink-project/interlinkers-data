@@ -274,8 +274,8 @@
                     "title": "Delete",
                     "type": "boolean"
                 },
-                "download": {
-                    "title": "Download",
+                "preview": {
+                    "title": "Preview",
                     "type": "boolean"
                 },
                 "open_in_modal": {
@@ -293,7 +293,7 @@
                 "clone",
                 "edit",
                 "delete",
-                "download",
+                "preview",
                 "open_in_modal",
                 "shortcut"
             ]
@@ -337,8 +337,8 @@
                         "type": "string"
                     }
                 },
-                "download_text_translations": {
-                    "title": "Download Text Translations",
+                "preview_text_translations": {
+                    "title": "Preview Text Translations",
                     "type": "object",
                     "additionalProperties": {
                         "type": "string"

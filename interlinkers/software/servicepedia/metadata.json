@@ -60,7 +60,7 @@
             "view": true,
             "edit": true,
             "delete": true,
-            "download": false,
+            "preview": false,
             "open_in_modal": false,
             "shortcut": true
         },

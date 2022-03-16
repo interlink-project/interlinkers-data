@@ -37,7 +37,7 @@
             "view": true,
             "edit": true,
             "delete": true,
-            "download": false,
+            "preview": true,
             "open_in_modal": true,
             "shortcut": true
         },
@@ -61,6 +61,10 @@
             "delete_text_translations": {
                 "en": "Delete reference",
                 "es": "Eliminar referencia"
+            },
+            "preview_text_translations": {
+                "en": "Open the external resource",
+                "es": "Abrir recurso externo"
             }
         }
     },

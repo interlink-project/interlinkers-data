@@ -31,7 +31,7 @@ class Capabilities(BaseModel):
     clone: bool
     edit: bool
     delete: bool
-    download: bool
+    preview: bool
     open_in_modal: bool
     shortcut: bool
 
@@ -41,7 +41,7 @@ class CapabilitiesTranslations(BaseModel):
     clone_text_translations: Optional[Dict[str, str]]
     edit_text_translations: Optional[Dict[str, str]]
     delete_text_translations: Optional[Dict[str, str]]
-    download_text_translations: Optional[Dict[str, str]]
+    preview_text_translations: Optional[Dict[str, str]]
 
 class InternalIntegration(BaseModel):
     type: IntegrationTypes
