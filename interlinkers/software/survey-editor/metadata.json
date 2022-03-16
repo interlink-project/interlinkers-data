@@ -1,6 +1,6 @@
 {
     "name_translations": {
-        "en": "Survey creator",
+        "en": "Survey editor",
         "es": ""
     },
     "description_translations": {
@@ -26,8 +26,8 @@
     "integration": {
         "type": "internalintegration",
         "domain": "",
-        "path": "survey",
-        "service_name": "survey",
+        "path": "surveyeditor",
+        "service_name": "surveyeditor",
         "is_subdomain": false,
         "api_path": "/assets",
         "auth_method": "cookie",
@@ -35,7 +35,7 @@
             "instantiate": true,
             "clone": true,
             "view": true,
-            "edit": true,
+            "edit": false,
             "delete": true,
             "download": true,
             "open_in_modal": true,
@@ -51,12 +51,8 @@
                 "es": "Clonar encuesta"
             },
             "view_text_translations": {
-                "en": "Open survey",
-                "es": "Abrir encuesta"
-            },
-            "edit_text_translations": {
-                "en": "Edit survey questions",
-                "es": "Editar preguntas de la encuesta"
+                "en": "Open survey editor",
+                "es": "Abrir editor de encuesta"
             },
             "delete_text_translations": {
                 "en": "Delete survey",
@@ -68,8 +64,8 @@
             }
         }
     },
-    "logotype": "./interlinkers/software/survey/logo.jpeg",
-    "reference": "survey-creator",
+    "logotype": "./interlinkers/software/survey-editor/logo.jpeg",
+    "reference": "survey-editor",
     "tags_translations": {
         "en": [
             "survey",

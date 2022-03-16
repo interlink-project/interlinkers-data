@@ -64,7 +64,7 @@
             }
         }
     },
-    "logotype": "./interlinkers/software/googledrive/logo.png",
+    "logotype": "./interlinkers/software/google-drive/logo.png",
     "reference": "google-drive",
     "tags_translations": {
         "en": [

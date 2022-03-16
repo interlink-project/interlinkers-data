@@ -224,7 +224,7 @@
             "description": "An enumeration.",
             "enum": [
                 "googledrive",
-                "survey",
+                "surveyeditor",
                 "ceditor",
                 "externalresourcemanager"
             ]
