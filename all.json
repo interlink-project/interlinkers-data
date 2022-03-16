@@ -2242,6 +2242,83 @@
             },
             {
                 "name_translations": {
+                    "en": "External resource manager",
+                    "es": ""
+                },
+                "description_translations": {
+                    "en": "This interlinker allows to create references to external resources, such as web pages or including links to resources allocated in other services.",
+                    "es": ""
+                },
+                "difficulty": "easy",
+                "licence": "propietary",
+                "problem_profiles": [],
+                "constraints_and_limitations_translations": {
+                    "en": "Some text here",
+                    "es": ""
+                },
+                "regulations_and_standards_translations": {
+                    "en": "Optional text here",
+                    "es": ""
+                },
+                "supported_by": [
+                    "on_premise"
+                ],
+                "supports_internationalization": true,
+                "is_responsive": true,
+                "integration": {
+                    "type": "internalintegration",
+                    "domain": "",
+                    "path": "externalresourcemanager",
+                    "service_name": "externalresourcemanager",
+                    "is_subdomain": false,
+                    "api_path": "/assets",
+                    "auth_method": "cookie",
+                    "capabilities": {
+                        "instantiate": true,
+                        "clone": true,
+                        "view": true,
+                        "edit": true,
+                        "delete": true,
+                        "download": false,
+                        "open_in_modal": true,
+                        "shortcut": true
+                    },
+                    "capabilities_translations": {
+                        "instantiate_text_translations": {
+                            "en": "Reference an external resource",
+                            "es": "Referenciar un recurso externo"
+                        },
+                        "clone_text_translations": {
+                            "en": "Clone reference",
+                            "es": "Clonar referencia"
+                        },
+                        "view_text_translations": {
+                            "en": "Open reference",
+                            "es": "Abrir referencia"
+                        },
+                        "edit_text_translations": {
+                            "en": "Edit reference",
+                            "es": "Editar referencia"
+                        },
+                        "delete_text_translations": {
+                            "en": "Delete reference",
+                            "es": "Eliminar referencia"
+                        }
+                    }
+                },
+                "logotype": "./interlinkers/software/external-resource-manager/logo.png",
+                "reference": "external-resource-manager",
+                "tags_translations": {
+                    "en": [
+                        "external",
+                        "link",
+                        "share",
+                        "report"
+                    ]
+                }
+            },
+            {
+                "name_translations": {
                     "en": "Loomio",
                     "es": ""
                 },
@@ -2581,87 +2658,6 @@
             },
             {
                 "name_translations": {
-                    "en": "Survey creator",
-                    "es": ""
-                },
-                "description_translations": {
-                    "en": "Survey designer and publishing INTERLINKER which allows to create on demand new forms to gather information or help in decision making in co-production processess. It is based on open source tool SurveyJs (https://github.com/surveyjs)",
-                    "es": ""
-                },
-                "difficulty": "easy",
-                "licence": "propietary",
-                "problem_profiles": [],
-                "constraints_and_limitations_translations": {
-                    "en": "Some text here",
-                    "es": ""
-                },
-                "regulations_and_standards_translations": {
-                    "en": "Optional text here",
-                    "es": ""
-                },
-                "supported_by": [
-                    "saas"
-                ],
-                "supports_internationalization": true,
-                "is_responsive": true,
-                "integration": {
-                    "type": "internalintegration",
-                    "domain": "",
-                    "path": "survey",
-                    "service_name": "survey",
-                    "is_subdomain": false,
-                    "api_path": "/assets",
-                    "auth_method": "cookie",
-                    "capabilities": {
-                        "instantiate": true,
-                        "clone": true,
-                        "view": true,
-                        "edit": true,
-                        "delete": true,
-                        "download": true,
-                        "open_in_modal": true,
-                        "shortcut": true
-                    },
-                    "capabilities_translations": {
-                        "instantiate_text_translations": {
-                            "en": "Create a survey",
-                            "es": "Crear una encuesta"
-                        },
-                        "clone_text_translations": {
-                            "en": "Clone survey",
-                            "es": "Clonar encuesta"
-                        },
-                        "view_text_translations": {
-                            "en": "Open survey",
-                            "es": "Abrir encuesta"
-                        },
-                        "edit_text_translations": {
-                            "en": "Edit survey questions",
-                            "es": "Editar preguntas de la encuesta"
-                        },
-                        "delete_text_translations": {
-                            "en": "Delete survey",
-                            "es": "Eliminar encuesta"
-                        },
-                        "download_text_translations": {
-                            "en": "Download survey JSON",
-                            "es": "Descargar JSON de la encuesta"
-                        }
-                    }
-                },
-                "logotype": "./interlinkers/software/survey/logo.jpeg",
-                "reference": "survey-creator",
-                "tags_translations": {
-                    "en": [
-                        "survey",
-                        "question",
-                        "poll",
-                        "vote"
-                    ]
-                }
-            },
-            {
-                "name_translations": {
                     "en": "Google Drive",
                     "es": ""
                 },
@@ -2726,7 +2722,7 @@
                         }
                     }
                 },
-                "logotype": "./interlinkers/software/googledrive/logo.png",
+                "logotype": "./interlinkers/software/google-drive/logo.png",
                 "reference": "google-drive",
                 "tags_translations": {
                     "en": [
@@ -2785,6 +2781,83 @@
             },
             {
                 "name_translations": {
+                    "en": "Survey editor",
+                    "es": ""
+                },
+                "description_translations": {
+                    "en": "Survey designer and publishing INTERLINKER which allows to create on demand new forms to gather information or help in decision making in co-production processess. It is based on open source tool SurveyJs (https://github.com/surveyjs)",
+                    "es": ""
+                },
+                "difficulty": "easy",
+                "licence": "propietary",
+                "problem_profiles": [],
+                "constraints_and_limitations_translations": {
+                    "en": "Some text here",
+                    "es": ""
+                },
+                "regulations_and_standards_translations": {
+                    "en": "Optional text here",
+                    "es": ""
+                },
+                "supported_by": [
+                    "saas"
+                ],
+                "supports_internationalization": true,
+                "is_responsive": true,
+                "integration": {
+                    "type": "internalintegration",
+                    "domain": "",
+                    "path": "surveyeditor",
+                    "service_name": "surveyeditor",
+                    "is_subdomain": false,
+                    "api_path": "/assets",
+                    "auth_method": "cookie",
+                    "capabilities": {
+                        "instantiate": true,
+                        "clone": true,
+                        "view": true,
+                        "edit": false,
+                        "delete": true,
+                        "download": true,
+                        "open_in_modal": true,
+                        "shortcut": true
+                    },
+                    "capabilities_translations": {
+                        "instantiate_text_translations": {
+                            "en": "Create a survey",
+                            "es": "Crear una encuesta"
+                        },
+                        "clone_text_translations": {
+                            "en": "Clone survey",
+                            "es": "Clonar encuesta"
+                        },
+                        "view_text_translations": {
+                            "en": "Open survey editor",
+                            "es": "Abrir editor de encuesta"
+                        },
+                        "delete_text_translations": {
+                            "en": "Delete survey",
+                            "es": "Eliminar encuesta"
+                        },
+                        "download_text_translations": {
+                            "en": "Download survey JSON",
+                            "es": "Descargar JSON de la encuesta"
+                        }
+                    }
+                },
+                "logotype": "./interlinkers/software/survey-editor/logo.jpeg",
+                "reference": "survey-editor",
+                "tags_translations": {
+                    "en": [
+                        "survey",
+                        "question",
+                        "poll",
+                        "vote"
+                    ]
+                }
+            },
+            {
+                "name_translations": {
                     "en": "Markup Validation Service"
                 },
                 "description_translations": {
@@ -2831,83 +2904,6 @@
                     "type": "externalintegration",
                     "redirection": "https://validator.w3.org/about.html",
                     "result": ""
-                }
-            },
-            {
-                "name_translations": {
-                    "en": "External resource manager",
-                    "es": ""
-                },
-                "description_translations": {
-                    "en": "This interlinker allows to create references to external resources, such as web pages or including links to resources allocated in other services.",
-                    "es": ""
-                },
-                "difficulty": "easy",
-                "licence": "propietary",
-                "problem_profiles": [],
-                "constraints_and_limitations_translations": {
-                    "en": "Some text here",
-                    "es": ""
-                },
-                "regulations_and_standards_translations": {
-                    "en": "Optional text here",
-                    "es": ""
-                },
-                "supported_by": [
-                    "on_premise"
-                ],
-                "supports_internationalization": true,
-                "is_responsive": true,
-                "integration": {
-                    "type": "internalintegration",
-                    "domain": "",
-                    "path": "externalresourcemanager",
-                    "service_name": "externalresourcemanager",
-                    "is_subdomain": false,
-                    "api_path": "/assets",
-                    "auth_method": "cookie",
-                    "capabilities": {
-                        "instantiate": true,
-                        "clone": true,
-                        "view": true,
-                        "edit": true,
-                        "delete": true,
-                        "download": false,
-                        "open_in_modal": true,
-                        "shortcut": true
-                    },
-                    "capabilities_translations": {
-                        "instantiate_text_translations": {
-                            "en": "Reference an external resource",
-                            "es": "Referenciar un recurso externo"
-                        },
-                        "clone_text_translations": {
-                            "en": "Clone reference",
-                            "es": "Clonar referencia"
-                        },
-                        "view_text_translations": {
-                            "en": "Open reference",
-                            "es": "Abrir referencia"
-                        },
-                        "edit_text_translations": {
-                            "en": "Edit reference",
-                            "es": "Editar referencia"
-                        },
-                        "delete_text_translations": {
-                            "en": "Delete reference",
-                            "es": "Eliminar referencia"
-                        }
-                    }
-                },
-                "logotype": "./interlinkers/software/externalresourcemanager/logo.png",
-                "reference": "external-resource-manager",
-                "tags_translations": {
-                    "en": [
-                        "external",
-                        "link",
-                        "share",
-                        "report"
-                    ]
                 }
             },
             {

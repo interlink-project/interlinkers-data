@@ -64,7 +64,7 @@
             }
         }
     },
-    "logotype": "./interlinkers/software/externalresourcemanager/logo.png",
+    "logotype": "./interlinkers/software/external-resource-manager/logo.png",
     "reference": "external-resource-manager",
     "tags_translations": {
         "en": [

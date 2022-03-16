@@ -26,7 +26,7 @@ class Formats(Enum):
 
 class SoftwareInterlinkers(Enum):
     googledrive = "googledrive"
-    survey = "survey"
+    surveyeditor = "surveyeditor"
     ceditor = "ceditor"
     externalresourcemanager = "externalresourcemanager"
 
