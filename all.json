@@ -2262,7 +2262,7 @@
                     "es": ""
                 },
                 "description_translations": {
-                    "en": "This interlinker uses etherpad, an open source online editor, to provide collaborative editing in really real-time",
+                    "en": "This interlinker uses etherpad, an open source online editor, to provide collaborative editing in really real-time.\nEtherpad (https://etherpad.org/) is an open-source, web-based collaborative real-time editor, allowing authors to simultaneously edit a text document, and see all of the participants' edits in real-time, with the ability to display each author's text in their own color. There is also a chat box in the sidebar to allow meta communication.",
                     "es": ""
                 },
                 "difficulty": "easy",
@@ -2473,7 +2473,7 @@
                     "es": ""
                 },
                 "description_translations": {
-                    "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus sapien, dapibus fringilla dolor sit amet, bibendum aliquam massa. Duis nec faucibus nunc. In sit amet vulputate justo. In dictum turpis eu dolor posuere vehicula. Sed turpis risus, vestibulum sed aliquam id, tempus nec dolor. Nulla facilisi. Suspendisse tempor pulvinar dignissim. Nulla dui ante, finibus in bibendum vel, dignissim nec risus. Nullam gravida nisi quis purus porttitor, sed hendrerit ante tristique. Donec eget augue vitae purus vehicula vehicula non sit amet lacus. Quisque porta nisi pharetra, fringilla felis id, porta arcu. Mauris vel elementum tortor. Ut sed magna id enim finibus molestie eu vitae leo. Mauris at sem elit. Fusce viverra accumsan orci et feugiat. Mauris ullamcorper molestie massa ac faucibus. Integer sit amet tellus tortor. Vivamus bibendum at libero at aliquet. Proin consectetur, erat et vulputate tincidunt, tortor quam euismod elit, id efficitur sem sapien tempus dolor. Aliquam a molestie risus. Nunc rutrum rutrum felis, in malesuada dolor porttitor nec. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc condimentum porta magna sed pharetra. In non quam dolor.",
+                    "en": "Survey designer and publishing INTERLINKER which allows to create on demand new forms to gather information or help in decision making in co-production processess. It is based on open source tool SurveyJs (https://github.com/surveyjs)",
                     "es": ""
                 },
                 "difficulty": "easy",
@@ -2603,7 +2603,7 @@
                     "es": ""
                 },
                 "description_translations": {
-                    "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus sapien, dapibus fringilla dolor sit amet, bibendum aliquam massa. Duis nec faucibus nunc. In sit amet vulputate justo. In dictum turpis eu dolor posuere vehicula. Sed turpis risus, vestibulum sed aliquam id, tempus nec dolor. Nulla facilisi. Suspendisse tempor pulvinar dignissim. Nulla dui ante, finibus in bibendum vel, dignissim nec risus. Nullam gravida nisi quis purus porttitor, sed hendrerit ante tristique. Donec eget augue vitae purus vehicula vehicula non sit amet lacus. Quisque porta nisi pharetra, fringilla felis id, porta arcu. Mauris vel elementum tortor. Ut sed magna id enim finibus molestie eu vitae leo. Mauris at sem elit. Fusce viverra accumsan orci et feugiat. Mauris ullamcorper molestie massa ac faucibus. Integer sit amet tellus tortor. Vivamus bibendum at libero at aliquet. Proin consectetur, erat et vulputate tincidunt, tortor quam euismod elit, id efficitur sem sapien tempus dolor. Aliquam a molestie risus. Nunc rutrum rutrum felis, in malesuada dolor porttitor nec. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc condimentum porta magna sed pharetra. In non quam dolor.",
+                    "en": "Google Drive is a file storage and synchronization service developed by Google. Launched on April 24, 2012, Google Drive allows users to store files in the cloud, synchronize files across devices, and share files.\nGoogle Drive encompasses Google Docs, Google Sheets, and Google Slides, which are a part of the Google Docs Editors office suite that permits collaborative editing of documents, spreadsheets, presentations, drawings, forms, and more. Files created and edited through the Google Docs suite are saved in Google Drive.\nThis software INTERLIKER allows users of the collaborative environment to create new documents, spreadsheets and presentations which can be co-edited and shared by co-production team participants",
                     "es": ""
                 },
                 "difficulty": "easy",
@@ -2741,7 +2741,7 @@
                     "es": ""
                 },
                 "description_translations": {
-                    "en": "This interlinker allows to create references to external resources, such as web pages or direct link to resources allocated in other services.",
+                    "en": "This interlinker allows to create references to external resources, such as web pages or including links to resources allocated in other services.",
                     "es": ""
                 },
                 "difficulty": "easy",
@@ -2922,7 +2922,7 @@
                     "en": "Doodle"
                 },
                 "description_translations": {
-                    "en": "<p>Online calendar tool for time management and coordinating meetings</p>"
+                    "en": "<p>Online calendar tool for time management and coordinating meetings. Anytime more than two people are trying to arrange a meeting, Doodle very useful. You can use doodle to plan meetings with team members, project collaborators, and external suppliers. </p>"
                 },
                 "tags_translations": {
                     "en": [

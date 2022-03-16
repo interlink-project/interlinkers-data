@@ -4,7 +4,7 @@
         "es": ""
     },
     "description_translations": {
-        "en": "This interlinker uses etherpad, an open source online editor, to provide collaborative editing in really real-time",
+        "en": "This interlinker uses etherpad, an open source online editor, to provide collaborative editing in really real-time.\nEtherpad (https://etherpad.org/) is an open-source, web-based collaborative real-time editor, allowing authors to simultaneously edit a text document, and see all of the participants' edits in real-time, with the ability to display each author's text in their own color. There is also a chat box in the sidebar to allow meta communication.",
         "es": ""
     },
     "difficulty": "easy",
