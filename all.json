@@ -2598,7 +2598,7 @@
                     "path": "servicepedia",
                     "service_name": "servicepedia",
                     "is_subdomain": true,
-                    "api_path": "/api/v1/assets",
+                    "api_path": "/assets",
                     "auth_method": "header",
                     "capabilities": {
                         "instantiate": true,
