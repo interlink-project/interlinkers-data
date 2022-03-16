@@ -2793,7 +2793,7 @@
                         "edit": false,
                         "delete": true,
                         "download": true,
-                        "preview": true,
+                        "preview": false,
                         "open_in_modal": true,
                         "shortcut": true
                     },
@@ -2817,10 +2817,6 @@
                         "download_text_translations": {
                             "en": "Download document",
                             "es": "Descargar documento"
-                        },
-                        "preview_text_translations": {
-                            "en": "Preview document",
-                            "es": "Ver documento"
                         }
                     }
                 },
