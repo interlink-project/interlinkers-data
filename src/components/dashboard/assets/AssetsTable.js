@@ -93,7 +93,7 @@ const AssetRow = ({ asset, onChange, actions }) => {
 
 const Assets = ({ assets, onChange = () => {}, actions }) => {
   return <>
-    {assets.length > 0 ? <Table sx={{ minWidth: 650 }} aria-label="assets table" size="small">
+    {assets.length > 0 ? <Table sx={{ minWidth: 650 }} aria-label="resources table" size="small">
       <TableHead>
         <TableRow>
           <TableCell></TableCell>
@@ -111,7 +111,7 @@ const Assets = ({ assets, onChange = () => {}, actions }) => {
       </TableBody>
     </Table>
       :
-      <Alert severity="info" sx={{ my: 2 }}>No assets yet</Alert>
+      <Alert severity="info" sx={{ my: 2 }}>No resources yet</Alert>
     }
   </>
 }

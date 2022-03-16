@@ -110,7 +110,7 @@ const RecommendedInterlinkerCard = ({ interlinker, assets, onClick }) => {
 const RightPart = () => {
     const { selectedTreeItem } = useSelector((state) => state.process);
 
-    const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
+    const [step, setStep] = useState(0);
 
     const [assets, setAssets] = useState([])
     const [recommendedInterlinkers, setRecommendedInterlinkers] = useState([])
@@ -121,7 +121,7 @@ const RightPart = () => {
 
     // new asset modal
     const [selectedInterlinker, setSelectedInterlinker] = useState(null)
-    const [openNewAsset, setOpenNewAsset] = useState(false);
+    const [newAssetDialogOpen, setNewAssetDialogOpen] = useState(false)
 
     const updateTaskInfo = async () => {
         const assets = await assetsApi.getMulti({ task_id: selectedTreeItem.id });
@@ -156,10 +156,8 @@ const RightPart = () => {
     const isTask = selectedTreeItem && selectedTreeItem.type === "task"
     return (
 
-        selectedTreeItem && <MobileDiscriminator defaultNode={
-            
-            <Grid item xl={8} lg={8} md={6} xs={12}>
-                <Paper sx={{height: "100%"}}>
+        selectedTreeItem && <Grid item xl={8} lg={8} md={6} xs={12}>
+            <Paper sx={{ height: "100%" }}>
                 <Box sx={{ p: 2 }}>
                     <Button sx={{ mb: 2 }} fullWidth variant="outlined" onClick={() => setTreeItemInfoOpen(!treeItemInfoOpen)}>
                         <Stack spacing={2}>
@@ -168,10 +166,10 @@ const RightPart = () => {
                         </Stack>
                     </Button>
                     <Collapse in={treeItemInfoOpen} timeout="auto" unmountOnExit>
-                            <TreeItemData type={selectedTreeItem.type} element={selectedTreeItem} showType={false} />
-                        </Collapse>
+                        <TreeItemData type={selectedTreeItem.type} element={selectedTreeItem} showType={false} />
+                    </Collapse>
                     {isTask && <>
-                        
+
                         <Button sx={{ my: 2 }} fullWidth variant="outlined" onClick={() => setrecommendedInterlinkersOpen(!recommendedInterlinkersOpen)}>
                             <Stack spacing={2}>
                                 <Typography variant="h6" >Recommended interlinkers</Typography>
@@ -186,8 +184,9 @@ const RightPart = () => {
                                     {recommendedInterlinkers.map(interlinker => (
                                         <Grid item xs={12} md={6} lg={3} xl={3} key={interlinker.id}>
                                             <RecommendedInterlinkerCard assets={assets} onClick={() => {
+                                                setStep(0);
                                                 setSelectedInterlinker(interlinker);
-                                                setOpenNewAsset(true)
+                                                setNewAssetDialogOpen(true)
                                             }} interlinker={interlinker} />
                                         </Grid>
                                     ))}
@@ -214,9 +213,6 @@ const RightPart = () => {
                                 <AssetsTable assets={assets} onChange={updateTaskInfo} />
 
                             </Box>
-
-                            {selectedInterlinker && openNewAsset && <NewAssetModal open={openNewAsset} setOpen={setOpenNewAsset} selectedInterlinker={selectedInterlinker} task={selectedTreeItem} onCreate={updateTaskInfo} />}
-
                             <Box sx={{ textAlign: "center", width: "100%" }}>
                                 <Button
                                     id="basic-button"
@@ -243,8 +239,9 @@ const RightPart = () => {
                             >
                                 {softwareInterlinkers.map(si =>
                                     <MenuItem key={si.id} onClick={() => {
+                                        setStep(1);
                                         setSelectedInterlinker(si);
-                                        setOpenNewAsset(true)
+                                        setNewAssetDialogOpen(true)
                                         handleClose()
                                     }
                                     }>
@@ -252,13 +249,11 @@ const RightPart = () => {
                                     </MenuItem>)}
                             </Menu>
                         </Box>
+                        {selectedInterlinker && <NewAssetModal open={newAssetDialogOpen} setOpen={setNewAssetDialogOpen} activeStep={step} setStep={setStep} selectedInterlinker={selectedInterlinker} task={selectedTreeItem} onCreate={updateTaskInfo} />}
                     </>}
                 </Box>
-                </Paper>
-            </Grid>
-        } onMobileNode={
-            <MobileDrawer open={mobileDrawerOpen} onClose={() => { setMobileDrawerOpen(false) }} content={<AssetsTable assets={assets} onChange={updateTaskInfo} />} />
-        } />
+            </Paper>
+        </Grid>
     );
 };
 

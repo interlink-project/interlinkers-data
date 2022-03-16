@@ -1,15 +1,15 @@
 import {
-    Avatar, AvatarGroup, Box,
+    Avatar, Box,
     Button, CircularProgress as MuiCircularProgress, Dialog, DialogActions, DialogContent,
     DialogTitle, Grid, IconButton, Typography
 } from '@material-ui/core';
-import { ArrowBack, Close, DoubleArrow, Download } from '@material-ui/icons';
-import { LoadingButton } from '@material-ui/lab';
+import { ArrowBack, Close, DoubleArrow, Download, Preview } from '@material-ui/icons';
 import { env } from 'configuration';
 import InterlinkerHeader from 'pages/dashboard/interlinkers/InterlinkerHeader';
 import { useEffect, useState } from 'react';
 import { assetsApi, knowledgeInterlinkersApi } from '__fakeApi__';
 import InterlinkerDetails from "../../../interlinkers/InterlinkerDetails";
+import { LoadingButton } from '@material-ui/lab';
 
 const CircularProgress = ({ text = "Waiting for response...", onCancel = null }) => (
     <Box
@@ -36,24 +36,54 @@ const CircularProgress = ({ text = "Waiting for response...", onCancel = null })
         </Grid>
     </Box>
 )
-export default function NewAssetModal({ open, setOpen, selectedInterlinker, task, onCreate }) {
+export default function NewAssetModal({ open, setOpen, activeStep, setStep, selectedInterlinker, task, onCreate }) {
     const [loadingInstantiator, setLoadingInstantiator] = useState(true);
-    const [activeStep, _setActiveStep] = useState(0);
     const [assetData, setAssetData] = useState(null);
     const [loadingKnowledgeInstantiation, setLoadingKnowledgeInstantiation] = useState(false);
 
-    const open_in_modal = selectedInterlinker.nature === "softwareinterlinker" && selectedInterlinker.integration && selectedInterlinker.integration.open_in_modal
-    const downloadable = selectedInterlinker.nature === "knowledgeinterlinker" && selectedInterlinker.softwareinterlinker.integration && selectedInterlinker.softwareinterlinker.integration.download
+    // if software interlinker, helper bools
+    const isSoftware = selectedInterlinker.nature === "softwareinterlinker"
+    const is_internally_integrated_softwareinterlinker = isSoftware && selectedInterlinker.integration && selectedInterlinker.integration.type === "internalintegration"
+    const can_open_in_modal = isSoftware && is_internally_integrated_softwareinterlinker && selectedInterlinker.integration.open_in_modal
+
+    // if knowledgeinterlinker is previewable
+    const previewable = !isSoftware && selectedInterlinker.softwareinterlinker.integration && selectedInterlinker.softwareinterlinker.integration.preview
+    const downloadable = !isSoftware && selectedInterlinker.softwareinterlinker.integration && selectedInterlinker.softwareinterlinker.integration.download
 
     const handleClose = () => {
         setOpen(false);
+        setActiveStep(0)
     };
 
-    const setActiveStep = (i) => {
-        if (i === 1) {
-            setLoadingInstantiator(true)
+    const setActiveStep = async (i) => {
+        if (i === 0) {
+            setAssetData(null)
+            setStep(0)
+            setLoadingInstantiator(false)
         }
-        _setActiveStep(i)
+        if (i === 1) {
+            if (isSoftware) {
+                setStep(1)
+                if (is_internally_integrated_softwareinterlinker) {
+                    if (can_open_in_modal) {
+                        setLoadingInstantiator(true)
+                    }
+                }
+            }
+            else {
+                // if knowledgeinterlinker
+                setLoadingKnowledgeInstantiation(true)
+                const interlinker_asset = await knowledgeInterlinkersApi.instantiate(selectedInterlinker.id)
+                const coproduction_asset = await onAssetCreate(interlinker_asset, selectedInterlinker.softwareinterlinker_id, selectedInterlinker.id)
+                setLoadingKnowledgeInstantiation(false)
+
+                // TODO: if fails
+                onFinish({ ...coproduction_asset, ...interlinker_asset })
+            }
+        } else {
+            setStep(i)
+        }
+
     }
 
     const onAssetCreate = async (data, softwareinterlinker_id, knowledgeinterlinker_id) => await assetsApi.create(
@@ -64,13 +94,7 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
     );
 
     const onFinish = (result) => {
-        var data
-        if (Array.isArray(result) && result.length < 2) {
-            data = result[0]
-        } else {
-            data = result
-        }
-        setAssetData(data)
+        setAssetData(result)
         setActiveStep(2)
         onCreate()
     }
@@ -98,14 +122,25 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
         // https://stackoverflow.com/questions/2161388/calling-a-parent-window-function-from-an-iframe
 
         if (activeStep === 1) {
-            if (window.addEventListener) {  // all browsers except IE before version 9
-                window.addEventListener("message", onMessage, false);
-            }
-            else if (window.attachEvent) {
-                window.attachEvent("onmessage", onMessage, false);
-            }
-            if (selectedInterlinker.nature === "softwareinterlinker" && !open_in_modal) {
-                window.open(`${selectedInterlinker.backend}/instantiate`)
+
+            if (isSoftware) {
+                if (is_internally_integrated_softwareinterlinker) {
+                    // Initiate listeners if is an internally integrated software interlinker
+                    if (window.addEventListener) {  // all browsers except IE before version 9
+                        window.addEventListener("message", onMessage, false);
+                    }
+                    else if (window.attachEvent) {
+                        window.attachEvent("onmessage", onMessage, false);
+                    }
+
+                    // if cannot be opened in a modal, open a window
+                    if (!can_open_in_modal) {
+                        window.open(`${selectedInterlinker.backend}/instantiate`)
+                    }
+                } else {
+                    // external software solution, so redirect to it
+                    window.open(`${selectedInterlinker.integration.redirection}`)
+                }
             }
         }
 
@@ -124,7 +159,7 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
             return "70vh"
         }
         if (activeStep === 1) {
-            return selectedInterlinker.nature === "softwareinterlinker" ? "70vh" : "50vh"
+            return isSoftware ? "70vh" : "50vh"
         }
         return "40vh"
     }
@@ -134,7 +169,7 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
             fullWidth
             maxWidth="lg"
             open={open}
-        // onClose={handleClose}
+            onClose={handleClose}
 
         >
             <DialogTitle sx={{
@@ -161,50 +196,18 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
                 alignItems: "center",
                 backgroundColor: 'background.default'
             }}>
-                {/* <Stepper sx={{ mt: 2}} activeStep={activeStep} alternativeLabel>
-                        {['Select interlinker', 'Instantiate'].map((label, index) => <Step key={label}>
-                            <StepLabel>{label}</StepLabel>
-                        </Step>
-                        )}
-                </Stepper>*/}
-
                 {activeStep === 0 && <Box>
                     <InterlinkerDetails interlinker={selectedInterlinker} />
                 </Box>}
 
-                {activeStep === 1 && <Box>
+                {activeStep === 1 && isSoftware && <Box>
                     {/* If software interlinker */}
-                    {selectedInterlinker.nature === "softwareinterlinker" && open_in_modal &&
+                    {can_open_in_modal ?
                         <>
                             {loadingInstantiator && <CircularProgress text="Loading instantiator..." />}
                             <iframe style={{ display: loadingInstantiator ? "none" : "block" }} src={`${selectedInterlinker.backend}/instantiate`} style={{ width: "100%", minHeight: "60vh", border: 0 }}></iframe>
-                        </>
-                    }
-                    {selectedInterlinker.nature === "softwareinterlinker" && !open_in_modal &&
+                        </> :
                         <CircularProgress onCancel={() => setActiveStep(0)} />
-                    }
-                    {/* If knowledge interlinker */}
-                    {selectedInterlinker.nature === "knowledgeinterlinker" &&
-                        <Box
-                            sx={{
-                                position: 'absolute', left: '50%', top: '50%', width: "100%",
-                                transform: 'translate(-50%, -50%)', p: 10,
-                                textAlign: 'center'
-                            }}
-                        >
-                            <Typography variant="h5">Are you sure you want to instantiate this interlinker?</Typography>
-                            <LoadingButton loading={loadingKnowledgeInstantiation} color="success" size="large" sx={{ mt: 2 }} onClick={async () => {
-                                setLoadingKnowledgeInstantiation(true)
-                                const interlinker_asset = await knowledgeInterlinkersApi.instantiate(selectedInterlinker.id)
-                                const coproduction_asset = await onAssetCreate(interlinker_asset, selectedInterlinker.softwareinterlinker_id, selectedInterlinker.id)
-                                setLoadingKnowledgeInstantiation(false)
-
-                                // TODO: if fails
-                                onFinish({ ...coproduction_asset, ...interlinker_asset })
-                            }}>
-                                Proceed
-                            </LoadingButton>
-                        </Box>
                     }
                 </Box>}
 
@@ -269,12 +272,15 @@ export default function NewAssetModal({ open, setOpen, selectedInterlinker, task
                 </Box>}
             </DialogContent>
             {activeStep === 0 && <DialogActions sx={{ bgcolor: "background.default", justifyContent: "center" }}>
-                {downloadable && <Button startIcon={<Download />} sx={{ my: 2, mx: 4 }} autoFocus variant="outlined" color="warning" onClick={() => window.open(selectedInterlinker.link + "/download", "_blank")}>
-                    Download locally as resource not related to project (for features exploration)
+                {previewable && <Button startIcon={<Preview />} sx={{ my: 2, mx: 4 }} autoFocus variant="outlined" color="warning" onClick={() => window.open(selectedInterlinker.link + "/preview", "_blank")}>
+                    {selectedInterlinker.softwareinterlinker.integration.preview_text} (it will be not related to project, for features exploration)
                 </Button>}
-                <Button startIcon={<DoubleArrow />} sx={{ my: 2, mx: 4 }} autoFocus variant="contained" onClick={() => setActiveStep(1)}>
+                {downloadable && <Button startIcon={<Download />} sx={{ my: 2, mx: 4 }} autoFocus variant="outlined" color="warning" onClick={() => window.open(selectedInterlinker.link + "/download", "_blank")}>
+                Download locally as resource not related to project (for features exploration)
+                </Button>}
+                <LoadingButton loading={loadingKnowledgeInstantiation} startIcon={<DoubleArrow />} sx={{ my: 2, mx: 4 }} autoFocus variant="contained" onClick={() => setActiveStep(1)}>
                     Instantiate as resource to use in project
-                </Button>
+                </LoadingButton>
             </DialogActions>}
         </Dialog>
     );

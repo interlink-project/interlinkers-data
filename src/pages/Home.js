@@ -61,7 +61,7 @@ const Home = () => {
           text={[
             "The INTERLINK platform will support you in developing public-civic partnerships, co-designing and co-delivering public services. This digital platform to guide step-by-step the co-production and co-delivery of public services is currently being designed, together with a set of open-source reusable resources that will concretely aid the planning and implementation of services. The platform will provide a collaborative environment where the different actors will work together and find the knowledge and tools needed to carry out a joint effort toward the co-delivery of services."
           ]}
-          extra2={<iframe width="560" height="315" src="https://www.youtube.com/embed/oCPz7dxN2Hk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>}
+          extra2={<iframe width="560" height="315" src="https://www.youtube.com/embed/oCPz7dxN2Hk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>}
           variance
         />
         <HomeRow

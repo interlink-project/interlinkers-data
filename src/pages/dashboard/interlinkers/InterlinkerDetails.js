@@ -1,5 +1,5 @@
 import {
-  Box, Card, CardContent, Chip, Divider, Grid, Tab, Tabs, Typography, Button
+  Box, Card, CardContent, Chip, Divider, Grid, Tab, Tabs, Typography, Button, Paper, Stack
 } from '@material-ui/core';
 import { NatureChip, OfficialityChip } from 'components/dashboard/assets/Icons';
 import {
@@ -15,7 +15,7 @@ import RelatedInterlinkersTable from "./RelatedInterlinkersTable";
 const InterlinkerDetails = ({ interlinker }) => {
   const [currentTab, setCurrentTab] = useState('overview');
 
-  const { link, description, tags, name, problemprofiles, softwareinterlinker } = interlinker;
+  const { link, description, tags, name, problemprofiles, softwareinterlinker, snapshots_links } = interlinker;
   const navigate = useNavigate();
 
   const handleTabsChange = (event, value) => {
@@ -31,12 +31,12 @@ const InterlinkerDetails = ({ interlinker }) => {
   const common = [
     { label: 'Overview', value: 'overview' },
     { label: 'Instructions', value: 'instructions' },
-    { label: 'Preview', value: 'preview' },
     { label: 'Reviews', value: 'reviews' },
     { label: 'Related interlinkers', value: 'related' },
   ]
   const tabs = isKnowledge ? [
     ...common,
+    { label: 'Preview', value: 'preview' },
   ] : [
     ...common
   ]
@@ -63,129 +63,194 @@ const InterlinkerDetails = ({ interlinker }) => {
 
       <Box sx={{ mt: 3 }} >
         {currentTab === 'overview' && (
-          <Card sx={{ height: "100%" }}>
-            <CardContent>
+          <Grid container spacing={3}>
+            <Grid item xs={12} md={5} lg={5} xl={5}
+            >
+              <Paper>
+                <SwipeableTextMobileStepper height="50vh" images={snapshots_links} objectFit="contain" />
 
-              <Grid container spacing={3}>
+              </Paper>
+            </Grid>
 
-                <Grid item xs={12} md={6} lg={6} xl={6}
-                >
-                  <Typography
-                    color='textSecondary'
-                    variant='overline'
-                  >
-                    Name
-                  </Typography>
-                  <Typography
-                    color='textPrimary'
-                    variant='subtitle2'
-                  >
-                    {name}
-                  </Typography>
-                </Grid>
+            <Grid item xs={12} md={7} lg={7} xl={7}
+            >
+              <Card >
+                <CardContent sx={{ minHeight: "55vh", overflowY: "scroll" }}>
+                  <Stack direction="column" spacing={1}>
+                    <Typography
+                      color='textSecondary'
+                      variant='overline'
+                    >
+                      Name
+                    </Typography>
+                    <Typography
+                      color='textPrimary'
+                      variant='subtitle2'
+                    >
+                      {name}
+                    </Typography>
 
+                    <Typography
+                      color='textSecondary'
+                      variant='overline'
+                    >
+                      Nature
+                    </Typography>
+                    <NatureChip nature={interlinker.nature} />
+                    <Typography
+                      color='textSecondary'
+                      variant='overline'
+                    >
+                      Creator
+                    </Typography>
+                    <OfficialityChip />
+                    <Typography
+                      color='textSecondary'
+                      variant='overline'
+                    >
+                      Tags
+                    </Typography>
+                    <Box>
+                      {tags.map((tag) => (
+                        <Chip
+                          key={tag}
+                          label={tag}
+                          sx={{ m: 1 }}
+                          variant='outlined'
+                        />
+                      ))}
+                    </Box>
+                    <Typography
+                      color='textSecondary'
+                      variant='overline'
+                    >
+                      Problem profiles
+                    </Typography>
+                    <Box>
+                      {problemprofiles.map((problem) => (
+                        <Chip
+                          key={problem.id}
+                          label={problem.name}
+                          title={problem.id}
+                          variant='outlined'
+                          sx={{ m: 1 }}
+                        />
+                      ))}
+                    </Box>
 
-                <Grid item xs={12} md={3} lg={3} xl={3}
-                >
-                  <Typography
-                    color='textSecondary'
-                    variant='overline'
-                  >
-                    Nature
-                  </Typography>
-                  <br></br>
-                  <NatureChip nature={interlinker.nature} />
-
-                </Grid>
-                <Grid item xs={12} md={3} lg={3} xl={3}
-                >
-                  <Typography
-                    color='textSecondary'
-                    variant='overline'
-                  >
-                    Creator
-                  </Typography>
-                  <br></br>
-                  <OfficialityChip />
-                </Grid>
-                <Grid item xs={12} md={6} lg={6} xl={6}
-                >
-                  <Typography
-                    color='textSecondary'
-                    variant='overline'
-                  >
-                    Description
-                  </Typography>
-                  <SafeHTMLElement data={description} />
-                </Grid>
-                <Grid item xs={12} md={6} lg={6} xl={6}
-                >
-                  <Typography
-                    color='textSecondary'
-                    variant='overline'
-                  >
-                    Tags
-                  </Typography>
-                  <Box sx={{ mt: 1 }}>
-                    {tags.map((tag) => (
-                      <Chip
-                        key={tag}
-                        label={tag}
-                        variant='outlined'
-                      />
-                    ))}
-                  </Box>
-                </Grid>
-                <Grid item xs={12} md={6} lg={6} xl={6}
-                >
-                  <Typography
-                    color='textSecondary'
-                    variant='overline'
-                  >
-                    Problem profiles
-                  </Typography>
-                  <Box sx={{ mt: 1 }}>
-                    {problemprofiles.map((problem) => (
-                      <Chip
-                        key={problem.id}
-                        label={problem.name}
-                        variant='outlined'
-                      />
-                    ))}
-                  </Box>
-                </Grid>
-
-                {softwareinterlinker && <Grid item xs={12} md={6} lg={6} xl={6}
-                >
-                  <Typography
-                    color='textSecondary'
-                    variant='overline'
-                  >
-                    Based on
-                  </Typography>
-                  <Box sx={{ mt: 1 }}>
-                    <InterlinkerReference interlinker={softwareinterlinker} />
-                  </Box>
-                </Grid>}
-              </Grid>
-
-            </CardContent>
-          </Card>
+                    {softwareinterlinker && <>
+                      <Typography
+                        color='textSecondary'
+                        variant='overline'
+                      >
+                        Based on
+                      </Typography>
+                      <Box sx={{ mt: 1 }}>
+                        <InterlinkerReference interlinker={softwareinterlinker} />
+                      </Box>
+                    </>}
+                  </Stack>
+                </CardContent>
+              </Card>
+            </Grid>
+          </Grid>
         )}
         {currentTab === 'instructions' && (
           <Card sx={{ p: 3, height: "100%" }}>
+
+            <Typography
+              color='textSecondary'
+              variant='overline'
+            >
+              Description
+            </Typography>
+            <SafeHTMLElement data={description} />
+            <Typography
+              color='textSecondary'
+              variant='overline'
+            >
+              Instructions
+            </Typography>
             <SafeHTMLElement data={interlinker.instructions} />
           </Card>
         )}
-        {currentTab === 'preview' && (
-          <Card sx={{ p: 3, height: "100%", justifyContent: "center" }}>
+        {currentTab === 'preview' && isKnowledge && (
 
-            <SwipeableTextMobileStepper height="50vh" images={interlinker.snapshots_links} objectFit="contain" />
-            {softwareinterlinker && softwareinterlinker.integration.download && <Button sx={{mt: 2}} variant="contained" onClick={() => window.open(link + "/download", "_blank")}>
-              {softwareinterlinker.integration.download_text}
-            </Button>}
+          <Box
+            style={{
+              position: 'absolute', left: '50%', top: '50%',
+              transform: 'translate(-50%, -50%)'
+            }}
+          >
+            <Box sx={{ mt: 2 }}>
+              <Typography
+                align='center'
+                color='textPrimary'
+                variant='h5'
+              >
+                This resource cannot be displayed here. Instead...
+              </Typography>
+            </Box>
+            {softwareinterlinker.integration && softwareinterlinker.integration.preview && <>
+              <Box sx={{ mt: 2 }}>
+                <Typography
+                  align='center'
+                  color='textSecondary'
+                  variant='subtitle1'
+                >
+                  you can preview the resource externally
+                </Typography>
+              </Box>
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  mt: 2,
+                }}
+              >
+                <Button
+                  color='primary'
+                  variant='contained'
+                  onClick={() => window.open(interlinker.link + "/preview", "_blank")}
+                >
+                  {softwareinterlinker.integration.preview_text || "Preview resource externally"}
+                </Button>
+              </Box>
+            </>}
 
-          </Card>
+            {softwareinterlinker.integration && !softwareinterlinker.integration.preview && softwareinterlinker.integration.download && <>
+              <Box sx={{ mt: 2 }}>
+                <Typography
+                  align='center'
+                  color='textSecondary'
+                  variant='subtitle1'
+                >
+                  you can download a copy of it to preview it on your machine
+                </Typography>
+              </Box>
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  mt: 2,
+                }}
+              >
+                <Button
+                  color='primary'
+                  variant='contained'
+                  onClick={() => window.open(interlinker.link + "/download", "_blank")}
+                >
+                  {softwareinterlinker.integration.download_text || "Download resource"}
+                </Button>
+              </Box>
+            </>}
+          </Box>
+
+
+
+
+
+
         )}
         {currentTab === 'related' && (
           <RelatedInterlinkersTable interlinker={interlinker} />

@@ -56,7 +56,7 @@ const OverviewTab = ({ coproductionprocess }) => {
 
 
             <Typography variant="h5" sx={{ my: 2, textAlign: "center", }} color="textSecondary">
-                Recent assets
+                Recent resources
             </Typography>
             <Box sx={{ mb: 3 }}>
                 <AssetsTable assets={assets} actions={<Button variant="outlined" size="small">See task</Button>} />
