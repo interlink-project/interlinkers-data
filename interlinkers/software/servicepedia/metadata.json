@@ -16,7 +16,7 @@
         "UND_PROBLEM_1",
         "UND_PROBLEM_5",
         "DEF_PROBLEM_2",
-        "BUILD.PROBLEM.9"
+        "BUILD_PROBLEM_9"
     ],
     "types": [
         "enabling_services;operation_services"
