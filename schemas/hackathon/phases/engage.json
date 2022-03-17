@@ -12,7 +12,7 @@
     "objectives": [
         {
             "name_translations": {
-                "en": "Demo objective",
+                "en": "Identify stakeholders",
                 "es": "Identificar stakeholders"
             },
             "description_translations": {
@@ -32,6 +32,45 @@
                     },
                     "problem_profiles": [
                         "UND_PROBLEM_2"
+                    ]
+                },
+                {
+                    "name_translations": {
+                        "en": "Map stakeholders, analyse motivation, skills, expectations",
+                        "es": "Mapear partes interesadas analizar motivación habilidades expectativas"
+                    },
+                    "description_translations": {
+                        "en": "Mapping the stakeholders is crucial to have a clear view of which roles stakeholders can play in different stages of innovation, what their level of commitment and strategic importance could be. Analyse the complexity of building relationships, realizing which connectors can be crucial for innovation development in your project.",
+                        "es": ""
+                    },
+                    "problem_profiles": [
+                        "UND_PROBLEM_2"
+                    ]
+                },
+                {
+                    "name_translations": {
+                        "en": "Visually map the network of stakeholders",
+                        "es": "Mapear visualmente la red de partes interesadas"
+                    },
+                    "description_translations": {
+                        "en": "Is your network balanced and inclusive?\r\nCreate a Stakeholder Map, where the ecosystem of stakeholders involved in a customer experience is visualized.",
+                        "es": ""
+                    },
+                    "problem_profiles": [
+                        "UND_PROBLEM_2"
+                    ]
+                },
+                {
+                    "name_translations": {
+                        "en": "Create a contact list of potential network participants",
+                        "es": "Crear una lista de contactos de posibles participantes de la red"
+                    },
+                    "description_translations": {
+                        "en": "Write down the list of participants, aside the co-production team, who may be interested in observing the progress of the co-production project and have the opportunity to emit opinions and take part in some decision processes. ",
+                        "es": ""
+                    },
+                    "problem_profiles": [
+                        "ORG_PROBLEM_4"
                     ]
                 }
             ]
@@ -107,5 +146,6 @@
                 }
             ]
         }
+
     ]
 }
