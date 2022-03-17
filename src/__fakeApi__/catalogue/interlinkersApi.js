@@ -12,8 +12,9 @@ class InterlinkersApi extends GeneralApi {
       const interlinkers = store.get("interlinkers_cache", [])
       const search = interlinkers.find(el => el.id === id)
       if (!search) {
-        const res = this.get(id)
+        const res = await this.get(id)
         store.set("interlinkers_cache", [...store.get("interlinkers_cache", []), res])
+        return res
       } else {
         return search
       }
