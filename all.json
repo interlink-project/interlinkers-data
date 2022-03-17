@@ -2119,7 +2119,9 @@
                                         "en": "Draft an initial description (or multiple optional descriptions) of the potential service: what it does, who benefits from the service, who helps delivering it. Use description templates to facilitate your task.",
                                         "es": ""
                                     },
-                                    "problem_profiles": [],
+                                    "problem_profiles": [
+                                        "ORG_PROBLEM_8"
+                                    ],
                                     "prerequisites": [
                                         {
                                             "objective": "objective-ideas-collection-for-hackathon-exploration-and-refinement",
@@ -2171,7 +2173,9 @@
                                         "en": "The ideas and service design concepts need to be translated into formal requirements to proceed with the implementation of the service. Follow the guidelines on how to collect, structure and communicate requirements and all the service specifications that clarify the objective of the service and how it should be developed. Use stardard representation formalism for requirements descriptions, as for example the Volere Requirements Specification template.",
                                         "es": ""
                                     },
-                                    "problem_profiles": [],
+                                    "problem_profiles": [
+                                        "ORG_PROBLEM_8"
+                                    ],
                                     "prerequisites": [
                                         {
                                             "objective": "objective-collaboratively-agree-on-hackathon-design",
@@ -2579,7 +2583,9 @@
                                 "en": "Service implementation is not possible if an environment for its depoyment and maintenance is not thought in advance. Independently on whether your envisioned co-produced service will be a piece of software or a bundle of digital resources, identify, select and make ready the development and deployment environments for your solution. Important to clearly specify and test the technical constraints within which the delivered service will be hosted.",
                                 "es": ""
                             },
-                            "problem_profiles": [],
+                            "problem_profiles": [
+                                "DEF_PROBLEM_5"
+                            ],
                             "tasks": [
                                 {
                                     "name_translations": {
@@ -2615,7 +2621,8 @@
                             },
                             "problem_profiles": [
                                 "ORG_PROBLEM_13",
-                                "ORG_PROBLEM_14"
+                                "ORG_PROBLEM_14",
+                                "DEF_PROBLEM_5"
                             ],
                             "tasks": [
                                 {
@@ -4658,6 +4665,54 @@
                     "all"
                 ],
                 "problem_profiles": [
+                    "DEF_PROBLEM_5"
+                ],
+                "types": [
+                    "enhancing_services"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "domain": "",
+                "process": "",
+                "reference": "public-service-proposal-template-for-interlink-project",
+                "form": "document_template",
+                "format": "editable_source_document",
+                "softwareinterlinker": "googledrive",
+                "difficulty": "very_easy",
+                "licence": "public_domain",
+                "instructions_translations": {
+                    "en": "./interlinkers/knowledge/Public-Service-Proposal-Template/instructions.md"
+                },
+                "tags_translations": {
+                    "en": [
+                        "public service",
+                        "proposal",
+                        "co-production project participants",
+                        "INTERLINK"
+                    ]
+                },
+                "name_translations": {
+                    "en": "Public Service Proposal Template for INTERLINK project"
+                },
+                "description_translations": {
+                    "en": "<p>Document with template for co-design of Public Service Proposal</p>"
+                },
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "regulations_and_standards_translations": {
+                    "en": "Public Service Proposal Template is compliant to GDPR norms."
+                },
+                "file_translations": {
+                    "en": "./interlinkers/knowledge/Public-Service-Proposal-Template/resource.docx"
+                }
+            },
+            {
+                "targets": [
+                    "all"
+                ],
+                "problem_profiles": [
                     "SUS_PROBLEM_1"
                 ],
                 "types": [
@@ -4698,6 +4753,54 @@
                 },
                 "file_translations": {
                     "en": "./interlinkers/knowledge/Business-Model-Canvas/resource.pptx"
+                }
+            },
+            {
+                "targets": [
+                    "all"
+                ],
+                "problem_profiles": [
+                    "ORG_PROBLEM_8"
+                ],
+                "types": [
+                    "enhancing_services"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "domain": "",
+                "process": "",
+                "reference": "hackathon-rules-template-for-interlink-project",
+                "form": "document_template",
+                "format": "editable_source_document",
+                "softwareinterlinker": "googledrive",
+                "difficulty": "very_easy",
+                "licence": "public_domain",
+                "instructions_translations": {
+                    "en": "./interlinkers/knowledge/Hackathon-Rules-Template/instructions.md"
+                },
+                "tags_translations": {
+                    "en": [
+                        "hackathon",
+                        "rules",
+                        "co-production project participants",
+                        "INTERLINK"
+                    ]
+                },
+                "name_translations": {
+                    "en": "Hackathon Rules Template for INTERLINK project"
+                },
+                "description_translations": {
+                    "en": "<p>Document with template for co-design of Hackathon Rules</p>"
+                },
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "regulations_and_standards_translations": {
+                    "en": "Hackathon Rules Template is compliant to GDPR norms."
+                },
+                "file_translations": {
+                    "en": "./interlinkers/knowledge/Hackathon-Rules-Template/resource.docx"
                 }
             },
             {
@@ -4794,6 +4897,54 @@
                 },
                 "file_translations": {
                     "en": "./interlinkers/knowledge/it-agid-personas/resource.pptx"
+                }
+            },
+            {
+                "targets": [
+                    "all"
+                ],
+                "problem_profiles": [
+                    "ORG_PROBLEM_5"
+                ],
+                "types": [
+                    "enhancing_services"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "domain": "",
+                "process": "",
+                "reference": "stakeholder-engagement-plan-for-interlink-project",
+                "form": "document_template",
+                "format": "editable_source_document",
+                "softwareinterlinker": "googledrive",
+                "difficulty": "very_easy",
+                "licence": "public_domain",
+                "instructions_translations": {
+                    "en": "./interlinkers/knowledge/Stakeholder-Engagement-Plan-Template/instructions.md"
+                },
+                "tags_translations": {
+                    "en": [
+                        "stakeholder engagement",
+                        "planning",
+                        "co-production project participants",
+                        "INTERLINK"
+                    ]
+                },
+                "name_translations": {
+                    "en": "Stakeholder Engagement Plan for INTERLINK project"
+                },
+                "description_translations": {
+                    "en": "<p>Document to design the engagement plan for those co-producing and/or using the resulting co-produced product</p>"
+                },
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "regulations_and_standards_translations": {
+                    "en": "Stakeholder Engagement Plan is compliant to GDPR norms."
+                },
+                "file_translations": {
+                    "en": "./interlinkers/knowledge/Stakeholder-Engagement-Plan-Template/resource.docx"
                 }
             },
             {
