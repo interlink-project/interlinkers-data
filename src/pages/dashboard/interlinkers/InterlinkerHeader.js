@@ -5,11 +5,12 @@ import { Share } from '@material-ui/icons';
 const InterlinkerHeader = ({ interlinker }) => {
 
     return <Stack direction="column" sx={{ m: 0 }}>
-        <Stack direction='row' style={{ justifyContent: "center", alignItems: "center", }} spacing={2}>
+        <Stack direction='row' justifyContent="center" alignItems="center" spacing={1}>
             {interlinker.logotype_link && <Avatar
+                sx={{width: "30px", height: "30px"}}
                 alt='Logotype'
                 src={interlinker.logotype_link}
-                variant='square'
+                variant='rounded'
             >
                 {interlinker.name}
             </Avatar>}
