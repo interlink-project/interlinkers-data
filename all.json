@@ -2073,7 +2073,12 @@
                                 "en": "Clearly define the problem to be addresses by the co-production team and agree on it. This  is an important step towards creating an effective and efficient solution. Different resources can be useful to this end: tips on how to create and share a common language among team members, resources to guide collaborative discussions, tools for ideas collection.",
                                 "es": ""
                             },
-                            "problem_profiles": [],
+                            "problem_profiles": [
+                                "ORG_PROBLEM_1",
+                                "UND_PROBLEM_3",
+                                "UND_PROBLEM_1",
+                                "VAL_PROBLEM_2"
+                            ],
                             "tasks": [
                                 {
                                     "name_translations": {
@@ -2136,6 +2141,7 @@
                                 "es": ""
                             },
                             "problem_profiles": [
+                                "ORG_PROBLEM_1",
                                 "ORG_PROBLEM_13",
                                 "ORG_PROBLEM_14",
                                 "UND_PROBLEM_4",
@@ -2193,6 +2199,7 @@
                                 "es": ""
                             },
                             "problem_profiles": [
+                                "ORG_PROBLEM_1",
                                 "DEF_PROBLEM_1",
                                 "DEF_PROBLEM_5",
                                 "BUILD_PROBLEM_1"
