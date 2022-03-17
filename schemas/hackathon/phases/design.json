@@ -52,7 +52,7 @@
                         "en": "Draft an initial description (or multiple optional descriptions) of the potential service: what it does, who benefits from the service, who helps delivering it. Use description templates to facilitate your task.",
                         "es": ""
                     },
-                    "problem_profiles": []
+                    "problem_profiles": ["ORG_PROBLEM_8"]
                 }
             ]
         },
@@ -95,7 +95,7 @@
                         "en": "The ideas and service design concepts need to be translated into formal requirements to proceed with the implementation of the service. Follow the guidelines on how to collect, structure and communicate requirements and all the service specifications that clarify the objective of the service and how it should be developed. Use stardard representation formalism for requirements descriptions, as for example the Volere Requirements Specification template.",
                         "es": ""
                     },
-                    "problem_profiles": []
+                    "problem_profiles": ["ORG_PROBLEM_8"]
                 }
             ]
         },

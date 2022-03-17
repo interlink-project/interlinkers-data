@@ -1,0 +1,48 @@
+{
+    "targets": [
+        "all"
+    ],
+    "problem_profiles": [
+        "ORG_PROBLEM_5"
+    ],
+    "types": [
+        "enhancing_services"
+    ],
+    "administrative_scopes": [
+        "eu"
+    ],
+    "domain": "",
+    "process": "",
+    "reference": "stakeholder-engagement-plan-for-interlink-project",
+    "form": "document_template",
+    "format": "editable_source_document",
+    "softwareinterlinker": "googledrive",
+    "difficulty": "very_easy",
+    "licence": "public_domain",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/Stakeholder-Engagement-Plan-Template/instructions.md"
+    },
+    "tags_translations": {
+        "en": [
+            "stakeholder engagement",
+            "planning",
+            "co-production project participants",
+            "INTERLINK"
+        ]
+    },
+    "name_translations": {
+        "en": "Stakeholder Engagement Plan for INTERLINK project"
+    },
+    "description_translations": {
+        "en": "<p>Document to design the engagement plan for those co-producing and/or using the resulting co-produced product</p>"
+    },
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "regulations_and_standards_translations": {
+        "en": "Stakeholder Engagement Plan is compliant to GDPR norms."
+    },
+    "file_translations": {
+        "en": "./interlinkers/knowledge/Stakeholder-Engagement-Plan-Template/resource.docx"
+    }
+}

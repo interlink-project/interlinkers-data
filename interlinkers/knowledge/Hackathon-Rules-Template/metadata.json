@@ -1,0 +1,48 @@
+{
+    "targets": [
+        "all"
+    ],
+    "problem_profiles": [
+        "ORG_PROBLEM_8"
+    ],
+    "types": [
+        "enhancing_services"
+    ],
+    "administrative_scopes": [
+        "eu"
+    ],
+    "domain": "",
+    "process": "",
+    "reference": "hackathon-rules-template-for-interlink-project",
+    "form": "document_template",
+    "format": "editable_source_document",
+    "softwareinterlinker": "googledrive",
+    "difficulty": "very_easy",
+    "licence": "public_domain",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/Hackathon-Rules-Template/instructions.md"
+    },
+    "tags_translations": {
+        "en": [
+            "hackathon",
+            "rules",
+            "co-production project participants",
+            "INTERLINK"
+        ]
+    },
+    "name_translations": {
+        "en": "Hackathon Rules Template for INTERLINK project"
+    },
+    "description_translations": {
+        "en": "<p>Document with template for co-design of Hackathon Rules</p>"
+    },
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "regulations_and_standards_translations": {
+        "en": "Hackathon Rules Template is compliant to GDPR norms."
+    },
+    "file_translations": {
+        "en": "./interlinkers/knowledge/Hackathon-Rules-Template/resource.docx"
+    }
+}

@@ -20,7 +20,7 @@
                 "en": "Service implementation is not possible if an environment for its depoyment and maintenance is not thought in advance. Independently on whether your envisioned co-produced service will be a piece of software or a bundle of digital resources, identify, select and make ready the development and deployment environments for your solution. Important to clearly specify and test the technical constraints within which the delivered service will be hosted.",
                 "es": ""
             },
-            "problem_profiles": [],
+            "problem_profiles": ["DEF_PROBLEM_5"],
             "tasks": [
                 {
                     "name_translations": {
@@ -54,7 +54,8 @@
             },
             "problem_profiles": [
                 "ORG_PROBLEM_13",
-                "ORG_PROBLEM_14"
+                "ORG_PROBLEM_14",
+				"DEF_PROBLEM_5"
             ],
             "tasks": [
                 {
