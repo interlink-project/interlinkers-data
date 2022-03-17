@@ -56,7 +56,7 @@ const AssetRow = ({ asset, onChange, actions }) => {
       {moment(data.updated_at || data.created_at).fromNow()}
     </TableCell>
     <TableCell align="center">
-      <InterlinkerReference interlinker_id={asset.knowledgeinterlinker_id || asset.interlinker_id} />
+      <InterlinkerReference interlinker_id={asset.knowledgeinterlinker_id || asset.softwareinterlinker_id} />
     </TableCell>
     <TableCell align="center">
       {actions ||  <IconButton aria-label="settings" id="basic-button"

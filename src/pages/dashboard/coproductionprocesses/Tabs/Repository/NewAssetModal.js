@@ -43,12 +43,14 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
 
     // if software interlinker, helper bools
     const isSoftware = selectedInterlinker.nature === "softwareinterlinker"
+    const isKnowledge = !isSoftware
     const is_internally_integrated_softwareinterlinker = isSoftware && selectedInterlinker.integration && selectedInterlinker.integration.type === "internalintegration"
     const can_open_in_modal = isSoftware && is_internally_integrated_softwareinterlinker && selectedInterlinker.integration.open_in_modal
 
     // if knowledgeinterlinker is previewable
-    const previewable = !isSoftware && selectedInterlinker.softwareinterlinker.integration && selectedInterlinker.softwareinterlinker.integration.preview
-    const downloadable = !isSoftware && selectedInterlinker.softwareinterlinker.integration && selectedInterlinker.softwareinterlinker.integration.download
+    const previewable = isKnowledge && selectedInterlinker.softwareinterlinker.integration && selectedInterlinker.softwareinterlinker.integration.preview
+    const downloadable = isKnowledge && selectedInterlinker.softwareinterlinker.integration && selectedInterlinker.softwareinterlinker.integration.download
+    const instantiatable = (isSoftware && selectedInterlinker.integration && selectedInterlinker.integration.instantiate) || (isKnowledge && selectedInterlinker.softwareinterlinker.integration && selectedInterlinker.softwareinterlinker.integration.instantiate)
 
     const handleClose = () => {
         setOpen(false);
@@ -278,9 +280,9 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
                 {downloadable && <Button startIcon={<Download />} sx={{ my: 2, mx: 4 }} autoFocus variant="outlined" color="warning" onClick={() => window.open(selectedInterlinker.link + "/download", "_blank")}>
                 Download locally as resource not related to project (for features exploration)
                 </Button>}
-                <LoadingButton loading={loadingKnowledgeInstantiation} startIcon={<DoubleArrow />} sx={{ my: 2, mx: 4 }} autoFocus variant="contained" onClick={() => setActiveStep(1)}>
+                {instantiatable && <LoadingButton loading={loadingKnowledgeInstantiation} startIcon={<DoubleArrow />} sx={{ my: 2, mx: 4 }} autoFocus variant="contained" onClick={() => setActiveStep(1)}>
                     Instantiate as resource to use in project
-                </LoadingButton>
+                </LoadingButton>}
             </DialogActions>}
         </Dialog>
     );

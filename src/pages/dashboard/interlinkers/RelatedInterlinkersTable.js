@@ -8,6 +8,7 @@ import useMounted from 'hooks/useMounted';
 import { SafeHTMLElement } from 'utils/safeHTML';
 import moment from "moment"
 import { NatureChip } from 'components/dashboard/assets/Icons';
+import { InterlinkerReference } from 'components/dashboard/interlinkers';
 
 function descendingComparator(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
@@ -53,8 +54,8 @@ const headCells = [
         label: 'Description',
     },
     {
-        id: 'languages',
-        label: 'Languages',
+        id: 'based_on',
+        label: 'Based on',
     },
     {
         id: 'created_at',
@@ -210,9 +211,9 @@ export default function RelatedInterlinkersTable({ interlinker }) {
                                                 id={labelId}
                                                 scope="row"
                                             >
-                                                <Stack sx={{ alignItems: "center", textAlign: "center" }}>
-                                                    <Avatar src={row.logotype_link} sx={{ width: "30px", height: "30px" }} />
-                                                    <Typography variant="overline">
+                                                <Stack sx={{ alignItems: "center", textAlign: "center" }} spacing={1}>
+                                                    {row.logotype_link && <Avatar src={row.logotype_link} sx={{ width: "30px", height: "30px" }} />}
+                                                    <Typography variant="subtitle1">
                                                         {row.name}
                                                     </Typography>
                                                 </Stack>
@@ -222,11 +223,17 @@ export default function RelatedInterlinkersTable({ interlinker }) {
                                             <TableCell>
                                                 <SafeHTMLElement data={row.description} />
                                             </TableCell>
-                                            <TableCell>{row.language}</TableCell>
+                                            <TableCell>
+                                                {row.softwareinterlinker_id && <InterlinkerReference interlinker_id={row.softwareinterlinker_id} />}
+                                            </TableCell>
                                             <TableCell>{moment(row.created_at).format("LL")}</TableCell>
 
                                             <TableCell>
+                                                <Stack direction="row" alignItems="center">
                                                 <Rating readOnly value={row.rating} />
+                                                <Typography>({row.ratings_count})</Typography>
+                                                </Stack>
+                                                
                                             </TableCell>
                                         </TableRow>
                                     );

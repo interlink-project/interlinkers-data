@@ -9,14 +9,14 @@ const InterlinkerReference = ({ interlinker_id }) => {
     const [data, setData] = useState(null)
 
     useEffect(() => {
-        interlinkersApi.get(interlinker_id).then((res) => {
+        interlinkersApi.get_cache(interlinker_id).then((res) => {
             setData(res)
             setLoading(false)
         })
     }, [])
 
     return loading || !data ? <Skeleton /> : <Stack direction="row" alignItems="center" spacing={1}>
-        <Avatar src={data.logotype_link} sx={{ height: "20px", width: "20px" }} />
+        {data.logotype_link && <Avatar src={data.logotype_link} sx={{ height: "20px", width: "20px" }} />}
         <Link
             color='primary'
             component={RouterLink}
