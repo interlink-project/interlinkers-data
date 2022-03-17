@@ -208,7 +208,7 @@ const RightPart = () => {
                     />
                   </Search>
                 </Paper>*/}
-                                <Typography sx={{ mb: 1 }} variant="h6">Current assets:</Typography>
+                                <Typography sx={{ mb: 1 }} variant="h6">Current resources:</Typography>
 
                                 <AssetsTable assets={assets} onChange={updateTaskInfo} />
 

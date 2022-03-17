@@ -5,20 +5,19 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
-const InterlinkerReviewCard = (props) => {
-  const { authorAvatar, title, authorName, comment, createdAt, value } = props;
+const InterlinkerReviewCard = ({ mine, authorAvatar, title, authorName, comment, createdAt, value }) => {
   const [editMode, _setEditMode] = useState(false);
 
   return (
     <Card>
-      <IconButton onClick={() => _setEditMode(true)} sx={{
-              position: "relative",
-              right: "10px",
-              top: "10px",
-              float: "right"
-            }}>
-              <Edit />
-            </IconButton>
+      {mine && false && <IconButton onClick={() => _setEditMode(true)} sx={{
+        position: "relative",
+        right: "10px",
+        top: "10px",
+        float: "right"
+      }}>
+        <Edit />
+      </IconButton>}
       <CardHeader
         avatar={(
           <Avatar src={authorAvatar} />
@@ -40,7 +39,7 @@ const InterlinkerReviewCard = (props) => {
           >
             {authorName}
           </Typography>
-            
+
           </>}
       />
       <Box

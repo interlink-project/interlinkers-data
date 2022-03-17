@@ -146,7 +146,7 @@ const InterlinkerDetails = ({ interlinker }) => {
                         Based on
                       </Typography>
                       <Box sx={{ mt: 1 }}>
-                        <InterlinkerReference interlinker={softwareinterlinker} />
+                        <InterlinkerReference interlinker_id={softwareinterlinker.id} />
                       </Box>
                     </>}
                   </Stack>

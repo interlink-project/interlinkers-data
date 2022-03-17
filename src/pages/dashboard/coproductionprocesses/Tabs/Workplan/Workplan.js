@@ -106,7 +106,6 @@ const Workplan = () => {
         read_only: true
       })
       objectives.filter(el => el.phase_id === phase.id).forEach(objective => {
-  
         final.push({
           id: objective.id,
           name: objective.name,
