@@ -171,7 +171,7 @@ const WorkspaceSidebar = (props) => {
             backgroundColor: 'background.paper',
             height: 'calc(100% - 64px) !important',
             top: '64px !Important',
-            width: 240,
+            width: 300,
             zIndex: 0
           }
         }}

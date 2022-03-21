@@ -24,7 +24,7 @@ const DashboardLayoutWrapper = experimentalStyled('div')(({ theme }) => ({
   overflow: 'hidden',
   paddingTop: '64px',
   [theme.breakpoints.up('lg')]: {
-    paddingLeft: '240px'
+    paddingLeft: '300px'
   }
 }));
 
