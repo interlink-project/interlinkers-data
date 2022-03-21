@@ -84,12 +84,12 @@ const Content = ({ tab, process }) => <>
     </Card>
   </TabPanel>
   <TabPanel value={tab} index="workplan">
-    <Card sx={{ mb: 2 }}>
+    <Card sx={{ mb: 2, minHeight: '87vh' }}>
       {process.phases_count > 0 ? <Workplan /> : <CreateSchema />}
     </Card>
   </TabPanel>
   <TabPanel value={tab} index="guide">
-    <Card sx={{ mb: 2 }}>
+    <Card sx={{ mb: 2, minHeight: '87vh' }}>
       {process.phases_count > 0 ? <Repository /> : <CreateSchema />}
     </Card>
   </TabPanel>

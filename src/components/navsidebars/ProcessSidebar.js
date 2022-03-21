@@ -15,7 +15,7 @@ import { red } from '@material-ui/core/colors';
 
 const ProcessSidebar = (props) => {
   const { onMobileClose, openMobile } = props;
-  const { process, loading } = useSelector((state) => state.process);
+  const { process, loading, updating } = useSelector((state) => state.process);
   const navigate = useNavigate();
 
   const location = useLocation();
@@ -54,7 +54,7 @@ const ProcessSidebar = (props) => {
           icon: <GroupIcon />
         },
         {
-          title: 'Project details',
+          title: 'Settings',
           path: `/dashboard/coproductionprocesses/${processId}/metadata`,
           icon: <Settings />
         },
@@ -113,8 +113,8 @@ const ProcessSidebar = (props) => {
           spacing={1}
           sx={{p: 3}}
         >
-          {!loading ? <Avatar variant="rounded" sx={{ width: "80px", height: "80px" }} src={process && process.logotype_link} /> : <Skeleton variant="rounded" sx={{ width: "80px", height: "80px" }} />}
-          <Typography sx={{textAlign: "center", width: "100%"}} variant="h6">{!loading && process ? process.name : <Skeleton />}</Typography>
+          {!loading && !updating ? <Avatar variant="rounded" sx={{ width: "80px", height: "80px" }} src={process && process.logotype_link} /> : <Skeleton variant="rounded" sx={{ width: "80px", height: "80px" }} />}
+          <Typography sx={{textAlign: "center", width: "100%"}} variant="h6">{!loading && !updating && process ? process.name : <Skeleton />}</Typography>
           <Button startIcon={<ArrowBack />} variant="outlined" fullWidth size="large" onClick={() => navigate("/dashboard")} />
         </Stack>
         <Divider />

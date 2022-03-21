@@ -133,7 +133,7 @@ const MetadataTab = () => {
                                 position: "relative"
                             }}>
                                 <Avatar
-                                    src={logotype ? logotype.path : process.logotype}
+                                    src={logotype ? logotype.path : process.logotype_link}
                                     variant="rounded"
                                     style={{
                                         width: "100px",
@@ -153,7 +153,7 @@ const MetadataTab = () => {
 
                         </IconButton>
                     </label> : <Avatar
-                        src={process.logotype && process.logotype}
+                        src={process.logotype_link}
                         variant="rounded"
                         style={{
                             margin: "10px",
@@ -165,7 +165,7 @@ const MetadataTab = () => {
                 title={
                     <Stack justifyContent="center">
                         <Typography variant="subtitle1"><b>Created:</b> {moment(process.created_at).format("LL")}</Typography>
-                        <Typography variant="subtitle1">{process.updated_at && `Last update: ${moment(process.updated_at).format("LLL")}`}</Typography>
+                        {process.updated_at && <Typography variant="subtitle1"><b>Last update:</b> {moment(process.updated_at).format("LLL")}</Typography>}
                     </Stack>
                 }
             />
@@ -224,11 +224,11 @@ const MetadataTab = () => {
                     .object()
                     .shape({
                         name: Yup.string().required('Required'),
-                        description: Yup.string().required('required'),
+                    /* description: Yup.string().required('required'),
                         aim: Yup.string().required('required'),
                         organization: Yup.string().required('required'),
                         idea: Yup.string().required('required'),
-                        challenges: Yup.string().required('required'),
+                        challenges: Yup.string().required('required'),*/
 
                     })}
                 onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
@@ -237,6 +237,7 @@ const MetadataTab = () => {
                         dispatch(updateProcess({
                             id: process.id,
                             data: values,
+                            logotype,
                             onSuccess: () => {
                                 setEditMode(false)
                                 setStatus({ success: true });

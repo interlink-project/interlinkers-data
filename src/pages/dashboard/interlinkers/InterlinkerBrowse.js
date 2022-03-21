@@ -19,13 +19,9 @@ const LoadingBlock = ({callback}) => {
     myRef
   );
   useEffect(() => {
-    const delayDebounceFn = setTimeout(() => {
-      if(inViewport){
-        callback && callback()
-      }
-    }, 500)
-
-    return () => clearTimeout(delayDebounceFn)
+    if(inViewport){
+      callback && callback()
+    }
   }, [inViewport])
   
   return (

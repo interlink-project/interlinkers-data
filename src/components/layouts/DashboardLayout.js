@@ -8,6 +8,7 @@ import DashboardMobileAppbar from '../navsidebars/DashboardMobileAppbar';
 import ProcessSidebar from 'components/navsidebars/ProcessSidebar';
 import { useDispatch, useSelector } from 'react-redux';
 import WorkspaceSidebar from 'components/navsidebars/WorkspaceSidebar';
+import useAuth from 'hooks/useAuth';
 
 const DashboardLayoutRoot = experimentalStyled('div')(({ theme }) => ({
   backgroundColor: theme.palette.background.default,
@@ -51,12 +52,13 @@ const DashboardLayoutContent = experimentalStyled('div')({
 const DashboardLayout = () => {
   const [isSidebarMobileOpen, setIsSidebarMobileOpen] = useState(false);
   const location = useLocation();
+  const {isAuthenticated} = useAuth();
   const theme = useTheme();
   const onMobile = !useMediaQuery(theme.breakpoints.up('sm'));
   const { process, loading } = useSelector((state) => state.process);
 
   const coproductionProcessLocation = location.pathname.indexOf("/dashboard/coproductionprocesses/") > -1
-  const dashboardLocation = location.pathname === "/dashboard"
+  const dashboardLocation = isAuthenticated && (location.pathname === "/dashboard" ||  location.pathname === "/dashboard/")
 
   const content = <DashboardLayoutContainer>
     <DashboardLayoutContent>

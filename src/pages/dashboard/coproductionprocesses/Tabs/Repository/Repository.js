@@ -13,7 +13,7 @@ const Repository = () => {
     dispatch(setSelectedTreeItem(task))
   }
   return (
-    <Box sx={{ width: '100%', bgcolor: 'background.paper', minHeight: '87vh' }}>
+    <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
 
       <Grid container>
         <Grid item xl={12} lg={12} md={12} xs={12}>

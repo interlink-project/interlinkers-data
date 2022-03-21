@@ -1,45 +1,42 @@
 import {
   Alert,
-  Box, Button, CardActions, IconButton, Stack, TextField, ToggleButton, ToggleButtonGroup, Typography
+  Box, Button, Stack, CardActions, IconButton, TextField, ToggleButton, ToggleButtonGroup, Typography, Divider
 } from '@material-ui/core';
 import { Edit } from '@material-ui/icons';
 import {
-  DesktopDateRangePicker
+  DesktopDateRangePicker, LoadingButton
 } from '@material-ui/lab';
 import { FinishedIcon, InProgressIcon } from 'components/dashboard/assets';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { updateObjective, updatePhase, updateTask } from 'slices/process';
+import { deleteObjective, deletePhase, deleteTask, updateObjective, updatePhase, updateTask } from 'slices/process';
 import { HTMLtoText } from 'utils/safeHTML';
 import { statusText, statusIcon } from '../assets/Icons';
 
 const TreeItemData = ({ element, type, onSave = null, showType = true }) => {
-  const [dateRange, setDateRange] = useState([element.start_date ? new Date(element.start_date) : null, element.end_date ? new Date(element.end_date) : null]);
-  const [status, setStatus] = useState(element.status);
-  const [name, setName] = useState(element.name);
-  const [description, setDescription] = useState(element.description);
-  const [editMode, _setEditMode] = useState(false);
+  const [dateRange, setDateRange] = useState([null, null]);
+  const [status, setStatus] = useState("");
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [editMode, setEditMode] = useState(false);
+  const [saving, setSaving] = useState(false);
 
-  const restart = () => {
-    setName(element.name)
-    setDescription(element.description)
-    setStatus(element.status)
-    setDateRange([element.start_date ? new Date(element.start_date) : null, element.end_date ? new Date(element.end_date) : null])
-  }
-
-  const setEditMode = (bool) => {
-    restart()
-    _setEditMode(bool)
+  const restart = (el) => {
+    setName(el.name)
+    setDescription(el.description)
+    setStatus(el.status)
+    setDateRange([el.start_date ? new Date(el.start_date) : null, el.end_date ? new Date(el.end_date) : null])
   }
 
   useEffect(() => {
-    setEditMode(false)
-  }, [element])
+    restart(element)
+  }, [editMode, element])
 
   const dispatch = useDispatch();
 
   const saveData = () => {
+    setSaving(true)
     const data = {}
 
     const start_date = dateRange[0] && dateRange[0].toISOString().slice(0, 10)
@@ -60,18 +57,43 @@ const TreeItemData = ({ element, type, onSave = null, showType = true }) => {
       data.description = description
     }
 
+    const callback = () => {
+      setSaving(false)
+      setEditMode(false)
+      if (onSave) {
+        onSave()
+      }
+    }
+
     if (type === "task") {
-      dispatch(updateTask({ id: element.id, data}))
+      dispatch(updateTask({ id: element.id, data, callback }))
     }
     else if (type === "objective") {
-      dispatch(updateObjective({ id: element.id, data }))
+      dispatch(updateObjective({ id: element.id, data, callback }))
     }
     else if (type === "phase") {
-      dispatch(updatePhase({ id: element.id, data }))
+      dispatch(updatePhase({ id: element.id, data, callback }))
     }
-    setEditMode(false)
-    if (onSave) {
-      onSave()
+    
+  }
+
+  const deleteTreeItem = () => {
+    const callback = () => {
+      setSaving(false)
+      setEditMode(false)
+      if (onSave) {
+        onSave()
+      }
+    }
+
+    if (type === "task") {
+      dispatch(deleteTask({ id: element.id, callback }))
+    }
+    else if (type === "objective") {
+      dispatch(deleteObjective({ id: element.id, callback }))
+    }
+    else if (type === "phase") {
+      dispatch(deletePhase({ id: element.id, callback }))
     }
   }
 
@@ -122,7 +144,7 @@ const TreeItemData = ({ element, type, onSave = null, showType = true }) => {
         <ToggleButton value="finished">Finished <FinishedIcon /></ToggleButton>
       </ToggleButtonGroup> : <Alert severity="warning">Only tasks can be modified</Alert>}</>
 
-      : <div style={{ alignItems: "center" }}>
+      : <div style={{ alignItems: "center", color: "primary.main"}}>
         {statusText(status)}
         {statusIcon(status)}
       </div>
@@ -153,10 +175,20 @@ const TreeItemData = ({ element, type, onSave = null, showType = true }) => {
       </> : <Alert severity="warning">Not set</Alert>}
     </Box>}
 
-    {editMode && <CardActions sx={{ justifyContent: "center" }}>
-      <Button sx={{ mt: 2 }} size="small" variant="outlined" onClick={() => setEditMode(false)} color="error">Discard changes</Button>
-      <Button sx={{ mt: 2 }} variant="contained" onClick={saveData} color="primary" size="small">Save</Button>
-    </CardActions>}
+    {editMode && 
+      <Box sx={{ width: "100%", justifyContent: "center", textAlign: "center" }}>
+        <Stack sx={{ mt: 2 }} justifyContent="center" direction="row" spacing={2}>
+          <Button size="small" variant="outlined" onClick={() => setEditMode(false)} color="warning">Discard changes</Button>
+          <LoadingButton loading={saving} sx={{ width: "200px" }} variant="contained" onClick={saveData} color="primary" size="small">Save</LoadingButton>
+
+        </Stack>
+
+        <Divider sx={{my: 2}}>
+          other actions
+        </Divider>
+        <LoadingButton size="small" variant="text" onClick={() => deleteTreeItem()} color="error">Remove {type}</LoadingButton>
+
+      </Box>}
   </>
 
 }

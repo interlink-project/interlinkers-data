@@ -184,7 +184,7 @@ const Workplan = () => {
 
   return (
     <Grid container style={{ overflow: "hidden" }}>
-      {clickedElement && <TreeItemDialog type={clickedElement.type} element={clickedElement} onClose={() => setClickedElement(null)} />}
+      {clickedElement && <TreeItemDialog saving={updating} type={clickedElement.type} element={clickedElement} onClose={() => setClickedElement(null)} />}
       <Grid item xs={12}>
         <PhaseTabs />
         <ToggleButtonGroup
@@ -200,7 +200,13 @@ const Workplan = () => {
         </ToggleButtonGroup>
       </Grid>
       <Grid item xs={12}>
-        {updating ? <Skeleton variant="rectangular" width={"100%"} height={"70vh"} /> : <div id="gantt" />}
+        {updating ? <Skeleton variant="rectangular" width={"100%"} height={"70vh"} /> : <div style={{
+          alignItems: "start", height: "100%", webkitScrollbar: {
+            height: "4px",
+            width: "4px",
+            border: "1px solid #d5d5d5"
+          }
+        }} id="gantt" />}
       </Grid>
     </Grid>
   );

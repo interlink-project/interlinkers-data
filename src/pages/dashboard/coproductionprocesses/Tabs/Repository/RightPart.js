@@ -167,7 +167,6 @@ const RightPart = () => {
     return (
 
         selectedTreeItem && <Grid item xl={8} lg={8} md={6} xs={12}>
-            <Paper sx={{ minHeight: "100%" }}>
                 <Box sx={{ p: 2 }}>
                     <Button sx={{ mb: 2 }} fullWidth variant="outlined" onClick={() => setTreeItemInfoOpen(!treeItemInfoOpen)}>
                         <Stack spacing={2}>
@@ -262,7 +261,6 @@ const RightPart = () => {
                         {selectedInterlinker && <NewAssetModal open={newAssetDialogOpen} setOpen={setNewAssetDialogOpen} activeStep={step} setStep={setStep} selectedInterlinker={selectedInterlinker} task={selectedTreeItem} onCreate={updateTaskInfo} />}
                     </>}
                 </Box>
-            </Paper>
         </Grid>
     );
 };

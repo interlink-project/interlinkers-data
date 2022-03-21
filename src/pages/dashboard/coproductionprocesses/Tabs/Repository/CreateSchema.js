@@ -8,7 +8,7 @@ import useMounted from 'hooks/useMounted';
 import { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setProcess } from 'slices/process';
-import { comparePrerequisites } from 'utils/comparePrerequisites';
+import { topologicalSort } from 'utils/comparePrerequisites';
 import { coproductionProcessesApi } from '__fakeApi__';
 import { coproductionSchemasApi } from '__fakeApi__/coproduction/coproductionSchemasApi';
 
@@ -39,10 +39,8 @@ const CreateSchema = () => {
 
     const getSchemas = async () => {
         let schemas = await coproductionSchemasApi.getPublic();
-        schemas.map(schema => {
-            const newValues = {...schema}
-            newValues["phasemetadatas"] = schema.phasemetadatas.sort(comparePrerequisites)
-            return newValues
+        schemas = schemas.map(schema => {
+            return {...schema, phasemetadatas: topologicalSort(schema.phasemetadatas)}
         })
         console.log(schemas)
         setSchemas(schemas)
