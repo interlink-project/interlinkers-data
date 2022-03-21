@@ -38,7 +38,13 @@ const CreateSchema = () => {
     }, [mounted]);
 
     const getSchemas = async () => {
-        const schemas = await coproductionSchemasApi.getPublic();
+        let schemas = await coproductionSchemasApi.getPublic();
+        schemas.map(schema => {
+            const newValues = {...schema}
+            newValues["phasemetadatas"] = schema.phasemetadatas.sort(comparePrerequisites)
+            return newValues
+        })
+        console.log(schemas)
         setSchemas(schemas)
         setLoading(false)
     }
@@ -83,7 +89,7 @@ const CreateSchema = () => {
                                 defaultExpandIcon={<ChevronRight />}
                                 sx={{ flexGrow: 1, overflowY: 'auto', mb: 2 }}
                             >
-                                {schema.phasemetadatas.sort(comparePrerequisites).map((phasemetadata) => {
+                                {schema.phasemetadatas.map((phasemetadata) => {
                                     return <TreeItem key={phasemetadata.id} nodeId={phasemetadata.id} label={<p><b>Phase</b>: {phasemetadata.name}</p>}>
                                         {phasemetadata.objectivemetadatas.map((objectivemetadata) => {
                                             return <TreeItem key={objectivemetadata.id} nodeId={objectivemetadata.id} label={<p><b>Objective</b>: {objectivemetadata.name}</p>}>

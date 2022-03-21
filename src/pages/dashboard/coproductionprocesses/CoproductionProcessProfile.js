@@ -99,13 +99,13 @@ const Content = ({ tab, process }) => <>
 </>
 
 const TabsMobile = ({ tab, process }) => {
-  const logoExists = process && process.logotype
+  const logoExists = process && process.logotype_link
   const navigate = useNavigate();
 
   return process && <Card sx={{ mb: 1 }}>
     <CardHeader
       avatar={
-        <Avatar variant="square" sx={logoExists ? {} : { bgcolor: red[500] }} aria-label="recipe" src={logoExists && process.logotype}>
+        <Avatar variant="square" sx={logoExists ? {} : { bgcolor: red[500] }} aria-label="recipe" src={logoExists && process.logotype_link}>
           {process && !logoExists && process.name[0]}
         </Avatar>
       }

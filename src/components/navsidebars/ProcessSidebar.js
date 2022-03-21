@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Link as RouterLink, useLocation, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Avatar, Box, Divider, Drawer, Link, Typography, Button, Grid, Stack } from '@material-ui/core';
+import { Avatar, Box, Divider, Drawer, Link, Typography, Button, Grid, Stack, Skeleton } from '@material-ui/core';
 import { Timeline, Dashboard, BubbleChart, Forum, Settings, FolderOpen, AccountTree, Group as GroupIcon, ArrowBack } from '@material-ui/icons';
 
 import useMediaQuery from '@material-ui/core/useMediaQuery';
@@ -113,8 +113,8 @@ const ProcessSidebar = (props) => {
           spacing={1}
           sx={{p: 3}}
         >
-          {process && <Avatar variant="rounded" sx={{ width: "80px", height: "80px" }} src={process.logotype} />}
-          {process && <Typography sx={{textAlign: "center"}} variant="h6">{process.name}</Typography>}
+          {!loading ? <Avatar variant="rounded" sx={{ width: "80px", height: "80px" }} src={process && process.logotype_link} /> : <Skeleton variant="rounded" sx={{ width: "80px", height: "80px" }} />}
+          <Typography sx={{textAlign: "center", width: "100%"}} variant="h6">{!loading && process ? process.name : <Skeleton />}</Typography>
           <Button startIcon={<ArrowBack />} variant="outlined" fullWidth size="large" onClick={() => navigate("/dashboard")} />
         </Stack>
         <Divider />

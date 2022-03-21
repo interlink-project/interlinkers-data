@@ -9,7 +9,7 @@ import {
   DialogActions,
   Dialog,
   TextField,
-  Button,
+Button,
   Input,
   Divider,
   ListItem,
@@ -33,7 +33,7 @@ import useAuth from 'hooks/useAuth';
 import { coproductionProcessesApi, usersApi } from '__fakeApi__';
 import useMounted from 'hooks/useMounted';
 
-const CoproductionprocessCreate = ({ teams = [], onCreate }) => {
+const CoproductionprocessCreate = ({ getButton, teams = [], onCreate }) => {
   const [open, setOpen] = useState(false);
   const auth = useAuth();
 
@@ -132,9 +132,7 @@ const CoproductionprocessCreate = ({ teams = [], onCreate }) => {
   }
   return (
     <>
-      <Button fullWidth variant="contained" color='primary' onClick={handleClickOpen}>
-        Create new co-production process
-      </Button>
+      {getButton(handleClickOpen)}
       <Dialog open={open} onClose={handleClose} fullWidth>
         <DialogTitle>Co-production process creation</DialogTitle>
         <DialogContent>

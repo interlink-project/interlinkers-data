@@ -28,7 +28,7 @@ import { LoadingButton } from '@material-ui/lab';
 import useAuth from 'hooks/useAuth';
 import { teamsApi, usersApi } from '__fakeApi__';
 
-const TeamCreate = ({ onCreate }) => {
+const TeamCreate = ({ getButton, onCreate }) => {
   const [open, setOpen] = useState(false);
   const [emailValue, setEmailValue] = useState("");
   const auth = useAuth();
@@ -138,9 +138,7 @@ const TeamCreate = ({ onCreate }) => {
 
   return (
     <>
-      <Button fullWidth variant="contained" color='primary' onClick={handleClickOpen}>
-        Create new team
-      </Button>
+    {getButton(handleClickOpen)}
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Team creation</DialogTitle>
         <DialogContent>

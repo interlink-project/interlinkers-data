@@ -1,9 +1,10 @@
 
-export function comparePrerequisites(a, b) {
-    if (a.prerequisites_ids.length === 0) {
-      return -1
-    }
-    return !a.prerequisites_ids.includes(b.id) ? 1 : 0
-  }
-  
-  
+export function comparePrerequisites( a, b )
+{
+if ( a.prerequisites_ids.includes(b.id)){
+  return 1;
+}
+if ( !a.prerequisites_ids.includes(b.id)){
+  return -1;
+}
+}

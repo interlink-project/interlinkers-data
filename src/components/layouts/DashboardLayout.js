@@ -7,6 +7,7 @@ import { useMediaQuery, useTheme } from '@material-ui/core';
 import DashboardMobileAppbar from '../navsidebars/DashboardMobileAppbar';
 import ProcessSidebar from 'components/navsidebars/ProcessSidebar';
 import { useDispatch, useSelector } from 'react-redux';
+import WorkspaceSidebar from 'components/navsidebars/WorkspaceSidebar';
 
 const DashboardLayoutRoot = experimentalStyled('div')(({ theme }) => ({
   backgroundColor: theme.palette.background.default,
@@ -55,6 +56,7 @@ const DashboardLayout = () => {
   const { process, loading } = useSelector((state) => state.process);
 
   const coproductionProcessLocation = location.pathname.indexOf("/dashboard/coproductionprocesses/") > -1
+  const dashboardLocation = location.pathname === "/dashboard"
 
   const content = <DashboardLayoutContainer>
     <DashboardLayoutContent>
@@ -71,7 +73,11 @@ const DashboardLayout = () => {
         onMobileClose={() => setIsSidebarMobileOpen(false)}
         openMobile={isSidebarMobileOpen}
       />}
-      {coproductionProcessLocation ? <DashboardLayoutWrapper>{content}</DashboardLayoutWrapper> : <DashboardLayoutWrapper2>{content}</DashboardLayoutWrapper2>}
+      {dashboardLocation && <WorkspaceSidebar
+        onMobileClose={() => setIsSidebarMobileOpen(false)}
+        openMobile={isSidebarMobileOpen}
+      />}
+      {coproductionProcessLocation || dashboardLocation ? <DashboardLayoutWrapper>{content}</DashboardLayoutWrapper> : <DashboardLayoutWrapper2>{content}</DashboardLayoutWrapper2>}
     </DashboardLayoutRoot>
   );
 };

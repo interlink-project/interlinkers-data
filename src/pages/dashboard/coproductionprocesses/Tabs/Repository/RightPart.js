@@ -1,9 +1,9 @@
-import { Alert, alpha, Avatar, Box, Button, Card, CardActionArea, CardActions, CardHeader, CircularProgress, Collapse, Divider, Grid, InputBase, Menu, MenuItem, Paper, Stack, Typography } from '@material-ui/core';
+import { Alert, alpha, Avatar, Box, Rating, Button, Card, CardActionArea, CardActions, CardHeader, CircularProgress, Collapse, Divider, Grid, InputBase, Menu, MenuItem, Paper, Stack, Typography } from '@material-ui/core';
 import { green } from '@material-ui/core/colors';
 import { Check, KeyboardArrowDown, KeyboardArrowUp } from '@material-ui/icons';
 import { styled } from '@material-ui/styles';
 import { AssetsTable } from 'components/dashboard/assets';
-import { NatureChip } from 'components/dashboard/assets/Icons';
+import { NatureChip, OfficialityChip } from 'components/dashboard/assets/Icons';
 import { TreeItemData } from 'components/dashboard/tree';
 import { truncate } from 'lodash';
 import { useEffect, useState } from 'react';
@@ -62,14 +62,25 @@ const sameHeightCards = {
 const RecommendedInterlinkerCard = ({ interlinker, assets, onClick }) => {
     const [isShown, setIsShown] = useState(false);
 
+    const logotype = interlinker.logotype_link || (interlinker.softwareinterlinker && interlinker.softwareinterlinker.logotype_link)
     return <>
         <CardActionArea style={sameHeightCards} onClick={onClick}>
-            <Card onMouseEnter={() => setIsShown(true)} onMouseLeave={() => setIsShown(false)} sx={{ height: "100%" }}>
+            <Card onMouseEnter={() => setIsShown(true)} onMouseLeave={() => setIsShown(false)} sx={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 <CardHeader
                     sx={{ px: 2, pt: 2, pb: 0 }}
-                    avatar={interlinker.logotype_link && <Avatar src={interlinker.logotype_link} />}
-                    title={interlinker.name}
-                    subheader={<NatureChip nature={interlinker.nature} />} />
+                    avatar={logotype && <Avatar sx={{ width: 25, height: 25 }} variant="rounded" src={logotype} />}
+                    title={<Stack direction="column" justifyContent="center" spacing={1}>
+
+                        <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>{interlinker.name}</Typography>
+                        <Box sx={{
+                            position: "absolute",
+                            top: 10,
+                            right: 10
+                        }}>
+                            {assets.find(el => el.knowledgeinterlinker_id === interlinker.id || el.softwareinterlinker_id === interlinker.id) && <Check style={{ color: green[500] }} />}
+                        </Box>
+                    </Stack>} 
+                    />
 
                 <Typography sx={{ p: 2 }} variant="body2" color="text.secondary">
                     {HTMLtoText(truncate(interlinker.description, {
@@ -77,13 +88,12 @@ const RecommendedInterlinkerCard = ({ interlinker, assets, onClick }) => {
                         separator: ' ',
                     }))}
                 </Typography>
-
-
-                <CardActions sx={{
-                    position: "absolute",
-                    bottom: 0
-                }}>
-                    {assets.find(el => el.knowledgeinterlinker_id === interlinker.id || el.softwareinterlinker_id === interlinker.id) && <Check style={{ color: green[500] }} />}
+                <CardActions sx={{ textAlign: "center"}}>
+                    <Stack direction="column" justifyContent="center" spacing={1} sx={{textAlign: "center"}}>
+                    <NatureChip nature={interlinker.nature} />
+                    <Rating readOnly value={interlinker.rating} size="small" />
+                    </Stack>
+                    
                 </CardActions>
             </Card>
         </CardActionArea>
@@ -157,7 +167,7 @@ const RightPart = () => {
     return (
 
         selectedTreeItem && <Grid item xl={8} lg={8} md={6} xs={12}>
-            <Paper sx={{ height: "100%" }}>
+            <Paper sx={{ minHeight: "100%" }}>
                 <Box sx={{ p: 2 }}>
                     <Button sx={{ mb: 2 }} fullWidth variant="outlined" onClick={() => setTreeItemInfoOpen(!treeItemInfoOpen)}>
                         <Stack spacing={2}>

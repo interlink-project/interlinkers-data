@@ -95,6 +95,7 @@ const slice = createSlice({
 
 
         const orderedPhases = [...phases].sort(comparePrerequisites)
+        console.log("ORDERED", orderedPhases)
         state.phases = orderedPhases;
         state.selectedPhaseTab = orderedPhases.length > 0 ? orderedPhases[0].name : ""
         state.selectedTreeItem = orderedPhases.length > 0 ? {...orderedPhases[0], type: "phase"} : null

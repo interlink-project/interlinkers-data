@@ -16,37 +16,43 @@ const view_modes = ["Day", "Week", "Month", "Year"]
 
 const setNewGantt = (id, props, tasks, darkMode, onClick) => {
   document.getElementById("gantt").innerHTML = "";
-  new Gantt(id, tasks, props);
+  if (tasks.length > 0) {
+    console.log(tasks)
+    new Gantt(id, tasks, props);
 
-  if (darkMode) {
-    $(".gantt .grid-header").css("fill", "#293142")
-    $(".gantt .grid-row").css("fill", "#1c2531")
-    $(".gantt .grid-row:nth-child(even)").css("fill", "#293142")
-    $(".gantt .tick").css("stroke", "#606060")
-    $(".gantt .upper-text").css("fill", "white")
-    $(".gantt .lower-text").css("fill", "white")
+    if (darkMode) {
+      $(".gantt .grid-header").css("fill", "#293142")
+      $(".gantt .grid-row").css("fill", "#1c2531")
+      $(".gantt .grid-row:nth-child(even)").css("fill", "#293142")
+      $(".gantt .tick").css("stroke", "#606060")
+      $(".gantt .upper-text").css("fill", "white")
+      $(".gantt .lower-text").css("fill", "white")
+    }
+
+    $(".gantt-phase").each(function (index1) {
+      const id = $(this).attr("data-id")
+      $(this).on("click", function () {
+        onClick(id, "phase")
+      });
+    })
+
+    $(".gantt-objective").each(function (index1) {
+      const id = $(this).attr("data-id")
+      $(this).on("click", function () {
+        onClick(id, "objective")
+      });
+    })
+
+    $(".gantt-task").each(function (index1) {
+      const id = $(this).attr("data-id")
+      $(this).on("click", function () {
+        onClick(id, "task")
+      });
+    })
+  } else {
+    console.log("NO TASKS")
   }
 
-  $(".gantt-phase").each(function (index1) {
-    const id = $(this).attr("data-id")
-    $(this).on("click", function () {
-      onClick(id, "phase")
-    });
-  })
-
-  $(".gantt-objective").each(function (index1) {
-    const id = $(this).attr("data-id")
-    $(this).on("click", function () {
-      onClick(id, "objective")
-    });
-  })
-
-  $(".gantt-task").each(function (index1) {
-    const id = $(this).attr("data-id")
-    $(this).on("click", function () {
-      onClick(id, "task")
-    });
-  })
 
 }
 
@@ -70,24 +76,24 @@ const Workplan = () => {
     else if (type === "task") {
       obj = tasks.find(el => el.id === id)
     }
-    return {...obj, type}
+    return { ...obj, type }
   }
 
   const getClasses = (element) => {
     let classes = ""
-    if(element.status === "in_progress"){
+    if (element.status === "in_progress") {
       classes += " in_progress"
     }
-    if(element.status === "finished"){
+    if (element.status === "finished") {
       classes += " finished"
     }
-    if(element.status === "awaiting"){
+    if (element.status === "awaiting") {
       classes += " awaiting"
     }
-    if(element.start_date){
+    if (element.start_date) {
       classes += " timed"
     }
-    
+
     return classes
   }
 
@@ -95,7 +101,7 @@ const Workplan = () => {
     const final = []
 
     const phase = phases.find(phase => selectedPhaseTab === phase.name)
-    if(phase){
+    if (phase) {
       final.push({
         id: phase.id,
         name: phase.name,
@@ -110,7 +116,7 @@ const Workplan = () => {
           id: objective.id,
           name: objective.name,
           dependencies: phase.id,
-          start: objective.start_date || phase.start_date,
+          start: objective.start_date || phase.start_date || null,
           end: objective.end_date,
           progress: objective.progress,
           custom_class: 'gantt-objective' + getClasses(objective),
@@ -121,7 +127,7 @@ const Workplan = () => {
             id: task.id,
             name: task.name,
             dependencies: task.objective_id,
-            start: task.start_date || objective.start_date || phase.start_date,
+            start: task.start_date || objective.start_date || phase.start_date || null,
             end: task.end_date,
             custom_class: 'gantt-task' + getClasses(task),
             read_only: true
@@ -129,7 +135,7 @@ const Workplan = () => {
         })
       })
     }
-    
+
     return final
     // .sort((a, b) => a.start_date < b.start_date)
   }
@@ -174,7 +180,7 @@ const Workplan = () => {
       setClickedElement(getElement(id, type));
     })
 
-  }, [viewMode, selectedPhaseTab, updating, setNewGantt]);
+  }, [viewMode, selectedPhaseTab, updating, tasks, setNewGantt]);
 
   return (
     <Grid container style={{ overflow: "hidden" }}>
