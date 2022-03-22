@@ -42,6 +42,14 @@ const TeamCreate = ({ getButton, onCreate }) => {
   const theme = useTheme();
   const [activeStep, setActiveStep] = useState(0);
 
+  const clean = () => {
+    setName("")
+    setDescription("")
+    setLogotype(null)
+    setSelectedUser(null)
+    setSelectedUsers([auth.user])
+    setActiveStep(0)
+  }
   const handleNext = async () => {
 
     const sendOnCreate = (data) => {
@@ -96,13 +104,8 @@ const TeamCreate = ({ getButton, onCreate }) => {
     setOpen(false);
     // avoid seeing how data is cleared
     setTimeout(() => {
-      setName("")
-      setDescription("")
-      setLogotype(null)
-      setSelectedUser(null)
-      setSelectedUsers([])
-      setActiveStep(0)
-    }, 1000);    
+      clean()
+    }, 1000);
   };
 
   useEffect(() => {
@@ -131,14 +134,14 @@ const TeamCreate = ({ getButton, onCreate }) => {
   }
 
   const isDisabled = () => {
-    if (activeStep === 0 && (!name || !description)){
+    if (activeStep === 0 && (!name || !description)) {
       return true
     }
   }
 
   return (
     <>
-    {getButton(handleClickOpen)}
+      {getButton(handleClickOpen)}
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Team creation</DialogTitle>
         <DialogContent>

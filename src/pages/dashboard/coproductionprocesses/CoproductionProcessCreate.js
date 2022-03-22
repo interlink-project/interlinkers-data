@@ -186,7 +186,7 @@ const CoproductionprocessCreate = ({ getButton, teams = [], onCreate }) => {
             >
 
               {team && <AvatarGroup max={4} sx={{m: 1, p:1}}>
-              <Avatar src={team.logotype} />
+              <Avatar src={team.logotype_link} />
                 {team && team.memberships.map(member => <Avatar key={member.id} src={member.picture} />)}
 
               </AvatarGroup>}
