@@ -54,7 +54,10 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
 
     const handleClose = () => {
         setOpen(false);
-        setActiveStep(0)
+        setTimeout(() => {
+            setActiveStep(0)
+          }, 1000)
+        
     };
 
     const setActiveStep = async (i) => {
@@ -225,7 +228,7 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
                             justifyContent: 'center',
                         }}
                     >
-                        <Avatar src={assetData.icon} />
+                        <Avatar src={assetData && assetData.icon} />
                     </Box>
                     <Box sx={{ mt: 2 }}>
                         <Typography
@@ -233,7 +236,7 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
                             color='textPrimary'
                             variant='h3'
                         >
-                            Asset '{assetData.name}' created!
+                            Asset '{assetData && assetData.name}' created!
                         </Typography>
                     </Box>
                     <Box sx={{ mt: 2 }}>
@@ -256,7 +259,7 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
                             color='primary'
                             variant='contained'
                             onClick={() => {
-                                window.open(assetData.link + "/view", "_blank")
+                                window.open(assetData && assetData.link + "/view", "_blank")
                                 handleClose()
                             }}
                         >

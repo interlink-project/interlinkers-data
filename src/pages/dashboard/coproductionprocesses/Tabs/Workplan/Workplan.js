@@ -200,13 +200,7 @@ const Workplan = () => {
         </ToggleButtonGroup>
       </Grid>
       <Grid item xs={12}>
-        {updating ? <Skeleton variant="rectangular" width={"100%"} height={"70vh"} /> : <div style={{
-          alignItems: "start", height: "100%", webkitScrollbar: {
-            height: "4px",
-            width: "4px",
-            border: "1px solid #d5d5d5"
-          }
-        }} id="gantt" />}
+        {updating ? <Skeleton variant="rectangular" width={"100%"} height={"70vh"} /> : <div style={{alignItems: "start", height: "100%"}} id="gantt" />}
       </Grid>
     </Grid>
   );

@@ -159,7 +159,7 @@ const RightPart = () => {
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
-    const handleClose = () => {
+    const handleMenuClose = () => {
         setAnchorEl(null);
     };
 
@@ -241,7 +241,7 @@ const RightPart = () => {
                                 id="basic-menu"
                                 anchorEl={anchorEl}
                                 open={open}
-                                onClose={handleClose}
+                                onClose={handleMenuClose}
                                 MenuListProps={{
                                     'aria-labelledby': 'basic-button',
                                 }}
@@ -251,7 +251,7 @@ const RightPart = () => {
                                         setStep(1);
                                         setSelectedInterlinker(si);
                                         setNewAssetDialogOpen(true)
-                                        handleClose()
+                                        handleMenuClose()
                                     }
                                     }>
                                         <Avatar src={si.logotype_link} sx={{ mr: 2, height: "20px", width: "20px" }} />{si.integration.instantiate_text}

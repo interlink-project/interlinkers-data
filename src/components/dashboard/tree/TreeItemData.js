@@ -6,6 +6,7 @@ import { Edit } from '@material-ui/icons';
 import {
   DesktopDateRangePicker, LoadingButton
 } from '@material-ui/lab';
+import ConfirmationButton from 'components/ConfirmationButton';
 import { FinishedIcon, InProgressIcon } from 'components/dashboard/assets';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
@@ -186,7 +187,13 @@ const TreeItemData = ({ element, type, onSave = null, showType = true }) => {
         <Divider sx={{my: 2}}>
           other actions
         </Divider>
-        <LoadingButton size="small" variant="text" onClick={() => deleteTreeItem()} color="error">Remove {type}</LoadingButton>
+        <ConfirmationButton
+          Actionator={({onClick}) => <Button size="small" variant="text" onClick={onClick} color="error">Remove {type}</Button>} 
+          ButtonComponent={({onClick}) => <LoadingButton sx={{mt: 1}} fullWidth variant='contained' color="error" onClick={onClick}>Confirm deletion</LoadingButton>} 
+          onClick={deleteTreeItem}
+          text="Are you sure?" 
+        />
+          
 
       </Box>}
   </>

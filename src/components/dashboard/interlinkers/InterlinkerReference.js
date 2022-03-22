@@ -4,7 +4,7 @@ import { Link as RouterLink } from "react-router-dom";
 import { interlinkersApi } from '__fakeApi__';
 
 
-const InterlinkerReference = ({ interlinker_id }) => {
+const InterlinkerReference = ({ interlinker_id, onClick = () => {} }) => {
     const [loading, setLoading] = useState(true)
     const [data, setData] = useState(null)
 
@@ -19,8 +19,7 @@ const InterlinkerReference = ({ interlinker_id }) => {
         {data.logotype_link && <Avatar src={data.logotype_link} sx={{ height: "20px", width: "20px" }} />}
         <Link
             color='primary'
-            component={RouterLink}
-            to={''}
+            onClick={onClick}
             underline='none'
         >
             {data.name}

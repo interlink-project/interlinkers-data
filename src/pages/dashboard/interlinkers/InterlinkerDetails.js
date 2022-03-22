@@ -245,12 +245,6 @@ const InterlinkerDetails = ({ interlinker }) => {
               </Box>
             </>}
           </Box>
-
-
-
-
-
-
         )}
         {currentTab === 'related' && (
           <RelatedInterlinkersTable interlinker={interlinker} />

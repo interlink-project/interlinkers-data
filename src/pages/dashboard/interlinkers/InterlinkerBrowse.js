@@ -1,15 +1,14 @@
-import { Box, CircularProgress, Container, Dialog, DialogContent, DialogTitle, Grid, LinearProgress, ToggleButton, ToggleButtonGroup, Typography } from '@material-ui/core';
+import { Box, Container, Grid, LinearProgress, ToggleButton, ToggleButtonGroup, Typography } from '@material-ui/core';
 import { ViewModule } from '@material-ui/icons';
 import { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useInViewport } from 'react-in-viewport';
 import { interlinkersApi } from '__fakeApi__';
 import { InterlinkerBrowseFilter, InterlinkerCard } from '../../../components/dashboard/interlinkers';
 import useMounted from '../../../hooks/useMounted';
-import InterlinkerDetails from './InterlinkerDetails';
-import InterlinkerHeader from './InterlinkerHeader';
-import { useInViewport } from 'react-in-viewport';
+import InterlinkerDialog from './InterlinkerDialog';
 
-const LoadingBlock = ({callback}) => {
+const LoadingBlock = ({ callback }) => {
   const myRef = useRef();
   const {
     inViewport,
@@ -19,11 +18,11 @@ const LoadingBlock = ({callback}) => {
     myRef
   );
   useEffect(() => {
-    if(inViewport){
+    if (inViewport) {
       callback && callback()
     }
   }, [inViewport])
-  
+
   return (
     <section ref={myRef}>
       <LinearProgress />
@@ -50,7 +49,7 @@ const InterlinkerBrowse = () => {
 
   const hasNextPage = loadedRows.length < total
 
-  
+
   useEffect(() => {
     loadServerRows(params)
   }, [params])
@@ -207,38 +206,21 @@ const InterlinkerBrowse = () => {
                   }} mode={mode} />
                 </Grid>
               ))}
-             
-                <Grid item xs={12}>
-                {loading ? <LinearProgress /> : hasNextPage && (<LoadingBlock callback={() => handleOnRowsScrollEnd()}/>) }
-                </Grid>
-              
+
+              <Grid item xs={12}>
+                {loading ? <LinearProgress /> : hasNextPage && (<LoadingBlock callback={() => handleOnRowsScrollEnd()} />)}
+              </Grid>
+
             </Grid>
 
           </Box>
 
         </Container>
-        <Dialog fullWidth={true}
-          maxWidth="lg"
-          onClose={handleClose}
-          open={interlinker && open ? true : false}
-          sx={{ py: 0 }}
-        >
-          {interlinker && <DialogTitle sx={{
-            backgroundColor: 'background.default',
-          }}
-
-          >
-            <InterlinkerHeader interlinker={interlinker} />
-
-          </DialogTitle>
-          }
-          <DialogContent style={{ minHeight: "70vh" }} sx={{
-            backgroundColor: 'background.default',
-            py: 0
-          }}>
-            <InterlinkerDetails interlinker={interlinker} />
-          </DialogContent>
-        </Dialog>
+        <InterlinkerDialog
+          interlinker={interlinker}
+          open={open}
+          setOpen={setOpen}
+        />
       </Box>
     </>
   );

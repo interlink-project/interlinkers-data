@@ -1,16 +1,28 @@
 import {
-  Alert, Avatar, CircularProgress, IconButton, ListItemIcon, ListItemText, Menu,
-  MenuItem, Skeleton, Table, TableBody, TableCell, TableHead, TableRow
+  Alert, Avatar, Box, Button, CircularProgress, IconButton, ListItemIcon, ListItemText, Menu,
+  MenuItem, Popover, Skeleton, Table, TableBody, TableCell, TableHead, TableRow, Typography
 } from '@material-ui/core';
 import { CopyAll, Delete, Download, Edit, MoreVert as MoreVertIcon, Share } from '@material-ui/icons';
+import { LoadingButton } from '@material-ui/lab';
+import ConfirmationButton from 'components/ConfirmationButton';
 import moment from 'moment';
+import InterlinkerDialog from 'pages/dashboard/interlinkers/InterlinkerDialog';
 import React, { useEffect, useState } from 'react';
 import { assetsApi } from '__fakeApi__';
 import { InterlinkerReference } from '../interlinkers';
 
-const AssetRow = ({ asset, onChange, actions }) => {
+const MyMenuItem = ({ onClick, text, icon, id, loading }) => {
+  return <MenuItem aria-describedby={id} onClick={onClick}>
+    <ListItemIcon>
+      {loading === id ? <CircularProgress /> : icon}
+    </ListItemIcon>
+    <ListItemText>{text}</ListItemText>
+  </MenuItem>
+}
+
+const AssetRow = ({ asset, onChange, actions, openInterlinkerDialog }) => {
   const [data, setData] = useState(null)
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState("data")
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
@@ -27,18 +39,39 @@ const AssetRow = ({ asset, onChange, actions }) => {
   useEffect(() => {
     assetsApi.getExternal(asset.id).then((res) => {
       setData(res)
-      setLoading(false)
+      setLoading("")
     }
     )
 
   }, [])
 
-  const MyMenuItem = ({ onClick, text, icon }) => <MenuItem onClick={onClick}>
-    <ListItemIcon>
-      {icon}
-    </ListItemIcon>
-    <ListItemText>{text}</ListItemText>
-  </MenuItem>
+  const handleDelete = () => {
+    setLoading("delete");
+    assetsApi.delete(asset.id).then(() => {
+      setLoading("");
+      onChange && onChange();
+      setAnchorEl(null);
+    });
+  }
+
+  const handleClone = () => {
+    setLoading("clone");
+    assetsApi.clone(asset.id).then(() => {
+      setLoading("");
+      onChange && onChange();
+      setAnchorEl(null);
+    })
+  }
+
+  const handleDownload = () => {
+    window.open(asset.link + "/download", "_blank");
+    setAnchorEl(null);
+  }
+
+  const handleEdit = () => {
+    window.open(asset.link + "/edit", "_blank");
+    setAnchorEl(null);
+  }
 
   return data ? <TableRow
     hover
@@ -56,18 +89,22 @@ const AssetRow = ({ asset, onChange, actions }) => {
       {moment(data.updated_at || data.created_at).fromNow()}
     </TableCell>
     <TableCell align="center">
-      <InterlinkerReference interlinker_id={asset.knowledgeinterlinker_id || asset.softwareinterlinker_id} />
+      <InterlinkerReference onClick={() => {
+        openInterlinkerDialog(asset.knowledgeinterlinker_id || asset.softwareinterlinker_id)
+      }}
+        interlinker_id={asset.knowledgeinterlinker_id || asset.softwareinterlinker_id}
+      />
     </TableCell>
     <TableCell align="center">
-      {actions ||  <IconButton aria-label="settings" id="basic-button"
-      aria-controls="basic-menu"
-      aria-haspopup="true"
-      aria-expanded={open ? 'true' : undefined}
-      onClick={handleClick}
-    >
-      <MoreVertIcon />
-    </IconButton>}
-     
+      {actions || <IconButton aria-label="settings" id="basic-button"
+        aria-controls="basic-menu"
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
+        onClick={handleClick}
+      >
+        <MoreVertIcon />
+      </IconButton>}
+
       <Menu
         id="basic-menu"
         anchorEl={anchorEl}
@@ -77,39 +114,49 @@ const AssetRow = ({ asset, onChange, actions }) => {
           'aria-labelledby': 'basic-button',
         }}
       >
-        {asset.capabilities.edit && <MyMenuItem onClick={() => { window.open(asset.link + "/edit", "_blank"); setAnchorEl(null); }} text="Edit" icon={<Edit fontSize="small" />} />}
-        {asset.capabilities.clone && <MyMenuItem onClick={() => { assetsApi.clone(asset.id).then(() => {onChange && onChange();  setAnchorEl(null); }) }} text="Clone" icon={<CopyAll fontSize="small" />} />}
-        {asset.capabilities.delete && <MyMenuItem onClick={() => { assetsApi.delete(asset.id).then(() =>{ onChange && onChange();  setAnchorEl(null); }); }} text="Delete" icon={<Delete fontSize="small" />} />}
-        {asset.capabilities.clone && <MyMenuItem onClick={() => { }} text="Publish" icon={<Share fontSize="small" />} />}
-        {asset.capabilities.download && <MyMenuItem onClick={() => { window.open(asset.link + "/download", "_blank"); setAnchorEl(null); }}  text="Download" icon={<Download fontSize="small" />} />}
-        {/* <MyMenuItem text="Share" onClick={() => { }} icon={<Share fontSize="small" />} /> */}
-        {loading && <CircularProgress />}
+        {asset.capabilities.edit && <MyMenuItem loading={loading} id="edit" onClick={handleEdit} text="Edit" icon={<Edit fontSize="small" />} />}
+        {asset.capabilities.clone && <MyMenuItem loading={loading} id="clone" onClick={handleClone} text="Clone" icon={<CopyAll fontSize="small" />} />}
+        {asset.capabilities.delete && <ConfirmationButton
+          Actionator={({ onClick }) => <MyMenuItem loading={loading} id="delete" onClick={onClick} text="Delete" icon={<Delete fontSize="small" />} />}
+          ButtonComponent={({ onClick }) => <LoadingButton sx={{ mt: 1 }} fullWidth variant='contained' color="error" onClick={onClick}>Confirm deletion</LoadingButton>}
+          onClick={handleDelete}
+          text="Are you sure?" />}
+        {asset.capabilities.clone && <MyMenuItem loading={loading} id="publish" onClick={() => { }} text="Publish" icon={<Share fontSize="small" />} />}
+        {asset.capabilities.download && <MyMenuItem loading={loading} id="download" onClick={handleDownload} text="Download" icon={<Download fontSize="small" />} />}
+        {loading && <CircularProgress size={10} />}
       </Menu>
-      </TableCell>
+    </TableCell>
   </TableRow>
-  : 
-  <Skeleton animation="wave" height={60} />
+    :
+    <Skeleton animation="wave" height={60} />
 }
 
-const Assets = ({ assets, onChange = () => {}, actions }) => {
+const Assets = ({ assets, onChange = () => { }, actions }) => {
+  const [interlinkerDialogOpen, setInterlinkerDialogOpen] = useState(false);
+  const [selectedInterlinker, setSelectedInterlinker] = useState(false);
+
   return <>
-    {assets.length > 0 ? <Table sx={{ minWidth: 650 }} aria-label="resources table" size="small">
-      <TableHead>
-        <TableRow>
-          <TableCell></TableCell>
-          <TableCell align="center">Name</TableCell>
-          <TableCell align="center">Created</TableCell>
-          <TableCell align="center">Updated</TableCell>
-          <TableCell align="center">Interlinker</TableCell>
-          <TableCell align="center">Actions</TableCell>
-        </TableRow>
-      </TableHead>
-      <TableBody>
-        {assets.map((asset) => (
-          <AssetRow asset={asset} onChange={onChange} actions={actions} />
-        ))}
-      </TableBody>
-    </Table>
+    {assets.length > 0 ?
+      <>
+        <InterlinkerDialog open={interlinkerDialogOpen} setOpen={setInterlinkerDialogOpen} interlinker={selectedInterlinker} />
+        <Table sx={{ minWidth: 650 }} aria-label="resources table" size="small">
+          <TableHead>
+            <TableRow>
+              <TableCell></TableCell>
+              <TableCell align="center">Name</TableCell>
+              <TableCell align="center">Created</TableCell>
+              <TableCell align="center">Updated</TableCell>
+              <TableCell align="center">Interlinker</TableCell>
+              <TableCell align="center">Actions</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {assets.map((asset) => (
+              <AssetRow openInterlinkerDialog={(id) => { setInterlinkerDialogOpen(true); setSelectedInterlinker(id) }} asset={asset} onChange={onChange} actions={actions} />
+            ))}
+          </TableBody>
+        </Table>
+      </>
       :
       <Alert severity="info" sx={{ my: 2 }}>No resources yet</Alert>
     }

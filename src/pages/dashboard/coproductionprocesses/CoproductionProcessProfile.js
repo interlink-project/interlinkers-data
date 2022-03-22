@@ -71,10 +71,16 @@ function TabPanel(props) {
   );
 }
 
+const style = {
+  mb: '30px',
+  minHeight: '87vh'
+
+}
+
 const Content = ({ tab, process }) => <>
 
   <TabPanel value={tab} index="overview">
-    <Card >
+    <Card sx={style}>
       <OverviewTab coproductionprocess={process} />
     </Card>
   </TabPanel>
@@ -84,12 +90,12 @@ const Content = ({ tab, process }) => <>
     </Card>
   </TabPanel>
   <TabPanel value={tab} index="workplan">
-    <Card sx={{ mb: 2, minHeight: '87vh' }}>
+    <Card sx={style}>
       {process.phases_count > 0 ? <Workplan /> : <CreateSchema />}
     </Card>
   </TabPanel>
   <TabPanel value={tab} index="guide">
-    <Card sx={{ mb: 2, minHeight: '87vh' }}>
+    <Card sx={style}>
       {process.phases_count > 0 ? <Repository /> : <CreateSchema />}
     </Card>
   </TabPanel>
