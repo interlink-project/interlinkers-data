@@ -55,7 +55,6 @@ const DashboardLayout = () => {
   const {isAuthenticated} = useAuth();
   const theme = useTheme();
   const onMobile = !useMediaQuery(theme.breakpoints.up('sm'));
-  const { process, loading } = useSelector((state) => state.process);
 
   const coproductionProcessLocation = location.pathname.indexOf("/dashboard/coproductionprocesses/") > -1
   const dashboardLocation = isAuthenticated && (location.pathname === "/dashboard" ||  location.pathname === "/dashboard/")

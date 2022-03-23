@@ -222,7 +222,7 @@ const InterlinkerCard = ({ interlinker, mode, onInterlinkerClick }) => {
             <Rating
               readOnly
               size='small'
-              value={interlinker.rating}
+              value={interlinker.rating || 0}
             />
             <Typography
               color='textPrimary'

@@ -3,23 +3,13 @@ import {
   Grid, Typography
 } from '@material-ui/core';
 import AuthGuardSkeleton from 'components/guards/AuthGuardSkeleton';
-import React, { useState } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
-import useMounted from '../../hooks/useMounted';
-import useSettings from '../../hooks/useSettings';
 
 const MyWorkspace = () => {
-  const { settings } = useSettings();
   const auth = useAuth();
-  const { user, isAuthenticated } = auth;
-  const [processes, setProcesses] = useState([]);
-  const [teams, setTeams] = useState([]);
-  const [loadingProcesses, setLoadingProcesses] = useState(true);
-  const [loadingTeams, setLoadingTeams] = useState(true);
-  const mounted = useMounted();
-  const navigate = useNavigate();
+  const { user } = auth;
 
   const LoggedInWorkspace = () => <> <Grid container spacing={3}>
     <Grid container justifyContent='space-between' item xs={12}>
@@ -36,7 +26,7 @@ const MyWorkspace = () => {
       </Grid>
     </Grid>
   </Grid>
-    <Alert sx={{mt: 3}} severity="warning">Not implemented yet</Alert>
+    <Alert sx={{ mt: 3 }} severity="warning">Not implemented yet</Alert>
 
   </>
 
@@ -54,7 +44,7 @@ const MyWorkspace = () => {
         }}
       >
         <Container maxWidth='lg'>
-          <AuthGuardSkeleton height="100%" width="100%">
+          <AuthGuardSkeleton height="60vh" width="100%">
             <LoggedInWorkspace />
           </AuthGuardSkeleton>
         </Container>

@@ -101,7 +101,7 @@ const InterlinkerRatings = ({ interlinker }) => {
             comment={rating.text}
             createdAt={rating.created_at}
             value={rating.value}
-            mine={user.id === rating.user_id}
+            mine={isAuthenticated && (user.id === rating.user_id)}
           />
         </Box>
       ))}

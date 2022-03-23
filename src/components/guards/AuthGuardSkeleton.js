@@ -5,15 +5,19 @@ import { styled } from '@material-ui/styles';
 import { useTheme } from '@material-ui/core/styles';
 import { Link as RouterLink } from 'react-router-dom';
 
-const AuthGuardSkeleton = ({ children, width, height }) => {
+const AuthGuardSkeleton = ({ children, width = "100%", height = "100%" }) => {
   const auth = useAuth();
   const theme = useTheme();
   const mobileDevice = useMediaQuery(theme.breakpoints.down('sm'));
 
   if (!auth.isAuthenticated) {
-    return <Box sx={{ width, height, textAlign: "center" }}>
-      <Card>
-        <CardContent>
+    return  <Box
+        style={{
+          bgcolor: "background.paper",
+          position: 'absolute', left: '50%', top: '50%',
+          transform: 'translate(-50%, -50%)'
+        }}
+      >
           <Typography
             align='center'
             color='textPrimary'
@@ -27,7 +31,7 @@ const AuthGuardSkeleton = ({ children, width, height }) => {
             sx={{ mt: 0.5 }}
             variant='subtitle2'
           >
-            You must be logged in to interact with this section of the page.
+            You must be logged in to access this section.
           </Typography>
           <Box
             sx={{
@@ -61,10 +65,7 @@ const AuthGuardSkeleton = ({ children, width, height }) => {
               Login
             </Button>
           </Box>
-        </CardContent>
-
-      </Card>
-    </Box>
+          </Box>
   }
   return <>{children}</>;
 };

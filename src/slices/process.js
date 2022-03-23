@@ -16,8 +16,6 @@ const initialState = {
   selectedPhaseTabId: "",
   selectedTreeItem: null,
   network: null,
-  softwareInterlinkers: [],
-  loadingSoftwareInterlinkers: false
 };
 
 const valid_obj_types = ["task", "objective", "phase"]
@@ -168,12 +166,6 @@ const slice = createSlice({
       state.selectedPhaseTabId = action.payload;
       state.selectedTreeItem = {...state.phases.find(phase => phase.id === action.payload), type: "phase"}
     },
-    setSoftwareInterlinkers(state, action) {
-      state.softwareInterlinkers = action.payload;
-    },
-    setSoftwareInterlinkersLoading(state, action) {
-      state.loadingSoftwareInterlinkers = action.payload;
-    },
   }
 });
 
@@ -198,13 +190,6 @@ export const getProcess = (processId) => async (dispatch) => {
   dispatch(slice.actions.setProcess(data));
   dispatch(slice.actions.setProcessTree(treeData));
   dispatch(slice.actions.setLoading(false));
-};
-
-export const getSoftwareInterlinkers = () => async (dispatch) => {
-  dispatch(slice.actions.setSoftwareInterlinkersLoading(true));
-  const softwareinterlinkers = await softwareInterlinkersApi.getIntegrated()
-  dispatch(slice.actions.setSoftwareInterlinkers(softwareinterlinkers));
-  dispatch(slice.actions.setSoftwareInterlinkersLoading(false));
 };
 
 export const updateProcess = ({ id, data, logotype, onSuccess }) => async (dispatch) => {

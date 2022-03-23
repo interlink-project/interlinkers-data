@@ -230,7 +230,7 @@ export default function RelatedInterlinkersTable({ interlinker }) {
 
                                             <TableCell>
                                                 <Stack direction="row" alignItems="center">
-                                                <Rating readOnly value={row.rating} />
+                                                <Rating readOnly value={row.rating || 0} />
                                                 <Typography>({row.ratings_count})</Typography>
                                                 </Stack>
                                                 

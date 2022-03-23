@@ -1,4 +1,4 @@
-import { Avatar, Box, Button, Divider, Drawer } from '@material-ui/core';
+import { Avatar, Box, Divider, Drawer } from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { Add, Folder, Groups, Workspaces } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
@@ -7,34 +7,37 @@ import CoproductionprocessCreate from 'pages/dashboard/coproductionprocesses/Cop
 import TeamCreate from 'pages/dashboard/teams/TeamCreate';
 import PropTypes from 'prop-types';
 import { useCallback, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
-import { coproductionProcessesApi, teamsApi } from '__fakeApi__';
+import { getMyProcesses, getMyTeams } from 'slices/general';
 import useAuth from '../../hooks/useAuth';
 import Logo from '../Logo';
 import NavSection from '../NavSection';
 import Scrollbar from '../Scrollbar';
-import SearchAppBar from './Search';
 
 
 const WorkspaceSidebar = (props) => {
   const { onMobileClose, openMobile } = props;
   const navigate = useNavigate();
   const mounted = useMounted();
-  const [processes, setProcesses] = useState([]);
-  const [loadingProcesses, setLoadingProcesses] = useState(true);
-  const [teams, setTeams] = useState([]);
-  const [loadingTeams, setLoadingTeams] = useState(true);
+  const dispatch = useDispatch();
+  const { teams, processes, loadingTeams, loadingProcesses } = useSelector((state) => state.general);
 
   const location = useLocation();
   const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));
+
+  const [teamCreatorOpen, setOpenTeamCreator] = useState(false);
+  const [creatingTeam, setCreatingTeam] = useState(false);
+
+  const [coproductionProcessCreatorOpen, setCoproductionProcessCreatorOpen] = useState(false);
+  const [coproductionProcessLoading, setCoproductionProcessLoading] = useState(false);
 
   const onProcessCreate = (res2) => {
     navigate(`/dashboard/coproductionprocesses/${res2.id}`)
   }
 
   const onTeamCreate = (res2) => {
-    setLoadingTeams(false)
     getTeamsData()
   }
 
@@ -50,31 +53,14 @@ const WorkspaceSidebar = (props) => {
 
   const getProcessesData = useCallback(async () => {
     if (isAuthenticated) {
-      try {
-        const processes_data = await coproductionProcessesApi.getMine();
-        if (mounted.current) {
-          setProcesses(processes_data);
-          setLoadingProcesses(false)
-        }
-      } catch (err) {
-        console.error(err);
-      }
+      dispatch(getMyProcesses())
     }
-  }, [isAuthenticated, mounted]);
+  }, [isAuthenticated]);
 
   const getTeamsData = useCallback(async () => {
     if (isAuthenticated) {
-      try {
-        const teams_data = await teamsApi.getMine();
-        if (mounted.current) {
-          setTeams(teams_data);
-          setLoadingTeams(false)
-        }
-      } catch (err) {
-        console.error(err);
-      }
+      dispatch(getMyTeams())
     }
-
   }, [isAuthenticated, mounted]);
 
   useEffect(() => {
@@ -130,10 +116,16 @@ const WorkspaceSidebar = (props) => {
               }
             })}
           />
-          <CoproductionprocessCreate getButton={(onClick) => <LoadingButton onClick={onClick} loading={loadingProcesses} fullWidth variant="outlined" sx={{ textAlign: "center", mt: 1, mb: 2}} color="success" startIcon={<Add />} size="small">
+          <LoadingButton onClick={() => setCoproductionProcessCreatorOpen(true)} loading={loadingProcesses} fullWidth variant="outlined" sx={{ textAlign: "center", mt: 1, mb: 2 }} color="success" startIcon={<Add />} size="small">
             Add
-          </LoadingButton>} teams={teams} onCreate={onProcessCreate} />
-
+          </LoadingButton>
+          <CoproductionprocessCreate
+            open={coproductionProcessCreatorOpen}
+            setOpen={setCoproductionProcessCreatorOpen}
+            loading={coproductionProcessLoading}
+            setLoading={setCoproductionProcessLoading}
+            onCreate={onProcessCreate}
+          />
 
           <NavSection
             title="Your teams"
@@ -153,9 +145,16 @@ const WorkspaceSidebar = (props) => {
               }
             })}
           />
-          <TeamCreate onCreate={onTeamCreate} getButton={(onClick) => <LoadingButton onClick={onClick} loading={loadingProcesses} fullWidth variant="outlined" sx={{ textAlign: "center", mt: 1 }} color="success" startIcon={<Add />} size="small">
+          <TeamCreate
+            open={teamCreatorOpen}
+            setOpen={setOpenTeamCreator}
+            onCreate={onTeamCreate}
+            loading={creatingTeam}
+            setLoading={setCreatingTeam}
+          />
+          <LoadingButton onClick={() => setOpenTeamCreator(true)} loading={loadingTeams} fullWidth variant="outlined" sx={{ textAlign: "center", mt: 1 }} color="success" startIcon={<Add />} size="small">
             Add
-            </LoadingButton>} />
+          </LoadingButton>
         </Box>
       </Scrollbar>
     </Box>

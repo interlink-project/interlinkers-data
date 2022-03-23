@@ -1,47 +1,29 @@
-import { useEffect, useState } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import {
-  Box,
-  DialogTitle,
-  DialogContentText,
-  DialogContent,
-  DialogActions,
-  Dialog,
-  TextField,
-Button,
-  Input,
-  Divider,
-  ListItem,
-  ListItemAvatar,
-  IconButton,
-  ListItemText,
-  Avatar,
-  ListItemSecondaryAction,
-  Typography,
-  useTheme,
-  MobileStepper,
-  AvatarGroup,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem
+  Avatar, AvatarGroup, Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, Divider, FormControl, IconButton, Input, InputLabel, MenuItem, MobileStepper, Select, TextField, Typography,
+  useTheme
 } from '@material-ui/core';
-import { Add, Delete, Folder, KeyboardArrowRight, KeyboardArrowLeft, CheckCircle, Cancel } from '@material-ui/icons';
+import { Add, KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import useAuth from 'hooks/useAuth';
-import { coproductionProcessesApi, usersApi } from '__fakeApi__';
 import useMounted from 'hooks/useMounted';
+import { useState } from 'react';
+import { coproductionProcessesApi } from '__fakeApi__';
+import TeamCreate from '../teams/TeamCreate';
+import { useDispatch, useSelector } from 'react-redux';
+import { addTeam } from 'slices/general';
 
-const CoproductionprocessCreate = ({ getButton, teams = [], onCreate }) => {
-  const [open, setOpen] = useState(false);
+const CoproductionprocessCreate = ({ open, setOpen, loading, setLoading, onCreate }) => {
+  const dispatch = useDispatch();
+  const { teams } = useSelector((state) => state.general);
+
   const auth = useAuth();
+  const [creatingTeam, setCreatingTeam] = useState(false);
+  const [teamCreatorOpen, setOpenTeamCreator] = useState(false);
 
-  const [loading, setLoading] = useState(false);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [logotype, setLogotype] = useState(null);
-  const [teamId, setTeamId] = useState('');
+  const [team, setTeam] = useState(null);
 
   const theme = useTheme();
   const [activeStep, setActiveStep] = useState(0);
@@ -58,11 +40,14 @@ const CoproductionprocessCreate = ({ getButton, teams = [], onCreate }) => {
     if (activeStep < 1) {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     } else {
+      if (!team || !team.id) {
+        return
+      }
       setLoading(true)
       coproductionProcessesApi.create({
         name,
         description,
-        team_id: teamId
+        team_id: team.id
       }).then(res => {
         if (!logotype) {
           sendOnCreate(res.data)
@@ -75,14 +60,15 @@ const CoproductionprocessCreate = ({ getButton, teams = [], onCreate }) => {
           }).finally(() => setLoading(false))
         }
 
-      }).catch(err => { 
+      }).catch(err => {
         console.log(err)
-        setLoading(false) })
+        setLoading(false)
+      })
     }
   };
 
   const handleBack = () => {
-    setTeamId('')
+    setTeam(null)
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
   const handleFileSelected = (e) => {
@@ -97,42 +83,43 @@ const CoproductionprocessCreate = ({ getButton, teams = [], onCreate }) => {
     }
   }
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
   const handleClose = () => {
     setOpen(false);
     // avoid seeing how data is cleared
     setTimeout(() => {
-      if(mounted){
+      if (mounted) {
         setName("")
         setDescription("")
         setLogotype(null)
-        setTeamId('')
+        setTeam(null)
         setActiveStep(0)
       }
-    }, 1000);    
+    }, 1000);
   };
 
 
   const handleChange = (event) => {
-    setTeamId(event.target.value);
+    setTeam(teams.find(team => team.id === event.target.value));
   };
 
-  const team = teams.find(team => team.id === teamId)
-
   const isDisabled = () => {
-    if (activeStep === 0 && (!name)){
+    if (activeStep === 0 && (!name)) {
       return true
     }
-    if (activeStep === 1 && !teamId){
+    if (activeStep === 1 && (!team || !team.id)) {
       return true
     }
   }
+
+  const onTeamCreate = (res2) => {
+    dispatch(addTeam({
+      data: res2, 
+      callback: () => setTeam(res2)
+    }))
+  }
+
   return (
     <>
-      {getButton(handleClickOpen)}
       <Dialog open={open} onClose={handleClose} fullWidth>
         <DialogTitle>Co-production process creation</DialogTitle>
         <DialogContent>
@@ -176,17 +163,17 @@ const CoproductionprocessCreate = ({ getButton, teams = [], onCreate }) => {
           </>}
 
           {activeStep === 1 && <>
-          <Typography>
-            Now you must select the main team of the process. Later you will be able to add additional users / teams to the process.
-          </Typography>
+            <Typography>
+              Now you must select the main team of the process. Later you will be able to add additional users / teams to the process.
+            </Typography>
             <Box
               display="flex"
               alignItems="center"
               justifyContent="center"
             >
 
-              {team && <AvatarGroup max={4} sx={{m: 1, p:1}}>
-              <Avatar src={team.logotype_link} />
+              {team && <AvatarGroup max={4} sx={{ m: 1, p: 1 }}>
+                <Avatar src={team.logotype_link} />
                 {team && team.memberships.map(member => <Avatar key={member.id} src={member.picture} />)}
 
               </AvatarGroup>}
@@ -197,7 +184,7 @@ const CoproductionprocessCreate = ({ getButton, teams = [], onCreate }) => {
               <Select
                 labelId="demo-simple-select-standard-label"
                 id="demo-simple-select-standard"
-                value={teamId}
+                value={team && team.id}
                 onChange={handleChange}
                 label="Team"
                 fullWidth
@@ -205,6 +192,17 @@ const CoproductionprocessCreate = ({ getButton, teams = [], onCreate }) => {
                 {teams.map(team => <MenuItem key={team.id} value={team.id}>{team.name}</MenuItem>)}
 
               </Select>
+              <Divider sx={{ mt: 3, mb: 2 }}>Or create a new one</Divider>
+              <LoadingButton onClick={() => setOpenTeamCreator(true)} loading={creatingTeam} fullWidth variant="outlined" sx={{ textAlign: "center", mt: 1 }} color="success" startIcon={<Add />} size="small">
+                Create new team
+              </LoadingButton>
+              <TeamCreate
+                open={teamCreatorOpen}
+                setOpen={setOpenTeamCreator}
+                onCreate={onTeamCreate}
+                loading={creatingTeam}
+                setLoading={setCreatingTeam}
+              />
             </FormControl>
           </>}
 

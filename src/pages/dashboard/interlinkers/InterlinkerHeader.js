@@ -30,7 +30,7 @@ const InterlinkerHeader = ({ interlinker }) => {
             </Button>*/}
         </Stack>
         <Stack direction="row" justifyContent="center" alignItems="center" spacing={1}>
-            <Rating readOnly value={interlinker.rating} />
+            <Rating readOnly value={interlinker.rating || 0} />
             <Typography variant="subtitle1">
                 ({interlinker.ratings_count})
             </Typography>

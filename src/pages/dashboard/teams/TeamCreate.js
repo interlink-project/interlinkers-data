@@ -28,13 +28,11 @@ import { LoadingButton } from '@material-ui/lab';
 import useAuth from 'hooks/useAuth';
 import { teamsApi, usersApi } from '__fakeApi__';
 
-const TeamCreate = ({ getButton, onCreate }) => {
-  const [open, setOpen] = useState(false);
+const TeamCreate = ({ loading, setLoading, open, setOpen, onCreate }) => {
   const [emailValue, setEmailValue] = useState("");
   const auth = useAuth();
   const [selectedUsers, setSelectedUsers] = useState([auth.user]);
   const [selectedUser, setSelectedUser] = useState(null);
-  const [loading, setLoading] = useState(false);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [logotype, setLogotype] = useState(null);
@@ -96,10 +94,6 @@ const TeamCreate = ({ getButton, onCreate }) => {
     }
   }
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
   const handleClose = () => {
     setOpen(false);
     // avoid seeing how data is cleared
@@ -141,7 +135,6 @@ const TeamCreate = ({ getButton, onCreate }) => {
 
   return (
     <>
-      {getButton(handleClickOpen)}
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Team creation</DialogTitle>
         <DialogContent>

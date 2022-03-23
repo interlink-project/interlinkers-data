@@ -119,7 +119,8 @@ const RecommendedInterlinkerCard = ({ interlinker, assets, onClick }) => {
     </>
 }
 const RightPart = () => {
-    const { selectedTreeItem, softwareInterlinkers } = useSelector((state) => state.process);
+    const { selectedTreeItem } = useSelector((state) => state.process);
+    const { softwareInterlinkers } = useSelector((state) => state.general);
     const isTask = selectedTreeItem && selectedTreeItem.type === "task"
     const [step, setStep] = useState(0);
 

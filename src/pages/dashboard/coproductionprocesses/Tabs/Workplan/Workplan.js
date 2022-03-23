@@ -107,7 +107,8 @@ const Workplan = () => {
         name: phase.name,
         start: phase.start_date,
         end: phase.end_date,
-        progress: phase.progress,
+        // progress: phase.progress,
+        type: "phase",
         custom_class: 'gantt-phase' + getClasses(phase),
         read_only: true
       })
@@ -118,7 +119,8 @@ const Workplan = () => {
           dependencies: phase.id,
           start: objective.start_date || phase.start_date || null,
           end: objective.end_date,
-          progress: objective.progress,
+          type: "objective",
+          // progress: objective.progress,
           custom_class: 'gantt-objective' + getClasses(objective),
           read_only: true
         })
@@ -129,8 +131,9 @@ const Workplan = () => {
             dependencies: task.objective_id,
             start: task.start_date || objective.start_date || phase.start_date || null,
             end: task.end_date,
+            type: "task",
             custom_class: 'gantt-task' + getClasses(task),
-            read_only: true
+            // read_only: true
           })
         })
       })
