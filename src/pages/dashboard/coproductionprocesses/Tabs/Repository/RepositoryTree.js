@@ -122,10 +122,10 @@ const StyledTreeItem = styled((props) => (
 }));
 
 const RepositoryTree = ({ setSelectedTreeItem, loading }) => {
-  const { selectedTreeItem } = useSelector((state) => state.process);
+  const { selectedTreeItem, allItems} = useSelector((state) => state.process);
 
-  const { phases, objectives: allObjectives, tasks: allTasks, selectedPhaseTab } = useSelector((state) => state.process);
-  const currentPhase = selectedPhaseTab ? phases.find(el => el.name === selectedPhaseTab) : phases[0]
+  const { phases, objectives: allObjectives, tasks: allTasks, selectedPhaseTabId } = useSelector((state) => state.process);
+  const currentPhase = selectedPhaseTabId ? phases.find(el => el.id === selectedPhaseTabId) : phases[0]
   if(!currentPhase){
     return "Loading"
   }
@@ -156,7 +156,7 @@ const RepositoryTree = ({ setSelectedTreeItem, loading }) => {
     <TreeView
       disableSelection={loading}
       aria-label="customized"
-      defaultExpanded={allObjectives.concat(allTasks).concat([currentPhase]).map(el => el.id) || []}
+      defaultExpanded={allItems.map(el => el.id)}
       defaultCollapseIcon={<MinusSquare />}
       defaultExpandIcon={<PlusSquare />}
       defaultEndIcon={<CloseSquare />}

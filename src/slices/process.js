@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { coproductionProcessesApi, coproductionSchemasApi, tasksApi, objectivesApi, phasesApi, assetsApi } from '../__fakeApi__';
+import { coproductionProcessesApi, coproductionSchemasApi, tasksApi, objectivesApi, phasesApi, assetsApi, softwareInterlinkersApi } from '../__fakeApi__';
 import moment from "moment"
 import generateGraph from 'pages/dashboard/coproductionprocesses/Tabs/Network/graph';
 import { topologicalSort } from 'utils/comparePrerequisites';
@@ -12,10 +12,12 @@ const initialState = {
   tasks: [],
   objectives: [],
   phases: [],
-  selectedPhaseTab: "",
+  allItems: [],
+  selectedPhaseTabId: "",
   selectedTreeItem: null,
   network: null,
-  
+  softwareInterlinkers: [],
+  loadingSoftwareInterlinkers: false
 };
 
 const valid_obj_types = ["task", "objective", "phase"]
@@ -91,13 +93,14 @@ const slice = createSlice({
           });
           phases.push(phase)
         });
+        state.allItems = phases.concat(objectives).concat(tasks)
         const orderedTasks = topologicalSort([...tasks])
         state.tasks = orderedTasks;
         const orderedObjectives = topologicalSort([...objectives])
         state.objectives = orderedObjectives;
         const orderedPhases = topologicalSort([...phases])
         state.phases = orderedPhases;
-        state.selectedPhaseTab = orderedPhases.length > 0 ? orderedPhases[0].name : ""
+        state.selectedPhaseTabId = orderedPhases.length > 0 ? orderedPhases[0].id : ""
         state.selectedTreeItem = orderedPhases.length > 0 ? {...orderedPhases[0], type: "phase"} : null
       }
 
@@ -162,8 +165,14 @@ const slice = createSlice({
       state.updatingTree = action.payload;
     },
     setSelectedPhase(state, action) {
-      state.selectedPhaseTab = action.payload;
-      state.selectedTreeItem = {...state.phases.find(phase => phase.name === action.payload), type: "phase"}
+      state.selectedPhaseTabId = action.payload;
+      state.selectedTreeItem = {...state.phases.find(phase => phase.id === action.payload), type: "phase"}
+    },
+    setSoftwareInterlinkers(state, action) {
+      state.softwareInterlinkers = action.payload;
+    },
+    setSoftwareInterlinkersLoading(state, action) {
+      state.loadingSoftwareInterlinkers = action.payload;
     },
   }
 });
@@ -189,6 +198,13 @@ export const getProcess = (processId) => async (dispatch) => {
   dispatch(slice.actions.setProcess(data));
   dispatch(slice.actions.setProcessTree(treeData));
   dispatch(slice.actions.setLoading(false));
+};
+
+export const getSoftwareInterlinkers = () => async (dispatch) => {
+  dispatch(slice.actions.setSoftwareInterlinkersLoading(true));
+  const softwareinterlinkers = await softwareInterlinkersApi.getIntegrated()
+  dispatch(slice.actions.setSoftwareInterlinkers(softwareinterlinkers));
+  dispatch(slice.actions.setSoftwareInterlinkersLoading(false));
 };
 
 export const updateProcess = ({ id, data, logotype, onSuccess }) => async (dispatch) => {
@@ -272,7 +288,7 @@ export const deletePhase = ({ id, callback }) => async (dispatch) => {
   }
 };
 
-export const setSelectedPhaseTab = (data) => async (dispatch) => {
+export const setselectedPhaseTabId = (data) => async (dispatch) => {
   dispatch(slice.actions.setSelectedPhase(data));
 };
 

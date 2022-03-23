@@ -2,18 +2,18 @@ import { AppBar, Tab, Tabs as MuiTabs } from "@material-ui/core";
 import React, { useCallback } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import CircularProgressWithLabel from "components/CircularProgress";
-import { setSelectedPhaseTab } from "slices/process";
+import { setselectedPhaseTabId } from "slices/process";
 import useMounted from 'hooks/useMounted';
 
 const PhaseTabs = () => {
-    const { selectedPhaseTab, phases} = useSelector((state) => state.process);
+    const { selectedPhaseTabId, phases} = useSelector((state) => state.process);
     const dispatch = useDispatch();
     const mounted = useMounted();
 
     const setNewPhaseTab = useCallback((event, value) => {
         try {
           if (mounted.current) {
-            dispatch(setSelectedPhaseTab(value))
+            dispatch(setselectedPhaseTabId(value))
           }
         } catch (err) {
           console.error(err);
@@ -26,7 +26,7 @@ const PhaseTabs = () => {
             <MuiTabs
                 indicatorColor="secondary"
                 onChange={setNewPhaseTab}
-                value={selectedPhaseTab}
+                value={selectedPhaseTabId}
                 centered
 
                 textColor="inherit"
@@ -39,7 +39,7 @@ const PhaseTabs = () => {
                         label={<>
                             <p>{phase.name}</p>
                             {/* <CircularProgressWithLabel value={phase.progress} size={40} sx={{ mb: 2 }} />*/}</>}
-                        value={phase.name}
+                        value={phase.id}
                     />
                 ))}
             </MuiTabs>

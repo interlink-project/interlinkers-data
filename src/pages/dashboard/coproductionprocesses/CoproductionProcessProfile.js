@@ -1,44 +1,26 @@
-import { useCallback, useState, useEffect } from 'react';
-
-import { Link, Link as RouterLink, useParams } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import {
   Avatar,
-  Box,
-  Button,
-  Container,
-  Divider,
-  IconButton,
-  Tab,
-  AppBar,
-  Tabs,
-  Tooltip,
-  Typography,
-  Card,
-  TabClassKey,
-  Skeleton,
-  CardHeader,
-  Breadcrumbs,
-  useMediaQuery,
-  useTheme,
-
+  Box, Card, CardHeader, Container, IconButton,
+  Tab, Tabs, useMediaQuery,
+  useTheme
 } from '@material-ui/core';
+import { red } from '@material-ui/core/colors';
+import { MoreVert } from '@material-ui/icons';
+import MainSkeleton from 'pages/dashboard/coproductionprocesses/Tabs/MainSkeleton';
+import OverviewTab from 'pages/dashboard/coproductionprocesses/Tabs/Overview';
+import { useCallback, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router';
+import { useParams } from 'react-router-dom';
+import { getProcess, getSoftwareInterlinkers } from 'slices/process';
 import useMounted from '../../../hooks/useMounted';
-import DotsVerticalIcon from '../../../icons/DotsVertical';
-import { Grain, Home, MoreVert, NavigateNext, Whatshot } from '@material-ui/icons';
-import Repository from './Tabs/Repository/Repository';
+import MetadataTab from './Tabs/Metadata';
 import CreateSchema from './Tabs/Repository/CreateSchema';
-import MobileRepository from './Tabs/Repository/MobileRepository';
+import Repository from './Tabs/Repository/Repository';
 import TeamTab from './Tabs/Team';
 import Workplan from './Tabs/Workplan/Workplan';
-import Forum from './Tabs/Forum';
-import { useNavigate } from 'react-router';
-import { useDispatch, useSelector } from 'react-redux';
-import { getProcess } from 'slices/process';
-import { red } from '@material-ui/core/colors';
-import OverviewTab from 'pages/dashboard/coproductionprocesses/Tabs/Overview';
-import MainSkeleton from 'pages/dashboard/coproductionprocesses/Tabs/MainSkeleton';
-import MetadataTab from './Tabs/Metadata';
+
 
 const tabs = [
   { label: 'Overview', value: 'overview' },
@@ -156,6 +138,7 @@ const CoproductionProcessProfile = () => {
 
       if (mounted.current) {
         dispatch(getProcess(processId))
+        dispatch(getSoftwareInterlinkers())
       }
     } catch (err) {
       console.error(err);

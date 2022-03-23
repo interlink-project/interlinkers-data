@@ -60,7 +60,7 @@ const Workplan = () => {
   const { settings } = useSettings();
 
   const [viewMode, setViewMode] = useState("Week")
-  const { phases, objectives, tasks, updating, selectedPhaseTab } = useSelector((state) => state.process);
+  const { phases, objectives, tasks, updating, selectedPhaseTabId } = useSelector((state) => state.process);
   const mounted = useMounted();
 
   const [clickedElement, setClickedElement] = useState(null);
@@ -100,7 +100,7 @@ const Workplan = () => {
   const getTasks = () => {
     const final = []
 
-    const phase = phases.find(phase => selectedPhaseTab === phase.name)
+    const phase = phases.find(phase => selectedPhaseTabId === phase.id)
     if (phase) {
       final.push({
         id: phase.id,
@@ -180,7 +180,7 @@ const Workplan = () => {
       setClickedElement(getElement(id, type));
     })
 
-  }, [viewMode, selectedPhaseTab, updating, phases, setNewGantt]);
+  }, [viewMode, selectedPhaseTabId, updating, phases, setNewGantt]);
 
   return (
     <Grid container style={{ overflow: "hidden" }}>
