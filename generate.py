@@ -29,22 +29,13 @@ for schema_metadata_path in Path("./schemas").glob("**/metadata.json"):
             with open(parent + "/phases/" + phase) as phase_metadata:
                 print(parent + "/phases/" + phase)
                 phasejson = json.load(phase_metadata)
-                
-                # if last_phase:
-                #     phasejson["prerequisites"] = [{
-                #             "phase": last_phase,
-                #             "status": "completed"
-                #         }]
-
-                last_phase = "phase-" + slugify(phasejson["name_translations"]["en"])
-                phasejson["reference"] = last_phase
 
                 last_objective = "" 
                 for objs in phasejson["objectives"]:
                     
                     if last_objective:
                         objs["prerequisites"] = [{
-                            "objective": last_objective,
+                            "item": last_objective,
                             "status": "completed"
                         }]
                     last_objective = "objective-" +slugify(objs["name_translations"]["en"])
@@ -55,10 +46,10 @@ for schema_metadata_path in Path("./schemas").glob("**/metadata.json"):
                         
                         if last_task:
                             task["prerequisites"] = [{
-                                "objective": last_task,
+                                "item": last_task,
                                 "status": "completed"
                             }]
-                        last_task = "objective-" +slugify(task["name_translations"]["en"])
+                        last_task = "task-" +slugify(task["name_translations"]["en"])
                         task["reference"] = last_task
                 schema_metadata["phases"].append(phasejson)
         dicts["schemas"].append(schema_metadata)

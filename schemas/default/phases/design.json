@@ -1,6 +1,10 @@
 {
+    "reference": "phase-design",
     "prerequisites": [
-        "phase-engage"
+        {
+            "item": "phase-engage",
+            "status": "finished"
+        }
     ],
     "name_translations": {
         "en": "Design",

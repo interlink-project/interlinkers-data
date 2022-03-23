@@ -1,6 +1,10 @@
 {
+    "reference": "phase-build",
     "prerequisites": [
-        "phase-design"
+        {
+            "item": "phase-design",
+            "status": "finished"
+        }
     ],
     "name_translations": {
         "en": "Build",
