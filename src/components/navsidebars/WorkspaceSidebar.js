@@ -130,7 +130,7 @@ const WorkspaceSidebar = (props) => {
               }
             })}
           />
-          <CoproductionprocessCreate getButton={(onClick) => <LoadingButton onClick={onClick} loading={loadingProcesses} fullWidth variant="text" sx={{ textAlign: "center" }} color="success" startIcon={<Add />} size="small">
+          <CoproductionprocessCreate getButton={(onClick) => <LoadingButton onClick={onClick} loading={loadingProcesses} fullWidth variant="outlined" sx={{ textAlign: "center", mt: 1, mb: 2}} color="success" startIcon={<Add />} size="small">
             Add
           </LoadingButton>} teams={teams} onCreate={onProcessCreate} />
 
@@ -153,7 +153,7 @@ const WorkspaceSidebar = (props) => {
               }
             })}
           />
-          <TeamCreate onCreate={onTeamCreate} getButton={(onClick) => <LoadingButton onClick={onClick} loading={loadingProcesses} fullWidth variant="text" sx={{ textAlign: "center" }} color="success" startIcon={<Add />} size="small">
+          <TeamCreate onCreate={onTeamCreate} getButton={(onClick) => <LoadingButton onClick={onClick} loading={loadingProcesses} fullWidth variant="outlined" sx={{ textAlign: "center", mt: 1 }} color="success" startIcon={<Add />} size="small">
             Add
             </LoadingButton>} />
         </Box>

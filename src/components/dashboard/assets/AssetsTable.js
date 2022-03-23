@@ -10,6 +10,7 @@ import InterlinkerDialog from 'pages/dashboard/interlinkers/InterlinkerDialog';
 import React, { useEffect, useState } from 'react';
 import { assetsApi } from '__fakeApi__';
 import { InterlinkerReference } from '../interlinkers';
+import useMounted from 'hooks/useMounted';
 
 const MyMenuItem = ({ onClick, text, icon, id, loading }) => {
   return <MenuItem aria-describedby={id} onClick={onClick}>
@@ -25,6 +26,7 @@ const AssetRow = ({ asset, onChange, actions, openInterlinkerDialog }) => {
   const [loading, setLoading] = useState("data")
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+  const mounted = useMounted();
 
   const handleClick = (event) => {
     event.stopPropagation();
@@ -38,12 +40,12 @@ const AssetRow = ({ asset, onChange, actions, openInterlinkerDialog }) => {
 
   useEffect(() => {
     assetsApi.getExternal(asset.id).then((res) => {
-      setData(res)
-      setLoading("")
-    }
-    )
-
-  }, [])
+      if (mounted.current) {
+        setData(res)
+        setLoading("")
+      }
+    })
+  }, [mounted])
 
   const handleDelete = () => {
     setLoading("delete");
@@ -128,7 +130,7 @@ const AssetRow = ({ asset, onChange, actions, openInterlinkerDialog }) => {
     </TableCell>
   </TableRow>
     :
-    <Skeleton animation="wave" height={60} />
+    <Skeleton key={asset.id} animation="wave" height={60} />
 }
 
 const Assets = ({ assets, onChange = () => { }, actions }) => {

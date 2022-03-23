@@ -91,13 +91,11 @@ const slice = createSlice({
           });
           phases.push(phase)
         });
-        state.tasks = tasks;
-        state.objectives = objectives;
-
-
+        const orderedTasks = topologicalSort([...tasks])
+        state.tasks = orderedTasks;
+        const orderedObjectives = topologicalSort([...objectives])
+        state.objectives = orderedObjectives;
         const orderedPhases = topologicalSort([...phases])
-
-        console.log("ORDERED", orderedPhases)
         state.phases = orderedPhases;
         state.selectedPhaseTab = orderedPhases.length > 0 ? orderedPhases[0].name : ""
         state.selectedTreeItem = orderedPhases.length > 0 ? {...orderedPhases[0], type: "phase"} : null

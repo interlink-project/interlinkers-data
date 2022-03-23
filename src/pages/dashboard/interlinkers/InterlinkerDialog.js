@@ -3,17 +3,25 @@ import { useEffect, useState } from 'react';
 import { interlinkersApi } from '__fakeApi__';
 import InterlinkerDetails from './InterlinkerDetails';
 import InterlinkerHeader from './InterlinkerHeader';
+import useMounted from 'hooks/useMounted';
 
 const InterlinkerDialog = ({ open, setOpen, interlinker }) => {
     const [data, setData] = useState(null)
+    const mounted = useMounted()
     useEffect(() => {
+        setData(null)
+
         const isObj = typeof interlinker === 'object' && !Array.isArray(interlinker) && interlinker !== null
         if (isObj) {
             setData(interlinker)
         } else {
-            interlinkersApi.get(interlinker).then(res => setData(res))
+            interlinkersApi.get(interlinker).then(res => {
+                if(mounted.current){
+                    setData(res)
+                }
+            })
         }
-    }, [interlinker])
+    }, [mounted, interlinker])
 
     return <Dialog fullWidth={true}
         maxWidth="lg"

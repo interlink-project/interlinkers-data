@@ -180,7 +180,7 @@ const Workplan = () => {
       setClickedElement(getElement(id, type));
     })
 
-  }, [viewMode, selectedPhaseTab, updating, tasks, setNewGantt]);
+  }, [viewMode, selectedPhaseTab, updating, phases, setNewGantt]);
 
   return (
     <Grid container style={{ overflow: "hidden" }}>
