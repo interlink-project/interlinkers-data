@@ -126,9 +126,10 @@ const MainNavbar = (props) => {
               alignItems: 'center',
               display: 'flex',
             }}
+            color="primary"
             onClick={() => navigate("/dashboard")}
           >
-            <Typography sx={{ mr: 1 }} variant="overline">Dashboard</Typography>
+            <Typography sx={{ mr: 1, color: "primary.main" }} variant="overline">Dashboard</Typography>
             <Login />
           </Box>
         </Box>

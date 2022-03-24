@@ -1,6 +1,1 @@
-export { default as HomeClients } from './HomeClients';
-export { default as HomeFeatures } from './HomeFeatures';
-export { default as HomeOverview } from './HomeOverview';
-export { default as HomeRoles } from './HomeRoles';
-export { default as HomeTestimonials } from './HomeTestimonials';
 export { default as HomeRow } from './HomeRow';

@@ -1,41 +1,97 @@
-import { Box, Button, Grid, Grow, Typography } from '@material-ui/core';
+import { Box, Container, Fade, Grid, Divider } from '@material-ui/core';
+import { useEffect, useRef, useState } from 'react';
+import { useInViewport } from 'react-in-viewport';
 
-const HomeRow = ({ title, text, extra1 = null, extra2 = null, variance = false }) => {
+const HomeRow = ({ light = true, graphic, right }) => {
+    const myRef = useRef();
+    const [show, setShow] = useState(true)
+    const {
+        inViewport,
+    } = useInViewport(
+        myRef
+    );
 
-    const First = () => <Grid item xs={12} lg={8}>
-        <Typography sx={{ textAlign: "center" }} variant="h4" color={variance && "primary.contrastText"}>
-            {title}
-        </Typography>
-        {text.map(el => <Typography variant="body1" color={variance && "primary.contrastText"} sx={{ fontSize: "17px", mt: 2 }}>
-            {el}
-        </Typography>)}
+    useEffect(() => {
+        console.log(inViewport)
+        if (inViewport) {
+            setShow(true)
+        }
+    }, [inViewport])
 
-        <Box sx={{ mx: 10 }}>
+    return (
+        <>
+        <Box
+            sx={{
+                backgroundColor: light ? 'background.paper' : 'background.default',
+                py: 10
+            }}
+        >
+            <Container maxWidth="lg">
+                <Grid
+                    alignItems="center"
+                    container
+                    justifyContent="center"
+                    spacing={10}
+                >
+                    {light ? <><Grid
+                        item
+                        md={6}
+                        xs={12}
+                        sx={{
+                            order: {
+                                xs: 2,
+                                md: 1
+                            },
+                        }}
+                    >
+                        {right}
+                    </Grid>
+                        <Grid
+                            item
+                            md={6}
+                            sm={8}
+                            xs={12}
+                            sx={{
+                                order: {
+                                    xs: 1,
+                                    md: 2
+                                }
+                            }}
+                        >
+                            <Box
+                                sx={{
+                                    position: 'relative',
 
-            {extra1}
+                                }}
+                            >
+                                {graphic}
+                            </Box>
+                        </Grid></> : <><Grid
+                            item
+                            md={6}
+                            sm={8}
+                            xs={12}
+                        >
+                            <Box
+                                sx={{
+                                    position: 'relative',
+                                }}
+                            >
+                                {graphic}
+                            </Box>
+                        </Grid>
+                        <Grid
+                            item
+                            md={6}
+                            xs={12}
+                        >
+                            {right}
+                        </Grid></>}
+                </Grid>
+            </Container>
         </Box>
-
-    </Grid>
-
-    const Second = () => <Grid item xs={12} lg={4}>
-        {extra2}
-    </Grid>
-
-    return <Box sx={{
-        bgcolor: variance ? "primary.main" : "background.paper",
-        px: {
-            "xs": 4,
-            "md": 20,
-            "lg": 40
-        },
-        py: 5
-    }}
-    >
-        <Grid container spacing={3} justifyContent="center" alignItems="center">
-            {variance ? <><First /><Second /></> : <><Second /><First /></>}
-        </Grid>
-    </Box>
-
+        <Divider />
+        </>)
 }
 
 export default HomeRow
