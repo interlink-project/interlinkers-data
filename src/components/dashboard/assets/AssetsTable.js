@@ -50,7 +50,7 @@ const AssetRow = ({ asset, onChange, actions, openInterlinkerDialog }) => {
 
   const handleDelete = () => {
     setLoading("delete");
-    assetsApi.delete(data.id).then(() => {
+    assetsApi.delete(asset.id).then(() => {
       setLoading("");
       onChange && onChange();
       setAnchorEl(null);
@@ -59,7 +59,7 @@ const AssetRow = ({ asset, onChange, actions, openInterlinkerDialog }) => {
 
   const handleClone = () => {
     setLoading("clone");
-    assetsApi.clone(data.id).then(() => {
+    assetsApi.clone(asset.id).then(() => {
       setLoading("");
       onChange && onChange();
       setAnchorEl(null);
@@ -67,12 +67,12 @@ const AssetRow = ({ asset, onChange, actions, openInterlinkerDialog }) => {
   }
 
   const handleDownload = () => {
-    window.open(data.link + "/download", "_blank");
+    window.open(asset.link + "/download", "_blank");
     setAnchorEl(null);
   }
 
   const handleEdit = () => {
-    window.open(data.link + "/edit", "_blank");
+    window.open(asset.link + "/edit", "_blank");
     setAnchorEl(null);
   }
   const avatarSize = { height: "30px", width: "30px" }
