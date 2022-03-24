@@ -2753,7 +2753,7 @@
                                 },
                                 {
                                     "name_translations": {
-                                        "en": "Guarantee transparent communication with partcipants in the Hackathon",
+                                        "en": "Guarantee transparent communication with participants in the Hackathon",
                                         "es": ""
                                     },
                                     "description_translations": {
@@ -2767,7 +2767,7 @@
                                             "status": "completed"
                                         }
                                     ],
-                                    "reference": "task-guarantee-transparent-communication-with-partcipants-in-the-hackathon"
+                                    "reference": "task-guarantee-transparent-communication-with-participants-in-the-hackathon"
                                 },
                                 {
                                     "name_translations": {
@@ -2781,7 +2781,7 @@
                                     "problem_profiles": [],
                                     "prerequisites": [
                                         {
-                                            "item": "task-guarantee-transparent-communication-with-partcipants-in-the-hackathon",
+                                            "item": "task-guarantee-transparent-communication-with-participants-in-the-hackathon",
                                             "status": "completed"
                                         }
                                     ],
