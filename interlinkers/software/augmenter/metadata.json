@@ -1,11 +1,11 @@
 {
     "name_translations": {
-        "en": "Servicepedia",
-        "es": "Servicepedia"
+        "en": "Agmenter",
+        "es": "Agmenter"
     },
     "description_translations": {
-        "en": "<p>Servicepedia is an Open Source application that offers the possibility of create and improve public services descriptions, in the workspace users can share opinions, questions and feedbacks, finally a assigned moderator will decide approve or not a suggestion. With Servicepedia it is possible to</p><ul><li>create and improve public service descriptions, organize discussions and keep record of participation and involvement;</li><li>manage moderator decisions over the improvements;</li><li>Generate a final improvement report. </li></ul>",
-        "es": "<p>Servicepedia es una aplicación Open Source que ofrece la posibilidad de crear y mejorar descripciones de servicios públicos, en el espacio de trabajo los usuarios pueden compartir opiniones, preguntas y comentarios, finalmente un moderador asignado decidirá aprobar o no una sugerencia. Con Servicepedia es posible</p><ul><li>Crear y mejorar descripciones de servicios públicos, organizar dicusiones y mantener un registro de participación e implicación;</li><li>administrar las decisiones del moderador sobre las mejoras;</li ><li>Generar un informe final de mejora.</li></ul>"
+        "en": "<p>Agmenter is an Open Source application that offers the possibility of create and improve public services descriptions, in the workspace users can share opinions, questions and feedbacks, finally a assigned moderator will decide approve or not a suggestion. With Agmenter it is possible to</p><ul><li>create and improve public service descriptions, organize discussions and keep record of participation and involvement;</li><li>manage moderator decisions over the improvements;</li><li>Generate a final improvement report. </li></ul>",
+        "es": "<p>Agmenter es una aplicación Open Source que ofrece la posibilidad de crear y mejorar descripciones de servicios públicos, en el espacio de trabajo los usuarios pueden compartir opiniones, preguntas y comentarios, finalmente un moderador asignado decidirá aprobar o no una sugerencia. Con Agmenter es posible</p><ul><li>Crear y mejorar descripciones de servicios públicos, organizar dicusiones y mantener un registro de participación e implicación;</li><li>administrar las decisiones del moderador sobre las mejoras;</li ><li>Generar un informe final de mejora.</li></ul>"
     },
     "difficulty": "medium",
     "targets": [
@@ -49,8 +49,8 @@
     "integration": {
         "type": "internalintegration",
         "domain": "",
-        "path": "servicepedia",
-        "service_name": "servicepedia",
+        "path": "Agmenter",
+        "service_name": "Agmenter",
         "is_subdomain": true,
         "api_path": "/assets",
         "auth_method": "header",
@@ -66,23 +66,23 @@
         },
         "capabilities_translations": {
             "instantiate_text_translations": {
-                "en": "Create a new description in Servicepedia",
-                "es": "Crear una nueva descripción en Servicepedia"
+                "en": "Create a new description in Agmenter",
+                "es": "Crear una nueva descripción en Agmenter"
             },
             "view_text_translations": {
                 "en": "Open a description web site to annotate.",
                 "es": "Abrir una página con descripciones para anotar"
             },
             "delete_text_translations": {
-                "en": "Delete una description of Servicepedia",
-                "es": "Eliminar una descripción del servicepedia"
+                "en": "Delete una description of Agmenter",
+                "es": "Eliminar una descripción del Agmenter"
             }
 
 
         }
     },
-    "logotype": "./interlinkers/software/servicepedia/logo.png",
-    "reference": "servicepedia",
+    "logotype": "./interlinkers/software/Agmenter/logo.png",
+    "reference": "Agmenter",
     "tags_translations": {
         "en": [
             "decision making",
