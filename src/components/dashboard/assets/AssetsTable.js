@@ -39,17 +39,18 @@ const AssetRow = ({ asset, onChange, actions, openInterlinkerDialog }) => {
   };
 
   useEffect(() => {
+    setLoading("info")
     assetsApi.getExternal(asset.id).then((res) => {
       if (mounted.current) {
-        setData(res)
+        setData({ ...asset, ...res })
         setLoading("")
       }
     })
-  }, [mounted])
+  }, [asset, mounted])
 
   const handleDelete = () => {
     setLoading("delete");
-    assetsApi.delete(asset.id).then(() => {
+    assetsApi.delete(data.id).then(() => {
       setLoading("");
       onChange && onChange();
       setAnchorEl(null);
@@ -58,7 +59,7 @@ const AssetRow = ({ asset, onChange, actions, openInterlinkerDialog }) => {
 
   const handleClone = () => {
     setLoading("clone");
-    assetsApi.clone(asset.id).then(() => {
+    assetsApi.clone(data.id).then(() => {
       setLoading("");
       onChange && onChange();
       setAnchorEl(null);
@@ -66,71 +67,78 @@ const AssetRow = ({ asset, onChange, actions, openInterlinkerDialog }) => {
   }
 
   const handleDownload = () => {
-    window.open(asset.link + "/download", "_blank");
+    window.open(data.link + "/download", "_blank");
     setAnchorEl(null);
   }
 
   const handleEdit = () => {
-    window.open(asset.link + "/edit", "_blank");
+    window.open(data.link + "/edit", "_blank");
     setAnchorEl(null);
   }
-
-  return data ? <TableRow
+  const avatarSize = { height: "30px", width: "30px" }
+  return <TableRow
     hover
     key={asset.id}
     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
   >
-    <TableCell component="th" scope="row" onClick={() => window.open(asset.link + "/view", "_blank")}>
-      <Avatar src={data.icon} sx={{ height: "30px", width: "30px" }} />
+    {data && loading !== "info" ? <><TableCell component="th" scope="row" onClick={() => window.open(data.link + "/view", "_blank")}>
+      <Avatar src={data.icon} sx={avatarSize} />
     </TableCell>
-    <TableCell style={{ cursor: "pointer" }} onClick={() => window.open(asset.link + "/view", "_blank")} align="left">{data.name}</TableCell>
-    <TableCell align="left">
-      {moment(data.created_at).format("LL")}
-    </TableCell>
-    <TableCell align="left">
-      {moment(data.updated_at || data.created_at).fromNow()}
-    </TableCell>
-    <TableCell align="center">
-      <InterlinkerReference onClick={() => {
-        openInterlinkerDialog(asset.knowledgeinterlinker_id || asset.softwareinterlinker_id)
-      }}
-        interlinker_id={asset.knowledgeinterlinker_id || asset.softwareinterlinker_id}
-      />
-    </TableCell>
-    <TableCell align="center">
-      {actions || <IconButton aria-label="settings" id="basic-button"
-        aria-controls="basic-menu"
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
-      >
-        <MoreVertIcon />
-      </IconButton>}
-
-      <Menu
-        id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
+      <TableCell style={{ cursor: "pointer" }} onClick={() => window.open(data.link + "/view", "_blank")} align="left">{data.name}</TableCell>
+      <TableCell align="left">
+        {moment(data.created_at).format("LL")}
+      </TableCell>
+      <TableCell align="left">
+        {moment(data.updated_at || data.created_at).fromNow()}
+      </TableCell>
+      <TableCell align="center">
+        <InterlinkerReference onClick={() => {
+          openInterlinkerDialog(data.knowledgeinterlinker_id || data.softwareinterlinker_id)
         }}
-      >
-        {asset.capabilities.edit && <MyMenuItem loading={loading} id="edit" onClick={handleEdit} text="Edit" icon={<Edit fontSize="small" />} />}
-        {asset.capabilities.clone && <MyMenuItem loading={loading} id="clone" onClick={handleClone} text="Clone" icon={<CopyAll fontSize="small" />} />}
-        {asset.capabilities.delete && <ConfirmationButton
-          Actionator={({ onClick }) => <MyMenuItem loading={loading} id="delete" onClick={onClick} text="Delete" icon={<Delete fontSize="small" />} />}
-          ButtonComponent={({ onClick }) => <LoadingButton sx={{ mt: 1 }} fullWidth variant='contained' color="error" onClick={onClick}>Confirm deletion</LoadingButton>}
-          onClick={handleDelete}
-          text="Are you sure?" />}
-        {asset.capabilities.clone && <MyMenuItem loading={loading} id="publish" onClick={() => { }} text="Publish" icon={<Share fontSize="small" />} />}
-        {asset.capabilities.download && <MyMenuItem loading={loading} id="download" onClick={handleDownload} text="Download" icon={<Download fontSize="small" />} />}
-        {loading && <CircularProgress size={10} />}
-      </Menu>
-    </TableCell>
+          interlinker_id={data.knowledgeinterlinker_id || data.softwareinterlinker_id}
+        />
+      </TableCell>
+      <TableCell align="center">
+        {actions || <IconButton aria-label="settings" id="basic-button"
+          aria-controls="basic-menu"
+          aria-haspopup="true"
+          aria-expanded={open ? 'true' : undefined}
+          onClick={handleClick}
+        >
+          <MoreVertIcon />
+        </IconButton>}
+
+        <Menu
+          id="basic-menu"
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          MenuListProps={{
+            'aria-labelledby': 'basic-button',
+          }}
+        >
+          {data.capabilities.edit && <MyMenuItem loading={loading} id="edit" onClick={handleEdit} text="Edit" icon={<Edit fontSize="small" />} />}
+          {data.capabilities.clone && <MyMenuItem loading={loading} id="clone" onClick={handleClone} text="Clone" icon={<CopyAll fontSize="small" />} />}
+          {data.capabilities.delete && <ConfirmationButton
+            Actionator={({ onClick }) => <MyMenuItem loading={loading} id="delete" onClick={onClick} text="Delete" icon={<Delete fontSize="small" />} />}
+            ButtonComponent={({ onClick }) => <LoadingButton sx={{ mt: 1 }} fullWidth variant='contained' color="error" onClick={onClick}>Confirm deletion</LoadingButton>}
+            onClick={handleDelete}
+            text="Are you sure?" />}
+          {data.capabilities.clone && <MyMenuItem loading={loading} id="publish" onClick={() => { }} text="Publish" icon={<Share fontSize="small" />} />}
+          {data.capabilities.download && <MyMenuItem loading={loading} id="download" onClick={handleDownload} text="Download" icon={<Download fontSize="small" />} />}
+          {loading && <CircularProgress size={10} />}
+        </Menu>
+      </TableCell></> : <>
+      <TableCell><Skeleton animation="wave" variant="circular" sx={avatarSize} /></TableCell>
+      <TableCell><Skeleton animation="wave" sx={{ width: "100%" }} height={60} /></TableCell>
+      <TableCell><Skeleton animation="wave" sx={{ width: "100%" }} height={60} /></TableCell>
+      <TableCell><Skeleton animation="wave" sx={{ width: "100%" }} height={60} /></TableCell>
+      <TableCell><Skeleton animation="wave" sx={{ width: "100%" }} height={60} /></TableCell>
+      <TableCell><Skeleton animation="wave" sx={{ width: "100%" }} height={60} /></TableCell>
+    </>
+    }
   </TableRow>
-    :
-    <Skeleton key={asset.id} animation="wave" height={60} />
+
 }
 
 const Assets = ({ assets, onChange = () => { }, actions }) => {
