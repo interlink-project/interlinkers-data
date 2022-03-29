@@ -1,17 +1,30 @@
 import {
   Avatar, AvatarGroup, Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, Divider, FormControl, IconButton, Input, InputLabel, MenuItem, MobileStepper, Select, TextField, Typography,
-  useTheme
+  useTheme, CircularProgress
 } from '@material-ui/core';
 import { Add, KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import useAuth from 'hooks/useAuth';
 import useMounted from 'hooks/useMounted';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { coproductionProcessesApi } from '__fakeApi__';
 import TeamCreate from '../teams/TeamCreate';
 import { useDispatch, useSelector } from 'react-redux';
 import { addTeam } from 'slices/general';
+import { usersApi } from "__fakeApi__"
 
+const UserData = ({ variant, id }) => {
+  const mounted = useMounted();
+  const [data, setData] = useState(null)
+  useEffect(() => {
+    usersApi.get(id).then(res => {
+      if (mounted) {
+        setData(res.data)
+      }
+    })
+  }, [id])
+  return data ? <Avatar key={id} src={data.picture} /> : <CircularProgress key={id} />
+}
 const CoproductionprocessCreate = ({ open, setOpen, loading, setLoading, onCreate }) => {
   const dispatch = useDispatch();
   const { teams } = useSelector((state) => state.general);
@@ -113,7 +126,7 @@ const CoproductionprocessCreate = ({ open, setOpen, loading, setLoading, onCreat
 
   const onTeamCreate = (res2) => {
     dispatch(addTeam({
-      data: res2, 
+      data: res2,
       callback: () => setTeam(res2)
     }))
   }
@@ -174,7 +187,7 @@ const CoproductionprocessCreate = ({ open, setOpen, loading, setLoading, onCreat
 
               {team && <AvatarGroup max={4} sx={{ m: 1, p: 1 }}>
                 <Avatar src={team.logotype_link} />
-                {team && team.memberships.map(member => <Avatar key={member.id} src={member.picture} />)}
+                {team && team.users.map(user => <UserData variant="avatar" id={user.id} />)}
 
               </AvatarGroup>}
             </Box>

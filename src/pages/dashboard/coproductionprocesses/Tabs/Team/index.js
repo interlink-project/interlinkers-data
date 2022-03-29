@@ -1,33 +1,36 @@
 import { Avatar, Divider, Select, AvatarGroup, Paper, Table, TableCell, TableContainer, TableHead, TableRow, TableBody, IconButton, Typography, Collapse, Box, MenuItem, CircularProgress } from '@material-ui/core';
+import useMounted from 'hooks/useMounted';
 import * as React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { getRoles } from 'slices/process';
 import PermissionsTable from './PermissionsTable';
 import TeamsTable from './TeamsTable';
-import { aclsApi } from '__fakeApi__';
 
 export default function TeamsTab() {
     const { process, updating } = useSelector((state) => state.process);
-    const [loading, setLoading] = React.useState(false)
-    const [acl, setAcl] = React.useState(null)
+    const dispatch = useDispatch();
+    const mounted = useMounted();
 
-    const updateAcl = async () => {
-        const acl = await aclsApi.get(process.acl_id);
-        setAcl(acl)
-        setLoading(false)
-    }
+    const init = React.useCallback(async () => {
+        try {
+
+            if (process && mounted.current) {
+                dispatch(getRoles(process.id))
+            }
+        } catch (err) {
+            console.error(err);
+        }
+    }, [mounted]);
 
     React.useEffect(() => {
-        if (process.acl_id) {
-            setLoading(true)
-            updateAcl()
-        }
-    }, [process])
+        init();
+    }, [init]);
 
-    return acl ? (
+
+    // <TeamsTable onChanges={updateAcl} />
+    // <Divider sx={{ my: 2 }} />
+    return !updating ? (
         <React.Fragment>
-            <TeamsTable acl={acl} onChanges={updateAcl} />
-            <Divider sx={{ my: 2 }} />
-            <PermissionsTable acl={acl} onChanges={updateAcl} />
+            <PermissionsTable onChanges={init} />
         </React.Fragment>) : <CircularProgress />
-        ;
 }

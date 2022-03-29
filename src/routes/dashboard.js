@@ -3,8 +3,8 @@ import AuthGuard from '../components/guards/AuthGuard';
 import DashboardLayout from '../components/layouts/DashboardLayout';
 import Loadable from './Loadable';
 
-const PracticePedia = Loadable(
-  lazy(() => import('../pages/dashboard/PracticePedia'))
+const TeamProfile = Loadable(
+  lazy(() => import('../pages/dashboard/teams/TeamProfile'))
 );
 const CoproductionProcessProfile = Loadable(
   lazy(() => import('../pages/dashboard/coproductionprocesses/CoproductionProcessProfile'))
@@ -63,8 +63,13 @@ export const routes = [
         ],
       },
       {
-        path: 'practicepedia',
-        element: <PracticePedia />,
+        path: 'teams',
+        children: [
+          {
+            path: ':teamId',
+            element: <TeamProfile />,
+          },
+        ],
       },
 
     ],

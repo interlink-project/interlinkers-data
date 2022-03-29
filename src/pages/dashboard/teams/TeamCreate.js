@@ -110,7 +110,6 @@ const TeamCreate = ({ loading, setLoading, open, setOpen, onCreate }) => {
       delayDebounceFn = setTimeout(() => {
         usersApi.get(emailValue).then(res => {
           if (!selectedUsers.find(user => user.sub === res.data.sub)) {
-
             setSelectedUser(res.data)
           }
         }).catch(() => {

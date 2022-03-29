@@ -21,7 +21,7 @@ const permissions = [
         "label": "Delete assets"
     },
     {
-        "code": "acl_update",
+        "code": "process_update",
         "label": "Update access control"
     },
     {
@@ -104,7 +104,7 @@ function Row(props) {
                 </TableCell>
                 {permissions.map(perm => {
                     const active = role.permissions.findIndex(pr => pr === perm.code) >= 0
-                    return <TableCell key={perm.code} align="center">
+                    return <TableCell key={perm.code + role.id} align="center">
                         {editMode && role.perms_editable ? <Switch color="success" defaultChecked={active} onChange={(e) => handleSwitch(e, perm.code)} /> : active ? <PermittedChip /> : <NotPermittedChip />}
 
 
@@ -142,7 +142,8 @@ function Row(props) {
 
 
 
-export default function PermissionsTable({ acl, onChanges }) {
+export default function PermissionsTable({onChanges}) {
+    const { process, roles } = useSelector((state) => state.process);
 
     return (
         <TableContainer component={Paper}>
@@ -156,13 +157,13 @@ export default function PermissionsTable({ acl, onChanges }) {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {acl.roles.map((role) => (
-                        <Row key={role.id} role={role} permissions={permissions} onChanges={onChanges} />
+                    {roles.map((role) => (
+                        <Row key={role.id} role={role} onChanges={onChanges} />
                     ))}
                 </TableBody>
             </Table>
 
-            <RoleCreate permissions={permissions} acl_id={acl.id} onCreate={onChanges} />
+            <RoleCreate coproductionprocess_id={process.id} onCreate={onChanges} possiblePermissions={permissions} />
         </TableContainer>
     );
 }

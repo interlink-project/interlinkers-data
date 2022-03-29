@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { coproductionProcessesApi, softwareInterlinkersApi, teamsApi } from '../__fakeApi__';
+import { topologicalSort } from 'utils/comparePrerequisites';
+import { coproductionProcessesApi, coproductionSchemasApi, softwareInterlinkersApi, teamsApi } from '../__fakeApi__';
 
 const initialState = {
   softwareInterlinkers: [],
@@ -10,6 +11,9 @@ const initialState = {
 
   processes: [],
   loadingProcesses: false,
+
+  schemas: [],
+  loadingSchemas: false,
 };
 
 const slice = createSlice({
@@ -37,6 +41,12 @@ const slice = createSlice({
     setSoftwareInterlinkersLoading(state, action) {
       state.loadingSoftwareInterlinkers = action.payload;
     },
+    setSchemas(state, action) {
+      state.schemas = action.payload
+    },
+    setLoadingSchemas(state, action) {
+      state.loadingSchemas = action.payload
+    },
   }
 });
 
@@ -56,9 +66,9 @@ export const getMyTeams = () => async (dispatch) => {
   dispatch(slice.actions.setLoadingTeams(false));
 };
 
-export const addTeam = ({data, callback}) => async (dispatch) => {
+export const addTeam = ({ data, callback }) => async (dispatch) => {
   dispatch(slice.actions.addTeam(data));
-  if (callback){
+  if (callback) {
     callback()
   }
 };
@@ -68,6 +78,16 @@ export const getMyProcesses = () => async (dispatch) => {
   const processes_data = await coproductionProcessesApi.getMine();
   dispatch(slice.actions.setProcesses(processes_data));
   dispatch(slice.actions.setLoadingProcesses(false));
+};
+
+export const getSchemas = () => async (dispatch) => {
+  dispatch(slice.actions.setLoadingSchemas(true));
+  let schemas = await coproductionSchemasApi.getPublic();
+  schemas = schemas.map(schema => {
+    return { ...schema, phasemetadatas: topologicalSort(schema.phasemetadatas) }
+  })
+  dispatch(slice.actions.setSchemas(schemas));
+  dispatch(slice.actions.setLoadingSchemas(false));
 };
 
 export default slice;

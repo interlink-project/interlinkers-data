@@ -20,9 +20,9 @@ import {
 import { Add, Delete, Folder, KeyboardArrowRight, KeyboardArrowLeft, CheckCircle, Cancel } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import useAuth from 'hooks/useAuth';
-import { aclsApi, rolesApi, teamsApi, usersApi } from '__fakeApi__';
+import { rolesApi, teamsApi, usersApi } from '__fakeApi__';
 
-const RoleCreate = ({ onCreate, acl_id, permissions: possiblePermissions }) => {
+const RoleCreate = ({ onCreate, coproductionprocess_id, possiblePermissions }) => {
   const [open, setOpen] = useState(false);
   const auth = useAuth();
   const [loading, setLoading] = useState(false);
@@ -45,9 +45,10 @@ const RoleCreate = ({ onCreate, acl_id, permissions: possiblePermissions }) => {
     if (activeStep < 1) {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     } else {
+      console.log({ name, description, permissions, coproductionprocess_id })
       rolesApi.create(
-        { name, description, permissions, acl_id }
-      ).then(res => sendOnCreate(res.data))
+        { name, description, permissions, coproductionprocess_id }
+      ).then(res => sendOnCreate(res.data)).catch(res => console.log(res.data))
     }
   };
 

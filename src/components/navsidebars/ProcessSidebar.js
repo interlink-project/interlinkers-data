@@ -20,7 +20,7 @@ const ProcessSidebar = (props) => {
 
   const location = useLocation();
   const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));
-  const processId = location.pathname.replace("/dashboard/coproductionprocesses/", "").split("/")[0]
+  const processId = process && process.id
 
   useEffect(() => {
     if (openMobile && onMobileClose) {

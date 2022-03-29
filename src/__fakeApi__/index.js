@@ -1,7 +1,6 @@
 import { interlinkersApi } from './catalogue/interlinkersApi';
 import { knowledgeInterlinkersApi } from './catalogue/knowledgeInterlinkersApi';
 import { softwareInterlinkersApi } from './catalogue/softwareInterlinkersApi';
-import { aclsApi } from './coproduction/aclApi';
 import { assetsApi } from './coproduction/assetsApi';
 import { coproductionProcessesApi } from './coproduction/coproductionProcessesApi';
 import { coproductionSchemasApi } from './coproduction/coproductionSchemasApi';
@@ -12,4 +11,4 @@ import { tasksApi } from './coproduction/tasksApi';
 import { teamsApi } from './coproduction/teamsApi';
 import { usersApi } from './users';
 
-export { assetsApi, knowledgeInterlinkersApi, softwareInterlinkersApi, aclsApi, rolesApi, coproductionProcessesApi, coproductionSchemasApi, teamsApi, usersApi, tasksApi, phasesApi, objectivesApi, interlinkersApi };
+export { assetsApi, knowledgeInterlinkersApi, softwareInterlinkersApi, rolesApi, coproductionProcessesApi, coproductionSchemasApi, teamsApi, usersApi, tasksApi, phasesApi, objectivesApi, interlinkersApi };

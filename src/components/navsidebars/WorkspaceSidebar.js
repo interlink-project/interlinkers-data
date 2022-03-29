@@ -140,7 +140,7 @@ const WorkspaceSidebar = (props) => {
             items={teams && teams.map((team) => {
               return {
                 title: team.name,
-                // path: `/dashboard`,
+                path: `/dashboard/teams/${team.id}`,
                 icon: team.logotype_link ? <Avatar sx={{ height: "25px", width: "25px" }} src={team.logotype_link} /> : <Groups />
               }
             })}

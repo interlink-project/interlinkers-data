@@ -1,26 +1,27 @@
-import { Avatar, Divider, Select, AvatarGroup, Paper, Table, TableCell, TableContainer, TableHead, TableRow, TableBody, IconButton, Typography, Collapse, Box, MenuItem, Alert } from '@material-ui/core';
+import { Avatar, Button, Select, AvatarGroup, Paper, Table, TableCell, TableContainer, TableHead, TableRow, TableBody, IconButton, Typography, Collapse, Box, MenuItem, Alert } from '@material-ui/core';
 import * as React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { KeyboardArrowUp as KeyboardArrowUpIcon, KeyboardArrowDown as KeyboardArrowDownIcon, Remove, Save, Edit, Delete } from '@material-ui/icons';
-import { aclsApi } from '__fakeApi__';
 import TeamAdd from './TeamAdd';
 import { LoadingButton } from '@material-ui/lab';
+import { useNavigate } from 'react-router';
+import { rolesApi } from '__fakeApi__';
 
 
-function MemberRow({ member, acl, onChanges }) {
+function MemberRow({ user, acl, onChanges }) {
     const { process } = useSelector((state) => state.process);
-    const {roles} = acl
-    const role = roles.find(role => role.membership_ids.includes(member.id)) || roles.find(el => el.id === acl.default_role_id)
+    const { roles } = acl
+    const role = roles.find(role => role.membership_ids.includes(user.id)) || roles.find(el => el.id === acl.default_role_id)
     const [editMode, setEditMode] = React.useState(false);
     const [newRole, setNewRole] = React.useState(role.id);
     const [loading, setLoading] = React.useState(false);
 
     const updateRole = () => {
         setLoading(true)
-        aclsApi.switchMembershipRole(process.acl_id, {
+        rolesApi.switch({
             "new_role": newRole,
             "old_role": role.id,
-            "membership_id": member.id
+            "user_id": user.id
 
         }).then((res) => {
             onChanges(res)
@@ -28,15 +29,15 @@ function MemberRow({ member, acl, onChanges }) {
         }).finally(() => setLoading(false))
     }
 
-    return <TableRow key={member.id}>
-        <TableCell  align="center">
-            <Avatar src={member.picture} />
+    return <TableRow key={user.id}>
+        <TableCell align="center">
+            <Avatar src={user.picture} />
 
         </TableCell>
-        <TableCell  align="center">
-            {member.created_at}
+        <TableCell align="center">
+            {user.created_at}
         </TableCell>
-        <TableCell  align="center">
+        <TableCell align="center">
             {editMode ? <Select
                 value={newRole}
                 label="Role"
@@ -46,18 +47,18 @@ function MemberRow({ member, acl, onChanges }) {
                 {roles.filter(role => role.selectable).map(role => <MenuItem key={role.id} value={role.id}>{role.name}</MenuItem>)}
             </Select> : role.name}
         </TableCell>
-        <TableCell align="center">{member.email}</TableCell>
+        <TableCell align="center">{user.email}</TableCell>
         <TableCell align="center">
             {editMode ? <>
                 <LoadingButton loading={loading} size="small" onClick={updateRole}>
                     <Save fontSize="small" />
                 </LoadingButton>
                 <IconButton size="small" onClick={() => setEditMode(false)}>
-                    <Remove fontSize="small" /> 
+                    <Remove fontSize="small" />
                 </IconButton>
             </> :
                 <>
-                    {process.creator_id !== member.user_id ? <IconButton size="small" onClick={() => setEditMode(true)}>
+                    {process.creator_id !== user.user_id ? <IconButton size="small" onClick={() => setEditMode(true)}>
                         <Edit fontSize="small" />
                     </IconButton> : <Alert severity="warning">Is the creator</Alert>}
 
@@ -66,8 +67,9 @@ function MemberRow({ member, acl, onChanges }) {
         </TableCell>
     </TableRow>
 }
-function TeamRow({ team, acl, onChanges }) {
+function TeamRow({ team }) {
     const [open, setOpen] = React.useState(false);
+    const navigate = useNavigate()
 
     const deleteTeam = () => {
         console.log(team.id, "delete")
@@ -86,7 +88,10 @@ function TeamRow({ team, acl, onChanges }) {
                     </IconButton>
                 </TableCell>
                 <TableCell align="center">
-                    {team.name}
+                    <Button variant="text" fullWidth onClick={() => navigate(`/dashboard/teams/${team.id}`)}>
+                        {team.name}
+                    </Button>
+
                 </TableCell>
                 <TableCell align="center">
                     <AvatarGroup max={4} variant='circular'>
@@ -99,7 +104,7 @@ function TeamRow({ team, acl, onChanges }) {
                     </IconButton>
                 </TableCell>
 
-            </TableRow>
+            </TableRow>{/*
             <TableRow>
                 <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
                     <Collapse in={open} timeout="auto" unmountOnExit>
@@ -127,13 +132,13 @@ function TeamRow({ team, acl, onChanges }) {
                         </Box>
                     </Collapse>
                 </TableCell>
-            </TableRow>
+                                    </TableRow> */}
 
         </React.Fragment>
     );
 }
 
-export default function TeamsTable({ acl, onChanges }) {
+export default function TeamsTable() {
     const { process } = useSelector((state) => state.process);
 
     return <TableContainer component={Paper}>
@@ -149,11 +154,11 @@ export default function TeamsTable({ acl, onChanges }) {
             </TableHead>
             <TableBody>
                 {process.teams.map((team) => (
-                    <TeamRow key={team.id} acl={acl} team={team} onChanges={onChanges} />
+                    <TeamRow key={team.id} team={team} />
                 ))}
             </TableBody>
         </Table>
 
-        <TeamAdd currentTeams={process.teams} onChanges={onChanges} />
+        <TeamAdd currentTeams={process.teams} />
     </ TableContainer>
 }

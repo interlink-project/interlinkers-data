@@ -116,7 +116,7 @@ const Workplan = () => {
         final.push({
           id: objective.id,
           name: objective.name,
-          dependencies: phase.id,
+          dependencies: objective.prerequisites_ids && objective.prerequisites_ids.length > 0 ? [...objective.prerequisites_ids] : [objective.phase_id],
           start: objective.start_date || phase.start_date || null,
           end: objective.end_date,
           type: "objective",
@@ -128,7 +128,7 @@ const Workplan = () => {
           final.push({
             id: task.id,
             name: task.name,
-            dependencies: task.objective_id,
+            dependencies: task.prerequisites_ids && task.prerequisites_ids.length > 0 ? [...task.prerequisites_ids] : [task.objective_id],
             start: task.start_date || objective.start_date || phase.start_date || null,
             end: task.end_date,
             type: "task",

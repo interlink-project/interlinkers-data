@@ -1,4 +1,4 @@
-import { Box, Card, CardHeader, Grid, Rating, Typography, Stack } from '@material-ui/core';
+import { Box, Card, CardHeader, Grid, Rating, Typography, Stack, CircularProgress } from '@material-ui/core';
 import { ChevronRight, ExpandMore } from '@material-ui/icons';
 import {
     LoadingButton, TreeItem,
@@ -21,8 +21,8 @@ const sameHeightCards = {
 }
 const CreateSchema = () => {
     const [loading, setLoading] = useState(true)
-    const [schemas, setSchemas] = useState([])
     const { process } = useSelector((state) => state.process);
+    const { schemas = [], loadingSchemas } = useSelector((state) => state.general);
     const dispatch = useDispatch()
     const mounted = useMounted();
 
@@ -37,20 +37,6 @@ const CreateSchema = () => {
         }
     }, [mounted]);
 
-    const getSchemas = async () => {
-        let schemas = await coproductionSchemasApi.getPublic();
-        schemas = schemas.map(schema => {
-            return {...schema, phasemetadatas: topologicalSort(schema.phasemetadatas)}
-        })
-        console.log(schemas)
-        setSchemas(schemas)
-        setLoading(false)
-    }
-
-    useEffect(() => {
-        getSchemas()
-    }, [])
-
 
     const submit = async (coproductionschema_id) => {
         setLoading(coproductionschema_id)
@@ -62,23 +48,24 @@ const CreateSchema = () => {
     return (
 
         <Box sx={{ p: 2, minHeight: '87vh' }}>
-            <Box sx={{textAlign: "center"}}>
-            <Typography variant="h4" sx={{ mb: 2 }}>Schema selection</Typography>
-            <Typography variant="subtitle1" sx={{ mb: 4 }}>An schema contains a set of phases, objectives and tasks predefined. Those items could (and should) be edited in order to adapt the workplan of your project.</Typography>
+            <Box sx={{ textAlign: "center" }}>
+                <Typography variant="h4" sx={{ mb: 2 }}>Schema selection</Typography>
+                <Typography variant="subtitle1" sx={{ mb: 4 }}>An schema contains a set of phases, objectives and tasks predefined. Those items could (and should) be edited in order to adapt the workplan of your project.</Typography>
             </Box>
-            <Grid container spacing={3} justifyContent="flex-start">
+
+            {loadingSchemas ? <CircularProgress /> : <Grid container spacing={3} justifyContent="flex-start">
                 {schemas.map(schema => (
                     <Grid item xs={12} md={6} lg={4} xl={3} key={schema.id}                       >
                         <Card style={sameHeightCards}>
-                            <CardHeader sx={{textAlign: "center"}} title={schema.name} subheader={
-                            <Stack direction="row"
-                                justifyContent="center"
-                                alignItems="center"
-                                spacing={2}
+                            <CardHeader sx={{ textAlign: "center" }} title={schema.name} subheader={
+                                <Stack direction="row"
+                                    justifyContent="center"
+                                    alignItems="center"
+                                    spacing={2}
                                 >
-                                <Rating size="small" readOnly value={0} />
-                                (0)
-                            </Stack>}>
+                                    <Rating size="small" readOnly value={0} />
+                                    (0)
+                                </Stack>}>
 
                             </CardHeader>
                             <TreeView
@@ -106,7 +93,8 @@ const CreateSchema = () => {
 
                     </Grid>
                 ))}
-            </Grid>
+            </Grid>}
+
         </Box>
     );
 };

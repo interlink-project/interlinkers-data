@@ -13,7 +13,7 @@ import { Helmet } from 'react-helmet-async';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { useParams } from 'react-router-dom';
-import { getSoftwareInterlinkers } from 'slices/general';
+import { getSchemas, getSoftwareInterlinkers } from 'slices/general';
 import { getProcess } from 'slices/process';
 import useMounted from '../../../hooks/useMounted';
 import MetadataTab from './Tabs/Metadata';
