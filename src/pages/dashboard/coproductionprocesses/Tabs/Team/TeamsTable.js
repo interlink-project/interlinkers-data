@@ -1,4 +1,4 @@
-import { Avatar, Button, Select, AvatarGroup, Paper, Table, TableCell, TableContainer, TableHead, TableRow, TableBody, IconButton, Typography, Collapse, Box, MenuItem, Alert } from '@material-ui/core';
+import { Avatar, Button, Select, AvatarGroup, Paper, Table, TableCell, TableContainer, TableHead, TableRow, TableBody, IconButton, Typography, Collapse, Box, MenuItem, Alert, Stack } from '@material-ui/core';
 import * as React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { KeyboardArrowUp as KeyboardArrowUpIcon, KeyboardArrowDown as KeyboardArrowDownIcon, Remove, Save, Edit, Delete } from '@material-ui/icons';
@@ -6,6 +6,7 @@ import TeamAdd from './TeamAdd';
 import { LoadingButton } from '@material-ui/lab';
 import { useNavigate } from 'react-router';
 import { rolesApi } from '__fakeApi__';
+import UserData from 'components/UserData';
 
 
 function MemberRow({ user, acl, onChanges }) {
@@ -68,97 +69,83 @@ function MemberRow({ user, acl, onChanges }) {
     </TableRow>
 }
 function TeamRow({ team }) {
-    const [open, setOpen] = React.useState(false);
     const navigate = useNavigate()
+    const { roles, teams } = useSelector((state) => state.process);
 
     const deleteTeam = () => {
         console.log(team.id, "delete")
     }
 
+    const teamRole = roles.find(r => r.teams && r.teams.find(t => t.id === team.id))
+
     return (
         <React.Fragment>
-            <TableRow hover sx={{ '& > *': { borderBottom: 'unset' } }}>
+            <TableRow hover>
                 <TableCell align="center">
-                    <IconButton
-                        aria-label="expand row"
-                        size="small"
-                        onClick={() => setOpen(!open)}
-                    >
-                        {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-                    </IconButton>
+                    <Avatar src={team.logotype_link} />
                 </TableCell>
                 <TableCell align="center">
+
                     <Button variant="text" fullWidth onClick={() => navigate(`/dashboard/teams/${team.id}`)}>
                         {team.name}
                     </Button>
 
+
                 </TableCell>
                 <TableCell align="center">
-                    <AvatarGroup max={4} variant='circular'>
-                        {team.memberships.map(member => <Avatar key={member.id} src={member.picture} sx={{ height: "30px", width: "30px", border: "0px" }} />)}
-                    </AvatarGroup>
+                    {teamRole.name}
                 </TableCell>
                 <TableCell align="center">
-                    <IconButton size="small" onClick={deleteTeam}>
+                    <Box
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="center"
+                    >
+
+                        {team && <AvatarGroup max={4}>
+                            {team && team.users.map(user => <UserData sx={{ height: "30px", width: "30px", border: "0px" }} variant="avatar" id={user.id} />)}
+
+                        </AvatarGroup>}
+                        ({team.users.length})
+                    </Box>
+
+                </TableCell>
+                <TableCell align="center">
+                    {teams.length > 1 && <IconButton size="small" onClick={deleteTeam}>
                         <Delete fontSize="small" />
+                    </IconButton>}
+                    <IconButton size="small" onClick={deleteTeam}>
+                        <Edit fontSize="small" />
                     </IconButton>
                 </TableCell>
 
-            </TableRow>{/*
-            <TableRow>
-                <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
-                    <Collapse in={open} timeout="auto" unmountOnExit>
-                        <Box sx={{ margin: 1 }}>
-                            <Typography variant="h6" gutterBottom component="div">
-                                Members of {team.name}
-                            </Typography>
-                            <Table size="small" aria-label="purchases">
-                                <TableHead>
-                                    <TableRow>
-                                        <TableCell></TableCell>
-                                        <TableCell align="center">Joined</TableCell>
-                                        <TableCell align="center">Name</TableCell>
-                                        <TableCell align="center">Email</TableCell>
-                                        <TableCell align="center">Actions</TableCell>
-                                    </TableRow>
-                                </TableHead>
-                                <TableBody>
-                                    {team.memberships.map((member) => (
-                                        <MemberRow key={member.id} member={member} acl={acl} onChanges={onChanges} />
-                                    ))}
-
-                                </TableBody>
-                            </Table>
-                        </Box>
-                    </Collapse>
-                </TableCell>
-                                    </TableRow> */}
-
+            </TableRow>
         </React.Fragment>
     );
 }
 
-export default function TeamsTable() {
-    const { process } = useSelector((state) => state.process);
+export default function TeamsTable({onChanges}) {
+    const { teams } = useSelector((state) => state.process);
 
     return <TableContainer component={Paper}>
 
-        <Table aria-label="collapsible table">
+        <Table aria-label="collapsible table" size='medium'>
             <TableHead>
                 <TableRow>
                     <TableCell />
                     <TableCell align="center">Name</TableCell>
+                    <TableCell align="center">Role</TableCell>
                     <TableCell align="center">Members</TableCell>
                     <TableCell align="center">Actions</TableCell>
                 </TableRow>
             </TableHead>
             <TableBody>
-                {process.teams.map((team) => (
+                {teams.map((team) => (
                     <TeamRow key={team.id} team={team} />
                 ))}
             </TableBody>
         </Table>
 
-        <TeamAdd currentTeams={process.teams} />
+        <TeamAdd currentTeams={teams} onChanges={onChanges} />
     </ TableContainer>
 }

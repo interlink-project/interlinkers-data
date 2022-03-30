@@ -31,6 +31,8 @@ export default function TeamsTab() {
     // <Divider sx={{ my: 2 }} />
     return !updating ? (
         <React.Fragment>
+            <TeamsTable onChanges={init} />
+            <Divider sx={{ my: 2 }} />
             <PermissionsTable onChanges={init} />
         </React.Fragment>) : <CircularProgress />
 }

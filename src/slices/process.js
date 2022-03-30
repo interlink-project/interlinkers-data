@@ -15,7 +15,8 @@ const initialState = {
   selectedPhaseTabId: "",
   selectedTreeItem: null,
   network: null,
-  roles: []
+  roles: [],
+  teams: []
 };
 
 const slice = createSlice({
@@ -63,6 +64,12 @@ const slice = createSlice({
     },
     setRoles(state, action) {
       state.roles = action.payload;
+      state.teams = action.payload.reduce(
+        (previousValue, currentValue) => {
+          return [...previousValue, ...currentValue.teams]
+        },
+        []
+      );
     },
     updatePhase(state, action) {
       state.phases = state.phases.map(obj => obj.id === action.payload.id ? action.payload : obj);

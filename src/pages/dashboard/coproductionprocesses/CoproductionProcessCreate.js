@@ -12,19 +12,8 @@ import TeamCreate from '../teams/TeamCreate';
 import { useDispatch, useSelector } from 'react-redux';
 import { addTeam } from 'slices/general';
 import { usersApi } from "__fakeApi__"
+import UserData from 'components/UserData';
 
-const UserData = ({ variant, id }) => {
-  const mounted = useMounted();
-  const [data, setData] = useState(null)
-  useEffect(() => {
-    usersApi.get(id).then(res => {
-      if (mounted) {
-        setData(res.data)
-      }
-    })
-  }, [id])
-  return data ? <Avatar key={id} src={data.picture} /> : <CircularProgress key={id} />
-}
 const CoproductionprocessCreate = ({ open, setOpen, loading, setLoading, onCreate }) => {
   const dispatch = useDispatch();
   const { teams } = useSelector((state) => state.general);
