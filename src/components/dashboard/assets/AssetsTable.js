@@ -8,7 +8,7 @@ import ConfirmationButton from 'components/ConfirmationButton';
 import moment from 'moment';
 import InterlinkerDialog from 'pages/dashboard/interlinkers/InterlinkerDialog';
 import React, { useEffect, useState } from 'react';
-import { assetsApi } from '__fakeApi__';
+import { assetsApi } from '__api__';
 import { InterlinkerReference } from '../interlinkers';
 import useMounted from 'hooks/useMounted';
 

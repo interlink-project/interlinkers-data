@@ -3,7 +3,7 @@ import GeneralApi from "./general"
 
 class UsersApi extends GeneralApi {
   constructor() {
-    super("auth/api/v1/users");
+    super("auth/api/v1/users", "users_cache");
   }
 
   async get(id) {

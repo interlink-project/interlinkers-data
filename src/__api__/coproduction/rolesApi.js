@@ -12,9 +12,23 @@ class RolesApi extends GeneralApi {
       return res.data
     }
   }
-  async switcRole(data) {
+  async removeTeam(id, team_id) {
+    if (id) {
+      const res = await axiosInstance.post(`/${this.url}/${id}/remove_team`, {team_id})
+      console.log('remove team', res.data);
+      return res.data
+    }
+  }
+  async removeUser(id, user_id) {
+    if (id) {
+      const res = await axiosInstance.post(`/${this.url}/${id}/remove_user`, {user_id})
+      console.log('remove user', res.data);
+      return res.data
+    }
+  }
+  async switchRole(data) {
     const res = await axiosInstance.post(
-      `/switch`,
+      `/${this.url}/switch`,
       data
     );
     console.log('switch roles call', res.data);

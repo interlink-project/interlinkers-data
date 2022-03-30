@@ -1,6 +1,6 @@
 import { CircularProgress, Dialog, DialogContent, DialogTitle } from '@material-ui/core';
 import { useEffect, useState } from 'react';
-import { interlinkersApi } from '__fakeApi__';
+import { interlinkersApi } from '__api__';
 import InterlinkerDetails from './InterlinkerDetails';
 import InterlinkerHeader from './InterlinkerHeader';
 import useMounted from 'hooks/useMounted';

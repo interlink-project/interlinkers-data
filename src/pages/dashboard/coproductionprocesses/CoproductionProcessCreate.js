@@ -7,11 +7,11 @@ import { LoadingButton } from '@material-ui/lab';
 import useAuth from 'hooks/useAuth';
 import useMounted from 'hooks/useMounted';
 import { useState, useEffect } from 'react';
-import { coproductionProcessesApi } from '__fakeApi__';
+import { coproductionProcessesApi } from '__api__';
 import TeamCreate from '../teams/TeamCreate';
 import { useDispatch, useSelector } from 'react-redux';
 import { addTeam } from 'slices/general';
-import { usersApi } from "__fakeApi__"
+import { usersApi } from "__api__"
 import UserData from 'components/UserData';
 
 const CoproductionprocessCreate = ({ open, setOpen, loading, setLoading, onCreate }) => {
@@ -38,18 +38,18 @@ const CoproductionprocessCreate = ({ open, setOpen, loading, setLoading, onCreat
       }
       handleClose()
     }
-
-    if (activeStep < 1) {
+    //activeStep < 1
+    if (false) {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     } else {
-      if (!team || !team.id) {
-        return
-      }
+      // if (!team || !team.id) {
+      //  return
+      // }
       setLoading(true)
       coproductionProcessesApi.create({
         name,
         description,
-        team_id: team.id
+        // team_id: team.id
       }).then(res => {
         if (!logotype) {
           sendOnCreate(res.data)
@@ -210,8 +210,12 @@ const CoproductionprocessCreate = ({ open, setOpen, loading, setLoading, onCreat
 
 
         </DialogContent>
-        <DialogActions>
-          <MobileStepper
+        <DialogActions sx={{justifyContent: "center"}}>
+        <LoadingButton sx={{my: 2}} loading={loading} size="small" onClick={handleNext} disabled={isDisabled()}>
+                Create
+                <KeyboardArrowRight />
+              </LoadingButton>
+          {/* <MobileStepper
             variant="dots"
             steps={2}
             position="static"
@@ -229,7 +233,7 @@ const CoproductionprocessCreate = ({ open, setOpen, loading, setLoading, onCreat
                 Back
               </Button>
             }
-          />
+          /> */}
 
         </DialogActions>
       </Dialog>

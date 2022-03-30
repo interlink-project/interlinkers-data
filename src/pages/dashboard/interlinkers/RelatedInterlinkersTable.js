@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { alpha, Box, Table, Toolbar, Avatar, Typography, Paper, Checkbox, FormControlLabel, IconButton, Tooltip, TableSortLabel, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow, Rating, Stack } from '@material-ui/core';
 import { visuallyHidden } from '@material-ui/utils';
 import { Delete, FilterList } from '@material-ui/icons';
-import { interlinkersApi } from "__fakeApi__"
+import { interlinkersApi } from "__api__"
 import useMounted from 'hooks/useMounted';
 import { SafeHTMLElement } from 'utils/safeHTML';
 import moment from "moment"

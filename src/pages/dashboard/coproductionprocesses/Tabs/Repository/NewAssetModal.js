@@ -7,7 +7,7 @@ import { ArrowBack, Close, DoubleArrow, Download, Preview } from '@material-ui/i
 import { env } from 'configuration';
 import InterlinkerHeader from 'pages/dashboard/interlinkers/InterlinkerHeader';
 import { useEffect, useState } from 'react';
-import { assetsApi, knowledgeInterlinkersApi } from '__fakeApi__';
+import { assetsApi, knowledgeInterlinkersApi } from '__api__';
 import InterlinkerDetails from "../../../interlinkers/InterlinkerDetails";
 import { LoadingButton } from '@material-ui/lab';
 

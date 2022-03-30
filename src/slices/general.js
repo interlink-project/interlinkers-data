@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { topologicalSort } from 'utils/comparePrerequisites';
-import { coproductionProcessesApi, coproductionSchemasApi, softwareInterlinkersApi, teamsApi } from '../__fakeApi__';
+import { coproductionProcessesApi, coproductionSchemasApi, softwareInterlinkersApi, teamsApi } from '../__api__';
 
 const initialState = {
   softwareInterlinkers: [],

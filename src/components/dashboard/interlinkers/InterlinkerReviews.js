@@ -3,7 +3,7 @@ import { Box, Button, Card, CardContent, Grid, Paper, Rating, TextField, Typogra
 import InterlinkerReviewCard from './InterlinkerReviewCard';
 import { useEffect, useState } from 'react';
 import axiosInstance from 'axiosInstance';
-import { ratingsApi } from '__fakeApi__/catalogue/ratingsApi';
+import { ratingsApi } from '__api__/catalogue/ratingsApi';
 import { LoadingButton } from '@material-ui/lab';
 import useAuth from 'hooks/useAuth';
 

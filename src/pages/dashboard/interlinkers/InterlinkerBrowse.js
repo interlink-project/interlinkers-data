@@ -3,7 +3,7 @@ import { ViewModule } from '@material-ui/icons';
 import { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useInViewport } from 'react-in-viewport';
-import { interlinkersApi } from '__fakeApi__';
+import { interlinkersApi } from '__api__';
 import { InterlinkerBrowseFilter, InterlinkerCard } from '../../../components/dashboard/interlinkers';
 import useMounted from '../../../hooks/useMounted';
 import InterlinkerDialog from './InterlinkerDialog';

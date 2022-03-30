@@ -3,7 +3,7 @@ import { AssetsTable } from "components/dashboard/assets";
 import useMounted from "hooks/useMounted";
 import React, { useEffect, useState } from "react";
 import { fetchJsFromCDN } from "utils/fetchFromCDN";
-import { assetsApi } from "__fakeApi__";
+import { assetsApi } from "__api__";
 
 const dateToUnix = (dateStr) => Math.floor(new Date(dateStr).getTime() / 1000)
 

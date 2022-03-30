@@ -1,38 +1,16 @@
-import { useEffect, useState, useCallback } from 'react';
 import {
-  Box,
-  DialogTitle,
-  DialogContentText,
-  DialogContent,
-  DialogActions,
-  Dialog,
-  TextField,
-  Button,
-  Autocomplete,
-  InputLabel,
-  Select,
-  OutlinedInput,
-  useTheme,
-  MenuItem,
-  FormControl,
-  Avatar,
-  Input,
-  Alert,
-  Divider,
-  Typography
-
+  Alert, Avatar, Button, Dialog, DialogContent, Divider, FormControl, Input, MenuItem, Select, Typography
 } from '@material-ui/core';
-import { coproductionProcessesApi, teamsApi } from '__fakeApi__';
-import useMounted from 'hooks/useMounted';
-import { styled } from '@material-ui/styles';
-import { useDispatch, useSelector } from 'react-redux';
-import { LoadingButton } from '@material-ui/lab';
-import TeamCreate from 'pages/dashboard/teams/TeamCreate';
-import { addTeam } from 'slices/general';
 import { Add } from '@material-ui/icons';
+import { LoadingButton } from '@material-ui/lab';
+import useMounted from 'hooks/useMounted';
+import TeamCreate from 'pages/dashboard/teams/TeamCreate';
+import { useCallback, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addTeam } from 'slices/general';
+import { coproductionProcessesApi, teamsApi } from '__api__';
 
-const TeamAdd = ({ currentTeams, onChanges }) => {
-  const [open, setOpen] = useState(false);
+const TeamAdd = ({ open, setOpen, currentTeams, onChanges }) => {
   const [loading, setLoading] = useState(false);
   const [teams, setTeams] = useState([]);
   const mounted = useMounted();
@@ -77,17 +55,16 @@ const TeamAdd = ({ currentTeams, onChanges }) => {
     }
   }, [open, getTeamsData]);
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
   const handleClose = () => {
     setOpen(false);
   };
 
 
   const handleAdd = () => {
-    coproductionProcessesApi.addTeam(process.id, selectedTeam.id).then((res) => onChanges && onChanges(res))
+    coproductionProcessesApi.addTeam(process.id, selectedTeam.id).then((res) => {
+      handleClose()
+      onChanges && onChanges(res)
+    })
   }
 
   return (
@@ -99,9 +76,6 @@ const TeamAdd = ({ currentTeams, onChanges }) => {
         loading={creatingTeam}
         setLoading={setCreatingTeam}
       />
-      <Button fullWidth variant="text" sx={{ m: 2 }} color='primary' onClick={handleClickOpen}>
-        Add new team
-      </Button>
       <Dialog open={open} onClose={handleClose} maxWidth="xs" fullWidth>
         <DialogContent sx={{ m: 2 }}>
           {!selectedTeam ? <>
@@ -131,11 +105,9 @@ const TeamAdd = ({ currentTeams, onChanges }) => {
             </LoadingButton>
 
           </> : <>
-          <Typography variant="h6" sx={{textAlign: "center", my: 2}}>Are you sure you want to add "{selectedTeam.name}" to this process? It will be added with the default role</Typography>
+            <Typography variant="h6" sx={{ textAlign: "center", my: 2 }}>Are you sure you want to add "{selectedTeam.name}" to this process? It will be added with the default role</Typography>
             <Button color="warning" fullWidth onClick={handleAdd}>Add</Button>
           </>}
-
-
         </DialogContent>
 
       </Dialog>

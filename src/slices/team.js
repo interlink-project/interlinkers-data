@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { teamsApi } from '../__fakeApi__';
+import { teamsApi } from '../__api__';
 
 const initialState = {
   loading: false,

@@ -1,12 +1,28 @@
 import axiosInstance from 'axiosInstance';
+import store from 'store';
 
 export function removeEmpty(obj) {
   return Object.fromEntries(Object.entries(obj).filter(([_, v]) => v != null));
 }
 
 export default class GeneralApi {
-  constructor(url) {
+  constructor(url, cache_key = "") {
     this.url = url;
+    this.cache_key = cache_key
+  }
+
+  async get_cache(id) {
+    if (this.cache_key) {
+      const objects = store.get(this.cache_key, [])
+      const search = objects.find(el => el.id === id)
+      if (!search) {
+        const res = await this.get(id)
+        store.set(this.cache_key, [...store.get(this.cache_key, []), res])
+        return res
+      } else {
+        return search
+      }
+    }
   }
 
   async create(data) {

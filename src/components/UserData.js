@@ -3,13 +3,13 @@ import {
 } from '@material-ui/core';
 import useMounted from 'hooks/useMounted';
 import { useEffect, useState } from 'react';
-import { usersApi } from "__fakeApi__";
+import { usersApi } from "__api__";
 
 const UserData = ({ variant, id, sx = {}}) => {
     const mounted = useMounted();
     const [data, setData] = useState(null)
     useEffect(() => {
-        usersApi.get(id).then(res => {
+        usersApi.get_cache(id).then(res => {
             if (mounted) {
                 setData(res.data)
             }

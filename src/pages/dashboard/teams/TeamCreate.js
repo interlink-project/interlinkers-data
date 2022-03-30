@@ -26,7 +26,7 @@ import {
 import { Add, Delete, Folder, KeyboardArrowRight, KeyboardArrowLeft, CheckCircle, Cancel } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import useAuth from 'hooks/useAuth';
-import { teamsApi, usersApi } from '__fakeApi__';
+import { teamsApi, usersApi } from '__api__';
 
 const TeamCreate = ({ loading, setLoading, open, setOpen, onCreate }) => {
   const [emailValue, setEmailValue] = useState("");
@@ -108,7 +108,7 @@ const TeamCreate = ({ loading, setLoading, open, setOpen, onCreate }) => {
     if (emailValue) {
       setLoading(true)
       delayDebounceFn = setTimeout(() => {
-        usersApi.get(emailValue).then(res => {
+        usersApi.get_cache(emailValue).then(res => {
           if (!selectedUsers.find(user => user.sub === res.data.sub)) {
             setSelectedUser(res.data)
           }

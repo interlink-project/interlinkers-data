@@ -1,24 +1,9 @@
 import axiosInstance from 'axiosInstance';
-import store from 'store';
 import GeneralApi, { removeEmpty } from "../general"
 
 class InterlinkersApi extends GeneralApi {
   constructor() {
-    super("catalogue/api/v1/interlinkers");
-  }
-
-  async get_cache(id) {
-    if (id) {
-      const interlinkers = store.get("interlinkers_cache", [])
-      const search = interlinkers.find(el => el.id === id)
-      if (!search) {
-        const res = await this.get(id)
-        store.set("interlinkers_cache", [...store.get("interlinkers_cache", []), res])
-        return res
-      } else {
-        return search
-      }
-    }
+    super("catalogue/api/v1/interlinkers", "interlinkers_cache");
   }
 
   async create(task_id, interlinker_id, external_representation_id) {

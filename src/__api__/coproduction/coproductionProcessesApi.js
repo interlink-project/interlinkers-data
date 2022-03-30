@@ -14,6 +14,15 @@ class CoproductionProcessesApi extends GeneralApi {
     }
   }
 
+  async addUser(id, user_id) {
+    if (id) {
+      console.log({user_id})
+      const res = await axiosInstance.post(`/${this.url}/${id}/add_user`, {user_id})
+      console.log('add user', res.data);
+      return res.data
+    }
+  }
+
   async getTree(id) {
     if (id) {
       const res = await axiosInstance.get(`/${this.url}/${id}/tree`)

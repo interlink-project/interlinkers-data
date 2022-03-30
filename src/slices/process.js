@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { topologicalSort } from 'utils/comparePrerequisites';
-import { coproductionProcessesApi, objectivesApi, phasesApi, rolesApi, tasksApi } from '../__fakeApi__';
+import { coproductionProcessesApi, objectivesApi, phasesApi, rolesApi, tasksApi } from '../__api__';
 import { getSchemas } from "./general";
 
 const initialState = {
@@ -16,7 +16,8 @@ const initialState = {
   selectedTreeItem: null,
   network: null,
   roles: [],
-  teams: []
+  teams: [],
+  users: []
 };
 
 const slice = createSlice({
@@ -66,7 +67,13 @@ const slice = createSlice({
       state.roles = action.payload;
       state.teams = action.payload.reduce(
         (previousValue, currentValue) => {
-          return [...previousValue, ...currentValue.teams]
+          return [...previousValue, ...currentValue.teams.map(t => ({...t, role_id: currentValue.id}))]
+        },
+        []
+      );
+      state.users = action.payload.reduce(
+        (previousValue, currentValue) => {
+          return [...previousValue, ...currentValue.users.map(u => ({...u, role_id: currentValue.id}))]
         },
         []
       );

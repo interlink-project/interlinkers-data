@@ -10,7 +10,7 @@ import { truncate } from 'lodash';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { HTMLtoText } from 'utils/safeHTML';
-import { assetsApi, interlinkersApi } from '__fakeApi__';
+import { assetsApi, interlinkersApi } from '__api__';
 import NewAssetModal from './NewAssetModal';
 
 const Search = styled('div')(({ theme }) => ({

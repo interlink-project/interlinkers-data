@@ -31,8 +31,16 @@ export default function TeamsTab() {
     // <Divider sx={{ my: 2 }} />
     return !updating ? (
         <React.Fragment>
+            <Typography variant="h5" sx={{mb: 2}}>
+                Teams and individuals
+            </Typography>
+            <Typography variant="subtitle1" sx={{mb: 2}}>
+                You can add entire teams or individuals to the process. In case an individual belongs to a team, the least restrictive role is used.
+            </Typography>
             <TeamsTable onChanges={init} />
-            <Divider sx={{ my: 2 }} />
+            <Typography variant="h5" sx={{my: 2}}>
+                Roles
+            </Typography>
             <PermissionsTable onChanges={init} />
         </React.Fragment>) : <CircularProgress />
 }
