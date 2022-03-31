@@ -16,7 +16,7 @@
         "all"
     ],
     "licence": "public_domain",
-    "problem_profiles": [
+    "problemprofiles": [
         "ORG_PROBLEM_6.2" 
     ],
     "types": ["enabling_services"],

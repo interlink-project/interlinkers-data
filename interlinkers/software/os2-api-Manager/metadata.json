@@ -19,7 +19,7 @@
     "all;research_organizations"
   ],
   "licence": "public_domain",
-  "problem_profiles": [
+  "problemprofiles": [
     "BUILD_PROBLEM_4"
   ],
   "types": [

@@ -2,7 +2,7 @@
     "targets": [
         "all"
     ],
-    "problem_profiles": [
+    "problemprofiles": [
         "SUS_PROBLEM_1"
     ],
     "types": [

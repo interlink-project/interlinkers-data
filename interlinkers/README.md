@@ -305,7 +305,7 @@ Defines these attributes:
 * tags
 * difficulty
 * targets
-* problem_profiles
+* problemprofiles
 * types
 * administrative_scope
 * domain

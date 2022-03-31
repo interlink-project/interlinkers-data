@@ -2,7 +2,7 @@
     "targets": [
         "all"
     ],
-    "problem_profiles": [
+    "problemprofiles": [
         "VAL_PROBLEM_2"
     ],
     "types": [

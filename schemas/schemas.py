@@ -1,6 +1,6 @@
 from typing import List, Optional, Dict
 
-from problem_profiles import WithProblemProfiles
+from problemprofiles import WithProblemProfiles
 from pydantic import BaseModel, Extra, validator
 
 

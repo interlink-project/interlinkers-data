@@ -2,7 +2,7 @@
     "targets": [
         "all"
     ],
-    "problem_profiles": [
+    "problemprofiles": [
         "DEF_PROBLEM_5"
     ],
     "types": [

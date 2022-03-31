@@ -2,8 +2,8 @@
     "title": "Schema",
     "type": "object",
     "properties": {
-        "problem_profiles": {
-            "title": "Problem Profiles",
+        "problemprofiles": {
+            "title": "Problemprofiles",
             "type": "array",
             "items": {
                 "type": "string"
@@ -113,7 +113,7 @@
         }
     },
     "required": [
-        "problem_profiles",
+        "problemprofiles",
         "name_translations",
         "description_translations",
         "constraints_and_limitations_translations",

@@ -2,7 +2,7 @@
     "targets": [
         "all"
     ],
-    "problem_profiles": [
+    "problemprofiles": [
         "BUILD_PROBLEM_2",
         "BUILD_PROBLEM_1"
     ],

@@ -1,7 +1,7 @@
 from enum import Enum
 from typing import Dict, List, Optional
 from pydantic import BaseModel, conlist, Extra, validator
-from problem_profiles import WithProblemProfiles
+from problemprofiles import WithProblemProfiles
 
 # https://docs.google.com/spreadsheets/d/1tJ2BfX4EOdbBqEbrJWg8a3MENw13vYiPZM_S4wWWgWQ/edit#gid=0
 
@@ -113,7 +113,7 @@ class InterlinkerSchema(WithProblemProfiles, extra=Extra.forbid):
     # Type of licences under which the INTERLINKER is usable.
     # The user should be provided with information that explains the meaning of the different licences, both for software and knowledge.
 
-    problem_profiles: List[ProblemProfiles]
+    problemprofiles: List[ProblemProfiles]
     # FOR 1
     # List of names of Problem Profiles associated to the INTERLINKER
     # This input will be:

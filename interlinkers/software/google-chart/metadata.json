@@ -17,7 +17,7 @@
           "all;research_organizations","all;businesses","all;pas"
       ],
       "licence": "propietary",
-      "problem_profiles": [
+      "problemprofiles": [
           "ORG_PROBLEM_6.2" 
       ],
       "types": ["enabling_services"],

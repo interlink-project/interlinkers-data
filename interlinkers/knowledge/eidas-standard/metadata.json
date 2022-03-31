@@ -16,7 +16,7 @@
         "all;pas", "all;businesses", "all;research_organizations"
     ],
     "licence": "permissive",
-    "problem_profiles": [
+    "problemprofiles": [
         "BUILD_PROBLEM_3"
     ],
     "types": [

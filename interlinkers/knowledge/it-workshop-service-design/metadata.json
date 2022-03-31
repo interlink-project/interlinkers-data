@@ -2,7 +2,7 @@
     "targets": [
         "all"
     ],
-    "problem_profiles": [
+    "problemprofiles": [
         "UND_PROBLEM_1",
         "DEF_PROBLEM_1",
         "DEF_PROBLEM_5"

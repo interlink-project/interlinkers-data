@@ -16,7 +16,7 @@
     "difficulty": "easy",
     "targets": ["all"],
     "licence": "propietary",
-    "problem_profiles": [
+    "problemprofiles": [
         "BUILD_PROBLEM_2" 
     ],
     "types": ["enabling_services"],

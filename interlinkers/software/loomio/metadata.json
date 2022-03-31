@@ -12,7 +12,7 @@
         "all"
     ],
     "licence": "copyleft",
-    "problem_profiles": [
+    "problemprofiles": [
         "UND_PROBLEM_1",
         "UND_PROBLEM_5",
         "DEF_PROBLEM_2"

@@ -10,22 +10,22 @@ class ProblemProfile(BaseModel):
     functionality_translations: dict
 
 
-problem_profiles_ids = []
-with open("problem_profiles.json") as json_file:
+problemprofiles_ids = []
+with open("problemprofiles.json") as json_file:
     for i in json.load(json_file):
         ProblemProfile(**i)
-        problem_profiles_ids.append(i["id"])
+        problemprofiles_ids.append(i["id"])
 
 class WithProblemProfiles(BaseModel):
-    problem_profiles: list
+    problemprofiles: list
 
-    @validator('problem_profiles')
-    def problem_profiles_valid(cls, v, values, **kwargs):
+    @validator('problemprofiles')
+    def problemprofiles_valid(cls, v, values, **kwargs):
         if len(v) == 0:
             print(
                 f"{bcolors.WARNING} ## WARNING Problem profiles empty {values}{bcolors.ENDC}"
             ) 
         for id in v:
-            if id not in problem_profiles_ids:
+            if id not in problemprofiles_ids:
                 raise ValueError(f'Invalid problem profile id {id}')
         return v

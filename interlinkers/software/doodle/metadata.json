@@ -15,7 +15,7 @@
   	,
     "difficulty": "easy",
     "licence": "propietary",
-    "problem_profiles": ["ORG_PROBLEM_4"
+    "problemprofiles": ["ORG_PROBLEM_4"
     ],
     "constraints_and_limitations_translations": {
       "en": "none"

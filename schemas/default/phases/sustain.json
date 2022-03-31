@@ -24,7 +24,7 @@
                 "en": "Optinally delegate service deployment from own on premise to Cloud-based to external hosting provider infrastructure. Agree on contract, costs, responsabilities and benefits for third party take over of service delivery ",
                 "es": ""
             },
-            "problem_profiles": [],
+            "problemprofiles": [],
             "tasks": [
                 {
                     "name_translations": {
@@ -35,7 +35,7 @@
                         "en": "Co-production team defines one to many business models with their associated business plans which can be negotiated with third party adopters of the service, who want to take over execution, maintenance and monitoring, but where exploitation between co-producers and adopters needs to be clarified.",
                         "es": ""
                     },
-                    "problem_profiles": [
+                    "problemprofiles": [
                         "ORG_PROBLEM_7"
                     ]
                 },
@@ -48,7 +48,7 @@
                         "en": "Before a third party adopter may take over a co-produced service an exploitation agreement must be produced and signed by the involved parties. ",
                         "es": ""
                     },
-                    "problem_profiles": [
+                    "problemprofiles": [
                         "ORG_PROBLEM_7"
                     ]
                 },
@@ -61,7 +61,7 @@
                         "en": "Provide documentation for third party take over of service maintenane and monitoring. Agreement on contract to regulate transfer of runnning responsability to third party and sharing of revenues among those that co-produced the service and third parties who may optionally host the service. Customization of the delivered service to target customers (translations, content adaptations and so on) ",
                         "es": ""
                     },
-                    "problem_profiles": [
+                    "problemprofiles": [
                         "ORG_PROBLEM_7"
                     ]
                 }
@@ -76,7 +76,7 @@
                 "en": "Ensure the deployed service is continously operative and responsive to new customer demands who may make the service further adopted and more useful. This responsability may be shared by co-production team and third parties who may have taken over the service. ",
                 "es": ""
             },
-            "problem_profiles": [],
+            "problemprofiles": [],
             "tasks": [
                 {
                     "name_translations": {
@@ -87,7 +87,7 @@
                         "en": "If service depoyment was delegated or is still carried out by co-production team, task distribution among those responsible for maintenance must be ensured. Regularly contract monitoring and maintenance activities will need to be carried out to ensure 24x7 operation.",
                         "es": ""
                     },
-                    "problem_profiles": []
+                    "problemprofiles": []
                 }
             ]
         },
@@ -100,7 +100,7 @@
                 "en": "Monitor that the service is fulfilling its originally set objectives by tracking a set of KPIs inferred from usage or polling customers.  ",
                 "es": ""
             },
-            "problem_profiles": [
+            "problemprofiles": [
                 "UND_PROBLEM_3",
                 "VAL_PROBLEM_5"
             ],
@@ -114,7 +114,7 @@
                         "en": "Analyse logs gathered by the delivered service. Analyse surveys\/questionnaires filled in by stakeholders. ",
                         "es": ""
                     },
-                    "problem_profiles": []
+                    "problemprofiles": []
                 }
             ]
         }

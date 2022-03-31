@@ -4,7 +4,7 @@ import os
 from slugify import slugify
 
 dicts = {
-    "problem_profiles": [],
+    "problemprofiles": [],
     "schemas": [],
     "interlinkers": {
         "software": [],
@@ -12,8 +12,8 @@ dicts = {
     }
 }
 
-with open("problem_profiles.json") as json_file:
-    dicts["problem_profiles"] = json.load(json_file)
+with open("problemprofiles.json") as json_file:
+    dicts["problemprofiles"] = json.load(json_file)
 
 for schema_metadata_path in Path("./schemas").glob("**/metadata.json"):
     with open(str(schema_metadata_path)) as json_file:

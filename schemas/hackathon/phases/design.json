@@ -24,7 +24,7 @@
                 "en": "Clearly define the problem to be addresses by the co-production team and agree on it. This  is an important step towards creating an effective and efficient solution. Different resources can be useful to this end: tips on how to create and share a common language among team members, resources to guide collaborative discussions, tools for ideas collection.",
                 "es": ""
             },
-            "problem_profiles": ["ORG_PROBLEM_1", "UND_PROBLEM_3", "UND_PROBLEM_1", "VAL_PROBLEM_2"],
+            "problemprofiles": ["ORG_PROBLEM_1", "UND_PROBLEM_3", "UND_PROBLEM_1", "VAL_PROBLEM_2"],
             "tasks": [
                 {
                     "name_translations": {
@@ -35,7 +35,7 @@
                         "en": "Refine with the collaboration of the stakeholders network the problem to be addressed. Service design is a problem-solving activity and it is important to clearly understand which is the challenge that the team addresses and how more information can be collected to understand how the service should be designed. Organize focus groups to discuss initial ideas and assumptions, refine them through structured methods and become aware about the missing information that still needs to be collected.",
                         "es": ""
                     },
-                    "problem_profiles": []
+                    "problemprofiles": []
                 },
                 {
                     "name_translations": {
@@ -46,7 +46,7 @@
                         "en": "In case of need, enlarge the collection of ideas about the various aspects of the problem by launching a discussion forum.",
                         "es": ""
                     },
-                    "problem_profiles": []
+                    "problemprofiles": []
                 },{
                     "name_translations": {
                         "en": "Sketch an initial idea of the Hackathon: theme, plan, submission & evaluation process",
@@ -56,7 +56,7 @@
                         "en": "Draft an initial description (or multiple optional descriptions) of the potential service: what it does, who benefits from the service, who helps delivering it. Use description templates to facilitate your task.",
                         "es": ""
                     },
-                    "problem_profiles": ["ORG_PROBLEM_8"]
+                    "problemprofiles": ["ORG_PROBLEM_8"]
                 }
             ]
         },
@@ -69,7 +69,7 @@
                 "en": "Ideation is the preliminary phase of service design in which the design team is created, the collected data are reviewed, and futher ideas are sougth if necessary.",
                 "es": ""
             },
-            "problem_profiles": [
+            "problemprofiles": [
                 "ORG_PROBLEM_1",
                 "ORG_PROBLEM_13", 
                 "ORG_PROBLEM_14",
@@ -88,7 +88,7 @@
                         "en": "Go back to your network of stakeholders to validate the service idea by means of a focus group or a poll.",
                         "es": ""
                     },
-                    "problem_profiles": []
+                    "problemprofiles": []
                 },
                 {
                     "name_translations": {
@@ -99,7 +99,7 @@
                         "en": "The ideas and service design concepts need to be translated into formal requirements to proceed with the implementation of the service. Follow the guidelines on how to collect, structure and communicate requirements and all the service specifications that clarify the objective of the service and how it should be developed. Use stardard representation formalism for requirements descriptions, as for example the Volere Requirements Specification template.",
                         "es": ""
                     },
-                    "problem_profiles": ["ORG_PROBLEM_8"]
+                    "problemprofiles": ["ORG_PROBLEM_8"]
                 }
             ]
         },
@@ -112,7 +112,7 @@
                 "en": "The ideas and service design concepts need to be translated into formal requirements and service specifications to proceed with the implementation of the service. Follow the guidelines to collect, structure and communicate requirements and all the service specifications that clarify the objective of the service and how it should be developed.",
                 "es": ""
             },
-            "problem_profiles": [
+            "problemprofiles": [
                 "ORG_PROBLEM_1",
                 "DEF_PROBLEM_1",
                 "DEF_PROBLEM_5",
@@ -128,7 +128,7 @@
                         "en": "Consult good practices for interface design and public services development. Reflect, in your specific use case, on how to make sure the services are provided in a multi-channel manner, maximizing the exploitation by potentially any group of users or by the agents acting on their behalf, and providing clear statements regarding the accessibility limits in the current implementation.",
                         "es": ""
                     },
-                    "problem_profiles": []
+                    "problemprofiles": []
                 },
                 {
                     "name_translations": {
@@ -139,7 +139,7 @@
                         "en": "Proceed with the design of the user interface of the service through the preparation of initial sketches and mockups. Ensure the design of the user interface follows the guidelines on usability and accessibility. ",
                         "es": ""
                     },
-                    "problem_profiles": []
+                    "problemprofiles": []
                 },
                 {
                     "name_translations": {
@@ -150,7 +150,7 @@
                         "en": "Prepare adequate content for the new/enhanced public service. Follow the guidelines on how to select and use the most appropriate language according to the users of the digital service and their skills.",
                         "es": ""
                     },
-                    "problem_profiles": [
+                    "problemprofiles": [
                         "DEF_PROBLEM_6"
                     ]
                 }
@@ -165,7 +165,7 @@
                 "en": "Before further going deep into the development of your service. Stop and reflect about the design results obtained so far and about the actual feasibility and sustainability of what you are about to implement.",
                 "es": ""
             },
-            "problem_profiles": [
+            "problemprofiles": [
                 "UND_PROBLEM_3"
             ],
             "tasks": [
@@ -178,7 +178,7 @@
                         "en": "Is the design output satisfactory?\r\nFollow the proposed checklist to understand if you are done with design or whether an iterative refinement cycle is recommended.",
                         "es": ""
                     },
-                    "problem_profiles": []
+                    "problemprofiles": []
                 },
                 {
                     "name_translations": {
@@ -189,7 +189,7 @@
                         "en": "How much funding is needed? Where does the money come from? What are the sources of funding \/ support necessary to keep it running after implementation?\r\nFollow the proposed checklist for an intermediate evaluation of financial sustainability.",
                         "es": ""
                     },
-                    "problem_profiles": []
+                    "problemprofiles": []
                 },
                 {
                     "name_translations": {
@@ -200,7 +200,7 @@
                         "en": "Are all technical skills and resources available to proceed with development? \r\nFollow the proposed checklist for an intermediate evaluation of technical sustainabiity.",
                         "es": ""
                     },
-                    "problem_profiles": []
+                    "problemprofiles": []
                 },
                 {
                     "name_translations": {
@@ -211,7 +211,7 @@
                         "en": "What are the incentives for those who can provide support \/ funding and for those developing \/ maintaining them?\r\nStop and reflect on how stakeholders collaboration in co-creation went so far. Follow the proposed checklist to understand whether further incentives and supportive measures are needed to ensure productive development and co-delivery phases.",
                         "es": ""
                     },
-                    "problem_profiles": []
+                    "problemprofiles": []
                 }
             ]
         }

@@ -50,8 +50,8 @@
                     "title": "Description Translations",
                     "type": "object"
                 },
-                "problem_profiles": {
-                    "title": "Problem Profiles",
+                "problemprofiles": {
+                    "title": "Problemprofiles",
                     "type": "array",
                     "items": {}
                 }
@@ -59,7 +59,7 @@
             "required": [
                 "name_translations",
                 "description_translations",
-                "problem_profiles"
+                "problemprofiles"
             ],
             "additionalProperties": false
         },
@@ -75,8 +75,8 @@
                     "title": "Description Translations",
                     "type": "object"
                 },
-                "problem_profiles": {
-                    "title": "Problem Profiles",
+                "problemprofiles": {
+                    "title": "Problemprofiles",
                     "type": "array",
                     "items": {}
                 },
@@ -91,7 +91,7 @@
             "required": [
                 "name_translations",
                 "description_translations",
-                "problem_profiles",
+                "problemprofiles",
                 "tasks"
             ],
             "additionalProperties": false
