@@ -5,6 +5,7 @@ import useSettings from 'hooks/useSettings';
 import $ from 'jquery';
 import React, { useCallback, useEffect, useState } from "react";
 import { useSelector } from 'react-redux';
+import { useNavigate } from "react-router";
 import { cleanUnderScores } from "utils/cleanUnderscores";
 import colorScale from "utils/colorScale";
 import PhaseTabs from "../PhaseTabs";
@@ -56,12 +57,13 @@ const setNewGantt = (id, props, tasks, darkMode, onClick) => {
 
 }
 
-const Workplan = () => {
+const Workplan = ({ setSelectedTreeItem }) => {
   const { settings } = useSettings();
 
   const [viewMode, setViewMode] = useState("Week")
-  const { phases, objectives, tasks, updating, selectedPhaseTabId } = useSelector((state) => state.process);
+  const { process, phases, objectives, tasks, updating, selectedPhaseTabId, selectedTreeItem } = useSelector((state) => state.process);
   const mounted = useMounted();
+  const navigate = useNavigate()
 
   const [clickedElement, setClickedElement] = useState(null);
 
@@ -93,7 +95,13 @@ const Workplan = () => {
     if (element.start_date) {
       classes += " timed"
     }
-
+    if (element.id === selectedTreeItem.id){
+      classes += " blink"
+      setTimeout(function(){
+        $(`[data-id="${element.id}"]`).removeClass("blink")
+    }, 1000);
+    
+    }
     return classes
   }
 
@@ -180,14 +188,16 @@ const Workplan = () => {
       }
     }
     setNewGantt(id, props, getTasks(), settings.theme === "DARK", (id, type) => {
-      setClickedElement(getElement(id, type));
+      // setClickedElement(getElement(id, type));
+      setSelectedTreeItem(getElement(id, type), () => navigate(`/dashboard/coproductionprocesses/${process.id}/guide`))
+      
     })
 
   }, [viewMode, selectedPhaseTabId, updating, phases, setNewGantt]);
 
   return (
     <Grid container style={{ overflow: "hidden" }}>
-      {clickedElement && <TreeItemDialog saving={updating} type={clickedElement.type} element={clickedElement} onClose={() => setClickedElement(null)} />}
+      {/* clickedElement && <TreeItemDialog saving={updating} type={clickedElement.type} element={clickedElement} onClose={() => setClickedElement(null)} />*/ }
       <Grid item xs={12}>
         <PhaseTabs />
         <ToggleButtonGroup

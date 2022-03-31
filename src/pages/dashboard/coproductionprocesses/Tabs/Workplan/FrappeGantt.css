@@ -1,3 +1,8 @@
+
+@keyframes blinkingText{
+  0%{     fill: #ffffff00;    }
+  100%{   fill: rgb(238, 232, 183);      }
+}
 .gantt .grid-background {
     fill: none; }
   
@@ -32,7 +37,7 @@
   
   .gantt .bar {
     fill: #b8c2cc;
-    stroke: #8D99A6;
+    stroke: #1377e2;
     stroke-width: 0;
     transition: stroke-width .3s ease;
     user-select: none; }
@@ -40,6 +45,12 @@
   .gantt .bar-progress {
     fill: #a3a3ff; }
   
+  .gantt .blink .bar-invalid {
+    animation:blinkingText 1.2s infinite;
+  }
+  .gantt .blink .bar {
+    animation:blinkingText 1.2s infinite;
+  }
   .gantt .bar-invalid {
     fill: transparent;
     stroke: #8D99A6;

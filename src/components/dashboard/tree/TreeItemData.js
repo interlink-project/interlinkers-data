@@ -1,8 +1,8 @@
 import {
   Alert,
-  Box, Button, Stack, CardActions, IconButton, TextField, ToggleButton, ToggleButtonGroup, Typography, Divider
+  Box, Button, Stack, CardActions, IconButton, TextField, ToggleButton, ToggleButtonGroup, Typography, Divider, Link
 } from '@material-ui/core';
-import { Edit } from '@material-ui/icons';
+import { Edit, Timeline } from '@material-ui/icons';
 import {
   DesktopDateRangePicker, LoadingButton
 } from '@material-ui/lab';
@@ -11,17 +11,19 @@ import { FinishedIcon, InProgressIcon } from 'components/dashboard/assets';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router';
 import { deleteObjective, deletePhase, deleteTask, updateObjective, updatePhase, updateTask } from 'slices/process';
 import { HTMLtoText } from 'utils/safeHTML';
 import { statusText, statusIcon } from '../assets/Icons';
 
-const TreeItemData = ({ element, type, onSave = null, showType = true }) => {
+const TreeItemData = ({ processId, element, type, onSave = null, showType = true }) => {
   const [dateRange, setDateRange] = useState([null, null]);
   const [status, setStatus] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [editMode, setEditMode] = useState(false);
   const [saving, setSaving] = useState(false);
+  const navigate = useNavigate()
 
   const restart = (el) => {
     setName(el.name)
@@ -150,7 +152,18 @@ const TreeItemData = ({ element, type, onSave = null, showType = true }) => {
         {statusIcon(status)}
       </div>
     }
-    <Typography variant="h6" sx={{ mt: 2 }}>Time planification:</Typography>
+    <Link
+      component="button"
+      variant="h6"
+      onClick={() => {
+        navigate(`/dashboard/coproductionprocesses/${processId}/workplan`);
+      }}
+      sx={{ mt: 2 }}
+      underline="none"
+    >
+      Time planification:
+    </Link>
+
     {editMode ? <>
       {type === "task" ? <Box justifyContent="center" sx={{ mt: 2 }}>
         <DesktopDateRangePicker

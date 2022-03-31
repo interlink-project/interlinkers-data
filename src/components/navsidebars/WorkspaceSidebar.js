@@ -34,7 +34,7 @@ const WorkspaceSidebar = (props) => {
   const [coproductionProcessLoading, setCoproductionProcessLoading] = useState(false);
 
   const onProcessCreate = (res2) => {
-    navigate(`/dashboard/coproductionprocesses/${res2.id}`)
+    navigate(`/dashboard/coproductionprocesses/${res2.id}/overview`)
   }
 
   const onTeamCreate = (res2) => {

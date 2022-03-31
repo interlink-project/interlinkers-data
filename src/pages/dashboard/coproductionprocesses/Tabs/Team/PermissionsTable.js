@@ -9,24 +9,24 @@ import { rolesApi } from '__api__';
 
 const permissions = [
     {
-        "code": "assets_create",
-        "label": "Create assets"
+        "code": "view_assets",
+        "label": "View resources"
     },
     {
-        "code": "assets_update",
-        "label": "Update assets"
+        "code": "create_assets",
+        "label": "Create resources"
     },
     {
-        "code": "assets_delete",
-        "label": "Delete assets"
+        "code": "delete_assets",
+        "label": "Delete resources"
     },
     {
-        "code": "process_update",
-        "label": "Update access control"
+        "code": "change_access",
+        "label": "Add teams or individuals"
     },
     {
-        "code": "process_update",
-        "label": "Update process metadata"
+        "code": "update_settings",
+        "label": "Change settings"
     },
 ]
 

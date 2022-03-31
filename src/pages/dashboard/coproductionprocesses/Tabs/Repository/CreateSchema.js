@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setProcess } from 'slices/process';
 import { topologicalSort } from 'utils/comparePrerequisites';
 import { coproductionProcessesApi } from '__api__';
-import { coproductionSchemasApi } from '__api__/coproduction/coproductionSchemasApi';
+import { coproductionSchemasApi } from '__api__/catalogue/coproductionSchemasApi';
 
 const sameHeightCards = {
     minHeight: "200px",

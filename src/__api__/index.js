@@ -3,7 +3,7 @@ import { knowledgeInterlinkersApi } from './catalogue/knowledgeInterlinkersApi';
 import { softwareInterlinkersApi } from './catalogue/softwareInterlinkersApi';
 import { assetsApi } from './coproduction/assetsApi';
 import { coproductionProcessesApi } from './coproduction/coproductionProcessesApi';
-import { coproductionSchemasApi } from './coproduction/coproductionSchemasApi';
+import { coproductionSchemasApi } from './catalogue/coproductionSchemasApi';
 import { objectivesApi } from './coproduction/objectivesApi';
 import { phasesApi } from './coproduction/phasesApi';
 import { rolesApi } from './coproduction/rolesApi';

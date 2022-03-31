@@ -14,7 +14,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { useParams } from 'react-router-dom';
 import { getSchemas, getSoftwareInterlinkers } from 'slices/general';
-import { getProcess } from 'slices/process';
+import { getProcess, setSelectedTreeItem } from 'slices/process';
 import useMounted from '../../../hooks/useMounted';
 import MetadataTab from './Tabs/Metadata';
 import CreateSchema from './Tabs/Repository/CreateSchema';
@@ -60,32 +60,6 @@ const style = {
 
 }
 
-const Content = ({ tab, process }) => <>
-
-  <TabPanel value={tab} index="overview">
-    <Card sx={style}>
-      <OverviewTab coproductionprocess={process} />
-    </Card>
-  </TabPanel>
-  <TabPanel value={tab} index="metadata">
-    <Card >
-      <MetadataTab />
-    </Card>
-  </TabPanel>
-  <TabPanel value={tab} index="workplan">
-    <Card sx={style}>
-      {process.phases_count > 0 ? <Workplan /> : <CreateSchema />}
-    </Card>
-  </TabPanel>
-  <TabPanel value={tab} index="guide">
-    <Card sx={style}>
-      {process.phases_count > 0 ? <Repository /> : <CreateSchema />}
-    </Card>
-  </TabPanel>
-  <TabPanel value={tab} index="team">
-    <TeamTab />
-  </TabPanel>
-</>
 
 const TabsMobile = ({ tab, process }) => {
   const logoExists = process && process.logotype_link
@@ -134,6 +108,10 @@ const CoproductionProcessProfile = () => {
   const theme = useTheme();
   const onMobile = !useMediaQuery(theme.breakpoints.up('md'));
 
+  const _setSelectedTreeItem = (item, callback) => {
+    dispatch(setSelectedTreeItem(item, callback))
+  }
+
   const getCoproductionProcess = useCallback(async () => {
     try {
 
@@ -165,7 +143,33 @@ const CoproductionProcessProfile = () => {
         <Box sx={{ mt: 5 }}>
           <Container maxWidth='xl'>
             {onMobile && <TabsMobile tab={tab} process={process} />}
-            {loading || !process ? <MainSkeleton /> : <Content tab={tab} process={process} />}
+            {loading || !process ? <MainSkeleton /> :
+              <>
+                <TabPanel value={tab} index="overview">
+                  <Card sx={style}>
+                    <OverviewTab coproductionprocess={process} />
+                  </Card>
+                </TabPanel>
+                <TabPanel value={tab} index="metadata">
+                  <Card >
+                    <MetadataTab />
+                  </Card>
+                </TabPanel>
+                <TabPanel value={tab} index="workplan">
+                  <Card sx={style}>
+                    {process.phases_count > 0 ? <Workplan setSelectedTreeItem={_setSelectedTreeItem} /> : <CreateSchema />}
+                  </Card>
+                </TabPanel>
+                <TabPanel value={tab} index="guide">
+                  <Card sx={style}>
+                    {process.phases_count > 0 ? <Repository setSelectedTreeItem={_setSelectedTreeItem} /> : <CreateSchema />}
+                  </Card>
+                </TabPanel>
+                <TabPanel value={tab} index="team">
+                  <TeamTab />
+                </TabPanel>
+              </>
+            }
           </Container>
         </Box>
       </Box>

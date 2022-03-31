@@ -136,8 +136,9 @@ const slice = createSlice({
 
 export const { reducer } = slice;
 
-export const setSelectedTreeItem = (data) => async (dispatch) => {
+export const setSelectedTreeItem = (data, callback) => async (dispatch) => {
   dispatch(slice.actions.setSelectedTreeItem(data));
+  callback && callback()
 };
 
 

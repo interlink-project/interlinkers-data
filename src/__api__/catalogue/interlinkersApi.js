@@ -16,9 +16,9 @@ class InterlinkersApi extends GeneralApi {
     return res.data
   }
 
-  async getByProblemProfiles(page, size, problem_profiles) {
+  async getByProblemProfiles(page, size, problemprofiles) {
     const res = await axiosInstance.post(
-      `/${this.url}/by_problem_profiles`, problem_profiles, {
+      `/${this.url}/by_problemprofiles`, problemprofiles, {
       params: removeEmpty({
         page,
         size

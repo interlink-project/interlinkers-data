@@ -119,7 +119,7 @@ const RecommendedInterlinkerCard = ({ interlinker, assets, onClick }) => {
     </>
 }
 const RightPart = () => {
-    const { selectedTreeItem } = useSelector((state) => state.process);
+    const { process, selectedTreeItem } = useSelector((state) => state.process);
     const { softwareInterlinkers } = useSelector((state) => state.general);
     const isTask = selectedTreeItem && selectedTreeItem.type === "task"
     const [step, setStep] = useState(0);
@@ -139,7 +139,7 @@ const RightPart = () => {
         assetsApi.getMulti({ task_id: selectedTreeItem.id }).then(assets => {
             if (mounted.current) {
                 setAssets(assets.items)
-                interlinkersApi.getByProblemProfiles(null, null, selectedTreeItem.problem_profiles).then(interlinkers => {
+                interlinkersApi.getByProblemProfiles(null, null, selectedTreeItem.problemprofiles).then(interlinkers => {
                     if (mounted.current) {
                         setRecommendedInterlinkers(interlinkers.items)
                         setLoadingTaskInfo(false)
@@ -177,7 +177,7 @@ const RightPart = () => {
                     </Stack>
                 </Button>
                 <Collapse in={treeItemInfoOpen} timeout="auto" unmountOnExit>
-                    <TreeItemData type={selectedTreeItem.type} element={selectedTreeItem} showType={false} />
+                    <TreeItemData processId={process.id} type={selectedTreeItem.type} element={selectedTreeItem} showType={false} />
                 </Collapse>
                 {isTask && <>
 

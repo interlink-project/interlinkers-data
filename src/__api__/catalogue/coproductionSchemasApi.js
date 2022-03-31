@@ -3,7 +3,7 @@ import GeneralApi from "../general"
 
 class CoproductionSchemasApi extends GeneralApi {
   constructor() {
-    super("coproduction/api/v1/coproductionschemas");
+    super("catalogue/api/v1/coproductionschemas");
   }
 
   async getPublic() {

@@ -1,17 +1,10 @@
-import { AppBar, Box, Grid, Divider } from '@material-ui/core';
-import { useState } from 'react';
+import { Box, Grid } from '@material-ui/core';
 import PhaseTabs from "../PhaseTabs";
 import RepositoryTree from "./RepositoryTree";
 import RightPart from './RightPart';
-import { useDispatch, useSelector } from 'react-redux';
-import { setSelectedTreeItem } from 'slices/process';
 
-const Repository = () => {
-  const dispatch = useDispatch()
+const Repository = ({ setSelectedTreeItem }) => {
 
-  const _setSelectedTreeItem = (task) => {
-    dispatch(setSelectedTreeItem(task))
-  }
   return (
     <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
 
@@ -20,7 +13,7 @@ const Repository = () => {
           <PhaseTabs />
         </Grid>
         <Grid item xl={4} lg={4} md={6} xs={12}>
-          <RepositoryTree setSelectedTreeItem={_setSelectedTreeItem} loading={false} />
+          <RepositoryTree setSelectedTreeItem={setSelectedTreeItem} loading={false} />
         </Grid>
         <RightPart />
       </Grid>

@@ -35,6 +35,7 @@ function Row({ obj: ob, onChanges, isTeam = false }) {
     }
 
     const canDelete = isTeam || (!isTeam && ob.id !== process.creator_id)
+    
     const handleDelete = () => {
         if (canDelete) {
             setLoading(true)
@@ -78,9 +79,9 @@ function Row({ obj: ob, onChanges, isTeam = false }) {
                 {canDelete && <IconButton size="small" onClick={handleDelete}>
                     <Delete fontSize="small" />
                 </IconButton>}
-                <IconButton size="small" onClick={() => setEditMode(true)}>
+                {canDelete && <IconButton size="small" onClick={() => setEditMode(true)}>
                     <Edit fontSize="small" />
-                </IconButton>
+                </IconButton>}
             </>
         }
     </TableCell>
