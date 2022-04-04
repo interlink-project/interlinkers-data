@@ -6,7 +6,7 @@ import ChevronDownIcon from '../icons/ChevronDown';
 import ChevronRightIcon from '../icons/ChevronRight';
 
 const NavItem = (props) => {
-  const { active, children, depth, icon, info, open: openProp, path, title, ...other } = props;
+  const { active, children, depth, icon, info, open: openProp, path, title, onClick, ...other } = props;
   const [open, setOpen] = useState(openProp);
 
   const handleToggle = () => {
@@ -59,7 +59,6 @@ const NavItem = (props) => {
       </ListItem>
     );
   }
-
   // Leaf
   return (
     <ListItem
@@ -70,6 +69,7 @@ const NavItem = (props) => {
       }}
     >
       <Button
+        onClick={onClick || null}
         component={path && RouterLink}
         startIcon={icon}
         sx={{
@@ -110,6 +110,7 @@ NavItem.propTypes = {
   info: PropTypes.node,
   open: PropTypes.bool,
   path: PropTypes.string,
+  onClick: PropTypes.func,
   title: PropTypes.string.isRequired
 };
 

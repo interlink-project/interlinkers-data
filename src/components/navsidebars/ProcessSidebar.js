@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Link as RouterLink, useLocation, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Avatar, Box, Divider, Drawer, Link, Typography, Button, Grid, Stack, Skeleton } from '@material-ui/core';
+import { Avatar, Box, Divider, Drawer, Link, Typography, Button, Grid, Stack, Skeleton, Chip } from '@material-ui/core';
 import { Timeline, Dashboard, BubbleChart, Forum, Settings, FolderOpen, AccountTree, Group as GroupIcon, ArrowBack } from '@material-ui/icons';
 
 import useMediaQuery from '@material-ui/core/useMediaQuery';
@@ -17,7 +17,6 @@ const ProcessSidebar = (props) => {
   const { onMobileClose, openMobile } = props;
   const { process, loading, updating } = useSelector((state) => state.process);
   const navigate = useNavigate();
-
   const location = useLocation();
   const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));
   const processId = process && process.id
@@ -113,9 +112,12 @@ const ProcessSidebar = (props) => {
           spacing={1}
           sx={{p: 3}}
         >
+
           {!loading && !updating ? <Avatar variant="rounded" sx={{ width: "80px", height: "80px" }} src={process && process.logotype_link} /> : <Skeleton variant="rounded" sx={{ width: "80px", height: "80px" }} />}
           <Typography sx={{textAlign: "center", width: "100%"}} variant="h6">{!loading && !updating && process ? process.name : <Skeleton />}</Typography>
+             <Chip color="primary" label="In progress" color="success" />
           <Button startIcon={<ArrowBack />} variant="outlined" fullWidth size="large" onClick={() => navigate("/dashboard")} />
+
         </Stack>
         <Divider />
         <Box sx={{ p: 2 }}>

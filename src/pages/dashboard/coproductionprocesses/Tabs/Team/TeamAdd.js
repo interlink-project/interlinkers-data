@@ -11,11 +11,10 @@ import { addTeam } from 'slices/general';
 import { coproductionProcessesApi, teamsApi } from '__api__';
 
 const TeamAdd = ({ open, setOpen, currentTeams, onChanges }) => {
-  const [loading, setLoading] = useState(false);
-  const [teams, setTeams] = useState([]);
   const mounted = useMounted();
   const [selectedTeam, setSelectedTeam] = useState(null);
   const { process } = useSelector((state) => state.process);
+  const { teams } = useSelector((state) => state.general);
   const [teamCreatorOpen, setOpenTeamCreator] = useState(false);
   const [creatingTeam, setCreatingTeam] = useState(false);
   const dispatch = useDispatch();
@@ -34,26 +33,11 @@ const TeamAdd = ({ open, setOpen, currentTeams, onChanges }) => {
     setSelectedTeam(teams.find(t => t.id === value));
   };
 
-  const getTeamsData = useCallback(async () => {
-    try {
-      setLoading(true)
-      const teams_data = await teamsApi.getMine();
-      if (mounted.current) {
-        setTeams(teams_data);
-        setLoading(false)
-      }
-    } catch (err) {
-      console.error(err);
-    }
-  }, [mounted]);
-
-
   useEffect(() => {
     if (open) {
-      getTeamsData();
       setSelectedTeam(null)
     }
-  }, [open, getTeamsData]);
+  }, [open]);
 
   const handleClose = () => {
     setOpen(false);
@@ -67,6 +51,9 @@ const TeamAdd = ({ open, setOpen, currentTeams, onChanges }) => {
     })
   }
 
+  const selectableTeams = teams.filter((team) => currentTeams.findIndex(t => t.id === team.id))
+
+  console.log(teams, currentTeams, selectableTeams)
   return (
     <>
       <TeamCreate
@@ -79,20 +66,18 @@ const TeamAdd = ({ open, setOpen, currentTeams, onChanges }) => {
       <Dialog open={open} onClose={handleClose} maxWidth="xs" fullWidth>
         <DialogContent sx={{ m: 2 }}>
           {!selectedTeam ? <>
-            {teams.length > 1 ? <FormControl sx={{ m: 1, width: 300 }}>
+            {selectableTeams.length > 0 ? <FormControl sx={{ m: 1, width: 300 }}>
               <Select
-                value={selectedTeam && selectedTeam.id}
                 onChange={handleChange}
                 input={<Input label="Team name" />}
                 fullWidth
                 renderValue={(selected) => teams.find(team => team.id === selected).name}
               >
-                {teams.map((team) => currentTeams.findIndex(t => t.id === team.id) < 0 && (
-                  <MenuItem key={team.id} value={team.id}>
+                {selectableTeams.map( team => <MenuItem key={team.id} value={team.id}>
                     <Avatar src={team.logotype_link} sx={{ mr: 2, width: "30px", height: "30px" }} />
                     {team.name}
                   </MenuItem>
-                ))}
+                )}
               </Select>
             </FormControl> : <Alert severity="warning">There are no more teams!</Alert>
             }

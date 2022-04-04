@@ -23,6 +23,15 @@ class CoproductionProcessesApi extends GeneralApi {
     }
   }
 
+  async myRoles(id) {
+    if (id) {
+      const res = await axiosInstance.get(`/${this.url}/${id}/my_roles`)
+      console.log('my roles', res.data);
+      return res.data
+    }
+  }
+
+
   async getTree(id) {
     if (id) {
       const res = await axiosInstance.get(`/${this.url}/${id}/tree`)

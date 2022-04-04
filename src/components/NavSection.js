@@ -3,7 +3,7 @@ import { matchPath } from 'react-router-dom';
 import { List, ListSubheader } from '@material-ui/core';
 import NavItem from './NavItem';
 
-const renderNavItems = ({ depth = 0, items, pathname }) => (
+const renderNavItems = ({ depth = 0, items, pathname, onClick }) => (
   <List disablePadding>
     {items.reduce(
       // eslint-disable-next-line no-use-before-define
@@ -11,7 +11,8 @@ const renderNavItems = ({ depth = 0, items, pathname }) => (
         acc,
         item,
         pathname,
-        depth
+        depth,
+        onClick
       }), []
     )}
   </List>
@@ -38,13 +39,15 @@ const reduceChildRoutes = ({ acc, pathname, item, depth }) => {
         info={item.info}
         key={key}
         open={partialMatch}
+        onClick={item.onClick}
         path={item.path}
         title={item.title}
       >
         {renderNavItems({
           depth: depth + 1,
           items: item.children,
-          pathname
+          pathname,
+          onClick: item.onClick
         })}
       </NavItem>
     );
@@ -56,6 +59,7 @@ const reduceChildRoutes = ({ acc, pathname, item, depth }) => {
         icon={item.icon}
         info={item.info}
         key={key}
+        onClick={item.onClick}
         path={item.path}
         title={item.title}
       />
@@ -66,7 +70,7 @@ const reduceChildRoutes = ({ acc, pathname, item, depth }) => {
 };
 
 const NavSection = (props) => {
-  const { items, pathname, title, ...other } = props;
+  const { items, pathname, title, onClick, ...other } = props;
 
   return (
     <List
@@ -88,7 +92,8 @@ const NavSection = (props) => {
     >
       {renderNavItems({
         items,
-        pathname
+        pathname,
+        onClick
       })}
     </List>
   );

@@ -4,6 +4,7 @@ import { Add, Folder, Groups, Workspaces } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import useMounted from 'hooks/useMounted';
 import CoproductionprocessCreate from 'pages/dashboard/coproductionprocesses/CoproductionProcessCreate';
+import TeamProfile from 'pages/dashboard/coproductionprocesses/Tabs/Team/TeamProfile';
 import TeamCreate from 'pages/dashboard/teams/TeamCreate';
 import PropTypes from 'prop-types';
 import { useCallback, useEffect, useState } from 'react';
@@ -16,7 +17,6 @@ import Logo from '../Logo';
 import NavSection from '../NavSection';
 import Scrollbar from '../Scrollbar';
 
-
 const WorkspaceSidebar = (props) => {
   const { onMobileClose, openMobile } = props;
   const navigate = useNavigate();
@@ -27,6 +27,8 @@ const WorkspaceSidebar = (props) => {
   const location = useLocation();
   const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));
 
+  const [teamProfileOpen, setTeamProfileOpen] = useState(false);
+  const [selectedTeam, setSelectedTeam] = useState(null);
   const [teamCreatorOpen, setOpenTeamCreator] = useState(false);
   const [creatingTeam, setCreatingTeam] = useState(false);
 
@@ -126,7 +128,7 @@ const WorkspaceSidebar = (props) => {
             setLoading={setCoproductionProcessLoading}
             onCreate={onProcessCreate}
           />
-
+    
           <NavSection
             title="Your teams"
             sx={{
@@ -140,11 +142,15 @@ const WorkspaceSidebar = (props) => {
             items={teams && teams.map((team) => {
               return {
                 title: team.name,
-                path: `/dashboard/teams/${team.id}`,
-                icon: team.logotype_link ? <Avatar sx={{ height: "25px", width: "25px" }} src={team.logotype_link} /> : <Groups />
+                icon: team.logotype_link ? <Avatar sx={{ height: "25px", width: "25px" }} src={team.logotype_link} /> : <Groups />,
+                onClick: () => {
+                  setSelectedTeam(team); 
+                  setTeamProfileOpen(true)
+                }
               }
             })}
           />
+          {selectedTeam && <TeamProfile teamId={selectedTeam.id} open={teamProfileOpen} setOpen={setTeamProfileOpen} onChanges={getTeamsData} />}
           <TeamCreate
             open={teamCreatorOpen}
             setOpen={setOpenTeamCreator}

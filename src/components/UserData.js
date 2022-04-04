@@ -2,10 +2,10 @@ import {
     Avatar, CircularProgress
 } from '@material-ui/core';
 import useMounted from 'hooks/useMounted';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { usersApi } from "__api__";
 
-const UserData = ({ variant, id, sx = {}}) => {
+const UserData = ({ variant, id, sx = {} }) => {
     const mounted = useMounted();
     const [data, setData] = useState(null)
     useEffect(() => {
@@ -15,6 +15,6 @@ const UserData = ({ variant, id, sx = {}}) => {
             }
         })
     }, [id])
-    return data ? <Avatar title={data.email} key={id} src={data.picture} sx={sx} /> : <CircularProgress sx={sx} key={id} />
+    return <React.Fragment key={id}>{data ? <Avatar title={data.email} src={data.picture} sx={sx} /> : <CircularProgress sx={sx} />}</React.Fragment>
 }
 export default UserData;

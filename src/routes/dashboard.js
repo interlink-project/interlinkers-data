@@ -3,9 +3,6 @@ import AuthGuard from '../components/guards/AuthGuard';
 import DashboardLayout from '../components/layouts/DashboardLayout';
 import Loadable from './Loadable';
 
-const TeamProfile = Loadable(
-  lazy(() => import('../pages/dashboard/teams/TeamProfile'))
-);
 const CoproductionProcessProfile = Loadable(
   lazy(() => import('../pages/dashboard/coproductionprocesses/CoproductionProcessProfile'))
 );
@@ -61,17 +58,7 @@ export const routes = [
             element: <InterlinkerDetails />,
           },
         ],
-      },
-      {
-        path: 'teams',
-        children: [
-          {
-            path: ':teamId',
-            element: <TeamProfile />,
-          },
-        ],
-      },
-
+      }
     ],
 
   },

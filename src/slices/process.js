@@ -16,6 +16,7 @@ const initialState = {
   selectedTreeItem: null,
   network: null,
   roles: [],
+  myRoles: [],
   teams: [],
   users: []
 };
@@ -55,6 +56,9 @@ const slice = createSlice({
     },
     setSelectedTreeItem(state, action) {
       state.selectedTreeItem = action.payload;
+    },
+    setMyRoles(state, action) {
+      state.myRoles = action.payload;
     },
     setProcess(state, action) {
       state.process = action.payload;
@@ -153,11 +157,14 @@ export const getProcess = (processId) => async (dispatch) => {
   dispatch(slice.actions.setLoading(true));
   const data = await coproductionProcessesApi.get(processId)
   const treeData = await coproductionProcessesApi.getTree(processId) || []
+  const myRoles = await coproductionProcessesApi.myRoles(processId) || []
   if (treeData.length === 0) {
+    // user may select a new schema, so load them
     dispatch(getSchemas())
   }
   dispatch(slice.actions.setProcess(data));
   dispatch(slice.actions.setProcessTree(treeData));
+  dispatch(slice.actions.setMyRoles(myRoles));
   dispatch(slice.actions.setLoading(false));
 };
 

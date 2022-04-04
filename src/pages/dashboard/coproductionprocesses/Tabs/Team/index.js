@@ -35,7 +35,7 @@ export default function TeamsTab() {
                 Teams and individuals
             </Typography>
             <Typography variant="subtitle1" sx={{mb: 2}}>
-                You can add entire teams or individuals to the process. In case an individual belongs to a team, the least restrictive role is used.
+                You can add entire teams or individuals to the process. In case an individual belongs to a team, the role assigned to the individual prevails.
             </Typography>
             <TeamsTable onChanges={init} />
             <Typography variant="h5" sx={{my: 2}}>

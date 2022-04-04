@@ -1,33 +1,23 @@
-import React, { useState, useEffect } from "react";
-import { TextField as MuiTextField, Alert, Grid, Box, Stack, Button, Typography, IconButton, Menu, MenuItem, Paper, MenuList, ListItemIcon, ListItemText, Divider, CardHeader, Avatar, Input } from "@material-ui/core";
-import { useDispatch, useSelector } from 'react-redux';
-import { Save, MoreVert, ContentCopy, ContentCut, Cloud, ContentPaste, Delete, Add, Edit, Share } from '@material-ui/icons';
-
-import { Formik, Field, Form, useFormikContext } from 'formik';
-import * as Yup from 'yup';
-import { updateProcess } from "slices/process";
+import { Avatar, Box, Button, CardHeader, Grid, IconButton, Input, Stack, TextField as MuiTextField, Typography } from "@material-ui/core";
+import { Delete, Edit, Save } from '@material-ui/icons';
 import QuillEditor from "components/QuillEditor";
+import { Field, Form, Formik, useFormikContext } from 'formik';
+import useMounted from "hooks/useMounted";
 import $ from 'jquery';
-import { Prompt } from 'react-router-dom'
-import MainSkeleton from "pages/dashboard/coproductionprocesses/Tabs/MainSkeleton";
 import moment from "moment";
-
-const ITEM_HEIGHT = 48;
+import MainSkeleton from "pages/dashboard/coproductionprocesses/Tabs/MainSkeleton";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { Prompt } from 'react-router-dom';
+import { updateProcess } from "slices/process";
+import * as Yup from 'yup';
 
 const MetadataTab = () => {
     const [editMode, setEditMode] = useState(false)
     const [initialData, setInitialData] = useState({})
     const { process, updating } = useSelector((state) => state.process);
-    const [anchorEl, setAnchorEl] = useState(null);
-    const open = Boolean(anchorEl);
     const [logotype, setLogotype] = useState(null);
-
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
+    const mounted = useMounted()
 
     const PromptIfDirty = () => {
         const formik = useFormikContext();
@@ -106,22 +96,12 @@ const MetadataTab = () => {
 
     return (
         <Box style={{ minHeight: "87vh", backgroundColor: "background.default" }}>
-
-
-            {editMode && <Alert severity="warning" sx={{ width: '100%' }}>
-                Editing mode. Do not forget to save the changes
-            </Alert>}
             <CardHeader
-                action={
-                    <IconButton aria-label="settings"
-                        aria-label="more"
-                        id="long-button"
-                        aria-controls="long-menu"
-                        aria-expanded={open ? 'true' : undefined}
-                        aria-haspopup="true"
-                        onClick={handleClick}>
-                        <MoreVert />
-                    </IconButton>
+                action={!editMode && <IconButton aria-label="settings"
+                    id="long-button"
+                    onClick={() => setEditMode(true)}>
+                    <Edit />
+                </IconButton>
                 }
                 avatar={
                     editMode ? <label htmlFor="contained-button-file">
@@ -169,47 +149,6 @@ const MetadataTab = () => {
                     </Stack>
                 }
             />
-            <Menu
-                id="long-menu"
-                MenuListProps={{
-                    'aria-labelledby': 'long-button',
-                }}
-                anchorEl={anchorEl}
-                open={open}
-                onClose={handleClose}
-                PaperProps={{
-                    style: {
-                        maxHeight: ITEM_HEIGHT * 4.5,
-                        width: '20ch',
-                    },
-                }}
-            >
-                <MenuList>
-                    <MenuItem onClick={() => { setEditMode(true); handleClose() }}>
-                        <ListItemIcon>
-                            <Edit fontSize="small" />
-                        </ListItemIcon>
-                        <ListItemText>Edit</ListItemText>
-                    </MenuItem>
-                    <MenuItem>
-                        <ListItemIcon>
-                            <Share fontSize="small" />
-                        </ListItemIcon>
-                        <ListItemText>Share</ListItemText>
-
-                    </MenuItem>
-
-                    <Divider />
-                    <MenuItem>
-                        <ListItemIcon>
-                            <Delete fontSize="small" />
-                        </ListItemIcon>
-                        <ListItemText>Delete</ListItemText>
-                    </MenuItem>
-                </MenuList>
-            </Menu>
-
-
             <Formik
                 initialValues={{
                     name: process.name || "",
@@ -224,11 +163,11 @@ const MetadataTab = () => {
                     .object()
                     .shape({
                         name: Yup.string().required('Required'),
-                    /* description: Yup.string().required('required'),
-                        aim: Yup.string().required('required'),
-                        organization: Yup.string().required('required'),
-                        idea: Yup.string().required('required'),
-                        challenges: Yup.string().required('required'),*/
+                        /* description: Yup.string().required('required'),
+                            aim: Yup.string().required('required'),
+                            organization: Yup.string().required('required'),
+                            idea: Yup.string().required('required'),
+                            challenges: Yup.string().required('required'),*/
 
                     })}
                 onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
@@ -239,9 +178,12 @@ const MetadataTab = () => {
                             data: values,
                             logotype,
                             onSuccess: () => {
-                                setEditMode(false)
-                                setStatus({ success: true });
-                                setSubmitting(false);
+                                if (mounted) {
+                                    setEditMode(false)
+                                    setStatus({ success: true });
+                                    setSubmitting(false);
+                                }
+
                             }
                         }))
 
@@ -305,16 +247,12 @@ const MetadataTab = () => {
 
                         </Grid>
                         {editMode && <Stack direction="row" spacing={2} sx={{ justifyContent: "center", mt: 3, mb: 2 }}>
-                            <Button variant="text" disabled={isSubmitting} color="error" startIcon={<Delete />} onClick={() => { setEditMode(false); resetForm(); setLogotype(null);  }}> Cancel</Button>
+                            <Button variant="text" disabled={isSubmitting} color="error" startIcon={<Delete />} onClick={() => { setEditMode(false); resetForm(); setLogotype(null); }}> Cancel</Button>
                             <Button variant="contained" disabled={isSubmitting} color="success" startIcon={<Save />} onClick={submitForm} disabled={!isValid}>Save</Button>
                         </Stack>}
                     </Form>
                 )}
             </Formik>
-
-
-
-
         </Box>
     );
 };

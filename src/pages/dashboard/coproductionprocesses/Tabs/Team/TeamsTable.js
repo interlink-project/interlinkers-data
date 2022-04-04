@@ -3,6 +3,7 @@ import { Delete, Edit, Remove, Save } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import UserData from 'components/UserData';
 import useMounted from 'hooks/useMounted';
+import TeamProfile from './TeamProfile';
 import { useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
@@ -10,7 +11,7 @@ import { rolesApi, usersApi } from '__api__';
 import IndividualAdd from './IndividualAdd';
 import TeamAdd from './TeamAdd';
 
-function Row({ obj: ob, onChanges, isTeam = false }) {
+function Row({ obj: ob, onChanges, isTeam = false, onTeamClick = () => {} }) {
     const navigate = useNavigate()
     const [obj, setObj] = useState(ob)
     const { process, roles, teams } = useSelector((state) => state.process);
@@ -100,7 +101,7 @@ function Row({ obj: ob, onChanges, isTeam = false }) {
                 <Avatar src={obj.logotype_link} />
             </TableCell>
             <TableCell align="center">
-                <Button variant="text" fullWidth onClick={() => navigate(`/dashboard/teams/${obj.id}`)}>
+                <Button variant="text" fullWidth onClick={() => onTeamClick(ob)}>
                     {obj.name}
                 </Button>
             </TableCell>
@@ -171,12 +172,21 @@ export default function TeamsTable({ onChanges }) {
     const { teams, users } = useSelector((state) => state.process);
     const [teamsOpen, setTeamsOpen] = useState(false);
     const [individualsOpen, setIndividualsOpen] = useState(false);
+    const [teamProfileOpen, setTeamProfileOpen] = useState(false);
+    const [selectedTeam, setSelectedTeam] = useState(null);
+
+    const onTeamClick = (team) => {
+        setSelectedTeam(team)
+        setTeamProfileOpen(true)
+    }
+    //         
 
     return <Grid container spacing={1}>
+        {selectedTeam && <TeamProfile open={teamProfileOpen} setOpen={setTeamProfileOpen} teamId={selectedTeam.id} onChanges={onChanges} />}
         <TeamAdd currentTeams={teams} open={teamsOpen} setOpen={setTeamsOpen} onChanges={onChanges} />
         <IndividualAdd open={individualsOpen} setOpen={setIndividualsOpen} onChanges={onChanges} />
         <Grid item lg={6} xs={12}>
-            <TableContainer component={Paper} style={sameHeightCards}>
+            <TableContainer component={Paper}>
                 <Table aria-label="teams-table" size='small'>
                     <TableHead>
                         <TableRow>
@@ -189,19 +199,20 @@ export default function TeamsTable({ onChanges }) {
                     </TableHead>
                     <TableBody>
                         {teams.map((team) => (
-                            <Row key={team.id} obj={team} onChanges={onChanges} isTeam />
+                            <Row key={team.id} obj={team} onChanges={onChanges} isTeam onTeamClick={onTeamClick} />
                         ))}
                     </TableBody>
                 </Table>
-                <CardActions sx={{ justifyContent: "center", textAlign: "center" }}>
+                
+            </TableContainer>
+            <Box sx={{ justifyContent: "center", textAlign: "center" }}>
                     <Button variant="contained" sx={{ my: 2 }} color='primary' onClick={() => setTeamsOpen(true)}>
                         Add new team
                     </Button>
-                </CardActions>
-            </TableContainer>
+                </Box>
         </Grid>
         <Grid item lg={6} xs={12}>
-        <TableContainer component={Paper} style={sameHeightCards}>
+        <TableContainer component={Paper} >
                 <Table aria-label="users-table" size='small'>
                     <TableHead>
                         <TableRow>
@@ -224,12 +235,13 @@ export default function TeamsTable({ onChanges }) {
                         </Typography>}
                     </TableBody>
                 </Table>
-                <CardActions sx={{ justifyContent: "center", textAlign: "center" }}>
-                    <Button variant="contained" sx={{ my: 2 }} color='primary' onClick={() => setIndividualsOpen(true)}>
+               
+            </TableContainer>
+            <Box sx={{ justifyContent: "center", textAlign: "center" }}>
+                <Button variant="contained" sx={{ my: 2 }} color='primary' onClick={() => setIndividualsOpen(true)}>
                         Add new individual
                     </Button>
-                </CardActions>
-            </TableContainer>
+                </Box>
         </Grid>
     </Grid>
 }
