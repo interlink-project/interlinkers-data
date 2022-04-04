@@ -44,7 +44,7 @@
   "supports_internationalization": false,
   "is_responsive": true,
   "reference": "api-manager",
-  "logotype": "./interlinkers/software/os2-api-Manager/logo.jpeg",
+  "logotype": "./interlinkers/software/wso2-api-Manager/logo.jpeg",
   "integration": {
     "type": "externalintegration",
     "redirection": "https://wso2.com/api-manager/",
