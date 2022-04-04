@@ -15,7 +15,7 @@
     },
     "difficulty": "difficult",
     "targets": ["all;pas", "all;research_organizations", "all;businesses"],
-    "licence": "public_domain",
+    "licence": "permissive",
     "problemprofiles": [
         "ORG_PROBLEM_3"
     ],

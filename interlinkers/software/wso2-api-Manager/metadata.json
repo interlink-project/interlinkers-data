@@ -1,6 +1,6 @@
 {
   "name_translations": {
-    "en": "OS2 API Manager"
+    "en": "WSO2 API Manager"
   },
   "description_translations": {
     "en": "<p>WSO2 API Manager is a complete platform for building, integrating, and exposing your digital services as managed APIs in the cloud, on-premise, and hybrid architectures to drive your digital transformation strategy. It allows API developers to design, publish, and manage the lifecycle of APIs and API product managers to create API products from one or more APIs.</p>"
