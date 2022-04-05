@@ -1,11 +1,15 @@
 import { Box, Button, Container, Fade, Typography, useTheme } from '@material-ui/core';
+import { HomeRow } from "components/home";
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
-import { HomeRow } from "components/home"
 
 const Home = () => {
   const navigate = useNavigate();
   const theme = useTheme();
+
+  const { t } = useTranslation()
+
   return (
     <>
       <Helmet>
@@ -42,7 +46,7 @@ const Home = () => {
                 variant='h5'
                 sx={{ my: 5 }}
               >
-                The collaboration portal to co-produce better and more inclusive public services
+                {t("home-1-1")}
               </Typography>
               <Button
                 color='primary'
@@ -51,7 +55,8 @@ const Home = () => {
                 to='/dashboard'
                 variant='contained'
               >
-                Go to dashboard
+                {t("home-1-2")}
+
               </Button>
             </Container>
           </Box>
@@ -62,17 +67,19 @@ const Home = () => {
           graphic={<iframe style={{
             minHeight: "300px",
             width: "100%"
-          }} src="https://www.youtube.com/embed/oCPz7dxN2Hk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>}
+          }} src="https://www.youtube.com/embed/oCPz7dxN2Hk" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>}
           right={<div>
             <Typography variant="h4">
-              Are you a Public Administration, a company or a citizen that wants to co-design and co-deliver better public services?
+              {t("home-2-1")}
+
             </Typography>
             <Typography
               color="textSecondary"
               sx={{ my: 3, textAlign: "justify" }}
               variant="subtitle1"
             >
-              The INTERLINK platform will support you in developing public-civic partnerships, co-designing and co-delivering public services. This digital platform to guide step-by-step the co-production and co-delivery of public services is currently being designed, together with a set of open-source reusable resources that will concretely aid the planning and implementation of services. The platform will provide a collaborative environment where the different actors will work together and find the knowledge and tools needed to carry out a joint effort toward the co-delivery of services.
+              {t("home-2-2")}
+
             </Typography>
           </div>}
         />
@@ -80,17 +87,15 @@ const Home = () => {
           graphic={<img style={{ width: "100%", height: "auto" }} src="/static/graphics/figure7.png" />}
           right={<>
             <Typography variant="h3">
-              Why co-production?
+              {t("home-3-1")}
+
             </Typography>
             <Typography
               color="textSecondary"
               sx={{ my: 3 }}
               variant="subtitle1"
             >
-              Co-production is a practice in the delivery of public services in which Public Administrations, stakeholders, as well as citizens work hand in hand for the creation of public policies and services.
-
-              In co-production, service providers and users work together to reach a collective outcome. Co-production can help build stronger communities and develops citizenship.
-
+              {t("home-3-2")}
             </Typography>
             <Box
               sx={{
@@ -105,7 +110,7 @@ const Home = () => {
                 sx={{ m: 1 }}
                 variant="outlined"
               >
-                Learn more on coproduction
+                {t("home-3-3")}
               </Button>
             </Box>
           </>} />
@@ -117,16 +122,15 @@ const Home = () => {
           light={false}
           right={<>
             <Typography variant="h3">
-              Browse the catalogue of resources
+              {t("home-4-1")}
+
             </Typography>
             <Typography
               color="textSecondary"
               sx={{ my: 3 }}
               variant="subtitle1"
             >
-              INTERLINK promotes the reuse and sharing of existing public services and resources leveraging on the partnership between citizens, private actors, and public administrations.
-
-              INTERLINK provides a set of digital building blocks, called “INTERLINKERs”, that support different stakeholders to cooperate in the delivery of a service.
+              {t("home-4-2")}
             </Typography>
             <Box
               sx={{
@@ -141,7 +145,8 @@ const Home = () => {
                 sx={{ m: 1 }}
                 variant="outlined"
               >
-                Browse the catalogue
+                {t("home-4-3")}
+
               </Button>
             </Box>
           </>} />
@@ -149,17 +154,17 @@ const Home = () => {
           graphic={<img style={{ width: "100%", height: "auto" }} src="/static/graphics/map2.png" />}
           right={<>
             <Typography variant="h3">
-              Join active co-production process
+              {t("home-5-1")}
+
             </Typography>
             <Typography
               color="textSecondary"
               sx={{ my: 3 }}
               variant="subtitle1"
             >
-              INTERLINK is being used in different European Countries to carry out co-production projects. Discover who is using INTERLINK and join active co-production projects!
-
-              Register to the INTERLINK platform and discover active projects!
+              {t("home-5-2")}
             </Typography>
+
             <Box
               sx={{
                 display: 'flex',
@@ -173,7 +178,7 @@ const Home = () => {
                 sx={{ m: 1 }}
                 variant="outlined"
               >
-                Go to dashboard
+                {t("home-5-3")}
               </Button>
             </Box>
           </>} />

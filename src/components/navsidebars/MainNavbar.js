@@ -12,28 +12,31 @@ import { Login } from '@material-ui/icons';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
+import i18n from 'translations/i18n';
 import MenuIcon from '../../icons/Menu';
 import Logo from '../Logo';
+import SettingsPopover from './SettingsPopover';
+
 
 export const landingPages = [
   {
-    name: 'Project',
+    name: i18n.t('Project'),
     link: '/',
   },
   {
-    name: 'INTERLINK platform',
+    name: i18n.t('INTERLINK platform'),
     link: '/platform',
   },
   {
-    name: 'Co-production',
+    name: i18n.t('Co-production'),
     link: '/coprod',
   },
   {
-    name: 'Catalogue',
+    name: i18n.t('Catalogue'),
     link: '/catal',
   },
   {
-    name: 'About',
+    name: i18n.t('About'),
     link: '/about',
   },
 ];
@@ -120,7 +123,8 @@ const MainNavbar = (props) => {
 
             </React.Fragment>
           ))}
-          <Box
+          <SettingsPopover />
+          {/* <Box
             component={ButtonBase}
             sx={{
               alignItems: 'center',
@@ -131,7 +135,7 @@ const MainNavbar = (props) => {
           >
             <Typography sx={{ mr: 1, color: "primary.main" }} variant="overline">Dashboard</Typography>
             <Login />
-          </Box>
+          </Box> */}
         </Box>
       </Toolbar>
       <Divider />

@@ -1,6 +1,7 @@
-import { Box, Button, Card, CardActions, CardContent, CardMedia, Container, Divider, Grid, Link, Stack, Typography } from '@material-ui/core';
-import { HomeRow } from 'components/home';
+import { Box, Button, Card, CardActions, CardContent, CardMedia, Container, Divider, Grid, Typography } from '@material-ui/core';
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
+import i18n from "translations/i18n";
 
 const sameHeightCards = {
   minHeight: "200px",
@@ -11,46 +12,50 @@ const sameHeightCards = {
 }
 
 const pilots = [{
-  name: "SPAIN",
-  description: "Zaragoza is using the Interlink governance framework to widen Open Innovation within the city. The framework and set of enablers made available within Interlink are providing support for sustainable Open Innovation in the co-creation and co-delivery of services.",
+  name: i18n.t("spain"),
+  description: i18n.t("home-zaragoza-pilot"),
   image: "/static/graphics/spain.png",
   link: "https://drive.google.com/drive/u/1/folders/17D9kGo4gwLx2QZDD7s4uP3Cn5uQRI7mR"
 },
 {
-  name: "LATVIA",
-  description: "The goal of the Latvian Ministry of Environmental Protection and Regional Development Customer Service Centers’ use case is to test sharing service delivery with third parties to improve public services.",
+  name: i18n.t("latvia"),
+  description: i18n.t("home-latvia-pilot"),
   image: "/static/graphics/latvia.png",
   link: "https://drive.google.com/drive/u/1/folders/173chr_g-LYZ6twMmz-sh5GH1Ea4IylsX"
 },
 {
-  name: "ITALY",
-  description: "The Italian Ministry of Economy and Finance together with the Agency for Digital Italy will leverage the Interlink platform and its components to co-create a new module with Reggio Emilia city for a Joint Strategic Planning between central and local Public Bodies.",
+  name: i18n.t("italy"),
+  description: i18n.t("home-italy-pilot"),
   image: "/static/graphics/italy.png",
   link: "https://drive.google.com/drive/u/1/folders/1Tyy4_2Fxf3HZQC0XhK2zMlIPp8m_-Apj"
 
 }]
 
 const HomeAbout = () => {
+  const { t } = useTranslation()
+
   return (
     <>
       <Helmet>
         <title>Interlink</title>
       </Helmet>
       <div>
-        <Container maxWidth="lg" sx={{my: 2}}>
-          
-          <Grid container alignItems="center" justifyContent="center" spacing={3} sx={{my: 4}}>
-          
-          <Grid item md={8}> 
-          <Typography variant="h3" sx={{textAlign: "center", mb: 3}}>
-            COLLABORATION and RE-USE
-          </Typography>
-          <Typography variant="body1">
-              INTERLINK in an European Project that aims to overcome the barriers preventing administrations to reuse and share services with private partners (including citizens) by developing a novel collaborative governance model that merges the enthusiasm and flexibility of grassroot initiatives with the legitimacy and accountability granted by top-down e-government frameworks.
-            </Typography>
+        <Container maxWidth="lg" sx={{ my: 2 }}>
 
-              <Typography variant="body1" sx={{mt: 2}}>
-                The INTERLINK multidisciplinary consortium will deliver the new governance model and Interlinkers within a technological framework and operational platform based on an open software system leveraging on mobile communications, facilitating the co-production of services between PAs and private stakeholders. The solution will be customised, deployed and evaluated on three use-cases (MEF, VARAM and Zaragoza). Lessons learned in the three use-cases will be generalized to deliver a reusable solution across Europe.
+          <Grid container alignItems="center" justifyContent="center" spacing={3} sx={{ my: 4 }}>
+
+            <Grid item md={8}>
+              <Typography variant="h3" sx={{ textAlign: "center", mb: 3 }}>
+                {t("home-about-1")}
+              </Typography>
+              <Typography variant="body1">
+                {t("home-about-1-1")}
+
+              </Typography>
+
+              <Typography variant="body1" sx={{ mt: 2 }}>
+                {t("home-about-1-2")}
+
               </Typography>
             </Grid>
             <Grid item md={4}>
@@ -76,7 +81,8 @@ const HomeAbout = () => {
             color='primary.contrastText'
             variant='h3'
           >
-            Discover more about INTERLINK piloting activities!
+            {t("home-about-2")}
+
           </Typography>
         </Box>
         <Container maxWidth='lg' sx={{ mt: 4 }}>
@@ -107,7 +113,7 @@ const HomeAbout = () => {
                   </Typography>
                 </CardContent>
                 <CardActions sx={{ justifyContent: "center" }}>
-                  <Button size="small" onClick={() => window.open(pilot.link, "_blank")}>Download the brochure</Button>
+                  <Button size="small" onClick={() => window.open(pilot.link, "_blank")}>{t("home-about-download-brochure")}</Button>
                 </CardActions>
               </Card>
             </Grid>)}

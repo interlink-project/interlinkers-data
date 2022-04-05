@@ -1,4 +1,4 @@
-import { Box, Container, Grid, LinearProgress, ToggleButton, ToggleButtonGroup, Typography } from '@material-ui/core';
+import { Box, Button, Container, Grid, LinearProgress, ToggleButton, ToggleButtonGroup, Typography } from '@material-ui/core';
 import { ViewModule } from '@material-ui/icons';
 import { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
@@ -7,6 +7,7 @@ import { interlinkersApi } from '__api__';
 import { InterlinkerBrowseFilter, InterlinkerCard } from '../../../components/dashboard/interlinkers';
 import useMounted from '../../../hooks/useMounted';
 import InterlinkerDialog from './InterlinkerDialog';
+import { LoadingButton } from '@material-ui/lab';
 
 const LoadingBlock = ({ callback }) => {
   const myRef = useRef();
@@ -48,7 +49,6 @@ const InterlinkerBrowse = () => {
   const [loadedRows, setLoadedRows] = useState([]);
 
   const hasNextPage = loadedRows.length < total
-
 
   useEffect(() => {
     loadServerRows(params)
@@ -207,8 +207,8 @@ const InterlinkerBrowse = () => {
                 </Grid>
               ))}
 
-              <Grid item xs={12}>
-                {loading ? <LinearProgress /> : hasNextPage && (<LoadingBlock callback={() => handleOnRowsScrollEnd()} />)}
+              <Grid item xs={12} sx={{justifyContent: "center", textAlign: "center"}}>
+                {hasNextPage && <LoadingButton loading={loading} variant="contained" onClick={handleOnRowsScrollEnd}>Load more</LoadingButton>}
               </Grid>
 
             </Grid>

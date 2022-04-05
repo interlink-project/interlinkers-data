@@ -6,7 +6,7 @@ module.exports = {
     default: ['JavascriptLexer'],
   },
 
-  locales: ['es', 'en'],
+  locales: ['es', 'en', 'lv', 'it'],
   // An array of the locales in your applications
 
   // namespaceSeparator: '.',

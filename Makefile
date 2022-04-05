@@ -15,7 +15,7 @@ down: ## Stops all containers and removes volumes
 
 .PHONY: build
 build: ## Builds development containers
-	docker-compose -f docker-compose.devsolo.yml build
+	docker-compose -f docker-compose.devintegrated.yml build
 
 #######################
 ## RUN CONTAINERS

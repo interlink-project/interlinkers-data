@@ -4,33 +4,27 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import store from 'store';
 import TRANSLATIONS_EN from './en';
 import TRANSLATIONS_ES from './es';
+import TRANSLATIONS_LV from './lv';
+import TRANSLATIONS_IT from './it';
 import axiosInstance from 'axiosInstance';
 
 export const DEFAULT_LANGUAGE = 'en';
-i18n
-  // .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
-    resources: {
-      "es": {
-        translation: TRANSLATIONS_ES,
-      },
-      "en": {
-        translation: TRANSLATIONS_EN,
-      },
-    },
-    fallbackLng: DEFAULT_LANGUAGE,
-    debug: true,
-  });
-
 export const LANGUAGES = [
   {
     label: 'English',
     value: 'en',
   },
   {
-    label: 'Castellano',
+    label: 'Español',
     value: 'es',
+  },
+  {
+    label: 'Latviešu',
+    value: 'lv',
+  },
+  {
+    label: 'Italiano',
+    value: 'it',
   },
 ];
 
@@ -48,7 +42,30 @@ export const setLanguage = (language) => {
 
 export const getInitialLanguage = () => {
   console.log("Returning", store.get('language', DEFAULT_LANGUAGE))
-  store.get('language', DEFAULT_LANGUAGE)
+  return store.get('language', DEFAULT_LANGUAGE)
 };
+
+
+i18n
+  // .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    resources: {
+      "es": {
+        translation: TRANSLATIONS_ES,
+      },
+      "en": {
+        translation: TRANSLATIONS_EN,
+      },
+      "it": {
+        translation: TRANSLATIONS_IT,
+      },
+      "lv": {
+        translation: TRANSLATIONS_LV,
+      },
+    },
+    fallbackLng: getInitialLanguage(),
+    debug: true,
+  });
 
 export default i18n;

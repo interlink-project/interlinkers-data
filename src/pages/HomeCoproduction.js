@@ -14,23 +14,22 @@ import { alpha, useTheme } from '@material-ui/core/styles';
 import { AllInclusive, Build } from '@material-ui/icons';
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
+import i18n from 'translations/i18n';
 
 
 const getFeatures = (theme) => ([
   {
     icon: Build,
     image: `/static/graphics/schema-codesign.png`,
-    items: ['Engagement', 'Design'],
-    subheader: 'co-design concerns activities that incorporate “the experience of users and their communities” into the creation, planning, or arrangements of public services” (Bovaird and Loeffler, 2012). In this phase the co-production team is created and starts working together to define the service to be co-produced. The co-design phase entails two sub-phases: ',
+    items: [i18n.t('Engagement'),i18n.t('Design')],
+    subheader: i18n.t('home-coproduction-build'),
     title: 'Co-design phase'
   },
   {
     icon: AllInclusive,
-    items: [
-      'Build',
-      'Sustain'
-    ],
-    subheader: 'co-delivery is a joint effort by public authorities and stakeholders to provide and improve public services (Alford, 2014; Nabatchi et.al., 2017)  where the service is implemented and delivered in a sustainable manner. The co-delivery phase entails two sub-phases: ',
+    items: [i18n.t('Build'),i18n.t('Sustain')],
+    subheader: i18n.t('home-coproduction-codelivery'),
     image: `/static/graphics/schema-codelivery.png`,
     title: 'Co-delivery phase'
   },
@@ -40,7 +39,7 @@ const HomeCoproduction = () => {
   const [selectedFeatureIndex, setSelectedFeatureIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [images, setImages] = useState();
-
+  const {t} = useTranslation()
   const features = getFeatures(theme.palette.mode);
 
   useEffect(() => {
@@ -81,7 +80,7 @@ const HomeCoproduction = () => {
           variant='h3'
           sx={{mb: 3}}
         >
-          Co-production process
+          {t("Co-production process")}
         </Typography>
 
         <img style={{ width: "100%", height: "auto" }} src="/static/graphics/schema2.png" />
@@ -109,7 +108,8 @@ const HomeCoproduction = () => {
                 variant='h5'
                 sx={{mb: 4}}
               >
-                Two main phases characterize this co-production process: the CO-DESIGN phase and the CO-DELIVERY phase, each of them is further specified in sub-phases:
+                {t("home-coproduction-1")}
+                
               </Typography>
               
               {features.map((feature, index) => {
