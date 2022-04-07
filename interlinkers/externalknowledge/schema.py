@@ -12,10 +12,5 @@ parent = Path(__file__).parents[0]
 
 class Schema(InterlinkerSchema):
     logotype: Optional[FilePath]
-    
-    deployment_manual: Optional[Union[HttpUrl, FilePath]]
-    user_manual: Optional[Union[HttpUrl, FilePath]]
-    developer_manual: Optional[Union[HttpUrl, FilePath]]
-
     uri_translations: dict
     asset_name_translations: Optional[dict]

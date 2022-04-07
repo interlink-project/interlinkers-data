@@ -110,51 +110,6 @@
             "format": "file-path",
             "type": "string"
         },
-        "deployment_manual": {
-            "title": "Deployment Manual",
-            "anyOf": [
-                {
-                    "type": "string",
-                    "minLength": 1,
-                    "maxLength": 2083,
-                    "format": "uri"
-                },
-                {
-                    "type": "string",
-                    "format": "file-path"
-                }
-            ]
-        },
-        "user_manual": {
-            "title": "User Manual",
-            "anyOf": [
-                {
-                    "type": "string",
-                    "minLength": 1,
-                    "maxLength": 2083,
-                    "format": "uri"
-                },
-                {
-                    "type": "string",
-                    "format": "file-path"
-                }
-            ]
-        },
-        "developer_manual": {
-            "title": "Developer Manual",
-            "anyOf": [
-                {
-                    "type": "string",
-                    "minLength": 1,
-                    "maxLength": 2083,
-                    "format": "uri"
-                },
-                {
-                    "type": "string",
-                    "format": "file-path"
-                }
-            ]
-        },
         "uri_translations": {
             "title": "Uri Translations",
             "type": "object"
