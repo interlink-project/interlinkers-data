@@ -654,23 +654,17 @@
                 "es": "Esquema para la creaci\u00f3n de un Hackathon"
             },
             "author": "",
-            "licence": "permissive",
-            "tags_translations": {
-                "en": [
-                    "default",
-                    "coproduction"
-                ]
-            },
             "description_translations": {
                 "en": "",
                 "es": ""
             },
-<<<<<<< HEAD
-=======
-            "tags": [
-                "hackathon"
-            ],
->>>>>>> 927dc371da53546ca7df5e5ea77d38447f82cbc9
+            "licence": "permissive",
+            "tags_translations": {
+                "en": [
+                    "hackathon",
+                    "coproduction"
+                ]
+            },
             "phases": [
                 {
                     "reference": "phase-exploit",
@@ -1503,14 +1497,17 @@
                 "es": "Esquema por defecto"
             },
             "author": "",
-            "licence": "",
+            "licence": "permissive",
+            "tags_translations": {
+                "en": [
+                    "default",
+                    "coproduction"
+                ]
+            },
             "description_translations": {
                 "en": "",
                 "es": ""
             },
-            "tags": [
-                "default"
-            ],
             "phases": [
                 {
                     "reference": "phase-sustain",
@@ -2099,53 +2096,8 @@
                                     "status": "completed"
                                 }
                             ],
-<<<<<<< HEAD
-                            "reference": "objective-service-codelivery"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "reference": "hackathon",
-            "name_translations": {
-                "en": "Hackathon creation process",
-                "es": "Esquema para la creaci\u00f3n de un Hackathon"
-            },
-            "author": "",
-            "description_translations": {
-                "en": "",
-                "es": ""
-            },
-            "licence": "permissive",
-            "tags_translations": {
-                "en": [
-                    "hackathon",
-                    "coproduction"
-                ]
-            },
-            "phases": [
-                {
-                    "reference": "phase-exploit",
-                    "prerequisites": [
-                        {
-                            "item": "phase-run",
-                            "status": "finished"
-                        }
-                    ],
-                    "name_translations": {
-                        "en": "Exploit",
-                        "es": "Explotar"
-                    },
-                    "description_translations": {
-                        "en": "Define the business models to ensure sustainability of the co-produced service. Create business plans and exploitation agreements that will foster the adoption of your co-produced service by third party PAs, companies and stakeholders. Continous maintenance and monotoring is needed for responsive, accesible, widely adopted services as INTERLINK ambitions.",
-                        "es": ""
-                    },
-                    "objectives": [
-=======
                             "reference": "objective-ideation"
                         },
->>>>>>> 927dc371da53546ca7df5e5ea77d38447f82cbc9
                         {
                             "name_translations": {
                                 "en": "Service design",
@@ -3478,64 +3430,7 @@
                     "all"
                 ],
                 "problemprofiles": [
-<<<<<<< HEAD
-                    "UND_PROBLEM_3",
-                    "VAL_PROBLEM_3",
-                    "VAL_PROBLEM_5",
-                    "ORG_PROBLEM_6.2"
-                ],
-                "types": [
-                    "enhancing_services;followup_services"
-                ],
-                "administrative_scopes": [
-                    "eu"
-                ],
-                "domain": "",
-                "process": "",
-                "reference": "Final-End-Users-Questionnaire-QoS",
-                "form": "survey_template",
-                "format": "pdf",
-                "softwareinterlinker": "googledrive",
-                "difficulty": "easy",
-                "licence": "public_domain",
-                "instructions_translations": {
-                    "en": "./interlinkers/knowledge/Final-End-Users-Questionnaire-QoS/instructions.md"
-                },
-                "tags_translations": {
-                    "en": [
-                        "quality of service",
-                        "questionnaire"
-                    ]
-                },
-                "name_translations": {
-                    "en": "Final end user's questionnaire- Quality of Service"
-                },
-                "description_translations": {
-                    "en": "This is a model of End Users' Perceptions Questionnaire. It aims to measure end-users' perceptions on user-based quality, value-based quality, trust and acceptance. This questionnaire is thought to be answered by users of traditional e-services and also those who co-produced them through INTERLINK."
-                },
-                "constraints_and_limitations_translations": {
-                    "en": "No special constraints apply"
-                },
-                "regulations_and_standards_translations": {
-                    "en": ""
-                },
-                "file_translations": {
-                    "en": "./interlinkers/knowledge/Final-End-Users-Questionnaire-QoS/resource.pdf"
-                }
-            },
-            {
-                "languages": [
-                    "en"
-                ],
-                "targets": [
-                    "all"
-                ],
-                "problemprofiles": [
-                    "ORG_PROBLEM_1",
-                    "UND_PROBLEM_2"
-=======
                     "ORG_PROBLEM_1"
->>>>>>> 927dc371da53546ca7df5e5ea77d38447f82cbc9
                 ],
                 "types": [
                     "enabling_services"
@@ -3729,57 +3624,6 @@
                     "all"
                 ],
                 "problemprofiles": [
-                    "ORG_PROBLEM_14",
-                    "UND_PROBLEM_3"
-                ],
-                "types": [
-                    "enhancing_services"
-                ],
-                "administrative_scopes": [
-                    "eu"
-                ],
-                "domain": "",
-                "process": "",
-                "reference": "Guidelines-for-interviews",
-                "form": "document_template",
-                "format": "editable_source_document",
-                "softwareinterlinker": "googledrive",
-                "difficulty": "easy",
-                "licence": "public_domain",
-                "instructions_translations": {
-                    "en": "./interlinkers/knowledge/Guidelines-for-interviews/instructions.md"
-                },
-                "tags_translations": {
-                    "en": [
-                        "focus group",
-                        "template",
-                        "understand"
-                    ]
-                },
-                "name_translations": {
-                    "en": "Guidelines for interviews"
-                },
-                "description_translations": {
-                    "en": "<p>Instructions on how to set up a research activity based on interviews, for a co-production project. </p>"
-                },
-                "constraints_and_limitations_translations": {
-                    "en": "No special constraints apply"
-                },
-                "regulations_and_standards_translations": {
-                    "en": ""
-                },
-                "file_translations": {
-                    "en": "./interlinkers/knowledge/Guidelines-for-interviews/resource.docx"
-                }
-            },
-            {
-                "languages": [
-                    "en"
-                ],
-                "targets": [
-                    "all"
-                ],
-                "problemprofiles": [
                     "UND_PROBLEM_3",
                     "VAL_PROBLEM_3",
                     "VAL_PROBLEM_5",
@@ -3883,62 +3727,7 @@
                     "all"
                 ],
                 "problemprofiles": [
-<<<<<<< HEAD
-                    "UND_PROBLEM_3",
-                    "VAL_PROBLEM_2"
-                ],
-                "types": [
-                    "enhancing_services"
-                ],
-                "administrative_scopes": [
-                    "eu"
-                ],
-                "domain": "",
-                "process": "",
-                "reference": "focus-group-template-problem-exploration-functionalities",
-                "form": "document_template",
-                "format": "editable_source_document",
-                "softwareinterlinker": "googledrive",
-                "difficulty": "easy",
-                "licence": "public_domain",
-                "instructions_translations": {
-                    "en": "./interlinkers/knowledge/Focus-Group-Template-problem-exploration-functionalities/instructions.md"
-                },
-                "tags_translations": {
-                    "en": [
-                        "focus group",
-                        "template",
-                        "understand"
-                    ]
-                },
-                "name_translations": {
-                    "en": "Focus Group Template Co-production Investigation"
-                },
-                "description_translations": {
-                    "en": "<p>This resource provides a skeleton to organize a focus group to investigate the problem that needs to be solved by a digital service / functionality. It addresses a series of questions about potential users, current practices, critical aspects and  desiderata.</p>"
-                },
-                "constraints_and_limitations_translations": {
-                    "en": "No special constraints apply"
-                },
-                "regulations_and_standards_translations": {
-                    "en": ""
-                },
-                "file_translations": {
-                    "en": "./interlinkers/knowledge/Focus-Group-Template-problem-exploration-functionalities/resource.pptx"
-                }
-            },
-            {
-                "languages": [
-                    "en"
-                ],
-                "targets": [
-                    "all"
-                ],
-                "problemprofiles": [
-                    "VAL_PROBLEM_2"
-=======
                     "UND_PROBLEM_2"
->>>>>>> 927dc371da53546ca7df5e5ea77d38447f82cbc9
                 ],
                 "types": [
                     "enhancing_services"
@@ -4675,9 +4464,6 @@
                 "asset_name_translations": {
                     "en": "Doodle - polling software"
                 },
-                "asset_name_translations": {
-                    "en": "Google charts"
-                },
                 "type": "software"
             },
             {
@@ -4785,9 +4571,6 @@
                 "asset_name_translations": {
                     "en": "Trello"
                 },
-                "asset_name_translations": {
-                    "en": "Grafana"
-                },
                 "type": "software"
             },
             {
@@ -4843,9 +4626,6 @@
                 "asset_name_translations": {
                     "en": "WSO2 Api manager"
                 },
-                "asset_name_translations": {
-                    "en": "Mailchimp"
-                },
                 "type": "software"
             },
             {
@@ -4897,9 +4677,6 @@
                 },
                 "asset_name_translations": {
                     "en": "Grafana"
-                },
-                "asset_name_translations": {
-                    "en": "Trello"
                 },
                 "type": "software"
             },
@@ -5022,9 +4799,6 @@
                 "instructions_translations": {
                     "en": "./interlinkers/externalsoftware/aac/instructions.md"
                 },
-                "asset_name_translations": {
-                    "en": "WSO2 Api manager"
-                },
                 "type": "software"
             },
             {
@@ -5080,9 +4854,6 @@
                 "asset_name_translations": {
                     "en": "Google charts"
                 },
-                "asset_name_translations": {
-                    "en": "W3C accessibility tools"
-                },
                 "type": "software"
             },
             {
@@ -5125,9 +4896,6 @@
                 "asset_name_translations": {
                     "en": "Mailchimp"
                 },
-                "asset_name_translations": {
-                    "en": "Doodle - polling software"
-                },
                 "type": "software"
             },
             {
@@ -5138,12 +4906,8 @@
                     "all"
                 ],
                 "problemprofiles": [
-<<<<<<< HEAD
-                    "BUILD_PROBLEM_3"
-=======
                     "BUILD_PROBLEM_2",
                     "BUILD_PROBLEM_1"
->>>>>>> 927dc371da53546ca7df5e5ea77d38447f82cbc9
                 ],
                 "types": [
                     "enabling_services;implementing_software_and_artifacts"
