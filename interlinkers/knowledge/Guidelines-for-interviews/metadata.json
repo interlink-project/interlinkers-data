@@ -1,0 +1,51 @@
+{
+    "languages": [
+        "en"
+    ],
+    "targets": [
+        "all"
+    ],
+    "problemprofiles": [
+        "ORG_PROBLEM_14",
+        "UND_PROBLEM_3"
+    ],
+    "types": [
+        "enhancing_services"
+    ],
+    "administrative_scopes": [
+        "eu"
+    ],
+    "domain": "",
+    "process": "",
+    "reference": "Guidelines-for-interviews",
+    "form": "document_template",
+    "format": "editable_source_document",
+    "softwareinterlinker": "googledrive",
+    "difficulty": "easy",
+    "licence": "public_domain",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/Guidelines-for-interviews/instructions.md"
+    },
+    "tags_translations": {
+        "en": [
+            "focus group",
+            "template",
+            "understand"
+        ]
+    },
+    "name_translations": {
+        "en": "Guidelines for interviews"
+    },
+    "description_translations": {
+        "en": "<p>Instructions on how to set up a research activity based on interviews, for a co-production project. </p>"
+    },
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "regulations_and_standards_translations": {
+        "en": ""
+    },
+    "file_translations": {
+        "en": "./interlinkers/knowledge/Guidelines-for-interviews/resource.docx"
+    }
+}
