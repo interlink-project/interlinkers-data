@@ -1,0 +1,50 @@
+{
+    "languages": [
+        "en"
+    ],
+    "targets": [
+        "all"
+    ],
+    "problemprofiles": [
+        "UND_PROBLEM_3"
+    ],
+    "types": [
+        "enhancing_services"
+    ],
+    "administrative_scopes": [
+        "eu"
+    ],
+    "domain": "",
+    "process": "",
+    "reference": "Guidelines-for-online-surveys",
+    "form": "document_template",
+    "format": "editable_source_document",
+    "softwareinterlinker": "googledrive",
+    "difficulty": "easy",
+    "licence": "public_domain",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/Guidelines-for-online-surveys/instructions.md"
+    },
+    "tags_translations": {
+        "en": [
+            "survey",
+            "template",
+            "understand"
+        ]
+    },
+    "name_translations": {
+        "en": "Guidelines for online-surveys"
+    },
+    "description_translations": {
+        "en": "<p>Instructions on how to set up a research activity based on online surveys, for a co-production project </p>"
+    },
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "regulations_and_standards_translations": {
+        "en": ""
+    },
+    "file_translations": {
+        "en": "./interlinkers/knowledge/Guidelines-for-online-surveys/resource.docx"
+    }
+}
