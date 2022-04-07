@@ -5,10 +5,15 @@
         "es": "Esquema por defecto"
     },
     "author": "",
-    "licence": "",
+    "licence": "permissive",
+    "tags_translations": {
+        "en": [
+            "default",
+            "coproduction"
+        ]
+    },
     "description_translations": {
         "en": "",
         "es": ""
-    },
-    "tags": ["default"]
+    }
 }

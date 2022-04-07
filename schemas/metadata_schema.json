@@ -14,11 +14,15 @@
             "title": "Reference",
             "type": "string"
         },
-        "tags": {
-            "title": "Tags",
-            "type": "array",
-            "items": {
-                "type": "string"
+        "tags_translations": {
+            "title": "Tags Translations",
+            "type": "object",
+            "additionalProperties": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                },
+                "minItems": 1
             }
         },
         "author": {
@@ -26,16 +30,29 @@
             "type": "string"
         },
         "licence": {
-            "title": "Licence",
-            "type": "string"
+            "$ref": "#/definitions/Licences"
         }
     },
     "required": [
         "name_translations",
         "description_translations",
         "reference",
-        "tags",
-        "author"
+        "tags_translations",
+        "author",
+        "licence"
     ],
-    "additionalProperties": false
+    "additionalProperties": false,
+    "definitions": {
+        "Licences": {
+            "title": "Licences",
+            "description": "An enumeration.",
+            "enum": [
+                "public_domain",
+                "permissive",
+                "copyleft",
+                "non_commercial",
+                "propietary"
+            ]
+        }
+    }
 }

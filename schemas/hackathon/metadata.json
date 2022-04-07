@@ -5,12 +5,15 @@
         "es": "Esquema para la creación de un Hackathon"
     },
     "author": "",
-    "licence": "",
     "description_translations": {
         "en": "",
         "es": ""
     },
-    "tags": [
-        "hackathon"
-    ]
+    "licence": "permissive",
+    "tags_translations": {
+        "en": [
+            "hackathon",
+            "coproduction"
+        ]
+    }
 }
