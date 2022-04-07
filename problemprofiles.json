@@ -643,5 +643,21 @@
           "en": "Enablers should provide guidance and tools on how to define suitable business models and effective business plans that would allow to put in practice the deviced business models.",
           "es": ""
       }
+  },
+  {
+      "id": "HACKATHON_PROBLEM_1",
+      "name_translations": {
+          "en": "Define a proposal of public service",
+          "es": ""
+      },
+      "description_translations": {
+          "en": "This problem addresses the need to be able to specify a new public service proposal to be considered for co-production.",
+          "es": ""
+      },
+      "functionality_translations": {
+          "en": "Enablers should provide guidance and tools on how to generate an adequate proposal of public service, compliant with standards, that would allow for these specifications to be realized.",
+          "es": ""
+      }
   }
+  
 ]
