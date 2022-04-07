@@ -56,7 +56,7 @@
                         "en": "Draft an initial description (or multiple optional descriptions) of the potential service: what it does, who benefits from the service, who helps delivering it. Use description templates to facilitate your task.",
                         "es": ""
                     },
-                    "problemprofiles": ["ORG_PROBLEM_8"]
+                    "problemprofiles": ["HACKATHON_PROBLEM_2"]
                 }
             ]
         },
