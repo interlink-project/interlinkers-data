@@ -3013,9 +3013,6 @@
                     "en": "Web-based tool for improving public service descriptions",
                     "es": "Herramienta basada en la web para mejorar descripciones de servicios p\u00fablicos"
                 },
-                "deployment_manual": "https://github.com/interlink-project/interlinker-service-augmenter",
-                "user_manual": "https://help.loomio.org/en/user_manual/",
-                "developer_manual": "https://github.com/loomio/loomio",
                 "supported_by": [
                     "on_premise"
                 ],
@@ -3109,9 +3106,6 @@
                     "en": "Web-based tool for collaborative decision making, discussion. and idea management",
                     "es": ""
                 },
-                "deployment_manual": "https://github.com/interlink-project/interlink-loomio",
-                "user_manual": "https://help.loomio.org/en/user_manual/",
-                "developer_manual": "https://github.com/loomio/loomio",
                 "supported_by": [
                     "on_premise"
                 ],
