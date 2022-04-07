@@ -658,6 +658,21 @@
           "en": "Enablers should provide guidance and tools on how to generate an adequate proposal of public service, compliant with standards, that would allow for these specifications to be realized.",
           "es": ""
       }
+  },
+  {
+      "id": "HACKATHON_PROBLEM_2",
+      "name_translations": {
+          "en": "Define the rules of a Hackathon or Contest",
+          "es": ""
+      },
+      "description_translations": {
+          "en": "This problem addresses the need to define the rules for a competition (hackathon, contest) where different teams may take part.",
+          "es": ""
+      },
+      "functionality_translations": {
+          "en": "Enablers should provide guidance and tools to help co-producers co-defining the rules of a given competition.",
+          "es": ""
+      }
   }
   
 ]
