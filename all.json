@@ -881,13 +881,7 @@
                                         "es": ""
                                     },
                                     "problemprofiles": [
-                                        "BUILD_PROBLEM_2",
-                                        "BUILD_PROBLEM_3",
-                                        "BUILD_PROBLEM_4",
-                                        "BUILD_PROBLEM_5",
-                                        "BUILD_PROBLEM_6",
-                                        "BUILD_PROBLEM_7",
-                                        "BUILD_PROBLEM_9"
+                                        "HACKATHON_PROBLEM_1"
                                     ],
                                     "prerequisites": [
                                         {
