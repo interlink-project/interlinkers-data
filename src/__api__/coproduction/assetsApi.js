@@ -6,12 +6,21 @@ class AssetsApi extends GeneralApi {
     super("coproduction/api/v1/assets");
   }
 
-  async create(task_id, softwareinterlinker_id, knowledgeinterlinker_id, external_asset_id) {
+  async create_internal(task_id, softwareinterlinker_id, knowledgeinterlinker_id, external_asset_id) {
     const res = await axiosInstance.post(`/${this.url}`, {
       task_id,
       softwareinterlinker_id,
       knowledgeinterlinker_id,
       external_asset_id
+    })
+    console.log('post call', res, res.data);
+    return res.data
+  }
+
+  async create_external(task_id, externalinterlinker_id) {
+    const res = await axiosInstance.post(`/${this.url}`, {
+      task_id,
+      externalinterlinker_id
     })
     console.log('post call', res, res.data);
     return res.data
@@ -23,10 +32,10 @@ class AssetsApi extends GeneralApi {
     return res.data
   }
 
-  async getExternal(id) {
+  async getInternal(id) {
     if (id) {
-      const res = await axiosInstance.get(`/${this.url}/external/${id}`)
-      console.log('get external call', res.data);
+      const res = await axiosInstance.get(`/${this.url}/internal/${id}`)
+      console.log('get internal call', res.data);
       return res.data
     }
   }

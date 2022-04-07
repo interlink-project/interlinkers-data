@@ -40,7 +40,7 @@ const AssetRow = ({ asset, onChange, actions, openInterlinkerDialog }) => {
 
   useEffect(() => {
     setLoading("info")
-    assetsApi.getExternal(asset.id).then((res) => {
+    assetsApi.getInternal(asset.id).then((res) => {
       if (mounted.current) {
         setData({ ...asset, ...res })
         setLoading("")

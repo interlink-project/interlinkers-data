@@ -219,7 +219,7 @@ export default function RelatedInterlinkersTable({ interlinker }) {
                                                 </Stack>
 
                                             </TableCell>
-                                            <TableCell><NatureChip nature={row.nature} /></TableCell>
+                                            <TableCell><NatureChip interlinker={row} /></TableCell>
                                             <TableCell>
                                                 <SafeHTMLElement data={row.description} />
                                             </TableCell>

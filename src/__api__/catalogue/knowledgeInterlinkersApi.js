@@ -12,14 +12,15 @@ class KnowledgeInterlinkersApi extends GeneralApi {
     console.log('post instantiate call', res, res.data);
     return res.data
   }
-
-  async getExternal(id) {
+/*
+  async getInternal(id) {
     if (id) {
-      const res = await axiosInstance.get(`/${this.url}/${id}/external`)
-      console.log('get external call', res.data);
+      const res = await axiosInstance.get(`/${this.url}/${id}/internal`)
+      console.log('get internal call', res.data);
       return res.data
     }
   }
+  */
 
 }
 

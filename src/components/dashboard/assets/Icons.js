@@ -21,6 +21,47 @@ export const statusText = (status) => status === "finished" ? "Finished" : statu
 
 export const statusIcon = (status) => status === "finished" ? <FinishedIcon /> : status === "in_progress" && <InProgressIcon />
 
-export const OfficialityChip = ({officiality = "official"}) => <Chip label={true ? "Official" : "Community"} color={true ? "success" : "warning"} size="small" />
 
-export const NatureChip = ({nature}) => <Chip label={nature === "softwareinterlinker" ? "Software" : "Knowledge"} color={nature === "softwareinterlinker" ? "primary" : "secondary"} size="small" />
+export const OfficialityChip = ({ officiality = "official" }) => {
+    let label = ""
+    let color = ""
+    switch (officiality) {
+        case 'official':
+            label = "Official"
+            color = "success"
+            break;
+
+        case 'community':
+            label = "Community"
+            color = "warning"
+            break;
+    }
+
+    return <Chip label={label} color={color} size="small" />
+}
+
+
+export const NatureChip = ({interlinker}) => {
+    let label = ""
+    let color = ""
+    if (interlinker.nature === 'softwareinterlinker') {
+        label = "Software"
+        color = "primary"
+
+    } else if (interlinker.nature === 'knowledgeinterlinker') {
+        label = "Knowledge"
+        color = "secondary"
+    }
+    else if (interlinker.nature === 'externalinterlinker') {
+        if (interlinker.type === "software") {
+            label = "External software"
+            color = "success"
+        } else {
+            label = "External knowledge"
+            color = "warning"
+        }
+
+    }
+
+    return <Chip label={label} color={color} size="small" />
+}

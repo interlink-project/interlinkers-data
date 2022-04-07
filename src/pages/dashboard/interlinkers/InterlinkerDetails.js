@@ -96,7 +96,7 @@ const InterlinkerDetails = ({ interlinker }) => {
                     >
                       Nature
                     </Typography>
-                    <NatureChip nature={interlinker.nature} />
+                    <NatureChip interlinker={interlinker} />
                     <Typography
                       color='textSecondary'
                       variant='overline'

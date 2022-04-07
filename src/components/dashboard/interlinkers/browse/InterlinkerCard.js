@@ -202,7 +202,7 @@ const InterlinkerCard = ({ interlinker, mode, onInterlinkerClick }) => {
             color='textPrimary'
             variant='subtitle2'
           >
-            <NatureChip nature={interlinker.nature} />
+            <NatureChip interlinker={interlinker} />
           </Typography>
         </Grid>
         <Grid item>

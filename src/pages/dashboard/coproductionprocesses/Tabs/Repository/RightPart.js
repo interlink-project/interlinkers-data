@@ -91,7 +91,7 @@ const RecommendedInterlinkerCard = ({ interlinker, assets, onClick }) => {
                 </Typography>
                 <CardActions sx={{ textAlign: "center" }}>
                     <Stack direction="column" justifyContent="center" spacing={1} sx={{ textAlign: "center" }}>
-                        <NatureChip nature={interlinker.nature} />
+                        <NatureChip interlinker={interlinker} />
                         <Rating readOnly value={interlinker.rating} size="small" />
                     </Stack>
 

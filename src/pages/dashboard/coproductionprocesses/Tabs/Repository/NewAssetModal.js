@@ -43,9 +43,9 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
 
     // if software interlinker, helper bools
     const isSoftware = selectedInterlinker.nature === "softwareinterlinker"
-    const isKnowledge = !isSoftware
-    const is_internally_integrated_softwareinterlinker = isSoftware && selectedInterlinker.integration && selectedInterlinker.integration.type === "internalintegration"
-    const can_open_in_modal = isSoftware && is_internally_integrated_softwareinterlinker && selectedInterlinker.integration.open_in_modal
+    const isKnowledge = selectedInterlinker.nature === "knowledgeinterlinker"
+    const isExternal = selectedInterlinker.nature === "externalinterlinker"
+    const can_open_in_modal = isSoftware && selectedInterlinker.integration.open_in_modal
 
     // if knowledgeinterlinker is previewable
     const previewable = isKnowledge && selectedInterlinker.softwareinterlinker.integration && selectedInterlinker.softwareinterlinker.integration.preview
@@ -56,8 +56,8 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
         setOpen(false);
         setTimeout(() => {
             setActiveStep(0)
-          }, 1000)
-        
+        }, 1000)
+
     };
 
     const setActiveStep = async (i) => {
@@ -69,21 +69,24 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
         if (i === 1) {
             if (isSoftware) {
                 setStep(1)
-                if (is_internally_integrated_softwareinterlinker) {
-                    if (can_open_in_modal) {
-                        setLoadingInstantiator(true)
-                    }
+                if (can_open_in_modal) {
+                    setLoadingInstantiator(true)
                 }
+
             }
-            else {
+            else if(isKnowledge) {
                 // if knowledgeinterlinker
                 setLoadingKnowledgeInstantiation(true)
                 const interlinker_asset = await knowledgeInterlinkersApi.instantiate(selectedInterlinker.id)
-                const coproduction_asset = await onAssetCreate(interlinker_asset, selectedInterlinker.softwareinterlinker_id, selectedInterlinker.id)
+                const coproduction_asset = await onInternalAssetCreate(interlinker_asset, selectedInterlinker.softwareinterlinker_id, selectedInterlinker.id)
                 setLoadingKnowledgeInstantiation(false)
 
                 // TODO: if fails
                 onFinish({ ...coproduction_asset, ...interlinker_asset })
+            }
+            else{
+                const interlinker_asset = await knowledgeInterlinkersApi.instantiate(selectedInterlinker.id)
+                onFinish({ ...interlinker_asset })
             }
         } else {
             setStep(i)
@@ -91,7 +94,7 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
 
     }
 
-    const onAssetCreate = async (data, softwareinterlinker_id, knowledgeinterlinker_id) => await assetsApi.create(
+    const onInternalAssetCreate = async (data, softwareinterlinker_id, knowledgeinterlinker_id) => await assetsApi.create_internal(
         task.id,
         softwareinterlinker_id,
         knowledgeinterlinker_id,
@@ -116,9 +119,9 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
         }
         if (code === "asset_created") {
             //task_id, interlinker_id, external_asset_id
-            const coproduction_asset = await onAssetCreate(message, selectedInterlinker.id, null)
+            const coproduction_asset = await onInternalAssetCreate(message, selectedInterlinker.id, null)
             // TODO: if fails
-            const interlinker_asset = await assetsApi.getExternal(coproduction_asset.id)
+            const interlinker_asset = await assetsApi.getInternal(coproduction_asset.id)
             onFinish({ ...coproduction_asset, ...interlinker_asset })
         }
     }
@@ -129,23 +132,22 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
         if (activeStep === 1) {
 
             if (isSoftware) {
-                if (is_internally_integrated_softwareinterlinker) {
-                    // Initiate listeners if is an internally integrated software interlinker
-                    if (window.addEventListener) {  // all browsers except IE before version 9
-                        window.addEventListener("message", onMessage, false);
-                    }
-                    else if (window.attachEvent) {
-                        window.attachEvent("onmessage", onMessage, false);
-                    }
-
-                    // if cannot be opened in a modal, open a window
-                    if (!can_open_in_modal) {
-                        window.open(`${selectedInterlinker.backend}/instantiate`)
-                    }
-                } else {
-                    // external software solution, so redirect to it
-                    window.open(`${selectedInterlinker.integration.redirection}`)
+                // Initiate listeners if is an internally integrated software interlinker
+                if (window.addEventListener) {  // all browsers except IE before version 9
+                    window.addEventListener("message", onMessage, false);
                 }
+                else if (window.attachEvent) {
+                    window.attachEvent("onmessage", onMessage, false);
+                }
+
+                // if cannot be opened in a modal, open a window
+                if (!can_open_in_modal) {
+                    window.open(`${selectedInterlinker.backend}/instantiate`)
+                }
+
+            }
+            if (isExternal) {
+                window.open(selectedInterlinker.uri)
             }
         }
 
@@ -281,7 +283,7 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
                     {selectedInterlinker.softwareinterlinker.integration.preview_text} (it will be not related to project, for features exploration)
                 </Button>}
                 {downloadable && <Button startIcon={<Download />} sx={{ my: 2, mx: 4 }} autoFocus variant="outlined" color="warning" onClick={() => window.open(selectedInterlinker.link + "/download", "_blank")}>
-                Download locally as resource not related to project (for features exploration)
+                    Download locally as resource not related to project (for features exploration)
                 </Button>}
                 {instantiatable && <LoadingButton loading={loadingKnowledgeInstantiation} startIcon={<DoubleArrow />} sx={{ my: 2, mx: 4 }} autoFocus variant="contained" onClick={() => setActiveStep(1)}>
                     Instantiate as resource to use in project
