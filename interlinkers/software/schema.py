@@ -21,10 +21,6 @@ class AuthMethods(Enum):
     header = "header"
     cookie = "cookie"
 
-class IntegrationTypes(Enum):
-    internal = "internalintegration"
-    external = "externalintegration"
-
 class Capabilities(BaseModel):
     instantiate: bool
     view: bool
@@ -44,7 +40,6 @@ class CapabilitiesTranslations(BaseModel):
     preview_text_translations: Optional[Dict[str, str]]
 
 class InternalIntegration(BaseModel):
-    type: IntegrationTypes
     service_name: str
     domain: str
     path: str
@@ -53,11 +48,6 @@ class InternalIntegration(BaseModel):
     capabilities: Capabilities
     capabilities_translations: CapabilitiesTranslations
     auth_method: AuthMethods
-
-class ExternalIntegration(BaseModel):
-    type: IntegrationTypes
-    redirection: str
-    result: Optional[str]
 
 class Schema(InterlinkerSchema):
     logotype: Optional[FilePath]
@@ -71,7 +61,7 @@ class Schema(InterlinkerSchema):
     supports_internationalization: bool
     is_responsive: bool
 
-    integration: Union[InternalIntegration, ExternalIntegration]
+    integration: InternalIntegration
 
     # INTERLINKER SPECIFIC
     difficulty: Difficulties

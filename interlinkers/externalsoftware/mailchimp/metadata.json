@@ -1,0 +1,41 @@
+{
+    "languages": [
+        "en",
+        "es"
+    ],
+    "name_translations": {
+        "en": "Mailchimp"
+    },
+    "description_translations": {
+        "en": "<p>Marketing automation platform and email marketing service[6] for managing mailing lists and creating email marketing campaigns to send to customers.</p>"
+    },
+    "tags_translations": {
+        "en": [
+            "marketing",
+            "newsletter",
+            "email"
+        ]
+    },
+    "difficulty": "easy",
+    "licence": "propietary",
+    "problemprofiles": [
+        "ORG_PROBLEM_4"
+    ],
+    "constraints_and_limitations_translations": {
+        "en": "none"
+    },
+    "regulations_and_standards_translations": {
+        "en": "none"
+    },
+    "logotype": "./interlinkers/externalsoftware/mailchimp/logo.png",
+    "reference": "email-marketing",
+    "uri_translations": {
+        "en": "https://mailchimp.com/es/"
+    },
+    "instructions_translations": {
+        "en": "./interlinkers/externalsoftware/mailchimp/instructions.md"
+    },
+    "asset_name_translations": {
+        "en": "Mailchimp"
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "languages": [
+        "en"
+    ],
+    "targets": [
+        "all"
+    ],
+    "problemprofiles": [
+        "BUILD_PROBLEM_3"
+    ],
+    "types": [
+        "enabling_services",
+        "enabling_services;implementing_software_and_artifacts"
+    ],
+    "administrative_scopes": [
+        "national",
+        "local"
+    ],
+    "reference": "cloud-enablement-kit-in-italian",
+    "form": "guidelines",
+    "format": "pdf",
+    "difficulty": "difficult",
+    "licence": "permissive",
+    "instructions_translations": {
+        "en": "./interlinkers/externalknowledge/it-cloud-enablement-kit/instructions.md"
+    },
+    "tags_translations": {
+        "en": [
+            "cloud",
+            "services",
+            "security"
+        ]
+    },
+    "name_translations": {
+        "en": "Cloud Enablement Kit (in Italian)"
+    },
+    "description_translations": {
+        "en": "<p>This resource describes the Cloud Enablement strategy outlined by AGID and Team Digitale (in Italian). </p>"
+    },
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "regulations_and_standards_translations": {
+        "en": ""
+    },
+    "asset_name_translations": {
+        "en": "Cloud Enablement Kit"
+    },
+    "uri_translations": {
+        "en": "https://www.agid.gov.it/sites/default/files/repository_files/manuale_di_abilitazione_al_cloud_11pt_id2.pdf"
+    }
+}

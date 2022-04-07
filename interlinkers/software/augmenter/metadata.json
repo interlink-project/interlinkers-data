@@ -1,4 +1,7 @@
 {
+    "languages": [
+        "en"
+    ],
     "name_translations": {
         "en": "Augmenter",
         "es": "Augmenter"
@@ -47,7 +50,6 @@
     "supports_internationalization": true,
     "is_responsive": true,
     "integration": {
-        "type": "internalintegration",
         "domain": "",
         "path": "servicepedia",
         "service_name": "servicepedia",
@@ -77,8 +79,6 @@
                 "en": "Delete una description of Augmenter",
                 "es": "Eliminar una descripción del Augmenter"
             }
-
-
         }
     },
     "logotype": "./interlinkers/software/augmenter/logo.png",
@@ -90,5 +90,8 @@
             "improve descriptions",
             "public service descriptions"
         ]
+    },
+    "instructions_translations": {
+        "en": "./interlinkers/software/augmenter/instructions.md"
     }
 }

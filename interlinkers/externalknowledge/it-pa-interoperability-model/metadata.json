@@ -1,0 +1,55 @@
+{
+    "languages": [
+        "en"
+    ],
+    "targets": [
+        "all"
+    ],
+    "problemprofiles": [
+        "BUILD_PROBLEM_3"
+    ],
+    "types": [
+        "enabling_services",
+        "enabling_services;implementing_software_and_artifacts"
+    ],
+    "administrative_scopes": [
+        "national",
+        "local"
+    ],
+    "reference": "italian-pa-interoperablity-model",
+    "form": "guidelines",
+    "format": "structured_format",
+    "difficulty": "difficult",
+    "licence": "permissive",
+    "instructions_translations": {
+        "en": "./interlinkers/externalknowledge/it-guidelines-data-protection/instructions.md"
+    },
+    "tags_translations": {
+        "en": [
+            "open source",
+            "software",
+            "interoperability",
+            "public administration",
+            "reuse",
+            "acquisition"
+        ]
+    },
+    "name_translations": {
+        "en": "Italian PA interoperablity model "
+    },
+    "description_translations": {
+        "en": "<p>This resource describes the guidelines for technical interoperability for PA and related operational documents: interaction patterns, interoperability profiles, implementation recommendations (in Italian). </p>"
+    },
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "regulations_and_standards_translations": {
+        "en": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en"
+    },
+    "asset_name_translations": {
+        "en": "Guidelines for technical interoperability for PA and related operational documents"
+    },
+    "uri_translations": {
+        "en": "https://www.agid.gov.it/it/infrastrutture/sistema-pubblico-connettivita/il-nuovo-modello-interoperabilita"
+    }
+}

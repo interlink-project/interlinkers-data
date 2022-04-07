@@ -1,4 +1,7 @@
 {
+    "languages": [
+        "en"
+    ],
     "name_translations": {
         "en": "Survey editor",
         "es": ""
@@ -24,7 +27,6 @@
     "supports_internationalization": true,
     "is_responsive": true,
     "integration": {
-        "type": "internalintegration",
         "domain": "",
         "path": "surveyeditor",
         "service_name": "surveyeditor",
@@ -74,5 +76,8 @@
             "poll",
             "vote"
         ]
+    },
+    "instructions_translations": {
+        "en": "./interlinkers/software/survey-editor/instructions.md"
     }
 }

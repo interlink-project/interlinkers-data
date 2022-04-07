@@ -1,4 +1,7 @@
 {
+    "languages": [
+        "en"
+    ],
     "name_translations": {
         "en": "Loomio",
         "es": ""
@@ -46,7 +49,6 @@
     "supports_internationalization": true,
     "is_responsive": true,
     "integration": {
-        "type": "internalintegration",
         "domain": "",
         "path": "loomio",
         "service_name": "loomio",
@@ -86,5 +88,8 @@
             "idea management",
             "voting"
         ]
+    },
+    "instructions_translations": {
+        "en": "./interlinkers/software/loomio/instructions.md"
     }
 }

@@ -1,0 +1,53 @@
+{
+    "languages": [
+        "en",
+        "es"
+    ],
+    "name_translations": {
+        "en": "Trello"
+    },
+    "description_translations": {
+        "en": "<p>Trello is a collaboration tool that organizes your projects into boards. In one glance, Trello tells you what's being worked on, who's working on what, and where something is in a process.</p>"
+    },
+    "tags_translations": {
+        "en": [
+            "project management",
+            "task management",
+            "team working"
+        ]
+    },
+    "difficulty": "easy",
+    "targets": [
+        "all"
+    ],
+    "licence": "propietary",
+    "problemprofiles": [
+        "ORG_PROBLEM_2"
+    ],
+    "types": [
+        "enabling_services",
+        "enhancing_services"
+    ],
+    "administrative_scopes": [
+        "eu",
+        "national",
+        "local"
+    ],
+    "constraints_and_limitations_translations": {
+        "en": "None"
+    },
+    "regulations_and_standards_translations": {
+        "en": "None"
+    },
+    "logotype": "./interlinkers/externalsoftware/trello/logo.png",
+    "reference": "project-management",
+    "uri_translations": {
+        "en": "https://trello.com/es"
+    },
+    "instructions_translations": {
+        "en": "./interlinkers/externalsoftware/trello/instructions.md"
+    },
+    "asset_name_translations": {
+        "en": "Trello"
+    }
+}

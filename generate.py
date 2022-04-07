@@ -8,7 +8,8 @@ dicts = {
     "schemas": [],
     "interlinkers": {
         "software": [],
-        "knowledge": []
+        "knowledge": [],
+        "external": []
     }
 }
 
@@ -65,6 +66,18 @@ for interlinker_metadata_path in Path("./interlinkers/software").glob("**/metada
     with open(str(interlinker_metadata_path)) as json_file:
         interlinker_metadata = json.load(json_file)
         dicts["interlinkers"]["software"].append(interlinker_metadata)
+
+for interlinker_metadata_path in Path("./interlinkers/externalsoftware").glob("**/metadata.json"):
+    with open(str(interlinker_metadata_path)) as json_file:
+        interlinker_metadata = json.load(json_file)
+        interlinker_metadata["type"] = "software"
+        dicts["interlinkers"]["external"].append(interlinker_metadata)
+
+for interlinker_metadata_path in Path("./interlinkers/externalknowledge").glob("**/metadata.json"):
+    with open(str(interlinker_metadata_path)) as json_file:
+        interlinker_metadata = json.load(json_file)
+        interlinker_metadata["type"] = "knowledge"
+        dicts["interlinkers"]["external"].append(interlinker_metadata)
 
 with open(f"all.json", "w") as f:
     json.dump(dicts, f, indent=4)

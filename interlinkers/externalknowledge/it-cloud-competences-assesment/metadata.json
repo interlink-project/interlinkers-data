@@ -1,0 +1,52 @@
+{
+    "languages": [
+        "en"
+    ],
+    "targets": [
+        "all"
+    ],
+    "problemprofiles": [
+        "BUILD_PROBLEM_3"
+    ],
+    "types": [
+        "enabling_services",
+        "enabling_services;implementing_software_and_artifacts"
+    ],
+    "administrative_scopes": [
+        "national",
+        "local"
+    ],
+    "reference": "agid-cloud-computing-competence-evalution-template",
+    "form": "guidelines",
+    "format": "editable_source_document",
+    "difficulty": "medium",
+    "licence": "permissive",
+    "instructions_translations": {
+        "en": "./interlinkers/externalknowledge/it-cloud-competences-assesment/instructions.md"
+    },
+    "tags_translations": {
+        "en": [
+            "cloud",
+            "services",
+            "security"
+        ]
+    },
+    "name_translations": {
+        "en": "AgID Cloud computing competence evalution template"
+    },
+    "description_translations": {
+        "en": "<p>This resource contains a questionnaire to check the level of knowledge and competence in cloud computing </p>"
+    },
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "regulations_and_standards_translations": {
+        "en": ""
+    },
+    "asset_name_translations": {
+        "en": "gID Cloud computing competence evalution template"
+    },
+    "uri_translations": {
+        "en": "https://docs.google.com/spreadsheets/d/1_5aEEDg4TGDEJB8EM5ZQqb6XgGtCxISLRFa_-l2BscU/edit#gid=829270166"
+    }
+}

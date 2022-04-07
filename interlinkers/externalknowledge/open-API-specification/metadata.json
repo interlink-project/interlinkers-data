@@ -1,0 +1,53 @@
+{
+  "languages": [
+    "en"
+  ],
+  "name_translations": {
+    "en": "Open API specification"
+  },
+  "description_translations": {
+    "en": "<p>A RFC document which specifyes the open API.</p>"
+  },
+  "tags_translations": {
+    "en": [
+      "OPEN API",
+      "SERVICE"
+    ]
+  },
+  "difficulty": "medium",
+  "targets": [
+    "all;pas",
+    "all;businesses",
+    "all;research_organizations"
+  ],
+  "licence": "public_domain",
+  "problemprofiles": [
+    "BUILD_PROBLEM_2"
+  ],
+  "types": [
+    "enabling_services"
+  ],
+  "administrative_scopes": [
+    "eu",
+    "national",
+    "local"
+  ],
+  "constraints_and_limitations_translations": {
+    "en": "No special constraints apply"
+  },
+  "regulations_and_standards_translations": {
+    "en": ""
+  },
+  "reference": "",
+  "form": "guidelines",
+  "instructions_translations": {
+    "en": "./interlinkers/externalknowledge/it-pa-minimum-security-measures/instructions.md"
+  },
+  "format": "structured_format",
+  "asset_name_translations": {
+    "en": "Open API specification"
+  },
+  "uri_translations": {
+    "en": "https://spec.openapis.org/oas/latest.html"
+  }
+}

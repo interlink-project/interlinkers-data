@@ -1,0 +1,52 @@
+{
+  "languages": [
+    "en",
+    "es"
+  ],
+  "name_translations": {
+    "en": "Markup Validation Service"
+  },
+  "description_translations": {
+    "en": "<p>This validator checks the markup validity of Web documents in HTML, XHTML, SMIL, MathML, etc.</p>"
+  },
+  "tags_translations": {
+    "en": [
+      "HTML",
+      "XHTML",
+      "SMIL",
+      "MathML"
+    ]
+  },
+  "difficulty": "easy",
+  "targets": [
+    "all"
+  ],
+  "licence": "propietary",
+  "problemprofiles": [
+    "BUILD_PROBLEM_2"
+  ],
+  "types": [
+    "enabling_services"
+  ],
+  "administrative_scopes": [
+    "eu",
+    "national",
+    "local"
+  ],
+  "constraints_and_limitations_translations": {
+    "en": "None"
+  },
+  "regulations_and_standards_translations": {
+    "en": "None"
+  },
+  "reference": "html-tools",
+  "uri_translations": {
+    "en": "https://validator.w3.org/about.html"
+  },
+  "instructions_translations": {
+    "en": "./interlinkers/externalsoftware/w3c-markup-language-validator/instructions.md"
+  },
+  "asset_name_translations": {
+    "en": "W3C Markup language validator"
+  }
+}

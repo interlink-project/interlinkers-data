@@ -1,9 +1,38 @@
 from enum import Enum
-from typing import Dict, List, Optional
-from pydantic import BaseModel, conlist, Extra, validator
+from typing import Dict, List, Optional, Union
+
 from problemprofiles import WithProblemProfiles
+from pydantic import BaseModel, Extra, FilePath, HttpUrl, conlist, validator
 
 # https://docs.google.com/spreadsheets/d/1tJ2BfX4EOdbBqEbrJWg8a3MENw13vYiPZM_S4wWWgWQ/edit#gid=0
+
+
+class Languages(Enum):
+    es = "es"
+    en = "en"
+    lv = "lv"
+    it = "it"
+
+
+class FormTypes(Enum):
+    software = "software"
+    visual_template = "visual_template"
+    document_template = "document_template"
+    canvas = "canvas"
+    best_practices = "best_practices"
+    guidelines = "guidelines"
+    checklist = "checklist"
+    survey_template = "survey_template"
+    legal_agreement_template = "legal_agreement_template"
+    other = "other"
+
+
+class Formats(Enum):
+    pdf = "pdf"
+    editable_source_document = "editable_source_document"
+    open_document = "open_document"
+    structured_format = "structured_format"
+    software = "sofware"
 
 
 class Difficulties(Enum):
@@ -61,6 +90,7 @@ class AdministrativeScopes(Enum):
 
 
 class InterlinkerSchema(WithProblemProfiles, extra=Extra.forbid):
+    languages: list
     name_translations: dict
     # FOR 1
     # A name for the INTERLINKER.
@@ -144,3 +174,18 @@ class InterlinkerSchema(WithProblemProfiles, extra=Extra.forbid):
     # FOR 2
     # Explanation of what is made available for user interaction.
     reference: str
+
+
+    form: Optional[FormTypes]
+    # FOR 1
+    # Type of knowledge INTERLINKER: e.g., visual template, document template, canvas, best practices, guidelines, checklist, survey template, legal agreement template
+    # This input will be:
+    # - Shown on the platform interface in the page showing the details of the INTERLINKER
+
+    format: Optional[Formats]
+    # FOR 1 // COULD BE INFERED
+    # Type of the format used to encode the knowledge of the INTERLINKER
+    # This input will be:
+    # - Shown on the platform interface in the page showing the details of the INTERLINKER
+    
+    instructions_translations:  Dict[str,  Union[HttpUrl, FilePath]]

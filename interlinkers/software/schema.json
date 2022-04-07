@@ -9,6 +9,11 @@
                 "type": "string"
             }
         },
+        "languages": {
+            "title": "Languages",
+            "type": "array",
+            "items": {}
+        },
         "name_translations": {
             "title": "Name Translations",
             "type": "object"
@@ -76,6 +81,30 @@
             "title": "Reference",
             "type": "string"
         },
+        "form": {
+            "$ref": "#/definitions/FormTypes"
+        },
+        "format": {
+            "$ref": "#/definitions/Formats"
+        },
+        "instructions_translations": {
+            "title": "Instructions Translations",
+            "type": "object",
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 2083,
+                        "format": "uri"
+                    },
+                    {
+                        "type": "string",
+                        "format": "file-path"
+                    }
+                ]
+            }
+        },
         "logotype": {
             "title": "Logotype",
             "format": "file-path",
@@ -141,19 +170,12 @@
             "type": "boolean"
         },
         "integration": {
-            "title": "Integration",
-            "anyOf": [
-                {
-                    "$ref": "#/definitions/InternalIntegration"
-                },
-                {
-                    "$ref": "#/definitions/ExternalIntegration"
-                }
-            ]
+            "$ref": "#/definitions/InternalIntegration"
         }
     },
     "required": [
         "problemprofiles",
+        "languages",
         "name_translations",
         "description_translations",
         "constraints_and_limitations_translations",
@@ -161,6 +183,7 @@
         "difficulty",
         "licence",
         "reference",
+        "instructions_translations",
         "supported_by",
         "supports_internationalization",
         "is_responsive",
@@ -233,6 +256,33 @@
                 "local"
             ]
         },
+        "FormTypes": {
+            "title": "FormTypes",
+            "description": "An enumeration.",
+            "enum": [
+                "software",
+                "visual_template",
+                "document_template",
+                "canvas",
+                "best_practices",
+                "guidelines",
+                "checklist",
+                "survey_template",
+                "legal_agreement_template",
+                "other"
+            ]
+        },
+        "Formats": {
+            "title": "Formats",
+            "description": "An enumeration.",
+            "enum": [
+                "pdf",
+                "editable_source_document",
+                "open_document",
+                "structured_format",
+                "sofware"
+            ]
+        },
         "Supporters": {
             "title": "Supporters",
             "description": "An enumeration.",
@@ -240,14 +290,6 @@
                 "saas",
                 "on_premise",
                 "installed_app"
-            ]
-        },
-        "IntegrationTypes": {
-            "title": "IntegrationTypes",
-            "description": "An enumeration.",
-            "enum": [
-                "internalintegration",
-                "externalintegration"
             ]
         },
         "Capabilities": {
@@ -358,9 +400,6 @@
             "title": "InternalIntegration",
             "type": "object",
             "properties": {
-                "type": {
-                    "$ref": "#/definitions/IntegrationTypes"
-                },
                 "service_name": {
                     "title": "Service Name",
                     "type": "string"
@@ -392,7 +431,6 @@
                 }
             },
             "required": [
-                "type",
                 "service_name",
                 "domain",
                 "path",
@@ -401,27 +439,6 @@
                 "capabilities",
                 "capabilities_translations",
                 "auth_method"
-            ]
-        },
-        "ExternalIntegration": {
-            "title": "ExternalIntegration",
-            "type": "object",
-            "properties": {
-                "type": {
-                    "$ref": "#/definitions/IntegrationTypes"
-                },
-                "redirection": {
-                    "title": "Redirection",
-                    "type": "string"
-                },
-                "result": {
-                    "title": "Result",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "type",
-                "redirection"
             ]
         }
     }

@@ -1,0 +1,51 @@
+{
+    "languages": [
+        "en",
+        "es"
+    ],
+    "name_translations": {
+        "en": "Accessibility Tools"
+    },
+    "description_translations": {
+        "en": "<p>Web accessibility evaluation tools are software programs or online services that help you determine if web content meets accessibility guidelines. This page provides a list of evaluation tools that you can filter to find ones that match your particular needs.</p>"
+    },
+    "tags_translations": {
+        "en": [
+            "ACCESSIBILITY",
+            "HTML5",
+            "CSS"
+        ]
+    },
+    "difficulty": "easy",
+    "targets": [
+        "all"
+    ],
+    "licence": "propietary",
+    "problemprofiles": [
+        "BUILD_PROBLEM_2"
+    ],
+    "types": [
+        "enabling_services"
+    ],
+    "administrative_scopes": [
+        "eu",
+        "national",
+        "local"
+    ],
+    "constraints_and_limitations_translations": {
+        "en": "None"
+    },
+    "regulations_and_standards_translations": {
+        "en": "None"
+    },
+    "reference": "html-tools",
+    "uri_translations": {
+        "en": "https://www.w3.org/WAI/ER/tools/"
+    },
+    "instructions_translations": {
+        "en": "./interlinkers/externalsoftware/w3c-accessibility-tools/instructions.md"
+    },
+    "asset_name_translations": {
+        "en": "W3C accessibility tools"
+    }
+}

@@ -1,4 +1,7 @@
 {
+    "languages": [
+        "en"
+    ],
     "name_translations": {
         "en": "Collaborative editor",
         "es": ""
@@ -24,7 +27,6 @@
     "supports_internationalization": true,
     "is_responsive": true,
     "integration": {
-        "type": "internalintegration",
         "domain": "",
         "path": "ceditor",
         "service_name": "ceditor",
@@ -69,5 +71,8 @@
             "editor",
             "etherpad"
         ]
+    },
+    "instructions_translations": {
+        "en": "./interlinkers/software/ceditor/instructions.md"
     }
 }

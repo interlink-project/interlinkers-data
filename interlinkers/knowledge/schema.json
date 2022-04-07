@@ -9,6 +9,11 @@
                 "type": "string"
             }
         },
+        "languages": {
+            "title": "Languages",
+            "type": "array",
+            "items": {}
+        },
         "name_translations": {
             "title": "Name Translations",
             "type": "object"
@@ -76,6 +81,12 @@
             "title": "Reference",
             "type": "string"
         },
+        "form": {
+            "$ref": "#/definitions/FormTypes"
+        },
+        "format": {
+            "$ref": "#/definitions/Formats"
+        },
         "instructions_translations": {
             "title": "Instructions Translations",
             "type": "object",
@@ -94,12 +105,6 @@
                 ]
             }
         },
-        "form": {
-            "$ref": "#/definitions/FormTypes"
-        },
-        "format": {
-            "$ref": "#/definitions/Formats"
-        },
         "softwareinterlinker": {
             "$ref": "#/definitions/SoftwareInterlinkers"
         },
@@ -114,6 +119,7 @@
     },
     "required": [
         "problemprofiles",
+        "languages",
         "name_translations",
         "description_translations",
         "constraints_and_limitations_translations",
@@ -122,8 +128,6 @@
         "licence",
         "reference",
         "instructions_translations",
-        "form",
-        "format",
         "softwareinterlinker",
         "file_translations"
     ],
@@ -198,6 +202,7 @@
             "title": "FormTypes",
             "description": "An enumeration.",
             "enum": [
+                "software",
                 "visual_template",
                 "document_template",
                 "canvas",
@@ -216,7 +221,8 @@
                 "pdf",
                 "editable_source_document",
                 "open_document",
-                "structured_format"
+                "structured_format",
+                "sofware"
             ]
         },
         "SoftwareInterlinkers": {
