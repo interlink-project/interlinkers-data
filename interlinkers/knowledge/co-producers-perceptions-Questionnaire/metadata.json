@@ -1,0 +1,50 @@
+{
+    "languages": [
+        "en"
+    ],
+    "targets": [
+        "all"
+    ],
+    "problemprofiles": [
+        "UND_PROBLEM_3"
+    ],
+    "types": [
+        "enhancing_services"
+    ],
+    "administrative_scopes": [
+        "eu"
+    ],
+    "domain": "",
+    "process": "",
+    "reference": "co-producers-perceptions-Questionnaire",
+    "form": "document_template",
+    "format": "editable_source_document",
+    "softwareinterlinker": "googledrive",
+    "difficulty": "easy",
+    "licence": "public_domain",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/co-producers-perceptions-Questionnaire/instructions.md"
+    },
+    "tags_translations": {
+        "en": [
+            "product specification",
+            "template",
+            "understand"
+        ]
+    },
+    "name_translations": {
+        "en": "Guidelines for surveys"
+    },
+    "description_translations": {
+        "en": "<p>This is a model of a questionnaire aimed to measure co-producer's perceptions on user-based quality, value-based quality, trust and acceptance. This questionnaire is thought to be answered by those who take part in the co-production of a public service or reuse artefacts (public services & INTERLINKERs) made available through INTERLINK co-production tools (Collaborative Environment and Catalogue).</p>"
+    },
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "regulations_and_standards_translations": {
+        "en": ""
+    },
+    "file_translations": {
+        "en": "./interlinkers/knowledge/co-producers-perceptions-Questionnaire/resource.pdf"
+    }
+}
