@@ -1,0 +1,51 @@
+{
+    "languages": [
+        "en"
+    ],
+    "targets": [
+        "all"
+    ],
+    "problemprofiles": [
+        "UND_PROBLEM_3",
+        "ORG_PROBLEM_13"
+    ],
+    "types": [
+        "enhancing_services"
+    ],
+    "administrative_scopes": [
+        "eu"
+    ],
+    "domain": "",
+    "process": "",
+    "reference": "Demographic and activity satisfaction questionnaire",
+    "form": "survey_template",
+    "format": "pdf",
+    "softwareinterlinker": "googledrive",
+    "difficulty": "easy",
+    "licence": "public_domain",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/Demographic-activity-satisfaction-questionnaire/instructions.md"
+    },
+    "tags_translations": {
+        "en": [
+            "product specification",
+            "testing",
+            "usability"
+        ]
+    },
+    "name_translations": {
+        "en": "Demographic and activity satisfaction questionnaire"
+    },
+    "description_translations": {
+        "en": "<p>This is a model of a questionnaire aimed to collect demographics and activity satisfaction scores from participants to project events and activities.</p>"
+    },
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "regulations_and_standards_translations": {
+        "en": ""
+    },
+    "file_translations": {
+        "en": "./interlinkers/knowledge/Demographic-activity-satisfaction-questionnaire/resource.pdf"
+    }
+}
