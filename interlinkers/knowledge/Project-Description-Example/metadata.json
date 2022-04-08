@@ -1,0 +1,55 @@
+{
+    "languages": [
+        "en"
+    ],
+    "targets": [
+        "all"
+    ],
+    "problemprofiles": [
+        "DEF_PROBLEM_1",
+        "ORG_PROBLEM_1",
+        "ORG_PROBLEM_2",
+        "ORG_PROBLEM_10",
+        "DEF_PROBLEM_1"
+    ],
+    "types": [
+        "enhancing_services"
+    ],
+    "administrative_scopes": [
+        "eu"
+    ],
+    "domain": "",
+    "process": "",
+    "reference": "Project description example",
+    "form": "document_template",
+    "format": "editable_source_document",
+    "softwareinterlinker": "googledrive",
+    "difficulty": "easy",
+    "licence": "public_domain",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/Project-Description-Example/instructions.md"
+    },
+    "tags_translations": {
+        "en": [
+            "product specification",
+            "template",
+            "example",
+            "description of project"
+        ]
+    },
+    "name_translations": {
+        "en": "Project description example"
+    },
+    "description_translations": {
+        "en": "<p>Example of project description that synthetically summarizes the goals and major aspects of a co-production initiative.  </p>"
+    },
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "regulations_and_standards_translations": {
+        "en": ""
+    },
+    "file_translations": {
+        "en": "./interlinkers/knowledge/Project-Description-Example/resource.docx"
+    }
+}
