@@ -3392,6 +3392,57 @@
                     "all"
                 ],
                 "problemprofiles": [
+                    "UND_PROBLEM_3",
+                    "ORG_PROBLEM_13"
+                ],
+                "types": [
+                    "enhancing_services"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "domain": "",
+                "process": "",
+                "reference": "Demographic and activity satisfaction questionnaire",
+                "form": "survey_template",
+                "format": "pdf",
+                "softwareinterlinker": "googledrive",
+                "difficulty": "easy",
+                "licence": "public_domain",
+                "instructions_translations": {
+                    "en": "./interlinkers/knowledge/Demographic-activity-satisfaction-questionnaire/instructions.md"
+                },
+                "tags_translations": {
+                    "en": [
+                        "product specification",
+                        "testing",
+                        "usability"
+                    ]
+                },
+                "name_translations": {
+                    "en": "Demographic and activity satisfaction questionnaire"
+                },
+                "description_translations": {
+                    "en": "<p>This is a model of a questionnaire aimed to collect demographics and activity satisfaction scores from participants to project events and activities.</p>"
+                },
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "regulations_and_standards_translations": {
+                    "en": ""
+                },
+                "file_translations": {
+                    "en": "./interlinkers/knowledge/Demographic-activity-satisfaction-questionnaire/resource.pdf"
+                }
+            },
+            {
+                "languages": [
+                    "en"
+                ],
+                "targets": [
+                    "all"
+                ],
+                "problemprofiles": [
                     "ORG_PROBLEM_14"
                 ],
                 "types": [
@@ -3806,7 +3857,7 @@
                 "domain": "",
                 "process": "",
                 "reference": "outcome-marketing-featureset",
-                "form": "document_template",
+                "form": "guidelines",
                 "format": "editable_source_document",
                 "softwareinterlinker": "googledrive",
                 "difficulty": "easy",
@@ -3822,7 +3873,7 @@
                     ]
                 },
                 "name_translations": {
-                    "en": "Guidelines for online-surveys"
+                    "en": "Outcome marketing featureset"
                 },
                 "description_translations": {
                     "en": "<p>This resource suggests a model to define the features of a co-produced service. It guides the description of the problem(s) that the product will solve in the long run, the vision for the user experience as well as the user interface, the vision for how the product will generate a return of investment</p>"
@@ -4000,6 +4051,110 @@
                     "all"
                 ],
                 "problemprofiles": [
+                    "ORG_PROBLEM_6.2",
+                    "BUILD_PROBLEM_1",
+                    "VAL_PROBLEM_4"
+                ],
+                "types": [
+                    "enhancing_services"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "domain": "",
+                "process": "",
+                "reference": "usability testing",
+                "form": "guidelines",
+                "format": "editable_source_document",
+                "softwareinterlinker": "googledrive",
+                "difficulty": "easy",
+                "licence": "public_domain",
+                "instructions_translations": {
+                    "en": "./interlinkers/knowledge/Usability-testing/instructions.md"
+                },
+                "tags_translations": {
+                    "en": [
+                        "product specification",
+                        "testing",
+                        "usability"
+                    ]
+                },
+                "name_translations": {
+                    "en": "Usability testing guidelines"
+                },
+                "description_translations": {
+                    "en": "<p>Guidelines and tips on how to perform a usability testing</p>"
+                },
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "regulations_and_standards_translations": {
+                    "en": ""
+                },
+                "file_translations": {
+                    "en": "./interlinkers/knowledge/Usability-testing/resource.docx"
+                }
+            },
+            {
+                "languages": [
+                    "en"
+                ],
+                "targets": [
+                    "all"
+                ],
+                "problemprofiles": [
+                    "ORG_PROBLEM_1",
+                    "UND_PROBLEM_2",
+                    "ORG_PROBLEM_5"
+                ],
+                "types": [
+                    "enhancing_services"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "domain": "",
+                "process": "",
+                "reference": "Stakeholders identification analisys template",
+                "form": "document_template",
+                "format": "editable_source_document",
+                "softwareinterlinker": "googledrive",
+                "difficulty": "easy",
+                "licence": "public_domain",
+                "instructions_translations": {
+                    "en": "./interlinkers/knowledge/Stakeholders-identification-analisys-template/instructions.md"
+                },
+                "tags_translations": {
+                    "en": [
+                        "product specification",
+                        "testing",
+                        "usability"
+                    ]
+                },
+                "name_translations": {
+                    "en": "Stakeholders identification analisys template guidelines"
+                },
+                "description_translations": {
+                    "en": "<p>This template of an excel file can be used in conjunction with the Stakeholders Mapping Canvas to identify by name and title the people, groups, and organisations that have significant influence on project direction and its success or who are significantly impacted by the project. The template helps in planning Stakeholders engagement according to different dimensions:<br> <ul><br><li>the desired or expected level of involvement<br><li> potential issues related to their engagement<br><li>motivations and barriers that can support you in finding the best strategy to engage them in the co-production process<br><li> expectation of the different Stakeholders<br><li> skills and potential role within the co-production process.<br></ul></p>"
+                },
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "regulations_and_standards_translations": {
+                    "en": ""
+                },
+                "file_translations": {
+                    "en": "./interlinkers/knowledge/Stakeholders-identification-analisys-template/resource.xlsx"
+                }
+            },
+            {
+                "languages": [
+                    "en"
+                ],
+                "targets": [
+                    "all"
+                ],
+                "problemprofiles": [
                     "UND_PROBLEM_3"
                 ],
                 "types": [
@@ -4011,7 +4166,7 @@
                 "domain": "",
                 "process": "",
                 "reference": "co-producers-perceptions-Questionnaire",
-                "form": "document_template",
+                "form": "survey_template",
                 "format": "editable_source_document",
                 "softwareinterlinker": "googledrive",
                 "difficulty": "easy",
@@ -4509,7 +4664,7 @@
                 "domain": "",
                 "process": "",
                 "reference": "Guidelines-for-online-surveys",
-                "form": "document_template",
+                "form": "guidelines",
                 "format": "editable_source_document",
                 "softwareinterlinker": "googledrive",
                 "difficulty": "easy",
@@ -4538,6 +4693,56 @@
                 },
                 "file_translations": {
                     "en": "./interlinkers/knowledge/Guidelines-for-online-surveys/resource.docx"
+                }
+            },
+            {
+                "languages": [
+                    "en"
+                ],
+                "targets": [
+                    "all"
+                ],
+                "problemprofiles": [
+                    "UND_PROBLEM_3"
+                ],
+                "types": [
+                    "enhancing_services"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "domain": "",
+                "process": "",
+                "reference": "template for online survey",
+                "form": "document_template",
+                "format": "editable_source_document",
+                "softwareinterlinker": "googledrive",
+                "difficulty": "easy",
+                "licence": "public_domain",
+                "instructions_translations": {
+                    "en": "./interlinkers/knowledge/Template-for-online-survey/instructions.md"
+                },
+                "tags_translations": {
+                    "en": [
+                        "product specification",
+                        "testing",
+                        "usability"
+                    ]
+                },
+                "name_translations": {
+                    "en": "template for online survey guidelines"
+                },
+                "description_translations": {
+                    "en": "<p>Template to collect data through online survey for assessing Media and Technology Usage and Attitudes</p>"
+                },
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "regulations_and_standards_translations": {
+                    "en": ""
+                },
+                "file_translations": {
+                    "en": "./interlinkers/knowledge/Template-for-online-survey/resource.docx"
                 }
             }
         ],
