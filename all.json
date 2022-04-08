@@ -697,93 +697,6 @@
             },
             "phases": [
                 {
-                    "reference": "phase-exploit",
-                    "prerequisites": [
-                        {
-                            "item": "phase-run",
-                            "status": "finished"
-                        }
-                    ],
-                    "name_translations": {
-                        "en": "Exploit",
-                        "es": "Explotar"
-                    },
-                    "description_translations": {
-                        "en": "Define the business models to ensure sustainability of the co-produced service. Create business plans and exploitation agreements that will foster the adoption of your co-produced service by third party PAs, companies and stakeholders. Continous maintenance and monotoring is needed for responsive, accesible, widely adopted services as INTERLINK ambitions.",
-                        "es": ""
-                    },
-                    "objectives": [
-                        {
-                            "name_translations": {
-                                "en": "Post-Hackathon exploitation",
-                                "es": "Explotaci\u00f3n tras Hackathon"
-                            },
-                            "description_translations": {
-                                "en": "Optinally delegate service deployment from own on premise to Cloud-based to external hosting provider infrastructure. Agree on contract, costs, responsabilities and benefits for third party take over of service delivery ",
-                                "es": ""
-                            },
-                            "problemprofiles": [],
-                            "tasks": [
-                                {
-                                    "name_translations": {
-                                        "en": "Agreement for winners' solutions' exploitation",
-                                        "es": "Acuerdo para explotaci\u00f3n de soluciones ganadoras"
-                                    },
-                                    "description_translations": {
-                                        "en": "Discuss between organizers and winners to study collaboration agreements, aid winning teams adopting sustainability measures to protect and further develop their solutions. An exploitation agreement must be produced and signed by the involved parties. ",
-                                        "es": ""
-                                    },
-                                    "problemprofiles": [
-                                        "ORG_PROBLEM_8"
-                                    ],
-                                    "reference": "task-agreement-for-winners-solutions-exploitation"
-                                },
-                                {
-                                    "name_translations": {
-                                        "en": "Publish results",
-                                        "es": "Publicar resultados"
-                                    },
-                                    "description_translations": {
-                                        "en": "Publish in social media and organizers' website details about the projects winning",
-                                        "es": ""
-                                    },
-                                    "problemprofiles": [
-                                        "ORG_PROBLEM_10"
-                                    ],
-                                    "prerequisites": [
-                                        {
-                                            "item": "task-agreement-for-winners-solutions-exploitation",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "task-publish-results"
-                                },
-                                {
-                                    "name_translations": {
-                                        "en": "Sustainability report",
-                                        "es": "Informe de sostenibilidad"
-                                    },
-                                    "description_translations": {
-                                        "en": "Report including insights, lessons learnt which are useful for the organizer. They represent the takeins thanks to the celebration of the hackathon, i.e. how the solutions devised could be leveraged by the organnizer for their own business or purpose. ",
-                                        "es": ""
-                                    },
-                                    "problemprofiles": [
-                                        "SUS_PROBLEM_1"
-                                    ],
-                                    "prerequisites": [
-                                        {
-                                            "item": "task-publish-results",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "task-sustainability-report"
-                                }
-                            ],
-                            "reference": "objective-post-hackathon-exploitation"
-                        }
-                    ]
-                },
-                {
                     "reference": "phase-run",
                     "prerequisites": [
                         {
@@ -996,6 +909,93 @@
                                 }
                             ],
                             "reference": "objective-hackathon-celebration"
+                        }
+                    ]
+                },
+                {
+                    "reference": "phase-exploit",
+                    "prerequisites": [
+                        {
+                            "item": "phase-run",
+                            "status": "finished"
+                        }
+                    ],
+                    "name_translations": {
+                        "en": "Exploit",
+                        "es": "Explotar"
+                    },
+                    "description_translations": {
+                        "en": "Define the business models to ensure sustainability of the co-produced service. Create business plans and exploitation agreements that will foster the adoption of your co-produced service by third party PAs, companies and stakeholders. Continous maintenance and monotoring is needed for responsive, accesible, widely adopted services as INTERLINK ambitions.",
+                        "es": ""
+                    },
+                    "objectives": [
+                        {
+                            "name_translations": {
+                                "en": "Post-Hackathon exploitation",
+                                "es": "Explotaci\u00f3n tras Hackathon"
+                            },
+                            "description_translations": {
+                                "en": "Optinally delegate service deployment from own on premise to Cloud-based to external hosting provider infrastructure. Agree on contract, costs, responsabilities and benefits for third party take over of service delivery ",
+                                "es": ""
+                            },
+                            "problemprofiles": [],
+                            "tasks": [
+                                {
+                                    "name_translations": {
+                                        "en": "Agreement for winners' solutions' exploitation",
+                                        "es": "Acuerdo para explotaci\u00f3n de soluciones ganadoras"
+                                    },
+                                    "description_translations": {
+                                        "en": "Discuss between organizers and winners to study collaboration agreements, aid winning teams adopting sustainability measures to protect and further develop their solutions. An exploitation agreement must be produced and signed by the involved parties. ",
+                                        "es": ""
+                                    },
+                                    "problemprofiles": [
+                                        "ORG_PROBLEM_8"
+                                    ],
+                                    "reference": "task-agreement-for-winners-solutions-exploitation"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Publish results",
+                                        "es": "Publicar resultados"
+                                    },
+                                    "description_translations": {
+                                        "en": "Publish in social media and organizers' website details about the projects winning",
+                                        "es": ""
+                                    },
+                                    "problemprofiles": [
+                                        "ORG_PROBLEM_10"
+                                    ],
+                                    "prerequisites": [
+                                        {
+                                            "item": "task-agreement-for-winners-solutions-exploitation",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "task-publish-results"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Sustainability report",
+                                        "es": "Informe de sostenibilidad"
+                                    },
+                                    "description_translations": {
+                                        "en": "Report including insights, lessons learnt which are useful for the organizer. They represent the takeins thanks to the celebration of the hackathon, i.e. how the solutions devised could be leveraged by the organnizer for their own business or purpose. ",
+                                        "es": ""
+                                    },
+                                    "problemprofiles": [
+                                        "SUS_PROBLEM_1"
+                                    ],
+                                    "prerequisites": [
+                                        {
+                                            "item": "task-publish-results",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "task-sustainability-report"
+                                }
+                            ],
+                            "reference": "objective-post-hackathon-exploitation"
                         }
                     ]
                 },
@@ -1533,160 +1533,6 @@
                 "es": "El proyecto INTERLINK ha definido un proceso de coproducci\u00f3n gen\u00e9rico que puede dar cabida a cualquier esfuerzo de coproducci\u00f3n. Se compone de dos fases principales que deben seguir los coproductores: a) Fase de codise\u00f1o. Se refiere a las actividades que incorporan \"la experiencia de los usuarios y de sus comunidades\" en la creaci\u00f3n, planificaci\u00f3n o disposici\u00f3n de los servicios p\u00fablicos. En ella, se crea el equipo de coproducci\u00f3n y se empieza a trabajar conjuntamente para definir el servicio que se va a coproducir. Esta fase conlleva dos subfases: involucraci\u00f3n y dise\u00f1o; y b) Fase de coproducci\u00f3n. Se trata de un esfuerzo conjunto de las autoridades p\u00fablicas y las partes interesadas para proporcionar y mejorar los servicios p\u00fablicos en los que el servicio se aplica y se presta de forma sostenible. La fase de co-prestaci\u00f3n conlleva dos subfases: Construir y Sostener."
             },
             "phases": [
-                {
-                    "reference": "phase-sustain",
-                    "prerequisites": [
-                        {
-                            "item": "phase-build",
-                            "status": "finished"
-                        }
-                    ],
-                    "name_translations": {
-                        "en": "Sustain",
-                        "es": "Sostener"
-                    },
-                    "description_translations": {
-                        "en": "Define the business models to ensure sustainability of the co-produced service. Create business plans and exploitation agreements that will foster the adoption of your co-produced service by third party PAs, companies and stakeholders. Continous maintenance and monotoring is needed for responsive, accesible, widely adopted services as INTERLINK ambitions.",
-                        "es": ""
-                    },
-                    "objectives": [
-                        {
-                            "name_translations": {
-                                "en": "Handover",
-                                "es": "Entrega"
-                            },
-                            "description_translations": {
-                                "en": "Optinally delegate service deployment from own on premise to Cloud-based to external hosting provider infrastructure. Agree on contract, costs, responsabilities and benefits for third party take over of service delivery ",
-                                "es": ""
-                            },
-                            "problemprofiles": [],
-                            "tasks": [
-                                {
-                                    "name_translations": {
-                                        "en": "Business model specification",
-                                        "es": "Especificaci\u00f3n de Modelo de Negocio"
-                                    },
-                                    "description_translations": {
-                                        "en": "Co-production team defines one to many business models with their associated business plans which can be negotiated with third party adopters of the service, who want to take over execution, maintenance and monitoring, but where exploitation between co-producers and adopters needs to be clarified.",
-                                        "es": ""
-                                    },
-                                    "problemprofiles": [
-                                        "ORG_PROBLEM_7"
-                                    ],
-                                    "reference": "task-business-model-specification"
-                                },
-                                {
-                                    "name_translations": {
-                                        "en": "Exploitation agreement",
-                                        "es": "Acuerdo de Explotaci\u00f3n"
-                                    },
-                                    "description_translations": {
-                                        "en": "Before a third party adopter may take over a co-produced service an exploitation agreement must be produced and signed by the involved parties. ",
-                                        "es": ""
-                                    },
-                                    "problemprofiles": [
-                                        "ORG_PROBLEM_7"
-                                    ],
-                                    "prerequisites": [
-                                        {
-                                            "item": "task-business-model-specification",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "task-exploitation-agreement"
-                                },
-                                {
-                                    "name_translations": {
-                                        "en": "Handover",
-                                        "es": "Entrega"
-                                    },
-                                    "description_translations": {
-                                        "en": "Provide documentation for third party take over of service maintenane and monitoring. Agreement on contract to regulate transfer of runnning responsability to third party and sharing of revenues among those that co-produced the service and third parties who may optionally host the service. Customization of the delivered service to target customers (translations, content adaptations and so on) ",
-                                        "es": ""
-                                    },
-                                    "problemprofiles": [
-                                        "ORG_PROBLEM_7"
-                                    ],
-                                    "prerequisites": [
-                                        {
-                                            "item": "task-exploitation-agreement",
-                                            "status": "completed"
-                                        }
-                                    ],
-                                    "reference": "task-handover"
-                                }
-                            ],
-                            "reference": "objective-handover"
-                        },
-                        {
-                            "name_translations": {
-                                "en": "Maintenance",
-                                "es": "Mantenimiento"
-                            },
-                            "description_translations": {
-                                "en": "Ensure the deployed service is continously operative and responsive to new customer demands who may make the service further adopted and more useful. This responsability may be shared by co-production team and third parties who may have taken over the service. ",
-                                "es": ""
-                            },
-                            "problemprofiles": [],
-                            "tasks": [
-                                {
-                                    "name_translations": {
-                                        "en": "Task distribution for maintenance, contracts regulation, data management archiving",
-                                        "es": "Distribuci\u00f3n de tareas para el mantenimiento, regulaci\u00f3n de contratos, archivo de la gesti\u00f3n de datos"
-                                    },
-                                    "description_translations": {
-                                        "en": "If service depoyment was delegated or is still carried out by co-production team, task distribution among those responsible for maintenance must be ensured. Regularly contract monitoring and maintenance activities will need to be carried out to ensure 24x7 operation.",
-                                        "es": ""
-                                    },
-                                    "problemprofiles": [],
-                                    "reference": "task-task-distribution-for-maintenance-contracts-regulation-data-management-archiving"
-                                }
-                            ],
-                            "prerequisites": [
-                                {
-                                    "item": "objective-handover",
-                                    "status": "completed"
-                                }
-                            ],
-                            "reference": "objective-maintenance"
-                        },
-                        {
-                            "name_translations": {
-                                "en": "Monitoring",
-                                "es": "Monitorizaci\u00f3n"
-                            },
-                            "description_translations": {
-                                "en": "Monitor that the service is fulfilling its originally set objectives by tracking a set of KPIs inferred from usage or polling customers.  ",
-                                "es": ""
-                            },
-                            "problemprofiles": [
-                                "UND_PROBLEM_3",
-                                "VAL_PROBLEM_5"
-                            ],
-                            "tasks": [
-                                {
-                                    "name_translations": {
-                                        "en": "Monitoring ongoing evaluation, periodic evaluations with stakeholders",
-                                        "es": "Seguimiento de la evaluaci\u00f3n continua, evaluaciones peri\u00f3dicas con las partes interesadas"
-                                    },
-                                    "description_translations": {
-                                        "en": "Analyse logs gathered by the delivered service. Analyse surveys/questionnaires filled in by stakeholders. ",
-                                        "es": ""
-                                    },
-                                    "problemprofiles": [],
-                                    "reference": "task-monitoring-ongoing-evaluation-periodic-evaluations-with-stakeholders"
-                                }
-                            ],
-                            "prerequisites": [
-                                {
-                                    "item": "objective-maintenance",
-                                    "status": "completed"
-                                }
-                            ],
-                            "reference": "objective-monitoring"
-                        }
-                    ]
-                },
                 {
                     "reference": "phase-build",
                     "prerequisites": [
@@ -2827,12 +2673,270 @@
                             "reference": "objective-define-data-management-plan"
                         }
                     ]
+                },
+                {
+                    "reference": "phase-sustain",
+                    "prerequisites": [
+                        {
+                            "item": "phase-build",
+                            "status": "finished"
+                        }
+                    ],
+                    "name_translations": {
+                        "en": "Sustain",
+                        "es": "Sostener"
+                    },
+                    "description_translations": {
+                        "en": "Define the business models to ensure sustainability of the co-produced service. Create business plans and exploitation agreements that will foster the adoption of your co-produced service by third party PAs, companies and stakeholders. Continous maintenance and monotoring is needed for responsive, accesible, widely adopted services as INTERLINK ambitions.",
+                        "es": ""
+                    },
+                    "objectives": [
+                        {
+                            "name_translations": {
+                                "en": "Handover",
+                                "es": "Entrega"
+                            },
+                            "description_translations": {
+                                "en": "Optinally delegate service deployment from own on premise to Cloud-based to external hosting provider infrastructure. Agree on contract, costs, responsabilities and benefits for third party take over of service delivery ",
+                                "es": ""
+                            },
+                            "problemprofiles": [],
+                            "tasks": [
+                                {
+                                    "name_translations": {
+                                        "en": "Business model specification",
+                                        "es": "Especificaci\u00f3n de Modelo de Negocio"
+                                    },
+                                    "description_translations": {
+                                        "en": "Co-production team defines one to many business models with their associated business plans which can be negotiated with third party adopters of the service, who want to take over execution, maintenance and monitoring, but where exploitation between co-producers and adopters needs to be clarified.",
+                                        "es": ""
+                                    },
+                                    "problemprofiles": [
+                                        "ORG_PROBLEM_7"
+                                    ],
+                                    "reference": "task-business-model-specification"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Exploitation agreement",
+                                        "es": "Acuerdo de Explotaci\u00f3n"
+                                    },
+                                    "description_translations": {
+                                        "en": "Before a third party adopter may take over a co-produced service an exploitation agreement must be produced and signed by the involved parties. ",
+                                        "es": ""
+                                    },
+                                    "problemprofiles": [
+                                        "ORG_PROBLEM_7"
+                                    ],
+                                    "prerequisites": [
+                                        {
+                                            "item": "task-business-model-specification",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "task-exploitation-agreement"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Handover",
+                                        "es": "Entrega"
+                                    },
+                                    "description_translations": {
+                                        "en": "Provide documentation for third party take over of service maintenane and monitoring. Agreement on contract to regulate transfer of runnning responsability to third party and sharing of revenues among those that co-produced the service and third parties who may optionally host the service. Customization of the delivered service to target customers (translations, content adaptations and so on) ",
+                                        "es": ""
+                                    },
+                                    "problemprofiles": [
+                                        "ORG_PROBLEM_7"
+                                    ],
+                                    "prerequisites": [
+                                        {
+                                            "item": "task-exploitation-agreement",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "task-handover"
+                                }
+                            ],
+                            "reference": "objective-handover"
+                        },
+                        {
+                            "name_translations": {
+                                "en": "Maintenance",
+                                "es": "Mantenimiento"
+                            },
+                            "description_translations": {
+                                "en": "Ensure the deployed service is continously operative and responsive to new customer demands who may make the service further adopted and more useful. This responsability may be shared by co-production team and third parties who may have taken over the service. ",
+                                "es": ""
+                            },
+                            "problemprofiles": [],
+                            "tasks": [
+                                {
+                                    "name_translations": {
+                                        "en": "Task distribution for maintenance, contracts regulation, data management archiving",
+                                        "es": "Distribuci\u00f3n de tareas para el mantenimiento, regulaci\u00f3n de contratos, archivo de la gesti\u00f3n de datos"
+                                    },
+                                    "description_translations": {
+                                        "en": "If service depoyment was delegated or is still carried out by co-production team, task distribution among those responsible for maintenance must be ensured. Regularly contract monitoring and maintenance activities will need to be carried out to ensure 24x7 operation.",
+                                        "es": ""
+                                    },
+                                    "problemprofiles": [],
+                                    "reference": "task-task-distribution-for-maintenance-contracts-regulation-data-management-archiving"
+                                }
+                            ],
+                            "prerequisites": [
+                                {
+                                    "item": "objective-handover",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-maintenance"
+                        },
+                        {
+                            "name_translations": {
+                                "en": "Monitoring",
+                                "es": "Monitorizaci\u00f3n"
+                            },
+                            "description_translations": {
+                                "en": "Monitor that the service is fulfilling its originally set objectives by tracking a set of KPIs inferred from usage or polling customers.  ",
+                                "es": ""
+                            },
+                            "problemprofiles": [
+                                "UND_PROBLEM_3",
+                                "VAL_PROBLEM_5"
+                            ],
+                            "tasks": [
+                                {
+                                    "name_translations": {
+                                        "en": "Monitoring ongoing evaluation, periodic evaluations with stakeholders",
+                                        "es": "Seguimiento de la evaluaci\u00f3n continua, evaluaciones peri\u00f3dicas con las partes interesadas"
+                                    },
+                                    "description_translations": {
+                                        "en": "Analyse logs gathered by the delivered service. Analyse surveys/questionnaires filled in by stakeholders. ",
+                                        "es": ""
+                                    },
+                                    "problemprofiles": [],
+                                    "reference": "task-monitoring-ongoing-evaluation-periodic-evaluations-with-stakeholders"
+                                }
+                            ],
+                            "prerequisites": [
+                                {
+                                    "item": "objective-maintenance",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-monitoring"
+                        }
+                    ]
                 }
             ]
         }
     ],
     "interlinkers": {
         "software": [
+            {
+                "languages": [],
+                "name_translations": {
+                    "en": "Google Drive",
+                    "es": "Google Drive"
+                },
+                "description_translations": {
+                    "en": "Google Drive is a file storage and synchronization service developed by Google. Launched on April 24, 2012, Google Drive allows users to store files in the cloud, synchronize files across devices, and share files.\nGoogle Drive encompasses Google Docs, Google Sheets, and Google Slides, which are a part of the Google Docs Editors office suite that permits collaborative editing of documents, spreadsheets, presentations, drawings, forms, and more. Files created and edited through the Google Docs suite are saved in Google Drive.\nThis software INTERLIKER allows users of the collaborative environment to create new documents, spreadsheets and presentations which can be co-edited and shared by co-production team participants",
+                    "es": "Google Drive es un servicio de almacenamiento y sincronizaci\u00f3n de archivos desarrollado por Google. Lanzado el 24 de abril de 2012, Google Drive permite a los usuarios almacenar archivos en la nube, sincronizar archivos entre dispositivos y compartir archivos.\nGoogle Drive incluye Google Docs, Google Sheets y Google Slides, que forman parte de Google Docs Editors. paquete ofim\u00e1tico que permite la edici\u00f3n colaborativa de documentos, hojas de c\u00e1lculo, presentaciones, dibujos, formularios y m\u00e1s. Los archivos creados y editados a trav\u00e9s de la suite Google Docs se guardan en Google Drive.\nEste software INTERLIKER permite a los usuarios del entorno colaborativo crear nuevos documentos, hojas de c\u00e1lculo y presentaciones que pueden ser coeditados y compartidos por los participantes del equipo de coproducci\u00f3n."
+                },
+                "difficulty": "easy",
+                "licence": "propietary",
+                "problemprofiles": [],
+                "constraints_and_limitations_translations": {
+                    "en": "",
+                    "es": ""
+                },
+                "regulations_and_standards_translations": {
+                    "en": "",
+                    "es": ""
+                },
+                "supported_by": [
+                    "saas"
+                ],
+                "supports_internationalization": true,
+                "is_responsive": true,
+                "integration": {
+                    "domain": "",
+                    "path": "googledrive",
+                    "service_name": "googledrive",
+                    "is_subdomain": false,
+                    "api_path": "/assets",
+                    "auth_method": "cookie",
+                    "capabilities": {
+                        "instantiate": true,
+                        "clone": true,
+                        "view": true,
+                        "edit": false,
+                        "delete": true,
+                        "download": true,
+                        "preview": false,
+                        "open_in_modal": true,
+                        "shortcut": true
+                    },
+                    "capabilities_translations": {
+                        "instantiate_text_translations": {
+                            "en": "Create a Google Drive document",
+                            "es": "Crear documento de Google Drive"
+                        },
+                        "clone_text_translations": {
+                            "en": "Clone document",
+                            "es": "Clonar documento"
+                        },
+                        "view_text_translations": {
+                            "en": "Open document",
+                            "es": "Abrir documento"
+                        },
+                        "delete_text_translations": {
+                            "en": "Delete document",
+                            "es": "Eliminar documento"
+                        },
+                        "download_text_translations": {
+                            "en": "Download document",
+                            "es": "Descargar documento"
+                        }
+                    }
+                },
+                "logotype": "./interlinkers/software/google-drive/logo.png",
+                "reference": "google-drive",
+                "tags_translations": {
+                    "en": [
+                        "document",
+                        "slide",
+                        "sheets",
+                        "form",
+                        "jamboard",
+                        "site",
+                        "paint",
+                        "draw",
+                        "collaboration",
+                        "excel",
+                        "word",
+                        "powerpoint"
+                    ],
+                    "es": [
+                        "documento",
+                        "diapositiva",
+                        "hojas",
+                        "formulario",
+                        "jamboard",
+                        "sitio",
+                        "pintar",
+                        "dibujar",
+                        "colaboraci\u00f3n",
+                        "excel",
+                        "word",
+                        "texto",
+                        "powerpoint"
+                    ]
+                },
+                "instructions_translations": {
+                    "en": "./interlinkers/software/google-drive/instructions.md"
+                }
+            },
             {
                 "languages": [
                     "en"
@@ -2914,84 +3018,6 @@
                 },
                 "instructions_translations": {
                     "en": "./interlinkers/software/survey-editor/instructions.md"
-                }
-            },
-            {
-                "languages": [
-                    "en"
-                ],
-                "name_translations": {
-                    "en": "Collaborative editor",
-                    "es": ""
-                },
-                "description_translations": {
-                    "en": "This interlinker uses etherpad, an open source online editor, to provide collaborative editing in really real-time.\nEtherpad (https://etherpad.org/) is an open-source, web-based collaborative real-time editor, allowing authors to simultaneously edit a text document, and see all of the participants' edits in real-time, with the ability to display each author's text in their own color. There is also a chat box in the sidebar to allow meta communication.",
-                    "es": ""
-                },
-                "difficulty": "easy",
-                "licence": "propietary",
-                "problemprofiles": [],
-                "constraints_and_limitations_translations": {
-                    "en": "Some text here",
-                    "es": ""
-                },
-                "regulations_and_standards_translations": {
-                    "en": "Optional text here",
-                    "es": ""
-                },
-                "supported_by": [
-                    "on_premise"
-                ],
-                "supports_internationalization": true,
-                "is_responsive": true,
-                "integration": {
-                    "domain": "",
-                    "path": "ceditor",
-                    "service_name": "ceditor",
-                    "is_subdomain": false,
-                    "api_path": "/assets",
-                    "auth_method": "cookie",
-                    "capabilities": {
-                        "instantiate": true,
-                        "clone": true,
-                        "view": true,
-                        "edit": false,
-                        "delete": true,
-                        "preview": false,
-                        "open_in_modal": true,
-                        "shortcut": true
-                    },
-                    "capabilities_translations": {
-                        "instantiate_text_translations": {
-                            "en": "Create an Etherpad document",
-                            "es": "Crear documento de Etherpad"
-                        },
-                        "clone_text_translations": {
-                            "en": "Clone document",
-                            "es": "Clonar documento"
-                        },
-                        "view_text_translations": {
-                            "en": "Open document",
-                            "es": "Abrir documento"
-                        },
-                        "delete_text_translations": {
-                            "en": "Delete document",
-                            "es": "Eliminar documento"
-                        }
-                    }
-                },
-                "logotype": "./interlinkers/software/ceditor/logo.jpeg",
-                "reference": "collaborative-editor",
-                "tags_translations": {
-                    "en": [
-                        "document",
-                        "collaborative",
-                        "editor",
-                        "etherpad"
-                    ]
-                },
-                "instructions_translations": {
-                    "en": "./interlinkers/software/ceditor/instructions.md"
                 }
             },
             {
@@ -3181,35 +3207,37 @@
                 }
             },
             {
-                "languages": [],
+                "languages": [
+                    "en"
+                ],
                 "name_translations": {
-                    "en": "Google Drive",
-                    "es": "Google Drive"
+                    "en": "Collaborative editor",
+                    "es": ""
                 },
                 "description_translations": {
-                    "en": "Google Drive is a file storage and synchronization service developed by Google. Launched on April 24, 2012, Google Drive allows users to store files in the cloud, synchronize files across devices, and share files.\nGoogle Drive encompasses Google Docs, Google Sheets, and Google Slides, which are a part of the Google Docs Editors office suite that permits collaborative editing of documents, spreadsheets, presentations, drawings, forms, and more. Files created and edited through the Google Docs suite are saved in Google Drive.\nThis software INTERLIKER allows users of the collaborative environment to create new documents, spreadsheets and presentations which can be co-edited and shared by co-production team participants",
-                    "es": "Google Drive es un servicio de almacenamiento y sincronizaci\u00f3n de archivos desarrollado por Google. Lanzado el 24 de abril de 2012, Google Drive permite a los usuarios almacenar archivos en la nube, sincronizar archivos entre dispositivos y compartir archivos.\nGoogle Drive incluye Google Docs, Google Sheets y Google Slides, que forman parte de Google Docs Editors. paquete ofim\u00e1tico que permite la edici\u00f3n colaborativa de documentos, hojas de c\u00e1lculo, presentaciones, dibujos, formularios y m\u00e1s. Los archivos creados y editados a trav\u00e9s de la suite Google Docs se guardan en Google Drive.\nEste software INTERLIKER permite a los usuarios del entorno colaborativo crear nuevos documentos, hojas de c\u00e1lculo y presentaciones que pueden ser coeditados y compartidos por los participantes del equipo de coproducci\u00f3n."
+                    "en": "This interlinker uses etherpad, an open source online editor, to provide collaborative editing in really real-time.\nEtherpad (https://etherpad.org/) is an open-source, web-based collaborative real-time editor, allowing authors to simultaneously edit a text document, and see all of the participants' edits in real-time, with the ability to display each author's text in their own color. There is also a chat box in the sidebar to allow meta communication.",
+                    "es": ""
                 },
                 "difficulty": "easy",
                 "licence": "propietary",
                 "problemprofiles": [],
                 "constraints_and_limitations_translations": {
-                    "en": "",
+                    "en": "Some text here",
                     "es": ""
                 },
                 "regulations_and_standards_translations": {
-                    "en": "",
+                    "en": "Optional text here",
                     "es": ""
                 },
                 "supported_by": [
-                    "saas"
+                    "on_premise"
                 ],
                 "supports_internationalization": true,
                 "is_responsive": true,
                 "integration": {
                     "domain": "",
-                    "path": "googledrive",
-                    "service_name": "googledrive",
+                    "path": "ceditor",
+                    "service_name": "ceditor",
                     "is_subdomain": false,
                     "api_path": "/assets",
                     "auth_method": "cookie",
@@ -3219,15 +3247,14 @@
                         "view": true,
                         "edit": false,
                         "delete": true,
-                        "download": true,
                         "preview": false,
                         "open_in_modal": true,
                         "shortcut": true
                     },
                     "capabilities_translations": {
                         "instantiate_text_translations": {
-                            "en": "Create a Google Drive document",
-                            "es": "Crear documento de Google Drive"
+                            "en": "Create an Etherpad document",
+                            "es": "Crear documento de Etherpad"
                         },
                         "clone_text_translations": {
                             "en": "Clone document",
@@ -3240,52 +3267,273 @@
                         "delete_text_translations": {
                             "en": "Delete document",
                             "es": "Eliminar documento"
-                        },
-                        "download_text_translations": {
-                            "en": "Download document",
-                            "es": "Descargar documento"
                         }
                     }
                 },
-                "logotype": "./interlinkers/software/google-drive/logo.png",
-                "reference": "google-drive",
+                "logotype": "./interlinkers/software/ceditor/logo.jpeg",
+                "reference": "collaborative-editor",
                 "tags_translations": {
                     "en": [
                         "document",
-                        "slide",
-                        "sheets",
-                        "form",
-                        "jamboard",
-                        "site",
-                        "paint",
-                        "draw",
-                        "collaboration",
-                        "excel",
-                        "word",
-                        "powerpoint"
-                    ],
-                    "es": [
-                        "documento",
-                        "diapositiva",
-                        "hojas",
-                        "formulario",
-                        "jamboard",
-                        "sitio",
-                        "pintar",
-                        "dibujar",
-                        "colaboraci\u00f3n",
-                        "excel",
-                        "word",
-                        "texto",
-                        "powerpoint"
+                        "collaborative",
+                        "editor",
+                        "etherpad"
                     ]
                 },
                 "instructions_translations": {
-                    "en": "./interlinkers/software/google-drive/instructions.md"
+                    "en": "./interlinkers/software/ceditor/instructions.md"
                 }
             }
         ],
         "knowledge": [
+            {
+                "languages": [
+                    "en"
+                ],
+                "targets": [
+                    "all"
+                ],
+                "problemprofiles": [
+                    "ORG_PROBLEM_1",
+                    "UND_PROBLEM_2"
+                ],
+                "types": [
+                    "enabling_services"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "reference": "template-for-use-scenarios",
+                "form": "document_template",
+                "format": "editable_source_document",
+                "softwareinterlinker": "googledrive",
+                "difficulty": "easy",
+                "licence": "permissive",
+                "instructions_translations": {
+                    "en": "./interlinkers/knowledge/it-use-scenarios/instructions.md"
+                },
+                "tags_translations": {
+                    "en": [
+                        "services"
+                    ]
+                },
+                "name_translations": {
+                    "en": "Template for use case scenarios"
+                },
+                "description_translations": {
+                    "en": "<p>Template for preparing a use scenarios. </p>"
+                },
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "regulations_and_standards_translations": {
+                    "en": ""
+                },
+                "file_translations": {
+                    "en": "./interlinkers/knowledge/it-use-scenarios/resource.xlsx"
+                }
+            },
+            {
+                "languages": [
+                    "en"
+                ],
+                "targets": [
+                    "all"
+                ],
+                "problemprofiles": [
+                    "ORG_PROBLEM_5"
+                ],
+                "types": [
+                    "enhancing_services"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "domain": "",
+                "process": "",
+                "reference": "stakeholder-engagement-plan-for-interlink-project",
+                "form": "document_template",
+                "format": "editable_source_document",
+                "softwareinterlinker": "googledrive",
+                "difficulty": "very_easy",
+                "licence": "public_domain",
+                "instructions_translations": {
+                    "en": "./interlinkers/knowledge/Stakeholder-Engagement-Plan-Template/instructions.md"
+                },
+                "tags_translations": {
+                    "en": [
+                        "stakeholder engagement",
+                        "planning",
+                        "co-production project participants",
+                        "INTERLINK"
+                    ]
+                },
+                "name_translations": {
+                    "en": "Stakeholder Engagement Plan for INTERLINK project"
+                },
+                "description_translations": {
+                    "en": "<p>Document to design the engagement plan for those co-producing and/or using the resulting co-produced product</p>"
+                },
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "regulations_and_standards_translations": {
+                    "en": "Stakeholder Engagement Plan is compliant to GDPR norms."
+                },
+                "file_translations": {
+                    "en": "./interlinkers/knowledge/Stakeholder-Engagement-Plan-Template/resource.docx"
+                }
+            },
+            {
+                "languages": [
+                    "en"
+                ],
+                "targets": [
+                    "all"
+                ],
+                "problemprofiles": [
+                    "ORG_PROBLEM_14"
+                ],
+                "types": [
+                    "enhancing_services"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "domain": "",
+                "process": "",
+                "reference": "consent-form-template",
+                "form": "document_template",
+                "format": "editable_source_document",
+                "softwareinterlinker": "googledrive",
+                "difficulty": "very_easy",
+                "licence": "public_domain",
+                "instructions_translations": {
+                    "en": "./interlinkers/knowledge/Consent-Form-Template/instructions.md"
+                },
+                "tags_translations": {
+                    "en": [
+                        "privacy management",
+                        "research activities",
+                        "co-production project participants",
+                        "INTERLINK"
+                    ]
+                },
+                "name_translations": {
+                    "en": "Consent Form Template"
+                },
+                "description_translations": {
+                    "en": "<p>Template to prepare a form to collect consent from participants engaged in research activities about the use of their personal data</p>"
+                },
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "regulations_and_standards_translations": {
+                    "en": "The consent form is compliant to GDPR norms."
+                },
+                "file_translations": {
+                    "en": "./interlinkers/knowledge/Consent-Form-Template/resource.docx"
+                }
+            },
+            {
+                "languages": [
+                    "en"
+                ],
+                "targets": [
+                    "all"
+                ],
+                "problemprofiles": [
+                    "UND_PROBLEM_3",
+                    "VAL_PROBLEM_2"
+                ],
+                "types": [
+                    "enhancing_services"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "domain": "",
+                "process": "",
+                "reference": "focus-group-template-problem-exploration-functionalities",
+                "form": "document_template",
+                "format": "editable_source_document",
+                "softwareinterlinker": "googledrive",
+                "difficulty": "easy",
+                "licence": "public_domain",
+                "instructions_translations": {
+                    "en": "./interlinkers/knowledge/Focus-Group-Template-problem-exploration-functionalities/instructions.md"
+                },
+                "tags_translations": {
+                    "en": [
+                        "focus group",
+                        "template",
+                        "understand"
+                    ]
+                },
+                "name_translations": {
+                    "en": "Focus Group Template Co-production Investigation"
+                },
+                "description_translations": {
+                    "en": "<p>This resource provides a skeleton to organize a focus group to investigate the problem that needs to be solved by a digital service / functionality. It addresses a series of questions about potential users, current practices, critical aspects and  desiderata.</p>"
+                },
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "regulations_and_standards_translations": {
+                    "en": ""
+                },
+                "file_translations": {
+                    "en": "./interlinkers/knowledge/Focus-Group-Template-problem-exploration-functionalities/resource.pptx"
+                }
+            },
+            {
+                "languages": [
+                    "en"
+                ],
+                "targets": [
+                    "all"
+                ],
+                "problemprofiles": [
+                    "UND_PROBLEM_1",
+                    "DEF_PROBLEM_1",
+                    "DEF_PROBLEM_5"
+                ],
+                "types": [
+                    "enabling_services"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "reference": "guidelines-for-co-design-service",
+                "form": "guidelines",
+                "format": "structured_format",
+                "softwareinterlinker": "googledrive",
+                "difficulty": "easy",
+                "licence": "permissive",
+                "instructions_translations": {
+                    "en": "./interlinkers/knowledge/it-workshop-service-design/instructions.md"
+                },
+                "tags_translations": {
+                    "en": [
+                        "services"
+                    ]
+                },
+                "name_translations": {
+                    "en": "Guidelines for co-design of service"
+                },
+                "description_translations": {
+                    "en": "<p>This resource describes the guidelines for the designing of a service in the public administration</p>"
+                },
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "regulations_and_standards_translations": {
+                    "en": ""
+                },
+                "file_translations": {
+                    "en": "./interlinkers/knowledge/it-workshop-service-design/resource.pptx"
+                }
+            },
             {
                 "languages": [
                     "en"
@@ -3335,6 +3583,258 @@
                 },
                 "file_translations": {
                     "en": "./interlinkers/knowledge/Information-Sheet-Template/resource.docx"
+                }
+            },
+            {
+                "languages": [
+                    "en"
+                ],
+                "targets": [
+                    "all"
+                ],
+                "problemprofiles": [
+                    "VAL_PROBLEM_2"
+                ],
+                "types": [
+                    "enhancing_services"
+                ],
+                "administrative_scopes": [
+                    "national",
+                    "local"
+                ],
+                "domain": "",
+                "process": "",
+                "reference": "model-for-personas-in-italian",
+                "form": "document_template",
+                "format": "editable_source_document",
+                "softwareinterlinker": "googledrive",
+                "difficulty": "easy",
+                "licence": "public_domain",
+                "instructions_translations": {
+                    "en": "./interlinkers/knowledge/it-agid-personas/instructions.md"
+                },
+                "tags_translations": {
+                    "en": [
+                        "services"
+                    ]
+                },
+                "name_translations": {
+                    "en": "Model for Personas (in italian)"
+                },
+                "description_translations": {
+                    "en": "<p>This resource provides a model for persona outlined by AGID and Team Digitale (in Italian).</p>"
+                },
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "regulations_and_standards_translations": {
+                    "en": ""
+                },
+                "file_translations": {
+                    "en": "./interlinkers/knowledge/it-agid-personas/resource.pptx"
+                }
+            },
+            {
+                "languages": [
+                    "en"
+                ],
+                "targets": [
+                    "all"
+                ],
+                "problemprofiles": [
+                    "SUS_PROBLEM_1"
+                ],
+                "types": [
+                    "enhancing_services"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "domain": "",
+                "process": "",
+                "reference": "business-plan-template",
+                "form": "document_template",
+                "format": "editable_source_document",
+                "softwareinterlinker": "googledrive",
+                "difficulty": "easy",
+                "licence": "public_domain",
+                "instructions_translations": {
+                    "en": "./interlinkers/knowledge/Business-Plan-Template/instructions.md"
+                },
+                "tags_translations": {
+                    "en": [
+                        "template",
+                        "canvas",
+                        "business"
+                    ]
+                },
+                "name_translations": {
+                    "en": "Business Plan Template"
+                },
+                "description_translations": {
+                    "en": "<p>This canvas can be edited collaboratively by the co-producing team to ellaborate the business plan for a co-produced service..</p>"
+                },
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "regulations_and_standards_translations": {
+                    "en": ""
+                },
+                "file_translations": {
+                    "en": "./interlinkers/knowledge/Business-Plan-Template/resource.docx"
+                }
+            },
+            {
+                "languages": [
+                    "en"
+                ],
+                "targets": [
+                    "all"
+                ],
+                "problemprofiles": [
+                    "SUS_PROBLEM_1"
+                ],
+                "types": [
+                    "enhancing_services"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "domain": "",
+                "process": "",
+                "reference": "business-model-canvas",
+                "form": "document_template",
+                "format": "editable_source_document",
+                "softwareinterlinker": "googledrive",
+                "difficulty": "easy",
+                "licence": "public_domain",
+                "instructions_translations": {
+                    "en": "./interlinkers/knowledge/Business-Model-Canvas/instructions.md"
+                },
+                "tags_translations": {
+                    "en": [
+                        "model",
+                        "canvas",
+                        "business"
+                    ]
+                },
+                "name_translations": {
+                    "en": "Business Model Canvas"
+                },
+                "description_translations": {
+                    "en": "This canvas can be used collaboratively, for instance, during a brainstorming or a focus group, to reflect on the the most suitable business model associated to a co-produced service."
+                },
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "regulations_and_standards_translations": {
+                    "en": ""
+                },
+                "file_translations": {
+                    "en": "./interlinkers/knowledge/Business-Model-Canvas/resource.pptx"
+                }
+            },
+            {
+                "languages": [
+                    "en"
+                ],
+                "targets": [
+                    "all"
+                ],
+                "problemprofiles": [
+                    "ORG_PROBLEM_14"
+                ],
+                "types": [
+                    "enhancing_services"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "domain": "",
+                "process": "",
+                "reference": "consent-form-for-interlink-project",
+                "form": "document_template",
+                "format": "editable_source_document",
+                "softwareinterlinker": "googledrive",
+                "difficulty": "very_easy",
+                "licence": "public_domain",
+                "instructions_translations": {
+                    "en": "./interlinkers/knowledge/Consent-Form-INTERLINK/instructions.md"
+                },
+                "tags_translations": {
+                    "en": [
+                        "privacy management",
+                        "research activities",
+                        "co-production project participants",
+                        "INTERLINK"
+                    ]
+                },
+                "name_translations": {
+                    "en": "Consent Form for INTERLINK project"
+                },
+                "description_translations": {
+                    "en": "<p>Form to collect consent from participants engaged in INTERLINK research activities about the use of their personal data</p>"
+                },
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "regulations_and_standards_translations": {
+                    "en": "The consent form is compliant to GDPR norms."
+                },
+                "file_translations": {
+                    "en": "./interlinkers/knowledge/Consent-Form-INTERLINK/resource.docx"
+                }
+            },
+            {
+                "languages": [
+                    "en"
+                ],
+                "targets": [
+                    "all"
+                ],
+                "problemprofiles": [
+                    "ORG_PROBLEM_6.2",
+                    "VAL_PROBLEM_1",
+                    "VAL_PROBLEM_5"
+                ],
+                "types": [
+                    "enhancing_services"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "domain": "",
+                "process": "",
+                "reference": "outcome-marketing-featureset",
+                "form": "document_template",
+                "format": "editable_source_document",
+                "softwareinterlinker": "googledrive",
+                "difficulty": "easy",
+                "licence": "public_domain",
+                "instructions_translations": {
+                    "en": "./interlinkers/knowledge/outcome-marketing-featureset/instructions.md"
+                },
+                "tags_translations": {
+                    "en": [
+                        "product specification",
+                        "template",
+                        "understand"
+                    ]
+                },
+                "name_translations": {
+                    "en": "Guidelines for online-surveys"
+                },
+                "description_translations": {
+                    "en": "<p>This resource suggests a model to define the features of a co-produced service. It guides the description of the problem(s) that the product will solve in the long run, the vision for the user experience as well as the user interface, the vision for how the product will generate a return of investment</p>"
+                },
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "regulations_and_standards_translations": {
+                    "en": ""
+                },
+                "file_translations": {
+                    "en": "./interlinkers/knowledge/outcome-marketing-featureset/resource.docx"
                 }
             },
             {
@@ -3398,102 +3898,6 @@
                     "all"
                 ],
                 "problemprofiles": [
-                    "UND_PROBLEM_2",
-                    "UND_PROBLEM_4"
-                ],
-                "types": [
-                    "enhancing_services"
-                ],
-                "administrative_scopes": [
-                    "eu"
-                ],
-                "domain": "",
-                "process": "",
-                "reference": "stakeholder-types-guidelines",
-                "form": "guidelines",
-                "format": "pdf",
-                "softwareinterlinker": "googledrive",
-                "difficulty": "easy",
-                "licence": "public_domain",
-                "instructions_translations": {
-                    "en": "./interlinkers/knowledge/Stakeholder-Types-Guidelines/instructions.md"
-                },
-                "tags_translations": {
-                    "en": [
-                        "services",
-                        "stakeholder mappping"
-                    ]
-                },
-                "name_translations": {
-                    "en": "Stakeholder types guidelines"
-                },
-                "description_translations": {
-                    "en": "<p>Guidelines to understand which are the different types of stakeholder, their  motivations, skills, expectations toward the project</p>"
-                },
-                "constraints_and_limitations_translations": {
-                    "en": "No special constraints apply"
-                },
-                "regulations_and_standards_translations": {
-                    "en": ""
-                },
-                "file_translations": {
-                    "en": "./interlinkers/knowledge/Stakeholder-Types-Guidelines/resource.pdf"
-                }
-            },
-            {
-                "languages": [
-                    "en"
-                ],
-                "targets": [
-                    "all"
-                ],
-                "problemprofiles": [
-                    "ORG_PROBLEM_1"
-                ],
-                "types": [
-                    "enabling_services"
-                ],
-                "administrative_scopes": [
-                    "eu"
-                ],
-                "reference": "template-for-project-description",
-                "form": "document_template",
-                "format": "editable_source_document",
-                "softwareinterlinker": "googledrive",
-                "difficulty": "easy",
-                "licence": "permissive",
-                "instructions_translations": {
-                    "en": "./interlinkers/knowledge/Project-Description-Template/instructions.md"
-                },
-                "tags_translations": {
-                    "en": [
-                        "project initiation"
-                    ]
-                },
-                "name_translations": {
-                    "en": "Template for project description"
-                },
-                "description_translations": {
-                    "en": "<p>Template for preparing a project description that synthetically summarizes the goals and major aspects of a co-production initiative. </p>"
-                },
-                "constraints_and_limitations_translations": {
-                    "en": "No special constraints apply"
-                },
-                "regulations_and_standards_translations": {
-                    "en": ""
-                },
-                "file_translations": {
-                    "en": "./interlinkers/knowledge/Project-Description-Template/resource.docx"
-                }
-            },
-            {
-                "languages": [
-                    "en"
-                ],
-                "targets": [
-                    "all"
-                ],
-                "problemprofiles": [
                     "UND_PROBLEM_3",
                     "UND_PROBLEM_1",
                     "VAL_PROBLEM_2"
@@ -3545,43 +3949,47 @@
                     "all"
                 ],
                 "problemprofiles": [
-                    "ORG_PROBLEM_1",
-                    "UND_PROBLEM_2"
+                    "HACKATHON_PROBLEM_1"
                 ],
                 "types": [
-                    "enabling_services"
+                    "enhancing_services"
                 ],
                 "administrative_scopes": [
                     "eu"
                 ],
-                "reference": "template-for-use-scenarios",
+                "domain": "",
+                "process": "",
+                "reference": "public-service-proposal-template-for-interlink-project",
                 "form": "document_template",
                 "format": "editable_source_document",
                 "softwareinterlinker": "googledrive",
-                "difficulty": "easy",
-                "licence": "permissive",
+                "difficulty": "very_easy",
+                "licence": "public_domain",
                 "instructions_translations": {
-                    "en": "./interlinkers/knowledge/it-use-scenarios/instructions.md"
+                    "en": "./interlinkers/knowledge/Public-Service-Proposal-Template/instructions.md"
                 },
                 "tags_translations": {
                     "en": [
-                        "services"
+                        "public service",
+                        "proposal",
+                        "co-production project participants",
+                        "INTERLINK"
                     ]
                 },
                 "name_translations": {
-                    "en": "Template for use case scenarios"
+                    "en": "Public Service Proposal Template for INTERLINK project"
                 },
                 "description_translations": {
-                    "en": "<p>Template for preparing a use scenarios. </p>"
+                    "en": "<p>Document with template for co-design of Public Service Proposal</p>"
                 },
                 "constraints_and_limitations_translations": {
                     "en": "No special constraints apply"
                 },
                 "regulations_and_standards_translations": {
-                    "en": ""
+                    "en": "Public Service Proposal Template is compliant to GDPR norms."
                 },
                 "file_translations": {
-                    "en": "./interlinkers/knowledge/it-use-scenarios/resource.xlsx"
+                    "en": "./interlinkers/knowledge/Public-Service-Proposal-Template/resource.docx"
                 }
             },
             {
@@ -3592,7 +4000,7 @@
                     "all"
                 ],
                 "problemprofiles": [
-                    "SUS_PROBLEM_1"
+                    "UND_PROBLEM_3"
                 ],
                 "types": [
                     "enhancing_services"
@@ -3602,27 +4010,27 @@
                 ],
                 "domain": "",
                 "process": "",
-                "reference": "business-model-canvas",
+                "reference": "co-producers-perceptions-Questionnaire",
                 "form": "document_template",
                 "format": "editable_source_document",
                 "softwareinterlinker": "googledrive",
                 "difficulty": "easy",
                 "licence": "public_domain",
                 "instructions_translations": {
-                    "en": "./interlinkers/knowledge/Business-Model-Canvas/instructions.md"
+                    "en": "./interlinkers/knowledge/co-producers-perceptions-Questionnaire/instructions.md"
                 },
                 "tags_translations": {
                     "en": [
-                        "model",
-                        "canvas",
-                        "business"
+                        "product specification",
+                        "template",
+                        "understand"
                     ]
                 },
                 "name_translations": {
-                    "en": "Business Model Canvas"
+                    "en": "Guidelines for surveys"
                 },
                 "description_translations": {
-                    "en": "This canvas can be used collaboratively, for instance, during a brainstorming or a focus group, to reflect on the the most suitable business model associated to a co-produced service."
+                    "en": "<p>This is a model of a questionnaire aimed to measure co-producer's perceptions on user-based quality, value-based quality, trust and acceptance. This questionnaire is thought to be answered by those who take part in the co-production of a public service or reuse artefacts (public services & INTERLINKERs) made available through INTERLINK co-production tools (Collaborative Environment and Catalogue).</p>"
                 },
                 "constraints_and_limitations_translations": {
                     "en": "No special constraints apply"
@@ -3631,7 +4039,7 @@
                     "en": ""
                 },
                 "file_translations": {
-                    "en": "./interlinkers/knowledge/Business-Model-Canvas/resource.pptx"
+                    "en": "./interlinkers/knowledge/co-producers-perceptions-Questionnaire/resource.pdf"
                 }
             },
             {
@@ -3694,88 +4102,33 @@
                     "all"
                 ],
                 "problemprofiles": [
-                    "ORG_PROBLEM_5"
+                    "ORG_PROBLEM_1"
                 ],
                 "types": [
-                    "enhancing_services"
+                    "enabling_services"
                 ],
                 "administrative_scopes": [
                     "eu"
                 ],
-                "domain": "",
-                "process": "",
-                "reference": "stakeholder-engagement-plan-for-interlink-project",
-                "form": "document_template",
-                "format": "editable_source_document",
-                "softwareinterlinker": "googledrive",
-                "difficulty": "very_easy",
-                "licence": "public_domain",
-                "instructions_translations": {
-                    "en": "./interlinkers/knowledge/Stakeholder-Engagement-Plan-Template/instructions.md"
-                },
-                "tags_translations": {
-                    "en": [
-                        "stakeholder engagement",
-                        "planning",
-                        "co-production project participants",
-                        "INTERLINK"
-                    ]
-                },
-                "name_translations": {
-                    "en": "Stakeholder Engagement Plan for INTERLINK project"
-                },
-                "description_translations": {
-                    "en": "<p>Document to design the engagement plan for those co-producing and/or using the resulting co-produced product</p>"
-                },
-                "constraints_and_limitations_translations": {
-                    "en": "No special constraints apply"
-                },
-                "regulations_and_standards_translations": {
-                    "en": "Stakeholder Engagement Plan is compliant to GDPR norms."
-                },
-                "file_translations": {
-                    "en": "./interlinkers/knowledge/Stakeholder-Engagement-Plan-Template/resource.docx"
-                }
-            },
-            {
-                "languages": [
-                    "en"
-                ],
-                "targets": [
-                    "all"
-                ],
-                "problemprofiles": [
-                    "UND_PROBLEM_2"
-                ],
-                "types": [
-                    "enhancing_services"
-                ],
-                "administrative_scopes": [
-                    "eu"
-                ],
-                "domain": "",
-                "process": "",
-                "reference": "stakeholders-mapping-canvas",
+                "reference": "template-for-project-description",
                 "form": "document_template",
                 "format": "editable_source_document",
                 "softwareinterlinker": "googledrive",
                 "difficulty": "easy",
-                "licence": "public_domain",
+                "licence": "permissive",
                 "instructions_translations": {
-                    "en": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/instructions.md"
+                    "en": "./interlinkers/knowledge/Project-Description-Template/instructions.md"
                 },
                 "tags_translations": {
                     "en": [
-                        "stakeholders mapping",
-                        "canvas",
-                        "understand"
+                        "project initiation"
                     ]
                 },
                 "name_translations": {
-                    "en": "Stakeholders Mapping Canvas"
+                    "en": "Template for project description"
                 },
                 "description_translations": {
-                    "en": "<p>This resource supports the identification and selection of the stakeholders to engage in a co-production team.</p>"
+                    "en": "<p>Template for preparing a project description that synthetically summarizes the goals and major aspects of a co-production initiative. </p>"
                 },
                 "constraints_and_limitations_translations": {
                     "en": "No special constraints apply"
@@ -3784,58 +4137,7 @@
                     "en": ""
                 },
                 "file_translations": {
-                    "en": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/resource.pptx"
-                }
-            },
-            {
-                "languages": [
-                    "en"
-                ],
-                "targets": [
-                    "all"
-                ],
-                "problemprofiles": [
-                    "ORG_PROBLEM_14",
-                    "UND_PROBLEM_3"
-                ],
-                "types": [
-                    "enhancing_services"
-                ],
-                "administrative_scopes": [
-                    "eu"
-                ],
-                "domain": "",
-                "process": "",
-                "reference": "Guidelines-for-interviews",
-                "form": "document_template",
-                "format": "editable_source_document",
-                "softwareinterlinker": "googledrive",
-                "difficulty": "easy",
-                "licence": "public_domain",
-                "instructions_translations": {
-                    "en": "./interlinkers/knowledge/Guidelines-for-interviews/instructions.md"
-                },
-                "tags_translations": {
-                    "en": [
-                        "focus group",
-                        "template",
-                        "understand"
-                    ]
-                },
-                "name_translations": {
-                    "en": "Guidelines for interviews"
-                },
-                "description_translations": {
-                    "en": "<p>Instructions on how to set up a research activity based on interviews, for a co-production project. </p>"
-                },
-                "constraints_and_limitations_translations": {
-                    "en": "No special constraints apply"
-                },
-                "regulations_and_standards_translations": {
-                    "en": ""
-                },
-                "file_translations": {
-                    "en": "./interlinkers/knowledge/Guidelines-for-interviews/resource.docx"
+                    "en": "./interlinkers/knowledge/Project-Description-Template/resource.docx"
                 }
             },
             {
@@ -3897,55 +4199,8 @@
                     "all"
                 ],
                 "problemprofiles": [
-                    "UND_PROBLEM_1",
-                    "DEF_PROBLEM_1",
-                    "DEF_PROBLEM_5"
-                ],
-                "types": [
-                    "enabling_services"
-                ],
-                "administrative_scopes": [
-                    "eu"
-                ],
-                "reference": "guidelines-for-co-design-service",
-                "form": "guidelines",
-                "format": "structured_format",
-                "softwareinterlinker": "googledrive",
-                "difficulty": "easy",
-                "licence": "permissive",
-                "instructions_translations": {
-                    "en": "./interlinkers/knowledge/it-workshop-service-design/instructions.md"
-                },
-                "tags_translations": {
-                    "en": [
-                        "services"
-                    ]
-                },
-                "name_translations": {
-                    "en": "Guidelines for co-design of service"
-                },
-                "description_translations": {
-                    "en": "<p>This resource describes the guidelines for the designing of a service in the public administration</p>"
-                },
-                "constraints_and_limitations_translations": {
-                    "en": "No special constraints apply"
-                },
-                "regulations_and_standards_translations": {
-                    "en": ""
-                },
-                "file_translations": {
-                    "en": "./interlinkers/knowledge/it-workshop-service-design/resource.pptx"
-                }
-            },
-            {
-                "languages": [
-                    "en"
-                ],
-                "targets": [
-                    "all"
-                ],
-                "problemprofiles": [
-                    "VAL_PROBLEM_2"
+                    "UND_PROBLEM_2",
+                    "UND_PROBLEM_4"
                 ],
                 "types": [
                     "enhancing_services"
@@ -3955,27 +4210,26 @@
                 ],
                 "domain": "",
                 "process": "",
-                "reference": "focus-group-template-co-production-investigation",
-                "form": "document_template",
-                "format": "editable_source_document",
+                "reference": "stakeholder-types-guidelines",
+                "form": "guidelines",
+                "format": "pdf",
                 "softwareinterlinker": "googledrive",
                 "difficulty": "easy",
                 "licence": "public_domain",
                 "instructions_translations": {
-                    "en": "./interlinkers/knowledge/Focus-Group-Template-Co-production/instructions.md"
+                    "en": "./interlinkers/knowledge/Stakeholder-Types-Guidelines/instructions.md"
                 },
                 "tags_translations": {
                     "en": [
-                        "focus group",
-                        "template",
-                        "understand"
+                        "services",
+                        "stakeholder mappping"
                     ]
                 },
                 "name_translations": {
-                    "en": "Focus Group Template Co-production Investigation"
+                    "en": "Stakeholder types guidelines"
                 },
                 "description_translations": {
-                    "en": "<p>This resource provides a skeleton to organize a focus group to investigate the co-production practices in a given organization. It addresses a series of questions about previous or current collaboration practices, the dynamics of collaboration (timeline, people, tools, communication channels), current KPIs, critical aspects and  desiderata.</p>"
+                    "en": "<p>Guidelines to understand which are the different types of stakeholder, their  motivations, skills, expectations toward the project</p>"
                 },
                 "constraints_and_limitations_translations": {
                     "en": "No special constraints apply"
@@ -3984,7 +4238,7 @@
                     "en": ""
                 },
                 "file_translations": {
-                    "en": "./interlinkers/knowledge/Focus-Group-Template-Co-production/resource.pptx"
+                    "en": "./interlinkers/knowledge/Stakeholder-Types-Guidelines/resource.pdf"
                 }
             },
             {
@@ -3995,6 +4249,7 @@
                     "all"
                 ],
                 "problemprofiles": [
+                    "ORG_PROBLEM_14",
                     "UND_PROBLEM_3"
                 ],
                 "types": [
@@ -4005,314 +4260,14 @@
                 ],
                 "domain": "",
                 "process": "",
-                "reference": "Guidelines-for-online-surveys",
+                "reference": "Guidelines-for-interviews",
                 "form": "document_template",
                 "format": "editable_source_document",
                 "softwareinterlinker": "googledrive",
                 "difficulty": "easy",
                 "licence": "public_domain",
                 "instructions_translations": {
-                    "en": "./interlinkers/knowledge/Guidelines-for-online-surveys/instructions.md"
-                },
-                "tags_translations": {
-                    "en": [
-                        "survey",
-                        "template",
-                        "understand"
-                    ]
-                },
-                "name_translations": {
-                    "en": "Guidelines for online-surveys"
-                },
-                "description_translations": {
-                    "en": "<p>Instructions on how to set up a research activity based on online surveys, for a co-production project </p>"
-                },
-                "constraints_and_limitations_translations": {
-                    "en": "No special constraints apply"
-                },
-                "regulations_and_standards_translations": {
-                    "en": ""
-                },
-                "file_translations": {
-                    "en": "./interlinkers/knowledge/Guidelines-for-online-surveys/resource.docx"
-                }
-            },
-            {
-                "languages": [
-                    "en"
-                ],
-                "targets": [
-                    "all"
-                ],
-                "problemprofiles": [
-                    "ORG_PROBLEM_14"
-                ],
-                "types": [
-                    "enhancing_services"
-                ],
-                "administrative_scopes": [
-                    "eu"
-                ],
-                "domain": "",
-                "process": "",
-                "reference": "consent-form-for-interlink-project",
-                "form": "document_template",
-                "format": "editable_source_document",
-                "softwareinterlinker": "googledrive",
-                "difficulty": "very_easy",
-                "licence": "public_domain",
-                "instructions_translations": {
-                    "en": "./interlinkers/knowledge/Consent-Form-INTERLINK/instructions.md"
-                },
-                "tags_translations": {
-                    "en": [
-                        "privacy management",
-                        "research activities",
-                        "co-production project participants",
-                        "INTERLINK"
-                    ]
-                },
-                "name_translations": {
-                    "en": "Consent Form for INTERLINK project"
-                },
-                "description_translations": {
-                    "en": "<p>Form to collect consent from participants engaged in INTERLINK research activities about the use of their personal data</p>"
-                },
-                "constraints_and_limitations_translations": {
-                    "en": "No special constraints apply"
-                },
-                "regulations_and_standards_translations": {
-                    "en": "The consent form is compliant to GDPR norms."
-                },
-                "file_translations": {
-                    "en": "./interlinkers/knowledge/Consent-Form-INTERLINK/resource.docx"
-                }
-            },
-            {
-                "languages": [
-                    "en"
-                ],
-                "targets": [
-                    "all"
-                ],
-                "problemprofiles": [
-                    "ORG_PROBLEM_1",
-                    "UND_PROBLEM_2"
-                ],
-                "types": [
-                    "enabling_services"
-                ],
-                "administrative_scopes": [
-                    "eu"
-                ],
-                "reference": "user-journey-template",
-                "form": "document_template",
-                "format": "editable_source_document",
-                "softwareinterlinker": "googledrive",
-                "difficulty": "easy",
-                "licence": "permissive",
-                "instructions_translations": {
-                    "en": "./interlinkers/knowledge/it-user-journey/instructions.md"
-                },
-                "tags_translations": {
-                    "en": [
-                        "services"
-                    ]
-                },
-                "name_translations": {
-                    "en": "Template for user journey"
-                },
-                "description_translations": {
-                    "en": "<p>Template for preparing a user journey. </p>"
-                },
-                "constraints_and_limitations_translations": {
-                    "en": "No special constraints apply"
-                },
-                "regulations_and_standards_translations": {
-                    "en": ""
-                },
-                "file_translations": {
-                    "en": "./interlinkers/knowledge/it-user-journey/resource.xlsx"
-                }
-            },
-            {
-                "languages": [
-                    "en"
-                ],
-                "targets": [
-                    "all"
-                ],
-                "problemprofiles": [
-                    "HACKATHON_PROBLEM_1"
-                ],
-                "types": [
-                    "enhancing_services"
-                ],
-                "administrative_scopes": [
-                    "eu"
-                ],
-                "domain": "",
-                "process": "",
-                "reference": "public-service-proposal-template-for-interlink-project",
-                "form": "document_template",
-                "format": "editable_source_document",
-                "softwareinterlinker": "googledrive",
-                "difficulty": "very_easy",
-                "licence": "public_domain",
-                "instructions_translations": {
-                    "en": "./interlinkers/knowledge/Public-Service-Proposal-Template/instructions.md"
-                },
-                "tags_translations": {
-                    "en": [
-                        "public service",
-                        "proposal",
-                        "co-production project participants",
-                        "INTERLINK"
-                    ]
-                },
-                "name_translations": {
-                    "en": "Public Service Proposal Template for INTERLINK project"
-                },
-                "description_translations": {
-                    "en": "<p>Document with template for co-design of Public Service Proposal</p>"
-                },
-                "constraints_and_limitations_translations": {
-                    "en": "No special constraints apply"
-                },
-                "regulations_and_standards_translations": {
-                    "en": "Public Service Proposal Template is compliant to GDPR norms."
-                },
-                "file_translations": {
-                    "en": "./interlinkers/knowledge/Public-Service-Proposal-Template/resource.docx"
-                }
-            },
-            {
-                "languages": [
-                    "en"
-                ],
-                "targets": [
-                    "all"
-                ],
-                "problemprofiles": [
-                    "ORG_PROBLEM_14"
-                ],
-                "types": [
-                    "enhancing_services"
-                ],
-                "administrative_scopes": [
-                    "eu"
-                ],
-                "domain": "",
-                "process": "",
-                "reference": "consent-form-template",
-                "form": "document_template",
-                "format": "editable_source_document",
-                "softwareinterlinker": "googledrive",
-                "difficulty": "very_easy",
-                "licence": "public_domain",
-                "instructions_translations": {
-                    "en": "./interlinkers/knowledge/Consent-Form-Template/instructions.md"
-                },
-                "tags_translations": {
-                    "en": [
-                        "privacy management",
-                        "research activities",
-                        "co-production project participants",
-                        "INTERLINK"
-                    ]
-                },
-                "name_translations": {
-                    "en": "Consent Form Template"
-                },
-                "description_translations": {
-                    "en": "<p>Template to prepare a form to collect consent from participants engaged in research activities about the use of their personal data</p>"
-                },
-                "constraints_and_limitations_translations": {
-                    "en": "No special constraints apply"
-                },
-                "regulations_and_standards_translations": {
-                    "en": "The consent form is compliant to GDPR norms."
-                },
-                "file_translations": {
-                    "en": "./interlinkers/knowledge/Consent-Form-Template/resource.docx"
-                }
-            },
-            {
-                "languages": [
-                    "en"
-                ],
-                "targets": [
-                    "all"
-                ],
-                "problemprofiles": [
-                    "VAL_PROBLEM_2"
-                ],
-                "types": [
-                    "enhancing_services"
-                ],
-                "administrative_scopes": [
-                    "national",
-                    "local"
-                ],
-                "domain": "",
-                "process": "",
-                "reference": "model-for-personas-in-italian",
-                "form": "document_template",
-                "format": "editable_source_document",
-                "softwareinterlinker": "googledrive",
-                "difficulty": "easy",
-                "licence": "public_domain",
-                "instructions_translations": {
-                    "en": "./interlinkers/knowledge/it-agid-personas/instructions.md"
-                },
-                "tags_translations": {
-                    "en": [
-                        "services"
-                    ]
-                },
-                "name_translations": {
-                    "en": "Model for Personas (in italian)"
-                },
-                "description_translations": {
-                    "en": "<p>This resource provides a model for persona outlined by AGID and Team Digitale (in Italian).</p>"
-                },
-                "constraints_and_limitations_translations": {
-                    "en": "No special constraints apply"
-                },
-                "regulations_and_standards_translations": {
-                    "en": ""
-                },
-                "file_translations": {
-                    "en": "./interlinkers/knowledge/it-agid-personas/resource.pptx"
-                }
-            },
-            {
-                "languages": [
-                    "en"
-                ],
-                "targets": [
-                    "all"
-                ],
-                "problemprofiles": [
-                    "UND_PROBLEM_3",
-                    "VAL_PROBLEM_2"
-                ],
-                "types": [
-                    "enhancing_services"
-                ],
-                "administrative_scopes": [
-                    "eu"
-                ],
-                "domain": "",
-                "process": "",
-                "reference": "focus-group-template-problem-exploration-functionalities",
-                "form": "document_template",
-                "format": "editable_source_document",
-                "softwareinterlinker": "googledrive",
-                "difficulty": "easy",
-                "licence": "public_domain",
-                "instructions_translations": {
-                    "en": "./interlinkers/knowledge/Focus-Group-Template-problem-exploration-functionalities/instructions.md"
+                    "en": "./interlinkers/knowledge/Guidelines-for-interviews/instructions.md"
                 },
                 "tags_translations": {
                     "en": [
@@ -4322,10 +4277,10 @@
                     ]
                 },
                 "name_translations": {
-                    "en": "Focus Group Template Co-production Investigation"
+                    "en": "Guidelines for interviews"
                 },
                 "description_translations": {
-                    "en": "<p>This resource provides a skeleton to organize a focus group to investigate the problem that needs to be solved by a digital service / functionality. It addresses a series of questions about potential users, current practices, critical aspects and  desiderata.</p>"
+                    "en": "<p>Instructions on how to set up a research activity based on interviews, for a co-production project. </p>"
                 },
                 "constraints_and_limitations_translations": {
                     "en": "No special constraints apply"
@@ -4334,59 +4289,7 @@
                     "en": ""
                 },
                 "file_translations": {
-                    "en": "./interlinkers/knowledge/Focus-Group-Template-problem-exploration-functionalities/resource.pptx"
-                }
-            },
-            {
-                "languages": [
-                    "en"
-                ],
-                "targets": [
-                    "all"
-                ],
-                "problemprofiles": [
-                    "ORG_PROBLEM_6.2",
-                    "VAL_PROBLEM_1",
-                    "VAL_PROBLEM_5"
-                ],
-                "types": [
-                    "enhancing_services"
-                ],
-                "administrative_scopes": [
-                    "eu"
-                ],
-                "domain": "",
-                "process": "",
-                "reference": "outcome-marketing-featureset",
-                "form": "document_template",
-                "format": "editable_source_document",
-                "softwareinterlinker": "googledrive",
-                "difficulty": "easy",
-                "licence": "public_domain",
-                "instructions_translations": {
-                    "en": "./interlinkers/knowledge/outcome-marketing-featureset/instructions.md"
-                },
-                "tags_translations": {
-                    "en": [
-                        "product specification",
-                        "template",
-                        "understand"
-                    ]
-                },
-                "name_translations": {
-                    "en": "Guidelines for online-surveys"
-                },
-                "description_translations": {
-                    "en": "<p>This resource suggests a model to define the features of a co-produced service. It guides the description of the problem(s) that the product will solve in the long run, the vision for the user experience as well as the user interface, the vision for how the product will generate a return of investment</p>"
-                },
-                "constraints_and_limitations_translations": {
-                    "en": "No special constraints apply"
-                },
-                "regulations_and_standards_translations": {
-                    "en": ""
-                },
-                "file_translations": {
-                    "en": "./interlinkers/knowledge/outcome-marketing-featureset/resource.docx"
+                    "en": "./interlinkers/knowledge/Guidelines-for-interviews/resource.docx"
                 }
             },
             {
@@ -4448,7 +4351,7 @@
                     "all"
                 ],
                 "problemprofiles": [
-                    "SUS_PROBLEM_1"
+                    "VAL_PROBLEM_2"
                 ],
                 "types": [
                     "enhancing_services"
@@ -4458,27 +4361,27 @@
                 ],
                 "domain": "",
                 "process": "",
-                "reference": "business-plan-template",
+                "reference": "focus-group-template-co-production-investigation",
                 "form": "document_template",
                 "format": "editable_source_document",
                 "softwareinterlinker": "googledrive",
                 "difficulty": "easy",
                 "licence": "public_domain",
                 "instructions_translations": {
-                    "en": "./interlinkers/knowledge/Business-Plan-Template/instructions.md"
+                    "en": "./interlinkers/knowledge/Focus-Group-Template-Co-production/instructions.md"
                 },
                 "tags_translations": {
                     "en": [
+                        "focus group",
                         "template",
-                        "canvas",
-                        "business"
+                        "understand"
                     ]
                 },
                 "name_translations": {
-                    "en": "Business Plan Template"
+                    "en": "Focus Group Template Co-production Investigation"
                 },
                 "description_translations": {
-                    "en": "<p>This canvas can be edited collaboratively by the co-producing team to ellaborate the business plan for a co-produced service..</p>"
+                    "en": "<p>This resource provides a skeleton to organize a focus group to investigate the co-production practices in a given organization. It addresses a series of questions about previous or current collaboration practices, the dynamics of collaboration (timeline, people, tools, communication channels), current KPIs, critical aspects and  desiderata.</p>"
                 },
                 "constraints_and_limitations_translations": {
                     "en": "No special constraints apply"
@@ -4487,7 +4390,154 @@
                     "en": ""
                 },
                 "file_translations": {
-                    "en": "./interlinkers/knowledge/Business-Plan-Template/resource.docx"
+                    "en": "./interlinkers/knowledge/Focus-Group-Template-Co-production/resource.pptx"
+                }
+            },
+            {
+                "languages": [
+                    "en"
+                ],
+                "targets": [
+                    "all"
+                ],
+                "problemprofiles": [
+                    "UND_PROBLEM_2"
+                ],
+                "types": [
+                    "enhancing_services"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "domain": "",
+                "process": "",
+                "reference": "stakeholders-mapping-canvas",
+                "form": "document_template",
+                "format": "editable_source_document",
+                "softwareinterlinker": "googledrive",
+                "difficulty": "easy",
+                "licence": "public_domain",
+                "instructions_translations": {
+                    "en": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/instructions.md"
+                },
+                "tags_translations": {
+                    "en": [
+                        "stakeholders mapping",
+                        "canvas",
+                        "understand"
+                    ]
+                },
+                "name_translations": {
+                    "en": "Stakeholders Mapping Canvas"
+                },
+                "description_translations": {
+                    "en": "<p>This resource supports the identification and selection of the stakeholders to engage in a co-production team.</p>"
+                },
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "regulations_and_standards_translations": {
+                    "en": ""
+                },
+                "file_translations": {
+                    "en": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/resource.pptx"
+                }
+            },
+            {
+                "languages": [
+                    "en"
+                ],
+                "targets": [
+                    "all"
+                ],
+                "problemprofiles": [
+                    "ORG_PROBLEM_1",
+                    "UND_PROBLEM_2"
+                ],
+                "types": [
+                    "enabling_services"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "reference": "user-journey-template",
+                "form": "document_template",
+                "format": "editable_source_document",
+                "softwareinterlinker": "googledrive",
+                "difficulty": "easy",
+                "licence": "permissive",
+                "instructions_translations": {
+                    "en": "./interlinkers/knowledge/it-user-journey/instructions.md"
+                },
+                "tags_translations": {
+                    "en": [
+                        "services"
+                    ]
+                },
+                "name_translations": {
+                    "en": "Template for user journey"
+                },
+                "description_translations": {
+                    "en": "<p>Template for preparing a user journey. </p>"
+                },
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "regulations_and_standards_translations": {
+                    "en": ""
+                },
+                "file_translations": {
+                    "en": "./interlinkers/knowledge/it-user-journey/resource.xlsx"
+                }
+            },
+            {
+                "languages": [
+                    "en"
+                ],
+                "targets": [
+                    "all"
+                ],
+                "problemprofiles": [
+                    "UND_PROBLEM_3"
+                ],
+                "types": [
+                    "enhancing_services"
+                ],
+                "administrative_scopes": [
+                    "eu"
+                ],
+                "domain": "",
+                "process": "",
+                "reference": "Guidelines-for-online-surveys",
+                "form": "document_template",
+                "format": "editable_source_document",
+                "softwareinterlinker": "googledrive",
+                "difficulty": "easy",
+                "licence": "public_domain",
+                "instructions_translations": {
+                    "en": "./interlinkers/knowledge/Guidelines-for-online-surveys/instructions.md"
+                },
+                "tags_translations": {
+                    "en": [
+                        "survey",
+                        "template",
+                        "understand"
+                    ]
+                },
+                "name_translations": {
+                    "en": "Guidelines for online-surveys"
+                },
+                "description_translations": {
+                    "en": "<p>Instructions on how to set up a research activity based on online surveys, for a co-production project </p>"
+                },
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "regulations_and_standards_translations": {
+                    "en": ""
+                },
+                "file_translations": {
+                    "en": "./interlinkers/knowledge/Guidelines-for-online-surveys/resource.docx"
                 }
             }
         ],
@@ -4498,25 +4548,24 @@
                     "es"
                 ],
                 "name_translations": {
-                    "en": "Accessibility Tools"
+                    "en": "Grafana"
                 },
                 "description_translations": {
-                    "en": "<p>Web accessibility evaluation tools are software programs or online services that help you determine if web content meets accessibility guidelines. This page provides a list of evaluation tools that you can filter to find ones that match your particular needs.</p>"
+                    "en": "<p>Multi-platform open source analytics and interactive visualization web application. It provides charts, graphs, and alerts for the web when connected to supported data sources. </p>"
                 },
                 "tags_translations": {
                     "en": [
-                        "ACCESSIBILITY",
-                        "HTML5",
-                        "CSS"
+                        "ANALYSIS",
+                        "DASHBOARD"
                     ]
                 },
-                "difficulty": "easy",
+                "difficulty": "medium",
                 "targets": [
                     "all"
                 ],
-                "licence": "propietary",
+                "licence": "public_domain",
                 "problemprofiles": [
-                    "BUILD_PROBLEM_2"
+                    "ORG_PROBLEM_6.2"
                 ],
                 "types": [
                     "enabling_services"
@@ -4532,15 +4581,137 @@
                 "regulations_and_standards_translations": {
                     "en": "None"
                 },
-                "reference": "html-tools",
+                "logotype": "./interlinkers/externalsoftware/grafana/logo.png",
+                "reference": "dashboard",
                 "uri_translations": {
-                    "en": "https://www.w3.org/WAI/ER/tools/"
+                    "en": "https://grafana.com/"
                 },
                 "instructions_translations": {
-                    "en": "./interlinkers/externalsoftware/w3c-accessibility-tools/instructions.md"
+                    "en": "./interlinkers/externalsoftware/grafana/instructions.md"
                 },
                 "asset_name_translations": {
-                    "en": "W3C accessibility tools"
+                    "en": "Grafana"
+                },
+                "type": "software"
+            },
+            {
+                "languages": [
+                    "en",
+                    "es"
+                ],
+                "name_translations": {
+                    "en": "AAC - Authentication and Authorization Controller",
+                    "es": ""
+                },
+                "description_translations": {
+                    "en": "<p> AAC is an Open Source platform for identity management, authentication, and authorization. Based on standard security protocols, such as OAuth2.0, OpenID Connect, SAML, SCIM, the tool allows for protecting the APIs and applciations, manage users, authenticate using external Identity Providers performing also Single Sign-On and Single Logout functionality. The tool is compatible with the eID providers and allow for integration of nation-level or cross-country authentication solutions.</p><p>More specifically, the tool allows for, but not limited to<ul><li>Multi-tenant management of users, applications, and personal data management in an extensible manner with the custom user attributes (claims) and attribute extraction;</li><li>User management with email/password based user registration or even passwordless authentication (based on WebAuthn standard)</li> <li>Authentication federation with external providers, and in particular, with eIDAS-compliant solutions, using SAML, OpenId Connect, and OAuth2.0 protocols;</li> <li>Perform OAuth2.0-based authorization and access control with customizable and extensible model of scopes, services, and applications;</li><li>Perform role-based and attribute-based access control policy implementation for end-users and applications accessing protected APIs.</li></ul></p>",
+                    "es": ""
+                },
+                "difficulty": "difficult",
+                "targets": [
+                    "all"
+                ],
+                "licence": "permissive",
+                "problemprofiles": [
+                    "ORG_PROBLEM_3",
+                    "BUILD_PROBLEM_4",
+                    "BUILD_PROBLEM_5",
+                    "BUILD_PROBLEM_8"
+                ],
+                "types": [
+                    "enabling_services;operation_services"
+                ],
+                "administrative_scopes": [
+                    "eu",
+                    "national",
+                    "local"
+                ],
+                "constraints_and_limitations_translations": {
+                    "en": "None",
+                    "es": ""
+                },
+                "regulations_and_standards_translations": {
+                    "en": "None",
+                    "es": ""
+                },
+                "overview_text": {
+                    "en": "Open source standard-based platform for identity and authorization management",
+                    "es": ""
+                },
+                "uri_translations": {
+                    "en": "https://scc-digitalhub.github.io/AAC"
+                },
+                "logotype": "./interlinkers/externalsoftware/aac/logo.png",
+                "reference": "aac",
+                "tags_translations": {
+                    "en": [
+                        "authentication",
+                        "authorization",
+                        "user management",
+                        "oauth2.0",
+                        "openid",
+                        "security"
+                    ]
+                },
+                "instructions_translations": {
+                    "en": "./interlinkers/externalsoftware/aac/instructions.md"
+                },
+                "type": "software"
+            },
+            {
+                "languages": [
+                    "en",
+                    "es"
+                ],
+                "name_translations": {
+                    "en": "Keycloak"
+                },
+                "description_translations": {
+                    "en": "<p>Keycloak provides user federation, strong authentication, user management, fine-grained authorization</p>"
+                },
+                "tags_translations": {
+                    "en": [
+                        "authentication",
+                        "ssl",
+                        "openid",
+                        "security"
+                    ]
+                },
+                "difficulty": "difficult",
+                "targets": [
+                    "all;pas",
+                    "all;research_organizations",
+                    "all;businesses"
+                ],
+                "licence": "permissive",
+                "problemprofiles": [
+                    "ORG_PROBLEM_3"
+                ],
+                "types": [
+                    "enabling_services",
+                    "enhancing_services"
+                ],
+                "administrative_scopes": [
+                    "eu",
+                    "national",
+                    "local"
+                ],
+                "constraints_and_limitations_translations": {
+                    "en": "None"
+                },
+                "regulations_and_standards_translations": {
+                    "en": "None"
+                },
+                "reference": "user-authentication-authorization",
+                "logotype": "./interlinkers/externalsoftware/keycloak/logo.png",
+                "uri_translations": {
+                    "en": "https://www.keycloak.org/"
+                },
+                "instructions_translations": {
+                    "en": "./interlinkers/externalsoftware/keycloak/instructions.md"
+                },
+                "asset_name_translations": {
+                    "en": "Keycloak"
                 },
                 "type": "software"
             },
@@ -4592,50 +4763,39 @@
                     "es"
                 ],
                 "name_translations": {
-                    "en": "Markup Validation Service"
+                    "en": "Mailchimp"
                 },
                 "description_translations": {
-                    "en": "<p>This validator checks the markup validity of Web documents in HTML, XHTML, SMIL, MathML, etc.</p>"
+                    "en": "<p>Marketing automation platform and email marketing service[6] for managing mailing lists and creating email marketing campaigns to send to customers.</p>"
                 },
                 "tags_translations": {
                     "en": [
-                        "HTML",
-                        "XHTML",
-                        "SMIL",
-                        "MathML"
+                        "marketing",
+                        "newsletter",
+                        "email"
                     ]
                 },
                 "difficulty": "easy",
-                "targets": [
-                    "all"
-                ],
                 "licence": "propietary",
                 "problemprofiles": [
-                    "BUILD_PROBLEM_2"
-                ],
-                "types": [
-                    "enabling_services"
-                ],
-                "administrative_scopes": [
-                    "eu",
-                    "national",
-                    "local"
+                    "ORG_PROBLEM_4"
                 ],
                 "constraints_and_limitations_translations": {
-                    "en": "None"
+                    "en": "none"
                 },
                 "regulations_and_standards_translations": {
-                    "en": "None"
+                    "en": "none"
                 },
-                "reference": "html-tools",
+                "logotype": "./interlinkers/externalsoftware/mailchimp/logo.png",
+                "reference": "email-marketing",
                 "uri_translations": {
-                    "en": "https://validator.w3.org/about.html"
+                    "en": "https://mailchimp.com/es/"
                 },
                 "instructions_translations": {
-                    "en": "./interlinkers/externalsoftware/w3c-markup-language-validator/instructions.md"
+                    "en": "./interlinkers/externalsoftware/mailchimp/instructions.md"
                 },
                 "asset_name_translations": {
-                    "en": "W3C Markup language validator"
+                    "en": "Mailchimp"
                 },
                 "type": "software"
             },
@@ -4754,24 +4914,25 @@
                     "es"
                 ],
                 "name_translations": {
-                    "en": "Grafana"
+                    "en": "Accessibility Tools"
                 },
                 "description_translations": {
-                    "en": "<p>Multi-platform open source analytics and interactive visualization web application. It provides charts, graphs, and alerts for the web when connected to supported data sources. </p>"
+                    "en": "<p>Web accessibility evaluation tools are software programs or online services that help you determine if web content meets accessibility guidelines. This page provides a list of evaluation tools that you can filter to find ones that match your particular needs.</p>"
                 },
                 "tags_translations": {
                     "en": [
-                        "ANALYSIS",
-                        "DASHBOARD"
+                        "ACCESSIBILITY",
+                        "HTML5",
+                        "CSS"
                     ]
                 },
-                "difficulty": "medium",
+                "difficulty": "easy",
                 "targets": [
                     "all"
                 ],
-                "licence": "public_domain",
+                "licence": "propietary",
                 "problemprofiles": [
-                    "ORG_PROBLEM_6.2"
+                    "BUILD_PROBLEM_2"
                 ],
                 "types": [
                     "enabling_services"
@@ -4787,137 +4948,15 @@
                 "regulations_and_standards_translations": {
                     "en": "None"
                 },
-                "logotype": "./interlinkers/externalsoftware/grafana/logo.png",
-                "reference": "dashboard",
+                "reference": "html-tools",
                 "uri_translations": {
-                    "en": "https://grafana.com/"
+                    "en": "https://www.w3.org/WAI/ER/tools/"
                 },
                 "instructions_translations": {
-                    "en": "./interlinkers/externalsoftware/grafana/instructions.md"
+                    "en": "./interlinkers/externalsoftware/w3c-accessibility-tools/instructions.md"
                 },
                 "asset_name_translations": {
-                    "en": "Grafana"
-                },
-                "type": "software"
-            },
-            {
-                "languages": [
-                    "en",
-                    "es"
-                ],
-                "name_translations": {
-                    "en": "Keycloak"
-                },
-                "description_translations": {
-                    "en": "<p>Keycloak provides user federation, strong authentication, user management, fine-grained authorization</p>"
-                },
-                "tags_translations": {
-                    "en": [
-                        "authentication",
-                        "ssl",
-                        "openid",
-                        "security"
-                    ]
-                },
-                "difficulty": "difficult",
-                "targets": [
-                    "all;pas",
-                    "all;research_organizations",
-                    "all;businesses"
-                ],
-                "licence": "permissive",
-                "problemprofiles": [
-                    "ORG_PROBLEM_3"
-                ],
-                "types": [
-                    "enabling_services",
-                    "enhancing_services"
-                ],
-                "administrative_scopes": [
-                    "eu",
-                    "national",
-                    "local"
-                ],
-                "constraints_and_limitations_translations": {
-                    "en": "None"
-                },
-                "regulations_and_standards_translations": {
-                    "en": "None"
-                },
-                "reference": "user-authentication-authorization",
-                "logotype": "./interlinkers/externalsoftware/keycloak/logo.png",
-                "uri_translations": {
-                    "en": "https://www.keycloak.org/"
-                },
-                "instructions_translations": {
-                    "en": "./interlinkers/externalsoftware/keycloak/instructions.md"
-                },
-                "asset_name_translations": {
-                    "en": "Keycloak"
-                },
-                "type": "software"
-            },
-            {
-                "languages": [
-                    "en",
-                    "es"
-                ],
-                "name_translations": {
-                    "en": "AAC - Authentication and Authorization Controller",
-                    "es": ""
-                },
-                "description_translations": {
-                    "en": "<p> AAC is an Open Source platform for identity management, authentication, and authorization. Based on standard security protocols, such as OAuth2.0, OpenID Connect, SAML, SCIM, the tool allows for protecting the APIs and applciations, manage users, authenticate using external Identity Providers performing also Single Sign-On and Single Logout functionality. The tool is compatible with the eID providers and allow for integration of nation-level or cross-country authentication solutions.</p><p>More specifically, the tool allows for, but not limited to<ul><li>Multi-tenant management of users, applications, and personal data management in an extensible manner with the custom user attributes (claims) and attribute extraction;</li><li>User management with email/password based user registration or even passwordless authentication (based on WebAuthn standard)</li> <li>Authentication federation with external providers, and in particular, with eIDAS-compliant solutions, using SAML, OpenId Connect, and OAuth2.0 protocols;</li> <li>Perform OAuth2.0-based authorization and access control with customizable and extensible model of scopes, services, and applications;</li><li>Perform role-based and attribute-based access control policy implementation for end-users and applications accessing protected APIs.</li></ul></p>",
-                    "es": ""
-                },
-                "difficulty": "difficult",
-                "targets": [
-                    "all"
-                ],
-                "licence": "permissive",
-                "problemprofiles": [
-                    "ORG_PROBLEM_3",
-                    "BUILD_PROBLEM_4",
-                    "BUILD_PROBLEM_5",
-                    "BUILD_PROBLEM_8"
-                ],
-                "types": [
-                    "enabling_services;operation_services"
-                ],
-                "administrative_scopes": [
-                    "eu",
-                    "national",
-                    "local"
-                ],
-                "constraints_and_limitations_translations": {
-                    "en": "None",
-                    "es": ""
-                },
-                "regulations_and_standards_translations": {
-                    "en": "None",
-                    "es": ""
-                },
-                "overview_text": {
-                    "en": "Open source standard-based platform for identity and authorization management",
-                    "es": ""
-                },
-                "uri_translations": {
-                    "en": "https://scc-digitalhub.github.io/AAC"
-                },
-                "logotype": "./interlinkers/externalsoftware/aac/logo.png",
-                "reference": "aac",
-                "tags_translations": {
-                    "en": [
-                        "authentication",
-                        "authorization",
-                        "user management",
-                        "oauth2.0",
-                        "openid",
-                        "security"
-                    ]
-                },
-                "instructions_translations": {
-                    "en": "./interlinkers/externalsoftware/aac/instructions.md"
+                    "en": "W3C accessibility tools"
                 },
                 "type": "software"
             },
@@ -4982,41 +5021,104 @@
                     "es"
                 ],
                 "name_translations": {
-                    "en": "Mailchimp"
+                    "en": "Markup Validation Service"
                 },
                 "description_translations": {
-                    "en": "<p>Marketing automation platform and email marketing service[6] for managing mailing lists and creating email marketing campaigns to send to customers.</p>"
+                    "en": "<p>This validator checks the markup validity of Web documents in HTML, XHTML, SMIL, MathML, etc.</p>"
                 },
                 "tags_translations": {
                     "en": [
-                        "marketing",
-                        "newsletter",
-                        "email"
+                        "HTML",
+                        "XHTML",
+                        "SMIL",
+                        "MathML"
                     ]
                 },
                 "difficulty": "easy",
+                "targets": [
+                    "all"
+                ],
                 "licence": "propietary",
                 "problemprofiles": [
-                    "ORG_PROBLEM_4"
+                    "BUILD_PROBLEM_2"
+                ],
+                "types": [
+                    "enabling_services"
+                ],
+                "administrative_scopes": [
+                    "eu",
+                    "national",
+                    "local"
                 ],
                 "constraints_and_limitations_translations": {
-                    "en": "none"
+                    "en": "None"
                 },
                 "regulations_and_standards_translations": {
-                    "en": "none"
+                    "en": "None"
                 },
-                "logotype": "./interlinkers/externalsoftware/mailchimp/logo.png",
-                "reference": "email-marketing",
+                "reference": "html-tools",
                 "uri_translations": {
-                    "en": "https://mailchimp.com/es/"
+                    "en": "https://validator.w3.org/about.html"
                 },
                 "instructions_translations": {
-                    "en": "./interlinkers/externalsoftware/mailchimp/instructions.md"
+                    "en": "./interlinkers/externalsoftware/w3c-markup-language-validator/instructions.md"
                 },
                 "asset_name_translations": {
-                    "en": "Mailchimp"
+                    "en": "W3C Markup language validator"
                 },
                 "type": "software"
+            },
+            {
+                "languages": [
+                    "en"
+                ],
+                "targets": [
+                    "all"
+                ],
+                "problemprofiles": [
+                    "BUILD_PROBLEM_3"
+                ],
+                "types": [
+                    "enabling_services",
+                    "enabling_services;implementing_software_and_artifacts"
+                ],
+                "administrative_scopes": [
+                    "eu",
+                    "national",
+                    "local"
+                ],
+                "reference": "open-source-guides",
+                "form": "guidelines",
+                "format": "structured_format",
+                "difficulty": "very_easy",
+                "licence": "public_domain",
+                "instructions_translations": {
+                    "en": "./interlinkers/externalknowledge/Opensource-Guide/instructions.md"
+                },
+                "tags_translations": {
+                    "en": [
+                        "open source software"
+                    ]
+                },
+                "name_translations": {
+                    "en": "Open Source guides"
+                },
+                "description_translations": {
+                    "en": "<p>A collection of resources for individuals, communities, and companies who want to learn how to run and contribute to an open source project.</p>"
+                },
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "regulations_and_standards_translations": {
+                    "en": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en"
+                },
+                "asset_name_translations": {
+                    "en": "Open source guide"
+                },
+                "uri_translations": {
+                    "en": "https://opensource.guide/"
+                },
+                "type": "knowledge"
             },
             {
                 "languages": [
@@ -5069,6 +5171,214 @@
                 },
                 "uri_translations": {
                     "en": "https://www.w3.org/WAI/standards-guidelines/"
+                },
+                "type": "knowledge"
+            },
+            {
+                "languages": [
+                    "en"
+                ],
+                "name_translations": {
+                    "en": "eIDAS standard"
+                },
+                "description_translations": {
+                    "en": "<p>The eIDAS solution allows citizens from Member States to prove and verify their identification when accessing on-line services in other Member States. It allows citizens to authenticate themselves by using their eIDs and connecting with their Identity Provider (IdP) from their country. </p>"
+                },
+                "tags_translations": {
+                    "en": [
+                        "security"
+                    ]
+                },
+                "difficulty": "medium",
+                "targets": [
+                    "all;pas",
+                    "all;businesses",
+                    "all;research_organizations"
+                ],
+                "licence": "permissive",
+                "problemprofiles": [
+                    "BUILD_PROBLEM_3"
+                ],
+                "types": [
+                    "enabling_services"
+                ],
+                "reference": "eidas-standard",
+                "form": "guidelines",
+                "administrative_scopes": [
+                    "eu",
+                    "national",
+                    "local"
+                ],
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "format": "structured_format",
+                "instructions_translations": {
+                    "en": "./interlinkers/externalknowledge/eidas-standard/instructions.md"
+                },
+                "asset_name_translations": {
+                    "en": "CEF eID and the eIDAS Regulation"
+                },
+                "uri_translations": {
+                    "en": "https://ec.europa.eu/digital-building-blocks/wikis/display/CEFDIGITAL/What+is+eID"
+                },
+                "type": "knowledge"
+            },
+            {
+                "languages": [
+                    "en"
+                ],
+                "targets": [
+                    "all"
+                ],
+                "problemprofiles": [
+                    "BUILD_PROBLEM_3"
+                ],
+                "types": [
+                    "enabling_services",
+                    "enabling_services;implementing_software_and_artifacts"
+                ],
+                "administrative_scopes": [
+                    "national",
+                    "local"
+                ],
+                "reference": "agid-cloud-computing-competence-evalution-template",
+                "form": "guidelines",
+                "format": "editable_source_document",
+                "difficulty": "medium",
+                "licence": "permissive",
+                "instructions_translations": {
+                    "en": "./interlinkers/externalknowledge/it-cloud-competences-assesment/instructions.md"
+                },
+                "tags_translations": {
+                    "en": [
+                        "cloud",
+                        "services",
+                        "security"
+                    ]
+                },
+                "name_translations": {
+                    "en": "AgID Cloud computing competence evalution template"
+                },
+                "description_translations": {
+                    "en": "<p>This resource contains a questionnaire to check the level of knowledge and competence in cloud computing </p>"
+                },
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "regulations_and_standards_translations": {
+                    "en": ""
+                },
+                "asset_name_translations": {
+                    "en": "gID Cloud computing competence evalution template"
+                },
+                "uri_translations": {
+                    "en": "https://docs.google.com/spreadsheets/d/1_5aEEDg4TGDEJB8EM5ZQqb6XgGtCxISLRFa_-l2BscU/edit#gid=829270166"
+                },
+                "type": "knowledge"
+            },
+            {
+                "languages": [
+                    "en"
+                ],
+                "targets": [
+                    "all"
+                ],
+                "problemprofiles": [
+                    "BUILD_PROBLEM_3"
+                ],
+                "types": [
+                    "enabling_services",
+                    "enabling_services;implementing_software_and_artifacts"
+                ],
+                "administrative_scopes": [
+                    "national",
+                    "local"
+                ],
+                "reference": "agid-guidelines-for-the-development-of-secure-software-in-italian",
+                "form": "guidelines",
+                "format": "structured_format",
+                "difficulty": "difficult",
+                "licence": "permissive",
+                "instructions_translations": {
+                    "en": "./interlinkers/externalknowledge/it-pa-guidelines-for-secure-software/instructions.md"
+                },
+                "tags_translations": {
+                    "en": [
+                        "security"
+                    ]
+                },
+                "name_translations": {
+                    "en": " AgID guidelines for the development of secure software (in Italian)"
+                },
+                "description_translations": {
+                    "en": "<p>This resource describes the guidelines for the development of secure software in the public administration</p>"
+                },
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "regulations_and_standards_translations": {
+                    "en": ""
+                },
+                "asset_name_translations": {
+                    "en": "AgID guidelines for the development of secure software"
+                },
+                "uri_translations": {
+                    "en": "https://www.agid.gov.it/it/sicurezza/cert-pa/linee-guida-sviluppo-del-software-sicuro"
+                },
+                "type": "knowledge"
+            },
+            {
+                "languages": [
+                    "en"
+                ],
+                "targets": [
+                    "all"
+                ],
+                "problemprofiles": [
+                    "BUILD_PROBLEM_3"
+                ],
+                "types": [
+                    "enabling_services",
+                    "enabling_services;implementing_software_and_artifacts"
+                ],
+                "administrative_scopes": [
+                    "eu",
+                    "national",
+                    "local"
+                ],
+                "reference": "edpb-data-protection-guidelines",
+                "form": "guidelines",
+                "format": "pdf",
+                "difficulty": "difficult",
+                "licence": "permissive",
+                "instructions_translations": {
+                    "en": "./interlinkers/externalknowledge/it-guidelines-data-protection/instructions.md"
+                },
+                "tags_translations": {
+                    "en": [
+                        "GDPR",
+                        "privacy",
+                        "security"
+                    ]
+                },
+                "name_translations": {
+                    "en": "EDPB Data Protection Guidelines"
+                },
+                "description_translations": {
+                    "en": "<p>These Guidelines give general guidance on the obligation of Data Protection by Design and by Default (henceforth \u201cDPbDD\u201d) set forth in Article 25 in the GDPR.</p>"
+                },
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "regulations_and_standards_translations": {
+                    "en": "<ul><li>Article 70 (1e) of the Regulation 2016/679/EU of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC], (hereinafter \"GDPR\")</li> <li>EEA Agreement and in particular to Annex XI and Protocol 37 thereof, as amended by the Decision of the EEA joint Committee No 154/2018 of 6 July 2018,</li><li>Article 12 and Article 22 of its Rules of Procedure</li></ul>"
+                },
+                "asset_name_translations": {
+                    "en": "EDPB Guidelines 4/2019. Data Protection by Design and by Default"
+                },
+                "uri_translations": {
+                    "en": "https://edpb.europa.eu/sites/default/files/files/file1/edpb_guidelines_201904_dataprotection_by_design_and_by_default_v2.0_en.pdf"
                 },
                 "type": "knowledge"
             },
@@ -5146,161 +5456,6 @@
                     "national",
                     "local"
                 ],
-                "reference": "agid-cloud-computing-competence-evalution-template",
-                "form": "guidelines",
-                "format": "editable_source_document",
-                "difficulty": "medium",
-                "licence": "permissive",
-                "instructions_translations": {
-                    "en": "./interlinkers/externalknowledge/it-cloud-competences-assesment/instructions.md"
-                },
-                "tags_translations": {
-                    "en": [
-                        "cloud",
-                        "services",
-                        "security"
-                    ]
-                },
-                "name_translations": {
-                    "en": "AgID Cloud computing competence evalution template"
-                },
-                "description_translations": {
-                    "en": "<p>This resource contains a questionnaire to check the level of knowledge and competence in cloud computing </p>"
-                },
-                "constraints_and_limitations_translations": {
-                    "en": "No special constraints apply"
-                },
-                "regulations_and_standards_translations": {
-                    "en": ""
-                },
-                "asset_name_translations": {
-                    "en": "gID Cloud computing competence evalution template"
-                },
-                "uri_translations": {
-                    "en": "https://docs.google.com/spreadsheets/d/1_5aEEDg4TGDEJB8EM5ZQqb6XgGtCxISLRFa_-l2BscU/edit#gid=829270166"
-                },
-                "type": "knowledge"
-            },
-            {
-                "languages": [
-                    "en"
-                ],
-                "targets": [
-                    "all"
-                ],
-                "problemprofiles": [
-                    "BUILD_PROBLEM_3"
-                ],
-                "types": [
-                    "enabling_services",
-                    "enabling_services;implementing_software_and_artifacts"
-                ],
-                "administrative_scopes": [
-                    "national",
-                    "local"
-                ],
-                "reference": "agid-minimum-security-measures-for-public-administration",
-                "form": "guidelines",
-                "format": "structured_format",
-                "difficulty": "difficult",
-                "licence": "permissive",
-                "instructions_translations": {
-                    "en": "./interlinkers/externalknowledge/it-pa-minimum-security-measures/instructions.md"
-                },
-                "tags_translations": {
-                    "en": [
-                        "security"
-                    ]
-                },
-                "name_translations": {
-                    "en": "AgID Minimum Security Measures for Public Administration. "
-                },
-                "description_translations": {
-                    "en": "<p>This resource describes the minimum ICT security measures issued by AgID aim at countering the most frequent cyber threats to the Italian public administration.</p>"
-                },
-                "constraints_and_limitations_translations": {
-                    "en": "No special constraints apply"
-                },
-                "regulations_and_standards_translations": {
-                    "en": ""
-                },
-                "asset_name_translations": {
-                    "en": "AgID Minimum Security Measures for Public Administration"
-                },
-                "uri_translations": {
-                    "en": "https://www.agid.gov.it/en/security/Minimum-ICT-security-measures-for-public-administrations"
-                },
-                "type": "knowledge"
-            },
-            {
-                "languages": [
-                    "en"
-                ],
-                "targets": [
-                    "all"
-                ],
-                "problemprofiles": [
-                    "BUILD_PROBLEM_3"
-                ],
-                "types": [
-                    "enabling_services",
-                    "enabling_services;implementing_software_and_artifacts"
-                ],
-                "administrative_scopes": [
-                    "national",
-                    "local"
-                ],
-                "reference": "agid-guidelines-for-the-development-of-secure-software-in-italian",
-                "form": "guidelines",
-                "format": "structured_format",
-                "difficulty": "difficult",
-                "licence": "permissive",
-                "instructions_translations": {
-                    "en": "./interlinkers/externalknowledge/it-pa-guidelines-for-secure-software/instructions.md"
-                },
-                "tags_translations": {
-                    "en": [
-                        "security"
-                    ]
-                },
-                "name_translations": {
-                    "en": " AgID guidelines for the development of secure software (in Italian)"
-                },
-                "description_translations": {
-                    "en": "<p>This resource describes the guidelines for the development of secure software in the public administration</p>"
-                },
-                "constraints_and_limitations_translations": {
-                    "en": "No special constraints apply"
-                },
-                "regulations_and_standards_translations": {
-                    "en": ""
-                },
-                "asset_name_translations": {
-                    "en": "AgID guidelines for the development of secure software"
-                },
-                "uri_translations": {
-                    "en": "https://www.agid.gov.it/it/sicurezza/cert-pa/linee-guida-sviluppo-del-software-sicuro"
-                },
-                "type": "knowledge"
-            },
-            {
-                "languages": [
-                    "en"
-                ],
-                "targets": [
-                    "all"
-                ],
-                "problemprofiles": [
-                    "BUILD_PROBLEM_3"
-                ],
-                "types": [
-                    "enabling_services",
-                    "enabling_services;implementing_software_and_artifacts"
-                ],
-                "administrative_scopes": [
-                    "national",
-                    "local"
-                ],
                 "reference": "agid-cloud-computing-migration-strategy-evalution-template",
                 "form": "guidelines",
                 "format": "editable_source_document",
@@ -5333,165 +5488,6 @@
                 },
                 "uri_translations": {
                     "en": "https://docs.google.com/spreadsheets/d/1P8lcsCxEXKYk7oZVoHrS6rhNmqdPz4bHfzmsmWq4akQ/edit#gid=1101730863"
-                },
-                "type": "knowledge"
-            },
-            {
-                "languages": [
-                    "en"
-                ],
-                "targets": [
-                    "all"
-                ],
-                "problemprofiles": [
-                    "BUILD_PROBLEM_3"
-                ],
-                "types": [
-                    "enabling_services",
-                    "enabling_services;implementing_software_and_artifacts"
-                ],
-                "administrative_scopes": [
-                    "eu",
-                    "national",
-                    "local"
-                ],
-                "reference": "open-source-guides",
-                "form": "guidelines",
-                "format": "structured_format",
-                "difficulty": "very_easy",
-                "licence": "public_domain",
-                "instructions_translations": {
-                    "en": "./interlinkers/externalknowledge/Opensource-Guide/instructions.md"
-                },
-                "tags_translations": {
-                    "en": [
-                        "open source software"
-                    ]
-                },
-                "name_translations": {
-                    "en": "Open Source guides"
-                },
-                "description_translations": {
-                    "en": "<p>A collection of resources for individuals, communities, and companies who want to learn how to run and contribute to an open source project.</p>"
-                },
-                "constraints_and_limitations_translations": {
-                    "en": "No special constraints apply"
-                },
-                "regulations_and_standards_translations": {
-                    "en": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en"
-                },
-                "asset_name_translations": {
-                    "en": "Open source guide"
-                },
-                "uri_translations": {
-                    "en": "https://opensource.guide/"
-                },
-                "type": "knowledge"
-            },
-            {
-                "languages": [
-                    "en"
-                ],
-                "targets": [
-                    "all"
-                ],
-                "problemprofiles": [
-                    "BUILD_PROBLEM_3"
-                ],
-                "types": [
-                    "enabling_services",
-                    "enabling_services;implementing_software_and_artifacts"
-                ],
-                "administrative_scopes": [
-                    "national",
-                    "local"
-                ],
-                "reference": "cloud-enablement-kit-in-italian",
-                "form": "guidelines",
-                "format": "pdf",
-                "difficulty": "difficult",
-                "licence": "permissive",
-                "instructions_translations": {
-                    "en": "./interlinkers/externalknowledge/it-cloud-enablement-kit/instructions.md"
-                },
-                "tags_translations": {
-                    "en": [
-                        "cloud",
-                        "services",
-                        "security"
-                    ]
-                },
-                "name_translations": {
-                    "en": "Cloud Enablement Kit (in Italian)"
-                },
-                "description_translations": {
-                    "en": "<p>This resource describes the Cloud Enablement strategy outlined by AGID and Team Digitale (in Italian). </p>"
-                },
-                "constraints_and_limitations_translations": {
-                    "en": "No special constraints apply"
-                },
-                "regulations_and_standards_translations": {
-                    "en": ""
-                },
-                "asset_name_translations": {
-                    "en": "Cloud Enablement Kit"
-                },
-                "uri_translations": {
-                    "en": "https://www.agid.gov.it/sites/default/files/repository_files/manuale_di_abilitazione_al_cloud_11pt_id2.pdf"
-                },
-                "type": "knowledge"
-            },
-            {
-                "languages": [
-                    "en"
-                ],
-                "targets": [
-                    "all"
-                ],
-                "problemprofiles": [
-                    "BUILD_PROBLEM_3"
-                ],
-                "types": [
-                    "enabling_services",
-                    "enabling_services;implementing_software_and_artifacts"
-                ],
-                "administrative_scopes": [
-                    "eu",
-                    "national",
-                    "local"
-                ],
-                "reference": "edpb-data-protection-guidelines",
-                "form": "guidelines",
-                "format": "pdf",
-                "difficulty": "difficult",
-                "licence": "permissive",
-                "instructions_translations": {
-                    "en": "./interlinkers/externalknowledge/it-guidelines-data-protection/instructions.md"
-                },
-                "tags_translations": {
-                    "en": [
-                        "GDPR",
-                        "privacy",
-                        "security"
-                    ]
-                },
-                "name_translations": {
-                    "en": "EDPB Data Protection Guidelines"
-                },
-                "description_translations": {
-                    "en": "<p>These Guidelines give general guidance on the obligation of Data Protection by Design and by Default (henceforth \u201cDPbDD\u201d) set forth in Article 25 in the GDPR.</p>"
-                },
-                "constraints_and_limitations_translations": {
-                    "en": "No special constraints apply"
-                },
-                "regulations_and_standards_translations": {
-                    "en": "<ul><li>Article 70 (1e) of the Regulation 2016/679/EU of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC], (hereinafter \"GDPR\")</li> <li>EEA Agreement and in particular to Annex XI and Protocol 37 thereof, as amended by the Decision of the EEA joint Committee No 154/2018 of 6 July 2018,</li><li>Article 12 and Article 22 of its Rules of Procedure</li></ul>"
-                },
-                "asset_name_translations": {
-                    "en": "EDPB Guidelines 4/2019. Data Protection by Design and by Default"
-                },
-                "uri_translations": {
-                    "en": "https://edpb.europa.eu/sites/default/files/files/file1/edpb_guidelines_201904_dataprotection_by_design_and_by_default_v2.0_en.pdf"
                 },
                 "type": "knowledge"
             },
@@ -5553,6 +5549,59 @@
                 "languages": [
                     "en"
                 ],
+                "targets": [
+                    "all"
+                ],
+                "problemprofiles": [
+                    "BUILD_PROBLEM_3"
+                ],
+                "types": [
+                    "enabling_services",
+                    "enabling_services;implementing_software_and_artifacts"
+                ],
+                "administrative_scopes": [
+                    "national",
+                    "local"
+                ],
+                "reference": "cloud-enablement-kit-in-italian",
+                "form": "guidelines",
+                "format": "pdf",
+                "difficulty": "difficult",
+                "licence": "permissive",
+                "instructions_translations": {
+                    "en": "./interlinkers/externalknowledge/it-cloud-enablement-kit/instructions.md"
+                },
+                "tags_translations": {
+                    "en": [
+                        "cloud",
+                        "services",
+                        "security"
+                    ]
+                },
+                "name_translations": {
+                    "en": "Cloud Enablement Kit (in Italian)"
+                },
+                "description_translations": {
+                    "en": "<p>This resource describes the Cloud Enablement strategy outlined by AGID and Team Digitale (in Italian). </p>"
+                },
+                "constraints_and_limitations_translations": {
+                    "en": "No special constraints apply"
+                },
+                "regulations_and_standards_translations": {
+                    "en": ""
+                },
+                "asset_name_translations": {
+                    "en": "Cloud Enablement Kit"
+                },
+                "uri_translations": {
+                    "en": "https://www.agid.gov.it/sites/default/files/repository_files/manuale_di_abilitazione_al_cloud_11pt_id2.pdf"
+                },
+                "type": "knowledge"
+            },
+            {
+                "languages": [
+                    "en"
+                ],
                 "name_translations": {
                     "en": "Open API specification"
                 },
@@ -5607,49 +5656,50 @@
                 "languages": [
                     "en"
                 ],
-                "name_translations": {
-                    "en": "eIDAS standard"
-                },
-                "description_translations": {
-                    "en": "<p>The eIDAS solution allows citizens from Member States to prove and verify their identification when accessing on-line services in other Member States. It allows citizens to authenticate themselves by using their eIDs and connecting with their Identity Provider (IdP) from their country. </p>"
+                "targets": [
+                    "all"
+                ],
+                "problemprofiles": [
+                    "BUILD_PROBLEM_3"
+                ],
+                "types": [
+                    "enabling_services",
+                    "enabling_services;implementing_software_and_artifacts"
+                ],
+                "administrative_scopes": [
+                    "national",
+                    "local"
+                ],
+                "reference": "agid-minimum-security-measures-for-public-administration",
+                "form": "guidelines",
+                "format": "structured_format",
+                "difficulty": "difficult",
+                "licence": "permissive",
+                "instructions_translations": {
+                    "en": "./interlinkers/externalknowledge/it-pa-minimum-security-measures/instructions.md"
                 },
                 "tags_translations": {
                     "en": [
                         "security"
                     ]
                 },
-                "difficulty": "medium",
-                "targets": [
-                    "all;pas",
-                    "all;businesses",
-                    "all;research_organizations"
-                ],
-                "licence": "permissive",
-                "problemprofiles": [
-                    "BUILD_PROBLEM_3"
-                ],
-                "types": [
-                    "enabling_services"
-                ],
-                "reference": "eidas-standard",
-                "form": "guidelines",
-                "administrative_scopes": [
-                    "eu",
-                    "national",
-                    "local"
-                ],
+                "name_translations": {
+                    "en": "AgID Minimum Security Measures for Public Administration. "
+                },
+                "description_translations": {
+                    "en": "<p>This resource describes the minimum ICT security measures issued by AgID aim at countering the most frequent cyber threats to the Italian public administration.</p>"
+                },
                 "constraints_and_limitations_translations": {
                     "en": "No special constraints apply"
                 },
-                "format": "structured_format",
-                "instructions_translations": {
-                    "en": "./interlinkers/externalknowledge/eidas-standard/instructions.md"
+                "regulations_and_standards_translations": {
+                    "en": ""
                 },
                 "asset_name_translations": {
-                    "en": "CEF eID and the eIDAS Regulation"
+                    "en": "AgID Minimum Security Measures for Public Administration"
                 },
                 "uri_translations": {
-                    "en": "https://ec.europa.eu/digital-building-blocks/wikis/display/CEFDIGITAL/What+is+eID"
+                    "en": "https://www.agid.gov.it/en/security/Minimum-ICT-security-measures-for-public-administrations"
                 },
                 "type": "knowledge"
             }
