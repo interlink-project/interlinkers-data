@@ -1,0 +1,52 @@
+{
+    "languages": [
+        "en"
+    ],
+    "targets": [
+        "all"
+    ],
+    "problemprofiles": [
+        "ORG_PROBLEM_6.2",
+        "BUILD_PROBLEM_1",
+        "VAL_PROBLEM_4"
+    ],
+    "types": [
+        "enhancing_services"
+    ],
+    "administrative_scopes": [
+        "eu"
+    ],
+    "domain": "",
+    "process": "",
+    "reference": "usability testing",
+    "form": "guidelines",
+    "format": "editable_source_document",
+    "softwareinterlinker": "googledrive",
+    "difficulty": "easy",
+    "licence": "public_domain",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/Usability-testing/instructions.md"
+    },
+    "tags_translations": {
+        "en": [
+            "product specification",
+            "testing",
+            "usability"
+        ]
+    },
+    "name_translations": {
+        "en": "Usability testing guidelines"
+    },
+    "description_translations": {
+        "en": "<p>Guidelines and tips on how to perform a usability testing</p>"
+    },
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "regulations_and_standards_translations": {
+        "en": ""
+    },
+    "file_translations": {
+        "en": "./interlinkers/knowledge/Usability-testing/resource.docx"
+    }
+}
