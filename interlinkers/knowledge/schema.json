@@ -204,7 +204,7 @@
             "enum": [
                 "software",
                 "visual_template",
-                " ",
+                "document_template",
                 "canvas",
                 "best_practices",
                 "guidelines",
