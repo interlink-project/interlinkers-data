@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { topologicalSort } from 'utils/comparePrerequisites';
-import { coproductionProcessesApi, objectivesApi, phasesApi, rolesApi, tasksApi } from '../__api__';
+import { coproductionProcessesApi, objectivesApi, phasesApi, rolesApi, tasksApi, logsApi } from '../__api__';
 import { getSchemas } from "./general";
+
 
 const initialState = {
   loading: false,
@@ -142,6 +143,7 @@ export const { reducer } = slice;
 
 export const setSelectedTreeItem = (data, callback) => async (dispatch) => {
   dispatch(slice.actions.setSelectedTreeItem(data));
+  logsApi.send_log(data.id, data.type, "GET");
   callback && callback()
 };
 
@@ -260,6 +262,7 @@ export const deletePhase = ({ id, callback }) => async (dispatch) => {
 
 export const setselectedPhaseTabId = (data) => async (dispatch) => {
   dispatch(slice.actions.setSelectedPhase(data));
+  logsApi.send_log(data, "PHASE", "GET");
 };
 
 export default slice;
