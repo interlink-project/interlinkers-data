@@ -69,7 +69,7 @@ export const AuthProvider = (props) => {
   }
   
   const logout = () => {
-    window.location.replace(`/auth/logout`);
+    window.location.replace(`/auth/logout?redirect_on_callback=${window.location.protocol + "//" + window.location.hostname}`);
   };
 
   return (

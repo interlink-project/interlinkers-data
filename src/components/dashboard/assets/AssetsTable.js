@@ -11,6 +11,7 @@ import React, { useEffect, useState } from 'react';
 import { assetsApi } from '__api__';
 import { InterlinkerReference } from '../interlinkers';
 import useMounted from 'hooks/useMounted';
+import { useTranslation } from 'react-i18next';
 
 const MyMenuItem = ({ onClick, text, icon, id, loading }) => {
   return <MenuItem aria-describedby={id} onClick={onClick}>
@@ -27,7 +28,11 @@ const AssetRow = ({ asset, onChange, actions, openInterlinkerDialog }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const mounted = useMounted();
+  const {t} = useTranslation()
 
+  const showInterlinkerId = data && (data.externalinterlinker_id || data.knowledgeinterlinker_id || data.softwareinterlinker_id)
+  const isInternal = asset.type === "internalasset"
+  console.log( asset.type, asset)
   const handleClick = (event) => {
     event.stopPropagation();
     event.preventDefault();
@@ -40,12 +45,18 @@ const AssetRow = ({ asset, onChange, actions, openInterlinkerDialog }) => {
 
   useEffect(() => {
     setLoading("info")
-    assetsApi.getInternal(asset.id).then((res) => {
-      if (mounted.current) {
-        setData({ ...asset, ...res })
-        setLoading("")
-      }
-    })
+    if (isInternal) {
+      assetsApi.getInternal(asset.id).then((res) => {
+        if (mounted.current) {
+          setData({ ...asset, ...res })
+          setLoading("")
+        }
+      })
+    } else {
+      setData({ ...asset })
+      setLoading("")
+    }
+
   }, [asset, mounted])
 
   const handleDelete = () => {
@@ -75,16 +86,48 @@ const AssetRow = ({ asset, onChange, actions, openInterlinkerDialog }) => {
     window.open(asset.link + "/edit", "_blank");
     setAnchorEl(null);
   }
+
+  const getActions = (id, capabilities) => {
+    const actios = []
+    if (capabilities.edit){
+      actios.push(<MyMenuItem key={`${id}-edit-action`} loading={loading} id="edit" onClick={handleEdit} text="Edit" icon={<Edit fontSize="small" />} />)
+    }
+    if (capabilities.clone){
+      actios.push(<MyMenuItem key={`${id}-clone-action`} loading={loading} id="clone" onClick={handleClone} text="Clone" icon={<CopyAll fontSize="small" />} />)
+    }
+    if (capabilities.delete){
+      actios.push(<ConfirmationButton
+        key={`${id}-delete-action`}
+        Actionator={({ onClick }) => <MyMenuItem loading={loading} id="delete" onClick={onClick} text="Delete" icon={<Delete fontSize="small" />} />}
+        ButtonComponent={({ onClick }) => <LoadingButton sx={{ mt: 1 }} fullWidth variant='contained' color="error" onClick={onClick}>Confirm deletion</LoadingButton>}
+        onClick={handleDelete}
+        text="Are you sure?" />)
+    }
+    if (capabilities.clone){
+      actios.push(<MyMenuItem key={`${id}-clone-action`} loading={loading} id="publish" onClick={() => { }} text="Publish" icon={<Share fontSize="small" />} />)
+    }
+    if(capabilities.download){
+      actios.push(<MyMenuItem key={`${id}-download-action`} loading={loading} id="download" onClick={handleDownload} text="Download" icon={<Download fontSize="small" />} />)
+    }
+    return actions
+  }
   const avatarSize = { height: "30px", width: "30px" }
   return <TableRow
     hover
     key={asset.id}
     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
   >
-    {data && loading !== "info" ? <><TableCell component="th" scope="row" onClick={() => window.open(data.link + "/view", "_blank")}>
-      <Avatar src={data.icon} sx={avatarSize} />
-    </TableCell>
-      <TableCell style={{ cursor: "pointer" }} onClick={() => window.open(data.link + "/view", "_blank")} align="left">{data.name}</TableCell>
+    {data && loading !== "info" ? <>
+      <TableCell component="th" scope="row" onClick={() => window.open(data.link + "/view", "_blank")}>
+        <Avatar src={data.icon} sx={avatarSize} />
+      </TableCell>
+      <TableCell style={{ cursor: "pointer" }} onClick={() => {
+        if(isInternal){
+          window.open(data.link + "/view", "_blank")
+        }else{
+          window.open(data.uri)
+        }
+        }} align="left">{data.name}</TableCell>
       <TableCell align="left">
         {moment(data.created_at).format("LL")}
       </TableCell>
@@ -92,14 +135,14 @@ const AssetRow = ({ asset, onChange, actions, openInterlinkerDialog }) => {
         {moment(data.updated_at || data.created_at).fromNow()}
       </TableCell>
       <TableCell align="center">
-        <InterlinkerReference onClick={() => {
-          openInterlinkerDialog(data.knowledgeinterlinker_id || data.softwareinterlinker_id)
+        {showInterlinkerId ? <InterlinkerReference onClick={() => {
+          openInterlinkerDialog(showInterlinkerId)
         }}
-          interlinker_id={data.knowledgeinterlinker_id || data.softwareinterlinker_id}
-        />
+          interlinker_id={showInterlinkerId}
+        /> : t("external-resource")}
       </TableCell>
       <TableCell align="center">
-        {actions || <IconButton aria-label="settings" id="basic-button"
+        {actions ? actions(data) : <IconButton aria-label="settings" id="basic-button"
           aria-controls="basic-menu"
           aria-haspopup="true"
           aria-expanded={open ? 'true' : undefined}
@@ -117,16 +160,7 @@ const AssetRow = ({ asset, onChange, actions, openInterlinkerDialog }) => {
             'aria-labelledby': 'basic-button',
           }}
         >
-          {data.capabilities.edit && <MyMenuItem loading={loading} id="edit" onClick={handleEdit} text="Edit" icon={<Edit fontSize="small" />} />}
-          {data.capabilities.clone && <MyMenuItem loading={loading} id="clone" onClick={handleClone} text="Clone" icon={<CopyAll fontSize="small" />} />}
-          {data.capabilities.delete && <ConfirmationButton
-            Actionator={({ onClick }) => <MyMenuItem loading={loading} id="delete" onClick={onClick} text="Delete" icon={<Delete fontSize="small" />} />}
-            ButtonComponent={({ onClick }) => <LoadingButton sx={{ mt: 1 }} fullWidth variant='contained' color="error" onClick={onClick}>Confirm deletion</LoadingButton>}
-            onClick={handleDelete}
-            text="Are you sure?" />}
-          {data.capabilities.clone && <MyMenuItem loading={loading} id="publish" onClick={() => { }} text="Publish" icon={<Share fontSize="small" />} />}
-          {data.capabilities.download && <MyMenuItem loading={loading} id="download" onClick={handleDownload} text="Download" icon={<Download fontSize="small" />} />}
-          {loading && <CircularProgress size={10} />}
+          {isInternal && data.capabilities && getActions(data.id, data.capabilities)}
         </Menu>
       </TableCell></> : <>
       <TableCell><Skeleton animation="wave" variant="circular" sx={avatarSize} /></TableCell>

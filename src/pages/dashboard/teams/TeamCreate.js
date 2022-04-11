@@ -27,6 +27,7 @@ import { Add, Delete, Folder, KeyboardArrowRight, KeyboardArrowLeft, CheckCircle
 import { LoadingButton } from '@material-ui/lab';
 import useAuth from 'hooks/useAuth';
 import { teamsApi, usersApi } from '__api__';
+import { useTranslation } from 'react-i18next';
 
 const TeamCreate = ({ loading, setLoading, open, setOpen, onCreate }) => {
   const [emailValue, setEmailValue] = useState("");
@@ -36,7 +37,7 @@ const TeamCreate = ({ loading, setLoading, open, setOpen, onCreate }) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [logotype, setLogotype] = useState(null);
-
+  const { t } = useTranslation()
   const theme = useTheme();
   const [activeStep, setActiveStep] = useState(0);
 
@@ -108,7 +109,7 @@ const TeamCreate = ({ loading, setLoading, open, setOpen, onCreate }) => {
     if (emailValue) {
       setLoading(true)
       delayDebounceFn = setTimeout(() => {
-        usersApi.get_cache(emailValue).then(res => {
+        usersApi.get(emailValue).then(res => {
           if (!selectedUsers.find(user => user.sub === res.data.sub)) {
             setSelectedUser(res.data)
           }
@@ -135,10 +136,10 @@ const TeamCreate = ({ loading, setLoading, open, setOpen, onCreate }) => {
   return (
     <>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Team creation</DialogTitle>
+        <DialogTitle>{t("team-create-title")}</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            To create a team, please enter a name and a description. Then, add people to the team.
+            {t("team-create-description")}
           </DialogContentText>
           {activeStep === 0 && <><Box sx={{ textAlign: "center" }}>
             <label htmlFor="contained-button-file">
@@ -158,7 +159,7 @@ const TeamCreate = ({ loading, setLoading, open, setOpen, onCreate }) => {
               autoFocus
               margin="dense"
               id="name"
-              label="Name"
+              label={t("Name")}
               value={name}
               onChange={(e) => setName(e.target.value)}
               type="text"
@@ -168,7 +169,7 @@ const TeamCreate = ({ loading, setLoading, open, setOpen, onCreate }) => {
             <TextField
               margin="dense"
               id="description"
-              label="Description"
+              label={t("Description")}
               type="text"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
@@ -185,7 +186,7 @@ const TeamCreate = ({ loading, setLoading, open, setOpen, onCreate }) => {
               var name = user.full_name
               const you = user.sub === auth.user.sub
               if (you) {
-                name += " (you)"
+                name += ` (${t("you")})`
               }
               return <ListItem key={user.sub}
               >
@@ -209,7 +210,7 @@ const TeamCreate = ({ loading, setLoading, open, setOpen, onCreate }) => {
 
             <TextField
               margin="dense"
-              label="Email Address"
+              label={t("Email address")}
               type="email"
               fullWidth
               variant="standard"
@@ -228,7 +229,7 @@ const TeamCreate = ({ loading, setLoading, open, setOpen, onCreate }) => {
               disabled={!selectedUser}
               endIcon={selectedUser ? <CheckCircle /> : emailValue && <Cancel color='error' />}
               sx={{ mt: 1 }}
-            >Add user</LoadingButton>
+            >{t("Add user")}</LoadingButton>
           </>}
 
 
@@ -242,14 +243,14 @@ const TeamCreate = ({ loading, setLoading, open, setOpen, onCreate }) => {
             sx={{ flexGrow: 1 }}
             nextButton={
               <Button size="small" onClick={handleNext} disabled={isDisabled()}>
-                {activeStep === 1 ? "Create" : "Next"}
+                {activeStep === 1 ? t("Create") : t("Next")}
                 <KeyboardArrowRight />
               </Button>
             }
             backButton={
               <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
                 <KeyboardArrowLeft />
-                Back
+                {t("Back")}
               </Button>
             }
           />

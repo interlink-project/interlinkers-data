@@ -11,20 +11,6 @@ export default class GeneralApi {
     this.cache_key = cache_key
   }
 
-  async get_cache(id) {
-    if (this.cache_key) {
-      const objects = store.get(this.cache_key, [])
-      const search = objects.find(el => el.id === id)
-      if (!search) {
-        const res = await this.get(id)
-        store.set(this.cache_key, [...store.get(this.cache_key, []), res])
-        return res
-      } else {
-        return search
-      }
-    }
-  }
-
   async create(data) {
     return axiosInstance.post(`/${this.url}`, data)
   }

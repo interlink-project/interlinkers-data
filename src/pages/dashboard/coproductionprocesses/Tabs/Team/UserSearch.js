@@ -16,7 +16,7 @@ const UserSearch = ({ text, onClick }) => {
         if (mounted && emailValue) {
             setLoading(true)
             delayDebounceFn = setTimeout(() => {
-                usersApi.get_cache(emailValue).then(res => {
+                usersApi.get(emailValue).then(res => {
                     if (mounted) {
                         setResultIndividualSearch(res.data)
                         console.log(res.data)

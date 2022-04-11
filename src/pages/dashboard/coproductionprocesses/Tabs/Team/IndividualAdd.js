@@ -1,6 +1,7 @@
 import { Button, Dialog, DialogContent, Typography } from '@material-ui/core';
 import useMounted from 'hooks/useMounted';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { coproductionProcessesApi } from '__api__';
 import UserSearch from './UserSearch';
@@ -10,7 +11,8 @@ const IndividualAdd = ({ open, setOpen, onChanges }) => {
   const mounted = useMounted();
   const [selectedIndividual, setSelectedIndividual] = useState(null);
   const { process } = useSelector((state) => state.process);
-
+  const {t} = useTranslation()
+  
   useEffect(() => {
     if (open) {
       setSelectedIndividual(null)
@@ -36,8 +38,8 @@ const IndividualAdd = ({ open, setOpen, onChanges }) => {
       {!selectedIndividual ? <UserSearch text="Add individual user" onClick={(user) => {
         setSelectedIndividual(user);
       }} /> : <>
-        <Typography variant="h6" sx={{ textAlign: "center", my: 2 }}>Are you sure you want to add "{selectedIndividual.full_name}" to this process? It will be added with the default role</Typography>
-        <Button color="warning" fullWidth onClick={handleAdd}>Add</Button>
+        <Typography variant="h6" sx={{ textAlign: "center", my: 2 }}>{t("add-role-confirmation", {name: selectedIndividual.full_name})}/</Typography>
+        <Button color="warning" fullWidth onClick={handleAdd}>{t("Add")}</Button>
       </>}
     </DialogContent>
 

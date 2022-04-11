@@ -147,7 +147,7 @@ const CoproductionProcessProfile = () => {
               <>
                 <TabPanel value={tab} index="overview">
                   <Card sx={style}>
-                    <OverviewTab coproductionprocess={process} />
+                    <OverviewTab setSelectedTreeItem={_setSelectedTreeItem} coproductionprocess={process} />
                   </Card>
                 </TabPanel>
                 <TabPanel value={tab} index="metadata">

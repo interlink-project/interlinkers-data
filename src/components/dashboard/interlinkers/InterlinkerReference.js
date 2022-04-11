@@ -9,7 +9,7 @@ const InterlinkerReference = ({ interlinker_id, onClick = () => {} }) => {
     const [data, setData] = useState(null)
 
     useEffect(() => {
-        interlinkersApi.get_cache(interlinker_id).then((res) => {
+        interlinkersApi.get(interlinker_id).then((res) => {
             setData(res)
             setLoading(false)
         })

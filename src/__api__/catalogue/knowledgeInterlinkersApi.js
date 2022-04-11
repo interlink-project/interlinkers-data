@@ -6,12 +6,6 @@ class KnowledgeInterlinkersApi extends GeneralApi {
     super("catalogue/api/v1/knowledgeinterlinkers");
   }
 
-
-  async instantiate(id) {
-    const res = await axiosInstance.post(`/${this.url}/${id}/instantiate`)
-    console.log('post instantiate call', res, res.data);
-    return res.data
-  }
 /*
   async getInternal(id) {
     if (id) {

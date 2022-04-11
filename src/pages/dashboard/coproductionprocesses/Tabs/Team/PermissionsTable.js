@@ -5,28 +5,29 @@ import { KeyboardArrowUp as KeyboardArrowUpIcon, KeyboardArrowDown as KeyboardAr
 import RoleCreate from './RoleCreate';
 import { LoadingButton } from '@material-ui/lab';
 import { rolesApi } from '__api__';
-
+import i18n from 'translations/i18n';
+import { useTranslation } from 'react-i18next';
 
 const permissions = [
     {
         "code": "view_assets",
-        "label": "View resources"
+        "label": i18n.t("view-resources")
     },
     {
         "code": "create_assets",
-        "label": "Create resources"
+        "label": i18n.t("create-resources")
     },
     {
         "code": "delete_assets",
-        "label": "Delete resources"
+        "label": i18n.t("delete-resources")
     },
     {
         "code": "change_access",
-        "label": "Add teams or individuals"
+        "label": i18n.t("add-teams-or-individuals")
     },
     {
         "code": "update_settings",
-        "label": "Change settings"
+        "label": i18n.t("change-settings")
     },
 ]
 
@@ -37,6 +38,7 @@ function Row(props) {
     const [newName, setNewName] = React.useState(role.name);
     const [newDescription, setNewDescription] = React.useState(role.description);
     const [newPermissions, setNewPermissions] = React.useState(role.permissions);
+    const {t} = useTranslation()
 
     const PermittedChip = () => <Chip
         color="success"
@@ -84,7 +86,7 @@ function Row(props) {
                 <TableCell>
                     {editMode && role.meta_editable ? <TextField
                         required
-                        label="Description"
+                        label={t("Name")}
                         value={newName}
                         onChange={(e) => setNewName(e.target.value)}
                         variant="standard"
@@ -94,7 +96,7 @@ function Row(props) {
                 <TableCell>
                     {editMode && role.meta_editable ? <TextField
                         required
-                        label="Description"
+                        label={t("Description")}
                         defaultValue={newDescription}
                         onChange={(e) => setNewDescription(e.target.value)}
                         variant="standard"
@@ -144,16 +146,17 @@ function Row(props) {
 
 export default function PermissionsTable({onChanges}) {
     const { process, roles } = useSelector((state) => state.process);
-
+    const {t} = useTranslation()
+    
     return (
         <TableContainer component={Paper}>
             <Table>
                 <TableHead>
                     <TableRow>
-                        <TableCell>Role name</TableCell>
-                        <TableCell>Description</TableCell>
+                        <TableCell>{t("Name")}</TableCell>
+                        <TableCell>{t("Description")}</TableCell>
                         {permissions.map(perm => <TableCell align="center" key={perm.code}>{perm.label}</TableCell>)}
-                        <TableCell>Actions</TableCell>
+                        <TableCell>{t("Actions")}</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>

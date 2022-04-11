@@ -1,5 +1,5 @@
 import { Avatar, AvatarGroup, Box, Button, Card, CardActions, Grid, IconButton, MenuItem, Select, Skeleton, Table, TableBody, TableCell, TableHead, TableRow, Typography, TableContainer, Paper } from '@material-ui/core';
-import { Delete, Edit, Remove, Save } from '@material-ui/icons';
+import { Add, Delete, Edit, Remove, Save } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import UserData from 'components/UserData';
 import useMounted from 'hooks/useMounted';
@@ -10,8 +10,9 @@ import { useNavigate } from 'react-router';
 import { rolesApi, usersApi } from '__api__';
 import IndividualAdd from './IndividualAdd';
 import TeamAdd from './TeamAdd';
+import { useTranslation } from 'react-i18next';
 
-function Row({ obj: ob, onChanges, isTeam = false, onTeamClick = () => {} }) {
+function Row({ obj: ob, onChanges, isTeam = false, onTeamClick = () => { } }) {
     const navigate = useNavigate()
     const [obj, setObj] = useState(ob)
     const { process, roles, teams } = useSelector((state) => state.process);
@@ -36,7 +37,7 @@ function Row({ obj: ob, onChanges, isTeam = false, onTeamClick = () => {} }) {
     }
 
     const canDelete = isTeam || (!isTeam && ob.id !== process.creator_id)
-    
+
     const handleDelete = () => {
         if (canDelete) {
             setLoading(true)
@@ -174,7 +175,7 @@ export default function TeamsTable({ onChanges }) {
     const [individualsOpen, setIndividualsOpen] = useState(false);
     const [teamProfileOpen, setTeamProfileOpen] = useState(false);
     const [selectedTeam, setSelectedTeam] = useState(null);
-
+    const { t } = useTranslation()
     const onTeamClick = (team) => {
         setSelectedTeam(team)
         setTeamProfileOpen(true)
@@ -191,36 +192,44 @@ export default function TeamsTable({ onChanges }) {
                     <TableHead>
                         <TableRow>
                             <TableCell />
-                            <TableCell align="center">Name</TableCell>
-                            <TableCell align="center">Role</TableCell>
-                            <TableCell align="center">Members</TableCell>
-                            <TableCell align="center">Actions</TableCell>
+                            <TableCell align="center">{t("Name")}</TableCell>
+                            <TableCell align="center">{t("Role")}</TableCell>
+                            <TableCell align="center">{t("Members")}</TableCell>
+                            <TableCell align="center">{t("Actions")}</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {teams.map((team) => (
+                        {teams.length > 0 ? teams.map((team) => (
                             <Row key={team.id} obj={team} onChanges={onChanges} isTeam onTeamClick={onTeamClick} />
-                        ))}
+                        )) : <Box sx={{ height: "53px", alignItems: "center", textAlign: "center" }}><Typography
+                            align='center'
+                            color='textSecondary'
+                            variant='h6'
+                        >
+                            {t("Empty")}
+                        </Typography></Box>}
                     </TableBody>
                 </Table>
-                
+
             </TableContainer>
             <Box sx={{ justifyContent: "center", textAlign: "center" }}>
-                    <Button variant="contained" sx={{ my: 2 }} color='primary' onClick={() => setTeamsOpen(true)}>
-                        Add new team
-                    </Button>
-                </Box>
+                <Button startIcon={<Add />} variant="contained" sx={{ my: 2 }} color='primary' onClick={() => setTeamsOpen(true)}>
+                    {t("add-new", {
+                        what: "team"
+                    })}
+                </Button>
+            </Box>
         </Grid>
         <Grid item lg={6} xs={12}>
-        <TableContainer component={Paper} >
+            <TableContainer component={Paper} >
                 <Table aria-label="users-table" size='small'>
                     <TableHead>
                         <TableRow>
                             <TableCell />
-                            <TableCell align="center">Name</TableCell>
-                            <TableCell align="center">Role</TableCell>
-                            <TableCell align="center">Email</TableCell>
-                            <TableCell align="center">Actions</TableCell>
+                            <TableCell align="center">{t("Name")}</TableCell>
+                            <TableCell align="center">{t("Role")}</TableCell>
+                            <TableCell align="center">{t("Email")}</TableCell>
+                            <TableCell align="center">{t("Actions")}</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -231,17 +240,19 @@ export default function TeamsTable({ onChanges }) {
                             color='textSecondary'
                             variant='subtitle1'
                         >
-                            Empty
+                            {t("Empty")}
                         </Typography>}
                     </TableBody>
                 </Table>
-               
+
             </TableContainer>
             <Box sx={{ justifyContent: "center", textAlign: "center" }}>
-                <Button variant="contained" sx={{ my: 2 }} color='primary' onClick={() => setIndividualsOpen(true)}>
-                        Add new individual
-                    </Button>
-                </Box>
+                <Button startIcon={<Add />} variant="contained" sx={{ my: 2 }} color='primary' onClick={() => setIndividualsOpen(true)}>
+                    {t("add-new", {
+                        what: "individual"
+                    })}
+                </Button>
+            </Box>
         </Grid>
     </Grid>
 }

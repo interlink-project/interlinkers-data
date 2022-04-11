@@ -9,7 +9,7 @@ const UserData = ({ variant, id, sx = {} }) => {
     const mounted = useMounted();
     const [data, setData] = useState(null)
     useEffect(() => {
-        usersApi.get_cache(id).then(res => {
+        usersApi.get(id).then(res => {
             if (mounted) {
                 setData(res.data)
             }

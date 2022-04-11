@@ -1,17 +1,21 @@
-import { Alert, alpha, Avatar, Box, Rating, Button, Card, CardActionArea, CardActions, CardHeader, CircularProgress, Collapse, Divider, Grid, InputBase, Menu, MenuItem, Paper, Stack, Typography } from '@material-ui/core';
+import { Alert, alpha, Avatar, Box, Button, Card, CardActionArea, CardActions, CardHeader, CircularProgress, Collapse, Dialog, DialogContent, Divider, Grid, InputBase, Menu, MenuItem, Rating, Stack, TextField, Typography } from '@material-ui/core';
 import { green } from '@material-ui/core/colors';
 import { Check, KeyboardArrowDown, KeyboardArrowUp } from '@material-ui/icons';
 import { styled } from '@material-ui/styles';
 import { AssetsTable } from 'components/dashboard/assets';
-import { NatureChip, OfficialityChip } from 'components/dashboard/assets/Icons';
+import { NatureChip } from 'components/dashboard/assets/Icons';
 import { TreeItemData } from 'components/dashboard/tree';
 import useMounted from 'hooks/useMounted';
 import { truncate } from 'lodash';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { HTMLtoText } from 'utils/safeHTML';
+import * as Yup from 'yup';
 import { assetsApi, interlinkersApi } from '__api__';
 import NewAssetModal from './NewAssetModal';
+import { Formik } from 'formik';
+import { useTranslation } from 'react-i18next';
+import { LoadingButton } from '@material-ui/lab';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -134,6 +138,8 @@ const RightPart = () => {
     const [selectedInterlinker, setSelectedInterlinker] = useState(null)
     const [newAssetDialogOpen, setNewAssetDialogOpen] = useState(false)
     const mounted = useMounted()
+    const [externalAssetOpen, setExternalAssetOpen] = useState(false);
+    const { t } = useTranslation()
 
     const updateTaskInfo = async () => {
         assetsApi.getMulti({ task_id: selectedTreeItem.id }).then(assets => {
@@ -238,7 +244,82 @@ const RightPart = () => {
                                 Initiate procedure
                             </Button>
                         </Box>
+                        <Dialog open={externalAssetOpen} onClose={() => setExternalAssetOpen(false)}>
+                            <DialogContent sx={{p: 2}}>
+                                <Formik
+                                    initialValues={{
+                                        name: "",
+                                        uri: ""
+                                    }}
+                                    validationSchema={Yup.object().shape({
+                                        name: Yup.string()
+                                            .min(3, 'Must be at least 3 characters')
+                                            .max(255)
+                                            .required('Required'),
+                                        uri: Yup.string()
+                                            .min(3, 'Must be at least 3 characters')
+                                            .required('Required'),
+                                    })}
+                                    onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
+                                        assetsApi.create_external(selectedTreeItem.id, null, values.name, values.uri).then(res => {
+                                            setStatus({ success: true });
+                                            setExternalAssetOpen(false)
+                                        }).catch(err => {
+                                            setStatus({ success: false });
+                                            setErrors({ submit: err });
+                                        }).finally(() => {
+                                            setSubmitting(false);
+                                        })
+                                    }}
+                                >
+                                    {({
+                                        errors,
+                                        handleBlur,
+                                        handleChange,
+                                        handleSubmit,
+                                        isSubmitting,
+                                        setFieldValue,
+                                        setFieldTouched,
+                                        touched,
+                                        values,
+                                    }) => (
+                                        <form onSubmit={handleSubmit}>
+                                            <Box sx={{ mt: 2 }}>
+                                                <TextField
+                                                    required
+                                                    error={Boolean(touched.name && errors.name)}
+                                                    fullWidth
+                                                    helperText={touched.name && errors.name}
+                                                    label='Name'
+                                                    name='name'
+                                                    onBlur={handleBlur}
+                                                    onChange={handleChange}
+                                                    onClick={() => setFieldTouched('name')}
+                                                    value={values.name}
+                                                    variant='outlined'
+                                                />
+                                                <TextField
+                                                    required
+                                                    sx={{mt: 2}}
+                                                    error={Boolean(touched.uri && errors.uri)}
+                                                    fullWidth
+                                                    helperText={touched.uri && errors.uri}
+                                                    label='URI'
+                                                    name='uri'
+                                                    onBlur={handleBlur}
+                                                    onChange={handleChange}
+                                                    onClick={() => setFieldTouched('uri')}
+                                                    value={values.uri}
+                                                    variant='outlined'
+                                                />
+                                                <LoadingButton sx={{mt: 2}} variant="contained" fullWidth loading={isSubmitting} onClick={handleSubmit}>{t("Create")}</LoadingButton>
+                                            </Box>
 
+                                        </form>
+                                    )}
+                                </Formik>
+                            </DialogContent>
+                        </Dialog>
                         <Menu
                             id="basic-menu"
                             anchorEl={anchorEl}
@@ -248,6 +329,13 @@ const RightPart = () => {
                                 'aria-labelledby': 'basic-button',
                             }}
                         >
+                            <MenuItem onClick={() => {
+                                setExternalAssetOpen(true)
+                                handleMenuClose()
+                            }
+                            }>
+                                <Avatar src={"https://cdn-icons-png.flaticon.com/512/282/282100.png"} sx={{ mr: 2, height: "20px", width: "20px" }} />Link an external resource
+                            </MenuItem>
                             {softwareInterlinkers.map(si =>
                                 <MenuItem key={si.id} onClick={() => {
                                     setStep(1);
@@ -256,8 +344,9 @@ const RightPart = () => {
                                     handleMenuClose()
                                 }
                                 }>
-                                    <Avatar src={si.logotype_link} sx={{ mr: 2, height: "20px", width: "20px" }} />{si.integration.instantiate_text}
+                                    <Avatar variant="rounded" src={si.logotype_link} sx={{ mr: 2, height: "20px", width: "20px" }} />{si.integration.instantiate_text}
                                 </MenuItem>)}
+
                         </Menu>
                     </Box>
                     {selectedInterlinker && <NewAssetModal open={newAssetDialogOpen} setOpen={setNewAssetDialogOpen} activeStep={step} setStep={setStep} selectedInterlinker={selectedInterlinker} task={selectedTreeItem} onCreate={updateTaskInfo} />}
