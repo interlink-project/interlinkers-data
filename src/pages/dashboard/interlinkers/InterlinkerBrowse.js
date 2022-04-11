@@ -45,19 +45,15 @@ const InterlinkerBrowse = () => {
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(0);
   const [size, setSize] = useState(9);
-  const [params, setParams] = useState({});
+  const [filters, setFilters] = useState({});
   const [loadedRows, setLoadedRows] = useState([]);
 
   const hasNextPage = loadedRows.length < total
 
-  useEffect(() => {
-    loadServerRows(params)
-  }, [params])
-
-  const loadServerRows = async (params) => {
+  const loadServerRows = async (page, loadedRows) => {
     setLoading(true);
     try {
-      interlinkersApi.getMulti({ page: page + 1, size, ...params }).then(res => {
+      interlinkersApi.getMulti({ page: page + 1, size, ...filters }).then(res => {
         if (mounted.current) {
           setLoading(false);
           setPage(page + 1)
@@ -71,18 +67,18 @@ const InterlinkerBrowse = () => {
     }
   };
 
-  const handleOnRowsScrollEnd = async () => {
+  const handleLoadMore = async () => {
     console.log(hasNextPage, loadedRows.length, "/", total)
     if (hasNextPage) {
-      loadServerRows();
+      loadServerRows(page, loadedRows)
     }
   };
 
-  const onFiltersChange = (params) => {
+  useEffect(() => {
     setPage(0)
     setLoadedRows([])
-    setParams(params)
-  }
+    loadServerRows(0, [])
+  }, [filters])
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -135,7 +131,7 @@ const InterlinkerBrowse = () => {
             </Grid>
           </Grid>
           <Box sx={{ mt: 3 }}>
-            <InterlinkerBrowseFilter onFiltersChange={onFiltersChange} />
+            <InterlinkerBrowseFilter onFiltersChange={setFilters} />
           </Box>
 
           <Box sx={{ mt: 6 }}>
@@ -208,7 +204,7 @@ const InterlinkerBrowse = () => {
               ))}
 
               <Grid item xs={12} sx={{justifyContent: "center", textAlign: "center"}}>
-                {hasNextPage && <LoadingButton loading={loading} variant="contained" onClick={handleOnRowsScrollEnd}>Load more</LoadingButton>}
+                {hasNextPage && <LoadingButton loading={loading} variant="contained" onClick={handleLoadMore}>Load more</LoadingButton>}
               </Grid>
 
             </Grid>

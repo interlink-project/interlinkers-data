@@ -45,7 +45,7 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
     // if software interlinker, helper bools
     const isSoftware = selectedInterlinker.nature === "softwareinterlinker"
     const isKnowledge = selectedInterlinker.nature === "knowledgeinterlinker"
-    const isExternal = selectedInterlinker.nature === "externalinterlinker"
+    const isExternal = selectedInterlinker.nature === "externalinterlinker" || selectedInterlinker.nature === "externalknowledgeinterlinker"
     const can_open_in_modal = isSoftware && selectedInterlinker.integration.open_in_modal
 
     // if knowledgeinterlinker is previewable

@@ -41,26 +41,24 @@ export const OfficialityChip = ({ officiality = "official" }) => {
 }
 
 
-export const NatureChip = ({interlinker}) => {
+export const NatureChip = ({ interlinker }) => {
     let label = ""
     let color = ""
     if (interlinker.nature === 'softwareinterlinker') {
-        label = "Software"
+        label = "Integrated software"
         color = "primary"
 
     } else if (interlinker.nature === 'knowledgeinterlinker') {
-        label = "Knowledge"
+        label = "Integrated knowledge"
         color = "secondary"
     }
-    else if (interlinker.nature === 'externalinterlinker') {
-        if (interlinker.type === "software") {
-            label = "External software"
-            color = "success"
-        } else {
-            label = "External knowledge"
-            color = "warning"
-        }
-
+    else if (interlinker.nature === 'externalsoftwareinterlinker') {
+        label = "External software"
+        color = "success"
+    }
+    else if (interlinker.nature === 'externalknowledgeinterlinker') {
+        label = "External knowledge"
+        color = "warning"
     }
 
     return <Chip label={label} color={color} size="small" />

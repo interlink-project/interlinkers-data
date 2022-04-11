@@ -175,7 +175,7 @@ const InterlinkerCard = ({ interlinker, mode, onInterlinkerClick }) => {
         justifyContent='space-between'
         spacing={3}
       >
-        <Grid item>
+        {/*<Grid item>
           <Typography
             color='textPrimary'
             variant='subtitle2'
@@ -189,7 +189,7 @@ const InterlinkerCard = ({ interlinker, mode, onInterlinkerClick }) => {
           >
             <OfficialityChip />
           </Typography>
-        </Grid>
+    </Grid>*/}
         <Grid item>
           <Typography
             color='textPrimary'
@@ -243,7 +243,7 @@ const InterlinkerCard = ({ interlinker, mode, onInterlinkerClick }) => {
       <Typography
         color='textPrimary'
         variant='subtitle2'
-        sx={{ mb: 1 }}
+        sx={{ mb: 1, textAlign: "center" }}
       >
         Keywords
       </Typography>

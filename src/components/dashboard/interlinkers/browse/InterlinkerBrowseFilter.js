@@ -9,16 +9,24 @@ const multiselectOptions = [
     label: 'Nature',
     options: [
       {
-        label: 'Software',
+        label: 'Integrated software',
         value: "softwareinterlinker"
+      },
+      {
+        label: 'External software',
+        value: "externalsoftwareinterlinker"
       },
       {
         label: 'Knowledge',
         value: "knowledgeinterlinker"
+      },
+      {
+        label: 'External knowledge',
+        value: "externalknowledgeinterlinker"
       }
     ]
   },
-  {
+  /* {
     label: 'Creator',
     options: [
       {
@@ -30,7 +38,7 @@ const multiselectOptions = [
         value: "community"
       },
     ]
-  },
+  },*/
 ];
 
 
@@ -52,7 +60,7 @@ const selectOptions = {
   ]
 };
 
-const allNatures = ["softwareinterlinker", "knowledgeinterlinker"]
+const allNatures = ["softwareinterlinker", "knowledgeinterlinker", "externalsoftwareinterlinker", "externalknowledgeinterlinker"]
 const allCreators = ["official", "community"]
 
 const InterlinkerBrowseFilter = ({ onFiltersChange }) => {

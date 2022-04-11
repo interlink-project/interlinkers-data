@@ -28,11 +28,11 @@ const AssetRow = ({ asset, onChange, actions, openInterlinkerDialog }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const mounted = useMounted();
-  const {t} = useTranslation()
+  const { t } = useTranslation()
 
   const showInterlinkerId = data && (data.externalinterlinker_id || data.knowledgeinterlinker_id || data.softwareinterlinker_id)
   const isInternal = asset.type === "internalasset"
-  console.log( asset.type, asset)
+
   const handleClick = (event) => {
     event.stopPropagation();
     event.preventDefault();
@@ -87,29 +87,48 @@ const AssetRow = ({ asset, onChange, actions, openInterlinkerDialog }) => {
     setAnchorEl(null);
   }
 
-  const getActions = (id, capabilities) => {
+  const getActions = (data) => {
     const actios = []
-    if (capabilities.edit){
-      actios.push(<MyMenuItem key={`${id}-edit-action`} loading={loading} id="edit" onClick={handleEdit} text="Edit" icon={<Edit fontSize="small" />} />)
+    if (!data) {
+      return actios
     }
-    if (capabilities.clone){
+    if (data.type === "internalasset" && data.capabilities) {
+      const { id, capabilities } = data
+      if (capabilities.edit) {
+        actios.push(<MyMenuItem key={`${id}-edit-action`} loading={loading} id="edit" onClick={handleEdit} text="Edit" icon={<Edit fontSize="small" />} />)
+      }
+      if (capabilities.clone) {
+        actios.push(<MyMenuItem key={`${id}-clone-action`} loading={loading} id="clone" onClick={handleClone} text="Clone" icon={<CopyAll fontSize="small" />} />)
+      }
+      if (capabilities.delete) {
+        actios.push(<ConfirmationButton
+          key={`${id}-delete-action`}
+          Actionator={({ onClick }) => <MyMenuItem loading={loading} id="delete" onClick={onClick} text="Delete" icon={<Delete fontSize="small" />} />}
+          ButtonComponent={({ onClick }) => <LoadingButton sx={{ mt: 1 }} fullWidth variant='contained' color="error" onClick={onClick}>Confirm deletion</LoadingButton>}
+          onClick={handleDelete}
+          text="Are you sure?" />)
+      }
+      if (capabilities.clone) {
+        actios.push(<MyMenuItem key={`${id}-share-action`} loading={loading} id="publish" onClick={() => { }} text="Publish" icon={<Share fontSize="small" />} />)
+      }
+      if (capabilities.download) {
+        actios.push(<MyMenuItem key={`${id}-download-action`} loading={loading} id="download" onClick={handleDownload} text="Download" icon={<Download fontSize="small" />} />)
+      }
+    }
+    if (data.type === "externalasset") {
+      const { id } = data
+      // actios.push(<MyMenuItem key={`${id}-edit-action`} loading={loading} id="edit" onClick={handleEdit} text="Edit" icon={<Edit fontSize="small" />} />)
       actios.push(<MyMenuItem key={`${id}-clone-action`} loading={loading} id="clone" onClick={handleClone} text="Clone" icon={<CopyAll fontSize="small" />} />)
-    }
-    if (capabilities.delete){
       actios.push(<ConfirmationButton
         key={`${id}-delete-action`}
         Actionator={({ onClick }) => <MyMenuItem loading={loading} id="delete" onClick={onClick} text="Delete" icon={<Delete fontSize="small" />} />}
         ButtonComponent={({ onClick }) => <LoadingButton sx={{ mt: 1 }} fullWidth variant='contained' color="error" onClick={onClick}>Confirm deletion</LoadingButton>}
         onClick={handleDelete}
         text="Are you sure?" />)
+
     }
-    if (capabilities.clone){
-      actios.push(<MyMenuItem key={`${id}-clone-action`} loading={loading} id="publish" onClick={() => { }} text="Publish" icon={<Share fontSize="small" />} />)
-    }
-    if(capabilities.download){
-      actios.push(<MyMenuItem key={`${id}-download-action`} loading={loading} id="download" onClick={handleDownload} text="Download" icon={<Download fontSize="small" />} />)
-    }
-    return actions
+
+    return actios
   }
   const avatarSize = { height: "30px", width: "30px" }
   return <TableRow
@@ -122,12 +141,12 @@ const AssetRow = ({ asset, onChange, actions, openInterlinkerDialog }) => {
         <Avatar src={data.icon} sx={avatarSize} />
       </TableCell>
       <TableCell style={{ cursor: "pointer" }} onClick={() => {
-        if(isInternal){
+        if (isInternal) {
           window.open(data.link + "/view", "_blank")
-        }else{
+        } else {
           window.open(data.uri)
         }
-        }} align="left">{data.name}</TableCell>
+      }} align="left">{data.name}</TableCell>
       <TableCell align="left">
         {moment(data.created_at).format("LL")}
       </TableCell>
@@ -160,7 +179,7 @@ const AssetRow = ({ asset, onChange, actions, openInterlinkerDialog }) => {
             'aria-labelledby': 'basic-button',
           }}
         >
-          {isInternal && data.capabilities && getActions(data.id, data.capabilities)}
+          {getActions(data)}
         </Menu>
       </TableCell></> : <>
       <TableCell><Skeleton animation="wave" variant="circular" sx={avatarSize} /></TableCell>
