@@ -10,5 +10,6 @@ import { rolesApi } from './coproduction/rolesApi';
 import { tasksApi } from './coproduction/tasksApi';
 import { teamsApi } from './coproduction/teamsApi';
 import { usersApi } from './users';
+import { logsApi } from './coproduction/logsApi';
 
-export { assetsApi, knowledgeInterlinkersApi, softwareInterlinkersApi, rolesApi, coproductionProcessesApi, coproductionSchemasApi, teamsApi, usersApi, tasksApi, phasesApi, objectivesApi, interlinkersApi };
+export { assetsApi, knowledgeInterlinkersApi, softwareInterlinkersApi, rolesApi, coproductionProcessesApi, coproductionSchemasApi, teamsApi, usersApi, tasksApi, phasesApi, objectivesApi, interlinkersApi, logsApi };
