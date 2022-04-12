@@ -1517,6 +1517,674 @@
         {
             "reference": "default",
             "name_translations": {
+                "en": "Co-production schema to support co-refinement of public service descriptions",
+                "es": "Esquema de coproducci\u00f3n para apoyar el perfeccionamiento de las descripciones de los servicios p\u00fablicos"
+            },
+            "author": "",
+            "licence": "permissive",
+            "tags_translations": {
+                "en": [
+                    "default",
+                    "coproduction"
+                ]
+            },
+            "description_translations": {
+                "en": "Specific co-production process specially catered for co-refinement of public service descriptions where citizens, civil servants managing public service infrastructure and civil servants working at specific departments cooperate. It is composed of the following phases: a) ENGAGE \u2013 where stakeholders involved in service description refinements are understood and engagement plans are proposed; b) DESIGN \u2013 where the actual managers of e-services prepare the description augmentation space to be used by those enhancing service descriptions; c) RUN \u2013 where the contributions from diverse stakeholders are gathered, moderated and validated with the support of the Description Augmenter INTERLINKER; and d) REFINE \u2013 where the validated contributions are assessment and applied in refinements to service descriptions.",
+                "es": "Proceso espec\u00edfico de coproducci\u00f3n especialmente concebido para el perfeccionamiento de las descripciones de los servicios p\u00fablicos en el que cooperan los ciudadanos, los funcionarios que gestionan la infraestructura de los servicios p\u00fablicos y los funcionarios que trabajan en departamentos espec\u00edficos. Se compone de las siguientes fases: a) ENGAGE \\u2013 donde se comprenden las partes interesadas que participan en el perfeccionamiento de las descripciones de los servicios y se proponen planes de participaci\u00f3n; b) DESIGN \\u2013 donde los gestores reales de los servicios electr\u00f3nicos preparan el espacio de aumento de la descripci\u00f3n que utilizar\u00e1n los que mejoran las descripciones de los servicios; c) RUN \\u2013 donde se recogen las contribuciones de las diversas partes interesadas, se moderan y se validan con el apoyo del INTERLINKER de aumento de la descripci\u00f3n; y d) REFINE \\u2013 donde se eval\u00faan las contribuciones validadas y se aplican en el perfeccionamiento de las descripciones de los servicios."
+            },
+            "phases": [
+                {
+                    "reference": "phase-run",
+                    "prerequisites": [
+                        {
+                            "item": "phase-design",
+                            "status": "finished"
+                        }
+                    ],
+                    "name_translations": {
+                        "en": "Run",
+                        "es": ""
+                    },
+                    "description_translations": {
+                        "en": "Make use of designed co-production process, reviewing contribs from users of the service, accepting or rejecting them, exporting reports with changes accepted so that they are processed for refinement.",
+                        "es": ""
+                    },
+                    "objectives": [
+                        {
+                            "name_translations": {
+                                "en": "Monitor continuous crowd refinement process",
+                                "es": ""
+                            },
+                            "description_translations": {
+                                "en": "Access to the Description Augmenter to monitor and moderate contributions from the crowd, generate intermediary reports and store them.",
+                                "es": ""
+                            },
+                            "problemprofiles": [
+                                "DEF_PROBLEM_5"
+                            ],
+                            "tasks": [
+                                {
+                                    "name_translations": {
+                                        "en": "Link to the Description Augmenter project",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Produce a link to the description augmenter session so that we co-producers can review contributions, accept, reject them or generate reports for refinement processing. ",
+                                        "es": ""
+                                    },
+                                    "problemprofiles": [
+                                        "BUILD_PROBLEM_2",
+                                        "BUILD_PROBLEM_3",
+                                        "BUILD_PROBLEM_4",
+                                        "BUILD_PROBLEM_5",
+                                        "BUILD_PROBLEM_6",
+                                        "BUILD_PROBLEM_7",
+                                        "BUILD_PROBLEM_8"
+                                    ],
+                                    "reference": "task-link-to-the-description-augmenter-project"
+                                }
+                            ],
+                            "reference": "objective-monitor-continuous-crowd-refinement-process"
+                        },
+                        {
+                            "name_translations": {
+                                "en": "Publish report with descriptions accepted to be processed",
+                                "es": ""
+                            },
+                            "description_translations": {
+                                "en": "Produce a link to the report",
+                                "es": ""
+                            },
+                            "problemprofiles": [
+                                "ORG_PROBLEM_13",
+                                "ORG_PROBLEM_14",
+                                "DEF_PROBLEM_5"
+                            ],
+                            "tasks": [
+                                {
+                                    "name_translations": {
+                                        "en": "Publish enhancement report",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Publish enhancement report.",
+                                        "es": ""
+                                    },
+                                    "problemprofiles": [
+                                        "BUILD_PROBLEM_2",
+                                        "BUILD_PROBLEM_3",
+                                        "BUILD_PROBLEM_4",
+                                        "BUILD_PROBLEM_5",
+                                        "BUILD_PROBLEM_6",
+                                        "BUILD_PROBLEM_7",
+                                        "BUILD_PROBLEM_9"
+                                    ],
+                                    "reference": "task-publish-enhancement-report"
+                                }
+                            ],
+                            "prerequisites": [
+                                {
+                                    "item": "objective-monitor-continuous-crowd-refinement-process",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-publish-report-with-descriptions-accepted-to-be-processed"
+                        }
+                    ]
+                },
+                {
+                    "reference": "phase-refine",
+                    "prerequisites": [
+                        {
+                            "item": "phase-run",
+                            "status": "finished"
+                        }
+                    ],
+                    "name_translations": {
+                        "en": "Refine",
+                        "es": "Refinar"
+                    },
+                    "description_translations": {
+                        "en": "Apply refinements according to crowd-contributions and publish new version of service description.",
+                        "es": ""
+                    },
+                    "objectives": [
+                        {
+                            "name_translations": {
+                                "en": "Appy refinements",
+                                "es": "Aplicar mejoras"
+                            },
+                            "description_translations": {
+                                "en": "You may use a changes template to trace how the refinements approved in report from Description Augmenter are applied",
+                                "es": ""
+                            },
+                            "problemprofiles": [],
+                            "tasks": [
+                                {
+                                    "name_translations": {
+                                        "en": "Create external reference to source Service Description to augment",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "With the support of the External Resource Manager include link to source service description to improve",
+                                        "es": ""
+                                    },
+                                    "problemprofiles": [
+                                        "ORG_PROBLEM_7"
+                                    ],
+                                    "reference": "task-create-external-reference-to-source-service-description-to-augment"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Upload refinements to apply",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Upload document/s generated by Description Augmenter to be able to trace enhancements to apply to a given Service Description",
+                                        "es": ""
+                                    },
+                                    "problemprofiles": [
+                                        "ORG_PROBLEM_7"
+                                    ],
+                                    "prerequisites": [
+                                        {
+                                            "item": "task-create-external-reference-to-source-service-description-to-augment",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "task-upload-refinements-to-apply"
+                                }
+                            ],
+                            "reference": "objective-appy-refinements"
+                        },
+                        {
+                            "name_translations": {
+                                "en": "Publish refined versions of service descriptions",
+                                "es": ""
+                            },
+                            "description_translations": {
+                                "en": "Using the External Resource Manager include link to enhanced version of service description after changes have been applied",
+                                "es": ""
+                            },
+                            "problemprofiles": [],
+                            "tasks": [
+                                {
+                                    "name_translations": {
+                                        "en": "Link with enhanced version of service description",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Leverage External Resource Manager to include those Service Descriptions",
+                                        "es": ""
+                                    },
+                                    "problemprofiles": [],
+                                    "reference": "task-link-with-enhanced-version-of-service-description"
+                                }
+                            ],
+                            "prerequisites": [
+                                {
+                                    "item": "objective-appy-refinements",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-publish-refined-versions-of-service-descriptions"
+                        }
+                    ]
+                },
+                {
+                    "reference": "phase-design",
+                    "prerequisites": [
+                        {
+                            "item": "phase-engage",
+                            "status": "finished"
+                        }
+                    ],
+                    "name_translations": {
+                        "en": "Design",
+                        "es": ""
+                    },
+                    "description_translations": {
+                        "en": "Follow the guidelines to discuss together, in a balanced and inclusive way, issues, beneficiaries, and priorities for the service to be designed. Find useful resources to conduct interviews, surveys and focus groups for a deeper understanding of stakeholders\u2019 and citizens\u2019 needs and requirements. Use the proposed material to organize service design workshops and develop mockups. Stop and reflect on the process so far with the co-evaluation checklists.",
+                        "es": ""
+                    },
+                    "objectives": [
+                        {
+                            "name_translations": {
+                                "en": "Focus the service description enhancement problem collaboratively",
+                                "es": ""
+                            },
+                            "description_translations": {
+                                "en": "Clearly define the problem to be addresses by the co-production team and agree on it. This  is an important step towards creating an effective and efficient solution. Different resources can be useful to this end: tips on how to create and share a common language among team members, resources to guide collaborative discussions, tools for ideas collection.",
+                                "es": ""
+                            },
+                            "problemprofiles": [],
+                            "tasks": [
+                                {
+                                    "name_translations": {
+                                        "en": "Develop a shared language",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Develop a shared language among the team members and encourage communication and ideas sharing with all the stakeholders. Developing a shared language is crucial to be able for stakeholders to: i) build a common ground for joint action, ii) share, mutually agree on, and understand a longterm research plan and protocol, iii) to ongoingly evaluate the success or failure of decisions.",
+                                        "es": ""
+                                    },
+                                    "problemprofiles": [
+                                        "ORG_PROBLEM_12"
+                                    ],
+                                    "reference": "task-develop-a-shared-language"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Collaboratively problem refinement",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Refine with the collaboration of the stakeholders network the problem to be addressed. Service design is a problem-solving activity and it is important to clearly understand which is the challenge that the team addresses and how more information can be collected to understand how the service should be designed. Organize focus groups to discuss initial ideas and assumptions, refine them through structured methods and become aware about the missing information that still needs to be collected.",
+                                        "es": ""
+                                    },
+                                    "problemprofiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "item": "task-develop-a-shared-language",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "task-collaboratively-problem-refinement"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Ideas collection for problem exploration and refinement",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "In case of need, enlarge the collection of ideas about the various aspects of the problem by launching a discussion forum.",
+                                        "es": ""
+                                    },
+                                    "problemprofiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "item": "task-collaboratively-problem-refinement",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "task-ideas-collection-for-problem-exploration-and-refinement"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Define requirements and constraints for the service",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "The ideas and service design concepts need to be translated into formal requirements to proceed with the implementation of the service. Follow the guidelines on how to collect, structure and communicate requirements and all the service specifications that clarify the objective of the service and how it should be developed. Use stardard representation formalism for requirements descriptions, as for example the Volere Requirements Specification template.",
+                                        "es": ""
+                                    },
+                                    "problemprofiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "item": "task-ideas-collection-for-problem-exploration-and-refinement",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "task-define-requirements-and-constraints-for-the-service"
+                                }
+                            ],
+                            "reference": "objective-focus-the-service-description-enhancement-problem-collaboratively"
+                        },
+                        {
+                            "name_translations": {
+                                "en": "Problem exploration",
+                                "es": ""
+                            },
+                            "description_translations": {
+                                "en": "Before actually designing the service description refinement process, deeply explore the problem context, to gather factual data about users, organizations, needs and their relationships.",
+                                "es": ""
+                            },
+                            "problemprofiles": [
+                                "UND_PROBLEM_1",
+                                "UND_PROBLEM_3",
+                                "UND_PROBLEM_4",
+                                "UND_PROBLEM_6",
+                                "DEF_PROBLEM_3"
+                            ],
+                            "tasks": [
+                                {
+                                    "name_translations": {
+                                        "en": "Collect data about users and their behavior",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Gather all the relevant information about the service that will be produced to put the right processes in place.  It\u2019s advisable to establish different types of consultation depending on the groups targeted:\r\n\\n- Consult users about desired outcomes of the service\r\n- Consult service providers about the solutions that can give in response to the service demanded\r\n- Ask public authorities about the implications (organizational, regulatory, etc.) that affect to the service delivery\r\nOrganize focus groups, interviews or surveys to elicit the desired data.",
+                                        "es": ""
+                                    },
+                                    "problemprofiles": [
+                                        "ORG_PROBLEM_6.2"
+                                    ],
+                                    "reference": "task-collect-data-about-users-and-their-behavior"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Ecosystem mapping",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Map in a synthetic representation all the key roles that can impact on the user, organization and service environment. The ecosystem map is built by first displaying all the entities, and then connecting them based on the type of value they exchange.",
+                                        "es": ""
+                                    },
+                                    "problemprofiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "item": "task-collect-data-about-users-and-their-behavior",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "task-ecosystem-mapping"
+                                }
+                            ],
+                            "prerequisites": [
+                                {
+                                    "item": "objective-focus-the-service-description-enhancement-problem-collaboratively",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-problem-exploration"
+                        },
+                        {
+                            "name_translations": {
+                                "en": "Service description refinement process specification",
+                                "es": ""
+                            },
+                            "description_translations": {
+                                "en": "Based on the description augmenter INTERLINKER create a new service description enhancement process.",
+                                "es": ""
+                            },
+                            "problemprofiles": [
+                                "DEF_PROBLEM_1",
+                                "DEF_PROBLEM_5",
+                                "BUILD_PROBLEM_1"
+                            ],
+                            "tasks": [
+                                {
+                                    "name_translations": {
+                                        "en": "Launch Description Augmenter",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Use the init procedure to launch it.",
+                                        "es": ""
+                                    },
+                                    "problemprofiles": [],
+                                    "reference": "task-launch-description-augmenter"
+                                }
+                            ],
+                            "prerequisites": [
+                                {
+                                    "item": "objective-problem-exploration",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-service-description-refinement-process-specification"
+                        },
+                        {
+                            "name_translations": {
+                                "en": "Sustainability",
+                                "es": ""
+                            },
+                            "description_translations": {
+                                "en": "Before further going deep into the launch of the enhancement process. Stop and reflect about the design results obtained so far and about the actual feasibility and sustainability of what you are about to implement.",
+                                "es": ""
+                            },
+                            "problemprofiles": [
+                                "UND_PROBLEM_3"
+                            ],
+                            "tasks": [
+                                {
+                                    "name_translations": {
+                                        "en": "Evaluation of codesign",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Is the design output satisfactory?\r\nFollow the proposed checklist to understand if you are done with design or whether an iterative refinement cycle is recommended.",
+                                        "es": ""
+                                    },
+                                    "problemprofiles": [],
+                                    "reference": "task-evaluation-of-codesign"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Understand motivations and incentives",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "What are the incentives for those who can provide support / funding and for those developing / maintaining them?\r\nStop and reflect on how stakeholders collaboration in co-creation went so far. Follow the proposed checklist to understand whether further incentives and supportive measures are needed to ensure productive development and co-delivery phases.",
+                                        "es": ""
+                                    },
+                                    "problemprofiles": [],
+                                    "prerequisites": [
+                                        {
+                                            "item": "task-evaluation-of-codesign",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "task-understand-motivations-and-incentives"
+                                }
+                            ],
+                            "prerequisites": [
+                                {
+                                    "item": "objective-service-description-refinement-process-specification",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-sustainability"
+                        }
+                    ]
+                },
+                {
+                    "reference": "phase-engage",
+                    "prerequisites": [],
+                    "name_translations": {
+                        "en": "Engage",
+                        "es": "Comprometer"
+                    },
+                    "description_translations": {
+                        "en": "Which stakeholders should be involved in your co-production process? How to communicate with them about your project goals and the benefits of participation?\r\nLearn about the value of involving stakeholders. Use the available knowledge tools to understand who are the stakeholders to involve in your project and the role they can have. \r\nExploit communication templates to raise awareness, invite stakeholders, and create a lively network of motivated contributors. Define partnership agreements and make sure shared information is protected. Plan together the next steps and create working groups. ",
+                        "es": ""
+                    },
+                    "objectives": [
+                        {
+                            "name_translations": {
+                                "en": "Identify stakeholders",
+                                "es": "Identificar stakeholders"
+                            },
+                            "description_translations": {
+                                "en": "The identification of key actors  is the first step to start your  process of co-production. According to the type of project, the goals and the level of citizen involvement, different questions are to be answered.\r\nWhat different  types of stakeholders enter into play in the initiative to be co-produced? What are their motivations and skills to participate in the project? What is their position in the network? How to contact them?\r\nFollow the specific tasks to get the complete picture.",
+                                "es": ""
+                            },
+                            "problemprofiles": [],
+                            "tasks": [
+                                {
+                                    "name_translations": {
+                                        "en": "Understand the different types of stakeholders",
+                                        "es": "Entender los diferentes tipos de stakeholders y sus motivaciones"
+                                    },
+                                    "description_translations": {
+                                        "en": "Usually different actors are engaged in co-production to create a new service or customizing an already existing service: public bodies, private companies, SMEs, citizens. Each actor brings specific needs and competences in relation to the service and has different motivations to participate in a project. Learn about the different types of stakeholders and which of them can add value to your co-production process",
+                                        "es": ""
+                                    },
+                                    "problemprofiles": [
+                                        "UND_PROBLEM_2"
+                                    ],
+                                    "reference": "task-understand-the-different-types-of-stakeholders"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Map stakeholders, analyse motivation, skills, expectations",
+                                        "es": "Mapear partes interesadas analizar motivaci\u00f3n habilidades expectativas"
+                                    },
+                                    "description_translations": {
+                                        "en": "Mapping the stakeholders is crucial to have a clear view of which roles stakeholders can play in different stages of innovation, what their level of commitment and strategic importance could be. Analyse the complexity of building relationships, realizing which connectors can be crucial for innovation development in your project.",
+                                        "es": ""
+                                    },
+                                    "problemprofiles": [
+                                        "UND_PROBLEM_2"
+                                    ],
+                                    "prerequisites": [
+                                        {
+                                            "item": "task-understand-the-different-types-of-stakeholders",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "task-map-stakeholders-analyse-motivation-skills-expectations"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Visually map the network of stakeholders",
+                                        "es": "Mapear visualmente la red de partes interesadas"
+                                    },
+                                    "description_translations": {
+                                        "en": "Is your network balanced and inclusive?\r\nCreate a Stakeholder Map, where the ecosystem of stakeholders involved in a customer experience is visualized.",
+                                        "es": ""
+                                    },
+                                    "problemprofiles": [
+                                        "UND_PROBLEM_2"
+                                    ],
+                                    "prerequisites": [
+                                        {
+                                            "item": "task-map-stakeholders-analyse-motivation-skills-expectations",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "task-visually-map-the-network-of-stakeholders"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Create a contact list of potential network participants",
+                                        "es": "Crear una lista de contactos de posibles participantes de la red"
+                                    },
+                                    "description_translations": {
+                                        "en": "Write down the list of participants, aside the co-production team, who may be interested in observing the progress of the co-production project and have the opportunity to emit opinions and take part in some decision processes. ",
+                                        "es": ""
+                                    },
+                                    "problemprofiles": [
+                                        "ORG_PROBLEM_4"
+                                    ],
+                                    "prerequisites": [
+                                        {
+                                            "item": "task-visually-map-the-network-of-stakeholders",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "task-create-a-contact-list-of-potential-network-participants"
+                                }
+                            ],
+                            "reference": "objective-identify-stakeholders"
+                        },
+                        {
+                            "name_translations": {
+                                "en": "Engage stakeholders",
+                                "es": ""
+                            },
+                            "description_translations": {
+                                "en": "Stakeholder engagement is about figuring out how to effectively communicate, collaborate, and interact with key people who have positive or negative influence, and may impact the success of your project.\r\nTo reach this objective you should carefully prepare an engagement plan, create awareness and communication material tailored to your audience, understand how to communicate benefit for stakeholders and, whenever this is forseen in your project, understand how to engage citizens in the co-production process. ",
+                                "es": ""
+                            },
+                            "problemprofiles": [
+                                "ORG_PROBLEM_12",
+                                "ORG_PROBLEM_13",
+                                "ORG_PROBLEM_14"
+                            ],
+                            "tasks": [
+                                {
+                                    "name_translations": {
+                                        "en": "Prepare an engagement plan",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Create an effective engagement plan which allows you to reach to the types and numbers of stakeholders sufficient to ensure that the co-produced service is well targeted. \r\nAn engagement plan is usually composed of three parts: the identification of your project\u2019s stakeholders; the planning of effective means for interacting with each stakeholder, and protocols for accurately documenting your work for the sake of transparency, accountability and evaluation of the process.",
+                                        "es": ""
+                                    },
+                                    "problemprofiles": [
+                                        "ORG_PROBLEM_5"
+                                    ],
+                                    "reference": "task-prepare-an-engagement-plan"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Create awareness and communication",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Ensure that relevant stakeholders are aware of the initiative in order to ensure their participation. Awareness-raising is a process that seeks to inform and educate people about a topic or issue with the intention of influencing their attitudes, behaviours and beliefs towards the achievement of a defined purpose or goal.",
+                                        "es": ""
+                                    },
+                                    "problemprofiles": [
+                                        "ORG_PROBLEM_4",
+                                        "ORG_PROBLEM_6.3"
+                                    ],
+                                    "prerequisites": [
+                                        {
+                                            "item": "task-prepare-an-engagement-plan",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "task-create-awareness-and-communication"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Communicate benefit for stakeholders",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Clearly communicate the benefits of service co-production to your network of stakeholders and citizens.\r\nParticipants need to understand why their participation matters, what they can gain individually and as a group.",
+                                        "es": ""
+                                    },
+                                    "problemprofiles": [
+                                        "ORG_PROBLEM_4"
+                                    ],
+                                    "prerequisites": [
+                                        {
+                                            "item": "task-create-awareness-and-communication",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "task-communicate-benefit-for-stakeholders"
+                                },
+                                {
+                                    "name_translations": {
+                                        "en": "Engage citizens in the co-production process",
+                                        "es": ""
+                                    },
+                                    "description_translations": {
+                                        "en": "Provide members of the public with the information they need to understand the project, the decision process, and also how public input can influence decisions, the design of the service and the way it is delivered. ",
+                                        "es": ""
+                                    },
+                                    "problemprofiles": [
+                                        "ORG_PROBLEM_10",
+                                        "ORG_PROBLEM_11"
+                                    ],
+                                    "prerequisites": [
+                                        {
+                                            "item": "task-communicate-benefit-for-stakeholders",
+                                            "status": "completed"
+                                        }
+                                    ],
+                                    "reference": "task-engage-citizens-in-the-co-production-process"
+                                }
+                            ],
+                            "prerequisites": [
+                                {
+                                    "item": "objective-identify-stakeholders",
+                                    "status": "completed"
+                                }
+                            ],
+                            "reference": "objective-engage-stakeholders"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "reference": "default",
+            "name_translations": {
                 "en": "Default schema",
                 "es": "Esquema por defecto"
             },
