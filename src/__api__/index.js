@@ -11,5 +11,6 @@ import { tasksApi } from './coproduction/tasksApi';
 import { teamsApi } from './coproduction/teamsApi';
 import { usersApi } from './users';
 import { problemprofilesApi } from './catalogue/problemProfilesApi';
+import { logsApi } from './coproduction/logsApi';
 
-export { problemprofilesApi, assetsApi, knowledgeInterlinkersApi, softwareInterlinkersApi, rolesApi, coproductionProcessesApi, coproductionSchemasApi, teamsApi, usersApi, tasksApi, phasesApi, objectivesApi, interlinkersApi };
+export { logsApi, problemprofilesApi, assetsApi, knowledgeInterlinkersApi, softwareInterlinkersApi, rolesApi, coproductionProcessesApi, coproductionSchemasApi, teamsApi, usersApi, tasksApi, phasesApi, objectivesApi, interlinkersApi };

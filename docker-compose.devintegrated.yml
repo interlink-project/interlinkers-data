@@ -1,4 +1,4 @@
-version: "3.3"
+version: "3.7"
 services:
 
   frontend:
@@ -25,6 +25,10 @@ services:
       - traefik.http.services.${STACK_NAME?Variable not set}-frontend.loadbalancer.server.port=${PORT}
     networks:
       - traefik-public
+    logging:
+      driver: "json-file"
+      options:
+        tag: "{{.ImageName}}|{{.Name}}|{{.ImageFullID}}|{{.FullID}}"
 
 networks:
   traefik-public:

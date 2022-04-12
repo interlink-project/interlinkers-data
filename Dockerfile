@@ -11,6 +11,9 @@ ENV PATH /usr/app/node_modules/.bin:$PATH
 COPY package.json .
 COPY package-lock.json .
 RUN npm install
+
+RUN mkdir -p node_modules/.cache && chmod -R 777 node_modules/.cache
+
 RUN npm install react-scripts@3.4.1 -g
 
 # add app
