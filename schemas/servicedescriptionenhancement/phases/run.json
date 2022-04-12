@@ -1,0 +1,88 @@
+{
+    "reference": "phase-run",
+    "prerequisites": [
+        {
+            "item": "phase-design",
+            "status": "finished"
+        }
+    ],
+    "name_translations": {
+        "en": "Run",
+        "es": ""
+    },
+    "description_translations": {
+        "en": "Make use of designed co-production process, reviewing contribs from users of the service, accepting or rejecting them, exporting reports with changes accepted so that they are processed for refinement.",
+        "es": ""
+    },
+    "objectives": [
+        {
+            "name_translations": {
+                "en": "Monitor continuous crowd refinement process",
+                "es": ""
+            },
+            "description_translations": {
+                "en": "Access to the Description Augmenter to monitor and moderate contributions from the crowd, generate intermediary reports and store them.",
+                "es": ""
+            },
+            "problemprofiles": ["DEF_PROBLEM_5"],
+            "tasks": [
+                {
+                    "name_translations": {
+                        "en": "Link to the Description Augmenter project",
+                        "es": ""
+                    },
+                    "description_translations": {
+                        "en": "Produce a link to the description augmenter session so that we co-producers can review contributions, accept, reject them or generate reports for refinement processing. ",
+                        "es": ""
+                    },
+                    "problemprofiles": [
+                        "BUILD_PROBLEM_2",
+                        "BUILD_PROBLEM_3",
+                        "BUILD_PROBLEM_4",
+                        "BUILD_PROBLEM_5",
+                        "BUILD_PROBLEM_6",
+                        "BUILD_PROBLEM_7",
+                        "BUILD_PROBLEM_8"
+                    ]
+                }
+            ]
+        },
+        {
+            "name_translations": {
+                "en": "Publish report with descriptions accepted to be processed",
+                "es": ""
+            },
+            "description_translations": {
+                "en": "Produce a link to the report",
+                "es": ""
+            },
+            "problemprofiles": [
+                "ORG_PROBLEM_13",
+                "ORG_PROBLEM_14",
+				"DEF_PROBLEM_5"
+            ],
+            "tasks": [
+                {
+                    "name_translations": {
+                        "en": "Publish enhancement report",
+                        "es": ""
+                    },
+                    "description_translations": {
+                        "en": "Publish enhancement report.",
+                        "es": ""
+                    },
+                    "problemprofiles": [
+                        "BUILD_PROBLEM_2",
+                        "BUILD_PROBLEM_3",
+                        "BUILD_PROBLEM_4",
+                        "BUILD_PROBLEM_5",
+                        "BUILD_PROBLEM_6",
+                        "BUILD_PROBLEM_7",
+                        "BUILD_PROBLEM_9"
+
+                    ]
+                }
+            ]
+        }
+    ]
+}
