@@ -7,6 +7,7 @@ const initialState = {
   updating: false,
   updatingTree: false,
   process: null,
+  hasSchema: false,
   tasks: [],
   objectives: [],
   phases: [],
@@ -28,8 +29,8 @@ const slice = createSlice({
       const phases = []
       const objectives = []
       const tasks = []
-
-      console.log(action)
+      
+      state.hasSchema = action.payload.length > 0
       if (action.payload) {
         // separate tree into groups
         action.payload.forEach(phase => {

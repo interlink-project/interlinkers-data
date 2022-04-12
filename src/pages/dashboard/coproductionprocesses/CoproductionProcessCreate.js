@@ -5,6 +5,7 @@ import { KeyboardArrowRight } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import useMounted from 'hooks/useMounted';
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { getInitialLanguage, LANGUAGES } from 'translations/i18n';
 import { coproductionProcessesApi } from '__api__';
 
@@ -16,6 +17,7 @@ const CoproductionprocessCreate = ({ open, setOpen, loading, setLoading, onCreat
 
   const [activeStep, setActiveStep] = useState(0);
   const mounted = useMounted();
+  const { t } = useTranslation()
 
   const sendOnCreate = (data) => {
     if (mounted) {
@@ -84,7 +86,7 @@ const CoproductionprocessCreate = ({ open, setOpen, loading, setLoading, onCreat
   return (
     <>
       <Dialog open={open} onClose={handleClose} fullWidth>
-        <DialogTitle>Co-production process creation</DialogTitle>
+        <DialogTitle>{t("coproductionprocess-creation-title")}</DialogTitle>
         <DialogContent>
           {activeStep === 0 && <><Box sx={{ textAlign: "center" }}>
             <label htmlFor="contained-button-file">
@@ -104,15 +106,15 @@ const CoproductionprocessCreate = ({ open, setOpen, loading, setLoading, onCreat
               autoFocus
               margin="dense"
               id="name"
-              label="Name"
+              label={t("Name")}
               value={name}
               onChange={(e) => setName(e.target.value)}
               type="text"
               fullWidth
               variant="standard"
             />
-            <FormControl variant="standard" fullWidth sx={{mt: 2}}>
-              <InputLabel id="select-language">Language</InputLabel>
+            <FormControl variant="standard" fullWidth sx={{ mt: 2 }}>
+              <InputLabel id="select-language">{t("Language")}</InputLabel>
               <Select
                 fullWidth
                 labelId="select-language-label"
@@ -121,16 +123,16 @@ const CoproductionprocessCreate = ({ open, setOpen, loading, setLoading, onCreat
                 onChange={(event) => {
                   setLanguage(event.target.value);
                 }}
-                label="language"
+                label={t("Language")}
               >
                 {LANGUAGES.map(lan => <MenuItem value={lan.value}>{lan.label}</MenuItem>)}
               </Select>
             </FormControl>
             <TextField
-              sx={{mt: 2}}
+              sx={{ mt: 2 }}
               margin="dense"
               id="description"
-              label="Description"
+              label={t("Description")}
               type="text"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
@@ -143,7 +145,7 @@ const CoproductionprocessCreate = ({ open, setOpen, loading, setLoading, onCreat
         </DialogContent>
         <DialogActions sx={{ justifyContent: "center" }}>
           <LoadingButton sx={{ my: 2 }} loading={loading} size="small" onClick={handleNext} disabled={!name}>
-            Create
+            {t("Create")}
             <KeyboardArrowRight />
           </LoadingButton>
         </DialogActions>

@@ -1,5 +1,6 @@
 import { Box, Card, Divider, Input, Rating, Typography } from '@material-ui/core';
 import React, { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import SearchIcon from '../../../../icons/Search';
 import MultiSelect from '../../../MultiSelect';
@@ -32,12 +33,14 @@ const InterlinkerBrowseFilter = ({ onFiltersChange }) => {
   const [selectedCreators, setSelectedCreators] = useState(allCreators);
   const [minimumRating, setMinimumRating] = useState(0);
   const didMount = useRef(false);
+  const {t} = useTranslation()
 
   const { problemprofiles } = useSelector((state) => state.general);
 
   const multiselectOptions = [
     {
-      label: 'Nature',
+      label: t('Nature'),
+      id: "nature",
       options: [
         {
           label: 'Integrated software',
@@ -58,14 +61,16 @@ const InterlinkerBrowseFilter = ({ onFiltersChange }) => {
       ]
     },
     /* {
-      label: 'Problem profiles',
+      label: t('Problem profiles'),
+      id: "problemprofiles",
       options: problemprofiles.map(pp => ({
         label: pp.name,
         value: pp.id
       }))
     },
     {
-      label: 'Creator',
+      label: t('Maintainer'),
+      id: "maintainer",
       options: [
         {
           label: 'Official',
@@ -94,11 +99,11 @@ const InterlinkerBrowseFilter = ({ onFiltersChange }) => {
     update()
   }, [selectedNatures, selectedCreators, minimumRating])
 
-  const handleMultiSelectChange = (value, type) => {
-    if (type === "Nature") {
+  const handleMultiSelectChange = (value, id) => {
+    if (id === "nature") {
       setSelectedNatures(value)
     }
-    if (type === "Creator") {
+    if (id === "maintainer") {
       setSelectedCreators(value)
     }
 
@@ -121,11 +126,11 @@ const InterlinkerBrowseFilter = ({ onFiltersChange }) => {
     }
   }, [inputValue])
 
-  const getValues = (type) => {
+  const getValues = (id) => {
     {
-      if (type === "Nature") {
+      if (id === "nature") {
         return selectedNatures
-      } else if (type === "Creator") {
+      } else if (id === "maintainer") {
         return selectedCreators
       }
       return []
@@ -152,7 +157,7 @@ const InterlinkerBrowseFilter = ({ onFiltersChange }) => {
             disableUnderline
             fullWidth
             onChange={handleInputChange}
-            placeholder='Search by text'
+            placeholder={t('Search')}
             value={inputValue}
           />
         </Box>
@@ -171,15 +176,15 @@ const InterlinkerBrowseFilter = ({ onFiltersChange }) => {
           <React.Fragment key={multiselect.label}>
             <MultiSelect
               label={multiselect.label}
-              onChange={(e) => handleMultiSelectChange(e, multiselect.label)}
+              onChange={(e) => handleMultiSelectChange(e, multiselect.id)}
               options={multiselect.options}
-              value={getValues(multiselect.label)}
+              value={getValues(multiselect.id)}
             />
             <Divider orientation='vertical' flexItem sx={{ mx: 2 }} />
           </React.Fragment>
         ))}
 
-        <Typography variant="body2" sx={{ mx: 1 }}><b>Minimum rating:</b></Typography>
+        <Typography variant="body2" sx={{ mx: 1 }}><b>{t("Minimum rating")}:</b></Typography>
         <Rating value={minimumRating} onChange={(e, value) => setMinimumRating(value)} />
         <Divider orientation='vertical' flexItem sx={{ mx: 2 }} />
         {/*<Typography variant="body2" sx={{ mr: 1 }}><b>Order by:</b></Typography>

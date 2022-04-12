@@ -13,14 +13,14 @@ import Scrollbar from '../Scrollbar';
 
 const ProcessSidebar = (props) => {
   const { onMobileClose, openMobile } = props;
-  const { process, loading, updating } = useSelector((state) => state.process);
+  const { process, hasSchema, loading, updating } = useSelector((state) => state.process);
   const navigate = useNavigate();
   const location = useLocation();
   const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));
   const processId = process && process.id
 
-  const { t, i18n } = useTranslation()
-  const processLanguage = i18n.getFixedT(process && process.language);
+  const { t : commonT, i18n } = useTranslation()
+  const t = i18n.getFixedT(process && process.language);
 
   useEffect(() => {
     if (openMobile && onMobileClose) {
@@ -34,27 +34,27 @@ const ProcessSidebar = (props) => {
       title: "",
       items: [
         {
-          title: processLanguage('Overview'),
+          title: t('Overview'),
           path: `/dashboard/coproductionprocesses/${processId}/overview`,
           icon: <Dashboard />
         },
-        {
-          title: processLanguage('Workplan'),
+        ... hasSchema ? [{
+          title: t('Workplan'),
           path: `/dashboard/coproductionprocesses/${processId}/workplan`,
           icon: <Timeline />
-        },
-        {
-          title: processLanguage('Guide'),
+        }] : [],
+        ... hasSchema ? [{
+          title: t('Guide'),
           path: `/dashboard/coproductionprocesses/${processId}/guide`,
           icon: <AccountTree />
-        },
+        }] : [],
         {
-          title: processLanguage('Team'),
+          title: t('Team'),
           path: `/dashboard/coproductionprocesses/${processId}/team`,
           icon: <GroupIcon />
         },
         {
-          title: processLanguage('Settings'),
+          title: t('Settings'),
           path: `/dashboard/coproductionprocesses/${processId}/metadata`,
           icon: <Settings />
         },
@@ -99,7 +99,7 @@ const ProcessSidebar = (props) => {
 
           {!loading && !updating ? <Avatar variant="rounded" sx={{ width: "80px", height: "80px" }} src={process && process.logotype_link} /> : <Skeleton variant="rounded" sx={{ width: "80px", height: "80px" }} />}
           <Typography sx={{ textAlign: "center", width: "100%" }} variant="h6">{!loading && !updating && process ? process.name : <Skeleton />}</Typography>
-          <Chip color="primary" label="In progress" color="success" />
+          <Chip color="primary" label={t("In progress")} color="success" />
           <Button startIcon={<ArrowBack />} variant="outlined" fullWidth size="large" onClick={() => navigate("/dashboard")} />
 
         </Stack>

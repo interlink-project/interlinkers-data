@@ -1,8 +1,9 @@
-import { AcUnit, Check, Loop } from '@material-ui/icons';
 import {
     Chip,
     IconButton
 } from '@material-ui/core';
+import { Check, Loop } from '@material-ui/icons';
+import i18n from 'translations/i18n';
 
 export const InProgressIcon = () => <Loop fontSize="small" sx={{ color: "#f0ad4e" }} />
 
@@ -17,7 +18,7 @@ export const FinishedIconButton = ({ onClick }) => <IconButton size="small" onCl
 </IconButton>
 
 
-export const statusText = (status) => status === "finished" ? "Finished" : status === "in_progress" ? "In progress" : "Awaiting"
+export const statusText = (status) => status === "finished" ? "Finished" : status === "in_progress" ? i18n.t("In progress") : i18n.t("Awaiting")
 
 export const statusIcon = (status) => status === "finished" ? <FinishedIcon /> : status === "in_progress" && <InProgressIcon />
 
@@ -27,12 +28,12 @@ export const OfficialityChip = ({ officiality = "official" }) => {
     let color = ""
     switch (officiality) {
         case 'official':
-            label = "Official"
+            label = i18n.t("Official")
             color = "success"
             break;
 
         case 'community':
-            label = "Community"
+            label = i18n.t("Community")
             color = "warning"
             break;
     }
@@ -45,19 +46,19 @@ export const NatureChip = ({ interlinker }) => {
     let label = ""
     let color = ""
     if (interlinker.nature === 'softwareinterlinker') {
-        label = "Integrated software"
+        label = i18n.t("Integrated software")
         color = "primary"
 
     } else if (interlinker.nature === 'knowledgeinterlinker') {
-        label = "Integrated knowledge"
+        label = i18n.t("Integrated knowledge")
         color = "secondary"
     }
     else if (interlinker.nature === 'externalsoftwareinterlinker') {
-        label = "External software"
+        label = i18n.t("External software")
         color = "success"
     }
     else if (interlinker.nature === 'externalknowledgeinterlinker') {
-        label = "External knowledge"
+        label = i18n.t("External knowledge")
         color = "warning"
     }
 

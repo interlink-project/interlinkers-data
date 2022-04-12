@@ -8,6 +8,7 @@ import TeamProfile from 'pages/dashboard/coproductionprocesses/Tabs/Team/TeamPro
 import TeamCreate from 'pages/dashboard/teams/TeamCreate';
 import PropTypes from 'prop-types';
 import { useCallback, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
@@ -21,6 +22,7 @@ const WorkspaceSidebar = (props) => {
   const { onMobileClose, openMobile } = props;
   const navigate = useNavigate();
   const mounted = useMounted();
+  const { t } = useTranslation()
   const dispatch = useDispatch();
   const { teams, processes, loadingTeams, loadingProcesses } = useSelector((state) => state.general);
 
@@ -101,7 +103,7 @@ const WorkspaceSidebar = (props) => {
         <Divider />
         <Box sx={{ p: 2 }}>
           <NavSection
-            title="Recent processes"
+            title={t("Recent processes")}
             sx={{
               '& + &': {
                 mt: 3
@@ -119,7 +121,7 @@ const WorkspaceSidebar = (props) => {
             })}
           />
           <LoadingButton onClick={() => setCoproductionProcessCreatorOpen(true)} loading={loadingProcesses} fullWidth variant="outlined" sx={{ textAlign: "center", mt: 1, mb: 2 }} color="success" startIcon={<Add />} size="small">
-            Add
+            {t("Add")}
           </LoadingButton>
           <CoproductionprocessCreate
             open={coproductionProcessCreatorOpen}
@@ -128,9 +130,9 @@ const WorkspaceSidebar = (props) => {
             setLoading={setCoproductionProcessLoading}
             onCreate={onProcessCreate}
           />
-    
+
           <NavSection
-            title="Your teams"
+            title={t("Your teams")}
             sx={{
               '& + &': {
                 mt: 3
@@ -144,7 +146,7 @@ const WorkspaceSidebar = (props) => {
                 title: team.name,
                 icon: team.logotype_link ? <Avatar sx={{ height: "25px", width: "25px" }} src={team.logotype_link} /> : <Groups />,
                 onClick: () => {
-                  setSelectedTeam(team); 
+                  setSelectedTeam(team);
                   setTeamProfileOpen(true)
                 }
               }
@@ -159,7 +161,7 @@ const WorkspaceSidebar = (props) => {
             setLoading={setCreatingTeam}
           />
           <LoadingButton onClick={() => setOpenTeamCreator(true)} loading={loadingTeams} fullWidth variant="outlined" sx={{ textAlign: "center", mt: 1 }} color="success" startIcon={<Add />} size="small">
-            Add
+            {t("Add")}
           </LoadingButton>
         </Box>
       </Scrollbar>

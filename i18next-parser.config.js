@@ -5,7 +5,7 @@ module.exports = {
     js: ['JsxLexer'], // we're writing jsx inside .js files
     default: ['JavascriptLexer'],
   },
-
+  useKeysAsDefaultValue: false,
   locales: ['es', 'en', 'lv', 'it'],
   // An array of the locales in your applications
 

@@ -10,6 +10,12 @@
   "You can add entire teams or individuals to the process. In case an individual belongs to a team, the role assigned to the individual prevails.": "",
   "Teams and individuals": "",
   "External resource": "",
-  "Overview": "",
-  "Workplan": ""
+  "time.ago": "Hace {{when}}",
+  "Keywords": "Palabras clave",
+  "catalogue.title": "Catálogo de interlinkers",
+  "interlinkers.catalogue": "Catálogo de interlinkers",
+  "interlinkers.catalogue.total": "{{total}} interlinkers encontrados",
+  "workspace.subtitle": "Espacio de trabajo",
+  "workspace.emptyprocesses": "Actualmente no colaboras en ningún proceso. Puedes crear uno en la parte derecha de esta misma pantalla.",
+  "workspace.title": "Espacio de trabajo"
 }

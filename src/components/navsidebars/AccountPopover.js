@@ -17,13 +17,15 @@ import CogIcon from '../../icons/Cog';
 import UserIcon from '../../icons/User';
 import useAuth from '../../hooks/useAuth';
 import { Login } from '@material-ui/icons';
+import { useTranslation } from 'react-i18next';
 
 const AccountPopover = () => {
   const anchorRef = useRef(null);
   const auth = useAuth();
   const { user, isAuthenticated } = auth;
   const [open, setOpen] = useState(false);
-
+  const {t} = useTranslation()
+  
   const handleOpen = () => {
     setOpen(true);
   };
@@ -89,7 +91,7 @@ const AccountPopover = () => {
           </Typography>
         </Box>
         <Divider />
-        <Box sx={{ mt: 2 }}>
+        {/* <Box sx={{ mt: 2 }}>
           <MenuItem
             // component={RouterLink}
             // to='/dashboard/social/profile'
@@ -126,7 +128,7 @@ const AccountPopover = () => {
               )}
             />
           </MenuItem>
-        </Box>
+              </Box> */}
         <Box sx={{ p: 2 }}>
           <Button
             color='primary'
@@ -134,7 +136,7 @@ const AccountPopover = () => {
             onClick={handleLogout}
             variant='outlined'
           >
-            Logout
+            {t("Logout")}
           </Button>
         </Box>
       </Popover>

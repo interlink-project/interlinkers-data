@@ -10,6 +10,7 @@ import {
     InputBase
 } from '@material-ui/core';
 import { Search as SearchIcon, Menu as MenuIcon } from '@material-ui/icons';
+import { useTranslation } from 'react-i18next';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -54,13 +55,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function SearchAppBar() {
+    const {t} = useTranslation()
+    
     return (
         <Search>
             <SearchIconWrapper>
                 <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-                placeholder="Search…"
+                placeholder={t("Search")}
                 inputProps={{ 'aria-label': 'search' }}
             />
         </Search>

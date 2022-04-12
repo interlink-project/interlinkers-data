@@ -19,7 +19,7 @@ import { getSoftwareInterlinkers } from 'slices/general';
 import { getProcess, setSelectedTreeItem } from 'slices/process';
 import useMounted from '../../../hooks/useMounted';
 import MetadataTab from './Tabs/Metadata';
-import CreateSchema from './Tabs/Repository/CreateSchema';
+import CreateSchema from './Tabs/Overview/CreateSchema';
 import Repository from './Tabs/Repository/Repository';
 import TeamTab from './Tabs/Team';
 import Workplan from './Tabs/Workplan/Workplan';
@@ -88,7 +88,7 @@ const CoproductionProcessProfile = () => {
   const dispatch = useDispatch();
   const mounted = useMounted();
   
-  const { process, loading } = useSelector((state) => state.process);
+  const { process, hasSchema, loading } = useSelector((state) => state.process);
 
   const theme = useTheme();
   const onMobile = !useMediaQuery(theme.breakpoints.up('md'));
@@ -116,6 +116,7 @@ const CoproductionProcessProfile = () => {
   const processLanguage = i18next.getFixedT(process && process.language);
   const {t} = useTranslation()
 
+
   const tabs = [
     { label: processLanguage('Overview'), value: 'overview' },
     { label: processLanguage('Metadata'), value: 'metadata' },
@@ -123,10 +124,11 @@ const CoproductionProcessProfile = () => {
     { label: processLanguage('Guide'), value: 'guide' },
     { label: processLanguage('Team'), value: 'team' },
   ];
+
   return (
     <>
       <Helmet>
-        <title>{t("dashboard.title")}</title>
+        <title>{t("dashboard-title")}</title>
       </Helmet>
 
       <Box
@@ -141,7 +143,7 @@ const CoproductionProcessProfile = () => {
               <>
                 <TabPanel value={tab} index="overview">
                   <Card sx={style}>
-                    <OverviewTab setSelectedTreeItem={_setSelectedTreeItem} coproductionprocess={process} />
+                    {hasSchema ? <OverviewTab setSelectedTreeItem={_setSelectedTreeItem} coproductionprocess={process} /> : <CreateSchema />}
                   </Card>
                 </TabPanel>
                 <TabPanel value={tab} index="metadata">
@@ -149,16 +151,19 @@ const CoproductionProcessProfile = () => {
                     <MetadataTab />
                   </Card>
                 </TabPanel>
-                <TabPanel value={tab} index="workplan">
+                {hasSchema && <>
+                  <TabPanel value={tab} index="workplan">
                   <Card sx={style}>
-                    {process.phases_count > 0 ? <Workplan setSelectedTreeItem={_setSelectedTreeItem} /> : <CreateSchema />}
+                     <Workplan setSelectedTreeItem={_setSelectedTreeItem} />
                   </Card>
                 </TabPanel>
                 <TabPanel value={tab} index="guide">
                   <Card sx={style}>
-                    {process.phases_count > 0 ? <Repository setSelectedTreeItem={_setSelectedTreeItem} /> : <CreateSchema />}
+                    <Repository setSelectedTreeItem={_setSelectedTreeItem} />
                   </Card>
                 </TabPanel>
+                </>}
+                
                 <TabPanel value={tab} index="team">
                   <TeamTab />
                 </TabPanel>

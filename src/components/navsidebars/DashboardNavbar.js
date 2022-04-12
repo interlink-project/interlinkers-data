@@ -7,6 +7,7 @@ import AccountPopover from './AccountPopover';
 import NotificationsPopover from './NotificationsPopover';
 import SettingsPopover from './SettingsPopover';
 import SearchAppBar from './Search';
+import { useTranslation } from 'react-i18next';
 
 const DashboardNavbarRoot = experimentalStyled(AppBar)(({ theme }) => ({
   ...(theme.palette.mode === 'light' && {
@@ -24,6 +25,7 @@ const DashboardNavbarRoot = experimentalStyled(AppBar)(({ theme }) => ({
 
 const DashboardNavbar = (props) => {
   const { onSidebarMobileOpen, ...other } = props;
+  const {t} = useTranslation()
 
   const theme = useTheme();
   const onMobile = !useMediaQuery(theme.breakpoints.up('sm'));
@@ -51,13 +53,13 @@ const DashboardNavbar = (props) => {
           />
         </RouterLink>}
         <MenuItem sx={{ml: 2}} component={RouterLink} to='/dashboard' selected>
-          <Typography textAlign="center" variant="button">Workspace</Typography>
+          <Typography textAlign="center" variant="button">{t("Workspace")}</Typography>
         </MenuItem>
         <MenuItem component={RouterLink} to='/dashboard/interlinkers' >
-          <Typography textAlign="center" variant="button">Interlinkers</Typography>
+          <Typography textAlign="center" variant="button">{t("Interlinkers")}</Typography>
         </MenuItem>
         <MenuItem component={RouterLink} to='/dashboard' disabled>
-          <Typography textAlign="center" variant="button">Public services</Typography>
+          <Typography textAlign="center" variant="button">{t("Public services")}</Typography>
         </MenuItem>
         <Box
           sx={{

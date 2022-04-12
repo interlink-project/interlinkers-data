@@ -1,38 +1,18 @@
-import { Box, Button, Container, Grid, LinearProgress, ToggleButton, ToggleButtonGroup, Typography } from '@material-ui/core';
+import { Box, Container, Grid, LinearProgress, ToggleButton, ToggleButtonGroup, Typography } from '@material-ui/core';
 import { ViewModule } from '@material-ui/icons';
+import { LoadingButton } from '@material-ui/lab';
 import { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 import { useInViewport } from 'react-in-viewport';
 import { interlinkersApi } from '__api__';
 import { InterlinkerBrowseFilter, InterlinkerCard } from '../../../components/dashboard/interlinkers';
 import useMounted from '../../../hooks/useMounted';
 import InterlinkerDialog from './InterlinkerDialog';
-import { LoadingButton } from '@material-ui/lab';
-
-const LoadingBlock = ({ callback }) => {
-  const myRef = useRef();
-  const {
-    inViewport,
-    enterCount,
-    leaveCount,
-  } = useInViewport(
-    myRef
-  );
-  useEffect(() => {
-    if (inViewport) {
-      callback && callback()
-    }
-  }, [inViewport])
-
-  return (
-    <section ref={myRef}>
-      <LinearProgress />
-    </section>
-  );
-};
 
 const InterlinkerBrowse = () => {
   const mounted = useMounted();
+  const { t } = useTranslation()
   const [open, setOpen] = useState(false);
   const [interlinker, setInterlinker] = useState(null);
   const [mode, setMode] = useState('grid');
@@ -91,7 +71,7 @@ const InterlinkerBrowse = () => {
   return (
     <>
       <Helmet>
-        <title>Dashboard: Interlinker catalogue</title>
+        <title>{t("catalogue-title")}</title>
       </Helmet>
       <Box
         sx={{
@@ -112,7 +92,7 @@ const InterlinkerBrowse = () => {
                 color='textPrimary'
                 variant='h5'
               >
-                Interlinkers catalogue
+                {t("interlinkers-catalogue")}
               </Typography>
             </Grid>
             <Grid item>
@@ -161,9 +141,8 @@ const InterlinkerBrowse = () => {
                   }
                 }}
                 variant='h6'
-              > {total}
-                {' '}
-                interlinkers found
+              >
+                {t("interlinkers-catalogue-total", { total })}
               </Typography>
               <Box
                 sx={{
@@ -203,12 +182,10 @@ const InterlinkerBrowse = () => {
                 </Grid>
               ))}
 
-              <Grid item xs={12} sx={{justifyContent: "center", textAlign: "center"}}>
-                {hasNextPage && <LoadingButton loading={loading} variant="contained" onClick={handleLoadMore}>Load more</LoadingButton>}
+              <Grid item xs={12} sx={{ justifyContent: "center", textAlign: "center" }}>
+                {hasNextPage && <LoadingButton loading={loading} variant="contained" onClick={handleLoadMore}>{t("Load more")}</LoadingButton>}
               </Grid>
-
             </Grid>
-
           </Box>
 
         </Container>

@@ -14,6 +14,7 @@ import { THEMES } from '../../constants';
 import { LANGUAGES } from 'translations/i18n';
 import useSettings from '../../hooks/useSettings';
 import AdjustmentsIcon from '../../icons/Adjustments';
+import { useTranslation } from 'react-i18next';
 
 const getValues = (settings) => ({
   direction: settings.direction,
@@ -26,6 +27,7 @@ const SettingsPopover = () => {
   const { settings, saveSettings } = useSettings();
   const [open, setOpen] = useState(false);
   const [values, setValues] = useState(getValues(settings));
+  const {t} = useTranslation()
 
   useEffect(() => {
     setValues(getValues(settings));
@@ -80,7 +82,7 @@ const SettingsPopover = () => {
         >
           <TextField
             fullWidth
-            label='Theme'
+            label={t("Theme")}
             name='theme'
             onChange={(event) => handleChange('theme', event.target.value)}
             select
@@ -102,7 +104,7 @@ const SettingsPopover = () => {
           {' '}
           <TextField
             fullWidth
-            label='Language'
+            label={t("Language")}
             name='language'
             onChange={(event) => handleChange('language', event.target.value)}
             select
@@ -162,7 +164,7 @@ const SettingsPopover = () => {
             onClick={handleSave}
             variant='contained'
           >
-            Save Settings
+            {t("Save")}
           </Button>
         </Box>{' '}
       </Popover>
