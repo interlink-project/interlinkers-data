@@ -110,7 +110,7 @@ RelatedInterlinkersTableHead.propTypes = {
     rowCount: PropTypes.number.isRequired,
 };
 
-export default function RelatedInterlinkersTable({ interlinker }) {
+export default function RelatedInterlinkersTable({ interlinker, onRelatedInterlinkerClick }) {
     const [order, setOrder] = React.useState('asc');
     const [orderBy, setOrderBy] = React.useState('calories');
     const [selected, setSelected] = React.useState([]);
@@ -155,6 +155,8 @@ export default function RelatedInterlinkersTable({ interlinker }) {
         }
         setSelected([]);
     };
+
+    const handleInterlinkerClick = (id) => onRelatedInterlinkerClick(id)
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
@@ -210,6 +212,7 @@ export default function RelatedInterlinkersTable({ interlinker }) {
                                                 component="th"
                                                 id={labelId}
                                                 scope="row"
+                                                onClick={onRelatedInterlinkerClick && handleInterlinkerClick(row.id)}
                                             >
                                                 <Stack sx={{ alignItems: "center", textAlign: "center" }} spacing={1}>
                                                     {row.logotype_link && <Avatar src={row.logotype_link} sx={{ width: "30px", height: "30px" }} />}

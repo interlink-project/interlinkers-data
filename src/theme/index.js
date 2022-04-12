@@ -144,7 +144,8 @@ const themesOptions = {
       },
       success: {
         contrastText: '#ffffff',
-        main: '#44c949'
+        main: '#44c949',
+        secondary: '#0ca811'
       },
       text: {
         primary: '#172b4d',
@@ -185,7 +186,8 @@ const themesOptions = {
       },
       success: {
         contrastText: '#ffffff',
-        main: '#4caf50'
+        main: '#4caf50',
+        secondary: '#1ac420'
       },
       text: {
         primary: '#ffffff',

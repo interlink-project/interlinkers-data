@@ -17,5 +17,6 @@
   "interlinkers.catalogue.total": "{{total}} interlinkers encontrados",
   "workspace.subtitle": "Espacio de trabajo",
   "workspace.emptyprocesses": "Actualmente no colaboras en ningún proceso. Puedes crear uno en la parte derecha de esta misma pantalla.",
-  "workspace.title": "Espacio de trabajo"
+  "workspace.title": "Espacio de trabajo",
+  "Public services": "Servicios públicos"
 }

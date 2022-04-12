@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { SafeHTMLElement } from 'utils/safeHTML';
 import RelatedInterlinkersTable from "./RelatedInterlinkersTable";
 
-const InterlinkerDetails = ({ interlinker }) => {
+const InterlinkerDetails = ({ interlinker, onRelatedInterlinkerClick }) => {
   const [currentTab, setCurrentTab] = useState('overview');
 
   const { link, description, tags, name, problemprofiles, softwareinterlinker, snapshots_links } = interlinker;
@@ -247,7 +247,7 @@ const InterlinkerDetails = ({ interlinker }) => {
           </Box>
         )}
         {currentTab === 'related' && (
-          <RelatedInterlinkersTable interlinker={interlinker} />
+          <RelatedInterlinkersTable interlinker={interlinker} onRelatedInterlinkerClick={onRelatedInterlinkerClick} />
         )}
         {currentTab === 'reviews' && (
           <InterlinkerReviews interlinker={interlinker} />

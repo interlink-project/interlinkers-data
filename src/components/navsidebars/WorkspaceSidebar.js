@@ -103,7 +103,7 @@ const WorkspaceSidebar = (props) => {
         <Divider />
         <Box sx={{ p: 2 }}>
           <NavSection
-            title={t("Recent processes")}
+            title={t("My projects")}
             sx={{
               '& + &': {
                 mt: 3
@@ -120,8 +120,8 @@ const WorkspaceSidebar = (props) => {
               }
             })}
           />
-          <LoadingButton onClick={() => setCoproductionProcessCreatorOpen(true)} loading={loadingProcesses} fullWidth variant="outlined" sx={{ textAlign: "center", mt: 1, mb: 2 }} color="success" startIcon={<Add />} size="small">
-            {t("Add")}
+          <LoadingButton onClick={() => setCoproductionProcessCreatorOpen(true)} loading={loadingProcesses} fullWidth variant="contained" sx={{ textAlign: "center", mt: 1, mb: 2 }} startIcon={<Add />} size="small">
+            {t("add-process")}
           </LoadingButton>
           <CoproductionprocessCreate
             open={coproductionProcessCreatorOpen}
@@ -160,8 +160,8 @@ const WorkspaceSidebar = (props) => {
             loading={creatingTeam}
             setLoading={setCreatingTeam}
           />
-          <LoadingButton onClick={() => setOpenTeamCreator(true)} loading={loadingTeams} fullWidth variant="outlined" sx={{ textAlign: "center", mt: 1 }} color="success" startIcon={<Add />} size="small">
-            {t("Add")}
+          <LoadingButton onClick={() => setOpenTeamCreator(true)} loading={loadingTeams} fullWidth variant="contained" sx={{ textAlign: "center", mt: 1 }} startIcon={<Add />} size="small">
+            {t("add-teams")}
           </LoadingButton>
         </Box>
       </Scrollbar>

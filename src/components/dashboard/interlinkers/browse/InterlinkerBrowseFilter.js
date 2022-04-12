@@ -24,13 +24,10 @@ const selectOptions = {
   ]
 };
 
-const allNatures = ["softwareinterlinker", "knowledgeinterlinker", "externalsoftwareinterlinker", "externalknowledgeinterlinker"]
-const allCreators = ["official", "community"]
-
 const InterlinkerBrowseFilter = ({ onFiltersChange }) => {
   const [inputValue, setInputValue] = useState('');
-  const [selectedNatures, setSelectedNatures] = useState(allNatures);
-  const [selectedCreators, setSelectedCreators] = useState(allCreators);
+  const [selectedNatures, setSelectedNatures] = useState([]);
+  const [selectedCreators, setSelectedCreators] = useState([]);
   const [minimumRating, setMinimumRating] = useState(0);
   const didMount = useRef(false);
   const {t} = useTranslation()
@@ -83,6 +80,10 @@ const InterlinkerBrowseFilter = ({ onFiltersChange }) => {
       ]
     },*/
   ];
+
+
+const allNatures = ["softwareinterlinker", "knowledgeinterlinker", "externalsoftwareinterlinker", "externalknowledgeinterlinker"]
+const allCreators = ["official", "community"]
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);

@@ -261,13 +261,16 @@ const RightPart = () => {
                                             .required('Required'),
                                     })}
                                     onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
+                                        setSubmitting(true);
                                         assetsApi.create_external(selectedTreeItem.id, null, values.name, values.uri).then(res => {
                                             setStatus({ success: true });
+                                            setSubmitting(false);
+                                            updateTaskInfo()
                                             setExternalAssetOpen(false)
+                                            
                                         }).catch(err => {
                                             setStatus({ success: false });
                                             setErrors({ submit: err });
-                                        }).finally(() => {
                                             setSubmitting(false);
                                         })
                                     }}
@@ -312,7 +315,7 @@ const RightPart = () => {
                                                     value={values.uri}
                                                     variant='outlined'
                                                 />
-                                                <LoadingButton sx={{mt: 2}} variant="contained" fullWidth loading={isSubmitting} onClick={handleSubmit}>{t("Create")}</LoadingButton>
+                                                <LoadingButton sx={{mt: 2}} variant="contained" fullWidth loading={isSubmitting} disabled={isSubmitting} onClick={handleSubmit}>{t("Create")}</LoadingButton>
                                             </Box>
 
                                         </form>

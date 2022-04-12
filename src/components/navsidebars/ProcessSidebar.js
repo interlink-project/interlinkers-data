@@ -99,7 +99,7 @@ const ProcessSidebar = (props) => {
 
           {!loading && !updating ? <Avatar variant="rounded" sx={{ width: "80px", height: "80px" }} src={process && process.logotype_link} /> : <Skeleton variant="rounded" sx={{ width: "80px", height: "80px" }} />}
           <Typography sx={{ textAlign: "center", width: "100%" }} variant="h6">{!loading && !updating && process ? process.name : <Skeleton />}</Typography>
-          <Chip color="primary" label={t("In progress")} color="success" />
+          {!loading && !updating ? <Chip color="primary" label={t("In progress")} color="success" /> : <Skeleton /> }
           <Button startIcon={<ArrowBack />} variant="outlined" fullWidth size="large" onClick={() => navigate("/dashboard")} />
 
         </Stack>

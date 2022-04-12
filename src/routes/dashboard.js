@@ -1,5 +1,4 @@
 import { lazy } from 'react';
-import AuthGuard from '../components/guards/AuthGuard';
 import DashboardLayout from '../components/layouts/DashboardLayout';
 import Loadable from './Loadable';
 
@@ -10,8 +9,8 @@ const CoproductionProcessProfile = Loadable(
 const InterlinkerBrowse = Loadable(
   lazy(() => import('../pages/dashboard/interlinkers/InterlinkerBrowse'))
 );
-const InterlinkerDetails = Loadable(
-  lazy(() => import('../pages/dashboard/interlinkers/InterlinkerDetails'))
+const InterlinkerProfile = Loadable(
+  lazy(() => import('../pages/dashboard/interlinkers/InterlinkerProfile'))
 );
 
 const MyWorkspace = Loadable(lazy(() => import('../pages/dashboard/MyWorkspace')));
@@ -55,7 +54,7 @@ export const routes = [
           },
           {
             path: ':interlinkerId',
-            element: <InterlinkerDetails />,
+            element: <InterlinkerProfile />,
           },
         ],
       }
