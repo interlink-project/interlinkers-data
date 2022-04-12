@@ -1,17 +1,15 @@
-import { useEffect } from 'react';
-import { Link as RouterLink, useLocation, useParams } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { Avatar, Box, Divider, Drawer, Link, Typography, Button, Grid, Stack, Skeleton, Chip } from '@material-ui/core';
-import { Timeline, Dashboard, BubbleChart, Forum, Settings, FolderOpen, AccountTree, Group as GroupIcon, ArrowBack } from '@material-ui/icons';
-
+import { Avatar, Box, Button, Chip, Divider, Drawer, Skeleton, Stack, Typography } from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { AccountTree, ArrowBack, Dashboard, Group as GroupIcon, Settings, Timeline } from '@material-ui/icons';
+import PropTypes from 'prop-types';
+import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 import Logo from '../Logo';
 import NavSection from '../NavSection';
-import Scrollbar from '../Scrollbar'; import useAuth from '../../hooks/useAuth';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router';
-import { red } from '@material-ui/core/colors';
-
+import Scrollbar from '../Scrollbar';
 
 const ProcessSidebar = (props) => {
   const { onMobileClose, openMobile } = props;
@@ -20,6 +18,9 @@ const ProcessSidebar = (props) => {
   const location = useLocation();
   const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));
   const processId = process && process.id
+
+  const { t, i18n } = useTranslation()
+  const processLanguage = i18n.getFixedT(process && process.language);
 
   useEffect(() => {
     if (openMobile && onMobileClose) {
@@ -33,47 +34,30 @@ const ProcessSidebar = (props) => {
       title: "",
       items: [
         {
-          title: 'Overview',
+          title: processLanguage('Overview'),
           path: `/dashboard/coproductionprocesses/${processId}/overview`,
           icon: <Dashboard />
         },
         {
-          title: 'Workplan',
+          title: processLanguage('Workplan'),
           path: `/dashboard/coproductionprocesses/${processId}/workplan`,
           icon: <Timeline />
         },
         {
-          title: 'Guide',
+          title: processLanguage('Guide'),
           path: `/dashboard/coproductionprocesses/${processId}/guide`,
           icon: <AccountTree />
         },
         {
-          title: 'Team',
+          title: processLanguage('Team'),
           path: `/dashboard/coproductionprocesses/${processId}/team`,
           icon: <GroupIcon />
         },
         {
-          title: 'Settings',
+          title: processLanguage('Settings'),
           path: `/dashboard/coproductionprocesses/${processId}/metadata`,
           icon: <Settings />
         },
-        /*{
-        {
-          title: 'Workplan',
-          path: `/dashboard/coproductionprocesses/${processId}/workplan`,
-          icon: <BubbleChart />
-        },
-        
-        {
-          title: 'Forum',
-          path: `/dashboard/coproductionprocesses/${processId}/forum`,
-          icon: <Forum />
-        },
-        {
-          title: 'Settings',
-          path: `/dashboard/coproductionprocesses/${processId}/settings`,
-          icon: <Settings />
-        }*/
       ]
     },
   ];
@@ -110,18 +94,18 @@ const ProcessSidebar = (props) => {
           justifyContent="center"
           alignItems="center"
           spacing={1}
-          sx={{p: 3}}
+          sx={{ p: 3 }}
         >
 
           {!loading && !updating ? <Avatar variant="rounded" sx={{ width: "80px", height: "80px" }} src={process && process.logotype_link} /> : <Skeleton variant="rounded" sx={{ width: "80px", height: "80px" }} />}
-          <Typography sx={{textAlign: "center", width: "100%"}} variant="h6">{!loading && !updating && process ? process.name : <Skeleton />}</Typography>
-             <Chip color="primary" label="In progress" color="success" />
+          <Typography sx={{ textAlign: "center", width: "100%" }} variant="h6">{!loading && !updating && process ? process.name : <Skeleton />}</Typography>
+          <Chip color="primary" label="In progress" color="success" />
           <Button startIcon={<ArrowBack />} variant="outlined" fullWidth size="large" onClick={() => navigate("/dashboard")} />
 
         </Stack>
         <Divider />
         <Box sx={{ p: 2 }}>
-          {sections.map((section) => (
+          {!loading && sections.map((section) => (
             <NavSection
               key={section.title}
               pathname={location.pathname}
@@ -149,7 +133,7 @@ const ProcessSidebar = (props) => {
             backgroundColor: 'background.paper',
             height: 'calc(100% - 64px) !important',
             top: '64px !Important',
-            width:300,
+            width: 300,
             zIndex: 0
           }
         }}

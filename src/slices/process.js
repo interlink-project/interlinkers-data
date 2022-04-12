@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { topologicalSort } from 'utils/comparePrerequisites';
 import { coproductionProcessesApi, objectivesApi, phasesApi, rolesApi, tasksApi } from '../__api__';
-import { getSchemas } from "./general";
 
 const initialState = {
   loading: false,
@@ -158,10 +157,6 @@ export const getProcess = (processId) => async (dispatch) => {
   const data = await coproductionProcessesApi.get(processId)
   const treeData = await coproductionProcessesApi.getTree(processId) || []
   const myRoles = await coproductionProcessesApi.myRoles(processId) || []
-  if (treeData.length === 0) {
-    // user may select a new schema, so load them
-    dispatch(getSchemas())
-  }
   dispatch(slice.actions.setProcess(data));
   dispatch(slice.actions.setProcessTree(treeData));
   dispatch(slice.actions.setMyRoles(myRoles));

@@ -20,11 +20,25 @@ const sameHeightCards = {
     justifyContent: "space-between"
 }
 const CreateSchema = () => {
+    const [loadingSchemaId, setLoadingSchemaId] = useState(null)
     const [loading, setLoading] = useState(true)
+    const [schemas, setSchemas] = useState([])
     const { process } = useSelector((state) => state.process);
-    const { schemas = [], loadingSchemas } = useSelector((state) => state.general);
     const dispatch = useDispatch()
     const mounted = useMounted();
+
+    const getSchemas = async () => {
+        coproductionSchemasApi.getPublic(process.language).then(res => {
+            if (mounted) {
+                setSchemas(res.map(schema => ({ ...schema, phasemetadatas: topologicalSort(schema.phasemetadatas) })))
+                setLoading(false)
+            }
+        });
+    }
+
+    useEffect(() => {
+        getSchemas()
+    }, [])
 
     const setCoproductionProcess = useCallback(async (process) => {
         try {
@@ -39,10 +53,10 @@ const CreateSchema = () => {
 
 
     const submit = async (coproductionschema_id) => {
-        setLoading(coproductionschema_id)
+        setLoadingSchemaId(coproductionschema_id)
         coproductionProcessesApi.setSchema(process.id, coproductionschema_id).then(process => {
             setCoproductionProcess(process)
-        }).finally(() => setLoading(coproductionschema_id));
+        });
     }
 
     return (
@@ -53,7 +67,7 @@ const CreateSchema = () => {
                 <Typography variant="subtitle1" sx={{ mb: 4 }}>An schema contains a set of phases, objectives and tasks predefined. Those items could (and should) be edited in order to adapt the workplan of your project.</Typography>
             </Box>
 
-            {loadingSchemas ? <CircularProgress /> : <Grid container spacing={3} justifyContent="flex-start">
+            {loading ? <CircularProgress /> : <Grid container spacing={3} justifyContent="flex-start">
                 {schemas.map(schema => (
                     <Grid item xs={12} md={6} lg={4} xl={3} key={schema.id}                       >
                         <Card style={sameHeightCards}>
@@ -87,7 +101,7 @@ const CreateSchema = () => {
                                 })}
 
                             </TreeView>
-                            <LoadingButton loading={loading === schema.id} variant="contained" fullWidth onClick={() => submit(schema.id)}>Use this schema</LoadingButton>
+                            <LoadingButton loading={loadingSchemaId === schema.id} variant="contained" fullWidth onClick={() => submit(schema.id)}>Use this schema</LoadingButton>
 
                         </Card>
 

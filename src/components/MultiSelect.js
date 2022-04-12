@@ -47,7 +47,6 @@ const MultiSelect = (props) => {
         elevation={1}
         onClose={handleMenuClose}
         open={openMenu}
-        PaperProps={{ style: { width: 250 } }}
       >
         {options.map((option) => (
           <MenuItem key={option.value}>

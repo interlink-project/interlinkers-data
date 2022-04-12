@@ -14,16 +14,8 @@ const axiosInstance = axios.create({
   headers: {
     'Content-Type': 'application/json',
     accept: 'application/json',
-    // 'Accept-Language': getInitialLanguage(),
+    'Accept-Language': getInitialLanguage(),
   },
 })
-
-axiosInstance.interceptors.request.use(
-  config => {
-    config.headers["Accept-Language"] = getInitialLanguage();
-    // console.log("2", config)
-    return config;
-  },  
-);
 
 export default axiosInstance

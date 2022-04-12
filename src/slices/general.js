@@ -1,8 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { topologicalSort } from 'utils/comparePrerequisites';
-import { coproductionProcessesApi, coproductionSchemasApi, softwareInterlinkersApi, teamsApi } from '../__api__';
+import { coproductionProcessesApi, coproductionSchemasApi, problemprofilesApi, softwareInterlinkersApi, teamsApi } from '../__api__';
 
 const initialState = {
+  problemprofiles: [],
+  loadingProblemprofiles: false,
+
   softwareInterlinkers: [],
   loadingSoftwareInterlinkers: false,
 
@@ -47,6 +50,12 @@ const slice = createSlice({
     setLoadingSchemas(state, action) {
       state.loadingSchemas = action.payload
     },
+    setProblemProfiles(state, action) {
+      state.problemprofiles = action.payload;
+    },
+    setLoadinProblemProfiles(state, action) {
+      state.loadingProblemprofiles = action.payload
+    },
   }
 });
 
@@ -80,14 +89,11 @@ export const getMyProcesses = () => async (dispatch) => {
   dispatch(slice.actions.setLoadingProcesses(false));
 };
 
-export const getSchemas = () => async (dispatch) => {
-  dispatch(slice.actions.setLoadingSchemas(true));
-  let schemas = await coproductionSchemasApi.getPublic();
-  schemas = schemas.map(schema => {
-    return { ...schema, phasemetadatas: topologicalSort(schema.phasemetadatas) }
-  })
-  dispatch(slice.actions.setSchemas(schemas));
-  dispatch(slice.actions.setLoadingSchemas(false));
+export const getProblemProfiles = () => async (dispatch) => {
+  dispatch(slice.actions.setLoadinProblemProfiles(true));
+  let problemProfiles = await problemprofilesApi.getMulti();
+  dispatch(slice.actions.setProblemProfiles(problemProfiles));
+  dispatch(slice.actions.setLoadinProblemProfiles(false));
 };
 
 export default slice;

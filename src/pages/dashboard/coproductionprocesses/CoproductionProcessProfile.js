@@ -6,14 +6,16 @@ import {
 } from '@material-ui/core';
 import { red } from '@material-ui/core/colors';
 import { MoreVert } from '@material-ui/icons';
+import i18next from 'i18next';
 import MainSkeleton from 'pages/dashboard/coproductionprocesses/Tabs/MainSkeleton';
 import OverviewTab from 'pages/dashboard/coproductionprocesses/Tabs/Overview';
 import { useCallback, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { useParams } from 'react-router-dom';
-import { getSchemas, getSoftwareInterlinkers } from 'slices/general';
+import { getSoftwareInterlinkers } from 'slices/general';
 import { getProcess, setSelectedTreeItem } from 'slices/process';
 import useMounted from '../../../hooks/useMounted';
 import MetadataTab from './Tabs/Metadata';
@@ -21,22 +23,6 @@ import CreateSchema from './Tabs/Repository/CreateSchema';
 import Repository from './Tabs/Repository/Repository';
 import TeamTab from './Tabs/Team';
 import Workplan from './Tabs/Workplan/Workplan';
-
-
-const tabs = [
-  { label: 'Overview', value: 'overview' },
-  { label: 'Metadata', value: 'metadata' },
-  { label: 'Workplan', value: 'workplan' },
-  { label: 'Guide', value: 'guide' },
-  { label: 'Team', value: 'team' },
-];
-
-/*{ label: 'Workplan', value: 'workplan' },
-  { label: 'Network', value: 'network' },
-  { label: 'Forum', value: 'forum' },
-  { label: 'Settings', value: 'settings' },*/
-
-
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -57,11 +43,10 @@ function TabPanel(props) {
 const style = {
   mb: '30px',
   minHeight: '87vh'
-
 }
 
 
-const TabsMobile = ({ tab, process }) => {
+const TabsMobile = ({ tabs, tab, process }) => {
   const logoExists = process && process.logotype_link
   const navigate = useNavigate();
 
@@ -102,7 +87,7 @@ const CoproductionProcessProfile = () => {
   let { processId, tab = "overview" } = useParams();
   const dispatch = useDispatch();
   const mounted = useMounted();
-
+  
   const { process, loading } = useSelector((state) => state.process);
 
   const theme = useTheme();
@@ -128,11 +113,20 @@ const CoproductionProcessProfile = () => {
     getCoproductionProcess();
   }, [getCoproductionProcess]);
 
+  const processLanguage = i18next.getFixedT(process && process.language);
+  const {t} = useTranslation()
 
+  const tabs = [
+    { label: processLanguage('Overview'), value: 'overview' },
+    { label: processLanguage('Metadata'), value: 'metadata' },
+    { label: processLanguage('Workplan'), value: 'workplan' },
+    { label: processLanguage('Guide'), value: 'guide' },
+    { label: processLanguage('Team'), value: 'team' },
+  ];
   return (
     <>
       <Helmet>
-        <title>Dashboard: Co-production process</title>
+        <title>{t("dashboard.title")}</title>
       </Helmet>
 
       <Box
@@ -142,7 +136,7 @@ const CoproductionProcessProfile = () => {
       >
         <Box sx={{ mt: 5 }}>
           <Container maxWidth='xl'>
-            {onMobile && <TabsMobile tab={tab} process={process} />}
+            {onMobile && <TabsMobile tabs={tabs} tab={tab} process={process} />}
             {loading || !process ? <MainSkeleton /> :
               <>
                 <TabPanel value={tab} index="overview">

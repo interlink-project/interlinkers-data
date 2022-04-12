@@ -6,9 +6,13 @@ class CoproductionSchemasApi extends GeneralApi {
     super("catalogue/api/v1/coproductionschemas");
   }
 
-  async getPublic() {
-    const res = await axiosInstance.get(`/${this.url}/public`)
-    console.log('get public schemas', res.data);
+  async getPublic(language) {
+    const res = await axiosInstance.get(`/${this.url}/public`, {
+      headers: {
+        "Accept-Language": language
+      }
+    })
+    console.log('get public schemas in', language, res.data);
     return res.data
   }
 }

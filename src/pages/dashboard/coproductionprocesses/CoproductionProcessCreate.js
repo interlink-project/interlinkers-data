@@ -1,15 +1,17 @@
 import {
-  Avatar, Box, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, Input, TextField
+  Avatar, Box, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, IconButton, Input, InputLabel, MenuItem, Select, TextField
 } from '@material-ui/core';
 import { KeyboardArrowRight } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import useMounted from 'hooks/useMounted';
 import { useState, useEffect } from 'react';
+import { getInitialLanguage, LANGUAGES } from 'translations/i18n';
 import { coproductionProcessesApi } from '__api__';
 
 const CoproductionprocessCreate = ({ open, setOpen, loading, setLoading, onCreate }) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+  const [language, setLanguage] = useState(getInitialLanguage());
   const [logotype, setLogotype] = useState(null);
 
   const [activeStep, setActiveStep] = useState(0);
@@ -27,9 +29,16 @@ const CoproductionprocessCreate = ({ open, setOpen, loading, setLoading, onCreat
 
   const handleNext = async () => {
     setLoading(true)
+    console.log({
+      name,
+      description,
+      language
+      // team_id: team.id
+    })
     coproductionProcessesApi.create({
       name,
       description,
+      language
       // team_id: team.id
     }).then(res => {
       if (!logotype) {
@@ -60,7 +69,7 @@ const CoproductionprocessCreate = ({ open, setOpen, loading, setLoading, onCreat
   }
 
   useEffect(() => {
-    if(open && mounted){
+    if (open && mounted) {
       setName("")
       setDescription("")
       setLogotype(null)
@@ -102,7 +111,23 @@ const CoproductionprocessCreate = ({ open, setOpen, loading, setLoading, onCreat
               fullWidth
               variant="standard"
             />
+            <FormControl variant="standard" fullWidth sx={{mt: 2}}>
+              <InputLabel id="select-language">Language</InputLabel>
+              <Select
+                fullWidth
+                labelId="select-language-label"
+                id="select-language"
+                value={language}
+                onChange={(event) => {
+                  setLanguage(event.target.value);
+                }}
+                label="language"
+              >
+                {LANGUAGES.map(lan => <MenuItem value={lan.value}>{lan.label}</MenuItem>)}
+              </Select>
+            </FormControl>
             <TextField
+              sx={{mt: 2}}
               margin="dense"
               id="description"
               label="Description"

@@ -1,45 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Box, Card, Rating, MenuItem, Divider, InputLabel, Input, Select, Typography, FormControl } from '@material-ui/core';
+import { Box, Card, Divider, Input, Rating, Typography } from '@material-ui/core';
+import React, { useEffect, useRef, useState } from 'react';
+import { useSelector } from 'react-redux';
 import SearchIcon from '../../../../icons/Search';
 import MultiSelect from '../../../MultiSelect';
-import { useDispatch, useSelector } from 'react-redux';
-
-const multiselectOptions = [
-  {
-    label: 'Nature',
-    options: [
-      {
-        label: 'Integrated software',
-        value: "softwareinterlinker"
-      },
-      {
-        label: 'External software',
-        value: "externalsoftwareinterlinker"
-      },
-      {
-        label: 'Knowledge',
-        value: "knowledgeinterlinker"
-      },
-      {
-        label: 'External knowledge',
-        value: "externalknowledgeinterlinker"
-      }
-    ]
-  },
-  /* {
-    label: 'Creator',
-    options: [
-      {
-        label: 'Official',
-        value: "official"
-      },
-      {
-        label: 'Community',
-        value: "community"
-      },
-    ]
-  },*/
-];
 
 
 const selectOptions = {
@@ -69,6 +32,52 @@ const InterlinkerBrowseFilter = ({ onFiltersChange }) => {
   const [selectedCreators, setSelectedCreators] = useState(allCreators);
   const [minimumRating, setMinimumRating] = useState(0);
   const didMount = useRef(false);
+
+  const { problemprofiles } = useSelector((state) => state.general);
+
+  const multiselectOptions = [
+    {
+      label: 'Nature',
+      options: [
+        {
+          label: 'Integrated software',
+          value: "softwareinterlinker"
+        },
+        {
+          label: 'External software',
+          value: "externalsoftwareinterlinker"
+        },
+        {
+          label: 'Knowledge',
+          value: "knowledgeinterlinker"
+        },
+        {
+          label: 'External knowledge',
+          value: "externalknowledgeinterlinker"
+        }
+      ]
+    },
+    /* {
+      label: 'Problem profiles',
+      options: problemprofiles.map(pp => ({
+        label: pp.name,
+        value: pp.id
+      }))
+    },
+    {
+      label: 'Creator',
+      options: [
+        {
+          label: 'Official',
+          value: "official"
+        },
+        {
+          label: 'Community',
+          value: "community"
+        },
+      ]
+    },*/
+  ];
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
