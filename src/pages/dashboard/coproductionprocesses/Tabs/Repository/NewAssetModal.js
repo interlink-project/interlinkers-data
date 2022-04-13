@@ -131,6 +131,9 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
                     window.open(selectedInterlinker.uri)
                 }
             }
+            if (activeStep === 2 && isKnowledge) {
+                handleClose()
+            }
         }
         if(mounted){
             doAsync()
@@ -201,8 +204,11 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
                         <CircularProgress onCancel={() => setStep(0)} />
                     }
                 </Box>}
+                {activeStep === 1 && isKnowledge && <Box>
+                        <CircularProgress />
+                </Box>}
 
-                {activeStep === 2 && <Box
+                {activeStep === 2 && !isKnowledge && <Box
                     style={{
                         position: 'absolute', left: '50%', top: '50%',
                         transform: 'translate(-50%, -50%)'
@@ -245,8 +251,8 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
                             color='primary'
                             variant='contained'
                             onClick={() => {
-                                window.open(assetData && assetData.ext_link + "/view", "_blank")
-                                handleClose()
+                                console.log("BUSCAME", assetData)
+                                assetData && assetData.link && window.open(assetData.link + "/view", "_blank")
                             }}
                         >
                             Open asset
