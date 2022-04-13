@@ -7,6 +7,7 @@ import $ from 'jquery';
 import moment from "moment";
 import MainSkeleton from "pages/dashboard/coproductionprocesses/Tabs/MainSkeleton";
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from 'react-redux';
 import { Prompt } from 'react-router-dom';
 import { updateProcess } from "slices/process";
@@ -18,6 +19,8 @@ const MetadataTab = () => {
     const { process, updating } = useSelector((state) => state.process);
     const [logotype, setLogotype] = useState(null);
     const mounted = useMounted()
+    const { t : commonT, i18n } = useTranslation()
+    const t = i18n.getFixedT(process && process.language);
 
     const PromptIfDirty = () => {
         const formik = useFormikContext();
@@ -66,7 +69,7 @@ const MetadataTab = () => {
 
         <Field name={props.name}>
             {({ field }) => <QuillEditor readOnly={!editMode}
-                placeholder='Write something'
+                placeholder={t('Write something')}
                 sx={{ minHeight: props.height, borderColor: "background.paper", backgroundColor: editMode && "background.default" }}
                 {...props}
                 value={field.value} onChange={field.onChange(field.name)} />}
@@ -144,8 +147,8 @@ const MetadataTab = () => {
                 }
                 title={
                     <Stack justifyContent="center">
-                        <Typography variant="subtitle1"><b>Created:</b> {moment(process.created_at).format("LL")}</Typography>
-                        {process.updated_at && <Typography variant="subtitle1"><b>Last update:</b> {moment(process.updated_at).format("LLL")}</Typography>}
+                        <Typography variant="subtitle1"><b>{t("Created")}:</b> {moment(process.created_at).format("LL")}</Typography>
+                        {process.updated_at && <Typography variant="subtitle1"><b>{t("Last update")}:</b> {moment(process.updated_at).format("LLL")}</Typography>}
                     </Stack>
                 }
             />
@@ -162,7 +165,7 @@ const MetadataTab = () => {
                 validationSchema={Yup
                     .object()
                     .shape({
-                        name: Yup.string().required('Required'),
+                        name: Yup.string().required(t('Required')),
                         /* description: Yup.string().required('required'),
                             aim: Yup.string().required('required'),
                             organization: Yup.string().required('required'),
@@ -213,21 +216,21 @@ const MetadataTab = () => {
                         <PromptIfDirty />
                         <Grid container sx={{ width: "96%", ml: 2 }} direction="row" justifyContent="center" spacing={2} >
                             <Grid item xs={12}>
-                                <TextField label="NAME OF THE PROJECT" helperText={touched.name && errors.name} error={Boolean(touched.name && errors.name)} value={values.name} onBlur={handleBlur} onChange={handleChange} name="name" />
+                                <TextField label={t("NAME OF THE PROJECT")} helperText={touched.name && errors.name} error={Boolean(touched.name && errors.name)} value={values.name} onBlur={handleBlur} onChange={handleChange} name="name" />
                             </Grid>
 
                             <Grid item xs={12}>
-                                <TextField label="SHORT DESCRIPTION OF THE PROJECT" multiline helperText={touched.description && errors.description} error={Boolean(touched.description && errors.description)} value={values.description} onBlur={handleBlur} onChange={handleChange} name="description" />
+                                <TextField label={t("SHORT DESCRIPTION OF THE PROJECT")} multiline helperText={touched.description && errors.description} error={Boolean(touched.description && errors.description)} value={values.description} onBlur={handleBlur} onChange={handleChange} name="description" />
                             </Grid>
                             <Grid item xs={12} lg={6}>
-                                <TextField label="ACTUAL ORGANIZATION OF THE SERVICE" multiline helperText={touched.organization && errors.organization} error={Boolean(touched.organization && errors.organization)} value={values.organization} onBlur={handleBlur} onChange={handleChange} name="organization" />
+                                <TextField label={t("ACTUAL ORGANIZATION OF THE SERVICE")} multiline helperText={touched.organization && errors.organization} error={Boolean(touched.organization && errors.organization)} value={values.organization} onBlur={handleBlur} onChange={handleChange} name="organization" />
                             </Grid>
                             <Grid item xs={12} lg={6}>
-                                <TextField label="AIM OF THE PROJECT" multiline helperText={touched.aim && errors.aim} error={Boolean(touched.aim && errors.aim)} value={values.aim} onBlur={handleBlur} onChange={handleChange} name="aim" />
+                                <TextField label={t("AIM OF THE PROJECT")} multiline helperText={touched.aim && errors.aim} error={Boolean(touched.aim && errors.aim)} value={values.aim} onBlur={handleBlur} onChange={handleChange} name="aim" />
                             </Grid>
                             <Grid item xs={12} lg={6}>
                                 <QuillField
-                                    label="IDEA OF SERVICE TO BE CO-DELIVERED"
+                                    label={t("IDEA OF SERVICE TO BE CO-DELIVERED")}
                                     helperText={touched.idea && errors.idea}
                                     error={Boolean(touched.idea && errors.idea)}
                                     value={values.idea}
@@ -237,7 +240,7 @@ const MetadataTab = () => {
                             </Grid>
                             <Grid item xs={12} lg={6}>
                                 <QuillField
-                                    label="CHALLENGES OF THE PROJECT"
+                                    label={t("CHALLENGES OF THE PROJECT")}
                                     helperText={touched.challenges && errors.challenges}
                                     error={Boolean(touched.challenges && errors.challenges)}
                                     value={values.challenges} name="challenges"
@@ -247,8 +250,8 @@ const MetadataTab = () => {
 
                         </Grid>
                         {editMode && <Stack direction="row" spacing={2} sx={{ justifyContent: "center", mt: 3, mb: 2 }}>
-                            <Button variant="text" disabled={isSubmitting} color="error" startIcon={<Delete />} onClick={() => { setEditMode(false); resetForm(); setLogotype(null); }}> Cancel</Button>
-                            <Button variant="contained" disabled={isSubmitting} color="success" startIcon={<Save />} onClick={submitForm} disabled={!isValid}>Save</Button>
+                            <Button variant="text" disabled={isSubmitting} color="error" startIcon={<Delete />} onClick={() => { setEditMode(false); resetForm(); setLogotype(null); }}>{t("Cancel")}</Button>
+                            <Button variant="contained" disabled={isSubmitting} color="success" startIcon={<Save />} onClick={submitForm} disabled={!isValid}>{t("Save")}</Button>
                         </Stack>}
                     </Form>
                 )}

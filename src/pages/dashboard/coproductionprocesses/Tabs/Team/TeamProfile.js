@@ -3,6 +3,7 @@ import { Edit, Save } from '@material-ui/icons';
 import useMounted from 'hooks/useMounted';
 import moment from 'moment';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { teamsApi, usersApi } from '__api__';
 import UserSearch from './UserSearch';
@@ -47,7 +48,8 @@ const TeamProfile = ({ open, setOpen, teamId, onChanges }) => {
   const [logotype, setLogotype] = useState(null);
 
   const mounted = useMounted();
-
+  const {t} = useTranslation()
+  
   const handleClose = () => {
     setOpen(false);
   };
@@ -205,10 +207,10 @@ const TeamProfile = ({ open, setOpen, teamId, onChanges }) => {
             <TableHead>
               <TableRow>
                 <TableCell></TableCell>
-                <TableCell>Full name</TableCell>
-                <TableCell>Email</TableCell>
-                <TableCell>Last login</TableCell>
-                {editMode && <TableCell>Actions</TableCell>}
+                <TableCell>{t("Full name")}</TableCell>
+                <TableCell>{t("Email")}</TableCell>
+                <TableCell>{t("Last login")}</TableCell>
+                {editMode && <TableCell>{t("Actions")}</TableCell>}
               </TableRow>
             </TableHead>
             <TableBody>
@@ -218,7 +220,7 @@ const TeamProfile = ({ open, setOpen, teamId, onChanges }) => {
             </TableBody>
           </Table>
           {editMode && <Box sx={{ mx: 6, textAlign: "center", justifyContent: "center" }}>
-            <UserSearch text="Add user to the team" onClick={addUserToTeam} />
+            <UserSearch text={t("Add user to the team")} onClick={addUserToTeam} />
           </Box>}
         </Grid>
       </Grid> : <Box
