@@ -1,0 +1,68 @@
+{
+    "languages": [
+        "en",
+        "es"
+    ],
+    "name_translations": {
+        "en": "Event Co-designer",
+        "es": ""
+    },
+    "description_translations": {
+        "en": "<p>Event Co-designer (ECO) is an open source plugin for the popular WordPress (WP) content management system which allows co-designing and organising new public events. It is especially designed from the needs of the ZGZ use case and can be integrated directly to the existing Etopia WP website. ECO provides an easy-to-use and feature-rich calendar view to schedule new events and make requests for resources, facilities and services needed to organise the event. In addition, ECO includes collaborative tools for documenting, discussing  and co-evaluating the event proposal.</p>",
+        "es": ""
+    },
+    "difficulty": "medium",
+    "targets": [
+        "all"
+    ],
+    "licence": "public_domain",
+    "problemprofiles": [
+	    "ORG_PROBLEM_1",
+		"ORG_PROBLEM_2",
+		"ORG_PROBLEM_4",
+		"ORG_PROBLEM_6.1",
+		"ORG_PROBLEM_6.3",
+		"UND_PROBLEM_1",
+		"UND_PROBLEM_5",
+		"DEF_PROBLEM_2",
+		"DEF_PROBLEM_5",
+		"VAL_PROBLEM_2",
+		"HACKATHON_PROBLEM_1"
+    ],
+    "types": [
+        "enabling_services",
+        "enhancing_services"
+    ],
+    "administrative_scopes": [
+        "eu",
+        "national",
+        "local"
+    ],
+    "constraints_and_limitations_translations": {
+        "en": "None",
+        "es": ""
+    },
+    "regulations_and_standards_translations": {
+        "en": "None",
+        "es": ""
+    },
+    "overview_text": {
+        "en": "Web application for co-designing public events and co-evaluating event proposals",
+        "es": ""
+    },
+    "uri_translations": {
+        "en": ""
+    },
+    "logotype": "./interlinkers/externalsoftware/event-codesigner/logo.png",
+    "reference": "event-codesigner",
+    "tags_translations": {
+        "en": [
+            "project management",
+            "team working",
+			"survey"			
+        ]
+    },
+    "instructions_translations": {
+        "en": "./interlinkers/externalsoftware/event-codesigner/instructions.md"
+    }
+}
