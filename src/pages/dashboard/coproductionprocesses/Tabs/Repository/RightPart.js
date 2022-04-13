@@ -260,7 +260,7 @@ const RightPart = () => {
                                             .min(3, 'Must be at least 3 characters')
                                             .required('Required'),
                                     })}
-                                    onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
+                                    onSubmit={(values, { setErrors, setStatus, setSubmitting }) => {
                                         setSubmitting(true);
                                         assetsApi.create_external(selectedTreeItem.id, null, values.name, values.uri).then(res => {
                                             setStatus({ success: true });

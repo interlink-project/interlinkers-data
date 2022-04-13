@@ -29,7 +29,6 @@ function Row({ obj: ob, onChanges, isTeam = false, onTeamClick = () => { } }) {
             "old_role": currentRole.id
         }
         data[isTeam ? "team_id" : "user_id"] = obj.id
-
         rolesApi.switchRole(data).then((res) => {
             onChanges && onChanges(res)
             setEditMode(false)

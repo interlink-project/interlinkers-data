@@ -38,7 +38,7 @@ const IndividualAdd = ({ open, setOpen, onChanges }) => {
       {!selectedIndividual ? <UserSearch text="Add individual user" onClick={(user) => {
         setSelectedIndividual(user);
       }} /> : <>
-        <Typography variant="h6" sx={{ textAlign: "center", my: 2 }}>{t("add-role-confirmation", {name: selectedIndividual.full_name})}/</Typography>
+        <Typography variant="h6" sx={{ textAlign: "center", my: 2 }}>{t("add-role-confirmation", {name: selectedIndividual.full_name})}</Typography>
         <Button color="warning" fullWidth onClick={handleAdd}>{t("Add")}</Button>
       </>}
     </DialogContent>
