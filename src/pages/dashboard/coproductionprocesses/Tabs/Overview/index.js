@@ -16,7 +16,7 @@ const OverviewTab = ({ coproductionprocess, setSelectedTreeItem }) => {
     useEffect(() => {
         assetsApi.getMulti({ coproductionprocess_id: coproductionprocess.id }).then((res) => {
             if (mounted.current) {
-                setAssets(res.items)
+                setAssets(res)
             }
         })
     }, [])

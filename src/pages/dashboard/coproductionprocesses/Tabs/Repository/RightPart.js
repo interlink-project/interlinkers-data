@@ -144,7 +144,7 @@ const RightPart = () => {
     const updateTaskInfo = async () => {
         assetsApi.getMulti({ task_id: selectedTreeItem.id }).then(assets => {
             if (mounted.current) {
-                setAssets(assets.items)
+                setAssets(assets)
                 interlinkersApi.getByProblemProfiles(null, null, selectedTreeItem.problemprofiles).then(interlinkers => {
                     if (mounted.current) {
                         setRecommendedInterlinkers(interlinkers.items)

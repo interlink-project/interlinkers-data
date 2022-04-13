@@ -1,5 +1,5 @@
 import {
-  Box, Card, CardContent, Chip, Divider, Grid, Tab, Tabs, Typography, Button, Paper, Stack
+  Box, Card, CardContent, Chip, Divider, Grid, Tab, Tabs, Typography, Button, Paper, Stack, Link
 } from '@material-ui/core';
 import { NatureChip, OfficialityChip } from 'components/dashboard/assets/Icons';
 import {
@@ -8,6 +8,7 @@ import {
 } from 'components/dashboard/interlinkers';
 import SwipeableTextMobileStepper from 'components/dashboard/interlinkers/browse/Carousel';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from "react-router-dom";
 import { SafeHTMLElement } from 'utils/safeHTML';
 import RelatedInterlinkersTable from "./RelatedInterlinkersTable";
@@ -17,7 +18,7 @@ const InterlinkerDetails = ({ interlinker, onRelatedInterlinkerClick }) => {
 
   const { link, description, tags, name, problemprofiles, softwareinterlinker, snapshots_links } = interlinker;
   const navigate = useNavigate();
-
+  const {t} = useTranslation()
   const handleTabsChange = (event, value) => {
     setCurrentTab(value);
   };
@@ -27,6 +28,7 @@ const InterlinkerDetails = ({ interlinker, onRelatedInterlinkerClick }) => {
   }
 
   const isKnowledge = interlinker.nature === "knowledgeinterlinker"
+  const isExternal = interlinker.nature === "externalknowledgeinterlinker" || interlinker.nature === "externalsoftwareinterlinker"
 
   const common = [
     { label: 'Overview', value: 'overview' },
@@ -81,7 +83,7 @@ const InterlinkerDetails = ({ interlinker, onRelatedInterlinkerClick }) => {
                       color='textSecondary'
                       variant='overline'
                     >
-                      Name
+                      {t("Name")}
                     </Typography>
                     <Typography
                       color='textPrimary'
@@ -89,26 +91,26 @@ const InterlinkerDetails = ({ interlinker, onRelatedInterlinkerClick }) => {
                     >
                       {name}
                     </Typography>
-
                     <Typography
                       color='textSecondary'
                       variant='overline'
                     >
-                      Nature
+                      {t("Nature")}
                     </Typography>
                     <NatureChip interlinker={interlinker} />
                     <Typography
                       color='textSecondary'
                       variant='overline'
                     >
-                      Creator
+                      {t("Creator")}
                     </Typography>
-                    <OfficialityChip />
+                    <OfficialityChip />                    
+                    
                     <Typography
                       color='textSecondary'
                       variant='overline'
                     >
-                      Tags
+                      {t("Tags")}
                     </Typography>
                     <Box>
                       {tags.map((tag) => (
@@ -124,7 +126,7 @@ const InterlinkerDetails = ({ interlinker, onRelatedInterlinkerClick }) => {
                       color='textSecondary'
                       variant='overline'
                     >
-                      Problem profiles
+                      {t("Problem profiles")}
                     </Typography>
                     <Box>
                       {problemprofiles.map((problem) => (
@@ -143,10 +145,24 @@ const InterlinkerDetails = ({ interlinker, onRelatedInterlinkerClick }) => {
                         color='textSecondary'
                         variant='overline'
                       >
-                        Based on
+                        {t("Based on")}
                       </Typography>
                       <Box sx={{ mt: 1 }}>
                         <InterlinkerReference interlinker_id={softwareinterlinker.id} />
+                      </Box>
+                    </>}
+
+                    {isExternal && <>
+                      <Typography
+                        color='textSecondary'
+                        variant='overline'
+                      >
+                        {t("URI")}
+                      </Typography>
+                      <Box sx={{ mt: 1 }}>
+                        <Link onClick={() => window.open(interlinker.uri)}>
+                        {interlinker.uri}
+                        </Link>
                       </Box>
                     </>}
                   </Stack>

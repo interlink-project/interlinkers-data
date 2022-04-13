@@ -245,7 +245,7 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
                             color='primary'
                             variant='contained'
                             onClick={() => {
-                                window.open(assetData && assetData.link + "/view", "_blank")
+                                window.open(assetData && assetData.ext_link + "/view", "_blank")
                                 handleClose()
                             }}
                         >
