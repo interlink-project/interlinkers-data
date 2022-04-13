@@ -1,6 +1,7 @@
 import { TextField } from '@material-ui/core';
 import { Cancel, CheckCircle } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
+import useDependantTranslation from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
 import { useEffect, useState } from 'react';
 import { usersApi } from '__api__';
@@ -10,7 +11,8 @@ const UserSearch = ({ text, onClick }) => {
     const mounted = useMounted();
     const [individualSearchResult, setResultIndividualSearch] = useState(null);
     const [emailValue, setEmailValue] = useState("");
-
+    const t = useDependantTranslation()
+    
     useEffect(() => {
         var delayDebounceFn
         if (mounted && emailValue) {
@@ -41,7 +43,7 @@ const UserSearch = ({ text, onClick }) => {
         <>
             <TextField
                 margin="dense"
-                label="Email Address"
+                label={t("Email")}
                 type="email"
                 fullWidth
                 variant="standard"

@@ -1,7 +1,7 @@
 import { CircularProgress, Typography } from '@material-ui/core';
+import useDependantTranslation from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
 import * as React from 'react';
-import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { getRoles } from 'slices/process';
 import PermissionsTable from './PermissionsTable';
@@ -11,7 +11,7 @@ export default function TeamsTab() {
     const { process, updating } = useSelector((state) => state.process);
     const dispatch = useDispatch();
     const mounted = useMounted();
-    const { t } = useTranslation()
+    const t = useDependantTranslation()
 
     const init = React.useCallback(async () => {
         try {
@@ -33,7 +33,7 @@ export default function TeamsTab() {
     return !updating ? (
         <React.Fragment>
             <Typography variant="h5" sx={{ mb: 2 }}>
-            {t("permissions-title")}
+                {t("permissions-title")}
             </Typography>
             <Typography variant="subtitle1" sx={{ mb: 2 }}>
                 {t("permissions-subtitle")}

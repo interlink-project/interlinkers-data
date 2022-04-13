@@ -11,6 +11,7 @@ import { setProcess } from 'slices/process';
 import { topologicalSort } from 'utils/comparePrerequisites';
 import { coproductionProcessesApi } from '__api__';
 import { coproductionSchemasApi } from '__api__/catalogue/coproductionSchemasApi';
+import useDependantTranslation from 'hooks/useDependantTranslation';
 
 const sameHeightCards = {
     minHeight: "200px",
@@ -26,6 +27,7 @@ const CreateSchema = () => {
     const { process } = useSelector((state) => state.process);
     const dispatch = useDispatch()
     const mounted = useMounted();
+    const t = useDependantTranslation()
 
     const getSchemas = async () => {
         coproductionSchemasApi.getPublic(process.language).then(res => {
@@ -59,12 +61,14 @@ const CreateSchema = () => {
         });
     }
 
+    const schemaword = t("schema")
+
     return (
 
         <Box sx={{ p: 2, minHeight: '87vh' }}>
             <Box sx={{ textAlign: "center" }}>
-                <Typography variant="h4" sx={{ mb: 2 }}>Schema selection</Typography>
-                <Typography variant="subtitle1" sx={{ mb: 4 }}>An schema contains a set of phases, objectives and tasks predefined. Those items could (and should) be edited in order to adapt the workplan of your project.</Typography>
+                <Typography variant="h4" sx={{ mb: 2 }}>{t("schema-selection-title")}</Typography>
+                <Typography variant="subtitle1" sx={{ mb: 4 }}>{t("schema-selection-description")}</Typography>
             </Box>
 
             {loading ? <CircularProgress /> : <Grid container spacing={3} justifyContent="flex-start">
@@ -89,11 +93,11 @@ const CreateSchema = () => {
                                 sx={{ flexGrow: 1, overflowY: 'auto', mb: 2 }}
                             >
                                 {schema.phasemetadatas.map((phasemetadata) => {
-                                    return <TreeItem key={phasemetadata.id} nodeId={phasemetadata.id} label={<p><b>Phase</b>: {phasemetadata.name}</p>}>
+                                    return <TreeItem key={phasemetadata.id} nodeId={phasemetadata.id} label={<p><b>{t("Phase")}</b>: {phasemetadata.name}</p>}>
                                         {phasemetadata.objectivemetadatas.map((objectivemetadata) => {
-                                            return <TreeItem key={objectivemetadata.id} nodeId={objectivemetadata.id} label={<p><b>Objective</b>: {objectivemetadata.name}</p>}>
+                                            return <TreeItem key={objectivemetadata.id} nodeId={objectivemetadata.id} label={<p><b>{t("Objective")}</b>: {objectivemetadata.name}</p>}>
                                                 {objectivemetadata.taskmetadatas.map((taskmetadata) => {
-                                                    return <TreeItem key={taskmetadata.id} nodeId={taskmetadata.id} label={<p><b>Task</b>: {taskmetadata.name}</p>} />
+                                                    return <TreeItem key={taskmetadata.id} nodeId={taskmetadata.id} label={<p><b>{t("Task")}</b>: {taskmetadata.name}</p>} />
                                                 })}
                                             </TreeItem>
                                         })}
@@ -101,7 +105,7 @@ const CreateSchema = () => {
                                 })}
 
                             </TreeView>
-                            <LoadingButton loading={loadingSchemaId === schema.id} variant="contained" fullWidth onClick={() => submit(schema.id)}>Use this schema</LoadingButton>
+                            <LoadingButton loading={loadingSchemaId === schema.id} variant="contained" fullWidth onClick={() => submit(schema.id)}>{t("use", {what: schemaword})}</LoadingButton>
 
                         </Card>
 

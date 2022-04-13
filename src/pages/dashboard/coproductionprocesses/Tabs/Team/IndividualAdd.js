@@ -1,7 +1,7 @@
 import { Button, Dialog, DialogContent, Typography } from '@material-ui/core';
+import useDependantTranslation from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
 import { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { coproductionProcessesApi } from '__api__';
 import UserSearch from './UserSearch';
@@ -11,8 +11,8 @@ const IndividualAdd = ({ open, setOpen, onChanges }) => {
   const mounted = useMounted();
   const [selectedIndividual, setSelectedIndividual] = useState(null);
   const { process } = useSelector((state) => state.process);
-  const {t} = useTranslation()
-  
+  const t = useDependantTranslation()
+
   useEffect(() => {
     if (open) {
       setSelectedIndividual(null)
@@ -26,7 +26,7 @@ const IndividualAdd = ({ open, setOpen, onChanges }) => {
 
   const handleAdd = () => {
     coproductionProcessesApi.addUser(process.id, selectedIndividual.sub).then((res) => {
-      if(mounted){
+      if (mounted) {
         handleClose()
         onChanges && onChanges(res)
       }
@@ -38,7 +38,7 @@ const IndividualAdd = ({ open, setOpen, onChanges }) => {
       {!selectedIndividual ? <UserSearch text="Add individual user" onClick={(user) => {
         setSelectedIndividual(user);
       }} /> : <>
-        <Typography variant="h6" sx={{ textAlign: "center", my: 2 }}>{t("add-role-confirmation", {name: selectedIndividual.full_name})}</Typography>
+        <Typography variant="h6" sx={{ textAlign: "center", my: 2 }}>{t("add-role-confirmation", { name: selectedIndividual.full_name })}</Typography>
         <Button color="warning" fullWidth onClick={handleAdd}>{t("Add")}</Button>
       </>}
     </DialogContent>

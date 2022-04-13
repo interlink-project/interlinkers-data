@@ -11,6 +11,7 @@ import { rolesApi, usersApi } from '__api__';
 import IndividualAdd from './IndividualAdd';
 import TeamAdd from './TeamAdd';
 import { useTranslation } from 'react-i18next';
+import useDependantTranslation from 'hooks/useDependantTranslation';
 
 function Row({ obj: ob, onChanges, isTeam = false, onTeamClick = () => { } }) {
     const navigate = useNavigate()
@@ -174,7 +175,7 @@ export default function TeamsTable({ onChanges }) {
     const [individualsOpen, setIndividualsOpen] = useState(false);
     const [teamProfileOpen, setTeamProfileOpen] = useState(false);
     const [selectedTeam, setSelectedTeam] = useState(null);
-    const { t } = useTranslation()
+    const t = useDependantTranslation()
     const onTeamClick = (team) => {
         setSelectedTeam(team)
         setTeamProfileOpen(true)

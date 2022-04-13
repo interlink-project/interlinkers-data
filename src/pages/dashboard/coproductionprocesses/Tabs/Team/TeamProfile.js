@@ -1,5 +1,6 @@
 import { Avatar, Box, CircularProgress, Dialog, DialogContent, Grid, IconButton, Input, Paper, Skeleton, Stack, Table, TableBody, TableCell, TableHead, TableRow, TextField, Typography } from '@material-ui/core';
 import { Edit, Save } from '@material-ui/icons';
+import useDependantTranslation from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
 import moment from 'moment';
 import { useEffect, useState } from 'react';
@@ -48,8 +49,8 @@ const TeamProfile = ({ open, setOpen, teamId, onChanges }) => {
   const [logotype, setLogotype] = useState(null);
 
   const mounted = useMounted();
-  const {t} = useTranslation()
-  
+  const t = useDependantTranslation()
+
   const handleClose = () => {
     setOpen(false);
   };

@@ -1,5 +1,6 @@
-import { Box, Button, Divider, Typography } from "@material-ui/core";
+import { Box, Button, Typography } from "@material-ui/core";
 import { AssetsTable } from "components/dashboard/assets";
+import useDependantTranslation from "hooks/useDependantTranslation";
 import useMounted from "hooks/useMounted";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -12,6 +13,7 @@ const OverviewTab = ({ coproductionprocess, setSelectedTreeItem }) => {
     const navigate = useNavigate()
 
     const { process, tasks: allTasks } = useSelector((state) => state.process);
+    const t = useDependantTranslation()
 
     useEffect(() => {
         assetsApi.getMulti({ coproductionprocess_id: coproductionprocess.id }).then((res) => {
@@ -24,13 +26,13 @@ const OverviewTab = ({ coproductionprocess, setSelectedTreeItem }) => {
     return (
         <Box style={{ backgroundColor: "background.default", justifyContent: "center" }}>
             <Typography variant="h5" sx={{ my: 2, textAlign: "center", }} color="textSecondary">
-                Recent resources
+                {t("Recent resources")}
             </Typography>
             <Box sx={{ mb: 3 }}>
                 <AssetsTable assets={assets} actions={(asset) => <Button variant="outlined" size="small" onClick={() => {
                     setSelectedTreeItem({ ...allTasks.find(task => task.id === asset.task_id), type: "task" })
                     navigate(`/dashboard/coproductionprocesses/${process.id}/guide`)
-                }} >See task</Button>} />
+                }} >{t("See task")}</Button>} />
             </Box>
         </Box>
     );

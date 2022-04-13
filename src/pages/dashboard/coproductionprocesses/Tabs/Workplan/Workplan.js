@@ -1,24 +1,18 @@
 import { Grid, Skeleton, ToggleButton, ToggleButtonGroup } from "@material-ui/core";
-import { TreeItemDialog } from "components/dashboard/tree";
+import useDependantTranslation from "hooks/useDependantTranslation";
 import useMounted from "hooks/useMounted";
 import useSettings from 'hooks/useSettings';
 import $ from 'jquery';
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from 'react-redux';
 import { useNavigate } from "react-router";
-import { cleanUnderScores } from "utils/cleanUnderscores";
-import colorScale from "utils/colorScale";
 import PhaseTabs from "../PhaseTabs";
-import Gantt from "./FrappeGantt"
-import "./FrappeGantt.css"
-
-const view_modes = ["Day", "Week", "Month", "Year"]
-
+import Gantt from "./FrappeGantt";
+import "./FrappeGantt.css";
 
 const setNewGantt = (id, props, tasks, darkMode, onClick) => {
   document.getElementById("gantt").innerHTML = "";
   if (tasks.length > 0) {
-    console.log(tasks)
     new Gantt(id, tasks, props);
 
     if (darkMode) {
@@ -66,6 +60,9 @@ const Workplan = ({ setSelectedTreeItem }) => {
   const navigate = useNavigate()
 
   const [clickedElement, setClickedElement] = useState(null);
+  const t = useDependantTranslation()
+
+  const view_modes = [t("Day"), t("Week"), t("Month"), t("Year")]
 
   const getElement = (id, type) => {
     let obj = {}
@@ -95,12 +92,12 @@ const Workplan = ({ setSelectedTreeItem }) => {
     if (element.start_date) {
       classes += " timed"
     }
-    if (element.id === selectedTreeItem.id){
+    if (element.id === selectedTreeItem.id) {
       classes += " blink"
-      setTimeout(function(){
+      setTimeout(function () {
         $(`[data-id="${element.id}"]`).removeClass("blink")
-    }, 1000);
-    
+      }, 1000);
+
     }
     return classes
   }
@@ -190,14 +187,14 @@ const Workplan = ({ setSelectedTreeItem }) => {
     setNewGantt(id, props, getTasks(), settings.theme === "DARK", (id, type) => {
       // setClickedElement(getElement(id, type));
       setSelectedTreeItem(getElement(id, type), () => navigate(`/dashboard/coproductionprocesses/${process.id}/guide`))
-      
+
     })
 
   }, [viewMode, selectedPhaseTabId, updating, phases, setNewGantt]);
 
   return (
     <Grid container style={{ overflow: "hidden" }}>
-      {/* clickedElement && <TreeItemDialog saving={updating} type={clickedElement.type} element={clickedElement} onClose={() => setClickedElement(null)} />*/ }
+      {/* clickedElement && <TreeItemDialog saving={updating} type={clickedElement.type} element={clickedElement} onClose={() => setClickedElement(null)} />*/}
       <Grid item xs={12}>
         <PhaseTabs />
         <ToggleButtonGroup
@@ -213,7 +210,7 @@ const Workplan = ({ setSelectedTreeItem }) => {
         </ToggleButtonGroup>
       </Grid>
       <Grid item xs={12}>
-        {updating ? <Skeleton variant="rectangular" width={"100%"} height={"70vh"} /> : <div style={{alignItems: "start", height: "100%"}} id="gantt" />}
+        {updating ? <Skeleton variant="rectangular" width={"100%"} height={"70vh"} /> : <div style={{ alignItems: "start", height: "100%" }} id="gantt" />}
       </Grid>
     </Grid>
   );

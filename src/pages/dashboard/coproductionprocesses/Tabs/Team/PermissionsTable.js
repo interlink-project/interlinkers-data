@@ -1,44 +1,21 @@
-import { Stack, Switch, Chip, Paper, Table, TableCell, TableContainer, TableHead, TableRow, TableBody, IconButton, TextField, Collapse, Box } from '@material-ui/core';
-import * as React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { KeyboardArrowUp as KeyboardArrowUpIcon, KeyboardArrowDown as KeyboardArrowDownIcon, Check, Edit, Delete, Save, Remove, Close } from '@material-ui/icons';
-import RoleCreate from './RoleCreate';
+import { Chip, IconButton, Paper, Stack, Switch, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField } from '@material-ui/core';
+import { Check, Close, Delete, Edit, Remove, Save } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
-import { rolesApi } from '__api__';
+import useDependantTranslation from 'hooks/useDependantTranslation';
+import * as React from 'react';
+import { useSelector } from 'react-redux';
 import i18n from 'translations/i18n';
-import { useTranslation } from 'react-i18next';
-
-const permissions = [
-    {
-        "code": "view_assets",
-        "label": i18n.t("view-resources")
-    },
-    {
-        "code": "create_assets",
-        "label": i18n.t("create-resources")
-    },
-    {
-        "code": "delete_assets",
-        "label": i18n.t("delete-resources")
-    },
-    {
-        "code": "change_access",
-        "label": i18n.t("add-teams-or-individuals")
-    },
-    {
-        "code": "update_settings",
-        "label": i18n.t("change-settings")
-    },
-]
+import { rolesApi } from '__api__';
+import RoleCreate from './RoleCreate';
 
 function Row(props) {
-    const { role, onChanges } = props;
+    const { role, onChanges, permissions } = props;
     const [editMode, setEditMode] = React.useState(false);
     const [loading, setLoading] = React.useState(false);
     const [newName, setNewName] = React.useState(role.name);
     const [newDescription, setNewDescription] = React.useState(role.description);
     const [newPermissions, setNewPermissions] = React.useState(role.permissions);
-    const {t} = useTranslation()
+    const t = useDependantTranslation()
 
     const PermittedChip = () => <Chip
         color="success"
@@ -127,7 +104,7 @@ function Row(props) {
                                 {(role.meta_editable || role.perms_editable) && <IconButton size="small" onClick={() => setEditMode(true)}>
                                     <Edit fontSize="small" />
                                 </IconButton>}
-                                
+
                                 {role.deletable && <IconButton size="small" color="warning" onClick={deleteRole}>
                                     <Delete fontSize="small" color="warning" />
                                 </IconButton>}
@@ -144,10 +121,33 @@ function Row(props) {
 
 
 
-export default function PermissionsTable({onChanges}) {
+export default function PermissionsTable({ onChanges }) {
     const { process, roles } = useSelector((state) => state.process);
-    const {t} = useTranslation()
-    
+    const t = useDependantTranslation()
+
+    const permissions = [
+        {
+            "code": "view_assets",
+            "label": t("view-resources")
+        },
+        {
+            "code": "create_assets",
+            "label": t("create-resources")
+        },
+        {
+            "code": "delete_assets",
+            "label": t("delete-resources")
+        },
+        {
+            "code": "change_access",
+            "label": t("add-teams-or-individuals")
+        },
+        {
+            "code": "update_settings",
+            "label": t("change-settings")
+        },
+    ]
+
     return (
         <TableContainer component={Paper}>
             <Table>
@@ -161,7 +161,7 @@ export default function PermissionsTable({onChanges}) {
                 </TableHead>
                 <TableBody>
                     {roles.map((role) => (
-                        <Row key={role.id} role={role} onChanges={onChanges} />
+                        <Row key={role.id} role={role} onChanges={onChanges} permissions={permissions} />
                     ))}
                 </TableBody>
             </Table>

@@ -2,12 +2,12 @@ import { Avatar, Box, Button, CardHeader, Grid, IconButton, Input, Stack, TextFi
 import { Delete, Edit, Save } from '@material-ui/icons';
 import QuillEditor from "components/QuillEditor";
 import { Field, Form, Formik, useFormikContext } from 'formik';
+import useDependantTranslation from "hooks/useDependantTranslation";
 import useMounted from "hooks/useMounted";
 import $ from 'jquery';
 import moment from "moment";
 import MainSkeleton from "pages/dashboard/coproductionprocesses/Tabs/MainSkeleton";
 import React, { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from 'react-redux';
 import { Prompt } from 'react-router-dom';
 import { updateProcess } from "slices/process";
@@ -19,8 +19,7 @@ const MetadataTab = () => {
     const { process, updating } = useSelector((state) => state.process);
     const [logotype, setLogotype] = useState(null);
     const mounted = useMounted()
-    const { t : commonT, i18n } = useTranslation()
-    const t = i18n.getFixedT(process && process.language);
+    const t = useDependantTranslation()
 
     const PromptIfDirty = () => {
         const formik = useFormikContext();

@@ -1,9 +1,9 @@
 import { Avatar, Box, Button, Chip, Divider, Drawer, Skeleton, Stack, Typography } from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { AccountTree, ArrowBack, Dashboard, Group as GroupIcon, Settings, Timeline } from '@material-ui/icons';
+import useDependantTranslation from 'hooks/useDependantTranslation';
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
@@ -19,8 +19,7 @@ const ProcessSidebar = (props) => {
   const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));
   const processId = process && process.id
 
-  const { t : commonT, i18n } = useTranslation()
-  const t = i18n.getFixedT(process && process.language);
+  const t = useDependantTranslation()
 
   useEffect(() => {
     if (openMobile && onMobileClose) {
@@ -38,12 +37,12 @@ const ProcessSidebar = (props) => {
           path: `/dashboard/coproductionprocesses/${processId}/overview`,
           icon: <Dashboard />
         },
-        ... hasSchema ? [{
+        ...hasSchema ? [{
           title: t('Workplan'),
           path: `/dashboard/coproductionprocesses/${processId}/workplan`,
           icon: <Timeline />
         }] : [],
-        ... hasSchema ? [{
+        ...hasSchema ? [{
           title: t('Guide'),
           path: `/dashboard/coproductionprocesses/${processId}/guide`,
           icon: <AccountTree />
@@ -99,7 +98,7 @@ const ProcessSidebar = (props) => {
 
           {!loading && !updating ? <Avatar variant="rounded" sx={{ width: "80px", height: "80px" }} src={process && process.logotype_link} /> : <Skeleton variant="rounded" sx={{ width: "80px", height: "80px" }} />}
           <Typography sx={{ textAlign: "center", width: "100%" }} variant="h6">{!loading && !updating && process ? process.name : <Skeleton />}</Typography>
-          {!loading && !updating ? <Chip color="primary" label={t("In progress")} color="success" /> : <Skeleton /> }
+          {!loading && !updating ? <Chip color="primary" label={t("In progress")} color="success" /> : <Skeleton />}
           <Button startIcon={<ArrowBack />} variant="outlined" fullWidth size="large" onClick={() => navigate("/dashboard")} />
 
         </Stack>

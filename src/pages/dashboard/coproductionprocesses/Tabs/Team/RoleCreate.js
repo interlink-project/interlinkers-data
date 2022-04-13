@@ -21,6 +21,7 @@ import { Add, Delete, Folder, KeyboardArrowRight, KeyboardArrowLeft, CheckCircle
 import { LoadingButton } from '@material-ui/lab';
 import useAuth from 'hooks/useAuth';
 import { rolesApi, teamsApi, usersApi } from '__api__';
+import useDependantTranslation from 'hooks/useDependantTranslation';
 
 const RoleCreate = ({ onCreate, coproductionprocess_id, possiblePermissions }) => {
   const [open, setOpen] = useState(false);
@@ -32,6 +33,7 @@ const RoleCreate = ({ onCreate, coproductionprocess_id, possiblePermissions }) =
 
   const theme = useTheme();
   const [activeStep, setActiveStep] = useState(0);
+  const t = useDependantTranslation()
 
   const handleNext = async () => {
 
@@ -86,13 +88,14 @@ const RoleCreate = ({ onCreate, coproductionprocess_id, possiblePermissions }) =
   return (
     <>
       <Button fullWidth variant="contained" color='primary' onClick={handleClickOpen}>
-        Create new role
+      {t("role-creation-title")}
       </Button>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Role creation</DialogTitle>
+        <DialogTitle>{t("role-creation-title")}</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            To create a role, please enter a name and a description. Then, add permissions to the role.
+          {t("role-creation-description")}
+            
           </DialogContentText>
           {activeStep === 0 && <>
             <TextField
@@ -122,13 +125,13 @@ const RoleCreate = ({ onCreate, coproductionprocess_id, possiblePermissions }) =
 
           {activeStep === 1 && <>
             <FormControl sx={{ m: 1 }} fullWidth>
-              <InputLabel id="permissions-select-label">Permissions</InputLabel>
+              <InputLabel id="permissions-select-label">{t("Permissions")}</InputLabel>
               <Select
                 labelId="permissions-select-label"
                 multiple
                 value={permissions}
                 onChange={handleChange}
-                input={<OutlinedInput label="Permissions" />}
+                input={<OutlinedInput label={t("Permissions")} />}
               >
                 {possiblePermissions.map((permission) => (
                   <MenuItem
@@ -154,14 +157,14 @@ const RoleCreate = ({ onCreate, coproductionprocess_id, possiblePermissions }) =
             sx={{ flexGrow: 1 }}
             nextButton={
               <Button size="small" onClick={handleNext}>
-                {activeStep === 1 ? "Create" : "Next"}
+                {activeStep === 1 ? t("Create") : t("Next")}
                 <KeyboardArrowRight />
               </Button>
             }
             backButton={
               <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
                 <KeyboardArrowLeft />
-                Back
+                {t("Back")}
               </Button>
             }
           />

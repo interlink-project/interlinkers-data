@@ -1,17 +1,17 @@
 import {
-  Alert, Avatar, Box, Button, CircularProgress, IconButton, ListItemIcon, ListItemText, Menu,
-  MenuItem, Popover, Skeleton, Table, TableBody, TableCell, TableHead, TableRow, Typography
+  Alert, Avatar, CircularProgress, IconButton, ListItemIcon, ListItemText, Menu,
+  MenuItem, Skeleton, Table, TableBody, TableCell, TableHead, TableRow
 } from '@material-ui/core';
 import { CopyAll, Delete, Download, Edit, MoreVert as MoreVertIcon, Share } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import ConfirmationButton from 'components/ConfirmationButton';
+import useDependantTranslation from 'hooks/useDependantTranslation';
+import useMounted from 'hooks/useMounted';
 import moment from 'moment';
 import InterlinkerDialog from 'pages/dashboard/interlinkers/InterlinkerDialog';
 import React, { useEffect, useState } from 'react';
 import { assetsApi } from '__api__';
 import { InterlinkerReference } from '../interlinkers';
-import useMounted from 'hooks/useMounted';
-import { useTranslation } from 'react-i18next';
 
 const MyMenuItem = ({ onClick, text, icon, id, loading }) => {
   return <MenuItem aria-describedby={id} onClick={onClick}>
@@ -28,8 +28,7 @@ const AssetRow = ({ asset, onChange, actions, openInterlinkerDialog }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const mounted = useMounted();
-  const { t } = useTranslation()
-
+  const t = useDependantTranslation()
   const showInterlinkerId = data && (data.externalinterlinker_id || data.knowledgeinterlinker_id || data.softwareinterlinker_id)
   const isInternal = asset.type === "internalasset"
 
@@ -197,6 +196,7 @@ const AssetRow = ({ asset, onChange, actions, openInterlinkerDialog }) => {
 const Assets = ({ assets, onChange = () => { }, actions }) => {
   const [interlinkerDialogOpen, setInterlinkerDialogOpen] = useState(false);
   const [selectedInterlinker, setSelectedInterlinker] = useState(false);
+  const t = useDependantTranslation()
 
   return <>
     {assets.length > 0 ?
@@ -206,11 +206,11 @@ const Assets = ({ assets, onChange = () => { }, actions }) => {
           <TableHead>
             <TableRow>
               <TableCell></TableCell>
-              <TableCell align="center">Name</TableCell>
-              <TableCell align="center">Created</TableCell>
-              <TableCell align="center">Updated</TableCell>
-              <TableCell align="center">Interlinker</TableCell>
-              <TableCell align="center">Actions</TableCell>
+              <TableCell align="center">{t("Name")}</TableCell>
+              <TableCell align="center">{t("Created")}</TableCell>
+              <TableCell align="center">{t("Updated")}</TableCell>
+              <TableCell align="center">{t("Interlinker")}</TableCell>
+              <TableCell align="center">{t("Actions")}</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -221,7 +221,7 @@ const Assets = ({ assets, onChange = () => { }, actions }) => {
         </Table>
       </>
       :
-      <Alert severity="info" sx={{ my: 2 }}>No resources yet</Alert>
+      <Alert severity="info" sx={{ my: 2 }}>{t("No resources yet")}</Alert>
     }
   </>
 }
