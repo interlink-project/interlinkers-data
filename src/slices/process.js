@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { topologicalSort } from 'utils/comparePrerequisites';
-import { coproductionProcessesApi, objectivesApi, phasesApi, rolesApi, tasksApi, logsApi} from '../__api__';
+import { coproductionProcessesApi, objectivesApi, phasesApi, rolesApi, tasksApi, logsApi } from '../__api__';
+import { getSchemas } from "./general";
 
 const initialState = {
   loading: false,
@@ -29,7 +30,7 @@ const slice = createSlice({
       const phases = []
       const objectives = []
       const tasks = []
-      
+
       state.hasSchema = action.payload.length > 0
       if (action.payload) {
         // separate tree into groups

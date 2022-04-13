@@ -13,4 +13,4 @@ import { usersApi } from './users';
 import { problemprofilesApi } from './catalogue/problemProfilesApi';
 import { logsApi } from './coproduction/logsApi';
 
-export { logsApi, problemprofilesApi, assetsApi, knowledgeInterlinkersApi, softwareInterlinkersApi, rolesApi, coproductionProcessesApi, coproductionSchemasApi, teamsApi, usersApi, tasksApi, phasesApi, objectivesApi, interlinkersApi };
+export { logsApi, problemprofilesApi, assetsApi, knowledgeInterlinkersApi, softwareInterlinkersApi, rolesApi, coproductionProcessesApi, coproductionSchemasApi, teamsApi, usersApi, tasksApi, phasesApi, objectivesApi, interlinkersApi, logsApi };
