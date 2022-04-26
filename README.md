@@ -61,11 +61,13 @@ To get a local copy up and running follow these simple example steps.
    ```
    Now, the frontend will be accessible through: http://localhost:3005 (can be changed by modifying DOMAIN and SOLODEVPORT variables defined in .env file)
    
-   **If proxy running and want to run the integrated version (routed by traefik):**
+   **If proxy is running and you want to run the integrated version (routed by traefik):**
    ```sh
    make integrated
    ```
    Now, the frontend will be accessible through: http://localhost
 
+<!-- GETTING STARTED -->
+## Customizations
 
 <p align="right">(<a href="#top">back to top</a>)</p>

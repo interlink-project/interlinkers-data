@@ -8,15 +8,17 @@ services:
       context: .
       target: dev
     volumes:
-      - .:/usr/app
+      - ./react:/usr/app
+      - ${FRONTEND_CUSTOMIZATION_IMAGES_PATH}:/usr/app/public/customization
       - /usr/app/node_modules
-    env_file:
-      - .env
     environment:
-      - DOMAIN=${DOMAIN}
       - REACT_APP_COMPLETE_DOMAIN=http://${DOMAIN}
-    ports:
-      - "${SOLODEVPORT}:${PORT}"
+      - DOMAIN
+      - PORT
+      - NODE_ENV=development
+      - REACT_APP_PRIMARY_COLOR=${PRIMARY_COLOR}
+      - REACT_APP_DEFAULT_LANGUAGE=${DEFAULT_LANGUAGE}
+      - REACT_APP_ALLOWED_LANGUAGES=${ALLOWED_LANGUAGES}
     stdin_open: true
     labels:
       - traefik.enable=true

@@ -38,7 +38,7 @@ const Home = () => {
             >
               <img
                 alt='Logo'
-                src='/static/graphics/logo-dark.png'
+                src='/customization/logo-home.svg'
                 style={{ width: "90%", height: "auto" }}
               />
               <Typography

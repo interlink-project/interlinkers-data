@@ -119,7 +119,7 @@
   "copied-clipboard": "Copiado al portapapeles",
   "Welcome": "Bienvenido, {{who}}",
   "workspace-subtitle": "Esta es la actividad reciente relacionada con tu espacio de trabajo",
-  "workspace-emptyprocesses": "Actualmente no estás participando en ningún proceso de coproducción. Puede crear uno haciendo clic en el botón 'añadir'",
+  "workspace-emptyprocesses": "Actualmente no estás participando en ningún proceso de coproducción. Puede crear uno haciendo click en el botón de la barra lateral",
   "workspace-title": "Espacio de trabajo",
   "team-create-title": "Creación de equipo",
   "team-create-description": "Para crear un equipo, debes especificar un nombre y una descripción. Más tarde, podrás añadir personas.",

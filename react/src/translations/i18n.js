@@ -1,48 +1,53 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
 import store from 'store';
 import TRANSLATIONS_EN from './en';
 import TRANSLATIONS_ES from './es';
 import TRANSLATIONS_LV from './lv';
 import TRANSLATIONS_IT from './it';
-import axiosInstance from 'axiosInstance';
+import { ALLOWED_LANGUAGES, DEFAULT_LANGUAGE } from 'configuration';
 
-export const DEFAULT_LANGUAGE = 'en';
 export const LANGUAGES = [
-  {
-    label: 'English',
-    value: 'en',
-  },
-  {
-    label: 'Español',
-    value: 'es',
-  },
-  {
-    label: 'Latviešu',
-    value: 'lv',
-  },
-  {
-    label: 'Italiano',
-    value: 'it',
-  },
+  ... ALLOWED_LANGUAGES.includes("en") ? [
+    {
+      label: 'English',
+      value: 'en',
+    }
+  ] : [],
+  ... ALLOWED_LANGUAGES.includes("es") ? [
+    {
+      label: 'Español',
+      value: 'es',
+    }
+  ] : [],
+  ... ALLOWED_LANGUAGES.includes("lv") ? [
+    {
+      label: 'Latviešu',
+      value: 'lv',
+    }
+  ] : [],
+  ... ALLOWED_LANGUAGES.includes("it") ? [
+    {
+      label: 'Italiano',
+      value: 'it',
+    }
+  ] : [],
 ];
 
 export const setLanguage = (language) => {
-  if (!LANGUAGES.every((el) => language !== el.value)) {
+  if (ALLOWED_LANGUAGES.includes(language)) {
     console.log(`Setting ${language} language`);
     store.set('language', language);
     i18n.changeLanguage(language);
     window.location.reload();
     // axiosInstance.defaults.headers['Accept-Language'] = language;
   } else {
-    console.error('Language', language, 'not supported. Only:', LANGUAGES);
+    console.error('Language', language, 'not supported. Only:', ALLOWED_LANGUAGES);
   }
 };
 
 export const getInitialLanguage = () => {
-  console.log("Returning", store.get('language', DEFAULT_LANGUAGE))
-  return store.get('language', DEFAULT_LANGUAGE)
+  return store.get('language')
 };
 
 
