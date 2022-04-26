@@ -40,19 +40,19 @@ const InterlinkerBrowseFilter = ({ onFiltersChange }) => {
       id: "nature",
       options: [
         {
-          label: 'Integrated software',
+          label: t('Internal software'),
           value: "softwareinterlinker"
         },
         {
-          label: 'External software',
+          label: t('External software'),
           value: "externalsoftwareinterlinker"
         },
         {
-          label: 'Knowledge',
+          label: t('Internal knowledge'),
           value: "knowledgeinterlinker"
         },
         {
-          label: 'External knowledge',
+          label: t('External knowledge'),
           value: "externalknowledgeinterlinker"
         }
       ]

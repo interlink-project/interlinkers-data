@@ -149,7 +149,7 @@ const AccountPopover = () => {
     }}
     onClick={() => auth.signinRedirect()}
   >
-    <Typography sx={{ mr: 1 }} variant="overline">Log in</Typography>
+    <Typography sx={{ mr: 1 }} variant="overline">{t("Login")}</Typography>
     <Login />
   </Box>;
 };

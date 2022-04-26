@@ -103,7 +103,7 @@ const WorkspaceSidebar = (props) => {
         <Divider />
         <Box sx={{ p: 2 }}>
           <NavSection
-            title={t("My projects")}
+            title={t("My processes")}
             sx={{
               '& + &': {
                 mt: 3
@@ -132,7 +132,7 @@ const WorkspaceSidebar = (props) => {
           />
 
           <NavSection
-            title={t("Your teams")}
+            title={t("My teams")}
             sx={{
               '& + &': {
                 mt: 3

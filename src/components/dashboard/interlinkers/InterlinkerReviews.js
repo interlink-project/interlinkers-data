@@ -6,6 +6,7 @@ import axiosInstance from 'axiosInstance';
 import { ratingsApi } from '__api__/catalogue/ratingsApi';
 import { LoadingButton } from '@material-ui/lab';
 import useAuth from 'hooks/useAuth';
+import { useTranslation } from 'react-i18next';
 
 const InterlinkerRatings = ({ interlinker }) => {
   const [loading, setLoading] = useState(true)
@@ -18,6 +19,7 @@ const InterlinkerRatings = ({ interlinker }) => {
   const auth = useAuth();
 
   const { user, isAuthenticated } = auth
+  const {t} = useTranslation()
 
   const setNewCommentDialog = (bool) => {
     setTitle("")
@@ -54,7 +56,7 @@ const InterlinkerRatings = ({ interlinker }) => {
                 color='textPrimary'
                 variant='subtitle2'
               >
-                Overall Ratings
+                {t("overall-rating")}
               </Typography>
             </Grid>
             <Grid item>
@@ -81,13 +83,13 @@ const InterlinkerRatings = ({ interlinker }) => {
               >
                 {ratings.length}
                 {' '}
-                ratings in total
+                {t("ratings-in-total")}
               </Typography>
             </Grid>
           </Grid>
         </CardContent>
       </Card>
-      {isAuthenticated && <Button variant="text" fullWidth onClick={() => setNewCommentDialog(true)} sx={{ mt: 1 }}>Rate this interlinker</Button>}
+      {isAuthenticated && <Button variant="text" fullWidth onClick={() => setNewCommentDialog(true)} sx={{ mt: 1 }}>{t("rate-interlinker")}</Button>}
 
       {loading ? <CircularProgress /> : ratings.map((rating) => (
         <Box
@@ -109,14 +111,14 @@ const InterlinkerRatings = ({ interlinker }) => {
         <Stack spacing={3} direction="column" sx={{ p: 3 }}>
           <TextField
             fullWidth
-            label="Comment title"
+            label={t("title")}
             variant="standard"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
           <TextField
             fullWidth
-            label="Comment body"
+            label={t("body")}
             multiline
             rows={3}
             variant="standard"
@@ -126,7 +128,7 @@ const InterlinkerRatings = ({ interlinker }) => {
           <Rating value={value} onChange={(event, newValue) => {
             setValue(newValue);
           }} />
-          <LoadingButton loading={loading} variant="contained" size="small" onClick={() => ratingsApi.create(title, text, value, interlinker.id).then(update)}> Send</LoadingButton>
+          <LoadingButton loading={loading} variant="contained" size="small" onClick={() => ratingsApi.create(title, text, value, interlinker.id).then(update)}>{t("Send")}</LoadingButton>
         </Stack>
 
       </Dialog>

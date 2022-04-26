@@ -24,16 +24,17 @@ const getFeatures = (theme) => ([
     image: `/static/graphics/schema-codesign.png`,
     items: [i18n.t('Engagement'),i18n.t('Design')],
     subheader: i18n.t('home-coproduction-build'),
-    title: 'Co-design phase'
+    title: i18n.t('Co-design phase'),
   },
   {
     icon: AllInclusive,
     items: [i18n.t('Build'),i18n.t('Sustain')],
     subheader: i18n.t('home-coproduction-codelivery'),
     image: `/static/graphics/schema-codelivery.png`,
-    title: 'Co-delivery phase'
+    title: i18n.t('Co-delivery phase'),
   },
 ]);
+
 const HomeCoproduction = () => {
   const theme = useTheme();
   const [selectedFeatureIndex, setSelectedFeatureIndex] = useState(0);

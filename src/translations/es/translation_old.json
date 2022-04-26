@@ -18,5 +18,10 @@
   "workspace.subtitle": "Espacio de trabajo",
   "workspace.emptyprocesses": "Actualmente no colaboras en ningún proceso. Puedes crear uno en la parte derecha de esta misma pantalla.",
   "workspace.title": "Espacio de trabajo",
-  "Public services": "Servicios públicos"
+  "Public services": "Servicios públicos",
+  "Login required": "",
+  "You must be logged in to access this section.": "",
+  "Log in": "",
+  "comment-title": "",
+  "comment-body": ""
 }

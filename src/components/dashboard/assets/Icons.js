@@ -46,11 +46,11 @@ export const NatureChip = ({ interlinker }) => {
     let label = ""
     let color = ""
     if (interlinker.nature === 'softwareinterlinker') {
-        label = i18n.t("Integrated software")
+        label = i18n.t("Internal software")
         color = "primary"
 
     } else if (interlinker.nature === 'knowledgeinterlinker') {
-        label = i18n.t("Integrated knowledge")
+        label = i18n.t("Internal knowledge")
         color = "secondary"
     }
     else if (interlinker.nature === 'externalsoftwareinterlinker') {

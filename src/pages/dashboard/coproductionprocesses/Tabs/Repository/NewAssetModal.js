@@ -103,7 +103,7 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
             }
             if (activeStep === 1) {
                 if (isSoftware) {
-                    // Initiate listeners if is an internally integrated software interlinker
+                    // Initiate listeners if is an internally Internal software interlinker
                     if (window.addEventListener) {  // all browsers except IE before version 9
                         window.addEventListener("message", onMessage, false);
                     }
