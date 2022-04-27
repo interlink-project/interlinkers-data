@@ -9,7 +9,7 @@ services:
       target: dev
     volumes:
       - ./react:/usr/app
-      - ${FRONTEND_CUSTOMIZATION_IMAGES_PATH}:/usr/app/public/customization
+      - ${FRONTEND_CUSTOMIZATION_IMAGES_PATH}:/usr/app/public/static/customization
       - /usr/app/node_modules
     environment:
       - REACT_APP_COMPLETE_DOMAIN=http://${DOMAIN}

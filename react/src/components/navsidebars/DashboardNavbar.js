@@ -65,7 +65,7 @@ const DashboardNavbar = (props) => {
         {!onMobile && <RouterLink to='/'>
           <img
             alt='Logo'
-            src='/customization/logo-light.svg'
+            src='/static/customization/logo-light.svg'
             height='40px'
           />
         </RouterLink>}

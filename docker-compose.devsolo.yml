@@ -9,7 +9,7 @@ services:
       target: prod
     volumes:
       - ./react:/usr/app
-      - ./pilots/default:/usr/app/public/customization
+      - ./pilots/default:/usr/app/public/static/customization
       - /usr/app/node_modules
     env_file:
       - .env
