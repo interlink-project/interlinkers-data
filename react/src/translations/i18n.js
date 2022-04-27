@@ -47,7 +47,7 @@ export const setLanguage = (language) => {
 };
 
 export const getInitialLanguage = () => {
-  return store.get('language')
+  return store.get('language', DEFAULT_LANGUAGE)
 };
 
 
@@ -69,6 +69,7 @@ i18n
         translation: TRANSLATIONS_LV,
       },
     },
+    lng: getInitialLanguage(), // if you're using a language detector, do not define the lng option
     fallbackLng: getInitialLanguage(),
     debug: true,
   });
