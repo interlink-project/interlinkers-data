@@ -1,5 +1,5 @@
 {
-    "reference": "phase-sustain",
+    "id": "phase-sustain",
     "prerequisites": [
         {
             "item": "phase-build",

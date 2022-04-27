@@ -34,13 +34,13 @@ class Objective(WithProblemProfiles, WithNameAndDesc, extra=Extra.forbid):
 
 
 class Phase(WithNameAndDesc, extra=Extra.forbid):
-    reference: str
+    id: str
     prerequisites: Dict[str, str]
     objectives: List[Objective]
 
 
 class CoproductionSchema(WithNameAndDesc, extra=Extra.forbid):
-    reference: str
+    id: str
     tags_translations: Dict[str,  conlist(str, min_items=1)]
     author: str
     licence: Licences

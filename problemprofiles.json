@@ -160,7 +160,7 @@
           "es": ""
       },
       "functionality_translations": {
-          "en": "Knowledge enablers addressing this problem should include  descriptive text that explains the rationale and the benefit of preparing a Data Management Plan, templates for guiding the preparation of the plan, examples of Data Management Plans.\nThe baseline Data Management Plan template should cover:\nOverall aim and domain of the DMP\nMotivations to collect data \nFlow of data\nPotential impact of data\nThe handling of data during & after the end of the project\nThe types of data\nDefinition of user and supplier preferences concerning data? (ownership, minimalization, responsibility, sharing, archiving, anonymity)\nPolicies for access and sharing\nPolicies and provisions for re-use\n-Plans for archiving data",
+          "en": "Knowledge enablers addressing this problem should include  descriptive text that explains the rationale and the benefit of preparing a Data Management Plan, templates for guiding the preparation of the plan, examples of Data Management Plans.\nThe baseline Data Management Plan template should cover:\nOverall aim and domain of the DMP\nMotivations to collect data \nFlow of data\nPotential impact of data\nThe handling of data during & after the end of the project\nThe types of data\nDefinition of user and supplier pids concerning data? (ownership, minimalization, responsibility, sharing, archiving, anonymity)\nPolicies for access and sharing\nPolicies and provisions for re-use\n-Plans for archiving data",
           "es": ""
       }
   },
@@ -535,7 +535,7 @@
           "es": ""
       },
       "functionality_translations": {
-          "en": "This problem is addressed by providing guidance on how to develop digital services in compliance  with EU regulations and CEF principles. Currently, there are eight Building Blocks: Big Data Test Infrastructure, Context Broker, eArchiving, eDelivery, eID, eInvoicing, eSignature and eTranslation. Information and reference to the Connecting Europe Facility (CEF) should be provided and given proper visibility and promotion.",
+          "en": "This problem is addressed by providing guidance on how to develop digital services in compliance  with EU regulations and CEF principles. Currently, there are eight Building Blocks: Big Data Test Infrastructure, Context Broker, eArchiving, eDelivery, eID, eInvoicing, eSignature and eTranslation. Information and id to the Connecting Europe Facility (CEF) should be provided and given proper visibility and promotion.",
           "es": ""
       }
   },

@@ -17,7 +17,7 @@
         "national",
         "local"
     ],
-    "reference": "open-source-guides",
+    "id": "open-source-guides",
     "form": "guidelines",
     "format": "structured_format",
     "difficulty": "very_easy",

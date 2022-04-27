@@ -20,7 +20,7 @@
     ],
     "domain": "",
     "process": "",
-    "reference": "Template for structured interview",
+    "id": "Template for structured interview",
     "form": "document_template",
     "format": "editable_source_document",
     "softwareinterlinker": "googledrive",

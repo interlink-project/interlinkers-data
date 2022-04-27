@@ -54,7 +54,7 @@
         "en": ""
     },
     "logotype": "./interlinkers/externalsoftware/event-codesigner/logo.png",
-    "reference": "event-codesigner",
+    "id": "event-codesigner",
     "tags_translations": {
         "en": [
             "project management",

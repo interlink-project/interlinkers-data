@@ -77,8 +77,8 @@
             "title": "Overview Text",
             "type": "object"
         },
-        "reference": {
-            "title": "Reference",
+        "id": {
+            "title": "Id",
             "type": "string"
         },
         "form": {
@@ -182,7 +182,7 @@
         "tags_translations",
         "difficulty",
         "licence",
-        "reference",
+        "id",
         "instructions_translations",
         "supported_by",
         "supports_internationalization",

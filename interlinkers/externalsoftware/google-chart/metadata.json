@@ -38,7 +38,7 @@
     "en": "None"
   },
   "logotype": "./interlinkers/externalsoftware/google-chart/logo.png",
-  "reference": "graph-js-library",
+  "id": "graph-js-library",
   "uri_translations": {
     "en": "https://developers.google.com/chart"
   },

@@ -1,5 +1,5 @@
 {
-    "reference": "default",
+    "id": "default",
     "name_translations": {
         "en": "Default schema",
         "es": "Esquema por defecto"

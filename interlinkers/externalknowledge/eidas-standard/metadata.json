@@ -26,7 +26,7 @@
   "types": [
     "enabling_services"
   ],
-  "reference": "eidas-standard",
+  "id": "eidas-standard",
   "form": "guidelines",
   "administrative_scopes": [
     "eu",

@@ -54,7 +54,7 @@
         "en": ""
     },
     "logotype": "./interlinkers/externalsoftware/event-organizer/logo.png",
-    "reference": "event-organizer",
+    "id": "event-organizer",
     "tags_translations": {
         "en": [
             "project management",

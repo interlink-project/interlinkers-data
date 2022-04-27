@@ -79,7 +79,7 @@
         }
     },
     "logotype": "./interlinkers/software/augmenter/logo.png",
-    "reference": "augmenter",
+    "id": "augmenter",
     "tags_translations": {
         "en": [
             "decision making",

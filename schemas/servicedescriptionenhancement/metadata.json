@@ -1,5 +1,5 @@
 {
-    "reference": "default",
+    "id": "servicedescriptionenhancement",
     "name_translations": {
         "en": "Co-production schema to support co-refinement of public service descriptions",
         "es": "Esquema de coproducción para apoyar el perfeccionamiento de las descripciones de los servicios públicos"

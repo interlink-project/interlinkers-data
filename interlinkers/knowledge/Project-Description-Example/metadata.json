@@ -20,7 +20,7 @@
     ],
     "domain": "",
     "process": "",
-    "reference": "Project description example",
+    "id": "Project description example",
     "form": "document_template",
     "format": "editable_source_document",
     "softwareinterlinker": "googledrive",

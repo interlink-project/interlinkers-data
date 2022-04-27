@@ -16,7 +16,7 @@
         "national",
         "local"
     ],
-    "reference": "agid-minimum-security-measures-for-public-administration",
+    "id": "agid-minimum-security-measures-for-public-administration",
     "form": "guidelines",
     "format": "structured_format",
     "difficulty": "difficult",

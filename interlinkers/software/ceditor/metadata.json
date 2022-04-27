@@ -63,7 +63,7 @@
         }
     },
     "logotype": "./interlinkers/software/ceditor/logo.jpeg",
-    "reference": "collaborative-editor",
+    "id": "collaborative-editor",
     "tags_translations": {
         "en": [
             "document",

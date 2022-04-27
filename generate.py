@@ -3,6 +3,34 @@ from pathlib import Path
 import os
 from slugify import slugify
 
+weblate_interlinkers = {
+"en": {},
+"es": {},
+"it": {},
+"lv": {}
+}
+weblate_problemprofiles = {
+"en": {},
+"es": {},
+"it": {},
+"lv": {}
+}
+weblate_schemas = {
+"en": {},
+"es": {},
+"it": {},
+"lv": {}
+}
+
+def add_to_weblate(key: str, obj: dict, data: dict):
+    translatable_elements = ["name_translations", "description_translations", "tags_translations"]
+    for lang_code in data.get("languages", ["en", "es", "it", "lv"]):
+        for element in translatable_elements:
+            if element in data:
+                ref = data.get("id", "")
+                addon = element.replace("_translations", "")
+                obj[lang_code][key + "_" + ref + "_" + addon] = data[element].get(lang_code, "")
+
 dicts = {
     "problemprofiles": [],
     "schemas": [],
@@ -14,7 +42,10 @@ dicts = {
 }
 
 with open("problemprofiles.json") as json_file:
-    dicts["problemprofiles"] = json.load(json_file)
+    problemprofiles = json.load(json_file)
+    dicts["problemprofiles"] = problemprofiles
+    for pp in problemprofiles:
+        add_to_weblate("problemprofile", weblate_problemprofiles, pp)
 
 for schema_metadata_path in Path("./schemas").glob("**/metadata.json"):
     with open(str(schema_metadata_path)) as json_file:
@@ -24,26 +55,26 @@ for schema_metadata_path in Path("./schemas").glob("**/metadata.json"):
         phases = os.listdir(parent + "/phases")
 
         schema_metadata["phases"] = []
-        for phase in phases:
+        for phase_name in phases:
             
             last_phase = "" 
-            with open(parent + "/phases/" + phase) as phase_metadata:
-                print(parent + "/phases/" + phase)
-                phasejson = json.load(phase_metadata)
+            with open(parent + "/phases/" + phase_name) as phasefile:
+                print(parent + "/phases/" + phase_name)
+                phase = json.load(phasefile)
 
                 last_objective = "" 
-                for objs in phasejson["objectives"]:
+                for objective in phase["objectives"]:
                     
                     if last_objective:
-                        objs["prerequisites"] = [{
+                        objective["prerequisites"] = [{
                             "item": last_objective,
                             "status": "completed"
                         }]
-                    last_objective = "objective-" +slugify(objs["name_translations"]["en"])
-                    objs["reference"] = last_objective
-                
+                    last_objective = "objective-" +slugify(objective["name_translations"]["en"])
+                    objective["id"] = last_objective
+                    
                     last_task = "" 
-                    for task in objs["tasks"]:
+                    for task in objective["tasks"]:
                         
                         if last_task:
                             task["prerequisites"] = [{
@@ -51,33 +82,53 @@ for schema_metadata_path in Path("./schemas").glob("**/metadata.json"):
                                 "status": "completed"
                             }]
                         last_task = "task-" +slugify(task["name_translations"]["en"])
-                        task["reference"] = last_task
-                schema_metadata["phases"].append(phasejson)
+                        task["id"] = last_task
+                        add_to_weblate(schema_metadata["id"] +  "-"  + phase["id"] +  "-" + objective["id"], weblate_schemas, task)
+                    add_to_weblate(schema_metadata["id"] +  "-"  + phase["id"], weblate_schemas, objective)
+                schema_metadata["phases"].append(phase)
+                add_to_weblate(schema_metadata["id"], weblate_schemas, phase)
         dicts["schemas"].append(schema_metadata)
+        add_to_weblate("schema", weblate_schemas, schema_metadata)
 
 
 # search for schemas
 for interlinker_metadata_path in Path("./interlinkers/knowledge").glob("**/metadata.json"):
     with open(str(interlinker_metadata_path)) as json_file:
-        interlinker_metadata = json.load(json_file)                   
+        interlinker_metadata = json.load(json_file)
+        add_to_weblate("knowledgeinterlinker", weblate_interlinkers, interlinker_metadata)
         dicts["interlinkers"]["knowledge"].append(interlinker_metadata)
 
 for interlinker_metadata_path in Path("./interlinkers/software").glob("**/metadata.json"):
     with open(str(interlinker_metadata_path)) as json_file:
         interlinker_metadata = json.load(json_file)
+        add_to_weblate("softwareinterlinker", weblate_interlinkers, interlinker_metadata)
         dicts["interlinkers"]["software"].append(interlinker_metadata)
 
 for interlinker_metadata_path in Path("./interlinkers/externalsoftware").glob("**/metadata.json"):
     with open(str(interlinker_metadata_path)) as json_file:
         interlinker_metadata = json.load(json_file)
         interlinker_metadata["type"] = "software"
+        add_to_weblate("externalsoftware", weblate_interlinkers, interlinker_metadata)
         dicts["interlinkers"]["external"].append(interlinker_metadata)
 
 for interlinker_metadata_path in Path("./interlinkers/externalknowledge").glob("**/metadata.json"):
     with open(str(interlinker_metadata_path)) as json_file:
         interlinker_metadata = json.load(json_file)
         interlinker_metadata["type"] = "knowledge"
+        add_to_weblate("externalknowledge", weblate_interlinkers, interlinker_metadata)
         dicts["interlinkers"]["external"].append(interlinker_metadata)
 
 with open(f"all.json", "w") as f:
     json.dump(dicts, f, indent=4)
+
+for lang_key, data in weblate_interlinkers.items():
+    with open(f"./weblate/{lang_key}/interlinkers.json", "w") as f:
+        json.dump(data, f, indent=4)
+
+for lang_key, data in weblate_problemprofiles.items():
+    with open(f"./weblate/{lang_key}/problemprofiles.json", "w") as f:
+        json.dump(data, f, indent=4)
+    
+for lang_key, data in weblate_schemas.items():
+    with open(f"./weblate/{lang_key}/schemas.json", "w") as f:
+        json.dump(data, f, indent=4)

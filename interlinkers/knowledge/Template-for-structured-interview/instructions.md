@@ -16,4 +16,4 @@ The second section aims to better understand the interviewee’s profile, what i
 Specify or modify the suggested topics, start listing all the questions you would like to ask the user, divided into the various chapters relating to the topics to be discussed. When writing the questions, always remember to move from the general to the specific, according to a logical path, and to favor open-ended questions, which can be a starting point for conversing on the subject.
 
 ## 5.
-Once you have finished the protocol structure, use it to create the outline to follow when taking notes during each interview. It is not necessary to follow the list of questions in a timely manner, but it is advisable to keep an eye on the guide for reference and be sure not to forget any points.
+Once you have finished the protocol structure, use it to create the outline to follow when taking notes during each interview. It is not necessary to follow the list of questions in a timely manner, but it is advisable to keep an eye on the guide for id and be sure not to forget any points.

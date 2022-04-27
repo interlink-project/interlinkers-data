@@ -28,7 +28,7 @@
         "en": "none"
     },
     "logotype": "./interlinkers/externalsoftware/mailchimp/logo.png",
-    "reference": "email-marketing",
+    "id": "email-marketing",
     "uri_translations": {
         "en": "https://mailchimp.com/es/"
     },

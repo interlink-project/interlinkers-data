@@ -15,7 +15,7 @@
         "national",
         "local"
     ],
-    "reference": "w3c-web-content-accessibility-guidelines",
+    "id": "w3c-web-content-accessibility-guidelines",
     "form": "guidelines",
     "format": "structured_format",
     "difficulty": "medium",

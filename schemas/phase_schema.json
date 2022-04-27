@@ -10,8 +10,8 @@
             "title": "Description Translations",
             "type": "object"
         },
-        "reference": {
-            "title": "Reference",
+        "id": {
+            "title": "Id",
             "type": "string"
         },
         "prerequisites": {
@@ -32,7 +32,7 @@
     "required": [
         "name_translations",
         "description_translations",
-        "reference",
+        "id",
         "prerequisites",
         "objectives"
     ],

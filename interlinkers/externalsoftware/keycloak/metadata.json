@@ -28,7 +28,7 @@
     "regulations_and_standards_translations": {
       "en":"None"
     },
-    "reference" : "user-authentication-authorization",
+    "id" : "user-authentication-authorization",
     "logotype": "./interlinkers/externalsoftware/keycloak/logo.png",
     "uri_translations": {
       "en": "https://www.keycloak.org/"

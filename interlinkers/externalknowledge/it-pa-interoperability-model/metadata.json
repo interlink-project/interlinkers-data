@@ -16,7 +16,7 @@
         "national",
         "local"
     ],
-    "reference": "italian-pa-interoperablity-model",
+    "id": "italian-pa-interoperablity-model",
     "form": "guidelines",
     "format": "structured_format",
     "difficulty": "difficult",

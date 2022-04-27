@@ -78,7 +78,7 @@
         }
     },
     "logotype": "./interlinkers/software/loomio/logo.png",
-    "reference": "loomio",
+    "id": "loomio",
     "tags_translations": {
         "en": [
             "decision making",

@@ -16,7 +16,7 @@
         "national",
         "local"
     ],
-    "reference": "agid-cloud-computing-migration-strategy-evalution-template",
+    "id": "agid-cloud-computing-migration-strategy-evalution-template",
     "form": "guidelines",
     "format": "editable_source_document",
     "difficulty": "medium",

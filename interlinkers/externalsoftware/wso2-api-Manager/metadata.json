@@ -40,7 +40,7 @@
   "regulations_and_standards_translations": {
     "en": "Open API"
   },
-  "reference": "api-manager",
+  "id": "api-manager",
   "logotype": "./interlinkers/externalsoftware/wso2-api-Manager/logo.jpeg",
   "uri_translations": {
     "en": "https://wso2.com/api-manager/"

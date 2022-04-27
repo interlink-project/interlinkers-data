@@ -1,5 +1,5 @@
 {
-    "reference": "phase-design",
+    "id": "phase-design",
     "prerequisites": [
         {
             "item": "phase-engage",

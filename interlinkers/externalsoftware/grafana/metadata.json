@@ -35,7 +35,7 @@
     "en": "None"
   },
   "logotype": "./interlinkers/externalsoftware/grafana/logo.png",
-  "reference": "dashboard",
+  "id": "dashboard",
   "uri_translations": {
     "en": "https://grafana.com/"
   },

@@ -10,8 +10,8 @@
             "title": "Description Translations",
             "type": "object"
         },
-        "reference": {
-            "title": "Reference",
+        "id": {
+            "title": "Id",
             "type": "string"
         },
         "tags_translations": {
@@ -36,7 +36,7 @@
     "required": [
         "name_translations",
         "description_translations",
-        "reference",
+        "id",
         "tags_translations",
         "author",
         "licence"

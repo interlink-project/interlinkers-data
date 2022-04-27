@@ -17,7 +17,7 @@
     ],
     "domain": "",
     "process": "",
-    "reference": "Demographic and activity satisfaction questionnaire",
+    "id": "Demographic and activity satisfaction questionnaire",
     "form": "survey_template",
     "format": "pdf",
     "softwareinterlinker": "googledrive",

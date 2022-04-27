@@ -39,7 +39,7 @@
   "regulations_and_standards_translations": {
     "en": "None"
   },
-  "reference": "html-tools",
+  "id": "html-tools",
   "uri_translations": {
     "en": "https://validator.w3.org/about.html"
   },

@@ -46,7 +46,7 @@
         "en": "https://scc-digitalhub.github.io/AAC"
     },
     "logotype": "./interlinkers/externalsoftware/aac/logo.png",
-    "reference": "aac",
+    "id": "aac",
     "tags_translations": {
         "en": [
             "authentication",

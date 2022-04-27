@@ -1,5 +1,5 @@
 {
-    "reference": "phase-engage",
+    "id": "phase-engage",
     "prerequisites": [
     ],
     "name_translations": {
@@ -227,7 +227,7 @@
                         "es": ""
                     },
                     "description_translations": {
-                        "en": "Consider which are users' and suppliers' preferences concerning data.\r\nReflect on aspects of ownership, minimalization, responsibility, sharing, archiving, anonymity.",
+                        "en": "Consider which are users' and suppliers' pids concerning data.\r\nReflect on aspects of ownership, minimalization, responsibility, sharing, archiving, anonymity.",
                         "es": ""
                     },
                     "problemprofiles": []

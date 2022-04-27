@@ -40,7 +40,7 @@
         "en": "None"
     },
     "logotype": "./interlinkers/externalsoftware/trello/logo.png",
-    "reference": "project-management",
+    "id": "project-management",
     "uri_translations": {
         "en": "https://trello.com/es"
     },

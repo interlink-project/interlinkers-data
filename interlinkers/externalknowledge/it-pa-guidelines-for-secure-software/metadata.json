@@ -16,7 +16,7 @@
         "national",
         "local"
     ],
-    "reference": "agid-guidelines-for-the-development-of-secure-software-in-italian",
+    "id": "agid-guidelines-for-the-development-of-secure-software-in-italian",
     "form": "guidelines",
     "format": "structured_format",
     "difficulty": "difficult",

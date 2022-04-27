@@ -122,7 +122,7 @@ class InterlinkerSchema(WithProblemProfiles, extra=Extra.forbid):
     #
     # Possible values:
     # In the initial specification of INTERLINKERS this field will be defined as textual, to allow for more freedom in the description.
-    # To be further evaluated which types of standard classifications will be used as reference for a more constrained filling of this field.
+    # To be further evaluated which types of standard classifications will be used as id for a more constrained filling of this field.
 
     tags_translations: Dict[str,  conlist(str, min_items=1)]
     # FOR 1
@@ -173,7 +173,7 @@ class InterlinkerSchema(WithProblemProfiles, extra=Extra.forbid):
     overview_text: Optional[dict]
     # FOR 2
     # Explanation of what is made available for user interaction.
-    reference: str
+    id: str
 
 
     form: Optional[FormTypes]

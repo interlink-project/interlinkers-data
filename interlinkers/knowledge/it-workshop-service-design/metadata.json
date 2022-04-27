@@ -16,7 +16,7 @@
     "administrative_scopes": [
         "eu"
     ],
-    "reference": "guidelines-for-co-design-service",
+    "id": "guidelines-for-co-design-service",
     "form": "guidelines",
     "format": "structured_format",
     "softwareinterlinker": "googledrive",

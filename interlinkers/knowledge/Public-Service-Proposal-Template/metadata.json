@@ -16,7 +16,7 @@
     ],
     "domain": "",
     "process": "",
-    "reference": "public-service-proposal-template-for-interlink-project",
+    "id": "public-service-proposal-template-for-interlink-project",
     "form": "document_template",
     "format": "editable_source_document",
     "softwareinterlinker": "googledrive",

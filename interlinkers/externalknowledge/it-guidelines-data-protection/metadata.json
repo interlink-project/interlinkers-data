@@ -17,7 +17,7 @@
         "national",
         "local"
     ],
-    "reference": "edpb-data-protection-guidelines",
+    "id": "edpb-data-protection-guidelines",
     "form": "guidelines",
     "format": "pdf",
     "difficulty": "difficult",

@@ -1,5 +1,5 @@
 {
-    "reference": "phase-refine",
+    "id": "phase-refine",
     "prerequisites": [
         {
             "item": "phase-run",
@@ -28,7 +28,7 @@
             "tasks": [
                 {
                     "name_translations": {
-                        "en": "Create external reference to source Service Description to augment",
+                        "en": "Create external id to source Service Description to augment",
                         "es": ""
                     },
                     "description_translations": {

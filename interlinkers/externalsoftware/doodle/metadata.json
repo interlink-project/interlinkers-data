@@ -24,7 +24,7 @@
   "regulations_and_standards_translations": {
     "en": "none"
   },
-  "reference": "calendar-tool",
+  "id": "calendar-tool",
   "logotype": "./interlinkers/externalsoftware/doodle/logo.png",
   "uri_translations": {
     "en": "https://doodle.com/es/"

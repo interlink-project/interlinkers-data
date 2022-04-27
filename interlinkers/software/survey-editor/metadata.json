@@ -68,7 +68,7 @@
         }
     },
     "logotype": "./interlinkers/software/survey-editor/logo.jpeg",
-    "reference": "survey-editor",
+    "id": "survey-editor",
     "tags_translations": {
         "en": [
             "survey",
