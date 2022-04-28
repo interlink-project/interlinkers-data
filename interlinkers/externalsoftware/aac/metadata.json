@@ -18,8 +18,8 @@
         "en": "./interlinkers/externalsoftware/aac/instructions.md"
     },
     "languages": [
-        "en",
-        "es"
+        "es",
+        "en"
     ],
     "licence": "permissive",
     "logotype": "./interlinkers/externalsoftware/aac/logo.png",

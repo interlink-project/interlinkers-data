@@ -18,8 +18,8 @@
         "en": "./interlinkers/externalsoftware/event-codesigner/instructions.md"
     },
     "languages": [
-        "en",
-        "es"
+        "es",
+        "en"
     ],
     "licence": "public_domain",
     "logotype": "./interlinkers/externalsoftware/event-codesigner/logo.png",
