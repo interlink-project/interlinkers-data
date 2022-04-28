@@ -1,6 +1,8 @@
 from enum import Enum
 from typing import Dict, List, Optional, Union
 
+from slugify import slugify
+
 from problemprofiles.problemprofiles import WithProblemProfiles
 from pydantic import BaseModel, Extra, FilePath, HttpUrl, conlist, validator
 
@@ -90,7 +92,6 @@ class AdministrativeScopes(Enum):
 
 
 class InterlinkerSchema(WithProblemProfiles, extra=Extra.forbid):
-    languages: list
     name_translations: dict
     # FOR 1
     # A name for the INTERLINKER.
@@ -173,8 +174,6 @@ class InterlinkerSchema(WithProblemProfiles, extra=Extra.forbid):
     overview_text: Optional[dict]
     # FOR 2
     # Explanation of what is made available for user interaction.
-    id: str
-
 
     form: Optional[FormTypes]
     # FOR 1
@@ -189,3 +188,8 @@ class InterlinkerSchema(WithProblemProfiles, extra=Extra.forbid):
     # - Shown on the platform interface in the page showing the details of the INTERLINKER
     
     instructions_translations:  Dict[str,  Union[HttpUrl, FilePath]]
+
+    # AUTOMATICALLY GENERATED
+    id: Optional[str]
+    type: Optional[str]
+    languages: Optional[list]

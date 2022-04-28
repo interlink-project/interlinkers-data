@@ -1,28 +1,36 @@
 {
-    "languages": [
-        "en"
-    ],
-    "targets": [
-        "all"
-    ],
-    "problemprofiles": [
-        "BUILD_PROBLEM_3"
-    ],
-    "types": [
-        "enabling_services",
-        "enabling_services;implementing_software_and_artifacts"
-    ],
     "administrative_scopes": [
         "national",
         "local"
     ],
-    "id": "italian-pa-interoperablity-model",
+    "asset_name_translations": {
+        "en": "Guidelines for technical interoperability for PA and related operational documents"
+    },
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "description_translations": {
+        "en": "<p>This resource describes the guidelines for technical interoperability for PA and related operational documents: interaction patterns, interoperability profiles, implementation recommendations (in Italian). </p>"
+    },
+    "difficulty": "difficult",
     "form": "guidelines",
     "format": "structured_format",
-    "difficulty": "difficult",
-    "licence": "permissive",
+    "id": "italian-pa-interoperablity-model",
     "instructions_translations": {
         "en": "./interlinkers/externalknowledge/it-guidelines-data-protection/instructions.md"
+    },
+    "languages": [
+        "en"
+    ],
+    "licence": "permissive",
+    "name_translations": {
+        "en": "Italian PA interoperablity model "
+    },
+    "problemprofiles": [
+        "BUILD_PROBLEM_3"
+    ],
+    "regulations_and_standards_translations": {
+        "en": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en"
     },
     "tags_translations": {
         "en": [
@@ -34,21 +42,14 @@
             "acquisition"
         ]
     },
-    "name_translations": {
-        "en": "Italian PA interoperablity model "
-    },
-    "description_translations": {
-        "en": "<p>This resource describes the guidelines for technical interoperability for PA and related operational documents: interaction patterns, interoperability profiles, implementation recommendations (in Italian). </p>"
-    },
-    "constraints_and_limitations_translations": {
-        "en": "No special constraints apply"
-    },
-    "regulations_and_standards_translations": {
-        "en": "EU Open Source Software Strategy: https://ec.europa.eu/info/departments/informatics/open-source-software-strategy_en"
-    },
-    "asset_name_translations": {
-        "en": "Guidelines for technical interoperability for PA and related operational documents"
-    },
+    "targets": [
+        "all"
+    ],
+    "type": "knowledge",
+    "types": [
+        "enabling_services",
+        "enabling_services;implementing_software_and_artifacts"
+    ],
     "uri_translations": {
         "en": "https://www.agid.gov.it/it/infrastrutture/sistema-pubblico-connettivita/il-nuovo-modello-interoperabilita"
     }

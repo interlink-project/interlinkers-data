@@ -1,49 +1,50 @@
 {
-    "languages": [
-        "en"
-    ],
-    "targets": [
-        "all"
-    ],
-    "problemprofiles": [
-        "VAL_PROBLEM_2"
-    ],
-    "types": [
-        "enhancing_services"
-    ],
     "administrative_scopes": [
         "national",
         "local"
     ],
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "description_translations": {
+        "en": "<p>This resource provides a model for persona outlined by AGID and Team Digitale (in Italian).</p>"
+    },
+    "difficulty": "easy",
     "domain": "",
-    "process": "",
-    "id": "model-for-personas-in-italian",
+    "file_translations": {
+        "en": "./interlinkers/knowledge/it-agid-personas/resource.pptx"
+    },
     "form": "document_template",
     "format": "editable_source_document",
-    "softwareinterlinker": "googledrive",
-    "difficulty": "easy",
-    "licence": "public_domain",
+    "id": "model-for-personas-in-italian",
     "instructions_translations": {
         "en": "./interlinkers/knowledge/it-agid-personas/instructions.md"
     },
+    "languages": [
+        "en"
+    ],
+    "licence": "public_domain",
+    "name_translations": {
+        "en": "Model for Personas (in italian)"
+    },
+    "problemprofiles": [
+        "VAL_PROBLEM_2"
+    ],
+    "process": "",
+    "regulations_and_standards_translations": {
+        "en": ""
+    },
+    "softwareinterlinker": "googledrive",
     "tags_translations": {
         "en": [
             "services"
         ]
     },
-    "name_translations": {
-        "en": "Model for Personas (in italian)"
-    },
-    "description_translations": {
-        "en": "<p>This resource provides a model for persona outlined by AGID and Team Digitale (in Italian).</p>"
-    },
-    "constraints_and_limitations_translations": {
-        "en": "No special constraints apply"
-    },
-    "regulations_and_standards_translations": {
-        "en": ""
-    },
-    "file_translations": {
-        "en": "./interlinkers/knowledge/it-agid-personas/resource.pptx"
-    }
+    "targets": [
+        "all"
+    ],
+    "type": "knowledge",
+    "types": [
+        "enhancing_services"
+    ]
 }

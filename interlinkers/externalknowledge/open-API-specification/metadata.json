@@ -1,53 +1,54 @@
 {
-  "languages": [
-    "en"
-  ],
-  "name_translations": {
-    "en": "Open API specification"
-  },
-  "description_translations": {
-    "en": "<p>A RFC document which specifyes the open API.</p>"
-  },
-  "tags_translations": {
-    "en": [
-      "OPEN API",
-      "SERVICE"
-    ]
-  },
-  "difficulty": "medium",
-  "targets": [
-    "all;pas",
-    "all;businesses",
-    "all;research_organizations"
-  ],
-  "licence": "public_domain",
-  "problemprofiles": [
-    "BUILD_PROBLEM_2"
-  ],
-  "types": [
-    "enabling_services"
-  ],
-  "administrative_scopes": [
-    "eu",
-    "national",
-    "local"
-  ],
-  "constraints_and_limitations_translations": {
-    "en": "No special constraints apply"
-  },
-  "regulations_and_standards_translations": {
-    "en": ""
-  },
-  "id": "",
-  "form": "guidelines",
-  "instructions_translations": {
-    "en": "./interlinkers/externalknowledge/it-pa-minimum-security-measures/instructions.md"
-  },
-  "format": "structured_format",
-  "asset_name_translations": {
-    "en": "Open API specification"
-  },
-  "uri_translations": {
-    "en": "https://spec.openapis.org/oas/latest.html"
-  }
+    "administrative_scopes": [
+        "eu",
+        "national",
+        "local"
+    ],
+    "asset_name_translations": {
+        "en": "Open API specification"
+    },
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "description_translations": {
+        "en": "<p>A RFC document which specifyes the open API.</p>"
+    },
+    "difficulty": "medium",
+    "form": "guidelines",
+    "format": "structured_format",
+    "id": "open-api-specification",
+    "instructions_translations": {
+        "en": "./interlinkers/externalknowledge/it-pa-minimum-security-measures/instructions.md"
+    },
+    "languages": [
+        "en"
+    ],
+    "licence": "public_domain",
+    "name_translations": {
+        "en": "Open API specification"
+    },
+    "problemprofiles": [
+        "BUILD_PROBLEM_2"
+    ],
+    "regulations_and_standards_translations": {
+        "en": ""
+    },
+    "tags_translations": {
+        "en": [
+            "OPEN API",
+            "SERVICE"
+        ]
+    },
+    "targets": [
+        "all;pas",
+        "all;businesses",
+        "all;research_organizations"
+    ],
+    "type": "knowledge",
+    "types": [
+        "enabling_services"
+    ],
+    "uri_translations": {
+        "en": "https://spec.openapis.org/oas/latest.html"
+    }
 }

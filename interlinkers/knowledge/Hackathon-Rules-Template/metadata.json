@@ -1,30 +1,39 @@
 {
-    "languages": [
-        "en"
-    ],
-    "targets": [
-        "all"
-    ],
-    "problemprofiles": [
-        "HACKATHON_PROBLEM_2"
-    ],
-    "types": [
-        "enhancing_services"
-    ],
     "administrative_scopes": [
         "eu"
     ],
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "description_translations": {
+        "en": "<p>Document with template for co-design of Hackathon Rules</p>"
+    },
+    "difficulty": "very_easy",
     "domain": "",
-    "process": "",
-    "id": "hackathon-rules-template-for-interlink-project",
+    "file_translations": {
+        "en": "./interlinkers/knowledge/Hackathon-Rules-Template/resource.docx"
+    },
     "form": "document_template",
     "format": "editable_source_document",
-    "softwareinterlinker": "googledrive",
-    "difficulty": "very_easy",
-    "licence": "public_domain",
+    "id": "hackathon-rules-template-for-interlink-project",
     "instructions_translations": {
         "en": "./interlinkers/knowledge/Hackathon-Rules-Template/instructions.md"
     },
+    "languages": [
+        "en"
+    ],
+    "licence": "public_domain",
+    "name_translations": {
+        "en": "Hackathon Rules Template for INTERLINK project"
+    },
+    "problemprofiles": [
+        "HACKATHON_PROBLEM_2"
+    ],
+    "process": "",
+    "regulations_and_standards_translations": {
+        "en": "Hackathon Rules Template is compliant to GDPR norms."
+    },
+    "softwareinterlinker": "googledrive",
     "tags_translations": {
         "en": [
             "hackathon",
@@ -33,19 +42,11 @@
             "INTERLINK"
         ]
     },
-    "name_translations": {
-        "en": "Hackathon Rules Template for INTERLINK project"
-    },
-    "description_translations": {
-        "en": "<p>Document with template for co-design of Hackathon Rules</p>"
-    },
-    "constraints_and_limitations_translations": {
-        "en": "No special constraints apply"
-    },
-    "regulations_and_standards_translations": {
-        "en": "Hackathon Rules Template is compliant to GDPR norms."
-    },
-    "file_translations": {
-        "en": "./interlinkers/knowledge/Hackathon-Rules-Template/resource.docx"
-    }
+    "targets": [
+        "all"
+    ],
+    "type": "knowledge",
+    "types": [
+        "enhancing_services"
+    ]
 }

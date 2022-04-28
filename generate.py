@@ -38,11 +38,15 @@ dicts = {
     }
 }
 
+### PROBLEMPROFILES
+
 with open("./problemprofiles/problemprofiles.json") as json_file:
     problemprofiles = json.load(json_file)
     dicts["problemprofiles"] = problemprofiles
     for pp in problemprofiles:
         add_to_weblate("problemprofile", weblate_problemprofiles, pp)
+
+### SCHEMAS
 
 for schema_metadata_path in Path("./schemas").glob("**/metadata.json"):
     with open(str(schema_metadata_path)) as json_file:
@@ -56,7 +60,6 @@ for schema_metadata_path in Path("./schemas").glob("**/metadata.json"):
             
             last_phase = "" 
             with open(parent + "/phases/" + phase_name) as phasefile:
-                print(parent + "/phases/" + phase_name)
                 phase = json.load(phasefile)
 
                 last_objective = "" 
@@ -88,45 +91,49 @@ for schema_metadata_path in Path("./schemas").glob("**/metadata.json"):
         add_to_weblate("schema", weblate_schemas, schema_metadata)
 
 
+### INTERLINKERS
 
 ids = []
 for interlinker_metadata_path in Path("./interlinkers").glob("**/metadata.json"):
-    # set ids of interlinkers are slugified and lowered
     with open(str(interlinker_metadata_path)) as json_file:
         interlinker_metadata = json.load(json_file)
         id = slugify(interlinker_metadata["name_translations"]["en"]).lower()
         while id in ids:
             id += "-2"
         interlinker_metadata["id"] = id
-       
-for interlinker_metadata_path in Path("./interlinkers/knowledge").glob("**/metadata.json"):
-    with open(str(interlinker_metadata_path)) as json_file:
-        interlinker_metadata = json.load(json_file)
-        add_to_weblate("knowledgeinterlinker", weblate_interlinkers, interlinker_metadata)
-        dicts["interlinkers"]["knowledge"].append(interlinker_metadata)
+        interlinker_metadata["languages"] = list(set(interlinker_metadata["name_translations"].keys()) & set(interlinker_metadata["description_translations"].keys()))
+        parent_folder = interlinker_metadata_path.parent.parent.name
 
-for interlinker_metadata_path in Path("./interlinkers/software").glob("**/metadata.json"):
-    with open(str(interlinker_metadata_path)) as json_file:
-        interlinker_metadata = json.load(json_file)
-        add_to_weblate("softwareinterlinker", weblate_interlinkers, interlinker_metadata)
-        dicts["interlinkers"]["software"].append(interlinker_metadata)
+        if parent_folder == "knowledge":
+            add_to_weblate("knowledgeinterlinker", weblate_interlinkers, interlinker_metadata)
+            interlinker_metadata["type"] = "knowledge"
+            dicts["interlinkers"]["knowledge"].append(interlinker_metadata)
+        
+        elif parent_folder == "software":
+            add_to_weblate("softwareinterlinker", weblate_interlinkers, interlinker_metadata)
+            interlinker_metadata["type"] = "software"
+            dicts["interlinkers"]["software"].append(interlinker_metadata)
+        
+        elif parent_folder == "externalsoftware":
+            interlinker_metadata["type"] = "software"
+            add_to_weblate("externalsoftware", weblate_interlinkers, interlinker_metadata)
+            dicts["interlinkers"]["external"].append(interlinker_metadata)
+        
+        elif parent_folder == "externalknowledge":
+            interlinker_metadata["type"] = "knowledge"
+            add_to_weblate("externalknowledge", weblate_interlinkers, interlinker_metadata)
+            dicts["interlinkers"]["external"].append(interlinker_metadata)
+    
+    with open(str(interlinker_metadata_path), "w") as json_file:
+        json.dump(interlinker_metadata, json_file, indent=4, sort_keys=True)
 
-for interlinker_metadata_path in Path("./interlinkers/externalsoftware").glob("**/metadata.json"):
-    with open(str(interlinker_metadata_path)) as json_file:
-        interlinker_metadata = json.load(json_file)
-        interlinker_metadata["type"] = "software"
-        add_to_weblate("externalsoftware", weblate_interlinkers, interlinker_metadata)
-        dicts["interlinkers"]["external"].append(interlinker_metadata)
 
-for interlinker_metadata_path in Path("./interlinkers/externalknowledge").glob("**/metadata.json"):
-    with open(str(interlinker_metadata_path)) as json_file:
-        interlinker_metadata = json.load(json_file)
-        interlinker_metadata["type"] = "knowledge"
-        add_to_weblate("externalknowledge", weblate_interlinkers, interlinker_metadata)
-        dicts["interlinkers"]["external"].append(interlinker_metadata)
+### DUMP ALL.JSON
 
 with open(f"all.json", "w") as f:
     json.dump(dicts, f, indent=4, sort_keys=True)
+
+### DUMP WEBLATE JSONS
 
 def export(obj, file):
     for lang_key, data in obj.items():

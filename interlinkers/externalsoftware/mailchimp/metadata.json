@@ -1,13 +1,31 @@
 {
-    "languages": [
-        "en",
-        "es"
-    ],
-    "name_translations": {
+    "asset_name_translations": {
         "en": "Mailchimp"
+    },
+    "constraints_and_limitations_translations": {
+        "en": "none"
     },
     "description_translations": {
         "en": "<p>Marketing automation platform and email marketing service[6] for managing mailing lists and creating email marketing campaigns to send to customers.</p>"
+    },
+    "difficulty": "easy",
+    "id": "mailchimp",
+    "instructions_translations": {
+        "en": "./interlinkers/externalsoftware/mailchimp/instructions.md"
+    },
+    "languages": [
+        "en"
+    ],
+    "licence": "propietary",
+    "logotype": "./interlinkers/externalsoftware/mailchimp/logo.png",
+    "name_translations": {
+        "en": "Mailchimp"
+    },
+    "problemprofiles": [
+        "ORG_PROBLEM_4"
+    ],
+    "regulations_and_standards_translations": {
+        "en": "none"
     },
     "tags_translations": {
         "en": [
@@ -16,26 +34,8 @@
             "email"
         ]
     },
-    "difficulty": "easy",
-    "licence": "propietary",
-    "problemprofiles": [
-        "ORG_PROBLEM_4"
-    ],
-    "constraints_and_limitations_translations": {
-        "en": "none"
-    },
-    "regulations_and_standards_translations": {
-        "en": "none"
-    },
-    "logotype": "./interlinkers/externalsoftware/mailchimp/logo.png",
-    "id": "email-marketing",
+    "type": "software",
     "uri_translations": {
         "en": "https://mailchimp.com/es/"
-    },
-    "instructions_translations": {
-        "en": "./interlinkers/externalsoftware/mailchimp/instructions.md"
-    },
-    "asset_name_translations": {
-        "en": "Mailchimp"
     }
 }

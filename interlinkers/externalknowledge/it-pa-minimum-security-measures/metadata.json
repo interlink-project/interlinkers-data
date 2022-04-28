@@ -1,49 +1,50 @@
 {
-    "languages": [
-        "en"
-    ],
-    "targets": [
-        "all"
-    ],
-    "problemprofiles": [
-        "BUILD_PROBLEM_3"
-    ],
-    "types": [
-        "enabling_services",
-        "enabling_services;implementing_software_and_artifacts"
-    ],
     "administrative_scopes": [
         "national",
         "local"
     ],
-    "id": "agid-minimum-security-measures-for-public-administration",
+    "asset_name_translations": {
+        "en": "AgID Minimum Security Measures for Public Administration"
+    },
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "description_translations": {
+        "en": "<p>This resource describes the minimum ICT security measures issued by AgID aim at countering the most frequent cyber threats to the Italian public administration.</p>"
+    },
+    "difficulty": "difficult",
     "form": "guidelines",
     "format": "structured_format",
-    "difficulty": "difficult",
-    "licence": "permissive",
+    "id": "agid-minimum-security-measures-for-public-administration",
     "instructions_translations": {
         "en": "./interlinkers/externalknowledge/it-pa-minimum-security-measures/instructions.md"
+    },
+    "languages": [
+        "en"
+    ],
+    "licence": "permissive",
+    "name_translations": {
+        "en": "AgID Minimum Security Measures for Public Administration. "
+    },
+    "problemprofiles": [
+        "BUILD_PROBLEM_3"
+    ],
+    "regulations_and_standards_translations": {
+        "en": ""
     },
     "tags_translations": {
         "en": [
             "security"
         ]
     },
-    "name_translations": {
-        "en": "AgID Minimum Security Measures for Public Administration. "
-    },
-    "description_translations": {
-        "en": "<p>This resource describes the minimum ICT security measures issued by AgID aim at countering the most frequent cyber threats to the Italian public administration.</p>"
-    },
-    "constraints_and_limitations_translations": {
-        "en": "No special constraints apply"
-    },
-    "regulations_and_standards_translations": {
-        "en": ""
-    },
-    "asset_name_translations": {
-        "en": "AgID Minimum Security Measures for Public Administration"
-    },
+    "targets": [
+        "all"
+    ],
+    "type": "knowledge",
+    "types": [
+        "enabling_services",
+        "enabling_services;implementing_software_and_artifacts"
+    ],
     "uri_translations": {
         "en": "https://www.agid.gov.it/en/security/Minimum-ICT-security-measures-for-public-administrations"
     }

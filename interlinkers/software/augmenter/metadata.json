@@ -1,29 +1,4 @@
 {
-    "languages": [
-        "en"
-    ],
-    "name_translations": {
-        "en": "Augmenter",
-        "es": "Augmenter"
-    },
-    "description_translations": {
-        "en": "<p>Augmenter is an Open Source application that offers the possibility of create and improve public services descriptions, in the workspace users can share opinions, questions and feedbacks, finally a assigned moderator will decide approve or not a suggestion. With Augmenter it is possible to</p><ul><li>create and improve public service descriptions, organize discussions and keep record of participation and involvement;</li><li>manage moderator decisions over the improvements;</li><li>Generate a final improvement report. </li></ul>",
-        "es": "<p>Augmenter es una aplicación Open Source que ofrece la posibilidad de crear y mejorar descripciones de servicios públicos, en el espacio de trabajo los usuarios pueden compartir opiniones, preguntas y comentarios, finalmente un moderador asignado decidirá aprobar o no una sugerencia. Con Augmenter es posible</p><ul><li>Crear y mejorar descripciones de servicios públicos, organizar dicusiones y mantener un registro de participación e implicación;</li><li>administrar las decisiones del moderador sobre las mejoras;</li ><li>Generar un informe final de mejora.</li></ul>"
-    },
-    "difficulty": "easy",
-    "targets": [
-        "all"
-    ],
-    "licence": "copyleft",
-    "problemprofiles": [
-        "UND_PROBLEM_1",
-        "UND_PROBLEM_5",
-        "DEF_PROBLEM_2",
-        "BUILD_PROBLEM_9"
-    ],
-    "types": [
-        "enabling_services;operation_services"
-    ],
     "administrative_scopes": [
         "eu",
         "national",
@@ -33,53 +8,76 @@
         "en": "None",
         "es": ""
     },
-    "regulations_and_standards_translations": {
-        "en": "None",
-        "es": "None"
+    "description_translations": {
+        "en": "<p>Augmenter is an Open Source application that offers the possibility of create and improve public services descriptions, in the workspace users can share opinions, questions and feedbacks, finally a assigned moderator will decide approve or not a suggestion. With Augmenter it is possible to</p><ul><li>create and improve public service descriptions, organize discussions and keep record of participation and involvement;</li><li>manage moderator decisions over the improvements;</li><li>Generate a final improvement report. </li></ul>",
+        "es": "<p>Augmenter es una aplicaci\u00f3n Open Source que ofrece la posibilidad de crear y mejorar descripciones de servicios p\u00fablicos, en el espacio de trabajo los usuarios pueden compartir opiniones, preguntas y comentarios, finalmente un moderador asignado decidir\u00e1 aprobar o no una sugerencia. Con Augmenter es posible</p><ul><li>Crear y mejorar descripciones de servicios p\u00fablicos, organizar dicusiones y mantener un registro de participaci\u00f3n e implicaci\u00f3n;</li><li>administrar las decisiones del moderador sobre las mejoras;</li ><li>Generar un informe final de mejora.</li></ul>"
+    },
+    "difficulty": "easy",
+    "id": "augmenter",
+    "instructions_translations": {
+        "en": "./interlinkers/software/augmenter/instructions.md"
+    },
+    "integration": {
+        "api_path": "/assets",
+        "auth_method": "header",
+        "capabilities": {
+            "clone": false,
+            "delete": true,
+            "edit": true,
+            "instantiate": true,
+            "open_in_modal": false,
+            "preview": false,
+            "shortcut": true,
+            "view": true
+        },
+        "capabilities_translations": {
+            "delete_text_translations": {
+                "en": "Delete una description of Augmenter",
+                "es": "Eliminar una descripci\u00f3n del Augmenter"
+            },
+            "instantiate_text_translations": {
+                "en": "Create a new description in Augmenter",
+                "es": "Crear una nueva descripci\u00f3n en Augmenter"
+            },
+            "view_text_translations": {
+                "en": "Open a description web site to annotate.",
+                "es": "Abrir una p\u00e1gina con descripciones para anotar"
+            }
+        },
+        "domain": "",
+        "is_subdomain": true,
+        "path": "servicepedia",
+        "service_name": "servicepedia"
+    },
+    "is_responsive": true,
+    "languages": [
+        "en",
+        "es"
+    ],
+    "licence": "copyleft",
+    "logotype": "./interlinkers/software/augmenter/logo.png",
+    "name_translations": {
+        "en": "Augmenter",
+        "es": "Augmenter"
     },
     "overview_text": {
         "en": "Web-based tool for improving public service descriptions",
-        "es": "Herramienta basada en la web para mejorar descripciones de servicios públicos"
+        "es": "Herramienta basada en la web para mejorar descripciones de servicios p\u00fablicos"
+    },
+    "problemprofiles": [
+        "UND_PROBLEM_1",
+        "UND_PROBLEM_5",
+        "DEF_PROBLEM_2",
+        "BUILD_PROBLEM_9"
+    ],
+    "regulations_and_standards_translations": {
+        "en": "None",
+        "es": "None"
     },
     "supported_by": [
         "on_premise"
     ],
     "supports_internationalization": true,
-    "is_responsive": true,
-    "integration": {
-        "domain": "",
-        "path": "servicepedia",
-        "service_name": "servicepedia",
-        "is_subdomain": true,
-        "api_path": "/assets",
-        "auth_method": "header",
-        "capabilities": {
-            "instantiate": true,
-            "clone": false,
-            "view": true,
-            "edit": true,
-            "delete": true,
-            "preview": false,
-            "open_in_modal": false,
-            "shortcut": true
-        },
-        "capabilities_translations": {
-            "instantiate_text_translations": {
-                "en": "Create a new description in Augmenter",
-                "es": "Crear una nueva descripción en Augmenter"
-            },
-            "view_text_translations": {
-                "en": "Open a description web site to annotate.",
-                "es": "Abrir una página con descripciones para anotar"
-            },
-            "delete_text_translations": {
-                "en": "Delete una description of Augmenter",
-                "es": "Eliminar una descripción del Augmenter"
-            }
-        }
-    },
-    "logotype": "./interlinkers/software/augmenter/logo.png",
-    "id": "augmenter",
     "tags_translations": {
         "en": [
             "decision making",
@@ -88,7 +86,11 @@
             "public service descriptions"
         ]
     },
-    "instructions_translations": {
-        "en": "./interlinkers/software/augmenter/instructions.md"
-    }
+    "targets": [
+        "all"
+    ],
+    "type": "software",
+    "types": [
+        "enabling_services;operation_services"
+    ]
 }

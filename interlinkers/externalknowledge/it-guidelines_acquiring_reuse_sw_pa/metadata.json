@@ -1,28 +1,36 @@
 {
-    "languages": [
-        "en"
-    ],
-    "targets": [
-        "all"
-    ],
-    "problemprofiles": [
-        "BUILD_PROBLEM_3"
-    ],
-    "types": [
-        "enabling_services",
-        "enabling_services;implementing_software_and_artifacts"
-    ],
     "administrative_scopes": [
         "national",
         "local"
     ],
-    "id": "guidelines-on-the-acquisition-and-reuse-of-software-for-public-administrations",
+    "asset_name_translations": {
+        "en": "Guidelines on the acquisition and reuse of software for public administrations"
+    },
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "description_translations": {
+        "en": "<p>This resource aims at explaining how to acquire and reuse software in PA context.</p>"
+    },
+    "difficulty": "difficult",
     "form": "guidelines",
     "format": "structured_format",
-    "difficulty": "difficult",
-    "licence": "permissive",
+    "id": "guidelines-on-the-acquisition-and-reuse-of-software-for-public-administrations",
     "instructions_translations": {
         "en": "./interlinkers/externalknowledge/it-guidelines_acquiring_reuse_sw_pa/instructions.md"
+    },
+    "languages": [
+        "en"
+    ],
+    "licence": "permissive",
+    "name_translations": {
+        "en": "Guidelines on the acquisition and reuse of software for public administrations"
+    },
+    "problemprofiles": [
+        "BUILD_PROBLEM_3"
+    ],
+    "regulations_and_standards_translations": {
+        "en": ""
     },
     "tags_translations": {
         "en": [
@@ -32,21 +40,14 @@
             "acquisition"
         ]
     },
-    "name_translations": {
-        "en": "Guidelines on the acquisition and reuse of software for public administrations"
-    },
-    "description_translations": {
-        "en": "<p>This resource aims at explaining how to acquire and reuse software in PA context.</p>"
-    },
-    "constraints_and_limitations_translations": {
-        "en": "No special constraints apply"
-    },
-    "regulations_and_standards_translations": {
-        "en": ""
-    },
-    "asset_name_translations": {
-        "en": "Guidelines on the acquisition and reuse of software for public administrations"
-    },
+    "targets": [
+        "all"
+    ],
+    "type": "knowledge",
+    "types": [
+        "enabling_services",
+        "enabling_services;implementing_software_and_artifacts"
+    ],
     "uri_translations": {
         "en": "https://docs.italia.it/italia/developers-italia/gl-acquisition-and-reuse-software-for-pa-docs/en/stabile/index.html"
     }

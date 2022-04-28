@@ -1,32 +1,41 @@
 {
+    "administrative_scopes": [
+        "eu"
+    ],
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "description_translations": {
+        "en": "<p>Guidelines and tips on how to perform a usability testing</p>"
+    },
+    "difficulty": "easy",
+    "domain": "",
+    "file_translations": {
+        "en": "./interlinkers/knowledge/Usability-testing/resource.docx"
+    },
+    "form": "guidelines",
+    "format": "editable_source_document",
+    "id": "usability-testing-guidelines",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/Usability-testing/instructions.md"
+    },
     "languages": [
         "en"
     ],
-    "targets": [
-        "all"
-    ],
+    "licence": "public_domain",
+    "name_translations": {
+        "en": "Usability testing guidelines"
+    },
     "problemprofiles": [
         "ORG_PROBLEM_6.2",
         "BUILD_PROBLEM_1",
         "VAL_PROBLEM_4"
     ],
-    "types": [
-        "enhancing_services"
-    ],
-    "administrative_scopes": [
-        "eu"
-    ],
-    "domain": "",
     "process": "",
-    "id": "usability testing",
-    "form": "guidelines",
-    "format": "editable_source_document",
-    "softwareinterlinker": "googledrive",
-    "difficulty": "easy",
-    "licence": "public_domain",
-    "instructions_translations": {
-        "en": "./interlinkers/knowledge/Usability-testing/instructions.md"
+    "regulations_and_standards_translations": {
+        "en": ""
     },
+    "softwareinterlinker": "googledrive",
     "tags_translations": {
         "en": [
             "product specification",
@@ -34,19 +43,11 @@
             "usability"
         ]
     },
-    "name_translations": {
-        "en": "Usability testing guidelines"
-    },
-    "description_translations": {
-        "en": "<p>Guidelines and tips on how to perform a usability testing</p>"
-    },
-    "constraints_and_limitations_translations": {
-        "en": "No special constraints apply"
-    },
-    "regulations_and_standards_translations": {
-        "en": ""
-    },
-    "file_translations": {
-        "en": "./interlinkers/knowledge/Usability-testing/resource.docx"
-    }
+    "targets": [
+        "all"
+    ],
+    "type": "knowledge",
+    "types": [
+        "enhancing_services"
+    ]
 }

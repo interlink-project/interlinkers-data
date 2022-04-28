@@ -1,47 +1,48 @@
 {
+    "administrative_scopes": [
+        "eu"
+    ],
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "description_translations": {
+        "en": "<p>Template for preparing a user journey. </p>"
+    },
+    "difficulty": "easy",
+    "file_translations": {
+        "en": "./interlinkers/knowledge/it-user-journey/resource.xlsx"
+    },
+    "form": "document_template",
+    "format": "editable_source_document",
+    "id": "template-for-user-journey",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/it-user-journey/instructions.md"
+    },
     "languages": [
         "en"
     ],
-    "targets": [
-        "all"
-    ],
+    "licence": "permissive",
+    "name_translations": {
+        "en": "Template for user journey"
+    },
     "problemprofiles": [
         "ORG_PROBLEM_1",
         "UND_PROBLEM_2"
     ],
-    "types": [
-        "enabling_services"
-    ],
-    "administrative_scopes": [
-        "eu"
-    ],
-    "id": "user-journey-template",
-    "form": "document_template",
-    "format": "editable_source_document",
-    "softwareinterlinker": "googledrive",
-    "difficulty": "easy",
-    "licence": "permissive",
-    "instructions_translations": {
-        "en": "./interlinkers/knowledge/it-user-journey/instructions.md"
+    "regulations_and_standards_translations": {
+        "en": ""
     },
+    "softwareinterlinker": "googledrive",
     "tags_translations": {
         "en": [
             "services"
         ]
     },
-    "name_translations": {
-        "en": "Template for user journey"
-    },
-    "description_translations": {
-        "en": "<p>Template for preparing a user journey. </p>"
-    },
-    "constraints_and_limitations_translations": {
-        "en": "No special constraints apply"
-    },
-    "regulations_and_standards_translations": {
-        "en": ""
-    },
-    "file_translations": {
-        "en": "./interlinkers/knowledge/it-user-journey/resource.xlsx"
-    }
+    "targets": [
+        "all"
+    ],
+    "type": "knowledge",
+    "types": [
+        "enabling_services"
+    ]
 }

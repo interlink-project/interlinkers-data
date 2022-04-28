@@ -9,11 +9,6 @@
                 "type": "string"
             }
         },
-        "languages": {
-            "title": "Languages",
-            "type": "array",
-            "items": {}
-        },
         "name_translations": {
             "title": "Name Translations",
             "type": "object"
@@ -77,10 +72,6 @@
             "title": "Overview Text",
             "type": "object"
         },
-        "id": {
-            "title": "Id",
-            "type": "string"
-        },
         "form": {
             "$ref": "#/definitions/FormTypes"
         },
@@ -104,6 +95,19 @@
                     }
                 ]
             }
+        },
+        "id": {
+            "title": "Id",
+            "type": "string"
+        },
+        "type": {
+            "title": "Type",
+            "type": "string"
+        },
+        "languages": {
+            "title": "Languages",
+            "type": "array",
+            "items": {}
         },
         "logotype": {
             "title": "Logotype",
@@ -175,14 +179,12 @@
     },
     "required": [
         "problemprofiles",
-        "languages",
         "name_translations",
         "description_translations",
         "constraints_and_limitations_translations",
         "tags_translations",
         "difficulty",
         "licence",
-        "id",
         "instructions_translations",
         "supported_by",
         "supports_internationalization",

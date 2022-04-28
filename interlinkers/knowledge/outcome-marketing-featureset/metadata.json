@@ -1,32 +1,41 @@
 {
+    "administrative_scopes": [
+        "eu"
+    ],
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "description_translations": {
+        "en": "<p>This resource suggests a model to define the features of a co-produced service. It guides the description of the problem(s) that the product will solve in the long run, the vision for the user experience as well as the user interface, the vision for how the product will generate a return of investment</p>"
+    },
+    "difficulty": "easy",
+    "domain": "",
+    "file_translations": {
+        "en": "./interlinkers/knowledge/outcome-marketing-featureset/resource.docx"
+    },
+    "form": "guidelines",
+    "format": "editable_source_document",
+    "id": "outcome-marketing-featureset",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/outcome-marketing-featureset/instructions.md"
+    },
     "languages": [
         "en"
     ],
-    "targets": [
-        "all"
-    ],
+    "licence": "public_domain",
+    "name_translations": {
+        "en": "Outcome marketing featureset"
+    },
     "problemprofiles": [
         "ORG_PROBLEM_6.2",
         "VAL_PROBLEM_1",
         "VAL_PROBLEM_5"
     ],
-    "types": [
-        "enhancing_services"
-    ],
-    "administrative_scopes": [
-        "eu"
-    ],
-    "domain": "",
     "process": "",
-    "id": "outcome-marketing-featureset",
-    "form": "guidelines",
-    "format": "editable_source_document",
-    "softwareinterlinker": "googledrive",
-    "difficulty": "easy",
-    "licence": "public_domain",
-    "instructions_translations": {
-        "en": "./interlinkers/knowledge/outcome-marketing-featureset/instructions.md"
+    "regulations_and_standards_translations": {
+        "en": ""
     },
+    "softwareinterlinker": "googledrive",
     "tags_translations": {
         "en": [
             "product specification",
@@ -34,19 +43,11 @@
             "understand"
         ]
     },
-    "name_translations": {
-        "en": "Outcome marketing featureset"
-    },
-    "description_translations": {
-        "en": "<p>This resource suggests a model to define the features of a co-produced service. It guides the description of the problem(s) that the product will solve in the long run, the vision for the user experience as well as the user interface, the vision for how the product will generate a return of investment</p>"
-    },
-    "constraints_and_limitations_translations": {
-        "en": "No special constraints apply"
-    },
-    "regulations_and_standards_translations": {
-        "en": ""
-    },
-    "file_translations": {
-        "en": "./interlinkers/knowledge/outcome-marketing-featureset/resource.docx"
-    }
+    "targets": [
+        "all"
+    ],
+    "type": "knowledge",
+    "types": [
+        "enhancing_services"
+    ]
 }

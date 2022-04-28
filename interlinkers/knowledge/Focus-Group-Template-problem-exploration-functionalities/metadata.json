@@ -1,31 +1,40 @@
 {
+    "administrative_scopes": [
+        "eu"
+    ],
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "description_translations": {
+        "en": "<p>This resource provides a skeleton to organize a focus group to investigate the problem that needs to be solved by a digital service / functionality. It addresses a series of questions about potential users, current practices, critical aspects and  desiderata.</p>"
+    },
+    "difficulty": "easy",
+    "domain": "",
+    "file_translations": {
+        "en": "./interlinkers/knowledge/Focus-Group-Template-problem-exploration-functionalities/resource.pptx"
+    },
+    "form": "document_template",
+    "format": "editable_source_document",
+    "id": "focus-group-template-co-production-investigation",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/Focus-Group-Template-problem-exploration-functionalities/instructions.md"
+    },
     "languages": [
         "en"
     ],
-    "targets": [
-        "all"
-    ],
+    "licence": "public_domain",
+    "name_translations": {
+        "en": "Focus Group Template Co-production Investigation"
+    },
     "problemprofiles": [
         "UND_PROBLEM_3",
         "VAL_PROBLEM_2"
     ],
-    "types": [
-        "enhancing_services"
-    ],
-    "administrative_scopes": [
-        "eu"
-    ],
-    "domain": "",
     "process": "",
-    "id": "focus-group-template-problem-exploration-functionalities",
-    "form": "document_template",
-    "format": "editable_source_document",
-    "softwareinterlinker": "googledrive",
-    "difficulty": "easy",
-    "licence": "public_domain",
-    "instructions_translations": {
-        "en": "./interlinkers/knowledge/Focus-Group-Template-problem-exploration-functionalities/instructions.md"
+    "regulations_and_standards_translations": {
+        "en": ""
     },
+    "softwareinterlinker": "googledrive",
     "tags_translations": {
         "en": [
             "focus group",
@@ -33,19 +42,11 @@
             "understand"
         ]
     },
-    "name_translations": {
-        "en": "Focus Group Template Co-production Investigation"
-    },
-    "description_translations": {
-        "en": "<p>This resource provides a skeleton to organize a focus group to investigate the problem that needs to be solved by a digital service / functionality. It addresses a series of questions about potential users, current practices, critical aspects and  desiderata.</p>"
-    },
-    "constraints_and_limitations_translations": {
-        "en": "No special constraints apply"
-    },
-    "regulations_and_standards_translations": {
-        "en": ""
-    },
-    "file_translations": {
-        "en": "./interlinkers/knowledge/Focus-Group-Template-problem-exploration-functionalities/resource.pptx"
-    }
+    "targets": [
+        "all"
+    ],
+    "type": "knowledge",
+    "types": [
+        "enhancing_services"
+    ]
 }

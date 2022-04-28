@@ -1,54 +1,53 @@
 {
+    "administrative_scopes": [
+        "eu"
+    ],
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "description_translations": {
+        "en": "This is a model of End Users' Perceptions Questionnaire. It aims to measure end-users' perceptions on user-based quality, value-based quality, trust and acceptance. This questionnaire is thought to be answered by users of traditional e-services and also those who co-produced them through INTERLINK."
+    },
+    "difficulty": "easy",
+    "domain": "",
+    "file_translations": {
+        "en": "./interlinkers/knowledge/Final-End-Users-Questionnaire-QoS/resource.pdf"
+    },
+    "form": "survey_template",
+    "format": "pdf",
+    "id": "final-end-user-s-questionnaire-quality-of-service",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/Final-End-Users-Questionnaire-QoS/instructions.md"
+    },
     "languages": [
         "en"
     ],
-    "targets": [
-        "all"
-    ],
+    "licence": "public_domain",
+    "name_translations": {
+        "en": "Final end user's questionnaire- Quality of Service"
+    },
     "problemprofiles": [
         "UND_PROBLEM_3",
         "VAL_PROBLEM_3",
         "VAL_PROBLEM_5",
         "ORG_PROBLEM_6.2"
-
     ],
-    "types": [
-         "enhancing_services;followup_services"
-    ],
-    "administrative_scopes": [
-        "eu"
-    ],
-    "domain": "",
     "process": "",
-    "id": "Final-End-Users-Questionnaire-QoS",
-    "form": "survey_template",
-    "format": "pdf",
-    "softwareinterlinker": "googledrive",
-    "difficulty": "easy",
-    "licence": "public_domain",
-    "instructions_translations": {
-        "en": "./interlinkers/knowledge/Final-End-Users-Questionnaire-QoS/instructions.md"
+    "regulations_and_standards_translations": {
+        "en": ""
     },
+    "softwareinterlinker": "googledrive",
     "tags_translations": {
         "en": [
             "quality of service",
             "questionnaire"
-            
         ]
     },
-    "name_translations": {
-        "en": "Final end user's questionnaire- Quality of Service"
-    },
-    "description_translations": {
-        "en": "This is a model of End Users' Perceptions Questionnaire. It aims to measure end-users' perceptions on user-based quality, value-based quality, trust and acceptance. This questionnaire is thought to be answered by users of traditional e-services and also those who co-produced them through INTERLINK."
-    },
-    "constraints_and_limitations_translations": {
-        "en": "No special constraints apply"
-    },
-    "regulations_and_standards_translations": {
-        "en": ""
-    },
-    "file_translations": {
-        "en": "./interlinkers/knowledge/Final-End-Users-Questionnaire-QoS/resource.pdf"
-    }
+    "targets": [
+        "all"
+    ],
+    "type": "knowledge",
+    "types": [
+        "enhancing_services;followup_services"
+    ]
 }

@@ -1,38 +1,4 @@
 {
-    "languages": [
-        "en",
-        "es"
-    ],
-    "name_translations": {
-        "en": "Event Organizer",
-        "es": ""
-    },
-    "description_translations": {
-        "en": "<p>Event Organiser (EVO) is a stand-alone web application to evaluate co-designed event proposals made with the ECO WordPress plugin and organise the events in practice. EVO complements the ZGZ use case by giving administrative tools to foster co-designing of events and implementing the best proposals. EVO comprises features to manage available resources and services and allocate them to requests made in event proposals. In addition, EVO can be used to organise co-evaluation polls to analyse different aspects of the proposal in order to find out which of the proposals are ready for implementation.</p>",
-        "es": ""
-    },
-    "difficulty": "medium",
-    "targets": [
-        "all"
-    ],
-    "licence": "propietary",
-    "problemprofiles": [
-	    "ORG_PROBLEM_1",
-		"ORG_PROBLEM_2",
-		"ORG_PROBLEM_4",
-		"ORG_PROBLEM_6.1",
-		"ORG_PROBLEM_6.3",
-		"UND_PROBLEM_5",
-		"DEF_PROBLEM_2",
-		"DEF_PROBLEM_5",
-		"VAL_PROBLEM_1",
-		"VAL_PROBLEM_2",
-		"HACKATHON_PROBLEM_1"
-    ],
-    "types": [
-        "enabling_services",
-        "enhancing_services"
-    ],
     "administrative_scopes": [
         "eu",
         "national",
@@ -42,27 +8,62 @@
         "en": "None",
         "es": ""
     },
-    "regulations_and_standards_translations": {
-        "en": "None",
+    "description_translations": {
+        "en": "<p>Event Organiser (EVO) is a stand-alone web application to evaluate co-designed event proposals made with the ECO WordPress plugin and organise the events in practice. EVO complements the ZGZ use case by giving administrative tools to foster co-designing of events and implementing the best proposals. EVO comprises features to manage available resources and services and allocate them to requests made in event proposals. In addition, EVO can be used to organise co-evaluation polls to analyse different aspects of the proposal in order to find out which of the proposals are ready for implementation.</p>",
+        "es": ""
+    },
+    "difficulty": "medium",
+    "id": "event-organizer",
+    "instructions_translations": {
+        "en": "./interlinkers/externalsoftware/event-organizer/instructions.md"
+    },
+    "languages": [
+        "en",
+        "es"
+    ],
+    "licence": "propietary",
+    "logotype": "./interlinkers/externalsoftware/event-organizer/logo.png",
+    "name_translations": {
+        "en": "Event Organizer",
         "es": ""
     },
     "overview_text": {
         "en": "Web application for co-designing public events, co-evaluating event proposals and organizing the best events in practice",
         "es": ""
     },
-    "uri_translations": {
-        "en": ""
+    "problemprofiles": [
+        "ORG_PROBLEM_1",
+        "ORG_PROBLEM_2",
+        "ORG_PROBLEM_4",
+        "ORG_PROBLEM_6.1",
+        "ORG_PROBLEM_6.3",
+        "UND_PROBLEM_5",
+        "DEF_PROBLEM_2",
+        "DEF_PROBLEM_5",
+        "VAL_PROBLEM_1",
+        "VAL_PROBLEM_2",
+        "HACKATHON_PROBLEM_1"
+    ],
+    "regulations_and_standards_translations": {
+        "en": "None",
+        "es": ""
     },
-    "logotype": "./interlinkers/externalsoftware/event-organizer/logo.png",
-    "id": "event-organizer",
     "tags_translations": {
         "en": [
             "project management",
             "team working",
-			"survey"			
+            "survey"
         ]
     },
-    "instructions_translations": {
-        "en": "./interlinkers/externalsoftware/event-organizer/instructions.md"
+    "targets": [
+        "all"
+    ],
+    "type": "software",
+    "types": [
+        "enabling_services",
+        "enhancing_services"
+    ],
+    "uri_translations": {
+        "en": ""
     }
 }

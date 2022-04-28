@@ -1,50 +1,51 @@
 {
+    "administrative_scopes": [
+        "eu"
+    ],
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "description_translations": {
+        "en": "<p>Guidelines to understand which are the different types of stakeholder, their  motivations, skills, expectations toward the project</p>"
+    },
+    "difficulty": "easy",
+    "domain": "",
+    "file_translations": {
+        "en": "./interlinkers/knowledge/Stakeholder-Types-Guidelines/resource.pdf"
+    },
+    "form": "guidelines",
+    "format": "pdf",
+    "id": "stakeholder-types-guidelines",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/Stakeholder-Types-Guidelines/instructions.md"
+    },
     "languages": [
         "en"
     ],
-    "targets": [
-        "all"
-    ],
+    "licence": "public_domain",
+    "name_translations": {
+        "en": "Stakeholder types guidelines"
+    },
     "problemprofiles": [
         "UND_PROBLEM_2",
         "UND_PROBLEM_4"
     ],
-    "types": [
-        "enhancing_services"
-    ],
-    "administrative_scopes": [
-        "eu"
-    ],
-    "domain": "",
     "process": "",
-    "id": "stakeholder-types-guidelines",
-    "form": "guidelines",
-    "format": "pdf",
-    "softwareinterlinker": "googledrive",
-    "difficulty": "easy",
-    "licence": "public_domain",
-    "instructions_translations": {
-        "en": "./interlinkers/knowledge/Stakeholder-Types-Guidelines/instructions.md"
+    "regulations_and_standards_translations": {
+        "en": ""
     },
+    "softwareinterlinker": "googledrive",
     "tags_translations": {
         "en": [
             "services",
             "stakeholder mappping"
         ]
     },
-    "name_translations": {
-        "en": "Stakeholder types guidelines"
-    },
-    "description_translations": {
-        "en": "<p>Guidelines to understand which are the different types of stakeholder, their  motivations, skills, expectations toward the project</p>"
-    },
-    "constraints_and_limitations_translations": {
-        "en": "No special constraints apply"
-    },
-    "regulations_and_standards_translations": {
-        "en": ""
-    },
-    "file_translations": {
-        "en": "./interlinkers/knowledge/Stakeholder-Types-Guidelines/resource.pdf"
-    }
+    "targets": [
+        "all"
+    ],
+    "type": "knowledge",
+    "types": [
+        "enhancing_services"
+    ]
 }
