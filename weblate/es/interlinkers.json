@@ -31,5 +31,10 @@
     "externalsoftware_html-tools_tags": "",
     "externalsoftware_graph-js-library_name": "",
     "externalsoftware_graph-js-library_description": "",
-    "externalsoftware_graph-js-library_tags": ""
+    "externalsoftware_graph-js-library_tags": "",
+    "knowledgeinterlinker_template-for-use-scenarios_description": "<p>Plantilla para preparar escenarios de casos de uso. </p>",
+    "knowledgeinterlinker_template-for-use-scenarios_tags": [
+        "servicios"
+    ],
+    "knowledgeinterlinker_template-for-use-scenarios_name": "Plantilla para escenarios de casos de uso"
 }
