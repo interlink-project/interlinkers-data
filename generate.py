@@ -4,36 +4,30 @@ import os
 import shutil
 from slugify import slugify
 
-weblate_interlinkers = {
-"en": {},
-"es": {},
-"it": {},
-"lv": {}
-}
-weblate_problemprofiles = {
-"en": {},
-"es": {},
-"it": {},
-"lv": {}
-}
-weblate_schemas = {
-"en": {},
-"es": {},
-"it": {},
-"lv": {}
-}
+lang_keys = ["en", "es", "it", "lv"]
+weblate_interlinkers = {}
+weblate_problemprofiles = {}
+weblate_schemas = {}
+
+for lang_key in lang_keys:
+    weblate_schemas[lang_key] = {}
+    weblate_problemprofiles[lang_key] = {}
+    weblate_interlinkers[lang_key] = {}
+    
+
 
 DELIMITER = ";"
 
 def add_to_weblate(key: str, obj: dict, data: dict):
-    translatable_elements = ["name_translations", "description_translations"]
     for lang_code in data.get("languages", ["en", "es", "it", "lv"]):
-        for element in translatable_elements:
-            if element in data:
-                ref = data.get("id", "").lower()
-                addon = element.replace("_translations", "")
-                obj[lang_code][key + DELIMITER + ref + DELIMITER + addon] = data[element].get(lang_code, "")
-
+        ref = data.get("id", "").lower()
+        for translatable_element in ["name_translations", "description_translations"]:
+            if translatable_element in data:
+                addon = translatable_element.replace("_translations", "")
+                key = key + DELIMITER + ref + DELIMITER + addon
+                value = data[translatable_element].get(lang_code, "")
+                
+                obj[lang_code][key] = value
 dicts = {
     "problemprofiles": [],
     "schemas": [],
@@ -134,14 +128,11 @@ for interlinker_metadata_path in Path("./interlinkers/externalknowledge").glob("
 with open(f"all.json", "w") as f:
     json.dump(dicts, f, indent=4)
 
-for lang_key, data in weblate_interlinkers.items():
-    with open(f"./weblate/{lang_key}/interlinkers.json", "w") as f:
-        json.dump(data, f, indent=4)
+def export(obj, file):
+    for lang_key, data in obj.items():
+        with open(f"./weblate/{lang_key}/{file}", "w") as f:
+            json.dump(data, f, indent=4)
 
-for lang_key, data in weblate_problemprofiles.items():
-    with open(f"./weblate/{lang_key}/problemprofiles.json", "w") as f:
-        json.dump(data, f, indent=4)
-    
-for lang_key, data in weblate_schemas.items():
-    with open(f"./weblate/{lang_key}/schemas.json", "w") as f:
-        json.dump(data, f, indent=4)
+export(weblate_interlinkers, "interlinkers.json")
+export(weblate_problemprofiles, "problemprofiles.json")
+export(weblate_schemas, "schemas.json")
