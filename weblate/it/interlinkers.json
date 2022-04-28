@@ -1,3 +1,413 @@
 {
-    "knowledgeinterlinker_template-for-use-scenarios_name": "Modello per gli scenari d'uso"
+    "knowledgeinterlinker_template-for-use-scenarios_name": "Modello per gli scenari d'uso",
+    "knowledgeinterlinker_business-plan-template_tags": [
+        "",
+        "",
+        ""
+    ],
+    "knowledgeinterlinker_template-for-use-scenarios_description": "",
+    "knowledgeinterlinker_template-for-use-scenarios_tags": [
+        ""
+    ],
+    "knowledgeinterlinker_stakeholder-engagement-plan-for-interlink-project_name": "",
+    "knowledgeinterlinker_stakeholder-engagement-plan-for-interlink-project_description": "",
+    "knowledgeinterlinker_stakeholder-engagement-plan-for-interlink-project_tags": [
+        "",
+        "",
+        "",
+        ""
+    ],
+    "knowledgeinterlinker_Template for structured interview_name": "",
+    "knowledgeinterlinker_Template for structured interview_description": "",
+    "knowledgeinterlinker_Template for structured interview_tags": [
+        "",
+        "",
+        ""
+    ],
+    "knowledgeinterlinker_Demographic and activity satisfaction questionnaire_name": "",
+    "knowledgeinterlinker_Demographic and activity satisfaction questionnaire_description": "",
+    "knowledgeinterlinker_Demographic and activity satisfaction questionnaire_tags": [
+        "",
+        "",
+        ""
+    ],
+    "knowledgeinterlinker_consent-form-template_name": "",
+    "knowledgeinterlinker_consent-form-template_description": "",
+    "knowledgeinterlinker_consent-form-template_tags": [
+        "",
+        "",
+        "",
+        ""
+    ],
+    "knowledgeinterlinker_Project description example_name": "",
+    "knowledgeinterlinker_Project description example_description": "",
+    "knowledgeinterlinker_Project description example_tags": [
+        "",
+        "",
+        "",
+        ""
+    ],
+    "knowledgeinterlinker_focus-group-template-problem-exploration-functionalities_name": "",
+    "knowledgeinterlinker_focus-group-template-problem-exploration-functionalities_description": "",
+    "knowledgeinterlinker_focus-group-template-problem-exploration-functionalities_tags": [
+        "",
+        "",
+        ""
+    ],
+    "knowledgeinterlinker_guidelines-for-co-design-service_name": "",
+    "knowledgeinterlinker_guidelines-for-co-design-service_description": "",
+    "knowledgeinterlinker_guidelines-for-co-design-service_tags": [
+        ""
+    ],
+    "knowledgeinterlinker_information-sheet-template_name": "",
+    "knowledgeinterlinker_information-sheet-template_description": "",
+    "knowledgeinterlinker_information-sheet-template_tags": [
+        "",
+        "",
+        "",
+        ""
+    ],
+    "knowledgeinterlinker_model-for-personas-in-italian_name": "",
+    "knowledgeinterlinker_model-for-personas-in-italian_description": "",
+    "knowledgeinterlinker_model-for-personas-in-italian_tags": [
+        ""
+    ],
+    "knowledgeinterlinker_business-plan-template_name": "",
+    "knowledgeinterlinker_business-plan-template_description": "",
+    "knowledgeinterlinker_business-model-canvas_name": "",
+    "knowledgeinterlinker_business-model-canvas_description": "",
+    "knowledgeinterlinker_business-model-canvas_tags": [
+        "",
+        "",
+        ""
+    ],
+    "knowledgeinterlinker_consent-form-for-interlink-project_name": "",
+    "knowledgeinterlinker_consent-form-for-interlink-project_description": "",
+    "knowledgeinterlinker_consent-form-for-interlink-project_tags": [
+        "",
+        "",
+        "",
+        ""
+    ],
+    "knowledgeinterlinker_outcome-marketing-featureset_name": "",
+    "knowledgeinterlinker_outcome-marketing-featureset_description": "",
+    "knowledgeinterlinker_outcome-marketing-featureset_tags": [
+        "",
+        "",
+        ""
+    ],
+    "knowledgeinterlinker_focus-group-guidelines_name": "",
+    "knowledgeinterlinker_focus-group-guidelines_description": "",
+    "knowledgeinterlinker_focus-group-guidelines_tags": [
+        "",
+        "",
+        "",
+        ""
+    ],
+    "knowledgeinterlinker_collaborative-problem-refinement_name": "",
+    "knowledgeinterlinker_collaborative-problem-refinement_description": "",
+    "knowledgeinterlinker_collaborative-problem-refinement_tags": [
+        "",
+        ""
+    ],
+    "knowledgeinterlinker_public-service-proposal-template-for-interlink-project_name": "",
+    "knowledgeinterlinker_public-service-proposal-template-for-interlink-project_description": "",
+    "knowledgeinterlinker_public-service-proposal-template-for-interlink-project_tags": [
+        "",
+        "",
+        "",
+        ""
+    ],
+    "knowledgeinterlinker_usability testing_name": "",
+    "knowledgeinterlinker_usability testing_description": "",
+    "knowledgeinterlinker_usability testing_tags": [
+        "",
+        "",
+        ""
+    ],
+    "knowledgeinterlinker_Stakeholders identification analisys template_name": "",
+    "knowledgeinterlinker_Stakeholders identification analisys template_description": "",
+    "knowledgeinterlinker_Stakeholders identification analisys template_tags": [
+        "",
+        "",
+        ""
+    ],
+    "knowledgeinterlinker_co-producers-perceptions-Questionnaire_name": "",
+    "knowledgeinterlinker_co-producers-perceptions-Questionnaire_description": "",
+    "knowledgeinterlinker_co-producers-perceptions-Questionnaire_tags": [
+        "",
+        "",
+        ""
+    ],
+    "knowledgeinterlinker_Final-End-Users-Questionnaire-QoS_name": "",
+    "knowledgeinterlinker_Final-End-Users-Questionnaire-QoS_description": "",
+    "knowledgeinterlinker_Final-End-Users-Questionnaire-QoS_tags": [
+        "",
+        ""
+    ],
+    "knowledgeinterlinker_template-for-project-description_name": "",
+    "knowledgeinterlinker_template-for-project-description_description": "",
+    "knowledgeinterlinker_template-for-project-description_tags": [
+        ""
+    ],
+    "knowledgeinterlinker_information-sheet-for-interlink-project_name": "",
+    "knowledgeinterlinker_information-sheet-for-interlink-project_description": "",
+    "knowledgeinterlinker_information-sheet-for-interlink-project_tags": [
+        "",
+        "",
+        "",
+        ""
+    ],
+    "knowledgeinterlinker_stakeholder-types-guidelines_name": "",
+    "knowledgeinterlinker_template for online survey_name": "",
+    "knowledgeinterlinker_stakeholder-types-guidelines_description": "",
+    "knowledgeinterlinker_stakeholder-types-guidelines_tags": [
+        "",
+        ""
+    ],
+    "knowledgeinterlinker_Guidelines-for-interviews_name": "",
+    "knowledgeinterlinker_Guidelines-for-interviews_description": "",
+    "knowledgeinterlinker_Guidelines-for-interviews_tags": [
+        "",
+        "",
+        ""
+    ],
+    "knowledgeinterlinker_hackathon-rules-template-for-interlink-project_name": "",
+    "knowledgeinterlinker_hackathon-rules-template-for-interlink-project_description": "",
+    "knowledgeinterlinker_hackathon-rules-template-for-interlink-project_tags": [
+        "",
+        "",
+        "",
+        ""
+    ],
+    "knowledgeinterlinker_focus-group-template-co-production-investigation_name": "",
+    "knowledgeinterlinker_focus-group-template-co-production-investigation_description": "",
+    "knowledgeinterlinker_focus-group-template-co-production-investigation_tags": [
+        "",
+        "",
+        ""
+    ],
+    "knowledgeinterlinker_Template for semi structured interview_name": "",
+    "knowledgeinterlinker_Template for semi structured interview_description": "",
+    "knowledgeinterlinker_Template for semi structured interview_tags": [
+        "",
+        "",
+        ""
+    ],
+    "knowledgeinterlinker_stakeholders-mapping-canvas_name": "",
+    "knowledgeinterlinker_stakeholders-mapping-canvas_description": "",
+    "knowledgeinterlinker_stakeholders-mapping-canvas_tags": [
+        "",
+        "",
+        ""
+    ],
+    "knowledgeinterlinker_user-journey-template_name": "",
+    "knowledgeinterlinker_user-journey-template_description": "",
+    "knowledgeinterlinker_user-journey-template_tags": [
+        ""
+    ],
+    "knowledgeinterlinker_Guidelines-for-online-surveys_name": "",
+    "knowledgeinterlinker_Guidelines-for-online-surveys_description": "",
+    "knowledgeinterlinker_Guidelines-for-online-surveys_tags": [
+        "",
+        "",
+        ""
+    ],
+    "knowledgeinterlinker_template for online survey_description": "",
+    "knowledgeinterlinker_template for online survey_tags": [
+        "",
+        "",
+        ""
+    ],
+    "softwareinterlinker_survey-editor_name": "",
+    "externalknowledge_edpb-data-protection-guidelines_name": "",
+    "softwareinterlinker_survey-editor_description": "",
+    "softwareinterlinker_survey-editor_tags": [
+        "",
+        "",
+        "",
+        ""
+    ],
+    "softwareinterlinker_augmenter_name": "",
+    "softwareinterlinker_augmenter_description": "",
+    "softwareinterlinker_augmenter_tags": [
+        "",
+        "",
+        "",
+        ""
+    ],
+    "softwareinterlinker_loomio_name": "",
+    "softwareinterlinker_loomio_description": "",
+    "softwareinterlinker_loomio_tags": [
+        "",
+        "",
+        ""
+    ],
+    "softwareinterlinker_collaborative-editor_name": "",
+    "softwareinterlinker_collaborative-editor_description": "",
+    "softwareinterlinker_collaborative-editor_tags": [
+        "",
+        "",
+        "",
+        ""
+    ],
+    "externalsoftware_event-organizer_name": "",
+    "externalsoftware_event-organizer_description": "",
+    "externalsoftware_event-organizer_tags": [
+        "",
+        "",
+        ""
+    ],
+    "externalsoftware_dashboard_name": "",
+    "externalsoftware_api-manager_tags": [
+        "",
+        "",
+        ""
+    ],
+    "externalsoftware_dashboard_description": "",
+    "externalsoftware_dashboard_tags": [
+        "",
+        ""
+    ],
+    "externalsoftware_aac_name": "",
+    "externalsoftware_aac_description": "",
+    "externalsoftware_aac_tags": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+    ],
+    "externalsoftware_user-authentication-authorization_name": "",
+    "externalsoftware_user-authentication-authorization_description": "",
+    "externalsoftware_user-authentication-authorization_tags": [
+        "",
+        "",
+        "",
+        ""
+    ],
+    "externalsoftware_calendar-tool_name": "",
+    "externalsoftware_calendar-tool_description": "",
+    "externalsoftware_calendar-tool_tags": [
+        "",
+        "",
+        ""
+    ],
+    "externalsoftware_email-marketing_name": "",
+    "externalsoftware_email-marketing_description": "",
+    "externalsoftware_email-marketing_tags": [
+        "",
+        "",
+        ""
+    ],
+    "externalsoftware_project-management_name": "",
+    "externalsoftware_project-management_description": "",
+    "externalsoftware_project-management_tags": [
+        "",
+        "",
+        ""
+    ],
+    "externalsoftware_api-manager_name": "",
+    "externalsoftware_api-manager_description": "",
+    "externalsoftware_event-codesigner_name": "",
+    "externalknowledge_agid-guidelines-for-the-development-of-secure-software-in-italian_description": "",
+    "externalsoftware_event-codesigner_description": "",
+    "externalsoftware_event-codesigner_tags": [
+        "",
+        "",
+        ""
+    ],
+    "externalsoftware_html-tools_name": "",
+    "externalsoftware_html-tools_description": "",
+    "externalsoftware_html-tools_tags": [
+        "",
+        "",
+        "",
+        ""
+    ],
+    "externalsoftware_graph-js-library_name": "",
+    "externalsoftware_graph-js-library_description": "",
+    "externalsoftware_graph-js-library_tags": [
+        "",
+        "",
+        ""
+    ],
+    "externalknowledge_open-source-guides_name": "",
+    "externalknowledge_open-source-guides_description": "",
+    "externalknowledge_open-source-guides_tags": [
+        ""
+    ],
+    "externalknowledge_w3c-web-content-accessibility-guidelines_name": "",
+    "externalknowledge_w3c-web-content-accessibility-guidelines_description": "",
+    "externalknowledge_w3c-web-content-accessibility-guidelines_tags": [
+        "",
+        "",
+        ""
+    ],
+    "externalknowledge_eidas-standard_name": "",
+    "externalknowledge_eidas-standard_description": "",
+    "externalknowledge_eidas-standard_tags": [
+        ""
+    ],
+    "externalknowledge_agid-cloud-computing-competence-evalution-template_name": "",
+    "externalknowledge_agid-cloud-computing-competence-evalution-template_description": "",
+    "externalknowledge_agid-cloud-computing-competence-evalution-template_tags": [
+        "",
+        "",
+        ""
+    ],
+    "externalknowledge_agid-guidelines-for-the-development-of-secure-software-in-italian_name": "",
+    "externalknowledge_agid-guidelines-for-the-development-of-secure-software-in-italian_tags": [
+        ""
+    ],
+    "externalknowledge_edpb-data-protection-guidelines_description": "",
+    "externalknowledge_edpb-data-protection-guidelines_tags": [
+        "",
+        "",
+        ""
+    ],
+    "externalknowledge_italian-pa-interoperablity-model_name": "",
+    "externalknowledge_italian-pa-interoperablity-model_description": "",
+    "externalknowledge_italian-pa-interoperablity-model_tags": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+    ],
+    "externalknowledge_agid-cloud-computing-migration-strategy-evalution-template_name": "",
+    "externalknowledge_agid-cloud-computing-migration-strategy-evalution-template_description": "",
+    "externalknowledge_agid-cloud-computing-migration-strategy-evalution-template_tags": [
+        "",
+        "",
+        ""
+    ],
+    "externalknowledge_guidelines-on-the-acquisition-and-reuse-of-software-for-public-administrations_name": "",
+    "externalknowledge_guidelines-on-the-acquisition-and-reuse-of-software-for-public-administrations_description": "",
+    "externalknowledge_guidelines-on-the-acquisition-and-reuse-of-software-for-public-administrations_tags": [
+        "",
+        "",
+        "",
+        ""
+    ],
+    "externalknowledge_cloud-enablement-kit-in-italian_name": "",
+    "externalknowledge_cloud-enablement-kit-in-italian_description": "",
+    "externalknowledge_cloud-enablement-kit-in-italian_tags": [
+        "",
+        "",
+        ""
+    ],
+    "externalknowledge__name": "",
+    "externalknowledge__description": "",
+    "externalknowledge__tags": [
+        "",
+        ""
+    ],
+    "externalknowledge_agid-minimum-security-measures-for-public-administration_name": "",
+    "externalknowledge_agid-minimum-security-measures-for-public-administration_description": "",
+    "externalknowledge_agid-minimum-security-measures-for-public-administration_tags": [
+        ""
+    ]
 }
