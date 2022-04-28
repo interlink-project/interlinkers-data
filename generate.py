@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 import os
+import shutil
 from slugify import slugify
 
 weblate_interlinkers = {
@@ -22,14 +23,16 @@ weblate_schemas = {
 "lv": {}
 }
 
+DELIMITER = ";"
+
 def add_to_weblate(key: str, obj: dict, data: dict):
-    translatable_elements = ["name_translations", "description_translations", "tags_translations"]
+    translatable_elements = ["name_translations", "description_translations"]
     for lang_code in data.get("languages", ["en", "es", "it", "lv"]):
         for element in translatable_elements:
             if element in data:
-                ref = data.get("id", "")
+                ref = data.get("id", "").lower()
                 addon = element.replace("_translations", "")
-                obj[lang_code][key + "_" + ref + "_" + addon] = data[element].get(lang_code, "")
+                obj[lang_code][key + DELIMITER + ref + DELIMITER + addon] = data[element].get(lang_code, "")
 
 dicts = {
     "problemprofiles": [],
@@ -41,7 +44,7 @@ dicts = {
     }
 }
 
-with open("problemprofiles.json") as json_file:
+with open("./problemprofiles/problemprofiles.json") as json_file:
     problemprofiles = json.load(json_file)
     dicts["problemprofiles"] = problemprofiles
     for pp in problemprofiles:
@@ -70,7 +73,7 @@ for schema_metadata_path in Path("./schemas").glob("**/metadata.json"):
                             "item": last_objective,
                             "status": "completed"
                         }]
-                    last_objective = "objective-" +slugify(objective["name_translations"]["en"])
+                    last_objective = "objective-" + slugify(objective["name_translations"]["en"])
                     objective["id"] = last_objective
                     
                     last_task = "" 
@@ -81,17 +84,27 @@ for schema_metadata_path in Path("./schemas").glob("**/metadata.json"):
                                 "item": last_task,
                                 "status": "completed"
                             }]
-                        last_task = "task-" +slugify(task["name_translations"]["en"])
-                        task["id"] = last_task
-                        add_to_weblate(schema_metadata["id"] +  "-"  + phase["id"] +  "-" + objective["id"], weblate_schemas, task)
-                    add_to_weblate(schema_metadata["id"] +  "-"  + phase["id"], weblate_schemas, objective)
+                        last_task = slugify(task["name_translations"]["en"])
+                        task["id"] = "task-" + last_task
+                        add_to_weblate(schema_metadata["id"] +  DELIMITER  + phase["id"] +  DELIMITER + objective["id"], weblate_schemas, task)
+                    add_to_weblate(schema_metadata["id"] +  DELIMITER  + phase["id"], weblate_schemas, objective)
                 schema_metadata["phases"].append(phase)
                 add_to_weblate(schema_metadata["id"], weblate_schemas, phase)
         dicts["schemas"].append(schema_metadata)
         add_to_weblate("schema", weblate_schemas, schema_metadata)
 
 
-# search for schemas
+
+ids = []
+for interlinker_metadata_path in Path("./interlinkers").glob("**/metadata.json"):
+    # set ids of interlinkers are slugified and lowered
+    with open(str(interlinker_metadata_path)) as json_file:
+        interlinker_metadata = json.load(json_file)
+        id = slugify(interlinker_metadata["name_translations"]["en"]).lower()
+        while id in ids:
+            id += "-2"
+        interlinker_metadata["id"] = id
+       
 for interlinker_metadata_path in Path("./interlinkers/knowledge").glob("**/metadata.json"):
     with open(str(interlinker_metadata_path)) as json_file:
         interlinker_metadata = json.load(json_file)

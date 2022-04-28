@@ -11,7 +11,7 @@ class ProblemProfile(BaseModel):
 
 
 problemprofiles_ids = []
-with open("problemprofiles.json") as json_file:
+with open("./problemprofiles/problemprofiles.json") as json_file:
     for i in json.load(json_file):
         ProblemProfile(**i)
         problemprofiles_ids.append(i["id"])

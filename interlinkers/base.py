@@ -1,7 +1,7 @@
 from enum import Enum
 from typing import Dict, List, Optional, Union
 
-from problemprofiles import WithProblemProfiles
+from problemprofiles.problemprofiles import WithProblemProfiles
 from pydantic import BaseModel, Extra, FilePath, HttpUrl, conlist, validator
 
 # https://docs.google.com/spreadsheets/d/1tJ2BfX4EOdbBqEbrJWg8a3MENw13vYiPZM_S4wWWgWQ/edit#gid=0
