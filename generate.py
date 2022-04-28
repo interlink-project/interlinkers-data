@@ -78,8 +78,8 @@ for schema_metadata_path in Path("./schemas").glob("**/metadata.json"):
                                 "item": last_task,
                                 "status": "completed"
                             }]
-                        last_task = slugify(task["name_translations"]["en"])
-                        task["id"] = "task-" + last_task
+                        last_task = "task-" + slugify(task["name_translations"]["en"])
+                        task["id"] = last_task
                         add_to_weblate(schema_metadata["id"] +  DELIMITER  + phase["id"] +  DELIMITER + objective["id"], weblate_schemas, task)
                     add_to_weblate(schema_metadata["id"] +  DELIMITER  + phase["id"], weblate_schemas, objective)
                 schema_metadata["phases"].append(phase)
@@ -126,12 +126,12 @@ for interlinker_metadata_path in Path("./interlinkers/externalknowledge").glob("
         dicts["interlinkers"]["external"].append(interlinker_metadata)
 
 with open(f"all.json", "w") as f:
-    json.dump(dicts, f, indent=4)
+    json.dump(dicts, f, indent=4, sort_keys=True)
 
 def export(obj, file):
     for lang_key, data in obj.items():
         with open(f"./weblate/{lang_key}/{file}", "w") as f:
-            json.dump(data, f, indent=4)
+            json.dump(data, f, indent=4, sort_keys=True)
 
 export(weblate_interlinkers, "interlinkers.json")
 export(weblate_problemprofiles, "problemprofiles.json")
