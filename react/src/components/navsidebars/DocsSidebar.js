@@ -3,7 +3,7 @@ import { Link as RouterLink, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Box, Drawer } from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import Logo from '../Logo';
+import Logo from '../LightLogo';
 import NavSection from '../../components/NavSection';
 
 const sections = [

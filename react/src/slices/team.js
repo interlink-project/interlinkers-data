@@ -8,7 +8,7 @@ const initialState = {
 };
 
 const slice = createSlice({
-  name: 'process',
+  name: 'team',
   initialState,
   reducers: {
     setTeam(state, action) {

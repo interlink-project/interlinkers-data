@@ -1,5 +1,6 @@
 import { Box, Button, Container, Fade, Typography, useTheme } from '@material-ui/core';
 import { HomeRow } from "components/home";
+import useSettings from 'hooks/useSettings';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
@@ -9,6 +10,7 @@ const Home = () => {
   const theme = useTheme();
 
   const { t } = useTranslation()
+  const { settings } = useSettings()
 
   return (
     <>
@@ -38,7 +40,7 @@ const Home = () => {
             >
               <img
                 alt='Logo'
-                src='/static/customization/logo-home.svg'
+                src={"/static/customization/" + settings.customData.logos.home}
                 style={{ width: "90%", height: "auto" }}
               />
               <Typography

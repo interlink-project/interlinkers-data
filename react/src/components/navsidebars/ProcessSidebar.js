@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
-import Logo from '../Logo';
+import Logo from '../LightLogo';
 import NavSection from '../NavSection';
 import Scrollbar from '../Scrollbar';
 

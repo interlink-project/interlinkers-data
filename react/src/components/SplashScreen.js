@@ -1,5 +1,5 @@
 import { Box } from '@material-ui/core';
-import Logo from './Logo';
+import Logo from './LightLogo';
 
 const SlashScreen = () => (
   <Box

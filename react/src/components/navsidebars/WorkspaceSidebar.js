@@ -14,7 +14,7 @@ import { useNavigate } from 'react-router';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { getMyProcesses, getMyTeams } from 'slices/general';
 import useAuth from '../../hooks/useAuth';
-import Logo from '../Logo';
+import Logo from '../LightLogo';
 import NavSection from '../NavSection';
 import Scrollbar from '../Scrollbar';
 

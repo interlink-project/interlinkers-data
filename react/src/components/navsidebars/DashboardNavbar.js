@@ -9,6 +9,7 @@ import SettingsPopover from './SettingsPopover';
 import SearchAppBar from './Search';
 import { useTranslation } from 'react-i18next';
 import i18n from 'translations/i18n';
+import useSettings from 'hooks/useSettings';
 
 const DashboardNavbarRoot = experimentalStyled(AppBar)(({ theme }) => ({
   ...(theme.palette.mode === 'light' && {
@@ -41,8 +42,9 @@ const pages = [
   }
 ]
 const DashboardNavbar = (props) => {
-  const { onSidebarMobileOpen, ...other } = props;
+  const { onSidebarMobileOpen, showOpenMenuButton, ...other } = props;
   const {t} = useTranslation()
+  const {settings} = useSettings()
 
   const theme = useTheme();
   const onMobile = !useMediaQuery(theme.breakpoints.up('sm'));
@@ -50,7 +52,7 @@ const DashboardNavbar = (props) => {
   return (
     <DashboardNavbarRoot {...other}>
       <Toolbar sx={{ minHeight: 64 }}>
-        {!onMobile && <IconButton
+        {!onMobile && showOpenMenuButton && <IconButton
           color='inherit'
           onClick={onSidebarMobileOpen}
           sx={{
@@ -65,7 +67,7 @@ const DashboardNavbar = (props) => {
         {!onMobile && <RouterLink to='/'>
           <img
             alt='Logo'
-            src='/static/customization/logo-light.svg'
+            src={"/static/customization/" + settings.customData.logos.light}
             height='40px'
           />
         </RouterLink>}

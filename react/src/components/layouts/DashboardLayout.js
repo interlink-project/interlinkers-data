@@ -69,15 +69,16 @@ const DashboardLayout = () => {
 
   return (
     <DashboardLayoutRoot>
-      <DashboardNavbar onSidebarMobileOpen={() => setIsSidebarMobileOpen(true)} />
-      {coproductionProcessLocation && <ProcessSidebar
-        onMobileClose={() => setIsSidebarMobileOpen(false)}
-        openMobile={isSidebarMobileOpen}
-      />}
+      <DashboardNavbar showOpenMenuButton={dashboardLocation || coproductionProcessLocation} onSidebarMobileOpen={() => setIsSidebarMobileOpen(true)} />
       {dashboardLocation && <WorkspaceSidebar
         onMobileClose={() => setIsSidebarMobileOpen(false)}
         openMobile={isSidebarMobileOpen}
       />}
+      {coproductionProcessLocation && <ProcessSidebar
+        onMobileClose={() => setIsSidebarMobileOpen(false)}
+        openMobile={isSidebarMobileOpen}
+      />}
+      
       {coproductionProcessLocation || dashboardLocation ? <DashboardLayoutWrapper>{content}</DashboardLayoutWrapper> : <DashboardLayoutWrapper2>{content}</DashboardLayoutWrapper2>}
     </DashboardLayoutRoot>
   );

@@ -5,7 +5,6 @@ import { Avatar, Box, Divider, Drawer, Link, Typography } from '@material-ui/cor
 import { Beenhere, Dashboard as DashboardIcon, FolderOpen as FolderOpenIcon, HomeRepairService as HomeRepairServiceIcon, Link as LinkIcon, Group as GroupIcon } from '@material-ui/icons';
 
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import Logo from '../Logo';
 import NavSection from '../../components/NavSection';
 import Scrollbar from '../../components/Scrollbar'; 
 import useAuth from '../../hooks/useAuth';

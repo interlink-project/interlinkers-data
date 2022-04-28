@@ -14,7 +14,7 @@ import React from 'react';
 import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
 import i18n from 'translations/i18n';
 import MenuIcon from '../../icons/Menu';
-import Logo from '../Logo';
+import Logo from '../LightLogo';
 import SettingsPopover from './SettingsPopover';
 
 

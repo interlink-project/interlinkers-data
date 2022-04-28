@@ -2,11 +2,19 @@ import { createContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { THEMES } from '../constants';
 import { getInitialLanguage, setLanguage } from '../translations/i18n';
+import axiosInstance from 'axiosInstance';
+import { createCustomTheme } from 'theme';
 
 const initialSettings = {
+  loaded: false,
   direction: 'ltr',
   theme: THEMES.LIGHT.key,
   language: getInitialLanguage(),
+  themeData: createCustomTheme({
+    direction: 'ltr',
+    theme: THEMES.LIGHT.key
+  }),
+  customData: {}
 };
 
 export const restoreSettings = () => {
@@ -48,11 +56,17 @@ export const SettingsProvider = (props) => {
   const [settings, setSettings] = useState(initialSettings);
 
   useEffect(() => {
-    const restoredSettings = restoreSettings();
-
-    if (restoredSettings) {
-      setSettings(restoredSettings);
-    }
+    const newSettigns = restoreSettings() || initialSettings;
+    newSettigns.themeData = createCustomTheme({
+      direction: newSettigns.direction,
+      theme: newSettigns.theme
+    })
+    axiosInstance.get("/static/customization/settings.json").then(res => {
+      console.log("BUSCAME", res.data)
+      newSettigns.customData = res.data
+      newSettigns.loaded = true
+      setSettings(newSettigns);
+    })
   }, []);
 
   const saveSettings = (updatedSettings) => {

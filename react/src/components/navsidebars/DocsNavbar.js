@@ -2,7 +2,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { AppBar, IconButton, Toolbar } from '@material-ui/core';
 import MenuIcon from '../../icons/Menu';
-import Logo from '../Logo';
+import Logo from '../LightLogo';
 
 const DocsNavbar = ({ onSidebarMobileOpen }) => (
   <AppBar
