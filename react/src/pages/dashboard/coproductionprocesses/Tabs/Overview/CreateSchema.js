@@ -1,9 +1,10 @@
-import { Box, Card, CardHeader, Grid, Rating, Typography, Stack, CircularProgress } from '@material-ui/core';
+import { Backdrop, Box, Card, CardHeader, CircularProgress, Grid, Rating, Stack, Typography } from '@material-ui/core';
 import { ChevronRight, ExpandMore } from '@material-ui/icons';
 import {
     LoadingButton, TreeItem,
     TreeView
 } from '@material-ui/lab';
+import useDependantTranslation from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
 import { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -11,7 +12,6 @@ import { setProcess } from 'slices/process';
 import { topologicalSort } from 'utils/comparePrerequisites';
 import { coproductionProcessesApi } from '__api__';
 import { coproductionSchemasApi } from '__api__/catalogue/coproductionSchemasApi';
-import useDependantTranslation from 'hooks/useDependantTranslation';
 
 const sameHeightCards = {
     minHeight: "200px",
@@ -70,7 +70,6 @@ const CreateSchema = () => {
                 <Typography variant="h4" sx={{ mb: 2 }}>{t("schema-selection-title")}</Typography>
                 <Typography variant="subtitle1" sx={{ mb: 4 }}>{t("schema-selection-description")}</Typography>
             </Box>
-
             {loading ? <CircularProgress /> : <Grid container spacing={3} justifyContent="flex-start">
                 {schemas.map(schema => (
                     <Grid item xs={12} md={6} lg={4} xl={3} key={schema.id}                       >
@@ -105,12 +104,15 @@ const CreateSchema = () => {
                                 })}
 
                             </TreeView>
-                            <LoadingButton loading={loadingSchemaId === schema.id} variant="contained" fullWidth onClick={() => submit(schema.id)}>{t("use", {what: schemaword})}</LoadingButton>
+                            <LoadingButton loading={loadingSchemaId === schema.id} variant="contained" fullWidth onClick={() => submit(schema.id)}>{t("use", { what: schemaword })}</LoadingButton>
 
                         </Card>
 
                     </Grid>
                 ))}
+                <Backdrop open={loadingSchemaId} >
+                    <CircularProgress color="inherit" />
+                </Backdrop>
             </Grid>}
 
         </Box>

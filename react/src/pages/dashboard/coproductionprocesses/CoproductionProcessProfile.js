@@ -1,11 +1,11 @@
 import {
   Avatar,
   Box, Card, CardHeader, Container, IconButton,
-  Tab, Tabs, useMediaQuery,
+  Tab, Tabs, Typography, useMediaQuery,
   useTheme
 } from '@material-ui/core';
 import { red } from '@material-ui/core/colors';
-import { MoreVert } from '@material-ui/icons';
+import { Error, MoreVert } from '@material-ui/icons';
 import i18next from 'i18next';
 import MainSkeleton from 'pages/dashboard/coproductionprocesses/Tabs/MainSkeleton';
 import OverviewTab from 'pages/dashboard/coproductionprocesses/Tabs/Overview';
@@ -23,6 +23,8 @@ import CreateSchema from './Tabs/Overview/CreateSchema';
 import Repository from './Tabs/Repository/Repository';
 import TeamTab from './Tabs/Team';
 import Workplan from './Tabs/Workplan/Workplan';
+import useAuth from 'hooks/useAuth';
+import PermissionDenied from 'components/PermissionDenied';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -87,7 +89,8 @@ const CoproductionProcessProfile = () => {
   let { processId, tab = "overview" } = useParams();
   const dispatch = useDispatch();
   const mounted = useMounted();
-  
+  const { user } = useAuth();
+
   const { process, hasSchema, loading } = useSelector((state) => state.process);
 
   const theme = useTheme();
@@ -114,7 +117,7 @@ const CoproductionProcessProfile = () => {
   }, [getCoproductionProcess]);
 
   const processLanguage = i18next.getFixedT(process && process.language);
-  const {t} = useTranslation()
+  const { t } = useTranslation()
 
 
   const tabs = [
@@ -143,7 +146,9 @@ const CoproductionProcessProfile = () => {
               <>
                 <TabPanel value={tab} index="overview">
                   <Card sx={style}>
-                    {hasSchema ? <OverviewTab setSelectedTreeItem={_setSelectedTreeItem} coproductionprocess={process} /> : <CreateSchema />}
+                    {hasSchema && <OverviewTab setSelectedTreeItem={_setSelectedTreeItem} coproductionprocess={process} />}
+                    {!hasSchema && process.creator_id === user.sub && <CreateSchema />}
+                    {!hasSchema && process.creator_id !== user.sub && <PermissionDenied explanation={t("Only the creator of the process can select an schema")} />}
                   </Card>
                 </TabPanel>
                 <TabPanel value={tab} index="metadata">
@@ -153,17 +158,17 @@ const CoproductionProcessProfile = () => {
                 </TabPanel>
                 {hasSchema && <>
                   <TabPanel value={tab} index="workplan">
-                  <Card sx={style}>
-                     <Workplan setSelectedTreeItem={_setSelectedTreeItem} />
-                  </Card>
-                </TabPanel>
-                <TabPanel value={tab} index="guide">
-                  <Card sx={style}>
-                    <Repository setSelectedTreeItem={_setSelectedTreeItem} />
-                  </Card>
-                </TabPanel>
+                    <Card sx={style}>
+                      <Workplan setSelectedTreeItem={_setSelectedTreeItem} />
+                    </Card>
+                  </TabPanel>
+                  <TabPanel value={tab} index="guide">
+                    <Card sx={style}>
+                      <Repository setSelectedTreeItem={_setSelectedTreeItem} />
+                    </Card>
+                  </TabPanel>
                 </>}
-                
+
                 <TabPanel value={tab} index="team">
                   <TeamTab />
                 </TabPanel>
