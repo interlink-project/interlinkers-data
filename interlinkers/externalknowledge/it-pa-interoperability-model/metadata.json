@@ -11,7 +11,7 @@
     },
     "description_translations": {
         "en": "<p>This resource describes the guidelines for technical interoperability for PA and related operational documents: interaction patterns, interoperability profiles, implementation recommendations (in Italian). </p>",
-        "es": "",
+        "es": "Este recurso describe las directrices de interoperabilidad t\u00e9cnica para la AP y los documentos operativos relacionados: patrones de interacci\u00f3n, perfiles de interoperabilidad, recomendaciones de implementaci\u00f3n (en italiano).",
         "it": "",
         "lv": ""
     },
@@ -33,7 +33,7 @@
     "licence": "permissive",
     "name_translations": {
         "en": "Italian PA interoperablity model ",
-        "es": "",
+        "es": "Modelo de interoperabilidad de la AP italiana ",
         "it": "",
         "lv": ""
     },

@@ -12,7 +12,7 @@
     },
     "description_translations": {
         "en": "<p>A RFC document which specifyes the open API.</p>",
-        "es": "",
+        "es": "<p>Un documento RFC que especifica la API abierta.</p>",
         "it": "",
         "lv": ""
     },
@@ -34,7 +34,7 @@
     "licence": "public_domain",
     "name_translations": {
         "en": "Open API specification",
-        "es": "",
+        "es": "Especificaci\u00f3n de la API abierta",
         "it": "",
         "lv": ""
     },
