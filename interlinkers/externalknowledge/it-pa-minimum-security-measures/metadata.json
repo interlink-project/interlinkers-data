@@ -11,7 +11,7 @@
     },
     "description_translations": {
         "en": "<p>This resource describes the minimum ICT security measures issued by AgID aim at countering the most frequent cyber threats to the Italian public administration.</p>",
-        "es": "",
+        "es": "<p>Este recurso describe las medidas m\u00ednimas de seguridad de las TIC emitidas por la AgID con el objetivo de contrarrestar las ciberamenazas m\u00e1s frecuentes para la administraci\u00f3n p\u00fablica italiana.</p>",
         "it": "",
         "lv": ""
     },
@@ -33,7 +33,7 @@
     "licence": "permissive",
     "name_translations": {
         "en": "AgID Minimum Security Measures for Public Administration. ",
-        "es": "",
+        "es": "AgID Medidas m\u00ednimas de seguridad para la administraci\u00f3n p\u00fablica. ",
         "it": "",
         "lv": ""
     },

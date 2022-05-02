@@ -795,7 +795,7 @@
                 },
                 "description_translations": {
                     "en": "<p>This resource describes the Cloud Enablement strategy outlined by AGID and Team Digitale (in Italian). </p>",
-                    "es": "",
+                    "es": "<p>Este recurso describe la estrategia de habilitaci\u00f3n en la nube esbozada por AGID y Team Digitale (en italiano). </p>",
                     "it": "",
                     "lv": ""
                 },
@@ -817,7 +817,7 @@
                 "licence": "permissive",
                 "name_translations": {
                     "en": "Cloud Enablement Kit (in Italian)",
-                    "es": "",
+                    "es": "Kit de habilitaci\u00f3n para la nube (en italiano)",
                     "it": "",
                     "lv": ""
                 },
@@ -1375,7 +1375,7 @@
                 },
                 "description_translations": {
                     "en": "<p>The eIDAS solution allows citizens from Member States to prove and verify their identification when accessing on-line services in other Member States. It allows citizens to authenticate themselves by using their eIDs and connecting with their Identity Provider (IdP) from their country. </p>",
-                    "es": "",
+                    "es": "<p>La soluci\u00f3n eIDAS permite a los ciudadanos de los Estados miembros demostrar y verificar su identificaci\u00f3n cuando acceden a servicios en l\u00ednea en otros Estados miembros. Permite a los ciudadanos autenticarse utilizando sus eIDs y conect\u00e1ndose con su proveedor de identidad (IdP) de su pa\u00eds. </p>",
                     "it": "",
                     "lv": ""
                 },
@@ -1435,7 +1435,7 @@
                 },
                 "description_translations": {
                     "en": "<p>This resource describes the minimum ICT security measures issued by AgID aim at countering the most frequent cyber threats to the Italian public administration.</p>",
-                    "es": "",
+                    "es": "<p>Este recurso describe las medidas m\u00ednimas de seguridad de las TIC emitidas por la AgID con el objetivo de contrarrestar las ciberamenazas m\u00e1s frecuentes para la administraci\u00f3n p\u00fablica italiana.</p>",
                     "it": "",
                     "lv": ""
                 },
@@ -1457,7 +1457,7 @@
                 "licence": "permissive",
                 "name_translations": {
                     "en": "AgID Minimum Security Measures for Public Administration. ",
-                    "es": "",
+                    "es": "AgID Medidas m\u00ednimas de seguridad para la administraci\u00f3n p\u00fablica. ",
                     "it": "",
                     "lv": ""
                 },
@@ -1498,7 +1498,7 @@
                 },
                 "description_translations": {
                     "en": "<p>These Guidelines give general guidance on the obligation of Data Protection by Design and by Default (henceforth \u201cDPbDD\u201d) set forth in Article 25 in the GDPR.</p>",
-                    "es": "",
+                    "es": "<p>Estas Directrices ofrecen una orientaci\u00f3n general sobre la obligaci\u00f3n de la Protecci\u00f3n de Datos por Dise\u00f1o y por Defecto (en adelante \"DPbDD\") establecida en el art\u00edculo 25 del GDPR.</p>",
                     "it": "",
                     "lv": ""
                 },
@@ -1520,7 +1520,7 @@
                 "licence": "permissive",
                 "name_translations": {
                     "en": "EDPB Data Protection Guidelines",
-                    "es": "",
+                    "es": "Directrices de protecci\u00f3n de datos del EDPB",
                     "it": "",
                     "lv": ""
                 },
