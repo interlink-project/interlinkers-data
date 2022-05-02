@@ -6,7 +6,10 @@
         "en": "No special constraints apply"
     },
     "description_translations": {
-        "en": "<p>This resource suggests a model to define the features of a co-produced service. It guides the description of the problem(s) that the product will solve in the long run, the vision for the user experience as well as the user interface, the vision for how the product will generate a return of investment</p>"
+        "en": "<p>This resource suggests a model to define the features of a co-produced service. It guides the description of the problem(s) that the product will solve in the long run, the vision for the user experience as well as the user interface, the vision for how the product will generate a return of investment</p>",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "difficulty": "easy",
     "domain": "",
@@ -29,7 +32,10 @@
     ],
     "licence": "public_domain",
     "name_translations": {
-        "en": "Outcome marketing featureset"
+        "en": "Outcome marketing featureset",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "problemprofiles": [
         "ORG_PROBLEM_6.2",

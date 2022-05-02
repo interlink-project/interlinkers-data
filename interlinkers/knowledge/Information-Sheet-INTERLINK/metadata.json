@@ -6,7 +6,10 @@
         "en": "No special constraints apply"
     },
     "description_translations": {
-        "en": "<p>Information on the INTERLINK project to be distributed to participants. It provides background on research activities.</p>"
+        "en": "<p>Information on the INTERLINK project to be distributed to participants. It provides background on research activities.</p>",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "difficulty": "very_easy",
     "domain": "",
@@ -29,7 +32,10 @@
     ],
     "licence": "public_domain",
     "name_translations": {
-        "en": "Information Sheet for INTERLINK project"
+        "en": "Information Sheet for INTERLINK project",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "problemprofiles": [
         "ORG_PROBLEM_14"

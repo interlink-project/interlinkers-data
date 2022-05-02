@@ -6,7 +6,10 @@
         "en": "No special constraints apply"
     },
     "description_translations": {
-        "en": "<p>Document with template for co-design of Public Service Proposal</p>"
+        "en": "<p>Document with template for co-design of Public Service Proposal</p>",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "difficulty": "very_easy",
     "domain": "",
@@ -29,7 +32,10 @@
     ],
     "licence": "public_domain",
     "name_translations": {
-        "en": "Public Service Proposal Template for INTERLINK project"
+        "en": "Public Service Proposal Template for INTERLINK project",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "problemprofiles": [
         "HACKATHON_PROBLEM_1"

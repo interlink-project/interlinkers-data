@@ -6,7 +6,10 @@
         "en": "No special constraints apply"
     },
     "description_translations": {
-        "en": "<p>Instructions on how to set up a research activity based on interviews, for a co-production project. </p>"
+        "en": "<p>Instructions on how to set up a research activity based on interviews, for a co-production project. </p>",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "difficulty": "easy",
     "domain": "",
@@ -29,7 +32,10 @@
     ],
     "licence": "public_domain",
     "name_translations": {
-        "en": "Guidelines for interviews"
+        "en": "Guidelines for interviews",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "problemprofiles": [
         "ORG_PROBLEM_14",

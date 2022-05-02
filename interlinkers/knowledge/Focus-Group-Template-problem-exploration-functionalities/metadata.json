@@ -6,7 +6,10 @@
         "en": "No special constraints apply"
     },
     "description_translations": {
-        "en": "<p>This resource provides a skeleton to organize a focus group to investigate the problem that needs to be solved by a digital service / functionality. It addresses a series of questions about potential users, current practices, critical aspects and  desiderata.</p>"
+        "en": "<p>This resource provides a skeleton to organize a focus group to investigate the problem that needs to be solved by a digital service / functionality. It addresses a series of questions about potential users, current practices, critical aspects and  desiderata.</p>",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "difficulty": "easy",
     "domain": "",
@@ -20,7 +23,7 @@
     },
     "form": "document_template",
     "format": "editable_source_document",
-    "id": "focus-group-template-co-production-investigation",
+    "id": "focus-group-on-problem-exploration-for-new-digital-functionality",
     "instructions_translations": {
         "en": "./interlinkers/knowledge/Focus-Group-Template-problem-exploration-functionalities/instructions.md"
     },
@@ -29,7 +32,10 @@
     ],
     "licence": "public_domain",
     "name_translations": {
-        "en": "Focus Group Template Co-production Investigation"
+        "en": "Focus Group on problem exploration for new digital functionality",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "problemprofiles": [
         "UND_PROBLEM_3",

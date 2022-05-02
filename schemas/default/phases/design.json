@@ -8,32 +8,44 @@
     ],
     "name_translations": {
         "en": "Design",
-        "es": ""
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "description_translations": {
         "en": "Follow the guidelines to discuss together, in a balanced and inclusive way, issues, beneficiaries, and priorities for the service to be designed. Find useful resources to conduct interviews, surveys and focus groups for a deeper understanding of stakeholders\u2019 and citizens\u2019 needs and requirements. Use the proposed material to organize service design workshops and develop mockups. Stop and reflect on the process so far with the co-evaluation checklists.",
-        "es": ""
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "objectives": [
         {
             "name_translations": {
                 "en": "Focus the problem collaboratively",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "description_translations": {
                 "en": "Clearly define the problem to be addresses by the co-production team and agree on it. This  is an important step towards creating an effective and efficient solution. Different resources can be useful to this end: tips on how to create and share a common language among team members, resources to guide collaborative discussions, tools for ideas collection.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "problemprofiles": [],
             "tasks": [
                 {
                     "name_translations": {
                         "en": "Develop a shared language",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Develop a shared language among the team members and encourage communication and ideas sharing with all the stakeholders. Developing a shared language is crucial to be able for stakeholders to: i) build a common ground for joint action, ii) share, mutually agree on, and understand a longterm research plan and protocol, iii) to ongoingly evaluate the success or failure of decisions.",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [
                         "ORG_PROBLEM_12"
@@ -44,11 +56,15 @@
                 {
                     "name_translations": {
                         "en": "Collaboratively problem refinement",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Refine with the collaboration of the stakeholders network the problem to be addressed. Service design is a problem-solving activity and it is important to clearly understand which is the challenge that the team addresses and how more information can be collected to understand how the service should be designed. Organize focus groups to discuss initial ideas and assumptions, refine them through structured methods and become aware about the missing information that still needs to be collected.",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [],
                     "prerequisites": [
@@ -62,11 +78,15 @@
                 {
                     "name_translations": {
                         "en": "Ideas collection for problem exploration and refinement",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "In case of need, enlarge the collection of ideas about the various aspects of the problem by launching a discussion forum.",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [],
                     "prerequisites": [
@@ -80,11 +100,15 @@
                 {
                     "name_translations": {
                         "en": "Sketch an initial idea of the service",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Draft an initial description (or multiple optional descriptions) of the potential service: what it does, who benefits from the service, who helps delivering it. Use description templates to facilitate your task.",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [],
                     "prerequisites": [
@@ -98,11 +122,15 @@
                 {
                     "name_translations": {
                         "en": "Collaborative agree on a service idea",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Go back to your network of stakeholders to validate the service idea by means of a focus group or a poll.",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [],
                     "prerequisites": [
@@ -116,11 +144,15 @@
                 {
                     "name_translations": {
                         "en": "Define requirements and constraints for the service",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "The ideas and service design concepts need to be translated into formal requirements to proceed with the implementation of the service. Follow the guidelines on how to collect, structure and communicate requirements and all the service specifications that clarify the objective of the service and how it should be developed. Use stardard representation formalism for requirements descriptions, as for example the Volere Requirements Specification template.",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [],
                     "prerequisites": [
@@ -138,11 +170,15 @@
         {
             "name_translations": {
                 "en": "Problem exploration",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "description_translations": {
                 "en": "Before actually designing how the service will look like, deeply explore the problem context, to gather factual data about users, organizations, needs and their relationships.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "problemprofiles": [
                 "UND_PROBLEM_1",
@@ -155,11 +191,15 @@
                 {
                     "name_translations": {
                         "en": "Collect data about users and their behavior",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Gather all the relevant information about the service that will be produced to put the right processes in place.  It\u2019s advisable to establish different types of consultation depending on the groups targeted:\r\n\\n- Consult users about desired outcomes of the service\r\n- Consult service providers about the solutions that can give in response to the service demanded\r\n- Ask public authorities about the implications (organizational, regulatory, etc.) that affect to the service delivery\r\nOrganize focus groups, interviews or surveys to elicit the desired data.",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [
                         "ORG_PROBLEM_6.2"
@@ -170,11 +210,15 @@
                 {
                     "name_translations": {
                         "en": "Ecosystem mapping",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Map in a synthetic representation all the key roles that can impact on the user, organization and service environment. The ecosystem map is built by first displaying all the entities, and then connecting them based on the type of value they exchange.",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [],
                     "prerequisites": [
@@ -197,11 +241,15 @@
         {
             "name_translations": {
                 "en": "Ideation",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "description_translations": {
                 "en": "Ideation is the preliminary phase of service design in which the design team is created, the collected data are reviewed, and futher ideas are sougth if necessary.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "problemprofiles": [
                 "ORG_PROBLEM_13",
@@ -215,11 +263,15 @@
                 {
                     "name_translations": {
                         "en": "Engage relevant actors in the design",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Create a core group of stakeholders to proceed with the actual ideation of the service. Provide appropriate communication, motivational statements, and workplan information about the next steps of service co-creation.",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [],
                     "id": "task-engage-relevant-actors-in-the-design",
@@ -228,11 +280,15 @@
                 {
                     "name_translations": {
                         "en": "Organize a braistorming",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Organize and manage a brainstorming to review the data collected about the service ecosystem and to produce service ideas, discuss and select them, through divergent and convergent phases of group discussion.",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [],
                     "prerequisites": [
@@ -246,11 +302,15 @@
                 {
                     "name_translations": {
                         "en": "Ideas crowdsourcing",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Collect ideas from a large set of contributors (e.g. citizens) related to a specific challenge, organize and manage the ideas and eventually evaluate them. Crowdsourcing projects can target both internal and external participants via dedicated tools and platforms, questionnaires, social media, competitions and other methods.",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [],
                     "prerequisites": [
@@ -273,11 +333,15 @@
         {
             "name_translations": {
                 "en": "Service design",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "description_translations": {
                 "en": "After the understanding of the problem and the brainstorming of the service ideas, elaborate concrete solutions for your challenge. Co-design workshops are useful at this stage as collective activities organized to discuss design issues and choices. Work together with relevant actors to start defining the service to be co-designed and co-delivered.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "problemprofiles": [
                 "UND_PROBLEM_4",
@@ -289,11 +353,15 @@
                 {
                     "name_translations": {
                         "en": "Define personas",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Reflect on the service beneficiary behavior, needs and expectations. Personas are fictional characters who embody the archetype of your customer, beneficiary or financing supporter. They are created through exhaustive observation of the customer segment and the drawing together of their shared characteristics, behaviors, motivations, interests, etc. It is a useful tool to focus on getting to know who you are designing for.",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [],
                     "id": "task-define-personas",
@@ -302,11 +370,15 @@
                 {
                     "name_translations": {
                         "en": "Define scenarios",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Write scenarios. To explain and collaboratively describe the envisioned service, scenarios can be used to reflect on the users experience. A user scenario is a story that describes, in an  narrative manner, how the user is going to interact with the service during a specific situation. Writing user scenarios requires to identify a specific context in which the action takes place, as well as characters and needs that defines the attitude of the user. ",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [],
                     "prerequisites": [
@@ -320,11 +392,15 @@
                 {
                     "name_translations": {
                         "en": "Define user journeys",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Describe the encounters between the user and the organization, service or product. Tell the story from the user\u2019s point of view, and try to depict how the user\u2019s expectations intersect with the organization\u2019s offer. It is a useful strategic tool that keeps the customers, beneficiaries and providers at the center of design decisions, highlighting pain points and opportunities for the organization to create a better user experience and an effective service.",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [],
                     "prerequisites": [
@@ -347,11 +423,15 @@
         {
             "name_translations": {
                 "en": "Service specification",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "description_translations": {
                 "en": "The ideas and service design concepts need to be translated into formal requirements and service specifications to proceed with the implementation of the service. Follow the guidelines to collect, structure and communicate requirements and all the service specifications that clarify the objective of the service and how it should be developed.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "problemprofiles": [
                 "DEF_PROBLEM_1",
@@ -362,11 +442,15 @@
                 {
                     "name_translations": {
                         "en": "Consider eu guidelines for public service developement",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Consult good practices for interface design and public services development. Reflect, in your specific use case, on how to make sure the services are provided in a multi-channel manner, maximizing the exploitation by potentially any group of users or by the agents acting on their behalf, and providing clear statements regarding the accessibility limits in the current implementation.",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [],
                     "id": "task-consider-eu-guidelines-for-public-service-developement",
@@ -375,11 +459,15 @@
                 {
                     "name_translations": {
                         "en": "User interface design",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Proceed with the design of the user interface of the service through the preparation of initial sketches and mockups. Ensure the design of the user interface follows the guidelines on usability and accessibility. ",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [],
                     "prerequisites": [
@@ -393,11 +481,15 @@
                 {
                     "name_translations": {
                         "en": "Content design",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Prepare adequate content for the new/enhanced public service. Follow the guidelines on how to select and use the most appropriate language according to the users of the digital service and their skills.",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [
                         "DEF_PROBLEM_6"
@@ -413,11 +505,15 @@
                 {
                     "name_translations": {
                         "en": "Service specification definition",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Possibly use standard specification formalisms for describing your service. INTERLINK suggests you to have a look at EU standards like the Service Offering Canvas. By filling out this structured, visual classification of digital services, you can describe how stakeholder needs are met. The result is a consolidated view that drives service orientation and awareness of needs and how services are to be consumed. SOC specifications can be shared and compared with other similar services at the EU level.",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [],
                     "prerequisites": [
@@ -431,11 +527,15 @@
                 {
                     "name_translations": {
                         "en": "Data model design",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Aid the following steps of service implementation by defining a  Data Model that explains: the conceptual organization of the service, its logical organization in terms of components, and the physical level of database implementations required. ",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [],
                     "prerequisites": [
@@ -449,11 +549,15 @@
                 {
                     "name_translations": {
                         "en": "Software architecture and api design",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Create a document that describes the software architecture of the digital system underneath the service and the APIs design.",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [],
                     "prerequisites": [
@@ -476,11 +580,15 @@
         {
             "name_translations": {
                 "en": "Prototype",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "description_translations": {
                 "en": "How to show and tell in which way the service is expected to work?\r\nValidate the concept of your service or verify the assumptions about your final product before developing it. Different types of proof of concepts can be used, according to the stage of service development and the type of service, whether it is a digital service or not.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "problemprofiles": [
                 "VAL_PROBLEM_3",
@@ -490,11 +598,15 @@
                 {
                     "name_translations": {
                         "en": "Experience scenarios",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Analyse and visualise how the system changes or evolves according to specific scenarios and their dynamics.\r\nSystem scenarios introduce a dynamic level of analysis, applying the lense of time and showing the possible variations that could take place. In this way, system scenarios provide a deeper level of analysis of the system, directed at understanding system dynamics and relations between actors in various conditions.",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [],
                     "id": "task-experience-scenarios",
@@ -503,11 +615,15 @@
                 {
                     "name_translations": {
                         "en": "Mockups and lowfi prototypes",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Iteratively discuss and evaluate mockups and lowfi prototypes within the enlarged design team. Set up a discussion forum, a method for e-voting and evaluation surveys to digitally facilitate this step.",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [],
                     "prerequisites": [
@@ -521,11 +637,15 @@
                 {
                     "name_translations": {
                         "en": "Perform an heuristic evaluation",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Test the design of the digital service with experts. Follow the guidelines on how to conduct an Heuristic Evaluation (also called Expert evaluation) and use the templates with the heuristics (principles) to follow when performing the test. The test can be conducted with early mock-ups as well with functioning early prototypes.",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [],
                     "prerequisites": [
@@ -539,11 +659,15 @@
                 {
                     "name_translations": {
                         "en": "Perform a test with users",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "If lowfi prototypes allow a good representation of what the service will be and allow to simulate interaction flows, conduct controlled evaluation experiments with potential end users. \r\nDo they understand the language of the interface mockups? Are major functionalities in place? Are there unexpected interaction paths?\r\nAlso very small experiments, may provide extremely valuable input at this stage.",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [],
                     "prerequisites": [
@@ -566,11 +690,15 @@
         {
             "name_translations": {
                 "en": "Sustainability",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "description_translations": {
                 "en": "Before further going deep into the development of your service. Stop and reflect about the design results obtained so far and about the actual feasibility and sustainability of what you are about to implement.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "problemprofiles": [
                 "UND_PROBLEM_3"
@@ -579,11 +707,15 @@
                 {
                     "name_translations": {
                         "en": "Evaluation of codesign",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Is the design output satisfactory?\r\nFollow the proposed checklist to understand if you are done with design or whether an iterative refinement cycle is recommended.",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [],
                     "id": "task-evaluation-of-codesign",
@@ -592,11 +724,15 @@
                 {
                     "name_translations": {
                         "en": "Refine the preliminary business model",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "How much funding is needed? Where does the money come from? What are the sources of funding / support necessary to keep it running after implementation?\r\nFollow the proposed checklist for an intermediate evaluation of financial sustainability.",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [],
                     "prerequisites": [
@@ -610,11 +746,15 @@
                 {
                     "name_translations": {
                         "en": "Feasibility analysis",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Are all technical skills and resources available to proceed with development? \r\nFollow the proposed checklist for an intermediate evaluation of technical sustainabiity.",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [],
                     "prerequisites": [
@@ -628,11 +768,15 @@
                 {
                     "name_translations": {
                         "en": "Understand motivations and incentives",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "What are the incentives for those who can provide support / funding and for those developing / maintaining them?\r\nStop and reflect on how stakeholders collaboration in co-creation went so far. Follow the proposed checklist to understand whether further incentives and supportive measures are needed to ensure productive development and co-delivery phases.",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [],
                     "prerequisites": [

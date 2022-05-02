@@ -5,15 +5,8 @@ from slugify import slugify
 
 from problemprofiles.problemprofiles import WithProblemProfiles
 from pydantic import BaseModel, Extra, FilePath, HttpUrl, conlist, validator
-
+from configuration import Languages
 # https://docs.google.com/spreadsheets/d/1tJ2BfX4EOdbBqEbrJWg8a3MENw13vYiPZM_S4wWWgWQ/edit#gid=0
-
-
-class Languages(Enum):
-    es = "es"
-    en = "en"
-    lv = "lv"
-    it = "it"
 
 class Environments(Enum):
     varam = "varam"

@@ -8,21 +8,29 @@
     ],
     "name_translations": {
         "en": "Run",
-        "es": ""
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "description_translations": {
         "en": "Make use of designed co-production process, reviewing contribs from users of the service, accepting or rejecting them, exporting reports with changes accepted so that they are processed for refinement.",
-        "es": ""
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "objectives": [
         {
             "name_translations": {
                 "en": "Monitor continuous crowd refinement process",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "description_translations": {
                 "en": "Access to the Description Augmenter to monitor and moderate contributions from the crowd, generate intermediary reports and store them.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "problemprofiles": [
                 "DEF_PROBLEM_5"
@@ -31,11 +39,15 @@
                 {
                     "name_translations": {
                         "en": "Link to the Description Augmenter project",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Produce a link to the description augmenter session so that we co-producers can review contributions, accept, reject them or generate reports for refinement processing. ",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [
                         "BUILD_PROBLEM_2",
@@ -56,11 +68,15 @@
         {
             "name_translations": {
                 "en": "Publish report with descriptions accepted to be processed",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "description_translations": {
                 "en": "Produce a link to the report",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "problemprofiles": [
                 "ORG_PROBLEM_13",
@@ -71,11 +87,15 @@
                 {
                     "name_translations": {
                         "en": "Publish enhancement report",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Publish enhancement report.",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [
                         "BUILD_PROBLEM_2",

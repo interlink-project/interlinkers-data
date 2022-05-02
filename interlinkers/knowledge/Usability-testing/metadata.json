@@ -6,7 +6,10 @@
         "en": "No special constraints apply"
     },
     "description_translations": {
-        "en": "<p>Guidelines and tips on how to perform a usability testing</p>"
+        "en": "<p>Guidelines and tips on how to perform a usability testing</p>",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "difficulty": "easy",
     "domain": "",
@@ -29,7 +32,10 @@
     ],
     "licence": "public_domain",
     "name_translations": {
-        "en": "Usability testing guidelines"
+        "en": "Usability testing guidelines",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "problemprofiles": [
         "ORG_PROBLEM_6.2",

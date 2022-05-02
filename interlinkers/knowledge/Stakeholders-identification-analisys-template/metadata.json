@@ -6,7 +6,10 @@
         "en": "No special constraints apply"
     },
     "description_translations": {
-        "en": "<p>This template of an excel file can be used in conjunction with the Stakeholders Mapping Canvas to identify by name and title the people, groups, and organisations that have significant influence on project direction and its success or who are significantly impacted by the project. The template helps in planning Stakeholders engagement according to different dimensions:<br> <ul><br><li>the desired or expected level of involvement<br><li> potential issues related to their engagement<br><li>motivations and barriers that can support you in finding the best strategy to engage them in the co-production process<br><li> expectation of the different Stakeholders<br><li> skills and potential role within the co-production process.<br></ul></p>"
+        "en": "<p>This template of an excel file can be used in conjunction with the Stakeholders Mapping Canvas to identify by name and title the people, groups, and organisations that have significant influence on project direction and its success or who are significantly impacted by the project. The template helps in planning Stakeholders engagement according to different dimensions:<br> <ul><br><li>the desired or expected level of involvement<br><li> potential issues related to their engagement<br><li>motivations and barriers that can support you in finding the best strategy to engage them in the co-production process<br><li> expectation of the different Stakeholders<br><li> skills and potential role within the co-production process.<br></ul></p>",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "difficulty": "easy",
     "domain": "",
@@ -29,7 +32,10 @@
     ],
     "licence": "public_domain",
     "name_translations": {
-        "en": "Stakeholders identification analisys template guidelines"
+        "en": "Stakeholders identification analisys template guidelines",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "problemprofiles": [
         "ORG_PROBLEM_1",

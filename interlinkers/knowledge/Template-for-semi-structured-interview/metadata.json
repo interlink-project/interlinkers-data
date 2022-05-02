@@ -6,7 +6,10 @@
         "en": "No special constraints apply"
     },
     "description_translations": {
-        "en": "<p>Instructions and examples on how to conduct structured interviews for a co-production project.</p>"
+        "en": "<p>Instructions and examples on how to conduct structured interviews for a co-production project.</p>",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "difficulty": "easy",
     "domain": "",
@@ -29,7 +32,10 @@
     ],
     "licence": "public_domain",
     "name_translations": {
-        "en": "Template for semi structured interview"
+        "en": "Template for semi structured interview",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "problemprofiles": [
         "ORG_PROBLEM_2",

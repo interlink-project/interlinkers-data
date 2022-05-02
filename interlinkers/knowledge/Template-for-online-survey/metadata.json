@@ -6,7 +6,10 @@
         "en": "No special constraints apply"
     },
     "description_translations": {
-        "en": "<p>Template to collect data through online survey for assessing Media and Technology Usage and Attitudes</p>"
+        "en": "<p>Template to collect data through online survey for assessing Media and Technology Usage and Attitudes</p>",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "difficulty": "easy",
     "domain": "",
@@ -29,7 +32,10 @@
     ],
     "licence": "public_domain",
     "name_translations": {
-        "en": "template for online survey guidelines"
+        "en": "template for online survey guidelines",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "problemprofiles": [
         "UND_PROBLEM_3"

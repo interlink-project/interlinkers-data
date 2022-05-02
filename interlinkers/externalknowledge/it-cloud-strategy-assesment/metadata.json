@@ -10,7 +10,10 @@
         "en": "No special constraints apply"
     },
     "description_translations": {
-        "en": "<p>This resource contains a questionnaire to check the cloud computing migration strategy  </p>"
+        "en": "<p>This resource contains a questionnaire to check the cloud computing migration strategy  </p>",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "difficulty": "medium",
     "environments": [
@@ -29,7 +32,10 @@
     ],
     "licence": "permissive",
     "name_translations": {
-        "en": "AgID Cloud computing migration strategy evalution template"
+        "en": "AgID Cloud computing migration strategy evalution template",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "problemprofiles": [
         "BUILD_PROBLEM_3"

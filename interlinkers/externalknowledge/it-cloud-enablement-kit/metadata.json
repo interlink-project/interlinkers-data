@@ -10,7 +10,10 @@
         "en": "No special constraints apply"
     },
     "description_translations": {
-        "en": "<p>This resource describes the Cloud Enablement strategy outlined by AGID and Team Digitale (in Italian). </p>"
+        "en": "<p>This resource describes the Cloud Enablement strategy outlined by AGID and Team Digitale (in Italian). </p>",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "difficulty": "difficult",
     "environments": [
@@ -29,7 +32,10 @@
     ],
     "licence": "permissive",
     "name_translations": {
-        "en": "Cloud Enablement Kit (in Italian)"
+        "en": "Cloud Enablement Kit (in Italian)",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "problemprofiles": [
         "BUILD_PROBLEM_3"

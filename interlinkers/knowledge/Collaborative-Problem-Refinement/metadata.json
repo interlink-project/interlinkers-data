@@ -6,7 +6,10 @@
         "en": "No special constraints apply"
     },
     "description_translations": {
-        "en": "<p>This resource will support you to refine the problem to be addresses by the co-production team as an important step to creating an effective and efficient solution.</p>"
+        "en": "<p>This resource will support you to refine the problem to be addresses by the co-production team as an important step to creating an effective and efficient solution.</p>",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "difficulty": "medium",
     "domain": "",
@@ -29,7 +32,10 @@
     ],
     "licence": "public_domain",
     "name_translations": {
-        "en": "Collaborative problem refinement"
+        "en": "Collaborative problem refinement",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "problemprofiles": [
         "UND_PROBLEM_3",

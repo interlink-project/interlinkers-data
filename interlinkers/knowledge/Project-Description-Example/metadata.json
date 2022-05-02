@@ -6,7 +6,10 @@
         "en": "No special constraints apply"
     },
     "description_translations": {
-        "en": "<p>Example of project description that synthetically summarizes the goals and major aspects of a co-production initiative.  </p>"
+        "en": "<p>Example of project description that synthetically summarizes the goals and major aspects of a co-production initiative.  </p>",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "difficulty": "easy",
     "domain": "",
@@ -29,7 +32,10 @@
     ],
     "licence": "public_domain",
     "name_translations": {
-        "en": "Project description example"
+        "en": "Project description example",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "problemprofiles": [
         "DEF_PROBLEM_1",

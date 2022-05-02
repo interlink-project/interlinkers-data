@@ -11,7 +11,10 @@
         "en": "No special constraints apply"
     },
     "description_translations": {
-        "en": "<p>A RFC document which specifyes the open API.</p>"
+        "en": "<p>A RFC document which specifyes the open API.</p>",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "difficulty": "medium",
     "environments": [
@@ -30,7 +33,10 @@
     ],
     "licence": "public_domain",
     "name_translations": {
-        "en": "Open API specification"
+        "en": "Open API specification",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "problemprofiles": [
         "BUILD_PROBLEM_2"

@@ -6,7 +6,10 @@
         "en": "none"
     },
     "description_translations": {
-        "en": "<p>Online calendar tool for time management and coordinating meetings. Anytime more than two people are trying to arrange a meeting, Doodle very useful. You can use doodle to plan meetings with team members, project collaborators, and external suppliers. </p>"
+        "en": "<p>Online calendar tool for time management and coordinating meetings. Anytime more than two people are trying to arrange a meeting, Doodle very useful. You can use doodle to plan meetings with team members, project collaborators, and external suppliers. </p>",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "difficulty": "easy",
     "environments": [
@@ -24,7 +27,10 @@
     "licence": "propietary",
     "logotype": "./interlinkers/externalsoftware/doodle/logo.png",
     "name_translations": {
-        "en": "Doodle"
+        "en": "Doodle",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "problemprofiles": [
         "ORG_PROBLEM_4"

@@ -6,7 +6,10 @@
         "en": "No special constraints apply"
     },
     "description_translations": {
-        "en": "<p>Template for preparing a user journey. </p>"
+        "en": "<p>Template for preparing a user journey. </p>",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "difficulty": "easy",
     "environments": [
@@ -28,7 +31,10 @@
     ],
     "licence": "permissive",
     "name_translations": {
-        "en": "Template for user journey"
+        "en": "Template for user journey",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "problemprofiles": [
         "ORG_PROBLEM_1",

@@ -11,7 +11,10 @@
         "en": "No special constraints apply"
     },
     "description_translations": {
-        "en": "<p>A collection of resources for individuals, communities, and companies who want to learn how to run and contribute to an open source project.</p>"
+        "en": "<p>A collection of resources for individuals, communities, and companies who want to learn how to run and contribute to an open source project.</p>",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "difficulty": "very_easy",
     "environments": [
@@ -30,7 +33,10 @@
     ],
     "licence": "public_domain",
     "name_translations": {
-        "en": "Open Source guides"
+        "en": "Open Source guides",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "problemprofiles": [
         "BUILD_PROBLEM_3"

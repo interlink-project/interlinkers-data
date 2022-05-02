@@ -11,7 +11,10 @@
         "en": "None"
     },
     "description_translations": {
-        "en": "<p>Web accessibility evaluation tools are software programs or online services that help you determine if web content meets accessibility guidelines. This page provides a list of evaluation tools that you can filter to find ones that match your particular needs.</p>"
+        "en": "<p>Web accessibility evaluation tools are software programs or online services that help you determine if web content meets accessibility guidelines. This page provides a list of evaluation tools that you can filter to find ones that match your particular needs.</p>",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "difficulty": "easy",
     "environments": [
@@ -28,7 +31,10 @@
     ],
     "licence": "propietary",
     "name_translations": {
-        "en": "Accessibility Tools"
+        "en": "Accessibility Tools",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "problemprofiles": [
         "BUILD_PROBLEM_2"

@@ -11,7 +11,10 @@
         "en": "None"
     },
     "description_translations": {
-        "en": "<p>Multi-platform open source analytics and interactive visualization web application. It provides charts, graphs, and alerts for the web when connected to supported data sources. </p>"
+        "en": "<p>Multi-platform open source analytics and interactive visualization web application. It provides charts, graphs, and alerts for the web when connected to supported data sources. </p>",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "difficulty": "medium",
     "environments": [
@@ -29,7 +32,10 @@
     "licence": "public_domain",
     "logotype": "./interlinkers/externalsoftware/grafana/logo.png",
     "name_translations": {
-        "en": "Grafana"
+        "en": "Grafana",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "problemprofiles": [
         "ORG_PROBLEM_6.2"

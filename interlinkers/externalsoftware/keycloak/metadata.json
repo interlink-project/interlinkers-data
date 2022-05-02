@@ -11,7 +11,10 @@
         "en": "None"
     },
     "description_translations": {
-        "en": "<p>Keycloak provides user federation, strong authentication, user management, fine-grained authorization</p>"
+        "en": "<p>Keycloak provides user federation, strong authentication, user management, fine-grained authorization</p>",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "difficulty": "difficult",
     "environments": [
@@ -29,7 +32,10 @@
     "licence": "permissive",
     "logotype": "./interlinkers/externalsoftware/keycloak/logo.png",
     "name_translations": {
-        "en": "Keycloak"
+        "en": "Keycloak",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "problemprofiles": [
         "ORG_PROBLEM_3"

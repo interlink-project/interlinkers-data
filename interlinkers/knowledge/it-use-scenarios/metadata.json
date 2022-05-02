@@ -6,7 +6,10 @@
         "en": "No special constraints apply"
     },
     "description_translations": {
-        "en": "<p>Template for preparing a use scenarios. </p>"
+        "en": "<p>Template for preparing a use scenarios. </p>",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "difficulty": "easy",
     "environments": [
@@ -28,7 +31,10 @@
     ],
     "licence": "permissive",
     "name_translations": {
-        "en": "Template for use case scenarios"
+        "en": "Template for use case scenarios",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "problemprofiles": [
         "ORG_PROBLEM_1",

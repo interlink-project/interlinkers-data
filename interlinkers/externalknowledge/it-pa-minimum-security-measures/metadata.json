@@ -10,7 +10,10 @@
         "en": "No special constraints apply"
     },
     "description_translations": {
-        "en": "<p>This resource describes the minimum ICT security measures issued by AgID aim at countering the most frequent cyber threats to the Italian public administration.</p>"
+        "en": "<p>This resource describes the minimum ICT security measures issued by AgID aim at countering the most frequent cyber threats to the Italian public administration.</p>",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "difficulty": "difficult",
     "environments": [
@@ -29,7 +32,10 @@
     ],
     "licence": "permissive",
     "name_translations": {
-        "en": "AgID Minimum Security Measures for Public Administration. "
+        "en": "AgID Minimum Security Measures for Public Administration. ",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "problemprofiles": [
         "BUILD_PROBLEM_3"

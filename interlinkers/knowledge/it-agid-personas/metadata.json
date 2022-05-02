@@ -7,7 +7,10 @@
         "en": "No special constraints apply"
     },
     "description_translations": {
-        "en": "<p>This resource provides a model for persona outlined by AGID and Team Digitale (in Italian).</p>"
+        "en": "<p>This resource provides a model for persona outlined by AGID and Team Digitale (in Italian).</p>",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "difficulty": "easy",
     "domain": "",
@@ -30,7 +33,10 @@
     ],
     "licence": "public_domain",
     "name_translations": {
-        "en": "Model for Personas (in italian)"
+        "en": "Model for Personas (in italian)",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "problemprofiles": [
         "VAL_PROBLEM_2"

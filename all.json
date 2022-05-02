@@ -13,7 +13,9 @@
                 },
                 "description_translations": {
                     "en": "<p> AAC is an Open Source platform for identity management, authentication, and authorization. Based on standard security protocols, such as OAuth2.0, OpenID Connect, SAML, SCIM, the tool allows for protecting the APIs and applciations, manage users, authenticate using external Identity Providers performing also Single Sign-On and Single Logout functionality. The tool is compatible with the eID providers and allow for integration of nation-level or cross-country authentication solutions.</p><p>More specifically, the tool allows for, but not limited to<ul><li>Multi-tenant management of users, applications, and personal data management in an extensible manner with the custom user attributes (claims) and attribute extraction;</li><li>User management with email/password based user registration or even passwordless authentication (based on WebAuthn standard)</li> <li>Authentication federation with external providers, and in particular, with eIDAS-compliant solutions, using SAML, OpenId Connect, and OAuth2.0 protocols;</li> <li>Perform OAuth2.0-based authorization and access control with customizable and extensible model of scopes, services, and applications;</li><li>Perform role-based and attribute-based access control policy implementation for end-users and applications accessing protected APIs.</li></ul></p>",
-                    "es": ""
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "difficult",
                 "environments": [
@@ -33,7 +35,9 @@
                 "logotype": "./interlinkers/externalsoftware/aac/logo.png",
                 "name_translations": {
                     "en": "AAC - Authentication and Authorization Controller",
-                    "es": ""
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "overview_text": {
                     "en": "Open source standard-based platform for identity and authorization management",
@@ -83,7 +87,10 @@
                     "en": "None"
                 },
                 "description_translations": {
-                    "en": "<p>Google Charts is a Java Script library providing a way to visualize data on your website (from simple line charts to complex hierarchical tree maps)</p>"
+                    "en": "<p>Google Charts is a Java Script library providing a way to visualize data on your website (from simple line charts to complex hierarchical tree maps)</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "medium",
                 "environments": [
@@ -101,7 +108,10 @@
                 "licence": "propietary",
                 "logotype": "./interlinkers/externalsoftware/google-chart/logo.png",
                 "name_translations": {
-                    "en": "Google Chart"
+                    "en": "Google Chart",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "ORG_PROBLEM_6.2"
@@ -142,7 +152,10 @@
                     "en": "None"
                 },
                 "description_translations": {
-                    "en": "<p>This validator checks the markup validity of Web documents in HTML, XHTML, SMIL, MathML, etc.</p>"
+                    "en": "<p>This validator checks the markup validity of Web documents in HTML, XHTML, SMIL, MathML, etc.</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "environments": [
@@ -159,7 +172,10 @@
                 ],
                 "licence": "propietary",
                 "name_translations": {
-                    "en": "Markup Validation Service"
+                    "en": "Markup Validation Service",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "BUILD_PROBLEM_2"
@@ -199,7 +215,10 @@
                     "en": "None"
                 },
                 "description_translations": {
-                    "en": "<p>Multi-platform open source analytics and interactive visualization web application. It provides charts, graphs, and alerts for the web when connected to supported data sources. </p>"
+                    "en": "<p>Multi-platform open source analytics and interactive visualization web application. It provides charts, graphs, and alerts for the web when connected to supported data sources. </p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "medium",
                 "environments": [
@@ -217,7 +236,10 @@
                 "licence": "public_domain",
                 "logotype": "./interlinkers/externalsoftware/grafana/logo.png",
                 "name_translations": {
-                    "en": "Grafana"
+                    "en": "Grafana",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "ORG_PROBLEM_6.2"
@@ -250,7 +272,10 @@
                     "en": "none"
                 },
                 "description_translations": {
-                    "en": "<p>Marketing automation platform and email marketing service[6] for managing mailing lists and creating email marketing campaigns to send to customers.</p>"
+                    "en": "<p>Marketing automation platform and email marketing service[6] for managing mailing lists and creating email marketing campaigns to send to customers.</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "environments": [
@@ -268,7 +293,10 @@
                 "licence": "propietary",
                 "logotype": "./interlinkers/externalsoftware/mailchimp/logo.png",
                 "name_translations": {
-                    "en": "Mailchimp"
+                    "en": "Mailchimp",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "ORG_PROBLEM_4"
@@ -300,7 +328,9 @@
                 },
                 "description_translations": {
                     "en": "<p>Event Organiser (EVO) is a stand-alone web application to evaluate co-designed event proposals made with the ECO WordPress plugin and organise the events in practice. EVO complements the ZGZ use case by giving administrative tools to foster co-designing of events and implementing the best proposals. EVO comprises features to manage available resources and services and allocate them to requests made in event proposals. In addition, EVO can be used to organise co-evaluation polls to analyse different aspects of the proposal in order to find out which of the proposals are ready for implementation.</p>",
-                    "es": ""
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "medium",
                 "environments": [
@@ -320,7 +350,9 @@
                 "logotype": "./interlinkers/externalsoftware/event-organizer/logo.png",
                 "name_translations": {
                     "en": "Event Organizer",
-                    "es": ""
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "overview_text": {
                     "en": "Web application for co-designing public events, co-evaluating event proposals and organizing the best events in practice",
@@ -375,7 +407,10 @@
                     "en": "None"
                 },
                 "description_translations": {
-                    "en": "<p>Trello is a collaboration tool that organizes your projects into boards. In one glance, Trello tells you what's being worked on, who's working on what, and where something is in a process.</p>"
+                    "en": "<p>Trello is a collaboration tool that organizes your projects into boards. In one glance, Trello tells you what's being worked on, who's working on what, and where something is in a process.</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "environments": [
@@ -393,7 +428,10 @@
                 "licence": "propietary",
                 "logotype": "./interlinkers/externalsoftware/trello/logo.png",
                 "name_translations": {
-                    "en": "Trello"
+                    "en": "Trello",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "ORG_PROBLEM_2"
@@ -433,7 +471,10 @@
                     "en": "None"
                 },
                 "description_translations": {
-                    "en": "<p>Keycloak provides user federation, strong authentication, user management, fine-grained authorization</p>"
+                    "en": "<p>Keycloak provides user federation, strong authentication, user management, fine-grained authorization</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "difficult",
                 "environments": [
@@ -451,7 +492,10 @@
                 "licence": "permissive",
                 "logotype": "./interlinkers/externalsoftware/keycloak/logo.png",
                 "name_translations": {
-                    "en": "Keycloak"
+                    "en": "Keycloak",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "ORG_PROBLEM_3"
@@ -493,7 +537,9 @@
                 },
                 "description_translations": {
                     "en": "<p>Event Co-designer (ECO) is an open source plugin for the popular WordPress (WP) content management system which allows co-designing and organising new public events. It is especially designed from the needs of the ZGZ use case and can be integrated directly to the existing Etopia WP website. ECO provides an easy-to-use and feature-rich calendar view to schedule new events and make requests for resources, facilities and services needed to organise the event. In addition, ECO includes collaborative tools for documenting, discussing  and co-evaluating the event proposal.</p>",
-                    "es": ""
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "medium",
                 "environments": [
@@ -513,7 +559,9 @@
                 "logotype": "./interlinkers/externalsoftware/event-codesigner/logo.png",
                 "name_translations": {
                     "en": "Event Co-designer",
-                    "es": ""
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "overview_text": {
                     "en": "Web application for co-designing public events and co-evaluating event proposals",
@@ -568,7 +616,10 @@
                     "en": "None"
                 },
                 "description_translations": {
-                    "en": "<p>WSO2 API Manager is a complete platform for building, integrating, and exposing your digital services as managed APIs in the cloud, on-premise, and hybrid architectures to drive your digital transformation strategy. It allows API developers to design, publish, and manage the lifecycle of APIs and API product managers to create API products from one or more APIs.</p>"
+                    "en": "<p>WSO2 API Manager is a complete platform for building, integrating, and exposing your digital services as managed APIs in the cloud, on-premise, and hybrid architectures to drive your digital transformation strategy. It allows API developers to design, publish, and manage the lifecycle of APIs and API product managers to create API products from one or more APIs.</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "medium",
                 "environments": [
@@ -586,7 +637,10 @@
                 "licence": "public_domain",
                 "logotype": "./interlinkers/externalsoftware/wso2-api-Manager/logo.jpeg",
                 "name_translations": {
-                    "en": "WSO2 API Manager"
+                    "en": "WSO2 API Manager",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "BUILD_PROBLEM_4"
@@ -627,7 +681,10 @@
                     "en": "None"
                 },
                 "description_translations": {
-                    "en": "<p>Web accessibility evaluation tools are software programs or online services that help you determine if web content meets accessibility guidelines. This page provides a list of evaluation tools that you can filter to find ones that match your particular needs.</p>"
+                    "en": "<p>Web accessibility evaluation tools are software programs or online services that help you determine if web content meets accessibility guidelines. This page provides a list of evaluation tools that you can filter to find ones that match your particular needs.</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "environments": [
@@ -644,7 +701,10 @@
                 ],
                 "licence": "propietary",
                 "name_translations": {
-                    "en": "Accessibility Tools"
+                    "en": "Accessibility Tools",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "BUILD_PROBLEM_2"
@@ -678,7 +738,10 @@
                     "en": "none"
                 },
                 "description_translations": {
-                    "en": "<p>Online calendar tool for time management and coordinating meetings. Anytime more than two people are trying to arrange a meeting, Doodle very useful. You can use doodle to plan meetings with team members, project collaborators, and external suppliers. </p>"
+                    "en": "<p>Online calendar tool for time management and coordinating meetings. Anytime more than two people are trying to arrange a meeting, Doodle very useful. You can use doodle to plan meetings with team members, project collaborators, and external suppliers. </p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "environments": [
@@ -696,7 +759,10 @@
                 "licence": "propietary",
                 "logotype": "./interlinkers/externalsoftware/doodle/logo.png",
                 "name_translations": {
-                    "en": "Doodle"
+                    "en": "Doodle",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "ORG_PROBLEM_4"
@@ -728,7 +794,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>This resource describes the guidelines for the development of secure software in the public administration</p>"
+                    "en": "<p>This resource describes the guidelines for the development of secure software in the public administration</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "difficult",
                 "environments": [
@@ -747,7 +816,10 @@
                 ],
                 "licence": "permissive",
                 "name_translations": {
-                    "en": " AgID guidelines for the development of secure software (in Italian)"
+                    "en": " AgID guidelines for the development of secure software (in Italian)",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "BUILD_PROBLEM_3"
@@ -785,7 +857,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>These Guidelines give general guidance on the obligation of Data Protection by Design and by Default (henceforth \u201cDPbDD\u201d) set forth in Article 25 in the GDPR.</p>"
+                    "en": "<p>These Guidelines give general guidance on the obligation of Data Protection by Design and by Default (henceforth \u201cDPbDD\u201d) set forth in Article 25 in the GDPR.</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "difficult",
                 "environments": [
@@ -804,7 +879,10 @@
                 ],
                 "licence": "permissive",
                 "name_translations": {
-                    "en": "EDPB Data Protection Guidelines"
+                    "en": "EDPB Data Protection Guidelines",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "BUILD_PROBLEM_3"
@@ -844,7 +922,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>A collection of resources for individuals, communities, and companies who want to learn how to run and contribute to an open source project.</p>"
+                    "en": "<p>A collection of resources for individuals, communities, and companies who want to learn how to run and contribute to an open source project.</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "very_easy",
                 "environments": [
@@ -863,7 +944,10 @@
                 ],
                 "licence": "public_domain",
                 "name_translations": {
-                    "en": "Open Source guides"
+                    "en": "Open Source guides",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "BUILD_PROBLEM_3"
@@ -901,7 +985,10 @@
                     "en": "Web applications"
                 },
                 "description_translations": {
-                    "en": "<p>Web Content Accessibility Guidelines (WCAG) aims at explaining how to make the Web content more accessible to the people with disabilities. It generally applies to the public services delivered as Web applications, and refers to the information in a web page of the applciation, including both the content (text, images, sounds, ...) and structure (markup, presentation, styles).</p><br><ul><li>defines a set of guidelines with corresponding testable success criteria across different levels</li><li>based on the accessibility principles: perceivable, operable, understandable, robust.</li></ul>"
+                    "en": "<p>Web Content Accessibility Guidelines (WCAG) aims at explaining how to make the Web content more accessible to the people with disabilities. It generally applies to the public services delivered as Web applications, and refers to the information in a web page of the applciation, including both the content (text, images, sounds, ...) and structure (markup, presentation, styles).</p><br><ul><li>defines a set of guidelines with corresponding testable success criteria across different levels</li><li>based on the accessibility principles: perceivable, operable, understandable, robust.</li></ul>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "medium",
                 "environments": [
@@ -920,7 +1007,10 @@
                 ],
                 "licence": "permissive",
                 "name_translations": {
-                    "en": "W3C Web Content Accessibility Guidelines"
+                    "en": "W3C Web Content Accessibility Guidelines",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "BUILD_PROBLEM_2",
@@ -959,7 +1049,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>This resource contains a questionnaire to check the cloud computing migration strategy  </p>"
+                    "en": "<p>This resource contains a questionnaire to check the cloud computing migration strategy  </p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "medium",
                 "environments": [
@@ -978,7 +1071,10 @@
                 ],
                 "licence": "permissive",
                 "name_translations": {
-                    "en": "AgID Cloud computing migration strategy evalution template"
+                    "en": "AgID Cloud computing migration strategy evalution template",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "BUILD_PROBLEM_3"
@@ -1017,7 +1113,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>This resource contains a questionnaire to check the level of knowledge and competence in cloud computing </p>"
+                    "en": "<p>This resource contains a questionnaire to check the level of knowledge and competence in cloud computing </p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "medium",
                 "environments": [
@@ -1036,7 +1135,10 @@
                 ],
                 "licence": "permissive",
                 "name_translations": {
-                    "en": "AgID Cloud computing competence evalution template"
+                    "en": "AgID Cloud computing competence evalution template",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "BUILD_PROBLEM_3"
@@ -1075,7 +1177,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>This resource describes the guidelines for technical interoperability for PA and related operational documents: interaction patterns, interoperability profiles, implementation recommendations (in Italian). </p>"
+                    "en": "<p>This resource describes the guidelines for technical interoperability for PA and related operational documents: interaction patterns, interoperability profiles, implementation recommendations (in Italian). </p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "difficult",
                 "environments": [
@@ -1094,7 +1199,10 @@
                 ],
                 "licence": "permissive",
                 "name_translations": {
-                    "en": "Italian PA interoperablity model "
+                    "en": "Italian PA interoperablity model ",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "BUILD_PROBLEM_3"
@@ -1136,7 +1244,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>This resource aims at explaining how to acquire and reuse software in PA context.</p>"
+                    "en": "<p>This resource aims at explaining how to acquire and reuse software in PA context.</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "difficult",
                 "environments": [
@@ -1155,7 +1266,10 @@
                 ],
                 "licence": "permissive",
                 "name_translations": {
-                    "en": "Guidelines on the acquisition and reuse of software for public administrations"
+                    "en": "Guidelines on the acquisition and reuse of software for public administrations",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "BUILD_PROBLEM_3"
@@ -1195,7 +1309,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>This resource describes the Cloud Enablement strategy outlined by AGID and Team Digitale (in Italian). </p>"
+                    "en": "<p>This resource describes the Cloud Enablement strategy outlined by AGID and Team Digitale (in Italian). </p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "difficult",
                 "environments": [
@@ -1214,7 +1331,10 @@
                 ],
                 "licence": "permissive",
                 "name_translations": {
-                    "en": "Cloud Enablement Kit (in Italian)"
+                    "en": "Cloud Enablement Kit (in Italian)",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "BUILD_PROBLEM_3"
@@ -1253,7 +1373,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>This resource describes the minimum ICT security measures issued by AgID aim at countering the most frequent cyber threats to the Italian public administration.</p>"
+                    "en": "<p>This resource describes the minimum ICT security measures issued by AgID aim at countering the most frequent cyber threats to the Italian public administration.</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "difficult",
                 "environments": [
@@ -1272,7 +1395,10 @@
                 ],
                 "licence": "permissive",
                 "name_translations": {
-                    "en": "AgID Minimum Security Measures for Public Administration. "
+                    "en": "AgID Minimum Security Measures for Public Administration. ",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "BUILD_PROBLEM_3"
@@ -1310,7 +1436,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>The eIDAS solution allows citizens from Member States to prove and verify their identification when accessing on-line services in other Member States. It allows citizens to authenticate themselves by using their eIDs and connecting with their Identity Provider (IdP) from their country. </p>"
+                    "en": "<p>The eIDAS solution allows citizens from Member States to prove and verify their identification when accessing on-line services in other Member States. It allows citizens to authenticate themselves by using their eIDs and connecting with their Identity Provider (IdP) from their country. </p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "medium",
                 "environments": [
@@ -1329,7 +1458,10 @@
                 ],
                 "licence": "permissive",
                 "name_translations": {
-                    "en": "eIDAS standard"
+                    "en": "eIDAS standard",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "BUILD_PROBLEM_3"
@@ -1365,7 +1497,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>A RFC document which specifyes the open API.</p>"
+                    "en": "<p>A RFC document which specifyes the open API.</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "medium",
                 "environments": [
@@ -1384,7 +1519,10 @@
                 ],
                 "licence": "public_domain",
                 "name_translations": {
-                    "en": "Open API specification"
+                    "en": "Open API specification",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "BUILD_PROBLEM_2"
@@ -1421,7 +1559,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>This is a model of a questionnaire aimed to collect demographics and activity satisfaction scores from participants to project events and activities.</p>"
+                    "en": "<p>This is a model of a questionnaire aimed to collect demographics and activity satisfaction scores from participants to project events and activities.</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "domain": "",
@@ -1444,7 +1585,10 @@
                 ],
                 "licence": "public_domain",
                 "name_translations": {
-                    "en": "Demographic and activity satisfaction questionnaire"
+                    "en": "Demographic and activity satisfaction questionnaire",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "UND_PROBLEM_3",
@@ -1478,7 +1622,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "This is a model of End Users' Perceptions Questionnaire. It aims to measure end-users' perceptions on user-based quality, value-based quality, trust and acceptance. This questionnaire is thought to be answered by users of traditional e-services and also those who co-produced them through INTERLINK."
+                    "en": "This is a model of End Users' Perceptions Questionnaire. It aims to measure end-users' perceptions on user-based quality, value-based quality, trust and acceptance. This questionnaire is thought to be answered by users of traditional e-services and also those who co-produced them through INTERLINK.",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "domain": "",
@@ -1501,7 +1648,10 @@
                 ],
                 "licence": "public_domain",
                 "name_translations": {
-                    "en": "Final end user's questionnaire- Quality of Service"
+                    "en": "Final end user's questionnaire- Quality of Service",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "UND_PROBLEM_3",
@@ -1536,7 +1686,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>Example of project description that synthetically summarizes the goals and major aspects of a co-production initiative.  </p>"
+                    "en": "<p>Example of project description that synthetically summarizes the goals and major aspects of a co-production initiative.  </p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "domain": "",
@@ -1559,7 +1712,10 @@
                 ],
                 "licence": "public_domain",
                 "name_translations": {
-                    "en": "Project description example"
+                    "en": "Project description example",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "DEF_PROBLEM_1",
@@ -1597,7 +1753,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>Template for preparing a use scenarios. </p>"
+                    "en": "<p>Template for preparing a use scenarios. </p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "environments": [
@@ -1619,7 +1778,10 @@
                 ],
                 "licence": "permissive",
                 "name_translations": {
-                    "en": "Template for use case scenarios"
+                    "en": "Template for use case scenarios",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "ORG_PROBLEM_1",
@@ -1650,7 +1812,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>Template to guide the preparation of an information sheet to be distributed to participants to project activities. It provides background on research objectives.</p>"
+                    "en": "<p>Template to guide the preparation of an information sheet to be distributed to participants to project activities. It provides background on research objectives.</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "very_easy",
                 "domain": "",
@@ -1673,7 +1838,10 @@
                 ],
                 "licence": "public_domain",
                 "name_translations": {
-                    "en": "Information Sheet Template"
+                    "en": "Information Sheet Template",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "ORG_PROBLEM_14"
@@ -1707,7 +1875,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>Template for preparing a project description that synthetically summarizes the goals and major aspects of a co-production initiative. </p>"
+                    "en": "<p>Template for preparing a project description that synthetically summarizes the goals and major aspects of a co-production initiative. </p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "environments": [
@@ -1729,7 +1900,10 @@
                 ],
                 "licence": "permissive",
                 "name_translations": {
-                    "en": "Template for project description"
+                    "en": "Template for project description",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "ORG_PROBLEM_1"
@@ -1759,7 +1933,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>Document to design the engagement plan for those co-producing and/or using the resulting co-produced product</p>"
+                    "en": "<p>Document to design the engagement plan for those co-producing and/or using the resulting co-produced product</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "very_easy",
                 "domain": "",
@@ -1782,7 +1959,10 @@
                 ],
                 "licence": "public_domain",
                 "name_translations": {
-                    "en": "Stakeholder Engagement Plan for INTERLINK project"
+                    "en": "Stakeholder Engagement Plan for INTERLINK project",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "ORG_PROBLEM_5"
@@ -1816,7 +1996,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>Instructions on how to set up a research activity based on interviews, for a co-production project. </p>"
+                    "en": "<p>Instructions on how to set up a research activity based on interviews, for a co-production project. </p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "domain": "",
@@ -1839,7 +2022,10 @@
                 ],
                 "licence": "public_domain",
                 "name_translations": {
-                    "en": "Guidelines for interviews"
+                    "en": "Guidelines for interviews",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "ORG_PROBLEM_14",
@@ -1873,7 +2059,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>This resource will support you to refine the problem to be addresses by the co-production team as an important step to creating an effective and efficient solution.</p>"
+                    "en": "<p>This resource will support you to refine the problem to be addresses by the co-production team as an important step to creating an effective and efficient solution.</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "medium",
                 "domain": "",
@@ -1896,7 +2085,10 @@
                 ],
                 "licence": "public_domain",
                 "name_translations": {
-                    "en": "Collaborative problem refinement"
+                    "en": "Collaborative problem refinement",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "UND_PROBLEM_3",
@@ -1930,7 +2122,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>Instructions and examples on how to conduct structured interviews for a co-production project.</p>"
+                    "en": "<p>Instructions and examples on how to conduct structured interviews for a co-production project.</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "domain": "",
@@ -1953,7 +2148,10 @@
                 ],
                 "licence": "public_domain",
                 "name_translations": {
-                    "en": "Template for semi structured interview"
+                    "en": "Template for semi structured interview",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "ORG_PROBLEM_2",
@@ -1990,7 +2188,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>Instructions and examples on how to conduct structured interviews for a co-production project.  </p>"
+                    "en": "<p>Instructions and examples on how to conduct structured interviews for a co-production project.  </p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "domain": "",
@@ -2013,7 +2214,10 @@
                 ],
                 "licence": "public_domain",
                 "name_translations": {
-                    "en": "template for structured interview"
+                    "en": "template for structured interview",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "ORG_PROBLEM_2",
@@ -2050,7 +2254,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>This canvas can be edited collaboratively by the co-producing team to ellaborate the business plan for a co-produced service..</p>"
+                    "en": "<p>This canvas can be edited collaboratively by the co-producing team to ellaborate the business plan for a co-produced service..</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "domain": "",
@@ -2073,7 +2280,10 @@
                 ],
                 "licence": "public_domain",
                 "name_translations": {
-                    "en": "Business Plan Template"
+                    "en": "Business Plan Template",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "SUS_PROBLEM_1"
@@ -2106,7 +2316,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>Instructions on how to set up a research activity based on online surveys, for a co-production project </p>"
+                    "en": "<p>Instructions on how to set up a research activity based on online surveys, for a co-production project </p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "domain": "",
@@ -2129,7 +2342,10 @@
                 ],
                 "licence": "public_domain",
                 "name_translations": {
-                    "en": "Guidelines for online-surveys"
+                    "en": "Guidelines for online-surveys",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "UND_PROBLEM_3"
@@ -2162,7 +2378,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>This resource provides a skeleton to organize a focus group to investigate the problem that needs to be solved by a digital service / functionality. It addresses a series of questions about potential users, current practices, critical aspects and  desiderata.</p>"
+                    "en": "<p>This resource provides a skeleton to organize a focus group to investigate the problem that needs to be solved by a digital service / functionality. It addresses a series of questions about potential users, current practices, critical aspects and  desiderata.</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "domain": "",
@@ -2176,7 +2395,7 @@
                 },
                 "form": "document_template",
                 "format": "editable_source_document",
-                "id": "focus-group-template-co-production-investigation",
+                "id": "focus-group-on-problem-exploration-for-new-digital-functionality",
                 "instructions_translations": {
                     "en": "./interlinkers/knowledge/Focus-Group-Template-problem-exploration-functionalities/instructions.md"
                 },
@@ -2185,7 +2404,10 @@
                 ],
                 "licence": "public_domain",
                 "name_translations": {
-                    "en": "Focus Group Template Co-production Investigation"
+                    "en": "Focus Group on problem exploration for new digital functionality",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "UND_PROBLEM_3",
@@ -2219,7 +2441,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>This is a model of a questionnaire aimed to measure co-producer's perceptions on user-based quality, value-based quality, trust and acceptance. This questionnaire is thought to be answered by those who take part in the co-production of a public service or reuse artefacts (public services & INTERLINKERs) made available through INTERLINK co-production tools (Collaborative Environment and Catalogue).</p>"
+                    "en": "<p>This is a model of a questionnaire aimed to measure co-producer's perceptions on user-based quality, value-based quality, trust and acceptance. This questionnaire is thought to be answered by those who take part in the co-production of a public service or reuse artefacts (public services & INTERLINKERs) made available through INTERLINK co-production tools (Collaborative Environment and Catalogue).</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "domain": "",
@@ -2242,7 +2467,10 @@
                 ],
                 "licence": "public_domain",
                 "name_translations": {
-                    "en": "Guidelines for surveys"
+                    "en": "Guidelines for surveys",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "UND_PROBLEM_3"
@@ -2275,7 +2503,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>Guidelines and tips on how to perform a usability testing</p>"
+                    "en": "<p>Guidelines and tips on how to perform a usability testing</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "domain": "",
@@ -2298,7 +2529,10 @@
                 ],
                 "licence": "public_domain",
                 "name_translations": {
-                    "en": "Usability testing guidelines"
+                    "en": "Usability testing guidelines",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "ORG_PROBLEM_6.2",
@@ -2333,7 +2567,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>This resource provides a skeleton to organize a focus group to investigate the co-production practices in a given organization. It addresses a series of questions about previous or current collaboration practices, the dynamics of collaboration (timeline, people, tools, communication channels), current KPIs, critical aspects and  desiderata.</p>"
+                    "en": "<p>This resource provides a skeleton to organize a focus group to investigate the co-production practices in a given organization. It addresses a series of questions about previous or current collaboration practices, the dynamics of collaboration (timeline, people, tools, communication channels), current KPIs, critical aspects and  desiderata.</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "domain": "",
@@ -2356,7 +2593,10 @@
                 ],
                 "licence": "public_domain",
                 "name_translations": {
-                    "en": "Focus Group Template Co-production Investigation"
+                    "en": "Focus Group Template Co-production Investigation",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "VAL_PROBLEM_2"
@@ -2389,7 +2629,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>Template to collect data through online survey for assessing Media and Technology Usage and Attitudes</p>"
+                    "en": "<p>Template to collect data through online survey for assessing Media and Technology Usage and Attitudes</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "domain": "",
@@ -2412,7 +2655,10 @@
                 ],
                 "licence": "public_domain",
                 "name_translations": {
-                    "en": "template for online survey guidelines"
+                    "en": "template for online survey guidelines",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "UND_PROBLEM_3"
@@ -2445,7 +2691,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>Instructions on how to set up a research activity based on focus groups, for a co-production project.</p>"
+                    "en": "<p>Instructions on how to set up a research activity based on focus groups, for a co-production project.</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "domain": "",
@@ -2468,7 +2717,10 @@
                 ],
                 "licence": "public_domain",
                 "name_translations": {
-                    "en": "Focus Group Guidelines"
+                    "en": "Focus Group Guidelines",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "UND_PROBLEM_3",
@@ -2504,7 +2756,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "This canvas can be used collaboratively, for instance, during a brainstorming or a focus group, to reflect on the the most suitable business model associated to a co-produced service."
+                    "en": "This canvas can be used collaboratively, for instance, during a brainstorming or a focus group, to reflect on the the most suitable business model associated to a co-produced service.",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "domain": "",
@@ -2527,7 +2782,10 @@
                 ],
                 "licence": "public_domain",
                 "name_translations": {
-                    "en": "Business Model Canvas"
+                    "en": "Business Model Canvas",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "SUS_PROBLEM_1"
@@ -2561,7 +2819,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>This resource provides a model for persona outlined by AGID and Team Digitale (in Italian).</p>"
+                    "en": "<p>This resource provides a model for persona outlined by AGID and Team Digitale (in Italian).</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "domain": "",
@@ -2584,7 +2845,10 @@
                 ],
                 "licence": "public_domain",
                 "name_translations": {
-                    "en": "Model for Personas (in italian)"
+                    "en": "Model for Personas (in italian)",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "VAL_PROBLEM_2"
@@ -2615,7 +2879,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>This resource supports the identification and selection of the stakeholders to engage in a co-production team.</p>"
+                    "en": "<p>This resource supports the identification and selection of the stakeholders to engage in a co-production team.</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "domain": "",
@@ -2638,7 +2905,10 @@
                 ],
                 "licence": "public_domain",
                 "name_translations": {
-                    "en": "Stakeholders Mapping Canvas"
+                    "en": "Stakeholders Mapping Canvas",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "UND_PROBLEM_2"
@@ -2671,7 +2941,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>This template of an excel file can be used in conjunction with the Stakeholders Mapping Canvas to identify by name and title the people, groups, and organisations that have significant influence on project direction and its success or who are significantly impacted by the project. The template helps in planning Stakeholders engagement according to different dimensions:<br> <ul><br><li>the desired or expected level of involvement<br><li> potential issues related to their engagement<br><li>motivations and barriers that can support you in finding the best strategy to engage them in the co-production process<br><li> expectation of the different Stakeholders<br><li> skills and potential role within the co-production process.<br></ul></p>"
+                    "en": "<p>This template of an excel file can be used in conjunction with the Stakeholders Mapping Canvas to identify by name and title the people, groups, and organisations that have significant influence on project direction and its success or who are significantly impacted by the project. The template helps in planning Stakeholders engagement according to different dimensions:<br> <ul><br><li>the desired or expected level of involvement<br><li> potential issues related to their engagement<br><li>motivations and barriers that can support you in finding the best strategy to engage them in the co-production process<br><li> expectation of the different Stakeholders<br><li> skills and potential role within the co-production process.<br></ul></p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "domain": "",
@@ -2694,7 +2967,10 @@
                 ],
                 "licence": "public_domain",
                 "name_translations": {
-                    "en": "Stakeholders identification analisys template guidelines"
+                    "en": "Stakeholders identification analisys template guidelines",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "ORG_PROBLEM_1",
@@ -2729,7 +3005,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>Template to prepare a form to collect consent from participants engaged in research activities about the use of their personal data</p>"
+                    "en": "<p>Template to prepare a form to collect consent from participants engaged in research activities about the use of their personal data</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "very_easy",
                 "domain": "",
@@ -2752,7 +3031,10 @@
                 ],
                 "licence": "public_domain",
                 "name_translations": {
-                    "en": "Consent Form Template"
+                    "en": "Consent Form Template",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "ORG_PROBLEM_14"
@@ -2786,7 +3068,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>Document with template for co-design of Public Service Proposal</p>"
+                    "en": "<p>Document with template for co-design of Public Service Proposal</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "very_easy",
                 "domain": "",
@@ -2809,7 +3094,10 @@
                 ],
                 "licence": "public_domain",
                 "name_translations": {
-                    "en": "Public Service Proposal Template for INTERLINK project"
+                    "en": "Public Service Proposal Template for INTERLINK project",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "HACKATHON_PROBLEM_1"
@@ -2843,7 +3131,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>Guidelines to understand which are the different types of stakeholder, their  motivations, skills, expectations toward the project</p>"
+                    "en": "<p>Guidelines to understand which are the different types of stakeholder, their  motivations, skills, expectations toward the project</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "domain": "",
@@ -2866,7 +3157,10 @@
                 ],
                 "licence": "public_domain",
                 "name_translations": {
-                    "en": "Stakeholder types guidelines"
+                    "en": "Stakeholder types guidelines",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "UND_PROBLEM_2",
@@ -2899,7 +3193,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>Template for preparing a user journey. </p>"
+                    "en": "<p>Template for preparing a user journey. </p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "environments": [
@@ -2921,7 +3218,10 @@
                 ],
                 "licence": "permissive",
                 "name_translations": {
-                    "en": "Template for user journey"
+                    "en": "Template for user journey",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "ORG_PROBLEM_1",
@@ -2952,7 +3252,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>This resource suggests a model to define the features of a co-produced service. It guides the description of the problem(s) that the product will solve in the long run, the vision for the user experience as well as the user interface, the vision for how the product will generate a return of investment</p>"
+                    "en": "<p>This resource suggests a model to define the features of a co-produced service. It guides the description of the problem(s) that the product will solve in the long run, the vision for the user experience as well as the user interface, the vision for how the product will generate a return of investment</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "domain": "",
@@ -2975,7 +3278,10 @@
                 ],
                 "licence": "public_domain",
                 "name_translations": {
-                    "en": "Outcome marketing featureset"
+                    "en": "Outcome marketing featureset",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "ORG_PROBLEM_6.2",
@@ -3010,7 +3316,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>Document with template for co-design of Hackathon Rules</p>"
+                    "en": "<p>Document with template for co-design of Hackathon Rules</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "very_easy",
                 "domain": "",
@@ -3033,7 +3342,10 @@
                 ],
                 "licence": "public_domain",
                 "name_translations": {
-                    "en": "Hackathon Rules Template for INTERLINK project"
+                    "en": "Hackathon Rules Template for INTERLINK project",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "HACKATHON_PROBLEM_2"
@@ -3067,7 +3379,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>This resource describes the guidelines for the designing of a service in the public administration</p>"
+                    "en": "<p>This resource describes the guidelines for the designing of a service in the public administration</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "environments": [
@@ -3089,7 +3404,10 @@
                 ],
                 "licence": "permissive",
                 "name_translations": {
-                    "en": "Guidelines for co-design of service"
+                    "en": "Guidelines for co-design of service",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "UND_PROBLEM_1",
@@ -3121,7 +3439,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>Form to collect consent from participants engaged in INTERLINK research activities about the use of their personal data</p>"
+                    "en": "<p>Form to collect consent from participants engaged in INTERLINK research activities about the use of their personal data</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "very_easy",
                 "domain": "",
@@ -3144,7 +3465,10 @@
                 ],
                 "licence": "public_domain",
                 "name_translations": {
-                    "en": "Consent Form for INTERLINK project"
+                    "en": "Consent Form for INTERLINK project",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "ORG_PROBLEM_14"
@@ -3178,7 +3502,10 @@
                     "en": "No special constraints apply"
                 },
                 "description_translations": {
-                    "en": "<p>Information on the INTERLINK project to be distributed to participants. It provides background on research activities.</p>"
+                    "en": "<p>Information on the INTERLINK project to be distributed to participants. It provides background on research activities.</p>",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "very_easy",
                 "domain": "",
@@ -3201,7 +3528,10 @@
                 ],
                 "licence": "public_domain",
                 "name_translations": {
-                    "en": "Information Sheet for INTERLINK project"
+                    "en": "Information Sheet for INTERLINK project",
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [
                     "ORG_PROBLEM_14"
@@ -3241,7 +3571,9 @@
                 },
                 "description_translations": {
                     "en": "<p>Augmenter is an Open Source application that offers the possibility of create and improve public services descriptions, in the workspace users can share opinions, questions and feedbacks, finally a assigned moderator will decide approve or not a suggestion. With Augmenter it is possible to</p><ul><li>create and improve public service descriptions, organize discussions and keep record of participation and involvement;</li><li>manage moderator decisions over the improvements;</li><li>Generate a final improvement report. </li></ul>",
-                    "es": "<p>Augmenter es una aplicaci\u00f3n Open Source que ofrece la posibilidad de crear y mejorar descripciones de servicios p\u00fablicos, en el espacio de trabajo los usuarios pueden compartir opiniones, preguntas y comentarios, finalmente un moderador asignado decidir\u00e1 aprobar o no una sugerencia. Con Augmenter es posible</p><ul><li>Crear y mejorar descripciones de servicios p\u00fablicos, organizar dicusiones y mantener un registro de participaci\u00f3n e implicaci\u00f3n;</li><li>administrar las decisiones del moderador sobre las mejoras;</li ><li>Generar un informe final de mejora.</li></ul>"
+                    "es": "<p>Augmenter es una aplicaci\u00f3n Open Source que ofrece la posibilidad de crear y mejorar descripciones de servicios p\u00fablicos, en el espacio de trabajo los usuarios pueden compartir opiniones, preguntas y comentarios, finalmente un moderador asignado decidir\u00e1 aprobar o no una sugerencia. Con Augmenter es posible</p><ul><li>Crear y mejorar descripciones de servicios p\u00fablicos, organizar dicusiones y mantener un registro de participaci\u00f3n e implicaci\u00f3n;</li><li>administrar las decisiones del moderador sobre las mejoras;</li ><li>Generar un informe final de mejora.</li></ul>",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "environments": [
@@ -3294,7 +3626,9 @@
                 "logotype": "./interlinkers/software/augmenter/logo.png",
                 "name_translations": {
                     "en": "Augmenter",
-                    "es": "Augmenter"
+                    "es": "Augmenter",
+                    "it": "",
+                    "lv": ""
                 },
                 "overview_text": {
                     "en": "Web-based tool for improving public service descriptions",
@@ -3342,7 +3676,9 @@
                 },
                 "description_translations": {
                     "en": "<p>Loomio is an Open Source solution that offers a workspace for conversation, sharing information and opinions, making proposals, deciding actions and achieving outcomes. With Loomio it is possible to</p><ul><li>start and organize discussions and keep record of participation and involvement;</li><li>manage collaborative decisions through different forms of polls, surveys, etc;</li><li>enable collaborating voting around ideas and proposal under discussion.</li></ul>",
-                    "es": ""
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "medium",
                 "environments": [
@@ -3395,7 +3731,9 @@
                 "logotype": "./interlinkers/software/loomio/logo.png",
                 "name_translations": {
                     "en": "Loomio",
-                    "es": ""
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "overview_text": {
                     "en": "Web-based tool for collaborative decision making, discussion. and idea management",
@@ -3436,7 +3774,9 @@
                 },
                 "description_translations": {
                     "en": "This interlinker uses etherpad, an open source online editor, to provide collaborative editing in really real-time.\nEtherpad (https://etherpad.org/) is an open-source, web-based collaborative real-time editor, allowing authors to simultaneously edit a text document, and see all of the participants' edits in real-time, with the ability to display each author's text in their own color. There is also a chat box in the sidebar to allow meta communication.",
-                    "es": ""
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "environments": [
@@ -3493,7 +3833,9 @@
                 "logotype": "./interlinkers/software/ceditor/logo.jpeg",
                 "name_translations": {
                     "en": "Collaborative editor",
-                    "es": ""
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [],
                 "regulations_and_standards_translations": {
@@ -3521,7 +3863,9 @@
                 },
                 "description_translations": {
                     "en": "Survey designer and publishing INTERLINKER which allows to create on demand new forms to gather information or help in decision making in co-production processess. It is based on open source tool SurveyJs (https://github.com/surveyjs)",
-                    "es": ""
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "environments": [
@@ -3583,7 +3927,9 @@
                 "logotype": "./interlinkers/software/survey-editor/logo.jpeg",
                 "name_translations": {
                     "en": "Survey editor",
-                    "es": ""
+                    "es": "",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [],
                 "regulations_and_standards_translations": {
@@ -3611,7 +3957,9 @@
                 },
                 "description_translations": {
                     "en": "Google Drive is a file storage and synchronization service developed by Google. Launched on April 24, 2012, Google Drive allows users to store files in the cloud, synchronize files across devices, and share files.\nGoogle Drive encompasses Google Docs, Google Sheets, and Google Slides, which are a part of the Google Docs Editors office suite that permits collaborative editing of documents, spreadsheets, presentations, drawings, forms, and more. Files created and edited through the Google Docs suite are saved in Google Drive.\nThis software INTERLIKER allows users of the collaborative environment to create new documents, spreadsheets and presentations which can be co-edited and shared by co-production team participants",
-                    "es": "Google Drive es un servicio de almacenamiento y sincronizaci\u00f3n de archivos desarrollado por Google. Lanzado el 24 de abril de 2012, Google Drive permite a los usuarios almacenar archivos en la nube, sincronizar archivos entre dispositivos y compartir archivos.\nGoogle Drive incluye Google Docs, Google Sheets y Google Slides, que forman parte de Google Docs Editors. paquete ofim\u00e1tico que permite la edici\u00f3n colaborativa de documentos, hojas de c\u00e1lculo, presentaciones, dibujos, formularios y m\u00e1s. Los archivos creados y editados a trav\u00e9s de la suite Google Docs se guardan en Google Drive.\nEste software INTERLIKER permite a los usuarios del entorno colaborativo crear nuevos documentos, hojas de c\u00e1lculo y presentaciones que pueden ser coeditados y compartidos por los participantes del equipo de coproducci\u00f3n."
+                    "es": "Google Drive es un servicio de almacenamiento y sincronizaci\u00f3n de archivos desarrollado por Google. Lanzado el 24 de abril de 2012, Google Drive permite a los usuarios almacenar archivos en la nube, sincronizar archivos entre dispositivos y compartir archivos.\nGoogle Drive incluye Google Docs, Google Sheets y Google Slides, que forman parte de Google Docs Editors. paquete ofim\u00e1tico que permite la edici\u00f3n colaborativa de documentos, hojas de c\u00e1lculo, presentaciones, dibujos, formularios y m\u00e1s. Los archivos creados y editados a trav\u00e9s de la suite Google Docs se guardan en Google Drive.\nEste software INTERLIKER permite a los usuarios del entorno colaborativo crear nuevos documentos, hojas de c\u00e1lculo y presentaciones que pueden ser coeditados y compartidos por los participantes del equipo de coproducci\u00f3n.",
+                    "it": "",
+                    "lv": ""
                 },
                 "difficulty": "easy",
                 "environments": [
@@ -3673,7 +4021,9 @@
                 "logotype": "./interlinkers/software/google-drive/logo.png",
                 "name_translations": {
                     "en": "Google Drive",
-                    "es": "Google Drive"
+                    "es": "Google Drive",
+                    "it": "",
+                    "lv": ""
                 },
                 "problemprofiles": [],
                 "regulations_and_standards_translations": {
@@ -3723,7 +4073,9 @@
         {
             "description_translations": {
                 "en": "This problem refers to the need to support the initiators of a co-production project to describe the main aim and expected benefit of establishing a collaborative network of stakeholders and engaging them in the co-production process",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "To solve this problem, the following knowledge enablers would be helpful:\n- a template to guide the preparation of the problem description, a tentative list of possible stakeholders, and (brief) draft scenarios. Possible template fields are for example:\nTitle for the co-production initiative\nContext and description\nActual organization of the service\nLimits/challenges of the actual service / initiatives\nFuture/desired scenario\nKey Actors and roles\nRelated initiatives and projects\nAvailable resources and links to other relevant documents\n- examples of template filing  for inspiration",
@@ -3732,13 +4084,17 @@
             "id": "ORG_PROBLEM_1",
             "name_translations": {
                 "en": "Project aim description",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "This item refers to the problem of preparing a workplan that summarizes the coproduction steps, the timeline and the milestones for the collaborative project. The workplan needs to be sharable with the other members of the collaborative network and updatable as the project progresses.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "Knowledge resources to support the preparation of the workplan should include:\n- a visual template that highlights the (possibly iterative) stages of a co-production process, based on the knowledge distilled in WP2\n- examples of instantiated project workplans for inspiration.\nDifferent workplan templates should be made available to fit different governance models and different application domains. \n\nFor co-production processes of large dimensions and complexity, desired functionalities include software tools that support a dynamic update of the workplan, with the additional management of milestones, tasks status, assignment of activities to people, with functionalities like:\nGantt and milestones representation\ntask management (creation, distribution and monitor)\ntime tracking\nissues management",
@@ -3747,13 +4103,17 @@
             "id": "ORG_PROBLEM_2",
             "name_translations": {
                 "en": "Workplan and project management",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "This problem refers to the need to ensure authentication to applications and secure services.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "The INTERLINKERs solving this problem  need to satisfy eID compliance and GDPR compliance. The following functionalities are envisaged:\nAuthentication\nAuthentication based on OAuth2.0/ OpenID Connect protocol and identity management using external Identity Providers (social, national, eID)\nUser Information\nInformation about the currently authenticated user as of OpenID Connect APIs\nAuthorization/Role management\nCreate  user groups\nAdd user to a group with the specified roles\nChange roles of the user within the group",
@@ -3762,13 +4122,17 @@
             "id": "ORG_PROBLEM_3",
             "name_translations": {
                 "en": "Registration and authentication",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "This problem item addresses the need to develop appropriate strategies for communicating the initiative, to actually contact stakeholders and schedule meetings",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "To solve this problem the following resources should be made available: \n-   guidelines for a communication plan and contact strategy\n- software tools that support the easy preparation and distribution of communication material within the network, and the scheduling of meetings. Useful functionalities for team communication are:\n- email automation for personalization\n- pre-designed templates for newsletters\n- rich text and embedded forms\n- reports on opens and clicks\nUseful functionalities for meeting scheduling are:\n- calendar presentation\n- meeting organization and scheduling\n- meeting participants invitation management\n- share participants time slot availability",
@@ -3777,13 +4141,17 @@
             "id": "ORG_PROBLEM_4",
             "name_translations": {
                 "en": "Team communication for co-production",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "This problem refers to the need to support the initiators of a co-production project to plan the active involvement of relevant actors in the co-production team. This problem is related to UND_PROBLEM_2 \u201cStakeholder mapping\u201d that provides knowledge on how effective and balanced co-production teams can be created, which are the different types of stakeholders, their motivations and potential role in the project.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "To solve this problem, the following knowledge enablers would be helpful:\n- Digital template (excel file) to describe for the potential stakeholders identified during the \"Stakeholders mapping\" (UND_PROBLEM_2):\n1. the desired or expected level of involvement\n2. potential issues related to their engagement\n3. motivations and barriers that can support finding the best strategy to engage them in the co-production process. \n4. responsible person\n5. timing of engagement during the different stages of the co-production process\n- Example of template filled  for inspiration\nResearch activities in progress within tasks T5.2 and T5.4  will contribute findings that will help further detail methods for stakeholders engagement, as will be documented in Deliverable D5.1 (M12).",
@@ -3792,13 +4160,17 @@
             "id": "ORG_PROBLEM_5",
             "name_translations": {
                 "en": "Stakeholders engagement plan",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "This problem addresses the need that might emerge at different stages of a coproduction initiative to collaboratively produce and share documents. Tasks may include the need to organize and manage documents among the coproduction team members, share documents among stakeholders, and help multiple people in the team work together on files to achieve a single final version.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "To solve this problem, software tools are required to support functionalities like: \n- authentication and authorization\n- document creation and editing, track changes\n- document storage (retrieve content, document versioning)\n- management of dedicated repositories for each service co-creation project \n- management of access rights granted only to members of the working group\n- support for different document formats",
@@ -3807,13 +4179,17 @@
             "id": "ORG_PROBLEM_6.1",
             "name_translations": {
                 "en": "Document collaboration",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "This problem refers to the need of using maps or charts to help the co-production team understand different measurable aspects for a public service, like for example: variables describing the context of the service, KPIs, evaluation variables like usability, acceptance, easy to use, quality of service",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "To support the team in visualizing data, software tools are required to;\nupload large sets of  data \nhandle and manage geographic information\noutput different chart, graph and map types\npossible output in form of report\nvisualize interactive on-line maps/charts\ncreate dashboards",
@@ -3822,13 +4198,17 @@
             "id": "ORG_PROBLEM_6.2",
             "name_translations": {
                 "en": "Data visualization",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "This problem relates to the need to support open discussion among the coproduction team members. E.g. Discussion forum where the co-creation team can discuss ideas, service features, plan actions.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "To support the team in online discussions, software tools are required to;\nsupport conversation on threads\nprovide notification of discussions\nmoderate contents\nprovide administrative dashboards\nmanage discussion groups\nsupport polls for decision making",
@@ -3837,13 +4217,17 @@
             "id": "ORG_PROBLEM_6.3",
             "name_translations": {
                 "en": "Discussion board",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "This problem item addresses the need to support the co-production team in defining an agreement for not disclosing confidential information that they need to share with each other as a necessary part of co-producing a service together.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "Knowledge enablers solving this problem should  contain descriptive text that explains the rationale and the benefit of preparing and signing a NDA, as well as, templates for guiding the preparation of the agreement, and examples of NDA agreements for the co-production of services.\nThe baseline agreement template should cover:\n- Overall aim and domain of the NDA  agreement\n- Type of agreement: mutual vs non-mutual\n- List of parties involved\n- Definition of what is deemed to be confidential\n- The scope of the confidentiality obligation by the receiving party\n- The exclusions from confidential treatment\n- The term of the agreement\n- Obligations\n- Duration of the agreement",
@@ -3852,13 +4236,17 @@
             "id": "ORG_PROBLEM_7",
             "name_translations": {
                 "en": "Non-Disclosure Agreement Definition (NDA)",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "This problem item addresses the need for information about good practices, templates and examples for preparing documents that define in a formal way agreements for a collaborative network of stakeholders. This need may emerge during the initial engagement of the stakeholders to write\ndown the terms and general plan for the collaboration. When co-evaluation takes\nplace on the outcome of the collaboration with respect to what was specified in the\npartnership agreement, possible revisions of the document may need to be\nintroduced.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "Knowledge enablers solving this problem should  contain descriptive text that explains the rationale and the benefit of preparing and signing a partnership agreement, templates for guiding the preparation of the agreement, and examples of successful partnership agreements for the co-production of services.\n\nThe baseline agreement template should cover:\n- Overall aim and domain of the agreement\n- The list of network partners\n- Rules for extending the network of stakeholders after the initial agreement signing\n- Definition of partner roles and levels of commitment\n- Definition of rules of fair play, obligations, rights within the collaborative network\n- Contact persons\n- Advisory board\n- Thematic work groups\n- Dissemination and communication plan\n- Monitoring and evaluation plan\n- Duration\n\nAlternative versions of the agreement template may be required for different governance models (e.g. G2C, C2G, C+G).\nMultilingual versions of the agreement templates should be available",
@@ -3867,13 +4255,17 @@
             "id": "ORG_PROBLEM_8",
             "name_translations": {
                 "en": "Partnership agreement definition",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "This problem item refers to the need to describe the data management life cycle for all data sets that are collected, processed or generated by the co-production of public services.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "Knowledge enablers addressing this problem should include  descriptive text that explains the rationale and the benefit of preparing a Data Management Plan, templates for guiding the preparation of the plan, examples of Data Management Plans.\nThe baseline Data Management Plan template should cover:\nOverall aim and domain of the DMP\nMotivations to collect data \nFlow of data\nPotential impact of data\nThe handling of data during & after the end of the project\nThe types of data\nDefinition of user and supplier pids concerning data? (ownership, minimalization, responsibility, sharing, archiving, anonymity)\nPolicies for access and sharing\nPolicies and provisions for re-use\n-Plans for archiving data",
@@ -3882,13 +4274,17 @@
             "id": "ORG_PROBLEM_9",
             "name_translations": {
                 "en": "Data Management Plan Definition (DPM)",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "This problem item addresses the need to provide members of the public with the information they need to understand the project, the decision process, and also to understand how public input influenced the decision",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "INTERLINKERs addressing this problem need to  provide information and guidelines on how to reach out to citizens and inform them on the creation of innovative public services. Sample methods to inform the public are for example:\nIn-person methods to inform: public meetings, briefings, telephone contacts\nRemote methods to inform: printed and digital  information (fact sheets, newsletters and bulletins), web sites, information repositories, information hotlines, information kiosks, press and media, social media)\nAll these methods have specific constraints for their application, e.g. preferred number of participants, and contexts they are best suited for, e.g. type of audience or the current phase of the project.  \nActivities within INTERLINK WP5 are currently investigating which methods for informing and engaging the public are best suited for the three project use cases",
@@ -3897,13 +4293,17 @@
             "id": "ORG_PROBLEM_10",
             "name_translations": {
                 "en": "Inform the public",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "This problem item addresses the need to provide members of the public with the possibility to actively participate in the decision process, whenever this is desired by the selected governance model.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "INTERLINKERs addressing this problem need to  provide information and guidelines on how to let public discussion converge and select preferred solutions. Software tools to aid e-voting are also relevant for this problem item. Sample methods for agreement seeking with the public are for example consensus workshops, advisory boards, citizen juries and computer assisted processes that include functionalities like online presentation, interactive polls and Q&A with participants, as well as real time visualization of answers. \nAll these methods have specific constraints for their application, e.g. preferred number of participants, and contexts they are best suited for, e.g. type of audience or the current phase of the project.  \nActivities within INTERLINK WP5 are currently investigating which methods for consensus building and agreement with the public are best suited for the three project use cases.",
@@ -3912,13 +4312,17 @@
             "id": "ORG_PROBLEM_11",
             "name_translations": {
                 "en": "Consensus building and agreement seeking with the public",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "This problem item addresses the need of providing guidance on how to develop a shared language among the co-production team members to ensure effective codesign and co-production of services. Developing a shared language is crucial to be able for stakeholders to: i) build a common ground for joint action, ii) share, mutually agree on, and understand a longterm research plan and protocol, iii) to ongoingly evaluate the success or failure of decisions",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "Knowledge enablers coping with this problem should  include  descriptive text that explains the rationale and the benefit of developing a shared language and of valuing the diversity of experiences, skills and values that each participant in the co-production process brings. \nThe enablers should propose  activities that the team might perform to create a shared language and value diversity. They should provide guidelines for discussing and exchanging knowledge, to value the knowledge of team members. In co-production processes it is crucial for participants to embrace diversity, to respect different values and knowledge systems.",
@@ -3927,13 +4331,17 @@
             "id": "ORG_PROBLEM_12",
             "name_translations": {
                 "en": "Develop a shared language (and value diversity)",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "Citizen participation in collaborative projects strongly depends on their motivation and their willingness to interact with governmental institutions and provide input on the given task.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "Enablers related to this problem should provide guidance and tools to track citizens' engagement and reward participation. \nGuidelines and tips on how to monitor citizens' level of engagement and track  activities performed by citizens and other entities engaged in the collaborative process  (e.g. participation in a workshop, submission of ideas on a web portal, attendance to events) \nGuidelines to define the rewarding strategy\nTypes of rewarding mechanisms  that can be used to sustain, encourage participation, according to the type of audience and depending on the tasks\n intrinsic rewarding  (e.g.: fun, self-realization, challenging tasks etc.)\nextrinsic rewarding  (e.g.: financial or non-financial rewards, career improvement, reputation etc.) \nGuidelines and tools to assess and follow-up the user\u2019s engagement and satisfaction level of the public. \nModule to track and follow up the engagement and satisfaction of citizens/participants.",
@@ -3942,13 +4350,17 @@
             "id": "ORG_PROBLEM_13",
             "name_translations": {
                 "en": "Loyalty, incentives and rewards",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "At different stages of the co-production process stakeholders (including citizens) are contacted, interviewed, asked for ideas and opinions. It is important to inform them about the context and purpose of the data collection and to gather their consent to be able to use the collected data collected in compliance with data protection regulations.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "Knowledge enablers coping with this problem should  include  descriptive guidelines that explain the importance of complying with the GDPR at all stages of co-production.\nTemplates for inform sheets and consent forms should be provided for different types of venues and data to be collected. Multilinguality and compliance to different national regulations should be supported.",
@@ -3957,13 +4369,17 @@
             "id": "ORG_PROBLEM_14",
             "name_translations": {
                 "en": "Consent collection",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "This item relates to the need of exploring and refining the problem that a service addresses. The service design process is a problem-solving activity and it is important to clearly understand which is the challenge that the team addresses and how more information can be collected to understand how the service should be designed. Guidelines and tools are needed to help teams in discussing initial ideas and assumptions, refine them through structured methods and become aware about the missing information that still needs to be collected.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "The knowledge enablers solving this problem should include descriptive text  that explains the rationale and the benefit of collecting and discussing ideas to refine the problem/challenge. Enablers should propose activities that the team might perform to refine the challenge concept, guiding the application of structured methods to collect and discuss ideas, such as brainstorming, and activities to elicit initial assumptions,  to agree on ideas and refine them. \nThis enabler should cover:\n- Explanation of  the benefits for defining the challenge and refining the understanding of the problem to be addressed\n- Tips to structure an open discussion that value diversity and knowledge exchange\n- Methods that can be used to discuss and collaboratively refine the idea, such as a structured brainstorming \n- Guidelines on how to conduct a brainstorming for problem refinement\n- Templates that can be used to organize ideas during a brainstorming for problem refinement and identification of missing  information (e.g. Ideas crowdsourcing, data collection through user research,..). \nThese knowledge enablers can be associated to the use of a Software  enabler to perform online brainstorming",
@@ -3972,13 +4388,17 @@
             "id": "UND_PROBLEM_1",
             "name_translations": {
                 "en": "Collaborative problem refinement",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "This problem item relates to the need to support the initiators of the co-production process to identify, select and plan the active involvement of stakeholders in the co-production team. It is important that the initiators of a co-production process understand who are the potential stakeholders, which are their motivations to participate and potential barriers, which skills and expertise they might bring in the project, and which type of support they need to fully contribute to the project.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "Knowledge for  \"stakeholders mapping\" should include:\nGuidelines that explain the rationale of the process of stakeholders mapping and analysis and that support the team in selecting relevant stakeholders, that is people directly or indirectly affected by the service  or that can influence the service. Different types of stakeholders exist that have diverse motivations to participate, different skills and potential roles to play in the project: public authorities (public servants and politicians, citizens (potential end-users and experts), private business and non-profit organizations (SMEs, freelance, etc). Also different roles should be considered: 1) service end-users, 2) co-production team, 3) Interlink partners\nGuidelines to analyse stakeholders motivations and potential incentives to participate: i) personal, ii) society, iii) financial, iv) governance, iv) research\nTemplates that support the team in \ncreating a stakeholders map, which  is helpful for understanding the complexity of building relationships, realizing which connectors can be crucial for innovation development and why\nin making the network balanced, i.e. by \nensuring inclusiveness, or openness to all who wish to participate\nensuring representativeness, ensuring that the interests of all stakeholders are effectively advocated\nensuring impartiality, or all parties being treated equally\nrecognising gender and cultural differences\nTangible material to facilitate the stakeholders analysis during a brainstorming (cards for people, roles, possible expectations, etc.)",
@@ -3987,13 +4407,17 @@
             "id": "UND_PROBLEM_2",
             "name_translations": {
                 "en": "Stakeholders mapping",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "This problem item refers to the need to support teams in collecting data and information about users and their behaviour for different purposes and phases of the co-production process, e.g. to better understand a phenomenon, to improve\nknowledge on citizens' needs toward services, to measure attitudes and\nexpectations, to monitor users satisfaction toward a service or a facility.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "The enablers addressing this problem item should help select the most appropriate data collection methods according to the specific information goals, explaining their pros and cons. For each method presented (e.g. survey, interviews, etc), guidelines and templates should be provided. \nKnowledge enablers should cover articulated guidelines including:\nMotivations to perform user research, according to the phase of the process and specific needs in terms of data collection, e.g.:\nunderstand a phenomenon\nvalidate an hypothesis\nevaluate a service\nmonitor service quality\nBenefits of collecting data directly from users\nType of data that can be collected and their pro and cons: qualitative vs quantitative \nDescription of the different methods to collect data\nGuidelines to support the team in deciding which is the best method to use to collect data, according to their informative needs, constraints and skills\nThe description of the process that should be followed to define a protocol for data collection\nDescription of how to collect and manage personal information when conducting user studies\nTips on  how to collect data through interviews \nTips on  how to collect data through focus groups \nTips on  how to collect data through online surveys  \nTips on  how to collect data through web data \n\nSpecific templates with already validated dimensions and scales are provided to support the set-up of the user research, such as\nsatisfaction / perceived quality of a service\nintention to use / easy to use scale\nThese knowledge enablers can be associated with the use of Software  tools for surveys.",
@@ -4002,13 +4426,17 @@
             "id": "UND_PROBLEM_3",
             "name_translations": {
                 "en": "Data collection about users and their behavior (user research)",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "A co-production team might need help to define the targets of the service and the characteristics of the users of the service and which are their main needs and the challenges they experience.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "Knowledge enablers addressing this problem should include \nDescriptive text that explains the rationale of clearly identifying the target users of a service and a definition of  \u201cPersonas\u201d as a method to identify, understand and empathize with users of a service\nGuidelines on how to identify \u201cPersonas\u201d \nGuidelines and templates to use \u201cPersonas\u201d during the design process",
@@ -4017,13 +4445,17 @@
             "id": "UND_PROBLEM_4",
             "name_translations": {
                 "en": "Identify and understand users of the service (Personas)",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "This problem relates to the need to support the co-creation team to collect ideas from a large set of contributors (e.g. citizens) related to a specific challenge, organize and manage the ideas and eventually evaluate them. Crowdsourcing projects can target both internal and external participants via dedicated tools and platforms, questionnaires, social media, competitions and other methods.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "The enablers solving this problem should  contain descriptive text that explains the rationale and the benefit of collecting crowdsourced data.\nGuidelines, tips and examples  are to be made available to support the co-creation team to collect ideas from a large set of contributors (e.g. citizens) .\nInformation that should be included:\nDefinition of ideas crowdsourcing\nBenefits of crowdsourcing\nWhen this method can be helpful\nProcess to set-up an ideas crowdsourced initiative\nWhich participants should be involved?\nUnderstand motivations for participation: why do people participate in this kind of activity? Which are their motivations?\nBarriers and challenges in using crowdsourced data\nHow to promote the initiative (channeles, strategies, etc)\nExamples of projects in which crowdsourced data have been used\nMethods that can be used to perform ideas crowdsourcing:\nSW tools\nSocial media\nOnline questionnaire \nPublic workshops\n\nThis knowledge enabler can be associated to the use of software enablers to perform ideas crowdsourcing",
@@ -4032,13 +4464,17 @@
             "id": "UND_PROBLEM_5",
             "name_translations": {
                 "en": "Ideas crowdsourcing",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "This problem item refers to the need to map in a synthetic representation all the key roles that can impact on the user, organization and service environment. The ecosystem map is built by first displaying all the entities, and then connecting them based on the type of value they exchange.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "The knowledge enablers addressing this problem, first of all, include descriptive text that explains the rationale and the benefit of mapping all the entities  involved in the delivery of a service.\nGuidelines should be provided to \nexplain the process that should be followed to map the entities\nillustrate the difference between actors (primary, secondary, etc), organizations, services\nTemplates should be prepared to facilitate\nthe listing of actors and their role\nthe visual representation of the map of actors and their relationships",
@@ -4047,13 +4483,17 @@
             "id": "UND_PROBLEM_6",
             "name_translations": {
                 "en": "Ecosystem mapping",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "Public Administrations and their service providers may require a general introductory guidance on how to approach the design of high-quality public services. The guidelines should refer to the different issues related with the \u201cService design\u201d problem.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "The knowledge enablers addressing this problem should be in the form of descriptive text that summarizes the main guidelines related to the design of digital public services. They should provide information on these topics: \nprinciples of citizen-centred design, \nprinciples of service design and of e-government, \naspects of project management, \nrequired expertise for service design,\naccessibility, \nrelevant regulations, \ngood practices for content design, \nlanguage,\nissues related to SEO, \nprinciples of user research, \nguidelines for user interface design.",
@@ -4062,13 +4502,17 @@
             "id": "DEF_PROBLEM_1",
             "name_translations": {
                 "en": "Guidelines for (digital) public service design",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "Brainstorming sessions may be useful in different phases of the co-production process. During each phase, the template and materials useful to guide the discussion should be customized to facilitate the organization of the specific event. During the \"ideation\" stage, the co-production team may require specific guidance in organizing and managing a brainstorming to produce service ideas, discuss and select them, through divergent and convergent phases of group discussion.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "Knowledge enablers addressing this problem  should cover:\nDescriptive guidelines explaining the rationale and the benefit of organizing a brainstorming for discussing service ideas\nWhen it is useful to organize a brainstorming\nA template description of the process that should be followed to organize and manage a brainstorming\nTools and materials that can be used to organize a brainstorming: online vs offline",
@@ -4077,13 +4521,17 @@
             "id": "DEF_PROBLEM_2",
             "name_translations": {
                 "en": "Brainstorm service ideas",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "After the understanding of the problem and the brainstorming of the service ideas, the co-production team should elaborate concrete solutions for a given challenge. Co-design workshops are useful at this stage as collective activities organized to discuss design issues and choices. Enablers are required to suggest how the coproduction team can work together and with relevant actors (also considering the map of actors developed thanks to the INTERLINKER \u201cMap of actors\u201d) to start defining the service to be co-designed and co-delivered.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "Enablers supporting this problem item include descriptive text that explains the rationale and the benefits of performing co-design workshops  as part of a co-production process and template materials to guide organizing and managing the workshop.\nEnablers should cover:\nDefinition of a co-design workshop\nMotivations to carry out a co-design workshop\nTips on how to organize a co-design workshop (e.g. define the topic, define the agenda, choose the data, prepare presentation and material for the workshop, define roles: who is the moderator?\nTips on how to moderate a co-design workshop\nActivities that can be performed during a co-design workshop (using INTERLINKERs such as \u201cMap of the Actors\u201d; \u201cPersonas\u201d)\nExamples",
@@ -4092,13 +4540,17 @@
             "id": "DEF_PROBLEM_3",
             "name_translations": {
                 "en": "Organize a co-design workshop",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "The co-production team may need guidance on how to define the interaction between the users and the service, reflecting on how a solution might be used by concrete users in a concrete context.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "Descriptive text that \nexplains the rationale and the benefits of clearly defining the interaction among users and a service before implementing it.\nsuggest tools that can be used to reach this goal, such as \u201cScenarios\u201d, and \u201cUser  Journey\u201d\nFor each method presented:\nbenefit of using it in a design process\nhow to use it\ntemplates\nExamples",
@@ -4107,13 +4559,17 @@
             "id": "DEF_PROBLEM_4",
             "name_translations": {
                 "en": "Define the interaction among users and service (Scenarios and User Journey)",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "The ideas and service design concepts need to be translated into formal requirements and service specifications to proceed with the implementation of the service. Guidance may be needed on how to collect, structure and communicate requirements and all the service specifications that clarify the objective of the service and how it should be developed",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "The knowledge enablers addressing this problem item should provide descriptive text that \nexplains the rationale and the benefits of clearly defining how a system /service should work\nillustrates different approaches for specifying system requirements and service specification and the pros and cons of the different approaches\nexplains how to select the best approach based on the task, team composition and other factors \ncontains guidelines and templates on how requirements can be represented\ncontains guidelines and templates on how service specifications can be represented",
@@ -4122,13 +4578,17 @@
             "id": "DEF_PROBLEM_5",
             "name_translations": {
                 "en": "Define requirements and service specifications",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "When defining a new public service, the co-production team needs to prepare adequate content. Guidance is needed on how to select and use the most appropriate language according to the users of the digital service and their skills.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "Enablers addressing this problem item should provide guidelines and  operational tools to create content, review it collaboratively and define the correct tone of voice with which to address users.\nExamples and templates to provide guidance in the good practice of using a shared approach to the creation and management of textual and multimedia content are required.",
@@ -4137,13 +4597,17 @@
             "id": "DEF_PROBLEM_6",
             "name_translations": {
                 "en": "Content design",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "The implementation of the user interface should guarantee usability. Coproduction team members involved in the interface design should be aware of good practices for interface design in the domain of public services.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "Knowledge resources addressing this problem items should include:\nGuidelines and templates on User Interface Design\nGuidelines and templates to design usable UI",
@@ -4152,13 +4616,17 @@
             "id": "BUILD_PROBLEM_1",
             "name_translations": {
                 "en": "User interface design",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "When the public services are provided digitally in the form of Web sites or mobile applications, it is necessary that the service may be easily used by different categories of users, especially considering the people with disabilities. The services should be provided in a multi-channel manner, maximizing the\nexploitation by potentially any group of users or by the agents acting on their\nbehalf, and providing clear statements regarding the accessibility limits in the\ncurrent implementation.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "The functionalities expected to address this problem include in particular:\nthe proper ways to design, organize, structure and implement accessible user interfaces;\nrealization of reusable accessible general purpose components;\nthe ways to evaluate and certify the accessibility requirements compliance according to the existing normative regulations.",
@@ -4167,13 +4635,17 @@
             "id": "BUILD_PROBLEM_2",
             "name_translations": {
                 "en": "Implement accessible digital public services",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "The EU and national legislation promote the use and adoption of Open Source software solutions as a way to reduce the development cost, to avoid the lock-in effect and to foster the adoption driven by Open Source communities. In other terms, Open Source is an enabler for the reusability principles underlying the European Interoperability Framework. Facing this problem, it is necessary to facilitate the selection, development, and maintenance of the Open Source software products.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "The functionalities expected to address this problem include in particular:\nUnderstanding different types of Open Source licenses, their limits and applicability;\nthe proper ways to manage the acquisition of the software products ensuring appropriate licensing;\nmethodological approach to the development of Open Source software in order to foster active public community and reuse;\nproper ways to maintain and support the evolution of the Open Source software solutions.",
@@ -4182,13 +4654,17 @@
             "id": "BUILD_PROBLEM_3",
             "name_translations": {
                 "en": "Open Source Software Licensing",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "European Interoperability Framework requires digital services to achieve an appropriate level of technical interoperability. When it comes to the implementation, it refers to the usage of standard communication protocols and data formats in order to guarantee the usage of the service in machine-to-machine communications, to facilitate software integration and re-use.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "The functionalities expected to address this problem include in particular:\nidentify, select, and implement appropriate interoperability patterns for interacting with the service;\ndesign and definition of suitable service interfaces (APIs) following the API-first approach;\ndocumentation and publishing of the interfaces.",
@@ -4197,13 +4673,17 @@
             "id": "BUILD_PROBLEM_4",
             "name_translations": {
                 "en": "Implementing Interoperable Digital Public Services",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "Digital public services should ensure that the interactions with these services takes place in a secure and trustworthy environment, following the principle of security by design. Access control, user identification, data management should be made compliant with the corresponding regulations, including e.g., the Regulation and Directive for data protection, Regulation on electronic identification, etc.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "The functionalities expected to address this problem include in particular:\nimplementing secure communication protocols for service interaction;\nimplementation of the trusted and protected user identification and authentication;\nimplementation of secure storage of personal data;\nguarantee transparent, informed, and controllable management of personal data in line with GDPR requirements;\nguarantee security in operations (audit, monitoring, incident handling).",
@@ -4212,13 +4692,17 @@
             "id": "BUILD_PROBLEM_5",
             "name_translations": {
                 "en": "Implementing Secure and Trusted Digital Public Services",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "One of the objectives for the open, transparent, and interoperable public services is to make them citizen-centric and enable the participation of citizens to the execution, improvement and evolution of the service. To achieve this, it is necessary to incentivise and make more attractive such participation and collaboration. A wide range of techniques, ranging from gamification, to feedback, and to rewards may apply",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "The functionalities expected to address this problem include in particular:\nDefine the incentives, rewards, policies, and appropriate mechanisms for continuous end user engagement\nAdopt and implement gamification techniques for sustainable participation;\nImplement the solutions to monitor, collect, and certify the end user actions and contributions.",
@@ -4227,13 +4711,17 @@
             "id": "BUILD_PROBLEM_6",
             "name_translations": {
                 "en": "Engage and incentivise citizen participation to the implementation and co-delivery of public services",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "In line with the Cloud-first principle promoted by EU Cloud Strategy, it is requested that the digital public services, when implemented as software solutions, adopt Cloud architectures and Cloud solutions to ensure their compatibility, portability, and scalability. In these settings, it is important to define and realize a proper Cloud strategy for the service implementation, appropriate Cloud-native architectures, different types of Cloud providers, as well as appropriate Cloud technologies and enablers.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "The functionalities expected to address this problem include in particular:\nIdentify and apply the appropriate Cloud adoption strategy for PA\nIdentify and apply the appropriate Cloud migration strategy for PA software\nImplementation of the new digital services following Cloud-native architectures\nAdoption and usage of Cloud technologies and solutions for the service development and provisioning",
@@ -4242,13 +4730,17 @@
             "id": "BUILD_PROBLEM_7",
             "name_translations": {
                 "en": "Cloud-ready digital public services",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "Building Blocks are endorsed by the European Commission and ensure that digital services will be fully compatible with others on the market and become interoperable, EU-compliant final products. In the CEF approach definition, a Building Block is an open and reusable digital solution. The implementation of new public services should take advantage of CEF Building Blocks as much as possible.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "This problem is addressed by providing guidance on how to develop digital services in compliance  with EU regulations and CEF principles. Currently, there are eight Building Blocks: Big Data Test Infrastructure, Context Broker, eArchiving, eDelivery, eID, eInvoicing, eSignature and eTranslation. Information and id to the Connecting Europe Facility (CEF) should be provided and given proper visibility and promotion.",
@@ -4257,13 +4749,17 @@
             "id": "BUILD_PROBLEM_8",
             "name_translations": {
                 "en": "Re-use of CEF Building Blocks",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "This problem item addresses the need of a digital service that supports the collaborative creation of effective descriptions of public services or processes that can be useful (i) for the daily work of people who provide information about the services to the public, (ii) for citizens and other end-users of the services, (iii) for other PAs that would like to replicate the services or the processes at their local level. The domain problem considered here encompasses the following user tasks: 1) Co-creation and co-delivery of information of public utility, e.g. \u25cf creation and sharing of knowledge on public services \u25cf creation and sharing of good practices on public services and processes \u25cf collaborative process of information creation to ensure quality descriptions and active participation of all the stakeholders involved in the delivery of information \u25cf collaborative process of information enrichment with citizens involvement 2) Structuring of information according to standard classifications and data models for public services and process descriptions 3) In some case the need may also be to co-create information that augments and better explains existing information sources and is shown in overlay 4) Monitoring of quality of information service",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "In brief, the expected functionalities to solve the problem are the following:\n- Repository of shareable documents\n- Templates for creating good descriptions\n- Authentication\n- Manage access and edit rights of different user groups\n- Add annotations to web document parts or terms\n- Browse, search and filter through available documents, templates and annotations\n- Edit, comment and revise templates, document parts or annotations\n- Resolve comments and approve revisions and annotations\n- Versioning of documents\n- Underlying database\n- Multilinguality\n- Monitor the access to service descriptions\n- Customizable graphical layout to align with PA corporate image",
@@ -4272,13 +4768,17 @@
             "id": "BUILD_PROBLEM_9",
             "name_translations": {
                 "en": "Collaborative knowledge sharing on public processes and services",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "Defining the evaluation criteria for a service to be co-delivered is a crucial step to monitor the quality of the co-designed and co-delivered service. Enablers addressing this problem should support the team in finding the most appropriate criteria, agree on them and use them in the evaluation of the service co-delivered",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "The knowledge enablers supporting this problem item should include: \nGuidelines for the selection of KPIs for co-produced public services\nGuidelines on how to define the evaluation criteria according to the type of service \nSet of standard criteria templates that might be used to evaluate the service, like for example acceptance, usability, trust, quality of service:\nevaluation dimensions defined for digital services and summarized in standard evaluation questionnaires\nExamples of KPIs and evaluation criteria set by significant Use Cases",
@@ -4287,13 +4787,17 @@
             "id": "VAL_PROBLEM_1",
             "name_translations": {
                 "en": "Define the evaluation criteria and KPIs",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "This problem profile refers to the reflection strategy that supports the coproduction team in iteratively evaluating whether the service is feasible and viable in the longer run (sustainable) or not, and hence deciding if it is worth continuing the co-production effort. Enablers in this category should provide support to the team during different stages of the project, supporting them in reflecting and continuously evaluating the process and the outcomes of the collaborative process",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "The enablers addressing this problem should provide guidance and tools on co-evaluation activities according to the stage of the process to be evaluated and should include:\nenablers for internal assessment of resources\nenablers for checking which are the competencies required for addressing the next phases of the process \nenablers to check competencies and skills internal to the group \n\u2026.\nMore detailed specifications for the desired knowledge and functionalities to solve this problem profile will be elaborated as research in WP2 on the governance models and co-production process progresses.",
@@ -4302,13 +4806,17 @@
             "id": "VAL_PROBLEM_2",
             "name_translations": {
                 "en": "Ongoing internal co-evaluation (Go-no go)",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "This problem addresses the need to validate a concept of a service or to verify the assumptions about a final product before developing it. Different types of proof of concepts can be used, according to the stage of service development and the type of service, whether it is a digital service or not.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "Enablers addressing this problem should provide guidance on the different approaches to develop and test a proof of concept, in which situations they could be useful, and  on how to use the insights coming from the test to improve the service before developing and co-delivering it.\nDescriptive text explaining what is a proof of concepts, which are the different types of proof of concepts that can be realized\nExamples and Templates of experience scenarios\nExamples andTemplates of Pen & paper mock-ups\nExamples and Templates of  Low-fidelity prototypes\nExamples of  MVP (minimum version of product)\nDescriptive text explaining how these artefacts might be used to validate and refine a concept of a new service",
@@ -4317,13 +4825,17 @@
             "id": "VAL_PROBLEM_3",
             "name_translations": {
                 "en": "Develop and test a proof of concept",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "This problem addresses the need to perform an early evaluation of the digital service leveraging experts without involving end users.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "Enablers to support this problem item should include guidelines on how to conduct an Heuristic Evaluation (also Expert evaluation) and templates with the heuristics (principles) to follow to perform the test. The test can be conducted with early mock-ups as well with functioning systems.",
@@ -4332,13 +4844,17 @@
             "id": "VAL_PROBLEM_4",
             "name_translations": {
                 "en": "Test the digital service with experts",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "This problem addresses the need to continuously monitor the service co-delivered in order to keep work on track, regularly review progress, make adjustments and changes if necessary.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "Enablers should provide guidance and tools  on how to monitor and evaluate services co-delivered.\nGuidelines on how to monitor services co-delivery \nSteps to follow to set up a monitoring process:\nReview the indicators you are going to measure, also according with KPIs (like number of users, users' satisfaction, other dimensions specifically related to co-production, \u2026.)\nDecide if indicators should be measured through qualitative or quantitative methods\nCollect and analyse data\nList of tools that can be used to monitor the quality of the service co-delivered\nUse data to implement changes and improve service co-delivery",
@@ -4347,13 +4863,17 @@
             "id": "VAL_PROBLEM_5",
             "name_translations": {
                 "en": "Monitoring and ongoing evaluation of the co-delivered service",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "This problem addresses the need to review and refine the business model and market reach plan associated to a co-produced service.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "Enablers should provide guidance and tools on how to define suitable business models and effective business plans that would allow to put in practice the deviced business models.",
@@ -4362,13 +4882,17 @@
             "id": "SUS_PROBLEM_1",
             "name_translations": {
                 "en": "Define a sustainability / business plan",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "This problem addresses the need to be able to specify a new public service proposal to be considered for co-production.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "Enablers should provide guidance and tools on how to generate an adequate proposal of public service, compliant with standards, that would allow for these specifications to be realized.",
@@ -4377,13 +4901,17 @@
             "id": "HACKATHON_PROBLEM_1",
             "name_translations": {
                 "en": "Define a proposal of public service",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         },
         {
             "description_translations": {
                 "en": "This problem addresses the need to define the rules for a competition (hackathon, contest) where different teams may take part.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "functionality_translations": {
                 "en": "Enablers should provide guidance and tools to help co-producers co-defining the rules of a given competition.",
@@ -4392,7 +4920,9 @@
             "id": "HACKATHON_PROBLEM_2",
             "name_translations": {
                 "en": "Define the rules of a Hackathon or Contest",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             }
         }
     ],

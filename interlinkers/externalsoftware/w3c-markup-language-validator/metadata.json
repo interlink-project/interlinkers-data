@@ -11,7 +11,10 @@
         "en": "None"
     },
     "description_translations": {
-        "en": "<p>This validator checks the markup validity of Web documents in HTML, XHTML, SMIL, MathML, etc.</p>"
+        "en": "<p>This validator checks the markup validity of Web documents in HTML, XHTML, SMIL, MathML, etc.</p>",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "difficulty": "easy",
     "environments": [
@@ -28,7 +31,10 @@
     ],
     "licence": "propietary",
     "name_translations": {
-        "en": "Markup Validation Service"
+        "en": "Markup Validation Service",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "problemprofiles": [
         "BUILD_PROBLEM_2"

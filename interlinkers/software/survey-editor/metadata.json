@@ -5,7 +5,9 @@
     },
     "description_translations": {
         "en": "Survey designer and publishing INTERLINKER which allows to create on demand new forms to gather information or help in decision making in co-production processess. It is based on open source tool SurveyJs (https://github.com/surveyjs)",
-        "es": ""
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "difficulty": "easy",
     "environments": [
@@ -67,7 +69,9 @@
     "logotype": "./interlinkers/software/survey-editor/logo.jpeg",
     "name_translations": {
         "en": "Survey editor",
-        "es": ""
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "problemprofiles": [],
     "regulations_and_standards_translations": {

@@ -6,7 +6,10 @@
         "en": "No special constraints apply"
     },
     "description_translations": {
-        "en": "<p>This resource supports the identification and selection of the stakeholders to engage in a co-production team.</p>"
+        "en": "<p>This resource supports the identification and selection of the stakeholders to engage in a co-production team.</p>",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "difficulty": "easy",
     "domain": "",
@@ -29,7 +32,10 @@
     ],
     "licence": "public_domain",
     "name_translations": {
-        "en": "Stakeholders Mapping Canvas"
+        "en": "Stakeholders Mapping Canvas",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "problemprofiles": [
         "UND_PROBLEM_2"

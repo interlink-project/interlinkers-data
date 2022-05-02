@@ -6,7 +6,10 @@
         "en": "none"
     },
     "description_translations": {
-        "en": "<p>Marketing automation platform and email marketing service[6] for managing mailing lists and creating email marketing campaigns to send to customers.</p>"
+        "en": "<p>Marketing automation platform and email marketing service[6] for managing mailing lists and creating email marketing campaigns to send to customers.</p>",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "difficulty": "easy",
     "environments": [
@@ -24,7 +27,10 @@
     "licence": "propietary",
     "logotype": "./interlinkers/externalsoftware/mailchimp/logo.png",
     "name_translations": {
-        "en": "Mailchimp"
+        "en": "Mailchimp",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "problemprofiles": [
         "ORG_PROBLEM_4"

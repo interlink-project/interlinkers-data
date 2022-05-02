@@ -6,7 +6,10 @@
         "en": "No special constraints apply"
     },
     "description_translations": {
-        "en": "<p>Template to prepare a form to collect consent from participants engaged in research activities about the use of their personal data</p>"
+        "en": "<p>Template to prepare a form to collect consent from participants engaged in research activities about the use of their personal data</p>",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "difficulty": "very_easy",
     "domain": "",
@@ -29,7 +32,10 @@
     ],
     "licence": "public_domain",
     "name_translations": {
-        "en": "Consent Form Template"
+        "en": "Consent Form Template",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "problemprofiles": [
         "ORG_PROBLEM_14"

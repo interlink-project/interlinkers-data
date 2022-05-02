@@ -8,21 +8,29 @@
     ],
     "name_translations": {
         "en": "Run",
-        "es": ""
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "description_translations": {
         "en": "Browse the catalogue of INTERLINKERs to find reusable building blocks for the implementation of your service. Monitor development advancement in the project workplan. Stop and reflect on the process so far with the co-evaluation checklists that help verify compliance with standards and regulations. Use incentives and reward tools made available by the INTERLINK platform to sustain stakeholders\u2019 and citizens\u2019 contribution to service delivery. Monitor quality of service and citizens\u2019 satisfaction with carefully prepared surveys. Stop and reflect on how co-delivery is going with the co-evaluation checklists.",
-        "es": ""
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "objectives": [
         {
             "name_translations": {
                 "en": "Launch Hackathon website",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "description_translations": {
                 "en": "Service implementation is not possible if an environment for its depoyment and maintenance is not thought in advance. Independently on whether your envisioned co-produced service will be a piece of software or a bundle of digital resources, identify, select and make ready the development and deployment environments for your solution. Important to clearly specify and test the technical constraints within which the delivered service will be hosted.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "problemprofiles": [
                 "DEF_PROBLEM_5"
@@ -31,11 +39,15 @@
                 {
                     "name_translations": {
                         "en": "Technical implementation and deployment",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Identify the dependencies and environment needed for the service co-production and co-delivery. Configure and deploy (if not already available) the dependencies and environment. Document the progress towards realizing the technical aspects associated to the co-produced service. ",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [
                         "BUILD_PROBLEM_2",
@@ -56,11 +68,15 @@
         {
             "name_translations": {
                 "en": "Service implementation",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "description_translations": {
                 "en": "Depending on the nature of the co-produced service, you main adopt different tools and mechanisms to realize a given co-produced service. Realizing a co-produced service might entail programming, using graphical design tools, 3D modelling and fabrication and so on. Register progress achieved during the realization of the implementation of the co-produced service, upload progress reports, cross-link with repositories where progress is being realized, document the co-produced service API or the kit and/or resources generated to realize the service. Acknowledge and trace the contributions of different co-production team members or external contributors. Reuse existing INTERLINKERs (software and knowledge) and add on top of them, browse through them in the Catalogue, do not reinvent the wheel!",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "problemprofiles": [
                 "ORG_PROBLEM_13",
@@ -71,11 +87,15 @@
                 {
                     "name_translations": {
                         "en": "Launch engagement campaign",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Organize activities among those candidate to participate in the Hackathon, based on previously undertaken stakeholder analysis.",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [
                         "BUILD_PROBLEM_2",
@@ -92,11 +112,15 @@
                 {
                     "name_translations": {
                         "en": "Open submissions",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Allow for submission of ideas by teams willing to take part in the hackathon.",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [
                         "HACKATHON_PROBLEM_1"
@@ -112,11 +136,15 @@
                 {
                     "name_translations": {
                         "en": "Monitor submissions",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Monitor how the submissions are going before the deadline for submissions reaches. React organizaing further activities if needed.",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [
                         "BUILD_PROBLEM_2",
@@ -147,11 +175,15 @@
         {
             "name_translations": {
                 "en": "Hackathon celebration",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "description_translations": {
                 "en": "Release the co-produced service. Ensure that is operational in a 24x7 basis.  Provide support to accomodate enhancements or fixes. Establish fluid mechanisms between service co-deliverers and consumers. Monitor fulfilment of obligations and responsabilities of distinct codeliverers.",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "problemprofiles": [
                 "ORG_PROBLEM_12",
@@ -161,11 +193,15 @@
                 {
                     "name_translations": {
                         "en": "Coordinate the actors involved in the codelivery of the Hackathon (organizers, evaluators, participants)",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Organize activities among co-deliverers according to their roles and responsabilities. Ensure quality of service is maintained in the cooperative activities involved in service codelivery. Launch satisfaction and quality of service assessement surveys. ",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [],
                     "id": "task-coordinate-the-actors-involved-in-the-codelivery-of-the-hackathon-organizers-evaluators-participants",
@@ -174,11 +210,15 @@
                 {
                     "name_translations": {
                         "en": "Guarantee transparent communication with participants in the Hackathon",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Ensure fluid and responsive communication among co-deliverers team and more importantly among those consuming and reusing the delivered service and the co-delivery team. Establish a web-based communication mechanism which allows to trace the communication with all actors. ",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [],
                     "prerequisites": [
@@ -192,11 +232,15 @@
                 {
                     "name_translations": {
                         "en": "Winner selection and announcement",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Based on the criteria established at DESIGN phase, evaluators assess the projects submitted, produce ranking and organizers announce winners.",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "problemprofiles": [],
                     "prerequisites": [

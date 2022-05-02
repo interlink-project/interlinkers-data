@@ -6,7 +6,10 @@
         "en": "No special constraints apply"
     },
     "description_translations": {
-        "en": "<p>Document to design the engagement plan for those co-producing and/or using the resulting co-produced product</p>"
+        "en": "<p>Document to design the engagement plan for those co-producing and/or using the resulting co-produced product</p>",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "difficulty": "very_easy",
     "domain": "",
@@ -29,7 +32,10 @@
     ],
     "licence": "public_domain",
     "name_translations": {
-        "en": "Stakeholder Engagement Plan for INTERLINK project"
+        "en": "Stakeholder Engagement Plan for INTERLINK project",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "problemprofiles": [
         "ORG_PROBLEM_5"

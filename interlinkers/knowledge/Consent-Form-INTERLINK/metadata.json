@@ -6,7 +6,10 @@
         "en": "No special constraints apply"
     },
     "description_translations": {
-        "en": "<p>Form to collect consent from participants engaged in INTERLINK research activities about the use of their personal data</p>"
+        "en": "<p>Form to collect consent from participants engaged in INTERLINK research activities about the use of their personal data</p>",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "difficulty": "very_easy",
     "domain": "",
@@ -29,7 +32,10 @@
     ],
     "licence": "public_domain",
     "name_translations": {
-        "en": "Consent Form for INTERLINK project"
+        "en": "Consent Form for INTERLINK project",
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "problemprofiles": [
         "ORG_PROBLEM_14"

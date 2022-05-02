@@ -3,8 +3,8 @@ from pathlib import Path
 import os
 import shutil
 from slugify import slugify
-
-lang_keys = ["en", "es", "it", "lv"]
+from configuration import lang_keys
+ 
 weblate_interlinkers = {}
 weblate_problemprofiles = {}
 weblate_schemas = {}
@@ -19,15 +19,16 @@ for lang_key in lang_keys:
 DELIMITER = ";"
 
 def add_to_weblate(key: str, obj: dict, data: dict):
-    for lang_code in data.get("languages", ["en", "es", "it", "lv"]):
+    for lang_code in lang_keys:
         ref = data.get("id", "").lower()
         for translatable_element in ["name_translations", "description_translations"]:
             if translatable_element in data:
                 addon = translatable_element.replace("_translations", "")
-                key = key + DELIMITER + ref + DELIMITER + addon
+                prefix = key + DELIMITER if key else ""
+                key2 = prefix + ref + DELIMITER + addon
                 value = data[translatable_element].get(lang_code, "")
                 
-                obj[lang_code][key] = value
+                obj[lang_code][key2] = value
 dicts = {
     "problemprofiles": [],
     "schemas": [],
@@ -100,22 +101,19 @@ for schema_metadata_path in Path("./schemas").glob("**/metadata.json"):
                 json.dump(phase, json_file, indent=4) # important to not sort keys
         
         dicts["schemas"].append(schema_metadata)
-        add_to_weblate("schema", weblate_schemas, schema_metadata)
+        add_to_weblate("", weblate_schemas, schema_metadata)
 
 
 ### INTERLINKERS
 
-ids = []
 for interlinker_metadata_path in Path("./interlinkers").glob("**/metadata.json"):
     with open(str(interlinker_metadata_path)) as json_file:
         interlinker_metadata = json.load(json_file)
         id = slugify(interlinker_metadata["name_translations"]["en"]).lower()
-        while id in ids:
-            id += "-2"
         # set as id the value of the name slugified
         interlinker_metadata["id"] = id
         # set languages depending on current values of name and description
-        interlinker_metadata["languages"] = list(set(interlinker_metadata["name_translations"].keys()) & set(interlinker_metadata["description_translations"].keys()))
+        # interlinker_metadata["languages"] = list(set(interlinker_metadata["name_translations"].keys()) & set(interlinker_metadata["description_translations"].keys()))
         # interlinker_metadata["environments"] = ["varam", "mef", "zgz"]
         parent_folder = interlinker_metadata_path.parent.parent.name
 
