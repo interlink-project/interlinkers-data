@@ -859,7 +859,7 @@
                 },
                 "description_translations": {
                     "en": "<p>This resource aims at explaining how to acquire and reuse software in PA context.</p>",
-                    "es": "",
+                    "es": "<p>Este recurso pretende explicar c\u00f3mo adquirir y reutilizar software en el contexto de la AP.</p>",
                     "it": "",
                     "lv": ""
                 },
@@ -881,7 +881,7 @@
                 "licence": "permissive",
                 "name_translations": {
                     "en": "Guidelines on the acquisition and reuse of software for public administrations",
-                    "es": "",
+                    "es": "Directrices sobre la adquisici\u00f3n y reutilizaci\u00f3n de programas inform\u00e1ticos para las administraciones p\u00fablicas",
                     "it": "",
                     "lv": ""
                 },
@@ -989,7 +989,7 @@
                 },
                 "description_translations": {
                     "en": "<p>A collection of resources for individuals, communities, and companies who want to learn how to run and contribute to an open source project.</p>",
-                    "es": "",
+                    "es": "<p>Una colecci\u00f3n de recursos para individuos, comunidades y empresas que quieran aprender a dirigir y contribuir a un proyecto de c\u00f3digo abierto.</p>",
                     "it": "",
                     "lv": ""
                 },
@@ -1011,7 +1011,7 @@
                 "licence": "public_domain",
                 "name_translations": {
                     "en": "Open Source guides",
-                    "es": "",
+                    "es": "Gu\u00edas de c\u00f3digo abierto",
                     "it": "",
                     "lv": ""
                 },
@@ -1052,7 +1052,7 @@
                 },
                 "description_translations": {
                     "en": "<p>A RFC document which specifyes the open API.</p>",
-                    "es": "",
+                    "es": "<p>Un documento RFC que especifica la API abierta.</p>",
                     "it": "",
                     "lv": ""
                 },
@@ -1074,7 +1074,7 @@
                 "licence": "public_domain",
                 "name_translations": {
                     "en": "Open API specification",
-                    "es": "",
+                    "es": "Especificaci\u00f3n de la API abierta",
                     "it": "",
                     "lv": ""
                 },
@@ -1181,7 +1181,7 @@
                 },
                 "description_translations": {
                     "en": "<p>Web Content Accessibility Guidelines (WCAG) aims at explaining how to make the Web content more accessible to the people with disabilities. It generally applies to the public services delivered as Web applications, and refers to the information in a web page of the applciation, including both the content (text, images, sounds, ...) and structure (markup, presentation, styles).</p><br><ul><li>defines a set of guidelines with corresponding testable success criteria across different levels</li><li>based on the accessibility principles: perceivable, operable, understandable, robust.</li></ul>",
-                    "es": "",
+                    "es": "<p>Web Content Accessibility Guidelines (WCAG) aims at explaining how to make the Web content more accessible to the people with disabilities. It generally applies to the public services delivered as Web applications, and refers to the information in a web page of the applciation, including both the content (text, images, sounds, ...) and structure (markup, presentation, styles).</p><br><ul><li>defines a set of guidelines with corresponding testable success criteria across different levels</li><li>based on the accessibility principles: perceivable, operable, understandable, robust.</li></ul>",
                     "it": "",
                     "lv": ""
                 },
@@ -1245,7 +1245,7 @@
                 },
                 "description_translations": {
                     "en": "<p>This resource describes the guidelines for technical interoperability for PA and related operational documents: interaction patterns, interoperability profiles, implementation recommendations (in Italian). </p>",
-                    "es": "",
+                    "es": "Este recurso describe las directrices de interoperabilidad t\u00e9cnica para la AP y los documentos operativos relacionados: patrones de interacci\u00f3n, perfiles de interoperabilidad, recomendaciones de implementaci\u00f3n (en italiano).",
                     "it": "",
                     "lv": ""
                 },
@@ -1267,7 +1267,7 @@
                 "licence": "permissive",
                 "name_translations": {
                     "en": "Italian PA interoperablity model ",
-                    "es": "",
+                    "es": "Modelo de interoperabilidad de la AP italiana ",
                     "it": "",
                     "lv": ""
                 },
@@ -1397,7 +1397,7 @@
                 "licence": "permissive",
                 "name_translations": {
                     "en": "eIDAS standard",
-                    "es": "",
+                    "es": "eIDAS est\u00e1ndar",
                     "it": "",
                     "lv": ""
                 },
