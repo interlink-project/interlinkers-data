@@ -26,6 +26,8 @@ for schema_metadata_path in Path("./schemas").glob("**/*.json"):
                 schema_paths[schema_data["id"]] = path
 
 def update_interlinker(interlinker_id, attribute_key, value):
+    if not interlinker_id in interlinker_paths:
+        return
     path = interlinker_paths[interlinker_id]
     with open(path) as interlinker_file:
         interlinker_data = json.load(interlinker_file)
