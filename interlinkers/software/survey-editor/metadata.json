@@ -8,6 +8,11 @@
         "es": ""
     },
     "difficulty": "easy",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
     "id": "survey-editor",
     "instructions_translations": {
         "en": "./interlinkers/software/survey-editor/instructions.md"

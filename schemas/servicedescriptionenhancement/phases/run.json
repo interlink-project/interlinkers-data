@@ -24,7 +24,9 @@
                 "en": "Access to the Description Augmenter to monitor and moderate contributions from the crowd, generate intermediary reports and store them.",
                 "es": ""
             },
-            "problemprofiles": ["DEF_PROBLEM_5"],
+            "problemprofiles": [
+                "DEF_PROBLEM_5"
+            ],
             "tasks": [
                 {
                     "name_translations": {
@@ -43,9 +45,13 @@
                         "BUILD_PROBLEM_6",
                         "BUILD_PROBLEM_7",
                         "BUILD_PROBLEM_8"
-                    ]
+                    ],
+                    "id": "task-link-to-the-description-augmenter-project",
+                    "prerequisites": []
                 }
-            ]
+            ],
+            "id": "objective-monitor-continuous-crowd-refinement-process",
+            "prerequisites": []
         },
         {
             "name_translations": {
@@ -59,7 +65,7 @@
             "problemprofiles": [
                 "ORG_PROBLEM_13",
                 "ORG_PROBLEM_14",
-				"DEF_PROBLEM_5"
+                "DEF_PROBLEM_5"
             ],
             "tasks": [
                 {
@@ -79,10 +85,18 @@
                         "BUILD_PROBLEM_6",
                         "BUILD_PROBLEM_7",
                         "BUILD_PROBLEM_9"
-
-                    ]
+                    ],
+                    "id": "task-publish-enhancement-report",
+                    "prerequisites": []
                 }
-            ]
+            ],
+            "prerequisites": [
+                {
+                    "item": "objective-monitor-continuous-crowd-refinement-process",
+                    "type": "previous"
+                }
+            ],
+            "id": "objective-publish-report-with-descriptions-accepted-to-be-processed"
         }
     ]
 }

@@ -37,9 +37,11 @@
                     },
                     "problemprofiles": [
                         "ORG_PROBLEM_7"
-                    ]
+                    ],
+                    "id": "task-create-external-id-to-source-service-description-to-augment",
+                    "prerequisites": []
                 },
-				{
+                {
                     "name_translations": {
                         "en": "Upload refinements to apply",
                         "es": ""
@@ -50,9 +52,18 @@
                     },
                     "problemprofiles": [
                         "ORG_PROBLEM_7"
-                    ]
+                    ],
+                    "prerequisites": [
+                        {
+                            "item": "task-create-external-id-to-source-service-description-to-augment",
+                            "type": "previous"
+                        }
+                    ],
+                    "id": "task-upload-refinements-to-apply"
                 }
-            ]
+            ],
+            "id": "objective-appy-refinements",
+            "prerequisites": []
         },
         {
             "name_translations": {
@@ -74,9 +85,18 @@
                         "en": "Leverage External Resource Manager to include those Service Descriptions",
                         "es": ""
                     },
-                    "problemprofiles": []
+                    "problemprofiles": [],
+                    "id": "task-link-with-enhanced-version-of-service-description",
+                    "prerequisites": []
                 }
-            ]
+            ],
+            "prerequisites": [
+                {
+                    "item": "objective-appy-refinements",
+                    "type": "previous"
+                }
+            ],
+            "id": "objective-publish-refined-versions-of-service-descriptions"
         }
     ]
 }

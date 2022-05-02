@@ -57,36 +57,48 @@ for schema_metadata_path in Path("./schemas").glob("**/metadata.json"):
 
         schema_metadata["phases"] = []
         for phase_name in phases:
-            
-            last_phase = "" 
-            with open(parent + "/phases/" + phase_name) as phasefile:
+            path = parent + "/phases/" + phase_name
+
+            phase = None
+            with open(path) as phasefile:
                 phase = json.load(phasefile)
+                phase["id"] = "phase-" + slugify(phase["name_translations"]["en"])
 
                 last_objective = "" 
                 for objective in phase["objectives"]:
                     
+                    obj_prereqs = []
                     if last_objective:
-                        objective["prerequisites"] = [{
+                        obj_prereqs = [{
                             "item": last_objective,
-                            "status": "completed"
-                        }]
+                            "type": "previous"
+                        }]                    
+                    objective["prerequisites"] = obj_prereqs
                     last_objective = "objective-" + slugify(objective["name_translations"]["en"])
                     objective["id"] = last_objective
                     
                     last_task = "" 
                     for task in objective["tasks"]:
                         
+                        task_prereqs = []
                         if last_task:
-                            task["prerequisites"] = [{
+                            task_prereqs = [{
                                 "item": last_task,
-                                "status": "completed"
+                                "type": "previous"
                             }]
+                        task["prerequisites"] = task_prereqs
+
                         last_task = "task-" + slugify(task["name_translations"]["en"])
                         task["id"] = last_task
                         add_to_weblate(schema_metadata["id"] +  DELIMITER  + phase["id"] +  DELIMITER + objective["id"], weblate_schemas, task)
                     add_to_weblate(schema_metadata["id"] +  DELIMITER  + phase["id"], weblate_schemas, objective)
-                schema_metadata["phases"].append(phase)
                 add_to_weblate(schema_metadata["id"], weblate_schemas, phase)
+            
+            schema_metadata["phases"].append(phase)
+            
+            with open(path, "w") as json_file:
+                json.dump(phase, json_file, indent=4) # important to not sort keys
+        
         dicts["schemas"].append(schema_metadata)
         add_to_weblate("schema", weblate_schemas, schema_metadata)
 
@@ -100,8 +112,11 @@ for interlinker_metadata_path in Path("./interlinkers").glob("**/metadata.json")
         id = slugify(interlinker_metadata["name_translations"]["en"]).lower()
         while id in ids:
             id += "-2"
+        # set as id the value of the name slugified
         interlinker_metadata["id"] = id
+        # set languages depending on current values of name and description
         interlinker_metadata["languages"] = list(set(interlinker_metadata["name_translations"].keys()) & set(interlinker_metadata["description_translations"].keys()))
+        # interlinker_metadata["environments"] = ["varam", "mef", "zgz"]
         parent_folder = interlinker_metadata_path.parent.parent.name
 
         if parent_folder == "knowledge":

@@ -10,6 +10,11 @@
     },
     "difficulty": "easy",
     "domain": "",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
     "file_translations": {
         "en": "./interlinkers/knowledge/Focus-Group-Template-Co-production/resource.pptx"
     },

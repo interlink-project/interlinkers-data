@@ -13,6 +13,11 @@
         "es": ""
     },
     "difficulty": "medium",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
     "id": "event-co-designer",
     "instructions_translations": {
         "en": "./interlinkers/externalsoftware/event-codesigner/instructions.md"

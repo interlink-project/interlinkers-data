@@ -9,6 +9,11 @@
         "en": "<p>Online calendar tool for time management and coordinating meetings. Anytime more than two people are trying to arrange a meeting, Doodle very useful. You can use doodle to plan meetings with team members, project collaborators, and external suppliers. </p>"
     },
     "difficulty": "easy",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
     "id": "doodle",
     "instructions_translations": {
         "en": "./interlinkers/externalsoftware/doodle/instructions.md"

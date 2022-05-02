@@ -14,6 +14,11 @@
         "en": "<p>These Guidelines give general guidance on the obligation of Data Protection by Design and by Default (henceforth \u201cDPbDD\u201d) set forth in Article 25 in the GDPR.</p>"
     },
     "difficulty": "difficult",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
     "form": "guidelines",
     "format": "pdf",
     "id": "edpb-data-protection-guidelines",

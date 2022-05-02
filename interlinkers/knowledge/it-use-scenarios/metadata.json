@@ -9,6 +9,11 @@
         "en": "<p>Template for preparing a use scenarios. </p>"
     },
     "difficulty": "easy",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
     "file_translations": {
         "en": "./interlinkers/knowledge/it-use-scenarios/resource.xlsx"
     },

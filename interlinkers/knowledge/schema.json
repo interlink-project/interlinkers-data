@@ -109,6 +109,12 @@
             "type": "array",
             "items": {}
         },
+        "environments": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Environments"
+            }
+        },
         "softwareinterlinker": {
             "$ref": "#/definitions/SoftwareInterlinkers"
         },
@@ -225,6 +231,15 @@
                 "open_document",
                 "structured_format",
                 "sofware"
+            ]
+        },
+        "Environments": {
+            "title": "Environments",
+            "description": "An enumeration.",
+            "enum": [
+                "varam",
+                "mef",
+                "zgz"
             ]
         },
         "SoftwareInterlinkers": {

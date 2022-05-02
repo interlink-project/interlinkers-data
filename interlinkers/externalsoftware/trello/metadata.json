@@ -14,6 +14,11 @@
         "en": "<p>Trello is a collaboration tool that organizes your projects into boards. In one glance, Trello tells you what's being worked on, who's working on what, and where something is in a process.</p>"
     },
     "difficulty": "easy",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
     "id": "trello",
     "instructions_translations": {
         "en": "./interlinkers/externalsoftware/trello/instructions.md"

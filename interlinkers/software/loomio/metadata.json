@@ -13,6 +13,11 @@
         "es": ""
     },
     "difficulty": "medium",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
     "id": "loomio",
     "instructions_translations": {
         "en": "./interlinkers/software/loomio/instructions.md"

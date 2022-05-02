@@ -10,6 +10,11 @@
     },
     "difficulty": "easy",
     "domain": "",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
     "file_translations": {
         "en": "./interlinkers/knowledge/co-producers-perceptions-Questionnaire/resource.pdf"
     },

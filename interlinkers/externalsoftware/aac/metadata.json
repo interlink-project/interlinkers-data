@@ -13,6 +13,11 @@
         "es": ""
     },
     "difficulty": "difficult",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
     "id": "aac-authentication-and-authorization-controller",
     "instructions_translations": {
         "en": "./interlinkers/externalsoftware/aac/instructions.md"

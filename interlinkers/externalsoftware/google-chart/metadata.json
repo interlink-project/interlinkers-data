@@ -14,6 +14,11 @@
         "en": "<p>Google Charts is a Java Script library providing a way to visualize data on your website (from simple line charts to complex hierarchical tree maps)</p>"
     },
     "difficulty": "medium",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
     "id": "google-chart",
     "instructions_translations": {
         "en": "./interlinkers/externalsoftware/google-chart/instructions.md"

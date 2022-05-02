@@ -13,6 +13,11 @@
         "en": "<p>This resource describes the guidelines for the development of secure software in the public administration</p>"
     },
     "difficulty": "difficult",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
     "form": "guidelines",
     "format": "structured_format",
     "id": "agid-guidelines-for-the-development-of-secure-software-in-italian",

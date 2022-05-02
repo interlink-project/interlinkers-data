@@ -8,6 +8,11 @@
         "es": ""
     },
     "difficulty": "easy",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
     "id": "collaborative-editor",
     "instructions_translations": {
         "en": "./interlinkers/software/ceditor/instructions.md"

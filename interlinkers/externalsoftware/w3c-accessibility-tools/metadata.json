@@ -14,6 +14,11 @@
         "en": "<p>Web accessibility evaluation tools are software programs or online services that help you determine if web content meets accessibility guidelines. This page provides a list of evaluation tools that you can filter to find ones that match your particular needs.</p>"
     },
     "difficulty": "easy",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
     "id": "accessibility-tools",
     "instructions_translations": {
         "en": "./interlinkers/externalsoftware/w3c-accessibility-tools/instructions.md"

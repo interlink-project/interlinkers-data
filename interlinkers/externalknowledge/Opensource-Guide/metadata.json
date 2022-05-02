@@ -14,6 +14,11 @@
         "en": "<p>A collection of resources for individuals, communities, and companies who want to learn how to run and contribute to an open source project.</p>"
     },
     "difficulty": "very_easy",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
     "form": "guidelines",
     "format": "structured_format",
     "id": "open-source-guides",

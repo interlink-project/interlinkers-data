@@ -9,6 +9,11 @@
         "en": "<p>Marketing automation platform and email marketing service[6] for managing mailing lists and creating email marketing campaigns to send to customers.</p>"
     },
     "difficulty": "easy",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
     "id": "mailchimp",
     "instructions_translations": {
         "en": "./interlinkers/externalsoftware/mailchimp/instructions.md"

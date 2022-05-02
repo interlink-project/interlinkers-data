@@ -14,6 +14,11 @@
         "en": "<p>Keycloak provides user federation, strong authentication, user management, fine-grained authorization</p>"
     },
     "difficulty": "difficult",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
     "id": "keycloak",
     "instructions_translations": {
         "en": "./interlinkers/externalsoftware/keycloak/instructions.md"

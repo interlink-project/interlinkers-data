@@ -109,6 +109,12 @@
             "type": "array",
             "items": {}
         },
+        "environments": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Environments"
+            }
+        },
         "logotype": {
             "title": "Logotype",
             "format": "file-path",
@@ -226,6 +232,15 @@
                 "open_document",
                 "structured_format",
                 "sofware"
+            ]
+        },
+        "Environments": {
+            "title": "Environments",
+            "description": "An enumeration.",
+            "enum": [
+                "varam",
+                "mef",
+                "zgz"
             ]
         }
     }

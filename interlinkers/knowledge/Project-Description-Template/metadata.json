@@ -9,6 +9,11 @@
         "en": "<p>Template for preparing a project description that synthetically summarizes the goals and major aspects of a co-production initiative. </p>"
     },
     "difficulty": "easy",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
     "file_translations": {
         "en": "./interlinkers/knowledge/Project-Description-Template/resource.docx"
     },

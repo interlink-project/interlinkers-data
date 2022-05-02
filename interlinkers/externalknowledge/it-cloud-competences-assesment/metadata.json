@@ -13,6 +13,11 @@
         "en": "<p>This resource contains a questionnaire to check the level of knowledge and competence in cloud computing </p>"
     },
     "difficulty": "medium",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
     "form": "guidelines",
     "format": "editable_source_document",
     "id": "agid-cloud-computing-competence-evalution-template",

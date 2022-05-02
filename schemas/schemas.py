@@ -26,10 +26,13 @@ class WithNameAndDesc(BaseModel):
 
 
 class Task(WithProblemProfiles, WithNameAndDesc, extra=Extra.forbid):
-    pass
+    id: str
+    prerequisites: Dict[str, str]
 
 
 class Objective(WithProblemProfiles, WithNameAndDesc, extra=Extra.forbid):
+    id: str
+    prerequisites: Dict[str, str]
     tasks: List[Task]
 
 

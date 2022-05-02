@@ -10,6 +10,11 @@
     },
     "difficulty": "easy",
     "domain": "",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
     "file_translations": {
         "en": "./interlinkers/knowledge/Final-End-Users-Questionnaire-QoS/resource.pdf"
     },

@@ -1,7 +1,6 @@
 {
     "id": "phase-engage",
-    "prerequisites": [
-    ],
+    "prerequisites": [],
     "name_translations": {
         "en": "Engage",
         "es": "Comprometer"
@@ -33,12 +32,14 @@
                     },
                     "problemprofiles": [
                         "UND_PROBLEM_2"
-                    ]
+                    ],
+                    "id": "task-understand-the-different-types-of-stakeholders",
+                    "prerequisites": []
                 },
                 {
                     "name_translations": {
                         "en": "Map stakeholders, analyse motivation, skills, expectations",
-                        "es": "Mapear partes interesadas analizar motivación habilidades expectativas"
+                        "es": "Mapear partes interesadas analizar motivaci\u00f3n habilidades expectativas"
                     },
                     "description_translations": {
                         "en": "Mapping the stakeholders is crucial to have a clear view of which roles stakeholders can play in different stages of innovation, what their level of commitment and strategic importance could be. Analyse the complexity of building relationships, realizing which connectors can be crucial for innovation development in your project.",
@@ -46,7 +47,14 @@
                     },
                     "problemprofiles": [
                         "UND_PROBLEM_2"
-                    ]
+                    ],
+                    "prerequisites": [
+                        {
+                            "item": "task-understand-the-different-types-of-stakeholders",
+                            "type": "previous"
+                        }
+                    ],
+                    "id": "task-map-stakeholders-analyse-motivation-skills-expectations"
                 },
                 {
                     "name_translations": {
@@ -59,7 +67,14 @@
                     },
                     "problemprofiles": [
                         "UND_PROBLEM_2"
-                    ]
+                    ],
+                    "prerequisites": [
+                        {
+                            "item": "task-map-stakeholders-analyse-motivation-skills-expectations",
+                            "type": "previous"
+                        }
+                    ],
+                    "id": "task-visually-map-the-network-of-stakeholders"
                 },
                 {
                     "name_translations": {
@@ -72,9 +87,18 @@
                     },
                     "problemprofiles": [
                         "ORG_PROBLEM_4"
-                    ]
+                    ],
+                    "prerequisites": [
+                        {
+                            "item": "task-visually-map-the-network-of-stakeholders",
+                            "type": "previous"
+                        }
+                    ],
+                    "id": "task-create-a-contact-list-of-potential-network-participants"
                 }
-            ]
+            ],
+            "id": "objective-identify-stakeholders",
+            "prerequisites": []
         },
         {
             "name_translations": {
@@ -102,7 +126,9 @@
                     },
                     "problemprofiles": [
                         "ORG_PROBLEM_5"
-                    ]
+                    ],
+                    "id": "task-prepare-an-engagement-plan",
+                    "prerequisites": []
                 },
                 {
                     "name_translations": {
@@ -116,7 +142,14 @@
                     "problemprofiles": [
                         "ORG_PROBLEM_4",
                         "ORG_PROBLEM_6.3"
-                    ]
+                    ],
+                    "prerequisites": [
+                        {
+                            "item": "task-prepare-an-engagement-plan",
+                            "type": "previous"
+                        }
+                    ],
+                    "id": "task-create-awareness-and-communication"
                 },
                 {
                     "name_translations": {
@@ -129,7 +162,14 @@
                     },
                     "problemprofiles": [
                         "ORG_PROBLEM_4"
-                    ]
+                    ],
+                    "prerequisites": [
+                        {
+                            "item": "task-create-awareness-and-communication",
+                            "type": "previous"
+                        }
+                    ],
+                    "id": "task-communicate-benefit-for-stakeholders"
                 },
                 {
                     "name_translations": {
@@ -143,10 +183,23 @@
                     "problemprofiles": [
                         "ORG_PROBLEM_10",
                         "ORG_PROBLEM_11"
-                    ]
+                    ],
+                    "prerequisites": [
+                        {
+                            "item": "task-communicate-benefit-for-stakeholders",
+                            "type": "previous"
+                        }
+                    ],
+                    "id": "task-engage-citizens-in-the-co-production-process"
                 }
-            ]
+            ],
+            "prerequisites": [
+                {
+                    "item": "objective-identify-stakeholders",
+                    "type": "previous"
+                }
+            ],
+            "id": "objective-engage-stakeholders"
         }
-
     ]
 }

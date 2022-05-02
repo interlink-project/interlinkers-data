@@ -10,6 +10,11 @@
     },
     "difficulty": "medium",
     "domain": "",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
     "file_translations": {
         "en": "./interlinkers/knowledge/Collaborative-Problem-Refinement/resource.pptx"
     },

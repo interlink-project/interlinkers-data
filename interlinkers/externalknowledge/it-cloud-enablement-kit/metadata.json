@@ -13,6 +13,11 @@
         "en": "<p>This resource describes the Cloud Enablement strategy outlined by AGID and Team Digitale (in Italian). </p>"
     },
     "difficulty": "difficult",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
     "form": "guidelines",
     "format": "pdf",
     "id": "cloud-enablement-kit-in-italian",

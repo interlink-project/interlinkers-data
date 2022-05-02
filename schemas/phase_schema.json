@@ -54,12 +54,25 @@
                     "title": "Problemprofiles",
                     "type": "array",
                     "items": {}
+                },
+                "id": {
+                    "title": "Id",
+                    "type": "string"
+                },
+                "prerequisites": {
+                    "title": "Prerequisites",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 }
             },
             "required": [
                 "name_translations",
                 "description_translations",
-                "problemprofiles"
+                "problemprofiles",
+                "id",
+                "prerequisites"
             ],
             "additionalProperties": false
         },
@@ -80,6 +93,17 @@
                     "type": "array",
                     "items": {}
                 },
+                "id": {
+                    "title": "Id",
+                    "type": "string"
+                },
+                "prerequisites": {
+                    "title": "Prerequisites",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
                 "tasks": {
                     "title": "Tasks",
                     "type": "array",
@@ -92,6 +116,8 @@
                 "name_translations",
                 "description_translations",
                 "problemprofiles",
+                "id",
+                "prerequisites",
                 "tasks"
             ],
             "additionalProperties": false

@@ -13,6 +13,11 @@
         "en": "<p>This resource aims at explaining how to acquire and reuse software in PA context.</p>"
     },
     "difficulty": "difficult",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
     "form": "guidelines",
     "format": "structured_format",
     "id": "guidelines-on-the-acquisition-and-reuse-of-software-for-public-administrations",

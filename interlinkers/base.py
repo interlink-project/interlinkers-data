@@ -15,6 +15,11 @@ class Languages(Enum):
     lv = "lv"
     it = "it"
 
+class Environments(Enum):
+    varam = "varam"
+    mef = "mef"
+    zgz = "zgz"
+
 
 class FormTypes(Enum):
     software = "software"
@@ -193,3 +198,4 @@ class InterlinkerSchema(WithProblemProfiles, extra=Extra.forbid):
     id: Optional[str]
     type: Optional[str]
     languages: Optional[list]
+    environments: Optional[List[Environments]]

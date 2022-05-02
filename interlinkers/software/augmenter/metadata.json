@@ -13,6 +13,11 @@
         "es": "<p>Augmenter es una aplicaci\u00f3n Open Source que ofrece la posibilidad de crear y mejorar descripciones de servicios p\u00fablicos, en el espacio de trabajo los usuarios pueden compartir opiniones, preguntas y comentarios, finalmente un moderador asignado decidir\u00e1 aprobar o no una sugerencia. Con Augmenter es posible</p><ul><li>Crear y mejorar descripciones de servicios p\u00fablicos, organizar dicusiones y mantener un registro de participaci\u00f3n e implicaci\u00f3n;</li><li>administrar las decisiones del moderador sobre las mejoras;</li ><li>Generar un informe final de mejora.</li></ul>"
     },
     "difficulty": "easy",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
     "id": "augmenter",
     "instructions_translations": {
         "en": "./interlinkers/software/augmenter/instructions.md"

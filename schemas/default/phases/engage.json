@@ -1,7 +1,6 @@
 {
     "id": "phase-engage",
-    "prerequisites": [
-    ],
+    "prerequisites": [],
     "name_translations": {
         "en": "Engage",
         "es": "Comprometer"
@@ -33,12 +32,14 @@
                     },
                     "problemprofiles": [
                         "UND_PROBLEM_2"
-                    ]
+                    ],
+                    "id": "task-understand-the-different-types-of-stakeholders",
+                    "prerequisites": []
                 },
                 {
                     "name_translations": {
                         "en": "Map stakeholders, analyse motivation, skills, expectations",
-                        "es": "Mapear partes interesadas analizar motivación habilidades expectativas"
+                        "es": "Mapear partes interesadas analizar motivaci\u00f3n habilidades expectativas"
                     },
                     "description_translations": {
                         "en": "Mapping the stakeholders is crucial to have a clear view of which roles stakeholders can play in different stages of innovation, what their level of commitment and strategic importance could be. Analyse the complexity of building relationships, realizing which connectors can be crucial for innovation development in your project.",
@@ -46,7 +47,14 @@
                     },
                     "problemprofiles": [
                         "UND_PROBLEM_2"
-                    ]
+                    ],
+                    "prerequisites": [
+                        {
+                            "item": "task-understand-the-different-types-of-stakeholders",
+                            "type": "previous"
+                        }
+                    ],
+                    "id": "task-map-stakeholders-analyse-motivation-skills-expectations"
                 },
                 {
                     "name_translations": {
@@ -59,7 +67,14 @@
                     },
                     "problemprofiles": [
                         "UND_PROBLEM_2"
-                    ]
+                    ],
+                    "prerequisites": [
+                        {
+                            "item": "task-map-stakeholders-analyse-motivation-skills-expectations",
+                            "type": "previous"
+                        }
+                    ],
+                    "id": "task-visually-map-the-network-of-stakeholders"
                 },
                 {
                     "name_translations": {
@@ -72,9 +87,18 @@
                     },
                     "problemprofiles": [
                         "ORG_PROBLEM_4"
-                    ]
+                    ],
+                    "prerequisites": [
+                        {
+                            "item": "task-visually-map-the-network-of-stakeholders",
+                            "type": "previous"
+                        }
+                    ],
+                    "id": "task-create-a-contact-list-of-potential-network-participants"
                 }
-            ]
+            ],
+            "id": "objective-identify-stakeholders",
+            "prerequisites": []
         },
         {
             "name_translations": {
@@ -102,7 +126,9 @@
                     },
                     "problemprofiles": [
                         "ORG_PROBLEM_5"
-                    ]
+                    ],
+                    "id": "task-prepare-an-engagement-plan",
+                    "prerequisites": []
                 },
                 {
                     "name_translations": {
@@ -116,7 +142,14 @@
                     "problemprofiles": [
                         "ORG_PROBLEM_4",
                         "ORG_PROBLEM_6.3"
-                    ]
+                    ],
+                    "prerequisites": [
+                        {
+                            "item": "task-prepare-an-engagement-plan",
+                            "type": "previous"
+                        }
+                    ],
+                    "id": "task-create-awareness-and-communication"
                 },
                 {
                     "name_translations": {
@@ -129,7 +162,14 @@
                     },
                     "problemprofiles": [
                         "ORG_PROBLEM_4"
-                    ]
+                    ],
+                    "prerequisites": [
+                        {
+                            "item": "task-create-awareness-and-communication",
+                            "type": "previous"
+                        }
+                    ],
+                    "id": "task-communicate-benefit-for-stakeholders"
                 },
                 {
                     "name_translations": {
@@ -143,9 +183,23 @@
                     "problemprofiles": [
                         "ORG_PROBLEM_10",
                         "ORG_PROBLEM_11"
-                    ]
+                    ],
+                    "prerequisites": [
+                        {
+                            "item": "task-communicate-benefit-for-stakeholders",
+                            "type": "previous"
+                        }
+                    ],
+                    "id": "task-engage-citizens-in-the-co-production-process"
                 }
-            ]
+            ],
+            "prerequisites": [
+                {
+                    "item": "objective-identify-stakeholders",
+                    "type": "previous"
+                }
+            ],
+            "id": "objective-engage-stakeholders"
         },
         {
             "name_translations": {
@@ -167,7 +221,9 @@
                         "en": "You should consider whether your collaborative network of stakeholders needs a formal  agreement for not disclosing the confidential information that is shared as part of co-producing a service together.",
                         "es": ""
                     },
-                    "problemprofiles": []
+                    "problemprofiles": [],
+                    "id": "task-define-a-non-disclosure-agreement-nda",
+                    "prerequisites": []
                 },
                 {
                     "name_translations": {
@@ -181,9 +237,23 @@
                     "problemprofiles": [
                         "ORG_PROBLEM_7",
                         "ORG_PROBLEM_8"
-                    ]
+                    ],
+                    "prerequisites": [
+                        {
+                            "item": "task-define-a-non-disclosure-agreement-nda",
+                            "type": "previous"
+                        }
+                    ],
+                    "id": "task-define-a-partnership-agreement"
                 }
-            ]
+            ],
+            "prerequisites": [
+                {
+                    "item": "objective-engage-stakeholders",
+                    "type": "previous"
+                }
+            ],
+            "id": "objective-define-legal-and-ethical-framework"
         },
         {
             "name_translations": {
@@ -208,7 +278,9 @@
                         "en": "Which data will be collected during co-production? \r\nStart your data management plan by making an inventory of data sources and types.",
                         "es": ""
                     },
-                    "problemprofiles": []
+                    "problemprofiles": [],
+                    "id": "task-clarify-the-purpose-for-data-collection",
+                    "prerequisites": []
                 },
                 {
                     "name_translations": {
@@ -219,7 +291,14 @@
                         "en": "From whom and for which purpose is data accessed? \r\nUnderstand where data can be securely stored and whether data is to be further transferred.",
                         "es": ""
                     },
-                    "problemprofiles": []
+                    "problemprofiles": [],
+                    "prerequisites": [
+                        {
+                            "item": "task-clarify-the-purpose-for-data-collection",
+                            "type": "previous"
+                        }
+                    ],
+                    "id": "task-understand-how-the-data-flows"
                 },
                 {
                     "name_translations": {
@@ -230,10 +309,23 @@
                         "en": "Consider which are users' and suppliers' pids concerning data.\r\nReflect on aspects of ownership, minimalization, responsibility, sharing, archiving, anonymity.",
                         "es": ""
                     },
-                    "problemprofiles": []
+                    "problemprofiles": [],
+                    "prerequisites": [
+                        {
+                            "item": "task-understand-how-the-data-flows",
+                            "type": "previous"
+                        }
+                    ],
+                    "id": "task-be-aware-of-data-impact"
                 }
-            ]
-        }   
-
+            ],
+            "prerequisites": [
+                {
+                    "item": "objective-define-legal-and-ethical-framework",
+                    "type": "previous"
+                }
+            ],
+            "id": "objective-define-data-management-plan"
+        }
     ]
 }
