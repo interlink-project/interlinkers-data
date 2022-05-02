@@ -924,7 +924,7 @@
                 },
                 "description_translations": {
                     "en": "<p>This resource contains a questionnaire to check the cloud computing migration strategy  </p>",
-                    "es": "",
+                    "es": "<p>Este recurso contiene un cuestionario para comprobar la estrategia de migraci\u00f3n a la computaci\u00f3n en la nube </p>",
                     "it": "",
                     "lv": ""
                 },
@@ -946,7 +946,7 @@
                 "licence": "permissive",
                 "name_translations": {
                     "en": "AgID Cloud computing migration strategy evalution template",
-                    "es": "",
+                    "es": "Plantilla de evaluaci\u00f3n de la estrategia de migraci\u00f3n a la nube de AgID",
                     "it": "",
                     "lv": ""
                 },
@@ -1116,7 +1116,7 @@
                 },
                 "description_translations": {
                     "en": "<p>This resource contains a questionnaire to check the level of knowledge and competence in cloud computing </p>",
-                    "es": "",
+                    "es": "<p>Este recurso contiene un cuestionario para comprobar el nivel de conocimiento y competencia en computaci\u00f3n en la nube</p>",
                     "it": "",
                     "lv": ""
                 },
@@ -1138,7 +1138,7 @@
                 "licence": "permissive",
                 "name_translations": {
                     "en": "AgID Cloud computing competence evalution template",
-                    "es": "",
+                    "es": "Plantilla de evaluaci\u00f3n de la competencia de computaci\u00f3n en nube de AgID",
                     "it": "",
                     "lv": ""
                 },
@@ -1312,7 +1312,7 @@
                 },
                 "description_translations": {
                     "en": "<p>This resource describes the guidelines for the development of secure software in the public administration</p>",
-                    "es": "",
+                    "es": "<p>Este recurso describe las directrices para el desarrollo de software seguro en la administraci\u00f3n p\u00fablica</p>",
                     "it": "",
                     "lv": ""
                 },
@@ -1334,7 +1334,7 @@
                 "licence": "permissive",
                 "name_translations": {
                     "en": " AgID guidelines for the development of secure software (in Italian)",
-                    "es": "",
+                    "es": " Directrices de AgID para el desarrollo de software seguro (en italiano)",
                     "it": "",
                     "lv": ""
                 },

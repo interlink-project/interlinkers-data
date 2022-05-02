@@ -11,7 +11,7 @@
     },
     "description_translations": {
         "en": "<p>This resource contains a questionnaire to check the level of knowledge and competence in cloud computing </p>",
-        "es": "",
+        "es": "<p>Este recurso contiene un cuestionario para comprobar el nivel de conocimiento y competencia en computaci\u00f3n en la nube</p>",
         "it": "",
         "lv": ""
     },
@@ -33,7 +33,7 @@
     "licence": "permissive",
     "name_translations": {
         "en": "AgID Cloud computing competence evalution template",
-        "es": "",
+        "es": "Plantilla de evaluaci\u00f3n de la competencia de computaci\u00f3n en nube de AgID",
         "it": "",
         "lv": ""
     },
