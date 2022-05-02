@@ -3,9 +3,9 @@ name: Migrate weblate translations to the corresponding files
 on:
   push:
     branches:    
-      - weblate_interlinkers
-      - weblate_problemprofiles
-      - weblate_schemas
+      - weblate
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
