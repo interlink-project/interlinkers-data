@@ -5747,14 +5747,14 @@
                 {
                     "description_translations": {
                         "en": "Browse the catalogue of INTERLINKERs to find reusable building blocks for the implementation of your service. Monitor development advancement in the project workplan. Stop and reflect on the process so far with the co-evaluation checklists that help verify compliance with standards and regulations. Use incentives and reward tools made available by the INTERLINK platform to sustain stakeholders\u2019 and citizens\u2019 contribution to service delivery. Monitor quality of service and citizens\u2019 satisfaction with carefully prepared surveys. Stop and reflect on how co-delivery is going with the co-evaluation checklists.",
-                        "es": "",
+                        "es": "Examine el cat\u00e1logo de INTERLINKERs para encontrar bloques de construcci\u00f3n reutilizables para la implementaci\u00f3n de su servicio. Supervise el avance del desarrollo en el plan de trabajo del proyecto. Det\u00e9ngase y reflexione sobre el proceso hasta el momento con las listas de comprobaci\u00f3n de coevaluaci\u00f3n que ayudan a verificar el cumplimiento de las normas y los reglamentos. Utilizar los incentivos y las herramientas de recompensa que pone a disposici\u00f3n la plataforma INTERLINK para mantener la contribuci\u00f3n de las partes interesadas y los ciudadanos a la prestaci\u00f3n del servicio. Controlar la calidad del servicio y la satisfacci\u00f3n de los ciudadanos con encuestas cuidadosamente preparadas. Detenerse y reflexionar sobre c\u00f3mo va la co-prestaci\u00f3n de servicios con las listas de comprobaci\u00f3n de la co-evaluaci\u00f3n.",
                         "it": "",
                         "lv": ""
                     },
                     "id": "phase-build",
                     "name_translations": {
                         "en": "Build",
-                        "es": "",
+                        "es": "Construir",
                         "it": "",
                         "lv": ""
                     },
@@ -5858,7 +5858,7 @@
                         {
                             "description_translations": {
                                 "en": "Release the co-produced service. Ensure that is operational in a 24x7 basis.  Provide support to accomodate enhancements or fixes. Establish fluid mechanisms between service co-deliverers and consumers. Monitor fulfilment of obligations and responsabilities of distinct codeliverers.",
-                                "es": "",
+                                "es": "Liberar el servicio coproducido. Garantizar que est\u00e9 operativo en r\u00e9gimen de 24x7. Proporcionar soporte para acomodar mejoras o correcciones. Establecer mecanismos fluidos entre los codirectores del servicio y los consumidores. Supervisar el cumplimiento de las obligaciones y responsabilidades de los distintos codistribuidores.",
                                 "it": "",
                                 "lv": ""
                             },
