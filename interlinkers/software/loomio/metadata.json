@@ -58,8 +58,8 @@
     },
     "is_responsive": true,
     "languages": [
-        "es",
-        "en"
+        "en",
+        "es"
     ],
     "licence": "copyleft",
     "logotype": "./interlinkers/software/loomio/logo.png",
