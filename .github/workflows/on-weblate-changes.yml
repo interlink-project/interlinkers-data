@@ -1,0 +1,24 @@
+name: Testing
+
+on:
+  push:
+    branches:    
+      - weblate
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v2 # checkout the repository content to github runner.
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8 #install the python needed
+      - name: Install dependencies and run test script
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          python test.py && python input.py && python generate.py
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Auto changes
