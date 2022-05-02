@@ -11,7 +11,7 @@
     },
     "description_translations": {
         "en": "<p>This resource aims at explaining how to acquire and reuse software in PA context.</p>",
-        "es": "",
+        "es": "<p>Este recurso pretende explicar c\u00f3mo adquirir y reutilizar software en el contexto de la AP.</p>",
         "it": "",
         "lv": ""
     },
@@ -33,7 +33,7 @@
     "licence": "permissive",
     "name_translations": {
         "en": "Guidelines on the acquisition and reuse of software for public administrations",
-        "es": "",
+        "es": "Directrices sobre la adquisici\u00f3n y reutilizaci\u00f3n de programas inform\u00e1ticos para las administraciones p\u00fablicas",
         "it": "",
         "lv": ""
     },
