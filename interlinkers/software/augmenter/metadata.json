@@ -56,8 +56,8 @@
     },
     "is_responsive": true,
     "languages": [
-        "es",
-        "en"
+        "en",
+        "es"
     ],
     "licence": "copyleft",
     "logotype": "./interlinkers/software/augmenter/logo.png",
