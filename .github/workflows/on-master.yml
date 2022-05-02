@@ -1,4 +1,4 @@
-name: Testing
+name: Test last changes and generate all.json
 
 on:
   push:

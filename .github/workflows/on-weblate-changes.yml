@@ -1,9 +1,11 @@
-name: Testing
+name: Migrate weblate translations to the corresponding files
 
 on:
   push:
     branches:    
-      - weblate
+      - weblate_interlinkers
+      - weblate_problemprofiles
+      - weblate_schemas
 jobs:
   build:
     runs-on: ubuntu-latest
