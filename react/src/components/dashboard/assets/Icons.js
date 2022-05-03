@@ -3,6 +3,7 @@ import {
     IconButton
 } from '@material-ui/core';
 import { Check, Loop } from '@material-ui/icons';
+import { useCustomTranslation } from 'hooks/useDependantTranslation';
 import i18n from 'translations/i18n';
 
 export const InProgressIcon = () => <Loop fontSize="small" sx={{ color: "#f0ad4e" }} />
@@ -42,23 +43,24 @@ export const OfficialityChip = ({ officiality = "official" }) => {
 }
 
 
-export const NatureChip = ({ interlinker }) => {
+export const NatureChip = ({ interlinker, language = null }) => {
+    const t = useCustomTranslation(language)
     let label = ""
     let color = ""
     if (interlinker.nature === 'softwareinterlinker') {
-        label = i18n.t("Internal software")
+        label = t("Internal software")
         color = "primary"
 
     } else if (interlinker.nature === 'knowledgeinterlinker') {
-        label = i18n.t("Internal knowledge")
+        label = t("Internal knowledge")
         color = "secondary"
     }
     else if (interlinker.nature === 'externalsoftwareinterlinker') {
-        label = i18n.t("External software")
+        label = t("External software")
         color = "success"
     }
     else if (interlinker.nature === 'externalknowledgeinterlinker') {
-        label = i18n.t("External knowledge")
+        label = t("External knowledge")
         color = "warning"
     }
 

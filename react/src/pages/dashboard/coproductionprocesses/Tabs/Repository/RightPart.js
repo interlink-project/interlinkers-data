@@ -1,10 +1,13 @@
 import { Alert, alpha, Avatar, Box, Button, Card, CardActionArea, CardActions, CardHeader, CircularProgress, Collapse, Dialog, DialogContent, Divider, Grid, InputBase, Menu, MenuItem, Rating, Stack, TextField, Typography } from '@material-ui/core';
 import { green } from '@material-ui/core/colors';
 import { Check, KeyboardArrowDown, KeyboardArrowUp } from '@material-ui/icons';
+import { LoadingButton } from '@material-ui/lab';
 import { styled } from '@material-ui/styles';
 import { AssetsTable } from 'components/dashboard/assets';
 import { NatureChip } from 'components/dashboard/assets/Icons';
 import { TreeItemData } from 'components/dashboard/tree';
+import { Formik } from 'formik';
+import { useCustomTranslation } from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
 import { truncate } from 'lodash';
 import { useEffect, useState } from 'react';
@@ -13,9 +16,6 @@ import { HTMLtoText } from 'utils/safeHTML';
 import * as Yup from 'yup';
 import { assetsApi, interlinkersApi } from '__api__';
 import NewAssetModal from './NewAssetModal';
-import { Formik } from 'formik';
-import { useTranslation } from 'react-i18next';
-import { LoadingButton } from '@material-ui/lab';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -64,9 +64,8 @@ const sameHeightCards = {
     justifyContent: "space-between"
 }
 
-const RecommendedInterlinkerCard = ({ interlinker, assets, onClick }) => {
+const RecommendedInterlinkerCard = ({ language, interlinker, assets, onClick }) => {
     const [isShown, setIsShown] = useState(false);
-
     const logotype = interlinker.logotype_link || (interlinker.softwareinterlinker && interlinker.softwareinterlinker.logotype_link)
     return <>
         <CardActionArea style={sameHeightCards} onClick={onClick}>
@@ -95,7 +94,7 @@ const RecommendedInterlinkerCard = ({ interlinker, assets, onClick }) => {
                 </Typography>
                 <CardActions sx={{ textAlign: "center" }}>
                     <Stack direction="column" justifyContent="center" spacing={1} sx={{ textAlign: "center" }}>
-                        <NatureChip interlinker={interlinker} />
+                        <NatureChip language={language} interlinker={interlinker} />
                         <Rating readOnly value={interlinker.rating} size="small" />
                     </Stack>
 
@@ -139,13 +138,13 @@ const RightPart = () => {
     const [newAssetDialogOpen, setNewAssetDialogOpen] = useState(false)
     const mounted = useMounted()
     const [externalAssetOpen, setExternalAssetOpen] = useState(false);
-    const { t } = useTranslation()
+    const t = useCustomTranslation()
 
     const updateTaskInfo = async () => {
         assetsApi.getMulti({ task_id: selectedTreeItem.id }).then(assets => {
             if (mounted.current) {
                 setAssets(assets)
-                interlinkersApi.getByProblemProfiles(null, null, selectedTreeItem.problemprofiles).then(interlinkers => {
+                interlinkersApi.getByProblemProfiles(null, null, selectedTreeItem.problemprofiles, process.language).then(interlinkers => {
                     if (mounted.current) {
                         setRecommendedInterlinkers(interlinkers.items)
                         setLoadingTaskInfo(false)
@@ -189,18 +188,18 @@ const RightPart = () => {
 
                     <Button sx={{ my: 2 }} fullWidth variant="outlined" onClick={() => setrecommendedInterlinkersOpen(!recommendedInterlinkersOpen)}>
                         <Stack spacing={2}>
-                            <Typography variant="h6" >Recommended interlinkers</Typography>
+                            <Typography variant="h6" >{t("Recommended interlinkers")}</Typography>
                             <Divider> {!recommendedInterlinkersOpen ? <KeyboardArrowDown /> : <KeyboardArrowUp />}</Divider>
                         </Stack>
                     </Button>
                     <Collapse in={recommendedInterlinkersOpen} timeout="auto" unmountOnExit>
 
                         {loadingTaskInfo ?
-                            <CircularProgress /> : recommendedInterlinkers.length === 0 ? <Alert severity="warning">No recommended interlinkers found</Alert> : <Grid container spacing={3} justifyContent="flex-start">
+                            <CircularProgress /> : recommendedInterlinkers.length === 0 ? <Alert severity="warning">{t("No recommended interlinkers found")}</Alert> : <Grid container spacing={3} justifyContent="flex-start">
 
                                 {recommendedInterlinkers.map(interlinker => (
                                     <Grid item xs={12} md={6} lg={4} xl={4} key={interlinker.id}>
-                                        <RecommendedInterlinkerCard assets={assets} onClick={() => {
+                                        <RecommendedInterlinkerCard language={process.language} assets={assets} onClick={() => {
                                             setStep(0);
                                             setSelectedInterlinker(interlinker);
                                             setNewAssetDialogOpen(true)
@@ -225,7 +224,7 @@ const RightPart = () => {
                     />
                   </Search>
                 </Paper>*/}
-                            <Typography sx={{ mb: 1 }} variant="h6">Current resources:</Typography>
+                            <Typography sx={{ mb: 1 }} variant="h6">{t("Current resources")}:</Typography>
 
                             <AssetsTable assets={assets} onChange={updateTaskInfo} />
 
@@ -241,11 +240,12 @@ const RightPart = () => {
                                 sx={{ mt: 2 }}
                                 endIcon={<KeyboardArrowDown />}
                             >
-                                Initiate procedure
+                                {t("Initiate procedure")}
+
                             </Button>
                         </Box>
                         <Dialog open={externalAssetOpen} onClose={() => setExternalAssetOpen(false)}>
-                            <DialogContent sx={{p: 2}}>
+                            <DialogContent sx={{ p: 2 }}>
                                 <Formik
                                     initialValues={{
                                         name: "",
@@ -267,7 +267,7 @@ const RightPart = () => {
                                             setSubmitting(false);
                                             updateTaskInfo()
                                             setExternalAssetOpen(false)
-                                            
+
                                         }).catch(err => {
                                             setStatus({ success: false });
                                             setErrors({ submit: err });
@@ -303,7 +303,7 @@ const RightPart = () => {
                                                 />
                                                 <TextField
                                                     required
-                                                    sx={{mt: 2}}
+                                                    sx={{ mt: 2 }}
                                                     error={Boolean(touched.uri && errors.uri)}
                                                     fullWidth
                                                     helperText={touched.uri && errors.uri}
@@ -315,7 +315,7 @@ const RightPart = () => {
                                                     value={values.uri}
                                                     variant='outlined'
                                                 />
-                                                <LoadingButton sx={{mt: 2}} variant="contained" fullWidth loading={isSubmitting} disabled={isSubmitting} onClick={handleSubmit}>{t("Create")}</LoadingButton>
+                                                <LoadingButton sx={{ mt: 2 }} variant="contained" fullWidth loading={isSubmitting} disabled={isSubmitting} onClick={handleSubmit}>{t("Create")}</LoadingButton>
                                             </Box>
 
                                         </form>
@@ -337,7 +337,7 @@ const RightPart = () => {
                                 handleMenuClose()
                             }
                             }>
-                                <Avatar src={"https://cdn-icons-png.flaticon.com/512/282/282100.png"} sx={{ mr: 2, height: "20px", width: "20px" }} />Link an external resource
+                                <Avatar src={"https://cdn-icons-png.flaticon.com/512/282/282100.png"} sx={{ mr: 2, height: "20px", width: "20px" }} />{t("Link an external resource")}
                             </MenuItem>
                             {softwareInterlinkers.map(si =>
                                 <MenuItem key={si.id} onClick={() => {

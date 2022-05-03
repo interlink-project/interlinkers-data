@@ -1,4 +1,5 @@
 import axiosInstance from 'axiosInstance';
+import { getLanguage } from 'translations/i18n';
 import GeneralApi, { removeEmpty } from "../general"
 
 class InterlinkersApi extends GeneralApi {
@@ -16,13 +17,16 @@ class InterlinkersApi extends GeneralApi {
     return res.data
   }
 
-  async getByProblemProfiles(page, size, problemprofiles) {
+  async getByProblemProfiles(page, size, problemprofiles, language = getLanguage()) {
     const res = await axiosInstance.post(
       `/${this.url}/by_problemprofiles`, problemprofiles, {
       params: removeEmpty({
         page,
         size
-      })
+      }),
+      headers: {
+        "Accept-Language": language
+      }
     }
     );
     console.log('by problem profiles call', res.data);
