@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { env } from 'configuration'
-import { getInitialLanguage } from 'translations/i18n'
+import { getLanguage } from 'translations/i18n'
 import qs from "qs"
 
 export const getImageUrl = (micro, path) => path && `/${micro}${path}`
@@ -14,7 +14,7 @@ const axiosInstance = axios.create({
   headers: {
     'Content-Type': 'application/json',
     accept: 'application/json',
-    'Accept-Language': getInitialLanguage(),
+    'Accept-Language': getLanguage(),
   },
 })
 

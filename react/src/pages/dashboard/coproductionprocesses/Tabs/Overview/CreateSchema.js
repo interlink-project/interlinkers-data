@@ -56,7 +56,7 @@ const CreateSchema = () => {
 
     const submit = async (coproductionschema_id) => {
         setLoadingSchemaId(coproductionschema_id)
-        coproductionProcessesApi.setSchema(process.id, coproductionschema_id).then(process => {
+        coproductionProcessesApi.setSchema(process.id, coproductionschema_id, process.language).then(process => {
             setCoproductionProcess(process)
         });
     }

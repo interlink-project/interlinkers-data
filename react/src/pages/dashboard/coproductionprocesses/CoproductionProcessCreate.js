@@ -6,13 +6,13 @@ import { LoadingButton } from '@material-ui/lab';
 import useMounted from 'hooks/useMounted';
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { getInitialLanguage, LANGUAGES } from 'translations/i18n';
+import { getLanguage, LANGUAGES } from 'translations/i18n';
 import { coproductionProcessesApi } from '__api__';
 
 const CoproductionprocessCreate = ({ open, setOpen, loading, setLoading, onCreate }) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [language, setLanguage] = useState(getInitialLanguage());
+  const [language, setLanguage] = useState(getLanguage());
   const [logotype, setLogotype] = useState(null);
 
   const [activeStep, setActiveStep] = useState(0);

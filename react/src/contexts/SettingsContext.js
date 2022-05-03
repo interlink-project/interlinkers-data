@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { THEMES } from '../constants';
-import { getInitialLanguage, setLanguage } from '../translations/i18n';
+import { getLanguage, setLanguage } from '../translations/i18n';
 import axiosInstance from 'axiosInstance';
 import { createCustomTheme } from 'theme';
 
@@ -9,7 +9,7 @@ const initialSettings = {
   loaded: false,
   direction: 'ltr',
   theme: THEMES.LIGHT.key,
-  language: getInitialLanguage(),
+  language: getLanguage(),
   themeData: createCustomTheme({
     direction: 'ltr',
     theme: THEMES.LIGHT.key

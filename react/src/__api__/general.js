@@ -1,5 +1,5 @@
 import axiosInstance from 'axiosInstance';
-import store from 'store';
+import { getLanguage } from 'translations/i18n';
 
 export function removeEmpty(obj) {
   return Object.fromEntries(Object.entries(obj).filter(([_, v]) => v != null));
@@ -15,13 +15,16 @@ export default class GeneralApi {
     return axiosInstance.post(`/${this.url}`, data)
   }
 
-  async getMulti(params = {}) {
+  async getMulti(params = {}, language = getLanguage()) {
     const res = await axiosInstance.get(
       `/${this.url}`, {
-        params: removeEmpty(params)
+      params: removeEmpty(params),
+      headers: {
+        "Accept-Language": language
       }
+    }
     );
-    console.log('getMulti call', res.data);
+    console.log('getMulti call', res.data, "in", language);
     return res.data;
   }
 
@@ -33,10 +36,14 @@ export default class GeneralApi {
     }
   }
 
-  async get(id) {
+  async get(id, language = getLanguage()) {
     if (id) {
-      const res = await axiosInstance.get(`/${this.url}/${id}`)
-      console.log('get call', res.data);
+      const res = await axiosInstance.get(`/${this.url}/${id}`, {
+        headers: {
+          "Accept-Language": language
+        }
+      })
+      console.log('get call', res.data, "in", language);
       return res.data
     }
   }
@@ -49,7 +56,7 @@ export default class GeneralApi {
     }
   }
 
-  async setFile(id, endpoint, file) {
+  async setFile(id, endpoint, file, language = getLanguage()) {
     let formData = new FormData();
     formData.append('file', file);
     const res = await axiosInstance.post(
@@ -57,9 +64,10 @@ export default class GeneralApi {
       formData,
       {
         headers: {
-            "Content-type": "multipart/form-data",
-        },                    
-    }
+          "Content-type": "multipart/form-data",
+          "Accept-Language": language
+        },
+      }
     );
     console.log('setLogotype call', res.data);
     return res;

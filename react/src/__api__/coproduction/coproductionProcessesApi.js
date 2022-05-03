@@ -1,5 +1,7 @@
 import axiosInstance from 'axiosInstance';
 import GeneralApi from "../general"
+import {coproductionSchemasApi} from "../catalogue/coproductionSchemasApi"
+
 
 class CoproductionProcessesApi extends GeneralApi {
   constructor() {
@@ -40,9 +42,10 @@ class CoproductionProcessesApi extends GeneralApi {
     }
   }
 
-  async setSchema(id, coproductionschema_id) {
+  async setSchema(id, coproductionschema_id, language) {
     if (id) {
-      const res = await axiosInstance.post(`/${this.url}/${id}/set_schema`, {coproductionschema_id})
+      const schema = await coproductionSchemasApi.get(coproductionschema_id, language)
+      const res = await axiosInstance.post(`/${this.url}/${id}/set_schema`, schema)
       console.log('set schema', res.data);
       return res.data
     }
