@@ -7,7 +7,6 @@ help: ## Show this help
 .PHONY: down
 down: ## Stops all containers and removes volumes
 	docker-compose -f docker-compose.devintegrated.yml down --volumes --remove-orphans
-	docker-compose -f docker-compose.devsolo.yml down --volumes --remove-orphans
 
 #######################
 ## BUILD IMAGES
@@ -20,9 +19,6 @@ build: ## Builds development containers
 #######################
 ## RUN CONTAINERS
 #######################
-.PHONY: solo
-solo: down ## Starts solo development containers
-	docker-compose -f docker-compose.devsolo.yml up -d
 
 .PHONY: integrated
 integrated: down ## Starts integrated development containers
