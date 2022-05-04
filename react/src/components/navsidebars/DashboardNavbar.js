@@ -10,6 +10,7 @@ import SearchAppBar from './Search';
 import { useTranslation } from 'react-i18next';
 import i18n from 'translations/i18n';
 import useSettings from 'hooks/useSettings';
+import { THEMES } from '../../constants';
 
 const DashboardNavbarRoot = experimentalStyled(AppBar)(({ theme }) => ({
   ...(theme.palette.mode === 'light' && {
@@ -67,11 +68,11 @@ const DashboardNavbar = (props) => {
         {!onMobile && <RouterLink to='/'>
           <img
             alt='Logo'
-            src={"/static/customization/" + settings.customData.logos.light}
+            src={"/static/customization/" + (settings.theme === THEMES.LIGHT.key ? settings.logos.light : settings.logos.dark)}
             height='40px'
           />
         </RouterLink>}
-        {pages.map(page => <Button sx={{ml: 2, ...page.sx}} component={RouterLink} to={page.path} color="inherit" variant={window.location.pathname === page.path ? "outlined" : "text"} disabled={page.disabled}>
+        {pages.map(page => <Button key={page.path} sx={{ml: 2, ...page.sx}} component={RouterLink} to={page.path} color="inherit" variant={window.location.pathname === page.path ? "outlined" : "text"} disabled={page.disabled}>
           <Typography textAlign="center" variant="button">{page.label}</Typography>
         </Button>)}
         <Box

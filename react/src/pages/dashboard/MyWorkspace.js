@@ -17,6 +17,7 @@ const MyWorkspace = () => {
   const { t } = useTranslation()
 
   const LoggedInWorkspace = () => <Container maxWidth="lg">
+    <>
     <Grid container spacing={3}>
       <Grid container justifyContent='space-between' item xs={12}>
         <Grid item>
@@ -44,10 +45,7 @@ const MyWorkspace = () => {
           </Typography>
         </Stack>
       </Container>}</Box>}
-
-
-
-
+      </>
   </Container>
 
   return (

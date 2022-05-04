@@ -122,10 +122,10 @@ const CoproductionProcessProfile = () => {
 
   const tabs = [
     { label: processLanguage('Overview'), value: 'overview' },
-    { label: processLanguage('Metadata'), value: 'metadata' },
     { label: processLanguage('Workplan'), value: 'workplan' },
     { label: processLanguage('Guide'), value: 'guide' },
     { label: processLanguage('Team'), value: 'team' },
+    { label: processLanguage('Settings'), value: 'settings' },
   ];
 
   return (
@@ -151,11 +151,6 @@ const CoproductionProcessProfile = () => {
                     {!hasSchema && process.creator_id !== user.sub && <PermissionDenied explanation={t("Only the creator of the process can select an schema")} />}
                   </Card>
                 </TabPanel>
-                <TabPanel value={tab} index="metadata">
-                  <Card >
-                    <MetadataTab />
-                  </Card>
-                </TabPanel>
                 {hasSchema && <>
                   <TabPanel value={tab} index="workplan">
                     <Card sx={style}>
@@ -168,9 +163,13 @@ const CoproductionProcessProfile = () => {
                     </Card>
                   </TabPanel>
                 </>}
-
                 <TabPanel value={tab} index="team">
                   <TeamTab />
+                </TabPanel>
+                <TabPanel value={tab} index="settings">
+                  <Card >
+                    <MetadataTab />
+                  </Card>
                 </TabPanel>
               </>
             }

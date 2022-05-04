@@ -1,0 +1,1 @@
+copy and paste any folder and rename it to "touse" in order to use its assets

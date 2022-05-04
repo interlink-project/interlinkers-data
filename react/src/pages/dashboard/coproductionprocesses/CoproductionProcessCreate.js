@@ -125,7 +125,7 @@ const CoproductionprocessCreate = ({ open, setOpen, loading, setLoading, onCreat
                 }}
                 label={t("Language")}
               >
-                {LANGUAGES.map(lan => <MenuItem value={lan.value}>{lan.label}</MenuItem>)}
+                {LANGUAGES.map(lan => <MenuItem key={lan.value} value={lan.value}>{lan.label}</MenuItem>)}
               </Select>
             </FormControl>
             <TextField

@@ -11,7 +11,7 @@ import {
   IconButton,
 } from '@material-ui/core';
 import { THEMES } from '../../constants';
-import { LANGUAGES } from 'translations/i18n';
+import { getLanguage, LANGUAGES } from 'translations/i18n';
 import useSettings from '../../hooks/useSettings';
 import AdjustmentsIcon from '../../icons/Adjustments';
 import { useTranslation } from 'react-i18next';
@@ -19,7 +19,7 @@ import { useTranslation } from 'react-i18next';
 const getValues = (settings) => ({
   direction: settings.direction,
   theme: settings.theme,
-  language: settings.language,
+  language: getLanguage()
 });
 
 const SettingsPopover = () => {

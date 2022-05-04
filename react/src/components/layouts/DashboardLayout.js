@@ -1,14 +1,12 @@
-import { useState } from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
-import { experimentalStyled } from '@material-ui/core/styles';
-import DashboardNavbar from '../navsidebars/DashboardNavbar';
-import DashboardSidebar from '../navsidebars/DashboardSidebar';
 import { useMediaQuery, useTheme } from '@material-ui/core';
-import DashboardMobileAppbar from '../navsidebars/DashboardMobileAppbar';
+import { experimentalStyled } from '@material-ui/core/styles';
 import ProcessSidebar from 'components/navsidebars/ProcessSidebar';
-import { useDispatch, useSelector } from 'react-redux';
 import WorkspaceSidebar from 'components/navsidebars/WorkspaceSidebar';
 import useAuth from 'hooks/useAuth';
+import { useState } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
+import DashboardMobileAppbar from '../navsidebars/DashboardMobileAppbar';
+import DashboardNavbar from '../navsidebars/DashboardNavbar';
 
 const DashboardLayoutRoot = experimentalStyled('div')(({ theme }) => ({
   backgroundColor: theme.palette.background.default,
@@ -26,6 +24,14 @@ const DashboardLayoutWrapper = experimentalStyled('div')(({ theme }) => ({
   [theme.breakpoints.up('lg')]: {
     paddingLeft: '300px'
   }
+}));
+
+const MobileLayoutWrapper = experimentalStyled('div')(({ theme }) => ({
+  display: 'flex',
+  flex: '1 1 auto',
+  overflow: 'hidden',
+  paddingBottom: '70px',
+
 }));
 
 const DashboardLayoutWrapper2 = experimentalStyled('div')(({ theme }) => ({
@@ -52,12 +58,12 @@ const DashboardLayoutContent = experimentalStyled('div')({
 const DashboardLayout = () => {
   const [isSidebarMobileOpen, setIsSidebarMobileOpen] = useState(false);
   const location = useLocation();
-  const {isAuthenticated} = useAuth();
+  const { isAuthenticated } = useAuth();
   const theme = useTheme();
   const onMobile = !useMediaQuery(theme.breakpoints.up('sm'));
 
   const coproductionProcessLocation = location.pathname.indexOf("/dashboard/coproductionprocesses/") > -1
-  const dashboardLocation = isAuthenticated && (location.pathname === "/dashboard" ||  location.pathname === "/dashboard/")
+  const dashboardLocation = isAuthenticated && (location.pathname === "/dashboard" || location.pathname === "/dashboard/")
 
   const content = <DashboardLayoutContainer>
     <DashboardLayoutContent>
@@ -69,7 +75,7 @@ const DashboardLayout = () => {
 
   return (
     <DashboardLayoutRoot>
-      <DashboardNavbar showOpenMenuButton={dashboardLocation || coproductionProcessLocation} onSidebarMobileOpen={() => setIsSidebarMobileOpen(true)} />
+      {!onMobile && <DashboardNavbar showOpenMenuButton={dashboardLocation || coproductionProcessLocation} onSidebarMobileOpen={() => setIsSidebarMobileOpen(true)} />}
       {dashboardLocation && <WorkspaceSidebar
         onMobileClose={() => setIsSidebarMobileOpen(false)}
         openMobile={isSidebarMobileOpen}
@@ -78,8 +84,9 @@ const DashboardLayout = () => {
         onMobileClose={() => setIsSidebarMobileOpen(false)}
         openMobile={isSidebarMobileOpen}
       />}
-      
+      {onMobile ? <MobileLayoutWrapper>{content}</MobileLayoutWrapper> : <> 
       {coproductionProcessLocation || dashboardLocation ? <DashboardLayoutWrapper>{content}</DashboardLayoutWrapper> : <DashboardLayoutWrapper2>{content}</DashboardLayoutWrapper2>}
+      </>}
     </DashboardLayoutRoot>
   );
 };

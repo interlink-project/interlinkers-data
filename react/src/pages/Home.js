@@ -40,7 +40,7 @@ const Home = () => {
             >
               <img
                 alt='Logo'
-                src={"/static/customization/" + settings.customData.logos.home}
+                src={"/static/customization/" + settings.logos.home}
                 style={{ width: "90%", height: "auto" }}
               />
               <Typography

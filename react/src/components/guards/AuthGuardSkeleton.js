@@ -43,7 +43,6 @@ const AuthGuardSkeleton = ({ children, width = "100%", height = "100%" }) => {
           mt: 6
         }}
       ><Box
-          alt='Under development'
           component='img'
           src={`/static/error/error401_${theme.palette.mode}.svg`}
           sx={{
