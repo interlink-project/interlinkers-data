@@ -9,7 +9,7 @@
         "en": "This canvas can be used collaboratively, for instance, during a brainstorming or a focus group, to reflect on the the most suitable business model associated to a co-produced service.",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "\u0160is audekls var tikt lietots sadarb\u012bbai, piem\u0113ram, pr\u0101ta v\u0113tru vai fokusgrupu laik\u0101, lai nov\u0113rt\u0113tu piem\u0113rot\u0101ko biznesa modeli koprad\u012btajam pakalpojumam."
     },
     "difficulty": "easy",
     "domain": "",
@@ -35,7 +35,7 @@
         "en": "Business Model Canvas",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "Business Model Canvas"
     },
     "problemprofiles": [
         "SUS_PROBLEM_1"

@@ -12,7 +12,7 @@
         "en": "<p>Event Organiser (EVO) is a stand-alone web application to evaluate co-designed event proposals made with the ECO WordPress plugin and organise the events in practice. EVO complements the ZGZ use case by giving administrative tools to foster co-designing of events and implementing the best proposals. EVO comprises features to manage available resources and services and allocate them to requests made in event proposals. In addition, EVO can be used to organise co-evaluation polls to analyse different aspects of the proposal in order to find out which of the proposals are ready for implementation.</p>",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "<p>Pas\u0101kumu organiz\u0113t\u0101js (EVO) ir patst\u0101v\u012bga t\u012bmek\u013ca aplik\u0101cija kop\u012bgi veidoto pas\u0101kumu pieteikumu, kas veidoti ar ECO WordPress spraudni, v\u0113rt\u0113\u0161anai un praktiskai organiz\u0113\u0161anai. EVO papildina Saragosas gad\u012bjumu, sniedzot administrat\u012bvus r\u012bkus pas\u0101kumu kop\u012bgai veido\u0161anai un lab\u0101ko pied\u0101v\u0101jumu ievie\u0161anai. EVO satur funkcijas pieejamo resursu un pakalpojumu vad\u012b\u0161anai un to pie\u0161\u0137ir\u0161anai atkar\u012bb\u0101 no pieteikumos iek\u013cautajiem piepras\u012bjumiem. Papildus tam EVO var tikt izmantots kop\u0113j\u0101 izv\u0113rt\u0113juma aptauju veido\u0161anai, lai analiz\u0113tu da\u017e\u0101dus pieteikumu parametrus nol\u016bk\u0101 identific\u0113t ievie\u0161anai gatavos pieteikumus.</p>"
     },
     "difficulty": "medium",
     "environments": [
@@ -34,7 +34,7 @@
         "en": "Event Organizer",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "Pas\u0101kumu organiz\u0113t\u0101js"
     },
     "overview_text": {
         "en": "Web application for co-designing public events, co-evaluating event proposals and organizing the best events in practice",

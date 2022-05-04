@@ -14,7 +14,7 @@
         "en": "<p>This validator checks the markup validity of Web documents in HTML, XHTML, SMIL, MathML, etc.</p>",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "<p>\u0160is validators p\u0101rbauda t\u012bmek\u013ca dokumentu HTML, XHTML, SMIL, MathML u.c. iez\u012bm\u0113\u0161anas (markup) valodas der\u012bgumu.</p>"
     },
     "difficulty": "easy",
     "environments": [
@@ -34,7 +34,7 @@
         "en": "Markup Validation Service",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "Iez\u012bm\u0113\u0161anas (markup) valodas valid\u0113\u0161anas pakalpojums"
     },
     "problemprofiles": [
         "BUILD_PROBLEM_2"

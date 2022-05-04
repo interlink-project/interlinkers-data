@@ -9,7 +9,7 @@
         "en": "<p>Form to collect consent from participants engaged in INTERLINK research activities about the use of their personal data</p>",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "<p> INTERLINK p\u0113tniecisko aktivit\u0101\u0161u dal\u012bbnieku person\u012bgo datu izmanto\u0161anas piekri\u0161anas forma</p>"
     },
     "difficulty": "very_easy",
     "domain": "",
@@ -35,7 +35,7 @@
         "en": "Consent Form for INTERLINK project",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "INTERLINK projekta piekri\u0161anas forma"
     },
     "problemprofiles": [
         "ORG_PROBLEM_14"

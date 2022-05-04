@@ -13,7 +13,7 @@
         "en": "<p>This resource contains a questionnaire to check the level of knowledge and competence in cloud computing </p>",
         "es": "<p>Este recurso contiene un cuestionario para comprobar el nivel de conocimiento y competencia en computaci\u00f3n en la nube</p>",
         "it": "",
-        "lv": ""
+        "lv": "<p> \u0160is resurss satur aptauju, ar kuras pal\u012bdz\u012bbu iesp\u0113jams p\u0101rbaud\u012bt zin\u0101\u0161anu l\u012bmeni par m\u0101ko\u0146dato\u0161anu </p>"
     },
     "difficulty": "medium",
     "environments": [
@@ -35,7 +35,7 @@
         "en": "AgID Cloud computing competence evalution template",
         "es": "Plantilla de evaluaci\u00f3n de la competencia de computaci\u00f3n en nube de AgID",
         "it": "",
-        "lv": ""
+        "lv": "It\u0101lijas Digit\u0101l\u0101s a\u0123ent\u016bras m\u0101ko\u0146dato\u0161anas kompetences nov\u0113rt\u0113\u0161anas paraugs"
     },
     "problemprofiles": [
         "BUILD_PROBLEM_3"

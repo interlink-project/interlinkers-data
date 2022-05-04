@@ -14,7 +14,7 @@
         "en": "<p>Google Charts is a Java Script library providing a way to visualize data on your website (from simple line charts to complex hierarchical tree maps)</p>",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "<p>Google Charts ir JavaScript bibliot\u0113ka, kas pied\u0101v\u0101 datu vizualiz\u0101cijas iesp\u0113jas j\u016bsu t\u012bmek\u013ca vietnei (s\u0101kot no vienk\u0101r\u0161\u0101m l\u012bniju diagramm\u0101m l\u012bdz hierarhisk\u0101m kart\u0113m)</p>"
     },
     "difficulty": "medium",
     "environments": [
@@ -35,7 +35,7 @@
         "en": "Google Chart",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "Google Chart"
     },
     "problemprofiles": [
         "ORG_PROBLEM_6.2"

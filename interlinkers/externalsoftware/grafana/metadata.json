@@ -14,7 +14,7 @@
         "en": "<p>Multi-platform open source analytics and interactive visualization web application. It provides charts, graphs, and alerts for the web when connected to supported data sources. </p>",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "<p>Atv\u0113rt\u0101 koda multiplatformu anal\u012btikas un interakt\u012bv\u0101s vizualiz\u0101cijas t\u012bmek\u013ca aplik\u0101cija. Pievienojot pie atbalst\u012btajiem datu avotiem, t\u0101 pied\u0101v\u0101 veidot diagrammas, grafikus un br\u012bdin\u0101jumus t\u012bmeklim. </p>"
     },
     "difficulty": "medium",
     "environments": [
@@ -35,7 +35,7 @@
         "en": "Grafana",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "Grafana"
     },
     "problemprofiles": [
         "ORG_PROBLEM_6.2"

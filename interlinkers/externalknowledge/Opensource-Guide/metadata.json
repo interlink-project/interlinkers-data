@@ -14,7 +14,7 @@
         "en": "<p>A collection of resources for individuals, communities, and companies who want to learn how to run and contribute to an open source project.</p>",
         "es": "<p>Una colecci\u00f3n de recursos para individuos, comunidades y empresas que quieran aprender a dirigir y contribuir a un proyecto de c\u00f3digo abierto.</p>",
         "it": "",
-        "lv": ""
+        "lv": "<p>Resursu kopums indiv\u012bdiem, kopien\u0101m un uz\u0146\u0113mumiem, kuri v\u0113las iem\u0101c\u012bties, k\u0101 piedal\u012bties un vad\u012bt atv\u0113rt\u0101 koda projektu.</p>"
     },
     "difficulty": "very_easy",
     "environments": [
@@ -36,7 +36,7 @@
         "en": "Open Source guides",
         "es": "Gu\u00edas de c\u00f3digo abierto",
         "it": "",
-        "lv": ""
+        "lv": "Atv\u0113rt\u0101 koda ce\u013cvedis"
     },
     "problemprofiles": [
         "BUILD_PROBLEM_3"

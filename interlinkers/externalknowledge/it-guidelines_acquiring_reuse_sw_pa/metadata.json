@@ -13,7 +13,7 @@
         "en": "<p>This resource aims at explaining how to acquire and reuse software in PA context.</p>",
         "es": "<p>Este recurso pretende explicar c\u00f3mo adquirir y reutilizar software en el contexto de la AP.</p>",
         "it": "",
-        "lv": ""
+        "lv": "<p>\u0160\u012b resursa m\u0113r\u0137is ir skaidrot, k\u0101 ieg\u016bt un atk\u0101rtoti izmantot programmat\u016bru valsts p\u0101rvald\u0113.</p>"
     },
     "difficulty": "difficult",
     "environments": [
@@ -35,7 +35,7 @@
         "en": "Guidelines on the acquisition and reuse of software for public administrations",
         "es": "Directrices sobre la adquisici\u00f3n y reutilizaci\u00f3n de programas inform\u00e1ticos para las administraciones p\u00fablicas",
         "it": "",
-        "lv": ""
+        "lv": "Programmat\u016bras ieg\u016b\u0161anas un atk\u0101rtotas izmanto\u0161anas vadl\u012bnijas valsts p\u0101rvald\u0113"
     },
     "problemprofiles": [
         "BUILD_PROBLEM_3"

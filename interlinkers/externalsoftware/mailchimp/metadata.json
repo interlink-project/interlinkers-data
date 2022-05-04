@@ -9,7 +9,7 @@
         "en": "<p>Marketing automation platform and email marketing service[6] for managing mailing lists and creating email marketing campaigns to send to customers.</p>",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "<p>M\u0101rketinga automatiz\u0101cijas platforma un e-pasta m\u0101rketinga serviss[6] izs\u016btnes sarakstu vad\u012bbai un e-pasta m\u0101rketinga kampa\u0146u veido\u0161anai klientiem.</p>"
     },
     "difficulty": "easy",
     "environments": [
@@ -30,7 +30,7 @@
         "en": "Mailchimp",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "Mailchimp"
     },
     "problemprofiles": [
         "ORG_PROBLEM_4"

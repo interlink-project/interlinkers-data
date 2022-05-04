@@ -14,7 +14,7 @@
         "en": "<p>Trello is a collaboration tool that organizes your projects into boards. In one glance, Trello tells you what's being worked on, who's working on what, and where something is in a process.</p>",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "<p>Trello ir sadarb\u012bbas r\u012bks, ar kura pal\u012bdz\u012bbu iesp\u0113jams izk\u0101rtot projektus t\u0101fel\u0113s. Vien\u0101 att\u0113l\u0101 Trello sp\u0113j par\u0101d\u012bt, kas tiek dar\u012bts, kur\u0161 str\u0101d\u0101 ar k\u0101diem jaut\u0101jumiem, un kuras lietas ir proces\u0101.</p>"
     },
     "difficulty": "easy",
     "environments": [
@@ -35,7 +35,7 @@
         "en": "Trello",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "Trello"
     },
     "problemprofiles": [
         "ORG_PROBLEM_2"

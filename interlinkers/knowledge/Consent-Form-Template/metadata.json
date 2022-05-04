@@ -9,7 +9,7 @@
         "en": "<p>Template to prepare a form to collect consent from participants engaged in research activities about the use of their personal data</p>",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "<p>Veidlapa p\u0113tnieciskaj\u0101s aktivit\u0101t\u0113s iesaist\u012bto dal\u012bbnieku piekri\u0161anas formas person\u012bgo datu izmanto\u0161anai sagatavo\u0161anai</p>"
     },
     "difficulty": "very_easy",
     "domain": "",
@@ -35,7 +35,7 @@
         "en": "Consent Form Template",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "Piekri\u0161anas formas veidlapa"
     },
     "problemprofiles": [
         "ORG_PROBLEM_14"

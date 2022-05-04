@@ -13,7 +13,7 @@
         "en": "<p>This resource describes the guidelines for technical interoperability for PA and related operational documents: interaction patterns, interoperability profiles, implementation recommendations (in Italian). </p>",
         "es": "Este recurso describe las directrices de interoperabilidad t\u00e9cnica para la AP y los documentos operativos relacionados: patrones de interacci\u00f3n, perfiles de interoperabilidad, recomendaciones de implementaci\u00f3n (en italiano).",
         "it": "",
-        "lv": ""
+        "lv": "<p>\u0160is resurss raksturo tehnisk\u0101s sadarbsp\u0113jas vadl\u012bnijas valsts p\u0101rvald\u0113 un ar t\u0101m saist\u012btos operacion\u0101los dokumentus: mijiedarb\u012bbas mode\u013cus, sadarbsp\u0113jas profilus, ievie\u0161anas rekomend\u0101cijas (it\u0101\u013cu valod\u0101).</p>"
     },
     "difficulty": "difficult",
     "environments": [
@@ -35,7 +35,7 @@
         "en": "Italian PA interoperablity model ",
         "es": "Modelo de interoperabilidad de la AP italiana ",
         "it": "",
-        "lv": ""
+        "lv": "It\u0101lijas valsts p\u0101rvaldes sadarbsp\u0113jas modelis "
     },
     "problemprofiles": [
         "BUILD_PROBLEM_3"

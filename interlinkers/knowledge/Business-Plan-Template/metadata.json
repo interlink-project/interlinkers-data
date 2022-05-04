@@ -9,7 +9,7 @@
         "en": "<p>This canvas can be edited collaboratively by the co-producing team to ellaborate the business plan for a co-produced service..</p>",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "<p>\u0160is audekls var tikt kop\u012bgi papildin\u0101ts koprades komandas ietvaros, lai izstr\u0101d\u0101tu koprad\u012bt\u0101 pakalpojuma biznesa modeli.</p>"
     },
     "difficulty": "easy",
     "domain": "",
@@ -35,7 +35,7 @@
         "en": "Business Plan Template",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "Biznesa pl\u0101na veidlapa"
     },
     "problemprofiles": [
         "SUS_PROBLEM_1"

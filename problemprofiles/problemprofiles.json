@@ -421,7 +421,7 @@
         "description_translations": {
             "en": "Public Administrations and their service providers may require a general introductory guidance on how to approach the design of high-quality public services. The guidelines should refer to the different issues related with the \u201cService design\u201d problem.",
             "es": "",
-            "it": "",
+            "it": "Le Pubbliche Amministrazioni e i loro fornitori di servizi possono necessitare di una guida introduttiva e di un accompagnamento al disegno di servizi pubblici di buona qualit\u00e0. Linee guida dovrebbero essere messe a disposizione e chiarire le diverse problematiche collegate al disegno di servizi.",
             "lv": ""
         },
         "functionality_translations": {
@@ -432,7 +432,7 @@
         "name_translations": {
             "en": "Guidelines for (digital) public service design",
             "es": "",
-            "it": "",
+            "it": "Linee guida per il disegno di servizi pubblici (digitali)",
             "lv": ""
         }
     },
@@ -440,7 +440,7 @@
         "description_translations": {
             "en": "Brainstorming sessions may be useful in different phases of the co-production process. During each phase, the template and materials useful to guide the discussion should be customized to facilitate the organization of the specific event. During the \"ideation\" stage, the co-production team may require specific guidance in organizing and managing a brainstorming to produce service ideas, discuss and select them, through divergent and convergent phases of group discussion.",
             "es": "",
-            "it": "",
+            "it": "Sessioni di brainstorming possono essere utili in diverse fasi del processo di co-produzione. Durante ciascuna fase, i modelli e i materiali utili per guidare la discussione dovrebbero essere personalizzati per facilitare l'organizzazione dei singoli eventi. Durante la fase ideativa di un servizio, il gruppo di lavoro di co-produzione pu\u00f2 necessitare di una guida alla organizzazione e conduzione di un brainstorming per generare idee del servizio, discuterle e selezionarle, attraverso fasi  di discussione divergenti e convergenti.",
             "lv": ""
         },
         "functionality_translations": {
@@ -451,7 +451,7 @@
         "name_translations": {
             "en": "Brainstorm service ideas",
             "es": "",
-            "it": "",
+            "it": "Brainstorming per idee sul futuro servizio",
             "lv": ""
         }
     },
@@ -459,7 +459,7 @@
         "description_translations": {
             "en": "After the understanding of the problem and the brainstorming of the service ideas, the co-production team should elaborate concrete solutions for a given challenge. Co-design workshops are useful at this stage as collective activities organized to discuss design issues and choices. Enablers are required to suggest how the coproduction team can work together and with relevant actors (also considering the map of actors developed thanks to the INTERLINKER \u201cMap of actors\u201d) to start defining the service to be co-designed and co-delivered.",
             "es": "",
-            "it": "",
+            "it": "Dopo l'analisi approfondita del problema da risolvere e un primo brainstorming di idee sul servizio, il team di co-produzione  dovrebbe elaborare delle prime soluzioni concrete per la sfida da affrontare. Dei workshop di co-design (disegno collaborativo del servizio) sono utili in questa fase, come forma di attivit\u00e0 collettiva per discutere idee di design e possibili scelte. Informazioni e linee guida dovrebbero essere messi a disposizione per fornire una traccia di come i team di co-produzione possano lavorare insieme, anche in collaborazione con portatori di interesse esterni, per raffinare il servizio che deve essere disegnato ed eseguito in modo collaborativo.",
             "lv": ""
         },
         "functionality_translations": {
@@ -470,7 +470,7 @@
         "name_translations": {
             "en": "Organize a co-design workshop",
             "es": "",
-            "it": "",
+            "it": "Organizzazione di un workshop di co-design",
             "lv": ""
         }
     },
@@ -478,7 +478,7 @@
         "description_translations": {
             "en": "The co-production team may need guidance on how to define the interaction between the users and the service, reflecting on how a solution might be used by concrete users in a concrete context.",
             "es": "",
-            "it": "",
+            "it": "Il team di co-produzione pu\u00f2 necessitare di una guida nella definizione della interazione fra gli utenti ed il servizio. Possono essere utili dei momenti di riflessione su come il servizio potrebbe essere utilizzato da utenti reali in contesti reali.",
             "lv": ""
         },
         "functionality_translations": {
@@ -489,7 +489,7 @@
         "name_translations": {
             "en": "Define the interaction among users and service (Scenarios and User Journey)",
             "es": "",
-            "it": "",
+            "it": "Definizione della interazione fra gli utenti e il servizio (scenari e percorsi utente)",
             "lv": ""
         }
     },
@@ -534,8 +534,8 @@
     {
         "description_translations": {
             "en": "The implementation of the user interface should guarantee usability. Coproduction team members involved in the interface design should be aware of good practices for interface design in the domain of public services.",
-            "es": "",
-            "it": "",
+            "es": "La implementaci\u00f3n de la interfaz de usuario debe garantizar la usabilidad. Los miembros del equipo de coproducci\u00f3n que participen en el dise\u00f1o de la interfaz deben conocer las buenas pr\u00e1cticas de dise\u00f1o de interfaces en el \u00e1mbito de los servicios p\u00fablicos.",
+            "it": "L'implementazione dell'interfaccia utente dovrebbe garantire l'usabilit\u00e0. I membri del team di co-produzione coinvolti nel disegno dell'interfaccia dovrebbero tenere in considerazione le buone pratiche per il disegno di interfacce per servizi pubblici.",
             "lv": ""
         },
         "functionality_translations": {
@@ -545,16 +545,16 @@
         "id": "BUILD_PROBLEM_1",
         "name_translations": {
             "en": "User interface design",
-            "es": "",
-            "it": "",
+            "es": "Dise\u00f1o de interfaz de usuario",
+            "it": "Disegno dell'interfaccia utente",
             "lv": ""
         }
     },
     {
         "description_translations": {
             "en": "When the public services are provided digitally in the form of Web sites or mobile applications, it is necessary that the service may be easily used by different categories of users, especially considering the people with disabilities. The services should be provided in a multi-channel manner, maximizing the\nexploitation by potentially any group of users or by the agents acting on their\nbehalf, and providing clear statements regarding the accessibility limits in the\ncurrent implementation.",
-            "es": "",
-            "it": "",
+            "es": "Cuando los servicios p\u00fablicos se prestan de forma digital en forma de sitios web o aplicaciones m\u00f3viles, es necesario que el servicio pueda ser utilizado f\u00e1cilmente por diferentes categor\u00edas de usuarios, especialmente teniendo en cuenta a las personas con discapacidad. Los servicios deben prestarse de forma multicanal, maximizando la\nexplotaci\u00f3n por parte de cualquier grupo de usuarios o de los agentes que act\u00faen en su\ny proporcionando declaraciones claras sobre los l\u00edmites de accesibilidad en la\nimplementaci\u00f3n actual.",
+            "it": "Quando un servizio pubblico viene offerto digitalmente attraverso un sito web o una applicazione mobile, \u00e8 necessario che il servizio sia facilmente usabile da diverse categorie di utenti, con particolare attenzione agli utenti con disabilit\u00e0. I servizi dovrebbero essere offerti attraverso canali diversi, massimizzando il loro potenziale utilizzo da parte di ogni categoria di utente o da parte di attori che agiscono per  conto dei reali beneficiari. Chiare asserzioni dovrebbero essere incluse sui limiti di accessibilit\u00e0 presenti nella implementazione corrente.",
             "lv": ""
         },
         "functionality_translations": {
@@ -564,16 +564,16 @@
         "id": "BUILD_PROBLEM_2",
         "name_translations": {
             "en": "Implement accessible digital public services",
-            "es": "",
-            "it": "",
+            "es": "Implantar servicios p\u00fablicos digitales accesibles",
+            "it": "Implementazione di servizi pubblici digitali accessibili",
             "lv": ""
         }
     },
     {
         "description_translations": {
             "en": "The EU and national legislation promote the use and adoption of Open Source software solutions as a way to reduce the development cost, to avoid the lock-in effect and to foster the adoption driven by Open Source communities. In other terms, Open Source is an enabler for the reusability principles underlying the European Interoperability Framework. Facing this problem, it is necessary to facilitate the selection, development, and maintenance of the Open Source software products.",
-            "es": "",
-            "it": "",
+            "es": "La UE y la legislaci\u00f3n nacional promueven el uso y la adopci\u00f3n de soluciones de software de c\u00f3digo abierto como forma de reducir el coste de desarrollo, evitar el efecto de bloqueo y fomentar la adopci\u00f3n impulsada por las comunidades de c\u00f3digo abierto. En otras palabras, el C\u00f3digo Abierto es un facilitador de los principios de reutilizaci\u00f3n subyacentes al Marco Europeo de Interoperabilidad. Frente a este problema, es necesario facilitar la selecci\u00f3n, el desarrollo y el mantenimiento de los productos de software de c\u00f3digo abierto.",
+            "it": "L'Unione Europea e la legislazione nazionale promuovono l'uso e l'adozione di soluzioni software Open Source come metodo per ridurre i costi di sviluppo, limitare la dipendenza dai fornitori e incoraggiare l'adozione della tecnologia favorita dalle comunit\u00e0 che promuovono il software libero.  In altri termini, l'approccio Open Source funge da abililitatore dei principi di riusabilit\u00e0 alla base dello European Interoperability Framework. Per affrontare questo problema \u00e8 necessario facilitare la selezione, lo sviluppo e la manutenzione dei prodotti software di tipo open source.",
             "lv": ""
         },
         "functionality_translations": {
@@ -583,16 +583,16 @@
         "id": "BUILD_PROBLEM_3",
         "name_translations": {
             "en": "Open Source Software Licensing",
-            "es": "",
-            "it": "",
+            "es": "Licencias de software de c\u00f3digo abierto",
+            "it": "Utilizzo di licenze software Open Source",
             "lv": ""
         }
     },
     {
         "description_translations": {
             "en": "European Interoperability Framework requires digital services to achieve an appropriate level of technical interoperability. When it comes to the implementation, it refers to the usage of standard communication protocols and data formats in order to guarantee the usage of the service in machine-to-machine communications, to facilitate software integration and re-use.",
-            "es": "",
-            "it": "",
+            "es": "El Marco Europeo de Interoperabilidad exige que los servicios digitales alcancen un nivel adecuado de interoperabilidad t\u00e9cnica. Cuando se trata de la implementaci\u00f3n, se refiere al uso de protocolos de comunicaci\u00f3n y formatos de datos est\u00e1ndar para garantizar el uso del servicio en las comunicaciones de m\u00e1quina a m\u00e1quina, para facilitar la integraci\u00f3n y reutilizaci\u00f3n del software.",
+            "it": "Lo European Interoperability Framework impone che i servizi digitali raggiungano un appropriato livello di interoperabilit\u00e0 tecnica. Relativamente all'implementazione, questo requisito si riferisce all'utilizzo di protocolli di comunicazione  e formati di dati standard per garantire l'utilizzabilit\u00e0 del servizio in comunicazioni fra sistemi diversi, per facilitare l'integrazione software e il riuso.",
             "lv": ""
         },
         "functionality_translations": {
@@ -602,16 +602,16 @@
         "id": "BUILD_PROBLEM_4",
         "name_translations": {
             "en": "Implementing Interoperable Digital Public Services",
-            "es": "",
-            "it": "",
+            "es": "Implantaci\u00f3n de servicios p\u00fablicos digitales interoperables",
+            "it": "Implementazione di servizi pubblici digitali interoperabili",
             "lv": ""
         }
     },
     {
         "description_translations": {
             "en": "Digital public services should ensure that the interactions with these services takes place in a secure and trustworthy environment, following the principle of security by design. Access control, user identification, data management should be made compliant with the corresponding regulations, including e.g., the Regulation and Directive for data protection, Regulation on electronic identification, etc.",
-            "es": "",
-            "it": "",
+            "es": "Los servicios p\u00fablicos digitales deben garantizar que las interacciones con estos servicios tengan lugar en un entorno seguro y fiable, siguiendo el principio de seguridad por dise\u00f1o. El control de acceso, la identificaci\u00f3n de los usuarios y la gesti\u00f3n de los datos deben ajustarse a la normativa correspondiente, incluidos, por ejemplo, el Reglamento y la Directiva sobre protecci\u00f3n de datos, el Reglamento sobre identificaci\u00f3n electr\u00f3nica, etc.",
+            "it": "I servizi pubblici digitali dovrebbero garantire che le interazioni degli utenti con i servizi avvengano in un ambiente sicuro ed affidabile, secondo il principio di \"sicurezza tramite design appropriato\". I controlli di accesso, l'identificazione dell'utente, la gestione dei dati  dovrebbero essere conformi alle normative corrispondenti, ad esempio la normativa e le direttive sulla protezione dei dati, la normativa sulla identit\u00e0 elettronica, ecc.",
             "lv": ""
         },
         "functionality_translations": {
@@ -622,7 +622,7 @@
         "name_translations": {
             "en": "Implementing Secure and Trusted Digital Public Services",
             "es": "",
-            "it": "",
+            "it": "Implementazione di servizi pubblici digitali sicuri e affidabili",
             "lv": ""
         }
     },
@@ -630,7 +630,7 @@
         "description_translations": {
             "en": "One of the objectives for the open, transparent, and interoperable public services is to make them citizen-centric and enable the participation of citizens to the execution, improvement and evolution of the service. To achieve this, it is necessary to incentivise and make more attractive such participation and collaboration. A wide range of techniques, ranging from gamification, to feedback, and to rewards may apply",
             "es": "",
-            "it": "",
+            "it": "Un importante obiettivo per la realizzazione di servizi pubblici aperti, trasparenti e interoperabili \u00e8 quello di renderli centrati sul cittadino e consentire la partecipazione dei cittadini alla esecuzione, miglioramento ed evoluzione dei servizi stessi. Per raggiungere tale obiettivo, \u00e8 necessario incentivare e rendere maggiormente attrattiva questa partecipazione e collaborazione. Un'ampia gamma di metodi pu\u00f2 essere utilizzata, spaziando dalle tecniche di gamification (che introducono aspetti di gioco), alla raccolta di opinioni e riscontri, all'utilizzo di ricompense e premi.",
             "lv": ""
         },
         "functionality_translations": {
@@ -641,7 +641,7 @@
         "name_translations": {
             "en": "Engage and incentivise citizen participation to the implementation and co-delivery of public services",
             "es": "",
-            "it": "",
+            "it": "Coinvolgimento e incentivi alla partecipazione dei cittadini nella implementazione ed esecuzione dei servizi pubblici",
             "lv": ""
         }
     },
@@ -649,7 +649,7 @@
         "description_translations": {
             "en": "In line with the Cloud-first principle promoted by EU Cloud Strategy, it is requested that the digital public services, when implemented as software solutions, adopt Cloud architectures and Cloud solutions to ensure their compatibility, portability, and scalability. In these settings, it is important to define and realize a proper Cloud strategy for the service implementation, appropriate Cloud-native architectures, different types of Cloud providers, as well as appropriate Cloud technologies and enablers.",
             "es": "",
-            "it": "",
+            "it": "In linea con il principio \"Cloud-first\" promosso dalla strategia europea per il Cloud (EU Cloud Strategy), \u00e8 richiesto che i servizi digitali pubblici, quando implementati come soluzioni software, adottino delle architetture e soluzioni Cloud che assicurino compatibilit\u00e0, portabilit\u00e0 e scalabilit\u00e0. In questi contesti \u00e8 dunque importante definire e realizzare una appropriata strategia per l'implementazione del servizio con appropriate architetture basate su Cloud, diversi tipi di fornitori Cloud e appropriate tecnologie abilitanti.",
             "lv": ""
         },
         "functionality_translations": {
@@ -660,7 +660,7 @@
         "name_translations": {
             "en": "Cloud-ready digital public services",
             "es": "",
-            "it": "",
+            "it": "Servizi pubblici digitali basati su Cloud",
             "lv": ""
         }
     },
@@ -668,7 +668,7 @@
         "description_translations": {
             "en": "Building Blocks are endorsed by the European Commission and ensure that digital services will be fully compatible with others on the market and become interoperable, EU-compliant final products. In the CEF approach definition, a Building Block is an open and reusable digital solution. The implementation of new public services should take advantage of CEF Building Blocks as much as possible.",
             "es": "",
-            "it": "",
+            "it": "I \"Building Blocks\" sono componenti di sviluppo standard promossi dalla Commissione Europea come metodologia per garantire che i servizi digitali siano pienamente compatibili con altri sul mercato e diventino prodotti interoperabili soddisfacenti le normative europee. All'interno del paradigma CEF, un Building Block viene definito come una soluzione digitale aperta e riusabile. L'implementazione di nuovi servizi pubblici dovrebbe sfruttare i CEF Building Blocks is pi\u00f9 possibile.",
             "lv": ""
         },
         "functionality_translations": {
@@ -679,7 +679,7 @@
         "name_translations": {
             "en": "Re-use of CEF Building Blocks",
             "es": "",
-            "it": "",
+            "it": "Riuso di CEF Building Blocks",
             "lv": ""
         }
     },
@@ -687,7 +687,7 @@
         "description_translations": {
             "en": "This problem item addresses the need of a digital service that supports the collaborative creation of effective descriptions of public services or processes that can be useful (i) for the daily work of people who provide information about the services to the public, (ii) for citizens and other end-users of the services, (iii) for other PAs that would like to replicate the services or the processes at their local level. The domain problem considered here encompasses the following user tasks: 1) Co-creation and co-delivery of information of public utility, e.g. \u25cf creation and sharing of knowledge on public services \u25cf creation and sharing of good practices on public services and processes \u25cf collaborative process of information creation to ensure quality descriptions and active participation of all the stakeholders involved in the delivery of information \u25cf collaborative process of information enrichment with citizens involvement 2) Structuring of information according to standard classifications and data models for public services and process descriptions 3) In some case the need may also be to co-create information that augments and better explains existing information sources and is shown in overlay 4) Monitoring of quality of information service",
             "es": "",
-            "it": "",
+            "it": "Questo problema \u00e8 riferito alla necessit\u00e0 di poter disporre di un servizio digitale che supporti la creazione collaborativa di descrizioni efficaci di servizi o processi pubblici che possa essere utile  (i) per supportare il lavoro quotidiano del personale che fornisce ai pubblico informazioni sui servizi, (ii) per informare direttamente i cittadini e gli altri utenti finali dei servizi, (iii) per informare altre Pubbliche Amministrazioni che volessero replicare i servizi e i processi nel loro territorio. Il problema considerato qui comprende le seguenti attivit\u00e0: 1) co-creazione e messa a disposizione collaborativa di informazioni di pubblica utilit\u00e0 (ad esempio:  conoscenza sui servizi pubblici; buone pratiche su servizi pubblici e processi; informazioni arricchite con il punto di vista dei diversi stakeholder e dei cittadini); 2) strutturazione dell'informazione rispetto a classificazioni standard e modelli di dati per servizi pubblici e processi; 3) co-creazione di informazione che aumenta e descrive in maniera pi\u00f9 efficace sorgenti informative esistenti attraverso delle visualizzazioni in sovraimpressione; 4) Monitoraggio della qualit\u00e0 del servizio informativo ai cittadini.",
             "lv": ""
         },
         "functionality_translations": {
@@ -698,7 +698,7 @@
         "name_translations": {
             "en": "Collaborative knowledge sharing on public processes and services",
             "es": "",
-            "it": "",
+            "it": "Condivisione collaborativa di conoscenza su servizi e processi pubblici",
             "lv": ""
         }
     },

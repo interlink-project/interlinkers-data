@@ -13,7 +13,7 @@
         "en": "<p>This resource contains a questionnaire to check the cloud computing migration strategy  </p>",
         "es": "<p>Este recurso contiene un cuestionario para comprobar la estrategia de migraci\u00f3n a la computaci\u00f3n en la nube </p>",
         "it": "",
-        "lv": ""
+        "lv": "<p>\u0160is resurss satur aptauju, ar kuras pal\u012bdz\u012bbu var p\u0101rbaud\u012bt m\u0101ko\u0146datu migr\u0101cijas strat\u0113\u0123iju</p>"
     },
     "difficulty": "medium",
     "environments": [
@@ -35,7 +35,7 @@
         "en": "AgID Cloud computing migration strategy evalution template",
         "es": "Plantilla de evaluaci\u00f3n de la estrategia de migraci\u00f3n a la nube de AgID",
         "it": "",
-        "lv": ""
+        "lv": "It\u0101lijas Digit\u0101l\u0101s a\u0123ent\u016bras m\u0101ko\u0146datu migr\u0101cijas strat\u0113\u0123ijas nov\u0113rt\u0113\u0161anas veidlapa"
     },
     "problemprofiles": [
         "BUILD_PROBLEM_3"

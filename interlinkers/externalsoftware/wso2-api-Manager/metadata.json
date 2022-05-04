@@ -14,7 +14,7 @@
         "en": "<p>WSO2 API Manager is a complete platform for building, integrating, and exposing your digital services as managed APIs in the cloud, on-premise, and hybrid architectures to drive your digital transformation strategy. It allows API developers to design, publish, and manage the lifecycle of APIs and API product managers to create API products from one or more APIs.</p>",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "<p>WSO2 API mened\u017eeris ir pilnv\u0113rt\u012bga platforma tie\u0161saistes pakalpojumu veido\u0161anai, integr\u0113\u0161anai un atkl\u0101\u0161anai caur vad\u012btiem API m\u0101ko\u0146datos, fiziskaj\u0101 vid\u0113 un hibr\u012bdaj\u0101s arhitekt\u016br\u0101s, t\u0101 \u013caujot virz\u012bt digit\u0101l\u0101s transform\u0101cijas strat\u0113\u0123iju. Tas \u013cauj API izstr\u0101d\u0101t\u0101jiem veidot, public\u0113t un vad\u012bt API dz\u012bves ciklu, bet API produktu vad\u012bt\u0101jiem veidot API produktus no vienas vai vair\u0101k\u0101m API.</p>"
     },
     "difficulty": "medium",
     "environments": [
@@ -35,7 +35,7 @@
         "en": "WSO2 API Manager",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "WSO2 API mened\u017eeris"
     },
     "problemprofiles": [
         "BUILD_PROBLEM_4"
