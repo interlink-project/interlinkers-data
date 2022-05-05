@@ -4074,7 +4074,7 @@
             "description_translations": {
                 "en": "This problem refers to the need to support the initiators of a co-production project to describe the main aim and expected benefit of establishing a collaborative network of stakeholders and engaging them in the co-production process",
                 "es": "",
-                "it": "",
+                "it": "Questo problema si riferisce alla necessit\u00e0 di supportare gli iniziatori di un progetto di co-produzione nella descrizione dell'obiettivo principale e dei benefici che si attendono dalla creazione di una rete collaborativa di stakeholders e dal loro coinvolgimento nel processo di co-produzione.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4085,7 +4085,7 @@
             "name_translations": {
                 "en": "Project aim description",
                 "es": "",
-                "it": "",
+                "it": "Descrizione degli obiettivi di progetto",
                 "lv": ""
             }
         },
@@ -4093,7 +4093,7 @@
             "description_translations": {
                 "en": "This item refers to the problem of preparing a workplan that summarizes the coproduction steps, the timeline and the milestones for the collaborative project. The workplan needs to be sharable with the other members of the collaborative network and updatable as the project progresses.",
                 "es": "",
-                "it": "",
+                "it": "Questo problema si riferisce all'utilit\u00e0 di preparare un piano di lavoro che riassuma le fasi di co-produzione, lo sviluppo temporale e le tappe salienti di un progetto collaborativo. Il piano di lavoro deve poter essere condiviso con gli altri membri della rete collaborativa e deve essere aggiornabile man mano che il progetto progredisce.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4104,7 +4104,7 @@
             "name_translations": {
                 "en": "Workplan and project management",
                 "es": "",
-                "it": "",
+                "it": "Piano di lavoro e gestione del progetto",
                 "lv": ""
             }
         },
@@ -4112,7 +4112,7 @@
             "description_translations": {
                 "en": "This problem refers to the need to ensure authentication to applications and secure services.",
                 "es": "",
-                "it": "",
+                "it": "Questo problema si riferisce alla necessit\u00e0 di garantire autenticazione e accesso sicuro ai servizi.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4123,7 +4123,7 @@
             "name_translations": {
                 "en": "Registration and authentication",
                 "es": "",
-                "it": "",
+                "it": "Registrazione e autenticazione",
                 "lv": ""
             }
         },
@@ -4131,7 +4131,7 @@
             "description_translations": {
                 "en": "This problem item addresses the need to develop appropriate strategies for communicating the initiative, to actually contact stakeholders and schedule meetings",
                 "es": "",
-                "it": "",
+                "it": "Questo problema si riferisce alla necessit\u00e0 di sviluppare appropriate strategie per comunicare l'iniziativa, contattare gli stakeholder e pianificare gli incontri.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4142,7 +4142,7 @@
             "name_translations": {
                 "en": "Team communication for co-production",
                 "es": "",
-                "it": "",
+                "it": "Comunicazione per il team di co-produzione",
                 "lv": ""
             }
         },
@@ -4150,7 +4150,7 @@
             "description_translations": {
                 "en": "This problem refers to the need to support the initiators of a co-production project to plan the active involvement of relevant actors in the co-production team. This problem is related to UND_PROBLEM_2 \u201cStakeholder mapping\u201d that provides knowledge on how effective and balanced co-production teams can be created, which are the different types of stakeholders, their motivations and potential role in the project.",
                 "es": "",
-                "it": "",
+                "it": "Questo problema si riferisce alla necessit\u00e0 di supportare gli iniziatori di un progetto di co-produzione nel pianificare il coinvolgimento attivo di potenziali portatori di interesse all'interno del team di co-produzione. Questo problema \u00e8 collegato alla \"Mappatura degli Stakeholder\" il cui obiettivo \u00e8 fornire conoscenza su come creare un team di co-produzione efficace e bilanciato, su quali siano i diversi tipi rilevanti di stakeholder, le loro motivazioni e ruolo potenziale nel progetto.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4161,7 +4161,7 @@
             "name_translations": {
                 "en": "Stakeholders engagement plan",
                 "es": "",
-                "it": "",
+                "it": "Piano di coinvolgimento degli stakeholder",
                 "lv": ""
             }
         },
@@ -4169,7 +4169,7 @@
             "description_translations": {
                 "en": "This problem addresses the need that might emerge at different stages of a coproduction initiative to collaboratively produce and share documents. Tasks may include the need to organize and manage documents among the coproduction team members, share documents among stakeholders, and help multiple people in the team work together on files to achieve a single final version.",
                 "es": "",
-                "it": "",
+                "it": "Questo problema si riferisce alla necessit\u00e0 che pu\u00f2 emergere in diverse fasi di una iniziativa di co-produzione di produrre documenti in modo collaborativo e condividerli. Le attivit\u00e0 possono includere l'organizzazione e gestione di documenti visibili da pi\u00f9 persone, la condivisione con altri stakeholder, il supporto al lavoro collaborativo di pi\u00f9 persone sullo stesso file per raggiungere un'unica versione finale.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4180,7 +4180,7 @@
             "name_translations": {
                 "en": "Document collaboration",
                 "es": "",
-                "it": "",
+                "it": "Collaborazione su documenti",
                 "lv": ""
             }
         },
@@ -4188,7 +4188,7 @@
             "description_translations": {
                 "en": "This problem refers to the need of using maps or charts to help the co-production team understand different measurable aspects for a public service, like for example: variables describing the context of the service, KPIs, evaluation variables like usability, acceptance, easy to use, quality of service",
                 "es": "",
-                "it": "",
+                "it": "Questo problema si riferisce alla necessit\u00e0 di usare delle mappe o dei grafici per aiutare il team di co-produzione a comprendere diversi aspetti misurabili relativi ad un servizio pubblico, come ad esempio: variabili che descrivono il contesto del servizio, indicatori di performance, dimensioni di valutazione come usabilit\u00e0, accettabilit\u00e0, facilit\u00e0 d'uso, qualit\u00e0 del servizio.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4199,7 +4199,7 @@
             "name_translations": {
                 "en": "Data visualization",
                 "es": "",
-                "it": "",
+                "it": "Visualizzazione di dati",
                 "lv": ""
             }
         },
@@ -4207,7 +4207,7 @@
             "description_translations": {
                 "en": "This problem relates to the need to support open discussion among the coproduction team members. E.g. Discussion forum where the co-creation team can discuss ideas, service features, plan actions.",
                 "es": "",
-                "it": "",
+                "it": "Questo problema si riferisce alla necessit\u00e0 di supportare discussioni aperte all'interno del gruppo di lavoro sulla co-produzione. Ad esempio, forum di discussione dove i membri del team possano scambiare idee, requisiti o funzionalit\u00e0 del servizio, piani di attivit\u00e0.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4218,7 +4218,7 @@
             "name_translations": {
                 "en": "Discussion board",
                 "es": "",
-                "it": "",
+                "it": "Spazio di discussione",
                 "lv": ""
             }
         },
@@ -4226,7 +4226,7 @@
             "description_translations": {
                 "en": "This problem item addresses the need to support the co-production team in defining an agreement for not disclosing confidential information that they need to share with each other as a necessary part of co-producing a service together.",
                 "es": "",
-                "it": "",
+                "it": "Questo problema si riferisce alla necessit\u00e0 di supportare il team di co-produzione nella definizione di un accordo di riservatezza relativo all'informazione condivisa all'interno del gruppo di lavoro durante le fasi di co-produzione collaborativa di un servizio.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4237,7 +4237,7 @@
             "name_translations": {
                 "en": "Non-Disclosure Agreement Definition (NDA)",
                 "es": "",
-                "it": "",
+                "it": "Definizione di accordi di riservatezza",
                 "lv": ""
             }
         },
@@ -4245,7 +4245,7 @@
             "description_translations": {
                 "en": "This problem item addresses the need for information about good practices, templates and examples for preparing documents that define in a formal way agreements for a collaborative network of stakeholders. This need may emerge during the initial engagement of the stakeholders to write\ndown the terms and general plan for the collaboration. When co-evaluation takes\nplace on the outcome of the collaboration with respect to what was specified in the\npartnership agreement, possible revisions of the document may need to be\nintroduced.",
                 "es": "",
-                "it": "",
+                "it": "Questo problema si riferisce alla necessit\u00e0 di disporre di informazioni relative a buone pratiche, modelli ed esempi per preparare documenti che definiscono in modo formale accordi di collaborazione per una rete di stakeholder. Questa necessit\u00e0 pu\u00f2 emergere durante il coinvolgimento iniziale degli stakeholder per elencare i termini ed il piano generale di collaborazione. Possibili revisioni al documento di accordo possono essere necessarie durante le fasi di valutazione iterativa dei risultati della collaborazione rispetto agli accordi iniziali.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4256,7 +4256,7 @@
             "name_translations": {
                 "en": "Partnership agreement definition",
                 "es": "",
-                "it": "",
+                "it": "Definizione di accordi di partnership",
                 "lv": ""
             }
         },
@@ -4264,7 +4264,7 @@
             "description_translations": {
                 "en": "This problem item refers to the need to describe the data management life cycle for all data sets that are collected, processed or generated by the co-production of public services.",
                 "es": "",
-                "it": "",
+                "it": "Questo problema si riferisce alla necessit\u00e0 di descrivere il ciclo di vita della gestione dei dati per tutte le collezioni di dati raccolte, processate o generate durante la co-produzione di servizi pubblici.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4275,7 +4275,7 @@
             "name_translations": {
                 "en": "Data Management Plan Definition (DPM)",
                 "es": "",
-                "it": "",
+                "it": "Definizione di un piano di gestione dei dati",
                 "lv": ""
             }
         },
@@ -4283,7 +4283,7 @@
             "description_translations": {
                 "en": "This problem item addresses the need to provide members of the public with the information they need to understand the project, the decision process, and also to understand how public input influenced the decision",
                 "es": "",
-                "it": "",
+                "it": "Questo problema si riferisce alla necessit\u00e0 di fornire al pubblico le informazioni che necessitano per comprendere il progetto, il processo decisionale e per comprendere come il loro contributo pu\u00f2 influenzare le decisioni.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4294,7 +4294,7 @@
             "name_translations": {
                 "en": "Inform the public",
                 "es": "",
-                "it": "",
+                "it": "Informare il pubblico",
                 "lv": ""
             }
         },
@@ -4302,7 +4302,7 @@
             "description_translations": {
                 "en": "This problem item addresses the need to provide members of the public with the possibility to actively participate in the decision process, whenever this is desired by the selected governance model.",
                 "es": "",
-                "it": "",
+                "it": "Questo problema si riferisce alla necessit\u00e0 di consentire alla cittadinanza di partecipare in modo attivo al processo decisionale, qualcosa questo sia previsto dal modello di governance selezionato.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4313,7 +4313,7 @@
             "name_translations": {
                 "en": "Consensus building and agreement seeking with the public",
                 "es": "",
-                "it": "",
+                "it": "Costruzione di consenso e di accordo da parte dei cittadini",
                 "lv": ""
             }
         },
@@ -4321,7 +4321,7 @@
             "description_translations": {
                 "en": "This problem item addresses the need of providing guidance on how to develop a shared language among the co-production team members to ensure effective codesign and co-production of services. Developing a shared language is crucial to be able for stakeholders to: i) build a common ground for joint action, ii) share, mutually agree on, and understand a longterm research plan and protocol, iii) to ongoingly evaluate the success or failure of decisions",
                 "es": "",
-                "it": "",
+                "it": "Questo problema si riferisce alla necessit\u00e0 di fornire una guida e consigli su come sviluppare una linguaggio condiviso all'interno del team di co-produzione per assicurare attivit\u00e0 di co-design e di esecuzione collaborativa dei servizi efficaci. Lo sviluppo di un linguaggio comune \u00e8 cruciale per consentire agli stakeholder di: i) costruire una base di partenza comune per attivit\u00e0 congiunte, ii) condividere, concordare e comprendere un piano ed un protocollo di ricerca a lungo termine, (iii) valutare progressivamente il successo o il fallimento delle decisioni prese.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4332,7 +4332,7 @@
             "name_translations": {
                 "en": "Develop a shared language (and value diversity)",
                 "es": "",
-                "it": "",
+                "it": "Sviluppo di un linguaggio condiviso (valorizzando la diversit\u00e0)",
                 "lv": ""
             }
         },
@@ -4340,7 +4340,7 @@
             "description_translations": {
                 "en": "Citizen participation in collaborative projects strongly depends on their motivation and their willingness to interact with governmental institutions and provide input on the given task.",
                 "es": "",
-                "it": "",
+                "it": "La partecipazione dei cittadini in progetti collaborativi dipende fortemente dalla loro motivazione e dalla loro disponibilit\u00e0 ad interagire con istituzione governative e a fornire input su task assegnati.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4351,7 +4351,7 @@
             "name_translations": {
                 "en": "Loyalty, incentives and rewards",
                 "es": "",
-                "it": "",
+                "it": "Fidelizzazione, incentivi e premi",
                 "lv": ""
             }
         },
@@ -4359,7 +4359,7 @@
             "description_translations": {
                 "en": "At different stages of the co-production process stakeholders (including citizens) are contacted, interviewed, asked for ideas and opinions. It is important to inform them about the context and purpose of the data collection and to gather their consent to be able to use the collected data collected in compliance with data protection regulations.",
                 "es": "",
-                "it": "",
+                "it": "Durante fasi diverse del processo di co-produzione, gli stakeholder (inclusi i cittadini) vengono contattati, intervistati, incoraggiati a fornire idee ed opinioni. E' importante informarli sul contesto e gli obiettivi della raccolta dati e ottenere il loro consenso all'utilizzo del materiale raccolto in conformit\u00e0 con le normative sulla privacy e la protezione dei dati.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4370,7 +4370,7 @@
             "name_translations": {
                 "en": "Consent collection",
                 "es": "",
-                "it": "",
+                "it": "Raccolta dei consensi",
                 "lv": ""
             }
         },
@@ -4378,7 +4378,7 @@
             "description_translations": {
                 "en": "This item relates to the need of exploring and refining the problem that a service addresses. The service design process is a problem-solving activity and it is important to clearly understand which is the challenge that the team addresses and how more information can be collected to understand how the service should be designed. Guidelines and tools are needed to help teams in discussing initial ideas and assumptions, refine them through structured methods and become aware about the missing information that still needs to be collected.",
                 "es": "",
-                "it": "",
+                "it": "Questa problematica si riferisce alla necessit\u00e0 di esplorare e raffinare il problema che un servizio deve risolvere. Il processo di disegno di un servizio \u00e8 essenzialmente una attivit\u00e0 di risoluzione di problemi (problem-solving) ed \u00e8 importante comprendere in modo chiaro quale \u00e8 la sfida che il team di lavoro deve risolvere e come informazioni aggiuntive possano essere raccolte. Linee guida e strumenti sono necessari per aiutare il team di co-produzione nella discussione delle idee ed assunzioni iniziali, nel loro raffinamento tramite metodi strutturati e nell'identificazione delle informazioni mancanti che devono ancora essere raccolte.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4389,7 +4389,7 @@
             "name_translations": {
                 "en": "Collaborative problem refinement",
                 "es": "",
-                "it": "",
+                "it": "Raffinamento collaborativo del problema",
                 "lv": ""
             }
         },
@@ -4397,7 +4397,7 @@
             "description_translations": {
                 "en": "This problem item relates to the need to support the initiators of the co-production process to identify, select and plan the active involvement of stakeholders in the co-production team. It is important that the initiators of a co-production process understand who are the potential stakeholders, which are their motivations to participate and potential barriers, which skills and expertise they might bring in the project, and which type of support they need to fully contribute to the project.",
                 "es": "",
-                "it": "",
+                "it": "Questo problema si riferisce alla necessit\u00e0 di supportare gli iniziatori di un progetto di co-produzione nel processo di identificazione, selezione e pianificazione del coinvolgimento attivo degli stakeholder all'interno del team di co-produzione. E' importante che gli iniziatori del processo di co-produzione comprendano chi sono i potenziali stakeholder, quali sono le loro motivazioni a partecipare e potenziali barriere, quali competenze ed esperienze possono portare nel progetto, quale tipo di supporto necessitano per contribuire pienamente.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4408,7 +4408,7 @@
             "name_translations": {
                 "en": "Stakeholders mapping",
                 "es": "",
-                "it": "",
+                "it": "Mappatura degli stakeholder",
                 "lv": ""
             }
         },
@@ -4416,7 +4416,7 @@
             "description_translations": {
                 "en": "This problem item refers to the need to support teams in collecting data and information about users and their behaviour for different purposes and phases of the co-production process, e.g. to better understand a phenomenon, to improve\nknowledge on citizens' needs toward services, to measure attitudes and\nexpectations, to monitor users satisfaction toward a service or a facility.",
                 "es": "",
-                "it": "",
+                "it": "Questo problema si riferisce alla necessit\u00e0 di supportare i gruppi di lavoro nella raccolta di dati e informazioni sui potenziali utenti di un servizio ed il loro comportamento. Queste informazioni possono essere utili per diversi scopi e durante varie fasi del processo di co-produzione, ad esempio per comprendere meglio un fenomeno, per migliorare la conoscenza sulle necessit\u00e0 dei cittadini rispetto ai servizi, per misurare attitudini ed aspettative, per monitorare la soddisfazione degli utenti verso un servizio o una struttura.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4427,7 +4427,7 @@
             "name_translations": {
                 "en": "Data collection about users and their behavior (user research)",
                 "es": "",
-                "it": "",
+                "it": "Raccolta di dati sugli utenti ed il loro comportamento (ricerca utente)",
                 "lv": ""
             }
         },
@@ -4435,7 +4435,7 @@
             "description_translations": {
                 "en": "A co-production team might need help to define the targets of the service and the characteristics of the users of the service and which are their main needs and the challenges they experience.",
                 "es": "",
-                "it": "",
+                "it": "Un team di co-produzione pu\u00f2 necessitare aiuto nella definizione dei destinatari del servizio e delle caratteristiche degli utenti, le loro necessit\u00e0 e le difficolt\u00e0 che incontrano.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4446,7 +4446,7 @@
             "name_translations": {
                 "en": "Identify and understand users of the service (Personas)",
                 "es": "",
-                "it": "",
+                "it": "Identificazione e comprensione degli utenti del servizio (Personas)",
                 "lv": ""
             }
         },
@@ -4454,7 +4454,7 @@
             "description_translations": {
                 "en": "This problem relates to the need to support the co-creation team to collect ideas from a large set of contributors (e.g. citizens) related to a specific challenge, organize and manage the ideas and eventually evaluate them. Crowdsourcing projects can target both internal and external participants via dedicated tools and platforms, questionnaires, social media, competitions and other methods.",
                 "es": "",
-                "it": "",
+                "it": "Questo problema si riferisce alla necessit\u00e0 di supportare il team di co-produzione nella raccolta di idee, collegate ad una specifica sfida, da un vasto numero di contributori (ad esempio cittadini). Ulteriori attivit\u00e0 riguardano l'organizzazione e gestione delle idee e la loro eventuale valutazione. Progetti di crowdsourcing possono coinvolgere sia partecipanti interni che esterni attraverso strumenti e piattaforme dedicate, questionari, social media, competizioni ed altri metodi.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4465,7 +4465,7 @@
             "name_translations": {
                 "en": "Ideas crowdsourcing",
                 "es": "",
-                "it": "",
+                "it": "Crowsourcing di idee",
                 "lv": ""
             }
         },
@@ -4473,7 +4473,7 @@
             "description_translations": {
                 "en": "This problem item refers to the need to map in a synthetic representation all the key roles that can impact on the user, organization and service environment. The ecosystem map is built by first displaying all the entities, and then connecting them based on the type of value they exchange.",
                 "es": "",
-                "it": "",
+                "it": "Questo problema si riferisce alla necessit\u00e0 di mappare in una rappresentazione sintetica tutti i ruoli principali che possono impattare sull'utente, l'organizzazione e il contesto del servizio. La mappa dell'ecosistema viene costruita attraverso una prima identificazione delle entit\u00e0 coinvolte e il loro successivo collegamento in base al tipo di valore che scambiano.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4484,7 +4484,7 @@
             "name_translations": {
                 "en": "Ecosystem mapping",
                 "es": "",
-                "it": "",
+                "it": "Mappatura dell'ecosistema",
                 "lv": ""
             }
         },
@@ -4511,7 +4511,7 @@
             "description_translations": {
                 "en": "Brainstorming sessions may be useful in different phases of the co-production process. During each phase, the template and materials useful to guide the discussion should be customized to facilitate the organization of the specific event. During the \"ideation\" stage, the co-production team may require specific guidance in organizing and managing a brainstorming to produce service ideas, discuss and select them, through divergent and convergent phases of group discussion.",
                 "es": "",
-                "it": "Sessioni di brainstorming possono essere utili in diverse fasi del processo di co-produzione. Durante ciascuna fase, i modelli e i materiali utili per guidare la discussione dovrebbero essere personalizzati per facilitare l'organizzazione dei singoli eventi. Durante la fase ideativa di un servizio, il gruppo di lavoro di co-produzione pu\u00f2 necessitare di una guida alla organizzazione e conduzione di un brainstorming per generare idee del servizio, discuterle e selezionarle, attraverso fasi  di discussione divergenti e convergenti.",
+                "it": "Sessioni di brainstorming possono essere utili in diverse fasi del processo di co-produzione. Durante ciascuna fase, i modelli e i materiali utili per guidare la discussione dovrebbero essere personalizzati per facilitare l'organizzazione dei singoli eventi. Durante la fase ideativa di un servizio, il gruppo di lavoro di co-produzione pu\u00f2 necessitare di una guida alla organizzazione e conduzione di un brainstorming per generare idee del servizio, discuterle e selezionarle, attraverso fasi di discussione divergenti e convergenti.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4530,7 +4530,7 @@
             "description_translations": {
                 "en": "After the understanding of the problem and the brainstorming of the service ideas, the co-production team should elaborate concrete solutions for a given challenge. Co-design workshops are useful at this stage as collective activities organized to discuss design issues and choices. Enablers are required to suggest how the coproduction team can work together and with relevant actors (also considering the map of actors developed thanks to the INTERLINKER \u201cMap of actors\u201d) to start defining the service to be co-designed and co-delivered.",
                 "es": "",
-                "it": "Dopo l'analisi approfondita del problema da risolvere e un primo brainstorming di idee sul servizio, il team di co-produzione  dovrebbe elaborare delle prime soluzioni concrete per la sfida da affrontare. Dei workshop di co-design (disegno collaborativo del servizio) sono utili in questa fase, come forma di attivit\u00e0 collettiva per discutere idee di design e possibili scelte. Informazioni e linee guida dovrebbero essere messi a disposizione per fornire una traccia di come i team di co-produzione possano lavorare insieme, anche in collaborazione con portatori di interesse esterni, per raffinare il servizio che deve essere disegnato ed eseguito in modo collaborativo.",
+                "it": "Dopo l'analisi approfondita del problema da risolvere e un primo brainstorming di idee sul servizio, il team di co-produzione dovrebbe elaborare delle prime soluzioni concrete per la sfida da affrontare. Dei workshop di co-design (disegno collaborativo del servizio) sono utili in questa fase, come forma di attivit\u00e0 collettiva per discutere idee di design e possibili scelte. Informazioni e linee guida dovrebbero essere messi a disposizione per fornire una traccia di come i team di co-produzione possano lavorare insieme, anche in collaborazione con portatori di interesse esterni, per raffinare il servizio che deve essere disegnato ed eseguito in modo collaborativo.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4568,7 +4568,7 @@
             "description_translations": {
                 "en": "The ideas and service design concepts need to be translated into formal requirements and service specifications to proceed with the implementation of the service. Guidance may be needed on how to collect, structure and communicate requirements and all the service specifications that clarify the objective of the service and how it should be developed",
                 "es": "",
-                "it": "",
+                "it": "Le idee e i concetti per il disegno del servizio devono essere tradotti in requisiti formali e specifiche di servizio per procedere all'implementazione del servizio. Una guida pu\u00f2 essere necessaria su come raccogliere, strutturare e comunicare i requisiti e tutte le specifiche del servizio che chiariscono l'obiettivo del servizio e come dovrebbe essere sviluppato.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4579,7 +4579,7 @@
             "name_translations": {
                 "en": "Define requirements and service specifications",
                 "es": "",
-                "it": "",
+                "it": "Definizione dei requisiti e delle specifiche del servizio",
                 "lv": ""
             }
         },
@@ -4587,7 +4587,7 @@
             "description_translations": {
                 "en": "When defining a new public service, the co-production team needs to prepare adequate content. Guidance is needed on how to select and use the most appropriate language according to the users of the digital service and their skills.",
                 "es": "",
-                "it": "",
+                "it": "Durante la definizione di un nuovo servizio pubblico, il team di co-produzione deve preparare contenuto adeguato. Una guida \u00e8 necessaria su come identificare il linguaggio pi\u00f9 appropriato da usare a seconda degli utilizzatori del servizio digitale e delle loro capacit\u00e0.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4598,7 +4598,7 @@
             "name_translations": {
                 "en": "Content design",
                 "es": "",
-                "it": "",
+                "it": "Disegno del contenuto",
                 "lv": ""
             }
         },
@@ -4777,7 +4777,7 @@
             "description_translations": {
                 "en": "Defining the evaluation criteria for a service to be co-delivered is a crucial step to monitor the quality of the co-designed and co-delivered service. Enablers addressing this problem should support the team in finding the most appropriate criteria, agree on them and use them in the evaluation of the service co-delivered",
                 "es": "",
-                "it": "",
+                "it": "La definizione dei criteri di valutazione di un servizio che deve essere eseguito in modo collaborativo rappresenta un passo cruciale per il monitoraggio della qualit\u00e0 del servizio. Il team di co-produzione deve essere accompagnato nella ricerca dei criteri pi\u00f9 appropriati, nel concordare la loro scelta e nella loro applicazione per la valutazione del servizio.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4788,7 +4788,7 @@
             "name_translations": {
                 "en": "Define the evaluation criteria and KPIs",
                 "es": "",
-                "it": "",
+                "it": "Definizione dei criteri di valutazione e degli principali indicatori di performance",
                 "lv": ""
             }
         },
@@ -4796,7 +4796,7 @@
             "description_translations": {
                 "en": "This problem profile refers to the reflection strategy that supports the coproduction team in iteratively evaluating whether the service is feasible and viable in the longer run (sustainable) or not, and hence deciding if it is worth continuing the co-production effort. Enablers in this category should provide support to the team during different stages of the project, supporting them in reflecting and continuously evaluating the process and the outcomes of the collaborative process",
                 "es": "",
-                "it": "",
+                "it": "Questo problema sottolinea l'importanza di una strategia di riflessione che supporti il team di co-produzione nel valutare iterativamente se il servizio \u00e8 fattibile e sostenibile nel lungo termine o meno, e quindi nel decidere se \u00e8 opportuno proseguire nell'iniziativa di co-produzione. Le risorse per risolvere questo problema dovrebbero supportare il team nel riflettere e valutare in modo continuo il processo collaborativo ed i suoi risultati.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4807,7 +4807,7 @@
             "name_translations": {
                 "en": "Ongoing internal co-evaluation (Go-no go)",
                 "es": "",
-                "it": "",
+                "it": "Valutazione interna continua (Go-no go)",
                 "lv": ""
             }
         },
@@ -4815,7 +4815,7 @@
             "description_translations": {
                 "en": "This problem addresses the need to validate a concept of a service or to verify the assumptions about a final product before developing it. Different types of proof of concepts can be used, according to the stage of service development and the type of service, whether it is a digital service or not.",
                 "es": "",
-                "it": "",
+                "it": "Questo problema si riferisce alla necessit\u00e0 di validare la concezione di un servizio o di verificare le assunzioni su un prodotto prima del suo sviluppo. Diversi modalit\u00e0 di validazione possono essere utilizzate, a seconda dello stadio di sviluppo del tipo di servizio, e a seconda che il servizio sia digitale o meno.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4826,7 +4826,7 @@
             "name_translations": {
                 "en": "Develop and test a proof of concept",
                 "es": "",
-                "it": "",
+                "it": "Sviluppo e test di un prototipo di idea",
                 "lv": ""
             }
         },
@@ -4834,7 +4834,7 @@
             "description_translations": {
                 "en": "This problem addresses the need to perform an early evaluation of the digital service leveraging experts without involving end users.",
                 "es": "",
-                "it": "",
+                "it": "Questo problema si riferisce alla necessit\u00e0 di eseguire una valutazione precoce dei servizi digitali sfruttando le competenze di esperti senza coinvolgere ancora gli utenti finali.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4845,7 +4845,7 @@
             "name_translations": {
                 "en": "Test the digital service with experts",
                 "es": "",
-                "it": "",
+                "it": "Testare i servizi digitali con esperti",
                 "lv": ""
             }
         },
@@ -4853,7 +4853,7 @@
             "description_translations": {
                 "en": "This problem addresses the need to continuously monitor the service co-delivered in order to keep work on track, regularly review progress, make adjustments and changes if necessary.",
                 "es": "",
-                "it": "",
+                "it": "Questo problema si riferisce alla necessit\u00e0 di monitorare in modo continuo il servizio eseguito in modo collaborativo al fine di mantenere l'esecuzione secondo le aspettative, di controllare regolarmente i progressi e applicare aggiustamenti o cambiamenti se necessario.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4864,7 +4864,7 @@
             "name_translations": {
                 "en": "Monitoring and ongoing evaluation of the co-delivered service",
                 "es": "",
-                "it": "",
+                "it": "Monitoraggio e valutazione in itinere del servizio erogato in modo collaborativo",
                 "lv": ""
             }
         },
@@ -4872,7 +4872,7 @@
             "description_translations": {
                 "en": "This problem addresses the need to review and refine the business model and market reach plan associated to a co-produced service.",
                 "es": "",
-                "it": "",
+                "it": "Questo problema si riferisce alla necessit\u00e0 di rivedere e raffinare il modello di business e il piano di copertura del mercato associato ad un servizio co-prodotto.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4883,7 +4883,7 @@
             "name_translations": {
                 "en": "Define a sustainability / business plan",
                 "es": "",
-                "it": "",
+                "it": "Definizione di un piano di business e di sostenibilit\u00e0",
                 "lv": ""
             }
         },
@@ -4891,7 +4891,7 @@
             "description_translations": {
                 "en": "This problem addresses the need to be able to specify a new public service proposal to be considered for co-production.",
                 "es": "",
-                "it": "",
+                "it": "Questo problema si riferisce alla necessit\u00e0 di specificare una nuova proposta di servizio pubblico da considerare per la co-produzione.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4902,7 +4902,7 @@
             "name_translations": {
                 "en": "Define a proposal of public service",
                 "es": "",
-                "it": "",
+                "it": "Definizione di una nuova proposta di servizio pubblico",
                 "lv": ""
             }
         },
@@ -4910,7 +4910,7 @@
             "description_translations": {
                 "en": "This problem addresses the need to define the rules for a competition (hackathon, contest) where different teams may take part.",
                 "es": "",
-                "it": "",
+                "it": "Questo problema si riferisce alla necessit\u00e0 di definire delle regole per una competizione (hackathon, concorso) a cui prendono parte diverse squadre.",
                 "lv": ""
             },
             "functionality_translations": {
@@ -4921,7 +4921,7 @@
             "name_translations": {
                 "en": "Define the rules of a Hackathon or Contest",
                 "es": "",
-                "it": "",
+                "it": "Definizione delle regole per un hackathon o un concorso",
                 "lv": ""
             }
         }
@@ -4932,7 +4932,7 @@
             "description_translations": {
                 "en": "The INTERLINK project has defined a generic co-production process which can accommodate any co-production endeavour. It is composed of two main phases to be followed by co-producers: a) Co-design phase. It concerns activities that incorporate 'the experience of users and their communities' into the creation, planning, or arrangements of public services. In it, the co-production team is created and starts working together to define the service to be co-produced. This phase entails two sub-phases: Engagement and Design; and b) Co-delivery phase. It is a joint effort by public authorities and stakeholders to provide and improve public services where the service is implemented and delivered in a sustainable manner. The co-delivery phase entails two sub-phases: Build and Sustain.",
                 "es": "El proyecto INTERLINK ha definido un proceso de coproducci\u00f3n gen\u00e9rico que puede dar cabida a cualquier esfuerzo de coproducci\u00f3n. Se compone de dos fases principales que deben seguir los coproductores: a) Fase de codise\u00f1o. Se refiere a las actividades que incorporan \"la experiencia de los usuarios y de sus comunidades\" en la creaci\u00f3n, planificaci\u00f3n o disposici\u00f3n de los servicios p\u00fablicos. En ella, se crea el equipo de coproducci\u00f3n y se empieza a trabajar conjuntamente para definir el servicio que se va a coproducir. Esta fase conlleva dos subfases: involucraci\u00f3n y dise\u00f1o; y b) Fase de coproducci\u00f3n. Se trata de un esfuerzo conjunto de las autoridades p\u00fablicas y las partes interesadas para proporcionar y mejorar los servicios p\u00fablicos en los que el servicio se aplica y se presta de forma sostenible. La fase de co-prestaci\u00f3n conlleva dos subfases: Construir y Sostener.",
-                "it": "",
+                "it": "Il progetto INTERLINK ha definito un processo di coproduzione generico che pu\u00f2 accompagnare diverse iniziative di  coproduzione.  Il processo si compone di due fasi principali : a) Fase di co-design. Si tratta di attivit\u00e0 che incorporano \"l'esperienza degli utenti e delle loro comunit\u00e0\" nella creazione, pianificazione o organizzazione di servizi pubblici. In questa fase viene creato il team di co-produzione e inizia a lavorare insieme per definire il servizio da co-produrre. Questa fase prevede due sottofasi: Engagement e Design; e b) Fase di co-consegna. \u00c8 uno sforzo congiunto delle autorit\u00e0 pubbliche e delle parti interessate per fornire e migliorare i servizi pubblici in cui il servizio \u00e8 implementato ed erogato in modo sostenibile. La fase di co-consegna prevede due sottofasi: Realizzare e Sostenere",
                 "lv": ""
             },
             "id": "default",
@@ -4940,37 +4940,37 @@
             "name_translations": {
                 "en": "Default schema",
                 "es": "Esquema por defecto",
-                "it": "",
+                "it": "Schema predefinito",
                 "lv": ""
             },
             "phases": [
                 {
                     "description_translations": {
                         "en": "Follow the guidelines to discuss together, in a balanced and inclusive way, issues, beneficiaries, and priorities for the service to be designed. Find useful resources to conduct interviews, surveys and focus groups for a deeper understanding of stakeholders\u2019 and citizens\u2019 needs and requirements. Use the proposed material to organize service design workshops and develop mockups. Stop and reflect on the process so far with the co-evaluation checklists.",
-                        "es": "",
-                        "it": "",
+                        "es": "Siga las directrices para debatir juntos, de forma equilibrada e inclusiva, los problemas, los beneficiarios y las prioridades del servicio que se va a dise\u00f1ar. Encuentre recursos \u00fatiles para realizar entrevistas, encuestas y grupos de discusi\u00f3n para comprender mejor las necesidades y requisitos de las partes interesadas y los ciudadanos. Utilizar el material propuesto para organizar talleres de dise\u00f1o de servicios y desarrollar maquetas. Det\u00e9ngase y reflexione sobre el proceso hasta el momento con las listas de comprobaci\u00f3n de la coevaluaci\u00f3n.",
+                        "it": "Segui le linee guida per discutere insieme, in modo equilibrato e inclusivo, temi, beneficiari e priorit\u00e0 per il servizio da progettare. Trova risorse utili per condurre interviste, sondaggi e focus group per una comprensione pi\u00f9 profonda dei bisogni e delle esigenze degli stakeholder e dei cittadini. Utilizza  il materiale proposto per organizzare sessioni di progettazione dei servizi e sviluppare momockups.         Fermati e rifletti sul processo finora svolto con le checklist di co-valutazione.",
                         "lv": ""
                     },
                     "id": "phase-design",
                     "name_translations": {
                         "en": "Design",
-                        "es": "",
-                        "it": "",
+                        "es": "Dise\u00f1o",
+                        "it": "Progettazione",
                         "lv": ""
                     },
                     "objectives": [
                         {
                             "description_translations": {
                                 "en": "Clearly define the problem to be addresses by the co-production team and agree on it. This  is an important step towards creating an effective and efficient solution. Different resources can be useful to this end: tips on how to create and share a common language among team members, resources to guide collaborative discussions, tools for ideas collection.",
-                                "es": "",
-                                "it": "",
+                                "es": "Definir claramente el problema que debe abordar el equipo de coproducci\u00f3n y ponerse de acuerdo sobre \u00e9l. Este es un paso importante para crear una soluci\u00f3n eficaz y eficiente. Para ello pueden ser \u00fatiles diferentes recursos: consejos sobre c\u00f3mo crear y compartir un lenguaje com\u00fan entre los miembros del equipo, recursos para guiar los debates colaborativos, herramientas para la recopilaci\u00f3n de ideas.",
+                                "it": "Definisci e concorda chiaramente il problema che deve essere affrontato dal team di co-produzione. Questo \u00e8 un passo importante verso la creazione di una soluzione efficace ed efficiente. Diverse risorse possono essere utili a tal fine: suggerimenti su come creare e condividere un linguaggio comune tra i membri del team, risorse per guidare discussioni collaborative, strumenti per la raccolta di idee.",
                                 "lv": ""
                             },
                             "id": "objective-focus-the-problem-collaboratively",
                             "name_translations": {
                                 "en": "Focus the problem collaboratively",
-                                "es": "",
-                                "it": "",
+                                "es": "Enfocar el problema de forma colaborativa",
+                                "it": "Focalizza il problema in modo collaborativo",
                                 "lv": ""
                             },
                             "prerequisites": [],
@@ -4980,14 +4980,14 @@
                                     "description_translations": {
                                         "en": "Develop a shared language among the team members and encourage communication and ideas sharing with all the stakeholders. Developing a shared language is crucial to be able for stakeholders to: i) build a common ground for joint action, ii) share, mutually agree on, and understand a longterm research plan and protocol, iii) to ongoingly evaluate the success or failure of decisions.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Sviluppa un linguaggio condiviso tra i membri del team e incoraggia la comunicazione e la condivisione di idee con tutti gli stakeholder. Lo sviluppo di un linguaggio condiviso \u00e8 fondamentale per consentire alle parti interessate di: i) costruire un terreno comune per un'azione congiunta, ii) condividere, concordare reciprocamente e comprendere un piano e un protocollo di ricerca a lungo termine, iii) valutare costantemente il successo o il fallimento di decisioni.",
                                         "lv": ""
                                     },
                                     "id": "task-develop-a-shared-language",
                                     "name_translations": {
                                         "en": "Develop a shared language",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Sviluppa un linguaggio comune",
                                         "lv": ""
                                     },
                                     "prerequisites": [],
@@ -4999,14 +4999,14 @@
                                     "description_translations": {
                                         "en": "Refine with the collaboration of the stakeholders network the problem to be addressed. Service design is a problem-solving activity and it is important to clearly understand which is the challenge that the team addresses and how more information can be collected to understand how the service should be designed. Organize focus groups to discuss initial ideas and assumptions, refine them through structured methods and become aware about the missing information that still needs to be collected.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Affina grazie alla collaborazione della rete degli stakeholder il problema da affrontare. La progettazione del servizio \u00e8 un'attivit\u00e0 di problem solving ed \u00e8 importante capire chiaramente qual \u00e8 la sfida che il team affronta e come raccogliere maggiori informazioni per capire come dovrebbe essere progettato il servizio. Organizza focus group per discutere idee e ipotesi iniziali, perfezionali attraverso metodi strutturati e  identifica le informazioni mancanti che devono ancora essere raccolte.",
                                         "lv": ""
                                     },
                                     "id": "task-collaboratively-problem-refinement",
                                     "name_translations": {
                                         "en": "Collaboratively problem refinement",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Raffina il problema in modo collaborativo",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -5021,14 +5021,14 @@
                                     "description_translations": {
                                         "en": "In case of need, enlarge the collection of ideas about the various aspects of the problem by launching a discussion forum.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "In caso di necessit\u00e0, amplia la raccolta di idee sui vari aspetti del problema avviando un forum di discussione.",
                                         "lv": ""
                                     },
                                     "id": "task-ideas-collection-for-problem-exploration-and-refinement",
                                     "name_translations": {
                                         "en": "Ideas collection for problem exploration and refinement",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Raccogli idee per l'esplorazione e il perfezionamento del problema",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -5043,14 +5043,14 @@
                                     "description_translations": {
                                         "en": "Draft an initial description (or multiple optional descriptions) of the potential service: what it does, who benefits from the service, who helps delivering it. Use description templates to facilitate your task.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Abbozza una descrizione iniziale (o pi\u00f9 descrizioni) del potenziale servizio: cosa fa? chi beneficia del servizio? chi lo eroga? Usa i modelli di descrizione per facilitare questa attivita'",
                                         "lv": ""
                                     },
                                     "id": "task-sketch-an-initial-idea-of-the-service",
                                     "name_translations": {
                                         "en": "Sketch an initial idea of the service",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Abbozza un'idea iniziale del servizio",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -5065,14 +5065,14 @@
                                     "description_translations": {
                                         "en": "Go back to your network of stakeholders to validate the service idea by means of a focus group or a poll.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Torna alla tua rete di stakeholder per convalidare l'idea di servizio tramite un focus group o un sondaggio.",
                                         "lv": ""
                                     },
                                     "id": "task-collaborative-agree-on-a-service-idea",
                                     "name_translations": {
                                         "en": "Collaborative agree on a service idea",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Concorda in modo collaborativo l'idea di servizio",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -5087,14 +5087,14 @@
                                     "description_translations": {
                                         "en": "The ideas and service design concepts need to be translated into formal requirements to proceed with the implementation of the service. Follow the guidelines on how to collect, structure and communicate requirements and all the service specifications that clarify the objective of the service and how it should be developed. Use stardard representation formalism for requirements descriptions, as for example the Volere Requirements Specification template.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Le idee relative alla progettazione del servizio devono essere tradotti in requisiti formali per procedere all'implementazione del servizio. Segui le linee guida su come raccogliere, strutturare e comunicare i requisiti e tutte le specifiche del servizio che definiscono l'obiettivo del servizio e come dovrebbe essere sviluppato. Utilizza formalismi standard per le descrizioni dei requisiti, come ad esempio il modello di specifica dei requisiti di Volere.",
                                         "lv": ""
                                     },
                                     "id": "task-define-requirements-and-constraints-for-the-service",
                                     "name_translations": {
                                         "en": "Define requirements and constraints for the service",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Definisci i requisiti e i vincoli del servizio",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -5111,14 +5111,14 @@
                             "description_translations": {
                                 "en": "Before actually designing how the service will look like, deeply explore the problem context, to gather factual data about users, organizations, needs and their relationships.",
                                 "es": "",
-                                "it": "",
+                                "it": "Prima di progettare come il servizio apparira' , esplora a fondo il contesto del problema, per raccogliere dati concreti su utenti, organizzazioni e i loro bisogni",
                                 "lv": ""
                             },
                             "id": "objective-problem-exploration",
                             "name_translations": {
                                 "en": "Problem exploration",
                                 "es": "",
-                                "it": "",
+                                "it": "Esplorazione del problema",
                                 "lv": ""
                             },
                             "prerequisites": [
@@ -5139,14 +5139,14 @@
                                     "description_translations": {
                                         "en": "Gather all the relevant information about the service that will be produced to put the right processes in place.  It\u2019s advisable to establish different types of consultation depending on the groups targeted:\r\n\\n- Consult users about desired outcomes of the service\r\n- Consult service providers about the solutions that can give in response to the service demanded\r\n- Ask public authorities about the implications (organizational, regulatory, etc.) that affect to the service delivery\r\nOrganize focus groups, interviews or surveys to elicit the desired data.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Raccogli tutte le informazioni rilevanti sul servizio  per mettere in atto i processi giusti. Si consiglia di stabilire diverse tipologie di consultazione a seconda dei gruppi a cui ci si rivolge:\n\\n- Consultare gli utenti sui risultati desiderati del servizio\n- Consultare i fornitori di servizi sulle soluzioni che possono dare in risposta al servizio richiesto\n- Chiedere alle autorit\u00e0 pubbliche le implicazioni (organizzative, normative, ecc.) che incidono sull'erogazione del servizio\nOrganizza focus group, interviste o sondaggi per ottenere i dati desiderati.",
                                         "lv": ""
                                     },
                                     "id": "task-collect-data-about-users-and-their-behavior",
                                     "name_translations": {
                                         "en": "Collect data about users and their behavior",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Raccogli dati sugli utenti e sul loro comportamento",
                                         "lv": ""
                                     },
                                     "prerequisites": [],
@@ -5158,14 +5158,14 @@
                                     "description_translations": {
                                         "en": "Map in a synthetic representation all the key roles that can impact on the user, organization and service environment. The ecosystem map is built by first displaying all the entities, and then connecting them based on the type of value they exchange.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Mappa in una rappresentazione grafica  gli elementi che possono avere un impatto sull'utente, sull'organizzazione e sull'ambiente di servizio. La mappa dell'ecosistema viene costruita visualizzando prima tutte le entit\u00e0 e poi collegandole in base al tipo di valore che si scambiano.",
                                         "lv": ""
                                     },
                                     "id": "task-ecosystem-mapping",
                                     "name_translations": {
                                         "en": "Ecosystem mapping",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Mappa dell'ecosistema",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -5182,14 +5182,14 @@
                             "description_translations": {
                                 "en": "Ideation is the preliminary phase of service design in which the design team is created, the collected data are reviewed, and futher ideas are sougth if necessary.",
                                 "es": "",
-                                "it": "",
+                                "it": "L'ideazione \u00e8 la fase preliminare della progettazione del servizio; in questa fase   viene creato il team di progettazione, vengono esaminati i dati raccolti e, se necessario, vengono elaborate ulteriori idee.",
                                 "lv": ""
                             },
                             "id": "objective-ideation",
                             "name_translations": {
                                 "en": "Ideation",
                                 "es": "",
-                                "it": "",
+                                "it": "Ideazione",
                                 "lv": ""
                             },
                             "prerequisites": [
@@ -5211,14 +5211,14 @@
                                     "description_translations": {
                                         "en": "Create a core group of stakeholders to proceed with the actual ideation of the service. Provide appropriate communication, motivational statements, and workplan information about the next steps of service co-creation.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Crea un nucleo di stakeholder per procedere con l'ideazione vera e propria del servizio. Fornisci informazioni appropriate e informazioni sul piano di lavoro sulle fasi successive della co-creazione del servizio.",
                                         "lv": ""
                                     },
                                     "id": "task-engage-relevant-actors-in-the-design",
                                     "name_translations": {
                                         "en": "Engage relevant actors in the design",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Coinvolgi gli attori rilevanti nella progettazione",
                                         "lv": ""
                                     },
                                     "prerequisites": [],
@@ -5228,14 +5228,14 @@
                                     "description_translations": {
                                         "en": "Organize and manage a brainstorming to review the data collected about the service ecosystem and to produce service ideas, discuss and select them, through divergent and convergent phases of group discussion.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Organizza e gestisci un brainstorming per rivedere i dati raccolti sull'ecosistema dei servizi e produrre idee di servizio, discuterle e selezionarle, attraverso fasi divergenti e convergenti di discussione di gruppo.",
                                         "lv": ""
                                     },
                                     "id": "task-organize-a-braistorming",
                                     "name_translations": {
                                         "en": "Organize a braistorming",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Organizza un brainstorming",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -5250,14 +5250,14 @@
                                     "description_translations": {
                                         "en": "Collect ideas from a large set of contributors (e.g. citizens) related to a specific challenge, organize and manage the ideas and eventually evaluate them. Crowdsourcing projects can target both internal and external participants via dedicated tools and platforms, questionnaires, social media, competitions and other methods.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Raccogli idee da un ampio gruppo di contributori (ad es. cittadini) relative a una sfida specifica, organizza e gestisci le idee ed eventualmente valutale. I progetti di crowdsourcing possono rivolgersi a partecipanti sia interni che esterni tramite strumenti e piattaforme dedicati, questionari, social media, concorsi e altri strumenti.",
                                         "lv": ""
                                     },
                                     "id": "task-ideas-crowdsourcing",
                                     "name_translations": {
                                         "en": "Ideas crowdsourcing",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Crowdsourcing di idee",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -5274,14 +5274,14 @@
                             "description_translations": {
                                 "en": "After the understanding of the problem and the brainstorming of the service ideas, elaborate concrete solutions for your challenge. Co-design workshops are useful at this stage as collective activities organized to discuss design issues and choices. Work together with relevant actors to start defining the service to be co-designed and co-delivered.",
                                 "es": "",
-                                "it": "",
+                                "it": "Dopo la comprensione del problema e il brainstorming relativo alle idee di servizio, elabora soluzioni concrete per la tua sfida. I workshop di co-progettazione sono utili in questa fase come attivit\u00e0 collettive organizzate per discutere questioni e scelte progettuali. Collabora con gli altri portatori di interesse  per iniziare a definire il servizio da co-progettare e co-erogare.",
                                 "lv": ""
                             },
                             "id": "objective-service-design",
                             "name_translations": {
                                 "en": "Service design",
                                 "es": "",
-                                "it": "",
+                                "it": "Progettazione del servizio",
                                 "lv": ""
                             },
                             "prerequisites": [
@@ -5301,14 +5301,14 @@
                                     "description_translations": {
                                         "en": "Reflect on the service beneficiary behavior, needs and expectations. Personas are fictional characters who embody the archetype of your customer, beneficiary or financing supporter. They are created through exhaustive observation of the customer segment and the drawing together of their shared characteristics, behaviors, motivations, interests, etc. It is a useful tool to focus on getting to know who you are designing for.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Rifletti sul comportamento, i bisogni e le aspettative del beneficiario finale del servizio. Le \"Personas\" sono personaggi fittizi che incarnano l'archetipo del tuo beneficiario finale del servizio. Le \"personas\" sono create attraverso un'osservazione  del segmento di clientela e uniscono le caratteristiche, i comportamenti, le motivazioni, gli interessi di un particolare target.  \u00c8 uno strumento utile per concentrarsi sul fruitore finale del servizio che si sta progettando.",
                                         "lv": ""
                                     },
                                     "id": "task-define-personas",
                                     "name_translations": {
                                         "en": "Define personas",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Definisci le \"personas\"",
                                         "lv": ""
                                     },
                                     "prerequisites": [],
@@ -5318,7 +5318,7 @@
                                     "description_translations": {
                                         "en": "Write scenarios. To explain and collaboratively describe the envisioned service, scenarios can be used to reflect on the users experience. A user scenario is a story that describes, in an  narrative manner, how the user is going to interact with the service during a specific situation. Writing user scenarios requires to identify a specific context in which the action takes place, as well as characters and needs that defines the attitude of the user. ",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Scrivi degli scenari. Per descrivere in modo collaborativo il servizio previsto, gli scenari possono essere utilizzati per riflettere sull'esperienza degli utenti. Uno scenario utente \u00e8 una storia che descrive, in modo narrativo, come l'utente interagir\u00e0 con il servizio durante una situazione specifica. Scrivere scenari utente richiede di identificare un contesto specifico in cui si svolge l'azione, gli attori coinvolti e bisogni   dell'utente. ",
                                         "lv": ""
                                     },
                                     "id": "task-define-scenarios",
@@ -5364,7 +5364,7 @@
                             "description_translations": {
                                 "en": "The ideas and service design concepts need to be translated into formal requirements and service specifications to proceed with the implementation of the service. Follow the guidelines to collect, structure and communicate requirements and all the service specifications that clarify the objective of the service and how it should be developed.",
                                 "es": "",
-                                "it": "",
+                                "it": "Le idee relative alla progettazione del servizio devono essere tradotti in requisiti formali per procedere all'implementazione del servizio. Segui le linee guida su come raccogliere, strutturare e comunicare i requisiti e tutte le specifiche del servizio che definiscono l'obiettivo del servizio e come dovrebbe essere sviluppato.",
                                 "lv": ""
                             },
                             "id": "objective-service-specification",
@@ -5521,14 +5521,14 @@
                             "description_translations": {
                                 "en": "How to show and tell in which way the service is expected to work?\r\nValidate the concept of your service or verify the assumptions about your final product before developing it. Different types of proof of concepts can be used, according to the stage of service development and the type of service, whether it is a digital service or not.",
                                 "es": "",
-                                "it": "",
+                                "it": "Come mostrare e raccontare in che modo dovrebbe funzionare il servizio?\nConvalida  l'idea del tuo servizio o verifica le ipotesi sul tuo prodotto finale prima di svilupparlo. Possono essere utilizzati diversi tipi di prototipo di idee, a seconda della fase di sviluppo del servizio e del tipo di servizio, che si tratti di un servizio digitale o meno.",
                                 "lv": ""
                             },
                             "id": "objective-prototype",
                             "name_translations": {
                                 "en": "Prototype",
                                 "es": "",
-                                "it": "",
+                                "it": "Realizza dei prototipi",
                                 "lv": ""
                             },
                             "prerequisites": [
@@ -5546,14 +5546,14 @@
                                     "description_translations": {
                                         "en": "Analyse and visualise how the system changes or evolves according to specific scenarios and their dynamics.\r\nSystem scenarios introduce a dynamic level of analysis, applying the lense of time and showing the possible variations that could take place. In this way, system scenarios provide a deeper level of analysis of the system, directed at understanding system dynamics and relations between actors in various conditions.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Analizza e visualizza come il sistema cambia o si evolve in base a scenari specifici e alle loro dinamiche.\nGli scenari di sistema introducono un livello dinamico di analisi, applicando la lente del tempo e mostrando le possibili variazioni che potrebbero verificarsi. In questo modo, gli scenari di sistema forniscono un livello pi\u00f9 profondo di analisi del sistema, volto a comprendere le dinamiche del sistema e le relazioni tra gli attori nelle varie condizioni.",
                                         "lv": ""
                                     },
                                     "id": "task-experience-scenarios",
                                     "name_translations": {
                                         "en": "Experience scenarios",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Scenari dell'esperienza dell'utente",
                                         "lv": ""
                                     },
                                     "prerequisites": [],
@@ -5563,14 +5563,14 @@
                                     "description_translations": {
                                         "en": "Iteratively discuss and evaluate mockups and lowfi prototypes within the enlarged design team. Set up a discussion forum, a method for e-voting and evaluation surveys to digitally facilitate this step.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Discuti e valuta in modo iterativo mockup e prototipi a bassa fedelta'  all'interno del team di progettazione allargato. Crea un forum di discussione, un metodo per votare le idee e sondaggi di valutazione per facilitare digitalmente questo passaggio.",
                                         "lv": ""
                                     },
                                     "id": "task-mockups-and-lowfi-prototypes",
                                     "name_translations": {
                                         "en": "Mockups and lowfi prototypes",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Modelli di interfaccia e prototipi a bassa fedelt\u00e0",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -5585,14 +5585,14 @@
                                     "description_translations": {
                                         "en": "Test the design of the digital service with experts. Follow the guidelines on how to conduct an Heuristic Evaluation (also called Expert evaluation) and use the templates with the heuristics (principles) to follow when performing the test. The test can be conducted with early mock-ups as well with functioning early prototypes.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Testa il design del servizio digitale con esperti. Segui le linee guida su come condurre una valutazione euristica (chiamata anche valutazione esperta) e utilizzare i modelli con le euristiche (principi) da seguire durante l'esecuzione del test. Il test pu\u00f2 essere condotto con i primi modelli e con i primi prototipi funzionanti.",
                                         "lv": ""
                                     },
                                     "id": "task-perform-an-heuristic-evaluation",
                                     "name_translations": {
                                         "en": "Perform an heuristic evaluation",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Esegui una valutazione euristica",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -5607,14 +5607,14 @@
                                     "description_translations": {
                                         "en": "If lowfi prototypes allow a good representation of what the service will be and allow to simulate interaction flows, conduct controlled evaluation experiments with potential end users. \r\nDo they understand the language of the interface mockups? Are major functionalities in place? Are there unexpected interaction paths?\r\nAlso very small experiments, may provide extremely valuable input at this stage.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Conduci esperimenti di valutazione controllata con potenziali utenti finali.\nCapiscono la lingua dei modelli di interfaccia? Sono presenti le funzionalit\u00e0 principali? Ci sono percorsi di interazione inaspettati?\nAnche esperimenti molto piccoli possono fornire input estremamente preziosi in questa fase.",
                                         "lv": ""
                                     },
                                     "id": "task-perform-a-test-with-users",
                                     "name_translations": {
                                         "en": "Perform a test with users",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Esegui un test con gli utenti",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -5716,14 +5716,14 @@
                                     "description_translations": {
                                         "en": "What are the incentives for those who can provide support / funding and for those developing / maintaining them?\r\nStop and reflect on how stakeholders collaboration in co-creation went so far. Follow the proposed checklist to understand whether further incentives and supportive measures are needed to ensure productive development and co-delivery phases.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Quali sono gli incentivi per coloro che forniscono supporto / finanziamenti al servizio e per coloro che lo sviluppano / mantengono?\nFermati e rifletti come ha funzionato fino ad ora la collaborazione fra gli stakeholder. Segui la lista di controllo per capire se siano necessari ulteriori incentivi e misure di supporto per assicurare uno sviluppo ed una erogazione del servizio produttivi.",
                                         "lv": ""
                                     },
                                     "id": "task-understand-motivations-and-incentives",
                                     "name_translations": {
                                         "en": "Understand motivations and incentives",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Comprendi le motivazioni e gli incentivi necessari",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -5748,29 +5748,29 @@
                     "description_translations": {
                         "en": "Browse the catalogue of INTERLINKERs to find reusable building blocks for the implementation of your service. Monitor development advancement in the project workplan. Stop and reflect on the process so far with the co-evaluation checklists that help verify compliance with standards and regulations. Use incentives and reward tools made available by the INTERLINK platform to sustain stakeholders\u2019 and citizens\u2019 contribution to service delivery. Monitor quality of service and citizens\u2019 satisfaction with carefully prepared surveys. Stop and reflect on how co-delivery is going with the co-evaluation checklists.",
                         "es": "Examine el cat\u00e1logo de INTERLINKERs para encontrar bloques de construcci\u00f3n reutilizables para la implementaci\u00f3n de su servicio. Supervise el avance del desarrollo en el plan de trabajo del proyecto. Det\u00e9ngase y reflexione sobre el proceso hasta el momento con las listas de comprobaci\u00f3n de coevaluaci\u00f3n que ayudan a verificar el cumplimiento de las normas y los reglamentos. Utilizar los incentivos y las herramientas de recompensa que pone a disposici\u00f3n la plataforma INTERLINK para mantener la contribuci\u00f3n de las partes interesadas y los ciudadanos a la prestaci\u00f3n del servicio. Controlar la calidad del servicio y la satisfacci\u00f3n de los ciudadanos con encuestas cuidadosamente preparadas. Detenerse y reflexionar sobre c\u00f3mo va la co-prestaci\u00f3n de servicios con las listas de comprobaci\u00f3n de la co-evaluaci\u00f3n.",
-                        "it": "",
+                        "it": "Sfoglia il catalogo degli INTERLINKERs per trovare i building block riutilizzabili per l'implementazione del tuo servizio. Monitora l'avanzamento dello sviluppo nel piano di lavoro del progetto. Fermati e rifletti sul processo finora svolto con le checklist di co-valutazione che aiutano a verificare la conformit\u00e0 a standard e regolamenti. Utilizzare gli incentivi e gli strumenti di ricompensa messi a disposizione dalla piattaforma INTERLINK per sostenere il contributo delle parti interessate e dei cittadini all'erogazione dei servizi. Monitora la qualit\u00e0 del servizio e la soddisfazione dei cittadini con sondaggi accuratamente preparati. Fermati e rifletti su come sta andando la co-consegna con le checklist di co-valutazione.",
                         "lv": ""
                     },
                     "id": "phase-build",
                     "name_translations": {
                         "en": "Build",
                         "es": "Construir",
-                        "it": "",
+                        "it": "Realizza",
                         "lv": ""
                     },
                     "objectives": [
                         {
                             "description_translations": {
                                 "en": "Service implementation is not possible if an environment for its depoyment and maintenance is not thought in advance. Independently on whether your envisioned co-produced service will be a piece of software or a bundle of digital resources, identify, select and make ready the development and deployment environments for your solution. Important to clearly specify and test the technical constraints within which the delivered service will be hosted.",
-                                "es": "",
-                                "it": "",
+                                "es": "La implantaci\u00f3n de un servicio no es posible si no se piensa de antemano en un entorno para su despliegue y mantenimiento. Independientemente de si el servicio coproducido previsto ser\u00e1 una pieza de software o un conjunto de recursos digitales, hay que identificar, seleccionar y preparar los entornos de desarrollo y despliegue de la soluci\u00f3n. Es importante especificar claramente y probar las limitaciones t\u00e9cnicas dentro de las cuales se alojar\u00e1 el servicio entregado.",
+                                "it": "L'implementazione del servizio non \u00e8 possibile se non si considera in anticipo  un ambiente per il suo rilascio e la sua manutenzione. Indipendentemente dal fatto che il servizio coprodotto previsto sar\u00e0 software o un insieme di risorse digitali, identifica, seleziona e prepara gli ambienti di sviluppo e distribuzione per la tua soluzione. E' importante specificare e testare chiaramente i vincoli tecnici entro i quali sar\u00e0 ospitato il servizio erogato",
                                 "lv": ""
                             },
                             "id": "objective-technical-implementation",
                             "name_translations": {
                                 "en": "Technical implementation",
-                                "es": "",
-                                "it": "",
+                                "es": "Implementaci\u00f3n t\u00e9cnica",
+                                "it": "Implementazione tecnica",
                                 "lv": ""
                             },
                             "prerequisites": [],
@@ -5779,15 +5779,15 @@
                                 {
                                     "description_translations": {
                                         "en": "Identify the dependencies and environment needed for the service co-production and co-delivery. Configure and deploy (if not already available) the dependencies and environment. Document the progress towards realizing the technical aspects associated to the co-produced service. ",
-                                        "es": "",
-                                        "it": "",
+                                        "es": "Identificar las dependencias y el entorno necesarios para la coproducci\u00f3n y la codistribuci\u00f3n de servicios. Configurar y desplegar (si no est\u00e1n ya disponibles) las dependencias y el entorno. Documentar el progreso hacia la realizaci\u00f3n de los aspectos t\u00e9cnicos asociados al servicio coproducido. ",
+                                        "it": "Identifica le dipendenze e l'ambiente necessario per la co-produzione e l'erogazione del servizio. Configura e rilascia (se non gi\u00e0 disponibili) le dipendenze e l'ambiente. Documenta i progressi relativi all'implementazione degli aspetti tecnici associati al servizio coprodotto. ",
                                         "lv": ""
                                     },
                                     "id": "task-technical-implementation",
                                     "name_translations": {
                                         "en": "Technical implementation",
-                                        "es": "",
-                                        "it": "",
+                                        "es": "Implementaci\u00f3n t\u00e9cnica",
+                                        "it": "Implementazione tecnica",
                                         "lv": ""
                                     },
                                     "prerequisites": [],
@@ -5806,15 +5806,15 @@
                         {
                             "description_translations": {
                                 "en": "Depending on the nature of the co-produced service, you main adopt different tools and mechanisms to realize a given co-produced service. Realizing a co-produced service might entail programming, using graphical design tools, 3D modelling and fabrication and so on. Register progress achieved during the realization of the implementation of the co-produced service, upload progress reports, cross-link with repositories where progress is being realized, document the co-produced service API or the kit and/or resources generated to realize the service. Acknowledge and trace the contributions of different co-production team members or external contributors. Reuse existing INTERLINKERs (software and knowledge) and add on top of them, browse through them in the Catalogue, do not reinvent the wheel!",
-                                "es": "",
-                                "it": "",
+                                "es": "Dependiendo de la naturaleza del servicio coproducido, se pueden adoptar diferentes herramientas y mecanismos para realizar un determinado servicio coproducido. La realizaci\u00f3n de un servicio coproducido puede implicar la programaci\u00f3n, el uso de herramientas de dise\u00f1o gr\u00e1fico, el modelado y la fabricaci\u00f3n en 3D, etc. Registre los avances logrados durante la realizaci\u00f3n de la implementaci\u00f3n del servicio coproducido, suba informes de progreso, cruce con los repositorios donde se est\u00e1n realizando los avances, documente la API del servicio coproducido o el kit y/o los recursos generados para realizar el servicio. Reconocer y rastrear las contribuciones de los diferentes miembros del equipo de coproducci\u00f3n o de los colaboradores externos. Reutilizar los INTERLINKERs existentes (software y conocimiento) y a\u00f1adir sobre ellos, navegar a trav\u00e9s de ellos en el Cat\u00e1logo, \u00a1no reinventar la rueda!",
+                                "it": "A seconda della natura del servizio , si adottano strumenti e meccanismi diversi per realizzare un determinato servizio coprodotto. La realizzazione di un servizio coprodotto potrebbe comportare la programmazione, l'utilizzo di strumenti di progettazione grafica, la modellazione e la fabbricazione 3D e cos\u00ec via. Registra i progressi raggiunti durante la realizzazione dell'implementazione del servizio coprodotto, crea e condividi report sullo stato di avanzamento, crea collegamenti incrociati con i repository, documenta l'API del servizio coprodotto o il kit e/o le risorse generate per realizzare il servizio . Riconosci e traccia i contributi di diversi membri del team di coproduzione o contributori esterni. Riutilizza gli INTERLINKERs esistenti (software e conoscenza) e sfogliali nel Catalogo, non reinventare la ruota!",
                                 "lv": ""
                             },
                             "id": "objective-service-implementation",
                             "name_translations": {
                                 "en": "Service implementation",
-                                "es": "",
-                                "it": "",
+                                "es": "Implementaci\u00f3n del servicio",
+                                "it": "Implementazione del servizio",
                                 "lv": ""
                             },
                             "prerequisites": [
@@ -5831,15 +5831,15 @@
                                 {
                                     "description_translations": {
                                         "en": "Departing from the service design specification generated in DESIGN phase, implement or build the service functionality. Provide an accessible and inclusive mechanism to aid future consumption of the service. ",
-                                        "es": "",
-                                        "it": "",
+                                        "es": "Partiendo de la especificaci\u00f3n del dise\u00f1o del servicio generada en la fase de DISE\u00d1O, implementar o construir la funcionalidad del servicio. Proporcionar un mecanismo accesible e inclusivo para ayudar al consumo futuro del servicio. ",
+                                        "it": "A partire dalle specifiche di progettazione del servizio generate nella fase di PROGETTAZIONE, implementa o crea le funzionalit\u00e0 del servizio. Garantisci meccanismi accessibili e inclusivi per favorire la futura fruizione del servizio. ",
                                         "lv": ""
                                     },
                                     "id": "task-service-implementation",
                                     "name_translations": {
                                         "en": "Service implementation",
-                                        "es": "",
-                                        "it": "",
+                                        "es": "Implementaci\u00f3n del servicio",
+                                        "it": "Implementazione del servizio",
                                         "lv": ""
                                     },
                                     "prerequisites": [],
@@ -5859,14 +5859,14 @@
                             "description_translations": {
                                 "en": "Release the co-produced service. Ensure that is operational in a 24x7 basis.  Provide support to accomodate enhancements or fixes. Establish fluid mechanisms between service co-deliverers and consumers. Monitor fulfilment of obligations and responsabilities of distinct codeliverers.",
                                 "es": "Liberar el servicio coproducido. Garantizar que est\u00e9 operativo en r\u00e9gimen de 24x7. Proporcionar soporte para acomodar mejoras o correcciones. Establecer mecanismos fluidos entre los codirectores del servicio y los consumidores. Supervisar el cumplimiento de las obligaciones y responsabilidades de los distintos codistribuidores.",
-                                "it": "",
+                                "it": "Rilascia il servizio coprodotto. Assicurati che sia operativo 24x7. Fornisci supporto per integrare miglioramenti o correzioni. Stabilisci meccanismi fluidi tra i co-fornitori di servizi e i consumatori. Monitora l'adempimento degli obblighi e delle responsabilit\u00e0 di chi eroga il servizio",
                                 "lv": ""
                             },
                             "id": "objective-service-codelivery",
                             "name_translations": {
                                 "en": "Service codelivery",
-                                "es": "",
-                                "it": "",
+                                "es": "Servicio de entrega de c\u00f3digo",
+                                "it": "Coerogazione del servizio",
                                 "lv": ""
                             },
                             "prerequisites": [
@@ -5883,15 +5883,15 @@
                                 {
                                     "description_translations": {
                                         "en": "Create a map of actors taking responsability for the service continous delivery: release, maintenance, support and exploitation. Assign roles and responsabilities to the different actors. Valorize co-delivery activities so that codelivery contributions can be traced and assessed. Define a service delivery model canvas. ",
-                                        "es": "",
-                                        "it": "",
+                                        "es": "Crear un mapa de actores que se responsabilicen de la prestaci\u00f3n continua del servicio: liberaci\u00f3n, mantenimiento, soporte y explotaci\u00f3n. Asignar funciones y responsabilidades a los diferentes actores. Valorar las actividades de co-entrega para poder rastrear y evaluar las contribuciones de la co-entrega. Definir un lienzo de modelo de prestaci\u00f3n de servicios. ",
+                                        "it": "Crea una mappa degli attori che si assumono la responsabilit\u00e0 dell'erogazione continua del servizio: rilascio, manutenzione, supporto e sfruttamento. Assegnare ruoli e responsabilit\u00e0 ai diversi attori. Valorizzare le attivit\u00e0 di co-consegna in modo che i contributi di co-consegna possano essere tracciati e valutati. Definire un'area di disegno del modello di erogazione del servizio. ",
                                         "lv": ""
                                     },
                                     "id": "task-identify-all-the-actors-engaged-in-the-codelivery-their-role-and-responsability",
                                     "name_translations": {
                                         "en": "Identify all the actors engaged in the codelivery their role and responsability",
-                                        "es": "",
-                                        "it": "",
+                                        "es": "Identificar a todos los actores que participan en la entrega del c\u00f3digo, su papel y su responsabilidad",
+                                        "it": "Identificare tutti gli attori coinvolti nell'erogazione del servizio, il loro ruolo e responsabilit\u00e0",
                                         "lv": ""
                                     },
                                     "prerequisites": [],
@@ -5900,15 +5900,15 @@
                                 {
                                     "description_translations": {
                                         "en": "Organize activities among co-deliverers according to their roles and responsabilities. Ensure quality of service is maintained in the cooperative activities involved in service codelivery. Launch satisfaction and quality of service assessement surveys. ",
-                                        "es": "",
-                                        "it": "",
+                                        "es": "Organizar las actividades entre los codirectores seg\u00fan sus funciones y responsabilidades. Garantizar el mantenimiento de la calidad del servicio en las actividades cooperativas de prestaci\u00f3n de servicios. Poner en marcha encuestas de evaluaci\u00f3n de la satisfacci\u00f3n y la calidad del servicio. ",
+                                        "it": "Organizza le attivit\u00e0 tra i co-erogatori del servzio in base ai loro ruoli e responsabilit\u00e0. Garantisci che la qualit\u00e0 del servizio sia mantenuta nelle attivit\u00e0  coinvolte nell'erogazione del servizio. Avvia sondaggi di valutazione della soddisfazione e della qualit\u00e0 del servizio. ",
                                         "lv": ""
                                     },
                                     "id": "task-coordinate-the-actors-involved-in-the-codelivery-of-the-service",
                                     "name_translations": {
                                         "en": "Coordinate the actors involved in the codelivery of the service",
-                                        "es": "",
-                                        "it": "",
+                                        "es": "Coordinar a los actores que intervienen en la codistribuci\u00f3n del servicio",
+                                        "it": "Coordina gli attori coinvolti nella coerogazione del servizio",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -5922,15 +5922,15 @@
                                 {
                                     "description_translations": {
                                         "en": "Ensure fluid and responsive communication among co-deliverers team and more importantly among those consuming and reusing the delivered service and the co-delivery team. Establish a web-based communication mechanism which allows to trace the communication with all actors. ",
-                                        "es": "",
-                                        "it": "",
+                                        "es": "Garantizar una comunicaci\u00f3n fluida y receptiva entre el equipo de codirectores y, lo que es m\u00e1s importante, entre quienes consumen y reutilizan el servicio prestado y el equipo de codirectores. Establecer un mecanismo de comunicaci\u00f3n basado en la web que permita rastrear la comunicaci\u00f3n con todos los actores. ",
+                                        "it": "Garantisci una comunicazione fluida e reattiva tra il team di co-erogatori e, soprattutto, tra coloro che consumano e riutilizzano il servizio fornito e il team responsabile dell'erogazione del serivizio. Stabilisci un meccanismo di comunicazione basato sul web che consenta di tracciare la comunicazione con tutti gli attori coinvolti. ",
                                         "lv": ""
                                     },
                                     "id": "task-guarantee-transparent-communication-about-the-service-codelivered",
                                     "name_translations": {
                                         "en": "Guarantee transparent communication about the service codelivered",
-                                        "es": "",
-                                        "it": "",
+                                        "es": "Garantizar una comunicaci\u00f3n transparente sobre el servicio prestado",
+                                        "it": "Garantisci una comunicazione trasparente sul servizio coerogato",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -5955,7 +5955,7 @@
                     "description_translations": {
                         "en": "Which stakeholders should be involved in your co-production process? How to communicate with them about your project goals and the benefits of participation?\r\nLearn about the value of involving stakeholders. Use the available knowledge tools to understand who are the stakeholders to involve in your project and the role they can have. \r\nExploit communication templates to raise awareness, invite stakeholders, and create a lively network of motivated contributors. Define partnership agreements and make sure shared information is protected. Plan together the next steps and create working groups. ",
                         "es": "",
-                        "it": "",
+                        "it": "Quali stakeholders dovrebbero essere coinvolti nel processo di co-produzione? Come comunicare loro gli obiettivi del progetto e i benefici della partecipazione?\nImpara quale sia il valore di coinvolgere gli stakeholder. Utilizza gli strumenti di conoscenza messi a disposizione per comprendere chi sono gli stakeholder da coinvolgere nel progetto ed il ruolo che possono avere.\nSfrutta i modelli di comunicazione per attivare la consapevolezza, invitare gli stakeholder e creare una rete attiva di contributori motivati. Definisci degli accordi di partnership e assicura la protezione delle informazioni condivise. Pianifica in modo collaborativo i prossimi passi e crea dei sottogruppi di lavoro. ",
                         "lv": ""
                     },
                     "id": "phase-engage",
@@ -6080,7 +6080,7 @@
                             "description_translations": {
                                 "en": "Stakeholder engagement is about figuring out how to effectively communicate, collaborate, and interact with key people who have positive or negative influence, and may impact the success of your project.\r\nTo reach this objective you should carefully prepare an engagement plan, create awareness and communication material tailored to your audience, understand how to communicate benefit for stakeholders and, whenever this is forseen in your project, understand how to engage citizens in the co-production process. ",
                                 "es": "",
-                                "it": "",
+                                "it": "Il coinvolgimento degli stakeholder inizia dalla comprensione di come comunicare, collaborare ed interagire efficacemente con le persone chiave che possono impattare ed avere una influenza positiva o negativa sul successo del progetto.\nPer raggiungere questo obiettivo, prepara attentamente un piano di coinvolgimento, crea consapevolezza a partire da materiale di comunicazione tagliato per l'audience specifica, rifletti su come comunicare i potenziali benefici della partecipazione agli stakeholder e, quando previsto dal progetto, rifletti su come coinvolgere i cittadini nel processo di co-produzione. ",
                                 "lv": ""
                             },
                             "id": "objective-engage-stakeholders",
@@ -6569,7 +6569,7 @@
             "name_translations": {
                 "en": "Co-production schema to support co-refinement of public service descriptions",
                 "es": "Esquema de coproducci\u00f3n para apoyar el perfeccionamiento de las descripciones de los servicios p\u00fablicos",
-                "it": "",
+                "it": "Schema di co-produzione per guidare il raffinamento collaborativo di descrizioni di servizi pubblici",
                 "lv": ""
             },
             "phases": [
@@ -6577,14 +6577,14 @@
                     "description_translations": {
                         "en": "Follow the guidelines to discuss together, in a balanced and inclusive way, issues, beneficiaries, and priorities for the service to be designed. Find useful resources to conduct interviews, surveys and focus groups for a deeper understanding of stakeholders\u2019 and citizens\u2019 needs and requirements. Use the proposed material to organize service design workshops and develop mockups. Stop and reflect on the process so far with the co-evaluation checklists.",
                         "es": "",
-                        "it": "",
+                        "it": "Segui le linee guida per discutere insieme, in modo equilibrato e inclusivo, temi, beneficiari e priorit\u00e0 per il servizio da progettare. Trova risorse utili per condurre interviste, sondaggi e focus group per una comprensione pi\u00f9 profonda dei bisogni e delle esigenze degli stakeholder e dei cittadini. Utilizza il materiale proposto per organizzare sessioni di progettazione dei servizi e sviluppare mockup. Fermati e rifletti sul processo finora svolto con le checklist di co-valutazione.",
                         "lv": ""
                     },
                     "id": "phase-design",
                     "name_translations": {
                         "en": "Design",
                         "es": "",
-                        "it": "",
+                        "it": "Progettazione",
                         "lv": ""
                     },
                     "objectives": [
@@ -6592,14 +6592,14 @@
                             "description_translations": {
                                 "en": "Clearly define the problem to be addresses by the co-production team and agree on it. This  is an important step towards creating an effective and efficient solution. Different resources can be useful to this end: tips on how to create and share a common language among team members, resources to guide collaborative discussions, tools for ideas collection.",
                                 "es": "",
-                                "it": "",
+                                "it": "Definisci e concorda chiaramente il problema che deve essere affrontato dal team di co-produzione. Questo \u00e8 un passo importante verso la creazione di una soluzione efficace ed efficiente. Diverse risorse possono essere utili a tal fine: suggerimenti su come creare e condividere un linguaggio comune tra i membri del team, risorse per guidare discussioni collaborative, strumenti per la raccolta di idee.",
                                 "lv": ""
                             },
                             "id": "objective-focus-the-service-description-enhancement-problem-collaboratively",
                             "name_translations": {
                                 "en": "Focus the service description enhancement problem collaboratively",
                                 "es": "",
-                                "it": "",
+                                "it": "Focalizza in modo collaborativo il problema di migliorare le descrizioni di servizio",
                                 "lv": ""
                             },
                             "prerequisites": [],
@@ -6609,14 +6609,14 @@
                                     "description_translations": {
                                         "en": "Develop a shared language among the team members and encourage communication and ideas sharing with all the stakeholders. Developing a shared language is crucial to be able for stakeholders to: i) build a common ground for joint action, ii) share, mutually agree on, and understand a longterm research plan and protocol, iii) to ongoingly evaluate the success or failure of decisions.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Sviluppa un linguaggio condiviso tra i membri del team e incoraggia la comunicazione e la condivisione di idee con tutti gli stakeholder. Lo sviluppo di un linguaggio condiviso \u00e8 fondamentale per consentire alle parti interessate di: i) costruire un terreno comune per un'azione congiunta, ii) condividere, concordare reciprocamente e comprendere un piano e un protocollo di ricerca a lungo termine, iii) valutare costantemente il successo o il fallimento di decisioni.",
                                         "lv": ""
                                     },
                                     "id": "task-develop-a-shared-language",
                                     "name_translations": {
                                         "en": "Develop a shared language",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Sviluppa un linguaggio comune",
                                         "lv": ""
                                     },
                                     "prerequisites": [],
@@ -6628,14 +6628,14 @@
                                     "description_translations": {
                                         "en": "Refine with the collaboration of the stakeholders network the problem to be addressed. Service design is a problem-solving activity and it is important to clearly understand which is the challenge that the team addresses and how more information can be collected to understand how the service should be designed. Organize focus groups to discuss initial ideas and assumptions, refine them through structured methods and become aware about the missing information that still needs to be collected.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Affina grazie alla collaborazione della rete degli stakeholder il problema da affrontare. La progettazione del servizio \u00e8 un'attivit\u00e0 di problem solving ed \u00e8 importante capire chiaramente qual \u00e8 la sfida che il team affronta e come raccogliere maggiori informazioni per capire come dovrebbe essere progettato il servizio. Organizza focus group per discutere idee e ipotesi iniziali, perfezionali attraverso metodi strutturati e identifica le informazioni mancanti che devono ancora essere raccolte.",
                                         "lv": ""
                                     },
                                     "id": "task-collaboratively-problem-refinement",
                                     "name_translations": {
                                         "en": "Collaboratively problem refinement",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Raffina in modo collaborativo il problema",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -6650,14 +6650,14 @@
                                     "description_translations": {
                                         "en": "In case of need, enlarge the collection of ideas about the various aspects of the problem by launching a discussion forum.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "In caso di necessit\u00e0, amplia la raccolta di idee sui vari aspetti del problema avviando un forum di discussione.",
                                         "lv": ""
                                     },
                                     "id": "task-ideas-collection-for-problem-exploration-and-refinement",
                                     "name_translations": {
                                         "en": "Ideas collection for problem exploration and refinement",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Raccogli idee per l'esplorazione e il perfezionamento del problema",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -6672,14 +6672,14 @@
                                     "description_translations": {
                                         "en": "The ideas and service design concepts need to be translated into formal requirements to proceed with the implementation of the service. Follow the guidelines on how to collect, structure and communicate requirements and all the service specifications that clarify the objective of the service and how it should be developed. Use stardard representation formalism for requirements descriptions, as for example the Volere Requirements Specification template.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Le idee relative alla progettazione del servizio devono essere tradotti in requisiti formali per procedere all'implementazione del servizio. Segui le linee guida su come raccogliere, strutturare e comunicare i requisiti e tutte le specifiche del servizio che definiscono l'obiettivo del servizio e come dovrebbe essere sviluppato. Utilizza formalismi standard per le descrizioni dei requisiti, come ad esempio il modello di specifica dei requisiti di Volere.",
                                         "lv": ""
                                     },
                                     "id": "task-define-requirements-and-constraints-for-the-service",
                                     "name_translations": {
                                         "en": "Define requirements and constraints for the service",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Definisci i requisiti e i vincoli del servizio",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -6696,14 +6696,14 @@
                             "description_translations": {
                                 "en": "Before actually designing the service description refinement process, deeply explore the problem context, to gather factual data about users, organizations, needs and their relationships.",
                                 "es": "",
-                                "it": "",
+                                "it": "Prima di progettare il processo di raffinamento delle descrizioni di servizi, esplora a fondo il contesto del problema, per raccogliere dati concreti su utenti, organizzazioni e i loro bisogni e relazioni.",
                                 "lv": ""
                             },
                             "id": "objective-problem-exploration",
                             "name_translations": {
                                 "en": "Problem exploration",
                                 "es": "",
-                                "it": "",
+                                "it": "Esplorazione del problema",
                                 "lv": ""
                             },
                             "prerequisites": [
@@ -6724,14 +6724,14 @@
                                     "description_translations": {
                                         "en": "Gather all the relevant information about the service that will be produced to put the right processes in place.  It\u2019s advisable to establish different types of consultation depending on the groups targeted:\r\n\\n- Consult users about desired outcomes of the service\r\n- Consult service providers about the solutions that can give in response to the service demanded\r\n- Ask public authorities about the implications (organizational, regulatory, etc.) that affect to the service delivery\r\nOrganize focus groups, interviews or surveys to elicit the desired data.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Raccogli tutte le informazioni rilevanti sul servizio per mettere in atto i processi giusti. Si consiglia di stabilire diverse tipologie di consultazione a seconda dei gruppi a cui ci si rivolge:\n- Consultare gli utenti sui risultati desiderati del servizio\n- Consultare i fornitori di servizi sulle soluzioni che possono dare in risposta al servizio richiesto\n- Chiedere alle autorit\u00e0 pubbliche le implicazioni (organizzative, normative, ecc.) che incidono sull'erogazione del servizio\nOrganizza focus group, interviste o sondaggi per ottenere i dati desiderati.",
                                         "lv": ""
                                     },
                                     "id": "task-collect-data-about-users-and-their-behavior",
                                     "name_translations": {
                                         "en": "Collect data about users and their behavior",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Raccogli dati sugli utenti e sul loro comportamento",
                                         "lv": ""
                                     },
                                     "prerequisites": [],
@@ -6743,14 +6743,14 @@
                                     "description_translations": {
                                         "en": "Map in a synthetic representation all the key roles that can impact on the user, organization and service environment. The ecosystem map is built by first displaying all the entities, and then connecting them based on the type of value they exchange.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Mappa in una rappresentazione grafica gli elementi che possono avere un impatto sull'utente, sull'organizzazione e sull'ambiente di servizio. La mappa dell'ecosistema viene costruita visualizzando prima tutte le entit\u00e0 e poi collegandole in base al tipo di valore che si scambiano.",
                                         "lv": ""
                                     },
                                     "id": "task-ecosystem-mapping",
                                     "name_translations": {
                                         "en": "Ecosystem mapping",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Mappa dell'ecosistema",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -6767,14 +6767,14 @@
                             "description_translations": {
                                 "en": "Based on the description augmenter INTERLINKER create a new service description enhancement process.",
                                 "es": "",
-                                "it": "",
+                                "it": "Sulla base dell'INTERLINKER Description Augmenter crea un nuovo processo di raffinamento della descrizione di un servizio.",
                                 "lv": ""
                             },
                             "id": "objective-service-description-refinement-process-specification",
                             "name_translations": {
                                 "en": "Service description refinement process specification",
                                 "es": "",
-                                "it": "",
+                                "it": "Specifica il processo di raffinamento della descrizione di un servizio",
                                 "lv": ""
                             },
                             "prerequisites": [
@@ -6793,14 +6793,14 @@
                                     "description_translations": {
                                         "en": "Use the init procedure to launch it.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Utilizza la procedura \"init\" per lanciarlo.",
                                         "lv": ""
                                     },
                                     "id": "task-launch-description-augmenter",
                                     "name_translations": {
                                         "en": "Launch Description Augmenter",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Lancia il Description Augmenter",
                                         "lv": ""
                                     },
                                     "prerequisites": [],
@@ -6812,14 +6812,14 @@
                             "description_translations": {
                                 "en": "Before further going deep into the launch of the enhancement process. Stop and reflect about the design results obtained so far and about the actual feasibility and sustainability of what you are about to implement.",
                                 "es": "",
-                                "it": "",
+                                "it": "Prima di addentrarti nel lancio effettivo del processo di miglioramento delle descrizioni dei servizi, fermati a riflettere sui risultati di design ottenuti sino ad ora e sulla effettiva fattibilit\u00e0 e sostenibilit\u00e0 di quello che state per implementare.",
                                 "lv": ""
                             },
                             "id": "objective-sustainability",
                             "name_translations": {
                                 "en": "Sustainability",
                                 "es": "",
-                                "it": "",
+                                "it": "Sostenibilit\u00e0",
                                 "lv": ""
                             },
                             "prerequisites": [
@@ -6836,7 +6836,7 @@
                                     "description_translations": {
                                         "en": "Is the design output satisfactory?\r\nFollow the proposed checklist to understand if you are done with design or whether an iterative refinement cycle is recommended.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Il risultato del design \u00e8 soddisfacente?\nSegui la lista di controllo proposta e comprendi se il design pu\u00f2 considerarsi completato o se un ciclo di raffinamento iterativo \u00e8 raccomandabile.",
                                         "lv": ""
                                     },
                                     "id": "task-evaluation-of-codesign",
@@ -6853,14 +6853,14 @@
                                     "description_translations": {
                                         "en": "What are the incentives for those who can provide support / funding and for those developing / maintaining them?\r\nStop and reflect on how stakeholders collaboration in co-creation went so far. Follow the proposed checklist to understand whether further incentives and supportive measures are needed to ensure productive development and co-delivery phases.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Quali sono gli incentivi per coloro che forniscono supporto / finanziamenti al servizio e per coloro che lo sviluppano / mantengono?\nFermati e rifletti come ha funzionato fino ad ora la collaborazione fra gli stakeholder. Segui la lista di controllo per capire se siano necessari ulteriori incentivi e misure di supporto per assicurare uno sviluppo ed una erogazione del servizio produttivi.",
                                         "lv": ""
                                     },
                                     "id": "task-understand-motivations-and-incentives",
                                     "name_translations": {
                                         "en": "Understand motivations and incentives",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Comprendere le motivazioni e gli incentivi necessari",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -7007,14 +7007,14 @@
                     "description_translations": {
                         "en": "Which stakeholders should be involved in your co-production process? How to communicate with them about your project goals and the benefits of participation?\r\nLearn about the value of involving stakeholders. Use the available knowledge tools to understand who are the stakeholders to involve in your project and the role they can have. \r\nExploit communication templates to raise awareness, invite stakeholders, and create a lively network of motivated contributors. Define partnership agreements and make sure shared information is protected. Plan together the next steps and create working groups. ",
                         "es": "",
-                        "it": "",
+                        "it": "Quali stakeholders dovrebbero essere coinvolti nel processo di co-produzione? Come comunicare loro gli obiettivi del progetto e i benefici della partecipazione?\nImpara quale sia il valore di coinvolgere gli stakeholder. Utilizza gli strumenti di conoscenza messi a disposizione per comprendere chi sono gli stakeholder da coinvolgere nel progetto ed il ruolo che possono avere.\nSfrutta i modelli di comunicazione per attivare la consapevolezza, invitare gli stakeholder e creare una rete attiva di contributori motivati. Definisci degli accordi di partnership e assicura la protezione delle informazioni condivise. Pianifica in modo collaborativo i prossimi passi e crea dei sottogruppi di lavoro. ",
                         "lv": ""
                     },
                     "id": "phase-engage",
                     "name_translations": {
                         "en": "Engage",
                         "es": "Comprometer",
-                        "it": "",
+                        "it": "Coinvolgere",
                         "lv": ""
                     },
                     "objectives": [
@@ -7132,14 +7132,14 @@
                             "description_translations": {
                                 "en": "Stakeholder engagement is about figuring out how to effectively communicate, collaborate, and interact with key people who have positive or negative influence, and may impact the success of your project.\r\nTo reach this objective you should carefully prepare an engagement plan, create awareness and communication material tailored to your audience, understand how to communicate benefit for stakeholders and, whenever this is forseen in your project, understand how to engage citizens in the co-production process. ",
                                 "es": "",
-                                "it": "",
+                                "it": "Il coinvolgimento degli stakeholder inizia dalla comprensione di come comunicare, collaborare ed interagire efficacemente con le persone chiave che possono impattare ed avere una influenza positiva o negativa sul successo del progetto.\nPer raggiungere questo obiettivo, prepara attentamente un piano di coinvolgimento, crea consapevolezza a partire da materiale di comunicazione tagliato per l'audience specifica, rifletti su come comunicare i potenziali benefici della partecipazione agli stakeholder e, quando previsto dal progetto, rifletti su come coinvolgere i cittadini nel processo di co-produzione. ",
                                 "lv": ""
                             },
                             "id": "objective-engage-stakeholders",
                             "name_translations": {
                                 "en": "Engage stakeholders",
                                 "es": "",
-                                "it": "",
+                                "it": "Coinvolgere gli stakeholder",
                                 "lv": ""
                             },
                             "prerequisites": [
@@ -7407,7 +7407,7 @@
                     "description_translations": {
                         "en": "Follow the guidelines to discuss together, in a balanced and inclusive way, issues, beneficiaries, and priorities for the service to be designed. Find useful resources to conduct interviews, surveys and focus groups for a deeper understanding of stakeholders\u2019 and citizens\u2019 needs and requirements. Use the proposed material to organize service design workshops and develop mockups. Stop and reflect on the process so far with the co-evaluation checklists.",
                         "es": "",
-                        "it": "",
+                        "it": "Segui le linee guida per discutere insieme, in modo equilibrato e inclusivo, temi, beneficiari e priorit\u00e0 per il servizio da progettare. Trova risorse utili per condurre interviste, sondaggi e focus group per una comprensione pi\u00f9 profonda dei bisogni e delle esigenze degli stakeholder e dei cittadini. Utilizza il materiale proposto per organizzare sessioni di progettazione dei servizi e sviluppare mockup. Fermati e rifletti sul processo finora svolto con le checklist di co-valutazione.",
                         "lv": ""
                     },
                     "id": "phase-design",
@@ -7422,7 +7422,7 @@
                             "description_translations": {
                                 "en": "Clearly define the problem to be addresses by the co-production team and agree on it. This  is an important step towards creating an effective and efficient solution. Different resources can be useful to this end: tips on how to create and share a common language among team members, resources to guide collaborative discussions, tools for ideas collection.",
                                 "es": "",
-                                "it": "",
+                                "it": "Definisci e concorda chiaramente il problema che deve essere affrontato dal team di co-produzione. Questo \u00e8 un passo importante verso la creazione di una soluzione efficace ed efficiente. Diverse risorse possono essere utili a tal fine: suggerimenti su come creare e condividere un linguaggio comune tra i membri del team, risorse per guidare discussioni collaborative, strumenti per la raccolta di idee.",
                                 "lv": ""
                             },
                             "id": "objective-focus-the-problem-collaboratively",
@@ -7444,7 +7444,7 @@
                                     "description_translations": {
                                         "en": "Refine with the collaboration of the stakeholders network the problem to be addressed. Service design is a problem-solving activity and it is important to clearly understand which is the challenge that the team addresses and how more information can be collected to understand how the service should be designed. Organize focus groups to discuss initial ideas and assumptions, refine them through structured methods and become aware about the missing information that still needs to be collected.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Affina grazie alla collaborazione della rete degli stakeholder il problema da affrontare. La progettazione del servizio \u00e8 un'attivit\u00e0 di problem solving ed \u00e8 importante capire chiaramente qual \u00e8 la sfida che il team affronta e come raccogliere maggiori informazioni per capire come dovrebbe essere progettato il servizio. Organizza focus group per discutere idee e ipotesi iniziali, perfezionali attraverso metodi strutturati e identifica le informazioni mancanti che devono ancora essere raccolte.",
                                         "lv": ""
                                     },
                                     "id": "task-collaboratively-hackathon-problem-refinement",
@@ -7461,7 +7461,7 @@
                                     "description_translations": {
                                         "en": "In case of need, enlarge the collection of ideas about the various aspects of the problem by launching a discussion forum.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "In caso di necessit\u00e0, amplia la raccolta di idee sui vari aspetti del problema avviando un forum di discussione.",
                                         "lv": ""
                                     },
                                     "id": "task-ideas-collection-for-hackathon-exploration-and-refinement",
@@ -7483,7 +7483,7 @@
                                     "description_translations": {
                                         "en": "Draft an initial description (or multiple optional descriptions) of the potential service: what it does, who benefits from the service, who helps delivering it. Use description templates to facilitate your task.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Abbozza una descrizione iniziale (o pi\u00f9 descrizioni) del potenziale servizio: cosa fa? chi beneficia del servizio? chi lo eroga? Usa i modelli di descrizione per facilitare questa attivit\u00e0.",
                                         "lv": ""
                                     },
                                     "id": "task-sketch-an-initial-idea-of-the-hackathon-theme-plan-submission-evaluation-process",
@@ -7509,7 +7509,7 @@
                             "description_translations": {
                                 "en": "Ideation is the preliminary phase of service design in which the design team is created, the collected data are reviewed, and futher ideas are sougth if necessary.",
                                 "es": "",
-                                "it": "",
+                                "it": "L'ideazione \u00e8 la fase preliminare della progettazione del servizio; in questa fase viene creato il team di progettazione, vengono esaminati i dati raccolti e, se necessario, vengono elaborate ulteriori idee.",
                                 "lv": ""
                             },
                             "id": "objective-ideation",
@@ -7556,7 +7556,7 @@
                                     "description_translations": {
                                         "en": "The ideas and service design concepts need to be translated into formal requirements to proceed with the implementation of the service. Follow the guidelines on how to collect, structure and communicate requirements and all the service specifications that clarify the objective of the service and how it should be developed. Use stardard representation formalism for requirements descriptions, as for example the Volere Requirements Specification template.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Le idee relative alla progettazione del servizio devono essere tradotti in requisiti formali per procedere all'implementazione del servizio. Segui le linee guida su come raccogliere, strutturare e comunicare i requisiti e tutte le specifiche del servizio che definiscono l'obiettivo del servizio e come dovrebbe essere sviluppato. Utilizza formalismi standard per le descrizioni dei requisiti, come ad esempio il modello di specifica dei requisiti di Volere.",
                                         "lv": ""
                                     },
                                     "id": "task-define-requirements-and-constraints-for-the-hackathon-plan-submission-evaluation-process",
@@ -7582,7 +7582,7 @@
                             "description_translations": {
                                 "en": "The ideas and service design concepts need to be translated into formal requirements and service specifications to proceed with the implementation of the service. Follow the guidelines to collect, structure and communicate requirements and all the service specifications that clarify the objective of the service and how it should be developed.",
                                 "es": "",
-                                "it": "",
+                                "it": "Le idee relative alla progettazione del servizio devono essere tradotti in requisiti formali per procedere all'implementazione del servizio. Segui le linee guida su come raccogliere, strutturare e comunicare i requisiti e tutte le specifiche del servizio che definiscono l'obiettivo del servizio e come dovrebbe essere sviluppato.",
                                 "lv": ""
                             },
                             "id": "objective-service-specification",
@@ -7759,14 +7759,14 @@
                                     "description_translations": {
                                         "en": "What are the incentives for those who can provide support / funding and for those developing / maintaining them?\r\nStop and reflect on how stakeholders collaboration in co-creation went so far. Follow the proposed checklist to understand whether further incentives and supportive measures are needed to ensure productive development and co-delivery phases.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Quali sono gli incentivi per coloro che forniscono supporto / finanziamenti al servizio e per coloro che lo sviluppano / mantengono?\nFermati e rifletti come ha funzionato fino ad ora la collaborazione fra gli stakeholder. Segui la lista di controllo per capire se siano necessari ulteriori incentivi e misure di supporto per assicurare uno sviluppo ed una erogazione del servizio produttivi.",
                                         "lv": ""
                                     },
                                     "id": "task-understand-motivations-and-incentives",
                                     "name_translations": {
                                         "en": "Understand motivations and incentives",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Comprendi le motivazioni e gli incentivi necessari",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -7791,7 +7791,7 @@
                     "description_translations": {
                         "en": "Browse the catalogue of INTERLINKERs to find reusable building blocks for the implementation of your service. Monitor development advancement in the project workplan. Stop and reflect on the process so far with the co-evaluation checklists that help verify compliance with standards and regulations. Use incentives and reward tools made available by the INTERLINK platform to sustain stakeholders\u2019 and citizens\u2019 contribution to service delivery. Monitor quality of service and citizens\u2019 satisfaction with carefully prepared surveys. Stop and reflect on how co-delivery is going with the co-evaluation checklists.",
                         "es": "",
-                        "it": "",
+                        "it": "Sfoglia il catalogo degli INTERLINKERs per trovare i building block riutilizzabili per l'implementazione del tuo servizio. Monitora l'avanzamento dello sviluppo nel piano di lavoro del progetto. Fermati e rifletti sul processo finora svolto con le checklist di co-valutazione che aiutano a verificare la conformit\u00e0 a standard e regolamenti. Utilizzare gli incentivi e gli strumenti di ricompensa messi a disposizione dalla piattaforma INTERLINK per sostenere il contributo delle parti interessate e dei cittadini all'erogazione dei servizi. Monitora la qualit\u00e0 del servizio e la soddisfazione dei cittadini con sondaggi accuratamente preparati. Fermati e rifletti su come sta andando la co-consegna con le checklist di co-valutazione.",
                         "lv": ""
                     },
                     "id": "phase-run",
@@ -7825,7 +7825,7 @@
                                     "description_translations": {
                                         "en": "Identify the dependencies and environment needed for the service co-production and co-delivery. Configure and deploy (if not already available) the dependencies and environment. Document the progress towards realizing the technical aspects associated to the co-produced service. ",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Identifica le dipendenze e l'ambiente necessario per la co-produzione e l'erogazione del servizio. Configura e rilascia (se non gi\u00e0 disponibili) le dipendenze e l'ambiente. Documenta i progressi relativi all'implementazione degli aspetti tecnici associati al servizio coprodotto. ",
                                         "lv": ""
                                     },
                                     "id": "task-technical-implementation-and-deployment",
@@ -7852,7 +7852,7 @@
                             "description_translations": {
                                 "en": "Depending on the nature of the co-produced service, you main adopt different tools and mechanisms to realize a given co-produced service. Realizing a co-produced service might entail programming, using graphical design tools, 3D modelling and fabrication and so on. Register progress achieved during the realization of the implementation of the co-produced service, upload progress reports, cross-link with repositories where progress is being realized, document the co-produced service API or the kit and/or resources generated to realize the service. Acknowledge and trace the contributions of different co-production team members or external contributors. Reuse existing INTERLINKERs (software and knowledge) and add on top of them, browse through them in the Catalogue, do not reinvent the wheel!",
                                 "es": "",
-                                "it": "",
+                                "it": "A seconda della natura del servizio , si adottano strumenti e meccanismi diversi per realizzare un determinato servizio coprodotto. La realizzazione di un servizio coprodotto potrebbe comportare la programmazione, l'utilizzo di strumenti di progettazione grafica, la modellazione e la fabbricazione 3D e cos\u00ec via. Registra i progressi raggiunti durante la realizzazione dell'implementazione del servizio coprodotto, crea e condividi report sullo stato di avanzamento, crea collegamenti incrociati con i repository, documenta l'API del servizio coprodotto o il kit e/o le risorse generate per realizzare il servizio . Riconosci e traccia i contributi di diversi membri del team di coproduzione o contributori esterni. Riutilizza gli INTERLINKERs esistenti (software e conoscenza) e sfogliali nel Catalogo, non reinventare la ruota!",
                                 "lv": ""
                             },
                             "id": "objective-service-implementation",
@@ -7959,7 +7959,7 @@
                             "description_translations": {
                                 "en": "Release the co-produced service. Ensure that is operational in a 24x7 basis.  Provide support to accomodate enhancements or fixes. Establish fluid mechanisms between service co-deliverers and consumers. Monitor fulfilment of obligations and responsabilities of distinct codeliverers.",
                                 "es": "",
-                                "it": "",
+                                "it": "Rilascia il servizio coprodotto. Assicurati che sia operativo 24x7. Fornisci supporto per integrare miglioramenti o correzioni. Stabilisci meccanismi fluidi tra i co-fornitori di servizi e i consumatori. Monitora l'adempimento degli obblighi e delle responsabilit\u00e0 di chi eroga il servizio.",
                                 "lv": ""
                             },
                             "id": "objective-hackathon-celebration",
@@ -7984,7 +7984,7 @@
                                     "description_translations": {
                                         "en": "Organize activities among co-deliverers according to their roles and responsabilities. Ensure quality of service is maintained in the cooperative activities involved in service codelivery. Launch satisfaction and quality of service assessement surveys. ",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Organizza le attivit\u00e0 tra i co-erogatori del servizio in base ai loro ruoli e responsabilit\u00e0. Garantisci che la qualit\u00e0 del servizio sia mantenuta nelle attivit\u00e0 coinvolte nell'erogazione del servizio. Avvia sondaggi di valutazione della soddisfazione e della qualit\u00e0 del servizio. ",
                                         "lv": ""
                                     },
                                     "id": "task-coordinate-the-actors-involved-in-the-codelivery-of-the-hackathon-organizers-evaluators-participants",
@@ -8001,7 +8001,7 @@
                                     "description_translations": {
                                         "en": "Ensure fluid and responsive communication among co-deliverers team and more importantly among those consuming and reusing the delivered service and the co-delivery team. Establish a web-based communication mechanism which allows to trace the communication with all actors. ",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Garantisci una comunicazione fluida e reattiva tra il team di co-erogatori e, soprattutto, tra coloro che consumano e riutilizzano il servizio fornito e il team responsabile dell'erogazione del servizio. Stabilisci un meccanismo di comunicazione basato sul web che consenta di tracciare la comunicazione con tutti gli attori coinvolti. ",
                                         "lv": ""
                                     },
                                     "id": "task-guarantee-transparent-communication-with-participants-in-the-hackathon",
@@ -8164,7 +8164,7 @@
                     "description_translations": {
                         "en": "Which stakeholders should be involved in your co-production process? How to communicate with them about your project goals and the benefits of participation?\r\nLearn about the value of involving stakeholders. Use the available knowledge tools to understand who are the stakeholders to involve in your project and the role they can have. \r\nExploit communication templates to raise awareness, invite stakeholders, and create a lively network of motivated contributors. Define partnership agreements and make sure shared information is protected. Plan together the next steps and create working groups. ",
                         "es": "",
-                        "it": "",
+                        "it": "Quali stakeholders dovrebbero essere coinvolti nel processo di co-produzione? Come comunicare loro gli obiettivi del progetto e i benefici della partecipazione?\nImpara quale sia il valore di coinvolgere gli stakeholder. Utilizza gli strumenti di conoscenza messi a disposizione per comprendere chi sono gli stakeholder da coinvolgere nel progetto ed il ruolo che possono avere.\nSfrutta i modelli di comunicazione per attivare la consapevolezza, invitare gli stakeholder e creare una rete attiva di contributori motivati. Definisci degli accordi di partnership e assicura la protezione delle informazioni condivise. Pianifica in modo collaborativo i prossimi passi e crea dei sottogruppi di lavoro. ",
                         "lv": ""
                     },
                     "id": "phase-engage",
@@ -8289,7 +8289,7 @@
                             "description_translations": {
                                 "en": "Stakeholder engagement is about figuring out how to effectively communicate, collaborate, and interact with key people who have positive or negative influence, and may impact the success of your project.\r\nTo reach this objective you should carefully prepare an engagement plan, create awareness and communication material tailored to your audience, understand how to communicate benefit for stakeholders and, whenever this is forseen in your project, understand how to engage citizens in the co-production process. ",
                                 "es": "",
-                                "it": "",
+                                "it": "Il coinvolgimento degli stakeholder inizia dalla comprensione di come comunicare, collaborare ed interagire efficacemente con le persone chiave che possono impattare ed avere una influenza positiva o negativa sul successo del progetto.\nPer raggiungere questo obiettivo, prepara attentamente un piano di coinvolgimento, crea consapevolezza a partire da materiale di comunicazione tagliato per l'audience specifica, rifletti su come comunicare i potenziali benefici della partecipazione agli stakeholder e, quando previsto dal progetto, rifletti su come coinvolgere i cittadini nel processo di co-produzione. ",
                                 "lv": ""
                             },
                             "id": "objective-engage-stakeholders",
