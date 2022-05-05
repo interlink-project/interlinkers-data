@@ -207,7 +207,7 @@ const InterlinkerDetails = ({ interlinker, onRelatedInterlinkerClick }) => {
                 This resource cannot be displayed here. Instead...
               </Typography>
             </Box>
-            {softwareinterlinker.integration && softwareinterlinker.integration.preview && <>
+            {softwareinterlinker.preview && <>
               <Box sx={{ mt: 2 }}>
                 <Typography
                   align='center'
@@ -229,12 +229,12 @@ const InterlinkerDetails = ({ interlinker, onRelatedInterlinkerClick }) => {
                   variant='contained'
                   onClick={() => window.open(interlinker.link + "/preview", "_blank")}
                 >
-                  {softwareinterlinker.integration.preview_text || "Preview resource externally"}
+                  {softwareinterlinker.preview_text || "Preview resource externally"}
                 </Button>
               </Box>
             </>}
 
-            {softwareinterlinker.integration && !softwareinterlinker.integration.preview && softwareinterlinker.integration.download && <>
+            {softwareinterlinker && !softwareinterlinker.preview && softwareinterlinker.download && <>
               <Box sx={{ mt: 2 }}>
                 <Typography
                   align='center'
@@ -256,7 +256,7 @@ const InterlinkerDetails = ({ interlinker, onRelatedInterlinkerClick }) => {
                   variant='contained'
                   onClick={() => window.open(interlinker.link + "/download", "_blank")}
                 >
-                  {softwareinterlinker.integration.download_text || "Download resource"}
+                  {softwareinterlinker.download_text || "Download resource"}
                 </Button>
               </Box>
             </>}

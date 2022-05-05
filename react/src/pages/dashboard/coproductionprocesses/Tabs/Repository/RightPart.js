@@ -347,7 +347,7 @@ const RightPart = () => {
                                     handleMenuClose()
                                 }
                                 }>
-                                    <Avatar variant="rounded" src={si.logotype_link} sx={{ mr: 2, height: "20px", width: "20px" }} />{si.integration.instantiate_text}
+                                    <Avatar variant="rounded" src={si.logotype_link} sx={{ mr: 2, height: "20px", width: "20px" }} />{si.instantiate_text}
                                 </MenuItem>)}
 
                         </Menu>

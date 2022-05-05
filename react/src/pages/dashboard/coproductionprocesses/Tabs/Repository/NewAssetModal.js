@@ -46,12 +46,12 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
     const isSoftware = selectedInterlinker.nature === "softwareinterlinker"
     const isKnowledge = selectedInterlinker.nature === "knowledgeinterlinker"
     const isExternal = selectedInterlinker.nature === "externalinterlinker" || selectedInterlinker.nature === "externalknowledgeinterlinker"
-    const can_open_in_modal = isSoftware && selectedInterlinker.integration.open_in_modal
+    const can_open_in_modal = isSoftware && selectedInterlinker.open_in_modal
 
     // if knowledgeinterlinker is previewable
-    const previewable = isKnowledge && selectedInterlinker.softwareinterlinker.integration && selectedInterlinker.softwareinterlinker.integration.preview
-    const downloadable = isKnowledge && selectedInterlinker.softwareinterlinker.integration && selectedInterlinker.softwareinterlinker.integration.download
-    const instantiatable = (isSoftware && selectedInterlinker.integration && selectedInterlinker.integration.instantiate) || (isKnowledge && selectedInterlinker.softwareinterlinker.integration && selectedInterlinker.softwareinterlinker.integration.instantiate)
+    const previewable = isKnowledge && selectedInterlinker.softwareinterlinker.preview
+    const downloadable = isKnowledge && selectedInterlinker.softwareinterlinker.download
+    const instantiatable = (isSoftware && selectedInterlinker.instantiate) || (isKnowledge && selectedInterlinker.softwareinterlinker.instantiate)
 
     const mounted = useMounted()
 
@@ -270,7 +270,7 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
             </DialogContent>
             {activeStep === 0 && <DialogActions sx={{ bgcolor: "background.default", justifyContent: "center" }}>
                 {previewable && <Button startIcon={<Preview />} sx={{ my: 2, mx: 4 }} autoFocus variant="outlined" color="warning" onClick={() => window.open(selectedInterlinker.link + "/preview", "_blank")}>
-                    {selectedInterlinker.softwareinterlinker.integration.preview_text} (it will be not related to project, for features exploration)
+                    {selectedInterlinker.softwareinterlinker.preview_text} (it will be not related to project, for features exploration)
                 </Button>}
                 {downloadable && <Button startIcon={<Download />} sx={{ my: 2, mx: 4 }} autoFocus variant="outlined" color="warning" onClick={() => window.open(selectedInterlinker.link + "/download", "_blank")}>
                     Download locally as resource not related to project (for features exploration)
