@@ -31,7 +31,7 @@
     "title": "Titolo",
     "body": "Corpo",
     "Send": "Invia",
-    "login-required": "Autenticazione richiesta",
+    "login-required": "Richiesta autenticazione",
     "login-required-description": "Devi essere autenticato per accedere a questa sezione.",
     "Login": "Login",
     "Logout": "Logout",
