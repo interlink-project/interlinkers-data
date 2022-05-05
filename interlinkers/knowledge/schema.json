@@ -105,9 +105,10 @@
             "type": "string"
         },
         "languages": {
-            "title": "Languages",
             "type": "array",
-            "items": {}
+            "items": {
+                "$ref": "#/definitions/Languages"
+            }
         },
         "environments": {
             "type": "array",
@@ -231,6 +232,16 @@
                 "open_document",
                 "structured_format",
                 "sofware"
+            ]
+        },
+        "Languages": {
+            "title": "Languages",
+            "description": "An enumeration.",
+            "enum": [
+                "en",
+                "es",
+                "lv",
+                "it"
             ]
         },
         "Environments": {

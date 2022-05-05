@@ -5,14 +5,8 @@ from slugify import slugify
 
 from problemprofiles.problemprofiles import WithProblemProfiles
 from pydantic import BaseModel, Extra, FilePath, HttpUrl, conlist, validator
-from configuration import Languages
+from configuration import Languages, Environments
 # https://docs.google.com/spreadsheets/d/1tJ2BfX4EOdbBqEbrJWg8a3MENw13vYiPZM_S4wWWgWQ/edit#gid=0
-
-class Environments(Enum):
-    varam = "varam"
-    mef = "mef"
-    zgz = "zgz"
-
 
 class FormTypes(Enum):
     software = "software"
@@ -190,5 +184,5 @@ class InterlinkerSchema(WithProblemProfiles, extra=Extra.forbid):
     # AUTOMATICALLY GENERATED
     id: Optional[str]
     type: Optional[str]
-    languages: Optional[list]
+    languages: Optional[List[Languages]]
     environments: Optional[List[Environments]]
