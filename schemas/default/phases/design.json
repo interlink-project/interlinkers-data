@@ -297,7 +297,7 @@
                             "type": "previous"
                         }
                     ],
-                    "id": "task-organize-a-braistorming"
+                    "id": "task-organize-a-brainstorming"
                 },
                 {
                     "name_translations": {
@@ -315,7 +315,7 @@
                     "problemprofiles": [],
                     "prerequisites": [
                         {
-                            "item": "task-organize-a-braistorming",
+                            "item": "task-organize-a-brainstorming",
                             "type": "previous"
                         }
                     ],
