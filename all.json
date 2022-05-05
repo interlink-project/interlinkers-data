@@ -1624,7 +1624,7 @@
                     "en": "This is a model of End Users' Perceptions Questionnaire. It aims to measure end-users' perceptions on user-based quality, value-based quality, trust and acceptance. This questionnaire is thought to be answered by users of traditional e-services and also those who co-produced them through INTERLINK.",
                     "es": "",
                     "it": "",
-                    "lv": ""
+                    "lv": "\u0160is ir gala lietot\u0101ju uztveres aptaujas modelis. T\u0101s m\u0113r\u0137is ir izm\u0113r\u012bt gala lietot\u0101ju uztveri un uz lietot\u0101ju balst\u012bto kvalit\u0101ti, uz v\u0113rt\u012bb\u0101m balst\u012bto kvalit\u0101ti, uzticam\u012bbu un pie\u0146em\u0161anu. \u0160\u012b aptauja paredz\u0113ta tipisko e-pakalpojumu lietot\u0101jiem, k\u0101 ar\u012b tiem lietot\u0101jiem, kuri kop\u012bgi tos veidoju\u0161i INTERLINK platform\u0101."
                 },
                 "difficulty": "easy",
                 "domain": "",
@@ -1650,7 +1650,7 @@
                     "en": "Final end user's questionnaire- Quality of Service",
                     "es": "",
                     "it": "",
-                    "lv": ""
+                    "lv": "Gala lietot\u0101ju nosl\u0113guma aptauja - pakalpojuma kvalit\u0101te"
                 },
                 "problemprofiles": [
                     "UND_PROBLEM_3",
@@ -1879,7 +1879,7 @@
                     "en": "<p>Instructions on how to set up a research activity based on focus groups, for a co-production project.</p>",
                     "es": "",
                     "it": "",
-                    "lv": ""
+                    "lv": "<p>Pam\u0101c\u012bba p\u0113tniec\u012bbas aktivit\u0101\u0161u veik\u0161anai koprades projekt\u0101, izmantojot fokusgrupas.</p>"
                 },
                 "difficulty": "easy",
                 "domain": "",
@@ -1905,7 +1905,7 @@
                     "en": "Focus Group Guidelines",
                     "es": "",
                     "it": "",
-                    "lv": ""
+                    "lv": "Fokusgrupu vadl\u012bnijas"
                 },
                 "problemprofiles": [
                     "UND_PROBLEM_3",
@@ -1944,7 +1944,7 @@
                     "en": "<p>This is a model of a questionnaire aimed to collect demographics and activity satisfaction scores from participants to project events and activities.</p>",
                     "es": "",
                     "it": "",
-                    "lv": ""
+                    "lv": "<p>\u0160is ir aptaujas modelis projekta aktivit\u0101t\u0113s iesaist\u012bto dal\u012bbnieku demogr\u0101fisko datu iev\u0101k\u0161anai un apmierin\u0101t\u012bbas m\u0113r\u012b\u0161anai.</p>"
                 },
                 "difficulty": "easy",
                 "domain": "",
@@ -1970,7 +1970,7 @@
                     "en": "Demographic and activity satisfaction questionnaire",
                     "es": "",
                     "it": "",
-                    "lv": ""
+                    "lv": "Demogr\u0101fisko datu un apmierin\u0101t\u012bbas aptauja"
                 },
                 "problemprofiles": [
                     "UND_PROBLEM_3",
@@ -2903,8 +2903,8 @@
                 "licence": "public_domain",
                 "name_translations": {
                     "en": "Collaborative problem refinement",
-                    "es": "",
-                    "it": "",
+                    "es": "Perfeccionamiento de problemas en colaboraci\u00f3n",
+                    "it": "Raffinamento collaborativo del problema",
                     "lv": "Uz sadarb\u012bbu v\u0113rsta uzdevuma preciz\u0113\u0161ana"
                 },
                 "problemprofiles": [
@@ -3005,7 +3005,7 @@
                     "en": "<p>This resource provides a skeleton to organize a focus group to investigate the problem that needs to be solved by a digital service / functionality. It addresses a series of questions about potential users, current practices, critical aspects and  desiderata.</p>",
                     "es": "",
                     "it": "",
-                    "lv": ""
+                    "lv": "<p>\u0160is resurss pied\u0101v\u0101 ietvaru fokusgrupu organiz\u0113\u0161anai, lai izp\u0113t\u012btu probl\u0113mu, kuru nepiecie\u0161ams atrisin\u0101t ar digit\u0101lo pakalpojumu/funkcionalit\u0101ti. Tas apkopo jaut\u0101jumu kopumu par potenci\u0101lajiem lietot\u0101jiem, eso\u0161o praksi, kritiskajiem aspektiem un v\u0113lm\u0113m.</p>"
                 },
                 "difficulty": "easy",
                 "domain": "",
@@ -3031,7 +3031,7 @@
                     "en": "Focus Group on problem exploration for new digital functionality",
                     "es": "",
                     "it": "",
-                    "lv": ""
+                    "lv": "Fokusgrupa probl\u0113mu izp\u0113tei jaunas digit\u0101l\u0101s funkcionalit\u0101tes rad\u012b\u0161anai"
                 },
                 "problemprofiles": [
                     "UND_PROBLEM_3",
