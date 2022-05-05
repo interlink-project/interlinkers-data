@@ -1,9 +1,9 @@
-from typing import Dict, List
+import enum
+from typing import Dict, List, Optional, Union
 
+from configuration import Environments, Languages
 from problemprofiles.problemprofiles import WithProblemProfiles
 from pydantic import BaseModel, Extra, conlist, validator
-
-import enum
 
 
 class Licences(enum.Enum):
@@ -47,3 +47,5 @@ class CoproductionSchema(WithNameAndDesc, extra=Extra.forbid):
     tags_translations: Dict[str,  conlist(str, min_items=1)]
     author: str
     licence: Licences
+    languages: Optional[List[Languages]]
+    environments: Optional[List[Environments]]
