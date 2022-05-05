@@ -50,9 +50,17 @@ with open("./problemprofiles/problemprofiles.json") as json_file:
 ### SCHEMAS
 
 for schema_metadata_path in Path("./schemas").glob("**/metadata.json"):
-    with open(str(schema_metadata_path)) as json_file:
+    schema_data = None
+    str_schema_metadata_path = str(schema_metadata_path)
 
-        schema_metadata = json.load(json_file)
+    with open(str_schema_metadata_path) as json_file:
+        schema_data = json.load(json_file)
+        # set languages depending on current values of name and description
+        # schema_data["languages"] = list(set(schema_data["name_translations"].keys()) & set(schema_data["description_translations"].keys()))
+        # schema_data["environments"] = ["varam", "mef", "zgz"]
+
+        schema_metadata = {**schema_data}
+
         parent = str(schema_metadata_path.parents[0])
         phases = os.listdir(parent + "/phases")
 
@@ -103,6 +111,8 @@ for schema_metadata_path in Path("./schemas").glob("**/metadata.json"):
         dicts["schemas"].append(schema_metadata)
         add_to_weblate("", weblate_schemas, schema_metadata)
 
+    with open(str_schema_metadata_path, "w") as json_file:
+        json.dump(schema_data, json_file, indent=4, sort_keys=True) # important to not sort keys
 
 ### INTERLINKERS
 

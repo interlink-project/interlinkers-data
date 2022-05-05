@@ -1,11 +1,4 @@
 {
-    "id": "hackathon",
-    "name_translations": {
-        "en": "Hackathon creation process",
-        "es": "Esquema para la creaci\u00f3n de un Hackathon",
-        "it": "",
-        "lv": ""
-    },
     "author": "",
     "description_translations": {
         "en": "The INTERLINK project allows for the definition of purpose-specific co-production processes. In this case, this co-production process is designed to guide ideation, preparation, launch and exploitation of a Hackathon devised to address some societal challenges in cooperation between public administrations, citizenry and other PA\u2019s stakeholders, namely, SMEs, academia or non-profit organizations. It is composed of 4 main phases: a) ENGAGE \u2013 understanding, approaching and engaging the right stakeholders; b) DESIGN \u2013 follow the guidelines to discuss together, in a balanced and inclusive way, issues, beneficiaries, and priorities for the hackathon to be designed; c) RUN \u2013 browse the catalogue of INTERLINKERs to find reusable building blocks for the implementation of the hackathon and its launch; and d) EXPLOIT \u2013 realize the results of the hackathons by reaching agreements to bring the proposed service ideas and mock-ups into reality",
@@ -13,7 +6,25 @@
         "it": "",
         "lv": ""
     },
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
+    "id": "hackathon",
+    "languages": [
+        "en",
+        "es",
+        "it",
+        "lv"
+    ],
     "licence": "permissive",
+    "name_translations": {
+        "en": "Hackathon creation process",
+        "es": "Esquema para la creaci\u00f3n de un Hackathon",
+        "it": "",
+        "lv": ""
+    },
     "tags_translations": {
         "en": [
             "hackathon",

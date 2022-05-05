@@ -1,23 +1,34 @@
 {
+    "author": "",
+    "description_translations": {
+        "en": "The INTERLINK project has defined a generic co-production process which can accommodate any co-production endeavour. It is composed of two main phases to be followed by co-producers: a) Co-design phase. It concerns activities that incorporate 'the experience of users and their communities' into the creation, planning, or arrangements of public services. In it, the co-production team is created and starts working together to define the service to be co-produced. This phase entails two sub-phases: Engagement and Design; and b) Co-delivery phase. It is a joint effort by public authorities and stakeholders to provide and improve public services where the service is implemented and delivered in a sustainable manner. The co-delivery phase entails two sub-phases: Build and Sustain.",
+        "es": "El proyecto INTERLINK ha definido un proceso de coproducci\u00f3n gen\u00e9rico que puede dar cabida a cualquier esfuerzo de coproducci\u00f3n. Se compone de dos fases principales que deben seguir los coproductores: a) Fase de codise\u00f1o. Se refiere a las actividades que incorporan \"la experiencia de los usuarios y de sus comunidades\" en la creaci\u00f3n, planificaci\u00f3n o disposici\u00f3n de los servicios p\u00fablicos. En ella, se crea el equipo de coproducci\u00f3n y se empieza a trabajar conjuntamente para definir el servicio que se va a coproducir. Esta fase conlleva dos subfases: involucraci\u00f3n y dise\u00f1o; y b) Fase de coproducci\u00f3n. Se trata de un esfuerzo conjunto de las autoridades p\u00fablicas y las partes interesadas para proporcionar y mejorar los servicios p\u00fablicos en los que el servicio se aplica y se presta de forma sostenible. La fase de co-prestaci\u00f3n conlleva dos subfases: Construir y Sostener.",
+        "it": "Il progetto INTERLINK ha definito un processo di coproduzione generico che pu\u00f2 accompagnare diverse iniziative di coproduzione. Il processo si compone di due fasi principali : a) Fase di co-design. Si tratta di attivit\u00e0 che incorporano \"l'esperienza degli utenti e delle loro comunit\u00e0\" nella creazione, pianificazione o organizzazione di servizi pubblici. In questa fase viene creato il team di co-produzione e inizia a lavorare insieme per definire il servizio da co-produrre. Questa fase prevede due sottofasi: Engagement e Design; e b) Fase di co-consegna. \u00c8 uno sforzo congiunto delle autorit\u00e0 pubbliche e delle parti interessate per fornire e migliorare i servizi pubblici in cui il servizio \u00e8 implementato ed erogato in modo sostenibile. La fase di co-consegna prevede due sottofasi: Realizzare e Sostenere.",
+        "lv": ""
+    },
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
     "id": "default",
+    "languages": [
+        "en",
+        "es",
+        "it",
+        "lv"
+    ],
+    "licence": "permissive",
     "name_translations": {
         "en": "Default schema",
         "es": "Esquema por defecto",
         "it": "Schema predefinito",
         "lv": ""
     },
-    "author": "",
-    "licence": "permissive",
     "tags_translations": {
         "en": [
             "default",
             "coproduction"
         ]
-    },
-    "description_translations": {
-        "en": "The INTERLINK project has defined a generic co-production process which can accommodate any co-production endeavour. It is composed of two main phases to be followed by co-producers: a) Co-design phase. It concerns activities that incorporate 'the experience of users and their communities' into the creation, planning, or arrangements of public services. In it, the co-production team is created and starts working together to define the service to be co-produced. This phase entails two sub-phases: Engagement and Design; and b) Co-delivery phase. It is a joint effort by public authorities and stakeholders to provide and improve public services where the service is implemented and delivered in a sustainable manner. The co-delivery phase entails two sub-phases: Build and Sustain.",
-        "es": "El proyecto INTERLINK ha definido un proceso de coproducci\u00f3n gen\u00e9rico que puede dar cabida a cualquier esfuerzo de coproducci\u00f3n. Se compone de dos fases principales que deben seguir los coproductores: a) Fase de codise\u00f1o. Se refiere a las actividades que incorporan \"la experiencia de los usuarios y de sus comunidades\" en la creaci\u00f3n, planificaci\u00f3n o disposici\u00f3n de los servicios p\u00fablicos. En ella, se crea el equipo de coproducci\u00f3n y se empieza a trabajar conjuntamente para definir el servicio que se va a coproducir. Esta fase conlleva dos subfases: involucraci\u00f3n y dise\u00f1o; y b) Fase de coproducci\u00f3n. Se trata de un esfuerzo conjunto de las autoridades p\u00fablicas y las partes interesadas para proporcionar y mejorar los servicios p\u00fablicos en los que el servicio se aplica y se presta de forma sostenible. La fase de co-prestaci\u00f3n conlleva dos subfases: Construir y Sostener.",
-        "it": "Il progetto INTERLINK ha definito un processo di coproduzione generico che pu\u00f2 accompagnare diverse iniziative di coproduzione. Il processo si compone di due fasi principali : a) Fase di co-design. Si tratta di attivit\u00e0 che incorporano \"l'esperienza degli utenti e delle loro comunit\u00e0\" nella creazione, pianificazione o organizzazione di servizi pubblici. In questa fase viene creato il team di co-produzione e inizia a lavorare insieme per definire il servizio da co-produrre. Questa fase prevede due sottofasi: Engagement e Design; e b) Fase di co-consegna. \u00c8 uno sforzo congiunto delle autorit\u00e0 pubbliche e delle parti interessate per fornire e migliorare i servizi pubblici in cui il servizio \u00e8 implementato ed erogato in modo sostenibile. La fase di co-consegna prevede due sottofasi: Realizzare e Sostenere.",
-        "lv": ""
     }
 }
