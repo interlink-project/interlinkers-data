@@ -29,7 +29,7 @@
             "description_translations": {
                 "en": "Service implementation is not possible if an environment for its depoyment and maintenance is not thought in advance. Independently on whether your envisioned co-produced service will be a piece of software or a bundle of digital resources, identify, select and make ready the development and deployment environments for your solution. Important to clearly specify and test the technical constraints within which the delivered service will be hosted.",
                 "es": "La implantaci\u00f3n de un servicio no es posible si no se piensa de antemano en un entorno para su despliegue y mantenimiento. Independientemente de si el servicio coproducido previsto ser\u00e1 una pieza de software o un conjunto de recursos digitales, hay que identificar, seleccionar y preparar los entornos de desarrollo y despliegue de la soluci\u00f3n. Es importante especificar claramente y probar las limitaciones t\u00e9cnicas dentro de las cuales se alojar\u00e1 el servicio entregado.",
-                "it": "L'implementazione del servizio non \u00e8 possibile se non si considera in anticipo  un ambiente per il suo rilascio e la sua manutenzione. Indipendentemente dal fatto che il servizio coprodotto previsto sar\u00e0 software o un insieme di risorse digitali, identifica, seleziona e prepara gli ambienti di sviluppo e distribuzione per la tua soluzione. E' importante specificare e testare chiaramente i vincoli tecnici entro i quali sar\u00e0 ospitato il servizio erogato",
+                "it": "L'implementazione del servizio non \u00e8 possibile se non si considera in anticipo un ambiente per il suo rilascio e la sua manutenzione. Indipendentemente dal fatto che il servizio coprodotto previsto sar\u00e0 software o un insieme di risorse digitali, identifica, seleziona e prepara gli ambienti di sviluppo e distribuzione per la tua soluzione. E' importante specificare e testare chiaramente i vincoli tecnici entro i quali sar\u00e0 ospitato il servizio erogato.",
                 "lv": ""
             },
             "problemprofiles": [],
@@ -158,9 +158,9 @@
                         "lv": ""
                     },
                     "description_translations": {
-                        "en": "Organize activities among co-deliverers according to their roles and responsabilities. Ensure quality of service is maintained in the cooperative activities involved in service codelivery. Launch satisfaction and quality of service assessement surveys. ",
-                        "es": "Organizar las actividades entre los codirectores seg\u00fan sus funciones y responsabilidades. Garantizar el mantenimiento de la calidad del servicio en las actividades cooperativas de prestaci\u00f3n de servicios. Poner en marcha encuestas de evaluaci\u00f3n de la satisfacci\u00f3n y la calidad del servicio. ",
-                        "it": "Organizza le attivit\u00e0 tra i co-erogatori del servzio in base ai loro ruoli e responsabilit\u00e0. Garantisci che la qualit\u00e0 del servizio sia mantenuta nelle attivit\u00e0  coinvolte nell'erogazione del servizio. Avvia sondaggi di valutazione della soddisfazione e della qualit\u00e0 del servizio. ",
+                        "en": "Organize activities among co-deliverers according to their roles and responsabilities. Ensure quality of service is maintained in the cooperative activities involved in service codelivery. Launch satisfaction and quality of service assessement surveys.",
+                        "es": "Organizar las actividades entre los codirectores seg\u00fan sus funciones y responsabilidades. Garantizar el mantenimiento de la calidad del servicio en las actividades cooperativas de prestaci\u00f3n de servicios. Poner en marcha encuestas de evaluaci\u00f3n de la satisfacci\u00f3n y la calidad del servicio.",
+                        "it": "Organizza le attivit\u00e0 tra i co-erogatori del servzio in base ai loro ruoli e responsabilit\u00e0. Garantisci che la qualit\u00e0 del servizio sia mantenuta nelle attivit\u00e0 coinvolte nell'erogazione del servizio. Avvia sondaggi di valutazione della soddisfazione e della qualit\u00e0 del servizio.",
                         "lv": ""
                     },
                     "problemprofiles": [],
