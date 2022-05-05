@@ -9,7 +9,7 @@
         "en": "<p>Document with template for co-design of Public Service Proposal</p>",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "<p>Publisk\u0101 pakalpojuma priek\u0161likuma kopdizaina parauga dokuments</p>"
     },
     "difficulty": "very_easy",
     "domain": "",
@@ -35,7 +35,7 @@
         "en": "Public Service Proposal Template for INTERLINK project",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "Publisk\u0101 pakalpojuma priek\u0161likuma veidlapa INTERLINK projektam"
     },
     "problemprofiles": [
         "HACKATHON_PROBLEM_1"

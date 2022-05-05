@@ -9,7 +9,7 @@
         "en": "<p>Information on the INTERLINK project to be distributed to participants. It provides background on research activities.</p>",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "<p>Izplat\u012b\u0161anai dal\u012bbniekiem paredz\u0113t\u0101 inform\u0101cija par INTERLINK projektu. T\u0101 nodro\u0161ina pamatinform\u0101ciju par p\u0113tniec\u012bbas aktivit\u0101t\u0113m.</p>"
     },
     "difficulty": "very_easy",
     "domain": "",
@@ -35,7 +35,7 @@
         "en": "Information Sheet for INTERLINK project",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "INTERLINK projekta inform\u0101cijas lapa"
     },
     "problemprofiles": [
         "ORG_PROBLEM_14"

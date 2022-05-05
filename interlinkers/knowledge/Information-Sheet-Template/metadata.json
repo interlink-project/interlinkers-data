@@ -9,7 +9,7 @@
         "en": "<p>Template to guide the preparation of an information sheet to be distributed to participants to project activities. It provides background on research objectives.</p>",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "<p>Veidlapa inform\u0101cijas lapas projekta aktivit\u0101\u0161u dal\u012bbniekiem sagatavo\u0161anai. T\u0101 sniedz pamatinform\u0101ciju par p\u0113tniec\u012bbas aktivit\u0101t\u0113m.</p>"
     },
     "difficulty": "very_easy",
     "domain": "",
@@ -35,7 +35,7 @@
         "en": "Information Sheet Template",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "Inform\u0101cijas lapas veidlapa"
     },
     "problemprofiles": [
         "ORG_PROBLEM_14"

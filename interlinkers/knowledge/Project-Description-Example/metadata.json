@@ -9,7 +9,7 @@
         "en": "<p>Example of project description that synthetically summarizes the goals and major aspects of a co-production initiative.  </p>",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "<p>Projekta raksturojuma piem\u0113rs, kas sint\u0113tiski apkopo koprades iniciat\u012bvas m\u0113r\u0137us un galvenos raksturlielumus.</p>"
     },
     "difficulty": "easy",
     "domain": "",
@@ -35,7 +35,7 @@
         "en": "Project description example",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "Projekta raksturojuma piem\u0113rs"
     },
     "problemprofiles": [
         "DEF_PROBLEM_1",
