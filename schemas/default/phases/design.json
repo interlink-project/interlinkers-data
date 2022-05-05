@@ -370,13 +370,13 @@
                 {
                     "name_translations": {
                         "en": "Define scenarios",
-                        "es": "",
+                        "es": "Definir escenarios",
                         "it": "Definisci gli scenari d'uso",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Write scenarios. To explain and collaboratively describe the envisioned service, scenarios can be used to reflect on the users experience. A user scenario is a story that describes, in an narrative manner, how the user is going to interact with the service during a specific situation. Writing user scenarios requires to identify a specific context in which the action takes place, as well as characters and needs that defines the attitude of the user.",
-                        "es": "",
+                        "es": "Escribir escenarios. Para explicar y describir de forma colaborativa el servicio previsto, se pueden utilizar escenarios para reflexionar sobre la experiencia de los usuarios. Un escenario de usuario es una historia que describe, de forma narrativa, c\u00f3mo el usuario va a interactuar con el servicio durante una situaci\u00f3n concreta. Escribir escenarios de usuario requiere identificar un contexto espec\u00edfico en el que se desarrolla la acci\u00f3n, as\u00ed como personajes y necesidades que definen la actitud del usuario.",
                         "it": "Scrivi degli scenari. Per descrivere in modo collaborativo il servizio previsto, gli scenari possono essere utilizzati per riflettere sull'esperienza degli utenti. Uno scenario utente \u00e8 una storia che descrive, in modo narrativo, come l'utente interagir\u00e0 con il servizio durante una situazione specifica. Scrivere scenari utente richiede di identificare un contesto specifico in cui si svolge l'azione, gli attori coinvolti e bisogni dell'utente.",
                         "lv": ""
                     },
@@ -392,13 +392,13 @@
                 {
                     "name_translations": {
                         "en": "Define user journeys",
-                        "es": "",
+                        "es": "Definir los recorridos de los usuarios",
                         "it": "Definisci il percorso dell'utente",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Describe the encounters between the user and the organization, service or product. Tell the story from the user\u2019s point of view, and try to depict how the user\u2019s expectations intersect with the organization\u2019s offer. It is a useful strategic tool that keeps the customers, beneficiaries and providers at the center of design decisions, highlighting pain points and opportunities for the organization to create a better user experience and an effective service.",
-                        "es": "",
+                        "es": "Describa los encuentros entre el usuario y la organizaci\u00f3n, el servicio o el producto. Cuente la historia desde el punto de vista del usuario e intente describir c\u00f3mo se cruzan las expectativas del usuario con la oferta de la organizaci\u00f3n. Es una herramienta estrat\u00e9gica \u00fatil que mantiene a los clientes, beneficiarios y proveedores en el centro de las decisiones de dise\u00f1o, destacando los puntos de dolor y las oportunidades para que la organizaci\u00f3n cree una mejor experiencia de usuario y un servicio eficaz.",
                         "it": "Descrivi l'interazione tra l'utente e l'organizzazione, il servizio o il prodotto. Racconta la storia dal punto di vista dell'utente e cerca di descrivere come le aspettative dell'utente si intersecano con l'offerta dell'organizzazione. \u00c8 un utile strumento strategico che ti permette di tenere i clienti, i beneficiari e i fornitori al centro delle scelte di progettazione, evidenziando punti deboli e opportunit\u00e0 per l'organizzazione di creare una migliore esperienza utente e un servizio efficace.",
                         "lv": ""
                     },
@@ -423,13 +423,13 @@
         {
             "name_translations": {
                 "en": "Service specification",
-                "es": "",
+                "es": "Especificaci\u00f3n del servicio",
                 "it": "Specifiche del servizio",
                 "lv": ""
             },
             "description_translations": {
                 "en": "The ideas and service design concepts need to be translated into formal requirements and service specifications to proceed with the implementation of the service. Follow the guidelines to collect, structure and communicate requirements and all the service specifications that clarify the objective of the service and how it should be developed.",
-                "es": "",
+                "es": "Las ideas y los conceptos de dise\u00f1o del servicio deben traducirse en requisitos formales y especificaciones del servicio para proceder a su implantaci\u00f3n. Siga las directrices para recoger, estructurar y comunicar los requisitos y todas las especificaciones del servicio que aclaren el objetivo del servicio y c\u00f3mo debe desarrollarse.",
                 "it": "Le idee relative alla progettazione del servizio devono essere tradotte in requisiti formali per procedere all'implementazione del servizio. Segui le linee guida su come raccogliere, strutturare e comunicare i requisiti e tutte le specifiche del servizio che definiscono l'obiettivo del servizio e come dovrebbe essere sviluppato.",
                 "lv": ""
             },
@@ -442,13 +442,13 @@
                 {
                     "name_translations": {
                         "en": "Consider eu guidelines for public service developement",
-                        "es": "",
+                        "es": "Considerar las directrices de la UE para el desarrollo del servicio p\u00fablico",
                         "it": "Considera le linee guida dell'UE per lo sviluppo del servizio pubblico",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Consult good practices for interface design and public services development. Reflect, in your specific use case, on how to make sure the services are provided in a multi-channel manner, maximizing the exploitation by potentially any group of users or by the agents acting on their behalf, and providing clear statements regarding the accessibility limits in the current implementation.",
-                        "es": "",
+                        "es": "Consulte las buenas pr\u00e1cticas de dise\u00f1o de interfaces y desarrollo de servicios p\u00fablicos. Reflexione, en su caso de uso espec\u00edfico, sobre c\u00f3mo asegurarse de que los servicios se prestan de forma multicanal, maximizando el aprovechamiento por parte de cualquier grupo de usuarios potencialmente o por los agentes que act\u00faan en su nombre, y proporcionando declaraciones claras sobre los l\u00edmites de accesibilidad en la implementaci\u00f3n actual.",
                         "it": "Consulta le buone pratiche per la progettazione dell'interfaccia e lo sviluppo dei servizi pubblici. Rifletti, nel tuo caso d'uso specifico, su come assicurarti che i servizi siano forniti in modo multicanale, massimizzando lo valorizazzione potenzialmente da parte di qualsiasi gruppo di utenti o da parte degli attori che agiscono per loro conto, e fornisci dichiarazioni chiare sui limiti di accessibilit\u00e0 nell'attuale implementazione.",
                         "lv": ""
                     },
@@ -459,13 +459,13 @@
                 {
                     "name_translations": {
                         "en": "User interface design",
-                        "es": "",
+                        "es": "Dise\u00f1o de la interfaz de usuario",
                         "it": "Progettazione dell'interfaccia utente",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Proceed with the design of the user interface of the service through the preparation of initial sketches and mockups. Ensure the design of the user interface follows the guidelines on usability and accessibility. ",
-                        "es": "",
+                        "es": "Proceder al dise\u00f1o de la interfaz de usuario del servicio mediante la preparaci\u00f3n de bocetos y maquetas iniciales. Aseg\u00farese de que el dise\u00f1o de la interfaz de usuario sigue las directrices de usabilidad y accesibilidad. ",
                         "it": "Procedi con la progettazione dell'interfaccia utente del servizio attraverso la predisposizione di schizzi e mockup iniziali. Assicurati che il design dell'interfaccia utente segua le linee guida sull'usabilit\u00e0 e l'accessibilit\u00e0. ",
                         "lv": ""
                     },
@@ -481,13 +481,13 @@
                 {
                     "name_translations": {
                         "en": "Content design",
-                        "es": "",
+                        "es": "Dise\u00f1o de contenidos",
                         "it": "Progettazione dei contenuti",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Prepare adequate content for the new/enhanced public service. Follow the guidelines on how to select and use the most appropriate language according to the users of the digital service and their skills.",
-                        "es": "",
+                        "es": "Preparar los contenidos adecuados para el nuevo/mejorado servicio p\u00fablico. Seguir las directrices sobre c\u00f3mo seleccionar y utilizar el lenguaje m\u00e1s adecuado seg\u00fan los usuarios del servicio digital y sus competencias.",
                         "it": "Prepara contenuti adeguati per il nuovo servizio pubblico. Segui le linee guida su come selezionare e utilizzare il linguaggio pi\u00f9 appropriato in base agli utenti del servizio digitale e alle loro competenze.",
                         "lv": ""
                     },
@@ -505,13 +505,13 @@
                 {
                     "name_translations": {
                         "en": "Service specification definition",
-                        "es": "",
+                        "es": "Definici\u00f3n del pliego de condiciones del servicio",
                         "it": "Definizione delle specifiche del servizio",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Possibly use standard specification formalisms for describing your service. INTERLINK suggests you to have a look at EU standards like the Service Offering Canvas. By filling out this structured, visual classification of digital services, you can describe how stakeholder needs are met. The result is a consolidated view that drives service orientation and awareness of needs and how services are to be consumed. SOC specifications can be shared and compared with other similar services at the EU level.",
-                        "es": "",
+                        "es": "Posiblemente utilice formalismos de especificaci\u00f3n est\u00e1ndar para describir su servicio. INTERLINK le sugiere que eche un vistazo a las normas de la UE, como el Lienzo de Oferta de Servicios. Rellenando esta clasificaci\u00f3n visual y estructurada de los servicios digitales, puede describir c\u00f3mo se satisfacen las necesidades de las partes interesadas. El resultado es una visi\u00f3n consolidada que impulsa la orientaci\u00f3n del servicio y el conocimiento de las necesidades y la forma de consumir los servicios. Las especificaciones del SOC pueden compartirse y compararse con otros servicios similares a nivel de la UE.",
                         "it": "Utilizza possibilmente formalismi di specifica standard per descrivere il servizio. INTERLINK ti suggerisce di dare un'occhiata agli standard dell'UE come il Service Offering Canvas. Compilando questa classificazione visiva strutturata dei servizi digitali, puoi descrivere come vengono soddisfatte le esigenze degli stakeholder. Il risultato \u00e8 una rappresentazione consolidata che guida l'orientamento al servizio e la consapevolezza dei bisogni e del modo in cui i servizi devono essere fruiti. Le specifiche SOC possono essere condivise e confrontate con altri servizi simili a livello dell'UE.",
                         "lv": ""
                     },
@@ -527,13 +527,13 @@
                 {
                     "name_translations": {
                         "en": "Data model design",
-                        "es": "",
+                        "es": "Dise\u00f1o del modelo de datos",
                         "it": "Progettazione del modello di dati",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Aid the following steps of service implementation by defining a  Data Model that explains: the conceptual organization of the service, its logical organization in terms of components, and the physical level of database implementations required. ",
-                        "es": "",
+                        "es": "Ayudar a los siguientes pasos de la implementaci\u00f3n del servicio mediante la definici\u00f3n de un Modelo de Datos que explique: la organizaci\u00f3n conceptual del servicio, su organizaci\u00f3n l\u00f3gica en t\u00e9rminos de componentes y el nivel f\u00edsico de las implementaciones de bases de datos requeridas. ",
                         "it": "Procedi con l'implementazione del servizio definendo un modello di dati che spieghi: l'organizzazione concettuale del servizio, la sua organizzazione logica in termini di componenti, e il livello fisico delle implementazioni del database richieste. ",
                         "lv": ""
                     },
@@ -549,13 +549,13 @@
                 {
                     "name_translations": {
                         "en": "Software architecture and api design",
-                        "es": "",
+                        "es": "Arquitectura de software y dise\u00f1o de api",
                         "it": "Architettura del software e progettazione delle API",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Create a document that describes the software architecture of the digital system underneath the service and the APIs design.",
-                        "es": "",
+                        "es": "Crear un documento que describa la arquitectura de software del sistema digital subyacente al servicio y el dise\u00f1o de las API.",
                         "it": "Crea un documento che descriva l'architettura software del sistema digitale alla base del servizio e la progettazione delle API.",
                         "lv": ""
                     },
@@ -690,13 +690,13 @@
         {
             "name_translations": {
                 "en": "Sustainability",
-                "es": "",
+                "es": "Sostenibilidad",
                 "it": "Sostenibilit\u00e0",
                 "lv": ""
             },
             "description_translations": {
                 "en": "Before further going deep into the development of your service. Stop and reflect about the design results obtained so far and about the actual feasibility and sustainability of what you are about to implement.",
-                "es": "",
+                "es": "Antes de seguir profundizando en el desarrollo de su servicio Det\u00e9ngase y reflexione sobre los resultados de dise\u00f1o obtenidos hasta el momento y sobre la viabilidad y sostenibilidad reales de lo que va a poner en marcha.",
                 "it": "Prima di approfondire ulteriormente lo sviluppo del tuo servizio fermati e rifletti sui risultati progettuali finora ottenuti e sull'effettiva fattibilit\u00e0 e sostenibilit\u00e0 di ci\u00f2 che stai per realizzare.",
                 "lv": ""
             },
@@ -707,13 +707,13 @@
                 {
                     "name_translations": {
                         "en": "Evaluation of codesign",
-                        "es": "",
+                        "es": "Evaluaci\u00f3n del codise\u00f1o",
                         "it": "Valutazione del codesign",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Is the design output satisfactory?\r\nFollow the proposed checklist to understand if you are done with design or whether an iterative refinement cycle is recommended.",
-                        "es": "",
+                        "es": "\u00bfEl resultado del dise\u00f1o es satisfactorio?\nSiga la lista de comprobaci\u00f3n propuesta para saber si ha terminado el dise\u00f1o o si se recomienda un ciclo de perfeccionamiento iterativo.",
                         "it": "L'output del progetto \u00e8 soddisfacente?\nSegui la checklist di controllo proposta per capire se hai terminato la progettazione o se \u00e8 consigliabile un ciclo di perfezionamento iterativo.",
                         "lv": ""
                     },
@@ -746,13 +746,13 @@
                 {
                     "name_translations": {
                         "en": "Feasibility analysis",
-                        "es": "",
+                        "es": "An\u00e1lisis de viabilidad",
                         "it": "Analisi di fattibilit\u00e0",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Are all technical skills and resources available to proceed with development? \r\nFollow the proposed checklist for an intermediate evaluation of technical sustainabiity.",
-                        "es": "",
+                        "es": "\u00bfEst\u00e1n disponibles todas las competencias y recursos t\u00e9cnicos para proceder al desarrollo?\nSiga la lista de comprobaci\u00f3n propuesta para una evaluaci\u00f3n intermedia de la sostenibilidad t\u00e9cnica.",
                         "it": "Sono disponibili tutte le competenze e le risorse tecniche per procedere con lo sviluppo?\nSegui la checklist proposta per una valutazione intermedia della sostenibilit\u00e0 tecnica.",
                         "lv": ""
                     },
