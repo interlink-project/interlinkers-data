@@ -28,33 +28,7 @@
                         "es": "Entender los diferentes tipos de stakeholders y sus motivaciones"
                     },
                     "description_translations": {
-                        "en": "Usually different actors are engaged in co-production to create a new service or customizing an already existing service: public bodies, private companies, SMEs, citizens. Each actor brings specific needs and competences in relation to the service and has different motivations to participate in a project. Learn about the different types of stakeholders and which of them can add value to your co-production process",
-                        "es": ""
-                    },
-                    "problemprofiles": [
-                        "UND_PROBLEM_2"
-                    ]
-                },
-                {
-                    "name_translations": {
-                        "en": "Map stakeholders, analyse motivation, skills, expectations",
-                        "es": "Mapear partes interesadas analizar motivación habilidades expectativas"
-                    },
-                    "description_translations": {
-                        "en": "Mapping the stakeholders is crucial to have a clear view of which roles stakeholders can play in different stages of innovation, what their level of commitment and strategic importance could be. Analyse the complexity of building relationships, realizing which connectors can be crucial for innovation development in your project.",
-                        "es": ""
-                    },
-                    "problemprofiles": [
-                        "UND_PROBLEM_2"
-                    ]
-                },
-                {
-                    "name_translations": {
-                        "en": "Visually map the network of stakeholders",
-                        "es": "Mapear visualmente la red de partes interesadas"
-                    },
-                    "description_translations": {
-                        "en": "Is your network balanced and inclusive?\r\nCreate a Stakeholder Map, where the ecosystem of stakeholders involved in a customer experience is visualized.",
+                        "en": "Usually different actors are engaged in co-production to create a new service or customizing an already existing service: public bodies, private companies, SMEs, citizens. Each actor brings specific needs and competences in relation to the service and has different motivations to participate in a project. Learn about the different types of stakeholders and which of them can add value to your co-production process. In this case, for service descriptions refinement, consider contributing public servants but also potentially citizens, i.e. consumers of those services.",
                         "es": ""
                     },
                     "problemprofiles": [
@@ -102,20 +76,6 @@
                     },
                     "problemprofiles": [
                         "ORG_PROBLEM_5"
-                    ]
-                },
-                {
-                    "name_translations": {
-                        "en": "Create awareness and communication",
-                        "es": ""
-                    },
-                    "description_translations": {
-                        "en": "Ensure that relevant stakeholders are aware of the initiative in order to ensure their participation. Awareness-raising is a process that seeks to inform and educate people about a topic or issue with the intention of influencing their attitudes, behaviours and beliefs towards the achievement of a defined purpose or goal.",
-                        "es": ""
-                    },
-                    "problemprofiles": [
-                        "ORG_PROBLEM_4",
-                        "ORG_PROBLEM_6.3"
                     ]
                 },
                 {
