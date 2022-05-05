@@ -1,38 +1,52 @@
 {
-  "languages": ["en", "es"],
-  "name_translations": {
-    "en": "Doodle"
-  },
-  "description_translations": {
-    "en": "<p>Online calendar tool for time management and coordinating meetings. Anytime more than two people are trying to arrange a meeting, Doodle very useful. You can use doodle to plan meetings with team members, project collaborators, and external suppliers. </p>"
-  },
-  "tags_translations": {
-    "en": [
-      "survey",
-      "time",
-      "task"
-    ]
-  },
-  "difficulty": "easy",
-  "licence": "propietary",
-  "problemprofiles": [
-    "ORG_PROBLEM_4"
-  ],
-  "constraints_and_limitations_translations": {
-    "en": "none"
-  },
-  "regulations_and_standards_translations": {
-    "en": "none"
-  },
-  "reference": "calendar-tool",
-  "logotype": "./interlinkers/externalsoftware/doodle/logo.png",
-  "uri_translations": {
-    "en": "https://doodle.com/es/"
-  },
-  "instructions_translations": {
-    "en": "./interlinkers/externalsoftware/doodle/instructions.md"
-  },
-  "asset_name_translations": {
-    "en": "Doodle - polling software"
-  }
+    "asset_name_translations": {
+        "en": "Doodle - polling software"
+    },
+    "constraints_and_limitations_translations": {
+        "en": "none"
+    },
+    "description_translations": {
+        "en": "<p>Online calendar tool for time management and coordinating meetings. Anytime more than two people are trying to arrange a meeting, Doodle very useful. You can use doodle to plan meetings with team members, project collaborators, and external suppliers. </p>",
+        "es": "",
+        "it": "",
+        "lv": "<p>Tie\u0161saistes kalend\u0101ra r\u012bks laika pl\u0101no\u0161anai un san\u0101ksmju koordin\u0113\u0161anai. Doodle ir noder\u012bgs br\u012b\u017eos, kad vair\u0101k nek\u0101 divi cilv\u0113ki m\u0113\u0123ina koordin\u0113t san\u0101ksmes laiku. Doodle var izmantot, lai koordin\u0113tu san\u0101ksmes komandas ietvaros, ar projekta sadarb\u012bbas partneriem vai \u0101r\u0113jiem dal\u012bbniekiem.</p>"
+    },
+    "difficulty": "easy",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
+    "id": "doodle",
+    "instructions_translations": {
+        "en": "./interlinkers/externalsoftware/doodle/instructions.md"
+    },
+    "languages": [
+        "en"
+    ],
+    "licence": "propietary",
+    "logotype": "./interlinkers/externalsoftware/doodle/logo.png",
+    "name_translations": {
+        "en": "Doodle",
+        "es": "",
+        "it": "",
+        "lv": "Doodle"
+    },
+    "problemprofiles": [
+        "ORG_PROBLEM_4"
+    ],
+    "regulations_and_standards_translations": {
+        "en": "none"
+    },
+    "tags_translations": {
+        "en": [
+            "survey",
+            "time",
+            "task"
+        ]
+    },
+    "type": "software",
+    "uri_translations": {
+        "en": "https://doodle.com/es/"
+    }
 }

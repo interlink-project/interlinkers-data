@@ -1,30 +1,50 @@
 {
-    "languages": [
-        "en"
-    ],
-    "targets": [
-        "all"
-    ],
-    "problemprofiles": [
-        "SUS_PROBLEM_1"
-    ],
-    "types": [
-        "enhancing_services"
-    ],
     "administrative_scopes": [
         "eu"
     ],
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "description_translations": {
+        "en": "<p>This canvas can be edited collaboratively by the co-producing team to ellaborate the business plan for a co-produced service..</p>",
+        "es": "",
+        "it": "",
+        "lv": "<p>\u0160is audekls var tikt kop\u012bgi papildin\u0101ts koprades komandas ietvaros, lai izstr\u0101d\u0101tu koprad\u012bt\u0101 pakalpojuma biznesa modeli.</p>"
+    },
+    "difficulty": "easy",
     "domain": "",
-    "process": "",
-    "reference": "business-plan-template",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
+    "file_translations": {
+        "en": "./interlinkers/knowledge/Business-Plan-Template/resource.docx"
+    },
     "form": "document_template",
     "format": "editable_source_document",
-    "softwareinterlinker": "googledrive",
-    "difficulty": "easy",
-    "licence": "public_domain",
+    "id": "business-plan-template",
     "instructions_translations": {
         "en": "./interlinkers/knowledge/Business-Plan-Template/instructions.md"
     },
+    "languages": [
+        "en"
+    ],
+    "licence": "public_domain",
+    "name_translations": {
+        "en": "Business Plan Template",
+        "es": "",
+        "it": "",
+        "lv": "Biznesa pl\u0101na veidlapa"
+    },
+    "problemprofiles": [
+        "SUS_PROBLEM_1"
+    ],
+    "process": "",
+    "regulations_and_standards_translations": {
+        "en": ""
+    },
+    "softwareinterlinker": "googledrive",
     "tags_translations": {
         "en": [
             "template",
@@ -32,19 +52,11 @@
             "business"
         ]
     },
-    "name_translations": {
-        "en": "Business Plan Template"
-    },
-    "description_translations": {
-        "en": "<p>This canvas can be edited collaboratively by the co-producing team to ellaborate the business plan for a co-produced service..</p>"
-    },
-    "constraints_and_limitations_translations": {
-        "en": "No special constraints apply"
-    },
-    "regulations_and_standards_translations": {
-        "en": ""
-    },
-    "file_translations": {
-        "en": "./interlinkers/knowledge/Business-Plan-Template/resource.docx"
-    }
+    "targets": [
+        "all"
+    ],
+    "type": "knowledge",
+    "types": [
+        "enhancing_services"
+    ]
 }

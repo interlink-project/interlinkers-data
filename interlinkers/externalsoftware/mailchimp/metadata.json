@@ -1,13 +1,42 @@
 {
-    "languages": [
-        "en",
-        "es"
-    ],
-    "name_translations": {
+    "asset_name_translations": {
         "en": "Mailchimp"
     },
+    "constraints_and_limitations_translations": {
+        "en": "none"
+    },
     "description_translations": {
-        "en": "<p>Marketing automation platform and email marketing service[6] for managing mailing lists and creating email marketing campaigns to send to customers.</p>"
+        "en": "<p>Marketing automation platform and email marketing service[6] for managing mailing lists and creating email marketing campaigns to send to customers.</p>",
+        "es": "",
+        "it": "",
+        "lv": "<p>M\u0101rketinga automatiz\u0101cijas platforma un e-pasta m\u0101rketinga serviss[6] izs\u016btnes sarakstu vad\u012bbai un e-pasta m\u0101rketinga kampa\u0146u veido\u0161anai klientiem.</p>"
+    },
+    "difficulty": "easy",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
+    "id": "mailchimp",
+    "instructions_translations": {
+        "en": "./interlinkers/externalsoftware/mailchimp/instructions.md"
+    },
+    "languages": [
+        "en"
+    ],
+    "licence": "propietary",
+    "logotype": "./interlinkers/externalsoftware/mailchimp/logo.png",
+    "name_translations": {
+        "en": "Mailchimp",
+        "es": "",
+        "it": "",
+        "lv": "Mailchimp"
+    },
+    "problemprofiles": [
+        "ORG_PROBLEM_4"
+    ],
+    "regulations_and_standards_translations": {
+        "en": "none"
     },
     "tags_translations": {
         "en": [
@@ -16,26 +45,8 @@
             "email"
         ]
     },
-    "difficulty": "easy",
-    "licence": "propietary",
-    "problemprofiles": [
-        "ORG_PROBLEM_4"
-    ],
-    "constraints_and_limitations_translations": {
-        "en": "none"
-    },
-    "regulations_and_standards_translations": {
-        "en": "none"
-    },
-    "logotype": "./interlinkers/externalsoftware/mailchimp/logo.png",
-    "reference": "email-marketing",
+    "type": "software",
     "uri_translations": {
         "en": "https://mailchimp.com/es/"
-    },
-    "instructions_translations": {
-        "en": "./interlinkers/externalsoftware/mailchimp/instructions.md"
-    },
-    "asset_name_translations": {
-        "en": "Mailchimp"
     }
 }

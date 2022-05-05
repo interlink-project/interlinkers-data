@@ -1,30 +1,50 @@
 {
-    "languages": [
-        "en"
-    ],
-    "targets": [
-        "all"
-    ],
-    "problemprofiles": [
-        "UND_PROBLEM_3"
-    ],
-    "types": [
-        "enhancing_services"
-    ],
     "administrative_scopes": [
         "eu"
     ],
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "description_translations": {
+        "en": "<p>Instructions on how to set up a research activity based on online surveys, for a co-production project </p>",
+        "es": "",
+        "it": "",
+        "lv": "<p>Pam\u0101c\u012bba p\u0113tniec\u012bbas aktivit\u0101\u0161u veik\u0161anai koprades projekt\u0101, izmantojot fokusgrupas.</p>"
+    },
+    "difficulty": "easy",
     "domain": "",
-    "process": "",
-    "reference": "Guidelines-for-online-surveys",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
+    "file_translations": {
+        "en": "./interlinkers/knowledge/Guidelines-for-online-surveys/resource.docx"
+    },
     "form": "guidelines",
     "format": "editable_source_document",
-    "softwareinterlinker": "googledrive",
-    "difficulty": "easy",
-    "licence": "public_domain",
+    "id": "guidelines-for-online-surveys",
     "instructions_translations": {
         "en": "./interlinkers/knowledge/Guidelines-for-online-surveys/instructions.md"
     },
+    "languages": [
+        "en"
+    ],
+    "licence": "public_domain",
+    "name_translations": {
+        "en": "Guidelines for online-surveys",
+        "es": "",
+        "it": "",
+        "lv": "Tie\u0161saistes aptauju vadl\u012bnijas"
+    },
+    "problemprofiles": [
+        "UND_PROBLEM_3"
+    ],
+    "process": "",
+    "regulations_and_standards_translations": {
+        "en": ""
+    },
+    "softwareinterlinker": "googledrive",
     "tags_translations": {
         "en": [
             "survey",
@@ -32,19 +52,11 @@
             "understand"
         ]
     },
-    "name_translations": {
-        "en": "Guidelines for online-surveys"
-    },
-    "description_translations": {
-        "en": "<p>Instructions on how to set up a research activity based on online surveys, for a co-production project </p>"
-    },
-    "constraints_and_limitations_translations": {
-        "en": "No special constraints apply"
-    },
-    "regulations_and_standards_translations": {
-        "en": ""
-    },
-    "file_translations": {
-        "en": "./interlinkers/knowledge/Guidelines-for-online-surveys/resource.docx"
-    }
+    "targets": [
+        "all"
+    ],
+    "type": "knowledge",
+    "types": [
+        "enhancing_services"
+    ]
 }

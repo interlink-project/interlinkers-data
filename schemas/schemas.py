@@ -1,6 +1,6 @@
 from typing import Dict, List
 
-from problemprofiles import WithProblemProfiles
+from problemprofiles.problemprofiles import WithProblemProfiles
 from pydantic import BaseModel, Extra, conlist, validator
 
 import enum
@@ -26,21 +26,24 @@ class WithNameAndDesc(BaseModel):
 
 
 class Task(WithProblemProfiles, WithNameAndDesc, extra=Extra.forbid):
-    pass
+    id: str
+    prerequisites: Dict[str, str]
 
 
 class Objective(WithProblemProfiles, WithNameAndDesc, extra=Extra.forbid):
+    id: str
+    prerequisites: Dict[str, str]
     tasks: List[Task]
 
 
 class Phase(WithNameAndDesc, extra=Extra.forbid):
-    reference: str
+    id: str
     prerequisites: Dict[str, str]
     objectives: List[Objective]
 
 
 class CoproductionSchema(WithNameAndDesc, extra=Extra.forbid):
-    reference: str
+    id: str
     tags_translations: Dict[str,  conlist(str, min_items=1)]
     author: str
     licence: Licences

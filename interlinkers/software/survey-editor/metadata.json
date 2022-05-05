@@ -1,22 +1,79 @@
 {
-    "languages": [
-        "en"
-    ],
-    "name_translations": {
-        "en": "Survey editor",
-        "es": ""
-    },
-    "description_translations": {
-        "en": "Survey designer and publishing INTERLINKER which allows to create on demand new forms to gather information or help in decision making in co-production processess. It is based on open source tool SurveyJs (https://github.com/surveyjs)",
-        "es": ""
-    },
-    "difficulty": "easy",
-    "licence": "propietary",
-    "problemprofiles": [],
     "constraints_and_limitations_translations": {
         "en": "Some text here",
         "es": ""
     },
+    "description_translations": {
+        "en": "Survey designer and publishing INTERLINKER which allows to create on demand new forms to gather information or help in decision making in co-production processess. It is based on open source tool SurveyJs (https://github.com/surveyjs)",
+        "es": "",
+        "it": "",
+        "lv": ""
+    },
+    "difficulty": "easy",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
+    "id": "survey-editor",
+    "instructions_translations": {
+        "en": "./interlinkers/software/survey-editor/instructions.md"
+    },
+    "integration": {
+        "api_path": "/assets",
+        "auth_method": "cookie",
+        "capabilities": {
+            "clone": true,
+            "delete": true,
+            "download": false,
+            "edit": false,
+            "instantiate": true,
+            "open_in_modal": true,
+            "preview": true,
+            "shortcut": true,
+            "view": true
+        },
+        "capabilities_translations": {
+            "clone_text_translations": {
+                "en": "Clone survey",
+                "es": "Clonar encuesta"
+            },
+            "delete_text_translations": {
+                "en": "Delete survey",
+                "es": "Eliminar encuesta"
+            },
+            "instantiate_text_translations": {
+                "en": "Create a survey",
+                "es": "Crear una encuesta"
+            },
+            "preview_text_translations": {
+                "en": "Preview survey",
+                "es": "Ver la encuesta propuesta"
+            },
+            "view_text_translations": {
+                "en": "Open survey editor",
+                "es": "Abrir editor de encuesta"
+            }
+        },
+        "domain": "",
+        "is_subdomain": false,
+        "path": "surveyeditor",
+        "service_name": "surveyeditor"
+    },
+    "is_responsive": true,
+    "languages": [
+        "en",
+        "es"
+    ],
+    "licence": "propietary",
+    "logotype": "./interlinkers/software/survey-editor/logo.jpeg",
+    "name_translations": {
+        "en": "Survey editor",
+        "es": "",
+        "it": "",
+        "lv": ""
+    },
+    "problemprofiles": [],
     "regulations_and_standards_translations": {
         "en": "Optional text here",
         "es": ""
@@ -25,50 +82,6 @@
         "saas"
     ],
     "supports_internationalization": true,
-    "is_responsive": true,
-    "integration": {
-        "domain": "",
-        "path": "surveyeditor",
-        "service_name": "surveyeditor",
-        "is_subdomain": false,
-        "api_path": "/assets",
-        "auth_method": "cookie",
-        "capabilities": {
-            "instantiate": true,
-            "clone": true,
-            "view": true,
-            "edit": false,
-            "delete": true,
-            "download": false,
-            "preview": true,
-            "open_in_modal": true,
-            "shortcut": true
-        },
-        "capabilities_translations": {
-            "instantiate_text_translations": {
-                "en": "Create a survey",
-                "es": "Crear una encuesta"
-            },
-            "clone_text_translations": {
-                "en": "Clone survey",
-                "es": "Clonar encuesta"
-            },
-            "view_text_translations": {
-                "en": "Open survey editor",
-                "es": "Abrir editor de encuesta"
-            },
-            "delete_text_translations": {
-                "en": "Delete survey",
-                "es": "Eliminar encuesta"
-            },
-            "preview_text_translations": {
-                "en": "Preview survey",
-                "es": "Ver la encuesta propuesta"
-            }
-        }
-    },
-    "logotype": "./interlinkers/software/survey-editor/logo.jpeg",
-    "reference": "survey-editor",
     "tags_translations": {
         "en": [
             "survey",
@@ -77,7 +90,5 @@
             "vote"
         ]
     },
-    "instructions_translations": {
-        "en": "./interlinkers/software/survey-editor/instructions.md"
-    }
+    "type": "software"
 }

@@ -1,31 +1,51 @@
 {
+    "administrative_scopes": [
+        "eu"
+    ],
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "description_translations": {
+        "en": "<p>This is a model of a questionnaire aimed to collect demographics and activity satisfaction scores from participants to project events and activities.</p>",
+        "es": "",
+        "it": "",
+        "lv": "<p>\u0160is ir aptaujas modelis projekta aktivit\u0101t\u0113s iesaist\u012bto dal\u012bbnieku demogr\u0101fisko datu iev\u0101k\u0161anai un apmierin\u0101t\u012bbas m\u0113r\u012b\u0161anai.</p>"
+    },
+    "difficulty": "easy",
+    "domain": "",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
+    "file_translations": {
+        "en": "./interlinkers/knowledge/Demographic-activity-satisfaction-questionnaire/resource.pdf"
+    },
+    "form": "survey_template",
+    "format": "pdf",
+    "id": "demographic-and-activity-satisfaction-questionnaire",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/Demographic-activity-satisfaction-questionnaire/instructions.md"
+    },
     "languages": [
         "en"
     ],
-    "targets": [
-        "all"
-    ],
+    "licence": "public_domain",
+    "name_translations": {
+        "en": "Demographic and activity satisfaction questionnaire",
+        "es": "",
+        "it": "",
+        "lv": "Demogr\u0101fisko datu un apmierin\u0101t\u012bbas aptauja"
+    },
     "problemprofiles": [
         "UND_PROBLEM_3",
         "ORG_PROBLEM_13"
     ],
-    "types": [
-        "enhancing_services"
-    ],
-    "administrative_scopes": [
-        "eu"
-    ],
-    "domain": "",
     "process": "",
-    "reference": "Demographic and activity satisfaction questionnaire",
-    "form": "survey_template",
-    "format": "pdf",
-    "softwareinterlinker": "googledrive",
-    "difficulty": "easy",
-    "licence": "public_domain",
-    "instructions_translations": {
-        "en": "./interlinkers/knowledge/Demographic-activity-satisfaction-questionnaire/instructions.md"
+    "regulations_and_standards_translations": {
+        "en": ""
     },
+    "softwareinterlinker": "googledrive",
     "tags_translations": {
         "en": [
             "product specification",
@@ -33,19 +53,11 @@
             "usability"
         ]
     },
-    "name_translations": {
-        "en": "Demographic and activity satisfaction questionnaire"
-    },
-    "description_translations": {
-        "en": "<p>This is a model of a questionnaire aimed to collect demographics and activity satisfaction scores from participants to project events and activities.</p>"
-    },
-    "constraints_and_limitations_translations": {
-        "en": "No special constraints apply"
-    },
-    "regulations_and_standards_translations": {
-        "en": ""
-    },
-    "file_translations": {
-        "en": "./interlinkers/knowledge/Demographic-activity-satisfaction-questionnaire/resource.pdf"
-    }
+    "targets": [
+        "all"
+    ],
+    "type": "knowledge",
+    "types": [
+        "enhancing_services"
+    ]
 }

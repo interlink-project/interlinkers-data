@@ -1,46 +1,58 @@
 {
-    "languages": [
-        "en"
-    ],
-    "targets": [
-        "all"
-    ],
-    "problemprofiles": [
-        "ORG_PROBLEM_1"
-    ],
-    "types": [
-        "enabling_services"
-    ],
     "administrative_scopes": [
         "eu"
     ],
-    "reference": "template-for-project-description",
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "description_translations": {
+        "en": "<p>Template for preparing a project description that synthetically summarizes the goals and major aspects of a co-production initiative. </p>",
+        "es": "",
+        "it": "",
+        "lv": ""
+    },
+    "difficulty": "easy",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
+    "file_translations": {
+        "en": "./interlinkers/knowledge/Project-Description-Template/resource.docx"
+    },
     "form": "document_template",
     "format": "editable_source_document",
-    "softwareinterlinker": "googledrive",
-    "difficulty": "easy",
-    "licence": "permissive",
+    "id": "template-for-project-description",
     "instructions_translations": {
         "en": "./interlinkers/knowledge/Project-Description-Template/instructions.md"
     },
+    "languages": [
+        "en"
+    ],
+    "licence": "permissive",
+    "name_translations": {
+        "en": "Template for project description",
+        "es": "",
+        "it": "",
+        "lv": ""
+    },
+    "problemprofiles": [
+        "ORG_PROBLEM_1"
+    ],
+    "regulations_and_standards_translations": {
+        "en": ""
+    },
+    "softwareinterlinker": "googledrive",
     "tags_translations": {
         "en": [
             "project initiation"
         ]
     },
-    "name_translations": {
-        "en": "Template for project description"
-    },
-    "description_translations": {
-        "en": "<p>Template for preparing a project description that synthetically summarizes the goals and major aspects of a co-production initiative. </p>"
-    },
-    "constraints_and_limitations_translations": {
-        "en": "No special constraints apply"
-    },
-    "regulations_and_standards_translations": {
-        "en": ""
-    },
-    "file_translations": {
-        "en": "./interlinkers/knowledge/Project-Description-Template/resource.docx"
-    }
+    "targets": [
+        "all"
+    ],
+    "type": "knowledge",
+    "types": [
+        "enabling_services"
+    ]
 }

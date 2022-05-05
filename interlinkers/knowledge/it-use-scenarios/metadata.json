@@ -1,47 +1,59 @@
 {
+    "administrative_scopes": [
+        "eu"
+    ],
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "description_translations": {
+        "en": "<p>Template for preparing a use scenarios. </p>",
+        "es": "",
+        "it": "",
+        "lv": ""
+    },
+    "difficulty": "easy",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
+    "file_translations": {
+        "en": "./interlinkers/knowledge/it-use-scenarios/resource.xlsx"
+    },
+    "form": "document_template",
+    "format": "editable_source_document",
+    "id": "template-for-use-case-scenarios",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/it-use-scenarios/instructions.md"
+    },
     "languages": [
         "en"
     ],
-    "targets": [
-        "all"
-    ],
+    "licence": "permissive",
+    "name_translations": {
+        "en": "Template for use case scenarios",
+        "es": "",
+        "it": "",
+        "lv": ""
+    },
     "problemprofiles": [
         "ORG_PROBLEM_1",
         "UND_PROBLEM_2"
     ],
-    "types": [
-        "enabling_services"
-    ],
-    "administrative_scopes": [
-        "eu"
-    ],
-    "reference": "template-for-use-scenarios",
-    "form": "document_template",
-    "format": "editable_source_document",
-    "softwareinterlinker": "googledrive",
-    "difficulty": "easy",
-    "licence": "permissive",
-    "instructions_translations": {
-        "en": "./interlinkers/knowledge/it-use-scenarios/instructions.md"
+    "regulations_and_standards_translations": {
+        "en": ""
     },
+    "softwareinterlinker": "googledrive",
     "tags_translations": {
         "en": [
             "services"
         ]
     },
-    "name_translations": {
-        "en": "Template for use case scenarios"
-    },
-    "description_translations": {
-        "en": "<p>Template for preparing a use scenarios. </p>"
-    },
-    "constraints_and_limitations_translations": {
-        "en": "No special constraints apply"
-    },
-    "regulations_and_standards_translations": {
-        "en": ""
-    },
-    "file_translations": {
-        "en": "./interlinkers/knowledge/it-use-scenarios/resource.xlsx"
-    }
+    "targets": [
+        "all"
+    ],
+    "type": "knowledge",
+    "types": [
+        "enabling_services"
+    ]
 }

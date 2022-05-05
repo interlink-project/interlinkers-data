@@ -1,51 +1,63 @@
 {
-  "languages": [
-    "en"
-  ],
-  "targets": [
-    "all"
-  ],
-  "problemprofiles": [
-    "UND_PROBLEM_3",
-    "UND_PROBLEM_1",
-    "VAL_PROBLEM_2"
-  ],
-  "types": [
-    "enhancing_services"
-  ],
-  "administrative_scopes": [
-    "eu"
-  ],
-  "domain": "",
-  "process": "",
-  "reference": "collaborative-problem-refinement",
-  "form": "document_template",
-  "format": "editable_source_document",
-  "softwareinterlinker": "googledrive",
-  "difficulty": "medium",
-  "licence": "public_domain",
-  "instructions_translations": {
-    "en": "./interlinkers/knowledge/Collaborative-Problem-Refinement/instructions.md"
-  },
-  "tags_translations": {
-    "en": [
-      "problem",
-      "refinements"
+    "administrative_scopes": [
+        "eu"
+    ],
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "description_translations": {
+        "en": "<p>This resource will support you to refine the problem to be addresses by the co-production team as an important step to creating an effective and efficient solution.</p>",
+        "es": "",
+        "it": "",
+        "lv": "<p>\u0160is resurss jums pal\u012bdz\u0113s preciz\u0113t uzdevumu, ko risin\u0101t koprades komandai, lai izveidotu efekt\u012bvu risin\u0101jumu.</p>"
+    },
+    "difficulty": "medium",
+    "domain": "",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
+    "file_translations": {
+        "en": "./interlinkers/knowledge/Collaborative-Problem-Refinement/resource.pptx"
+    },
+    "form": "document_template",
+    "format": "editable_source_document",
+    "id": "collaborative-problem-refinement",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/Collaborative-Problem-Refinement/instructions.md"
+    },
+    "languages": [
+        "en"
+    ],
+    "licence": "public_domain",
+    "name_translations": {
+        "en": "Collaborative problem refinement",
+        "es": "Perfeccionamiento de problemas en colaboraci\u00f3n",
+        "it": "Raffinamento collaborativo del problema",
+        "lv": "Uz sadarb\u012bbu v\u0113rsta uzdevuma preciz\u0113\u0161ana"
+    },
+    "problemprofiles": [
+        "UND_PROBLEM_3",
+        "UND_PROBLEM_1",
+        "VAL_PROBLEM_2"
+    ],
+    "process": "",
+    "regulations_and_standards_translations": {
+        "en": ""
+    },
+    "softwareinterlinker": "googledrive",
+    "tags_translations": {
+        "en": [
+            "problem",
+            "refinements"
+        ]
+    },
+    "targets": [
+        "all"
+    ],
+    "type": "knowledge",
+    "types": [
+        "enhancing_services"
     ]
-  },
-  "name_translations": {
-    "en": "Collaborative problem refinement"
-  },
-  "description_translations": {
-    "en": "<p>This resource will support you to refine the problem to be addresses by the co-production team as an important step to creating an effective and efficient solution.</p>"
-  },
-  "constraints_and_limitations_translations": {
-    "en": "No special constraints apply"
-  },
-  "regulations_and_standards_translations": {
-    "en": ""
-  },
-  "file_translations": {
-    "en": "./interlinkers/knowledge/Collaborative-Problem-Refinement/resource.pptx"
-  }
 }

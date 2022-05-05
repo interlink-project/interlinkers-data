@@ -1,5 +1,5 @@
 {
-    "reference": "phase-run",
+    "id": "phase-run",
     "prerequisites": [
         {
             "item": "phase-design",
@@ -8,19 +8,26 @@
     ],
     "name_translations": {
         "en": "Run",
-        "es": ""
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "description_translations": {
         "en": "Make use of designed co-production process, reviewing contribs from users of the service, accepting or rejecting them, exporting reports with changes accepted so that they are processed for refinement.",
-        "es": ""
+        "es": "",
+        "it": "",
+        "lv": ""
     },
     "objectives": [
         {
             "name_translations": {
                 "en": "Monitor continuous crowd refinement process",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "description_translations": {
+<<<<<<< HEAD
                 "en": "Access to the Description Augmenter to the augmented view of service descriptions to monitor and moderate contributions from the crowd, generate intermediary reports and store them. Notice that only the creator of the process to refine a service description can moderate it, unless rights are given to other co-refinement team members through Servicepedia dashboard",
                 "es": ""
             },
@@ -30,13 +37,26 @@
 				"DEF_PROBLEM_2",
 				"BUILD_PROBLEM_9"
 			],
+=======
+                "en": "Access to the Description Augmenter to monitor and moderate contributions from the crowd, generate intermediary reports and store them.",
+                "es": "",
+                "it": "",
+                "lv": ""
+            },
+            "problemprofiles": [
+                "DEF_PROBLEM_5"
+            ],
+>>>>>>> baae50ccbd6ecda9940f824bc1135102d84b92ac
             "tasks": [
                 {
                     "name_translations": {
                         "en": "Link to the Description Augmenter project",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
+<<<<<<< HEAD
                         "en": "Produce a link to the description augmenter process so that co-producers can review contributions, accept, reject them or generate reports for refinement processing. Again, only those with rol moderator in Servicepedia can accept or reject suggestions. All the others, can comment and add new augmentation suggestions ",
                         "es": ""
                     },
@@ -56,32 +76,70 @@
                     "problemprofiles": [
                         
                     ]
+=======
+                        "en": "Produce a link to the description augmenter session so that we co-producers can review contributions, accept, reject them or generate reports for refinement processing. ",
+                        "es": "",
+                        "it": "",
+                        "lv": ""
+                    },
+                    "problemprofiles": [
+                        "BUILD_PROBLEM_2",
+                        "BUILD_PROBLEM_3",
+                        "BUILD_PROBLEM_4",
+                        "BUILD_PROBLEM_5",
+                        "BUILD_PROBLEM_6",
+                        "BUILD_PROBLEM_7",
+                        "BUILD_PROBLEM_8"
+                    ],
+                    "id": "task-link-to-the-description-augmenter-project",
+                    "prerequisites": []
+>>>>>>> baae50ccbd6ecda9940f824bc1135102d84b92ac
                 }
-            ]
+            ],
+            "id": "objective-monitor-continuous-crowd-refinement-process",
+            "prerequisites": []
         },
         {
             "name_translations": {
                 "en": "Publish report with descriptions accepted to be processed",
-                "es": ""
+                "es": "",
+                "it": "",
+                "lv": ""
             },
             "description_translations": {
+<<<<<<< HEAD
                 "en": "Publish enhancement report generated from Servicepedia after having processed refinement suggestions for a given public service description",
                 "es": ""
+=======
+                "en": "Produce a link to the report",
+                "es": "",
+                "it": "",
+                "lv": ""
+>>>>>>> baae50ccbd6ecda9940f824bc1135102d84b92ac
             },
             "problemprofiles": [
                 "ORG_PROBLEM_13",
                 "ORG_PROBLEM_14",
-				"DEF_PROBLEM_5"
+                "DEF_PROBLEM_5"
             ],
             "tasks": [
                 {
                     "name_translations": {
                         "en": "Publish enhancement report",
-                        "es": ""
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
+<<<<<<< HEAD
                         "en": "Publish enhancement report from Servicepedia.",
                         "es": ""
+=======
+                        "en": "Publish enhancement report.",
+                        "es": "",
+                        "it": "",
+                        "lv": ""
+>>>>>>> baae50ccbd6ecda9940f824bc1135102d84b92ac
                     },
                     "problemprofiles": [
                         "BUILD_PROBLEM_2",
@@ -91,10 +149,18 @@
                         "BUILD_PROBLEM_6",
                         "BUILD_PROBLEM_7",
                         "BUILD_PROBLEM_9"
-
-                    ]
+                    ],
+                    "id": "task-publish-enhancement-report",
+                    "prerequisites": []
                 }
-            ]
+            ],
+            "prerequisites": [
+                {
+                    "item": "objective-monitor-continuous-crowd-refinement-process",
+                    "type": "previous"
+                }
+            ],
+            "id": "objective-publish-report-with-descriptions-accepted-to-be-processed"
         }
     ]
 }

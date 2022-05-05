@@ -1,31 +1,51 @@
 {
+    "administrative_scopes": [
+        "eu"
+    ],
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "description_translations": {
+        "en": "<p>Instructions on how to set up a research activity based on interviews, for a co-production project. </p>",
+        "es": "",
+        "it": "",
+        "lv": "<p>Pam\u0101c\u012bba p\u0113tniec\u012bbas aktivit\u0101\u0161u veik\u0161anai koprades projekt\u0101, izmantojot fokusgrupas.</p>"
+    },
+    "difficulty": "easy",
+    "domain": "",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
+    "file_translations": {
+        "en": "./interlinkers/knowledge/Guidelines-for-interviews/resource.docx"
+    },
+    "form": "document_template",
+    "format": "editable_source_document",
+    "id": "guidelines-for-interviews",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/Guidelines-for-interviews/instructions.md"
+    },
     "languages": [
         "en"
     ],
-    "targets": [
-        "all"
-    ],
+    "licence": "public_domain",
+    "name_translations": {
+        "en": "Guidelines for interviews",
+        "es": "",
+        "it": "",
+        "lv": "Interviju vadl\u012bnijas"
+    },
     "problemprofiles": [
         "ORG_PROBLEM_14",
         "UND_PROBLEM_3"
     ],
-    "types": [
-        "enhancing_services"
-    ],
-    "administrative_scopes": [
-        "eu"
-    ],
-    "domain": "",
     "process": "",
-    "reference": "Guidelines-for-interviews",
-    "form": "document_template",
-    "format": "editable_source_document",
-    "softwareinterlinker": "googledrive",
-    "difficulty": "easy",
-    "licence": "public_domain",
-    "instructions_translations": {
-        "en": "./interlinkers/knowledge/Guidelines-for-interviews/instructions.md"
+    "regulations_and_standards_translations": {
+        "en": ""
     },
+    "softwareinterlinker": "googledrive",
     "tags_translations": {
         "en": [
             "focus group",
@@ -33,19 +53,11 @@
             "understand"
         ]
     },
-    "name_translations": {
-        "en": "Guidelines for interviews"
-    },
-    "description_translations": {
-        "en": "<p>Instructions on how to set up a research activity based on interviews, for a co-production project. </p>"
-    },
-    "constraints_and_limitations_translations": {
-        "en": "No special constraints apply"
-    },
-    "regulations_and_standards_translations": {
-        "en": ""
-    },
-    "file_translations": {
-        "en": "./interlinkers/knowledge/Guidelines-for-interviews/resource.docx"
-    }
+    "targets": [
+        "all"
+    ],
+    "type": "knowledge",
+    "types": [
+        "enhancing_services"
+    ]
 }

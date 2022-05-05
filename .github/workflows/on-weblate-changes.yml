@@ -1,9 +1,14 @@
-name: Testing
+name: Migrate weblate translations to the corresponding files
 
 on:
   push:
     branches:    
-      - '*'
+      - master
+  pull_request:
+    branches:    
+      - master
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,7 +19,14 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.8 #install the python needed
-      - name: Install dependencies and run test script
+      - name: Install dependencies and run input script if pull request from weblate
+        if: github.event_name == 'pull_request'
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          python input.py
+      - name: Install dependencies, run test script and generate weblate files if push to master
+        if: github.event_name == 'push'
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt

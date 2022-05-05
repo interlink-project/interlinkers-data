@@ -1,30 +1,50 @@
 {
-    "languages": [
-        "en"
-    ],
-    "targets": [
-        "all"
-    ],
-    "problemprofiles": [
-        "VAL_PROBLEM_2"
-    ],
-    "types": [
-        "enhancing_services"
-    ],
     "administrative_scopes": [
         "eu"
     ],
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "description_translations": {
+        "en": "<p>This resource provides a skeleton to organize a focus group to investigate the co-production practices in a given organization. It addresses a series of questions about previous or current collaboration practices, the dynamics of collaboration (timeline, people, tools, communication channels), current KPIs, critical aspects and  desiderata.</p>",
+        "es": "",
+        "it": "",
+        "lv": "<p>\u0160is resurss pied\u0101v\u0101 fokusgrupas organiz\u0113\u0161anas ietvaru koprades prakses izp\u0113tei konkr\u0113t\u0101 organiz\u0101cij\u0101. Tas ietver jaut\u0101jumu kopumu par \u0161\u012bbr\u012b\u017ea sadarb\u012bbas praksi, sadarb\u012bbas dinamiku (laika grafiks, cilv\u0113ki, r\u012bki, komunik\u0101cijas kan\u0101li), \u0161\u012bbr\u012b\u017ea sasniedzamajiem r\u0101d\u012bt\u0101jiem (KPI), kritiskajiem aspektiem un v\u0113lm\u0113m.</p>"
+    },
+    "difficulty": "easy",
     "domain": "",
-    "process": "",
-    "reference": "focus-group-template-co-production-investigation",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
+    "file_translations": {
+        "en": "./interlinkers/knowledge/Focus-Group-Template-Co-production/resource.pptx"
+    },
     "form": "document_template",
     "format": "editable_source_document",
-    "softwareinterlinker": "googledrive",
-    "difficulty": "easy",
-    "licence": "public_domain",
+    "id": "focus-group-template-co-production-investigation",
     "instructions_translations": {
         "en": "./interlinkers/knowledge/Focus-Group-Template-Co-production/instructions.md"
     },
+    "languages": [
+        "en"
+    ],
+    "licence": "public_domain",
+    "name_translations": {
+        "en": "Focus Group Template Co-production Investigation",
+        "es": "",
+        "it": "",
+        "lv": "Koprades izp\u0113tes fokusgrupas veidlapa"
+    },
+    "problemprofiles": [
+        "VAL_PROBLEM_2"
+    ],
+    "process": "",
+    "regulations_and_standards_translations": {
+        "en": ""
+    },
+    "softwareinterlinker": "googledrive",
     "tags_translations": {
         "en": [
             "focus group",
@@ -32,19 +52,11 @@
             "understand"
         ]
     },
-    "name_translations": {
-        "en": "Focus Group Template Co-production Investigation"
-    },
-    "description_translations": {
-        "en": "<p>This resource provides a skeleton to organize a focus group to investigate the co-production practices in a given organization. It addresses a series of questions about previous or current collaboration practices, the dynamics of collaboration (timeline, people, tools, communication channels), current KPIs, critical aspects and  desiderata.</p>"
-    },
-    "constraints_and_limitations_translations": {
-        "en": "No special constraints apply"
-    },
-    "regulations_and_standards_translations": {
-        "en": ""
-    },
-    "file_translations": {
-        "en": "./interlinkers/knowledge/Focus-Group-Template-Co-production/resource.pptx"
-    }
+    "targets": [
+        "all"
+    ],
+    "type": "knowledge",
+    "types": [
+        "enhancing_services"
+    ]
 }

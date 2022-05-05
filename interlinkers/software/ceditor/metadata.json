@@ -1,22 +1,74 @@
 {
-    "languages": [
-        "en"
-    ],
-    "name_translations": {
-        "en": "Collaborative editor",
-        "es": ""
-    },
-    "description_translations": {
-        "en": "This interlinker uses etherpad, an open source online editor, to provide collaborative editing in really real-time.\nEtherpad (https://etherpad.org/) is an open-source, web-based collaborative real-time editor, allowing authors to simultaneously edit a text document, and see all of the participants' edits in real-time, with the ability to display each author's text in their own color. There is also a chat box in the sidebar to allow meta communication.",
-        "es": ""
-    },
-    "difficulty": "easy",
-    "licence": "propietary",
-    "problemprofiles": [],
     "constraints_and_limitations_translations": {
         "en": "Some text here",
         "es": ""
     },
+    "description_translations": {
+        "en": "This interlinker uses etherpad, an open source online editor, to provide collaborative editing in really real-time.\nEtherpad (https://etherpad.org/) is an open-source, web-based collaborative real-time editor, allowing authors to simultaneously edit a text document, and see all of the participants' edits in real-time, with the ability to display each author's text in their own color. There is also a chat box in the sidebar to allow meta communication.",
+        "es": "",
+        "it": "",
+        "lv": ""
+    },
+    "difficulty": "easy",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
+    "id": "collaborative-editor",
+    "instructions_translations": {
+        "en": "./interlinkers/software/ceditor/instructions.md"
+    },
+    "integration": {
+        "api_path": "/assets",
+        "auth_method": "cookie",
+        "capabilities": {
+            "clone": true,
+            "delete": true,
+            "edit": false,
+            "instantiate": true,
+            "open_in_modal": true,
+            "preview": false,
+            "shortcut": true,
+            "view": true
+        },
+        "capabilities_translations": {
+            "clone_text_translations": {
+                "en": "Clone document",
+                "es": "Clonar documento"
+            },
+            "delete_text_translations": {
+                "en": "Delete document",
+                "es": "Eliminar documento"
+            },
+            "instantiate_text_translations": {
+                "en": "Create an Etherpad document",
+                "es": "Crear documento de Etherpad"
+            },
+            "view_text_translations": {
+                "en": "Open document",
+                "es": "Abrir documento"
+            }
+        },
+        "domain": "",
+        "is_subdomain": false,
+        "path": "ceditor",
+        "service_name": "ceditor"
+    },
+    "is_responsive": true,
+    "languages": [
+        "en",
+        "es"
+    ],
+    "licence": "propietary",
+    "logotype": "./interlinkers/software/ceditor/logo.jpeg",
+    "name_translations": {
+        "en": "Collaborative editor",
+        "es": "",
+        "it": "",
+        "lv": ""
+    },
+    "problemprofiles": [],
     "regulations_and_standards_translations": {
         "en": "Optional text here",
         "es": ""
@@ -25,45 +77,6 @@
         "on_premise"
     ],
     "supports_internationalization": true,
-    "is_responsive": true,
-    "integration": {
-        "domain": "",
-        "path": "ceditor",
-        "service_name": "ceditor",
-        "is_subdomain": false,
-        "api_path": "/assets",
-        "auth_method": "cookie",
-        "capabilities": {
-            "instantiate": true,
-            "clone": true,
-            "view": true,
-            "edit": false,
-            "delete": true,
-            "preview": false,
-            "open_in_modal": true,
-            "shortcut": true
-        },
-        "capabilities_translations": {
-            "instantiate_text_translations": {
-                "en": "Create an Etherpad document",
-                "es": "Crear documento de Etherpad"
-            },
-            "clone_text_translations": {
-                "en": "Clone document",
-                "es": "Clonar documento"
-            },
-            "view_text_translations": {
-                "en": "Open document",
-                "es": "Abrir documento"
-            },
-            "delete_text_translations": {
-                "en": "Delete document",
-                "es": "Eliminar documento"
-            }
-        }
-    },
-    "logotype": "./interlinkers/software/ceditor/logo.jpeg",
-    "reference": "collaborative-editor",
     "tags_translations": {
         "en": [
             "document",
@@ -72,7 +85,5 @@
             "etherpad"
         ]
     },
-    "instructions_translations": {
-        "en": "./interlinkers/software/ceditor/instructions.md"
-    }
+    "type": "software"
 }

@@ -9,11 +9,6 @@
                 "type": "string"
             }
         },
-        "languages": {
-            "title": "Languages",
-            "type": "array",
-            "items": {}
-        },
         "name_translations": {
             "title": "Name Translations",
             "type": "object"
@@ -77,10 +72,6 @@
             "title": "Overview Text",
             "type": "object"
         },
-        "reference": {
-            "title": "Reference",
-            "type": "string"
-        },
         "form": {
             "$ref": "#/definitions/FormTypes"
         },
@@ -105,6 +96,25 @@
                 ]
             }
         },
+        "id": {
+            "title": "Id",
+            "type": "string"
+        },
+        "type": {
+            "title": "Type",
+            "type": "string"
+        },
+        "languages": {
+            "title": "Languages",
+            "type": "array",
+            "items": {}
+        },
+        "environments": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Environments"
+            }
+        },
         "softwareinterlinker": {
             "$ref": "#/definitions/SoftwareInterlinkers"
         },
@@ -119,14 +129,12 @@
     },
     "required": [
         "problemprofiles",
-        "languages",
         "name_translations",
         "description_translations",
         "constraints_and_limitations_translations",
         "tags_translations",
         "difficulty",
         "licence",
-        "reference",
         "instructions_translations",
         "softwareinterlinker",
         "file_translations"
@@ -223,6 +231,15 @@
                 "open_document",
                 "structured_format",
                 "sofware"
+            ]
+        },
+        "Environments": {
+            "title": "Environments",
+            "description": "An enumeration.",
+            "enum": [
+                "varam",
+                "mef",
+                "zgz"
             ]
         },
         "SoftwareInterlinkers": {

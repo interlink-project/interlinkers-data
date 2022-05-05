@@ -1,28 +1,47 @@
 {
-    "languages": [
-        "en"
-    ],
-    "targets": [
-        "all"
-    ],
-    "problemprofiles": [
-        "BUILD_PROBLEM_3"
-    ],
-    "types": [
-        "enabling_services",
-        "enabling_services;implementing_software_and_artifacts"
-    ],
     "administrative_scopes": [
         "national",
         "local"
     ],
-    "reference": "agid-cloud-computing-competence-evalution-template",
+    "asset_name_translations": {
+        "en": "gID Cloud computing competence evalution template"
+    },
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "description_translations": {
+        "en": "<p>This resource contains a questionnaire to check the level of knowledge and competence in cloud computing </p>",
+        "es": "<p>Este recurso contiene un cuestionario para comprobar el nivel de conocimiento y competencia en computaci\u00f3n en la nube</p>",
+        "it": "",
+        "lv": "<p> \u0160is resurss satur aptauju, ar kuras pal\u012bdz\u012bbu iesp\u0113jams p\u0101rbaud\u012bt zin\u0101\u0161anu l\u012bmeni par m\u0101ko\u0146dato\u0161anu </p>"
+    },
+    "difficulty": "medium",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
     "form": "guidelines",
     "format": "editable_source_document",
-    "difficulty": "medium",
-    "licence": "permissive",
+    "id": "agid-cloud-computing-competence-evalution-template",
     "instructions_translations": {
         "en": "./interlinkers/externalknowledge/it-cloud-competences-assesment/instructions.md"
+    },
+    "languages": [
+        "en"
+    ],
+    "licence": "permissive",
+    "name_translations": {
+        "en": "AgID Cloud computing competence evalution template",
+        "es": "Plantilla de evaluaci\u00f3n de la competencia de computaci\u00f3n en nube de AgID",
+        "it": "",
+        "lv": "It\u0101lijas Digit\u0101l\u0101s a\u0123ent\u016bras m\u0101ko\u0146dato\u0161anas kompetences nov\u0113rt\u0113\u0161anas paraugs"
+    },
+    "problemprofiles": [
+        "BUILD_PROBLEM_3"
+    ],
+    "regulations_and_standards_translations": {
+        "en": ""
     },
     "tags_translations": {
         "en": [
@@ -31,21 +50,14 @@
             "security"
         ]
     },
-    "name_translations": {
-        "en": "AgID Cloud computing competence evalution template"
-    },
-    "description_translations": {
-        "en": "<p>This resource contains a questionnaire to check the level of knowledge and competence in cloud computing </p>"
-    },
-    "constraints_and_limitations_translations": {
-        "en": "No special constraints apply"
-    },
-    "regulations_and_standards_translations": {
-        "en": ""
-    },
-    "asset_name_translations": {
-        "en": "gID Cloud computing competence evalution template"
-    },
+    "targets": [
+        "all"
+    ],
+    "type": "knowledge",
+    "types": [
+        "enabling_services",
+        "enabling_services;implementing_software_and_artifacts"
+    ],
     "uri_translations": {
         "en": "https://docs.google.com/spreadsheets/d/1_5aEEDg4TGDEJB8EM5ZQqb6XgGtCxISLRFa_-l2BscU/edit#gid=829270166"
     }

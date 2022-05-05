@@ -1,17 +1,17 @@
 from enum import Enum
 from typing import Dict, List, Optional, Union
 
-from problemprofiles import WithProblemProfiles
-from pydantic import BaseModel, Extra, FilePath, HttpUrl, conlist, validator
+from slugify import slugify
 
+from problemprofiles.problemprofiles import WithProblemProfiles
+from pydantic import BaseModel, Extra, FilePath, HttpUrl, conlist, validator
+from configuration import Languages
 # https://docs.google.com/spreadsheets/d/1tJ2BfX4EOdbBqEbrJWg8a3MENw13vYiPZM_S4wWWgWQ/edit#gid=0
 
-
-class Languages(Enum):
-    es = "es"
-    en = "en"
-    lv = "lv"
-    it = "it"
+class Environments(Enum):
+    varam = "varam"
+    mef = "mef"
+    zgz = "zgz"
 
 
 class FormTypes(Enum):
@@ -90,7 +90,6 @@ class AdministrativeScopes(Enum):
 
 
 class InterlinkerSchema(WithProblemProfiles, extra=Extra.forbid):
-    languages: list
     name_translations: dict
     # FOR 1
     # A name for the INTERLINKER.
@@ -122,7 +121,7 @@ class InterlinkerSchema(WithProblemProfiles, extra=Extra.forbid):
     #
     # Possible values:
     # In the initial specification of INTERLINKERS this field will be defined as textual, to allow for more freedom in the description.
-    # To be further evaluated which types of standard classifications will be used as reference for a more constrained filling of this field.
+    # To be further evaluated which types of standard classifications will be used as id for a more constrained filling of this field.
 
     tags_translations: Dict[str,  conlist(str, min_items=1)]
     # FOR 1
@@ -173,8 +172,6 @@ class InterlinkerSchema(WithProblemProfiles, extra=Extra.forbid):
     overview_text: Optional[dict]
     # FOR 2
     # Explanation of what is made available for user interaction.
-    reference: str
-
 
     form: Optional[FormTypes]
     # FOR 1
@@ -189,3 +186,9 @@ class InterlinkerSchema(WithProblemProfiles, extra=Extra.forbid):
     # - Shown on the platform interface in the page showing the details of the INTERLINKER
     
     instructions_translations:  Dict[str,  Union[HttpUrl, FilePath]]
+
+    # AUTOMATICALLY GENERATED
+    id: Optional[str]
+    type: Optional[str]
+    languages: Optional[list]
+    environments: Optional[List[Environments]]

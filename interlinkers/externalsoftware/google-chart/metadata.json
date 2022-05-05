@@ -1,51 +1,65 @@
 {
-  "languages": ["en", "es"],
-  "name_translations": {
-    "en": "Google Chart"
-  },
-  "description_translations": {
-    "en": "<p>Google Charts is a Java Script library providing a way to visualize data on your website (from simple line charts to complex hierarchical tree maps)</p>"
-  },
-  "tags_translations": {
-    "en": [
-      "ANALYSIS",
-      "GRAPH",
-      "JAVASCRIPT"
-    ]
-  },
-  "difficulty": "medium",
-  "targets": [
-    "all;research_organizations",
-    "all;businesses",
-    "all;pas"
-  ],
-  "licence": "propietary",
-  "problemprofiles": [
-    "ORG_PROBLEM_6.2"
-  ],
-  "types": [
-    "enabling_services"
-  ],
-  "administrative_scopes": [
-    "eu",
-    "national",
-    "local"
-  ],
-  "constraints_and_limitations_translations": {
-    "en": "None"
-  },
-  "regulations_and_standards_translations": {
-    "en": "None"
-  },
-  "logotype": "./interlinkers/externalsoftware/google-chart/logo.png",
-  "reference": "graph-js-library",
-  "uri_translations": {
-    "en": "https://developers.google.com/chart"
-  },
-  "instructions_translations": {
-    "en": "./interlinkers/externalsoftware/google-chart/instructions.md"
-  },
-  "asset_name_translations": {
-    "en": "Google charts"
-  }
+    "administrative_scopes": [
+        "eu",
+        "national",
+        "local"
+    ],
+    "asset_name_translations": {
+        "en": "Google charts"
+    },
+    "constraints_and_limitations_translations": {
+        "en": "None"
+    },
+    "description_translations": {
+        "en": "<p>Google Charts is a Java Script library providing a way to visualize data on your website (from simple line charts to complex hierarchical tree maps)</p>",
+        "es": "",
+        "it": "",
+        "lv": "<p>Google Charts ir JavaScript bibliot\u0113ka, kas pied\u0101v\u0101 datu vizualiz\u0101cijas iesp\u0113jas j\u016bsu t\u012bmek\u013ca vietnei (s\u0101kot no vienk\u0101r\u0161\u0101m l\u012bniju diagramm\u0101m l\u012bdz hierarhisk\u0101m kart\u0113m)</p>"
+    },
+    "difficulty": "medium",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
+    "id": "google-chart",
+    "instructions_translations": {
+        "en": "./interlinkers/externalsoftware/google-chart/instructions.md"
+    },
+    "languages": [
+        "en"
+    ],
+    "licence": "propietary",
+    "logotype": "./interlinkers/externalsoftware/google-chart/logo.png",
+    "name_translations": {
+        "en": "Google Chart",
+        "es": "",
+        "it": "",
+        "lv": "Google Chart"
+    },
+    "problemprofiles": [
+        "ORG_PROBLEM_6.2"
+    ],
+    "regulations_and_standards_translations": {
+        "en": "None"
+    },
+    "tags_translations": {
+        "en": [
+            "ANALYSIS",
+            "GRAPH",
+            "JAVASCRIPT"
+        ]
+    },
+    "targets": [
+        "all;research_organizations",
+        "all;businesses",
+        "all;pas"
+    ],
+    "type": "software",
+    "types": [
+        "enabling_services"
+    ],
+    "uri_translations": {
+        "en": "https://developers.google.com/chart"
+    }
 }

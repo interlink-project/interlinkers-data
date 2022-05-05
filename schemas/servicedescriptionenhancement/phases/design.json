@@ -1,5 +1,5 @@
 {
-    "reference": "phase-design",
+    "id": "phase-design",
     "prerequisites": [
         {
             "item": "phase-engage",
@@ -8,21 +8,29 @@
     ],
     "name_translations": {
         "en": "Design",
-        "es": ""
+        "es": "",
+        "it": "Progettazione",
+        "lv": ""
     },
     "description_translations": {
-        "en": "Follow the guidelines to discuss together, in a balanced and inclusive way, issues, beneficiaries, and priorities for the service to be designed. Find useful resources to conduct interviews, surveys and focus groups for a deeper understanding of stakeholders’ and citizens’ needs and requirements. Use the proposed material to organize service design workshops and develop mockups. Stop and reflect on the process so far with the co-evaluation checklists.",
-        "es": ""
+        "en": "Follow the guidelines to discuss together, in a balanced and inclusive way, issues, beneficiaries, and priorities for the service to be designed. Find useful resources to conduct interviews, surveys and focus groups for a deeper understanding of stakeholders\u2019 and citizens\u2019 needs and requirements. Use the proposed material to organize service design workshops and develop mockups. Stop and reflect on the process so far with the co-evaluation checklists.",
+        "es": "",
+        "it": "Segui le linee guida per discutere insieme, in modo equilibrato e inclusivo, temi, beneficiari e priorit\u00e0 per il servizio da progettare. Trova risorse utili per condurre interviste, sondaggi e focus group per una comprensione pi\u00f9 profonda dei bisogni e delle esigenze degli stakeholder e dei cittadini. Utilizza il materiale proposto per organizzare sessioni di progettazione dei servizi e sviluppare mockup. Fermati e rifletti sul processo finora svolto con le checklist di co-valutazione.",
+        "lv": ""
     },
     "objectives": [
         {
             "name_translations": {
                 "en": "Focus the service description enhancement problem collaboratively",
-                "es": ""
+                "es": "",
+                "it": "Focalizza in modo collaborativo il problema di migliorare le descrizioni di servizio",
+                "lv": ""
             },
             "description_translations": {
                 "en": "Clearly define the problem to be addresses by the co-production team and agree on it. This  is an important step towards creating an effective and efficient solution. Different resources can be useful to this end: tips on how to create and share a common language among team members, resources to guide collaborative discussions, tools for ideas collection.",
-                "es": ""
+                "es": "",
+                "it": "Definisci e concorda chiaramente il problema che deve essere affrontato dal team di co-produzione. Questo \u00e8 un passo importante verso la creazione di una soluzione efficace ed efficiente. Diverse risorse possono essere utili a tal fine: suggerimenti su come creare e condividere un linguaggio comune tra i membri del team, risorse per guidare discussioni collaborative, strumenti per la raccolta di idee.",
+                "lv": ""
             },
             "problemprofiles": [
 				"UND_PROBLEM_1",
@@ -32,36 +40,187 @@
             "tasks": [
                 {
                     "name_translations": {
+<<<<<<< HEAD
+=======
+                        "en": "Develop a shared language",
+                        "es": "",
+                        "it": "Sviluppa un linguaggio comune",
+                        "lv": ""
+                    },
+                    "description_translations": {
+                        "en": "Develop a shared language among the team members and encourage communication and ideas sharing with all the stakeholders. Developing a shared language is crucial to be able for stakeholders to: i) build a common ground for joint action, ii) share, mutually agree on, and understand a longterm research plan and protocol, iii) to ongoingly evaluate the success or failure of decisions.",
+                        "es": "",
+                        "it": "Sviluppa un linguaggio condiviso tra i membri del team e incoraggia la comunicazione e la condivisione di idee con tutti gli stakeholder. Lo sviluppo di un linguaggio condiviso \u00e8 fondamentale per consentire alle parti interessate di: i) costruire un terreno comune per un'azione congiunta, ii) condividere, concordare reciprocamente e comprendere un piano e un protocollo di ricerca a lungo termine, iii) valutare costantemente il successo o il fallimento di decisioni.",
+                        "lv": ""
+                    },
+                    "problemprofiles": [
+                        "ORG_PROBLEM_12"
+                    ],
+                    "id": "task-develop-a-shared-language",
+                    "prerequisites": []
+                },
+                {
+                    "name_translations": {
+>>>>>>> baae50ccbd6ecda9940f824bc1135102d84b92ac
                         "en": "Collaboratively problem refinement",
-                        "es": ""
+                        "es": "",
+                        "it": "Raffina in modo collaborativo il problema",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Refine with the collaboration of the stakeholders network the problem to be addressed. Service design is a problem-solving activity and it is important to clearly understand which is the challenge that the team addresses and how more information can be collected to understand how the service should be designed. Organize focus groups to discuss initial ideas and assumptions, refine them through structured methods and become aware about the missing information that still needs to be collected.",
-                        "es": ""
+                        "es": "",
+                        "it": "Affina grazie alla collaborazione della rete degli stakeholder il problema da affrontare. La progettazione del servizio \u00e8 un'attivit\u00e0 di problem solving ed \u00e8 importante capire chiaramente qual \u00e8 la sfida che il team affronta e come raccogliere maggiori informazioni per capire come dovrebbe essere progettato il servizio. Organizza focus group per discutere idee e ipotesi iniziali, perfezionali attraverso metodi strutturati e identifica le informazioni mancanti che devono ancora essere raccolte.",
+                        "lv": ""
                     },
+<<<<<<< HEAD
                     "problemprofiles": []
                 }
+=======
+                    "problemprofiles": [],
+                    "prerequisites": [
+                        {
+                            "item": "task-develop-a-shared-language",
+                            "type": "previous"
+                        }
+                    ],
+                    "id": "task-collaboratively-problem-refinement"
+                },
+                {
+                    "name_translations": {
+                        "en": "Ideas collection for problem exploration and refinement",
+                        "es": "",
+                        "it": "Raccogli idee per l'esplorazione e il perfezionamento del problema",
+                        "lv": ""
+                    },
+                    "description_translations": {
+                        "en": "In case of need, enlarge the collection of ideas about the various aspects of the problem by launching a discussion forum.",
+                        "es": "",
+                        "it": "In caso di necessit\u00e0, amplia la raccolta di idee sui vari aspetti del problema avviando un forum di discussione.",
+                        "lv": ""
+                    },
+                    "problemprofiles": [],
+                    "prerequisites": [
+                        {
+                            "item": "task-collaboratively-problem-refinement",
+                            "type": "previous"
+                        }
+                    ],
+                    "id": "task-ideas-collection-for-problem-exploration-and-refinement"
+                },
+>>>>>>> baae50ccbd6ecda9940f824bc1135102d84b92ac
                 {
                     "name_translations": {
                         "en": "Define requirements and constraints for the service",
-                        "es": ""
+                        "es": "",
+                        "it": "Definisci i requisiti e i vincoli del servizio",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "The ideas and service design concepts need to be translated into formal requirements to proceed with the implementation of the service. Follow the guidelines on how to collect, structure and communicate requirements and all the service specifications that clarify the objective of the service and how it should be developed. Use stardard representation formalism for requirements descriptions, as for example the Volere Requirements Specification template.",
-                        "es": ""
+                        "es": "",
+                        "it": "Le idee relative alla progettazione del servizio devono essere tradotti in requisiti formali per procedere all'implementazione del servizio. Segui le linee guida su come raccogliere, strutturare e comunicare i requisiti e tutte le specifiche del servizio che definiscono l'obiettivo del servizio e come dovrebbe essere sviluppato. Utilizza formalismi standard per le descrizioni dei requisiti, come ad esempio il modello di specifica dei requisiti di Volere.",
+                        "lv": ""
                     },
-                    "problemprofiles": []
+                    "problemprofiles": [],
+                    "prerequisites": [
+                        {
+                            "item": "task-ideas-collection-for-problem-exploration-and-refinement",
+                            "type": "previous"
+                        }
+                    ],
+                    "id": "task-define-requirements-and-constraints-for-the-service"
                 }
-            ]
+            ],
+            "id": "objective-focus-the-service-description-enhancement-problem-collaboratively",
+            "prerequisites": []
         },
         {
             "name_translations": {
+<<<<<<< HEAD
+=======
+                "en": "Problem exploration",
+                "es": "",
+                "it": "Esplorazione del problema",
+                "lv": ""
+            },
+            "description_translations": {
+                "en": "Before actually designing the service description refinement process, deeply explore the problem context, to gather factual data about users, organizations, needs and their relationships.",
+                "es": "",
+                "it": "Prima di progettare il processo di raffinamento delle descrizioni di servizi, esplora a fondo il contesto del problema, per raccogliere dati concreti su utenti, organizzazioni e i loro bisogni e relazioni.",
+                "lv": ""
+            },
+            "problemprofiles": [
+                "UND_PROBLEM_1",
+                "UND_PROBLEM_3",
+                "UND_PROBLEM_4",
+                "UND_PROBLEM_6",
+                "DEF_PROBLEM_3"
+            ],
+            "tasks": [
+                {
+                    "name_translations": {
+                        "en": "Collect data about users and their behavior",
+                        "es": "",
+                        "it": "Raccogli dati sugli utenti e sul loro comportamento",
+                        "lv": ""
+                    },
+                    "description_translations": {
+                        "en": "Gather all the relevant information about the service that will be produced to put the right processes in place. It\u2019s advisable to establish different types of consultation depending on the groups targeted:\n\\n- Consult users about desired outcomes of the service\n- Consult service providers about the solutions that can give in response to the service demanded\n- Ask public authorities about the implications (organizational, regulatory, etc.) that affect to the service delivery\nOrganize focus groups, interviews or surveys to elicit the desired data.",
+                        "es": "",
+                        "it": "Raccogli tutte le informazioni rilevanti sul servizio per mettere in atto i processi giusti. Si consiglia di stabilire diverse tipologie di consultazione a seconda dei gruppi a cui ci si rivolge:\n\\n- Consultare gli utenti sui risultati desiderati del servizio\n- Consultare i fornitori di servizi sulle soluzioni che possono dare in risposta al servizio richiesto\n- Chiedere alle autorit\u00e0 pubbliche le implicazioni (organizzative, normative, ecc.) che incidono sull'erogazione del servizio\nOrganizza focus group, interviste o sondaggi per ottenere i dati desiderati.",
+                        "lv": ""
+                    },
+                    "problemprofiles": [
+                        "ORG_PROBLEM_6.2"
+                    ],
+                    "id": "task-collect-data-about-users-and-their-behavior",
+                    "prerequisites": []
+                },
+                {
+                    "name_translations": {
+                        "en": "Ecosystem mapping",
+                        "es": "",
+                        "it": "Mappa dell'ecosistema",
+                        "lv": ""
+                    },
+                    "description_translations": {
+                        "en": "Map in a synthetic representation all the key roles that can impact on the user, organization and service environment. The ecosystem map is built by first displaying all the entities, and then connecting them based on the type of value they exchange.",
+                        "es": "",
+                        "it": "Mappa in una rappresentazione grafica gli elementi che possono avere un impatto sull'utente, sull'organizzazione e sull'ambiente di servizio. La mappa dell'ecosistema viene costruita visualizzando prima tutte le entit\u00e0 e poi collegandole in base al tipo di valore che si scambiano.",
+                        "lv": ""
+                    },
+                    "problemprofiles": [],
+                    "prerequisites": [
+                        {
+                            "item": "task-collect-data-about-users-and-their-behavior",
+                            "type": "previous"
+                        }
+                    ],
+                    "id": "task-ecosystem-mapping"
+                }
+            ],
+            "prerequisites": [
+                {
+                    "item": "objective-focus-the-service-description-enhancement-problem-collaboratively",
+                    "type": "previous"
+                }
+            ],
+            "id": "objective-problem-exploration"
+        },
+        {
+            "name_translations": {
+>>>>>>> baae50ccbd6ecda9940f824bc1135102d84b92ac
                 "en": "Service description refinement process specification",
-                "es": ""
+                "es": "",
+                "it": "Specifica il processo di raffinamento della descrizione di un servizio",
+                "lv": ""
             },
             "description_translations": {
                 "en": "Based on the description augmenter INTERLINKER create a new service description enhancement process.",
-                "es": ""
+                "es": "",
+                "it": "Sulla base dell'INTERLINKER Description Augmenter crea un nuovo processo di raffinamento della descrizione di un servizio.",
+                "lv": ""
             },
             "problemprofiles": [
                 "UND_PROBLEM_1",
@@ -75,26 +234,50 @@
                 {
                     "name_translations": {
                         "en": "Launch Description Augmenter",
-                        "es": ""
+                        "es": "",
+                        "it": "Lancia il Description Augmenter",
+                        "lv": ""
                     },
                     "description_translations": {
+<<<<<<< HEAD
                         "en": "Use the Initiate Procedure to launch Description Augmenter or simply select Description Augmenter recommended INTERLINKER",
                         "es": ""
                     },
                     "problemprofiles": [
 						"BUILD_PROBLEM_9"
 					]
+=======
+                        "en": "Use the init procedure to launch it.",
+                        "es": "",
+                        "it": "Utilizza la procedura \"init\" per lanciarlo.",
+                        "lv": ""
+                    },
+                    "problemprofiles": [],
+                    "id": "task-launch-description-augmenter",
+                    "prerequisites": []
+>>>>>>> baae50ccbd6ecda9940f824bc1135102d84b92ac
                 }
-            ]
+            ],
+            "prerequisites": [
+                {
+                    "item": "objective-problem-exploration",
+                    "type": "previous"
+                }
+            ],
+            "id": "objective-service-description-refinement-process-specification"
         },
         {
             "name_translations": {
                 "en": "Sustainability",
-                "es": ""
+                "es": "",
+                "it": "Sostenibilit\u00e0",
+                "lv": ""
             },
             "description_translations": {
                 "en": "Before further going deep into the launch of the enhancement process. Stop and reflect about the design results obtained so far and about the actual feasibility and sustainability of what you are about to implement.",
-                "es": ""
+                "es": "",
+                "it": "Prima di addentrarti nel lancio effettivo del processo di miglioramento delle descrizioni dei servizi, fermati a riflettere sui risultati di design ottenuti sino ad ora e sulla effettiva fattibilit\u00e0 e sostenibilit\u00e0 di quello che state per implementare.",
+                "lv": ""
             },
             "problemprofiles": [
                 "UND_PROBLEM_3"
@@ -102,16 +285,54 @@
             "tasks": [
                 {
                     "name_translations": {
-                        "en": "Understand motivations and incentives",
-                        "es": ""
+<<<<<<< HEAD
+=======
+                        "en": "Evaluation of codesign",
+                        "es": "",
+                        "it": "",
+                        "lv": ""
                     },
                     "description_translations": {
-                        "en": "What are the incentives for those who can provide support \/ funding and for those developing \/ maintaining them?\r\nStop and reflect on how stakeholders collaboration in co-creation went so far. Follow the proposed checklist to understand whether further incentives and supportive measures are needed to ensure productive development and co-delivery phases.",
-                        "es": ""
+                        "en": "Is the design output satisfactory?\r\nFollow the proposed checklist to understand if you are done with design or whether an iterative refinement cycle is recommended.",
+                        "es": "",
+                        "it": "Il risultato del design \u00e8 soddisfacente?\nSegui la lista di controllo proposta e comprendi se il design pu\u00f2 considerarsi completato o se un ciclo di raffinamento iterativo \u00e8 raccomandabile.",
+                        "lv": ""
                     },
-                    "problemprofiles": []
+                    "problemprofiles": [],
+                    "id": "task-evaluation-of-codesign",
+                    "prerequisites": []
+                },
+                {
+                    "name_translations": {
+>>>>>>> baae50ccbd6ecda9940f824bc1135102d84b92ac
+                        "en": "Understand motivations and incentives",
+                        "es": "",
+                        "it": "Comprendere le motivazioni e gli incentivi necessari",
+                        "lv": ""
+                    },
+                    "description_translations": {
+                        "en": "What are the incentives for those who can provide support / funding and for those developing / maintaining them?\r\nStop and reflect on how stakeholders collaboration in co-creation went so far. Follow the proposed checklist to understand whether further incentives and supportive measures are needed to ensure productive development and co-delivery phases.",
+                        "es": "",
+                        "it": "Quali sono gli incentivi per coloro che forniscono supporto / finanziamenti al servizio e per coloro che lo sviluppano / mantengono?\nFermati e rifletti come ha funzionato fino ad ora la collaborazione fra gli stakeholder. Segui la lista di controllo per capire se siano necessari ulteriori incentivi e misure di supporto per assicurare uno sviluppo ed una erogazione del servizio produttivi.",
+                        "lv": ""
+                    },
+                    "problemprofiles": [],
+                    "prerequisites": [
+                        {
+                            "item": "task-evaluation-of-codesign",
+                            "type": "previous"
+                        }
+                    ],
+                    "id": "task-understand-motivations-and-incentives"
                 }
-            ]
+            ],
+            "prerequisites": [
+                {
+                    "item": "objective-service-description-refinement-process-specification",
+                    "type": "previous"
+                }
+            ],
+            "id": "objective-sustainability"
         }
     ]
 }

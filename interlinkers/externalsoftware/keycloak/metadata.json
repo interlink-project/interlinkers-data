@@ -1,42 +1,67 @@
 {
-  "languages": ["en", "es"],
-    "name_translations": {
-      "en":"Keycloak"
+    "administrative_scopes": [
+        "eu",
+        "national",
+        "local"
+    ],
+    "asset_name_translations": {
+        "en": "Keycloak"
+    },
+    "constraints_and_limitations_translations": {
+        "en": "None"
     },
     "description_translations": {
-      "en":"<p>Keycloak provides user federation, strong authentication, user management, fine-grained authorization</p>"
-    },
-    "tags_translations": {
-      "en" : [
-        "authentication",
-        "ssl",
-        "openid", 
-        "security"
-      ]
+        "en": "<p>Keycloak provides user federation, strong authentication, user management, fine-grained authorization</p>",
+        "es": "",
+        "it": "",
+        "lv": "<p>Keycloak nodro\u0161ina lietot\u0101ju feder\u0101ciju, sp\u0113c\u012bgu autentifik\u0101ciju, lietot\u0101ju kontroli un prec\u012bzu autoriz\u0101ciju</p>"
     },
     "difficulty": "difficult",
-    "targets": ["all;pas", "all;research_organizations", "all;businesses"],
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
+    "id": "keycloak",
+    "instructions_translations": {
+        "en": "./interlinkers/externalsoftware/keycloak/instructions.md"
+    },
+    "languages": [
+        "en"
+    ],
     "licence": "permissive",
+    "logotype": "./interlinkers/externalsoftware/keycloak/logo.png",
+    "name_translations": {
+        "en": "Keycloak",
+        "es": "",
+        "it": "",
+        "lv": "Keycloak"
+    },
     "problemprofiles": [
         "ORG_PROBLEM_3"
     ],
-    "types": ["enabling_services", "enhancing_services"],
-    "administrative_scopes": ["eu", "national", "local"],
-    "constraints_and_limitations_translations": {
-      "en": "None"
-    },
     "regulations_and_standards_translations": {
-      "en":"None"
+        "en": "None"
     },
-    "reference" : "user-authentication-authorization",
-    "logotype": "./interlinkers/externalsoftware/keycloak/logo.png",
+    "tags_translations": {
+        "en": [
+            "authentication",
+            "ssl",
+            "openid",
+            "security"
+        ]
+    },
+    "targets": [
+        "all;pas",
+        "all;research_organizations",
+        "all;businesses"
+    ],
+    "type": "software",
+    "types": [
+        "enabling_services",
+        "enhancing_services"
+    ],
     "uri_translations": {
-      "en": "https://www.keycloak.org/"
-    },
-    "instructions_translations": {
-      "en": "./interlinkers/externalsoftware/keycloak/instructions.md"
-    },
-    "asset_name_translations": {
-      "en": "Keycloak"
+        "en": "https://www.keycloak.org/"
     }
 }

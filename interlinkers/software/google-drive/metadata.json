@@ -1,62 +1,42 @@
 {
-    "languages": [
-        "en"
-    ],
-    "languages": [],
-    "name_translations": {
-        "en": "Google Drive",
-        "es": "Google Drive"
-    },
-    "description_translations": {
-        "en": "Google Drive is a file storage and synchronization service developed by Google. Launched on April 24, 2012, Google Drive allows users to store files in the cloud, synchronize files across devices, and share files.\nGoogle Drive encompasses Google Docs, Google Sheets, and Google Slides, which are a part of the Google Docs Editors office suite that permits collaborative editing of documents, spreadsheets, presentations, drawings, forms, and more. Files created and edited through the Google Docs suite are saved in Google Drive.\nThis software INTERLIKER allows users of the collaborative environment to create new documents, spreadsheets and presentations which can be co-edited and shared by co-production team participants",
-        "es": "Google Drive es un servicio de almacenamiento y sincronización de archivos desarrollado por Google. Lanzado el 24 de abril de 2012, Google Drive permite a los usuarios almacenar archivos en la nube, sincronizar archivos entre dispositivos y compartir archivos.\nGoogle Drive incluye Google Docs, Google Sheets y Google Slides, que forman parte de Google Docs Editors. paquete ofimático que permite la edición colaborativa de documentos, hojas de cálculo, presentaciones, dibujos, formularios y más. Los archivos creados y editados a través de la suite Google Docs se guardan en Google Drive.\nEste software INTERLIKER permite a los usuarios del entorno colaborativo crear nuevos documentos, hojas de cálculo y presentaciones que pueden ser coeditados y compartidos por los participantes del equipo de coproducción."
-    },
-    "difficulty": "easy",
-    "licence": "propietary",
-    "problemprofiles": [],
     "constraints_and_limitations_translations": {
         "en": "",
         "es": ""
     },
-    "regulations_and_standards_translations": {
-        "en": "",
-        "es": ""
+    "description_translations": {
+        "en": "Google Drive is a file storage and synchronization service developed by Google. Launched on April 24, 2012, Google Drive allows users to store files in the cloud, synchronize files across devices, and share files.\nGoogle Drive encompasses Google Docs, Google Sheets, and Google Slides, which are a part of the Google Docs Editors office suite that permits collaborative editing of documents, spreadsheets, presentations, drawings, forms, and more. Files created and edited through the Google Docs suite are saved in Google Drive.\nThis software INTERLIKER allows users of the collaborative environment to create new documents, spreadsheets and presentations which can be co-edited and shared by co-production team participants",
+        "es": "Google Drive es un servicio de almacenamiento y sincronizaci\u00f3n de archivos desarrollado por Google. Lanzado el 24 de abril de 2012, Google Drive permite a los usuarios almacenar archivos en la nube, sincronizar archivos entre dispositivos y compartir archivos.\nGoogle Drive incluye Google Docs, Google Sheets y Google Slides, que forman parte de Google Docs Editors. paquete ofim\u00e1tico que permite la edici\u00f3n colaborativa de documentos, hojas de c\u00e1lculo, presentaciones, dibujos, formularios y m\u00e1s. Los archivos creados y editados a trav\u00e9s de la suite Google Docs se guardan en Google Drive.\nEste software INTERLIKER permite a los usuarios del entorno colaborativo crear nuevos documentos, hojas de c\u00e1lculo y presentaciones que pueden ser coeditados y compartidos por los participantes del equipo de coproducci\u00f3n.",
+        "it": "",
+        "lv": ""
     },
-    "supported_by": [
-        "saas"
+    "difficulty": "easy",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
     ],
-    "supports_internationalization": true,
-    "is_responsive": true,
+    "id": "google-drive",
+    "instructions_translations": {
+        "en": "./interlinkers/software/google-drive/instructions.md"
+    },
     "integration": {
-        "domain": "",
-        "path": "googledrive",
-        "service_name": "googledrive",
-        "is_subdomain": false,
         "api_path": "/assets",
         "auth_method": "cookie",
         "capabilities": {
-            "instantiate": true,
             "clone": true,
-            "view": true,
-            "edit": false,
             "delete": true,
             "download": true,
-            "preview": false,
+            "edit": false,
+            "instantiate": true,
             "open_in_modal": true,
-            "shortcut": true
+            "preview": false,
+            "shortcut": true,
+            "view": true
         },
         "capabilities_translations": {
-            "instantiate_text_translations": {
-                "en": "Create a Google Drive document",
-                "es": "Crear documento de Google Drive"
-            },
             "clone_text_translations": {
                 "en": "Clone document",
                 "es": "Clonar documento"
-            },
-            "view_text_translations": {
-                "en": "Open document",
-                "es": "Abrir documento"
             },
             "delete_text_translations": {
                 "en": "Delete document",
@@ -65,11 +45,43 @@
             "download_text_translations": {
                 "en": "Download document",
                 "es": "Descargar documento"
+            },
+            "instantiate_text_translations": {
+                "en": "Create a Google Drive document",
+                "es": "Crear documento de Google Drive"
+            },
+            "view_text_translations": {
+                "en": "Open document",
+                "es": "Abrir documento"
             }
-        }
+        },
+        "domain": "",
+        "is_subdomain": false,
+        "path": "googledrive",
+        "service_name": "googledrive"
     },
+    "is_responsive": true,
+    "languages": [
+        "en",
+        "es"
+    ],
+    "licence": "propietary",
     "logotype": "./interlinkers/software/google-drive/logo.png",
-    "reference": "google-drive",
+    "name_translations": {
+        "en": "Google Drive",
+        "es": "Google Drive",
+        "it": "",
+        "lv": ""
+    },
+    "problemprofiles": [],
+    "regulations_and_standards_translations": {
+        "en": "",
+        "es": ""
+    },
+    "supported_by": [
+        "saas"
+    ],
+    "supports_internationalization": true,
     "tags_translations": {
         "en": [
             "document",
@@ -94,14 +106,12 @@
             "sitio",
             "pintar",
             "dibujar",
-            "colaboración",
+            "colaboraci\u00f3n",
             "excel",
             "word",
             "texto",
             "powerpoint"
         ]
     },
-    "instructions_translations": {
-        "en": "./interlinkers/software/google-drive/instructions.md"
-    }
+    "type": "software"
 }
