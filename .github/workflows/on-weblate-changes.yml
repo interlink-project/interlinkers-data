@@ -1,17 +1,13 @@
 name: Migrate weblate translations to the corresponding files
 
 on:
-  push:
-    branches:    
-      - weblate
+  pull_request:
+    branches:
+      - input
   workflow_dispatch:
 
 jobs:
   build:
-    # Ensures that only one will run at a time.
-    concurrency:
-      group: environment-${{ github.ref }}
-      cancel-in-progress: true
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo content
@@ -20,7 +16,7 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.8 #install the python needed
-      - name: Install dependencies and run test script
+      - name: Install dependencies and run input script
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
@@ -28,3 +24,4 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Auto changes
+          branch: master
