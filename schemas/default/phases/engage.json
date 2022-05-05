@@ -4,7 +4,7 @@
     "name_translations": {
         "en": "Engage",
         "es": "Comprometer",
-        "it": "",
+        "it": "Coinvolgere",
         "lv": ""
     },
     "description_translations": {
@@ -18,13 +18,13 @@
             "name_translations": {
                 "en": "Identify stakeholders",
                 "es": "Identificar stakeholders",
-                "it": "",
+                "it": "Identifica le parti interessate",
                 "lv": ""
             },
             "description_translations": {
                 "en": "The identification of key actors  is the first step to start your  process of co-production. According to the type of project, the goals and the level of citizen involvement, different questions are to be answered.\r\nWhat different  types of stakeholders enter into play in the initiative to be co-produced? What are their motivations and skills to participate in the project? What is their position in the network? How to contact them?\r\nFollow the specific tasks to get the complete picture.",
                 "es": "",
-                "it": "",
+                "it": "L'identificazione degli attori rilevanti \u00e8 il primo passo per avviare il processo di co-produzione. A seconda del tipo di progetto, degli obiettivi e del livello di coinvolgimento dei cittadini, \u00e8 necessario rispondere a diverse domande.\nQuali diversi tipi di portarori di interesse e stakeholder entrano in gioco nell'iniziativa da co-produrre? Quali sono le loro motivazioni e capacit\u00e0 per partecipare al progetto? Qual \u00e8 la loro posizione nella rete? Come contattarli?\nSegui le attivit\u00e0 specifiche per ottenere il quadro completo.",
                 "lv": ""
             },
             "problemprofiles": [],
@@ -106,7 +106,7 @@
                     "description_translations": {
                         "en": "Write down the list of participants, aside the co-production team, who may be interested in observing the progress of the co-production project and have the opportunity to emit opinions and take part in some decision processes. ",
                         "es": "",
-                        "it": "",
+                        "it": "Annota l'elenco dei partecipanti, a parte il team di coproduzione, che potrebbero essere interessati ad osservare l'andamento del progetto di coproduzione e avere l'opportunit\u00e0 di esprimere opinioni e prendere parte ad alcuni processi decisionali. ",
                         "lv": ""
                     },
                     "problemprofiles": [
@@ -128,7 +128,7 @@
             "name_translations": {
                 "en": "Engage stakeholders",
                 "es": "",
-                "it": "",
+                "it": "Coinvolgi le parti interessate",
                 "lv": ""
             },
             "description_translations": {
@@ -147,13 +147,13 @@
                     "name_translations": {
                         "en": "Prepare an engagement plan",
                         "es": "",
-                        "it": "",
+                        "it": "Prepara un piano di coinvolgimento",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Create an effective engagement plan which allows you to reach to the types and numbers of stakeholders sufficient to ensure that the co-produced service is well targeted. \r\nAn engagement plan is usually composed of three parts: the identification of your project\u2019s stakeholders; the planning of effective means for interacting with each stakeholder, and protocols for accurately documenting your work for the sake of transparency, accountability and evaluation of the process.",
                         "es": "",
-                        "it": "",
+                        "it": "Crea un piano di coinvolgimento efficace che consenta di raggiungere le tipologie e il numero di stakeholder sufficienti per garantire che il servizio coprodotto sia ben mirato.\nUn piano di coinvolgimento \u00e8 solitamente composto da tre parti: l'identificazione degli stakeholder del progetto; la pianificazione di mezzi efficaci per interagire con ogni stakeholder e protocolli per documentare accuratamente il vostro lavoro per motivi di trasparenza, responsabilit\u00e0 e valutazione del processo.",
                         "lv": ""
                     },
                     "problemprofiles": [
@@ -166,13 +166,13 @@
                     "name_translations": {
                         "en": "Create awareness and communication",
                         "es": "",
-                        "it": "",
+                        "it": "Crea consapevolezza e comunicazione",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Ensure that relevant stakeholders are aware of the initiative in order to ensure their participation. Awareness-raising is a process that seeks to inform and educate people about a topic or issue with the intention of influencing their attitudes, behaviours and beliefs towards the achievement of a defined purpose or goal.",
                         "es": "",
-                        "it": "",
+                        "it": "Accertati che le parti interessate siano a conoscenza dell'iniziativa al fine di garantire la loro partecipazione. La sensibilizzazione \u00e8 un processo che cerca di informare ed educare le persone su un argomento o un problema con l'intenzione di influenzare i loro atteggiamenti, comportamenti e convinzioni verso il raggiungimento di uno scopo o obiettivo definito.",
                         "lv": ""
                     },
                     "problemprofiles": [
@@ -191,13 +191,13 @@
                     "name_translations": {
                         "en": "Communicate benefit for stakeholders",
                         "es": "",
-                        "it": "",
+                        "it": "Comunica i benefici agli stakeholder",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Clearly communicate the benefits of service co-production to your network of stakeholders and citizens.\r\nParticipants need to understand why their participation matters, what they can gain individually and as a group.",
                         "es": "",
-                        "it": "",
+                        "it": "Comunica chiaramente i vantaggi della co-produzione di servizi alla tua rete di stakeholder e di cittadini.\nI partecipanti devono capire perch\u00e9 la loro partecipazione \u00e8 importante, cosa possono ottenere individualmente e come gruppo.",
                         "lv": ""
                     },
                     "problemprofiles": [
@@ -215,13 +215,13 @@
                     "name_translations": {
                         "en": "Engage citizens in the co-production process",
                         "es": "",
-                        "it": "",
+                        "it": "Coinvolgi i cittadini nel processo di coproduzione",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Provide members of the public with the information they need to understand the project, the decision process, and also how public input can influence decisions, the design of the service and the way it is delivered. ",
                         "es": "",
-                        "it": "",
+                        "it": "Fornisci ai membri della societ\u00e0 civile le informazioni di cui hanno bisogno per comprendere il progetto, il processo decisionale e anche come il loro input pu\u00f2 influenzare le decisioni, la progettazione del servizio e il modo in cui viene erogato. ",
                         "lv": ""
                     },
                     "problemprofiles": [
@@ -249,13 +249,13 @@
             "name_translations": {
                 "en": "Define legal and ethical framework",
                 "es": "",
-                "it": "",
+                "it": "Definire il quadro giuridico ed etico",
                 "lv": ""
             },
             "description_translations": {
                 "en": "The complexity of legal regulations can sometime make it difficult for governments to take up ICTs to co-produce and can cause significant delays in the deployment of solutions.\r\nFollow the guidelines offered here to prepare the financial, technical, and legal agreements that ensure viability to your co-production project.",
                 "es": "",
-                "it": "",
+                "it": "La complessit\u00e0 delle normative legali a volte pu\u00f2 rendere difficile per le amministrazioni utilizzare le ICT per co-produrre e pu\u00f2 causare ritardi significativi nell'implementazione delle soluzioni.\nSegui le linee guida offerte qui per preparare gli accordi finanziari, tecnici e legali che garantiscono la fattibilit\u00e0 del tuo progetto di coproduzione.",
                 "lv": ""
             },
             "problemprofiles": [],
@@ -264,13 +264,13 @@
                     "name_translations": {
                         "en": "Define a non-disclosure agreement (NDA)",
                         "es": "",
-                        "it": "",
+                        "it": "Definisci un accordo di riservatezza (NDA)",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "You should consider whether your collaborative network of stakeholders needs a formal  agreement for not disclosing the confidential information that is shared as part of co-producing a service together.",
                         "es": "",
-                        "it": "",
+                        "it": "Stabilisci se la tua rete collaborativa di parti interessate ha bisogno di un accordo formale per non divulgare le informazioni riservate condivise come parte della co-produzione di un servizio insieme.",
                         "lv": ""
                     },
                     "problemprofiles": [],
@@ -281,13 +281,13 @@
                     "name_translations": {
                         "en": "Define a partnership agreement",
                         "es": "",
-                        "it": "",
+                        "it": "Definisci un accordo di partnenariato",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Participants should clearly understand their role in the co-production effort, their responsabilities, their rights. \r\nYou might wish to write down the terms and general plan for the collaboration, to give to the initiative a more formal structure, visibility and political support. \r\nGuidelines and examples of partnership agreements may help you decide which is the most suitable solution for your case.",
                         "es": "",
-                        "it": "",
+                        "it": "I partecipanti dovrebbero comprendere chiaramente il loro ruolo nello sforzo di coproduzione, le loro responsabilit\u00e0, i loro diritti.\nPotresti scrivere i termini e il piano generale della collaborazione, per dare all'iniziativa una struttura pi\u00f9 formale, visibilit\u00e0 e sostegno politico.\nLinee guida ed esempi di accordi di partnership possono aiutarti a decidere quale sia la soluzione pi\u00f9 adatta al tuo caso.",
                         "lv": ""
                     },
                     "problemprofiles": [
@@ -315,13 +315,13 @@
             "name_translations": {
                 "en": "Define data management plan",
                 "es": "",
-                "it": "",
+                "it": "Definisci il piano di gestione dei dati",
                 "lv": ""
             },
             "description_translations": {
                 "en": "Make sure data that is collected and processed during the co-production process is managed according to the GDPR and EU best practices.\r\nPrepare a data management plan to guide you throughout the project life time and beyond.",
                 "es": "",
-                "it": "",
+                "it": "Assicurati che i dati raccolti ed elaborati durante il processo di coproduzione siano gestiti secondo il GDPR e le best practices dell'UE.\nPrepara un piano di gestione dei dati che ti guidi per tutta la durata del progetto e oltre.",
                 "lv": ""
             },
             "problemprofiles": [
@@ -333,13 +333,13 @@
                     "name_translations": {
                         "en": "Clarify the purpose for data collection",
                         "es": "",
-                        "it": "",
+                        "it": "Chiarisci lo scopo della raccolta dei dati",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Which data will be collected during co-production? \r\nStart your data management plan by making an inventory of data sources and types.",
                         "es": "",
-                        "it": "",
+                        "it": "Quali dati verranno raccolti durante la coproduzione?\nAvvia il tuo piano di gestione dei dati creando un inventario delle origini e dei tipi di dati che verrano raccolti e usati.",
                         "lv": ""
                     },
                     "problemprofiles": [],
@@ -350,13 +350,13 @@
                     "name_translations": {
                         "en": "Understand how the data flows",
                         "es": "",
-                        "it": "",
+                        "it": "Comprendi il flusso dei dati",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "From whom and for which purpose is data accessed? \r\nUnderstand where data can be securely stored and whether data is to be further transferred.",
                         "es": "",
-                        "it": "",
+                        "it": "Chi accede ai dati? Per quale scopo?\nComprendi dove i dati possono essere archiviati in modo sicuro e se i dati devono essere ulteriormente trasferiti.",
                         "lv": ""
                     },
                     "problemprofiles": [],
@@ -372,13 +372,13 @@
                     "name_translations": {
                         "en": "Be aware of data impact",
                         "es": "",
-                        "it": "",
+                        "it": "Sii consapevole dell'impatto dei dati",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Consider which are users' and suppliers' pids concerning data.\r\nReflect on aspects of ownership, minimalization, responsibility, sharing, archiving, anonymity.",
                         "es": "",
-                        "it": "",
+                        "it": "Considera quali sono i pids degli utenti e dei fornitori relativi ai dati.\nRifletti sugli aspetti di propriet\u00e0, minimizzazione, responsabilit\u00e0, condivisione, archiviazione, anonimato.",
                         "lv": ""
                     },
                     "problemprofiles": [],
