@@ -27,26 +27,15 @@
                 "lv": ""
             },
             "description_translations": {
-<<<<<<< HEAD
                 "en": "Access to the Description Augmenter to the augmented view of service descriptions to monitor and moderate contributions from the crowd, generate intermediary reports and store them. Notice that only the creator of the process to refine a service description can moderate it, unless rights are given to other co-refinement team members through Servicepedia dashboard",
                 "es": ""
             },
             "problemprofiles": [
-				"UND_PROBLEM_1",
-				"UND_PROBLEM_5",
-				"DEF_PROBLEM_2",
-				"BUILD_PROBLEM_9"
-			],
-=======
-                "en": "Access to the Description Augmenter to monitor and moderate contributions from the crowd, generate intermediary reports and store them.",
-                "es": "",
-                "it": "",
-                "lv": ""
-            },
-            "problemprofiles": [
-                "DEF_PROBLEM_5"
+                "UND_PROBLEM_1",
+                "UND_PROBLEM_5",
+                "DEF_PROBLEM_2",
+                "BUILD_PROBLEM_9"
             ],
->>>>>>> baae50ccbd6ecda9940f824bc1135102d84b92ac
             "tasks": [
                 {
                     "name_translations": {
@@ -56,16 +45,15 @@
                         "lv": ""
                     },
                     "description_translations": {
-<<<<<<< HEAD
                         "en": "Produce a link to the description augmenter process so that co-producers can review contributions, accept, reject them or generate reports for refinement processing. Again, only those with rol moderator in Servicepedia can accept or reject suggestions. All the others, can comment and add new augmentation suggestions ",
                         "es": ""
                     },
-                    "problemprofiles": [
-              
-                    ]
+                    "problemprofiles": [],
+                    "prerequisites": [],
+                    "id": "task-link-to-the-description-augmenter-project"
                 },
-				{
-					"name_translations": {
+                {
+                    "name_translations": {
                         "en": "Review in Servicepedia dashboard contribs",
                         "es": ""
                     },
@@ -73,27 +61,14 @@
                         "en": "Review in Servicepedia dashboard contribs, accept those that are good, reject the bad ones, until completing revision process",
                         "es": ""
                     },
-                    "problemprofiles": [
-                        
-                    ]
-=======
-                        "en": "Produce a link to the description augmenter session so that we co-producers can review contributions, accept, reject them or generate reports for refinement processing. ",
-                        "es": "",
-                        "it": "",
-                        "lv": ""
-                    },
-                    "problemprofiles": [
-                        "BUILD_PROBLEM_2",
-                        "BUILD_PROBLEM_3",
-                        "BUILD_PROBLEM_4",
-                        "BUILD_PROBLEM_5",
-                        "BUILD_PROBLEM_6",
-                        "BUILD_PROBLEM_7",
-                        "BUILD_PROBLEM_8"
+                    "problemprofiles": [],
+                    "prerequisites": [
+                        {
+                            "item": "task-link-to-the-description-augmenter-project",
+                            "type": "previous"
+                        }
                     ],
-                    "id": "task-link-to-the-description-augmenter-project",
-                    "prerequisites": []
->>>>>>> baae50ccbd6ecda9940f824bc1135102d84b92ac
+                    "id": "task-review-in-servicepedia-dashboard-contribs"
                 }
             ],
             "id": "objective-monitor-continuous-crowd-refinement-process",
@@ -107,15 +82,8 @@
                 "lv": ""
             },
             "description_translations": {
-<<<<<<< HEAD
                 "en": "Publish enhancement report generated from Servicepedia after having processed refinement suggestions for a given public service description",
                 "es": ""
-=======
-                "en": "Produce a link to the report",
-                "es": "",
-                "it": "",
-                "lv": ""
->>>>>>> baae50ccbd6ecda9940f824bc1135102d84b92ac
             },
             "problemprofiles": [
                 "ORG_PROBLEM_13",
@@ -131,15 +99,8 @@
                         "lv": ""
                     },
                     "description_translations": {
-<<<<<<< HEAD
                         "en": "Publish enhancement report from Servicepedia.",
                         "es": ""
-=======
-                        "en": "Publish enhancement report.",
-                        "es": "",
-                        "it": "",
-                        "lv": ""
->>>>>>> baae50ccbd6ecda9940f824bc1135102d84b92ac
                     },
                     "problemprofiles": [
                         "BUILD_PROBLEM_2",

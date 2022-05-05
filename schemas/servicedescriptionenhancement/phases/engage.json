@@ -37,69 +37,14 @@
                         "lv": ""
                     },
                     "description_translations": {
-<<<<<<< HEAD
                         "en": "Usually different actors are engaged in co-production to create a new service or customizing an already existing service: public bodies, private companies, SMEs, citizens. Each actor brings specific needs and competences in relation to the service and has different motivations to participate in a project. Learn about the different types of stakeholders and which of them can add value to your co-production process. In this case, for service descriptions refinement, consider contributing public servants but also potentially citizens, i.e. consumers of those services.",
                         "es": ""
-=======
-                        "en": "Usually different actors are engaged in co-production to create a new service or customizing an already existing service: public bodies, private companies, SMEs, citizens. Each actor brings specific needs and competences in relation to the service and has different motivations to participate in a project. Learn about the different types of stakeholders and which of them can add value to your co-production process",
-                        "es": "",
-                        "it": "",
-                        "lv": ""
                     },
                     "problemprofiles": [
                         "UND_PROBLEM_2"
                     ],
-                    "id": "task-understand-the-different-types-of-stakeholders",
-                    "prerequisites": []
-                },
-                {
-                    "name_translations": {
-                        "en": "Map stakeholders, analyse motivation, skills, expectations",
-                        "es": "Mapear partes interesadas analizar motivaci\u00f3n habilidades expectativas",
-                        "it": "",
-                        "lv": ""
-                    },
-                    "description_translations": {
-                        "en": "Mapping the stakeholders is crucial to have a clear view of which roles stakeholders can play in different stages of innovation, what their level of commitment and strategic importance could be. Analyse the complexity of building relationships, realizing which connectors can be crucial for innovation development in your project.",
-                        "es": "",
-                        "it": "",
-                        "lv": ""
-                    },
-                    "problemprofiles": [
-                        "UND_PROBLEM_2"
-                    ],
-                    "prerequisites": [
-                        {
-                            "item": "task-understand-the-different-types-of-stakeholders",
-                            "type": "previous"
-                        }
-                    ],
-                    "id": "task-map-stakeholders-analyse-motivation-skills-expectations"
-                },
-                {
-                    "name_translations": {
-                        "en": "Visually map the network of stakeholders",
-                        "es": "Mapear visualmente la red de partes interesadas",
-                        "it": "",
-                        "lv": ""
-                    },
-                    "description_translations": {
-                        "en": "Is your network balanced and inclusive?\r\nCreate a Stakeholder Map, where the ecosystem of stakeholders involved in a customer experience is visualized.",
-                        "es": "",
-                        "it": "",
-                        "lv": ""
->>>>>>> baae50ccbd6ecda9940f824bc1135102d84b92ac
-                    },
-                    "problemprofiles": [
-                        "UND_PROBLEM_2"
-                    ],
-                    "prerequisites": [
-                        {
-                            "item": "task-map-stakeholders-analyse-motivation-skills-expectations",
-                            "type": "previous"
-                        }
-                    ],
-                    "id": "task-visually-map-the-network-of-stakeholders"
+                    "prerequisites": [],
+                    "id": "task-understand-the-different-types-of-stakeholders"
                 },
                 {
                     "name_translations": {
@@ -119,7 +64,7 @@
                     ],
                     "prerequisites": [
                         {
-                            "item": "task-visually-map-the-network-of-stakeholders",
+                            "item": "task-understand-the-different-types-of-stakeholders",
                             "type": "previous"
                         }
                     ],
@@ -169,34 +114,6 @@
                 },
                 {
                     "name_translations": {
-<<<<<<< HEAD
-=======
-                        "en": "Create awareness and communication",
-                        "es": "",
-                        "it": "",
-                        "lv": ""
-                    },
-                    "description_translations": {
-                        "en": "Ensure that relevant stakeholders are aware of the initiative in order to ensure their participation. Awareness-raising is a process that seeks to inform and educate people about a topic or issue with the intention of influencing their attitudes, behaviours and beliefs towards the achievement of a defined purpose or goal.",
-                        "es": "",
-                        "it": "",
-                        "lv": ""
-                    },
-                    "problemprofiles": [
-                        "ORG_PROBLEM_4",
-                        "ORG_PROBLEM_6.3"
-                    ],
-                    "prerequisites": [
-                        {
-                            "item": "task-prepare-an-engagement-plan",
-                            "type": "previous"
-                        }
-                    ],
-                    "id": "task-create-awareness-and-communication"
-                },
-                {
-                    "name_translations": {
->>>>>>> baae50ccbd6ecda9940f824bc1135102d84b92ac
                         "en": "Communicate benefit for stakeholders",
                         "es": "",
                         "it": "",
@@ -213,7 +130,7 @@
                     ],
                     "prerequisites": [
                         {
-                            "item": "task-create-awareness-and-communication",
+                            "item": "task-prepare-an-engagement-plan",
                             "type": "previous"
                         }
                     ],
