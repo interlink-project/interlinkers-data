@@ -4,13 +4,13 @@
     "name_translations": {
         "en": "Engage",
         "es": "Comprometer",
-        "it": "",
+        "it": "Coinvolgere",
         "lv": ""
     },
     "description_translations": {
         "en": "Which stakeholders should be involved in your co-production process? How to communicate with them about your project goals and the benefits of participation?\r\nLearn about the value of involving stakeholders. Use the available knowledge tools to understand who are the stakeholders to involve in your project and the role they can have. \r\nExploit communication templates to raise awareness, invite stakeholders, and create a lively network of motivated contributors. Define partnership agreements and make sure shared information is protected. Plan together the next steps and create working groups. ",
         "es": "",
-        "it": "",
+        "it": "Quali stakeholders dovrebbero essere coinvolti nel processo di co-produzione? Come comunicare loro gli obiettivi del progetto e i benefici della partecipazione?\nImpara quale sia il valore di coinvolgere gli stakeholder. Utilizza gli strumenti di conoscenza messi a disposizione per comprendere chi sono gli stakeholder da coinvolgere nel progetto ed il ruolo che possono avere.\nSfrutta i modelli di comunicazione per attivare la consapevolezza, invitare gli stakeholder e creare una rete attiva di contributori motivati. Definisci degli accordi di partnership e assicura la protezione delle informazioni condivise. Pianifica in modo collaborativo i prossimi passi e crea dei sottogruppi di lavoro. ",
         "lv": ""
     },
     "objectives": [
@@ -128,13 +128,13 @@
             "name_translations": {
                 "en": "Engage stakeholders",
                 "es": "",
-                "it": "",
+                "it": "Coinvolgere gli stakeholder",
                 "lv": ""
             },
             "description_translations": {
                 "en": "Stakeholder engagement is about figuring out how to effectively communicate, collaborate, and interact with key people who have positive or negative influence, and may impact the success of your project.\r\nTo reach this objective you should carefully prepare an engagement plan, create awareness and communication material tailored to your audience, understand how to communicate benefit for stakeholders and, whenever this is forseen in your project, understand how to engage citizens in the co-production process. ",
                 "es": "",
-                "it": "",
+                "it": "Il coinvolgimento degli stakeholder inizia dalla comprensione di come comunicare, collaborare ed interagire efficacemente con le persone chiave che possono impattare ed avere una influenza positiva o negativa sul successo del progetto.\nPer raggiungere questo obiettivo, prepara attentamente un piano di coinvolgimento, crea consapevolezza a partire da materiale di comunicazione tagliato per l'audience specifica, rifletti su come comunicare i potenziali benefici della partecipazione agli stakeholder e, quando previsto dal progetto, rifletti su come coinvolgere i cittadini nel processo di co-produzione. ",
                 "lv": ""
             },
             "problemprofiles": [

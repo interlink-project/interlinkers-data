@@ -15,7 +15,7 @@
     "description_translations": {
         "en": "Browse the catalogue of INTERLINKERs to find reusable building blocks for the implementation of your service. Monitor development advancement in the project workplan. Stop and reflect on the process so far with the co-evaluation checklists that help verify compliance with standards and regulations. Use incentives and reward tools made available by the INTERLINK platform to sustain stakeholders\u2019 and citizens\u2019 contribution to service delivery. Monitor quality of service and citizens\u2019 satisfaction with carefully prepared surveys. Stop and reflect on how co-delivery is going with the co-evaluation checklists.",
         "es": "",
-        "it": "",
+        "it": "Sfoglia il catalogo degli INTERLINKERs per trovare i building block riutilizzabili per l'implementazione del tuo servizio. Monitora l'avanzamento dello sviluppo nel piano di lavoro del progetto. Fermati e rifletti sul processo finora svolto con le checklist di co-valutazione che aiutano a verificare la conformit\u00e0 a standard e regolamenti. Utilizzare gli incentivi e gli strumenti di ricompensa messi a disposizione dalla piattaforma INTERLINK per sostenere il contributo delle parti interessate e dei cittadini all'erogazione dei servizi. Monitora la qualit\u00e0 del servizio e la soddisfazione dei cittadini con sondaggi accuratamente preparati. Fermati e rifletti su come sta andando la co-consegna con le checklist di co-valutazione.",
         "lv": ""
     },
     "objectives": [
@@ -46,7 +46,7 @@
                     "description_translations": {
                         "en": "Identify the dependencies and environment needed for the service co-production and co-delivery. Configure and deploy (if not already available) the dependencies and environment. Document the progress towards realizing the technical aspects associated to the co-produced service. ",
                         "es": "",
-                        "it": "",
+                        "it": "Identifica le dipendenze e l'ambiente necessario per la co-produzione e l'erogazione del servizio. Configura e rilascia (se non gi\u00e0 disponibili) le dipendenze e l'ambiente. Documenta i progressi relativi all'implementazione degli aspetti tecnici associati al servizio coprodotto. ",
                         "lv": ""
                     },
                     "problemprofiles": [
@@ -75,7 +75,7 @@
             "description_translations": {
                 "en": "Depending on the nature of the co-produced service, you main adopt different tools and mechanisms to realize a given co-produced service. Realizing a co-produced service might entail programming, using graphical design tools, 3D modelling and fabrication and so on. Register progress achieved during the realization of the implementation of the co-produced service, upload progress reports, cross-link with repositories where progress is being realized, document the co-produced service API or the kit and/or resources generated to realize the service. Acknowledge and trace the contributions of different co-production team members or external contributors. Reuse existing INTERLINKERs (software and knowledge) and add on top of them, browse through them in the Catalogue, do not reinvent the wheel!",
                 "es": "",
-                "it": "",
+                "it": "A seconda della natura del servizio , si adottano strumenti e meccanismi diversi per realizzare un determinato servizio coprodotto. La realizzazione di un servizio coprodotto potrebbe comportare la programmazione, l'utilizzo di strumenti di progettazione grafica, la modellazione e la fabbricazione 3D e cos\u00ec via. Registra i progressi raggiunti durante la realizzazione dell'implementazione del servizio coprodotto, crea e condividi report sullo stato di avanzamento, crea collegamenti incrociati con i repository, documenta l'API del servizio coprodotto o il kit e/o le risorse generate per realizzare il servizio . Riconosci e traccia i contributi di diversi membri del team di coproduzione o contributori esterni. Riutilizza gli INTERLINKERs esistenti (software e conoscenza) e sfogliali nel Catalogo, non reinventare la ruota!",
                 "lv": ""
             },
             "problemprofiles": [
@@ -182,7 +182,7 @@
             "description_translations": {
                 "en": "Release the co-produced service. Ensure that is operational in a 24x7 basis.  Provide support to accomodate enhancements or fixes. Establish fluid mechanisms between service co-deliverers and consumers. Monitor fulfilment of obligations and responsabilities of distinct codeliverers.",
                 "es": "",
-                "it": "",
+                "it": "Rilascia il servizio coprodotto. Assicurati che sia operativo 24x7. Fornisci supporto per integrare miglioramenti o correzioni. Stabilisci meccanismi fluidi tra i co-fornitori di servizi e i consumatori. Monitora l'adempimento degli obblighi e delle responsabilit\u00e0 di chi eroga il servizio.",
                 "lv": ""
             },
             "problemprofiles": [
@@ -200,7 +200,7 @@
                     "description_translations": {
                         "en": "Organize activities among co-deliverers according to their roles and responsabilities. Ensure quality of service is maintained in the cooperative activities involved in service codelivery. Launch satisfaction and quality of service assessement surveys. ",
                         "es": "",
-                        "it": "",
+                        "it": "Organizza le attivit\u00e0 tra i co-erogatori del servizio in base ai loro ruoli e responsabilit\u00e0. Garantisci che la qualit\u00e0 del servizio sia mantenuta nelle attivit\u00e0 coinvolte nell'erogazione del servizio. Avvia sondaggi di valutazione della soddisfazione e della qualit\u00e0 del servizio. ",
                         "lv": ""
                     },
                     "problemprofiles": [],
@@ -217,7 +217,7 @@
                     "description_translations": {
                         "en": "Ensure fluid and responsive communication among co-deliverers team and more importantly among those consuming and reusing the delivered service and the co-delivery team. Establish a web-based communication mechanism which allows to trace the communication with all actors. ",
                         "es": "",
-                        "it": "",
+                        "it": "Garantisci una comunicazione fluida e reattiva tra il team di co-erogatori e, soprattutto, tra coloro che consumano e riutilizzano il servizio fornito e il team responsabile dell'erogazione del servizio. Stabilisci un meccanismo di comunicazione basato sul web che consenta di tracciare la comunicazione con tutti gli attori coinvolti. ",
                         "lv": ""
                     },
                     "problemprofiles": [],
