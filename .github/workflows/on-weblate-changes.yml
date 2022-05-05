@@ -8,6 +8,10 @@ on:
 
 jobs:
   build:
+    # Ensures that only one will run at a time.
+    concurrency:
+      group: environment-${{ github.ref }}
+      cancel-in-progress: true
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo content
