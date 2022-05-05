@@ -18,7 +18,7 @@ import { useParams } from 'react-router-dom';
 import { getSoftwareInterlinkers } from 'slices/general';
 import { getProcess, setSelectedTreeItem } from 'slices/process';
 import useMounted from '../../../hooks/useMounted';
-import MetadataTab from './Tabs/Metadata';
+import SettingsTab from './Tabs/Settings';
 import CreateSchema from './Tabs/Overview/CreateSchema';
 import Repository from './Tabs/Repository/Repository';
 import TeamTab from './Tabs/Team';
@@ -168,7 +168,7 @@ const CoproductionProcessProfile = () => {
                 </TabPanel>
                 <TabPanel value={tab} index="settings">
                   <Card >
-                    <MetadataTab />
+                    <SettingsTab />
                   </Card>
                 </TabPanel>
               </>

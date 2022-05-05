@@ -13,7 +13,7 @@ import { Prompt } from 'react-router-dom';
 import { updateProcess } from "slices/process";
 import * as Yup from 'yup';
 
-const MetadataTab = () => {
+const SettingsTab = () => {
     const [editMode, setEditMode] = useState(false)
     const [initialData, setInitialData] = useState({})
     const { process, updating } = useSelector((state) => state.process);
@@ -259,4 +259,4 @@ const MetadataTab = () => {
     );
 };
 
-export default MetadataTab
+export default SettingsTab

@@ -54,7 +54,7 @@ const ProcessSidebar = (props) => {
         },
         {
           title: t('Settings'),
-          path: `/dashboard/coproductionprocesses/${processId}/metadata`,
+          path: `/dashboard/coproductionprocesses/${processId}/settings`,
           icon: <Settings />
         },
       ]
