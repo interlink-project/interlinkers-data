@@ -9,13 +9,13 @@
     "name_translations": {
         "en": "Sustain",
         "es": "Sostener",
-        "it": "",
+        "it": "Sostenere",
         "lv": ""
     },
     "description_translations": {
         "en": "Define the business models to ensure sustainability of the co-produced service. Create business plans and exploitation agreements that will foster the adoption of your co-produced service by third party PAs, companies and stakeholders. Continous maintenance and monotoring is needed for responsive, accesible, widely adopted services as INTERLINK ambitions.",
         "es": "",
-        "it": "",
+        "it": "Definisci i modelli di business per garantire la sostenibilit\u00e0 del servizio coprodotto. Crea piani aziendali e accordi per la valorizzazione e l'utilizzo del servizio che ne favoriscano l'adozione da parte di PA, aziende e terze parti. La manutenzione e il monitoraggio continui sono cruciali per garantire servizi reattivi e accessibili.",
         "lv": ""
     },
     "objectives": [
@@ -29,7 +29,7 @@
             "description_translations": {
                 "en": "Optinally delegate service deployment from own on premise to Cloud-based to external hosting provider infrastructure. Agree on contract, costs, responsabilities and benefits for third party take over of service delivery ",
                 "es": "",
-                "it": "",
+                "it": "Delega in modo ottimale l'implementazione del servizio dall'infrastruttura propria in sede all'infrastruttura basata su cloud a un provider di hosting esterno. Concordare contratto, costi, responsabilit\u00e0 e benefici per l'assunzione da parte di terzi della fornitura del servizio ",
                 "lv": ""
             },
             "problemprofiles": [],

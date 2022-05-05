@@ -33,13 +33,13 @@
                     "name_translations": {
                         "en": "Understand the different types of stakeholders",
                         "es": "Entender los diferentes tipos de stakeholders y sus motivaciones",
-                        "it": "",
+                        "it": "Comprendi le diverse tipologie di stakeholders",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Usually different actors are engaged in co-production to create a new service or customizing an already existing service: public bodies, private companies, SMEs, citizens. Each actor brings specific needs and competences in relation to the service and has different motivations to participate in a project. Learn about the different types of stakeholders and which of them can add value to your co-production process",
                         "es": "",
-                        "it": "",
+                        "it": "Solitamente diversi attori sono impegnati in processi di co-produzione per creare un nuovo servizio o per personalizzare un servizio gi\u00e0 esistente: enti pubblici, aziende private, PMI, cittadini. Ogni attore porta bisogni e competenze specifiche in relazione al servizio e ha motivazioni diverse per partecipare a un progetto. Scopri i diversi tipi di stakeholder e quali di essi possono aggiungere valore al tuo processo di co-produzione",
                         "lv": ""
                     },
                     "problemprofiles": [
@@ -52,13 +52,13 @@
                     "name_translations": {
                         "en": "Map stakeholders, analyse motivation, skills, expectations",
                         "es": "Mapear partes interesadas analizar motivaci\u00f3n habilidades expectativas",
-                        "it": "",
+                        "it": "Mappa le parti interessate, analizza la loro motivazione, competenze e aspettative",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Mapping the stakeholders is crucial to have a clear view of which roles stakeholders can play in different stages of innovation, what their level of commitment and strategic importance could be. Analyse the complexity of building relationships, realizing which connectors can be crucial for innovation development in your project.",
                         "es": "",
-                        "it": "",
+                        "it": "La mappatura delle parti interessate (stakeholders) \u00e8 fondamentale per avere una visione chiara dei ruoli che gli stakeholder possono svolgere nelle diverse fasi dell'innovazione, quale potrebbe essere il loro livello di impegno e importanza strategica. Analizza la complessit\u00e0 della costruzione di relazioni, realizzando quali connettori possono essere cruciali per lo sviluppo dell'innovazione nel tuo progetto.",
                         "lv": ""
                     },
                     "problemprofiles": [
@@ -76,13 +76,13 @@
                     "name_translations": {
                         "en": "Visually map the network of stakeholders",
                         "es": "Mapear visualmente la red de partes interesadas",
-                        "it": "",
+                        "it": "Mappa graficamente la rete degli stakeholder",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Is your network balanced and inclusive?\r\nCreate a Stakeholder Map, where the ecosystem of stakeholders involved in a customer experience is visualized.",
                         "es": "",
-                        "it": "",
+                        "it": "La tua rete \u00e8 equilibrata e inclusiva?\nCrea una mappa degli stakeholder, in cui viene visualizzato l'ecosistema delle parti interessate.",
                         "lv": ""
                     },
                     "problemprofiles": [
@@ -100,7 +100,7 @@
                     "name_translations": {
                         "en": "Create a contact list of potential network participants",
                         "es": "Crear una lista de contactos de posibles participantes de la red",
-                        "it": "",
+                        "it": "Crea un elenco di contatti di potenziali partecipanti alla rete",
                         "lv": ""
                     },
                     "description_translations": {
