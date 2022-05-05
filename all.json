@@ -6655,9 +6655,9 @@
                                         "it": "Le idee relative alla progettazione del servizio devono essere tradotti in requisiti formali per procedere all'implementazione del servizio. Segui le linee guida su come raccogliere, strutturare e comunicare i requisiti e tutte le specifiche del servizio che definiscono l'obiettivo del servizio e come dovrebbe essere sviluppato. Utilizza formalismi standard per le descrizioni dei requisiti, come ad esempio il modello di specifica dei requisiti di Volere.",
                                         "lv": ""
                                     },
-                                    "id": "task-define-requirements-and-constraints-for-the-service",
+                                    "id": "task-define-requirements-and-constraints-for-the-public-service-description-enhancement",
                                     "name_translations": {
-                                        "en": "Define requirements and constraints for the service",
+                                        "en": "Define requirements and constraints for the public service description enhancement",
                                         "es": "",
                                         "it": "Definisci i requisiti e i vincoli del servizio",
                                         "lv": ""
@@ -6773,7 +6773,7 @@
                 },
                 {
                     "description_translations": {
-                        "en": "Make use of designed co-production process, reviewing contribs from users of the service, accepting or rejecting them, exporting reports with changes accepted so that they are processed for refinement.",
+                        "en": "Make use of instantiated co-refinement process, reviewing contribs from users of the service description, accepting or rejecting them, exporting reports with changes accepted so that they are processed for refinement.",
                         "es": "",
                         "it": "",
                         "lv": ""
@@ -6823,12 +6823,12 @@
                                 },
                                 {
                                     "description_translations": {
-                                        "en": "Review in Servicepedia dashboard contribs, accept those that are good, reject the bad ones, until completing revision process",
+                                        "en": "Review in Servicepedia dashboard contributions from users, accept those that are good, reject the bad ones, until completing revision process",
                                         "es": ""
                                     },
-                                    "id": "task-review-in-servicepedia-dashboard-contribs",
+                                    "id": "task-review-in-servicepedia-dashboard-user-contributions",
                                     "name_translations": {
-                                        "en": "Review in Servicepedia dashboard contribs",
+                                        "en": "Review in Servicepedia dashboard user contributions",
                                         "es": ""
                                     },
                                     "prerequisites": [
@@ -7044,14 +7044,14 @@
                                 },
                                 {
                                     "description_translations": {
-                                        "en": "Provide members of the public with the information they need to understand the project, the decision process, and also how public input can influence decisions, the design of the service and the way it is delivered. ",
+                                        "en": "Provide members of the public with the information they need to understand the project, the decision process, and also how public input can influence decisions, the refinement of public service descriptions and the way it is delivered. ",
                                         "es": "",
                                         "it": "",
                                         "lv": ""
                                     },
-                                    "id": "task-engage-citizens-in-the-co-production-process",
+                                    "id": "task-engage-citizens-in-the-co-refinement-process",
                                     "name_translations": {
-                                        "en": "Engage citizens in the co-production process",
+                                        "en": "Engage citizens in the co-refinement process",
                                         "es": "",
                                         "it": "",
                                         "lv": ""
@@ -7141,12 +7141,12 @@
                         },
                         {
                             "description_translations": {
-                                "en": "Using the External Resource Manager (through Initiate Procedure) include link to enhanced version of service description after changes have been applied",
+                                "en": "Using the External Resource Manager (through Initiate Procedure) include link to enhanced version of public service description after changes have been applied",
                                 "es": ""
                             },
-                            "id": "objective-publish-refined-versions-of-service-descriptions",
+                            "id": "objective-publish-refined-version-of-public-service-description",
                             "name_translations": {
-                                "en": "Publish refined versions of service descriptions",
+                                "en": "Publish refined version of public service description",
                                 "es": "",
                                 "it": "",
                                 "lv": ""
@@ -7161,14 +7161,14 @@
                             "tasks": [
                                 {
                                     "description_translations": {
-                                        "en": "Leverage External Resource Manager to include those Service Descriptions",
+                                        "en": "Leverage External Resource Manager to include reference to new public service description",
                                         "es": "",
                                         "it": "",
                                         "lv": ""
                                     },
-                                    "id": "task-link-with-enhanced-version-of-service-description",
+                                    "id": "task-link-with-enhanced-version-of-public-service-description",
                                     "name_translations": {
-                                        "en": "Link with enhanced version of service description",
+                                        "en": "Link with enhanced version of public service description",
                                         "es": "",
                                         "it": "",
                                         "lv": ""
@@ -7188,7 +7188,7 @@
                                     },
                                     "prerequisites": [
                                         {
-                                            "item": "task-link-with-enhanced-version-of-service-description",
+                                            "item": "task-link-with-enhanced-version-of-public-service-description",
                                             "type": "previous"
                                         }
                                     ],

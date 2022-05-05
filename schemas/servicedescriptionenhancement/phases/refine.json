@@ -99,7 +99,7 @@
                     },
                     "problemprofiles": [],
                     "prerequisites": [],
-                    "id": "task-link-with-enhanced-version-of-service-description"
+                    "id": "task-link-with-enhanced-version-of-public-service-description"
                 },
                 {
                     "name_translations": {
@@ -115,7 +115,7 @@
                     ],
                     "prerequisites": [
                         {
-                            "item": "task-link-with-enhanced-version-of-service-description",
+                            "item": "task-link-with-enhanced-version-of-public-service-description",
                             "type": "previous"
                         }
                     ],
@@ -128,7 +128,7 @@
                     "type": "previous"
                 }
             ],
-            "id": "objective-publish-refined-versions-of-service-descriptions"
+            "id": "objective-publish-refined-version-of-public-service-description"
         }
     ]
 }
