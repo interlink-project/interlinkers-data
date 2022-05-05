@@ -13,7 +13,7 @@
         "lv": ""
     },
     "description_translations": {
-        "en": "Make use of designed co-production process, reviewing contribs from users of the service, accepting or rejecting them, exporting reports with changes accepted so that they are processed for refinement.",
+        "en": "Make use of instantiated co-refinement process, reviewing contribs from users of the service description, accepting or rejecting them, exporting reports with changes accepted so that they are processed for refinement.",
         "es": "",
         "it": "",
         "lv": ""
@@ -54,11 +54,11 @@
                 },
                 {
                     "name_translations": {
-                        "en": "Review in Servicepedia dashboard contribs",
+                        "en": "Review in Servicepedia dashboard user contributions",
                         "es": ""
                     },
                     "description_translations": {
-                        "en": "Review in Servicepedia dashboard contribs, accept those that are good, reject the bad ones, until completing revision process",
+                        "en": "Review in Servicepedia dashboard contributions from users, accept those that are good, reject the bad ones, until completing revision process",
                         "es": ""
                     },
                     "problemprofiles": [],

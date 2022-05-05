@@ -73,26 +73,26 @@
         },
         {
             "name_translations": {
-                "en": "Publish refined versions of service descriptions",
+                "en": "Publish refined version of public service description",
                 "es": "",
                 "it": "",
                 "lv": ""
             },
             "description_translations": {
-                "en": "Using the External Resource Manager (through Initiate Procedure) include link to enhanced version of service description after changes have been applied",
+                "en": "Using the External Resource Manager (through Initiate Procedure) include link to enhanced version of public service description after changes have been applied",
                 "es": ""
             },
             "problemprofiles": [],
             "tasks": [
                 {
                     "name_translations": {
-                        "en": "Link with enhanced version of service description",
+                        "en": "Link with enhanced version of public service description",
                         "es": "",
                         "it": "",
                         "lv": ""
                     },
                     "description_translations": {
-                        "en": "Leverage External Resource Manager to include those Service Descriptions",
+                        "en": "Leverage External Resource Manager to include reference to new public service description",
                         "es": "",
                         "it": "",
                         "lv": ""
