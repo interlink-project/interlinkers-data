@@ -9,7 +9,7 @@
         "en": "<p>This is a model of a questionnaire aimed to collect demographics and activity satisfaction scores from participants to project events and activities.</p>",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "<p>\u0160is ir aptaujas modelis projekta aktivit\u0101t\u0113s iesaist\u012bto dal\u012bbnieku demogr\u0101fisko datu iev\u0101k\u0161anai un apmierin\u0101t\u012bbas m\u0113r\u012b\u0161anai.</p>"
     },
     "difficulty": "easy",
     "domain": "",
@@ -35,7 +35,7 @@
         "en": "Demographic and activity satisfaction questionnaire",
         "es": "",
         "it": "",
-        "lv": ""
+        "lv": "Demogr\u0101fisko datu un apmierin\u0101t\u012bbas aptauja"
     },
     "problemprofiles": [
         "UND_PROBLEM_3",
