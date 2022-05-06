@@ -22,7 +22,10 @@
         "en": "./interlinkers/externalsoftware/doodle/instructions.md"
     },
     "languages": [
-        "en"
+        "lv",
+        "en",
+        "es",
+        "it"
     ],
     "licence": "propietary",
     "logotype": "./interlinkers/externalsoftware/doodle/logo.png",

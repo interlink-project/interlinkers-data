@@ -29,7 +29,10 @@
         "en": "./interlinkers/externalknowledge/eidas-standard/instructions.md"
     },
     "languages": [
-        "en"
+        "lv",
+        "en",
+        "es",
+        "it"
     ],
     "licence": "permissive",
     "name_translations": {

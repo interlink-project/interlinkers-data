@@ -27,7 +27,10 @@
         "en": "./interlinkers/externalsoftware/wso2-api-Manager/instructions.md"
     },
     "languages": [
-        "en"
+        "lv",
+        "en",
+        "es",
+        "it"
     ],
     "licence": "public_domain",
     "logotype": "./interlinkers/externalsoftware/wso2-api-Manager/logo.jpeg",

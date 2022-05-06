@@ -27,7 +27,10 @@
         "en": "./interlinkers/externalsoftware/w3c-accessibility-tools/instructions.md"
     },
     "languages": [
-        "en"
+        "lv",
+        "en",
+        "es",
+        "it"
     ],
     "licence": "propietary",
     "name_translations": {

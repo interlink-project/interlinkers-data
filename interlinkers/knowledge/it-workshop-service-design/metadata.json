@@ -27,7 +27,10 @@
         "en": "./interlinkers/knowledge/it-workshop-service-design/instructions.md"
     },
     "languages": [
-        "en"
+        "lv",
+        "en",
+        "es",
+        "it"
     ],
     "licence": "permissive",
     "name_translations": {

@@ -29,7 +29,10 @@
         "en": "./interlinkers/externalknowledge/w3c_web_content_accessibility_guidelines/instructions.md"
     },
     "languages": [
-        "en"
+        "lv",
+        "en",
+        "es",
+        "it"
     ],
     "licence": "permissive",
     "name_translations": {

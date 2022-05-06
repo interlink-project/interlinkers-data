@@ -27,7 +27,10 @@
         "en": "./interlinkers/externalsoftware/keycloak/instructions.md"
     },
     "languages": [
-        "en"
+        "lv",
+        "en",
+        "es",
+        "it"
     ],
     "licence": "permissive",
     "logotype": "./interlinkers/externalsoftware/keycloak/logo.png",

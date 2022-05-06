@@ -28,7 +28,10 @@
         "en": "./interlinkers/knowledge/co-producers-perceptions-Questionnaire/instructions.md"
     },
     "languages": [
-        "en"
+        "lv",
+        "en",
+        "es",
+        "it"
     ],
     "licence": "public_domain",
     "name_translations": {

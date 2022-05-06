@@ -29,7 +29,10 @@
         "en": "./interlinkers/externalknowledge/it-pa-minimum-security-measures/instructions.md"
     },
     "languages": [
-        "en"
+        "lv",
+        "en",
+        "es",
+        "it"
     ],
     "licence": "public_domain",
     "name_translations": {

@@ -28,7 +28,10 @@
         "en": "./interlinkers/externalknowledge/it-pa-guidelines-for-secure-software/instructions.md"
     },
     "languages": [
-        "en"
+        "lv",
+        "en",
+        "es",
+        "it"
     ],
     "licence": "permissive",
     "name_translations": {

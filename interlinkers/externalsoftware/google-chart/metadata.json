@@ -27,7 +27,10 @@
         "en": "./interlinkers/externalsoftware/google-chart/instructions.md"
     },
     "languages": [
-        "en"
+        "lv",
+        "en",
+        "es",
+        "it"
     ],
     "licence": "propietary",
     "logotype": "./interlinkers/externalsoftware/google-chart/logo.png",

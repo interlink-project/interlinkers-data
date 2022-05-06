@@ -27,7 +27,10 @@
         "en": "./interlinkers/externalsoftware/trello/instructions.md"
     },
     "languages": [
-        "en"
+        "lv",
+        "en",
+        "es",
+        "it"
     ],
     "licence": "propietary",
     "logotype": "./interlinkers/externalsoftware/trello/logo.png",

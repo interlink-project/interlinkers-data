@@ -29,7 +29,10 @@
         "en": "./interlinkers/knowledge/it-agid-personas/instructions.md"
     },
     "languages": [
-        "en"
+        "lv",
+        "en",
+        "es",
+        "it"
     ],
     "licence": "public_domain",
     "name_translations": {

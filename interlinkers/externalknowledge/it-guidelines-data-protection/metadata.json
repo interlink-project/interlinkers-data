@@ -29,7 +29,10 @@
         "en": "./interlinkers/externalknowledge/it-guidelines-data-protection/instructions.md"
     },
     "languages": [
-        "en"
+        "lv",
+        "en",
+        "es",
+        "it"
     ],
     "licence": "permissive",
     "name_translations": {

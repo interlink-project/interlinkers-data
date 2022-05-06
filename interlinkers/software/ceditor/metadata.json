@@ -57,8 +57,10 @@
     },
     "is_responsive": true,
     "languages": [
+        "lv",
         "en",
-        "es"
+        "es",
+        "it"
     ],
     "licence": "propietary",
     "logotype": "./interlinkers/software/ceditor/logo.jpeg",

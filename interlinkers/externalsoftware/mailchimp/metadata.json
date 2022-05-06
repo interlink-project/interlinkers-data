@@ -22,7 +22,10 @@
         "en": "./interlinkers/externalsoftware/mailchimp/instructions.md"
     },
     "languages": [
-        "en"
+        "lv",
+        "en",
+        "es",
+        "it"
     ],
     "licence": "propietary",
     "logotype": "./interlinkers/externalsoftware/mailchimp/logo.png",
