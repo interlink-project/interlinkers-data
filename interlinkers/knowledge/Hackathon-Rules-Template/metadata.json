@@ -8,7 +8,7 @@
     "description_translations": {
         "en": "<p>Document with template for co-design of Hackathon Rules</p>",
         "es": "",
-        "it": "",
+        "it": "<p>Documento con schemi e modello per il co-design delle Regole in Hackathon</p>",
         "lv": "<p>Dokuments ar hakatona noteikumu kopdizaina paraugu</p>"
     },
     "difficulty": "very_easy",
@@ -34,7 +34,7 @@
     "name_translations": {
         "en": "Hackathon Rules Template for INTERLINK project",
         "es": "",
-        "it": "",
+        "it": "Modello relativo alle regole per hackaton specifiche per progetto INTERLINK",
         "lv": "Hakatona noteikumu paraugs INTERLINK projektam"
     },
     "problemprofiles": [

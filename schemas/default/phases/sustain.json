@@ -9,7 +9,7 @@
     "name_translations": {
         "en": "Sustain",
         "es": "Sostener",
-        "it": "Sostenere",
+        "it": "Sostenibilit\u00e0",
         "lv": ""
     },
     "description_translations": {
@@ -23,7 +23,7 @@
             "name_translations": {
                 "en": "Handover",
                 "es": "Entrega",
-                "it": "",
+                "it": "Passaggio di consegne",
                 "lv": ""
             },
             "description_translations": {
@@ -38,13 +38,13 @@
                     "name_translations": {
                         "en": "Business model specification",
                         "es": "Especificaci\u00f3n de Modelo de Negocio",
-                        "it": "",
+                        "it": "Specifica del modello di business",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Co-production team defines one to many business models with their associated business plans which can be negotiated with third party adopters of the service, who want to take over execution, maintenance and monitoring, but where exploitation between co-producers and adopters needs to be clarified.",
                         "es": "",
-                        "it": "",
+                        "it": "Il team di coproduzione definisce da uno a molti modelli di business con i relativi piani aziendali che possono essere negoziati con terze parti che adottano il servizio, che desiderano gestirne l'esecuzione, la manutenzione e il monitoraggio. In questo caso \u00e8 necessario definire la strategia di valorizzazione tra co-produttori e adottanti.",
                         "lv": ""
                     },
                     "problemprofiles": [
@@ -57,13 +57,13 @@
                     "name_translations": {
                         "en": "Exploitation agreement",
                         "es": "Acuerdo de Explotaci\u00f3n",
-                        "it": "",
+                        "it": "Accordo per la valorizzazione",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Before a third party adopter may take over a co-produced service an exploitation agreement must be produced and signed by the involved parties. ",
                         "es": "",
-                        "it": "",
+                        "it": "Prima che un terzo adottante possa rilevare un servizio coprodotto, deve essere realizato e firmato dalle parti coinvolte un accordo per la valorizzazione del servizio. ",
                         "lv": ""
                     },
                     "problemprofiles": [
@@ -81,13 +81,13 @@
                     "name_translations": {
                         "en": "Handover",
                         "es": "Entrega",
-                        "it": "",
+                        "it": "Passaggio di consegne",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Provide documentation for third party take over of service maintenane and monitoring. Agreement on contract to regulate transfer of runnning responsability to third party and sharing of revenues among those that co-produced the service and third parties who may optionally host the service. Customization of the delivered service to target customers (translations, content adaptations and so on) ",
                         "es": "",
-                        "it": "",
+                        "it": "Fornisce documentazione per l'assunzione da parte di terzi della manutenzione e del monitoraggio del servizio. E' importante definire un accordo contrattuale per disciplinare il trasferimento della responsabilit\u00e0 di esercizio a terzi e la ripartizione dei ricavi tra coloro che hanno coprodotto il servizio e terzi che possono ospitare il servizio. Personalizzazione del servizio erogato ai clienti target (traduzioni, adattamenti di contenuti e cos\u00ec via) ",
                         "lv": ""
                     },
                     "problemprofiles": [
@@ -109,13 +109,13 @@
             "name_translations": {
                 "en": "Maintenance",
                 "es": "Mantenimiento",
-                "it": "",
+                "it": "Mantenimento",
                 "lv": ""
             },
             "description_translations": {
                 "en": "Ensure the deployed service is continously operative and responsive to new customer demands who may make the service further adopted and more useful. This responsability may be shared by co-production team and third parties who may have taken over the service. ",
                 "es": "",
-                "it": "",
+                "it": "Garantisci che il servizio implementato sia costantemente operativo e risponda alle nuove richieste dei clienti che potrebbero rendere il servizio ulteriormente adottato e pi\u00f9 utile. Questa responsabilit\u00e0 pu\u00f2 essere condivisa dal team di coproduzione e da terze parti che potrebbero gestire il servizio. ",
                 "lv": ""
             },
             "problemprofiles": [],
@@ -124,13 +124,13 @@
                     "name_translations": {
                         "en": "Task distribution for maintenance, contracts regulation, data management archiving",
                         "es": "Distribuci\u00f3n de tareas para el mantenimiento, regulaci\u00f3n de contratos, archivo de la gesti\u00f3n de datos",
-                        "it": "",
+                        "it": "Distribuzione degli incarichi per la manutenzione, il regolamenti dei contratti, l'archiviazione della gestione dei dati",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "If service depoyment was delegated or is still carried out by co-production team, task distribution among those responsible for maintenance must be ensured. Regularly contract monitoring and maintenance activities will need to be carried out to ensure 24x7 operation.",
                         "es": "",
-                        "it": "",
+                        "it": "Sia che la messa in esercizio (deployment) del servizio sia stata delegata sia che sia svolta dal team di coproduzione, deve essere assicurata la distribuzione dei compiti tra i responsabili della manutenzione. Dovranno essere svolte regolarmente attivit\u00e0 di monitoraggio e manutenzione del contratto per garantire il funzionamento 24x7 del servizio.",
                         "lv": ""
                     },
                     "problemprofiles": [],
@@ -150,13 +150,13 @@
             "name_translations": {
                 "en": "Monitoring",
                 "es": "Monitorizaci\u00f3n",
-                "it": "",
+                "it": "Monitoraggio",
                 "lv": ""
             },
             "description_translations": {
                 "en": "Monitor that the service is fulfilling its originally set objectives by tracking a set of KPIs inferred from usage or polling customers.  ",
                 "es": "",
-                "it": "",
+                "it": "Monitora che il servizio soddisfi gli obiettivi originariamente definiti, monitorando una serie di KPI ( Key Performance Indicator) dedotti dall'utilizzo del servizio o effettuando sondaggi ai clienti.  ",
                 "lv": ""
             },
             "problemprofiles": [
@@ -168,13 +168,13 @@
                     "name_translations": {
                         "en": "Monitoring ongoing evaluation, periodic evaluations with stakeholders",
                         "es": "Seguimiento de la evaluaci\u00f3n continua, evaluaciones peri\u00f3dicas con las partes interesadas",
-                        "it": "",
+                        "it": "Monitoraggio continuo della valutazione, valutazioni periodiche con gli stakeholder",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Analyse logs gathered by the delivered service. Analyse surveys/questionnaires filled in by stakeholders. ",
                         "es": "",
-                        "it": "",
+                        "it": "Analizza i log (registri) raccolti dal servizio erogato. Analizza i sondaggi e i questionari compilati dalle parti interessate. ",
                         "lv": ""
                     },
                     "problemprofiles": [],

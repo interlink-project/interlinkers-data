@@ -8,7 +8,7 @@
     "description_translations": {
         "en": "<p>Form to collect consent from participants engaged in INTERLINK research activities about the use of their personal data</p>",
         "es": "",
-        "it": "",
+        "it": "<p>Modulo per raccogliere il consenso dei partecipanti impegnati in attivit\u00e0 di ricerca INTERLINK sull'utilizzo dei propri dati personali</p>",
         "lv": "<p> INTERLINK p\u0113tniecisko aktivit\u0101\u0161u dal\u012bbnieku person\u012bgo datu izmanto\u0161anas piekri\u0161anas forma</p>"
     },
     "difficulty": "very_easy",
@@ -34,7 +34,7 @@
     "name_translations": {
         "en": "Consent Form for INTERLINK project",
         "es": "",
-        "it": "",
+        "it": "Modulo di consenso per il progetto INTERLINK",
         "lv": "INTERLINK projekta piekri\u0161anas forma"
     },
     "problemprofiles": [

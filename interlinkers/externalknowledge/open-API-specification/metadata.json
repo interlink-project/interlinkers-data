@@ -13,7 +13,7 @@
     "description_translations": {
         "en": "<p>A RFC document which specifyes the open API.</p>",
         "es": "<p>Un documento RFC que especifica la API abierta.</p>",
-        "it": "",
+        "it": "<p>Un documento RFC che specifica l'open API .</p>",
         "lv": "<p>RFC (piepras\u012bjums p\u0113c koment\u0101riem) dokuments, kas raksturo atv\u0113rto API (lietojumprogrammas saskarni).</p>"
     },
     "difficulty": "medium",
@@ -35,7 +35,7 @@
     "name_translations": {
         "en": "Open API specification",
         "es": "Especificaci\u00f3n de la API abierta",
-        "it": "",
+        "it": "Specifiche di Open API",
         "lv": "Atv\u0113rt\u0101s API (lietojumprogrammas saskarnes) specifik\u0101cija"
     },
     "problemprofiles": [

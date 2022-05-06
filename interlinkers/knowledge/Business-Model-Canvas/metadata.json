@@ -8,7 +8,7 @@
     "description_translations": {
         "en": "This canvas can be used collaboratively, for instance, during a brainstorming or a focus group, to reflect on the the most suitable business model associated to a co-produced service.",
         "es": "",
-        "it": "",
+        "it": "Questo canvas pu\u00f2 essere utilizzato in modo collaborativo, ad esempio, durante un brainstorming o un focus group, per riflettere sul modello di business pi\u00f9 adatto associato a un servizio coprodotto.",
         "lv": "\u0160is audekls var tikt lietots sadarb\u012bbai, piem\u0113ram, pr\u0101ta v\u0113tru vai fokusgrupu laik\u0101, lai nov\u0113rt\u0113tu piem\u0113rot\u0101ko biznesa modeli koprad\u012btajam pakalpojumam."
     },
     "difficulty": "easy",
@@ -34,8 +34,8 @@
     "name_translations": {
         "en": "Business Model Canvas",
         "es": "",
-        "it": "",
-        "lv": ""
+        "it": "Business Model Canvas",
+        "lv": "Biznesa mode\u013ca pl\u0101no\u0161anas r\u012bks"
     },
     "problemprofiles": [
         "SUS_PROBLEM_1"

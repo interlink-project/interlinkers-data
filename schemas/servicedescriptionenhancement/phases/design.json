@@ -112,7 +112,9 @@
                     },
                     "description_translations": {
                         "en": "Use the Initiate Procedure to launch Description Augmenter or simply select Description Augmenter recommended INTERLINKER",
-                        "es": ""
+                        "es": "",
+                        "it": "Usa il bottone \"Inizia Procedura\" per lanciare il Description Augmenter o semplicemente seleziona il Description Augmenter dalla lista degli INTERLINKER raccomandati",
+                        "lv": ""
                     },
                     "problemprofiles": [
                         "BUILD_PROBLEM_9"

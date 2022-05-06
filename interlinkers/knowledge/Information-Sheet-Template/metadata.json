@@ -8,7 +8,7 @@
     "description_translations": {
         "en": "<p>Template to guide the preparation of an information sheet to be distributed to participants to project activities. It provides background on research objectives.</p>",
         "es": "",
-        "it": "",
+        "it": "<p>Modello per guidare la preparazione di una scheda informativa da distribuire ai partecipanti alle attivit\u00e0 del progetto. Fornisce informazioni sugli obiettivi di ricerca.</p>",
         "lv": "<p>Veidlapa inform\u0101cijas lapas projekta aktivit\u0101\u0161u dal\u012bbniekiem sagatavo\u0161anai. T\u0101 sniedz pamatinform\u0101ciju par p\u0113tniec\u012bbas aktivit\u0101t\u0113m.</p>"
     },
     "difficulty": "very_easy",
@@ -34,7 +34,7 @@
     "name_translations": {
         "en": "Information Sheet Template",
         "es": "",
-        "it": "",
+        "it": "Modello di foglio informativo",
         "lv": "Inform\u0101cijas lapas veidlapa"
     },
     "problemprofiles": [

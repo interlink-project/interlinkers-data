@@ -8,8 +8,8 @@
     "description_translations": {
         "en": "<p>Guidelines and tips on how to perform a usability testing</p>",
         "es": "",
-        "it": "",
-        "lv": ""
+        "it": "<p>Linee guida e suggerimenti su come eseguire un test di usabilit\u00e0</p>",
+        "lv": "<p>Lietojam\u012bbas test\u0113\u0161anas veik\u0161anas vadl\u012bnijas un ieteikumi</p>"
     },
     "difficulty": "easy",
     "domain": "",
@@ -34,8 +34,8 @@
     "name_translations": {
         "en": "Usability testing guidelines",
         "es": "",
-        "it": "",
-        "lv": ""
+        "it": "Linee guida per i test di usabilit\u00e0",
+        "lv": "Lietojam\u012bbas test\u0113\u0161anas vadl\u012bnijas"
     },
     "problemprofiles": [
         "ORG_PROBLEM_6.2",

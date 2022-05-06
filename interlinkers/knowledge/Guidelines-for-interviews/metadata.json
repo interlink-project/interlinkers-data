@@ -8,7 +8,7 @@
     "description_translations": {
         "en": "<p>Instructions on how to set up a research activity based on interviews, for a co-production project. </p>",
         "es": "",
-        "it": "",
+        "it": "<p>Istruzioni su come impostare un'attivit\u00e0 di ricerca basata su interviste, per un progetto di coproduzione. </p>",
         "lv": "<p>Pam\u0101c\u012bba p\u0113tniec\u012bbas aktivit\u0101\u0161u veik\u0161anai koprades projekt\u0101, izmantojot fokusgrupas.</p>"
     },
     "difficulty": "easy",
@@ -34,7 +34,7 @@
     "name_translations": {
         "en": "Guidelines for interviews",
         "es": "",
-        "it": "",
+        "it": "Linee guida per interviste",
         "lv": "Interviju vadl\u012bnijas"
     },
     "problemprofiles": [

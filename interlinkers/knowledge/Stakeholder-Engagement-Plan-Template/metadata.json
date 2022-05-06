@@ -8,7 +8,7 @@
     "description_translations": {
         "en": "<p>Document to design the engagement plan for those co-producing and/or using the resulting co-produced product</p>",
         "es": "",
-        "it": "",
+        "it": "<p>Documento per progettare il piano di coinvolgimento per coloro che coproducono e/o utilizzano il prodotto risultante in coproduzione</p>",
         "lv": "<p> Koprades un/vai koprades proces\u0101 rad\u012bta produkta lietot\u0101ju iesaistes pl\u0101na izveides dokuments</p>"
     },
     "difficulty": "very_easy",
@@ -34,7 +34,7 @@
     "name_translations": {
         "en": "Stakeholder Engagement Plan for INTERLINK project",
         "es": "",
-        "it": "",
+        "it": "Piano di coinvolgimento degli stakeholder per il progetto INTERLINK",
         "lv": "Ieinteres\u0113to pu\u0161u iesaistes pl\u0101ns INTERLINK projektam"
     },
     "problemprofiles": [

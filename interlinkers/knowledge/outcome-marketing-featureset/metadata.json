@@ -8,7 +8,7 @@
     "description_translations": {
         "en": "<p>This resource suggests a model to define the features of a co-produced service. It guides the description of the problem(s) that the product will solve in the long run, the vision for the user experience as well as the user interface, the vision for how the product will generate a return of investment</p>",
         "es": "",
-        "it": "",
+        "it": "<p>Questa risorsa suggerisce un modello per definire le caratteristiche di un servizio coprodotto. Guida nella descrizione del problema o dei problemi che il prodotto risolver\u00e0 a lungo termine, la visione dell'esperienza utente cos\u00ec come l'interfaccia utente, la visione di come il prodotto generer\u00e0 un ritorno sull'investimento</p>",
         "lv": "<p>\u0160is resurss pied\u0101v\u0101 koprad\u012bta pakalpojuma funkciju defin\u0113\u0161anas modeli. Tas vada ilgtermi\u0146a risin\u0101m\u0101s probl\u0113mas defin\u0113\u0161anas procesu, lietot\u0101ja pieredzes un lietot\u0101ja saskarnes v\u012bziju un redz\u0113jumu par produkta invest\u012bciju atdevi (ROI)t</p>"
     },
     "difficulty": "easy",
@@ -34,7 +34,7 @@
     "name_translations": {
         "en": "Outcome marketing featureset",
         "es": "",
-        "it": "",
+        "it": "Set di funzionalit\u00e0 per la commercializzazione dei risultati",
         "lv": "M\u0101rketinga rezult\u0101tu komplekts"
     },
     "problemprofiles": [

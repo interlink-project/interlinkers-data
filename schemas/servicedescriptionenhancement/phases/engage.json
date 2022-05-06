@@ -4,7 +4,7 @@
     "name_translations": {
         "en": "Engage",
         "es": "Comprometer",
-        "it": "Coinvolgere",
+        "it": "Coinvolgimento",
         "lv": ""
     },
     "description_translations": {
@@ -18,13 +18,13 @@
             "name_translations": {
                 "en": "Identify stakeholders",
                 "es": "Identificar stakeholders",
-                "it": "",
+                "it": "Identifica gli stakeholder",
                 "lv": ""
             },
             "description_translations": {
                 "en": "The identification of key actors  is the first step to start your  process of co-production. According to the type of project, the goals and the level of citizen involvement, different questions are to be answered.\r\nWhat different  types of stakeholders enter into play in the initiative to be co-produced? What are their motivations and skills to participate in the project? What is their position in the network? How to contact them?\r\nFollow the specific tasks to get the complete picture.",
                 "es": "",
-                "it": "",
+                "it": "L'identificazione degli attori rilevanti \u00e8 il primo passo per avviare il processo di co-produzione. A seconda del tipo di progetto, degli obiettivi e del livello di coinvolgimento dei cittadini, \u00e8 necessario rispondere a diverse domande.\nQuali diversi tipi di portatori di interesse e stakeholder entrano in gioco nell'iniziativa da co-produrre? Quali sono le loro motivazioni e capacit\u00e0 per partecipare al progetto? Qual \u00e8 la loro posizione nella rete? Come contattarli?\nSegui le attivit\u00e0 specifiche per ottenere il quadro completo.",
                 "lv": ""
             },
             "problemprofiles": [],
@@ -33,12 +33,14 @@
                     "name_translations": {
                         "en": "Understand the different types of stakeholders",
                         "es": "Entender los diferentes tipos de stakeholders y sus motivaciones",
-                        "it": "",
+                        "it": "Comprendi le diverse tipologie di stakeholders",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Usually different actors are engaged in co-production to create a new service or customizing an already existing service: public bodies, private companies, SMEs, citizens. Each actor brings specific needs and competences in relation to the service and has different motivations to participate in a project. Learn about the different types of stakeholders and which of them can add value to your co-production process. In this case, for service descriptions refinement, consider contributing public servants but also potentially citizens, i.e. consumers of those services.",
-                        "es": ""
+                        "es": "",
+                        "it": "Solitamente diversi attori sono impegnati in processi di co-produzione per creare un nuovo servizio o per personalizzare un servizio gi\u00e0 esistente: enti pubblici, aziende private, PMI, cittadini. Ogni attore porta bisogni e competenze specifiche in relazione al servizio e ha motivazioni diverse per partecipare a un progetto. Scopri i diversi tipi di stakeholder e quali di essi possono aggiungere valore al tuo processo di co-produzione.",
+                        "lv": ""
                     },
                     "problemprofiles": [
                         "UND_PROBLEM_2"
@@ -50,13 +52,13 @@
                     "name_translations": {
                         "en": "Create a contact list of potential network participants",
                         "es": "Crear una lista de contactos de posibles participantes de la red",
-                        "it": "",
+                        "it": "Crea un elenco di contatti di potenziali partecipanti alla rete",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Write down the list of participants, aside the co-production team, who may be interested in observing the progress of the co-production project and have the opportunity to emit opinions and take part in some decision processes. ",
                         "es": "",
-                        "it": "",
+                        "it": "Annota l'elenco dei partecipanti, da affiancare al team di coproduzione, che potrebbero essere interessati ad osservare l'andamento del progetto di coproduzione e avere l'opportunit\u00e0 di esprimere opinioni e prendere parte ad alcuni processi decisionali. ",
                         "lv": ""
                     },
                     "problemprofiles": [
@@ -97,13 +99,13 @@
                     "name_translations": {
                         "en": "Prepare an engagement plan",
                         "es": "",
-                        "it": "",
+                        "it": "Prepara un piano di coinvolgimento",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Create an effective engagement plan which allows you to reach to the types and numbers of stakeholders sufficient to ensure that the co-produced service is well targeted. \r\nAn engagement plan is usually composed of three parts: the identification of your project\u2019s stakeholders; the planning of effective means for interacting with each stakeholder, and protocols for accurately documenting your work for the sake of transparency, accountability and evaluation of the process.",
                         "es": "",
-                        "it": "",
+                        "it": "Crea un piano di coinvolgimento efficace che consenta di raggiungere le tipologie e il numero di stakeholder sufficienti per garantire che il servizio coprodotto sia ben mirato.\nUn piano di coinvolgimento \u00e8 solitamente composto da tre parti: l'identificazione degli stakeholder del progetto; la pianificazione di mezzi efficaci per interagire con ogni stakeholder e protocolli per documentare accuratamente il vostro lavoro per motivi di trasparenza, responsabilit\u00e0 e valutazione del processo.",
                         "lv": ""
                     },
                     "problemprofiles": [
@@ -116,13 +118,13 @@
                     "name_translations": {
                         "en": "Communicate benefit for stakeholders",
                         "es": "",
-                        "it": "",
+                        "it": "Comunica i benefici agli stakeholder",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Clearly communicate the benefits of service co-production to your network of stakeholders and citizens.\r\nParticipants need to understand why their participation matters, what they can gain individually and as a group.",
                         "es": "",
-                        "it": "",
+                        "it": "Comunica chiaramente i vantaggi della co-produzione di servizi alla tua rete di stakeholder e di cittadini.\nI partecipanti devono capire perch\u00e9 la loro partecipazione \u00e8 importante, cosa possono ottenere individualmente e come gruppo.",
                         "lv": ""
                     },
                     "problemprofiles": [
@@ -140,13 +142,13 @@
                     "name_translations": {
                         "en": "Engage citizens in the co-refinement process",
                         "es": "",
-                        "it": "",
+                        "it": "Coinvolgi i cittadini nel processo di co-raffinamento",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Provide members of the public with the information they need to understand the project, the decision process, and also how public input can influence decisions, the refinement of public service descriptions and the way it is delivered. ",
                         "es": "",
-                        "it": "",
+                        "it": "Fornisci ai membri della societ\u00e0 civile le informazioni di cui hanno bisogno per comprendere il progetto, il processo decisionale e anche come il loro input pu\u00f2 influenzare le decisioni, la progettazione del servizio e il modo in cui viene erogato. ",
                         "lv": ""
                     },
                     "problemprofiles": [

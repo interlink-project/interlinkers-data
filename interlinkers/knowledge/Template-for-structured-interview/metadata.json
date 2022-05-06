@@ -8,8 +8,8 @@
     "description_translations": {
         "en": "<p>Instructions and examples on how to conduct structured interviews for a co-production project.  </p>",
         "es": "",
-        "it": "",
-        "lv": ""
+        "it": "<p>Istruzioni ed esempi su come condurre interviste strutturate in un progetto di coproduzione. </p>",
+        "lv": "<p>Koprades procesam nepiecie\u0161amo struktur\u0113to interviju veik\u0161anas instrukcija ar piem\u0113riem.</p>"
     },
     "difficulty": "easy",
     "domain": "",
@@ -34,8 +34,8 @@
     "name_translations": {
         "en": "template for structured interview",
         "es": "",
-        "it": "",
-        "lv": ""
+        "it": "Modello per interviste strutturate",
+        "lv": "Struktur\u0113t\u0101s intervijas veidlapa"
     },
     "problemprofiles": [
         "ORG_PROBLEM_2",
