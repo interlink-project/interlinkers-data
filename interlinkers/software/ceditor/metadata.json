@@ -6,8 +6,8 @@
     "description_translations": {
         "en": "This interlinker uses etherpad, an open source online editor, to provide collaborative editing in really real-time.\nEtherpad (https://etherpad.org/) is an open-source, web-based collaborative real-time editor, allowing authors to simultaneously edit a text document, and see all of the participants' edits in real-time, with the ability to display each author's text in their own color. There is also a chat box in the sidebar to allow meta communication.",
         "es": "",
-        "it": "",
-        "lv": ""
+        "it": "Questo interlinker utilizza etherpad, un editor online open source, per fornire editing collaborativo in tempo reale.\nEtherpad (https://etherpad.org/) \u00e8 un editor collaborativo in tempo reale open source basato sul Web, che consente agli autori di modificare contemporaneamente un documento di testo e vedere tutte le modifiche dei partecipanti in tempo reale, con il possibilit\u00e0 di visualizzare il testo di ogni autore nel proprio colore. C'\u00e8 anche una casella di chat nella barra laterale per consentire la meta-comunicazione.",
+        "lv": "\u0160is INTERLINKERs izmanto atv\u0113rt\u0101 koda tie\u0161saistes redaktoru Etherpad, lai sniegtu kop\u012bgas redig\u0113\u0161anas iesp\u0113jas re\u0101laj\u0101 laik\u0101.\nEtherpad (https://etherpad.org/) ir t\u012bmekl\u012b balst\u012bts atv\u0113rt\u0101 koda re\u0101l\u0101 laika kop\u012bg\u0101s redi\u0123\u0113\u0161anas r\u012bks, kas \u013cauj dokumenta autoriem redi\u0123\u0113t teksta dokumentu un \u013cauj redz\u0113t visu dal\u012bbnieku veikt\u0101s izmai\u0146as re\u0101laj\u0101 laik\u0101. Tiek nodro\u0161in\u0101ta iesp\u0113ja katra dal\u012bbnieka tekstu p\u0101r\u0101d\u012bt cit\u0101 kr\u0101s\u0101. R\u012bkam ir ar\u012b t\u0113rz\u0113\u0161anas logs, kas \u013cauj veikt sekund\u0101ro komunik\u0101ciju."
     },
     "difficulty": "easy",
     "environments": [
@@ -65,8 +65,8 @@
     "name_translations": {
         "en": "Collaborative editor",
         "es": "",
-        "it": "",
-        "lv": ""
+        "it": "Editor collaborativo",
+        "lv": "Kop\u012bg\u0101s redi\u0123\u0113\u0161anas r\u012bks"
     },
     "problemprofiles": [],
     "regulations_and_standards_translations": {

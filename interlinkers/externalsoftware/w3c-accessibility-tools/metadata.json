@@ -13,7 +13,7 @@
     "description_translations": {
         "en": "<p>Web accessibility evaluation tools are software programs or online services that help you determine if web content meets accessibility guidelines. This page provides a list of evaluation tools that you can filter to find ones that match your particular needs.</p>",
         "es": "",
-        "it": "",
+        "it": "<p>Gli strumenti di valutazione dell'accessibilit\u00e0 del Web sono programmi software o servizi online che consentono di determinare se i contenuti Web soddisfano le linee guida sull'accessibilit\u00e0. Questa pagina fornisce un elenco di strumenti di valutazione che puoi filtrare per trovare quelli che soddisfano le tue esigenze particolari.</p>",
         "lv": "<p>T\u012bmek\u013ca pieejam\u012bbas nov\u0113rt\u0113\u0161anas r\u012bki ir programmat\u016bra vai tie\u0161saistes pakalpojums, ar kura pal\u012bdz\u012bbu ir iesp\u0113jams noteikt, vai tie\u0161saistes saturs atbilst pieejam\u012bbas vadl\u012bnij\u0101m. \u0160\u012b lapa pied\u0101v\u0101 sarakstu ar nov\u0113rt\u0113\u0161anas r\u012bkiem, kurus ir iesp\u0113jams filtr\u0113t, lai atrastu atbilsto\u0161\u0101kos konkr\u0113taj\u0101m vajadz\u012bb\u0101m.</p>"
     },
     "difficulty": "easy",
@@ -33,7 +33,7 @@
     "name_translations": {
         "en": "Accessibility Tools",
         "es": "",
-        "it": "",
+        "it": "Strumenti per l'accessibit\u00e0",
         "lv": "Pieejam\u012bbas r\u012bki"
     },
     "problemprofiles": [

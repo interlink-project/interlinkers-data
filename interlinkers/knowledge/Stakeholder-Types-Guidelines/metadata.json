@@ -8,7 +8,7 @@
     "description_translations": {
         "en": "<p>Guidelines to understand which are the different types of stakeholder, their  motivations, skills, expectations toward the project</p>",
         "es": "",
-        "it": "",
+        "it": "<p>Linee guida per capire quali sono le diverse tipologie di stakeholder, le loro motivazioni, competenze, aspettative nei confronti del progetto</p>",
         "lv": "<p>Vadl\u012bnijas ieinteres\u0113to pu\u0161u tipu, motiv\u0101cijas, prasmju un cer\u012bbu noteik\u0161anai projekt\u0101</p>"
     },
     "difficulty": "easy",
@@ -34,7 +34,7 @@
     "name_translations": {
         "en": "Stakeholder types guidelines",
         "es": "",
-        "it": "",
+        "it": "Linee guida sui tipi di stakeholder",
         "lv": "Ieinteres\u0113to pu\u0161u tipu vadl\u012bnijas"
     },
     "problemprofiles": [

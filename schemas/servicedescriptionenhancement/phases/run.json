@@ -9,13 +9,13 @@
     "name_translations": {
         "en": "Run",
         "es": "",
-        "it": "",
+        "it": "Esecuzione",
         "lv": ""
     },
     "description_translations": {
         "en": "Make use of instantiated co-refinement process, reviewing contribs from users of the service description, accepting or rejecting them, exporting reports with changes accepted so that they are processed for refinement.",
         "es": "",
-        "it": "",
+        "it": "Utilizza il processo di co-raffinamento effettuato, rivedi i contributi dei partecipanti alla descrizione di serviio, accetta o declina i contributi, esporta il report con i cambiamenti accettati in modo che possano essere elaborati per il raffinamento.",
         "lv": ""
     },
     "objectives": [
@@ -23,12 +23,14 @@
             "name_translations": {
                 "en": "Monitor continuous crowd refinement process",
                 "es": "",
-                "it": "",
+                "it": "Monitora in modo continuo il processo di raffinamento collettivo",
                 "lv": ""
             },
             "description_translations": {
                 "en": "Access to the Description Augmenter to the augmented view of service descriptions to monitor and moderate contributions from the crowd, generate intermediary reports and store them. Notice that only the creator of the process to refine a service description can moderate it, unless rights are given to other co-refinement team members through Servicepedia dashboard",
-                "es": ""
+                "es": "",
+                "it": "Accedi attraverso il Description Augmenter alla vista aumentata delle descrizioni di servizio per monitorare e moderare i contributi collettivi, general report intermedi e memorizza queste versioni. Tieni conto che solamente il creatore del processo di raffinamento di una descrizione di servizio pu\u00f2 moderare la discussione, a meno che appropriati diritti vengano assegnati ad altri membri del team di co-raffinamento attraverso il pannello di controllo della Servicepedia",
+                "lv": ""
             },
             "problemprofiles": [
                 "UND_PROBLEM_1",
@@ -41,12 +43,14 @@
                     "name_translations": {
                         "en": "Link to the Description Augmenter project",
                         "es": "",
-                        "it": "",
+                        "it": "Crea un link al progetto in Description Augmenter",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Produce a link to the description augmenter process so that co-producers can review contributions, accept, reject them or generate reports for refinement processing. Again, only those with rol moderator in Servicepedia can accept or reject suggestions. All the others, can comment and add new augmentation suggestions ",
-                        "es": ""
+                        "es": "",
+                        "it": "Genera un link al progetto in Description Augmenter in modo che altri partecipanti possano rivedere i contributi, accettarli o declinarli e generare i report riassuntivi del processo di raffinamento. Ricorda che sono i partecipanti con ruolo di moderatore in Servicepedia possono accettare o declinare i suggerimenti. Tutti gli altri possono commentare e aggiungere nuovi suggerimenti di raffinamento. ",
+                        "lv": ""
                     },
                     "problemprofiles": [],
                     "prerequisites": [],
@@ -55,11 +59,15 @@
                 {
                     "name_translations": {
                         "en": "Review in Servicepedia dashboard user contributions",
-                        "es": ""
+                        "es": "",
+                        "it": "Controlla nel pannello di controllo della Servicepedia i contributi degli utenti",
+                        "lv": ""
                     },
                     "description_translations": {
                         "en": "Review in Servicepedia dashboard contributions from users, accept those that are good, reject the bad ones, until completing revision process",
-                        "es": ""
+                        "es": "",
+                        "it": "Controlla nel pannello di controllo della Servicepedia i contributi degli utenti, accetta quelli che sono validi, declina quelli non ottimali, fino al completamento del processo di revisione",
+                        "lv": ""
                     },
                     "problemprofiles": [],
                     "prerequisites": [
@@ -78,12 +86,14 @@
             "name_translations": {
                 "en": "Publish report with descriptions accepted to be processed",
                 "es": "",
-                "it": "",
+                "it": "Pubblica un report con le revisioni accettate per essere processate",
                 "lv": ""
             },
             "description_translations": {
                 "en": "Publish enhancement report generated from Servicepedia after having processed refinement suggestions for a given public service description",
-                "es": ""
+                "es": "",
+                "it": "Pubblica i report sui raffinamenti generati dalla componente Servicepedia dopo aver terminato di processare i suggerimenti di raffinamento su una data descrizione di servizio pubblico",
+                "lv": ""
             },
             "problemprofiles": [
                 "ORG_PROBLEM_13",
@@ -95,12 +105,14 @@
                     "name_translations": {
                         "en": "Publish enhancement report",
                         "es": "",
-                        "it": "",
+                        "it": "Pubblica il report di raffinamento",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Publish enhancement report from Servicepedia.",
-                        "es": ""
+                        "es": "",
+                        "it": "Pubblica il report di raffinamento dalla componente Servicepedia.",
+                        "lv": ""
                     },
                     "problemprofiles": [
                         "BUILD_PROBLEM_2",

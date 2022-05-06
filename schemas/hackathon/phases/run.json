@@ -9,7 +9,7 @@
     "name_translations": {
         "en": "Run",
         "es": "",
-        "it": "",
+        "it": "Esecuzione",
         "lv": ""
     },
     "description_translations": {
@@ -23,13 +23,13 @@
             "name_translations": {
                 "en": "Launch Hackathon website",
                 "es": "",
-                "it": "",
+                "it": "Lancia il sito web per l'hackathon",
                 "lv": ""
             },
             "description_translations": {
                 "en": "Service implementation is not possible if an environment for its depoyment and maintenance is not thought in advance. Independently on whether your envisioned co-produced service will be a piece of software or a bundle of digital resources, identify, select and make ready the development and deployment environments for your solution. Important to clearly specify and test the technical constraints within which the delivered service will be hosted.",
                 "es": "",
-                "it": "",
+                "it": "L'implementazione del servizio non \u00e8 possibile se non si considera in anticipo un ambiente per il suo rilascio e la sua manutenzione. Indipendentemente dal fatto che il servizio coprodotto previsto sia un software o un insieme di risorse digitali, identifica, seleziona e prepara gli ambienti di sviluppo e di distribuzione per la tua soluzione. E' importante specificare e testare chiaramente i vincoli tecnici entro i quali sar\u00e0 ospitato il servizio erogato.",
                 "lv": ""
             },
             "problemprofiles": [
@@ -40,7 +40,7 @@
                     "name_translations": {
                         "en": "Technical implementation and deployment",
                         "es": "",
-                        "it": "",
+                        "it": "Implementazione tecnica e messa in esercizio",
                         "lv": ""
                     },
                     "description_translations": {
@@ -69,7 +69,7 @@
             "name_translations": {
                 "en": "Service implementation",
                 "es": "",
-                "it": "",
+                "it": "Implementazione del servizio",
                 "lv": ""
             },
             "description_translations": {
@@ -88,13 +88,13 @@
                     "name_translations": {
                         "en": "Launch engagement campaign",
                         "es": "",
-                        "it": "",
+                        "it": "Lancia campagne di coinvolgimento",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Organize activities among those candidate to participate in the Hackathon, based on previously undertaken stakeholder analysis.",
                         "es": "",
-                        "it": "",
+                        "it": "Organizza le attivit\u00e0 con i candidati che partecipano all'hackathon in base ai risultati dell'analisi degli stakeholder effettuata in precedenza.",
                         "lv": ""
                     },
                     "problemprofiles": [
@@ -113,13 +113,13 @@
                     "name_translations": {
                         "en": "Open submissions",
                         "es": "",
-                        "it": "",
+                        "it": "Apri le sottomissioni",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Allow for submission of ideas by teams willing to take part in the hackathon.",
                         "es": "",
-                        "it": "",
+                        "it": "Consenti la sottomissione di idee da parte dei team che intendono prendere parte all'hackathon.",
                         "lv": ""
                     },
                     "problemprofiles": [
@@ -137,13 +137,13 @@
                     "name_translations": {
                         "en": "Monitor submissions",
                         "es": "",
-                        "it": "",
+                        "it": "Monitora le sottomissioni",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Monitor how the submissions are going before the deadline for submissions reaches. React organizaing further activities if needed.",
                         "es": "",
-                        "it": "",
+                        "it": "Monitora l'andamento delle sottomissioni prima della scadenza stabilita. Organizza ulteriori attivit\u00e0 se necessario.",
                         "lv": ""
                     },
                     "problemprofiles": [
@@ -176,7 +176,7 @@
             "name_translations": {
                 "en": "Hackathon celebration",
                 "es": "",
-                "it": "",
+                "it": "Realizzazione dell'hackathon",
                 "lv": ""
             },
             "description_translations": {
@@ -194,7 +194,7 @@
                     "name_translations": {
                         "en": "Coordinate the actors involved in the codelivery of the Hackathon (organizers, evaluators, participants)",
                         "es": "",
-                        "it": "",
+                        "it": "Coordina gli attori coinvolti nella co-esecuzione dell'hackathon (organizzatori, valutatori, partecipanti)",
                         "lv": ""
                     },
                     "description_translations": {
@@ -211,7 +211,7 @@
                     "name_translations": {
                         "en": "Guarantee transparent communication with participants in the Hackathon",
                         "es": "",
-                        "it": "",
+                        "it": "Garantisci comunicazioni trasparenti con i partecipanti dell'hackathon",
                         "lv": ""
                     },
                     "description_translations": {
@@ -233,13 +233,13 @@
                     "name_translations": {
                         "en": "Winner selection and announcement",
                         "es": "",
-                        "it": "",
+                        "it": "Selezione dei vincitori e annuncio",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Based on the criteria established at DESIGN phase, evaluators assess the projects submitted, produce ranking and organizers announce winners.",
                         "es": "",
-                        "it": "",
+                        "it": "In base ai criteri stabiliti durante la fase di DESIGN, i valutatori valutano i progetti sottomessi, producono una classifica e gli organizzatori annunciano i vincitori.",
                         "lv": ""
                     },
                     "problemprofiles": [],

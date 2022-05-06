@@ -8,7 +8,7 @@
     "description_translations": {
         "en": "<p>Information on the INTERLINK project to be distributed to participants. It provides background on research activities.</p>",
         "es": "",
-        "it": "",
+        "it": "<p>Informazioni sul progetto INTERLINK da distribuire ai partecipanti. Fornisce informazioni sulle attivit\u00e0 di ricerca.</p>",
         "lv": "<p>Izplat\u012b\u0161anai dal\u012bbniekiem paredz\u0113t\u0101 inform\u0101cija par INTERLINK projektu. T\u0101 nodro\u0161ina pamatinform\u0101ciju par p\u0113tniec\u012bbas aktivit\u0101t\u0113m.</p>"
     },
     "difficulty": "very_easy",
@@ -34,7 +34,7 @@
     "name_translations": {
         "en": "Information Sheet for INTERLINK project",
         "es": "",
-        "it": "",
+        "it": "Foglio informativo per il progetto INTERLINK",
         "lv": "INTERLINK projekta inform\u0101cijas lapa"
     },
     "problemprofiles": [

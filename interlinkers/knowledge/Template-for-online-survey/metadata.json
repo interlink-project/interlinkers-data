@@ -8,8 +8,8 @@
     "description_translations": {
         "en": "<p>Template to collect data through online survey for assessing Media and Technology Usage and Attitudes</p>",
         "es": "",
-        "it": "",
-        "lv": ""
+        "it": "<p>Modello per raccogliere dati tramite sondaggi online per valutare l'utilizzo e attitudine verso media e tecnologia</p>",
+        "lv": "<p> Veidlapa tie\u0161saistes aptaujas par mediju un tehnolo\u0123iju lieto\u0161anas un attieksmes nov\u0113rt\u0113jumu datu sav\u0101k\u0161anai</p>"
     },
     "difficulty": "easy",
     "domain": "",
@@ -34,8 +34,8 @@
     "name_translations": {
         "en": "template for online survey guidelines",
         "es": "",
-        "it": "",
-        "lv": ""
+        "it": "modello di linee guida per sondaggi online",
+        "lv": "veidlapa tie\u0161saistes aptauju vadl\u012bnij\u0101m"
     },
     "problemprofiles": [
         "UND_PROBLEM_3"

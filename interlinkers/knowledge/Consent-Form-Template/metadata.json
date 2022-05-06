@@ -8,7 +8,7 @@
     "description_translations": {
         "en": "<p>Template to prepare a form to collect consent from participants engaged in research activities about the use of their personal data</p>",
         "es": "",
-        "it": "",
+        "it": "<p>Modello per preparare un modulo per raccogliere il consenso dei partecipanti impegnati in attivit\u00e0 di ricerca sull'uso dei loro dati personali</p>",
         "lv": "<p>Veidlapa p\u0113tnieciskaj\u0101s aktivit\u0101t\u0113s iesaist\u012bto dal\u012bbnieku piekri\u0161anas formas person\u012bgo datu izmanto\u0161anai sagatavo\u0161anai</p>"
     },
     "difficulty": "very_easy",
@@ -34,7 +34,7 @@
     "name_translations": {
         "en": "Consent Form Template",
         "es": "",
-        "it": "",
+        "it": "Modello di modulo di consenso",
         "lv": "Piekri\u0161anas formas veidlapa"
     },
     "problemprofiles": [

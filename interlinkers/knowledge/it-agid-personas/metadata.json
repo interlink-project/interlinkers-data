@@ -9,7 +9,7 @@
     "description_translations": {
         "en": "<p>This resource provides a model for persona outlined by AGID and Team Digitale (in Italian).</p>",
         "es": "",
-        "it": "",
+        "it": "<p>Questa risorsa fornisce un modello per persona delineato da AGID e da Team Digitale (in italiano).</p>",
         "lv": "<p>\u0160is resurss sniedz personas (lietot\u0101ja tipa) modeli, ko izmanto It\u0101lijas Digit\u0101l\u0101 a\u0123ent\u016bra un Digit\u0101l\u0101s transform\u0101cijas komanda (it\u0101\u013cu valod\u0101).</p>"
     },
     "difficulty": "easy",
@@ -35,7 +35,7 @@
     "name_translations": {
         "en": "Model for Personas (in italian)",
         "es": "",
-        "it": "",
+        "it": "Modello per Personas (in italiano)",
         "lv": "Personas (lietot\u0101ju tipa) modelis (it\u0101\u013cu valod\u0101)"
     },
     "problemprofiles": [

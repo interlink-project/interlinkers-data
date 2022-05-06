@@ -8,8 +8,8 @@
     "description_translations": {
         "en": "<p>Template for preparing a project description that synthetically summarizes the goals and major aspects of a co-production initiative. </p>",
         "es": "",
-        "it": "",
-        "lv": ""
+        "it": "<p>Modello per la preparazione di una descrizione del progetto che riassume sinteticamente gli obiettivi e gli aspetti principali di un'iniziativa di coproduzione. </p>",
+        "lv": "<p>Projekta raksturojuma piem\u0113rs, kas sint\u0113tiski apkopo koprades iniciat\u012bvas m\u0113r\u0137us un galvenos raksturlielumus.</p>"
     },
     "difficulty": "easy",
     "environments": [
@@ -33,8 +33,8 @@
     "name_translations": {
         "en": "Template for project description",
         "es": "",
-        "it": "",
-        "lv": ""
+        "it": "Modello per la descrizione del progetto",
+        "lv": "Projekta apraksta veidlapa"
     },
     "problemprofiles": [
         "ORG_PROBLEM_1"

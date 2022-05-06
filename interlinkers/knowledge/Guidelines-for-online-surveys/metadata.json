@@ -8,7 +8,7 @@
     "description_translations": {
         "en": "<p>Instructions on how to set up a research activity based on online surveys, for a co-production project </p>",
         "es": "",
-        "it": "",
+        "it": "<p>Istruzioni su come impostare un'attivit\u00e0 di ricerca basata su sondaggi online, nell'ambito di un progetto di coproduzione </p>",
         "lv": "<p>Pam\u0101c\u012bba p\u0113tniec\u012bbas aktivit\u0101\u0161u veik\u0161anai koprades projekt\u0101, izmantojot fokusgrupas.</p>"
     },
     "difficulty": "easy",
@@ -34,7 +34,7 @@
     "name_translations": {
         "en": "Guidelines for online-surveys",
         "es": "",
-        "it": "",
+        "it": "Linee guida per i sondaggi online",
         "lv": "Tie\u0161saistes aptauju vadl\u012bnijas"
     },
     "problemprofiles": [

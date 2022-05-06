@@ -9,7 +9,7 @@
     "name_translations": {
         "en": "Design",
         "es": "",
-        "it": "",
+        "it": "Design",
         "lv": ""
     },
     "description_translations": {
@@ -23,7 +23,7 @@
             "name_translations": {
                 "en": "Focus the problem collaboratively",
                 "es": "",
-                "it": "",
+                "it": "Focalizza il problema in modo collaborativo",
                 "lv": ""
             },
             "description_translations": {
@@ -43,7 +43,7 @@
                     "name_translations": {
                         "en": "Collaboratively Hackathon problem refinement",
                         "es": "",
-                        "it": "",
+                        "it": "Raffinamento collaborativo dell'Hackathon",
                         "lv": ""
                     },
                     "description_translations": {
@@ -60,7 +60,7 @@
                     "name_translations": {
                         "en": "Ideas collection for Hackathon exploration and refinement",
                         "es": "",
-                        "it": "",
+                        "it": "Raccolta di idee per l'esplorazione e il perfezionamento dell'Hackathon",
                         "lv": ""
                     },
                     "description_translations": {
@@ -82,7 +82,7 @@
                     "name_translations": {
                         "en": "Sketch an initial idea of the Hackathon: theme, plan, submission & evaluation process",
                         "es": "",
-                        "it": "",
+                        "it": "Abbozza un'idea iniziale dell'Hackathon: il tema, il piano, il processo di presentazione e di valutazione",
                         "lv": ""
                     },
                     "description_translations": {
@@ -110,7 +110,7 @@
             "name_translations": {
                 "en": "Ideation",
                 "es": "",
-                "it": "",
+                "it": "Ideazione",
                 "lv": ""
             },
             "description_translations": {
@@ -133,13 +133,13 @@
                     "name_translations": {
                         "en": "Collaboratively agree on Hackathon design",
                         "es": "",
-                        "it": "",
+                        "it": "Concorda in modo collaborativo il disegno dell'Hackathon",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Go back to your network of stakeholders to validate the service idea by means of a focus group or a poll.",
                         "es": "",
-                        "it": "",
+                        "it": "Consulta nuovamente la rete di stakeholder per validare l'idea di servizio attraverso un focus group o un sondaggio.",
                         "lv": ""
                     },
                     "problemprofiles": [],
@@ -150,7 +150,7 @@
                     "name_translations": {
                         "en": "Define requirements and constraints for the Hackathon: plan, submission & evaluation process",
                         "es": "",
-                        "it": "",
+                        "it": "Definisci requisiti e vincoli per l'Hackathon: piano, processo di sottomissione e valutazione",
                         "lv": ""
                     },
                     "description_translations": {
@@ -183,7 +183,7 @@
             "name_translations": {
                 "en": "Service specification",
                 "es": "",
-                "it": "",
+                "it": "Specifica del servizio",
                 "lv": ""
             },
             "description_translations": {
@@ -203,13 +203,13 @@
                     "name_translations": {
                         "en": "Consider eu guidelines for public service developement",
                         "es": "",
-                        "it": "",
+                        "it": "Considera linee guida europee per lo sviluppo di servizi pubblici",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Consult good practices for interface design and public services development. Reflect, in your specific use case, on how to make sure the services are provided in a multi-channel manner, maximizing the exploitation by potentially any group of users or by the agents acting on their behalf, and providing clear statements regarding the accessibility limits in the current implementation.",
                         "es": "",
-                        "it": "",
+                        "it": "Consulta le buone pratiche per la progettazione di interfacce e lo sviluppo di servizi pubblici. Rifletti, nel tuo caso d'uso specifico, su come assicurare che i servizi vengano erogati in modo multicanale, massimizzandone l'utilizzo potenzialmente da parte di qualsiasi gruppo di utenti o da parte degli attori che agiscono per loro conto. Fornisci dichiarazioni chiare sulle limitazioni in termini di accessibilit\u00e0 dell'attuale implementazione.",
                         "lv": ""
                     },
                     "problemprofiles": [],
@@ -220,13 +220,13 @@
                     "name_translations": {
                         "en": "User interface design for Hackathon website and submission system",
                         "es": "",
-                        "it": "",
+                        "it": "Disegno dell'interfaccia utente per il sito web dell'Hackathon e il sistema di sottomissione",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Proceed with the design of the user interface of the service through the preparation of initial sketches and mockups. Ensure the design of the user interface follows the guidelines on usability and accessibility. ",
                         "es": "",
-                        "it": "",
+                        "it": "Procedi con la progettazione dell'interfaccia utente del servizio attraverso la predisposizione di schizzi e mockup iniziali. Assicurati che il design dell'interfaccia utente segua le linee guida sull'usabilit\u00e0 e l'accessibilit\u00e0. ",
                         "lv": ""
                     },
                     "problemprofiles": [],
@@ -242,13 +242,13 @@
                     "name_translations": {
                         "en": "Content design, including plan, rules, prize announcement and so on",
                         "es": "",
-                        "it": "",
+                        "it": "Disegno del contenuto, inclusi piano, regole, annuncio di premi e cos\u00ec via",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Prepare adequate content for the new/enhanced public service. Follow the guidelines on how to select and use the most appropriate language according to the users of the digital service and their skills.",
                         "es": "",
-                        "it": "",
+                        "it": "Prepara contenuti adeguati per il nuovo servizio pubblico. Segui le linee guida su come selezionare e utilizzare il linguaggio pi\u00f9 appropriato in base agli utenti del servizio digitale e alle loro competenze.",
                         "lv": ""
                     },
                     "problemprofiles": [
@@ -275,13 +275,13 @@
             "name_translations": {
                 "en": "Sustainability",
                 "es": "",
-                "it": "",
+                "it": "Sostenibilit\u00e0",
                 "lv": ""
             },
             "description_translations": {
                 "en": "Before further going deep into the development of your service. Stop and reflect about the design results obtained so far and about the actual feasibility and sustainability of what you are about to implement.",
                 "es": "",
-                "it": "",
+                "it": "Prima di approfondire ulteriormente lo sviluppo del tuo servizio fermati e rifletti sui risultati progettuali finora ottenuti e sull'effettiva fattibilit\u00e0 e sostenibilit\u00e0 di ci\u00f2 che stai per realizzare.",
                 "lv": ""
             },
             "problemprofiles": [
@@ -292,13 +292,13 @@
                     "name_translations": {
                         "en": "Evaluation of codesign",
                         "es": "",
-                        "it": "",
+                        "it": "Valutazione del design collaborativo",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Is the design output satisfactory?\r\nFollow the proposed checklist to understand if you are done with design or whether an iterative refinement cycle is recommended.",
                         "es": "",
-                        "it": "",
+                        "it": "L'output del progetto \u00e8 soddisfacente?\nSegui la checklist di controllo proposta per capire se hai terminato la progettazione o se \u00e8 consigliabile un ciclo di perfezionamento iterativo.",
                         "lv": ""
                     },
                     "problemprofiles": [],
@@ -309,13 +309,13 @@
                     "name_translations": {
                         "en": "Refine the preliminary business model",
                         "es": "",
-                        "it": "",
+                        "it": "Raffina il modello di business preliminare",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "How much funding is needed? Where does the money come from? What are the sources of funding / support necessary to keep it running after implementation?\r\nFollow the proposed checklist for an intermediate evaluation of financial sustainability.",
                         "es": "",
-                        "it": "",
+                        "it": "Quanti finanziamenti sono necessari? Da dove proviene il denaro? Quali sono le fonti di finanziamento/sostegno necessarie per mantenere il servizio operativo dopo l'implementazione?\nSegui la checklist proposta per una valutazione intermedia della sostenibilit\u00e0 finanziaria.",
                         "lv": ""
                     },
                     "problemprofiles": [],
@@ -331,13 +331,13 @@
                     "name_translations": {
                         "en": "Feasibility analysis",
                         "es": "",
-                        "it": "",
+                        "it": "Analisi di fattibilit\u00e0",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Are all technical skills and resources available to proceed with development? \r\nFollow the proposed checklist for an intermediate evaluation of technical sustainabiity.",
                         "es": "",
-                        "it": "",
+                        "it": "Sono disponibili tutte le competenze e le risorse tecniche per procedere con lo sviluppo?\nSegui la checklist proposta per una valutazione intermedia della sostenibilit\u00e0 tecnica.",
                         "lv": ""
                     },
                     "problemprofiles": [],

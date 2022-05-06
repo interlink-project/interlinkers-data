@@ -11,8 +11,8 @@
     "description_translations": {
         "en": "<p>Augmenter is an Open Source application that offers the possibility of create and improve public services descriptions, in the workspace users can share opinions, questions and feedbacks, finally a assigned moderator will decide approve or not a suggestion. With Augmenter it is possible to</p><ul><li>create and improve public service descriptions, organize discussions and keep record of participation and involvement;</li><li>manage moderator decisions over the improvements;</li><li>Generate a final improvement report. </li></ul>",
         "es": "<p>Augmenter es una aplicaci\u00f3n Open Source que ofrece la posibilidad de crear y mejorar descripciones de servicios p\u00fablicos, en el espacio de trabajo los usuarios pueden compartir opiniones, preguntas y comentarios, finalmente un moderador asignado decidir\u00e1 aprobar o no una sugerencia. Con Augmenter es posible</p><ul><li>Crear y mejorar descripciones de servicios p\u00fablicos, organizar dicusiones y mantener un registro de participaci\u00f3n e implicaci\u00f3n;</li><li>administrar las decisiones del moderador sobre las mejoras;</li ><li>Generar un informe final de mejora.</li></ul>",
-        "it": "",
-        "lv": ""
+        "it": "<p>Augmenter \u00e8 un'applicazione Open Source che offre la possibilit\u00e0 di creare e migliorare le descrizioni dei servizi pubblici, nell'area di lavoro gli utenti possono condividere opinioni, domande e feedback, infine un moderatore incaricato decider\u00e0 di approvare o meno un suggerimento. Con Augmenter \u00e8 possibile</p><ul><li>creare e migliorare le descrizioni dei servizi pubblici, organizzare discussioni e tenere traccia della partecipazione e del coinvolgimento;</li><li>gestire le decisioni dei moderatori sui miglioramenti;</li ><li>Genera un rapporto di miglioramento finale. </li></ul>",
+        "lv": "<p>Augmenter ir atv\u0113rt\u0101 koda lietotne, kas pied\u0101v\u0101 iesp\u0113ju veidot un uzlabot publisko pakalpojumu aprakstus. Lietotnes darbaviet\u0101 lietot\u0101jiem ir iesp\u0113ja dal\u012bties ar viedok\u013ciem, jaut\u0101jumiem un ierosin\u0101jumiem, un procesa moderators pie\u0146em l\u0113mumu apstiprin\u0101t vai noraid\u012bt priek\u0161likumu. Ar Augmenter ir iesp\u0113jams</p><ul><li>izveidot un uzlabot publisko pakalpojumu aprakstus, organiz\u0113t diskusijas un veikt dal\u012bbas un iesaistes uzskaiti;</li><li>vad\u012bt moderatora l\u0113mumus par nepiecie\u0161amajiem uzlabojumiem;</li><li>izveidot nepiecie\u0161amo uzlabojumu zi\u0146ojuma galaversiju.</li></ul>"
     },
     "difficulty": "easy",
     "environments": [
@@ -66,8 +66,8 @@
     "name_translations": {
         "en": "Augmenter",
         "es": "Augmenter",
-        "it": "",
-        "lv": ""
+        "it": "Augmenter",
+        "lv": "Augmenter"
     },
     "overview_text": {
         "en": "Web-based tool for improving public service descriptions",
