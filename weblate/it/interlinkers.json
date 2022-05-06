@@ -6,7 +6,7 @@
     "externalknowledge;agid-guidelines-for-the-development-of-secure-software-in-italian;description": "<p>Questa risorsa descrive le linee guida per lo sviluppo di software sicuro nella pubblica amministrazione</p>",
     "externalknowledge;agid-guidelines-for-the-development-of-secure-software-in-italian;name": " Linee guida AgID per lo sviluppo di software sicuro (in italiano)",
     "externalknowledge;agid-minimum-security-measures-for-public-administration;description": "<p>Questa risorsa descrive le misure minime di sicurezza ICT emanate da AgID volte a contrastare le più frequenti minacce informatiche per la pubblica amministrazione italiana.</p>",
-    "externalknowledge;agid-minimum-security-measures-for-public-administration;name": "Misure minime AgID per  sicurezza per la Pubblica Amministrazione. ",
+    "externalknowledge;agid-minimum-security-measures-for-public-administration;name": "Misure minime AgID per sicurezza per la Pubblica Amministrazione. ",
     "externalknowledge;cloud-enablement-kit-in-italian;description": "<p>Questa risorsa descrive la strategia di Cloud Enablement delineata da AGID e Team Digitale (in italiano). </p>",
     "externalknowledge;cloud-enablement-kit-in-italian;name": "Kit di abilitazione al cloud (in italiano)",
     "externalknowledge;edpb-data-protection-guidelines;description": "<p>Le presenti Linee guida forniscono indicazioni generali sull'obbligo di protezione dei dati fin dalla progettazione e per impostazione predefinita (di seguito \"DPbDD\") di cui all'articolo 25 del GDPR.</p>",
@@ -60,7 +60,7 @@
     "knowledgeinterlinker;demographic-and-activity-satisfaction-questionnaire;description": "<p>Questo è un modello di questionario volto a raccogliere dati demografici e punteggi di soddisfazione delle attività dai partecipanti agli eventi e alle attività del progetto.</p>",
     "knowledgeinterlinker;demographic-and-activity-satisfaction-questionnaire;name": "Questionario demografico e sulla soddisfazione delle attività",
     "knowledgeinterlinker;final-end-user-s-questionnaire-quality-of-service;description": "Questo è un modello di questionario sulla percezione degli utenti finali. Mira a misurare le percezioni degli utenti finali sulla qualità basata sull'utente, sulla qualità basata sul valore, sulla fiducia e sull'accettazione. Il questionario è pensato per ricevere risposta dagli utenti dei servizi tradizionali e anche da coloro che li hanno co-prodotti tramite INTERLINK.",
-    "knowledgeinterlinker;final-end-user-s-questionnaire-quality-of-service;name": "Questionario  per l'utente finale - Qualità del servizio",
+    "knowledgeinterlinker;final-end-user-s-questionnaire-quality-of-service;name": "Questionario per l'utente finale - Qualità del servizio",
     "knowledgeinterlinker;focus-group-guidelines;description": "<p>Istruzioni su come impostare un'attività di ricerca basata su focus group in un progetto di coproduzione.</p>",
     "knowledgeinterlinker;focus-group-guidelines;name": "Linee guida per focus group",
     "knowledgeinterlinker;focus-group-on-problem-exploration-for-new-digital-functionality;description": "<p>Questa risorsa fornisce uno scheletro per organizzare un focus group per indagare sul problema che deve essere risolto da un servizio/funzionalità digitale. Risponde a una serie di domande su potenziali utenti, pratiche attuali, aspetti critici e desiderata.</p>",
@@ -119,6 +119,6 @@
     "softwareinterlinker;google-drive;name": "Google Drive",
     "softwareinterlinker;loomio;description": "<p>Loomio è una soluzione Open Source che offre uno spazio di lavoro per la conversazione, la condivisione di informazioni e opinioni, la formulazione di proposte, la decisione di azioni e il raggiungimento di risultati. Con Loomio è possibile</p><ul><li>avviare e organizzare discussioni e tenere traccia della partecipazione e del coinvolgimento;</li><li>gestire decisioni collaborative attraverso diverse forme di sondaggi, sondaggi, ecc;</li><li> li><li>consentire di collaborare votando su idee e proposte in discussione.</li></ul>",
     "softwareinterlinker;loomio;name": "Loomio",
-    "softwareinterlinker;survey-editor;description": "L  INTERLINKER Survey designer and publishing  permette di creare on demand nuovi moduli per raccogliere informazioni o aiutare nel processo decisionale nei processi di coproduzione. Si basa sullo strumento open source SurveyJs (https://github.com/surveyjs)",
+    "softwareinterlinker;survey-editor;description": "L INTERLINKER Survey designer and publishing permette di creare on demand nuovi moduli per raccogliere informazioni o aiutare nel processo decisionale nei processi di coproduzione. Si basa sullo strumento open source SurveyJs (https://github.com/surveyjs)",
     "softwareinterlinker;survey-editor;name": "Survey editor"
 }
