@@ -16,7 +16,7 @@
                 "description_translations": {
                     "en": "<p>WSO2 API Manager is a complete platform for building, integrating, and exposing your digital services as managed APIs in the cloud, on-premise, and hybrid architectures to drive your digital transformation strategy. It allows API developers to design, publish, and manage the lifecycle of APIs and API product managers to create API products from one or more APIs.</p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>WSO2 API Manager \u00e8 una piattaforma completa per creare, integrare ed esporre i tuoi servizi digitali come API gestite nelle architetture cloud, on-premise e ibride per guidare la tua strategia di trasformazione digitale. Consente agli sviluppatori API di progettare, pubblicare e gestire il ciclo di vita delle API e ai product manager API di creare prodotti API da una o pi\u00f9 API.</p>",
                     "lv": "<p>WSO2 API mened\u017eeris ir pilnv\u0113rt\u012bga platforma tie\u0161saistes pakalpojumu veido\u0161anai, integr\u0113\u0161anai un atkl\u0101\u0161anai caur vad\u012btiem API m\u0101ko\u0146datos, fiziskaj\u0101 vid\u0113 un hibr\u012bdaj\u0101s arhitekt\u016br\u0101s, t\u0101 \u013caujot virz\u012bt digit\u0101l\u0101s transform\u0101cijas strat\u0113\u0123iju. Tas \u013cauj API izstr\u0101d\u0101t\u0101jiem veidot, public\u0113t un vad\u012bt API dz\u012bves ciklu, bet API produktu vad\u012bt\u0101jiem veidot API produktus no vienas vai vair\u0101k\u0101m API.</p>"
                 },
                 "difficulty": "medium",
@@ -37,7 +37,7 @@
                 "name_translations": {
                     "en": "WSO2 API Manager",
                     "es": "",
-                    "it": "",
+                    "it": "WSO2 API Manager",
                     "lv": "WSO2 API mened\u017eeris"
                 },
                 "problemprofiles": [
@@ -81,7 +81,7 @@
                 "description_translations": {
                     "en": "<p>This validator checks the markup validity of Web documents in HTML, XHTML, SMIL, MathML, etc.</p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>Questo validatore verifica la validit\u00e0 del markup dei documenti Web in HTML, XHTML, SMIL, MathML, ecc.</p>",
                     "lv": "<p>\u0160is validators p\u0101rbauda t\u012bmek\u013ca dokumentu HTML, XHTML, SMIL, MathML u.c. iez\u012bm\u0113\u0161anas (markup) valodas der\u012bgumu.</p>"
                 },
                 "difficulty": "easy",
@@ -101,7 +101,7 @@
                 "name_translations": {
                     "en": "Markup Validation Service",
                     "es": "",
-                    "it": "",
+                    "it": "Markup Validation Service",
                     "lv": "Iez\u012bm\u0113\u0161anas (markup) valodas valid\u0113\u0161anas pakalpojums"
                 },
                 "problemprofiles": [
@@ -144,7 +144,7 @@
                 "description_translations": {
                     "en": "<p>Google Charts is a Java Script library providing a way to visualize data on your website (from simple line charts to complex hierarchical tree maps)</p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>Google Charts \u00e8 una libreria di script Java che fornisce un modo per visualizzare i dati sul tuo sito web (da semplici grafici a linee a complesse mappe ad albero gerarchiche)</p>",
                     "lv": "<p>Google Charts ir JavaScript bibliot\u0113ka, kas pied\u0101v\u0101 datu vizualiz\u0101cijas iesp\u0113jas j\u016bsu t\u012bmek\u013ca vietnei (s\u0101kot no vienk\u0101r\u0161\u0101m l\u012bniju diagramm\u0101m l\u012bdz hierarhisk\u0101m kart\u0113m)</p>"
                 },
                 "difficulty": "medium",
@@ -165,7 +165,7 @@
                 "name_translations": {
                     "en": "Google Chart",
                     "es": "",
-                    "it": "",
+                    "it": "Google Chart",
                     "lv": "Google Chart"
                 },
                 "problemprofiles": [
@@ -209,7 +209,7 @@
                 "description_translations": {
                     "en": "<p>Keycloak provides user federation, strong authentication, user management, fine-grained authorization</p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>Keycloak fornisce federazione di utenti, autenticazione avanzata, gestione degli utenti e autorizzazione dettagliata</p>",
                     "lv": "<p>Keycloak nodro\u0161ina lietot\u0101ju feder\u0101ciju, sp\u0113c\u012bgu autentifik\u0101ciju, lietot\u0101ju kontroli un prec\u012bzu autoriz\u0101ciju</p>"
                 },
                 "difficulty": "difficult",
@@ -230,7 +230,7 @@
                 "name_translations": {
                     "en": "Keycloak",
                     "es": "",
-                    "it": "",
+                    "it": "Keycloak",
                     "lv": "Keycloak"
                 },
                 "problemprofiles": [
@@ -276,7 +276,7 @@
                 "description_translations": {
                     "en": "<p>Web accessibility evaluation tools are software programs or online services that help you determine if web content meets accessibility guidelines. This page provides a list of evaluation tools that you can filter to find ones that match your particular needs.</p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>Gli strumenti di valutazione dell'accessibilit\u00e0 del Web sono programmi software o servizi online che consentono di determinare se i contenuti Web soddisfano le linee guida sull'accessibilit\u00e0. Questa pagina fornisce un elenco di strumenti di valutazione che puoi filtrare per trovare quelli che soddisfano le tue esigenze particolari.</p>",
                     "lv": "<p>T\u012bmek\u013ca pieejam\u012bbas nov\u0113rt\u0113\u0161anas r\u012bki ir programmat\u016bra vai tie\u0161saistes pakalpojums, ar kura pal\u012bdz\u012bbu ir iesp\u0113jams noteikt, vai tie\u0161saistes saturs atbilst pieejam\u012bbas vadl\u012bnij\u0101m. \u0160\u012b lapa pied\u0101v\u0101 sarakstu ar nov\u0113rt\u0113\u0161anas r\u012bkiem, kurus ir iesp\u0113jams filtr\u0113t, lai atrastu atbilsto\u0161\u0101kos konkr\u0113taj\u0101m vajadz\u012bb\u0101m.</p>"
                 },
                 "difficulty": "easy",
@@ -296,7 +296,7 @@
                 "name_translations": {
                     "en": "Accessibility Tools",
                     "es": "",
-                    "it": "",
+                    "it": "Strumenti per l'accessibit\u00e0",
                     "lv": "Pieejam\u012bbas r\u012bki"
                 },
                 "problemprofiles": [
@@ -333,7 +333,7 @@
                 "description_translations": {
                     "en": "<p>Marketing automation platform and email marketing service[6] for managing mailing lists and creating email marketing campaigns to send to customers.</p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>Piattaforma di automazione del marketing e servizio di email marketing[6] per la gestione di mailing list e la creazione di campagne di email marketing da inviare ai clienti.</p>",
                     "lv": "<p>M\u0101rketinga automatiz\u0101cijas platforma un e-pasta m\u0101rketinga serviss[6] izs\u016btnes sarakstu vad\u012bbai un e-pasta m\u0101rketinga kampa\u0146u veido\u0161anai klientiem.</p>"
                 },
                 "difficulty": "easy",
@@ -354,7 +354,7 @@
                 "name_translations": {
                     "en": "Mailchimp",
                     "es": "",
-                    "it": "",
+                    "it": "Mailchimp",
                     "lv": "Mailchimp"
                 },
                 "problemprofiles": [
@@ -388,7 +388,7 @@
                 "description_translations": {
                     "en": "<p> AAC is an Open Source platform for identity management, authentication, and authorization. Based on standard security protocols, such as OAuth2.0, OpenID Connect, SAML, SCIM, the tool allows for protecting the APIs and applciations, manage users, authenticate using external Identity Providers performing also Single Sign-On and Single Logout functionality. The tool is compatible with the eID providers and allow for integration of nation-level or cross-country authentication solutions.</p><p>More specifically, the tool allows for, but not limited to<ul><li>Multi-tenant management of users, applications, and personal data management in an extensible manner with the custom user attributes (claims) and attribute extraction;</li><li>User management with email/password based user registration or even passwordless authentication (based on WebAuthn standard)</li> <li>Authentication federation with external providers, and in particular, with eIDAS-compliant solutions, using SAML, OpenId Connect, and OAuth2.0 protocols;</li> <li>Perform OAuth2.0-based authorization and access control with customizable and extensible model of scopes, services, and applications;</li><li>Perform role-based and attribute-based access control policy implementation for end-users and applications accessing protected APIs.</li></ul></p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p> AAC \u00e8 una piattaforma Open Source per la gestione delle identit\u00e0, l'autenticazione e l'autorizzazione. Basato su protocolli di sicurezza standard, come OAuth2.0, OpenID Connect, SAML, SCIM, lo strumento consente di proteggere le API e le applicazioni, gestire gli utenti, autenticarsi utilizzando provider di identit\u00e0 esterni eseguendo anche funzionalit\u00e0 di Single Sign-On e Single Logout. Lo strumento \u00e8 compatibile con i fornitori di eID e consente l'integrazione di soluzioni di autenticazione a livello nazionale o cross-country.</p><p>In particolare, lo strumento consente, ma non solo,<ul><li>Multi- gestione tenant di utenti, applicazioni e gestione dei dati personali in modo estensibile con gli attributi utente personalizzati (claims) e l'estrazione degli attributi;</li><li>Gestione degli utenti con registrazione utente basata su e-mail/password o anche autenticazione senza password (basata su Standard WebAuthn)</li> <li>Federazione di autenticazione con provider esterni e, in particolare, con soluzioni conformi a eIDAS, utilizzando i protocolli SAML, OpenId Connect e OAuth2.0;</li> <li>Esegui OAuth2.0- autorizzazione e controllo degli accessi basati su modelli personalizzabili ed estensibili di ambiti, servizi e applicazioni;</li><li>Esegui l'implementazione di criteri di controllo degli accessi basati su ruoli e attributi per utenti finali e applicazioni che accedono ad API protette.</li ></ul></p>",
                     "lv": "<p> AAC ir atv\u0113rt\u0101 koda platforma identit\u0101tes kontrolei, autentifik\u0101cijai un autoriz\u0101cijai. T\u0101 ir balst\u012bta uz standarta dro\u0161\u012bbas protokoliem, piem\u0113ram, OAuth2.0, OpenID Connect, SAML, SCIM, un t\u0101 \u013cauj aizsarg\u0101t API un aplik\u0101cijas, kontrol\u0113t lietot\u0101jus, veikt autentifik\u0101ciju, izmantojot \u0101r\u0113jos identit\u0101tes pakalpojuma sniedz\u0113jus un veicot vienotas pierakst\u012b\u0161an\u0101s un izrakst\u012b\u0161an\u0101s funkcionalit\u0101tes. R\u012bks ir savietojams ar eID pakalpojumu sniedz\u0113jiem un \u013cauj integr\u0113t nacion\u0101l\u0101 l\u012bme\u0146a un p\u0101rrobe\u017eu autentifik\u0101cijas risin\u0101jumus.</p><p> R\u012bks tostarp \u013cauj<ul><li>vair\u0101ku profilu lietot\u0101ju, aplik\u0101ciju un personas datu papla\u0161in\u0101tu kontroli ar piel\u0101gotiem lietot\u0101ju atrib\u016btiem un atrib\u016btu izg\u016b\u0161anu;</li><li> Lietot\u0101ju kontroli ar e-past\u0101/parol\u0113 balst\u012btu re\u0123istr\u0101ciju vai autentifik\u0101ciju pat bez paroles (balst\u012bta uz WebAuthn standartu);</li> <li>Autentifik\u0101cijas feder\u0101ciju \u0101r\u0113jiem pakalpojuma sniedz\u0113jiem, jo \u012bpa\u0161i ar eIDAS sal\u0101gojamiem risin\u0101jumiem, izmantojot SAML, OpenId Connect un OAuth2.0 protokolus;</li> <li>Veikt OAuth2.0 balst\u012btu autoriz\u0101ciju un piek\u013cuves kontroli ar piel\u0101gojamiem un papla\u0161in\u0101tiem tv\u0113rumu, pakalpojumu un aplik\u0101ciju mode\u013ciem;</li><li>Veikt uz lom\u0101m atrib\u016btiem balst\u012btu piek\u013cuves kontroles politikas ievie\u0161anu gala lietot\u0101jiem un aplik\u0101cij\u0101m, kuras piek\u013c\u016bst aizsarg\u0101t\u0101m API.</li></ul></p>"
                 },
                 "difficulty": "difficult",
@@ -410,7 +410,7 @@
                 "name_translations": {
                     "en": "AAC - Authentication and Authorization Controller",
                     "es": "",
-                    "it": "",
+                    "it": "AAC - Controller per autenticazione ed autorizzazione",
                     "lv": "AAC - Autentifik\u0101cijas un autoriz\u0101cijas p\u0101rzinis"
                 },
                 "overview_text": {
@@ -461,7 +461,7 @@
                 "description_translations": {
                     "en": "<p>Event Organiser (EVO) is a stand-alone web application to evaluate co-designed event proposals made with the ECO WordPress plugin and organise the events in practice. EVO complements the ZGZ use case by giving administrative tools to foster co-designing of events and implementing the best proposals. EVO comprises features to manage available resources and services and allocate them to requests made in event proposals. In addition, EVO can be used to organise co-evaluation polls to analyse different aspects of the proposal in order to find out which of the proposals are ready for implementation.</p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>Event Organizer (EVO) \u00e8 un'applicazione web autonoma per valutare le proposte di eventi co-progettate fatte con il plugin ECO WordPress e organizzare gli eventi nella pratica. EVO integra il caso d'uso ZGZ fornendo strumenti amministrativi per promuovere la co-progettazione di eventi e implementare le migliori proposte. EVO comprende funzionalit\u00e0 per gestire le risorse e i servizi disponibili e assegnarli alle richieste avanzate nelle proposte di eventi. Inoltre, EVO pu\u00f2 essere utilizzato per organizzare sondaggi di co-valutazione per analizzare diversi aspetti della proposta al fine di scoprire quali proposte sono pronte per l'attuazione.</p>",
                     "lv": "<p>Pas\u0101kumu organiz\u0113t\u0101js (EVO) ir patst\u0101v\u012bga t\u012bmek\u013ca aplik\u0101cija kop\u012bgi veidoto pas\u0101kumu pieteikumu, kas veidoti ar ECO WordPress spraudni, v\u0113rt\u0113\u0161anai un praktiskai organiz\u0113\u0161anai. EVO papildina Saragosas gad\u012bjumu, sniedzot administrat\u012bvus r\u012bkus pas\u0101kumu kop\u012bgai veido\u0161anai un lab\u0101ko pied\u0101v\u0101jumu ievie\u0161anai. EVO satur funkcijas pieejamo resursu un pakalpojumu vad\u012b\u0161anai un to pie\u0161\u0137ir\u0161anai atkar\u012bb\u0101 no pieteikumos iek\u013cautajiem piepras\u012bjumiem. Papildus tam EVO var tikt izmantots kop\u0113j\u0101 izv\u0113rt\u0113juma aptauju veido\u0161anai, lai analiz\u0113tu da\u017e\u0101dus pieteikumu parametrus nol\u016bk\u0101 identific\u0113t ievie\u0161anai gatavos pieteikumus.</p>"
                 },
                 "difficulty": "medium",
@@ -483,7 +483,7 @@
                 "name_translations": {
                     "en": "Event Organizer",
                     "es": "",
-                    "it": "",
+                    "it": "Event Organizer",
                     "lv": "Pas\u0101kumu organiz\u0113t\u0101js"
                 },
                 "overview_text": {
@@ -536,7 +536,7 @@
                 "description_translations": {
                     "en": "<p>Online calendar tool for time management and coordinating meetings. Anytime more than two people are trying to arrange a meeting, Doodle very useful. You can use doodle to plan meetings with team members, project collaborators, and external suppliers. </p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>Strumento calendario online per la gestione del tempo e il coordinamento delle riunioni. Ogni volta che pi\u00f9 di due persone stanno cercando di organizzare un incontro, Doodle molto utile. Puoi utilizzare doodle per pianificare riunioni con membri del team, collaboratori di progetto e fornitori esterni. </p>",
                     "lv": "<p>Tie\u0161saistes kalend\u0101ra r\u012bks laika pl\u0101no\u0161anai un san\u0101ksmju koordin\u0113\u0161anai. Doodle ir noder\u012bgs br\u012b\u017eos, kad vair\u0101k nek\u0101 divi cilv\u0113ki m\u0113\u0123ina koordin\u0113t san\u0101ksmes laiku. Doodle var izmantot, lai koordin\u0113tu san\u0101ksmes komandas ietvaros, ar projekta sadarb\u012bbas partneriem vai \u0101r\u0113jiem dal\u012bbniekiem.</p>"
                 },
                 "difficulty": "easy",
@@ -557,7 +557,7 @@
                 "name_translations": {
                     "en": "Doodle",
                     "es": "",
-                    "it": "",
+                    "it": "Doodle",
                     "lv": "Doodle"
                 },
                 "problemprofiles": [
@@ -593,7 +593,7 @@
                 "description_translations": {
                     "en": "<p>Trello is a collaboration tool that organizes your projects into boards. In one glance, Trello tells you what's being worked on, who's working on what, and where something is in a process.</p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>Trello \u00e8 uno strumento di collaborazione che organizza i tuoi progetti in bacheche. In un colpo d'occhio, Trello ti dice su cosa si sta lavorando, chi sta lavorando su cosa e dove si trova qualcosa in un processo.</p>",
                     "lv": "<p>Trello ir sadarb\u012bbas r\u012bks, ar kura pal\u012bdz\u012bbu iesp\u0113jams izk\u0101rtot projektus t\u0101fel\u0113s. Vien\u0101 att\u0113l\u0101 Trello sp\u0113j par\u0101d\u012bt, kas tiek dar\u012bts, kur\u0161 str\u0101d\u0101 ar k\u0101diem jaut\u0101jumiem, un kuras lietas ir proces\u0101.</p>"
                 },
                 "difficulty": "easy",
@@ -614,7 +614,7 @@
                 "name_translations": {
                     "en": "Trello",
                     "es": "",
-                    "it": "",
+                    "it": "Trello",
                     "lv": "Trello"
                 },
                 "problemprofiles": [
@@ -657,7 +657,7 @@
                 "description_translations": {
                     "en": "<p>Multi-platform open source analytics and interactive visualization web application. It provides charts, graphs, and alerts for the web when connected to supported data sources. </p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>Applicazione web di analisi open source multipiattaforma e visualizzazione interattiva. Fornisce grafici, grafici e avvisi per il Web quando \u00e8 connesso a origini dati supportate. </p>",
                     "lv": "<p>Atv\u0113rt\u0101 koda multiplatformu anal\u012btikas un interakt\u012bv\u0101s vizualiz\u0101cijas t\u012bmek\u013ca aplik\u0101cija. Pievienojot pie atbalst\u012btajiem datu avotiem, t\u0101 pied\u0101v\u0101 veidot diagrammas, grafikus un br\u012bdin\u0101jumus t\u012bmeklim. </p>"
                 },
                 "difficulty": "medium",
@@ -678,7 +678,7 @@
                 "name_translations": {
                     "en": "Grafana",
                     "es": "",
-                    "it": "",
+                    "it": "Grafana",
                     "lv": "Grafana"
                 },
                 "problemprofiles": [
@@ -717,7 +717,7 @@
                 "description_translations": {
                     "en": "<p>Event Co-designer (ECO) is an open source plugin for the popular WordPress (WP) content management system which allows co-designing and organising new public events. It is especially designed from the needs of the ZGZ use case and can be integrated directly to the existing Etopia WP website. ECO provides an easy-to-use and feature-rich calendar view to schedule new events and make requests for resources, facilities and services needed to organise the event. In addition, ECO includes collaborative tools for documenting, discussing  and co-evaluating the event proposal.</p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>Event Co-designer (ECO) \u00e8 un plug-in open source per il popolare sistema di gestione dei contenuti WordPress (WP) che consente la co-progettazione e l'organizzazione di nuovi eventi pubblici. \u00c8 appositamente progettato in base alle esigenze del caso d'uso ZGZ e pu\u00f2 essere integrato direttamente nel sito Web Etopia WP esistente. ECO fornisce una visualizzazione calendario facile da usare e ricca di funzionalit\u00e0 per programmare nuovi eventi ed effettuare richieste di risorse, strutture e servizi necessari per organizzare l'evento. Inoltre, ECO include strumenti collaborativi per la documentazione, la discussione e la co-valutazione della proposta dell'evento.</p>",
                     "lv": "<p>Pas\u0101kumu kopdizaineris (ECO) ir atv\u0113rt\u0101 koda spraudnis popul\u0101rajai WordPress (WP) satura vad\u012bbas sist\u0113mai, kas \u013cauj kop\u012bgi veidot un organiz\u0113t publiskos pas\u0101kumus. Tas ir specifiski veidots Saragosas gad\u012bjumam, un to ir iesp\u0113jams tie\u0161i integr\u0113t eso\u0161aj\u0101 Etopia WP m\u0101jaslap\u0101. ECO pied\u0101v\u0101 viegli lietojamu un ar funkcionalit\u0101t\u0113m piepild\u012btu kalend\u0101ra skatu jaunu pas\u0101kumu pl\u0101no\u0161anai, k\u0101 ar\u012b pied\u0101va veidot piepras\u012bjumus resursiem, telp\u0101m un pas\u0101kumam nepiecie\u0161amajiem pakalpojumiem. Papildus tam ECO ietverti ar\u012b dokumentu veido\u0161anas, diskusiju un pas\u0101kumu pieteikumu kop\u012bg\u0101s v\u0113rt\u0113\u0161anas sadarb\u012bbas r\u012bki.</p>"
                 },
                 "difficulty": "medium",
@@ -739,7 +739,7 @@
                 "name_translations": {
                     "en": "Event Co-designer",
                     "es": "",
-                    "it": "",
+                    "it": "Event Co-Designer",
                     "lv": "Pas\u0101kumu kopdizaineris"
                 },
                 "overview_text": {
@@ -796,7 +796,7 @@
                 "description_translations": {
                     "en": "<p>This resource describes the Cloud Enablement strategy outlined by AGID and Team Digitale (in Italian). </p>",
                     "es": "<p>Este recurso describe la estrategia de habilitaci\u00f3n en la nube esbozada por AGID y Team Digitale (en italiano). </p>",
-                    "it": "",
+                    "it": "<p>Questa risorsa descrive la strategia di Cloud Enablement delineata da AGID e Team Digitale (in italiano). </p>",
                     "lv": "<p>\u0160is resurss raksturo It\u0101lijas Digit\u0101l\u0101s a\u0123ent\u016bras un Digit\u0101l\u0101s transform\u0101cijas komandas M\u0101ko\u0146datu iesp\u0113jo\u0161anas strat\u0113\u0123iju (it\u0101\u013cu valod\u0101). </p>"
                 },
                 "difficulty": "difficult",
@@ -818,7 +818,7 @@
                 "name_translations": {
                     "en": "Cloud Enablement Kit (in Italian)",
                     "es": "Kit de habilitaci\u00f3n para la nube (en italiano)",
-                    "it": "",
+                    "it": "Kit di abilitazione al cloud (in italiano)",
                     "lv": "M\u0101ko\u0146datu iesp\u0113jo\u0161anas komplekts (it\u0101\u013cu valod\u0101)"
                 },
                 "problemprofiles": [
@@ -860,7 +860,7 @@
                 "description_translations": {
                     "en": "<p>This resource aims at explaining how to acquire and reuse software in PA context.</p>",
                     "es": "<p>Este recurso pretende explicar c\u00f3mo adquirir y reutilizar software en el contexto de la AP.</p>",
-                    "it": "",
+                    "it": "<p>Questa risorsa mira a spiegare come acquisire e riutilizzare software nel contesto della PA.</p>",
                     "lv": "<p>\u0160\u012b resursa m\u0113r\u0137is ir skaidrot, k\u0101 ieg\u016bt un atk\u0101rtoti izmantot programmat\u016bru valsts p\u0101rvald\u0113.</p>"
                 },
                 "difficulty": "difficult",
@@ -882,7 +882,7 @@
                 "name_translations": {
                     "en": "Guidelines on the acquisition and reuse of software for public administrations",
                     "es": "Directrices sobre la adquisici\u00f3n y reutilizaci\u00f3n de programas inform\u00e1ticos para las administraciones p\u00fablicas",
-                    "it": "",
+                    "it": "Linee guida per l'acquisizione e il riutilizzo di software per le pubbliche amministrazioni",
                     "lv": "Programmat\u016bras ieg\u016b\u0161anas un atk\u0101rtotas izmanto\u0161anas vadl\u012bnijas valsts p\u0101rvald\u0113"
                 },
                 "problemprofiles": [
@@ -925,7 +925,7 @@
                 "description_translations": {
                     "en": "<p>This resource contains a questionnaire to check the cloud computing migration strategy  </p>",
                     "es": "<p>Este recurso contiene un cuestionario para comprobar la estrategia de migraci\u00f3n a la computaci\u00f3n en la nube </p>",
-                    "it": "",
+                    "it": "<p>Questa risorsa contiene un questionario per verificare la strategia di migrazione del cloud computing </p>",
                     "lv": "<p>\u0160is resurss satur aptauju, ar kuras pal\u012bdz\u012bbu var p\u0101rbaud\u012bt m\u0101ko\u0146datu migr\u0101cijas strat\u0113\u0123iju</p>"
                 },
                 "difficulty": "medium",
@@ -947,7 +947,7 @@
                 "name_translations": {
                     "en": "AgID Cloud computing migration strategy evalution template",
                     "es": "Plantilla de evaluaci\u00f3n de la estrategia de migraci\u00f3n a la nube de AgID",
-                    "it": "",
+                    "it": "Modello di valutazione della strategia di migrazione del cloud computing AgID",
                     "lv": "It\u0101lijas Digit\u0101l\u0101s a\u0123ent\u016bras m\u0101ko\u0146datu migr\u0101cijas strat\u0113\u0123ijas nov\u0113rt\u0113\u0161anas veidlapa"
                 },
                 "problemprofiles": [
@@ -990,7 +990,7 @@
                 "description_translations": {
                     "en": "<p>A collection of resources for individuals, communities, and companies who want to learn how to run and contribute to an open source project.</p>",
                     "es": "<p>Una colecci\u00f3n de recursos para individuos, comunidades y empresas que quieran aprender a dirigir y contribuir a un proyecto de c\u00f3digo abierto.</p>",
-                    "it": "",
+                    "it": "<p>Una raccolta di risorse per individui, comunit\u00e0 e aziende che desiderano imparare a gestire e contribuire a un progetto open source.</p>",
                     "lv": "<p>Resursu kopums indiv\u012bdiem, kopien\u0101m un uz\u0146\u0113mumiem, kuri v\u0113las iem\u0101c\u012bties, k\u0101 piedal\u012bties un vad\u012bt atv\u0113rt\u0101 koda projektu.</p>"
                 },
                 "difficulty": "very_easy",
@@ -1012,7 +1012,7 @@
                 "name_translations": {
                     "en": "Open Source guides",
                     "es": "Gu\u00edas de c\u00f3digo abierto",
-                    "it": "",
+                    "it": "Indicazioni per Open Source",
                     "lv": "Atv\u0113rt\u0101 koda ce\u013cvedis"
                 },
                 "problemprofiles": [
@@ -1053,7 +1053,7 @@
                 "description_translations": {
                     "en": "<p>A RFC document which specifyes the open API.</p>",
                     "es": "<p>Un documento RFC que especifica la API abierta.</p>",
-                    "it": "",
+                    "it": "<p>Un documento RFC che specifica l'open API .</p>",
                     "lv": "<p>RFC (piepras\u012bjums p\u0113c koment\u0101riem) dokuments, kas raksturo atv\u0113rto API (lietojumprogrammas saskarni).</p>"
                 },
                 "difficulty": "medium",
@@ -1075,7 +1075,7 @@
                 "name_translations": {
                     "en": "Open API specification",
                     "es": "Especificaci\u00f3n de la API abierta",
-                    "it": "",
+                    "it": "Specifiche di Open API",
                     "lv": "Atv\u0113rt\u0101s API (lietojumprogrammas saskarnes) specifik\u0101cija"
                 },
                 "problemprofiles": [
@@ -1117,7 +1117,7 @@
                 "description_translations": {
                     "en": "<p>This resource contains a questionnaire to check the level of knowledge and competence in cloud computing </p>",
                     "es": "<p>Este recurso contiene un cuestionario para comprobar el nivel de conocimiento y competencia en computaci\u00f3n en la nube</p>",
-                    "it": "",
+                    "it": "<p>Questa risorsa contiene un questionario per verificare il livello di conoscenza e competenza nel cloud computing </p>",
                     "lv": "<p> \u0160is resurss satur aptauju, ar kuras pal\u012bdz\u012bbu iesp\u0113jams p\u0101rbaud\u012bt zin\u0101\u0161anu l\u012bmeni par m\u0101ko\u0146dato\u0161anu </p>"
                 },
                 "difficulty": "medium",
@@ -1139,7 +1139,7 @@
                 "name_translations": {
                     "en": "AgID Cloud computing competence evalution template",
                     "es": "Plantilla de evaluaci\u00f3n de la competencia de computaci\u00f3n en nube de AgID",
-                    "it": "",
+                    "it": "Modello di valutazione delle competenze di AgID Cloud computing",
                     "lv": "It\u0101lijas Digit\u0101l\u0101s a\u0123ent\u016bras m\u0101ko\u0146dato\u0161anas kompetences nov\u0113rt\u0113\u0161anas paraugs"
                 },
                 "problemprofiles": [
@@ -1182,7 +1182,7 @@
                 "description_translations": {
                     "en": "<p>Web Content Accessibility Guidelines (WCAG) aims at explaining how to make the Web content more accessible to the people with disabilities. It generally applies to the public services delivered as Web applications, and refers to the information in a web page of the applciation, including both the content (text, images, sounds, ...) and structure (markup, presentation, styles).</p><br><ul><li>defines a set of guidelines with corresponding testable success criteria across different levels</li><li>based on the accessibility principles: perceivable, operable, understandable, robust.</li></ul>",
                     "es": "<p>Web Content Accessibility Guidelines (WCAG) aims at explaining how to make the Web content more accessible to the people with disabilities. It generally applies to the public services delivered as Web applications, and refers to the information in a web page of the applciation, including both the content (text, images, sounds, ...) and structure (markup, presentation, styles).</p><br><ul><li>defines a set of guidelines with corresponding testable success criteria across different levels</li><li>based on the accessibility principles: perceivable, operable, understandable, robust.</li></ul>",
-                    "it": "",
+                    "it": "<p>Le Linee guida per l'accessibilit\u00e0 dei contenuti Web (WCAG) mirano a spiegare come rendere i contenuti Web pi\u00f9 accessibili alle persone con disabilit\u00e0. Si applica generalmente ai servizi pubblici forniti come applicazioni Web e si riferisce alle informazioni in una pagina Web dell'applicazione, inclusi sia il contenuto (testo, immagini, suoni, ...) che la struttura (markup, presentazione, stili). </p><br><ul><li>definisce una serie di linee guida con corrispondenti criteri di successo verificabili a diversi livelli</li><li>basati sui principi di accessibilit\u00e0: percepibile, utilizzabile, comprensibile, robusto.</li ></ul>",
                     "lv": "<p>Tie\u0161saistes satura pieejam\u012bbas vadl\u012bnijas (WCAG) cen\u0161as izskaidrot, k\u0101 veidot pieejam\u0101ku tie\u0161saistes saturu person\u0101m ar invalidit\u0101ti. T\u0101s kopum\u0101 attiecas uz tie\u0161saist\u0113 pieejamiem publiskajiem pakalpojumiem saist\u012bb\u0101 ar inform\u0101ciju m\u0101jaslap\u0101, iek\u013caujot gan saturu (teksts, att\u0113li, ska\u0146as u.c.), gan strukt\u016bru (iez\u012bm\u0113\u0161anas valoda, prezent\u0101cija, stils).</p><br><ul><li>defin\u0113 vadl\u012bniju kopumu kop\u0101 ar attiec\u012bgiem test\u0113jamiem pan\u0101kumu krit\u0113rijiem da\u017e\u0101dos l\u012bme\u0146os</li><li>balstoties uz pieejam\u012bbas principiem: uztveram\u012bbu, darboties sp\u0113ju, saproatam\u012bbu, iztur\u012bbu.</li></ul>"
                 },
                 "difficulty": "medium",
@@ -1204,7 +1204,7 @@
                 "name_translations": {
                     "en": "W3C Web Content Accessibility Guidelines",
                     "es": "",
-                    "it": "",
+                    "it": "Linee guida W3C per contenuto Web accessibile",
                     "lv": "W3C Tie\u0161saistes satura pieejam\u012bbas vadl\u012bnijas"
                 },
                 "problemprofiles": [
@@ -1245,8 +1245,8 @@
                 },
                 "description_translations": {
                     "en": "<p>This resource describes the guidelines for technical interoperability for PA and related operational documents: interaction patterns, interoperability profiles, implementation recommendations (in Italian). </p>",
-                    "es": "Este recurso describe las directrices de interoperabilidad t\u00e9cnica para la AP y los documentos operativos relacionados: patrones de interacci\u00f3n, perfiles de interoperabilidad, recomendaciones de implementaci\u00f3n (en italiano).",
-                    "it": "",
+                    "es": "<p>Este recurso describe las directrices de interoperabilidad t\u00e9cnica para la AP y los documentos operativos relacionados: patrones de interacci\u00f3n, perfiles de interoperabilidad, recomendaciones de implementaci\u00f3n (en italiano)</p>",
+                    "it": "<p>Questa risorsa descrive le linee guida per l'interoperabilit\u00e0 tecnica per la PA e i relativi documenti operativi: modelli di interazione, profili di interoperabilit\u00e0, raccomandazioni di attuazione (in italiano). </p>",
                     "lv": "<p>\u0160is resurss raksturo tehnisk\u0101s sadarbsp\u0113jas vadl\u012bnijas valsts p\u0101rvald\u0113 un ar t\u0101m saist\u012btos operacion\u0101los dokumentus: mijiedarb\u012bbas mode\u013cus, sadarbsp\u0113jas profilus, ievie\u0161anas rekomend\u0101cijas (it\u0101\u013cu valod\u0101).</p>"
                 },
                 "difficulty": "difficult",
@@ -1266,9 +1266,9 @@
                 ],
                 "licence": "permissive",
                 "name_translations": {
-                    "en": "Italian PA interoperablity model ",
-                    "es": "Modelo de interoperabilidad de la AP italiana ",
-                    "it": "",
+                    "en": "Italian PA interoperablity model",
+                    "es": "Modelo de interoperabilidad de la AP italiana",
+                    "it": "Modello per l'interoperabilit\u00e0 delle PA italiane",
                     "lv": "It\u0101lijas valsts p\u0101rvaldes sadarbsp\u0113jas modelis "
                 },
                 "problemprofiles": [
@@ -1313,7 +1313,7 @@
                 "description_translations": {
                     "en": "<p>This resource describes the guidelines for the development of secure software in the public administration</p>",
                     "es": "<p>Este recurso describe las directrices para el desarrollo de software seguro en la administraci\u00f3n p\u00fablica</p>",
-                    "it": "",
+                    "it": "<p>Questa risorsa descrive le linee guida per lo sviluppo di software sicuro nella pubblica amministrazione</p>",
                     "lv": "<p>\u0160aj\u0101 resurs\u0101 raksturotas vadl\u012bnijas dro\u0161as programmat\u016bras izstr\u0101dei valsts p\u0101rvald\u0113</p>"
                 },
                 "difficulty": "difficult",
@@ -1335,7 +1335,7 @@
                 "name_translations": {
                     "en": " AgID guidelines for the development of secure software (in Italian)",
                     "es": " Directrices de AgID para el desarrollo de software seguro (en italiano)",
-                    "it": "",
+                    "it": " Linee guida AgID per lo sviluppo di software sicuro (in italiano)",
                     "lv": " It\u0101lijas Digit\u0101l\u0101s a\u0123ent\u016bras vadl\u012bnijas dro\u0161as programmat\u016bras izstr\u0101dei (it\u0101\u013cu valod\u0101)"
                 },
                 "problemprofiles": [
@@ -1376,7 +1376,7 @@
                 "description_translations": {
                     "en": "<p>The eIDAS solution allows citizens from Member States to prove and verify their identification when accessing on-line services in other Member States. It allows citizens to authenticate themselves by using their eIDs and connecting with their Identity Provider (IdP) from their country. </p>",
                     "es": "<p>La soluci\u00f3n eIDAS permite a los ciudadanos de los Estados miembros demostrar y verificar su identificaci\u00f3n cuando acceden a servicios en l\u00ednea en otros Estados miembros. Permite a los ciudadanos autenticarse utilizando sus eIDs y conect\u00e1ndose con su proveedor de identidad (IdP) de su pa\u00eds. </p>",
-                    "it": "",
+                    "it": "<p>La soluzione eIDAS consente ai cittadini degli Stati membri di provare e verificare la propria identificazione quando accedono a servizi online in altri Stati membri. Consente ai cittadini di autenticarsi utilizzando i propri eID e collegandosi con il proprio provider di identit\u00e0 (IdP) dal proprio paese. </p>",
                     "lv": "<p>eIDAS risin\u0101jums lauj citu dal\u012bbvalstu pilso\u0146iem pier\u0101d\u012bt un p\u0101rbaud\u012bt vi\u0146u identit\u0101ti, piek\u013c\u016bstot citu dal\u012bbvalstu tie\u0161saistes pakalpojumiem. Tas \u013cauj pilso\u0146iem autentific\u0113ties, izmantojot eID un savienojoties ar vi\u0146u valsts identit\u0101tes pakalpojuma sniedz\u0113ju (IdP).</p>"
                 },
                 "difficulty": "medium",
@@ -1398,7 +1398,7 @@
                 "name_translations": {
                     "en": "eIDAS standard",
                     "es": "eIDAS est\u00e1ndar",
-                    "it": "",
+                    "it": "standard eIDAS",
                     "lv": "eIDAS standarts"
                 },
                 "problemprofiles": [
@@ -1436,7 +1436,7 @@
                 "description_translations": {
                     "en": "<p>This resource describes the minimum ICT security measures issued by AgID aim at countering the most frequent cyber threats to the Italian public administration.</p>",
                     "es": "<p>Este recurso describe las medidas m\u00ednimas de seguridad de las TIC emitidas por la AgID con el objetivo de contrarrestar las ciberamenazas m\u00e1s frecuentes para la administraci\u00f3n p\u00fablica italiana.</p>",
-                    "it": "",
+                    "it": "<p>Questa risorsa descrive le misure minime di sicurezza ICT emanate da AgID volte a contrastare le pi\u00f9 frequenti minacce informatiche per la pubblica amministrazione italiana.</p>",
                     "lv": "<p>\u0160is resurss raksturo It\u0101lijas Digit\u0101l\u0101s a\u0123ent\u016bras minim\u0101l\u0101s IKT dro\u0161\u012bbas pras\u012bbas, kas m\u0113r\u0137\u0113tas uz visbie\u017e\u0101ko kiberdro\u0161\u012bbas risku nov\u0113r\u0161anu It\u0101lijas valsts p\u0101rvald\u0113.</p>"
                 },
                 "difficulty": "difficult",
@@ -1458,7 +1458,7 @@
                 "name_translations": {
                     "en": "AgID Minimum Security Measures for Public Administration. ",
                     "es": "AgID Medidas m\u00ednimas de seguridad para la administraci\u00f3n p\u00fablica. ",
-                    "it": "",
+                    "it": "Misure minime AgID per sicurezza per la Pubblica Amministrazione. ",
                     "lv": "It\u0101lijas Digit\u0101l\u0101s a\u0123ent\u016bras dro\u0161\u012bbas pras\u012bbas valsts p\u0101rvaldei "
                 },
                 "problemprofiles": [
@@ -1499,7 +1499,7 @@
                 "description_translations": {
                     "en": "<p>These Guidelines give general guidance on the obligation of Data Protection by Design and by Default (henceforth \u201cDPbDD\u201d) set forth in Article 25 in the GDPR.</p>",
                     "es": "<p>Estas Directrices ofrecen una orientaci\u00f3n general sobre la obligaci\u00f3n de la Protecci\u00f3n de Datos por Dise\u00f1o y por Defecto (en adelante \"DPbDD\") establecida en el art\u00edculo 25 del GDPR.</p>",
-                    "it": "",
+                    "it": "<p>Le presenti Linee guida forniscono indicazioni generali sull'obbligo di protezione dei dati fin dalla progettazione e per impostazione predefinita (di seguito \"DPbDD\") di cui all'articolo 25 del GDPR.</p>",
                     "lv": "<p>\u0160\u012bs vadl\u012bnijas sniedz visp\u0101r\u0113ju ieskatu GDPR 25. pant\u0101 izkl\u0101st\u012btaj\u0101s integr\u0113t\u0101s datu aizsardz\u012bbas un datu aizsardz\u012bbas p\u0113c noklus\u0113juma (turpm\u0101k \"DPbDD\") saist\u012bb\u0101s.</p>"
                 },
                 "difficulty": "difficult",
@@ -1521,7 +1521,7 @@
                 "name_translations": {
                     "en": "EDPB Data Protection Guidelines",
                     "es": "Directrices de protecci\u00f3n de datos del EDPB",
-                    "it": "",
+                    "it": "Linee guida EDPB per la protezione dei dati",
                     "lv": "EDPB Datu aizsardz\u012bbas vadl\u012bnijas"
                 },
                 "problemprofiles": [
@@ -1561,7 +1561,7 @@
                 "description_translations": {
                     "en": "This canvas can be used collaboratively, for instance, during a brainstorming or a focus group, to reflect on the the most suitable business model associated to a co-produced service.",
                     "es": "",
-                    "it": "",
+                    "it": "Questo canvas pu\u00f2 essere utilizzato in modo collaborativo, ad esempio, durante un brainstorming o un focus group, per riflettere sul modello di business pi\u00f9 adatto associato a un servizio coprodotto.",
                     "lv": "\u0160is audekls var tikt lietots sadarb\u012bbai, piem\u0113ram, pr\u0101ta v\u0113tru vai fokusgrupu laik\u0101, lai nov\u0113rt\u0113tu piem\u0113rot\u0101ko biznesa modeli koprad\u012btajam pakalpojumam."
                 },
                 "difficulty": "easy",
@@ -1587,8 +1587,8 @@
                 "name_translations": {
                     "en": "Business Model Canvas",
                     "es": "",
-                    "it": "",
-                    "lv": ""
+                    "it": "Business Model Canvas",
+                    "lv": "Biznesa mode\u013ca pl\u0101no\u0161anas r\u012bks"
                 },
                 "problemprofiles": [
                     "SUS_PROBLEM_1"
@@ -1623,7 +1623,7 @@
                 "description_translations": {
                     "en": "This is a model of End Users' Perceptions Questionnaire. It aims to measure end-users' perceptions on user-based quality, value-based quality, trust and acceptance. This questionnaire is thought to be answered by users of traditional e-services and also those who co-produced them through INTERLINK.",
                     "es": "",
-                    "it": "",
+                    "it": "Questo \u00e8 un modello di questionario sulla percezione degli utenti finali. Mira a misurare le percezioni degli utenti finali sulla qualit\u00e0 basata sull'utente, sulla qualit\u00e0 basata sul valore, sulla fiducia e sull'accettazione. Il questionario \u00e8 pensato per ricevere risposta dagli utenti dei servizi tradizionali e anche da coloro che li hanno co-prodotti tramite INTERLINK.",
                     "lv": "\u0160is ir gala lietot\u0101ju uztveres aptaujas modelis. T\u0101s m\u0113r\u0137is ir izm\u0113r\u012bt gala lietot\u0101ju uztveri un uz lietot\u0101ju balst\u012bto kvalit\u0101ti, uz v\u0113rt\u012bb\u0101m balst\u012bto kvalit\u0101ti, uzticam\u012bbu un pie\u0146em\u0161anu. \u0160\u012b aptauja paredz\u0113ta tipisko e-pakalpojumu lietot\u0101jiem, k\u0101 ar\u012b tiem lietot\u0101jiem, kuri kop\u012bgi tos veidoju\u0161i INTERLINK platform\u0101."
                 },
                 "difficulty": "easy",
@@ -1649,7 +1649,7 @@
                 "name_translations": {
                     "en": "Final end user's questionnaire- Quality of Service",
                     "es": "",
-                    "it": "",
+                    "it": "Questionario per l'utente finale - Qualit\u00e0 del servizio",
                     "lv": "Gala lietot\u0101ju nosl\u0113guma aptauja - pakalpojuma kvalit\u0101te"
                 },
                 "problemprofiles": [
@@ -1687,8 +1687,8 @@
                 "description_translations": {
                     "en": "<p>Instructions and examples on how to conduct structured interviews for a co-production project.  </p>",
                     "es": "",
-                    "it": "",
-                    "lv": ""
+                    "it": "<p>Istruzioni ed esempi su come condurre interviste strutturate in un progetto di coproduzione. </p>",
+                    "lv": "<p>Koprades procesam nepiecie\u0161amo struktur\u0113to interviju veik\u0161anas instrukcija ar piem\u0113riem.</p>"
                 },
                 "difficulty": "easy",
                 "domain": "",
@@ -1713,8 +1713,8 @@
                 "name_translations": {
                     "en": "template for structured interview",
                     "es": "",
-                    "it": "",
-                    "lv": ""
+                    "it": "Modello per interviste strutturate",
+                    "lv": "Struktur\u0113t\u0101s intervijas veidlapa"
                 },
                 "problemprofiles": [
                     "ORG_PROBLEM_2",
@@ -1753,8 +1753,8 @@
                 "description_translations": {
                     "en": "<p>This template of an excel file can be used in conjunction with the Stakeholders Mapping Canvas to identify by name and title the people, groups, and organisations that have significant influence on project direction and its success or who are significantly impacted by the project. The template helps in planning Stakeholders engagement according to different dimensions:<br> <ul><br><li>the desired or expected level of involvement<br><li> potential issues related to their engagement<br><li>motivations and barriers that can support you in finding the best strategy to engage them in the co-production process<br><li> expectation of the different Stakeholders<br><li> skills and potential role within the co-production process.<br></ul></p>",
                     "es": "",
-                    "it": "",
-                    "lv": ""
+                    "it": "<p>Questo modello di file excel pu\u00f2 essere utilizzato insieme allo Stakeholders Mapping Canvas per identificare per nome e titolo le persone, i gruppi e le organizzazioni che hanno un'influenza significativa sulla direzione del progetto e sul suo successo o che sono significativamente influenzati dal progetto . Il modello aiuta a pianificare il coinvolgimento degli stakeholder in base a diverse dimensioni:<br> <ul><br><li>il livello di coinvolgimento desiderato o previsto<br><li> potenziali problemi legati al loro coinvolgimento<br><li>motivazioni e barriere che possono supportarti nella ricerca della migliore strategia per coinvolgerli nel processo di coproduzione<br><li> aspettative dei diversi Stakeholders<br><li> competenze e ruolo potenziale all'interno del processo di coproduzione.<br><li> ></ul></p>",
+                    "lv": "<p>\u0160is Excel faila paraugs var tikt izmantots kop\u0101 ar ieinteres\u0113to pu\u0161u kart\u0113\u0161anas r\u012bku, lai p\u0113c v\u0101rda un nosaukuma identific\u0113tu cilv\u0113kus, grupas un organiz\u0101cijas, kur\u0101m ir noz\u012bm\u012bga ietekme uz projekta virz\u012bbu un izn\u0101kumu vai uz kuriem projekts atst\u0101s noz\u012bm\u012bgu ietekmi. Paraugs pal\u012bdz pl\u0101not ieinteres\u0113to pu\u0161u iesaisti saska\u0146\u0101 ar da\u017e\u0101d\u0101m dimensij\u0101m:<br> <ul><br><li>v\u0113lamais vai paredzamais iesaistes l\u012bmenis<br><li>iesp\u0113jam\u0101s probl\u0113mas, kas saist\u012btas ar vi\u0146u iesaisti<br><li>motiv\u0101cijas faktori un barjeras, kas var pal\u012bdz\u0113t izv\u0113l\u0113ties lab\u0101ko strat\u0113\u0123iju vi\u0146u iesaistei koprades proces\u0101<br><li>da\u017e\u0101du ieinteres\u0113to pu\u0161u ekspekt\u0101cijas<br><li>prasmes un iesp\u0113jam\u0101 loma koprades proces\u0101.<br></ul></p>"
                 },
                 "difficulty": "easy",
                 "domain": "",
@@ -1779,8 +1779,8 @@
                 "name_translations": {
                     "en": "Stakeholders identification analisys template guidelines",
                     "es": "",
-                    "it": "",
-                    "lv": ""
+                    "it": "Modello di linee guida per l'analisi identificativa degli stakeholder",
+                    "lv": "Ieinteres\u0113to pu\u0161u identific\u0113\u0161anas anal\u012bzes veidlapas vadl\u012bnijas"
                 },
                 "problemprofiles": [
                     "ORG_PROBLEM_1",
@@ -1818,7 +1818,7 @@
                 "description_translations": {
                     "en": "<p>This resource provides a model for persona outlined by AGID and Team Digitale (in Italian).</p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>Questa risorsa fornisce un modello per persona delineato da AGID e da Team Digitale (in italiano).</p>",
                     "lv": "<p>\u0160is resurss sniedz personas (lietot\u0101ja tipa) modeli, ko izmanto It\u0101lijas Digit\u0101l\u0101 a\u0123ent\u016bra un Digit\u0101l\u0101s transform\u0101cijas komanda (it\u0101\u013cu valod\u0101).</p>"
                 },
                 "difficulty": "easy",
@@ -1844,7 +1844,7 @@
                 "name_translations": {
                     "en": "Model for Personas (in italian)",
                     "es": "",
-                    "it": "",
+                    "it": "Modello per Personas (in italiano)",
                     "lv": "Personas (lietot\u0101ju tipa) modelis (it\u0101\u013cu valod\u0101)"
                 },
                 "problemprofiles": [
@@ -1878,7 +1878,7 @@
                 "description_translations": {
                     "en": "<p>Instructions on how to set up a research activity based on focus groups, for a co-production project.</p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>Istruzioni su come impostare un'attivit\u00e0 di ricerca basata su focus group in un progetto di coproduzione.</p>",
                     "lv": "<p>Pam\u0101c\u012bba p\u0113tniec\u012bbas aktivit\u0101\u0161u veik\u0161anai koprades projekt\u0101, izmantojot fokusgrupas.</p>"
                 },
                 "difficulty": "easy",
@@ -1904,7 +1904,7 @@
                 "name_translations": {
                     "en": "Focus Group Guidelines",
                     "es": "",
-                    "it": "",
+                    "it": "Linee guida per focus group",
                     "lv": "Fokusgrupu vadl\u012bnijas"
                 },
                 "problemprofiles": [
@@ -1943,7 +1943,7 @@
                 "description_translations": {
                     "en": "<p>This is a model of a questionnaire aimed to collect demographics and activity satisfaction scores from participants to project events and activities.</p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>Questo \u00e8 un modello di questionario volto a raccogliere dati demografici e punteggi di soddisfazione delle attivit\u00e0 dai partecipanti agli eventi e alle attivit\u00e0 del progetto.</p>",
                     "lv": "<p>\u0160is ir aptaujas modelis projekta aktivit\u0101t\u0113s iesaist\u012bto dal\u012bbnieku demogr\u0101fisko datu iev\u0101k\u0161anai un apmierin\u0101t\u012bbas m\u0113r\u012b\u0161anai.</p>"
                 },
                 "difficulty": "easy",
@@ -1969,7 +1969,7 @@
                 "name_translations": {
                     "en": "Demographic and activity satisfaction questionnaire",
                     "es": "",
-                    "it": "",
+                    "it": "Questionario demografico e sulla soddisfazione delle attivit\u00e0",
                     "lv": "Demogr\u0101fisko datu un apmierin\u0101t\u012bbas aptauja"
                 },
                 "problemprofiles": [
@@ -2006,7 +2006,7 @@
                 "description_translations": {
                     "en": "<p>This resource describes the guidelines for the designing of a service in the public administration</p>",
                     "es": "<p>Este recurso describe las directrices para el desarrollo de software seguro en la administraci\u00f3n p\u00fablica</p>",
-                    "it": "",
+                    "it": "<p>Questa risorsa descrive le linee guida per la progettazione di un servizio nella pubblica amministrazione</p>",
                     "lv": "<p>\u0160aj\u0101 resurs\u0101 raksturotas vadl\u012bnijas dro\u0161as programmat\u016bras izstr\u0101dei valsts p\u0101rvald\u0113</p>"
                 },
                 "difficulty": "easy",
@@ -2031,7 +2031,7 @@
                 "name_translations": {
                     "en": "Guidelines for co-design of service",
                     "es": "",
-                    "it": "",
+                    "it": "Linee guida per la co-progettazione del servizio",
                     "lv": "Pakalpojuma kopdizain\u0113\u0161anas vadl\u012bnijas"
                 },
                 "problemprofiles": [
@@ -2066,8 +2066,8 @@
                 "description_translations": {
                     "en": "<p>Template for preparing a project description that synthetically summarizes the goals and major aspects of a co-production initiative. </p>",
                     "es": "",
-                    "it": "",
-                    "lv": ""
+                    "it": "<p>Modello per la preparazione di una descrizione del progetto che riassume sinteticamente gli obiettivi e gli aspetti principali di un'iniziativa di coproduzione. </p>",
+                    "lv": "<p>Projekta raksturojuma piem\u0113rs, kas sint\u0113tiski apkopo koprades iniciat\u012bvas m\u0113r\u0137us un galvenos raksturlielumus.</p>"
                 },
                 "difficulty": "easy",
                 "environments": [
@@ -2091,8 +2091,8 @@
                 "name_translations": {
                     "en": "Template for project description",
                     "es": "",
-                    "it": "",
-                    "lv": ""
+                    "it": "Modello per la descrizione del progetto",
+                    "lv": "Projekta apraksta veidlapa"
                 },
                 "problemprofiles": [
                     "ORG_PROBLEM_1"
@@ -2124,7 +2124,7 @@
                 "description_translations": {
                     "en": "<p>Document to design the engagement plan for those co-producing and/or using the resulting co-produced product</p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>Documento per progettare il piano di coinvolgimento per coloro che coproducono e/o utilizzano il prodotto risultante in coproduzione</p>",
                     "lv": "<p> Koprades un/vai koprades proces\u0101 rad\u012bta produkta lietot\u0101ju iesaistes pl\u0101na izveides dokuments</p>"
                 },
                 "difficulty": "very_easy",
@@ -2150,7 +2150,7 @@
                 "name_translations": {
                     "en": "Stakeholder Engagement Plan for INTERLINK project",
                     "es": "",
-                    "it": "",
+                    "it": "Piano di coinvolgimento degli stakeholder per il progetto INTERLINK",
                     "lv": "Ieinteres\u0113to pu\u0161u iesaistes pl\u0101ns INTERLINK projektam"
                 },
                 "problemprofiles": [
@@ -2187,7 +2187,7 @@
                 "description_translations": {
                     "en": "<p>Template to prepare a form to collect consent from participants engaged in research activities about the use of their personal data</p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>Modello per preparare un modulo per raccogliere il consenso dei partecipanti impegnati in attivit\u00e0 di ricerca sull'uso dei loro dati personali</p>",
                     "lv": "<p>Veidlapa p\u0113tnieciskaj\u0101s aktivit\u0101t\u0113s iesaist\u012bto dal\u012bbnieku piekri\u0161anas formas person\u012bgo datu izmanto\u0161anai sagatavo\u0161anai</p>"
                 },
                 "difficulty": "very_easy",
@@ -2213,7 +2213,7 @@
                 "name_translations": {
                     "en": "Consent Form Template",
                     "es": "",
-                    "it": "",
+                    "it": "Modello di modulo di consenso",
                     "lv": "Piekri\u0161anas formas veidlapa"
                 },
                 "problemprofiles": [
@@ -2250,7 +2250,7 @@
                 "description_translations": {
                     "en": "<p>Guidelines to understand which are the different types of stakeholder, their  motivations, skills, expectations toward the project</p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>Linee guida per capire quali sono le diverse tipologie di stakeholder, le loro motivazioni, competenze, aspettative nei confronti del progetto</p>",
                     "lv": "<p>Vadl\u012bnijas ieinteres\u0113to pu\u0161u tipu, motiv\u0101cijas, prasmju un cer\u012bbu noteik\u0161anai projekt\u0101</p>"
                 },
                 "difficulty": "easy",
@@ -2276,7 +2276,7 @@
                 "name_translations": {
                     "en": "Stakeholder types guidelines",
                     "es": "",
-                    "it": "",
+                    "it": "Linee guida sui tipi di stakeholder",
                     "lv": "Ieinteres\u0113to pu\u0161u tipu vadl\u012bnijas"
                 },
                 "problemprofiles": [
@@ -2312,7 +2312,7 @@
                 "description_translations": {
                     "en": "<p>Example of project description that synthetically summarizes the goals and major aspects of a co-production initiative.  </p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>Esempio di descrizione del progetto che riassume sinteticamente gli obiettivi e gli aspetti principali di un'iniziativa di coproduzione. </p>",
                     "lv": "<p>Projekta raksturojuma piem\u0113rs, kas sint\u0113tiski apkopo koprades iniciat\u012bvas m\u0113r\u0137us un galvenos raksturlielumus.</p>"
                 },
                 "difficulty": "easy",
@@ -2338,7 +2338,7 @@
                 "name_translations": {
                     "en": "Project description example",
                     "es": "",
-                    "it": "",
+                    "it": "Esempio di descrizione del progetto",
                     "lv": "Projekta raksturojuma piem\u0113rs"
                 },
                 "problemprofiles": [
@@ -2379,8 +2379,8 @@
                 "description_translations": {
                     "en": "<p>Guidelines and tips on how to perform a usability testing</p>",
                     "es": "",
-                    "it": "",
-                    "lv": ""
+                    "it": "<p>Linee guida e suggerimenti su come eseguire un test di usabilit\u00e0</p>",
+                    "lv": "<p>Lietojam\u012bbas test\u0113\u0161anas veik\u0161anas vadl\u012bnijas un ieteikumi</p>"
                 },
                 "difficulty": "easy",
                 "domain": "",
@@ -2405,8 +2405,8 @@
                 "name_translations": {
                     "en": "Usability testing guidelines",
                     "es": "",
-                    "it": "",
-                    "lv": ""
+                    "it": "Linee guida per i test di usabilit\u00e0",
+                    "lv": "Lietojam\u012bbas test\u0113\u0161anas vadl\u012bnijas"
                 },
                 "problemprofiles": [
                     "ORG_PROBLEM_6.2",
@@ -2443,7 +2443,7 @@
                 "description_translations": {
                     "en": "<p>Document with template for co-design of Hackathon Rules</p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>Documento con schemi e modello per il co-design delle Regole in Hackathon</p>",
                     "lv": "<p>Dokuments ar hakatona noteikumu kopdizaina paraugu</p>"
                 },
                 "difficulty": "very_easy",
@@ -2469,7 +2469,7 @@
                 "name_translations": {
                     "en": "Hackathon Rules Template for INTERLINK project",
                     "es": "",
-                    "it": "",
+                    "it": "Modello relativo alle regole per hackaton specifiche per progetto INTERLINK",
                     "lv": "Hakatona noteikumu paraugs INTERLINK projektam"
                 },
                 "problemprofiles": [
@@ -2506,7 +2506,7 @@
                 "description_translations": {
                     "en": "<p>Form to collect consent from participants engaged in INTERLINK research activities about the use of their personal data</p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>Modulo per raccogliere il consenso dei partecipanti impegnati in attivit\u00e0 di ricerca INTERLINK sull'utilizzo dei propri dati personali</p>",
                     "lv": "<p> INTERLINK p\u0113tniecisko aktivit\u0101\u0161u dal\u012bbnieku person\u012bgo datu izmanto\u0161anas piekri\u0161anas forma</p>"
                 },
                 "difficulty": "very_easy",
@@ -2532,7 +2532,7 @@
                 "name_translations": {
                     "en": "Consent Form for INTERLINK project",
                     "es": "",
-                    "it": "",
+                    "it": "Modulo di consenso per il progetto INTERLINK",
                     "lv": "INTERLINK projekta piekri\u0161anas forma"
                 },
                 "problemprofiles": [
@@ -2569,8 +2569,8 @@
                 "description_translations": {
                     "en": "<p>Template for preparing a user journey. </p>",
                     "es": "",
-                    "it": "",
-                    "lv": ""
+                    "it": "<p>Modello per la preparazione di un percorso utente. </p>",
+                    "lv": "<p>Lietot\u0101ja ce\u013ca (user journey) sagatavo\u0161anas veidlapa.</p>"
                 },
                 "difficulty": "easy",
                 "environments": [
@@ -2594,8 +2594,8 @@
                 "name_translations": {
                     "en": "Template for user journey",
                     "es": "",
-                    "it": "",
-                    "lv": ""
+                    "it": "Modello schematico per il percorso dell'utente",
+                    "lv": "Lietot\u0101ja ce\u013ca (user journey) veidlapa"
                 },
                 "problemprofiles": [
                     "ORG_PROBLEM_1",
@@ -2628,8 +2628,8 @@
                 "description_translations": {
                     "en": "<p>This resource supports the identification and selection of the stakeholders to engage in a co-production team.</p>",
                     "es": "",
-                    "it": "",
-                    "lv": ""
+                    "it": "<p>Questa risorsa supporta l'identificazione e la selezione delle parti interessate da coinvolgere in un team di co-produzione.</p>",
+                    "lv": "<p>\u0160is resurss pal\u012bdz identific\u0113t un izv\u0113l\u0113ties ieinteres\u0113t\u0101s puses iesaistei koprades komand\u0101.</p>"
                 },
                 "difficulty": "easy",
                 "domain": "",
@@ -2654,8 +2654,8 @@
                 "name_translations": {
                     "en": "Stakeholders Mapping Canvas",
                     "es": "",
-                    "it": "",
-                    "lv": ""
+                    "it": "Modello per la mappatura degli shakeholder",
+                    "lv": "Ieinteres\u0113to pu\u0161u kart\u0113\u0161anas r\u012bks"
                 },
                 "problemprofiles": [
                     "UND_PROBLEM_2"
@@ -2690,7 +2690,7 @@
                 "description_translations": {
                     "en": "<p>This canvas can be edited collaboratively by the co-producing team to ellaborate the business plan for a co-produced service..</p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>Questo modello pu\u00f2 essere modificato in collaborazione dal team di coproduzione per elaborare il business plan per un servizio di coproduzione.</p>",
                     "lv": "<p>\u0160is audekls var tikt kop\u012bgi papildin\u0101ts koprades komandas ietvaros, lai izstr\u0101d\u0101tu koprad\u012bt\u0101 pakalpojuma biznesa modeli.</p>"
                 },
                 "difficulty": "easy",
@@ -2716,7 +2716,7 @@
                 "name_translations": {
                     "en": "Business Plan Template",
                     "es": "",
-                    "it": "",
+                    "it": "Modello del Business Plan",
                     "lv": "Biznesa pl\u0101na veidlapa"
                 },
                 "problemprofiles": [
@@ -2752,7 +2752,7 @@
                 "description_translations": {
                     "en": "<p>Template to guide the preparation of an information sheet to be distributed to participants to project activities. It provides background on research objectives.</p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>Modello per guidare la preparazione di una scheda informativa da distribuire ai partecipanti alle attivit\u00e0 del progetto. Fornisce informazioni sugli obiettivi di ricerca.</p>",
                     "lv": "<p>Veidlapa inform\u0101cijas lapas projekta aktivit\u0101\u0161u dal\u012bbniekiem sagatavo\u0161anai. T\u0101 sniedz pamatinform\u0101ciju par p\u0113tniec\u012bbas aktivit\u0101t\u0113m.</p>"
                 },
                 "difficulty": "very_easy",
@@ -2778,7 +2778,7 @@
                 "name_translations": {
                     "en": "Information Sheet Template",
                     "es": "",
-                    "it": "",
+                    "it": "Modello di foglio informativo",
                     "lv": "Inform\u0101cijas lapas veidlapa"
                 },
                 "problemprofiles": [
@@ -2815,7 +2815,7 @@
                 "description_translations": {
                     "en": "<p>Information on the INTERLINK project to be distributed to participants. It provides background on research activities.</p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>Informazioni sul progetto INTERLINK da distribuire ai partecipanti. Fornisce informazioni sulle attivit\u00e0 di ricerca.</p>",
                     "lv": "<p>Izplat\u012b\u0161anai dal\u012bbniekiem paredz\u0113t\u0101 inform\u0101cija par INTERLINK projektu. T\u0101 nodro\u0161ina pamatinform\u0101ciju par p\u0113tniec\u012bbas aktivit\u0101t\u0113m.</p>"
                 },
                 "difficulty": "very_easy",
@@ -2841,7 +2841,7 @@
                 "name_translations": {
                     "en": "Information Sheet for INTERLINK project",
                     "es": "",
-                    "it": "",
+                    "it": "Foglio informativo per il progetto INTERLINK",
                     "lv": "INTERLINK projekta inform\u0101cijas lapa"
                 },
                 "problemprofiles": [
@@ -2878,7 +2878,7 @@
                 "description_translations": {
                     "en": "<p>This resource will support you to refine the problem to be addresses by the co-production team as an important step to creating an effective and efficient solution.</p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>Questa risorsa ti aiuter\u00e0 a perfezionare il problema in modo che venga affrontato dal team di co-produzione come passaggio importante per creare una soluzione efficace ed efficiente.</p>",
                     "lv": "<p>\u0160is resurss jums pal\u012bdz\u0113s preciz\u0113t uzdevumu, ko risin\u0101t koprades komandai, lai izveidotu efekt\u012bvu risin\u0101jumu.</p>"
                 },
                 "difficulty": "medium",
@@ -2941,7 +2941,7 @@
                 "description_translations": {
                     "en": "<p>Document with template for co-design of Public Service Proposal</p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>Documento con template per la co-progettazione della Proposta di Servizio Pubblico</p>",
                     "lv": "<p>Publisk\u0101 pakalpojuma priek\u0161likuma kopdizaina parauga dokuments</p>"
                 },
                 "difficulty": "very_easy",
@@ -2967,7 +2967,7 @@
                 "name_translations": {
                     "en": "Public Service Proposal Template for INTERLINK project",
                     "es": "",
-                    "it": "",
+                    "it": "Modello di proposta di servizio pubblico per il progetto INTERLINK",
                     "lv": "Publisk\u0101 pakalpojuma priek\u0161likuma veidlapa INTERLINK projektam"
                 },
                 "problemprofiles": [
@@ -3004,7 +3004,7 @@
                 "description_translations": {
                     "en": "<p>This resource provides a skeleton to organize a focus group to investigate the problem that needs to be solved by a digital service / functionality. It addresses a series of questions about potential users, current practices, critical aspects and  desiderata.</p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>Questa risorsa fornisce uno scheletro per organizzare un focus group per indagare sul problema che deve essere risolto da un servizio/funzionalit\u00e0 digitale. Risponde a una serie di domande su potenziali utenti, pratiche attuali, aspetti critici e desiderata.</p>",
                     "lv": "<p>\u0160is resurss pied\u0101v\u0101 ietvaru fokusgrupu organiz\u0113\u0161anai, lai izp\u0113t\u012btu probl\u0113mu, kuru nepiecie\u0161ams atrisin\u0101t ar digit\u0101lo pakalpojumu/funkcionalit\u0101ti. Tas apkopo jaut\u0101jumu kopumu par potenci\u0101lajiem lietot\u0101jiem, eso\u0161o praksi, kritiskajiem aspektiem un v\u0113lm\u0113m.</p>"
                 },
                 "difficulty": "easy",
@@ -3030,7 +3030,7 @@
                 "name_translations": {
                     "en": "Focus Group on problem exploration for new digital functionality",
                     "es": "",
-                    "it": "",
+                    "it": "Focus Group sull'esplorazione dei problemi per nuove funzionalit\u00e0 digitali",
                     "lv": "Fokusgrupa probl\u0113mu izp\u0113tei jaunas digit\u0101l\u0101s funkcionalit\u0101tes rad\u012b\u0161anai"
                 },
                 "problemprofiles": [
@@ -3067,8 +3067,8 @@
                 "description_translations": {
                     "en": "<p>Template to collect data through online survey for assessing Media and Technology Usage and Attitudes</p>",
                     "es": "",
-                    "it": "",
-                    "lv": ""
+                    "it": "<p>Modello per raccogliere dati tramite sondaggi online per valutare l'utilizzo e attitudine verso media e tecnologia</p>",
+                    "lv": "<p> Veidlapa tie\u0161saistes aptaujas par mediju un tehnolo\u0123iju lieto\u0161anas un attieksmes nov\u0113rt\u0113jumu datu sav\u0101k\u0161anai</p>"
                 },
                 "difficulty": "easy",
                 "domain": "",
@@ -3093,8 +3093,8 @@
                 "name_translations": {
                     "en": "template for online survey guidelines",
                     "es": "",
-                    "it": "",
-                    "lv": ""
+                    "it": "modello di linee guida per sondaggi online",
+                    "lv": "veidlapa tie\u0161saistes aptauju vadl\u012bnij\u0101m"
                 },
                 "problemprofiles": [
                     "UND_PROBLEM_3"
@@ -3129,7 +3129,7 @@
                 "description_translations": {
                     "en": "<p>This resource suggests a model to define the features of a co-produced service. It guides the description of the problem(s) that the product will solve in the long run, the vision for the user experience as well as the user interface, the vision for how the product will generate a return of investment</p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>Questa risorsa suggerisce un modello per definire le caratteristiche di un servizio coprodotto. Guida nella descrizione del problema o dei problemi che il prodotto risolver\u00e0 a lungo termine, la visione dell'esperienza utente cos\u00ec come l'interfaccia utente, la visione di come il prodotto generer\u00e0 un ritorno sull'investimento</p>",
                     "lv": "<p>\u0160is resurss pied\u0101v\u0101 koprad\u012bta pakalpojuma funkciju defin\u0113\u0161anas modeli. Tas vada ilgtermi\u0146a risin\u0101m\u0101s probl\u0113mas defin\u0113\u0161anas procesu, lietot\u0101ja pieredzes un lietot\u0101ja saskarnes v\u012bziju un redz\u0113jumu par produkta invest\u012bciju atdevi (ROI)t</p>"
                 },
                 "difficulty": "easy",
@@ -3155,7 +3155,7 @@
                 "name_translations": {
                     "en": "Outcome marketing featureset",
                     "es": "",
-                    "it": "",
+                    "it": "Set di funzionalit\u00e0 per la commercializzazione dei risultati",
                     "lv": "M\u0101rketinga rezult\u0101tu komplekts"
                 },
                 "problemprofiles": [
@@ -3193,7 +3193,7 @@
                 "description_translations": {
                     "en": "<p>Instructions on how to set up a research activity based on online surveys, for a co-production project </p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>Istruzioni su come impostare un'attivit\u00e0 di ricerca basata su sondaggi online, nell'ambito di un progetto di coproduzione </p>",
                     "lv": "<p>Pam\u0101c\u012bba p\u0113tniec\u012bbas aktivit\u0101\u0161u veik\u0161anai koprades projekt\u0101, izmantojot fokusgrupas.</p>"
                 },
                 "difficulty": "easy",
@@ -3219,7 +3219,7 @@
                 "name_translations": {
                     "en": "Guidelines for online-surveys",
                     "es": "",
-                    "it": "",
+                    "it": "Linee guida per i sondaggi online",
                     "lv": "Tie\u0161saistes aptauju vadl\u012bnijas"
                 },
                 "problemprofiles": [
@@ -3255,7 +3255,7 @@
                 "description_translations": {
                     "en": "<p>This is a model of a questionnaire aimed to measure co-producer's perceptions on user-based quality, value-based quality, trust and acceptance. This questionnaire is thought to be answered by those who take part in the co-production of a public service or reuse artefacts (public services & INTERLINKERs) made available through INTERLINK co-production tools (Collaborative Environment and Catalogue).</p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>Questo \u00e8 un modello di questionario volto a misurare le percezioni del coproduttore sulla qualit\u00e0 basata sull'utente, sulla qualit\u00e0 basata sul valore, sulla fiducia e sull'accettazione. Si ritiene che a questo questionario rispondano coloro che partecipano alla coproduzione di un servizio pubblico o riutilizzano manufatti (servizi pubblici e INTERLINKER) messi a disposizione attraverso gli strumenti di coproduzione INTERLINK (Ambiente e Catalogo Collaborativi).</p>",
                     "lv": "<p>\u0160is ir aptaujas modelis koprades procesa dal\u012bbnieku uztveres (uz lietot\u0101ju balst\u012bta kvalit\u0101te, uz v\u0113rt\u012bb\u0101m balst\u012bta kvalit\u0101te, uzticam\u012bba un pie\u0146em\u0161ana) m\u0113r\u012b\u0161anai. \u0160\u012b aptauja paredz\u0113ta koprades procesa dal\u012bbniekiem, kuri iesaist\u0101s publisk\u0101 pakalpojuma vai vair\u0101klietojamo artefaktu (publiskie pakalpojumi un INTERLINKERi) koprad\u0113. T\u0101 ir pieejama INTERLINK koprades r\u012bkos (Sadarb\u012bbas vide un Katalogs).</p>"
                 },
                 "difficulty": "easy",
@@ -3281,7 +3281,7 @@
                 "name_translations": {
                     "en": "Guidelines for surveys",
                     "es": "",
-                    "it": "",
+                    "it": "Linee guida per i sondaggi",
                     "lv": "Aptauju vadl\u012bnijas"
                 },
                 "problemprofiles": [
@@ -3317,7 +3317,7 @@
                 "description_translations": {
                     "en": "<p>This resource provides a skeleton to organize a focus group to investigate the co-production practices in a given organization. It addresses a series of questions about previous or current collaboration practices, the dynamics of collaboration (timeline, people, tools, communication channels), current KPIs, critical aspects and  desiderata.</p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>Questa risorsa fornisce uno scheletro per organizzare un focus group per studiare le pratiche di coproduzione in una determinata organizzazione. Affronta una serie di domande sulle pratiche di collaborazione precedenti o attuali, le dinamiche della collaborazione (timeline, persone, strumenti, canali di comunicazione), KPI attuali, aspetti critici e desiderata.</p>",
                     "lv": "<p>\u0160is resurss pied\u0101v\u0101 fokusgrupas organiz\u0113\u0161anas ietvaru koprades prakses izp\u0113tei konkr\u0113t\u0101 organiz\u0101cij\u0101. Tas ietver jaut\u0101jumu kopumu par \u0161\u012bbr\u012b\u017ea sadarb\u012bbas praksi, sadarb\u012bbas dinamiku (laika grafiks, cilv\u0113ki, r\u012bki, komunik\u0101cijas kan\u0101li), \u0161\u012bbr\u012b\u017ea sasniedzamajiem r\u0101d\u012bt\u0101jiem (KPI), kritiskajiem aspektiem un v\u0113lm\u0113m.</p>"
                 },
                 "difficulty": "easy",
@@ -3343,7 +3343,7 @@
                 "name_translations": {
                     "en": "Focus Group Template Co-production Investigation",
                     "es": "",
-                    "it": "",
+                    "it": "Schema per focus group in indagini di coproduzione",
                     "lv": "Koprades izp\u0113tes fokusgrupas veidlapa"
                 },
                 "problemprofiles": [
@@ -3379,8 +3379,8 @@
                 "description_translations": {
                     "en": "<p>Instructions and examples on how to conduct structured interviews for a co-production project.</p>",
                     "es": "",
-                    "it": "",
-                    "lv": ""
+                    "it": "<p>Istruzioni ed esempi su come condurre interviste strutturate in un progetto di coproduzione.</p>",
+                    "lv": "<p>Koprades projektam nepiecie\u0161amo struktur\u0113to interviju veik\u0161anas instrukcija ar paraugiem.</p>"
                 },
                 "difficulty": "easy",
                 "domain": "",
@@ -3405,8 +3405,8 @@
                 "name_translations": {
                     "en": "Template for semi structured interview",
                     "es": "",
-                    "it": "",
-                    "lv": ""
+                    "it": "Modello per interviste semi strutturate",
+                    "lv": "Da\u013c\u0113ji struktur\u0113t\u0101s intervijas veidlapa"
                 },
                 "problemprofiles": [
                     "ORG_PROBLEM_2",
@@ -3445,7 +3445,7 @@
                 "description_translations": {
                     "en": "<p>Instructions on how to set up a research activity based on interviews, for a co-production project. </p>",
                     "es": "",
-                    "it": "",
+                    "it": "<p>Istruzioni su come impostare un'attivit\u00e0 di ricerca basata su interviste, per un progetto di coproduzione. </p>",
                     "lv": "<p>Pam\u0101c\u012bba p\u0113tniec\u012bbas aktivit\u0101\u0161u veik\u0161anai koprades projekt\u0101, izmantojot fokusgrupas.</p>"
                 },
                 "difficulty": "easy",
@@ -3471,7 +3471,7 @@
                 "name_translations": {
                     "en": "Guidelines for interviews",
                     "es": "",
-                    "it": "",
+                    "it": "Linee guida per interviste",
                     "lv": "Interviju vadl\u012bnijas"
                 },
                 "problemprofiles": [
@@ -3508,8 +3508,8 @@
                 "description_translations": {
                     "en": "<p>Template for preparing a use scenarios. </p>",
                     "es": "",
-                    "it": "",
-                    "lv": ""
+                    "it": "<p>Modello per la preparazione di scenari d'uso. </p>",
+                    "lv": "<p>Lieto\u0161anas scen\u0101rija sagatavo\u0161anas veidlapa.</p>"
                 },
                 "difficulty": "easy",
                 "environments": [
@@ -3533,8 +3533,8 @@
                 "name_translations": {
                     "en": "Template for use case scenarios",
                     "es": "",
-                    "it": "",
-                    "lv": ""
+                    "it": "Modello schematico per gli scenari d'uso",
+                    "lv": "Lieto\u0161anas scen\u0101rija gad\u012bjuma (use case) veidlapa"
                 },
                 "problemprofiles": [
                     "ORG_PROBLEM_1",
@@ -3567,8 +3567,8 @@
                 "description_translations": {
                     "en": "Survey designer and publishing INTERLINKER which allows to create on demand new forms to gather information or help in decision making in co-production processess. It is based on open source tool SurveyJs (https://github.com/surveyjs)",
                     "es": "",
-                    "it": "",
-                    "lv": ""
+                    "it": "L INTERLINKER Survey designer and publishing permette di creare on demand nuovi moduli per raccogliere informazioni o aiutare nel processo decisionale nei processi di coproduzione. Si basa sullo strumento open source SurveyJs (https://github.com/surveyjs)",
+                    "lv": "Aptauju veido\u0161anas un public\u0113\u0161anas INTERLINKERs, kas \u013cauj izveidot un piepras\u012bt jaunas formas inform\u0101cijas iev\u0101k\u0161anai vai pal\u012bdz\u0113t koprades proces\u0101 radu\u0161os l\u0113mumu pie\u0146em\u0161anai. Tas ir balst\u012bts uz atv\u0113rt\u0101 koda r\u012bku SurveyJS (https://github.com/surveyjs)"
                 },
                 "difficulty": "easy",
                 "environments": [
@@ -3631,8 +3631,8 @@
                 "name_translations": {
                     "en": "Survey editor",
                     "es": "",
-                    "it": "",
-                    "lv": ""
+                    "it": "Survey editor",
+                    "lv": "Aptauju redaktors"
                 },
                 "problemprofiles": [],
                 "regulations_and_standards_translations": {
@@ -3661,8 +3661,8 @@
                 "description_translations": {
                     "en": "This interlinker uses etherpad, an open source online editor, to provide collaborative editing in really real-time.\nEtherpad (https://etherpad.org/) is an open-source, web-based collaborative real-time editor, allowing authors to simultaneously edit a text document, and see all of the participants' edits in real-time, with the ability to display each author's text in their own color. There is also a chat box in the sidebar to allow meta communication.",
                     "es": "",
-                    "it": "",
-                    "lv": ""
+                    "it": "Questo interlinker utilizza etherpad, un editor online open source, per fornire editing collaborativo in tempo reale.\nEtherpad (https://etherpad.org/) \u00e8 un editor collaborativo in tempo reale open source basato sul Web, che consente agli autori di modificare contemporaneamente un documento di testo e vedere tutte le modifiche dei partecipanti in tempo reale, con il possibilit\u00e0 di visualizzare il testo di ogni autore nel proprio colore. C'\u00e8 anche una casella di chat nella barra laterale per consentire la meta-comunicazione.",
+                    "lv": "\u0160is INTERLINKERs izmanto atv\u0113rt\u0101 koda tie\u0161saistes redaktoru Etherpad, lai sniegtu kop\u012bgas redig\u0113\u0161anas iesp\u0113jas re\u0101laj\u0101 laik\u0101.\nEtherpad (https://etherpad.org/) ir t\u012bmekl\u012b balst\u012bts atv\u0113rt\u0101 koda re\u0101l\u0101 laika kop\u012bg\u0101s redi\u0123\u0113\u0161anas r\u012bks, kas \u013cauj dokumenta autoriem redi\u0123\u0113t teksta dokumentu un \u013cauj redz\u0113t visu dal\u012bbnieku veikt\u0101s izmai\u0146as re\u0101laj\u0101 laik\u0101. Tiek nodro\u0161in\u0101ta iesp\u0113ja katra dal\u012bbnieka tekstu p\u0101r\u0101d\u012bt cit\u0101 kr\u0101s\u0101. R\u012bkam ir ar\u012b t\u0113rz\u0113\u0161anas logs, kas \u013cauj veikt sekund\u0101ro komunik\u0101ciju."
                 },
                 "difficulty": "easy",
                 "environments": [
@@ -3720,8 +3720,8 @@
                 "name_translations": {
                     "en": "Collaborative editor",
                     "es": "",
-                    "it": "",
-                    "lv": ""
+                    "it": "Editor collaborativo",
+                    "lv": "Kop\u012bg\u0101s redi\u0123\u0113\u0161anas r\u012bks"
                 },
                 "problemprofiles": [],
                 "regulations_and_standards_translations": {
@@ -3755,8 +3755,8 @@
                 "description_translations": {
                     "en": "<p>Augmenter is an Open Source application that offers the possibility of create and improve public services descriptions, in the workspace users can share opinions, questions and feedbacks, finally a assigned moderator will decide approve or not a suggestion. With Augmenter it is possible to</p><ul><li>create and improve public service descriptions, organize discussions and keep record of participation and involvement;</li><li>manage moderator decisions over the improvements;</li><li>Generate a final improvement report. </li></ul>",
                     "es": "<p>Augmenter es una aplicaci\u00f3n Open Source que ofrece la posibilidad de crear y mejorar descripciones de servicios p\u00fablicos, en el espacio de trabajo los usuarios pueden compartir opiniones, preguntas y comentarios, finalmente un moderador asignado decidir\u00e1 aprobar o no una sugerencia. Con Augmenter es posible</p><ul><li>Crear y mejorar descripciones de servicios p\u00fablicos, organizar dicusiones y mantener un registro de participaci\u00f3n e implicaci\u00f3n;</li><li>administrar las decisiones del moderador sobre las mejoras;</li ><li>Generar un informe final de mejora.</li></ul>",
-                    "it": "",
-                    "lv": ""
+                    "it": "<p>Augmenter \u00e8 un'applicazione Open Source che offre la possibilit\u00e0 di creare e migliorare le descrizioni dei servizi pubblici, nell'area di lavoro gli utenti possono condividere opinioni, domande e feedback, infine un moderatore incaricato decider\u00e0 di approvare o meno un suggerimento. Con Augmenter \u00e8 possibile</p><ul><li>creare e migliorare le descrizioni dei servizi pubblici, organizzare discussioni e tenere traccia della partecipazione e del coinvolgimento;</li><li>gestire le decisioni dei moderatori sui miglioramenti;</li ><li>Genera un rapporto di miglioramento finale. </li></ul>",
+                    "lv": "<p>Augmenter ir atv\u0113rt\u0101 koda lietotne, kas pied\u0101v\u0101 iesp\u0113ju veidot un uzlabot publisko pakalpojumu aprakstus. Lietotnes darbaviet\u0101 lietot\u0101jiem ir iesp\u0113ja dal\u012bties ar viedok\u013ciem, jaut\u0101jumiem un ierosin\u0101jumiem, un procesa moderators pie\u0146em l\u0113mumu apstiprin\u0101t vai noraid\u012bt priek\u0161likumu. Ar Augmenter ir iesp\u0113jams</p><ul><li>izveidot un uzlabot publisko pakalpojumu aprakstus, organiz\u0113t diskusijas un veikt dal\u012bbas un iesaistes uzskaiti;</li><li>vad\u012bt moderatora l\u0113mumus par nepiecie\u0161amajiem uzlabojumiem;</li><li>izveidot nepiecie\u0161amo uzlabojumu zi\u0146ojuma galaversiju.</li></ul>"
                 },
                 "difficulty": "easy",
                 "environments": [
@@ -3810,8 +3810,8 @@
                 "name_translations": {
                     "en": "Augmenter",
                     "es": "Augmenter",
-                    "it": "",
-                    "lv": ""
+                    "it": "Augmenter",
+                    "lv": "Augmenter"
                 },
                 "overview_text": {
                     "en": "Web-based tool for improving public service descriptions",
@@ -3855,8 +3855,8 @@
                 "description_translations": {
                     "en": "Google Drive is a file storage and synchronization service developed by Google. Launched on April 24, 2012, Google Drive allows users to store files in the cloud, synchronize files across devices, and share files.\nGoogle Drive encompasses Google Docs, Google Sheets, and Google Slides, which are a part of the Google Docs Editors office suite that permits collaborative editing of documents, spreadsheets, presentations, drawings, forms, and more. Files created and edited through the Google Docs suite are saved in Google Drive.\nThis software INTERLIKER allows users of the collaborative environment to create new documents, spreadsheets and presentations which can be co-edited and shared by co-production team participants",
                     "es": "Google Drive es un servicio de almacenamiento y sincronizaci\u00f3n de archivos desarrollado por Google. Lanzado el 24 de abril de 2012, Google Drive permite a los usuarios almacenar archivos en la nube, sincronizar archivos entre dispositivos y compartir archivos.\nGoogle Drive incluye Google Docs, Google Sheets y Google Slides, que forman parte de Google Docs Editors. paquete ofim\u00e1tico que permite la edici\u00f3n colaborativa de documentos, hojas de c\u00e1lculo, presentaciones, dibujos, formularios y m\u00e1s. Los archivos creados y editados a trav\u00e9s de la suite Google Docs se guardan en Google Drive.\nEste software INTERLIKER permite a los usuarios del entorno colaborativo crear nuevos documentos, hojas de c\u00e1lculo y presentaciones que pueden ser coeditados y compartidos por los participantes del equipo de coproducci\u00f3n.",
-                    "it": "",
-                    "lv": ""
+                    "it": "Google Drive \u00e8 un servizio di archiviazione e sincronizzazione di file sviluppato da Google. Lanciato il 24 aprile 2012, Google Drive consente agli utenti di archiviare file nel cloud, sincronizzare file tra dispositivi e condividere file.\nGoogle Drive comprende Google Docs, Google Sheets e Google Slides, che fanno parte della suite per ufficio di Google Docs Editors che consente la modifica collaborativa di documenti, fogli di lavoro, presentazioni, disegni, moduli e altro ancora. I file creati e modificati tramite la suite Google Docs vengono salvati in Google Drive.\nQuesto INTERLIKER software consente agli utenti dell'ambiente collaborativo di creare nuovi documenti, fogli di calcolo e presentazioni che possono essere modificati e condivisi dai partecipanti del team di coproduzione",
+                    "lv": "Google Drive ir failu uzglab\u0101\u0161anas un sinhroniz\u0113\u0161anas pakalpojums, ko izstr\u0101d\u0101jis Google. Pakalpojums uzs\u0101ka darb\u012bbu 2012. gada 24. apr\u012bl\u012b. Google Drive \u013cauj lietot\u0101jiem uzglab\u0101t failus m\u0101kon\u012b, sinhroniz\u0113t tos starp da\u017e\u0101d\u0101m ier\u012bc\u0113m un dal\u012bties ar tiem.\nGoogle Drive sast\u0101v no Google Docs, Google Sheets un Google Slides, kas ir da\u013ca no Google Docs Editors biroja komplekta, kas \u013cauj kop\u012bgi redi\u0123\u0113t dokumentus, izkl\u0101jlapas, prezent\u0101cijas, z\u012bm\u0113jumus, formas u.c. Google Docs izveidotie un redi\u0123\u0113tie faili tiek saglab\u0101ti Google Drive.\n\u0160is programmat\u016bras INTERLINKERs \u013cauj sadarb\u012bbas vides lietot\u0101jiem veidot jaunus dokumentus, izkl\u0101jlapas un prezent\u0101cijas, kas var tikt kop\u0113ji redi\u0123\u0113tas un izplat\u012btas starp koprades komandas dal\u012bbniekiem."
                 },
                 "difficulty": "easy",
                 "environments": [
@@ -3919,8 +3919,8 @@
                 "name_translations": {
                     "en": "Google Drive",
                     "es": "Google Drive",
-                    "it": "",
-                    "lv": ""
+                    "it": "Google Drive",
+                    "lv": "Google Drive"
                 },
                 "problemprofiles": [],
                 "regulations_and_standards_translations": {
@@ -3977,8 +3977,8 @@
                 "description_translations": {
                     "en": "<p>Loomio is an Open Source solution that offers a workspace for conversation, sharing information and opinions, making proposals, deciding actions and achieving outcomes. With Loomio it is possible to</p><ul><li>start and organize discussions and keep record of participation and involvement;</li><li>manage collaborative decisions through different forms of polls, surveys, etc;</li><li>enable collaborating voting around ideas and proposal under discussion.</li></ul>",
                     "es": "",
-                    "it": "",
-                    "lv": ""
+                    "it": "<p>Loomio \u00e8 una soluzione Open Source che offre uno spazio di lavoro per la conversazione, la condivisione di informazioni e opinioni, la formulazione di proposte, la decisione di azioni e il raggiungimento di risultati. Con Loomio \u00e8 possibile</p><ul><li>avviare e organizzare discussioni e tenere traccia della partecipazione e del coinvolgimento;</li><li>gestire decisioni collaborative attraverso diverse forme di sondaggi, sondaggi, ecc;</li><li> li><li>consentire di collaborare votando su idee e proposte in discussione.</li></ul>",
+                    "lv": "<p>Loomio ir atv\u0113rt\u0101 koda risin\u0101jums, kas pied\u0101v\u0101 darbavietu sarun\u0101m, inform\u0101cijas un viedok\u013cu apmai\u0146ai, priek\u0161likumu izteik\u0161anai, l\u0113mumu pie\u0146em\u0161anai un m\u0113r\u0137u sasnieg\u0161anai. Ar Loomio ir iesp\u0113jams</p><ul><li>uzs\u0101kt un organiz\u0113t diskusijas un sekot l\u012bdzi dal\u012bbai un iesaistei;</li><li>vad\u012bt sadarb\u012bb\u0101 balst\u012btus l\u0113mumus ar da\u017e\u0101du balsojumu, aptauju u.c. r\u012bku pal\u012bdz\u012bbu;</li><li>aktiviz\u0113t kop\u012bgus balsojumus par idej\u0101m un priek\u0161likumiem, kas tiek apspriesti.</li></ul>"
                 },
                 "difficulty": "medium",
                 "environments": [
@@ -4032,8 +4032,8 @@
                 "name_translations": {
                     "en": "Loomio",
                     "es": "",
-                    "it": "",
-                    "lv": ""
+                    "it": "Loomio",
+                    "lv": "Loomio"
                 },
                 "overview_text": {
                     "en": "Web-based tool for collaborative decision making, discussion. and idea management",
@@ -5766,7 +5766,7 @@
                     "name_translations": {
                         "en": "Build",
                         "es": "Construir",
-                        "it": "Realizza",
+                        "it": "Realizzazione",
                         "lv": ""
                     },
                     "objectives": [
@@ -5973,7 +5973,7 @@
                     "name_translations": {
                         "en": "Engage",
                         "es": "Comprometer",
-                        "it": "Coinvolgere",
+                        "it": "Coinvolgimento",
                         "lv": ""
                     },
                     "objectives": [
@@ -6376,7 +6376,7 @@
                     "name_translations": {
                         "en": "Sustain",
                         "es": "Sostener",
-                        "it": "Sostenere",
+                        "it": "Sostenibilit\u00e0",
                         "lv": ""
                     },
                     "objectives": [
@@ -6391,7 +6391,7 @@
                             "name_translations": {
                                 "en": "Handover",
                                 "es": "Entrega",
-                                "it": "",
+                                "it": "Passaggio di consegne",
                                 "lv": ""
                             },
                             "prerequisites": [],
@@ -6401,14 +6401,14 @@
                                     "description_translations": {
                                         "en": "Co-production team defines one to many business models with their associated business plans which can be negotiated with third party adopters of the service, who want to take over execution, maintenance and monitoring, but where exploitation between co-producers and adopters needs to be clarified.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Il team di coproduzione definisce da uno a molti modelli di business con i relativi piani aziendali che possono essere negoziati con terze parti che adottano il servizio, che desiderano gestirne l'esecuzione, la manutenzione e il monitoraggio. In questo caso \u00e8 necessario definire la strategia di valorizzazione tra co-produttori e adottanti.",
                                         "lv": ""
                                     },
                                     "id": "task-business-model-specification",
                                     "name_translations": {
                                         "en": "Business model specification",
                                         "es": "Especificaci\u00f3n de Modelo de Negocio",
-                                        "it": "",
+                                        "it": "Specifica del modello di business",
                                         "lv": ""
                                     },
                                     "prerequisites": [],
@@ -6420,14 +6420,14 @@
                                     "description_translations": {
                                         "en": "Before a third party adopter may take over a co-produced service an exploitation agreement must be produced and signed by the involved parties. ",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Prima che un terzo adottante possa rilevare un servizio coprodotto, deve essere realizato e firmato dalle parti coinvolte un accordo per la valorizzazione del servizio. ",
                                         "lv": ""
                                     },
                                     "id": "task-exploitation-agreement",
                                     "name_translations": {
                                         "en": "Exploitation agreement",
                                         "es": "Acuerdo de Explotaci\u00f3n",
-                                        "it": "",
+                                        "it": "Accordo per la valorizzazione",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -6444,14 +6444,14 @@
                                     "description_translations": {
                                         "en": "Provide documentation for third party take over of service maintenane and monitoring. Agreement on contract to regulate transfer of runnning responsability to third party and sharing of revenues among those that co-produced the service and third parties who may optionally host the service. Customization of the delivered service to target customers (translations, content adaptations and so on) ",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Fornisce documentazione per l'assunzione da parte di terzi della manutenzione e del monitoraggio del servizio. E' importante definire un accordo contrattuale per disciplinare il trasferimento della responsabilit\u00e0 di esercizio a terzi e la ripartizione dei ricavi tra coloro che hanno coprodotto il servizio e terzi che possono ospitare il servizio. Personalizzazione del servizio erogato ai clienti target (traduzioni, adattamenti di contenuti e cos\u00ec via) ",
                                         "lv": ""
                                     },
                                     "id": "task-handover",
                                     "name_translations": {
                                         "en": "Handover",
                                         "es": "Entrega",
-                                        "it": "",
+                                        "it": "Passaggio di consegne",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -6470,14 +6470,14 @@
                             "description_translations": {
                                 "en": "Ensure the deployed service is continously operative and responsive to new customer demands who may make the service further adopted and more useful. This responsability may be shared by co-production team and third parties who may have taken over the service. ",
                                 "es": "",
-                                "it": "",
+                                "it": "Garantisci che il servizio implementato sia costantemente operativo e risponda alle nuove richieste dei clienti che potrebbero rendere il servizio ulteriormente adottato e pi\u00f9 utile. Questa responsabilit\u00e0 pu\u00f2 essere condivisa dal team di coproduzione e da terze parti che potrebbero gestire il servizio. ",
                                 "lv": ""
                             },
                             "id": "objective-maintenance",
                             "name_translations": {
                                 "en": "Maintenance",
                                 "es": "Mantenimiento",
-                                "it": "",
+                                "it": "Mantenimento",
                                 "lv": ""
                             },
                             "prerequisites": [
@@ -6492,14 +6492,14 @@
                                     "description_translations": {
                                         "en": "If service depoyment was delegated or is still carried out by co-production team, task distribution among those responsible for maintenance must be ensured. Regularly contract monitoring and maintenance activities will need to be carried out to ensure 24x7 operation.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Sia che la messa in esercizio (deployment) del servizio sia stata delegata sia che sia svolta dal team di coproduzione, deve essere assicurata la distribuzione dei compiti tra i responsabili della manutenzione. Dovranno essere svolte regolarmente attivit\u00e0 di monitoraggio e manutenzione del contratto per garantire il funzionamento 24x7 del servizio.",
                                         "lv": ""
                                     },
                                     "id": "task-task-distribution-for-maintenance-contracts-regulation-data-management-archiving",
                                     "name_translations": {
                                         "en": "Task distribution for maintenance, contracts regulation, data management archiving",
                                         "es": "Distribuci\u00f3n de tareas para el mantenimiento, regulaci\u00f3n de contratos, archivo de la gesti\u00f3n de datos",
-                                        "it": "",
+                                        "it": "Distribuzione degli incarichi per la manutenzione, il regolamenti dei contratti, l'archiviazione della gestione dei dati",
                                         "lv": ""
                                     },
                                     "prerequisites": [],
@@ -6511,14 +6511,14 @@
                             "description_translations": {
                                 "en": "Monitor that the service is fulfilling its originally set objectives by tracking a set of KPIs inferred from usage or polling customers.  ",
                                 "es": "",
-                                "it": "",
+                                "it": "Monitora che il servizio soddisfi gli obiettivi originariamente definiti, monitorando una serie di KPI ( Key Performance Indicator) dedotti dall'utilizzo del servizio o effettuando sondaggi ai clienti.  ",
                                 "lv": ""
                             },
                             "id": "objective-monitoring",
                             "name_translations": {
                                 "en": "Monitoring",
                                 "es": "Monitorizaci\u00f3n",
-                                "it": "",
+                                "it": "Monitoraggio",
                                 "lv": ""
                             },
                             "prerequisites": [
@@ -6536,14 +6536,14 @@
                                     "description_translations": {
                                         "en": "Analyse logs gathered by the delivered service. Analyse surveys/questionnaires filled in by stakeholders. ",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Analizza i log (registri) raccolti dal servizio erogato. Analizza i sondaggi e i questionari compilati dalle parti interessate. ",
                                         "lv": ""
                                     },
                                     "id": "task-monitoring-ongoing-evaluation-periodic-evaluations-with-stakeholders",
                                     "name_translations": {
                                         "en": "Monitoring ongoing evaluation, periodic evaluations with stakeholders",
                                         "es": "Seguimiento de la evaluaci\u00f3n continua, evaluaciones peri\u00f3dicas con las partes interesadas",
-                                        "it": "",
+                                        "it": "Monitoraggio continuo della valutazione, valutazioni periodiche con gli stakeholder",
                                         "lv": ""
                                     },
                                     "prerequisites": [],
@@ -6572,7 +6572,7 @@
             "description_translations": {
                 "en": "Specific co-production process specially catered for co-refinement of public service descriptions where citizens, civil servants managing public service infrastructure and civil servants working at specific departments cooperate. It is composed of the following phases: a) ENGAGE \u2013 where stakeholders involved in service description refinements are understood and engagement plans are proposed; b) DESIGN \u2013 where the actual managers of e-services prepare the description augmentation space to be used by those enhancing service descriptions; c) RUN \u2013 where the contributions from diverse stakeholders are gathered, moderated and validated with the support of the Description Augmenter INTERLINKER; and d) REFINE \u2013 where the validated contributions are assessment and applied in refinements to service descriptions.",
                 "es": "Proceso espec\u00edfico de coproducci\u00f3n especialmente concebido para el perfeccionamiento de las descripciones de los servicios p\u00fablicos en el que cooperan los ciudadanos, los funcionarios que gestionan la infraestructura de los servicios p\u00fablicos y los funcionarios que trabajan en departamentos espec\u00edficos. Se compone de las siguientes fases: a) ENGAGE \\u2013 donde se comprenden las partes interesadas que participan en el perfeccionamiento de las descripciones de los servicios y se proponen planes de participaci\u00f3n; b) DESIGN \\u2013 donde los gestores reales de los servicios electr\u00f3nicos preparan el espacio de aumento de la descripci\u00f3n que utilizar\u00e1n los que mejoran las descripciones de los servicios; c) RUN \\u2013 donde se recogen las contribuciones de las diversas partes interesadas, se moderan y se validan con el apoyo del INTERLINKER de aumento de la descripci\u00f3n; y d) REFINE \\u2013 donde se eval\u00faan las contribuciones validadas y se aplican en el perfeccionamiento de las descripciones de los servicios.",
-                "it": "",
+                "it": "Si tratta di uno specifico processo di co-produzione specificamente rivolto al raffinamento collaborativo delle descrizioni dei servizi pubblici dove i cittadini, gli impiegati che gestiscono le infrastrutture dei servizi pubblici e gli impiegati in specifici dipartimenti collaborano nella preparazione delle spiegazioni. Questo processo \u00e8 composto dalle seguenti fasi: a) COINVOLGIMENTO - durante il quale gli stakeholder coinvolti nel raffinamento delle descrizioni di servizi vengono individuati e coinvolti; b) PROGETTAZIONE - dove gli attuali gestori dei servizi digitali preparano lo spazio per la collaborazione sui testi da usarsi per raffinare le descrizioni dei servizi; c) ESECUZIONE - quando i contributi dei diversi stakeholder vengono raccolti, moderati e validati con il supporto dell'INTERLIKER Description Augmenter; e d) RAFFINAMENTO - quando i contributi validati vengono valutati e tradotti in raffinamenti delle descrizioni dei servizi.",
                 "lv": ""
             },
             "environments": [
@@ -6704,7 +6704,9 @@
                                 {
                                     "description_translations": {
                                         "en": "Use the Initiate Procedure to launch Description Augmenter or simply select Description Augmenter recommended INTERLINKER",
-                                        "es": ""
+                                        "es": "",
+                                        "it": "Usa il bottone \"Inizia Procedura\" per lanciare il Description Augmenter o semplicemente seleziona il Description Augmenter dalla lista degli INTERLINKER raccomandati",
+                                        "lv": ""
                                     },
                                     "id": "task-launch-description-augmenter",
                                     "name_translations": {
@@ -6775,27 +6777,29 @@
                     "description_translations": {
                         "en": "Make use of instantiated co-refinement process, reviewing contribs from users of the service description, accepting or rejecting them, exporting reports with changes accepted so that they are processed for refinement.",
                         "es": "",
-                        "it": "",
+                        "it": "Utilizza il processo di co-raffinamento effettuato, rivedi i contributi dei partecipanti alla descrizione di serviio, accetta o declina i contributi, esporta il report con i cambiamenti accettati in modo che possano essere elaborati per il raffinamento.",
                         "lv": ""
                     },
                     "id": "phase-run",
                     "name_translations": {
                         "en": "Run",
                         "es": "",
-                        "it": "",
+                        "it": "Esecuzione",
                         "lv": ""
                     },
                     "objectives": [
                         {
                             "description_translations": {
                                 "en": "Access to the Description Augmenter to the augmented view of service descriptions to monitor and moderate contributions from the crowd, generate intermediary reports and store them. Notice that only the creator of the process to refine a service description can moderate it, unless rights are given to other co-refinement team members through Servicepedia dashboard",
-                                "es": ""
+                                "es": "",
+                                "it": "Accedi attraverso il Description Augmenter alla vista aumentata delle descrizioni di servizio per monitorare e moderare i contributi collettivi, general report intermedi e memorizza queste versioni. Tieni conto che solamente il creatore del processo di raffinamento di una descrizione di servizio pu\u00f2 moderare la discussione, a meno che appropriati diritti vengano assegnati ad altri membri del team di co-raffinamento attraverso il pannello di controllo della Servicepedia",
+                                "lv": ""
                             },
                             "id": "objective-monitor-continuous-crowd-refinement-process",
                             "name_translations": {
                                 "en": "Monitor continuous crowd refinement process",
                                 "es": "",
-                                "it": "",
+                                "it": "Monitora in modo continuo il processo di raffinamento collettivo",
                                 "lv": ""
                             },
                             "prerequisites": [],
@@ -6809,13 +6813,15 @@
                                 {
                                     "description_translations": {
                                         "en": "Produce a link to the description augmenter process so that co-producers can review contributions, accept, reject them or generate reports for refinement processing. Again, only those with rol moderator in Servicepedia can accept or reject suggestions. All the others, can comment and add new augmentation suggestions ",
-                                        "es": ""
+                                        "es": "",
+                                        "it": "Genera un link al progetto in Description Augmenter in modo che altri partecipanti possano rivedere i contributi, accettarli o declinarli e generare i report riassuntivi del processo di raffinamento. Ricorda che sono i partecipanti con ruolo di moderatore in Servicepedia possono accettare o declinare i suggerimenti. Tutti gli altri possono commentare e aggiungere nuovi suggerimenti di raffinamento. ",
+                                        "lv": ""
                                     },
                                     "id": "task-link-to-the-description-augmenter-project",
                                     "name_translations": {
                                         "en": "Link to the Description Augmenter project",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Crea un link al progetto in Description Augmenter",
                                         "lv": ""
                                     },
                                     "prerequisites": [],
@@ -6824,12 +6830,16 @@
                                 {
                                     "description_translations": {
                                         "en": "Review in Servicepedia dashboard contributions from users, accept those that are good, reject the bad ones, until completing revision process",
-                                        "es": ""
+                                        "es": "",
+                                        "it": "Controlla nel pannello di controllo della Servicepedia i contributi degli utenti, accetta quelli che sono validi, declina quelli non ottimali, fino al completamento del processo di revisione",
+                                        "lv": ""
                                     },
                                     "id": "task-review-in-servicepedia-dashboard-user-contributions",
                                     "name_translations": {
                                         "en": "Review in Servicepedia dashboard user contributions",
-                                        "es": ""
+                                        "es": "",
+                                        "it": "Controlla nel pannello di controllo della Servicepedia i contributi degli utenti",
+                                        "lv": ""
                                     },
                                     "prerequisites": [
                                         {
@@ -6844,13 +6854,15 @@
                         {
                             "description_translations": {
                                 "en": "Publish enhancement report generated from Servicepedia after having processed refinement suggestions for a given public service description",
-                                "es": ""
+                                "es": "",
+                                "it": "Pubblica i report sui raffinamenti generati dalla componente Servicepedia dopo aver terminato di processare i suggerimenti di raffinamento su una data descrizione di servizio pubblico",
+                                "lv": ""
                             },
                             "id": "objective-publish-report-with-descriptions-accepted-to-be-processed",
                             "name_translations": {
                                 "en": "Publish report with descriptions accepted to be processed",
                                 "es": "",
-                                "it": "",
+                                "it": "Pubblica un report con le revisioni accettate per essere processate",
                                 "lv": ""
                             },
                             "prerequisites": [
@@ -6868,13 +6880,15 @@
                                 {
                                     "description_translations": {
                                         "en": "Publish enhancement report from Servicepedia.",
-                                        "es": ""
+                                        "es": "",
+                                        "it": "Pubblica il report di raffinamento dalla componente Servicepedia.",
+                                        "lv": ""
                                     },
                                     "id": "task-publish-enhancement-report",
                                     "name_translations": {
                                         "en": "Publish enhancement report",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Pubblica il report di raffinamento",
                                         "lv": ""
                                     },
                                     "prerequisites": [],
@@ -6909,7 +6923,7 @@
                     "name_translations": {
                         "en": "Engage",
                         "es": "Comprometer",
-                        "it": "Coinvolgere",
+                        "it": "Coinvolgimento",
                         "lv": ""
                     },
                     "objectives": [
@@ -6917,14 +6931,14 @@
                             "description_translations": {
                                 "en": "The identification of key actors  is the first step to start your  process of co-production. According to the type of project, the goals and the level of citizen involvement, different questions are to be answered.\r\nWhat different  types of stakeholders enter into play in the initiative to be co-produced? What are their motivations and skills to participate in the project? What is their position in the network? How to contact them?\r\nFollow the specific tasks to get the complete picture.",
                                 "es": "",
-                                "it": "",
+                                "it": "L'identificazione degli attori rilevanti \u00e8 il primo passo per avviare il processo di co-produzione. A seconda del tipo di progetto, degli obiettivi e del livello di coinvolgimento dei cittadini, \u00e8 necessario rispondere a diverse domande.\nQuali diversi tipi di portatori di interesse e stakeholder entrano in gioco nell'iniziativa da co-produrre? Quali sono le loro motivazioni e capacit\u00e0 per partecipare al progetto? Qual \u00e8 la loro posizione nella rete? Come contattarli?\nSegui le attivit\u00e0 specifiche per ottenere il quadro completo.",
                                 "lv": ""
                             },
                             "id": "objective-identify-stakeholders",
                             "name_translations": {
                                 "en": "Identify stakeholders",
                                 "es": "Identificar stakeholders",
-                                "it": "",
+                                "it": "Identifica gli stakeholder",
                                 "lv": ""
                             },
                             "prerequisites": [],
@@ -6933,13 +6947,15 @@
                                 {
                                     "description_translations": {
                                         "en": "Usually different actors are engaged in co-production to create a new service or customizing an already existing service: public bodies, private companies, SMEs, citizens. Each actor brings specific needs and competences in relation to the service and has different motivations to participate in a project. Learn about the different types of stakeholders and which of them can add value to your co-production process. In this case, for service descriptions refinement, consider contributing public servants but also potentially citizens, i.e. consumers of those services.",
-                                        "es": ""
+                                        "es": "",
+                                        "it": "Solitamente diversi attori sono impegnati in processi di co-produzione per creare un nuovo servizio o per personalizzare un servizio gi\u00e0 esistente: enti pubblici, aziende private, PMI, cittadini. Ogni attore porta bisogni e competenze specifiche in relazione al servizio e ha motivazioni diverse per partecipare a un progetto. Scopri i diversi tipi di stakeholder e quali di essi possono aggiungere valore al tuo processo di co-produzione.",
+                                        "lv": ""
                                     },
                                     "id": "task-understand-the-different-types-of-stakeholders",
                                     "name_translations": {
                                         "en": "Understand the different types of stakeholders",
                                         "es": "Entender los diferentes tipos de stakeholders y sus motivaciones",
-                                        "it": "",
+                                        "it": "Comprendi le diverse tipologie di stakeholders",
                                         "lv": ""
                                     },
                                     "prerequisites": [],
@@ -6951,14 +6967,14 @@
                                     "description_translations": {
                                         "en": "Write down the list of participants, aside the co-production team, who may be interested in observing the progress of the co-production project and have the opportunity to emit opinions and take part in some decision processes. ",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Annota l'elenco dei partecipanti, da affiancare al team di coproduzione, che potrebbero essere interessati ad osservare l'andamento del progetto di coproduzione e avere l'opportunit\u00e0 di esprimere opinioni e prendere parte ad alcuni processi decisionali. ",
                                         "lv": ""
                                     },
                                     "id": "task-create-a-contact-list-of-potential-network-participants",
                                     "name_translations": {
                                         "en": "Create a contact list of potential network participants",
                                         "es": "Crear una lista de contactos de posibles participantes de la red",
-                                        "it": "",
+                                        "it": "Crea un elenco di contatti di potenziali partecipanti alla rete",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -7003,14 +7019,14 @@
                                     "description_translations": {
                                         "en": "Create an effective engagement plan which allows you to reach to the types and numbers of stakeholders sufficient to ensure that the co-produced service is well targeted. \r\nAn engagement plan is usually composed of three parts: the identification of your project\u2019s stakeholders; the planning of effective means for interacting with each stakeholder, and protocols for accurately documenting your work for the sake of transparency, accountability and evaluation of the process.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Crea un piano di coinvolgimento efficace che consenta di raggiungere le tipologie e il numero di stakeholder sufficienti per garantire che il servizio coprodotto sia ben mirato.\nUn piano di coinvolgimento \u00e8 solitamente composto da tre parti: l'identificazione degli stakeholder del progetto; la pianificazione di mezzi efficaci per interagire con ogni stakeholder e protocolli per documentare accuratamente il vostro lavoro per motivi di trasparenza, responsabilit\u00e0 e valutazione del processo.",
                                         "lv": ""
                                     },
                                     "id": "task-prepare-an-engagement-plan",
                                     "name_translations": {
                                         "en": "Prepare an engagement plan",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Prepara un piano di coinvolgimento",
                                         "lv": ""
                                     },
                                     "prerequisites": [],
@@ -7022,14 +7038,14 @@
                                     "description_translations": {
                                         "en": "Clearly communicate the benefits of service co-production to your network of stakeholders and citizens.\r\nParticipants need to understand why their participation matters, what they can gain individually and as a group.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Comunica chiaramente i vantaggi della co-produzione di servizi alla tua rete di stakeholder e di cittadini.\nI partecipanti devono capire perch\u00e9 la loro partecipazione \u00e8 importante, cosa possono ottenere individualmente e come gruppo.",
                                         "lv": ""
                                     },
                                     "id": "task-communicate-benefit-for-stakeholders",
                                     "name_translations": {
                                         "en": "Communicate benefit for stakeholders",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Comunica i benefici agli stakeholder",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -7046,14 +7062,14 @@
                                     "description_translations": {
                                         "en": "Provide members of the public with the information they need to understand the project, the decision process, and also how public input can influence decisions, the refinement of public service descriptions and the way it is delivered. ",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Fornisci ai membri della societ\u00e0 civile le informazioni di cui hanno bisogno per comprendere il progetto, il processo decisionale e anche come il loro input pu\u00f2 influenzare le decisioni, la progettazione del servizio e il modo in cui viene erogato. ",
                                         "lv": ""
                                     },
                                     "id": "task-engage-citizens-in-the-co-refinement-process",
                                     "name_translations": {
                                         "en": "Engage citizens in the co-refinement process",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Coinvolgi i cittadini nel processo di co-raffinamento",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -7076,14 +7092,14 @@
                     "description_translations": {
                         "en": "Apply refinements according to crowd-contributions and publish new version of service description.",
                         "es": "",
-                        "it": "",
+                        "it": "Applica i raffinamenti derivati dal contributo collettivo e pubblica la nuova versione della descrizione del servizio.",
                         "lv": ""
                     },
                     "id": "phase-refine",
                     "name_translations": {
                         "en": "Refine",
                         "es": "Refinar",
-                        "it": "",
+                        "it": "Raffinamento",
                         "lv": ""
                     },
                     "objectives": [
@@ -7091,13 +7107,15 @@
                             "description_translations": {
                                 "en": "You may use a changes template to trace how the refinements approved in report from Description Augmenter are applied",
                                 "es": "",
-                                "it": "",
+                                "it": "Puoi utilizzare un tracciamento delle modifiche per mantenere la storia dei cambiamenti applicati al documento attraverso il Description Augmenter",
                                 "lv": ""
                             },
                             "id": "objective-apply-refinements",
                             "name_translations": {
                                 "en": "Apply refinements",
-                                "es": "Aplicar mejoras"
+                                "es": "Aplicar mejoras",
+                                "it": "Applica i raffinamenti",
+                                "lv": ""
                             },
                             "prerequisites": [],
                             "problemprofiles": [],
@@ -7105,12 +7123,16 @@
                                 {
                                     "description_translations": {
                                         "en": "You may clone a given Servicepedia enhancements reports and upload with the support of GoogleDrive INTERLINKER (through initiate Procedure) so that you can use such document as check list to indicate what accepted refinement suggestions have been processed.",
-                                        "es": ""
+                                        "es": "",
+                                        "it": "Puoi effettuare una copia del report riassuntivo delle modifiche e caricarlo nello spazio di lavoro con il supporto dell'INTERLINKER GoogleDrive (utilizzabile dal bottone \"Inizia Procedura\"). Puoi usare questo documento come lista di controllo per indicare quali suggerimenti di raffinamento sono stati accettati e processati.",
+                                        "lv": ""
                                     },
                                     "id": "task-generate-a-checklist-for-improvements",
                                     "name_translations": {
                                         "en": "Generate a checklist for improvements",
-                                        "es": ""
+                                        "es": "",
+                                        "it": "Genera una lista di controllo dei miglioramenti",
+                                        "lv": ""
                                     },
                                     "prerequisites": [],
                                     "problemprofiles": [
@@ -7120,12 +7142,16 @@
                                 {
                                     "description_translations": {
                                         "en": "Link to content management system (CMS) where changes should be applied to the public service description",
-                                        "es": ""
+                                        "es": "",
+                                        "it": "Crea collegamenti nel Content Management System (CMS) nel punto dove dovrebbero essere applicati dei cambiamenti alla descrizione dei servizi pubblici",
+                                        "lv": ""
                                     },
                                     "id": "task-link-to-content-management-system-cms-where-changes-should-be-applied",
                                     "name_translations": {
                                         "en": "Link to content management system (CMS) where changes should be applied",
-                                        "es": ""
+                                        "es": "",
+                                        "it": "Crea collegamenti nel Content Management System (CMS) nel punto dove dovrebbero essere applicati dei cambiamenti",
+                                        "lv": ""
                                     },
                                     "prerequisites": [
                                         {
@@ -7142,13 +7168,15 @@
                         {
                             "description_translations": {
                                 "en": "Using the External Resource Manager (through Initiate Procedure) include link to enhanced version of public service description after changes have been applied",
-                                "es": ""
+                                "es": "",
+                                "it": "Usa il Gestore di Risorse Esterne (attraverso il bottone \"Inizia Procedura\") per includere un collegamento alla versione raffinata della descrizione di servizio pubblico dopo che i cambiamenti sono stati applicati",
+                                "lv": ""
                             },
                             "id": "objective-publish-refined-version-of-public-service-description",
                             "name_translations": {
                                 "en": "Publish refined version of public service description",
                                 "es": "",
-                                "it": "",
+                                "it": "Pubblica la versione raffinata della descrizione di servizio pubblico",
                                 "lv": ""
                             },
                             "prerequisites": [
@@ -7163,14 +7191,14 @@
                                     "description_translations": {
                                         "en": "Leverage External Resource Manager to include reference to new public service description",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Utilizza il Gestore di Risorse Esterne per includere riferimenti alla nuova descrizione di servizio pubblico",
                                         "lv": ""
                                     },
                                     "id": "task-link-with-enhanced-version-of-public-service-description",
                                     "name_translations": {
                                         "en": "Link with enhanced version of public service description",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Crea un link alla versione migliorata della descrizione di servizio pubblico",
                                         "lv": ""
                                     },
                                     "prerequisites": [],
@@ -7179,12 +7207,16 @@
                                 {
                                     "description_translations": {
                                         "en": "Communicate the enhancements applied as result of co-refiners contributions and send update",
-                                        "es": ""
+                                        "es": "",
+                                        "it": "Comunica i miglioramenti applicati come risultato del contributo dei partecipanti e invia aggiornamenti",
+                                        "lv": ""
                                     },
                                     "id": "task-communicate-enhancements-to-co-refiners",
                                     "name_translations": {
                                         "en": "Communicate enhancements to co-refiners",
-                                        "es": ""
+                                        "es": "",
+                                        "it": "Comunica i raffinamenti ai partecipanti",
+                                        "lv": ""
                                     },
                                     "prerequisites": [
                                         {
@@ -7219,7 +7251,7 @@
             "description_translations": {
                 "en": "The INTERLINK project allows for the definition of purpose-specific co-production processes. In this case, this co-production process is designed to guide ideation, preparation, launch and exploitation of a Hackathon devised to address some societal challenges in cooperation between public administrations, citizenry and other PA\u2019s stakeholders, namely, SMEs, academia or non-profit organizations. It is composed of 4 main phases: a) ENGAGE \u2013 understanding, approaching and engaging the right stakeholders; b) DESIGN \u2013 follow the guidelines to discuss together, in a balanced and inclusive way, issues, beneficiaries, and priorities for the hackathon to be designed; c) RUN \u2013 browse the catalogue of INTERLINKERs to find reusable building blocks for the implementation of the hackathon and its launch; and d) EXPLOIT \u2013 realize the results of the hackathons by reaching agreements to bring the proposed service ideas and mock-ups into reality",
                 "es": "El proyecto INTERLINK permite definir procesos de coproducci\u00f3n con fines espec\u00edficos. En este caso, este proceso de coproducci\u00f3n est\u00e1 dise\u00f1ado para guiar la ideaci\u00f3n, la preparaci\u00f3n, el lanzamiento y la explotaci\u00f3n de un Hackathon concebido para abordar algunos retos de la sociedad en cooperaci\u00f3n entre las administraciones p\u00fablicas, la ciudadan\u00eda y otras partes interesadas de las AP, a saber, las PYME, el mundo acad\u00e9mico o las organizaciones sin \u00e1nimo de lucro. Se compone de 4 fases principales: a) INVOLUCRAR - comprender, acercarse e involucrar a las partes interesadas adecuadas; b) DISE\u00d1AR - seguir las directrices para debatir juntos, de forma equilibrada e inclusiva, los problemas, los beneficiarios y las prioridades para el hackathon que se va a dise\u00f1ar; c) EJECUTAR - navegar por el cat\u00e1logo de INTERLINKERs para encontrar bloques de construcci\u00f3n reutilizables para la implementaci\u00f3n del hackathon y su lanzamiento; y d) EXPLOTAR - realizar los resultados de los hackathons llegando a acuerdos para llevar a la realidad las ideas y maquetas de servicio propuestas",
-                "it": "",
+                "it": "Il progetto INTERLINK consente la definizione di processi di coproduzione specifici. In questo caso, questo processo di co-produzione \u00e8 realizzato per guidare l'ideazione, la preparazione, il lancio e la valorizazione di un Hackathon, con l'obiettivo di affrontare alcune sfide della societ\u00e0 grazie alla collaborazione tra le pubbliche amministrazioni, i cittadini e altri stakeholder, come ad esempio PMI, mondo accademico o organizzazioni non profit. Il processo e' composto da 4 fasi principali: a) COINVOLGIMENTO \u2013 strumenti e best practices per comprendere, avvicinare e coinvolgere gli stakeholder appropriati; b) PROGETTAZIONE \u2013 linee guida per discutere insieme, in modo equilibrato e inclusivo, temi, beneficiari e priorit\u00e0 per la progettazione dell'hackathon; c) ESECUZIONE \u2013 sfoglia il catalogo degli INTERLINKER per trovare i building block riutilizzabili per l'implementazione dell'hackathon e il suo lancio; e d) VALORIZZAZIONE \u2013 realizza i risultati degli hackathon realizzando accordi per trasformare in realt\u00e0 le idee di servizio proposte",
                 "lv": ""
             },
             "environments": [
@@ -7238,7 +7270,7 @@
             "name_translations": {
                 "en": "Hackathon creation process",
                 "es": "Esquema para la creaci\u00f3n de un Hackathon",
-                "it": "",
+                "it": "Processo di creazione dell'hackathon",
                 "lv": ""
             },
             "phases": [
@@ -7253,7 +7285,7 @@
                     "name_translations": {
                         "en": "Design",
                         "es": "",
-                        "it": "",
+                        "it": "Design",
                         "lv": ""
                     },
                     "objectives": [
@@ -7268,7 +7300,7 @@
                             "name_translations": {
                                 "en": "Focus the problem collaboratively",
                                 "es": "",
-                                "it": "",
+                                "it": "Focalizza il problema in modo collaborativo",
                                 "lv": ""
                             },
                             "prerequisites": [],
@@ -7290,7 +7322,7 @@
                                     "name_translations": {
                                         "en": "Collaboratively Hackathon problem refinement",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Raffinamento collaborativo dell'Hackathon",
                                         "lv": ""
                                     },
                                     "prerequisites": [],
@@ -7307,7 +7339,7 @@
                                     "name_translations": {
                                         "en": "Ideas collection for Hackathon exploration and refinement",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Raccolta di idee per l'esplorazione e il perfezionamento dell'Hackathon",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -7329,7 +7361,7 @@
                                     "name_translations": {
                                         "en": "Sketch an initial idea of the Hackathon: theme, plan, submission & evaluation process",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Abbozza un'idea iniziale dell'Hackathon: il tema, il piano, il processo di presentazione e di valutazione",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -7355,7 +7387,7 @@
                             "name_translations": {
                                 "en": "Ideation",
                                 "es": "",
-                                "it": "",
+                                "it": "Ideazione",
                                 "lv": ""
                             },
                             "prerequisites": [
@@ -7378,14 +7410,14 @@
                                     "description_translations": {
                                         "en": "Go back to your network of stakeholders to validate the service idea by means of a focus group or a poll.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Consulta nuovamente la rete di stakeholder per validare l'idea di servizio attraverso un focus group o un sondaggio.",
                                         "lv": ""
                                     },
                                     "id": "task-collaboratively-agree-on-hackathon-design",
                                     "name_translations": {
                                         "en": "Collaboratively agree on Hackathon design",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Concorda in modo collaborativo il disegno dell'Hackathon",
                                         "lv": ""
                                     },
                                     "prerequisites": [],
@@ -7402,7 +7434,7 @@
                                     "name_translations": {
                                         "en": "Define requirements and constraints for the Hackathon: plan, submission & evaluation process",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Definisci requisiti e vincoli per l'Hackathon: piano, processo di sottomissione e valutazione",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -7428,7 +7460,7 @@
                             "name_translations": {
                                 "en": "Service specification",
                                 "es": "",
-                                "it": "",
+                                "it": "Specifica del servizio",
                                 "lv": ""
                             },
                             "prerequisites": [
@@ -7448,14 +7480,14 @@
                                     "description_translations": {
                                         "en": "Consult good practices for interface design and public services development. Reflect, in your specific use case, on how to make sure the services are provided in a multi-channel manner, maximizing the exploitation by potentially any group of users or by the agents acting on their behalf, and providing clear statements regarding the accessibility limits in the current implementation.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Consulta le buone pratiche per la progettazione di interfacce e lo sviluppo di servizi pubblici. Rifletti, nel tuo caso d'uso specifico, su come assicurare che i servizi vengano erogati in modo multicanale, massimizzandone l'utilizzo potenzialmente da parte di qualsiasi gruppo di utenti o da parte degli attori che agiscono per loro conto. Fornisci dichiarazioni chiare sulle limitazioni in termini di accessibilit\u00e0 dell'attuale implementazione.",
                                         "lv": ""
                                     },
                                     "id": "task-consider-eu-guidelines-for-public-service-developement",
                                     "name_translations": {
                                         "en": "Consider eu guidelines for public service developement",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Considera linee guida europee per lo sviluppo di servizi pubblici",
                                         "lv": ""
                                     },
                                     "prerequisites": [],
@@ -7465,14 +7497,14 @@
                                     "description_translations": {
                                         "en": "Proceed with the design of the user interface of the service through the preparation of initial sketches and mockups. Ensure the design of the user interface follows the guidelines on usability and accessibility. ",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Procedi con la progettazione dell'interfaccia utente del servizio attraverso la predisposizione di schizzi e mockup iniziali. Assicurati che il design dell'interfaccia utente segua le linee guida sull'usabilit\u00e0 e l'accessibilit\u00e0. ",
                                         "lv": ""
                                     },
                                     "id": "task-user-interface-design-for-hackathon-website-and-submission-system",
                                     "name_translations": {
                                         "en": "User interface design for Hackathon website and submission system",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Disegno dell'interfaccia utente per il sito web dell'Hackathon e il sistema di sottomissione",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -7487,14 +7519,14 @@
                                     "description_translations": {
                                         "en": "Prepare adequate content for the new/enhanced public service. Follow the guidelines on how to select and use the most appropriate language according to the users of the digital service and their skills.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Prepara contenuti adeguati per il nuovo servizio pubblico. Segui le linee guida su come selezionare e utilizzare il linguaggio pi\u00f9 appropriato in base agli utenti del servizio digitale e alle loro competenze.",
                                         "lv": ""
                                     },
                                     "id": "task-content-design-including-plan-rules-prize-announcement-and-so-on",
                                     "name_translations": {
                                         "en": "Content design, including plan, rules, prize announcement and so on",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Disegno del contenuto, inclusi piano, regole, annuncio di premi e cos\u00ec via",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -7513,14 +7545,14 @@
                             "description_translations": {
                                 "en": "Before further going deep into the development of your service. Stop and reflect about the design results obtained so far and about the actual feasibility and sustainability of what you are about to implement.",
                                 "es": "",
-                                "it": "",
+                                "it": "Prima di approfondire ulteriormente lo sviluppo del tuo servizio fermati e rifletti sui risultati progettuali finora ottenuti e sull'effettiva fattibilit\u00e0 e sostenibilit\u00e0 di ci\u00f2 che stai per realizzare.",
                                 "lv": ""
                             },
                             "id": "objective-sustainability",
                             "name_translations": {
                                 "en": "Sustainability",
                                 "es": "",
-                                "it": "",
+                                "it": "Sostenibilit\u00e0",
                                 "lv": ""
                             },
                             "prerequisites": [
@@ -7537,14 +7569,14 @@
                                     "description_translations": {
                                         "en": "Is the design output satisfactory?\r\nFollow the proposed checklist to understand if you are done with design or whether an iterative refinement cycle is recommended.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "L'output del progetto \u00e8 soddisfacente?\nSegui la checklist di controllo proposta per capire se hai terminato la progettazione o se \u00e8 consigliabile un ciclo di perfezionamento iterativo.",
                                         "lv": ""
                                     },
                                     "id": "task-evaluation-of-codesign",
                                     "name_translations": {
                                         "en": "Evaluation of codesign",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Valutazione del design collaborativo",
                                         "lv": ""
                                     },
                                     "prerequisites": [],
@@ -7554,14 +7586,14 @@
                                     "description_translations": {
                                         "en": "How much funding is needed? Where does the money come from? What are the sources of funding / support necessary to keep it running after implementation?\r\nFollow the proposed checklist for an intermediate evaluation of financial sustainability.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Quanti finanziamenti sono necessari? Da dove proviene il denaro? Quali sono le fonti di finanziamento/sostegno necessarie per mantenere il servizio operativo dopo l'implementazione?\nSegui la checklist proposta per una valutazione intermedia della sostenibilit\u00e0 finanziaria.",
                                         "lv": ""
                                     },
                                     "id": "task-refine-the-preliminary-business-model",
                                     "name_translations": {
                                         "en": "Refine the preliminary business model",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Raffina il modello di business preliminare",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -7576,14 +7608,14 @@
                                     "description_translations": {
                                         "en": "Are all technical skills and resources available to proceed with development? \r\nFollow the proposed checklist for an intermediate evaluation of technical sustainabiity.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Sono disponibili tutte le competenze e le risorse tecniche per procedere con lo sviluppo?\nSegui la checklist proposta per una valutazione intermedia della sostenibilit\u00e0 tecnica.",
                                         "lv": ""
                                     },
                                     "id": "task-feasibility-analysis",
                                     "name_translations": {
                                         "en": "Feasibility analysis",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Analisi di fattibilit\u00e0",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -7637,7 +7669,7 @@
                     "name_translations": {
                         "en": "Run",
                         "es": "",
-                        "it": "",
+                        "it": "Esecuzione",
                         "lv": ""
                     },
                     "objectives": [
@@ -7645,14 +7677,14 @@
                             "description_translations": {
                                 "en": "Service implementation is not possible if an environment for its depoyment and maintenance is not thought in advance. Independently on whether your envisioned co-produced service will be a piece of software or a bundle of digital resources, identify, select and make ready the development and deployment environments for your solution. Important to clearly specify and test the technical constraints within which the delivered service will be hosted.",
                                 "es": "",
-                                "it": "",
+                                "it": "L'implementazione del servizio non \u00e8 possibile se non si considera in anticipo un ambiente per il suo rilascio e la sua manutenzione. Indipendentemente dal fatto che il servizio coprodotto previsto sia un software o un insieme di risorse digitali, identifica, seleziona e prepara gli ambienti di sviluppo e di distribuzione per la tua soluzione. E' importante specificare e testare chiaramente i vincoli tecnici entro i quali sar\u00e0 ospitato il servizio erogato.",
                                 "lv": ""
                             },
                             "id": "objective-launch-hackathon-website",
                             "name_translations": {
                                 "en": "Launch Hackathon website",
                                 "es": "",
-                                "it": "",
+                                "it": "Lancia il sito web per l'hackathon",
                                 "lv": ""
                             },
                             "prerequisites": [],
@@ -7671,7 +7703,7 @@
                                     "name_translations": {
                                         "en": "Technical implementation and deployment",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Implementazione tecnica e messa in esercizio",
                                         "lv": ""
                                     },
                                     "prerequisites": [],
@@ -7698,7 +7730,7 @@
                             "name_translations": {
                                 "en": "Service implementation",
                                 "es": "",
-                                "it": "",
+                                "it": "Implementazione del servizio",
                                 "lv": ""
                             },
                             "prerequisites": [
@@ -7717,14 +7749,14 @@
                                     "description_translations": {
                                         "en": "Organize activities among those candidate to participate in the Hackathon, based on previously undertaken stakeholder analysis.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Organizza le attivit\u00e0 con i candidati che partecipano all'hackathon in base ai risultati dell'analisi degli stakeholder effettuata in precedenza.",
                                         "lv": ""
                                     },
                                     "id": "task-launch-engagement-campaign",
                                     "name_translations": {
                                         "en": "Launch engagement campaign",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Lancia campagne di coinvolgimento",
                                         "lv": ""
                                     },
                                     "prerequisites": [],
@@ -7742,14 +7774,14 @@
                                     "description_translations": {
                                         "en": "Allow for submission of ideas by teams willing to take part in the hackathon.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Consenti la sottomissione di idee da parte dei team che intendono prendere parte all'hackathon.",
                                         "lv": ""
                                     },
                                     "id": "task-open-submissions",
                                     "name_translations": {
                                         "en": "Open submissions",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Apri le sottomissioni",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -7766,14 +7798,14 @@
                                     "description_translations": {
                                         "en": "Monitor how the submissions are going before the deadline for submissions reaches. React organizaing further activities if needed.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Monitora l'andamento delle sottomissioni prima della scadenza stabilita. Organizza ulteriori attivit\u00e0 se necessario.",
                                         "lv": ""
                                     },
                                     "id": "task-monitor-submissions",
                                     "name_translations": {
                                         "en": "Monitor submissions",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Monitora le sottomissioni",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -7805,7 +7837,7 @@
                             "name_translations": {
                                 "en": "Hackathon celebration",
                                 "es": "",
-                                "it": "",
+                                "it": "Realizzazione dell'hackathon",
                                 "lv": ""
                             },
                             "prerequisites": [
@@ -7830,7 +7862,7 @@
                                     "name_translations": {
                                         "en": "Coordinate the actors involved in the codelivery of the Hackathon (organizers, evaluators, participants)",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Coordina gli attori coinvolti nella co-esecuzione dell'hackathon (organizzatori, valutatori, partecipanti)",
                                         "lv": ""
                                     },
                                     "prerequisites": [],
@@ -7847,7 +7879,7 @@
                                     "name_translations": {
                                         "en": "Guarantee transparent communication with participants in the Hackathon",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Garantisci comunicazioni trasparenti con i partecipanti dell'hackathon",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -7862,14 +7894,14 @@
                                     "description_translations": {
                                         "en": "Based on the criteria established at DESIGN phase, evaluators assess the projects submitted, produce ranking and organizers announce winners.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "In base ai criteri stabiliti durante la fase di DESIGN, i valutatori valutano i progetti sottomessi, producono una classifica e gli organizzatori annunciano i vincitori.",
                                         "lv": ""
                                     },
                                     "id": "task-winner-selection-and-announcement",
                                     "name_translations": {
                                         "en": "Winner selection and announcement",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Selezione dei vincitori e annuncio",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -7894,14 +7926,14 @@
                     "description_translations": {
                         "en": "Define the business models to ensure sustainability of the co-produced service. Create business plans and exploitation agreements that will foster the adoption of your co-produced service by third party PAs, companies and stakeholders. Continous maintenance and monotoring is needed for responsive, accesible, widely adopted services as INTERLINK ambitions.",
                         "es": "",
-                        "it": "",
+                        "it": "Definisci i modelli di business per garantire la sostenibilit\u00e0 del servizio coprodotto. Crea piani aziendali e accordi per la valorizzazione e l'utilizzo del servizio che ne favoriscano l'adozione da parte di PA, aziende e terze parti. La manutenzione e il monitoraggio continui sono cruciali per garantire servizi reattivi e accessibili.",
                         "lv": ""
                     },
                     "id": "phase-exploit",
                     "name_translations": {
                         "en": "Exploit",
                         "es": "Explotar",
-                        "it": "",
+                        "it": "Sfruttamento",
                         "lv": ""
                     },
                     "objectives": [
@@ -7909,14 +7941,14 @@
                             "description_translations": {
                                 "en": "Optinally delegate service deployment from own on premise to Cloud-based to external hosting provider infrastructure. Agree on contract, costs, responsabilities and benefits for third party take over of service delivery ",
                                 "es": "",
-                                "it": "",
+                                "it": "Eventualmente delega la messa in esercizio del servizio passando da soluzioni basate su risorse interne a soluzioni basate su infrastrutture Cloud di fornitori esterni. Concorda contratti, costi, responsabilit\u00e0 e benefici per le terze parti coinvolte nella messa in esercizio. ",
                                 "lv": ""
                             },
                             "id": "objective-post-hackathon-exploitation",
                             "name_translations": {
                                 "en": "Post-Hackathon exploitation",
                                 "es": "Explotaci\u00f3n tras Hackathon",
-                                "it": "",
+                                "it": "Sfruttamento post-Hackathon",
                                 "lv": ""
                             },
                             "prerequisites": [],
@@ -7926,14 +7958,14 @@
                                     "description_translations": {
                                         "en": "Discuss between organizers and winners to study collaboration agreements, aid winning teams adopting sustainability measures to protect and further develop their solutions. An exploitation agreement must be produced and signed by the involved parties. ",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Organizza discussioni collaborative fra organizzatori e vincitori per definire accordi di collaborazione, aiutare i team vincitori nell'adottare misure per proteggere e sviluppare ulteriormente le loro soluzioni. Un accordo di sfruttamento deve essere creato e firmato dalle parti coinvolte. ",
                                         "lv": ""
                                     },
                                     "id": "task-agreement-for-winners-solutions-exploitation",
                                     "name_translations": {
                                         "en": "Agreement for winners' solutions' exploitation",
                                         "es": "Acuerdo para explotaci\u00f3n de soluciones ganadoras",
-                                        "it": "",
+                                        "it": "Accordi per lo sfruttamento delle soluzioni vincitrici",
                                         "lv": ""
                                     },
                                     "prerequisites": [],
@@ -7945,14 +7977,14 @@
                                     "description_translations": {
                                         "en": "Publish in social media and organizers' website details about the projects winning",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Pubblica sui social media e sul sito web degli organizzatori i dettagli di progetti vincenti",
                                         "lv": ""
                                     },
                                     "id": "task-publish-results",
                                     "name_translations": {
                                         "en": "Publish results",
                                         "es": "Publicar resultados",
-                                        "it": "",
+                                        "it": "Pubblica i risultati",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -7969,14 +8001,14 @@
                                     "description_translations": {
                                         "en": "Report including insights, lessons learnt which are useful for the organizer. They represent the takeins thanks to the celebration of the hackathon, i.e. how the solutions devised could be leveraged by the organnizer for their own business or purpose. ",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Prepara un report che includa approfondimenti e lezioni apprese utili agli organizzatori. Questi informazioni valorizzano quanto \u00e8 stato appreso dalla realizzazione dell'hackathon, come ad esempio i modi in cui le soluzioni concepite durante l'hackthon possono essere sfruttate dagli organizzatori per i loro scopi o affari. ",
                                         "lv": ""
                                     },
                                     "id": "task-sustainability-report",
                                     "name_translations": {
                                         "en": "Sustainability report",
                                         "es": "Informe de sostenibilidad",
-                                        "it": "",
+                                        "it": "Report su sostenibilit\u00e0",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -8010,7 +8042,7 @@
                     "name_translations": {
                         "en": "Engage",
                         "es": "Comprometer",
-                        "it": "",
+                        "it": "Coinvolgimento",
                         "lv": ""
                     },
                     "objectives": [
@@ -8018,14 +8050,14 @@
                             "description_translations": {
                                 "en": "The identification of key actors  is the first step to start your  process of co-production. According to the type of project, the goals and the level of citizen involvement, different questions are to be answered.\r\nWhat different  types of stakeholders enter into play in the initiative to be co-produced? What are their motivations and skills to participate in the project? What is their position in the network? How to contact them?\r\nFollow the specific tasks to get the complete picture.",
                                 "es": "",
-                                "it": "",
+                                "it": "L'identificazione degli attori rilevanti \u00e8 il primo passo per avviare il processo di co-produzione. A seconda del tipo di progetto, degli obiettivi e del livello di coinvolgimento dei cittadini, \u00e8 necessario rispondere a diverse domande.\nQuali diversi tipi di portatori di interesse e stakeholder entrano in gioco nell'iniziativa da co-produrre? Quali sono le loro motivazioni e capacit\u00e0 per partecipare al progetto? Qual \u00e8 la loro posizione nella rete? Come contattarli?\nSegui le attivit\u00e0 specifiche per ottenere il quadro completo.",
                                 "lv": ""
                             },
                             "id": "objective-identify-stakeholders",
                             "name_translations": {
                                 "en": "Identify stakeholders",
                                 "es": "Identificar stakeholders",
-                                "it": "",
+                                "it": "Identifica gli stakeholder",
                                 "lv": ""
                             },
                             "prerequisites": [],
@@ -8035,14 +8067,14 @@
                                     "description_translations": {
                                         "en": "Usually different actors are engaged in co-production to create a new service or customizing an already existing service: public bodies, private companies, SMEs, citizens. Each actor brings specific needs and competences in relation to the service and has different motivations to participate in a project. Learn about the different types of stakeholders and which of them can add value to your co-production process",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Solitamente diversi attori sono impegnati in processi di co-produzione per creare un nuovo servizio o per personalizzare un servizio gi\u00e0 esistente: enti pubblici, aziende private, PMI, cittadini. Ogni attore porta bisogni e competenze specifiche in relazione al servizio e ha motivazioni diverse per partecipare a un progetto. Scopri i diversi tipi di stakeholder e quali di essi possono aggiungere valore al tuo processo di co-produzione",
                                         "lv": ""
                                     },
                                     "id": "task-understand-the-different-types-of-stakeholders",
                                     "name_translations": {
                                         "en": "Understand the different types of stakeholders",
                                         "es": "Entender los diferentes tipos de stakeholders y sus motivaciones",
-                                        "it": "",
+                                        "it": "Comprendi le diverse tipologie di stakeholders",
                                         "lv": ""
                                     },
                                     "prerequisites": [],
@@ -8054,14 +8086,14 @@
                                     "description_translations": {
                                         "en": "Mapping the stakeholders is crucial to have a clear view of which roles stakeholders can play in different stages of innovation, what their level of commitment and strategic importance could be. Analyse the complexity of building relationships, realizing which connectors can be crucial for innovation development in your project.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "La mappatura delle parti interessate (stakeholder) \u00e8 fondamentale per avere una visione chiara dei ruoli che gli stakeholder possono svolgere nelle diverse fasi dell'innovazione, quale potrebbe essere il loro livello di impegno e importanza strategica. Analizza la complessit\u00e0 della costruzione di relazioni, identificando quali connettori possono essere cruciali per lo sviluppo dell'innovazione nel tuo progetto.",
                                         "lv": ""
                                     },
                                     "id": "task-map-stakeholders-analyse-motivation-skills-expectations",
                                     "name_translations": {
                                         "en": "Map stakeholders, analyse motivation, skills, expectations",
                                         "es": "Mapear partes interesadas analizar motivaci\u00f3n habilidades expectativas",
-                                        "it": "",
+                                        "it": "Mappa le parti interessate, analizza la loro motivazione, competenze e aspettative",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -8078,14 +8110,14 @@
                                     "description_translations": {
                                         "en": "Is your network balanced and inclusive?\r\nCreate a Stakeholder Map, where the ecosystem of stakeholders involved in a customer experience is visualized.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "La tua rete \u00e8 equilibrata e inclusiva?\nCrea una mappa degli stakeholder, in cui viene visualizzato l'ecosistema delle parti interessate.",
                                         "lv": ""
                                     },
                                     "id": "task-visually-map-the-network-of-stakeholders",
                                     "name_translations": {
                                         "en": "Visually map the network of stakeholders",
                                         "es": "Mapear visualmente la red de partes interesadas",
-                                        "it": "",
+                                        "it": "Mappa graficamente la rete degli stakeholder",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -8102,14 +8134,14 @@
                                     "description_translations": {
                                         "en": "Write down the list of participants, aside the co-production team, who may be interested in observing the progress of the co-production project and have the opportunity to emit opinions and take part in some decision processes. ",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Annota l'elenco dei partecipanti, oltre al team di co-produzione, che potrebbero essere interessati ad osservare l'andamento del progetto di co-produzione e ad avere l'opportunit\u00e0 di esprimere opinioni e prendere parte ad alcuni processi decisionali. ",
                                         "lv": ""
                                     },
                                     "id": "task-create-a-contact-list-of-potential-network-participants",
                                     "name_translations": {
                                         "en": "Create a contact list of potential network participants",
                                         "es": "Crear una lista de contactos de posibles participantes de la red",
-                                        "it": "",
+                                        "it": "Crea un elenco di contatti di potenziali partecipanti alla rete",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -8135,7 +8167,7 @@
                             "name_translations": {
                                 "en": "Engage stakeholders",
                                 "es": "",
-                                "it": "",
+                                "it": "Coinvolgi gli stakeholder",
                                 "lv": ""
                             },
                             "prerequisites": [
@@ -8154,14 +8186,14 @@
                                     "description_translations": {
                                         "en": "Create an effective engagement plan which allows you to reach to the types and numbers of stakeholders sufficient to ensure that the co-produced service is well targeted. \r\nAn engagement plan is usually composed of three parts: the identification of your project\u2019s stakeholders; the planning of effective means for interacting with each stakeholder, and protocols for accurately documenting your work for the sake of transparency, accountability and evaluation of the process.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Crea un piano di coinvolgimento efficace che consenta di raggiungere le tipologie e il numero di stakeholder sufficienti per garantire che il servizio coprodotto sia ben mirato.\nUn piano di coinvolgimento \u00e8 solitamente composto da tre parti: l'identificazione degli stakeholder del progetto; la pianificazione di mezzi efficaci per interagire con ogni stakeholder e protocolli per documentare accuratamente il lavoro per motivi di trasparenza, responsabilit\u00e0 e valutazione del processo.",
                                         "lv": ""
                                     },
                                     "id": "task-prepare-an-engagement-plan",
                                     "name_translations": {
                                         "en": "Prepare an engagement plan",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Prepara un piano di coinvolgimento",
                                         "lv": ""
                                     },
                                     "prerequisites": [],
@@ -8173,14 +8205,14 @@
                                     "description_translations": {
                                         "en": "Ensure that relevant stakeholders are aware of the initiative in order to ensure their participation. Awareness-raising is a process that seeks to inform and educate people about a topic or issue with the intention of influencing their attitudes, behaviours and beliefs towards the achievement of a defined purpose or goal.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Accertati che le parti interessate siano a conoscenza dell'iniziativa al fine di garantire la loro partecipazione. La sensibilizzazione \u00e8 un processo che cerca di informare ed educare le persone su un argomento o un problema con l'intenzione di influenzare i loro atteggiamenti, comportamenti e convinzioni verso il raggiungimento di uno scopo o obiettivo definito.",
                                         "lv": ""
                                     },
                                     "id": "task-create-awareness-and-communication",
                                     "name_translations": {
                                         "en": "Create awareness and communication",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Crea consapevolezza e comunicazione",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -8198,14 +8230,14 @@
                                     "description_translations": {
                                         "en": "Clearly communicate the benefits of service co-production to your network of stakeholders and citizens.\r\nParticipants need to understand why their participation matters, what they can gain individually and as a group.",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Comunica chiaramente i vantaggi della co-produzione di servizi alla tua rete di stakeholder e di cittadini.\nI partecipanti devono capire perch\u00e9 la loro partecipazione \u00e8 importante, cosa possono ottenere individualmente e come gruppo.",
                                         "lv": ""
                                     },
                                     "id": "task-communicate-benefit-for-stakeholders",
                                     "name_translations": {
                                         "en": "Communicate benefit for stakeholders",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Comunica i benefici agli stakeholder",
                                         "lv": ""
                                     },
                                     "prerequisites": [
@@ -8222,14 +8254,14 @@
                                     "description_translations": {
                                         "en": "Provide members of the public with the information they need to understand the project, the decision process, and also how public input can influence decisions, the design of the service and the way it is delivered. ",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Fornisci ai membri della societ\u00e0 civile le informazioni di cui hanno bisogno per comprendere il progetto, il processo decisionale e anche come il loro input pu\u00f2 influenzare le decisioni, la progettazione del servizio e il modo in cui viene erogato. ",
                                         "lv": ""
                                     },
                                     "id": "task-engage-citizens-in-the-co-production-process",
                                     "name_translations": {
                                         "en": "Engage citizens in the co-production process",
                                         "es": "",
-                                        "it": "",
+                                        "it": "Coinvolgi i cittadini nel processo di coproduzione",
                                         "lv": ""
                                     },
                                     "prerequisites": [
