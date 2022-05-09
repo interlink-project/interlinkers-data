@@ -7,7 +7,7 @@
     },
     "description_translations": {
         "en": "<p>This is a model of a questionnaire aimed to collect demographics and activity satisfaction scores from participants to project events and activities.</p>",
-        "es": "",
+        "es": "<p>Este es un modelo de cuestionario destinado a recoger datos demogr\u00e1ficos y puntuaciones de satisfacci\u00f3n de los participantes en los eventos y actividades del proyecto.</p>",
         "it": "<p>Questo \u00e8 un modello di questionario volto a raccogliere dati demografici e punteggi di soddisfazione delle attivit\u00e0 dai partecipanti agli eventi e alle attivit\u00e0 del progetto.</p>",
         "lv": "<p>\u0160is ir aptaujas modelis projekta aktivit\u0101t\u0113s iesaist\u012bto dal\u012bbnieku demogr\u0101fisko datu iev\u0101k\u0161anai un apmierin\u0101t\u012bbas m\u0113r\u012b\u0161anai.</p>"
     },
@@ -36,7 +36,7 @@
     "licence": "public_domain",
     "name_translations": {
         "en": "Demographic and activity satisfaction questionnaire",
-        "es": "",
+        "es": "Cuestionario demogr\u00e1fico y de satisfacci\u00f3n de la actividad",
         "it": "Questionario demografico e sulla soddisfazione delle attivit\u00e0",
         "lv": "Demogr\u0101fisko datu un apmierin\u0101t\u012bbas aptauja"
     },

@@ -7,7 +7,7 @@
     },
     "description_translations": {
         "en": "<p>Template for preparing a use scenarios. </p>",
-        "es": "",
+        "es": "<p>Plantilla para preparar unos escenarios de uso. </p>",
         "it": "<p>Modello per la preparazione di scenari d'uso. </p>",
         "lv": "<p>Lieto\u0161anas scen\u0101rija sagatavo\u0161anas veidlapa.</p>"
     },
@@ -35,7 +35,7 @@
     "licence": "permissive",
     "name_translations": {
         "en": "Template for use case scenarios",
-        "es": "",
+        "es": "Plantilla de casos de uso",
         "it": "Modello schematico per gli scenari d'uso",
         "lv": "Lieto\u0161anas scen\u0101rija gad\u012bjuma (use case) veidlapa"
     },

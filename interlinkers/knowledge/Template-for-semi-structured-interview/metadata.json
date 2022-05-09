@@ -7,7 +7,7 @@
     },
     "description_translations": {
         "en": "<p>Instructions and examples on how to conduct structured interviews for a co-production project.</p>",
-        "es": "",
+        "es": "<p>Instrucciones y ejemplos sobre c\u00f3mo realizar entrevistas estructuradas para un proyecto de coproducci\u00f3n.</p>",
         "it": "<p>Istruzioni ed esempi su come condurre interviste strutturate in un progetto di coproduzione.</p>",
         "lv": "<p>Koprades projektam nepiecie\u0161amo struktur\u0113to interviju veik\u0161anas instrukcija ar paraugiem.</p>"
     },
@@ -36,7 +36,7 @@
     "licence": "public_domain",
     "name_translations": {
         "en": "Template for semi structured interview",
-        "es": "",
+        "es": "Plantilla de entrevista semiestructurada",
         "it": "Modello per interviste semi strutturate",
         "lv": "Da\u013c\u0113ji struktur\u0113t\u0101s intervijas veidlapa"
     },

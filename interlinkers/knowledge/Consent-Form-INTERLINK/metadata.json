@@ -7,7 +7,7 @@
     },
     "description_translations": {
         "en": "<p>Form to collect consent from participants engaged in INTERLINK research activities about the use of their personal data</p>",
-        "es": "",
+        "es": "<p>Formulario para recoger el consentimiento de los participantes en las actividades de investigaci\u00f3n de INTERLINK sobre el uso de sus datos personales</p>",
         "it": "<p>Modulo per raccogliere il consenso dei partecipanti impegnati in attivit\u00e0 di ricerca INTERLINK sull'utilizzo dei propri dati personali</p>",
         "lv": "<p> INTERLINK p\u0113tniecisko aktivit\u0101\u0161u dal\u012bbnieku person\u012bgo datu izmanto\u0161anas piekri\u0161anas forma</p>"
     },
@@ -36,7 +36,7 @@
     "licence": "public_domain",
     "name_translations": {
         "en": "Consent Form for INTERLINK project",
-        "es": "",
+        "es": "Formulario de consentimiento para el proyecto INTERLINK",
         "it": "Modulo di consenso per il progetto INTERLINK",
         "lv": "INTERLINK projekta piekri\u0161anas forma"
     },

@@ -7,7 +7,7 @@
     },
     "description_translations": {
         "en": "<p>Example of project description that synthetically summarizes the goals and major aspects of a co-production initiative.  </p>",
-        "es": "",
+        "es": "<p>Ejemplo de descripci\u00f3n de proyecto que resume sint\u00e9ticamente los objetivos y aspectos principales de una iniciativa de coproducci\u00f3n.</p>",
         "it": "<p>Esempio di descrizione del progetto che riassume sinteticamente gli obiettivi e gli aspetti principali di un'iniziativa di coproduzione. </p>",
         "lv": "<p>Projekta raksturojuma piem\u0113rs, kas sint\u0113tiski apkopo koprades iniciat\u012bvas m\u0113r\u0137us un galvenos raksturlielumus.</p>"
     },
@@ -36,7 +36,7 @@
     "licence": "public_domain",
     "name_translations": {
         "en": "Project description example",
-        "es": "",
+        "es": "Ejemplo de descripci\u00f3n del proyecto",
         "it": "Esempio di descrizione del progetto",
         "lv": "Projekta raksturojuma piem\u0113rs"
     },

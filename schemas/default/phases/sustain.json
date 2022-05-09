@@ -124,7 +124,7 @@
                     "name_translations": {
                         "en": "Task distribution for maintenance, contracts regulation, data management archiving",
                         "es": "Distribuci\u00f3n de tareas para el mantenimiento, regulaci\u00f3n de contratos, archivo de la gesti\u00f3n de datos",
-                        "it": "Distribuzione degli incarichi per la manutenzione, il regolamenti dei contratti, l'archiviazione della gestione dei dati",
+                        "it": "Distribuzione degli incarichi per la manutenzione, la regolamentazione dei contratti, la gestione dell'archiviazione dei dati",
                         "lv": ""
                     },
                     "description_translations": {
@@ -156,7 +156,7 @@
             "description_translations": {
                 "en": "Monitor that the service is fulfilling its originally set objectives by tracking a set of KPIs inferred from usage or polling customers.  ",
                 "es": "Supervisar que el servicio est\u00e1 cumpliendo los objetivos fijados originalmente mediante el seguimiento de un conjunto de KPIs inferidos del uso o el sondeo de los clientes.  ",
-                "it": "Monitora che il servizio soddisfi gli obiettivi originariamente definiti, monitorando una serie di KPI ( Key Performance Indicator) dedotti dall'utilizzo del servizio o effettuando sondaggi ai clienti.  ",
+                "it": "Monitora che il servizio soddisfi gli obiettivi originariamente definiti, monitorando una serie di indicatori chiave di performance (KPI - Key Performance Indicator) dedotti dall'utilizzo del servizio o effettuando sondaggi con gli utilizzatori.  ",
                 "lv": ""
             },
             "problemprofiles": [

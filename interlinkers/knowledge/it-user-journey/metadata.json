@@ -7,7 +7,7 @@
     },
     "description_translations": {
         "en": "<p>Template for preparing a user journey. </p>",
-        "es": "",
+        "es": "<p>Plantilla para preparar un viaje de usuario. </p>",
         "it": "<p>Modello per la preparazione di un percorso utente. </p>",
         "lv": "<p>Lietot\u0101ja ce\u013ca (user journey) sagatavo\u0161anas veidlapa.</p>"
     },
@@ -35,7 +35,7 @@
     "licence": "permissive",
     "name_translations": {
         "en": "Template for user journey",
-        "es": "",
+        "es": "Plantilla del recorrido del usuario",
         "it": "Modello schematico per il percorso dell'utente",
         "lv": "Lietot\u0101ja ce\u013ca (user journey) veidlapa"
     },

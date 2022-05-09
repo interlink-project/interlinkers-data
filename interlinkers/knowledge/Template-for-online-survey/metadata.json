@@ -7,7 +7,7 @@
     },
     "description_translations": {
         "en": "<p>Template to collect data through online survey for assessing Media and Technology Usage and Attitudes</p>",
-        "es": "",
+        "es": "<p>Plantilla para recoger datos a trav\u00e9s de una encuesta en l\u00ednea para evaluar el uso de los medios de comunicaci\u00f3n y la tecnolog\u00eda y las actitudes</p>",
         "it": "<p>Modello per raccogliere dati tramite sondaggi online per valutare l'utilizzo e attitudine verso media e tecnologia</p>",
         "lv": "<p> Veidlapa tie\u0161saistes aptaujas par mediju un tehnolo\u0123iju lieto\u0161anas un attieksmes nov\u0113rt\u0113jumu datu sav\u0101k\u0161anai</p>"
     },
@@ -36,7 +36,7 @@
     "licence": "public_domain",
     "name_translations": {
         "en": "template for online survey guidelines",
-        "es": "",
+        "es": "Plantilla para las directrices de la encuesta en l\u00ednea",
         "it": "modello di linee guida per sondaggi online",
         "lv": "veidlapa tie\u0161saistes aptauju vadl\u012bnij\u0101m"
     },

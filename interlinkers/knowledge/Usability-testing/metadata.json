@@ -7,7 +7,7 @@
     },
     "description_translations": {
         "en": "<p>Guidelines and tips on how to perform a usability testing</p>",
-        "es": "",
+        "es": "<p>Directrices y consejos sobre c\u00f3mo realizar un test de usabilidad</p>",
         "it": "<p>Linee guida e suggerimenti su come eseguire un test di usabilit\u00e0</p>",
         "lv": "<p>Lietojam\u012bbas test\u0113\u0161anas veik\u0161anas vadl\u012bnijas un ieteikumi</p>"
     },
@@ -36,7 +36,7 @@
     "licence": "public_domain",
     "name_translations": {
         "en": "Usability testing guidelines",
-        "es": "",
+        "es": "Directrices para las pruebas de usabilidad",
         "it": "Linee guida per i test di usabilit\u00e0",
         "lv": "Lietojam\u012bbas test\u0113\u0161anas vadl\u012bnijas"
     },

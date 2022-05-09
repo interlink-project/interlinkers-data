@@ -7,7 +7,7 @@
     },
     "description_translations": {
         "en": "<p>Information on the INTERLINK project to be distributed to participants. It provides background on research activities.</p>",
-        "es": "",
+        "es": "<p>Informaci\u00f3n sobre el proyecto INTERLINK que se distribuir\u00e1 a los participantes. Proporciona antecedentes sobre las actividades de investigaci\u00f3n.</p>",
         "it": "<p>Informazioni sul progetto INTERLINK da distribuire ai partecipanti. Fornisce informazioni sulle attivit\u00e0 di ricerca.</p>",
         "lv": "<p>Izplat\u012b\u0161anai dal\u012bbniekiem paredz\u0113t\u0101 inform\u0101cija par INTERLINK projektu. T\u0101 nodro\u0161ina pamatinform\u0101ciju par p\u0113tniec\u012bbas aktivit\u0101t\u0113m.</p>"
     },
@@ -36,7 +36,7 @@
     "licence": "public_domain",
     "name_translations": {
         "en": "Information Sheet for INTERLINK project",
-        "es": "",
+        "es": "Hoja informativa del proyecto INTERLINK",
         "it": "Foglio informativo per il progetto INTERLINK",
         "lv": "INTERLINK projekta inform\u0101cijas lapa"
     },
