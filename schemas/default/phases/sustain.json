@@ -14,7 +14,7 @@
     },
     "description_translations": {
         "en": "Define the business models to ensure sustainability of the co-produced service. Create business plans and exploitation agreements that will foster the adoption of your co-produced service by third party PAs, companies and stakeholders. Continous maintenance and monotoring is needed for responsive, accesible, widely adopted services as INTERLINK ambitions.",
-        "es": "",
+        "es": "Definir los modelos de negocio para garantizar la sostenibilidad del servicio coproducido. Cree planes de negocio y acuerdos de explotaci\u00f3n que fomenten la adopci\u00f3n de su servicio coproducido por parte de terceras AP, empresas y partes interesadas. El mantenimiento y la monitorizaci\u00f3n continuos son necesarios para que los servicios respondan, sean accesibles y se adopten ampliamente, tal y como ambiciona INTERLINK.",
         "it": "Definisci i modelli di business per garantire la sostenibilit\u00e0 del servizio coprodotto. Crea piani aziendali e accordi per la valorizzazione e l'utilizzo del servizio che ne favoriscano l'adozione da parte di PA, aziende e terze parti. La manutenzione e il monitoraggio continui sono cruciali per garantire servizi reattivi e accessibili.",
         "lv": ""
     },
@@ -28,7 +28,7 @@
             },
             "description_translations": {
                 "en": "Optinally delegate service deployment from own on premise to Cloud-based to external hosting provider infrastructure. Agree on contract, costs, responsabilities and benefits for third party take over of service delivery ",
-                "es": "",
+                "es": "Delegar opcionalmente el despliegue del servicio de las propias instalaciones a la infraestructura de un proveedor de alojamiento externo basado en la nube. Acordar el contrato, los costes, las responsabilidades y las ventajas de que un tercero se haga cargo de la prestaci\u00f3n del servicio. ",
                 "it": "Delega in modo ottimale l'implementazione del servizio dall'infrastruttura propria in sede all'infrastruttura basata su cloud a un provider di hosting esterno. Concordare contratto, costi, responsabilit\u00e0 e benefici per l'assunzione da parte di terzi della fornitura del servizio ",
                 "lv": ""
             },
@@ -43,7 +43,7 @@
                     },
                     "description_translations": {
                         "en": "Co-production team defines one to many business models with their associated business plans which can be negotiated with third party adopters of the service, who want to take over execution, maintenance and monitoring, but where exploitation between co-producers and adopters needs to be clarified.",
-                        "es": "",
+                        "es": "El equipo de coproducci\u00f3n define de uno a varios modelos de negocio con sus correspondientes planes de negocio que pueden negociarse con terceros adoptantes del servicio, que quieren hacerse cargo de la ejecuci\u00f3n, el mantenimiento y el seguimiento, pero en los que hay que aclarar la explotaci\u00f3n entre coproductores y adoptantes.",
                         "it": "Il team di coproduzione definisce da uno a molti modelli di business con i relativi piani aziendali che possono essere negoziati con terze parti che adottano il servizio, che desiderano gestirne l'esecuzione, la manutenzione e il monitoraggio. In questo caso \u00e8 necessario definire la strategia di valorizzazione tra co-produttori e adottanti.",
                         "lv": ""
                     },
@@ -62,7 +62,7 @@
                     },
                     "description_translations": {
                         "en": "Before a third party adopter may take over a co-produced service an exploitation agreement must be produced and signed by the involved parties. ",
-                        "es": "",
+                        "es": "Antes de que un tercer adoptante pueda hacerse cargo de un servicio coproducido, debe elaborarse un acuerdo de explotaci\u00f3n que deber\u00e1n firmar las partes implicadas. ",
                         "it": "Prima che un terzo adottante possa rilevare un servizio coprodotto, deve essere realizato e firmato dalle parti coinvolte un accordo per la valorizzazione del servizio. ",
                         "lv": ""
                     },
@@ -86,7 +86,7 @@
                     },
                     "description_translations": {
                         "en": "Provide documentation for third party take over of service maintenane and monitoring. Agreement on contract to regulate transfer of runnning responsability to third party and sharing of revenues among those that co-produced the service and third parties who may optionally host the service. Customization of the delivered service to target customers (translations, content adaptations and so on) ",
-                        "es": "",
+                        "es": "Proporcionar documentaci\u00f3n para que un tercero se haga cargo del mantenimiento y la supervisi\u00f3n del servicio. Acuerdo sobre el contrato para regular la transferencia de la responsabilidad de funcionamiento a terceros y el reparto de los ingresos entre los que coprodujeron el servicio y los terceros que pueden alojar opcionalmente el servicio. Personalizaci\u00f3n del servicio prestado a los clientes objetivo (traducciones, adaptaciones de contenido, etc.) ",
                         "it": "Fornisce documentazione per l'assunzione da parte di terzi della manutenzione e del monitoraggio del servizio. E' importante definire un accordo contrattuale per disciplinare il trasferimento della responsabilit\u00e0 di esercizio a terzi e la ripartizione dei ricavi tra coloro che hanno coprodotto il servizio e terzi che possono ospitare il servizio. Personalizzazione del servizio erogato ai clienti target (traduzioni, adattamenti di contenuti e cos\u00ec via) ",
                         "lv": ""
                     },
@@ -114,7 +114,7 @@
             },
             "description_translations": {
                 "en": "Ensure the deployed service is continously operative and responsive to new customer demands who may make the service further adopted and more useful. This responsability may be shared by co-production team and third parties who may have taken over the service. ",
-                "es": "",
+                "es": "Garantizar que el servicio desplegado est\u00e9 continuamente operativo y responda a las nuevas demandas de los clientes que puedan hacer que el servicio se adopte m\u00e1s y sea m\u00e1s \u00fatil. Esta responsabilidad puede ser compartida por el equipo de coproducci\u00f3n y por terceros que puedan haber asumido el servicio. ",
                 "it": "Garantisci che il servizio implementato sia costantemente operativo e risponda alle nuove richieste dei clienti che potrebbero rendere il servizio ulteriormente adottato e pi\u00f9 utile. Questa responsabilit\u00e0 pu\u00f2 essere condivisa dal team di coproduzione e da terze parti che potrebbero gestire il servizio. ",
                 "lv": ""
             },
@@ -129,8 +129,8 @@
                     },
                     "description_translations": {
                         "en": "If service depoyment was delegated or is still carried out by co-production team, task distribution among those responsible for maintenance must be ensured. Regularly contract monitoring and maintenance activities will need to be carried out to ensure 24x7 operation.",
-                        "es": "",
-                        "it": "Sia che la messa in esercizio (deployment) del servizio sia stata delegata sia che sia svolta dal team di coproduzione, deve essere assicurata la distribuzione dei compiti tra i responsabili della manutenzione. Dovranno essere svolte regolarmente attivit\u00e0 di monitoraggio e manutenzione del contratto per garantire il funzionamento 24x7 del servizio.",
+                        "es": "Si el dep\u00f3sito de servicios se deleg\u00f3 o se sigue llevando a cabo por el equipo de coproducci\u00f3n, debe garantizarse la distribuci\u00f3n de tareas entre los responsables del mantenimiento. Ser\u00e1 necesario realizar peri\u00f3dicamente actividades de supervisi\u00f3n y mantenimiento de los contratos para garantizar el funcionamiento 24 horas al d\u00eda, 7 d\u00edas a la semana.",
+                        "it": "Sia che l'esecuzione del servizio sia stata delegata ad altri sia che sia svolta dal team di co-produzione, deve essere assicurata una efficace distribuzione delle attivit\u00e0 da svolgere fra le persone responsabili della manutenzione. Operazioni regolari di monitoraggio e di manutenzione devono essere svolte per assicurare il funzionamento 24x7.",
                         "lv": ""
                     },
                     "problemprofiles": [],
@@ -155,7 +155,7 @@
             },
             "description_translations": {
                 "en": "Monitor that the service is fulfilling its originally set objectives by tracking a set of KPIs inferred from usage or polling customers.  ",
-                "es": "",
+                "es": "Supervisar que el servicio est\u00e1 cumpliendo los objetivos fijados originalmente mediante el seguimiento de un conjunto de KPIs inferidos del uso o el sondeo de los clientes.  ",
                 "it": "Monitora che il servizio soddisfi gli obiettivi originariamente definiti, monitorando una serie di KPI ( Key Performance Indicator) dedotti dall'utilizzo del servizio o effettuando sondaggi ai clienti.  ",
                 "lv": ""
             },
@@ -173,7 +173,7 @@
                     },
                     "description_translations": {
                         "en": "Analyse logs gathered by the delivered service. Analyse surveys/questionnaires filled in by stakeholders. ",
-                        "es": "",
+                        "es": "Analizar los registros recogidos por el servicio prestado. Analizar las encuestas/cuestionarios rellenados por las partes interesadas. ",
                         "it": "Analizza i log (registri) raccolti dal servizio erogato. Analizza i sondaggi e i questionari compilati dalle parti interessate. ",
                         "lv": ""
                     },
