@@ -8,13 +8,13 @@
     ],
     "name_translations": {
         "en": "Run",
-        "es": "",
+        "es": "Ejecuci\u00f3n",
         "it": "Esecuzione",
         "lv": ""
     },
     "description_translations": {
         "en": "Make use of instantiated co-refinement process, reviewing contribs from users of the service description, accepting or rejecting them, exporting reports with changes accepted so that they are processed for refinement.",
-        "es": "",
+        "es": "Hacer uso del proceso de co-refinamiento instanciado, revisando las contribuciones de los usuarios de la descripci\u00f3n del servicio, acept\u00e1ndolas o rechaz\u00e1ndolas, exportando informes con los cambios aceptados para que sean procesados para su refinamiento.",
         "it": "Utilizza il processo di co-raffinamento effettuato, rivedi i contributi dei partecipanti alla descrizione di serviio, accetta o declina i contributi, esporta il report con i cambiamenti accettati in modo che possano essere elaborati per il raffinamento.",
         "lv": ""
     },
@@ -22,13 +22,13 @@
         {
             "name_translations": {
                 "en": "Monitor continuous crowd refinement process",
-                "es": "",
+                "es": "Supervisar el proceso de perfeccionamiento continuo de la multitud",
                 "it": "Monitora in modo continuo il processo di raffinamento collettivo",
                 "lv": ""
             },
             "description_translations": {
                 "en": "Access to the Description Augmenter to the augmented view of service descriptions to monitor and moderate contributions from the crowd, generate intermediary reports and store them. Notice that only the creator of the process to refine a service description can moderate it, unless rights are given to other co-refinement team members through Servicepedia dashboard",
-                "es": "",
+                "es": "Acceso al Aumentador de Descripciones a la vista aumentada de las descripciones de servicios para supervisar y moderar las contribuciones de la multitud, generar informes intermedios y almacenarlos. Tenga en cuenta que s\u00f3lo el creador del proceso para refinar una descripci\u00f3n de servicio puede moderarla, a menos que se den derechos a otros miembros del equipo de co-refinamiento a trav\u00e9s del tablero de Servicepedia",
                 "it": "Accedi attraverso il Description Augmenter alla vista aumentata delle descrizioni di servizio per monitorare e moderare i contributi collettivi, general report intermedi e memorizza queste versioni. Tieni conto che solamente il creatore del processo di raffinamento di una descrizione di servizio pu\u00f2 moderare la discussione, a meno che appropriati diritti vengano assegnati ad altri membri del team di co-raffinamento attraverso il pannello di controllo della Servicepedia",
                 "lv": ""
             },
@@ -42,13 +42,13 @@
                 {
                     "name_translations": {
                         "en": "Link to the Description Augmenter project",
-                        "es": "",
+                        "es": "Enlace al proyecto en Description Augmenter",
                         "it": "Crea un link al progetto in Description Augmenter",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Produce a link to the description augmenter process so that co-producers can review contributions, accept, reject them or generate reports for refinement processing. Again, only those with rol moderator in Servicepedia can accept or reject suggestions. All the others, can comment and add new augmentation suggestions ",
-                        "es": "",
+                        "es": "Producir un enlace al proceso de aumento de la descripci\u00f3n para que los coproductores puedan revisar las contribuciones, aceptarlas, rechazarlas o generar informes para procesarlas. De nuevo, s\u00f3lo aquellos con rol de moderador en Servicepedia pueden aceptar o rechazar las sugerencias. Todos los dem\u00e1s, pueden comentar y a\u00f1adir nuevas sugerencias de aumento ",
                         "it": "Genera un link al progetto in Description Augmenter in modo che altri partecipanti possano rivedere i contributi, accettarli o declinarli e generare i report riassuntivi del processo di raffinamento. Ricorda che sono i partecipanti con ruolo di moderatore in Servicepedia possono accettare o declinare i suggerimenti. Tutti gli altri possono commentare e aggiungere nuovi suggerimenti di raffinamento. ",
                         "lv": ""
                     },
@@ -59,13 +59,13 @@
                 {
                     "name_translations": {
                         "en": "Review in Servicepedia dashboard user contributions",
-                        "es": "",
+                        "es": "Revisi\u00f3n en las contribuciones de los usuarios del tablero de Servicepedia",
                         "it": "Controlla nel pannello di controllo della Servicepedia i contributi degli utenti",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Review in Servicepedia dashboard contributions from users, accept those that are good, reject the bad ones, until completing revision process",
-                        "es": "",
+                        "es": "Revisar en el tablero de Servicepedia las contribuciones de los usuarios, aceptar las que son buenas, rechazar las malas, hasta completar el proceso de revisi\u00f3n",
                         "it": "Controlla nel pannello di controllo della Servicepedia i contributi degli utenti, accetta quelli che sono validi, declina quelli non ottimali, fino al completamento del processo di revisione",
                         "lv": ""
                     },
@@ -85,13 +85,13 @@
         {
             "name_translations": {
                 "en": "Publish report with descriptions accepted to be processed",
-                "es": "",
+                "es": "Publicar el informe con las descripciones admitidas a tr\u00e1mite",
                 "it": "Pubblica un report con le revisioni accettate per essere processate",
                 "lv": ""
             },
             "description_translations": {
                 "en": "Publish enhancement report generated from Servicepedia after having processed refinement suggestions for a given public service description",
-                "es": "",
+                "es": "Publicar el informe de mejora generado a partir de Servicepedia despu\u00e9s de haber procesado las sugerencias de mejora para una determinada descripci\u00f3n de servicio p\u00fablico",
                 "it": "Pubblica i report sui raffinamenti generati dalla componente Servicepedia dopo aver terminato di processare i suggerimenti di raffinamento su una data descrizione di servizio pubblico",
                 "lv": ""
             },
@@ -104,13 +104,13 @@
                 {
                     "name_translations": {
                         "en": "Publish enhancement report",
-                        "es": "",
+                        "es": "Publicar el informe de mejora",
                         "it": "Pubblica il report di raffinamento",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Publish enhancement report from Servicepedia.",
-                        "es": "",
+                        "es": "Publicar el informe de mejora de la Servicepedia.",
                         "it": "Pubblica il report di raffinamento dalla componente Servicepedia.",
                         "lv": ""
                     },

@@ -9,7 +9,7 @@
     "name_translations": {
         "en": "Design",
         "es": "Dise\u00f1o",
-        "it": "Design",
+        "it": "Progettazione",
         "lv": ""
     },
     "description_translations": {
@@ -43,7 +43,7 @@
                     "name_translations": {
                         "en": "Collaboratively Hackathon problem refinement",
                         "es": "Perfeccionamiento del problema del Hackathon en colaboraci\u00f3n",
-                        "it": "Raffinamento collaborativo dell'Hackathon",
+                        "it": "Raffinamento collaborativo del problema dell'Hackathon",
                         "lv": ""
                     },
                     "description_translations": {

@@ -7,7 +7,7 @@
     },
     "description_translations": {
         "en": "<p>This canvas can be edited collaboratively by the co-producing team to ellaborate the business plan for a co-produced service..</p>",
-        "es": "",
+        "es": "<p>Este lienzo puede ser editado de forma colaborativa por el equipo coproductor para elaborar el plan de negocio de un servicio coproducido..</p>",
         "it": "<p>Questo modello pu\u00f2 essere modificato in collaborazione dal team di coproduzione per elaborare il business plan per un servizio di coproduzione.</p>",
         "lv": "<p>\u0160is audekls var tikt kop\u012bgi papildin\u0101ts koprades komandas ietvaros, lai izstr\u0101d\u0101tu koprad\u012bt\u0101 pakalpojuma biznesa modeli.</p>"
     },
@@ -36,7 +36,7 @@
     "licence": "public_domain",
     "name_translations": {
         "en": "Business Plan Template",
-        "es": "",
+        "es": "Plantilla del plan de negocios",
         "it": "Modello del Business Plan",
         "lv": "Biznesa pl\u0101na veidlapa"
     },

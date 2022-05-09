@@ -12,7 +12,7 @@
     },
     "description_translations": {
         "en": "<p>Multi-platform open source analytics and interactive visualization web application. It provides charts, graphs, and alerts for the web when connected to supported data sources. </p>",
-        "es": "",
+        "es": "<p>Aplicaci\u00f3n web de an\u00e1lisis y visualizaci\u00f3n interactiva de c\u00f3digo abierto multiplataforma. Proporciona tablas, gr\u00e1ficos y alertas para la web cuando se conecta a fuentes de datos compatibles. </p>",
         "it": "<p>Applicazione web di analisi open source multipiattaforma e visualizzazione interattiva. Fornisce grafici, grafici e avvisi per il Web quando \u00e8 connesso a origini dati supportate. </p>",
         "lv": "<p>Atv\u0113rt\u0101 koda multiplatformu anal\u012btikas un interakt\u012bv\u0101s vizualiz\u0101cijas t\u012bmek\u013ca aplik\u0101cija. Pievienojot pie atbalst\u012btajiem datu avotiem, t\u0101 pied\u0101v\u0101 veidot diagrammas, grafikus un br\u012bdin\u0101jumus t\u012bmeklim. </p>"
     },
@@ -36,7 +36,7 @@
     "logotype": "./interlinkers/externalsoftware/grafana/logo.png",
     "name_translations": {
         "en": "Grafana",
-        "es": "",
+        "es": "Grafana",
         "it": "Grafana",
         "lv": "Grafana"
     },

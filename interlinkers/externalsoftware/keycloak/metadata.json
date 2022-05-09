@@ -12,7 +12,7 @@
     },
     "description_translations": {
         "en": "<p>Keycloak provides user federation, strong authentication, user management, fine-grained authorization</p>",
-        "es": "",
+        "es": "<p>Keycloak proporciona federaci\u00f3n de usuarios, autenticaci\u00f3n fuerte, gesti\u00f3n de usuarios, autorizaci\u00f3n de grano fino</p>",
         "it": "<p>Keycloak fornisce federazione di utenti, autenticazione avanzata, gestione degli utenti e autorizzazione dettagliata</p>",
         "lv": "<p>Keycloak nodro\u0161ina lietot\u0101ju feder\u0101ciju, sp\u0113c\u012bgu autentifik\u0101ciju, lietot\u0101ju kontroli un prec\u012bzu autoriz\u0101ciju</p>"
     },
@@ -36,7 +36,7 @@
     "logotype": "./interlinkers/externalsoftware/keycloak/logo.png",
     "name_translations": {
         "en": "Keycloak",
-        "es": "",
+        "es": "Keycloak",
         "it": "Keycloak",
         "lv": "Keycloak"
     },

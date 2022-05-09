@@ -12,7 +12,7 @@
     },
     "description_translations": {
         "en": "<p>Google Charts is a Java Script library providing a way to visualize data on your website (from simple line charts to complex hierarchical tree maps)</p>",
-        "es": "",
+        "es": "<p>Google Charts es una librer\u00eda de Java Script que proporciona una forma de visualizar los datos en su sitio web (desde simples gr\u00e1ficos de l\u00edneas hasta complejos mapas jer\u00e1rquicos en forma de \u00e1rbol)</p>",
         "it": "<p>Google Charts \u00e8 una libreria di script Java che fornisce un modo per visualizzare i dati sul tuo sito web (da semplici grafici a linee a complesse mappe ad albero gerarchiche)</p>",
         "lv": "<p>Google Charts ir JavaScript bibliot\u0113ka, kas pied\u0101v\u0101 datu vizualiz\u0101cijas iesp\u0113jas j\u016bsu t\u012bmek\u013ca vietnei (s\u0101kot no vienk\u0101r\u0161\u0101m l\u012bniju diagramm\u0101m l\u012bdz hierarhisk\u0101m kart\u0113m)</p>"
     },
@@ -36,7 +36,7 @@
     "logotype": "./interlinkers/externalsoftware/google-chart/logo.png",
     "name_translations": {
         "en": "Google Chart",
-        "es": "",
+        "es": "Google Chart",
         "it": "Google Chart",
         "lv": "Google Chart"
     },

@@ -22,13 +22,13 @@
         {
             "name_translations": {
                 "en": "Launch Hackathon website",
-                "es": "",
+                "es": "Lanzamiento del sitio web del Hackathon",
                 "it": "Lancia il sito web per l'hackathon",
                 "lv": ""
             },
             "description_translations": {
                 "en": "Service implementation is not possible if an environment for its depoyment and maintenance is not thought in advance. Independently on whether your envisioned co-produced service will be a piece of software or a bundle of digital resources, identify, select and make ready the development and deployment environments for your solution. Important to clearly specify and test the technical constraints within which the delivered service will be hosted.",
-                "es": "",
+                "es": "La implantaci\u00f3n de un servicio no es posible si no se piensa de antemano en un entorno para su despliegue y mantenimiento. Independientemente de si el servicio coproducido previsto ser\u00e1 una pieza de software o un conjunto de recursos digitales, hay que identificar, seleccionar y preparar los entornos de desarrollo y despliegue de la soluci\u00f3n. Es importante especificar claramente y probar las limitaciones t\u00e9cnicas dentro de las cuales se alojar\u00e1 el servicio entregado.",
                 "it": "L'implementazione del servizio non \u00e8 possibile se non si considera in anticipo un ambiente per il suo rilascio e la sua manutenzione. Indipendentemente dal fatto che il servizio coprodotto previsto sia un software o un insieme di risorse digitali, identifica, seleziona e prepara gli ambienti di sviluppo e di distribuzione per la tua soluzione. E' importante specificare e testare chiaramente i vincoli tecnici entro i quali sar\u00e0 ospitato il servizio erogato.",
                 "lv": ""
             },
@@ -39,13 +39,13 @@
                 {
                     "name_translations": {
                         "en": "Technical implementation and deployment",
-                        "es": "",
+                        "es": "Implementaci\u00f3n y despliegue t\u00e9cnico",
                         "it": "Implementazione tecnica e messa in esercizio",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Identify the dependencies and environment needed for the service co-production and co-delivery. Configure and deploy (if not already available) the dependencies and environment. Document the progress towards realizing the technical aspects associated to the co-produced service. ",
-                        "es": "",
+                        "es": "Identificar las dependencias y el entorno necesarios para la coproducci\u00f3n y la codistribuci\u00f3n de servicios. Configurar y desplegar (si no est\u00e1n ya disponibles) las dependencias y el entorno. Documentar el progreso hacia la realizaci\u00f3n de los aspectos t\u00e9cnicos asociados al servicio coproducido. ",
                         "it": "Identifica le dipendenze e l'ambiente necessario per la co-produzione e l'erogazione del servizio. Configura e rilascia (se non gi\u00e0 disponibili) le dipendenze e l'ambiente. Documenta i progressi relativi all'implementazione degli aspetti tecnici associati al servizio coprodotto. ",
                         "lv": ""
                     },
@@ -68,13 +68,13 @@
         {
             "name_translations": {
                 "en": "Service implementation",
-                "es": "",
+                "es": "Implementaci\u00f3n del servicio",
                 "it": "Implementazione del servizio",
                 "lv": ""
             },
             "description_translations": {
                 "en": "Depending on the nature of the co-produced service, you main adopt different tools and mechanisms to realize a given co-produced service. Realizing a co-produced service might entail programming, using graphical design tools, 3D modelling and fabrication and so on. Register progress achieved during the realization of the implementation of the co-produced service, upload progress reports, cross-link with repositories where progress is being realized, document the co-produced service API or the kit and/or resources generated to realize the service. Acknowledge and trace the contributions of different co-production team members or external contributors. Reuse existing INTERLINKERs (software and knowledge) and add on top of them, browse through them in the Catalogue, do not reinvent the wheel!",
-                "es": "",
+                "es": "Dependiendo de la naturaleza del servicio coproducido, se pueden adoptar diferentes herramientas y mecanismos para realizar un determinado servicio coproducido. La realizaci\u00f3n de un servicio coproducido puede implicar la programaci\u00f3n, el uso de herramientas de dise\u00f1o gr\u00e1fico, el modelado y la fabricaci\u00f3n en 3D, etc. Registre los avances logrados durante la realizaci\u00f3n de la implementaci\u00f3n del servicio coproducido, suba informes de progreso, cruce con los repositorios donde se est\u00e1n realizando los avances, documente la API del servicio coproducido o el kit y/o los recursos generados para realizar el servicio. Reconocer y trazar las contribuciones de los diferentes miembros del equipo de coproducci\u00f3n o de los colaboradores externos. Reutilizar los INTERLINKERs existentes (software y conocimiento) y a\u00f1adir sobre ellos, navegar a trav\u00e9s de ellos en el Cat\u00e1logo, \u00a1no reinventar la rueda!",
                 "it": "A seconda della natura del servizio , si adottano strumenti e meccanismi diversi per realizzare un determinato servizio coprodotto. La realizzazione di un servizio coprodotto potrebbe comportare la programmazione, l'utilizzo di strumenti di progettazione grafica, la modellazione e la fabbricazione 3D e cos\u00ec via. Registra i progressi raggiunti durante la realizzazione dell'implementazione del servizio coprodotto, crea e condividi report sullo stato di avanzamento, crea collegamenti incrociati con i repository, documenta l'API del servizio coprodotto o il kit e/o le risorse generate per realizzare il servizio . Riconosci e traccia i contributi di diversi membri del team di coproduzione o contributori esterni. Riutilizza gli INTERLINKERs esistenti (software e conoscenza) e sfogliali nel Catalogo, non reinventare la ruota!",
                 "lv": ""
             },
@@ -87,13 +87,13 @@
                 {
                     "name_translations": {
                         "en": "Launch engagement campaign",
-                        "es": "",
+                        "es": "Lanzar una campa\u00f1a de compromiso",
                         "it": "Lancia campagne di coinvolgimento",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Organize activities among those candidate to participate in the Hackathon, based on previously undertaken stakeholder analysis.",
-                        "es": "",
+                        "es": "Organizar actividades entre los candidatos a participar en el Hackathon, bas\u00e1ndose en el an\u00e1lisis de las partes interesadas realizado previamente.",
                         "it": "Organizza le attivit\u00e0 con i candidati che partecipano all'hackathon in base ai risultati dell'analisi degli stakeholder effettuata in precedenza.",
                         "lv": ""
                     },
@@ -112,13 +112,13 @@
                 {
                     "name_translations": {
                         "en": "Open submissions",
-                        "es": "",
+                        "es": "Entregas abiertas",
                         "it": "Apri le sottomissioni",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Allow for submission of ideas by teams willing to take part in the hackathon.",
-                        "es": "",
+                        "es": "Permitir la presentaci\u00f3n de ideas por parte de los equipos que deseen participar en el hackathon.",
                         "it": "Consenti la sottomissione di idee da parte dei team che intendono prendere parte all'hackathon.",
                         "lv": ""
                     },
@@ -136,13 +136,13 @@
                 {
                     "name_translations": {
                         "en": "Monitor submissions",
-                        "es": "",
+                        "es": "Supervisar las entregas",
                         "it": "Monitora le sottomissioni",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Monitor how the submissions are going before the deadline for submissions reaches. React organizaing further activities if needed.",
-                        "es": "",
+                        "es": "Supervisar c\u00f3mo van las presentaciones antes de que llegue la fecha l\u00edmite de entrega. Reaccione organizando m\u00e1s actividades si es necesario.",
                         "it": "Monitora l'andamento delle sottomissioni prima della scadenza stabilita. Organizza ulteriori attivit\u00e0 se necessario.",
                         "lv": ""
                     },
@@ -175,7 +175,7 @@
         {
             "name_translations": {
                 "en": "Hackathon celebration",
-                "es": "",
+                "es": "Celebraci\u00f3n del Hackathon",
                 "it": "Realizzazione dell'hackathon",
                 "lv": ""
             },
@@ -193,13 +193,13 @@
                 {
                     "name_translations": {
                         "en": "Coordinate the actors involved in the codelivery of the Hackathon (organizers, evaluators, participants)",
-                        "es": "",
+                        "es": "Coordinar a los actores implicados en la codificaci\u00f3n del Hackathon (organizadores, evaluadores, participantes)",
                         "it": "Coordina gli attori coinvolti nella co-esecuzione dell'hackathon (organizzatori, valutatori, partecipanti)",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Organize activities among co-deliverers according to their roles and responsabilities. Ensure quality of service is maintained in the cooperative activities involved in service codelivery. Launch satisfaction and quality of service assessement surveys. ",
-                        "es": "",
+                        "es": "Organizar las actividades entre los codirectores seg\u00fan sus funciones y responsabilidades. Garantizar el mantenimiento de la calidad del servicio en las actividades cooperativas de prestaci\u00f3n de servicios. Poner en marcha encuestas de evaluaci\u00f3n de la satisfacci\u00f3n y la calidad del servicio. ",
                         "it": "Organizza le attivit\u00e0 tra i co-erogatori del servizio in base ai loro ruoli e responsabilit\u00e0. Garantisci che la qualit\u00e0 del servizio sia mantenuta nelle attivit\u00e0 coinvolte nell'erogazione del servizio. Avvia sondaggi di valutazione della soddisfazione e della qualit\u00e0 del servizio. ",
                         "lv": ""
                     },
@@ -210,13 +210,13 @@
                 {
                     "name_translations": {
                         "en": "Guarantee transparent communication with participants in the Hackathon",
-                        "es": "",
+                        "es": "Garantizar una comunicaci\u00f3n transparente con los participantes en el Hackathon",
                         "it": "Garantisci comunicazioni trasparenti con i partecipanti dell'hackathon",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Ensure fluid and responsive communication among co-deliverers team and more importantly among those consuming and reusing the delivered service and the co-delivery team. Establish a web-based communication mechanism which allows to trace the communication with all actors. ",
-                        "es": "",
+                        "es": "Garantizar una comunicaci\u00f3n fluida y receptiva entre el equipo de codirectores y, lo que es m\u00e1s importante, entre quienes consumen y reutilizan el servicio entregado y el equipo de codirectores. Establecer un mecanismo de comunicaci\u00f3n basado en la web que permita rastrear la comunicaci\u00f3n con todos los actores. ",
                         "it": "Garantisci una comunicazione fluida e reattiva tra il team di co-erogatori e, soprattutto, tra coloro che consumano e riutilizzano il servizio fornito e il team responsabile dell'erogazione del servizio. Stabilisci un meccanismo di comunicazione basato sul web che consenta di tracciare la comunicazione con tutti gli attori coinvolti. ",
                         "lv": ""
                     },
@@ -232,13 +232,13 @@
                 {
                     "name_translations": {
                         "en": "Winner selection and announcement",
-                        "es": "",
+                        "es": "Selecci\u00f3n y anuncio del ganador",
                         "it": "Selezione dei vincitori e annuncio",
                         "lv": ""
                     },
                     "description_translations": {
                         "en": "Based on the criteria established at DESIGN phase, evaluators assess the projects submitted, produce ranking and organizers announce winners.",
-                        "es": "",
+                        "es": "Bas\u00e1ndose en los criterios establecidos en la fase de DISE\u00d1O, los evaluadores valoran los proyectos presentados, elaboran una clasificaci\u00f3n y los organizadores anuncian los ganadores.",
                         "it": "In base ai criteri stabiliti durante la fase di DESIGN, i valutatori valutano i progetti sottomessi, producono una classifica e gli organizzatori annunciano i vincitori.",
                         "lv": ""
                     },
