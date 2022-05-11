@@ -12,6 +12,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Prompt } from 'react-router-dom';
 import { updateProcess } from "slices/process";
 import * as Yup from 'yup';
+import { coproductionProcessesApi } from "__api__";
+import { useNavigate } from 'react-router';
+import ConfirmationButton from "components/ConfirmationButton";
 
 const SettingsTab = () => {
     const [editMode, setEditMode] = useState(false)
@@ -20,6 +23,12 @@ const SettingsTab = () => {
     const [logotype, setLogotype] = useState(null);
     const mounted = useMounted()
     const t = useDependantTranslation()
+
+    const navigate = useNavigate()
+
+    const onRemove = () => {
+        coproductionProcessesApi.delete(process.id).then(() => navigate("/dashboard"))
+    }
 
     const PromptIfDirty = () => {
         const formik = useFormikContext();
@@ -249,8 +258,14 @@ const SettingsTab = () => {
 
                         </Grid>
                         {editMode && <Stack direction="row" spacing={2} sx={{ justifyContent: "center", mt: 3, mb: 2 }}>
-                            <Button variant="text" disabled={isSubmitting} color="error" startIcon={<Delete />} onClick={() => { setEditMode(false); resetForm(); setLogotype(null); }}>{t("Cancel")}</Button>
+                            <Button variant="text" disabled={isSubmitting} color="warning" startIcon={<Delete />} onClick={() => { setEditMode(false); resetForm(); setLogotype(null); }}>{t("Cancel")}</Button>
                             <Button variant="contained" disabled={isSubmitting} color="success" startIcon={<Save />} onClick={submitForm} disabled={!isValid}>{t("Save")}</Button>
+                            <ConfirmationButton
+                                Actionator={({ onClick }) => <Button variant="contained" disabled={isSubmitting} color="error" startIcon={<Delete />}>{t("Remove", { what: t("coproduction process") })}</Button>}
+                                ButtonComponent={({ onClick }) => <Button sx={{ mt: 1 }} fullWidth variant='contained' color="error" onClick={onClick}>Confirm deletion</Button>}
+                                onClick={onRemove}
+                                text={t("Are you sure?")}
+                            />
                         </Stack>}
                     </Form>
                 )}

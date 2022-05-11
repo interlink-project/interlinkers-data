@@ -2,10 +2,12 @@ import { Box, Button, Container, Typography } from '@material-ui/core';
 import { HomeRow } from 'components/home';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router';
 
 
 const HomePlatform = () => {
   const { t } = useTranslation()
+  const navigate = useNavigate();
 
   return (
     <>
@@ -26,6 +28,14 @@ const HomePlatform = () => {
             >
               {t("home-platform-1-1")}
             </Typography>
+            <Button
+                onClick={() => navigate('/dashboard')}
+                size="large"
+                sx={{ m: 1 }}
+                variant="outlined"
+              >
+                {t("home-1-2")}
+              </Button>
           </div>}
         />
         <HomeRow
@@ -100,7 +110,7 @@ const HomePlatform = () => {
                 {t("home-platform-4-1")}
               </Typography>
             </Box>
-            <Button onClick={() => window.open("", "_blank")} fullWidth sx={{ mt: 3, width: "50vw" }}>{t("home-platform-4-2")}</Button>
+            <Button onClick={() => window.open("https://interlink-project.github.io/interlink-project/testing/acceptance-tests/index.html", "_blank")} fullWidth sx={{ mt: 3, width: "50vw" }}>{t("home-platform-4-2")}</Button>
           </Container>
         </Box>
       </div>

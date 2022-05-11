@@ -39,9 +39,7 @@ const MainSidebar = (props) => {
           p: 2,
         }}
       >
-        <RouterLink to='/'>
           <Logo />
-        </RouterLink>
         <Box sx={{ mt: 3 }}>
           {landingPages.map((el, i) => (
             <React.Fragment key={`sidebarItem${i}`}>

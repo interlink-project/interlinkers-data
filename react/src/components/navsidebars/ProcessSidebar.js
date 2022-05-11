@@ -69,25 +69,6 @@ const ProcessSidebar = (props) => {
       }}
     >
       <Scrollbar options={{ suppressScrollX: true }}>
-        <Box
-          sx={{
-            display: {
-              lg: 'none',
-              xs: 'flex'
-            },
-            justifyContent: 'center',
-            p: 2
-          }}
-        >
-          <RouterLink to='/'>
-            <Logo
-              sx={{
-                height: 40,
-                width: 40
-              }}
-            />
-          </RouterLink>
-        </Box>
         <Stack
           direction="column"
           justifyContent="center"

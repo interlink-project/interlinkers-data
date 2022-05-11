@@ -3,9 +3,10 @@ import useDependantTranslation from "hooks/useDependantTranslation";
 import useMounted from "hooks/useMounted";
 import useSettings from 'hooks/useSettings';
 import $ from 'jquery';
-import React, { useEffect, useState } from "react";
-import { useSelector } from 'react-redux';
+import React, { useCallback, useEffect, useState } from "react";
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from "react-router";
+import { setselectedPhaseTabId } from "slices/process";
 import PhaseTabs from "../PhaseTabs";
 import Gantt from "./FrappeGantt";
 import "./FrappeGantt.css";
@@ -53,16 +54,26 @@ const setNewGantt = (id, props, tasks, darkMode, onClick) => {
 
 const Workplan = ({ setSelectedTreeItem }) => {
   const { settings } = useSettings();
-
   const [viewMode, setViewMode] = useState("Week")
   const { process, phases, objectives, tasks, updating, selectedPhaseTabId, selectedTreeItem } = useSelector((state) => state.process);
-  const mounted = useMounted();
   const navigate = useNavigate()
 
-  const [clickedElement, setClickedElement] = useState(null);
   const t = useDependantTranslation()
 
   const view_modes = [t("Day"), t("Week"), t("Month"), t("Year")]
+
+  const dispatch = useDispatch();
+  const mounted = useMounted();
+
+  const setNewPhaseTab = useCallback((phase) => {
+    try {
+      if (mounted.current) {
+        dispatch(setselectedPhaseTabId(phase.id))
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  }, [mounted]);
 
   const getElement = (id, type) => {
     let obj = {}
@@ -185,7 +196,6 @@ const Workplan = ({ setSelectedTreeItem }) => {
       }
     }
     setNewGantt(id, props, getTasks(), settings.theme === "DARK", (id, type) => {
-      // setClickedElement(getElement(id, type));
       setSelectedTreeItem(getElement(id, type), () => navigate(`/dashboard/coproductionprocesses/${process.id}/guide`))
 
     })
@@ -194,9 +204,8 @@ const Workplan = ({ setSelectedTreeItem }) => {
 
   return (
     <Grid container style={{ overflow: "hidden" }}>
-      {/* clickedElement && <TreeItemDialog saving={updating} type={clickedElement.type} element={clickedElement} onClose={() => setClickedElement(null)} />*/}
       <Grid item xs={12}>
-        <PhaseTabs />
+        <PhaseTabs selectedPhaseTabId={selectedPhaseTabId} phases={phases} onSelect={setNewPhaseTab} />
         <ToggleButtonGroup
           color="primary"
           value={viewMode}

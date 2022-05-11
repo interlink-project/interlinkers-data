@@ -159,7 +159,6 @@ const HomeCoproduction = () => {
                       >
                         {subheader}
                       </Typography>
-                      {index === selectedFeatureIndex && (
                         <List
                           disablePadding
                           sx={{
@@ -199,7 +198,6 @@ const HomeCoproduction = () => {
                             </ListItem>
                           ))}
                         </List>
-                      )}
                     </div>
                   </Box>
                 );

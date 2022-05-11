@@ -1,48 +1,41 @@
-import { Backdrop, Box, Card, CardHeader, CircularProgress, Grid, Rating, Stack, Typography } from '@material-ui/core';
-import { ChevronRight, ExpandMore } from '@material-ui/icons';
-import {
-    LoadingButton, TreeItem,
-    TreeView
-} from '@material-ui/lab';
+import { Box, Button, Dialog, DialogContent, Grid, Rating, Skeleton, Table, TableBody, TableCell, TableContainer, TableRow, Typography } from '@material-ui/core';
+import { LoadingButton } from '@material-ui/lab';
+import { StyledTree } from 'components/dashboard/tree';
 import useDependantTranslation from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
-import { useCallback, useEffect, useState } from 'react';
+import { truncate } from 'lodash';
+import * as React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setProcess } from 'slices/process';
 import { topologicalSort } from 'utils/comparePrerequisites';
-import { coproductionProcessesApi } from '__api__';
-import { coproductionSchemasApi } from '__api__/catalogue/coproductionSchemasApi';
+import { coproductionProcessesApi, coproductionSchemasApi } from '__api__';
+import PhaseTabs from '../PhaseTabs';
 
-const sameHeightCards = {
-    minHeight: "200px",
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between"
-}
 const CreateSchema = () => {
-    const [loadingSchemaId, setLoadingSchemaId] = useState(null)
-    const [loading, setLoading] = useState(true)
-    const [schemas, setSchemas] = useState([])
+    const [loadingSchemaId, setLoadingSchemaId] = React.useState(null)
+    const [loading, setLoading] = React.useState(true)
+    const [selectedSchema, setSelectedSchema] = React.useState(null)
+    const [dialogOpen, setDialogOpen] = React.useState(false)
+    const [rows, setRows] = React.useState([])
     const { process } = useSelector((state) => state.process);
     const dispatch = useDispatch()
     const mounted = useMounted();
     const t = useDependantTranslation()
 
-    const getSchemas = async () => {
+    const [selectedPhaseTab, setSelectedPhaseTab] = React.useState(null)
+    const [selectedTreeItem, setSelectedTreeItem] = React.useState(null)
+
+    React.useEffect(() => {
+        setLoading(true)
         coproductionSchemasApi.getPublic(process.language).then(res => {
             if (mounted) {
-                setSchemas(res.map(schema => ({ ...schema, phasemetadatas: topologicalSort(schema.phasemetadatas) })))
+                setRows(res)
                 setLoading(false)
             }
         });
-    }
-
-    useEffect(() => {
-        getSchemas()
     }, [])
 
-    const setCoproductionProcess = useCallback(async (process) => {
+    const setCoproductionProcess = React.useCallback(async (process) => {
         try {
 
             if (mounted.current) {
@@ -63,60 +56,86 @@ const CreateSchema = () => {
 
     const schemaword = t("schema")
 
-    return (
+    return <TableContainer sx={{ height: "100%" }}>
+        <Box sx={{ textAlign: "center", my: 3 }}>
+            <Typography variant="h4" sx={{ mb: 2 }}>{t("schema-selection-title")}</Typography>
+            <Typography variant="subtitle1" sx={{ mb: 4 }}>{t("schema-selection-description")}</Typography>
+        </Box>
+        {!loading ? <Table sx={{ minWidth: 500 }} aria-label="coproduction schemas table">
+            <TableBody>
+                {rows.map((row) => (
+                    <TableRow key={row.name}>
+                        <TableCell style={{ width: 160 }} component="th" scope="row" sx={{ textAlign: "center" }}>
+                            <Typography sx={{ fontWeight: "bold" }}>
+                                {row.name}
+                            </Typography>
+                            <Rating size="small" readOnly value={row.rating} sx={{ mt: 2 }} />
+                            ({row.ratings_count})
+                        </TableCell>
+                        <TableCell>
+                            {truncate(row.description, {
+                                length: 1000,
+                                separator: ' ',
+                            })}
+                        </TableCell>
+                        <TableCell>
+                            <Button variant="contained" onClick={() => {
+                                setSelectedPhaseTab(topologicalSort(row.phasemetadatas)[0]);
+                                setSelectedSchema(row);
+                                setDialogOpen(true)
+                            }}>{t("Preview")}</Button>
+                        </TableCell>
+                    </TableRow>
+                ))}
+            </TableBody>
 
-        <Box sx={{ p: 2, minHeight: '87vh' }}>
-            <Box sx={{ textAlign: "center" }}>
-                <Typography variant="h4" sx={{ mb: 2 }}>{t("schema-selection-title")}</Typography>
-                <Typography variant="subtitle1" sx={{ mb: 4 }}>{t("schema-selection-description")}</Typography>
-            </Box>
-            {loading ? <CircularProgress /> : <Grid container spacing={3} justifyContent="flex-start">
-                {schemas.map(schema => (
-                    <Grid item xs={12} md={6} lg={4} xl={3} key={schema.id}                       >
-                        <Card style={sameHeightCards}>
-                            <CardHeader sx={{ textAlign: "center" }} title={schema.name} subheader={
-                                <Stack direction="row"
-                                    justifyContent="center"
-                                    alignItems="center"
-                                    spacing={2}
-                                >
-                                    <Rating size="small" readOnly value={0} />
-                                    (0)
-                                </Stack>}>
+        </Table> : <Skeleton sx={{ height: "100%" }} />}
+        <Dialog open={dialogOpen} fullWidth maxWidth="lg" onClose={() => {
+            setDialogOpen(false)
+            setSelectedPhaseTab(null)
+            setSelectedSchema(null)
+        }}>
+            <DialogContent sx={{ p: 5 }}>
 
-                            </CardHeader>
-                            <TreeView
-                                aria-label="file system navigator"
-                                defaultCollapseIcon={<ExpandMore />}
-                                defaultExpandIcon={<ChevronRight />}
-                                sx={{ flexGrow: 1, overflowY: 'auto', mb: 2 }}
-                            >
-                                {schema.phasemetadatas.map((phasemetadata) => {
-                                    return <TreeItem key={phasemetadata.id} nodeId={phasemetadata.id} label={<p><b>{t("Phase")}</b>: {phasemetadata.name}</p>}>
-                                        {phasemetadata.objectivemetadatas.map((objectivemetadata) => {
-                                            return <TreeItem key={objectivemetadata.id} nodeId={objectivemetadata.id} label={<p><b>{t("Objective")}</b>: {objectivemetadata.name}</p>}>
-                                                {objectivemetadata.taskmetadatas.map((taskmetadata) => {
-                                                    return <TreeItem key={taskmetadata.id} nodeId={taskmetadata.id} label={<p><b>{t("Task")}</b>: {taskmetadata.name}</p>} />
-                                                })}
-                                            </TreeItem>
-                                        })}
-                                    </TreeItem>
-                                })}
+                {selectedSchema && <>
 
-                            </TreeView>
-                            <LoadingButton loading={loadingSchemaId === schema.id} variant="contained" fullWidth onClick={() => submit(schema.id)}>{t("use", { what: schemaword })}</LoadingButton>
+                        <Typography variant="h5"  sx={{ mb: 3 }}>
+                            {selectedSchema.name}
+                        </Typography>
+                    <PhaseTabs phases={selectedSchema.phasemetadatas} selectedPhaseTabId={selectedPhaseTab && selectedPhaseTab.id} onSelect={(value) => {
+                        setSelectedPhaseTab(value)
+                        setSelectedTreeItem(value)
+                    }} />
+                    <Grid container>
+                        <Grid item xl={4} lg={4} md={6} xs={12}>
+                            <StyledTree phase={selectedPhaseTab} selectedTreeItem={selectedTreeItem} setSelectedTreeItem={setSelectedTreeItem} objectives_key="objectivemetadatas" tasks_key="taskmetadatas" />
 
-                        </Card>
+                        </Grid>
+                        <Grid item xl={8} lg={8} md={6} xs={12}>
+                            {selectedTreeItem && <Box sx={{ p: 3 }}>
+
+                                <Typography variant="h6">
+                                    {t("Name")}
+                                </Typography>
+                                <Typography>
+                                    {selectedTreeItem.name}
+                                </Typography>
+                                <Typography variant="h6" sx={{ mt: 3 }}>
+                                    {t("Description")}
+                                </Typography>
+                                <Typography>
+                                    {selectedTreeItem.description}
+                                </Typography>
+                            </Box>}
+                        </Grid>
 
                     </Grid>
-                ))}
-                <Backdrop open={loadingSchemaId} >
-                    <CircularProgress color="inherit" />
-                </Backdrop>
-            </Grid>}
+                    <LoadingButton loading={loadingSchemaId === selectedSchema.id} variant="contained" fullWidth onClick={() => submit(selectedSchema.id)}>{t("use-what", { what: schemaword })}</LoadingButton>
+                </>}
+            </DialogContent>
 
-        </Box>
-    );
+        </Dialog>
+    </TableContainer>
 };
 
 export default CreateSchema;

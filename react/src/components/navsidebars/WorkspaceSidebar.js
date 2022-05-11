@@ -91,14 +91,12 @@ const WorkspaceSidebar = (props) => {
             p: 2
           }}
         >
-          <RouterLink to='/'>
             <Logo
               sx={{
                 height: 40,
                 width: 40
               }}
             />
-          </RouterLink>
         </Box>
         <Divider />
         <Box sx={{ p: 2 }}>

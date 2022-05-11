@@ -19,5 +19,14 @@
   "You must be logged in to access this section.": "",
   "Log in": "",
   "comment-title": "",
-  "comment-body": ""
+  "comment-body": "",
+  "Unlike": "Differente",
+  "Like": "Simile",
+  "Phase": "Fase",
+  "Objective": "Obiettivo",
+  "Task": "Compito",
+  "use": "Usa {{what}}",
+  "preview": "",
+  "preview-what": "",
+  "Only tasks can be scheduled": ""
 }

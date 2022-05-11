@@ -1,22 +1,22 @@
 import {
   Alert,
-  Box, Button, Stack, CardActions, IconButton, TextField, ToggleButton, ToggleButtonGroup, Typography, Divider, Link
+  Box, Button, Divider, IconButton, Link, Stack, TextField, ToggleButton, ToggleButtonGroup, Typography
 } from '@material-ui/core';
-import { Edit, Timeline } from '@material-ui/icons';
+import { Edit } from '@material-ui/icons';
 import {
   DesktopDateRangePicker, LoadingButton
 } from '@material-ui/lab';
 import ConfirmationButton from 'components/ConfirmationButton';
 import { FinishedIcon, InProgressIcon } from 'components/dashboard/assets';
+import { useCustomTranslation } from 'hooks/useDependantTranslation';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { deleteObjective, deletePhase, deleteTask, updateObjective, updatePhase, updateTask } from 'slices/process';
-import { HTMLtoText } from 'utils/safeHTML';
-import { statusText, statusIcon } from '../assets/Icons';
+import { statusIcon, statusText } from '../assets/Icons';
 
-const TreeItemData = ({ processId, element, type, onSave = null, showType = true }) => {
+const TreeItemData = ({ language, processId, element, type, onSave = null, showType = true }) => {
   const [dateRange, setDateRange] = useState([null, null]);
   const [status, setStatus] = useState("");
   const [name, setName] = useState("");
@@ -24,6 +24,7 @@ const TreeItemData = ({ processId, element, type, onSave = null, showType = true
   const [editMode, setEditMode] = useState(false);
   const [saving, setSaving] = useState(false);
   const navigate = useNavigate()
+  const t = useCustomTranslation(language)
 
   const restart = (el) => {
     setName(el.name)
@@ -77,7 +78,7 @@ const TreeItemData = ({ processId, element, type, onSave = null, showType = true
     else if (type === "phase") {
       dispatch(updatePhase({ id: element.id, data, callback }))
     }
-    
+
   }
 
   const deleteTreeItem = () => {
@@ -101,13 +102,6 @@ const TreeItemData = ({ processId, element, type, onSave = null, showType = true
   }
 
   return <>
-    {type && showType && <>
-      <Typography variant="h6">
-        Type
-      </Typography>
-      {type === "task" && "Task"}
-      {type === "objective" && "Objective"}
-      {type === "phase" && "Phase"}</>}
     {!editMode && <IconButton onClick={() => setEditMode(true)} sx={{
       position: "relative",
       right: 0,
@@ -142,13 +136,13 @@ const TreeItemData = ({ processId, element, type, onSave = null, showType = true
           setStatus(newStatus)
         }}
       >
-        <ToggleButton value="awaiting">Awaiting</ToggleButton>
-        <ToggleButton value="in_progress">In progress <InProgressIcon /></ToggleButton>
-        <ToggleButton value="finished">Finished <FinishedIcon /></ToggleButton>
-      </ToggleButtonGroup> : <Alert severity="warning">Only tasks can be modified</Alert>}</>
+        <ToggleButton value="awaiting">{t("Awaiting")}</ToggleButton>
+        <ToggleButton value="in_progress">{t("In progress")}<InProgressIcon /></ToggleButton>
+        <ToggleButton value="finished">{t("Finished")} <FinishedIcon /></ToggleButton>
+      </ToggleButtonGroup> : <Alert severity="warning">{t("can only be set for tasks", {what: t("Status")})}</Alert>}</>
 
-      : <div style={{ alignItems: "center", color: "primary.main"}}>
-        {statusText(status)}
+      : <div style={{ alignItems: "center", color: "primary.main" }}>
+        {statusText(status, language)}
         {statusIcon(status)}
       </div>
     }
@@ -161,7 +155,7 @@ const TreeItemData = ({ processId, element, type, onSave = null, showType = true
       sx={{ mt: 2 }}
       underline="none"
     >
-      Time planification:
+      {t("Time planification")}:
     </Link>
 
     {editMode ? <>
@@ -181,33 +175,31 @@ const TreeItemData = ({ processId, element, type, onSave = null, showType = true
             </Stack>
           )}
         />
-      </Box> : <Alert severity="warning">Only tasks can be modified</Alert>}</> : <Box sx={{ mt: 2 }}>
+      </Box> : <Alert severity="warning">{t("can only be set for tasks", {what: t("Start and end dates")})}</Alert>}</> : <Box sx={{ mt: 2 }}>
       {dateRange[0] !== null ? <>
-        <b>Start:  </b>{moment(dateRange[0]).format("LL")}
+        <b>{t("Start")}:  </b>{moment(dateRange[0]).format("LL")}
         <br />
-        <b>End:  </b>{moment(dateRange[1]).format("LL")}
-      </> : <Alert severity="warning">Not set</Alert>}
+        <b>{t("End")}:  </b>{moment(dateRange[1]).format("LL")}
+      </> : <Alert severity="warning">{t("Not set")}</Alert>}
     </Box>}
 
-    {editMode && 
+    {editMode &&
       <Box sx={{ width: "100%", justifyContent: "center", textAlign: "center" }}>
         <Stack sx={{ mt: 2 }} justifyContent="center" direction="row" spacing={2}>
-          <Button size="small" variant="outlined" onClick={() => setEditMode(false)} color="warning">Discard changes</Button>
-          <LoadingButton loading={saving} sx={{ width: "200px" }} variant="contained" onClick={saveData} color="primary" size="small">Save</LoadingButton>
+          <Button size="small" variant="outlined" onClick={() => setEditMode(false)} color="warning">{t("Discard changes")}</Button>
+          <LoadingButton loading={saving} sx={{ width: "200px" }} variant="contained" onClick={saveData} color="primary" size="small">{t("Save")}</LoadingButton>
 
         </Stack>
 
-        <Divider sx={{my: 2}}>
-          other actions
+        <Divider sx={{ my: 2 }}>
+        {t("other actions")}
         </Divider>
         <ConfirmationButton
-          Actionator={({onClick}) => <Button size="small" variant="text" onClick={onClick} color="error">Remove {type}</Button>} 
-          ButtonComponent={({onClick}) => <LoadingButton sx={{mt: 1}} fullWidth variant='contained' color="error" onClick={onClick}>Confirm deletion</LoadingButton>} 
+          Actionator={({ onClick }) => <Button size="small" variant="text" onClick={onClick} color="error">{t("Remove", {what: type})}</Button>}
+          ButtonComponent={({ onClick }) => <LoadingButton sx={{ mt: 1 }} fullWidth variant='contained' color="error" onClick={onClick}>{t("Confirm deletion")}</LoadingButton>}
           onClick={deleteTreeItem}
-          text="Are you sure?" 
+          text={t("Are you sure?")}
         />
-          
-
       </Box>}
   </>
 

@@ -13,7 +13,7 @@ function SwipeableTextMobileStepper({ images = [], height = '100%', objectFit="c
 
     let imageList = []
     if (images.length === 0) {
-        imageList = ["https://cdn.dribbble.com/users/308895/screenshots/2598725/no-results.gif"]
+        imageList = ["https://622386.smushcdn.com/1998349/wp-content/uploads/2022/01/default_image.png?lossy=0&strip=1&webp=1"]
     } else {
         imageList = images
     }

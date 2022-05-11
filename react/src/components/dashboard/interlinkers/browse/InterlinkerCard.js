@@ -118,7 +118,7 @@ const InterlinkerCard = ({ interlinker, mode, onInterlinkerClick }) => {
             display: 'flex',
           }}
         >
-          {isLiked ? (
+          {/* isLiked ? (
             <Tooltip title={t('Unlike')}>
               <IconButton
                 onClick={handleUnlike}
@@ -133,7 +133,7 @@ const InterlinkerCard = ({ interlinker, mode, onInterlinkerClick }) => {
                 <FavoriteBorderIcon fontSize='small' />
               </IconButton>
             </Tooltip>
-          )}
+          ) */}
         </Box>
       </Box>
 

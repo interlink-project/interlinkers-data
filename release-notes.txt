@@ -1,0 +1,12 @@
+NEW
+
+IMPROVED
+• The button the user sees "GO to dashboard" is not clear => "Access Collaborative Environment". By clicking on this button you will access to a web-based tool that will allow you to define teams, co-production initiatives and guide you through the co-production process. 
+• Include button "Access Collaborative Environment" in Platform page
+• Download of manual in platform section does not work (no dowload starts) => redirection to github pages
+• The button to download the brochure of one pilot redirects to a Google Drive
+• Static image shown in Interlinker Card when snapshots are not available
+
+FIXED
+• Like button disabled until functionality added
+• Panel on the left opened from menu to create a new project redirects to home when clicking on Interlink logo

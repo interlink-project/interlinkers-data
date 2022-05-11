@@ -1,39 +1,23 @@
 import { AppBar, Tab, Tabs as MuiTabs } from "@material-ui/core";
-import React, { useCallback } from "react";
-import { useSelector, useDispatch } from 'react-redux';
-import CircularProgressWithLabel from "components/CircularProgress";
-import { setselectedPhaseTabId } from "slices/process";
-import useMounted from 'hooks/useMounted';
+import React, { useMemo } from "react";
+import { topologicalSort } from "utils/comparePrerequisites";
 
-const PhaseTabs = () => {
-    const { selectedPhaseTabId, phases} = useSelector((state) => state.process);
-    const dispatch = useDispatch();
-    const mounted = useMounted();
+const PhaseTabs = ({ selectedPhaseTabId, phases, onSelect }) => {
+    const orderedPhases = useMemo(() => topologicalSort(phases), [phases]);
 
-    const setNewPhaseTab = useCallback((event, value) => {
-        try {
-          if (mounted.current) {
-            dispatch(setselectedPhaseTabId(value))
-          }
-        } catch (err) {
-          console.error(err);
-        }
-      }, [mounted]);
-    
-      
     return (
         <AppBar position="static" sx={{ color: "white" }}>
             <MuiTabs
                 indicatorColor="secondary"
-                onChange={setNewPhaseTab}
-                value={selectedPhaseTabId}
+                onChange={(event, value) => onSelect(phases.find(el => el.id === value))}
+                value={selectedPhaseTabId || orderedPhases[0].id}
                 centered
 
                 textColor="inherit"
                 aria-label="Coproduction phases tabs"
             >
 
-                {phases.map((phase) => (
+                {orderedPhases.map((phase) => (
                     <Tab
                         key={phase.id}
                         label={<>

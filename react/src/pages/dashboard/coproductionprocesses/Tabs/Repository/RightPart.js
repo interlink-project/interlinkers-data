@@ -177,12 +177,12 @@ const RightPart = () => {
             <Box sx={{ p: 2 }}>
                 <Button sx={{ mb: 2 }} fullWidth variant="outlined" onClick={() => setTreeItemInfoOpen(!treeItemInfoOpen)}>
                     <Stack spacing={2}>
-                        <Typography variant="h6" >Information about the {selectedTreeItem.type}</Typography>
+                        <Typography variant="h6" >{t("Information about the", {what: selectedTreeItem.type})}</Typography>
                         <Divider> {!treeItemInfoOpen ? <KeyboardArrowDown /> : <KeyboardArrowUp />}</Divider>
                     </Stack>
                 </Button>
                 <Collapse in={treeItemInfoOpen} timeout="auto" unmountOnExit>
-                    <TreeItemData processId={process.id} type={selectedTreeItem.type} element={selectedTreeItem} showType={false} />
+                    <TreeItemData language={process.language} processId={process.id} type={selectedTreeItem.type} element={selectedTreeItem} />
                 </Collapse>
                 {isTask && <>
 

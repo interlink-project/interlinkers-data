@@ -15,5 +15,13 @@
   "Keywords": "Keywords",
   "Public services": "Public services",
   "login-required-title": "Login required",
-  "Log in": ""
+  "Log in": "",
+  "Unlike": "Unlike",
+  "Like": "Like",
+  "Phase": "Phase",
+  "Objective": "Objective",
+  "Task": "Task",
+  "use": "Use {{what}}",
+  "preview-what": "Preview {{what}}",
+  "Only tasks can be scheduled": ""
 }

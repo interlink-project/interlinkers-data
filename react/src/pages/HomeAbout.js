@@ -15,19 +15,19 @@ const pilots = [{
   name: i18n.t("spain"),
   description: i18n.t("home-zaragoza-pilot"),
   image: "/static/graphics/spain.png",
-  link: "https://drive.google.com/drive/u/1/folders/17D9kGo4gwLx2QZDD7s4uP3Cn5uQRI7mR"
+  link: "https://drive.google.com/file/d/1w5GjUWokvWVZKcJ3EQkX3UoPkc4Tmqqc/view?usp=sharing"
 },
 {
   name: i18n.t("latvia"),
   description: i18n.t("home-latvia-pilot"),
   image: "/static/graphics/latvia.png",
-  link: "https://drive.google.com/drive/u/1/folders/173chr_g-LYZ6twMmz-sh5GH1Ea4IylsX"
+  link: "https://drive.google.com/file/d/1JB8ITHecP7rOnhcd_BbhWqCvj6KI-KS7/view?usp=sharing"
 },
 {
   name: i18n.t("italy"),
   description: i18n.t("home-italy-pilot"),
   image: "/static/graphics/italy.png",
-  link: "https://drive.google.com/drive/u/1/folders/1Tyy4_2Fxf3HZQC0XhK2zMlIPp8m_-Apj"
+  link: "https://drive.google.com/file/d/1iWG9rn8jrOhfeSOO2rdLYz4p-BjBOjSS/view?usp=sharing"
 
 }]
 
