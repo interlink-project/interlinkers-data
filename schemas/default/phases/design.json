@@ -32,7 +32,11 @@
                 "it": "Definisci e concorda chiaramente il problema che deve essere affrontato dal team di co-produzione. Questo \u00e8 un passo importante verso la creazione di una soluzione efficace ed efficiente. Diverse risorse possono essere utili a tal fine: suggerimenti su come creare e condividere un linguaggio comune tra i membri del team, risorse per guidare discussioni collaborative, strumenti per la raccolta di idee.",
                 "lv": ""
             },
-            "problemprofiles": [],
+            "problemprofiles": [
+                "UND_PROBLEM_1",
+                "UND_PROBLEM_5",
+                "DEF_PROBLEM_2"
+            ],
             "tasks": [
                 {
                     "name_translations": {
