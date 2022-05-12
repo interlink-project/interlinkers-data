@@ -1,8 +1,8 @@
 {
     "problemprofile;build_problem_1;description": "Lietotāja saskarnes ieviešanai būtu jāgarantē izmantojamība. Sadarbības grupas dalībniekiem, kas iesaistīti saskarņu izstrādē, vajadzētu būt informētiem par labu praksi saskarņu izstrādē publisko pakalpojumu jomā.",
-    "problemprofile;build_problem_1;name": "",
-    "problemprofile;build_problem_2;description": "",
-    "problemprofile;build_problem_2;name": "",
+    "problemprofile;build_problem_1;name": "Lietotāja saskarnes dizains",
+    "problemprofile;build_problem_2;description": "Ja publiskie pakalpojumi tiek sniegti digitāli Tīmekļvietnē vai mobilajā lietojumprogrammā, ir nepieciešams, lai pakalpojumu varētu viegli izmantot dažādas lietotāju kategorijas, īpaši ņemot vērā personas ar invaliditāti. Pakalpojumi būtu jāsniedz daudzkanālu veidā, maksimāli palielinot to izmantošanu, ko veic potenciāli jebkura lietotāju grupa vai pārstāvji, kas darbojas to vārdā, un sniedzot skaidrus paziņojumus par pieejamības ierobežojumiem pašreizējā īstenošanā.",
+    "problemprofile;build_problem_2;name": "Ieviest pieejamus digitālos publiskos pakalpojumus",
     "problemprofile;build_problem_3;description": "",
     "problemprofile;build_problem_3;name": "Atvērtās avota programmatūras licencēšana",
     "problemprofile;build_problem_4;description": "",
