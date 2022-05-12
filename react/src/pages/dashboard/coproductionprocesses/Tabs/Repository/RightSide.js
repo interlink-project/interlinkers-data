@@ -121,7 +121,7 @@ const RecommendedInterlinkerCard = ({ language, interlinker, assets, onClick }) 
         )}
     </>
 }
-const RightPart = () => {
+const RightSide = () => {
     const { process, selectedTreeItem } = useSelector((state) => state.process);
     const { softwareInterlinkers } = useSelector((state) => state.general);
     const isTask = selectedTreeItem && selectedTreeItem.type === "task"
@@ -359,4 +359,4 @@ const RightPart = () => {
     );
 };
 
-export default RightPart;
+export default RightSide;

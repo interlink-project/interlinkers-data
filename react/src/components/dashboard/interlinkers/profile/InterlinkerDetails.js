@@ -6,7 +6,7 @@ import {
   InterlinkerReference,
   InterlinkerReviews
 } from 'components/dashboard/interlinkers';
-import SwipeableTextMobileStepper from 'components/dashboard/interlinkers/browse/Carousel';
+import SwipeableTextMobileStepper from 'components/SwipeableTextMobileStepper';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from "react-router-dom";

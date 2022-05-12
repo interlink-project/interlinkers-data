@@ -126,8 +126,6 @@ export const SettingsProvider = (props) => {
 
   useEffect(() => {
     const newSettigns = restoreSettings() || initialSettings;
-
-    console.log("mira", newSettigns)
     fetch("/static/customization/settings.json")
       .then(r => r.json())
       .then(json => {

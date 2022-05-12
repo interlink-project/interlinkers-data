@@ -40,7 +40,7 @@ const InterlinkerDialog = ({ open, setOpen, interlinker }) => {
                 backgroundColor: 'background.default',
                 py: 0
             }}>
-                <InterlinkerDetails interlinker={data} />
+                <InterlinkerDetails interlinker={data} onRelatedInterlinkerClick={() => {}} />
             </DialogContent>
         </> : <CircularProgress />
         }

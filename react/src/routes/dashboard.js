@@ -10,7 +10,7 @@ const InterlinkerBrowse = Loadable(
   lazy(() => import('../pages/dashboard/interlinkers/InterlinkerBrowse'))
 );
 const InterlinkerProfile = Loadable(
-  lazy(() => import('../pages/dashboard/interlinkers/InterlinkerProfile'))
+  lazy(() => import('../components/dashboard/interlinkers/profile/InterlinkerProfile'))
 );
 
 const MyWorkspace = Loadable(lazy(() => import('../pages/dashboard/MyWorkspace')));

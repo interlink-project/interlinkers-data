@@ -3,7 +3,7 @@ import { Link as RouterLink, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Box, Divider, Drawer, Link } from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import Logo from '../LightLogo';
+import Logo, { LandingNavbarLogo } from '../Logo';
 import { landingPages, UserAreaButton } from './MainNavbar';
 
 const MainSidebar = (props) => {
@@ -39,7 +39,7 @@ const MainSidebar = (props) => {
           p: 2,
         }}
       >
-          <Logo />
+          <LandingNavbarLogo />
         <Box sx={{ mt: 3 }}>
           {landingPages.map((el, i) => (
             <React.Fragment key={`sidebarItem${i}`}>

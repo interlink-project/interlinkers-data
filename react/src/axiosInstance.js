@@ -1,14 +1,14 @@
-import axios from 'axios'
-import { env } from 'configuration'
-import { getLanguage } from 'translations/i18n'
-import qs from "qs"
+import axios from 'axios';
+import { env } from 'configuration';
+import { getLanguage } from 'translations/i18n';
+import qs from 'qs';
 
-export const getImageUrl = (micro, path) => path && `/${micro}${path}`
+export const getImageUrl = (micro, path) => path && `/${micro}${path}`;
 
 // https://stackoverflow.com/questions/42898009/multiple-fields-with-same-key-in-query-params-axios-request/46153494#46153494
 
 const axiosInstance = axios.create({
-  paramsSerializer: params => qs.stringify(params, {arrayFormat: 'repeat'}),
+  paramsSerializer: (params) => qs.stringify(params, { arrayFormat: 'repeat' }),
   baseURL: env.REACT_APP_COMPLETE_DOMAIN,
   timeout: 20000,
   headers: {
@@ -16,6 +16,6 @@ const axiosInstance = axios.create({
     accept: 'application/json',
     'Accept-Language': getLanguage(),
   },
-})
+});
 
-export default axiosInstance
+export default axiosInstance;

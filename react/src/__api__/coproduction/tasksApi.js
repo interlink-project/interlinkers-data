@@ -1,9 +1,9 @@
 import axiosInstance from 'axiosInstance';
-import GeneralApi from "../general"
+import GeneralApi from '../general';
 
 class TasksApi extends GeneralApi {
   constructor() {
-    super("coproduction/api/v1/tasks");
+    super('coproduction/api/v1/tasks');
   }
 }
 

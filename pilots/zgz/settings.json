@@ -1,8 +1,11 @@
 {
 	"logos": {
-		"light": "all-white.png",
-        "dark": "zaragoza-white.png",
-        "home": "zaragoza.png"
+		"dashboard_navbar_light": "all-white.png",
+        "dashboard_navbar_dark": "zaragoza-white.png",
+        "home_light": "zaragoza.png",
+        "home_dark": "zaragoza-white.png",
+        "landing_light": "zaragoza.png",
+        "landing_dark": "zaragoza-white.png"
 	},
 	"palette": {
 		"light": {
@@ -20,7 +23,7 @@
 			"primary": {
 				"contrastText": "#ffffff",
 				"workspaceText": "#000000",
-				"main": "#d94438"
+				"main": "#D33A19"
 			},
 			"secondary": {
 				"contrastText": "#000000",
@@ -53,7 +56,7 @@
 			"primary": {
 				"contrastText": "#ffffff",
 				"workspaceText": "#0ca811",
-				"main": "#262625"
+				"main": "#d94438"
 			},
 			"secondary": {
 				"contrastText": "#000000",

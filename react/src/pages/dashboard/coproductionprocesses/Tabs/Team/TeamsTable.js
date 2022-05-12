@@ -59,7 +59,7 @@ function Row({ obj: ob, onChanges, isTeam = false, onTeamClick = () => { } }) {
         if (!isTeam && mounted) {
             setLoading(true)
             usersApi.get(obj.id).then(res => {
-                if (mounted) {
+                if (mounted.current) {
                     setObj({ ...res.data, ...ob })
                     setLoading(false)
                 }

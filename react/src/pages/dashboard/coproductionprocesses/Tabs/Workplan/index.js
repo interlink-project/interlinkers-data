@@ -1,4 +1,5 @@
 import { Grid, Skeleton, ToggleButton, ToggleButtonGroup } from "@material-ui/core";
+import { PhaseTabs } from "components/dashboard/tree";
 import useDependantTranslation from "hooks/useDependantTranslation";
 import useMounted from "hooks/useMounted";
 import useSettings from 'hooks/useSettings';
@@ -7,7 +8,6 @@ import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from "react-router";
 import { setselectedPhaseTabId } from "slices/process";
-import PhaseTabs from "../PhaseTabs";
 import Gantt from "./FrappeGantt";
 import "./FrappeGantt.css";
 

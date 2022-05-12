@@ -1,8 +1,8 @@
 import { Box, Card, Divider, Input, Rating, Typography } from '@material-ui/core';
+import { Search } from '@material-ui/icons';
 import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import SearchIcon from '../../../../icons/Search';
 import MultiSelect from '../../../MultiSelect';
 
 
@@ -31,8 +31,6 @@ const InterlinkerBrowseFilter = ({ onFiltersChange }) => {
   const [minimumRating, setMinimumRating] = useState(0);
   const didMount = useRef(false);
   const {t} = useTranslation()
-
-  const { problemprofiles } = useSelector((state) => state.general);
 
   const multiselectOptions = [
     {
@@ -147,7 +145,7 @@ const allCreators = ["official", "community"]
           p: 2
         }}
       >
-        <SearchIcon fontSize='small' />
+        <Search fontSize='small' />
         <Box
           sx={{
             flexGrow: 1,

@@ -4,8 +4,6 @@ import { BottomNavigation, BottomNavigationAction, Badge } from '@material-ui/co
 import { AccountBox, Folder, Dashboard, Notifications } from '@material-ui/icons';
 import { grey } from '@material-ui/core/colors';
 
-// /dashboard/account
-
 const sections = [{
   title: 'Overview',
   path: '/dashboard',

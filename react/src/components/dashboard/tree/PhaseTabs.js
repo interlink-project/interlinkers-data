@@ -1,6 +1,6 @@
 import { AppBar, Tab, Tabs as MuiTabs } from "@material-ui/core";
 import React, { useMemo } from "react";
-import { topologicalSort } from "utils/comparePrerequisites";
+import { topologicalSort } from "utils/topologicalSort";
 
 const PhaseTabs = ({ selectedPhaseTabId, phases, onSelect }) => {
     const orderedPhases = useMemo(() => topologicalSort(phases), [phases]);

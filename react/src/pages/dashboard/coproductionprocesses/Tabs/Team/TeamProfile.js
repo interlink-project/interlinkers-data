@@ -17,7 +17,7 @@ const UserRow = ({ user, editMode }) => {
   useEffect(() => {
     setLoading(true)
     usersApi.get(user.id).then(res => {
-      if (mounted) {
+      if (mounted.current) {
         setData(res.data)
         setLoading(false)
       }
@@ -57,7 +57,7 @@ const TeamProfile = ({ open, setOpen, teamId, onChanges }) => {
 
   const addUserToTeam = (user) => {
     teamsApi.addUser(teamId, user.sub || user.id).then(res => {
-      if (mounted) {
+      if (mounted.current) {
         update(res)
         onChanges && onChanges(res)
       }
@@ -83,7 +83,7 @@ const TeamProfile = ({ open, setOpen, teamId, onChanges }) => {
     if (send) {
       setLoading(true)
       const callResponses = await Promise.all(calls);
-      if (mounted) {
+      if (mounted.current) {
         onChanges && onChanges()
         update(callResponses.find(el => el !== null && Object.keys(el).length > 0))
       }
@@ -104,7 +104,7 @@ const TeamProfile = ({ open, setOpen, teamId, onChanges }) => {
     if (teamId) {
       setLoading(true)
       teamsApi.get(teamId).then(res => {
-        if(mounted){
+        if(mounted.current){
           update(res)
           setLoading(false)
         }

@@ -12,7 +12,6 @@ const HomeRow = ({ light = true, graphic, right }) => {
     );
 
     useEffect(() => {
-        console.log(inViewport)
         if (inViewport) {
             setShow(true)
         }

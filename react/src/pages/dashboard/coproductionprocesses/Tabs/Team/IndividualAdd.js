@@ -26,7 +26,7 @@ const IndividualAdd = ({ open, setOpen, onChanges }) => {
 
   const handleAdd = () => {
     coproductionProcessesApi.addUser(process.id, selectedIndividual.sub).then((res) => {
-      if (mounted) {
+      if (mounted.current) {
         handleClose()
         onChanges && onChanges(res)
       }

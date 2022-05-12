@@ -20,7 +20,7 @@ const CoproductionprocessCreate = ({ open, setOpen, loading, setLoading, onCreat
   const { t } = useTranslation()
 
   const sendOnCreate = (data) => {
-    if (mounted) {
+    if (mounted.current) {
       setLoading(false)
       handleClose()
       if (onCreate) {

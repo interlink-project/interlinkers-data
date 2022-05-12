@@ -3,7 +3,7 @@ import { TreeView } from '@material-ui/lab';
 import { statusIcon } from 'components/dashboard/assets/Icons';
 import { StyledTreeItem } from 'components/dashboard/tree';
 import { useEffect, useMemo, useState } from 'react';
-import { topologicalSort } from 'utils/comparePrerequisites';
+import { topologicalSort } from 'utils/topologicalSort';
 
 function MinusSquare(props) {
   return (

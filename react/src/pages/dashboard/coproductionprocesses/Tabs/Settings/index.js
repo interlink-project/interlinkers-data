@@ -6,7 +6,7 @@ import useDependantTranslation from "hooks/useDependantTranslation";
 import useMounted from "hooks/useMounted";
 import $ from 'jquery';
 import moment from "moment";
-import MainSkeleton from "pages/dashboard/coproductionprocesses/Tabs/MainSkeleton";
+import MainSkeleton from "components/MainSkeleton";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { Prompt } from 'react-router-dom';
@@ -189,7 +189,7 @@ const SettingsTab = () => {
                             data: values,
                             logotype,
                             onSuccess: () => {
-                                if (mounted) {
+                                if (mounted.current) {
                                     setEditMode(false)
                                     setStatus({ success: true });
                                     setSubmitting(false);
@@ -261,7 +261,7 @@ const SettingsTab = () => {
                             <Button variant="text" disabled={isSubmitting} color="warning" startIcon={<Delete />} onClick={() => { setEditMode(false); resetForm(); setLogotype(null); }}>{t("Cancel")}</Button>
                             <Button variant="contained" disabled={isSubmitting} color="success" startIcon={<Save />} onClick={submitForm} disabled={!isValid}>{t("Save")}</Button>
                             <ConfirmationButton
-                                Actionator={({ onClick }) => <Button variant="contained" disabled={isSubmitting} color="error" startIcon={<Delete />}>{t("Remove", { what: t("coproduction process") })}</Button>}
+                                Actionator={({ onClick }) => <Button variant="contained" disabled={isSubmitting} color="error" onClick={onClick} startIcon={<Delete />}>{t("Remove", { what: t("coproduction process") })}</Button>}
                                 ButtonComponent={({ onClick }) => <Button sx={{ mt: 1 }} fullWidth variant='contained' color="error" onClick={onClick}>Confirm deletion</Button>}
                                 onClick={onRemove}
                                 text={t("Are you sure?")}

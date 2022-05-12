@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { topologicalSort } from 'utils/comparePrerequisites';
-import { coproductionProcessesApi, coproductionSchemasApi, problemprofilesApi, softwareInterlinkersApi, teamsApi } from '../__api__';
+import { coproductionProcessesApi, problemprofilesApi, softwareInterlinkersApi, teamsApi } from '../__api__';
 
 const initialState = {
   problemprofiles: [],
@@ -24,19 +23,19 @@ const slice = createSlice({
   initialState,
   reducers: {
     setTeams(state, action) {
-      state.teams = action.payload
+      state.teams = action.payload;
     },
     addTeam(state, action) {
-      state.teams = [...state.teams, action.payload]
+      state.teams = [...state.teams, action.payload];
     },
     setLoadingTeams(state, action) {
-      state.loadingTeams = action.payload
+      state.loadingTeams = action.payload;
     },
     setProcesses(state, action) {
       state.processes = action.payload;
     },
     setLoadingProcesses(state, action) {
-      state.loadingProcesses = action.payload
+      state.loadingProcesses = action.payload;
     },
     setSoftwareInterlinkers(state, action) {
       state.softwareInterlinkers = action.payload;
@@ -45,16 +44,16 @@ const slice = createSlice({
       state.loadingSoftwareInterlinkers = action.payload;
     },
     setSchemas(state, action) {
-      state.schemas = action.payload
+      state.schemas = action.payload;
     },
     setLoadingSchemas(state, action) {
-      state.loadingSchemas = action.payload
+      state.loadingSchemas = action.payload;
     },
     setProblemProfiles(state, action) {
       state.problemprofiles = action.payload;
     },
     setLoadinProblemProfiles(state, action) {
-      state.loadingProblemprofiles = action.payload
+      state.loadingProblemprofiles = action.payload;
     },
   }
 });
@@ -63,7 +62,7 @@ export const { reducer } = slice;
 
 export const getSoftwareInterlinkers = () => async (dispatch) => {
   dispatch(slice.actions.setSoftwareInterlinkersLoading(true));
-  const softwareinterlinkers = await softwareInterlinkersApi.getIntegrated()
+  const softwareinterlinkers = await softwareInterlinkersApi.getIntegrated();
   dispatch(slice.actions.setSoftwareInterlinkers(softwareinterlinkers));
   dispatch(slice.actions.setSoftwareInterlinkersLoading(false));
 };
@@ -78,7 +77,7 @@ export const getMyTeams = () => async (dispatch) => {
 export const addTeam = ({ data, callback }) => async (dispatch) => {
   dispatch(slice.actions.addTeam(data));
   if (callback) {
-    callback()
+    callback();
   }
 };
 
@@ -91,7 +90,7 @@ export const getMyProcesses = () => async (dispatch) => {
 
 export const getProblemProfiles = () => async (dispatch) => {
   dispatch(slice.actions.setLoadinProblemProfiles(true));
-  let problemProfiles = await problemprofilesApi.getMulti();
+  const problemProfiles = await problemprofilesApi.getMulti();
   dispatch(slice.actions.setProblemProfiles(problemProfiles));
   dispatch(slice.actions.setLoadinProblemProfiles(false));
 };

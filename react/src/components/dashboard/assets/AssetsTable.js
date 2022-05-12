@@ -5,10 +5,10 @@ import {
 import { CopyAll, Delete, Download, Edit, MoreVert as MoreVertIcon, Share } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import ConfirmationButton from 'components/ConfirmationButton';
+import { InterlinkerDialog } from 'components/dashboard/interlinkers';
 import useDependantTranslation from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
 import moment from 'moment';
-import InterlinkerDialog from 'pages/dashboard/interlinkers/InterlinkerDialog';
 import React, { useEffect, useState } from 'react';
 import { assetsApi } from '__api__';
 import { InterlinkerReference } from '../interlinkers';
@@ -225,6 +225,5 @@ const Assets = ({ assets, onChange = () => { }, actions }) => {
     }
   </>
 }
-
 
 export default Assets;

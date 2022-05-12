@@ -1,5 +1,6 @@
 import { Box, Button, Container, Fade, Typography, useTheme } from '@material-ui/core';
 import { HomeRow } from "components/home";
+import { HomeLogo } from 'components/Logo';
 import useSettings from 'hooks/useSettings';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
@@ -38,11 +39,7 @@ const Home = () => {
                 py: 5
               }}
             >
-              <img
-                alt='Logo'
-                src={"/static/customization/" + settings.logos.home}
-                style={{ width: "90%", height: "auto" }}
-              />
+              <HomeLogo style={{ width: "90%", height: "auto" }} />
               <Typography
                 align='center'
                 variant='h5'

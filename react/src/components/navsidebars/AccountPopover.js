@@ -1,31 +1,24 @@
-import { useRef, useState } from 'react';
-import { Link as RouterLink, useNavigate } from 'react-router-dom';
-import toast from 'react-hot-toast';
 import {
   Avatar,
   Box,
   Button,
   ButtonBase,
-  Divider,
-  ListItemIcon,
-  ListItemText,
-  MenuItem,
-  Popover,
-  Typography,
+  Divider, Popover,
+  Typography
 } from '@material-ui/core';
-import CogIcon from '../../icons/Cog';
-import UserIcon from '../../icons/User';
-import useAuth from '../../hooks/useAuth';
 import { Login } from '@material-ui/icons';
+import { useRef, useState } from 'react';
+import toast from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
+import useAuth from '../../hooks/useAuth';
 
 const AccountPopover = () => {
   const anchorRef = useRef(null);
   const auth = useAuth();
   const { user, isAuthenticated } = auth;
   const [open, setOpen] = useState(false);
-  const {t} = useTranslation()
-  
+  const { t } = useTranslation()
+
   const handleOpen = () => {
     setOpen(true);
   };

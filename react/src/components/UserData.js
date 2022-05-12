@@ -10,7 +10,7 @@ const UserData = ({ variant, id, sx = {} }) => {
     const [data, setData] = useState(null)
     useEffect(() => {
         usersApi.get(id).then(res => {
-            if (mounted) {
+            if (mounted.current) {
                 setData(res.data)
             }
         })

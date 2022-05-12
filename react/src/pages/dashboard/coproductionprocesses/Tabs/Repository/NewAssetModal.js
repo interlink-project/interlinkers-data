@@ -4,13 +4,12 @@ import {
     DialogTitle, Grid, IconButton, Typography
 } from '@material-ui/core';
 import { ArrowBack, Close, DoubleArrow, Download, Preview } from '@material-ui/icons';
-import { env } from 'configuration';
-import InterlinkerHeader from 'pages/dashboard/interlinkers/InterlinkerHeader';
-import { useEffect, useState } from 'react';
-import { assetsApi, knowledgeInterlinkersApi } from '__api__';
-import InterlinkerDetails from "../../../interlinkers/InterlinkerDetails";
 import { LoadingButton } from '@material-ui/lab';
+import { InterlinkerDetails, InterlinkerHeader } from 'components/dashboard/interlinkers';
+import { env } from 'configuration';
 import useMounted from 'hooks/useMounted';
+import { useEffect, useState } from 'react';
+import { assetsApi } from '__api__';
 
 const CircularProgress = ({ text = "Waiting for response...", onCancel = null }) => (
     <Box
@@ -45,7 +44,7 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
     // if software interlinker, helper bools
     const isSoftware = selectedInterlinker.nature === "softwareinterlinker"
     const isKnowledge = selectedInterlinker.nature === "knowledgeinterlinker"
-    const isExternal = selectedInterlinker.nature === "externalinterlinker" || selectedInterlinker.nature === "externalknowledgeinterlinker"
+    const isExternal = selectedInterlinker.nature === "externalinterlinker" || selectedInterlinker.nature === "externalknowledgeinterlinker"
     const can_open_in_modal = isSoftware && selectedInterlinker.open_in_modal
 
     // if knowledgeinterlinker is previewable
@@ -85,7 +84,7 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
                 selectedInterlinker.id,
                 message.id || message._id,
             );
-        
+
             // TODO: if fails
             const interlinker_asset = await assetsApi.getInternal(coproduction_asset.id)
             onFinish({ ...coproduction_asset, ...interlinker_asset })
@@ -110,20 +109,20 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
                     else if (window.attachEvent) {
                         window.attachEvent("onmessage", onMessage, false);
                     }
-    
+
                     // if cannot be opened in a modal, open a window
                     if (!can_open_in_modal) {
                         window.open(`${selectedInterlinker.backend}/instantiate`)
-                    }else{
+                    } else {
                         setLoadingInstantiator(true)
                     }
                 }
-                else if(isKnowledge) {
+                else if (isKnowledge) {
                     // if knowledgeinterlinker
                     setLoadingKnowledgeInstantiation(true)
                     const interlinker_asset = await assetsApi.instantiate(selectedInterlinker.id, task.id)
                     setLoadingKnowledgeInstantiation(false)
-    
+
                     // TODO: if fails
                     onFinish(interlinker_asset)
                 }
@@ -135,7 +134,7 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
                 handleClose()
             }
         }
-        if(mounted){
+        if (mounted.current) {
             doAsync()
         }
         return () => {
@@ -191,7 +190,7 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
                 backgroundColor: 'background.default'
             }}>
                 {activeStep === 0 && <Box>
-                    <InterlinkerDetails interlinker={selectedInterlinker} />
+                    <InterlinkerDetails interlinker={selectedInterlinker} onRelatedInterlinkerClick={() => {}} />
                 </Box>}
 
                 {activeStep === 1 && isSoftware && <Box>
@@ -205,7 +204,7 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
                     }
                 </Box>}
                 {activeStep === 1 && isKnowledge && <Box>
-                        <CircularProgress />
+                    <CircularProgress />
                 </Box>}
 
                 {activeStep === 2 && !isKnowledge && <Box

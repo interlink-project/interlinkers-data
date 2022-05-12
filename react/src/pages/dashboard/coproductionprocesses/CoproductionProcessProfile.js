@@ -1,13 +1,15 @@
 import {
   Avatar,
   Box, Card, CardHeader, Container, IconButton,
-  Tab, Tabs, Typography, useMediaQuery,
+  Tab, Tabs, useMediaQuery,
   useTheme
 } from '@material-ui/core';
 import { red } from '@material-ui/core/colors';
-import { Error, MoreVert } from '@material-ui/icons';
+import { MoreVert } from '@material-ui/icons';
+import MainSkeleton from 'components/MainSkeleton';
+import PermissionDenied from 'components/PermissionDenied';
+import useAuth from 'hooks/useAuth';
 import i18next from 'i18next';
-import MainSkeleton from 'pages/dashboard/coproductionprocesses/Tabs/MainSkeleton';
 import OverviewTab from 'pages/dashboard/coproductionprocesses/Tabs/Overview';
 import { useCallback, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
@@ -18,13 +20,11 @@ import { useParams } from 'react-router-dom';
 import { getSoftwareInterlinkers } from 'slices/general';
 import { getProcess, setSelectedTreeItem } from 'slices/process';
 import useMounted from '../../../hooks/useMounted';
+import SchemaSelector from './Tabs/Overview/SchemaSelector';
+import Repository from './Tabs/Repository';
 import SettingsTab from './Tabs/Settings';
-import CreateSchema from './Tabs/Overview/CreateSchema';
-import Repository from './Tabs/Repository/Repository';
 import TeamTab from './Tabs/Team';
-import Workplan from './Tabs/Workplan/Workplan';
-import useAuth from 'hooks/useAuth';
-import PermissionDenied from 'components/PermissionDenied';
+import Workplan from './Tabs/Workplan';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -147,7 +147,7 @@ const CoproductionProcessProfile = () => {
                 <TabPanel value={tab} index="overview">
                   <Card sx={style}>
                     {hasSchema && <OverviewTab setSelectedTreeItem={_setSelectedTreeItem} coproductionprocess={process} />}
-                    {!hasSchema && process.creator_id === user.sub && <CreateSchema />}
+                    {!hasSchema && process.creator_id === user.sub && <SchemaSelector />}
                     {!hasSchema && process.creator_id !== user.sub && <PermissionDenied explanation={t("Only the creator of the process can select an schema")} />}
                   </Card>
                 </TabPanel>

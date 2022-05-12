@@ -1,9 +1,9 @@
 import axiosInstance from 'axiosInstance';
-import GeneralApi, { removeEmpty } from "../general"
+import GeneralApi, { removeEmpty } from '../general';
 
 class SoftwareInterlinkersApi extends GeneralApi {
   constructor() {
-    super("catalogue/api/v1/softwareinterlinkers");
+    super('catalogue/api/v1/softwareinterlinkers');
   }
 
   async getIntegrated(params = {}) {

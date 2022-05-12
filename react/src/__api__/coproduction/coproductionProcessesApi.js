@@ -1,53 +1,51 @@
 import axiosInstance from 'axiosInstance';
-import GeneralApi from "../general"
-import {coproductionSchemasApi} from "../catalogue/coproductionSchemasApi"
-
+import GeneralApi from '../general';
+import { coproductionSchemasApi } from '../catalogue/coproductionSchemasApi';
 
 class CoproductionProcessesApi extends GeneralApi {
   constructor() {
-    super("coproduction/api/v1/coproductionprocesses");
+    super('coproduction/api/v1/coproductionprocesses');
   }
 
   async addTeam(id, team_id) {
     if (id) {
-      const res = await axiosInstance.post(`/${this.url}/${id}/add_team`, {team_id})
+      const res = await axiosInstance.post(`/${this.url}/${id}/add_team`, { team_id });
       console.log('add team', res.data);
-      return res.data
+      return res.data;
     }
   }
 
   async addUser(id, user_id) {
     if (id) {
-      console.log({user_id})
-      const res = await axiosInstance.post(`/${this.url}/${id}/add_user`, {user_id})
+      console.log({ user_id });
+      const res = await axiosInstance.post(`/${this.url}/${id}/add_user`, { user_id });
       console.log('add user', res.data);
-      return res.data
+      return res.data;
     }
   }
 
   async myRoles(id) {
     if (id) {
-      const res = await axiosInstance.get(`/${this.url}/${id}/my_roles`)
+      const res = await axiosInstance.get(`/${this.url}/${id}/my_roles`);
       console.log('my roles', res.data);
-      return res.data
+      return res.data;
     }
   }
 
-
   async getTree(id) {
     if (id) {
-      const res = await axiosInstance.get(`/${this.url}/${id}/tree`)
+      const res = await axiosInstance.get(`/${this.url}/${id}/tree`);
       console.log('get tree', res.data);
-      return res.data
+      return res.data;
     }
   }
 
   async setSchema(id, coproductionschema_id, language) {
     if (id) {
-      const schema = await coproductionSchemasApi.get(coproductionschema_id, language)
-      const res = await axiosInstance.post(`/${this.url}/${id}/set_schema`, schema)
+      const schema = await coproductionSchemasApi.get(coproductionschema_id, language);
+      const res = await axiosInstance.post(`/${this.url}/${id}/set_schema`, schema);
       console.log('set schema', res.data);
-      return res.data
+      return res.data;
     }
   }
 

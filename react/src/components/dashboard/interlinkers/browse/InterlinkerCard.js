@@ -18,7 +18,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link as RouterLink } from 'react-router-dom';
 import { HTMLtoText } from 'utils/safeHTML';
-import SwipeableTextMobileStepper from './Carousel';
+import SwipeableTextMobileStepper from 'components/SwipeableTextMobileStepper';
 
 
 const InterlinkerCard = ({ interlinker, mode, onInterlinkerClick }) => {

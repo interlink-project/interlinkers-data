@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { topologicalSort } from 'utils/comparePrerequisites';
-import { coproductionProcessesApi, objectivesApi, phasesApi, rolesApi, tasksApi, logsApi } from '../__api__';
-import { getSchemas } from "./general";
+import { topologicalSort } from 'utils/topologicalSort';
+import { coproductionProcessesApi, logsApi, objectivesApi, phasesApi, rolesApi, tasksApi } from '../__api__';
 
 const initialState = {
   loading: false,
@@ -13,7 +12,7 @@ const initialState = {
   objectives: [],
   phases: [],
   allItems: [],
-  selectedPhaseTabId: "",
+  selectedPhaseTabId: '',
   selectedTreeItem: null,
   network: null,
   roles: [],
@@ -27,33 +26,32 @@ const slice = createSlice({
   initialState,
   reducers: {
     setProcessTree(state, action) {
-      const phases = []
-      const objectives = []
-      const tasks = []
+      const phases = [];
+      const objectives = [];
+      const tasks = [];
 
-      state.hasSchema = action.payload.length > 0
+      state.hasSchema = action.payload.length > 0;
       if (action.payload) {
         // separate tree into groups
-        action.payload.forEach(phase => {
-          phase.objectives.forEach(objective => {
-            objective.tasks.forEach(task => {
-              tasks.push(task)
+        action.payload.forEach((phase) => {
+          phase.objectives.forEach((objective) => {
+            objective.tasks.forEach((task) => {
+              tasks.push(task);
             });
-            objectives.push(objective)
+            objectives.push(objective);
           });
-          phases.push(phase)
+          phases.push(phase);
         });
-        state.allItems = phases.concat(objectives).concat(tasks)
-        const orderedTasks = topologicalSort([...tasks])
+        state.allItems = phases.concat(objectives).concat(tasks);
+        const orderedTasks = topologicalSort([...tasks]);
         state.tasks = orderedTasks;
-        const orderedObjectives = topologicalSort([...objectives])
+        const orderedObjectives = topologicalSort([...objectives]);
         state.objectives = orderedObjectives;
-        const orderedPhases = topologicalSort([...phases])
+        const orderedPhases = topologicalSort([...phases]);
         state.phases = orderedPhases;
-        state.selectedPhaseTabId = orderedPhases.length > 0 ? orderedPhases[0].id : ""
-        state.selectedTreeItem = orderedPhases.length > 0 ? { ...orderedPhases[0], type: "phase" } : null
+        state.selectedPhaseTabId = orderedPhases.length > 0 ? orderedPhases[0].id : '';
+        state.selectedTreeItem = orderedPhases.length > 0 ? { ...orderedPhases[0], type: 'phase' } : null;
       }
-
     },
     setSelectedTreeItem(state, action) {
       state.selectedTreeItem = action.payload;
@@ -65,62 +63,58 @@ const slice = createSlice({
       state.process = action.payload;
       // state.network = generateGraph(state.process);
       // TODO: set tab depending on progress
-      console.log("SETTING SELECTED TASK NULL")
-      state.selectedTreeItem = null
+      console.log('SETTING SELECTED TASK NULL');
+      state.selectedTreeItem = null;
     },
     setRoles(state, action) {
       state.roles = action.payload;
       state.teams = action.payload.reduce(
-        (previousValue, currentValue) => {
-          return [...previousValue, ...currentValue.teams.map(t => ({...t, role_id: currentValue.id}))]
-        },
+        (previousValue, currentValue) => [...previousValue, ...currentValue.teams.map((t) => ({ ...t, role_id: currentValue.id }))],
         []
       );
       state.users = action.payload.reduce(
-        (previousValue, currentValue) => {
-          return [...previousValue, ...currentValue.users.map(u => ({...u, role_id: currentValue.id}))]
-        },
+        (previousValue, currentValue) => [...previousValue, ...currentValue.users.map((u) => ({ ...u, role_id: currentValue.id }))],
         []
       );
     },
     updatePhase(state, action) {
-      state.phases = state.phases.map(obj => obj.id === action.payload.id ? action.payload : obj);
+      state.phases = state.phases.map((obj) => (obj.id === action.payload.id ? action.payload : obj));
       if (state.selectedTreeItem && state.selectedTreeItem.id === action.payload.id) {
-        state.selectedTreeItem = { ...action.payload, type: "phase" }
+        state.selectedTreeItem = { ...action.payload, type: 'phase' };
       }
     },
     deletePhase(state, action) {
-      state.phases = state.phases.filter(obj => obj.id !== action.payload);
+      state.phases = state.phases.filter((obj) => obj.id !== action.payload);
       if (state.selectedTreeItem && state.selectedTreeItem.id === action.payload) {
-        state.selectedTreeItem = null
+        state.selectedTreeItem = null;
       }
     },
     updateObjective(state, action) {
-      state.objectives = state.objectives.map(obj => obj.id === action.payload.id ? action.payload : obj);
+      state.objectives = state.objectives.map((obj) => (obj.id === action.payload.id ? action.payload : obj));
       // updateDatesForObject(state, action.payload.phase_id, "phase", "objective")
       // updateProgressForObject(state, action.payload.phase_id, "phase", "objective")
       if (state.selectedTreeItem && state.selectedTreeItem.id === action.payload.id) {
-        state.selectedTreeItem = { ...action.payload, type: "objective" }
+        state.selectedTreeItem = { ...action.payload, type: 'objective' };
       }
     },
     deleteObjective(state, action) {
-      state.objectives = state.objectives.filter(obj => obj.id !== action.payload);
+      state.objectives = state.objectives.filter((obj) => obj.id !== action.payload);
       if (state.selectedTreeItem && state.selectedTreeItem.id === action.payload) {
-        state.selectedTreeItem = null
+        state.selectedTreeItem = null;
       }
     },
     updateTask(state, action) {
-      state.tasks = state.tasks.map(obj => obj.id === action.payload.id ? action.payload : obj);
+      state.tasks = state.tasks.map((obj) => (obj.id === action.payload.id ? action.payload : obj));
       // updateDatesForObject(state, action.payload.objective_id, "objective", "task")
       // updateProgressForObject(state, action.payload.objective_id, "objective", "task")
       if (state.selectedTreeItem && state.selectedTreeItem.id === action.payload.id) {
-        state.selectedTreeItem = { ...action.payload, type: "task" }
+        state.selectedTreeItem = { ...action.payload, type: 'task' };
       }
     },
     deleteTask(state, action) {
-      state.tasks = state.tasks.filter(obj => obj.id !== action.payload);
+      state.tasks = state.tasks.filter((obj) => obj.id !== action.payload);
       if (state.selectedTreeItem && state.selectedTreeItem.id === action.payload) {
-        state.selectedTreeItem = null
+        state.selectedTreeItem = null;
       }
     },
     setLoading(state, action) {
@@ -134,7 +128,7 @@ const slice = createSlice({
     },
     setSelectedPhase(state, action) {
       state.selectedPhaseTabId = action.payload;
-      state.selectedTreeItem = { ...state.phases.find(phase => phase.id === action.payload), type: "phase" }
+      state.selectedTreeItem = { ...state.phases.find((phase) => phase.id === action.payload), type: 'phase' };
     },
   }
 });
@@ -143,23 +137,21 @@ export const { reducer } = slice;
 
 export const setSelectedTreeItem = (data, callback) => async (dispatch) => {
   dispatch(slice.actions.setSelectedTreeItem(data));
-  logsApi.send_log(data.id, data.type, "GET");
-  callback && callback()
+  logsApi.send_log(data.id, data.type, 'GET');
+  callback && callback();
 };
 
-
 export const setProcess = (data) => async (dispatch) => {
-  const treeData = await coproductionProcessesApi.getTree(data.id)
+  const treeData = await coproductionProcessesApi.getTree(data.id);
   dispatch(slice.actions.setProcess(data));
   dispatch(slice.actions.setProcessTree(treeData));
 };
 
-
 export const getProcess = (processId) => async (dispatch) => {
   dispatch(slice.actions.setLoading(true));
-  const data = await coproductionProcessesApi.get(processId)
-  const treeData = await coproductionProcessesApi.getTree(processId) || []
-  const myRoles = await coproductionProcessesApi.myRoles(processId) || []
+  const data = await coproductionProcessesApi.get(processId);
+  const treeData = await coproductionProcessesApi.getTree(processId) || [];
+  const myRoles = await coproductionProcessesApi.myRoles(processId) || [];
   dispatch(slice.actions.setProcess(data));
   dispatch(slice.actions.setProcessTree(treeData));
   dispatch(slice.actions.setMyRoles(myRoles));
@@ -170,7 +162,7 @@ export const getRoles = (processId) => async (dispatch) => {
   // dispatch(slice.actions.setUpdating(true));
   const data = await rolesApi.getMulti({
     coproductionprocess_id: processId
-  })
+  });
   dispatch(slice.actions.setRoles(data));
   // dispatch(slice.actions.setUpdating(false));
 };
@@ -179,86 +171,86 @@ export const updateProcess = ({ id, data, logotype, onSuccess }) => async (dispa
   dispatch(slice.actions.setUpdating(true));
   let updatedData = await coproductionProcessesApi.update(id, data);
   if (logotype) {
-    await coproductionProcessesApi.setFile(id, "logotype", logotype)
-    updatedData = await coproductionProcessesApi.get(id)
+    await coproductionProcessesApi.setFile(id, 'logotype', logotype);
+    updatedData = await coproductionProcessesApi.get(id);
   }
   dispatch(slice.actions.setProcess(updatedData));
   dispatch(slice.actions.setUpdating(false));
   if (onSuccess) {
-    onSuccess()
+    onSuccess();
   }
 };
 
 export const updateTask = ({ id, data, callback }) => async (dispatch) => {
   dispatch(slice.actions.setUpdatingTree(true));
-  const updatedData = await tasksApi.update(id, data)
+  const updatedData = await tasksApi.update(id, data);
   dispatch(slice.actions.updateTask(updatedData));
   // update parent objective
-  const updatedObjectiveData = await objectivesApi.get(updatedData.objective_id)
+  const updatedObjectiveData = await objectivesApi.get(updatedData.objective_id);
   dispatch(slice.actions.updateObjective(updatedObjectiveData));
   // update parent phase
-  const updatedPhaseData = await phasesApi.get(updatedObjectiveData.phase_id)
+  const updatedPhaseData = await phasesApi.get(updatedObjectiveData.phase_id);
   dispatch(slice.actions.updatePhase(updatedPhaseData));
   dispatch(slice.actions.setUpdatingTree(false));
   if (callback) {
-    callback()
+    callback();
   }
 };
 
 export const updateObjective = ({ id, data, callback }) => async (dispatch) => {
   dispatch(slice.actions.setUpdatingTree(true));
-  const updatedData = await objectivesApi.update(id, data)
+  const updatedData = await objectivesApi.update(id, data);
   dispatch(slice.actions.updateObjective(updatedData));
   // update parent phase
   // const updatedPhaseData = await phasesApi.get(updatedData.phase_id)
   // dispatch(slice.actions.updatePhase(updatedPhaseData));
   dispatch(slice.actions.setUpdatingTree(false));
   if (callback) {
-    callback()
+    callback();
   }
 };
 
 export const updatePhase = ({ id, data, callback }) => async (dispatch) => {
   dispatch(slice.actions.setUpdatingTree(true));
-  const updatedData = await phasesApi.update(id, data)
+  const updatedData = await phasesApi.update(id, data);
   dispatch(slice.actions.updatePhase(updatedData));
   dispatch(slice.actions.setUpdatingTree(false));
   if (callback) {
-    callback()
+    callback();
   }
 };
 
 export const deleteTask = ({ id, callback }) => async (dispatch) => {
   dispatch(slice.actions.setUpdatingTree(true));
-  await tasksApi.delete(id)
+  await tasksApi.delete(id);
   dispatch(slice.actions.deleteTask(id));
   dispatch(slice.actions.setUpdatingTree(false));
   if (callback) {
-    callback()
+    callback();
   }
 };
 export const deleteObjective = ({ id, callback }) => async (dispatch) => {
   dispatch(slice.actions.setUpdatingTree(true));
-  await objectivesApi.delete(id)
+  await objectivesApi.delete(id);
   dispatch(slice.actions.deleteObjective(id));
   dispatch(slice.actions.setUpdatingTree(false));
   if (callback) {
-    callback()
+    callback();
   }
 };
 export const deletePhase = ({ id, callback }) => async (dispatch) => {
   dispatch(slice.actions.setUpdatingTree(true));
-  await phasesApi.delete(id)
+  await phasesApi.delete(id);
   dispatch(slice.actions.deletePhase(id));
   dispatch(slice.actions.setUpdatingTree(false));
   if (callback) {
-    callback()
+    callback();
   }
 };
 
 export const setselectedPhaseTabId = (data) => async (dispatch) => {
   dispatch(slice.actions.setSelectedPhase(data));
-  logsApi.send_log(data, "PHASE", "GET");
+  logsApi.send_log(data, 'PHASE', 'GET');
 };
 
 export default slice;

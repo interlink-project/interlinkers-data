@@ -19,17 +19,17 @@ const UserSearch = ({ text, onClick }) => {
             setLoading(true)
             delayDebounceFn = setTimeout(() => {
                 usersApi.get(emailValue).then(res => {
-                    if (mounted) {
+                    if (mounted.current) {
                         setResultIndividualSearch(res.data)
                         console.log(res.data)
                     }
 
                 }).catch(() => {
-                    if (mounted) {
+                    if (mounted.current) {
                         setResultIndividualSearch(null)
                     }
                 }).finally(() => {
-                    if (mounted) {
+                    if (mounted.current) {
                         setLoading(false)
 
                     }

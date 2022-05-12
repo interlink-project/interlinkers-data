@@ -1,8 +1,11 @@
 {
     "logos": {
-        "light": "logo-light.svg",
-        "dark": "logo-dark.svg",
-        "home": "logo-light.svg"
+		"dashboard_navbar_light": "logo-light.svg",
+        "dashboard_navbar_dark": "logo-light.svg",
+        "home_light": "logo-dark.svg",
+        "home_dark": "logo-light.svg",
+        "landing_light": "logo-dark.svg",
+        "landing_dark": "logo-light.svg"
     },
     "palette": {
 		"light": {

@@ -16,7 +16,7 @@ const DashboardLayoutRoot = experimentalStyled('div')(({ theme }) => ({
   width: '100%',
 }));
 
-const DashboardLayoutWrapper = experimentalStyled('div')(({ theme }) => ({
+const DashboardLayoutWrapperWithNavbar = experimentalStyled('div')(({ theme }) => ({
   display: 'flex',
   flex: '1 1 auto',
   overflow: 'hidden',
@@ -34,7 +34,7 @@ const MobileLayoutWrapper = experimentalStyled('div')(({ theme }) => ({
 
 }));
 
-const DashboardLayoutWrapper2 = experimentalStyled('div')(({ theme }) => ({
+const DashboardLayoutWrapper = experimentalStyled('div')(({ theme }) => ({
   display: 'flex',
   flex: '1 1 auto',
   overflow: 'hidden',
@@ -75,7 +75,6 @@ const DashboardLayout = () => {
 
   return (
     <DashboardLayoutRoot>
-      {!onMobile && <DashboardNavbar showOpenMenuButton={dashboardLocation || coproductionProcessLocation} onSidebarMobileOpen={() => setIsSidebarMobileOpen(true)} />}
       {dashboardLocation && <WorkspaceSidebar
         onMobileClose={() => setIsSidebarMobileOpen(false)}
         openMobile={isSidebarMobileOpen}
@@ -84,9 +83,14 @@ const DashboardLayout = () => {
         onMobileClose={() => setIsSidebarMobileOpen(false)}
         openMobile={isSidebarMobileOpen}
       />}
-      {onMobile ? <MobileLayoutWrapper>{content}</MobileLayoutWrapper> : <> 
-      {coproductionProcessLocation || dashboardLocation ? <DashboardLayoutWrapper>{content}</DashboardLayoutWrapper> : <DashboardLayoutWrapper2>{content}</DashboardLayoutWrapper2>}
-      </>}
+      {onMobile ? 
+        <MobileLayoutWrapper>{content}</MobileLayoutWrapper> 
+        : 
+        <> 
+          <DashboardNavbar showOpenMenuButton={dashboardLocation || coproductionProcessLocation} onSidebarMobileOpen={() => setIsSidebarMobileOpen(true)} />}
+          {coproductionProcessLocation || dashboardLocation ? <DashboardLayoutWrapperWithNavbar>{content}</DashboardLayoutWrapperWithNavbar> : <DashboardLayoutWrapper>{content}</DashboardLayoutWrapper>}
+        </>
+      }
     </DashboardLayoutRoot>
   );
 };

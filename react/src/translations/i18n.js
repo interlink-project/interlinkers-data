@@ -8,25 +8,25 @@ import TRANSLATIONS_IT from './it';
 import { ALLOWED_LANGUAGES, DEFAULT_LANGUAGE } from 'configuration';
 
 export const LANGUAGES = [
-  ... ALLOWED_LANGUAGES.includes("en") ? [
+  ...ALLOWED_LANGUAGES.includes('en') ? [
     {
       label: 'English',
       value: 'en',
     }
   ] : [],
-  ... ALLOWED_LANGUAGES.includes("es") ? [
+  ...ALLOWED_LANGUAGES.includes('es') ? [
     {
       label: 'Español',
       value: 'es',
     }
   ] : [],
-  ... ALLOWED_LANGUAGES.includes("lv") ? [
+  ...ALLOWED_LANGUAGES.includes('lv') ? [
     {
       label: 'Latviešu',
       value: 'lv',
     }
   ] : [],
-  ... ALLOWED_LANGUAGES.includes("it") ? [
+  ...ALLOWED_LANGUAGES.includes('it') ? [
     {
       label: 'Italiano',
       value: 'it',
@@ -46,26 +46,23 @@ export const setLanguage = (language) => {
   }
 };
 
-export const getLanguage = () => {
-  return store.get('language', DEFAULT_LANGUAGE)
-};
-
+export const getLanguage = () => store.get('language', DEFAULT_LANGUAGE);
 
 i18n
   // .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources: {
-      "es": {
+      es: {
         translation: TRANSLATIONS_ES,
       },
-      "en": {
+      en: {
         translation: TRANSLATIONS_EN,
       },
-      "it": {
+      it: {
         translation: TRANSLATIONS_IT,
       },
-      "lv": {
+      lv: {
         translation: TRANSLATIONS_LV,
       },
     },

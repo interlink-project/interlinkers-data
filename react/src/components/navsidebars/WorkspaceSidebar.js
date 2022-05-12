@@ -11,10 +11,10 @@ import { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
-import { Link as RouterLink, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { getMyProcesses, getMyTeams } from 'slices/general';
 import useAuth from '../../hooks/useAuth';
-import Logo from '../LightLogo';
+import { LandingNavbarLogo } from '../Logo';
 import NavSection from '../NavSection';
 import Scrollbar from '../Scrollbar';
 
@@ -91,12 +91,7 @@ const WorkspaceSidebar = (props) => {
             p: 2
           }}
         >
-            <Logo
-              sx={{
-                height: 40,
-                width: 40
-              }}
-            />
+          <LandingNavbarLogo />
         </Box>
         <Divider />
         <Box sx={{ p: 2 }}>

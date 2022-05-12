@@ -1,9 +1,9 @@
 import axiosInstance from 'axiosInstance';
-import GeneralApi, { removeEmpty } from "../general"
+import GeneralApi, { removeEmpty } from '../general';
 
 class RatingsApi extends GeneralApi {
   constructor() {
-    super("catalogue/api/v1/ratings");
+    super('catalogue/api/v1/ratings');
   }
 
   async getMulti(artefact_id, params = {}) {
@@ -16,15 +16,13 @@ class RatingsApi extends GeneralApi {
     return res.data;
   }
 
-
   async create(title, text, value, artefact_id) {
     const res = await axiosInstance.post(`/${this.url}`, {
       title, text, value, artefact_id
-    })
+    });
     console.log('post call', res, res.data);
-    return res.data
+    return res.data;
   }
-
 }
 
 export const ratingsApi = new RatingsApi();

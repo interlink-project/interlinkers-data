@@ -1,14 +1,12 @@
-import { Box, Container, Grid, LinearProgress, ToggleButton, ToggleButtonGroup, Typography } from '@material-ui/core';
+import { Box, Container, Grid, ToggleButton, ToggleButtonGroup, Typography } from '@material-ui/core';
 import { ViewModule } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
-import { useEffect, useRef, useState } from 'react';
+import { InterlinkerBrowseFilter, InterlinkerCard, InterlinkerDialog } from 'components/dashboard/interlinkers';
+import useMounted from 'hooks/useMounted';
+import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
-import { useInViewport } from 'react-in-viewport';
 import { interlinkersApi } from '__api__';
-import { InterlinkerBrowseFilter, InterlinkerCard } from '../../../components/dashboard/interlinkers';
-import useMounted from '../../../hooks/useMounted';
-import InterlinkerDialog from './InterlinkerDialog';
 
 const InterlinkerBrowse = () => {
   const mounted = useMounted();

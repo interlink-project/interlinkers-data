@@ -6,8 +6,7 @@ import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
-import { Link as RouterLink, useLocation } from 'react-router-dom';
-import Logo from '../LightLogo';
+import { useLocation } from 'react-router-dom';
 import NavSection from '../NavSection';
 import Scrollbar from '../Scrollbar';
 
@@ -38,14 +37,14 @@ const ProcessSidebar = (props) => {
           icon: <Dashboard />
         },
         ...hasSchema ? [{
-          title: t('Workplan'),
-          path: `/dashboard/coproductionprocesses/${processId}/workplan`,
-          icon: <Timeline />
-        }] : [],
-        ...hasSchema ? [{
           title: t('Guide'),
           path: `/dashboard/coproductionprocesses/${processId}/guide`,
           icon: <AccountTree />
+        }] : [],
+        ...hasSchema ? [{
+          title: t('Workplan'),
+          path: `/dashboard/coproductionprocesses/${processId}/workplan`,
+          icon: <Timeline />
         }] : [],
         {
           title: t('Team'),

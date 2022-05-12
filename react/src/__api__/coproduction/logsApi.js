@@ -1,9 +1,9 @@
 import axiosInstance from 'axiosInstance';
-import GeneralApi from "../general";
+import GeneralApi from '../general';
 
 class LogsApi extends GeneralApi {
   constructor() {
-    super("coproduction/api/v1/logs");
+    super('coproduction/api/v1/logs');
   }
 
   async send_log(object_id, model, action) {
@@ -11,11 +11,10 @@ class LogsApi extends GeneralApi {
       object_id,
       model,
       action
-    })
+    });
     console.log('post call', res, res.data);
-    return res.data
+    return res.data;
   }
-
 }
 
 export const logsApi = new LogsApi();

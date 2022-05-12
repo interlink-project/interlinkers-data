@@ -1,22 +1,17 @@
 import {
   AppBar,
-  Box,
-  ButtonBase,
-  Divider,
+  Box, Divider,
   IconButton,
   Link,
-  Toolbar,
-  Typography
+  Toolbar
 } from '@material-ui/core';
-import { Login } from '@material-ui/icons';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
 import i18n from 'translations/i18n';
 import MenuIcon from '../../icons/Menu';
-import Logo from '../LightLogo';
+import { LandingNavbarLogo } from '../Logo';
 import SettingsPopover from './SettingsPopover';
-
 
 export const landingPages = [
   {
@@ -81,16 +76,7 @@ const MainNavbar = (props) => {
           <MenuIcon fontSize='small' />
         </IconButton>
         <RouterLink to='/'>
-          <Logo
-            sx={{
-              display: {
-                md: 'inline',
-                xs: 'none',
-              },
-              height: 40,
-              width: 40,
-            }}
-          />
+          <LandingNavbarLogo />
         </RouterLink>
         <Box sx={{ flexGrow: 1 }} />
         <Box

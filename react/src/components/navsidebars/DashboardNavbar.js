@@ -1,16 +1,16 @@
-import { Link as RouterLink } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { AppBar, Box, IconButton, Toolbar, useMediaQuery, useTheme, MenuItem, Typography, Button } from '@material-ui/core';
+import { AppBar, Box, Button, IconButton, Toolbar, Typography, useMediaQuery, useTheme } from '@material-ui/core';
 import { experimentalStyled } from '@material-ui/core/styles';
+import { DashboardNavbarLogo } from 'components/Logo';
+import useSettings from 'hooks/useSettings';
+import PropTypes from 'prop-types';
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Link as RouterLink } from 'react-router-dom';
+import i18n from 'translations/i18n';
 import MenuIcon from '../../icons/Menu';
 import AccountPopover from './AccountPopover';
-import NotificationsPopover from './NotificationsPopover';
-import SettingsPopover from './SettingsPopover';
 import SearchAppBar from './Search';
-import { useTranslation } from 'react-i18next';
-import i18n from 'translations/i18n';
-import useSettings from 'hooks/useSettings';
-import { THEMES } from '../../constants';
+import SettingsPopover from './SettingsPopover';
 
 const DashboardNavbarRoot = experimentalStyled(AppBar)(({ theme }) => ({
   ...(theme.palette.mode === 'light' && {
@@ -28,7 +28,7 @@ const DashboardNavbarRoot = experimentalStyled(AppBar)(({ theme }) => ({
 
 const pages = [
   {
-    sx: {ml: 2},
+    sx: { ml: 2 },
     label: i18n.t("Workspace"),
     path: '/dashboard',
   },
@@ -44,12 +44,16 @@ const pages = [
 ]
 const DashboardNavbar = (props) => {
   const { onSidebarMobileOpen, showOpenMenuButton, ...other } = props;
-  const {t} = useTranslation()
-  const {settings} = useSettings()
+  const { t } = useTranslation()
+  const { settings } = useSettings()
 
   const theme = useTheme();
   const onMobile = !useMediaQuery(theme.breakpoints.up('sm'));
+  const [value, setValue] = useState(2);
 
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
   return (
     <DashboardNavbarRoot {...other}>
       <Toolbar sx={{ minHeight: 64 }}>
@@ -66,13 +70,9 @@ const DashboardNavbar = (props) => {
         </IconButton>}
 
         {!onMobile && <RouterLink to='/'>
-          <img
-            alt='Logo'
-            src={"/static/customization/" + (settings.theme === THEMES.LIGHT.key ? settings.logos.light : settings.logos.dark)}
-            height='40px'
-          />
+          <DashboardNavbarLogo />
         </RouterLink>}
-        {pages.map(page => <Button key={page.path} sx={{ml: 2, ...page.sx}} component={RouterLink} to={page.path} color="inherit" variant={window.location.pathname === page.path ? "outlined" : "text"} disabled={page.disabled}>
+        {pages.map(page => <Button key={page.path} sx={{ ml: 2, ...page.sx }} component={RouterLink} to={page.path} color="inherit" variant={window.location.pathname === page.path ? "outlined" : "text"} disabled={page.disabled}>
           <Typography textAlign="center" variant="button">{page.label}</Typography>
         </Button>)}
         <Box

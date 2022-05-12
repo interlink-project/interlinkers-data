@@ -3,9 +3,7 @@ import merge from 'lodash/merge';
 import { THEMES } from '../constants';
 import { darkShadows, lightShadows } from './shadows';
 
-
 export const createCustomTheme = (config = {}) => {
-
   const baseOptions = {
     direction: 'ltr',
     components: {
@@ -43,7 +41,7 @@ export const createCustomTheme = (config = {}) => {
           },
           '#nprogress .bar': {
             zIndex: '2000 !important',
-            background: config.paletteCustomData[config.theme === THEMES.LIGHT.key ? "light" : "dark"].progressBarColor + ' !important'
+            background: `${config.paletteCustomData[config.theme === THEMES.LIGHT.key ? 'light' : 'dark'].progressBarColor} !important`
           }
         }
       },
@@ -112,7 +110,7 @@ export const createCustomTheme = (config = {}) => {
       }
     }
   };
-    
+
   const themesOptions = {
     [THEMES.LIGHT.key]: {
       components: {
@@ -129,7 +127,7 @@ export const createCustomTheme = (config = {}) => {
       },
       palette: {
         ...config.paletteCustomData.light,
-        mode: "light"
+        mode: 'light'
       },
       shadows: lightShadows
     },
@@ -145,7 +143,7 @@ export const createCustomTheme = (config = {}) => {
       },
       palette: {
         ...config.paletteCustomData.dark,
-        mode: "dark"
+        mode: 'dark'
       },
       shadows: darkShadows
     },
@@ -162,5 +160,5 @@ export const createCustomTheme = (config = {}) => {
   }));
 
   theme = responsiveFontSizes(theme);
-  return {...theme, paletteCustomData: config.paletteCustomData};
+  return { ...theme, paletteCustomData: config.paletteCustomData };
 };

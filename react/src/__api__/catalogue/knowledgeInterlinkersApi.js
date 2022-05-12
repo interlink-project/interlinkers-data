@@ -1,12 +1,12 @@
 import axiosInstance from 'axiosInstance';
-import GeneralApi from "../general"
+import GeneralApi from '../general';
 
 class KnowledgeInterlinkersApi extends GeneralApi {
   constructor() {
-    super("catalogue/api/v1/knowledgeinterlinkers");
+    super('catalogue/api/v1/knowledgeinterlinkers');
   }
 
-/*
+  /*
   async getInternal(id) {
     if (id) {
       const res = await axiosInstance.get(`/${this.url}/${id}/internal`)
@@ -15,7 +15,6 @@ class KnowledgeInterlinkersApi extends GeneralApi {
     }
   }
   */
-
 }
 
 export const knowledgeInterlinkersApi = new KnowledgeInterlinkersApi();
