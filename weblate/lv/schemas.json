@@ -1,8 +1,8 @@
 {
     "default;description": "",
-    "default;name": "",
+    "default;name": "Noklusējuma shēma",
     "default;phase-build;description": "",
-    "default;phase-build;name": "",
+    "default;phase-build;name": "Izveide",
     "default;phase-build;objective-service-codelivery;description": "",
     "default;phase-build;objective-service-codelivery;name": "",
     "default;phase-build;objective-service-codelivery;task-coordinate-the-actors-involved-in-the-codelivery-of-the-service;description": "",
