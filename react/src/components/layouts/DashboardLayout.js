@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import DashboardMobileAppbar from '../navsidebars/DashboardMobileAppbar';
 import DashboardNavbar from '../navsidebars/DashboardNavbar';
+import HelpPanel from './HelpPanel';
 
 const DashboardLayoutRoot = experimentalStyled('div')(({ theme }) => ({
   backgroundColor: theme.palette.background.default,
@@ -68,8 +69,6 @@ const DashboardLayout = () => {
   const content = <DashboardLayoutContainer>
     <DashboardLayoutContent>
       <Outlet />
-      {onMobile && <DashboardMobileAppbar />}
-
     </DashboardLayoutContent>
   </DashboardLayoutContainer>
 
@@ -77,20 +76,25 @@ const DashboardLayout = () => {
     <DashboardLayoutRoot>
       {dashboardLocation && <WorkspaceSidebar
         onMobileClose={() => setIsSidebarMobileOpen(false)}
-        openMobile={isSidebarMobileOpen}
+        openMobile={!onMobile && isSidebarMobileOpen}
       />}
       {coproductionProcessLocation && <ProcessSidebar
         onMobileClose={() => setIsSidebarMobileOpen(false)}
-        openMobile={isSidebarMobileOpen}
+        openMobile={!onMobile && isSidebarMobileOpen}
       />}
-      {onMobile ? 
-        <MobileLayoutWrapper>{content}</MobileLayoutWrapper> 
-        : 
-        <> 
-          <DashboardNavbar showOpenMenuButton={dashboardLocation || coproductionProcessLocation} onSidebarMobileOpen={() => setIsSidebarMobileOpen(true)} />}
+      {onMobile ?
+        <>
+          <MobileLayoutWrapper>{content}</MobileLayoutWrapper>
+          <DashboardMobileAppbar />
+        </>
+        :
+        <>
+          <DashboardNavbar showOpenMenuButton={dashboardLocation || coproductionProcessLocation} onSidebarMobileOpen={() => setIsSidebarMobileOpen(true)} />
           {coproductionProcessLocation || dashboardLocation ? <DashboardLayoutWrapperWithNavbar>{content}</DashboardLayoutWrapperWithNavbar> : <DashboardLayoutWrapper>{content}</DashboardLayoutWrapper>}
+          <HelpPanel />
         </>
       }
+
     </DashboardLayoutRoot>
   );
 };

@@ -6,6 +6,8 @@ import { getLanguage, setLanguage } from '../translations/i18n';
 
 const initialSettings = {
   loaded: false,
+  showHelp: true,
+  helpOpen: false,
   direction: 'ltr',
   theme: THEMES.LIGHT.key,
   themeData: createCustomTheme({
@@ -117,7 +119,7 @@ export const storeSettings = (settings) => {
 
 const SettingsContext = createContext({
   settings: initialSettings,
-  saveSettings: () => { },
+  saveSettings: (settings) => { },
 });
 
 export const SettingsProvider = (props) => {
@@ -129,7 +131,7 @@ export const SettingsProvider = (props) => {
     fetch("/static/customization/settings.json")
       .then(r => r.json())
       .then(json => {
-        console.log("GOT SETTINGS", json)
+        console.log("GOT CUSTOMIZATION INFO", json)
         newSettigns.themeData = createCustomTheme({
           direction: newSettigns.direction,
           theme: newSettigns.theme,
@@ -143,7 +145,7 @@ export const SettingsProvider = (props) => {
 
   const saveSettings = (updatedSettings) => {
     const newSettigns = { ...settings }
-    if (settings.theme !== updatedSettings.theme) {
+    if ("theme" in updatedSettings && settings.theme !== updatedSettings.theme) {
       newSettigns.theme = updatedSettings.theme
       newSettigns.themeData = createCustomTheme({
         direction: settings.direction,
@@ -151,14 +153,27 @@ export const SettingsProvider = (props) => {
         paletteCustomData: settings.themeData.paletteCustomData
       })
       newSettigns.loaded = true
-      console.log("SAVING ", newSettigns)
       setSettings(newSettigns);
       storeSettings(newSettigns);
     }
 
-    if (getLanguage() !== updatedSettings.language) {
+    if ("helpOpen" in updatedSettings && settings.helpOpen !== updatedSettings.helpOpen) {
+      newSettigns.helpOpen = updatedSettings.helpOpen
+      setSettings(newSettigns);
+      storeSettings(newSettigns);
+    }
+
+    if ("showHelp" in updatedSettings && settings.showHelp !== updatedSettings.showHelp) {
+      newSettigns.showHelp = updatedSettings.showHelp
+      setSettings(newSettigns);
+      storeSettings(newSettigns);
+    }
+
+    if ("language" in updatedSettings && getLanguage() !== updatedSettings.language) {
       setLanguage(updatedSettings.language);
     }
+
+    
   };
 
   return (

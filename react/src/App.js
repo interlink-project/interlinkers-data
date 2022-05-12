@@ -14,7 +14,19 @@ import useScrollReset from './hooks/useScrollReset';
 import useSettings from './hooks/useSettings';
 import routes from './routes/index';
 import './translations/i18n';
+import {Navigate, useLocation} from "react-router-dom";
 
+export const RemoveTrailingSlash = ({...rest}) => {
+    const location = useLocation()
+
+    // If the last character of the url is '/'
+    if (location.pathname.match('/.*/$')) {
+        return <Navigate replace {...rest} to={{
+            pathname: location.pathname.replace(/\/+$/, ""),
+            search: location.search
+        }}/>
+    } else return null
+}
 
 const App = () => {
   const content = useRoutes(routes);
@@ -48,6 +60,7 @@ const App = () => {
         <Helmet>
           {env.NODE_ENV === "production" && <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"></meta>}
         </Helmet>
+        <RemoveTrailingSlash/>
         {auth.isInitialized ? content : <SplashScreen />}
       </RTL>
     </ThemeProvider>

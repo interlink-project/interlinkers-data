@@ -19,6 +19,7 @@ import { useTranslation } from 'react-i18next';
 const getValues = (settings) => ({
   direction: settings.direction,
   theme: settings.theme,
+  showHelp: settings.showHelp,
   language: getLanguage()
 });
 
@@ -121,38 +122,25 @@ const SettingsPopover = () => {
             ))}
           </TextField>{' '}
         </Box>
-        {/* <Box sx={{ p: 2 }}>
+        <Box sx={{ px: 4 }}>
           <FormControlLabel
             control={
               <Switch
-                checked={values.direction === 'rtl'}
+                checked={values.showHelp}
                 color='primary'
                 edge='start'
-                name='direction'
+                name='showHelp'
                 onChange={(event) =>
                   handleChange(
-                    'direction',
-                    event.target.checked ? 'rtl' : 'ltr'
+                    'showHelp',
+                    event.target.checked
                   )
                 }
               />
             }
-            label={
-              <div>
-                {' '}
-                RTL{' '}
-                <Typography
-                  color='textSecondary'
-                  component='p'
-                  variant='caption'
-                >
-                  {' '}
-                  Change text direction{' '}
-                </Typography>
-              </div>
-            }
+            label={"Show help button"}
           />
-          </Box> */}
+          </Box>
         <Box
           sx={{
             p: 2,

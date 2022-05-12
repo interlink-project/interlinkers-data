@@ -1,5 +1,6 @@
 import { AppBar, Box, Button, IconButton, Toolbar, Typography, useMediaQuery, useTheme } from '@material-ui/core';
 import { experimentalStyled } from '@material-ui/core/styles';
+import { Search } from '@material-ui/icons';
 import { DashboardNavbarLogo } from 'components/Logo';
 import useSettings from 'hooks/useSettings';
 import PropTypes from 'prop-types';
@@ -49,6 +50,7 @@ const DashboardNavbar = (props) => {
 
   const theme = useTheme();
   const onMobile = !useMediaQuery(theme.breakpoints.up('sm'));
+  const onReduced = !useMediaQuery(theme.breakpoints.up('md'));
   const [value, setValue] = useState(2);
 
   const handleChange = (event, newValue) => {
@@ -69,7 +71,7 @@ const DashboardNavbar = (props) => {
           <MenuIcon fontSize='small' />
         </IconButton>}
 
-        {!onMobile && <RouterLink to='/'>
+        {!onReduced && <RouterLink to='/'>
           <DashboardNavbarLogo />
         </RouterLink>}
         {pages.map(page => <Button key={page.path} sx={{ ml: 2, ...page.sx }} component={RouterLink} to={page.path} color="inherit" variant={window.location.pathname === page.path ? "outlined" : "text"} disabled={page.disabled}>
@@ -85,7 +87,7 @@ const DashboardNavbar = (props) => {
           <SettingsPopover />
         </Box>
         <Box sx={{ ml: 1 }}>
-          <SearchAppBar />
+          {onReduced ? <IconButton sx={{color: "primary.contrastText"}}><Search /></IconButton>: <SearchAppBar />}
         </Box>
         {!onMobile &&
           <>
