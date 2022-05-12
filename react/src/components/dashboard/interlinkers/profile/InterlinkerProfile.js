@@ -43,7 +43,7 @@ const InterlinkerProfile = () => {
         {interlinker && <InterlinkerHeader interlinker={interlinker} />}
 
         </Box>
-        {interlinker && <InterlinkerDetails interlinker={interlinker} onRelatedInterlinkerClick={() => navigate(`/dashboard/interlinkers/${id}`)} />}
+        {interlinker && <InterlinkerDetails interlinker={interlinker} onRelatedInterlinkerClick={(id) => navigate(`/dashboard/interlinkers/${id}`)} />}
       </Container>
 
     </>

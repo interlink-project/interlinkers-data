@@ -1,13 +1,23 @@
-import { Box, CardHeader, Drawer, Fab, IconButton, Typography } from '@material-ui/core';
+import { Box, CardHeader, Drawer, Fab, IconButton, Paper, Typography } from '@material-ui/core';
 import { Close, Help } from '@material-ui/icons';
 import useSettings from 'hooks/useSettings';
 
 const helps = {
     "/dashboard": {
         title: "Workspace",
+        content: <>
+        </>
     },
     "/dashboard/interlinkers": {
-        title: "Interlinkers catalogue",
+        title: "Interlinkers catalogue help",
+        content: <>
+            <img src="/static/help/catalogue-1.png" style={{ height: "auto", width: "100%" }} />
+            <Typography sx={{ my: 3 }}>
+                On this page you can view, filter and preview existing interlinkers. To view the profile of an interlinker, click on its name.
+            </Typography>
+            <img src="/static/help/catalogue-2.png" style={{ height: "auto", width: "100%" }} />
+
+        </>
     }
 }
 
@@ -52,12 +62,14 @@ const HelpPanel = () => {
                             <Close />
                         </IconButton>
                     }
-                    title="Help"
-                    subheader={helpData && "for " + helpData.title}
+                    title={helpData ? helpData.title : location.pathname}
                 />
-                {helpData ? helpData.content : <Typography>
-                    No help found for {location.pathname}
-                </Typography>}
+                <Box sx={{ m: 3 }}>
+                    {helpData ? helpData.content : <Typography>
+                        No help found for {location.pathname}
+                    </Typography>}
+                </Box>
+
             </Box>
         </Drawer>
 
