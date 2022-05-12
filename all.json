@@ -6030,7 +6030,11 @@
                                 "lv": ""
                             },
                             "prerequisites": [],
-                            "problemprofiles": [],
+                            "problemprofiles": [
+                                "UND_PROBLEM_1",
+                                "UND_PROBLEM_5",
+                                "DEF_PROBLEM_2"
+                            ],
                             "tasks": [
                                 {
                                     "description_translations": {
