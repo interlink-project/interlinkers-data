@@ -22,11 +22,18 @@
   "comment-body": "",
   "Unlike": "Non mi piace",
   "Like": "Mi piace",
-  "Phase": "Fase",
-  "Objective": "Obiettivo",
-  "Task": "Compito",
   "use": "Usa {{what}}",
   "preview": "",
   "preview-what": "",
-  "Only tasks can be scheduled": ""
+  "Only tasks can be scheduled": "",
+  "Information about the": "",
+  "Phase": "Fase",
+  "Objective": "Obiettivo",
+  "Task": "Compito",
+  "current-status-of": "",
+  "Current status of the phase": "",
+  "Current status of the objective": "",
+  "Current status of the task": "",
+  "Start and end dates": "",
+  "can only be set for tasks": ""
 }

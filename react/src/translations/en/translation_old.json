@@ -18,10 +18,17 @@
   "Log in": "",
   "Unlike": "Unlike",
   "Like": "Like",
+  "use": "Use {{what}}",
+  "preview-what": "Preview {{what}}",
+  "Only tasks can be scheduled": "",
+  "Information about the": "Information about the {{what}}",
   "Phase": "Phase",
   "Objective": "Objective",
   "Task": "Task",
-  "use": "Use {{what}}",
-  "preview-what": "Preview {{what}}",
-  "Only tasks can be scheduled": ""
+  "current-status-of-the-task": "Estado actual de la tarea",
+  "Current status of the phase": "Current status of the phase",
+  "Current status of the objective": "Current status of the objective",
+  "Current status of the task": "Current status of the phase",
+  "Start and end dates": "Start and end dates",
+  "can only be set for tasks": "{{what}} can only be set for tasks"
 }

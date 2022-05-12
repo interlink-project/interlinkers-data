@@ -9,9 +9,10 @@ import { InterlinkerDetails, InterlinkerHeader } from 'components/dashboard/inte
 import { env } from 'configuration';
 import useMounted from 'hooks/useMounted';
 import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { assetsApi } from '__api__';
 
-const CircularProgress = ({ text = "Waiting for response...", onCancel = null }) => (
+const CircularProgress = ({ text = "", onCancel = null }) => (
     <Box
         style={{
             position: 'absolute', left: '50%', top: '50%',
@@ -37,6 +38,8 @@ const CircularProgress = ({ text = "Waiting for response...", onCancel = null })
     </Box>
 )
 export default function NewAssetModal({ open, setOpen, activeStep, setStep, selectedInterlinker, task, onCreate }) {
+    const { process } = useSelector((state) => state.process);
+
     const [loadingInstantiator, setLoadingInstantiator] = useState(true);
     const [assetData, setAssetData] = useState(null);
     const [loadingKnowledgeInstantiation, setLoadingKnowledgeInstantiation] = useState(false);
@@ -120,7 +123,7 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
                 else if (isKnowledge) {
                     // if knowledgeinterlinker
                     setLoadingKnowledgeInstantiation(true)
-                    const interlinker_asset = await assetsApi.instantiate(selectedInterlinker.id, task.id)
+                    const interlinker_asset = await assetsApi.instantiate(selectedInterlinker.id, task.id, process.language)
                     setLoadingKnowledgeInstantiation(false)
 
                     // TODO: if fails
@@ -197,7 +200,7 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
                     {/* If software interlinker */}
                     {can_open_in_modal ?
                         <>
-                            {loadingInstantiator && <CircularProgress text="Loading instantiator..." />}
+                            {loadingInstantiator && <CircularProgress />}
                             <iframe style={{ display: loadingInstantiator ? "none" : "block" }} src={`${selectedInterlinker.backend}/instantiate`} style={{ width: "100%", minHeight: "60vh", border: 0 }}></iframe>
                         </> :
                         <CircularProgress onCancel={() => setStep(0)} />

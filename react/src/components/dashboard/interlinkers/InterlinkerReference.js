@@ -1,10 +1,9 @@
 import { Avatar, Link, Skeleton, Stack } from '@material-ui/core';
 import { useEffect, useState } from 'react';
-import { Link as RouterLink } from "react-router-dom";
 import { interlinkersApi } from '__api__';
 
 
-const InterlinkerReference = ({ interlinker_id, onClick = () => {} }) => {
+const InterlinkerReference = ({ interlinker_id, onClick = () => { } }) => {
     const [loading, setLoading] = useState(true)
     const [data, setData] = useState(null)
 

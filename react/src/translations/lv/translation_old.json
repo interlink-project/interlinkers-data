@@ -22,11 +22,18 @@
   "comment-body": "",
   "Unlike": "Nepatīk",
   "Like": "Patīk",
-  "Phase": "Fāze",
-  "Objective": "Mērķis",
-  "Task": "Uzdevums",
   "use": "Lietot {{what}}",
   "preview": "",
   "preview-what": "",
-  "Only tasks can be scheduled": ""
+  "Only tasks can be scheduled": "",
+  "Information about the": "Informācija par {{what}}",
+  "Phase": "Fāze",
+  "Objective": "Mērķis",
+  "Task": "Uzdevums",
+  "current-status-of": "",
+  "Current status of the phase": "",
+  "Current status of the objective": "",
+  "Current status of the task": "",
+  "Start and end dates": "",
+  "can only be set for tasks": "{{what}} var iestatīt tikai uzdevumiem"
 }

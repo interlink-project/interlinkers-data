@@ -2,27 +2,8 @@ import { Box, Card, Chip, Divider, Input, Rating, Typography } from '@material-u
 import { Search } from '@material-ui/icons';
 import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
+import i18n from "translations/i18n";
 import MultiSelect from '../../../MultiSelect';
-import i18n from "translations/i18n"
-
-const selectOptions = {
-  label: 'Order by',
-  options: [
-    {
-      label: 'Popularity',
-      value: "popularity"
-    },
-    {
-      label: 'Best rated',
-      value: "best_rated"
-    },
-    {
-      label: 'Most recent',
-      value: "most_recent"
-    },
-  ]
-};
 
 const allNatures = ["softwareinterlinker", "knowledgeinterlinker", "externalsoftwareinterlinker", "externalknowledgeinterlinker"]
 const allCreators = ["official", "community"]
@@ -55,7 +36,7 @@ const InterlinkerBrowseFilter = ({ onFiltersChange }) => {
   const [selectedCreators, setSelectedCreators] = useState([]);
   const [minimumRating, setMinimumRating] = useState(null);
   const didMount = useRef(false);
-  const {t} = useTranslation()
+  const { t } = useTranslation()
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -125,14 +106,14 @@ const InterlinkerBrowseFilter = ({ onFiltersChange }) => {
           p: 1
         }}
       >
-            <MultiSelect
-              label={natureMultiselect.label}
-              onChange={(e) => setSelectedNatures(e)}
-              options={natureMultiselect.options}
-              value={selectedNatures}
-            />
-            <Divider orientation='vertical' flexItem sx={{ mx: 2 }} />
-            
+        <MultiSelect
+          label={natureMultiselect.label}
+          onChange={(e) => setSelectedNatures(e)}
+          options={natureMultiselect.options}
+          value={selectedNatures}
+        />
+        <Divider orientation='vertical' flexItem sx={{ mx: 2 }} />
+
         <Typography variant="body2" sx={{ mx: 1 }}><b>{t("Minimum rating")}:</b></Typography>
         <Rating value={minimumRating} onChange={(e, value) => setMinimumRating(value)} />
         <Divider orientation='vertical' flexItem sx={{ mx: 2 }} />
@@ -147,15 +128,15 @@ const InterlinkerBrowseFilter = ({ onFiltersChange }) => {
           {selectOptions.options.map((opt) => <MenuItem key={opt.value} value={opt.value}>{opt.label}</MenuItem>)}
         </Select>*/}
       </Box>
-      
-    </Card>    
-    <Box sx={{mt: 2}}>
-    {inputValue && <Chip sx={{mr: 1}} label={`${t("Search")}: ${inputValue}`} onDelete={() => setInputValue("")}  />}
-    {selectedNatures.map(nature => <Chip sx={{mr: 1}} label={`${t("Nature")}: ${natureMultiselect.options.find(option => option.value === nature).label}`} onDelete={() => setSelectedNatures(selectedNatures.filter(nt => nt !== nature))}/>)}
-    {minimumRating && <Chip sx={{mr: 1}} label={`${t("Minimum rating")}: ${minimumRating}`} onDelete={() => setMinimumRating(null)}  />}
+
+    </Card>
+    <Box sx={{ mt: 2 }}>
+      {inputValue && <Chip sx={{ mr: 1 }} label={`${t("Search")}: ${inputValue}`} onDelete={() => setInputValue("")} />}
+      {selectedNatures.map(nature => <Chip sx={{ mr: 1 }} label={`${t("Nature")}: ${natureMultiselect.options.find(option => option.value === nature).label}`} onDelete={() => setSelectedNatures(selectedNatures.filter(nt => nt !== nature))} />)}
+      {minimumRating && <Chip sx={{ mr: 1 }} label={`${t("Minimum rating")}: ${minimumRating}`} onDelete={() => setMinimumRating(null)} />}
     </Box>
-    
-    </>
+
+  </>
   );
 };
 

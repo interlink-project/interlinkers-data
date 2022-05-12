@@ -19,9 +19,9 @@ export const FinishedIconButton = ({ onClick }) => <IconButton size="small" onCl
 </IconButton>
 
 
-export const statusText = (status, language = null) => {
+export const StatusText = ({status, language = null}) => {
     const t = useCustomTranslation(language)
-    return status === "finished" ? t("Finished") : status === "in_progress" ? t("In progress") : t("Awaiting")
+    return <>{status === "finished" ? t("Finished") : status === "in_progress" ? t("In progress") : t("Awaiting")}</>
 }
 
 export const statusIcon = (status) => status === "finished" ? <FinishedIcon /> : status === "in_progress" && <InProgressIcon />

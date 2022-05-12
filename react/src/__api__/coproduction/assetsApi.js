@@ -29,8 +29,9 @@ class AssetsApi extends GeneralApi {
     return res.data;
   }
 
-  async instantiate(knowledgeinterlinker_id, task_id) {
+  async instantiate(knowledgeinterlinker_id, task_id, language) {
     const res = await axiosInstance.post(`/${this.url}/instantiate`, {
+      language,
       knowledgeinterlinker_id,
       task_id
     });

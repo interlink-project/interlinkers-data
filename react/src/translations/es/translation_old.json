@@ -26,11 +26,18 @@
   "comment-body": "",
   "Unlike": "No me gusta",
   "Like": "Me gusta",
-  "Phase": "Fase",
-  "Objective": "Objetivo",
-  "Task": "Tarea",
   "use": "Usar {{what}}",
   "preview": "",
   "preview-what": "",
-  "Only tasks can be scheduled": ""
+  "Only tasks can be scheduled": "",
+  "Information about the": "Información sobre {{what}}",
+  "Phase": "Fase",
+  "Objective": "Objetivo",
+  "Task": "Tarea",
+  "current-status-of": "",
+  "Current status of the phase": "",
+  "Current status of the objective": "",
+  "Current status of the task": "",
+  "Start and end dates": "Fechas de inicio y final",
+  "can only be set for tasks": "{{what}} solo puede ser establecido para las tareas"
 }

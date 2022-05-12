@@ -14,7 +14,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { deleteObjective, deletePhase, deleteTask, updateObjective, updatePhase, updateTask } from 'slices/process';
-import { statusIcon, statusText } from '../assets/Icons';
+import { statusIcon, StatusText } from '../assets/Icons';
 
 const TreeItemData = ({ language, processId, element, type, onSave = null, showType = true }) => {
   const [dateRange, setDateRange] = useState([null, null]);
@@ -24,6 +24,7 @@ const TreeItemData = ({ language, processId, element, type, onSave = null, showT
   const [editMode, setEditMode] = useState(false);
   const [saving, setSaving] = useState(false);
   const navigate = useNavigate()
+  const dispatch = useDispatch();
   const t = useCustomTranslation(language)
 
   const restart = (el) => {
@@ -36,8 +37,6 @@ const TreeItemData = ({ language, processId, element, type, onSave = null, showT
   useEffect(() => {
     restart(element)
   }, [editMode, element])
-
-  const dispatch = useDispatch();
 
   const saveData = () => {
     setSaving(true)
@@ -110,13 +109,13 @@ const TreeItemData = ({ language, processId, element, type, onSave = null, showT
       <Edit />
     </IconButton>}
     <Typography variant="h6" sx={showType ? { mt: 2 } : {}}>
-      Name
+      {t("Name")}
     </Typography>
     {editMode ? <TextField onChange={(event) => {
       setName(event.target.value);
     }} variant="standard" fullWidth value={name} /> : name}
     <Typography variant="h6" sx={{ mt: 2 }}>
-      Description
+    {t("Description")}
     </Typography>
     {editMode ? <TextField onChange={(event) => {
       setDescription(event.target.value);
@@ -124,7 +123,7 @@ const TreeItemData = ({ language, processId, element, type, onSave = null, showT
       whiteSpace: 'pre-wrap',
       marginTop: 0
     }}>{description}</p>}
-    <Typography variant="h6" sx={{ mt: 2 }}>Current status of the {type}:</Typography>
+    <Typography variant="h6" sx={{ mt: 2 }}>{t("Current status")}</Typography>
     {editMode ? <>
       {type === "task" ? <ToggleButtonGroup
         sx={{ mt: 1 }}
@@ -139,10 +138,10 @@ const TreeItemData = ({ language, processId, element, type, onSave = null, showT
         <ToggleButton value="awaiting">{t("Awaiting")}</ToggleButton>
         <ToggleButton value="in_progress">{t("In progress")}<InProgressIcon /></ToggleButton>
         <ToggleButton value="finished">{t("Finished")} <FinishedIcon /></ToggleButton>
-      </ToggleButtonGroup> : <Alert severity="warning">{t("can only be set for tasks", {what: t("Status")})}</Alert>}</>
+      </ToggleButtonGroup> : <Alert severity="warning" sx={{mt: 1}}>{t("Status can only be set for tasks")}</Alert>}</>
 
       : <div style={{ alignItems: "center", color: "primary.main" }}>
-        {statusText(status, language)}
+        <StatusText status={status} language={language} />
         {statusIcon(status)}
       </div>
     }
@@ -175,7 +174,7 @@ const TreeItemData = ({ language, processId, element, type, onSave = null, showT
             </Stack>
           )}
         />
-      </Box> : <Alert severity="warning">{t("can only be set for tasks", {what: t("Start and end dates")})}</Alert>}</> : <Box sx={{ mt: 2 }}>
+      </Box> : <Alert severity="warning" sx={{mt: 1}}>{t("Start and end dates can only be set for tasks")}</Alert>}</> : <Box sx={{ mt: 2 }}>
       {dateRange[0] !== null ? <>
         <b>{t("Start")}:  </b>{moment(dateRange[0]).format("LL")}
         <br />

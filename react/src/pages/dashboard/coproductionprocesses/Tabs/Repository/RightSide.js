@@ -7,7 +7,7 @@ import { AssetsTable } from 'components/dashboard/assets';
 import { NatureChip } from 'components/dashboard/assets/Icons';
 import { TreeItemData } from 'components/dashboard/tree';
 import { Formik } from 'formik';
-import { useCustomTranslation } from 'hooks/useDependantTranslation';
+import useDependantTranslation from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
 import { truncate } from 'lodash';
 import { useEffect, useState } from 'react';
@@ -138,7 +138,7 @@ const RightSide = () => {
     const [newAssetDialogOpen, setNewAssetDialogOpen] = useState(false)
     const mounted = useMounted()
     const [externalAssetOpen, setExternalAssetOpen] = useState(false);
-    const t = useCustomTranslation()
+    const t = useDependantTranslation()
 
     const updateTaskInfo = async () => {
         assetsApi.getMulti({ task_id: selectedTreeItem.id }).then(assets => {
@@ -171,13 +171,19 @@ const RightSide = () => {
     };
 
 
+    const information_about_translations ={
+        "phase": t("Information about the phase"),
+        "objective": t("Information about the objective"),
+        "task": t("Information about the task"),
+      }
+
     return (
 
         selectedTreeItem && <Grid item xl={8} lg={8} md={6} xs={12}>
             <Box sx={{ p: 2 }}>
                 <Button sx={{ mb: 2 }} fullWidth variant="outlined" onClick={() => setTreeItemInfoOpen(!treeItemInfoOpen)}>
                     <Stack spacing={2}>
-                        <Typography variant="h6" >{t("Information about the", {what: selectedTreeItem.type})}</Typography>
+                        <Typography variant="h6" >{information_about_translations[selectedTreeItem.type]}</Typography>
                         <Divider> {!treeItemInfoOpen ? <KeyboardArrowDown /> : <KeyboardArrowUp />}</Divider>
                     </Stack>
                 </Button>
