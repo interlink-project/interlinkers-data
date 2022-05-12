@@ -112,7 +112,7 @@ for schema_metadata_path in Path("./schemas").glob("**/metadata.json"):
         add_to_weblate("", weblate_schemas, schema_metadata)
 
     with open(str_schema_metadata_path, "w") as json_file:
-        json.dump(schema_data, json_file, indent=4, sort_keys=True) # important to not sort keys
+        json.dump(schema_data, json_file, indent=4, sort_keys=True)
 
 ### INTERLINKERS
 

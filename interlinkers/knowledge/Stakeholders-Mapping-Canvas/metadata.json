@@ -19,7 +19,8 @@
         "zgz"
     ],
     "file_translations": {
-        "en": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/resource.pptx"
+        "en": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/resource.pptx",
+        "es": "./interlinkers/knowledge/Stakeholders-Mapping-Canvas/resource-es.pptx"
     },
     "form": "document_template",
     "format": "editable_source_document",
