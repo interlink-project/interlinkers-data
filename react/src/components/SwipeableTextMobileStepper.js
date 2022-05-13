@@ -13,7 +13,7 @@ function SwipeableTextMobileStepper({ images = [], height = '100%', objectFit="c
 
     let imageList = []
     if (images.length === 0) {
-        imageList = ["https://622386.smushcdn.com/1998349/wp-content/uploads/2022/01/default_image.png?lossy=0&strip=1&webp=1"]
+        imageList = ["/static/default_image.webp"]
     } else {
         imageList = images
     }
@@ -35,7 +35,7 @@ function SwipeableTextMobileStepper({ images = [], height = '100%', objectFit="c
     return (
         <Box sx={{ flexGrow: 1 }}>
 
-            <AutoPlaySwipeableViews
+            <SwipeableViews
                 axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                 index={activeStep}
                 onChangeIndex={handleStepChange}
@@ -60,7 +60,7 @@ function SwipeableTextMobileStepper({ images = [], height = '100%', objectFit="c
                         ) : null}
                     </div>
                 ))}
-            </AutoPlaySwipeableViews>
+            </SwipeableViews>
             <MobileStepper
                 steps={maxSteps}
                 position="static"

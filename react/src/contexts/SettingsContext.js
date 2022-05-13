@@ -127,46 +127,47 @@ export const SettingsProvider = (props) => {
   const [settings, setSettings] = useState(initialSettings);
 
   useEffect(() => {
-    const newSettigns = restoreSettings() || initialSettings;
+    const newSettings = restoreSettings() || initialSettings;
+    newSettings.helpOpen = false
     fetch("/static/customization/settings.json")
       .then(r => r.json())
       .then(json => {
         console.log("GOT CUSTOMIZATION INFO", json)
-        newSettigns.themeData = createCustomTheme({
-          direction: newSettigns.direction,
-          theme: newSettigns.theme,
+        newSettings.themeData = createCustomTheme({
+          direction: newSettings.direction,
+          theme: newSettings.theme,
           paletteCustomData: json.palette
         })
-        newSettigns.logos = json.logos
-        newSettigns.loaded = true
-        setSettings(newSettigns);
+        newSettings.logos = json.logos
+        newSettings.loaded = true
+        setSettings(newSettings);
       })
   }, []);
 
   const saveSettings = (updatedSettings) => {
-    const newSettigns = { ...settings }
+    const newSettings = { ...settings }
     if ("theme" in updatedSettings && settings.theme !== updatedSettings.theme) {
-      newSettigns.theme = updatedSettings.theme
-      newSettigns.themeData = createCustomTheme({
+      newSettings.theme = updatedSettings.theme
+      newSettings.themeData = createCustomTheme({
         direction: settings.direction,
         theme: updatedSettings.theme,
         paletteCustomData: settings.themeData.paletteCustomData
       })
-      newSettigns.loaded = true
-      setSettings(newSettigns);
-      storeSettings(newSettigns);
+      newSettings.loaded = true
+      setSettings(newSettings);
+      storeSettings(newSettings);
     }
 
     if ("helpOpen" in updatedSettings && settings.helpOpen !== updatedSettings.helpOpen) {
-      newSettigns.helpOpen = updatedSettings.helpOpen
-      setSettings(newSettigns);
-      storeSettings(newSettigns);
+      newSettings.helpOpen = updatedSettings.helpOpen
+      setSettings(newSettings);
+      storeSettings(newSettings);
     }
 
     if ("showHelp" in updatedSettings && settings.showHelp !== updatedSettings.showHelp) {
-      newSettigns.showHelp = updatedSettings.showHelp
-      setSettings(newSettigns);
-      storeSettings(newSettigns);
+      newSettings.showHelp = updatedSettings.showHelp
+      setSettings(newSettings);
+      storeSettings(newSettings);
     }
 
     if ("language" in updatedSettings && getLanguage() !== updatedSettings.language) {

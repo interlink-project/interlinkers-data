@@ -1,4 +1,4 @@
-import { TextField } from '@material-ui/core';
+import { Alert, TextField } from '@material-ui/core';
 import { Cancel, CheckCircle } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import useDependantTranslation from 'hooks/useDependantTranslation';
@@ -12,7 +12,7 @@ const UserSearch = ({ text, onClick }) => {
     const [individualSearchResult, setResultIndividualSearch] = useState(null);
     const [emailValue, setEmailValue] = useState("");
     const t = useDependantTranslation()
-    
+
     useEffect(() => {
         var delayDebounceFn
         if (mounted && emailValue) {
@@ -36,11 +36,15 @@ const UserSearch = ({ text, onClick }) => {
                 })
             }, 1000)
         }
-        return () => clearTimeout(delayDebounceFn)
+        return () => {
+            clearTimeout(delayDebounceFn)
+            setLoading(false)
+        }
     }, [mounted, emailValue])
 
     return (
         <>
+            <Alert severity='warning' sx={{my: 2}}>{t("Only registered users can be added")}</Alert>
             <TextField
                 margin="dense"
                 label={t("Email")}
@@ -52,7 +56,6 @@ const UserSearch = ({ text, onClick }) => {
                     setEmailValue(e.target.value)
                 }}
             />
-
             <LoadingButton loading={loading} fullWidth variant="text" color='primary' onClick={() => onClick(individualSearchResult)}
                 disabled={!individualSearchResult}
                 endIcon={individualSearchResult ? <CheckCircle /> : emailValue && <Cancel color='error' />}

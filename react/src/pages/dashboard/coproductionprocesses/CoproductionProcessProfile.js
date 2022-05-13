@@ -17,7 +17,6 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { useParams } from 'react-router-dom';
-import { getSoftwareInterlinkers } from 'slices/general';
 import { getProcess, setSelectedTreeItem } from 'slices/process';
 import useMounted from '../../../hooks/useMounted';
 import SchemaSelector from './Tabs/Overview/SchemaSelector';
@@ -105,7 +104,6 @@ const CoproductionProcessProfile = () => {
 
       if (mounted.current) {
         dispatch(getProcess(processId))
-        dispatch(getSoftwareInterlinkers())
       }
     } catch (err) {
       console.error(err);

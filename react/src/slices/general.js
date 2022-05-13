@@ -5,9 +5,6 @@ const initialState = {
   problemprofiles: [],
   loadingProblemprofiles: false,
 
-  softwareInterlinkers: [],
-  loadingSoftwareInterlinkers: false,
-
   teams: [],
   loadingTeams: false,
 
@@ -37,12 +34,6 @@ const slice = createSlice({
     setLoadingProcesses(state, action) {
       state.loadingProcesses = action.payload;
     },
-    setSoftwareInterlinkers(state, action) {
-      state.softwareInterlinkers = action.payload;
-    },
-    setSoftwareInterlinkersLoading(state, action) {
-      state.loadingSoftwareInterlinkers = action.payload;
-    },
     setSchemas(state, action) {
       state.schemas = action.payload;
     },
@@ -59,13 +50,6 @@ const slice = createSlice({
 });
 
 export const { reducer } = slice;
-
-export const getSoftwareInterlinkers = () => async (dispatch) => {
-  dispatch(slice.actions.setSoftwareInterlinkersLoading(true));
-  const softwareinterlinkers = await softwareInterlinkersApi.getIntegrated();
-  dispatch(slice.actions.setSoftwareInterlinkers(softwareinterlinkers));
-  dispatch(slice.actions.setSoftwareInterlinkersLoading(false));
-};
 
 export const getMyTeams = () => async (dispatch) => {
   dispatch(slice.actions.setLoadingTeams(true));

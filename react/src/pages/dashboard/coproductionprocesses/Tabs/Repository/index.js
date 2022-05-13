@@ -1,17 +1,26 @@
 import { Box, Grid } from '@material-ui/core';
 import { PhaseTabs, StyledTree } from 'components/dashboard/tree';
 import useMounted from 'hooks/useMounted';
-import { useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setselectedPhaseTabId } from 'slices/process';
+import { softwareInterlinkersApi } from '__api__';
 import RightSide from './RightSide';
 
 const Repository = ({ setSelectedTreeItem }) => {
   const dispatch = useDispatch();
   const mounted = useMounted();
-
-  const { selectedPhaseTabId, selectedTreeItem, phases } = useSelector((state) => state.process);
+  const [softwareInterlinkers, setSoftwareInterlinkers] = useState([])
+  const { process, selectedPhaseTabId, selectedTreeItem, phases } = useSelector((state) => state.process);
   const currentPhase = selectedPhaseTabId ? phases.find(el => el.id === selectedPhaseTabId) : phases[0]
+
+  useEffect(() => {
+    softwareInterlinkersApi.getMulti({}, process.language).then(res => {
+      if (mounted.current) {
+        setSoftwareInterlinkers(res.items)
+      }
+    })
+  }, [])
 
   const setNewPhaseTab = useCallback((phase) => {
     if (mounted.current) {
@@ -28,7 +37,7 @@ const Repository = ({ setSelectedTreeItem }) => {
         <Grid item xl={4} lg={4} md={6} xs={12}>
           <StyledTree phase={currentPhase} selectedTreeItem={selectedTreeItem} setSelectedTreeItem={setSelectedTreeItem} objectives_key="objectives" tasks_key="tasks" showIcon />
         </Grid>
-        <RightSide />
+        <RightSide softwareInterlinkers={softwareInterlinkers} />
       </Grid>
 
     </Box>

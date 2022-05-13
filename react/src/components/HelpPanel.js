@@ -1,6 +1,7 @@
-import { Box, Drawer, Fab, IconButton, Typography } from '@material-ui/core';
-import { Close, Help } from '@material-ui/icons';
+import { Box, Drawer, Fab, Typography } from '@material-ui/core';
+import { Help } from '@material-ui/icons';
 import useSettings from 'hooks/useSettings';
+import { useTranslation } from 'react-i18next';
 
 const helps = {
     "/dashboard": {
@@ -43,6 +44,7 @@ const helps = {
                 */
 const HelpPanel = () => {
     const { settings, saveSettings } = useSettings();
+    const { t } = useTranslation()
 
     if (!settings.showHelp) {
         return <></>
@@ -70,7 +72,7 @@ const HelpPanel = () => {
 
                 <Box>
                     {helpData ? <iframe style={{ position: "absolute", height: "100%", width: "100%", border: "none" }} src={helpData.url} /> : <Typography>
-                        No help found for {location.pathname}
+                        {t("No help found for", { what: location.pathname })}
                     </Typography>}
                 </Box>
 
@@ -87,7 +89,7 @@ const HelpPanel = () => {
             position: 'fixed',
         }} color="primary" variant="extended" onClick={() => saveSettings({ helpOpen: true })}>
             <Help sx={{ mr: 1 }} />
-            Need help?
+            {t("Need help?")}
         </Fab>
         }
     </>

@@ -121,9 +121,8 @@ const RecommendedInterlinkerCard = ({ language, interlinker, assets, onClick }) 
         )}
     </>
 }
-const RightSide = () => {
+const RightSide = ({softwareInterlinkers}) => {
     const { process, selectedTreeItem } = useSelector((state) => state.process);
-    const { softwareInterlinkers } = useSelector((state) => state.general);
     const isTask = selectedTreeItem && selectedTreeItem.type === "task"
     const [step, setStep] = useState(0);
 
@@ -321,7 +320,7 @@ const RightSide = () => {
                                                     value={values.uri}
                                                     variant='outlined'
                                                 />
-                                                <LoadingButton sx={{ mt: 2 }} variant="contained" fullWidth loading={isSubmitting} disabled={isSubmitting} onClick={handleSubmit}>{t("Create")}</LoadingButton>
+                                                <LoadingButton sx={{ mt: 2 }} variant="contained" fullWidth loading={isSubmitting} onClick={handleSubmit}>{t("Create")}</LoadingButton>
                                             </Box>
 
                                         </form>

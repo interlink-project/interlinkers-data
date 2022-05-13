@@ -21,7 +21,8 @@ import {
   Typography,
   useTheme,
   MobileStepper,
-  AvatarGroup
+  AvatarGroup,
+  Alert
 } from '@material-ui/core';
 import { Add, Delete, Folder, KeyboardArrowRight, KeyboardArrowLeft, CheckCircle, Cancel } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
@@ -219,7 +220,7 @@ const TeamCreate = ({ loading, setLoading, open, setOpen, onCreate }) => {
                 setEmailValue(e.target.value)
               }}
             />
-
+            {emailValue && !selectedUser && <Alert severity='warning'>{t("User must have logged in first")}</Alert>}
             <LoadingButton loading={loading} fullWidth variant="text" color='primary' onClick={() => {
               setSelectedUsers([...selectedUsers, selectedUser])
               setSelectedUser(null)
@@ -227,7 +228,7 @@ const TeamCreate = ({ loading, setLoading, open, setOpen, onCreate }) => {
 
             }}
               disabled={!selectedUser}
-              endIcon={selectedUser ? <CheckCircle /> : emailValue && <Cancel color='error' />}
+              endIcon={selectedUser ? <CheckCircle /> : (emailValue && <Cancel color='error' />)}
               sx={{ mt: 1 }}
             >{t("Add user")}</LoadingButton>
           </>}

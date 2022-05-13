@@ -133,7 +133,8 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
                     window.open(selectedInterlinker.uri)
                 }
             }
-            if (activeStep === 2 && isKnowledge) {
+            if (activeStep === 2) {
+                // && isKnowledge
                 handleClose()
             }
         }
@@ -210,7 +211,7 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
                     <CircularProgress />
                 </Box>}
 
-                {activeStep === 2 && !isKnowledge && <Box
+                {false && activeStep === 2 && !isKnowledge && <Box
                     style={{
                         position: 'absolute', left: '50%', top: '50%',
                         transform: 'translate(-50%, -50%)'
