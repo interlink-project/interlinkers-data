@@ -7,12 +7,15 @@ import { ArrowBack, Close, DoubleArrow, Download, Preview } from '@material-ui/i
 import { LoadingButton } from '@material-ui/lab';
 import { InterlinkerDetails, InterlinkerHeader } from 'components/dashboard/interlinkers';
 import { env } from 'configuration';
+import useDependantTranslation from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { assetsApi } from '__api__';
 
-const CircularProgress = ({ text = "", onCancel = null }) => (
+const CircularProgress = ({ text = "", onCancel = null }) => {
+    const t = useDependantTranslation()
+    return (
     <Box
         style={{
             position: 'absolute', left: '50%', top: '50%',
@@ -30,15 +33,16 @@ const CircularProgress = ({ text = "", onCancel = null }) => (
             </Grid>
             {onCancel && <Grid item xs={12} sx={{ mt: 3 }}>
                 <Button color="error" onClick={onCancel}>
-                    Cancel
+                    {t("Cancel")}
                 </Button>
             </Grid>}
 
         </Grid>
     </Box>
-)
+)}
 export default function NewAssetModal({ open, setOpen, activeStep, setStep, selectedInterlinker, task, onCreate }) {
     const { process } = useSelector((state) => state.process);
+    const t = useDependantTranslation()
 
     const [loadingInstantiator, setLoadingInstantiator] = useState(true);
     const [assetData, setAssetData] = useState(null);
@@ -47,7 +51,7 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
     // if software interlinker, helper bools
     const isSoftware = selectedInterlinker.nature === "softwareinterlinker"
     const isKnowledge = selectedInterlinker.nature === "knowledgeinterlinker"
-    const isExternal = selectedInterlinker.nature === "externalinterlinker" || selectedInterlinker.nature === "externalknowledgeinterlinker"
+    const isExternal = selectedInterlinker.nature === "externalsoftwareinterlinker" || selectedInterlinker.nature === "externalknowledgeinterlinker"
     const can_open_in_modal = isSoftware && selectedInterlinker.open_in_modal
 
     // if knowledgeinterlinker is previewable
@@ -210,77 +214,18 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
                 {activeStep === 1 && isKnowledge && <Box>
                     <CircularProgress />
                 </Box>}
-
-                {false && activeStep === 2 && !isKnowledge && <Box
-                    style={{
-                        position: 'absolute', left: '50%', top: '50%',
-                        transform: 'translate(-50%, -50%)'
-                    }}
-                >
-                    <Box
-                        sx={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                        }}
-                    >
-                        <Avatar src={assetData && assetData.icon} />
-                    </Box>
-                    <Box sx={{ mt: 2 }}>
-                        <Typography
-                            align='center'
-                            color='textPrimary'
-                            variant='h3'
-                        >
-                            Resource '{assetData && assetData.name}' created!
-                        </Typography>
-                    </Box>
-                    <Box sx={{ mt: 2 }}>
-                        <Typography
-                            align='center'
-                            color='textSecondary'
-                            variant='subtitle1'
-                        >
-                            The resource is now accessible for this task.
-                        </Typography>
-                    </Box>
-                    <Box
-                        sx={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            mt: 2,
-                        }}
-                    >
-                        <Button
-                            color='primary'
-                            variant='contained'
-                            onClick={() => {
-                                console.log("BUSCAME", assetData)
-                                assetData && assetData.link && window.open(assetData.link + "/view", "_blank")
-                            }}
-                        >
-                            Open asset
-                        </Button>
-
-                        <Button
-                            color='primary'
-                            onClick={handleClose}
-                            variant='text'
-                        >
-                            Dispose this window
-                        </Button>
-                    </Box>
-                </Box>}
             </DialogContent>
             {activeStep === 0 && <DialogActions sx={{ bgcolor: "background.default", justifyContent: "center" }}>
                 {previewable && <Button startIcon={<Preview />} sx={{ my: 2, mx: 4 }} autoFocus variant="outlined" color="warning" onClick={() => window.open(selectedInterlinker.link + "/preview", "_blank")}>
-                    {selectedInterlinker.softwareinterlinker.preview_text} (it will be not related to project, for features exploration)
+                    {selectedInterlinker.softwareinterlinker.preview_text} {t("(it will be not related to project, for features exploration)")}
                 </Button>}
                 {downloadable && <Button startIcon={<Download />} sx={{ my: 2, mx: 4 }} autoFocus variant="outlined" color="warning" onClick={() => window.open(selectedInterlinker.link + "/download", "_blank")}>
-                    Download locally as resource not related to project (for features exploration)
+                    {t("Download locally as resource not related to project (for features exploration)")}
                 </Button>}
                 {instantiatable && <LoadingButton loading={loadingKnowledgeInstantiation} startIcon={<DoubleArrow />} sx={{ my: 2, mx: 4 }} autoFocus variant="contained" onClick={() => setStep(1)}>
-                    Instantiate as resource to use in project
+                    {t("Instantiate as resource to use in project")}
                 </LoadingButton>}
+                {isExternal && <Button startIcon={<DoubleArrow />} sx={{ my: 2, mx: 4 }} autoFocus variant="contained" onClick={() => window.open(selectedInterlinker.uri, "_blank")}>{t("Open the external resource on a new tab")}</Button>}
             </DialogActions>}
         </Dialog>
     );

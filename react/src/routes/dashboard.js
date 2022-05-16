@@ -7,7 +7,7 @@ const CoproductionProcessProfile = Loadable(
 );
 
 const InterlinkerBrowse = Loadable(
-  lazy(() => import('../pages/dashboard/interlinkers/InterlinkerBrowse'))
+  lazy(() => import('../components/dashboard/interlinkers/browse/InterlinkerBrowse'))
 );
 const InterlinkerProfile = Loadable(
   lazy(() => import('../components/dashboard/interlinkers/profile/InterlinkerProfile'))

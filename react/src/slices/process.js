@@ -14,7 +14,6 @@ const initialState = {
   allItems: [],
   selectedPhaseTabId: '',
   selectedTreeItem: null,
-  network: null,
   roles: [],
   myRoles: [],
   teams: [],

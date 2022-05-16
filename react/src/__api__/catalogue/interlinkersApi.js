@@ -17,22 +17,6 @@ class InterlinkersApi extends GeneralApi {
     return res.data;
   }
 
-  async getByProblemProfiles(page, size, problemprofiles, language = getLanguage()) {
-    const res = await axiosInstance.post(
-      `/${this.url}/by_problemprofiles`, problemprofiles, {
-        params: removeEmpty({
-          page,
-          size
-        }),
-        headers: {
-          'Accept-Language': language
-        }
-      }
-    );
-    console.log('by problem profiles call', res.data);
-    return res.data;
-  }
-
   async getRelated(page, size, id) {
     const res = await axiosInstance.get(
       `/${this.url}/${id}/related`, {

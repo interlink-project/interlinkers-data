@@ -2,28 +2,29 @@ import { Box, Drawer, Fab, Typography } from '@material-ui/core';
 import { Help } from '@material-ui/icons';
 import useSettings from 'hooks/useSettings';
 import { useTranslation } from 'react-i18next';
+import { getLanguage } from 'translations/i18n';
 
 const helps = {
     "/dashboard": {
-        url: "https://interlink-project.github.io/interlink-project/usermanual/dashboard.html"
+        url: (language) => `https://dev.interlink-project.eu/docs/${language}/usermanual/dashboard.html`,
     },
     "/dashboard/interlinkers": {
-        url: "https://interlink-project.github.io/interlink-project/usermanual/catalogue-interlinkers.html"
+        url: (language) => `https://dev.interlink-project.eu/docs/${language}/usermanual/catalogue-interlinkers.html`,
     },
     "/dashboard/interlinkers/(.+)": {
-        url: "https://interlink-project.github.io/interlink-project/usermanual/catalogue-interlinker-profile.html"
+        url: (language) => `https://dev.interlink-project.eu/docs/${language}/usermanual/catalogue-interlinker-profile.html`,
     },
     "/dashboard/coproductionprocesses/(.+)/overview": {
-        url: "https://interlink-project.github.io/interlink-project/usermanual/coproductionprocess-overview.html"
+        url: (language) => `https://dev.interlink-project.eu/docs/${language}/usermanual/coproductionprocess-overview.html`,
     },
     "/dashboard/coproductionprocesses/(.+)/guide": {
-        url: "https://interlink-project.github.io/interlink-project/usermanual/coproductionprocess-guide.html"
+        url: (language) => `https://dev.interlink-project.eu/docs/${language}/usermanual/coproductionprocess-guide.html`,
     },
     "/dashboard/coproductionprocesses/(.+)/workplan": {
-        url: "https://interlink-project.github.io/interlink-project/usermanual/coproductionprocess-workplan.html"
+        url: (language) => `https://dev.interlink-project.eu/docs/${language}/usermanual/coproductionprocess-workplan.html`,
     },
     "/dashboard/coproductionprocesses/(.+)/settings": {
-        url: "https://interlink-project.github.io/interlink-project/usermanual/coproductionprocess-settings.html"
+        url: (language) => `https://dev.interlink-project.eu/docs/${language}/usermanual/coproductionprocess-settings.html`,
     }
 }
 
@@ -51,13 +52,13 @@ const HelpPanel = () => {
     }
 
     let helpData
-    Object.keys(helps).forEach(element => {
-        const match = location.pathname.match(element)
+    Object.keys(helps).forEach(path => {
+        const match = location.pathname.match(path)
         if (match) {
-            helpData = helps[element]
+            helpData = helps[path]
         }
     });
-
+    const language = getLanguage()
     return <>
 
         <Drawer
@@ -71,7 +72,7 @@ const HelpPanel = () => {
                 </IconButton> */}
 
                 <Box>
-                    {helpData ? <iframe style={{ position: "absolute", height: "100%", width: "100%", border: "none" }} src={helpData.url} /> : <Typography>
+                    {helpData ? <iframe style={{ position: "absolute", height: "100%", width: "100%", border: "none" }} src={helpData.url(language)} /> : <Typography>
                         {t("No help found for", { what: location.pathname })}
                     </Typography>}
                 </Box>

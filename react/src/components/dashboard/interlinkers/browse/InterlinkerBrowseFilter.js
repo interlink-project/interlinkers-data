@@ -1,68 +1,68 @@
 import { Box, Card, Chip, Divider, Input, Rating, Typography } from '@material-ui/core';
 import { Search } from '@material-ui/icons';
-import React, { useEffect, useRef, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import i18n from "translations/i18n";
+import { useCustomTranslation } from 'hooks/useDependantTranslation';
+import useMounted from 'hooks/useMounted';
+import React, { useEffect, useState } from 'react';
+import { problemprofilesApi } from '__api__';
 import MultiSelect from '../../../MultiSelect';
 
-const allNatures = ["softwareinterlinker", "knowledgeinterlinker", "externalsoftwareinterlinker", "externalknowledgeinterlinker"]
-const allCreators = ["official", "community"]
-const natureMultiselect = {
-  label: i18n.t('Nature'),
-  options: [
-    {
-      label: i18n.t('Internal software'),
-      value: "softwareinterlinker"
-    },
-    {
-      label: i18n.t('External software'),
-      value: "externalsoftwareinterlinker"
-    },
-    {
-      label: i18n.t('Internal knowledge'),
-      value: "knowledgeinterlinker"
-    },
-    {
-      label: i18n.t('External knowledge'),
-      value: "externalknowledgeinterlinker"
-    }
-  ]
-};
-
-
-const InterlinkerBrowseFilter = ({ onFiltersChange }) => {
-  const [inputValue, setInputValue] = useState('');
-  const [selectedNatures, setSelectedNatures] = useState([]);
-  const [selectedCreators, setSelectedCreators] = useState([]);
-  const [minimumRating, setMinimumRating] = useState(null);
-  const didMount = useRef(false);
-  const { t } = useTranslation()
-
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
-  };
-
-  const update = () => onFiltersChange({
-    search: inputValue || null,
-    nature: selectedNatures !== allNatures ? selectedNatures : null,
-    creator: selectedCreators !== allCreators ? selectedCreators : null,
-    rating: minimumRating || null
-  })
+const InterlinkerBrowseFilter = ({ filters, onFiltersChange, language }) => {
+  const [inputValue, setInputValue] = useState(filters.search);
+  const mounted = useMounted()
+  const t = useCustomTranslation(language)
+  const [problemProfiles, setProblemProfiles] = useState([]);
 
   useEffect(() => {
-    update()
-  }, [selectedNatures, selectedCreators, minimumRating])
+    problemprofilesApi.getMulti({}, language).then(res => {
+      if (mounted.current) {
+        setProblemProfiles(res)
+      }
+    })
+  }, [language])
 
+  const problemprofilesMultiselect = {
+    label: t('Problem profiles'),
+    options: problemProfiles.map(pp => ({
+      label: pp.id + " - " + pp.name,
+      value: pp.id
+    }))
+  };
+
+  const natureMultiselect = {
+    label: t('Nature'),
+    options: [
+      {
+        label: t('Internal software'),
+        value: "softwareinterlinker"
+      },
+      {
+        label: t('External software'),
+        value: "externalsoftwareinterlinker"
+      },
+      {
+        label: t('Internal knowledge'),
+        value: "knowledgeinterlinker"
+      },
+      {
+        label: t('External knowledge'),
+        value: "externalknowledgeinterlinker"
+      }
+    ]
+  };
+
+  const changeFilter = (key, value) => {
+    console.log("CHANGED", key, value)
+    const newFilters = { ...filters }
+    newFilters[key] = value
+    onFiltersChange(newFilters)
+  }
 
   useEffect(() => {
     var delayDebounceFn
-    if (didMount.current) {
+    if (mounted.current && inputValue !== filters.search) {
       delayDebounceFn = setTimeout(() => {
-        update()
+        changeFilter("search", inputValue)
       }, 800)
-    }
-    else {
-      didMount.current = true
     }
     return () => {
       if (delayDebounceFn) {
@@ -90,7 +90,9 @@ const InterlinkerBrowseFilter = ({ onFiltersChange }) => {
           <Input
             disableUnderline
             fullWidth
-            onChange={handleInputChange}
+            onChange={(event) => {
+              setInputValue(event.target.value);
+            }}
             placeholder={t('Search')}
             value={inputValue}
           />
@@ -108,14 +110,21 @@ const InterlinkerBrowseFilter = ({ onFiltersChange }) => {
       >
         <MultiSelect
           label={natureMultiselect.label}
-          onChange={(e) => setSelectedNatures(e)}
+          onChange={(e) => changeFilter("nature", e)}
           options={natureMultiselect.options}
-          value={selectedNatures}
+          value={filters.nature}
+        />
+        <Divider orientation='vertical' flexItem sx={{ mx: 2 }} />
+        <MultiSelect
+          label={problemprofilesMultiselect.label}
+          onChange={(e) => changeFilter("problemprofiles", e)}
+          options={problemprofilesMultiselect.options}
+          value={filters.problemprofiles}
         />
         <Divider orientation='vertical' flexItem sx={{ mx: 2 }} />
 
         <Typography variant="body2" sx={{ mx: 1 }}><b>{t("Minimum rating")}:</b></Typography>
-        <Rating value={minimumRating} onChange={(e, value) => setMinimumRating(value)} />
+        <Rating value={filters.rating} onChange={(e, value) => changeFilter("rating", value)} />
         <Divider orientation='vertical' flexItem sx={{ mx: 2 }} />
         {/*<Typography variant="body2" sx={{ mr: 1 }}><b>Order by:</b></Typography>
         <Select
@@ -130,10 +139,11 @@ const InterlinkerBrowseFilter = ({ onFiltersChange }) => {
       </Box>
 
     </Card>
-    <Box sx={{ mt: 2 }}>
-      {inputValue && <Chip sx={{ mr: 1 }} label={`${t("Search")}: ${inputValue}`} onDelete={() => setInputValue("")} />}
-      {selectedNatures.map(nature => <Chip sx={{ mr: 1 }} label={`${t("Nature")}: ${natureMultiselect.options.find(option => option.value === nature).label}`} onDelete={() => setSelectedNatures(selectedNatures.filter(nt => nt !== nature))} />)}
-      {minimumRating && <Chip sx={{ mr: 1 }} label={`${t("Minimum rating")}: ${minimumRating}`} onDelete={() => setMinimumRating(null)} />}
+    <Box sx={{ mt: 1 }}>
+      {filters.search && <Chip sx={{ mr: 1, mt: 1 }} label={`${t("Search")}: ${filters.search}`} onDelete={() => changeFilter("search", "")} />}
+      {filters.nature.map(nature => <Chip key={`active-filter-${nature}`} sx={{ mr: 1, mt: 1 }} label={`${t("Nature")}: ${natureMultiselect.options.find(option => option.value === nature).label}`} onDelete={() => changeFilter("nature", filters.nature.filter(nt => nt !== nature))} />)}
+      {problemProfiles.length > 0 && filters.problemprofiles.map(pp => <Chip key={`active-filter-${pp}`} sx={{ mr: 1, mt: 1 }} label={`${t("Problem profile")}: ${problemProfiles.find(el => el.id === pp).id}`} onDelete={() => changeFilter("problemprofiles", filters.problemprofiles.filter(problemprofile => problemprofile !== pp))} />)}
+      {filters.rating && <Chip sx={{ mr: 1, mt: 1 }} label={`${t("Minimum rating")}: ${filters.rating}`} onDelete={() => changeFilter("rating", null)} />}
     </Box>
 
   </>

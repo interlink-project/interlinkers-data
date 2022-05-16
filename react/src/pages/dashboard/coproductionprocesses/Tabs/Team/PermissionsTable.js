@@ -20,13 +20,11 @@ function Row(props) {
     const PermittedChip = () => <Chip
         color="success"
         size="small"
-        onDelete={console.log}
         icon={<Check />}
     />
     const NotPermittedChip = () => <Chip
         size="small"
         icon={<Close />}
-        onDelete={console.log}
     />
 
     const deleteRole = () => {

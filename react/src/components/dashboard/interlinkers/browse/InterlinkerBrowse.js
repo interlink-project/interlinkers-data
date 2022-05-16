@@ -2,15 +2,23 @@ import { Box, Container, Grid, ToggleButton, ToggleButtonGroup, Typography } fro
 import { ViewModule } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import { InterlinkerBrowseFilter, InterlinkerCard, InterlinkerDialog } from 'components/dashboard/interlinkers';
+import { useCustomTranslation } from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useTranslation } from 'react-i18next';
+import { getLanguage } from 'translations/i18n';
 import { interlinkersApi } from '__api__';
 
-const InterlinkerBrowse = () => {
+const initialDefaultFilters = {
+  search: "",
+  problemprofiles: [],
+  nature: ["softwareinterlinker", "knowledgeinterlinker", "externalsoftwareinterlinker", "externalknowledgeinterlinker"],
+  rating: null,
+}
+
+const InterlinkerBrowse = ({ language = getLanguage(), initialFilters = {}, onInterlinkerClick }) => {
   const mounted = useMounted();
-  const { t } = useTranslation()
+  const t = useCustomTranslation(language)
   const [open, setOpen] = useState(false);
   const [interlinker, setInterlinker] = useState(null);
   const [mode, setMode] = useState('grid');
@@ -23,7 +31,7 @@ const InterlinkerBrowse = () => {
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(0);
   const [size, setSize] = useState(9);
-  const [filters, setFilters] = useState({});
+  const [filters, setFilters] = useState({ ...initialDefaultFilters, ...initialFilters });
   const [loadedRows, setLoadedRows] = useState([]);
 
   const hasNextPage = loadedRows.length < total
@@ -31,7 +39,7 @@ const InterlinkerBrowse = () => {
   const loadServerRows = async (page, loadedRows) => {
     setLoading(true);
     try {
-      interlinkersApi.getMulti({ page: page + 1, size, ...filters }).then(res => {
+      interlinkersApi.getMulti({ page: page + 1, size, ...filters }, language).then(res => {
         if (mounted.current) {
           setLoading(false);
           setPage(page + 1)
@@ -65,6 +73,11 @@ const InterlinkerBrowse = () => {
   const handleClose = () => {
     setOpen(false);
   };
+
+  const handleInterlinkerClick = onInterlinkerClick ? onInterlinkerClick : (interlinker) => {
+    setInterlinker(interlinker)
+    handleClickOpen()
+  }
 
   return (
     <>
@@ -109,7 +122,7 @@ const InterlinkerBrowse = () => {
             </Grid>
           </Grid>
           <Box sx={{ mt: 3 }}>
-            <InterlinkerBrowseFilter onFiltersChange={setFilters} />
+            <InterlinkerBrowseFilter language={language} filters={filters} onFiltersChange={setFilters} />
           </Box>
 
           <Box sx={{ mt: 6 }}>
@@ -173,10 +186,7 @@ const InterlinkerBrowse = () => {
                   sm={mode === 'grid' ? 6 : 12}
                   xs={12}
                 >
-                  <InterlinkerCard interlinker={interlinker} onInterlinkerClick={(i) => {
-                    setInterlinker(i)
-                    handleClickOpen()
-                  }} mode={mode} />
+                  <InterlinkerCard language={language} interlinker={interlinker} onInterlinkerClick={handleInterlinkerClick} mode={mode} />
                 </Grid>
               ))}
 
@@ -187,11 +197,11 @@ const InterlinkerBrowse = () => {
           </Box>
 
         </Container>
-        <InterlinkerDialog
+        {!onInterlinkerClick && <InterlinkerDialog
           interlinker={interlinker}
           open={open}
           setOpen={setOpen}
-        />
+        />}
       </Box>
     </>
   );

@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import Loadable from 'routes/Loadable';
 
 const InterlinkerBrowse = Loadable(
-  lazy(() => import('./dashboard/interlinkers/InterlinkerBrowse'))
+  lazy(() => import('../components/dashboard/interlinkers/browse/InterlinkerBrowse'))
 );
 
 const HomeCatalogue = () => {

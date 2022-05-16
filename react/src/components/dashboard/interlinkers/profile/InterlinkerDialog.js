@@ -1,4 +1,4 @@
-import { CircularProgress, Dialog, DialogContent, DialogTitle } from '@material-ui/core';
+import { CircularProgress, Dialog, DialogContent, DialogTitle, Skeleton } from '@material-ui/core';
 import { useEffect, useState } from 'react';
 import { interlinkersApi } from '__api__';
 import InterlinkerDetails from './InterlinkerDetails';

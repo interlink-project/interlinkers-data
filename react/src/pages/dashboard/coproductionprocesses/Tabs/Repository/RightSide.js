@@ -1,20 +1,17 @@
-import { Alert, alpha, Avatar, Box, Button, Card, CardActionArea, CardActions, CardHeader, CircularProgress, Collapse, Dialog, DialogContent, Divider, Grid, InputBase, Menu, MenuItem, Rating, Stack, TextField, Typography } from '@material-ui/core';
-import { green } from '@material-ui/core/colors';
-import { Check, KeyboardArrowDown, KeyboardArrowUp } from '@material-ui/icons';
+import { alpha, Avatar, Box, Button, Collapse, Dialog, DialogContent, Divider, Grid, InputBase, Menu, MenuItem, Stack, TextField, Typography } from '@material-ui/core';
+import { KeyboardArrowDown, KeyboardArrowUp } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import { styled } from '@material-ui/styles';
 import { AssetsTable } from 'components/dashboard/assets';
-import { NatureChip } from 'components/dashboard/assets/Icons';
+import InterlinkerBrowse from 'components/dashboard/interlinkers/browse/InterlinkerBrowse';
 import { TreeItemData } from 'components/dashboard/tree';
 import { Formik } from 'formik';
 import useDependantTranslation from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
-import { truncate } from 'lodash';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { HTMLtoText } from 'utils/safeHTML';
 import * as Yup from 'yup';
-import { assetsApi, interlinkersApi } from '__api__';
+import { assetsApi } from '__api__';
 import NewAssetModal from './NewAssetModal';
 
 const Search = styled('div')(({ theme }) => ({
@@ -64,72 +61,13 @@ const sameHeightCards = {
     justifyContent: "space-between"
 }
 
-const RecommendedInterlinkerCard = ({ language, interlinker, assets, onClick }) => {
-    const [isShown, setIsShown] = useState(false);
-    const logotype = interlinker.logotype_link || (interlinker.softwareinterlinker && interlinker.softwareinterlinker.logotype_link)
-    return <>
-        <CardActionArea style={sameHeightCards} onClick={onClick}>
-            <Card onMouseEnter={() => setIsShown(true)} onMouseLeave={() => setIsShown(false)} sx={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-                <CardHeader
-                    sx={{ px: 2, pt: 2, pb: 0 }}
-                    avatar={logotype && <Avatar sx={{ width: 25, height: 25 }} variant="rounded" src={logotype} />}
-                    title={<Stack direction="column" justifyContent="center" spacing={1}>
-
-                        <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>{interlinker.name}</Typography>
-                        <Box sx={{
-                            position: "absolute",
-                            top: 10,
-                            right: 10
-                        }}>
-                            {assets.find(el => el.knowledgeinterlinker_id === interlinker.id || el.softwareinterlinker_id === interlinker.id) && <Check style={{ color: green[500] }} />}
-                        </Box>
-                    </Stack>}
-                />
-
-                <Typography sx={{ p: 2 }} variant="body2" color="text.secondary">
-                    {HTMLtoText(truncate(interlinker.description, {
-                        length: 150,
-                        separator: ' ',
-                    }))}
-                </Typography>
-                <CardActions sx={{ textAlign: "center" }}>
-                    <Stack direction="column" justifyContent="center" spacing={1} sx={{ textAlign: "center" }}>
-                        <NatureChip language={language} interlinker={interlinker} />
-                        <Rating readOnly value={interlinker.rating} size="small" />
-                    </Stack>
-
-                </CardActions>
-            </Card>
-        </CardActionArea>
-        {isShown && interlinker.snapshots_links && interlinker.snapshots_links[0] && (
-            <Card style={{
-                position: "fixed",
-                bottom: 30,
-                left: 30,
-                zIndex: 99999,
-                width: "40%",
-                height: "auto"
-            }}
-                onMouseEnter={() => setIsShown(true)} onMouseLeave={() => setIsShown(false)} sx={{ height: "100%" }}
-            >
-                <img style={{
-                    width: "100%",
-                    height: "auto"
-                }} src={interlinker.snapshots_links[0]} />
-            </Card>
-
-        )}
-    </>
-}
-const RightSide = ({softwareInterlinkers}) => {
+const RightSide = ({ softwareInterlinkers }) => {
     const { process, selectedTreeItem } = useSelector((state) => state.process);
     const isTask = selectedTreeItem && selectedTreeItem.type === "task"
     const [step, setStep] = useState(0);
 
     const [assets, setAssets] = useState([])
-    const [recommendedInterlinkers, setRecommendedInterlinkers] = useState([])
     const [loadingTaskInfo, setLoadingTaskInfo] = useState(false)
-    const [recommendedInterlinkersOpen, setrecommendedInterlinkersOpen] = useState(false)
     const [treeItemInfoOpen, setTreeItemInfoOpen] = useState(true)
 
     // new asset modal
@@ -137,18 +75,14 @@ const RightSide = ({softwareInterlinkers}) => {
     const [newAssetDialogOpen, setNewAssetDialogOpen] = useState(false)
     const mounted = useMounted()
     const [externalAssetOpen, setExternalAssetOpen] = useState(false);
+    const [catalogueOpen, setCatalogueOpen] = useState(false);
     const t = useDependantTranslation()
 
     const updateTaskInfo = async () => {
         assetsApi.getMulti({ task_id: selectedTreeItem.id }).then(assets => {
             if (mounted.current) {
                 setAssets(assets)
-                interlinkersApi.getByProblemProfiles(null, null, selectedTreeItem.problemprofiles, process.language).then(interlinkers => {
-                    if (mounted.current) {
-                        setRecommendedInterlinkers(interlinkers.items)
-                        setLoadingTaskInfo(false)
-                    }
-                });
+                setLoadingTaskInfo(false)
             }
         });
     }
@@ -170,11 +104,11 @@ const RightSide = ({softwareInterlinkers}) => {
     };
 
 
-    const information_about_translations ={
+    const information_about_translations = {
         "phase": t("Information about the phase"),
         "objective": t("Information about the objective"),
         "task": t("Information about the task"),
-      }
+    }
 
     return (
 
@@ -190,31 +124,7 @@ const RightSide = ({softwareInterlinkers}) => {
                     <TreeItemData language={process.language} processId={process.id} type={selectedTreeItem.type} element={selectedTreeItem} />
                 </Collapse>
                 {isTask && <>
-
-                    <Button sx={{ my: 2 }} fullWidth variant="outlined" onClick={() => setrecommendedInterlinkersOpen(!recommendedInterlinkersOpen)}>
-                        <Stack spacing={2}>
-                            <Typography variant="h6" >{t("Recommended interlinkers")}</Typography>
-                            <Divider> {!recommendedInterlinkersOpen ? <KeyboardArrowDown /> : <KeyboardArrowUp />}</Divider>
-                        </Stack>
-                    </Button>
-                    <Collapse in={recommendedInterlinkersOpen} timeout="auto" unmountOnExit>
-
-                        {loadingTaskInfo ?
-                            <CircularProgress /> : recommendedInterlinkers.length === 0 ? <Alert severity="warning">{t("No recommended interlinkers found")}</Alert> : <Grid container spacing={3} justifyContent="flex-start">
-
-                                {recommendedInterlinkers.map(interlinker => (
-                                    <Grid item xs={12} md={6} lg={4} xl={4} key={interlinker.id}>
-                                        <RecommendedInterlinkerCard language={process.language} assets={assets} onClick={() => {
-                                            setStep(0);
-                                            setSelectedInterlinker(interlinker);
-                                            setNewAssetDialogOpen(true)
-                                        }} interlinker={interlinker} />
-                                    </Grid>
-                                ))}
-                            </Grid>}
-
-                        <Divider sx={{ my: 2 }} />
-                    </Collapse>
+                    
                     <Box>
                         <Box sx={{ mt: 2 }}>
 
@@ -232,23 +142,47 @@ const RightSide = ({softwareInterlinkers}) => {
                             <Typography sx={{ mb: 1 }} variant="h6">{t("Current resources")}:</Typography>
 
                             <AssetsTable assets={assets} onChange={updateTaskInfo} />
+                            <Box sx={{ textAlign: "center", width: "100%" }}>
+                        <Button
+                            id="basic-button"
+                            aria-controls={open ? 'basic-menu' : undefined}
+                            aria-haspopup="true"
+                            aria-expanded={open ? 'true' : undefined}
+                            onClick={() => setCatalogueOpen(true)}
+                            variant="contained"
+                            sx={{ my: 2 }}
+                            endIcon={<KeyboardArrowUp />}
+                        >
+                            {t("Open catalogue")}
 
-                        </Box>
-                        <Box sx={{ textAlign: "center", width: "100%" }}>
-                            <Button
-                                id="basic-button"
-                                aria-controls={open ? 'basic-menu' : undefined}
-                                aria-haspopup="true"
-                                aria-expanded={open ? 'true' : undefined}
-                                onClick={handleClick}
-                                variant="contained"
-                                sx={{ mt: 2 }}
-                                endIcon={<KeyboardArrowDown />}
-                            >
-                                {t("Initiate procedure")}
+                        </Button>
+                        <Divider>or</Divider>
+                        <Button
+                            id="basic-button"
+                            aria-controls={open ? 'basic-menu' : undefined}
+                            aria-haspopup="true"
+                            aria-expanded={open ? 'true' : undefined}
+                            onClick={handleClick}
+                            variant="contained"
+                            sx={{ my: 2 }}
+                            endIcon={<KeyboardArrowDown />}
+                        >
+                            {t("Initiate procedure")}
 
-                            </Button>
+                        </Button>
+                    </Box>
                         </Box>
+
+
+                        <Dialog open={catalogueOpen} onClose={() => setCatalogueOpen(false)} maxWidth="lg" fullWidth>
+                            <Box sx={{ minWidth: "70vh" }}>
+                                <InterlinkerBrowse language={process.language} initialFilters={{ problemprofiles: selectedTreeItem.problemprofiles }} onInterlinkerClick={(interlinker) => {
+                                    setStep(0);
+                                    setSelectedInterlinker(interlinker);
+                                    setNewAssetDialogOpen(true)
+                                }} />
+                            </Box>
+                        </Dialog>
                         <Dialog open={externalAssetOpen} onClose={() => setExternalAssetOpen(false)}>
                             <DialogContent sx={{ p: 2 }}>
                                 <Formik

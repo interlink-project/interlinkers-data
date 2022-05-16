@@ -94,36 +94,36 @@ const AssetRow = ({ asset, onChange, actions, openInterlinkerDialog }) => {
     if (data.type === "internalasset" && data.capabilities) {
       const { id, capabilities } = data
       if (capabilities.edit) {
-        actios.push(<MyMenuItem key={`${id}-edit-action`} loading={loading} id="edit" onClick={handleEdit} text="Edit" icon={<Edit fontSize="small" />} />)
+        actios.push(<MyMenuItem key={`${id}-edit-action`} loading={loading} id="edit" onClick={handleEdit} text={t("Edit")} icon={<Edit fontSize="small" />} />)
       }
       if (capabilities.clone) {
-        actios.push(<MyMenuItem key={`${id}-clone-action`} loading={loading} id="clone" onClick={handleClone} text="Clone" icon={<CopyAll fontSize="small" />} />)
+        actios.push(<MyMenuItem key={`${id}-clone-action`} loading={loading} id="clone" onClick={handleClone} text={t("Clone")} icon={<CopyAll fontSize="small" />} />)
       }
       if (capabilities.delete) {
         actios.push(<ConfirmationButton
           key={`${id}-delete-action`}
-          Actionator={({ onClick }) => <MyMenuItem loading={loading} id="delete" onClick={onClick} text="Delete" icon={<Delete fontSize="small" />} />}
-          ButtonComponent={({ onClick }) => <LoadingButton sx={{ mt: 1 }} fullWidth variant='contained' color="error" onClick={onClick}>Confirm deletion</LoadingButton>}
+          Actionator={({ onClick }) => <MyMenuItem loading={loading} id="delete" onClick={onClick} text={t("Delete")} icon={<Delete fontSize="small" />} />}
+          ButtonComponent={({ onClick }) => <LoadingButton sx={{ mt: 1 }} fullWidth variant='contained' color="error" onClick={onClick}>{t("Confirm deletion")}</LoadingButton>}
           onClick={handleDelete}
-          text="Are you sure?" />)
+          text={t("Are you sure?")} />)
       }
       if (capabilities.clone) {
-        actios.push(<MyMenuItem key={`${id}-share-action`} loading={loading} id="publish" onClick={() => { }} text="Publish" icon={<Share fontSize="small" />} />)
+        actios.push(<MyMenuItem key={`${id}-share-action`} loading={loading} id="publish" onClick={() => { }} text={t("Publish")} icon={<Share fontSize="small" />} />)
       }
       if (capabilities.download) {
-        actios.push(<MyMenuItem key={`${id}-download-action`} loading={loading} id="download" onClick={handleDownload} text="Download" icon={<Download fontSize="small" />} />)
+        actios.push(<MyMenuItem key={`${id}-download-action`} loading={loading} id="download" onClick={handleDownload} text={t("Download")} icon={<Download fontSize="small" />} />)
       }
     }
     if (data.type === "externalasset") {
       const { id } = data
       // actios.push(<MyMenuItem key={`${id}-edit-action`} loading={loading} id="edit" onClick={handleEdit} text="Edit" icon={<Edit fontSize="small" />} />)
-      actios.push(<MyMenuItem key={`${id}-clone-action`} loading={loading} id="clone" onClick={handleClone} text="Clone" icon={<CopyAll fontSize="small" />} />)
+      actios.push(<MyMenuItem key={`${id}-clone-action`} loading={loading} id="clone" onClick={handleClone} text={t("Clone")} icon={<CopyAll fontSize="small" />} />)
       actios.push(<ConfirmationButton
         key={`${id}-delete-action`}
-        Actionator={({ onClick }) => <MyMenuItem loading={loading} id="delete" onClick={onClick} text="Delete" icon={<Delete fontSize="small" />} />}
-        ButtonComponent={({ onClick }) => <LoadingButton sx={{ mt: 1 }} fullWidth variant='contained' color="error" onClick={onClick}>Confirm deletion</LoadingButton>}
+        Actionator={({ onClick }) => <MyMenuItem loading={loading} id="delete" onClick={onClick} text={t("Delete")} icon={<Delete fontSize="small" />} />}
+        ButtonComponent={({ onClick }) => <LoadingButton sx={{ mt: 1 }} fullWidth variant='contained' color="error" onClick={onClick}>{t("Confirm deletion")}</LoadingButton>}
         onClick={handleDelete}
-        text="Are you sure?" />)
+        text={t("Are you sure?")} />)
 
     }
 

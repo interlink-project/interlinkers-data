@@ -138,7 +138,7 @@ const SettingsPopover = () => {
                 }
               />
             }
-            label={"Show help button"}
+            label={t("Show help button")}
           />
           </Box>
         <Box

@@ -1,30 +1,23 @@
 import {
   Avatar,
-  Box, Card, Chip, Grid,
-  IconButton,
-  Link,
-  Rating,
-  Tooltip,
-  Typography
+  Box, Card, CardActionArea, Grid, Link,
+  Rating, Typography
 } from '@material-ui/core';
-import red from '@material-ui/core/colors/red';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import { NatureChip } from 'components/dashboard/assets/Icons';
+import SwipeableTextMobileStepper from 'components/SwipeableTextMobileStepper';
 import { formatDistanceToNowStrict } from 'date-fns';
+import { useCustomTranslation } from 'hooks/useDependantTranslation';
 import { truncate } from 'lodash';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Link as RouterLink } from 'react-router-dom';
 import { HTMLtoText } from 'utils/safeHTML';
-import SwipeableTextMobileStepper from 'components/SwipeableTextMobileStepper';
 
 
-const InterlinkerCard = ({ interlinker, mode, onInterlinkerClick }) => {
+const InterlinkerCard = ({ language, interlinker, mode, onInterlinkerClick }) => {
   const [isLiked, setIsLiked] = useState(interlinker.isLiked);
   const [likes, setLikes] = useState(interlinker.likes || 0);
-  const { t } = useTranslation()
+  const t = useCustomTranslation(language)
 
   const sameHeightCards = {
     minHeight: "200px",
@@ -54,7 +47,7 @@ const InterlinkerCard = ({ interlinker, mode, onInterlinkerClick }) => {
   }
   const GridMode = () => <>
     <Box sx={{ p: 3, pb: 1 }}>
-
+      
       <Box
         sx={{
           alignItems: 'center',

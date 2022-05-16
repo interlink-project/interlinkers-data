@@ -1,10 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { coproductionProcessesApi, problemprofilesApi, softwareInterlinkersApi, teamsApi } from '../__api__';
+import { coproductionProcessesApi, teamsApi } from '../__api__';
 
 const initialState = {
-  problemprofiles: [],
-  loadingProblemprofiles: false,
-
   teams: [],
   loadingTeams: false,
 
@@ -40,12 +37,6 @@ const slice = createSlice({
     setLoadingSchemas(state, action) {
       state.loadingSchemas = action.payload;
     },
-    setProblemProfiles(state, action) {
-      state.problemprofiles = action.payload;
-    },
-    setLoadinProblemProfiles(state, action) {
-      state.loadingProblemprofiles = action.payload;
-    },
   }
 });
 
@@ -70,13 +61,6 @@ export const getMyProcesses = () => async (dispatch) => {
   const processes_data = await coproductionProcessesApi.getMine();
   dispatch(slice.actions.setProcesses(processes_data));
   dispatch(slice.actions.setLoadingProcesses(false));
-};
-
-export const getProblemProfiles = () => async (dispatch) => {
-  dispatch(slice.actions.setLoadinProblemProfiles(true));
-  const problemProfiles = await problemprofilesApi.getMulti();
-  dispatch(slice.actions.setProblemProfiles(problemProfiles));
-  dispatch(slice.actions.setLoadinProblemProfiles(false));
 };
 
 export default slice;
