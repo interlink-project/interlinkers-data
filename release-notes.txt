@@ -1,6 +1,7 @@
 VERSION: v1.1.2
 
 NEW
+• Problemprofiles shown as chips in the Guide
 
 IMPROVED
 • The button the user sees "GO to dashboard" is not clear => "Access Collaborative Environment". By clicking on this button you will access to a web-based tool that will allow you to define teams, co-production initiatives and guide you through the co-production process. 
@@ -9,6 +10,7 @@ IMPROVED
 • The button to download the brochure of one pilot redirects to a Google Drive
 • Static image shown in Interlinker Card when snapshots are not available
 • Recommended interlinkers for a task directly shown in the catalogue
+• Coproduction processes deletion
 
 FIXED
 • Like button disabled until functionality added

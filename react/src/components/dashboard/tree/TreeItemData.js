@@ -1,6 +1,6 @@
 import {
   Alert,
-  Box, Button, Divider, IconButton, Link, Stack, TextField, ToggleButton, ToggleButtonGroup, Typography
+  Box, Button, Chip, Divider, IconButton, Link, Stack, TextField, ToggleButton, ToggleButtonGroup, Typography
 } from '@material-ui/core';
 import { Edit } from '@material-ui/icons';
 import {
@@ -123,6 +123,15 @@ const TreeItemData = ({ language, processId, element, type, onSave = null, showT
       whiteSpace: 'pre-wrap',
       marginTop: 0
     }}>{description}</p>}
+
+    {element.problemprofiles && <><Typography variant="h6" sx={showType ? { mt: 2 } : {}}>
+      {t("Problem profiles")}
+    </Typography>
+    <p style={{
+      whiteSpace: 'pre-wrap',
+      marginTop: 0
+    }}>{element.problemprofiles.map(pp => <Chip sx={{mr: 1, mt: 1}} label={pp} key={`task-problemprofile-${pp}`} />)}</p></>}
+    
     <Typography variant="h6" sx={{ mt: 2 }}>{t("Current status")}</Typography>
     {editMode ? <>
       {type === "task" ? <ToggleButtonGroup

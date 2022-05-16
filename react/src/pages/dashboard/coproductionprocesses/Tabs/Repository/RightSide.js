@@ -124,7 +124,7 @@ const RightSide = ({ softwareInterlinkers }) => {
                     <TreeItemData language={process.language} processId={process.id} type={selectedTreeItem.type} element={selectedTreeItem} />
                 </Collapse>
                 {isTask && <>
-                    
+
                     <Box>
                         <Box sx={{ mt: 2 }}>
 
@@ -143,34 +143,34 @@ const RightSide = ({ softwareInterlinkers }) => {
 
                             <AssetsTable assets={assets} onChange={updateTaskInfo} />
                             <Box sx={{ textAlign: "center", width: "100%" }}>
-                        <Button
-                            id="basic-button"
-                            aria-controls={open ? 'basic-menu' : undefined}
-                            aria-haspopup="true"
-                            aria-expanded={open ? 'true' : undefined}
-                            onClick={() => setCatalogueOpen(true)}
-                            variant="contained"
-                            sx={{ my: 2 }}
-                            endIcon={<KeyboardArrowUp />}
-                        >
-                            {t("Open catalogue")}
+                                <Stack spacing={2} >
+                                    <Button
+                                        id="basic-button"
+                                        aria-controls={open ? 'basic-menu' : undefined}
+                                        aria-haspopup="true"
+                                        aria-expanded={open ? 'true' : undefined}
+                                        onClick={() => setCatalogueOpen(true)}
+                                        variant="contained"
+                                        sx={{ mt: 2 }}
+                                    >
+                                        {t("Open catalogue")}
 
-                        </Button>
-                        <Divider>or</Divider>
-                        <Button
-                            id="basic-button"
-                            aria-controls={open ? 'basic-menu' : undefined}
-                            aria-haspopup="true"
-                            aria-expanded={open ? 'true' : undefined}
-                            onClick={handleClick}
-                            variant="contained"
-                            sx={{ my: 2 }}
-                            endIcon={<KeyboardArrowDown />}
-                        >
-                            {t("Initiate procedure")}
+                                    </Button>
+                                    <Button
+                                        id="basic-button"
+                                        aria-controls={open ? 'basic-menu' : undefined}
+                                        aria-haspopup="true"
+                                        aria-expanded={open ? 'true' : undefined}
+                                        onClick={handleClick}
+                                        variant="contained"
+                                        endIcon={<KeyboardArrowDown />}
+                                    >
+                                        {t("Initiate procedure")}
 
-                        </Button>
-                    </Box>
+                                    </Button>
+
+                                </Stack>
+                            </Box>
                         </Box>
 
 
