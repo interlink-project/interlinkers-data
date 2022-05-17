@@ -1,16 +1,15 @@
 import { Avatar, Button, Rating, Snackbar, Stack, Typography } from '@material-ui/core';
 import { Share } from '@material-ui/icons';
+import { useCustomTranslation } from 'hooks/useDependantTranslation';
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 
-
-const InterlinkerHeader = ({ interlinker }) => {
+const InterlinkerHeader = ({ language, interlinker }) => {
     const [openSnackbar, setSnackbarOpen] = useState(false)
     const handleShareClick = () => {
         navigator.clipboard.writeText(window.location.protocol + "//" + window.location.hostname + "/dashboard/interlinkers/" + interlinker.id)
         setSnackbarOpen(true)
     }
-    const { t } = useTranslation()
+    const t = useCustomTranslation(language)
 
     return <Stack direction="column" sx={{ m: 0 }}>
         <Stack direction='row' justifyContent="center" alignItems="center" spacing={1}>

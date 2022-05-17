@@ -144,7 +144,7 @@ const InterlinkerBrowseFilter = ({ loading, filters, onFiltersChange, language }
     <Box sx={{ mt: 1 }}>
       {filters.search && <Chip sx={{ mr: 1, mt: 1 }} label={`${t("Search")}: ${filters.search}`} onDelete={() => changeFilter("search", "")} />}
       {filters.nature.map(nature => <Chip key={`active-filter-${nature}`} sx={{ mr: 1, mt: 1 }} label={`${t("Nature")}: ${natureMultiselect.options.find(option => option.value === nature).label}`} onDelete={() => changeFilter("nature", filters.nature.filter(nt => nt !== nature))} />)}
-      {problemProfiles.length > 0 && filters.problemprofiles.map(pp => <Chip key={`active-filter-${pp}`} sx={{ mr: 1, mt: 1 }} label={`${t("Problem profile")}: ${problemProfiles.find(el => el.id === pp).id}`} onDelete={() => changeFilter("problemprofiles", filters.problemprofiles.filter(problemprofile => problemprofile !== pp))} />)}
+      {filters.problemprofiles.map(pp => <Chip key={`active-filter-${pp}`} sx={{ mr: 1, mt: 1 }} label={`${t("Problem profile")}: ${pp}`} onDelete={() => changeFilter("problemprofiles", filters.problemprofiles.filter(problemprofile => problemprofile !== pp))} />)}
       {filters.rating && <Chip sx={{ mr: 1, mt: 1 }} label={`${t("Minimum rating")}: ${filters.rating}`} onDelete={() => changeFilter("rating", null)} />}
     </Box>
 

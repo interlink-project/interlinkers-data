@@ -6,5 +6,4 @@ export { default as InterlinkerDetails } from './profile/InterlinkerDetails';
 export { default as InterlinkerDialog } from './profile/InterlinkerDialog';
 export { default as InterlinkerHeader } from './profile/InterlinkerHeader';
 export { default as InterlinkerProfile } from './profile/InterlinkerProfile';
-export { default as RelatedInterlinkersTable } from './profile/RelatedInterlinkersTable';
 export { default as InterlinkerReference } from './InterlinkerReference';

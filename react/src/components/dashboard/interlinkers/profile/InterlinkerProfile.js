@@ -5,7 +5,9 @@ import {
 import useMounted from 'hooks/useMounted';
 import { useCallback, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useNavigate, useParams } from 'react-router';
+import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router';
+import { getLanguage } from 'translations/i18n';
 import { interlinkersApi } from '__api__';
 import InterlinkerDetails from './InterlinkerDetails';
 import InterlinkerHeader from './InterlinkerHeader';
@@ -14,7 +16,8 @@ const InterlinkerProfile = () => {
   let { interlinkerId } = useParams();
   const [interlinker, setInterlinker] = useState(null)
   const mounted = useMounted()
-  const navigate = useNavigate()
+  const language = getLanguage()
+  const { t } = useTranslation()
 
   const getInterlinker = useCallback(async () => {
     try {
@@ -36,16 +39,15 @@ const InterlinkerProfile = () => {
   return (
     <>
       <Helmet>
-        <title>Dashboard: Interlinker Details</title>
+        <title>{t("Dashboard: Interlinker Details")}</title>
       </Helmet>
       <Container maxWidth="lg">
-        <Box sx={{my: 3}}>
-        {interlinker && <InterlinkerHeader interlinker={interlinker} />}
+        <Box sx={{ my: 3 }}>
+          {interlinker && <InterlinkerHeader language={language} interlinker={interlinker} />}
 
         </Box>
-        {interlinker && <InterlinkerDetails interlinker={interlinker} onRelatedInterlinkerClick={(id) => navigate(`/dashboard/interlinkers/${id}`)} />}
+        {interlinker && <InterlinkerDetails language={language} interlinker={interlinker} />}
       </Container>
-
     </>
   );
 };

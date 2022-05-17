@@ -54,20 +54,20 @@ const StyledTree = ({ phase, selectedTreeItem, setSelectedTreeItem, objectives_k
 
   const onSelectedItemChange = (event, nodeIds) => {
     // if the selection is a phase
-    if (phase.id === nodeIds) {
+    if (phase.id === nodeIds && (!selectedTreeItem || selectedTreeItem.id !== phase.id)) {
       setSelectedTreeItem({ ...phase, type: "phase" })
       return
     }
 
     const taskselected = tasks.find(el => el.id === nodeIds)
     // if the selection is a task
-    if (taskselected) {
+    if (taskselected && (!selectedTreeItem || selectedTreeItem.id !== taskselected.id)) {
       setSelectedTreeItem({ ...taskselected, type: "task" })
       return
     }
     const objectiveselected = objectives.find(el => el.id === nodeIds)
     // if the selection is a task
-    if (objectiveselected) {
+    if (objectiveselected && (!selectedTreeItem || selectedTreeItem.id !== objectiveselected.id)) {
       setSelectedTreeItem({ ...objectiveselected, type: "objective" })
       return
     }

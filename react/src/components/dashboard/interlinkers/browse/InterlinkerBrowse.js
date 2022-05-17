@@ -126,8 +126,6 @@ const InterlinkerBrowse = ({ language = getLanguage(), initialFilters = {}, onIn
           </Box>
 
           <Box sx={{ mt: 6 }}>
-
-
             <Box
               sx={{
                 alignItems: 'center',
@@ -198,6 +196,7 @@ const InterlinkerBrowse = ({ language = getLanguage(), initialFilters = {}, onIn
 
         </Container>
         {!onInterlinkerClick && <InterlinkerDialog
+          language={language}
           interlinker={interlinker}
           open={open}
           setOpen={setOpen}

@@ -177,7 +177,7 @@ export default function NewAssetModal({ open, handleUserClose, handleFinish, act
                         {activeStep > 0 && <IconButton children={<ArrowBack />} onClick={() => setStep(activeStep - 1)} />}
                     </Grid>
                     <Grid item xs={10}>
-                        {activeStep === 0 && <InterlinkerHeader interlinker={selectedInterlinker} />}
+                        {activeStep === 0 && <InterlinkerHeader language={process.language} interlinker={selectedInterlinker} />}
                     </Grid>
                     <Grid item xs={1} style={{ textAlign: "right" }}>
                         <IconButton children={<Close />} onClick={handleUserClose} />
@@ -191,7 +191,7 @@ export default function NewAssetModal({ open, handleUserClose, handleFinish, act
                 backgroundColor: 'background.default'
             }}>
                 {activeStep === 0 && <Box>
-                    <InterlinkerDetails interlinker={selectedInterlinker} onRelatedInterlinkerClick={() => {}} />
+                    <InterlinkerDetails language={process.language} interlinker={selectedInterlinker} />
                 </Box>}
 
                 {activeStep === 1 && isSoftware && <Box>

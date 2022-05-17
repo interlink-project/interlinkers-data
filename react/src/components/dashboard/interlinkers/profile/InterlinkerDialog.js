@@ -5,7 +5,7 @@ import InterlinkerDetails from './InterlinkerDetails';
 import InterlinkerHeader from './InterlinkerHeader';
 import useMounted from 'hooks/useMounted';
 
-const InterlinkerDialog = ({ open, setOpen, interlinker }) => {
+const InterlinkerDialog = ({ language, open, setOpen, interlinker }) => {
     const [data, setData] = useState(null)
     const mounted = useMounted()
     useEffect(() => {
@@ -33,14 +33,14 @@ const InterlinkerDialog = ({ open, setOpen, interlinker }) => {
             <DialogTitle sx={{
                 backgroundColor: 'background.default',
             }} >
-                <InterlinkerHeader interlinker={data} />
+                <InterlinkerHeader language={language} interlinker={data} />
             </DialogTitle>
 
             <DialogContent style={{ minHeight: "70vh" }} sx={{
                 backgroundColor: 'background.default',
                 py: 0
             }}>
-                <InterlinkerDetails interlinker={data} onRelatedInterlinkerClick={() => {}} />
+                <InterlinkerDetails language={language} interlinker={data} />
             </DialogContent>
         </> : <CircularProgress />
         }

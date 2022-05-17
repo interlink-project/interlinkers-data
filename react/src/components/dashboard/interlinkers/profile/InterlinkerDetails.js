@@ -7,18 +7,17 @@ import {
   InterlinkerReviews
 } from 'components/dashboard/interlinkers';
 import SwipeableTextMobileStepper from 'components/SwipeableTextMobileStepper';
+import { useCustomTranslation } from 'hooks/useDependantTranslation';
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useNavigate } from "react-router-dom";
 import { SafeHTMLElement } from 'utils/safeHTML';
-import RelatedInterlinkersTable from "./RelatedInterlinkersTable";
+import InterlinkerBrowse from '../browse/InterlinkerBrowse';
 
-const InterlinkerDetails = ({ interlinker, onRelatedInterlinkerClick }) => {
+const InterlinkerDetails = ({ language, interlinker }) => {
   const [currentTab, setCurrentTab] = useState('overview');
 
   const { link, description, tags, name, problemprofiles, softwareinterlinker, snapshots_links } = interlinker;
-  const navigate = useNavigate();
-  const {t} = useTranslation()
+  const t = useCustomTranslation(language)
+
   const handleTabsChange = (event, value) => {
     setCurrentTab(value);
   };
@@ -263,7 +262,7 @@ const InterlinkerDetails = ({ interlinker, onRelatedInterlinkerClick }) => {
           </Box>
         )}
         {currentTab === 'related' && (
-          <RelatedInterlinkersTable interlinker={interlinker} onRelatedInterlinkerClick={onRelatedInterlinkerClick} />
+          <InterlinkerBrowse language={language} initialFilters={{ problemprofiles: interlinker.problemprofiles.map(el => el.id) }} onInterlinkerClick={(interlinker) => {console.log(interlinker)}} />
         )}
         {currentTab === 'reviews' && (
           <InterlinkerReviews interlinker={interlinker} />

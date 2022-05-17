@@ -199,7 +199,7 @@ const Assets = ({ language, loading, assets, onChange = () => { }, actions = nul
   const t = useCustomTranslation(language)
 
   return <>
-        <InterlinkerDialog open={interlinkerDialogOpen} setOpen={setInterlinkerDialogOpen} interlinker={selectedInterlinker} />
+        <InterlinkerDialog language={language} open={interlinkerDialogOpen} setOpen={setInterlinkerDialogOpen} interlinker={selectedInterlinker} />
         <Table sx={{ minWidth: 650 }} aria-label="resources table" size="small">
           <TableHead>
             <TableRow>
