@@ -16,7 +16,7 @@ import { useNavigate } from 'react-router';
 import { deleteObjective, deletePhase, deleteTask, updateObjective, updatePhase, updateTask } from 'slices/process';
 import { statusIcon, StatusText } from '../assets/Icons';
 
-const TreeItemData = ({ language, processId, element, type, onSave = null, showType = true }) => {
+const TreeItemData = ({ language, processId, element }) => {
   const [dateRange, setDateRange] = useState([null, null]);
   const [status, setStatus] = useState("");
   const [name, setName] = useState("");
@@ -37,6 +37,11 @@ const TreeItemData = ({ language, processId, element, type, onSave = null, showT
   useEffect(() => {
     restart(element)
   }, [editMode, element])
+
+  const callback = () => {
+    setSaving(false)
+    setEditMode(false)
+  }
 
   const saveData = () => {
     setSaving(true)
@@ -60,42 +65,28 @@ const TreeItemData = ({ language, processId, element, type, onSave = null, showT
       data.description = description
     }
 
-    const callback = () => {
-      setSaving(false)
-      setEditMode(false)
-      if (onSave) {
-        onSave()
-      }
-    }
-
-    if (type === "task") {
+    if (element.type === "task") {
       dispatch(updateTask({ id: element.id, data, callback }))
     }
-    else if (type === "objective") {
+    else if (element.type === "objective") {
       dispatch(updateObjective({ id: element.id, data, callback }))
     }
-    else if (type === "phase") {
+    else if (element.type === "phase") {
       dispatch(updatePhase({ id: element.id, data, callback }))
     }
 
   }
 
   const deleteTreeItem = () => {
-    const callback = () => {
-      setSaving(false)
-      setEditMode(false)
-      if (onSave) {
-        onSave()
-      }
-    }
-
-    if (type === "task") {
+    
+    console.log("DELETING", element.type)
+    if (element.type === "task") {
       dispatch(deleteTask({ id: element.id, callback }))
     }
-    else if (type === "objective") {
+    else if (element.type === "objective") {
       dispatch(deleteObjective({ id: element.id, callback }))
     }
-    else if (type === "phase") {
+    else if (element.type === "phase") {
       dispatch(deletePhase({ id: element.id, callback }))
     }
   }
@@ -108,7 +99,7 @@ const TreeItemData = ({ language, processId, element, type, onSave = null, showT
     }}>
       <Edit />
     </IconButton>}
-    <Typography variant="h6" sx={showType ? { mt: 2 } : {}}>
+    <Typography variant="h6">
       {t("Name")}
     </Typography>
     {editMode ? <TextField onChange={(event) => {
@@ -124,7 +115,7 @@ const TreeItemData = ({ language, processId, element, type, onSave = null, showT
       marginTop: 0
     }}>{description}</p>}
 
-    {element.problemprofiles && <><Typography variant="h6" sx={showType ? { mt: 2 } : {}}>
+    {element.problemprofiles && <><Typography variant="h6">
       {t("Problem profiles")}
     </Typography>
     <p style={{
@@ -134,7 +125,7 @@ const TreeItemData = ({ language, processId, element, type, onSave = null, showT
     
     <Typography variant="h6" sx={{ mt: 2 }}>{t("Current status")}</Typography>
     {editMode ? <>
-      {type === "task" ? <ToggleButtonGroup
+      {element.type === "task" ? <ToggleButtonGroup
         sx={{ mt: 1 }}
         color={status === "finished" ? "success" : status === "in_progress" ? "warning" : "primary"}
         value={status}
@@ -167,7 +158,7 @@ const TreeItemData = ({ language, processId, element, type, onSave = null, showT
     </Link>
 
     {editMode ? <>
-      {type === "task" ? <Box justifyContent="center" sx={{ mt: 2 }}>
+      {element.type === "task" ? <Box justifyContent="center" sx={{ mt: 2 }}>
         <DesktopDateRangePicker
           startText="Start date"
           endText="End date"
@@ -203,7 +194,7 @@ const TreeItemData = ({ language, processId, element, type, onSave = null, showT
         {t("other actions")}
         </Divider>
         <ConfirmationButton
-          Actionator={({ onClick }) => <Button size="small" variant="text" onClick={onClick} color="error">{t("Remove", {what: type})}</Button>}
+          Actionator={({ onClick }) => <Button size="small" variant="text" onClick={onClick} color="error">{t("Remove", {what: element.type})}</Button>}
           ButtonComponent={({ onClick }) => <LoadingButton sx={{ mt: 1 }} fullWidth variant='contained' color="error" onClick={onClick}>{t("Confirm deletion")}</LoadingButton>}
           onClick={deleteTreeItem}
           text={t("Are you sure?")}

@@ -114,14 +114,13 @@ const RightSide = ({ softwareInterlinkers }) => {
 
         selectedTreeItem && <Grid item xl={8} lg={8} md={6} xs={12}>
             <Box sx={{ p: 2 }}>
-                <Button sx={{ mb: 2 }} fullWidth variant="outlined" onClick={() => setTreeItemInfoOpen(!treeItemInfoOpen)}>
-                    <Stack spacing={2}>
-                        <Typography variant="h6" >{information_about_translations[selectedTreeItem.type]}</Typography>
-                        <Divider> {!treeItemInfoOpen ? <KeyboardArrowDown /> : <KeyboardArrowUp />}</Divider>
+                <Button sx={{ mb: 2 }} fullWidth variant={treeItemInfoOpen ? "outlined" : "contained"} color="warning" onClick={() => setTreeItemInfoOpen(!treeItemInfoOpen)}>
+                    <Stack spacing={2} alignItems="center" direction="row">
+                        <Typography variant="h6" >{information_about_translations[selectedTreeItem.type]} </Typography>{!treeItemInfoOpen ? <KeyboardArrowDown /> : <KeyboardArrowUp />}
                     </Stack>
                 </Button>
                 <Collapse in={treeItemInfoOpen} timeout="auto" unmountOnExit>
-                    <TreeItemData language={process.language} processId={process.id} type={selectedTreeItem.type} element={selectedTreeItem} />
+                    <TreeItemData language={process.language} processId={process.id} element={selectedTreeItem} />
                 </Collapse>
                 {isTask && <>
 

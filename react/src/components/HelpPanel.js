@@ -23,6 +23,9 @@ const helps = {
     "/dashboard/coproductionprocesses/(.+)/workplan": {
         url: (language) => `https://dev.interlink-project.eu/docs/${language}/usermanual/coproductionprocess-workplan.html`,
     },
+    "/dashboard/coproductionprocesses/(.+)/team": {
+        url: (language) => `https://dev.interlink-project.eu/docs/${language}/usermanual/coproductionprocess-team.html`,
+    },
     "/dashboard/coproductionprocesses/(.+)/settings": {
         url: (language) => `https://dev.interlink-project.eu/docs/${language}/usermanual/coproductionprocess-settings.html`,
     }

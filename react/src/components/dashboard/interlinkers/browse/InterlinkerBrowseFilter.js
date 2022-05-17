@@ -1,4 +1,4 @@
-import { Box, Card, Chip, Divider, Input, Rating, Typography } from '@material-ui/core';
+import { Box, Card, Chip, Divider, Input, LinearProgress, Rating, Typography } from '@material-ui/core';
 import { Search } from '@material-ui/icons';
 import { useCustomTranslation } from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
@@ -6,8 +6,9 @@ import React, { useEffect, useState } from 'react';
 import { problemprofilesApi } from '__api__';
 import MultiSelect from '../../../MultiSelect';
 
-const InterlinkerBrowseFilter = ({ filters, onFiltersChange, language }) => {
+const InterlinkerBrowseFilter = ({ loading, filters, onFiltersChange, language }) => {
   const [inputValue, setInputValue] = useState(filters.search);
+  const [loadingProblemProfiles, setLoadingProblemProfiles] = useState(true);
   const mounted = useMounted()
   const t = useCustomTranslation(language)
   const [problemProfiles, setProblemProfiles] = useState([]);
@@ -16,6 +17,7 @@ const InterlinkerBrowseFilter = ({ filters, onFiltersChange, language }) => {
     problemprofilesApi.getMulti({}, language).then(res => {
       if (mounted.current) {
         setProblemProfiles(res)
+        setLoadingProblemProfiles(false)
       }
     })
   }, [language])
@@ -137,7 +139,7 @@ const InterlinkerBrowseFilter = ({ filters, onFiltersChange, language }) => {
           {selectOptions.options.map((opt) => <MenuItem key={opt.value} value={opt.value}>{opt.label}</MenuItem>)}
         </Select>*/}
       </Box>
-
+      {(loading || loadingProblemProfiles) && <LinearProgress />}
     </Card>
     <Box sx={{ mt: 1 }}>
       {filters.search && <Chip sx={{ mr: 1, mt: 1 }} label={`${t("Search")}: ${filters.search}`} onDelete={() => changeFilter("search", "")} />}

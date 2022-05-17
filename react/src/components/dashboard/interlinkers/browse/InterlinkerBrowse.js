@@ -122,7 +122,7 @@ const InterlinkerBrowse = ({ language = getLanguage(), initialFilters = {}, onIn
             </Grid>
           </Grid>
           <Box sx={{ mt: 3 }}>
-            <InterlinkerBrowseFilter language={language} filters={filters} onFiltersChange={setFilters} />
+            <InterlinkerBrowseFilter loading={loading} language={language} filters={filters} onFiltersChange={setFilters} />
           </Box>
 
           <Box sx={{ mt: 6 }}>

@@ -11,6 +11,7 @@ IMPROVED
 • Static image shown in Interlinker Card when snapshots are not available
 • Recommended interlinkers for a task directly shown in the catalogue
 • Coproduction processes deletion
+• Loading indicator in the catalogue
 
 FIXED
 • Like button disabled until functionality added
