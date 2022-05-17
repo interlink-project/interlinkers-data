@@ -3,11 +3,11 @@ import GeneralApi from '../general';
 
 class LogsApi extends GeneralApi {
   constructor() {
-    super('coproduction/api/v1/logs');
+    super('logging/api/v1');
   }
 
   async send_log(object_id, model, action) {
-    const res = await axiosInstance.post(`/${this.url}`, {
+    const res = await axiosInstance.post(`/${this.url}/log`, {
       object_id,
       model,
       action
