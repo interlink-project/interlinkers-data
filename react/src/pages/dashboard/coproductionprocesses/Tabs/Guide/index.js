@@ -7,7 +7,7 @@ import { setselectedPhaseTabId } from 'slices/process';
 import { softwareInterlinkersApi } from '__api__';
 import RightSide from './RightSide';
 
-const Repository = ({ setSelectedTreeItem }) => {
+const Guide = ({ setSelectedTreeItem }) => {
   const dispatch = useDispatch();
   const mounted = useMounted();
   const [softwareInterlinkers, setSoftwareInterlinkers] = useState([])
@@ -44,4 +44,4 @@ const Repository = ({ setSelectedTreeItem }) => {
   );
 };
 
-export default Repository;
+export default Guide;

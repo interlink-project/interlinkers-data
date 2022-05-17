@@ -1,3 +1,4 @@
+import { Box, Container } from '@material-ui/core';
 import { lazy } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Loadable from 'routes/Loadable';
@@ -12,9 +13,14 @@ const HomeCatalogue = () => {
       <Helmet>
         <title>Interlink: Catalogue</title>
       </Helmet>
-      <div>
-        <InterlinkerBrowse />
-      </div>
+      <Box sx={{ backgroundColor: 'background.default',
+          minHeight: '100%',
+          py: 6 }}>
+        <Container maxWidth="lg">
+          <InterlinkerBrowse />
+
+        </Container>
+      </Box>
     </>
   );
 };

@@ -20,7 +20,7 @@ import { useParams } from 'react-router-dom';
 import { getProcess, setSelectedTreeItem } from 'slices/process';
 import useMounted from '../../../hooks/useMounted';
 import SchemaSelector from './Tabs/Overview/SchemaSelector';
-import Repository from './Tabs/Repository';
+import Guide from './Tabs/Guide';
 import SettingsTab from './Tabs/Settings';
 import TeamTab from './Tabs/Team';
 import Workplan from './Tabs/Workplan';
@@ -157,7 +157,7 @@ const CoproductionProcessProfile = () => {
                   </TabPanel>
                   <TabPanel value={tab} index="guide">
                     <Card sx={style}>
-                      <Repository setSelectedTreeItem={_setSelectedTreeItem} />
+                      <Guide setSelectedTreeItem={_setSelectedTreeItem} />
                     </Card>
                   </TabPanel>
                 </>}

@@ -174,7 +174,7 @@ const RightSide = ({ softwareInterlinkers }) => {
 
 
                         <Dialog open={catalogueOpen} onClose={() => setCatalogueOpen(false)} maxWidth="lg" fullWidth>
-                            <Box sx={{ minWidth: "70vh" }}>
+                            <Box sx={{ minWidth: "70vh", p: 7, backgroundColor: 'background.default',}}>
                                 <InterlinkerBrowse language={process.language} initialFilters={{ problemprofiles: selectedTreeItem.problemprofiles }} onInterlinkerClick={(interlinker) => {
                                     setCatalogueOpen(false)
                                     setStep(0);

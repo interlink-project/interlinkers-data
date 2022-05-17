@@ -6,8 +6,8 @@ const CoproductionProcessProfile = Loadable(
   lazy(() => import('../pages/dashboard/coproductionprocesses/CoproductionProcessProfile'))
 );
 
-const InterlinkerBrowse = Loadable(
-  lazy(() => import('../components/dashboard/interlinkers/browse/InterlinkerBrowse'))
+const Catalogue = Loadable(
+  lazy(() => import('../pages/dashboard/interlinkers/Catalogue'))
 );
 const InterlinkerProfile = Loadable(
   lazy(() => import('../components/dashboard/interlinkers/profile/InterlinkerProfile'))
@@ -50,7 +50,7 @@ export const routes = [
         children: [
           {
             path: '',
-            element: <InterlinkerBrowse />,
+            element: <Catalogue />,
           },
           {
             path: ':interlinkerId',
