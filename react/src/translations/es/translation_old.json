@@ -39,5 +39,8 @@
   "Current status of the objective": "",
   "Current status of the task": "",
   "Start and end dates": "Fechas de inicio y final",
-  "can only be set for tasks": "{{what}} solo puede ser establecido para las tareas"
+  "can only be set for tasks": "{{what}} solo puede ser establecido para las tareas",
+  "Recommended interlinkers": "Interlinkers recomendados",
+  "No recommended interlinkers found": "No se han encontrado interlinkers recomendados",
+  "(it will be not related to project, for features exploration)": ""
 }

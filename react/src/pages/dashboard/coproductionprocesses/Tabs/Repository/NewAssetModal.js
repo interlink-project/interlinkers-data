@@ -210,7 +210,7 @@ export default function NewAssetModal({ open, handleUserClose, handleFinish, act
             </DialogContent>
             {activeStep === 0 && <DialogActions sx={{ bgcolor: "background.default", justifyContent: "center" }}>
                 {previewable && <Button startIcon={<Preview />} sx={{ my: 2, mx: 4 }} autoFocus variant="outlined" color="warning" onClick={() => window.open(selectedInterlinker.link + "/preview", "_blank")}>
-                    {selectedInterlinker.softwareinterlinker.preview_text} {t("(it will be not related to project, for features exploration)")}
+                    {selectedInterlinker.softwareinterlinker.preview_text} {t("(it will be not related to project but it is useful for features exploration)")}
                 </Button>}
                 {downloadable && <Button startIcon={<Download />} sx={{ my: 2, mx: 4 }} autoFocus variant="outlined" color="warning" onClick={() => window.open(selectedInterlinker.link + "/download", "_blank")}>
                     {t("Download locally as resource not related to project (for features exploration)")}
@@ -218,7 +218,7 @@ export default function NewAssetModal({ open, handleUserClose, handleFinish, act
                 {instantiatable && <LoadingButton loading={loadingKnowledgeInstantiation} startIcon={<DoubleArrow />} sx={{ my: 2, mx: 4 }} autoFocus variant="contained" onClick={() => setStep(1)}>
                     {t("Instantiate as resource to use in project")}
                 </LoadingButton>}
-                {isExternal && <Button startIcon={<DoubleArrow />} sx={{ my: 2, mx: 4 }} autoFocus variant="contained" onClick={() => window.open(selectedInterlinker.uri, "_blank")}>{t("Open the external resource on a new tab")}</Button>}
+                {isExternal && <Button startIcon={<DoubleArrow />} sx={{ my: 2, mx: 4 }} disabled={!selectedInterlinker.uri} autoFocus variant="contained" onClick={() => window.open(selectedInterlinker.uri, "_blank")}>{t("Open the external resource on a new tab")}</Button>}
             </DialogActions>}
         </Dialog>
     );

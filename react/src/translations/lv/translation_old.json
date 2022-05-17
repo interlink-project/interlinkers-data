@@ -35,5 +35,8 @@
   "Current status of the objective": "",
   "Current status of the task": "",
   "Start and end dates": "",
-  "can only be set for tasks": "{{what}} var iestatīt tikai uzdevumiem"
+  "can only be set for tasks": "{{what}} var iestatīt tikai uzdevumiem",
+  "Recommended interlinkers": "Ieteicamie interlinkeri",
+  "No recommended interlinkers found": "Ieteicamie interlinkeri netika atrasti",
+  "(it will be not related to project, for features exploration)": ""
 }

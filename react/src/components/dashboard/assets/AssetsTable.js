@@ -107,7 +107,7 @@ const AssetRow = ({ language, asset, onChange, actions, openInterlinkerDialog })
           onClick={handleDelete}
           text={t("Are you sure?")} />)
       }
-      if (capabilities.clone) {
+      if (false && capabilities.clone) {
         actios.push(<MyMenuItem key={`${id}-share-action`} loading={loading} id="publish" onClick={() => { }} text={t("Publish")} icon={<Share fontSize="small" />} />)
       }
       if (capabilities.download) {
@@ -136,30 +136,30 @@ const AssetRow = ({ language, asset, onChange, actions, openInterlinkerDialog })
     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
   >
     {data && loading !== "info" ? <>
-      <TableCell component="th" scope="row" onClick={() => window.open(data.link + "/view", "_blank")}>
+      <TableCell width="5%" component="th" scope="row" onClick={() => window.open(data.link + "/view", "_blank")}>
         <Avatar src={data.icon} sx={avatarSize} />
       </TableCell>
-      <TableCell style={{ cursor: "pointer" }} onClick={() => {
+      <TableCell width="35%" style={{ cursor: "pointer" }} onClick={() => {
         if (isInternal) {
           window.open(data.link + "/view", "_blank")
         } else {
           window.open(data.uri)
         }
       }} align="left">{data.name}</TableCell>
-      <TableCell align="left">
+      <TableCell width="15%" align="left">
         {moment(data.created_at).format("LL")}
       </TableCell>
-      <TableCell align="left">
+      <TableCell width="15%" align="left">
         {moment(data.updated_at || data.created_at).fromNow()}
       </TableCell>
-      <TableCell align="center">
+      <TableCell width="20%" align="center">
         {showInterlinkerId ? <InterlinkerReference onClick={() => {
           openInterlinkerDialog(showInterlinkerId)
         }}
           interlinker_id={showInterlinkerId}
         /> : t("external-resource")}
       </TableCell>
-      <TableCell align="center">
+      <TableCell width="10%" align="center">
         {actions ? actions(data) : <IconButton aria-label="settings" id="basic-button"
           aria-controls="basic-menu"
           aria-haspopup="true"
@@ -186,7 +186,7 @@ const AssetRow = ({ language, asset, onChange, actions, openInterlinkerDialog })
       <TableCell><Skeleton animation="wave" sx={{ width: "100%" }} height={60} /></TableCell>
       <TableCell><Skeleton animation="wave" sx={{ width: "100%" }} height={60} /></TableCell>
       <TableCell><Skeleton animation="wave" sx={{ width: "100%" }} height={60} /></TableCell>
-      <TableCell><Skeleton animation="wave" sx={{ width: "100%" }} height={60} /></TableCell>
+      <TableCell><IconButton aria-label="actions"> <MoreVertIcon /> </IconButton></TableCell>
     </>
     }
   </TableRow>
@@ -203,12 +203,12 @@ const Assets = ({ language, loading, assets, onChange = () => { }, actions = nul
         <Table sx={{ minWidth: 650 }} aria-label="resources table" size="small">
           <TableHead>
             <TableRow>
-              <TableCell></TableCell>
-              <TableCell align="center">{t("Name")}</TableCell>
-              <TableCell align="center">{t("Created")}</TableCell>
-              <TableCell align="center">{t("Updated")}</TableCell>
-              <TableCell align="center">{t("Interlinker")}</TableCell>
-              <TableCell align="center">{t("Actions")}</TableCell>
+              <TableCell width="5%"></TableCell>
+              <TableCell width="35%" align="center">{t("Name")}</TableCell>
+              <TableCell width="15%" align="center">{t("Created")}</TableCell>
+              <TableCell width="15%" align="center">{t("Updated")}</TableCell>
+              <TableCell width="20%"align="center">{t("Interlinker")}</TableCell>
+              <TableCell width="10%" align="center">{t("Actions")}</TableCell>
             </TableRow>
             {loading && <TableRow>
               <TableCell colSpan={6}> <LinearProgress /></TableCell>

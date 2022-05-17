@@ -35,5 +35,8 @@
   "Current status of the objective": "",
   "Current status of the task": "",
   "Start and end dates": "",
-  "can only be set for tasks": ""
+  "can only be set for tasks": "",
+  "Recommended interlinkers": "Interlinkers raccomandati",
+  "No recommended interlinkers found": "Nessun Interlinker raccomandato trovato",
+  "(it will be not related to project, for features exploration)": ""
 }

@@ -1,5 +1,5 @@
 import {
-  Box, Card, CardContent, Chip, Divider, Grid, Tab, Tabs, Typography, Button, Paper, Stack, Link
+  Box, Card, CardContent, Chip, Divider, Grid, Tab, Tabs, Typography, Button, Paper, Stack, Link, Alert
 } from '@material-ui/core';
 import { NatureChip, OfficialityChip } from 'components/dashboard/assets/Icons';
 import {
@@ -161,7 +161,7 @@ const InterlinkerDetails = ({ interlinker, onRelatedInterlinkerClick }) => {
                       </Typography>
                       <Box sx={{ mt: 1 }}>
                         <Link onClick={() => window.open(interlinker.uri)}>
-                        {interlinker.uri}
+                        {interlinker.uri || <Alert severity='warning'>{t("Not available")}</Alert>}
                         </Link>
                       </Box>
                     </>}

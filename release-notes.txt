@@ -2,6 +2,7 @@ VERSION: v1.1.2
 
 NEW
 • Problemprofiles shown as chips in the Guide
+• Some translations
 
 IMPROVED
 • The button the user sees "GO to dashboard" is not clear => "Access Collaborative Environment". By clicking on this button you will access to a web-based tool that will allow you to define teams, co-production initiatives and guide you through the co-production process. 
@@ -13,6 +14,7 @@ IMPROVED
 • Coproduction processes deletion
 • Loading indicator in the catalogue and assets tables
 • Home button bigger
+• Assets table proportional width
 
 FIXED
 • Like button disabled until functionality added

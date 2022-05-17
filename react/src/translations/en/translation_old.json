@@ -30,5 +30,8 @@
   "Current status of the objective": "Current status of the objective",
   "Current status of the task": "Current status of the phase",
   "Start and end dates": "Start and end dates",
-  "can only be set for tasks": "{{what}} can only be set for tasks"
+  "can only be set for tasks": "{{what}} can only be set for tasks",
+  "Recommended interlinkers": "Recommended interlinkers",
+  "No recommended interlinkers found": "No recommended interlinkers found",
+  "(it will be not related to project, for features exploration)": "(it will be not related to project, for features exploration)"
 }
