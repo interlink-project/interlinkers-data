@@ -1,17 +1,14 @@
-import { Box, Button, Container, Fade, Typography, useTheme } from '@material-ui/core';
+import { Box, Button, Container, Fade, Typography } from '@material-ui/core';
+import { ChevronRight } from '@material-ui/icons';
 import { HomeRow } from "components/home";
 import { HomeLogo } from 'components/Logo';
-import useSettings from 'hooks/useSettings';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const navigate = useNavigate();
-  const theme = useTheme();
-
   const { t } = useTranslation()
-  const { settings } = useSettings()
 
   return (
     <>
@@ -53,6 +50,8 @@ const Home = () => {
                 size='large'
                 to='/dashboard'
                 variant='contained'
+                sx={{ fontSize: "20px" }}
+                endIcon={<ChevronRight />}
               >
                 {t("home-1-2")}
 
