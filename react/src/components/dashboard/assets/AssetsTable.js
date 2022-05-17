@@ -1,12 +1,12 @@
 import {
-  Alert, Avatar, CircularProgress, IconButton, ListItemIcon, ListItemText, Menu,
+  Alert, Avatar, CircularProgress, IconButton, LinearProgress, ListItemIcon, ListItemText, Menu,
   MenuItem, Skeleton, Table, TableBody, TableCell, TableHead, TableRow
 } from '@material-ui/core';
 import { CopyAll, Delete, Download, Edit, MoreVert as MoreVertIcon, Share } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import ConfirmationButton from 'components/ConfirmationButton';
 import { InterlinkerDialog } from 'components/dashboard/interlinkers';
-import useDependantTranslation from 'hooks/useDependantTranslation';
+import {useCustomTranslation} from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
@@ -22,13 +22,13 @@ const MyMenuItem = ({ onClick, text, icon, id, loading }) => {
   </MenuItem>
 }
 
-const AssetRow = ({ asset, onChange, actions, openInterlinkerDialog }) => {
+const AssetRow = ({ language, asset, onChange, actions, openInterlinkerDialog }) => {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState("data")
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const mounted = useMounted();
-  const t = useDependantTranslation()
+  const t = useCustomTranslation(language)
   const showInterlinkerId = data && (data.externalinterlinker_id || data.knowledgeinterlinker_id || data.softwareinterlinker_id)
   const isInternal = asset.type === "internalasset"
 
@@ -193,14 +193,12 @@ const AssetRow = ({ asset, onChange, actions, openInterlinkerDialog }) => {
 
 }
 
-const Assets = ({ assets, onChange = () => { }, actions }) => {
+const Assets = ({ language, loading, assets, onChange = () => { }, actions = null }) => {
   const [interlinkerDialogOpen, setInterlinkerDialogOpen] = useState(false);
   const [selectedInterlinker, setSelectedInterlinker] = useState(false);
-  const t = useDependantTranslation()
+  const t = useCustomTranslation(language)
 
   return <>
-    {assets.length > 0 ?
-      <>
         <InterlinkerDialog open={interlinkerDialogOpen} setOpen={setInterlinkerDialogOpen} interlinker={selectedInterlinker} />
         <Table sx={{ minWidth: 650 }} aria-label="resources table" size="small">
           <TableHead>
@@ -212,17 +210,18 @@ const Assets = ({ assets, onChange = () => { }, actions }) => {
               <TableCell align="center">{t("Interlinker")}</TableCell>
               <TableCell align="center">{t("Actions")}</TableCell>
             </TableRow>
+            {loading && <TableRow>
+              <TableCell colSpan={6}> <LinearProgress /></TableCell>
+            </TableRow>}
           </TableHead>
+          
           <TableBody>
             {assets.map((asset) => (
-              <AssetRow openInterlinkerDialog={(id) => { setInterlinkerDialogOpen(true); setSelectedInterlinker(id) }} asset={asset} onChange={onChange} actions={actions} />
+              <AssetRow language={language} openInterlinkerDialog={(id) => { setInterlinkerDialogOpen(true); setSelectedInterlinker(id) }} asset={asset} onChange={onChange} actions={actions} />
             ))}
           </TableBody>
         </Table>
-      </>
-      :
-      <Alert severity="info" sx={{ my: 2 }}>{t("No resources yet")}</Alert>
-    }
+        {assets.length === 0 && <Alert severity="info" sx={{ my: 2 }}>{t("No resources yet")}</Alert>}
   </>
 }
 

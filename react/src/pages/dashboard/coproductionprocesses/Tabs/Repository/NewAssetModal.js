@@ -40,7 +40,7 @@ const CircularProgress = ({ text = "", onCancel = null }) => {
         </Grid>
     </Box>
 )}
-export default function NewAssetModal({ open, setOpen, activeStep, setStep, selectedInterlinker, task, onCreate }) {
+export default function NewAssetModal({ open, handleUserClose, handleFinish, activeStep, setStep, selectedInterlinker, task, onCreate }) {
     const { process } = useSelector((state) => state.process);
     const t = useDependantTranslation()
 
@@ -60,13 +60,6 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
     const instantiatable = (isSoftware && selectedInterlinker.instantiate) || (isKnowledge && selectedInterlinker.softwareinterlinker.instantiate)
 
     const mounted = useMounted()
-
-    const handleClose = () => {
-        setOpen(false);
-        setTimeout(() => {
-            setStep(0)
-        }, 1000)
-    };
 
     const onFinish = (result) => {
         setAssetData(result)
@@ -139,7 +132,7 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
             }
             if (activeStep === 2) {
                 // && isKnowledge
-                handleClose()
+                handleFinish()
             }
         }
         if (mounted.current) {
@@ -170,7 +163,7 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
             fullWidth
             maxWidth="lg"
             open={open}
-            onClose={handleClose}
+            onClose={handleUserClose}
 
         >
             <DialogTitle sx={{
@@ -187,7 +180,7 @@ export default function NewAssetModal({ open, setOpen, activeStep, setStep, sele
                         {activeStep === 0 && <InterlinkerHeader interlinker={selectedInterlinker} />}
                     </Grid>
                     <Grid item xs={1} style={{ textAlign: "right" }}>
-                        <IconButton children={<Close />} onClick={handleClose} />
+                        <IconButton children={<Close />} onClick={handleUserClose} />
                     </Grid>
                 </Grid>
 

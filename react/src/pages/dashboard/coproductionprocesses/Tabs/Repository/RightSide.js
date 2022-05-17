@@ -79,6 +79,7 @@ const RightSide = ({ softwareInterlinkers }) => {
     const t = useDependantTranslation()
 
     const updateTaskInfo = async () => {
+        setLoadingTaskInfo(true)
         assetsApi.getMulti({ task_id: selectedTreeItem.id }).then(assets => {
             if (mounted.current) {
                 setAssets(assets)
@@ -89,7 +90,6 @@ const RightSide = ({ softwareInterlinkers }) => {
 
     useEffect(() => {
         if (isTask && mounted.current) {
-            setLoadingTaskInfo(true)
             updateTaskInfo()
         }
     }, [mounted, selectedTreeItem])
@@ -140,7 +140,7 @@ const RightSide = ({ softwareInterlinkers }) => {
                 </Paper>*/}
                             <Typography sx={{ mb: 1 }} variant="h6">{t("Current resources")}:</Typography>
 
-                            <AssetsTable assets={assets} onChange={updateTaskInfo} />
+                            <AssetsTable language={process.language} loading={loadingTaskInfo} assets={assets} onChange={updateTaskInfo} />
                             <Box sx={{ textAlign: "center", width: "100%" }}>
                                 <Stack spacing={2} >
                                     <Button
@@ -176,6 +176,7 @@ const RightSide = ({ softwareInterlinkers }) => {
                         <Dialog open={catalogueOpen} onClose={() => setCatalogueOpen(false)} maxWidth="lg" fullWidth>
                             <Box sx={{ minWidth: "70vh" }}>
                                 <InterlinkerBrowse language={process.language} initialFilters={{ problemprofiles: selectedTreeItem.problemprofiles }} onInterlinkerClick={(interlinker) => {
+                                    setCatalogueOpen(false)
                                     setStep(0);
                                     setSelectedInterlinker(interlinker);
                                     setNewAssetDialogOpen(true)
@@ -290,7 +291,26 @@ const RightSide = ({ softwareInterlinkers }) => {
 
                         </Menu>
                     </Box>
-                    {selectedInterlinker && <NewAssetModal open={newAssetDialogOpen} setOpen={setNewAssetDialogOpen} activeStep={step} setStep={setStep} selectedInterlinker={selectedInterlinker} task={selectedTreeItem} onCreate={updateTaskInfo} />}
+                    {selectedInterlinker && <NewAssetModal 
+                    handleUserClose={() => {
+                        setNewAssetDialogOpen(false)
+                        setTimeout(() => {
+                            setStep(0)
+                        }, 1000)
+                        setCatalogueOpen(true)
+                    }} 
+                    handleFinish={() => {
+                        setNewAssetDialogOpen(false)
+                        setTimeout(() => {
+                            setStep(0)
+                        }, 1000)
+                    }}
+                    open={newAssetDialogOpen} 
+                    activeStep={step} 
+                    setStep={setStep} 
+                    selectedInterlinker={selectedInterlinker} 
+                    task={selectedTreeItem} 
+                    onCreate={updateTaskInfo} />}
                 </>}
             </Box>
         </Grid>

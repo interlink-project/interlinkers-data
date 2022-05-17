@@ -9,6 +9,7 @@ import { assetsApi } from "__api__";
 
 const OverviewTab = ({ coproductionprocess, setSelectedTreeItem }) => {
     const [assets, setAssets] = useState([])
+    const [loadingAssets, setLoadingAssets] = useState(false)
     const mounted = useMounted()
     const navigate = useNavigate()
 
@@ -16,9 +17,11 @@ const OverviewTab = ({ coproductionprocess, setSelectedTreeItem }) => {
     const t = useDependantTranslation()
 
     useEffect(() => {
+        setLoadingAssets(true)
         assetsApi.getMulti({ coproductionprocess_id: coproductionprocess.id }).then((res) => {
             if (mounted.current) {
                 setAssets(res)
+                setLoadingAssets(false)
             }
         })
     }, [])
@@ -29,10 +32,17 @@ const OverviewTab = ({ coproductionprocess, setSelectedTreeItem }) => {
                 {t("Recent resources")}
             </Typography>
             <Box sx={{ mb: 3 }}>
-                <AssetsTable assets={assets} actions={(asset) => <Button variant="outlined" size="small" onClick={() => {
-                    setSelectedTreeItem({ ...allTasks.find(task => task.id === asset.task_id), type: "task" })
-                    navigate(`/dashboard/coproductionprocesses/${process.id}/guide`)
-                }} >{t("See task")}</Button>} />
+                <AssetsTable 
+                    loading={loadingAssets} 
+                    language={process.language} 
+                    assets={assets} 
+                    actions={(asset) => <Button variant="outlined" size="small" onClick={() => {
+                        setSelectedTreeItem({ ...allTasks.find(task => task.id === asset.task_id), type: "task" })
+                        navigate(`/dashboard/coproductionprocesses/${process.id}/guide`)
+                    }}>
+                        {t("See task")}
+                    </Button>} 
+                />
             </Box>
         </Box>
     );
