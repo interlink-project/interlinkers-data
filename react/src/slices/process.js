@@ -11,7 +11,6 @@ const initialState = {
   tasks: [],
   objectives: [],
   phases: [],
-  allItems: [],
   selectedPhaseTabId: '',
   selectedTreeItem: null,
   roles: [],
@@ -41,7 +40,6 @@ const slice = createSlice({
           });
           phases.push(phase);
         });
-        state.allItems = phases.concat(objectives).concat(tasks);
         const orderedTasks = topologicalSort([...tasks]);
         state.tasks = orderedTasks;
         const orderedObjectives = topologicalSort([...objectives]);

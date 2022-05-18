@@ -11,7 +11,7 @@ const Guide = ({ setSelectedTreeItem }) => {
   const dispatch = useDispatch();
   const mounted = useMounted();
   const [softwareInterlinkers, setSoftwareInterlinkers] = useState([])
-  const { process, selectedPhaseTabId, selectedTreeItem, phases } = useSelector((state) => state.process);
+  const { process, selectedPhaseTabId, selectedTreeItem, phases, updatingTree } = useSelector((state) => state.process);
   const currentPhase = selectedPhaseTabId ? phases.find(el => el.id === selectedPhaseTabId) : phases[0]
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const Guide = ({ setSelectedTreeItem }) => {
 
   return (
     <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
-      <Grid container>
+      {!updatingTree && <Grid container>
         <Grid item xl={12} lg={12} md={12} xs={12}>
           <PhaseTabs selectedPhaseTabId={selectedPhaseTabId} phases={phases} onSelect={setNewPhaseTab} />
         </Grid>
@@ -38,7 +38,7 @@ const Guide = ({ setSelectedTreeItem }) => {
           <StyledTree phase={currentPhase} selectedTreeItem={selectedTreeItem} setSelectedTreeItem={setSelectedTreeItem} objectives_key="objectives" tasks_key="tasks" showIcon />
         </Grid>
         <RightSide softwareInterlinkers={softwareInterlinkers} />
-      </Grid>
+      </Grid>}
 
     </Box>
   );

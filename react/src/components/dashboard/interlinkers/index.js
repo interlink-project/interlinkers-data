@@ -1,3 +1,5 @@
+export { default as InterlinkerBrowse } from './browse/InterlinkerBrowse';
+export { default as InterlinkerResults } from './browse/InterlinkerResults';
 export { default as InterlinkerBrowseFilter } from './browse/InterlinkerBrowseFilter';
 export { default as InterlinkerCard } from './browse/InterlinkerCard';
 export { default as InterlinkerReviewCard } from './profile/InterlinkerReviewCard';

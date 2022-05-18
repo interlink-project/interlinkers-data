@@ -1,10 +1,11 @@
 import {
-    Avatar, Box,
-    Button, CircularProgress as MuiCircularProgress, Dialog, DialogActions, DialogContent,
-    DialogTitle, Grid, IconButton, Typography
+    Box,
+    Button, Dialog, DialogActions, DialogContent,
+    DialogTitle, Grid, IconButton
 } from '@material-ui/core';
 import { ArrowBack, Close, DoubleArrow, Download, Preview } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
+import CentricCircularProgress from 'components/CentricCircularProgress';
 import { InterlinkerDetails, InterlinkerHeader } from 'components/dashboard/interlinkers';
 import { env } from 'configuration';
 import useDependantTranslation from 'hooks/useDependantTranslation';
@@ -13,33 +14,6 @@ import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { assetsApi } from '__api__';
 
-const CircularProgress = ({ text = "", onCancel = null }) => {
-    const t = useDependantTranslation()
-    return (
-    <Box
-        style={{
-            position: 'absolute', left: '50%', top: '50%',
-            transform: 'translate(-50%, -50%)'
-        }}
-    >
-        <Grid container justifyContent="center" style={{ textAlign: "center" }}>
-            <Grid item xs={12}>
-                <Typography variant="h5">
-                    {text}
-                </Typography>
-            </Grid>
-            <Grid item xs={12} sx={{ mt: 3 }}>
-                <MuiCircularProgress />
-            </Grid>
-            {onCancel && <Grid item xs={12} sx={{ mt: 3 }}>
-                <Button color="error" onClick={onCancel}>
-                    {t("Cancel")}
-                </Button>
-            </Grid>}
-
-        </Grid>
-    </Box>
-)}
 export default function NewAssetModal({ open, handleUserClose, handleFinish, activeStep, setStep, selectedInterlinker, task, onCreate }) {
     const { process } = useSelector((state) => state.process);
     const t = useDependantTranslation()
@@ -198,14 +172,14 @@ export default function NewAssetModal({ open, handleUserClose, handleFinish, act
                     {/* If software interlinker */}
                     {can_open_in_modal ?
                         <>
-                            {loadingInstantiator && <CircularProgress />}
+                            {loadingInstantiator && <CentricCircularProgress language={process.language} />}
                             <iframe style={{ display: loadingInstantiator ? "none" : "block" }} src={`${selectedInterlinker.backend}/instantiate`} style={{ width: "100%", minHeight: "60vh", border: 0 }}></iframe>
                         </> :
-                        <CircularProgress onCancel={() => setStep(0)} />
+                        <CentricCircularProgress language={process.language} onCancel={() => setStep(0)} />
                     }
                 </Box>}
                 {activeStep === 1 && isKnowledge && <Box>
-                    <CircularProgress />
+                    <CentricCircularProgress language={process.language} />
                 </Box>}
             </DialogContent>
             {activeStep === 0 && <DialogActions sx={{ bgcolor: "background.default", justifyContent: "center" }}>
