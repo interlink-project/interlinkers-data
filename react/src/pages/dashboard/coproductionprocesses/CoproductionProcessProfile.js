@@ -9,18 +9,18 @@ import { MoreVert } from '@material-ui/icons';
 import MainSkeleton from 'components/MainSkeleton';
 import PermissionDenied from 'components/PermissionDenied';
 import useAuth from 'hooks/useAuth';
-import i18next from 'i18next';
-import OverviewTab from 'pages/dashboard/coproductionprocesses/Tabs/Overview';
+import { useCustomTranslation } from 'hooks/useDependantTranslation';
+import RecentActivityTab from 'pages/dashboard/coproductionprocesses/Tabs/RecentActivity';
 import { useCallback, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { useParams } from 'react-router-dom';
 import { getProcess, setSelectedTreeItem } from 'slices/process';
+import SchemaSelector from '../../../components/dashboard/SchemaSelector';
 import useMounted from '../../../hooks/useMounted';
-import SchemaSelector from './Tabs/Overview/SchemaSelector';
 import Guide from './Tabs/Guide';
+import TimeLine from './Tabs/Overview';
 import SettingsTab from './Tabs/Settings';
 import TeamTab from './Tabs/Team';
 import Workplan from './Tabs/Workplan';
@@ -42,8 +42,7 @@ function TabPanel(props) {
 }
 
 const style = {
-  mb: '30px',
-  minHeight: '87vh'
+  minHeight: '90vh'
 }
 
 
@@ -114,16 +113,15 @@ const CoproductionProcessProfile = () => {
     getCoproductionProcess();
   }, [getCoproductionProcess]);
 
-  const processLanguage = i18next.getFixedT(process && process.language);
-  const { t } = useTranslation()
-
+  const t = useCustomTranslation(process && process.language)
 
   const tabs = [
-    { label: processLanguage('Overview'), value: 'overview' },
-    { label: processLanguage('Workplan'), value: 'workplan' },
-    { label: processLanguage('Guide'), value: 'guide' },
-    { label: processLanguage('Team'), value: 'team' },
-    { label: processLanguage('Settings'), value: 'settings' },
+    { label: t('Overview'), value: 'overview' },
+    { label: t('Recent activity'), value: 'activity' },
+    { label: t('Workplan'), value: 'workplan' },
+    { label: t('Guide'), value: 'guide' },
+    { label: t('Team'), value: 'team' },
+    { label: t('Settings'), value: 'settings' },
   ];
 
   return (
@@ -137,30 +135,33 @@ const CoproductionProcessProfile = () => {
           backgroundColor: 'background.default',
         }}
       >
-        <Box sx={{ mt: 5 }}>
+        <Box sx={{ mt: 3 }}>
           <Container maxWidth='xl'>
             {onMobile && <TabsMobile tabs={tabs} tab={tab} process={process} />}
             {loading || !process ? <MainSkeleton /> :
               <>
                 <TabPanel value={tab} index="overview">
                   <Card sx={style}>
-                    {hasSchema && <OverviewTab setSelectedTreeItem={_setSelectedTreeItem} coproductionprocess={process} />}
-                    {!hasSchema && process.creator_id === user.sub && <SchemaSelector />}
-                    {!hasSchema && process.creator_id !== user.sub && <PermissionDenied explanation={t("Only the creator of the process can select an schema")} />}
+                    <TimeLine />
                   </Card>
                 </TabPanel>
-                {hasSchema && <>
-                  <TabPanel value={tab} index="workplan">
-                    <Card sx={style}>
-                      <Workplan setSelectedTreeItem={_setSelectedTreeItem} />
-                    </Card>
-                  </TabPanel>
-                  <TabPanel value={tab} index="guide">
-                    <Card sx={style}>
-                      <Guide setSelectedTreeItem={_setSelectedTreeItem} />
-                    </Card>
-                  </TabPanel>
-                </>}
+                <TabPanel value={tab} index="activity">
+                  <Card sx={style}>
+                    <RecentActivityTab setSelectedTreeItem={_setSelectedTreeItem} coproductionprocess={process} />
+                  </Card>
+                </TabPanel>
+                <TabPanel value={tab} index="workplan">
+                  <Card sx={{ ...style, mb: 3 }}>
+                    <Workplan setSelectedTreeItem={_setSelectedTreeItem} />
+                  </Card>
+                </TabPanel>
+                <TabPanel value={tab} index="guide">
+                  <Card sx={{ ...style, mb: 3 }}>
+                    {!hasSchema && process.creator_id === user.sub && <SchemaSelector />}
+                    {!hasSchema && process.creator_id !== user.sub && <PermissionDenied explanation={t("Only the creator of the process can select an schema")} />}
+                    {hasSchema && <Guide setSelectedTreeItem={_setSelectedTreeItem} />}
+                  </Card>
+                </TabPanel>
                 <TabPanel value={tab} index="team">
                   <TeamTab />
                 </TabPanel>

@@ -1,8 +1,12 @@
 VERSION: v1.1.3
 
 NEW
+• Timeline in the overview tab
+• Activity tab in coproduction process
 
 IMPROVED
+• Schema selection with preview and search capabilities
+• NavItems can be disabled
 
 FIXED
 • Log endpoint changed

@@ -38,5 +38,6 @@
   "can only be set for tasks": "",
   "Recommended interlinkers": "Interlinkers raccomandati",
   "No recommended interlinkers found": "Nessun Interlinker raccomandato trovato",
-  "(it will be not related to project, for features exploration)": ""
+  "(it will be not related to project, for features exploration)": "",
+  "schema-selection-description": "Uno schema contiene un insieme di fasi, obiettivi e compiti predefiniti. Tali elementi potrebbero (e dovrebbero) essere modificati per adattare il piano di lavoro del tuo progetto."
 }

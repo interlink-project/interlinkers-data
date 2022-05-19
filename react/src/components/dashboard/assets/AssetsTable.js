@@ -6,6 +6,7 @@ import { CopyAll, Delete, Download, Edit, MoreVert as MoreVertIcon, Share } from
 import { LoadingButton } from '@material-ui/lab';
 import ConfirmationButton from 'components/ConfirmationButton';
 import { InterlinkerDialog } from 'components/dashboard/interlinkers';
+import SearchBox from 'components/SearchBox';
 import {useCustomTranslation} from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
 import moment from 'moment';
@@ -196,10 +197,25 @@ const AssetRow = ({ language, asset, onChange, actions, openInterlinkerDialog })
 const Assets = ({ language, loading, assets, onChange = () => { }, actions = null }) => {
   const [interlinkerDialogOpen, setInterlinkerDialogOpen] = useState(false);
   const [selectedInterlinker, setSelectedInterlinker] = useState(false);
+  const [loadingg, setLoading] = useState(true)
+  const [inputValue, setInputValue] = useState("");
+
   const t = useCustomTranslation(language)
+
+
+function find(items, text) {
+  text = text.split(' ');
+  return items.filter(item => {
+    return text.every(el => {
+      return item.name.includes(el);
+    });
+  });
+}
 
   return <>
         <InterlinkerDialog language={language} open={interlinkerDialogOpen} setOpen={setInterlinkerDialogOpen} interlinker={selectedInterlinker} />
+        <SearchBox language={language} loading={loading} inputValue={inputValue} setInputValue={setInputValue} />
+
         <Table sx={{ minWidth: 650 }} aria-label="resources table" size="small">
           <TableHead>
             <TableRow>
@@ -210,13 +226,13 @@ const Assets = ({ language, loading, assets, onChange = () => { }, actions = nul
               <TableCell width="20%"align="center">{t("Interlinker")}</TableCell>
               <TableCell width="10%" align="center">{t("Actions")}</TableCell>
             </TableRow>
-            {loading && <TableRow>
+            {false && loading && <TableRow>
               <TableCell colSpan={6}> <LinearProgress /></TableCell>
             </TableRow>}
           </TableHead>
           
           <TableBody>
-            {assets.map((asset) => (
+            {find(assets, inputValue).map((asset) => (
               <AssetRow language={language} openInterlinkerDialog={(id) => { setInterlinkerDialogOpen(true); setSelectedInterlinker(id) }} asset={asset} onChange={onChange} actions={actions} />
             ))}
           </TableBody>

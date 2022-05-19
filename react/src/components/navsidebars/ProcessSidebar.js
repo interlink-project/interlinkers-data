@@ -1,6 +1,6 @@
 import { Avatar, Box, Button, Chip, Divider, Drawer, Skeleton, Stack, Typography } from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import { AccountTree, ArrowBack, Dashboard, Group as GroupIcon, Settings, Timeline } from '@material-ui/icons';
+import { AccessTime, AccountTree, ArrowBack, Dashboard, Group as GroupIcon, Settings, Timeline } from '@material-ui/icons';
 import useDependantTranslation from 'hooks/useDependantTranslation';
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
@@ -34,27 +34,38 @@ const ProcessSidebar = (props) => {
         {
           title: t('Overview'),
           path: `/dashboard/coproductionprocesses/${processId}/overview`,
-          icon: <Dashboard />
+          icon: <Dashboard />,
+          disabled: false
         },
-        ...hasSchema ? [{
+        {
+          title: t('Recent activity'),
+          path: `/dashboard/coproductionprocesses/${processId}/activity`,
+          icon: <AccessTime />,
+          disabled: false
+        },
+        {
           title: t('Guide'),
           path: `/dashboard/coproductionprocesses/${processId}/guide`,
-          icon: <AccountTree />
-        }] : [],
-        ...hasSchema ? [{
+          icon: <AccountTree />,
+          disabled: false
+        },
+        {
           title: t('Workplan'),
           path: `/dashboard/coproductionprocesses/${processId}/workplan`,
-          icon: <Timeline />
-        }] : [],
+          icon: <Timeline />,
+          disabled: !hasSchema
+        },
         {
           title: t('Team'),
           path: `/dashboard/coproductionprocesses/${processId}/team`,
-          icon: <GroupIcon />
+          icon: <GroupIcon />,
+          disabled: false
         },
         {
           title: t('Settings'),
           path: `/dashboard/coproductionprocesses/${processId}/settings`,
-          icon: <Settings />
+          icon: <Settings />,
+          disabled: false
         },
       ]
     },

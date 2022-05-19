@@ -4,7 +4,8 @@ import { LoadingButton } from '@material-ui/lab';
 import CentricCircularProgress from 'components/CentricCircularProgress';
 import { InterlinkerResults } from 'components/dashboard/interlinkers';
 import { PhaseTabs, StyledTree } from 'components/dashboard/tree';
-import useDependantTranslation from 'hooks/useDependantTranslation';
+import SearchBox from 'components/SearchBox';
+import useDependantTranslation, { useCustomTranslation } from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
 import { truncate } from 'lodash';
 import moment from 'moment';
@@ -24,7 +25,7 @@ const CreateSchema = () => {
     const { process } = useSelector((state) => state.process);
     const dispatch = useDispatch()
     const mounted = useMounted();
-    const t = useDependantTranslation()
+    const t = useCustomTranslation(process.language)
 
     const [selectedPhaseTab, setSelectedPhaseTab] = React.useState(null)
     const [selectedTreeItem, setSelectedTreeItem] = React.useState(null)
@@ -90,34 +91,7 @@ const CreateSchema = () => {
             <Box sx={{ textAlign: "center", my: 3 }}>
                 <Typography variant="h5" sx={{ mb: 2 }}>{t("schema-selection-title")}</Typography>
             </Box>
-            <Card sx={{my: 2, mx: 10}}>
-                <Box
-                    sx={{
-                        alignItems: 'center',
-                        display: 'flex',
-                        p: 2
-                    }}
-                >
-                    <Search fontSize='small' />
-                    <Box
-                        sx={{
-                            flexGrow: 1,
-                            ml: 3
-                        }}
-                    >
-                        <Input
-                            disableUnderline
-                            fullWidth
-                            onChange={(event) => {
-                                setInputValue(event.target.value);
-                            }}
-                            placeholder={t('Search')}
-                            value={inputValue}
-                        />
-                    </Box>
-                </Box>
-                {loading && <LinearProgress />}
-            </Card>
+            <SearchBox language={process.language} loading={loading} inputValue={inputValue} setInputValue={setInputValue} />
 
             <Table sx={{ minWidth: 400 }} aria-label="coproduction schemas table" >
                 <TableHead>
@@ -166,11 +140,11 @@ const CreateSchema = () => {
             </Table></> : <>
             <Alert severity="warning" action={
                 <>
-                    <LoadingButton sx={{ mr: 2 }} startIcon={<ArrowBack />} variant="outlined" color="error" onClick={handleClose}>{t("Go back")}</LoadingButton>
+                    <LoadingButton sx={{ mr: 2 }} startIcon={<ArrowBack />} variant="contained" color="error" onClick={handleClose}>{t("Go back")}</LoadingButton>
 
                     <LoadingButton endIcon={<ArrowForward />} loading={loadingSchemaId === selectedSchema.id} variant="contained" onClick={() => submit(selectedSchema.id)}>{t("use-what", { what: schemaword })}</LoadingButton>
                 </>
-            }>{t("This is a preview. Click on 'Use Schema' to instantiate it")}</Alert>
+            }>{t("This is a preview. Click on \'Use Schema\' to instantiate it")}</Alert>
             <PhaseTabs phases={selectedSchema.phasemetadatas} selectedPhaseTabId={selectedPhaseTab && selectedPhaseTab.id} onSelect={(value) => {
                 setSelectedPhaseTab(value)
                 setSelectedTreeItem(value)

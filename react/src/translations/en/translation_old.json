@@ -33,5 +33,6 @@
   "can only be set for tasks": "{{what}} can only be set for tasks",
   "Recommended interlinkers": "Recommended interlinkers",
   "No recommended interlinkers found": "No recommended interlinkers found",
-  "(it will be not related to project, for features exploration)": "(it will be not related to project, for features exploration)"
+  "(it will be not related to project, for features exploration)": "(it will be not related to project, for features exploration)",
+  "schema-selection-description": "An schema contains a set of phases, objectives and tasks predefined. Those items could (and should) be edited in order to adapt the workplan of your project."
 }

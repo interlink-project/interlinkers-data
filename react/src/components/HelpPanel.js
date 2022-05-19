@@ -17,6 +17,9 @@ const helps = {
     "/dashboard/coproductionprocesses/(.+)/overview": {
         url: (language) => `https://dev.interlink-project.eu/docs/${language}/usermanual/coproductionprocess-overview.html`,
     },
+    "/dashboard/coproductionprocesses/(.+)/activity": {
+        url: (language) => `https://dev.interlink-project.eu/docs/${language}/usermanual/coproductionprocess-activity.html`,
+    },
     "/dashboard/coproductionprocesses/(.+)/guide": {
         url: (language) => `https://dev.interlink-project.eu/docs/${language}/usermanual/coproductionprocess-guide.html`,
     },

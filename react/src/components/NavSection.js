@@ -18,7 +18,7 @@ const renderNavItems = ({ depth = 0, items, pathname, onClick }) => (
   </List>
 );
 
-const reduceChildRoutes = ({ acc, pathname, item, depth }) => {
+const reduceChildRoutes = ({ acc, pathname, item, depth, disabled }) => {
   const key = `${item.title}-${depth}`;
   const exactMatch = item.path ? !!matchPath({
     path: item.path,
@@ -41,6 +41,7 @@ const reduceChildRoutes = ({ acc, pathname, item, depth }) => {
         open={partialMatch}
         onClick={item.onClick}
         path={item.path}
+        disabled={item.disabled}
         title={item.title}
       >
         {renderNavItems({
@@ -58,6 +59,7 @@ const reduceChildRoutes = ({ acc, pathname, item, depth }) => {
         depth={depth}
         icon={item.icon}
         info={item.info}
+        disabled={item.disabled}
         key={key}
         onClick={item.onClick}
         path={item.path}
@@ -71,7 +73,6 @@ const reduceChildRoutes = ({ acc, pathname, item, depth }) => {
 
 const NavSection = (props) => {
   const { items, pathname, title, onClick, ...other } = props;
-
   return (
     <List
       subheader={(
@@ -103,7 +104,7 @@ const NavSection = (props) => {
 NavSection.propTypes = {
   items: PropTypes.array,
   pathname: PropTypes.string,
-  title: PropTypes.any
+  title: PropTypes.any,
 };
 
 export default NavSection;

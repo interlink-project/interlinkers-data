@@ -38,5 +38,6 @@
   "can only be set for tasks": "{{what}} var iestatīt tikai uzdevumiem",
   "Recommended interlinkers": "Ieteicamie interlinkeri",
   "No recommended interlinkers found": "Ieteicamie interlinkeri netika atrasti",
-  "(it will be not related to project, for features exploration)": ""
+  "(it will be not related to project, for features exploration)": "",
+  "schema-selection-description": "Shēma sastāv no iepriekš definētu fāžu, rezultātu un uzdevumu kopuma. Tās elementus var (un vajag) pielāgot jūsu projekta darba plānam."
 }

@@ -6,7 +6,7 @@ import ChevronDownIcon from '../icons/ChevronDown';
 import ChevronRightIcon from '../icons/ChevronRight';
 
 const NavItem = (props) => {
-  const { active, children, depth, icon, info, open: openProp, path, title, onClick, ...other } = props;
+  const { active, children, depth, icon, info, open: openProp, path, title, disabled = false, onClick, ...other } = props;
   const [open, setOpen] = useState(openProp);
 
   const handleToggle = () => {
@@ -35,6 +35,7 @@ const NavItem = (props) => {
             : <ChevronDownIcon fontSize='small' />}
           onClick={handleToggle}
           startIcon={icon}
+          disabled={disabled}
           sx={{
             color: 'inherit',
             fontWeight: 'fontWeightMedium',
@@ -72,6 +73,7 @@ const NavItem = (props) => {
         onClick={onClick || null}
         component={path && RouterLink}
         startIcon={icon}
+        disabled={disabled}
         sx={{
           color: 'inherit',
           fontWeight: 'fontWeightMedium',
@@ -109,6 +111,7 @@ NavItem.propTypes = {
   icon: PropTypes.node,
   info: PropTypes.node,
   open: PropTypes.bool,
+  disabled: PropTypes.bool,
   path: PropTypes.string,
   onClick: PropTypes.func,
   title: PropTypes.string.isRequired
