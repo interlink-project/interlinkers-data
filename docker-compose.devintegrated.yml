@@ -5,7 +5,7 @@ services:
     image: 'frontenddev'
     container_name: frontend-integrated
     build:
-      context: .
+      context: ./react
       target: dev
     volumes:
       - ./react:/usr/app

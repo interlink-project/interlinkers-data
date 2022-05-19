@@ -70,7 +70,7 @@ To get a local copy up and running follow these simple example steps.
 <!-- GETTING STARTED -->
 ## Customizations
 
-<a href="http://dev.interlink-project.eu/weblate/engage/interlink/">
-<img src="http://dev.interlink-project.eu/weblate/widgets/interlink/-/frontend/multi-auto.svg" alt="Translations status" />
+<a href="http://demo.interlink-project.eu/weblate/engage/interlink/">
+<img src="http://demo.interlink-project.eu/weblate/widgets/interlink/-/frontend/multi-auto.svg" alt="Translations status" />
 
 <p align="right">(<a href="#top">back to top</a>)</p>

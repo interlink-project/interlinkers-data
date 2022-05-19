@@ -7,6 +7,8 @@ NEW
 IMPROVED
 • Schema selection with preview and search capabilities
 • NavItems can be disabled
+• Dependencies cleaned
 
 FIXED
 • Log endpoint changed
+• Route path "/" nested path is not valid in react-router 6

@@ -22,23 +22,23 @@ export const routes = [
     element: <MainLayout />,
     children: [
       {
-        path: '/',
+        path: '',
         element: <Home />,
       },
       {
-        path: '/coprod',
+        path: 'coprod',
         element: <HomeCoproduction />,
       },
       {
-        path: '/platform',
+        path: 'platform',
         element: <HomePlatform />,
       },
       {
-        path: '/catal',
+        path: 'catal',
         element: <HomeCatalogue />,
       },
       {
-        path: '/about',
+        path: 'about',
         element: <HomeAbout />,
       },
       {

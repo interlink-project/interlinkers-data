@@ -1,7 +1,7 @@
 import {
   Avatar,
-  Box, Card, CardHeader, Container, IconButton,
-  Tab, Tabs, useMediaQuery,
+  Box, Card, CardHeader, Container, Grid, IconButton,
+  Tab, Tabs, Typography, useMediaQuery,
   useTheme
 } from '@material-ui/core';
 import { red } from '@material-ui/core/colors';
@@ -141,9 +141,20 @@ const CoproductionProcessProfile = () => {
             {loading || !process ? <MainSkeleton /> :
               <>
                 <TabPanel value={tab} index="overview">
-                  <Card sx={style}>
-                    <TimeLine />
-                  </Card>
+                  <Grid container>
+                    <Grid item xs={12} md={12} lg={6} xl={6}>
+                      <Card sx={style}>
+                        <TimeLine />
+                      </Card>
+                    </Grid>
+                    <Grid item xs={12} md={12} lg={6} xl={6}>
+                      <Card sx={style}>
+                        <Typography variant="h4" sx={{ textAlign: "center", my: 2 }}>
+                          {t("Your pendant actions")}
+                        </Typography>
+                      </Card>
+                    </Grid>
+                  </Grid>
                 </TabPanel>
                 <TabPanel value={tab} index="activity">
                   <Card sx={style}>

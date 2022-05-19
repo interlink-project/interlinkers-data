@@ -109,7 +109,7 @@ const WorkspaceSidebar = (props) => {
               return {
                 title: process.name,
                 path: `/dashboard/coproductionprocesses/${process.id}/overview`,
-                icon: process.logotype_link ? <Avatar sx={{ height: "25px", width: "25px" }} src={process.logotype_link} /> : <Folder />
+                icon: process.logotype_link ? <Avatar sx={{ height: "25px", width: "25px" }} variant="rounded" src={process.logotype_link} /> : <Folder />
               }
             })}
           />
@@ -137,7 +137,7 @@ const WorkspaceSidebar = (props) => {
             items={teams && teams.map((team) => {
               return {
                 title: team.name,
-                icon: team.logotype_link ? <Avatar sx={{ height: "25px", width: "25px" }} src={team.logotype_link} /> : <Groups />,
+                icon: team.logotype_link ? <Avatar sx={{ height: "25px", width: "25px" }} src={team.logotype_link} variant="rounded" /> : <Groups />,
                 onClick: () => {
                   setSelectedTeam(team);
                   setTeamProfileOpen(true)

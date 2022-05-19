@@ -23,7 +23,7 @@ export const routes = [
     ),
     children: [
       {
-        path: '/',
+        path: '',
         element: <MyWorkspace />,
       },
 
@@ -34,7 +34,7 @@ export const routes = [
             path: ':processId',
             children: [
               {
-                path: '/',
+                path: '',
                 element: <CoproductionProcessProfile />,
               },
               {
