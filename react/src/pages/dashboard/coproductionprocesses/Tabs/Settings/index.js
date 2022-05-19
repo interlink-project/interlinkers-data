@@ -83,12 +83,6 @@ const SettingsTab = () => {
     return (
         <Box style={{ minHeight: "87vh", backgroundColor: "background.default" }}>
             <CardHeader
-                action={!editMode && <IconButton aria-label="settings"
-                    id="long-button"
-                    onClick={() => setEditMode(true)}>
-                    <Edit />
-                </IconButton>
-                }
                 avatar={
                     editMode ? <label htmlFor="contained-button-file">
                         <Input inputProps={{ accept: 'image/*' }} id="contained-button-file" type="file" sx={{ display: "none" }} onChange={handleFileSelected} />
@@ -129,9 +123,19 @@ const SettingsTab = () => {
                     />
                 }
                 title={
-                    <Stack justifyContent="center">
+                    <Stack justifyContent="center" spacing={1}>
                         <Typography variant="subtitle1"><b>{t("Created")}:</b> {moment(process.created_at).format("LL")}</Typography>
                         {process.updated_at && <Typography variant="subtitle1"><b>{t("Last update")}:</b> {moment(process.updated_at).format("LLL")}</Typography>}
+                        <Stack direction="row" spacing={2}>
+                            <Button variant="contained" disabled={editMode} color="primary" onClick={() => setEditMode(true)} startIcon={<Edit />}>{t("Edit coproduction process")}</Button>
+                            <ConfirmationButton
+
+                                    Actionator={({ onClick }) => <Button disabled={!editMode} variant="contained" color="error" onClick={onClick} startIcon={<Delete />}>{t("Remove coproduction process")}</Button>}
+                                    ButtonComponent={({ onClick }) => <Button sx={{ mt: 1 }} fullWidth variant='contained' color="error" onClick={onClick}>{t("Confirm deletion")}</Button>}
+                                    onClick={onRemove}
+                                    text={t("Are you sure?")}
+                            />
+                        </Stack>
                     </Stack>
                 }
             />
@@ -221,12 +225,7 @@ const SettingsTab = () => {
                         {editMode && <Stack direction="row" spacing={2} sx={{ justifyContent: "center", mt: 3, mb: 2 }}>
                             <Button variant="text" disabled={isSubmitting} color="warning" startIcon={<Delete />} onClick={() => { setEditMode(false); resetForm(); setLogotype(null); }}>{t("Cancel")}</Button>
                             <Button variant="contained" disabled={isSubmitting} color="success" startIcon={<Save />} onClick={submitForm} disabled={!isValid}>{t("Save")}</Button>
-                            <ConfirmationButton
-                                Actionator={({ onClick }) => <Button variant="contained" disabled={isSubmitting} color="error" onClick={onClick} startIcon={<Delete />}>{t("Remove", { what: t("coproduction process") })}</Button>}
-                                ButtonComponent={({ onClick }) => <Button sx={{ mt: 1 }} fullWidth variant='contained' color="error" onClick={onClick}>Confirm deletion</Button>}
-                                onClick={onRemove}
-                                text={t("Are you sure?")}
-                            />
+                            
                         </Stack>}
                     </Form>
                 )}

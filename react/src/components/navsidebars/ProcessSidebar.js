@@ -38,12 +38,6 @@ const ProcessSidebar = (props) => {
           disabled: false
         },
         {
-          title: t('Recent activity'),
-          path: `/dashboard/coproductionprocesses/${processId}/activity`,
-          icon: <AccessTime />,
-          disabled: false
-        },
-        {
           title: t('Guide'),
           path: `/dashboard/coproductionprocesses/${processId}/guide`,
           icon: <AccountTree />,
@@ -123,7 +117,7 @@ const ProcessSidebar = (props) => {
             backgroundColor: 'background.paper',
             height: 'calc(100% - 64px) !important',
             top: '64px !Important',
-            width: 300,
+            width: "260px",
             zIndex: 0
           }
         }}

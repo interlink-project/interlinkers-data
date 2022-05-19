@@ -8,6 +8,7 @@ IMPROVED
 • Schema selection with preview and search capabilities
 • NavItems can be disabled
 • Dependencies cleaned
+• Sidebars smaller
 
 FIXED
 • Log endpoint changed

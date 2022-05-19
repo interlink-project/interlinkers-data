@@ -23,7 +23,7 @@ const DashboardLayoutWrapperWithNavbar = experimentalStyled('div')(({ theme }) =
   overflow: 'hidden',
   paddingTop: '64px',
   [theme.breakpoints.up('lg')]: {
-    paddingLeft: '300px'
+    paddingLeft: '260px'
   }
 }));
 

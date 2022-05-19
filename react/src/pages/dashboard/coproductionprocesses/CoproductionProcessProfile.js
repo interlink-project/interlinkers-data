@@ -1,17 +1,16 @@
 import {
   Avatar,
-  Box, Card, CardHeader, Container, Grid, IconButton,
-  Tab, Tabs, Typography, useMediaQuery,
+  Box, Card, CardHeader, Container, Grid, IconButton, Tab, Tabs, Typography, useMediaQuery,
   useTheme
 } from '@material-ui/core';
 import { red } from '@material-ui/core/colors';
-import { MoreVert } from '@material-ui/icons';
+import { MoreVert, UnfoldLess, UnfoldMore } from '@material-ui/icons';
 import MainSkeleton from 'components/MainSkeleton';
 import PermissionDenied from 'components/PermissionDenied';
 import useAuth from 'hooks/useAuth';
 import { useCustomTranslation } from 'hooks/useDependantTranslation';
 import RecentActivityTab from 'pages/dashboard/coproductionprocesses/Tabs/RecentActivity';
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
@@ -47,13 +46,13 @@ const style = {
 
 
 const TabsMobile = ({ tabs, tab, process }) => {
-  const logoExists = process && process.logotype_link
+  const logoExists = process && process.logotype
   const navigate = useNavigate();
 
   return process && <Card sx={{ mb: 1 }}>
     <CardHeader
       avatar={
-        <Avatar variant="square" sx={logoExists ? {} : { bgcolor: red[500] }} aria-label="recipe" src={logoExists && process.logotype_link}>
+        <Avatar variant="rounded" sx={logoExists ? {} : { bgcolor: red[500] }} aria-label="recipe" src={logoExists && process.logotype_link}>
           {process && !logoExists && process.name[0]}
         </Avatar>
       }
@@ -67,7 +66,7 @@ const TabsMobile = ({ tabs, tab, process }) => {
     />
     <Tabs
       indicatorColor="secondary"
-      onChange={(value) => navigate(`/dashboard/coproductionprocesses/${process.id}/${value}`)}
+      onChange={(event, value) => navigate(`/dashboard/coproductionprocesses/${process.id}/${value}`)}
       value={tab}
       aria-label="Coproduction tabs"
       centered
@@ -88,11 +87,12 @@ const CoproductionProcessProfile = () => {
   const dispatch = useDispatch();
   const mounted = useMounted();
   const { user } = useAuth();
+  const [expanded, setExpanded] = useState(false);
 
   const { process, hasSchema, loading } = useSelector((state) => state.process);
 
   const theme = useTheme();
-  const onMobile = !useMediaQuery(theme.breakpoints.up('md'));
+  const showMobileTabs = !useMediaQuery(theme.breakpoints.up('lg'));
 
   const _setSelectedTreeItem = (item, callback) => {
     dispatch(setSelectedTreeItem(item, callback))
@@ -117,9 +117,8 @@ const CoproductionProcessProfile = () => {
 
   const tabs = [
     { label: t('Overview'), value: 'overview' },
-    { label: t('Recent activity'), value: 'activity' },
-    { label: t('Workplan'), value: 'workplan' },
     { label: t('Guide'), value: 'guide' },
+    { label: t('Workplan'), value: 'workplan' },
     { label: t('Team'), value: 'team' },
     { label: t('Settings'), value: 'settings' },
   ];
@@ -137,29 +136,34 @@ const CoproductionProcessProfile = () => {
       >
         <Box sx={{ mt: 3 }}>
           <Container maxWidth='xl'>
-            {onMobile && <TabsMobile tabs={tabs} tab={tab} process={process} />}
+            {showMobileTabs && <TabsMobile tabs={tabs} tab={tab} process={process} />}
             {loading || !process ? <MainSkeleton /> :
               <>
                 <TabPanel value={tab} index="overview">
-                  <Grid container>
-                    <Grid item xs={12} md={12} lg={6} xl={6}>
+                  <Grid container spacing={2}>
+                    <Grid item xs={12} md={12} lg={4} xl={5}>
                       <Card sx={style}>
-                        <TimeLine />
+                        <CardHeader
+                          title={<Typography variant="h5" sx={{ textAlign: "center" }}>
+                            {t("Progress of the coproduction process")}
+                          </Typography>}
+                          action={<IconButton onClick={() => setExpanded(!expanded)}>{!expanded ? <UnfoldMore /> : <UnfoldLess />}</IconButton>}
+                        />
+                        <TimeLine expanded={expanded} />
                       </Card>
                     </Grid>
-                    <Grid item xs={12} md={12} lg={6} xl={6}>
+                    <Grid item xs={12} md={12} lg={8} xl={7}>
                       <Card sx={style}>
-                        <Typography variant="h4" sx={{ textAlign: "center", my: 2 }}>
-                          {t("Your pendant actions")}
-                        </Typography>
+                        <CardHeader
+                          title={<Typography variant="h5" sx={{ textAlign: "center" }}>
+                            {t("Recent activity")}
+                          </Typography>}
+                        />
+
+                        <RecentActivityTab setSelectedTreeItem={_setSelectedTreeItem} coproductionprocess={process} />
                       </Card>
                     </Grid>
                   </Grid>
-                </TabPanel>
-                <TabPanel value={tab} index="activity">
-                  <Card sx={style}>
-                    <RecentActivityTab setSelectedTreeItem={_setSelectedTreeItem} coproductionprocess={process} />
-                  </Card>
                 </TabPanel>
                 <TabPanel value={tab} index="workplan">
                   <Card sx={{ ...style, mb: 3 }}>

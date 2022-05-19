@@ -28,18 +28,18 @@ const TimeItem = ({ actions = null, title, subtitle, icon }) => <TimelineItem>
         <TimelineConnector />
     </TimelineSeparator>
     <TimelineContent sx={{ py: '12px', px: 2 }}>
-        <Stack direction="column">
+        <Stack direction="column" spacing={1}>
             <Typography variant="h6" component="span">
                 {title}
             </Typography>
-            {actions}
             {subtitle}
+            {actions}
         </Stack>
 
     </TimelineContent>
 </TimelineItem>
 
-export default function TimeLine({ }) {
+export default function TimeLine({ expanded = false }) {
     const { process, hasSchema, phases } = useSelector((state) => state.process);
     const t = useCustomTranslation(process.language)
     const navigate = useNavigate();
@@ -47,7 +47,8 @@ export default function TimeLine({ }) {
     if (!process) {
         return
     }
-    return (<Timeline position="right">
+    return (
+        <Timeline position="right">
         <TimeItem
             title={t("Coproduction process creation")}
             subtitle={<DoneAlert t={t} date={process.created_at} />}
@@ -70,8 +71,8 @@ export default function TimeLine({ }) {
             subtitle={<>
                 {phase.status === "finished" ? <DoneAlert t={t} /> : <WarningAlert t={t} explanation={t("Phase is not finished yet")} />}
                 {phase.objectives.map(objective =>
-                    <Collapse timeout="auto" unmountOnExit>
-                        <Timeline key={objective.id} position="right">
+                    <Collapse in={expanded} key={objective.id} timeout="auto" unmountOnExit>
+                        <Timeline position="right">
                             <TimeItem title={objective.name} subtitle={objective.status} />
                         </Timeline>
                     </Collapse>)}

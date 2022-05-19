@@ -7,7 +7,7 @@ import { LoadingButton } from '@material-ui/lab';
 import ConfirmationButton from 'components/ConfirmationButton';
 import { InterlinkerDialog } from 'components/dashboard/interlinkers';
 import SearchBox from 'components/SearchBox';
-import {useCustomTranslation} from 'hooks/useDependantTranslation';
+import { useCustomTranslation } from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
@@ -203,41 +203,41 @@ const Assets = ({ language, loading, assets, onChange = () => { }, actions = nul
   const t = useCustomTranslation(language)
 
 
-function find(items, text) {
-  text = text.split(' ');
-  return items.filter(item => {
-    return text.every(el => {
-      return item.name.includes(el);
+  function find(items, text) {
+    text = text.split(' ');
+    return items.filter(item => {
+      return text.every(el => {
+        return item.name ? item.name.includes(el) : true;
+      });
     });
-  });
-}
+  }
 
   return <>
-        <InterlinkerDialog language={language} open={interlinkerDialogOpen} setOpen={setInterlinkerDialogOpen} interlinker={selectedInterlinker} />
-        <SearchBox language={language} loading={loading} inputValue={inputValue} setInputValue={setInputValue} />
+    <InterlinkerDialog language={language} open={interlinkerDialogOpen} setOpen={setInterlinkerDialogOpen} interlinker={selectedInterlinker} />
+    <SearchBox size="small" language={language} loading={loading} inputValue={inputValue} setInputValue={setInputValue} />
 
-        <Table sx={{ minWidth: 650 }} aria-label="resources table" size="small">
-          <TableHead>
-            <TableRow>
-              <TableCell width="5%"></TableCell>
-              <TableCell width="35%" align="center">{t("Name")}</TableCell>
-              <TableCell width="15%" align="center">{t("Created")}</TableCell>
-              <TableCell width="15%" align="center">{t("Updated")}</TableCell>
-              <TableCell width="20%"align="center">{t("Interlinker")}</TableCell>
-              <TableCell width="10%" align="center">{t("Actions")}</TableCell>
-            </TableRow>
-            {false && loading && <TableRow>
-              <TableCell colSpan={6}> <LinearProgress /></TableCell>
-            </TableRow>}
-          </TableHead>
-          
-          <TableBody>
-            {find(assets, inputValue).map((asset) => (
-              <AssetRow language={language} openInterlinkerDialog={(id) => { setInterlinkerDialogOpen(true); setSelectedInterlinker(id) }} asset={asset} onChange={onChange} actions={actions} />
-            ))}
-          </TableBody>
-        </Table>
-        {assets.length === 0 && <Alert severity="info" sx={{ my: 2 }}>{t("No resources yet")}</Alert>}
+    <Table sx={{ minWidth: 650 }} aria-label="resources table" size="small">
+      <TableHead>
+        <TableRow>
+          <TableCell width="5%"></TableCell>
+          <TableCell width="35%" align="center">{t("Name")}</TableCell>
+          <TableCell width="15%" align="center">{t("Created")}</TableCell>
+          <TableCell width="15%" align="center">{t("Updated")}</TableCell>
+          <TableCell width="20%" align="center">{t("Interlinker")}</TableCell>
+          <TableCell width="10%" align="center">{t("Actions")}</TableCell>
+        </TableRow>
+        {false && loading && <TableRow>
+          <TableCell colSpan={6}> <LinearProgress /></TableCell>
+        </TableRow>}
+      </TableHead>
+
+      <TableBody>
+        {find(assets, inputValue).map((asset) => (
+          <AssetRow language={language} openInterlinkerDialog={(id) => { setInterlinkerDialogOpen(true); setSelectedInterlinker(id) }} asset={asset} onChange={onChange} actions={actions} />
+        ))}
+      </TableBody>
+    </Table>
+    {assets.length === 0 && <Alert severity="info" sx={{ my: 2 }}>{t("No resources yet")}</Alert>}
   </>
 }
 

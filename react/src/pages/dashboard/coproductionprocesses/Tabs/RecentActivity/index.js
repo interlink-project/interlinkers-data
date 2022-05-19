@@ -27,23 +27,18 @@ const RecentActivityTab = ({ coproductionprocess, setSelectedTreeItem }) => {
     }, [])
 
     return (
-        <Box style={{ backgroundColor: "background.default", justifyContent: "center" }}>
-            <Typography variant="h5" sx={{ my: 2, textAlign: "center", }} color="textSecondary">
-                {t("Recent resources")}
-            </Typography>
-            <Box sx={{ mb: 3 }}>
-                <AssetsTable 
-                    loading={loadingAssets} 
-                    language={process.language} 
-                    assets={assets} 
-                    actions={(asset) => <Button variant="outlined" size="small" onClick={() => {
-                        setSelectedTreeItem({ ...allTasks.find(task => task.id === asset.task_id), type: "task" })
-                        navigate(`/dashboard/coproductionprocesses/${process.id}/guide`)
-                    }}>
-                        {t("See task")}
-                    </Button>} 
-                />
-            </Box>
+        <Box sx={{ mb: 3 }}>
+            <AssetsTable
+                loading={loadingAssets}
+                language={process.language}
+                assets={assets}
+                actions={(asset) => <Button variant="outlined" size="small" onClick={() => {
+                    setSelectedTreeItem({ ...allTasks.find(task => task.id === asset.task_id), type: "task" })
+                    navigate(`/dashboard/coproductionprocesses/${process.id}/guide`)
+                }}>
+                    {t("See task")}
+                </Button>}
+            />
         </Box>
     );
 };
