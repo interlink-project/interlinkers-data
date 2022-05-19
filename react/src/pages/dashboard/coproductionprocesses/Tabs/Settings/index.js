@@ -10,7 +10,6 @@ import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
-import { Prompt } from 'react-router-dom';
 import { updateProcess } from "slices/process";
 import * as Yup from 'yup';
 import { coproductionProcessesApi } from "__api__";
@@ -28,16 +27,6 @@ const SettingsTab = () => {
     const onRemove = () => {
         coproductionProcessesApi.delete(process.id).then(() => navigate("/dashboard"))
     }
-
-    const PromptIfDirty = () => {
-        const formik = useFormikContext();
-        return (
-            <Prompt
-                when={formik.dirty && formik.submitCount === 0}
-                message="Are you sure you want to leave? You have with unsaved changes."
-            />
-        );
-    };
 
     const dispatch = useDispatch();
 
@@ -76,7 +65,7 @@ const SettingsTab = () => {
         </Typography>
         <MuiTextField
             fullWidth
-            minRows={4}
+            minRows={props.minRows || 4}
             variant={editMode ? "filled" : "standard"}
             InputProps={{
                 readOnly: !editMode,
@@ -207,7 +196,6 @@ const SettingsTab = () => {
                     values
                 }) => (
                     <Form>
-                        <PromptIfDirty />
                         <Grid container sx={{ width: "96%", ml: 2 }} direction="row" justifyContent="center" spacing={2} >
                             <Grid item xs={12}>
                                 <TextField label={t("NAME OF THE PROJECT")} helperText={touched.name && errors.name} error={Boolean(touched.name && errors.name)} value={values.name} onBlur={handleBlur} onChange={handleChange} name="name" />
@@ -223,10 +211,10 @@ const SettingsTab = () => {
                                 <TextField label={t("AIM OF THE PROJECT")} multiline helperText={touched.aim && errors.aim} error={Boolean(touched.aim && errors.aim)} value={values.aim} onBlur={handleBlur} onChange={handleChange} name="aim" />
                             </Grid>
                             <Grid item xs={12} lg={6}>
-                                <TextField label={t("IDEA OF SERVICE TO BE CO-DELIVERED")} multiline helperText={touched.idea && errors.idea} error={Boolean(touched.idea && errors.idea)} value={values.idea} onBlur={handleBlur} onChange={handleChange} name="idea" />
+                                <TextField minRows={8} label={t("IDEA OF SERVICE TO BE CO-DELIVERED")} multiline helperText={touched.idea && errors.idea} error={Boolean(touched.idea && errors.idea)} value={values.idea} onBlur={handleBlur} onChange={handleChange} name="idea" />
                             </Grid>
                             <Grid item xs={12} lg={6}>
-                                <TextField label={t("CHALLENGES OF THE PROJECT")} multiline helperText={touched.challenges && errors.challenges} error={Boolean(touched.challenges && errors.challenges)} value={values.challenges} onBlur={handleBlur} onChange={handleChange} name="challenges" />
+                                <TextField minRows={8} label={t("CHALLENGES OF THE PROJECT")} multiline helperText={touched.challenges && errors.challenges} error={Boolean(touched.challenges && errors.challenges)} value={values.challenges} onBlur={handleBlur} onChange={handleChange} name="challenges" />
                             </Grid>
 
                         </Grid>
