@@ -1,20 +1,19 @@
 import { Avatar, Box, Button, CardHeader, Grid, IconButton, Input, Stack, TextField as MuiTextField, Typography } from "@material-ui/core";
 import { Delete, Edit, Save } from '@material-ui/icons';
-import QuillEditor from "components/QuillEditor";
-import { Field, Form, Formik, useFormikContext } from 'formik';
+import ConfirmationButton from "components/ConfirmationButton";
+import MainSkeleton from "components/MainSkeleton";
+import { Form, Formik, useFormikContext } from 'formik';
 import useDependantTranslation from "hooks/useDependantTranslation";
 import useMounted from "hooks/useMounted";
 import $ from 'jquery';
 import moment from "moment";
-import MainSkeleton from "components/MainSkeleton";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router';
 import { Prompt } from 'react-router-dom';
 import { updateProcess } from "slices/process";
 import * as Yup from 'yup';
 import { coproductionProcessesApi } from "__api__";
-import { useNavigate } from 'react-router';
-import ConfirmationButton from "components/ConfirmationButton";
 
 const SettingsTab = () => {
     const [editMode, setEditMode] = useState(false)
@@ -70,19 +69,6 @@ const SettingsTab = () => {
         }
     }
 
-    const QuillField = (props) => <>
-        <Typography variant="overline" display="block" gutterBottom color="primary">
-            {props.label}
-        </Typography>
-
-        <Field name={props.name}>
-            {({ field }) => <QuillEditor readOnly={!editMode}
-                placeholder={t('Write something')}
-                sx={{ minHeight: props.height, borderColor: "background.paper", backgroundColor: editMode && "background.default" }}
-                {...props}
-                value={field.value} onChange={field.onChange(field.name)} />}
-        </Field>
-    </>
 
     const TextField = (props) => <>
         <Typography variant="overline" display="block" gutterBottom color="primary">
@@ -237,23 +223,10 @@ const SettingsTab = () => {
                                 <TextField label={t("AIM OF THE PROJECT")} multiline helperText={touched.aim && errors.aim} error={Boolean(touched.aim && errors.aim)} value={values.aim} onBlur={handleBlur} onChange={handleChange} name="aim" />
                             </Grid>
                             <Grid item xs={12} lg={6}>
-                                <QuillField
-                                    label={t("IDEA OF SERVICE TO BE CO-DELIVERED")}
-                                    helperText={touched.idea && errors.idea}
-                                    error={Boolean(touched.idea && errors.idea)}
-                                    value={values.idea}
-                                    name="idea"
-                                    height={200}
-                                />
+                                <TextField label={t("IDEA OF SERVICE TO BE CO-DELIVERED")} multiline helperText={touched.idea && errors.idea} error={Boolean(touched.idea && errors.idea)} value={values.idea} onBlur={handleBlur} onChange={handleChange} name="idea" />
                             </Grid>
                             <Grid item xs={12} lg={6}>
-                                <QuillField
-                                    label={t("CHALLENGES OF THE PROJECT")}
-                                    helperText={touched.challenges && errors.challenges}
-                                    error={Boolean(touched.challenges && errors.challenges)}
-                                    value={values.challenges} name="challenges"
-                                    height={200}
-                                />
+                                <TextField label={t("CHALLENGES OF THE PROJECT")} multiline helperText={touched.challenges && errors.challenges} error={Boolean(touched.challenges && errors.challenges)} value={values.challenges} onBlur={handleBlur} onChange={handleChange} name="challenges" />
                             </Grid>
 
                         </Grid>
