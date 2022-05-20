@@ -156,7 +156,7 @@ const CoproductionProcessProfile = () => {
                       <Card sx={style}>
                         <CardHeader
                           title={<Typography variant="h5" sx={{ textAlign: "center" }}>
-                            {t("Recent activity")}
+                            {t("Recent resources")}
                           </Typography>}
                         />
 

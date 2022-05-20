@@ -103,7 +103,7 @@ const Workplan = ({ setSelectedTreeItem }) => {
     if (element.start_date) {
       classes += " timed"
     }
-    if (element.id === selectedTreeItem.id) {
+    if (element && selectedTreeItem && element.id === selectedTreeItem.id) {
       classes += " blink"
       setTimeout(function () {
         $(`[data-id="${element.id}"]`).removeClass("blink")

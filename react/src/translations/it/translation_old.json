@@ -7,7 +7,6 @@
   "Teams and individuals": "",
   "External resource": "",
   "time.ago": "",
-  "Keywords": "",
   "catalogue.title": "",
   "interlinkers.catalogue": "",
   "interlinkers.catalogue.total": "",
@@ -39,5 +38,9 @@
   "Recommended interlinkers": "Interlinkers raccomandati",
   "No recommended interlinkers found": "Nessun Interlinker raccomandato trovato",
   "(it will be not related to project, for features exploration)": "",
-  "schema-selection-description": "Uno schema contiene un insieme di fasi, obiettivi e compiti predefiniti. Tali elementi potrebbero (e dovrebbero) essere modificati per adattare il piano di lavoro del tuo progetto."
+  "schema-selection-description": "Uno schema contiene un insieme di fasi, obiettivi e compiti predefiniti. Tali elementi potrebbero (e dovrebbero) essere modificati per adattare il piano di lavoro del tuo progetto.",
+  "Recent activity": "",
+  "unsavedchanges": "Sei sicuro di abbandonare le modifiche senza salvare?",
+  "Coproduction process overview": "",
+  "Write something": "Inserisci del testo"
 }

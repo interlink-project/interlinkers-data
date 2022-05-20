@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { useLocation } from 'react-router-dom';
+import { LANGUAGES } from 'translations/i18n';
 import NavSection from '../NavSection';
 import Scrollbar from '../Scrollbar';
 
@@ -77,13 +78,14 @@ const ProcessSidebar = (props) => {
           direction="column"
           justifyContent="center"
           alignItems="center"
-          spacing={1}
+          spacing={!loading && !updating && 1}
           sx={{ p: 3 }}
         >
 
-          {!loading && !updating ? <Avatar variant="rounded" sx={{ width: "80px", height: "80px" }} src={process && process.logotype_link} /> : <Skeleton variant="rounded" sx={{ width: "80px", height: "80px" }} />}
+          {!loading && !updating ? <Avatar variant="rounded" sx={{ width: "80px", height: "80px" }} src={process && process.logotype_link} /> : <Skeleton variant="rounded" sx={{ m: 1, width: "80px", height: "80px" }} />}
           <Typography sx={{ textAlign: "center", width: "100%" }} variant="h6">{!loading && !updating && process ? process.name : <Skeleton />}</Typography>
-          {!loading && !updating ? <Chip color="primary" label={t("In progress")} color="success" /> : <Skeleton />}
+          {!loading && !updating && process ? <Chip color="primary" label={t("In progress")} /> : <Skeleton sx={{width: 80, height: 45, m: 0, p: 0}} />}
+          {!loading && !updating && process ? <Chip color="secondary" label={LANGUAGES.find(el => el.value === process.language).label}/> : <Skeleton sx={{width: 80, height: 45, m: 0, p: 0}} />}
           <Button startIcon={<ArrowBack />} variant="outlined" fullWidth size="large" onClick={() => navigate("/dashboard")} />
 
         </Stack>

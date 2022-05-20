@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router';
 import axiosInstance from 'axiosInstance';
 
+export let user_id = ""
+
 const initialState = {
   isInitialized: false,
   isAuthenticated: false,
@@ -50,6 +52,7 @@ export const AuthProvider = (props) => {
     console.log("executing setUser")
     axiosInstance.get('/auth/api/v1/users/me').then(({ data }) => {
       console.log('RESPONSE FOR ME', data);
+      user_id = data.sub
       dispatch({
         type: 'SET_USER',
         payload: {

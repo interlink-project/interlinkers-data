@@ -12,7 +12,6 @@
   "INTERLINK is being used in different European Countries to carry out co-production projects. Discover who is using INTERLINK and join active co-production projects! Register to the INTERLINK platform and discover active projects!": "INTERLINK is being used in different European Countries to carry out co-production projects. Discover who is using INTERLINK and join active co-production projects! Register to the INTERLINK platform and discover active projects!",
   "Team-create-title": "",
   "External resource": "",
-  "Keywords": "Keywords",
   "Public services": "Public services",
   "login-required-title": "Login required",
   "Log in": "",
@@ -34,5 +33,9 @@
   "Recommended interlinkers": "Recommended interlinkers",
   "No recommended interlinkers found": "No recommended interlinkers found",
   "(it will be not related to project, for features exploration)": "(it will be not related to project, for features exploration)",
-  "schema-selection-description": "An schema contains a set of phases, objectives and tasks predefined. Those items could (and should) be edited in order to adapt the workplan of your project."
+  "schema-selection-description": "An schema contains a set of phases, objectives and tasks predefined. Those items could (and should) be edited in order to adapt the workplan of your project.",
+  "Recent activity": "Recent activity",
+  "unsavedchanges": "Are you sure you want to leave without saving?",
+  "Coproduction process overview": "Coproduction process overview",
+  "Write something": "Write something"
 }

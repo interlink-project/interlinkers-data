@@ -1,4 +1,5 @@
 import axiosInstance from 'axiosInstance';
+import { user_id } from 'contexts/CookieContext';
 import GeneralApi from '../general';
 
 class LogsApi extends GeneralApi {
@@ -8,11 +9,13 @@ class LogsApi extends GeneralApi {
 
   async send_log(object_id, model, action) {
     const res = await axiosInstance.post(`/${this.url}/log`, {
+      user_id: user_id,
+      service: "frontend",
       object_id,
       model,
       action
     });
-    console.log('post call', res, res.data);
+    console.log('send log call', res, res.data);
     return res.data;
   }
 }

@@ -7,7 +7,6 @@
   "Teams and individuals": "",
   "External resource": "",
   "time.ago": "",
-  "Keywords": "",
   "catalogue.title": "",
   "interlinkers.catalogue": "",
   "interlinkers.catalogue.total": "",
@@ -39,5 +38,9 @@
   "Recommended interlinkers": "Ieteicamie interlinkeri",
   "No recommended interlinkers found": "Ieteicamie interlinkeri netika atrasti",
   "(it will be not related to project, for features exploration)": "",
-  "schema-selection-description": "Shēma sastāv no iepriekš definētu fāžu, rezultātu un uzdevumu kopuma. Tās elementus var (un vajag) pielāgot jūsu projekta darba plānam."
+  "schema-selection-description": "Shēma sastāv no iepriekš definētu fāžu, rezultātu un uzdevumu kopuma. Tās elementus var (un vajag) pielāgot jūsu projekta darba plānam.",
+  "Recent activity": "",
+  "unsavedchanges": "Vai tiešām vēlaties iziet bez saglabāšanas?",
+  "Coproduction process overview": "",
+  "Write something": "Ierakstiet kaut ko"
 }

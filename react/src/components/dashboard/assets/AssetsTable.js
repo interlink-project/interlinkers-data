@@ -232,8 +232,10 @@ const Assets = ({ language, loading, assets, onChange = () => { }, actions = nul
       </TableHead>
 
       <TableBody>
-        {find(assets, inputValue).map((asset) => (
-          <AssetRow language={language} openInterlinkerDialog={(id) => { setInterlinkerDialogOpen(true); setSelectedInterlinker(id) }} asset={asset} onChange={onChange} actions={actions} />
+        {!loading && find(assets, inputValue).map((asset) => (
+          <React.Fragment key={asset.id}>
+            <AssetRow language={language} openInterlinkerDialog={(id) => { setInterlinkerDialogOpen(true); setSelectedInterlinker(id) }} asset={asset} onChange={onChange} actions={actions} />
+          </React.Fragment>
         ))}
       </TableBody>
     </Table>

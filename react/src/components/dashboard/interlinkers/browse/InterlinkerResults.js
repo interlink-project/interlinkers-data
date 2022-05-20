@@ -1,5 +1,5 @@
 import { Box, Grid, ToggleButton, ToggleButtonGroup, Typography } from '@material-ui/core';
-import { ViewModule } from '@material-ui/icons';
+import { List, ViewModule } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import { InterlinkerCard } from 'components/dashboard/interlinkers';
 import { useCustomTranslation } from 'hooks/useDependantTranslation';
@@ -8,23 +8,25 @@ import { useEffect, useState } from 'react';
 import { getLanguage } from 'translations/i18n';
 import { interlinkersApi } from '__api__';
 
-const InterlinkerResults = ({ loading : propLoading = null, setLoading : propSetLoading = null, language = getLanguage(), filters = {}, onInterlinkerClick }) => {
+const InterlinkerResults = ({ loading : propLoading = null, setLoading : propSetLoading = null, language = getLanguage(), filters = {}, onInterlinkerClick, defaultMode = 'grid', defaultSize = 9 }) => {
   const mounted = useMounted();
   const t = useCustomTranslation(language)
 
-  const [mode, setMode] = useState('grid');
-  const [_loading, _setLoading] = useState('grid');
+  const [mode, setMode] = useState(defaultMode);
+  const [_loading, _setLoading] = useState(true);
 
   const loading = propLoading || _loading
   const setLoading = propSetLoading || _setLoading
   
   const handleModeChange = (event, value) => {
-    setMode(value);
+    if(value){
+      setMode(value);
+    }
   };
 
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(0);
-  const [size, setSize] = useState(9);
+  const [size, setSize] = useState(defaultSize);
   const [loadedRows, setLoadedRows] = useState([]);
 
   const hasNextPage = loadedRows.length < total
@@ -102,6 +104,9 @@ const InterlinkerResults = ({ loading : propLoading = null, setLoading : propSet
             >
               <ToggleButton value='grid'>
                 <ViewModule fontSize='small' />
+              </ToggleButton>
+              <ToggleButton value='list'>
+                <List fontSize='small' />
               </ToggleButton>
             </ToggleButtonGroup>
           </Box>

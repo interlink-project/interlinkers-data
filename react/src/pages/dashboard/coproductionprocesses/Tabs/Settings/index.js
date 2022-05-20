@@ -206,13 +206,13 @@ const SettingsTab = () => {
                             </Grid>
 
                             <Grid item xs={12}>
-                                <TextField label={t("SHORT DESCRIPTION OF THE PROJECT")} multiline helperText={touched.description && errors.description} error={Boolean(touched.description && errors.description)} value={values.description} onBlur={handleBlur} onChange={handleChange} name="description" />
+                                <TextField minRows={8} label={t("SHORT DESCRIPTION OF THE PROJECT")} multiline helperText={touched.description && errors.description} error={Boolean(touched.description && errors.description)} value={values.description} onBlur={handleBlur} onChange={handleChange} name="description" />
                             </Grid>
                             <Grid item xs={12} lg={6}>
-                                <TextField label={t("ACTUAL ORGANIZATION OF THE SERVICE")} multiline helperText={touched.organization && errors.organization} error={Boolean(touched.organization && errors.organization)} value={values.organization} onBlur={handleBlur} onChange={handleChange} name="organization" />
+                                <TextField minRows={8} label={t("ACTUAL ORGANIZATION OF THE SERVICE")} multiline helperText={touched.organization && errors.organization} error={Boolean(touched.organization && errors.organization)} value={values.organization} onBlur={handleBlur} onChange={handleChange} name="organization" />
                             </Grid>
                             <Grid item xs={12} lg={6}>
-                                <TextField label={t("AIM OF THE PROJECT")} multiline helperText={touched.aim && errors.aim} error={Boolean(touched.aim && errors.aim)} value={values.aim} onBlur={handleBlur} onChange={handleChange} name="aim" />
+                                <TextField minRows={8} label={t("AIM OF THE PROJECT")} multiline helperText={touched.aim && errors.aim} error={Boolean(touched.aim && errors.aim)} value={values.aim} onBlur={handleBlur} onChange={handleChange} name="aim" />
                             </Grid>
                             <Grid item xs={12} lg={6}>
                                 <TextField minRows={8} label={t("IDEA OF SERVICE TO BE CO-DELIVERED")} multiline helperText={touched.idea && errors.idea} error={Boolean(touched.idea && errors.idea)} value={values.idea} onBlur={handleBlur} onChange={handleChange} name="idea" />
@@ -223,8 +223,8 @@ const SettingsTab = () => {
 
                         </Grid>
                         {editMode && <Stack direction="row" spacing={2} sx={{ justifyContent: "center", mt: 3, mb: 2 }}>
-                            <Button variant="text" disabled={isSubmitting} color="warning" startIcon={<Delete />} onClick={() => { setEditMode(false); resetForm(); setLogotype(null); }}>{t("Cancel")}</Button>
-                            <Button variant="contained" disabled={isSubmitting} color="success" startIcon={<Save />} onClick={submitForm} disabled={!isValid}>{t("Save")}</Button>
+                            <Button variant="contained" disabled={isSubmitting} color="warning" size="medium" startIcon={<Delete />} onClick={() => { setEditMode(false); resetForm(); setLogotype(null); }}>{t("Cancel")}</Button>
+                            <Button variant="contained" disabled={isSubmitting} color="success" size="large" startIcon={<Save />} onClick={submitForm} disabled={!isValid}>{t("Save")}</Button>
                             
                         </Stack>}
                     </Form>

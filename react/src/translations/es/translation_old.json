@@ -11,7 +11,6 @@
   "Teams and individuals": "",
   "External resource": "",
   "time.ago": "Hace {{when}}",
-  "Keywords": "Palabras clave",
   "catalogue.title": "Catálogo de interlinkers",
   "interlinkers.catalogue": "Catálogo de interlinkers",
   "interlinkers.catalogue.total": "{{total}} interlinkers encontrados",
@@ -43,5 +42,9 @@
   "Recommended interlinkers": "Interlinkers recomendados",
   "No recommended interlinkers found": "No se han encontrado interlinkers recomendados",
   "(it will be not related to project, for features exploration)": "",
-  "schema-selection-description": "Un esquema contiene un conjunto de fases, objetivos y tareas predefinidas. Esos elementos podrían (y deberían) editarse para adaptar el plan de trabajo de su proyecto."
+  "schema-selection-description": "Un esquema contiene un conjunto de fases, objetivos y tareas predefinidas. Esos elementos podrían (y deberían) editarse para adaptar el plan de trabajo de su proyecto.",
+  "Recent activity": "Actividad reciente",
+  "unsavedchanges": "¿Está seguro de que no quiere guardar los cambios?",
+  "Coproduction process overview": "Resumen del proceso de coproducción",
+  "Write something": "Escribir algo"
 }

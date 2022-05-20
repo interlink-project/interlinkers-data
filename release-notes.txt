@@ -2,7 +2,7 @@ VERSION: v1.1.3
 
 NEW
 • Timeline in the overview tab
-• Activity tab in coproduction process
+• Interlinkers list view
 
 IMPROVED
 • Schema selection with preview and search capabilities
@@ -11,5 +11,5 @@ IMPROVED
 • Sidebars smaller
 
 FIXED
-• Log endpoint changed
+• Log endpoint changed with user_id and service keys
 • Route path "/" nested path is not valid in react-router 6
