@@ -11,7 +11,7 @@ export default function TeamsTab() {
     const { process, updating } = useSelector((state) => state.process);
     const dispatch = useDispatch();
     const mounted = useMounted();
-    const t = useDependantTranslation()
+    const { t } = useDependantTranslation()
 
     const init = React.useCallback(async () => {
         try {

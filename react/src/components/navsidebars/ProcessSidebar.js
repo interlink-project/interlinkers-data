@@ -19,7 +19,7 @@ const ProcessSidebar = (props) => {
   const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));
   const processId = process && process.id
 
-  const t = useDependantTranslation()
+  const { t } = useDependantTranslation()
 
   useEffect(() => {
     if (openMobile && onMobileClose) {

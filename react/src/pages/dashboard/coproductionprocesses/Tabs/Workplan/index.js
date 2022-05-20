@@ -58,7 +58,7 @@ const Workplan = ({ setSelectedTreeItem }) => {
   const { process, phases, objectives, tasks, updating, selectedPhaseTabId, selectedTreeItem } = useSelector((state) => state.process);
   const navigate = useNavigate()
 
-  const t = useDependantTranslation()
+  const { t } = useDependantTranslation()
 
   const view_modes = [t("Day"), t("Week"), t("Month"), t("Year")]
 

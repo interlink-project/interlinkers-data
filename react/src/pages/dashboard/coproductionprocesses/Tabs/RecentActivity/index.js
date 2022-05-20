@@ -14,7 +14,7 @@ const RecentActivityTab = ({ coproductionprocess, setSelectedTreeItem }) => {
     const navigate = useNavigate()
 
     const { process, tasks: allTasks } = useSelector((state) => state.process);
-    const t = useDependantTranslation()
+    const { t } = useDependantTranslation()
 
     useEffect(() => {
         setLoadingAssets(true)

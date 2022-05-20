@@ -108,9 +108,6 @@
   "Download locally as resource not related to project (for features exploration)": "",
   "Instantiate as resource to use in project": "",
   "Open the external resource on a new tab": "",
-  "Information about the phase": "",
-  "Information about the objective": "",
-  "Information about the task": "",
   "Current resources": "Risorse correnti",
   "Open catalogue": "",
   "Initiate procedure": "Abilita risorse collaborative",
@@ -221,5 +218,11 @@
   "home-platform-3-1": "INTERLINK facilita la condivisione e il riutilizzo di conoscenze, software e servizi. Gli INTERLINKER sono conoscenze o software che il tuo team può riutilizzare e personalizzare per fornire servizi. Sono elementi costitutivi digitali che risolvono i problemi che un team di stakeholder potrebbe incontrare durante l'intero processo: linee guida, buone pratiche, modelli, esempi e software riutilizzabili supportano l'intero ciclo di vita della co-produzione, dalla fase iniziale dello sviluppo della rete alla co-erogazione finale e al monitoraggio del servizio. Queste risorse aiutano la progettazione collaborativa di nuove soluzioni che mettono al centro le esigenze degli utenti",
   "home-platform-4": "Ulteriori informazioni sull'utilizzo della piattaforma",
   "home-platform-4-1": "Per domande frequenti e suggerimenti su come utilizzare la piattaforma, scarica il manuale utente",
-  "home-platform-4-2": "Scarica il manuale utente"
+  "home-platform-4-2": "Scarica il manuale utente",
+  "Information about the phase": "",
+  "Information about the objective": "",
+  "Information about the task": "",
+  "Phase": "Fase",
+  "Objective": "Obiettivo",
+  "Task": "Compito"
 }

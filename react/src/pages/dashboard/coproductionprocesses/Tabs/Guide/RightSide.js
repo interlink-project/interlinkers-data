@@ -10,6 +10,7 @@ import useDependantTranslation from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { information_about_translations } from 'utils/someCommonTranslations';
 import * as Yup from 'yup';
 import { assetsApi } from '__api__';
 import NewAssetModal from './NewAssetModal';
@@ -76,7 +77,7 @@ const RightSide = ({ softwareInterlinkers }) => {
     const mounted = useMounted()
     const [externalAssetOpen, setExternalAssetOpen] = useState(false);
     const [catalogueOpen, setCatalogueOpen] = useState(false);
-    const t = useDependantTranslation()
+    const { t } = useDependantTranslation()
 
     const updateTaskInfo = async () => {
         setLoadingTaskInfo(true)
@@ -104,11 +105,7 @@ const RightSide = ({ softwareInterlinkers }) => {
     };
 
 
-    const information_about_translations = {
-        "phase": t("Information about the phase"),
-        "objective": t("Information about the objective"),
-        "task": t("Information about the task"),
-    }
+    const information_translations = information_about_translations(t)
 
     return (
 
@@ -116,7 +113,7 @@ const RightSide = ({ softwareInterlinkers }) => {
             <Box sx={{ p: 2 }}>
                 <Button sx={{ mb: 2 }} fullWidth variant={treeItemInfoOpen ? "outlined" : "contained"} color="warning" onClick={() => setTreeItemInfoOpen(!treeItemInfoOpen)}>
                     <Stack spacing={2} alignItems="center" direction="row">
-                        <Typography variant="h6" >{information_about_translations[selectedTreeItem.type]} </Typography>{!treeItemInfoOpen ? <KeyboardArrowDown /> : <KeyboardArrowUp />}
+                        <Typography variant="h6" >{information_translations[selectedTreeItem.type]} </Typography>{!treeItemInfoOpen ? <KeyboardArrowDown /> : <KeyboardArrowUp />}
                     </Stack>
                 </Button>
                 <Collapse in={treeItemInfoOpen} timeout="auto" unmountOnExit>

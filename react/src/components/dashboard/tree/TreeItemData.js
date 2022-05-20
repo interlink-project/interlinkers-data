@@ -14,6 +14,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { deleteObjective, deletePhase, deleteTask, updateObjective, updatePhase, updateTask } from 'slices/process';
+import { tree_items_translations } from 'utils/someCommonTranslations';
 import { statusIcon, StatusText } from '../assets/Icons';
 
 const TreeItemData = ({ language, processId, element }) => {
@@ -90,6 +91,9 @@ const TreeItemData = ({ language, processId, element }) => {
       dispatch(deletePhase({ id: element.id, callback }))
     }
   }
+
+  const treeitem_translations = tree_items_translations(t)
+
 
   return <>
     {!editMode && <IconButton onClick={() => setEditMode(true)} sx={{
@@ -194,7 +198,7 @@ const TreeItemData = ({ language, processId, element }) => {
         {t("other actions")}
         </Divider>
         <ConfirmationButton
-          Actionator={({ onClick }) => <Button size="small" variant="text" onClick={onClick} color="error">{t("Remove", {what: element.type})}</Button>}
+          Actionator={({ onClick }) => <Button size="small" variant="text" onClick={onClick} color="error">{t("Remove", {what: treeitem_translations[element.type].toLowerCase()})}</Button>}
           ButtonComponent={({ onClick }) => <LoadingButton sx={{ mt: 1 }} fullWidth variant='contained' color="error" onClick={onClick}>{t("Confirm deletion")}</LoadingButton>}
           onClick={deleteTreeItem}
           text={t("Are you sure?")}

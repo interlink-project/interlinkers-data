@@ -11,7 +11,7 @@ const IndividualAdd = ({ open, setOpen, onChanges }) => {
   const mounted = useMounted();
   const [selectedIndividual, setSelectedIndividual] = useState(null);
   const { process } = useSelector((state) => state.process);
-  const t = useDependantTranslation()
+  const { t } = useDependantTranslation()
 
   useEffect(() => {
     if (open) {

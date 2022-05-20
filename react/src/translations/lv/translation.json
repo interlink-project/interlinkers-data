@@ -108,9 +108,6 @@
   "Download locally as resource not related to project (for features exploration)": "",
   "Instantiate as resource to use in project": "",
   "Open the external resource on a new tab": "",
-  "Information about the phase": "",
-  "Information about the objective": "",
-  "Information about the task": "",
   "Current resources": "Esošie resursi",
   "Open catalogue": "",
   "Initiate procedure": "Uzsākt procedūru",
@@ -221,5 +218,11 @@
   "home-platform-3-1": "INTERLINK atvieglo zināšanu, programmatūras un pakalpojumu koplietošanu un atkalizmantošanu. INTERLINKERS ir zināšanu vai programmatūras elementi, kurus jūsu komanda var atkārtoti izmantot un pielāgot pakalpojumu sniegšanai. Tie ir digitāli būvmateriāli, kas risina problēmas, ar kurām ieinteresēto personu komanda var saskarties visa procesa laikā: vadlīnijas, paraugprakse, veidnes, piemēri un atkārtoti izmantojama programmatūra atbalsta visu kopražošanas dzīves ciklu, sākot no tīkla izstrādes sākotnējā posma līdz pat galīgajai kopīgai pakalpojuma sniegšanai un uzraudzībai. Šie resursi palīdz kopīgi izstrādāt jaunus risinājumus, kuru centrā ir lietotāju vajadzības",
   "home-platform-4": "Uzziniet vairāk par platformas izmantošanu",
   "home-platform-4-1": "Biežāk uzdotie jautājumi un padomi par platformas lietošanu, lūdzu, lejupielādējiet lietotāja rokasgrāmatu",
-  "home-platform-4-2": "Lejupielādēt lietotāja rokasgrāmatu"
+  "home-platform-4-2": "Lejupielādēt lietotāja rokasgrāmatu",
+  "Information about the phase": "",
+  "Information about the objective": "",
+  "Information about the task": "",
+  "Phase": "Fāze",
+  "Objective": "Mērķis",
+  "Task": "Uzdevums"
 }

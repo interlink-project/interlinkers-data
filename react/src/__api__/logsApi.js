@@ -1,6 +1,6 @@
 import axiosInstance from 'axiosInstance';
 import { user_id } from 'contexts/CookieContext';
-import GeneralApi from '../general';
+import GeneralApi from './general';
 
 class LogsApi extends GeneralApi {
   constructor() {
@@ -10,7 +10,7 @@ class LogsApi extends GeneralApi {
   async send_log(object_id, model, action) {
     const res = await axiosInstance.post(`/${this.url}/log`, {
       user_id: user_id,
-      service: "frontend",
+      service: "collaborative_environment_frontend",
       object_id,
       model,
       action

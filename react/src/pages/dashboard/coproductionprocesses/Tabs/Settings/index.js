@@ -20,7 +20,7 @@ const SettingsTab = () => {
     const { process, updating } = useSelector((state) => state.process);
     const [logotype, setLogotype] = useState(null);
     const mounted = useMounted()
-    const t = useDependantTranslation()
+    const { t } = useDependantTranslation()
 
     const navigate = useNavigate()
 

@@ -7,7 +7,7 @@ import useDependantTranslation from 'hooks/useDependantTranslation';
 
 const PermissionDenied = (props) => {
     const { explanation, ...other } = props;
-    const t = useDependantTranslation()
+    const { t } = useDependantTranslation()
     
     return (
         <Box

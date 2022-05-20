@@ -16,7 +16,7 @@ import { assetsApi } from '__api__';
 
 export default function NewAssetModal({ open, handleUserClose, handleFinish, activeStep, setStep, selectedInterlinker, task, onCreate }) {
     const { process } = useSelector((state) => state.process);
-    const t = useDependantTranslation()
+    const { t } = useDependantTranslation()
 
     const [loadingInstantiator, setLoadingInstantiator] = useState(true);
     const [assetData, setAssetData] = useState(null);

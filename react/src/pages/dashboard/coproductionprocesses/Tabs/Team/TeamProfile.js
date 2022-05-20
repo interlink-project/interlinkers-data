@@ -49,7 +49,7 @@ const TeamProfile = ({ open, setOpen, teamId, onChanges }) => {
   const [logotype, setLogotype] = useState(null);
 
   const mounted = useMounted();
-  const t = useDependantTranslation()
+  const { t } = useDependantTranslation()
 
   const handleClose = () => {
     setOpen(false);

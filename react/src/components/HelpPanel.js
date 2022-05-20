@@ -1,5 +1,6 @@
 import { Box, Drawer, Fab, Typography } from '@material-ui/core';
 import { Help } from '@material-ui/icons';
+import useDependantTranslation from 'hooks/useDependantTranslation';
 import useSettings from 'hooks/useSettings';
 import { useTranslation } from 'react-i18next';
 import { getLanguage } from 'translations/i18n';
@@ -51,7 +52,7 @@ const helps = {
                 */
 const HelpPanel = () => {
     const { settings, saveSettings } = useSettings();
-    const { t } = useTranslation()
+    const { t, language } = useDependantTranslation()
 
     if (!settings.showHelp) {
         return <></>
@@ -64,7 +65,6 @@ const HelpPanel = () => {
             helpData = helps[path]
         }
     });
-    const language = getLanguage()
     return <>
 
         <Drawer

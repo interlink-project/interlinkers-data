@@ -5,7 +5,8 @@ import { getLanguage } from 'translations/i18n';
 const useDependantTranslation = () => {
   const { process } = useSelector((state) => state.process);
   const { i18n } = useTranslation();
-  return i18n.getFixedT(process && process.language);
+  const language = process ? process.language : getLanguage()
+  return {t: i18n.getFixedT(language), language};
 };
 
 export const useCustomTranslation = (language) => {

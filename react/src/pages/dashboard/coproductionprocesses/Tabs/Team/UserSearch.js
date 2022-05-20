@@ -11,7 +11,7 @@ const UserSearch = ({ text, onClick }) => {
     const mounted = useMounted();
     const [individualSearchResult, setResultIndividualSearch] = useState(null);
     const [emailValue, setEmailValue] = useState("");
-    const t = useDependantTranslation()
+    const { t } = useDependantTranslation()
 
     useEffect(() => {
         var delayDebounceFn

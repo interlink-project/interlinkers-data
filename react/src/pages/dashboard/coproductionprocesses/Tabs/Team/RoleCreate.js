@@ -33,7 +33,7 @@ const RoleCreate = ({ onCreate, coproductionprocess_id, possiblePermissions }) =
 
   const theme = useTheme();
   const [activeStep, setActiveStep] = useState(0);
-  const t = useDependantTranslation()
+  const { t } = useDependantTranslation()
 
   const handleNext = async () => {
 

@@ -215,13 +215,13 @@ const ListMode = ({ interlinker, t, linkProps }) => <>
   <Grid container>
     <Grid item xs={12} md={6} lg={4} xl={4}>
       <CardHeader
-        avatar={interlinker.logotype_link ? <Avatar
+        avatar={<Avatar
           alt={t("Logotype")}
           src={interlinker.logotype_link}
-          variant='square'
+          variant='rounded'
         >
           {interlinker.title}
-        </Avatar> : <div></div>}
+        </Avatar>}
         title={<Link
           color='textPrimary'
           {...linkProps}

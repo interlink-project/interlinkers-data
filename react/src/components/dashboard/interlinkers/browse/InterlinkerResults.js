@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 import { getLanguage } from 'translations/i18n';
 import { interlinkersApi } from '__api__';
 
-const InterlinkerResults = ({ loading : propLoading = null, setLoading : propSetLoading = null, language = getLanguage(), filters = {}, onInterlinkerClick, defaultMode = 'grid', defaultSize = 9 }) => {
+const InterlinkerResults = ({ loading : propLoading = null, setLoading : propSetLoading = null, language = getLanguage(), filters = {}, onInterlinkerClick, defaultMode = 'list', defaultSize = 9 }) => {
   const mounted = useMounted();
   const t = useCustomTranslation(language)
 
@@ -102,11 +102,11 @@ const InterlinkerResults = ({ loading : propLoading = null, setLoading : propSet
               size='small'
               value={mode}
             >
-              <ToggleButton value='grid'>
-                <ViewModule fontSize='small' />
-              </ToggleButton>
               <ToggleButton value='list'>
                 <List fontSize='small' />
+              </ToggleButton>
+              <ToggleButton value='grid'>
+                <ViewModule fontSize='small' />
               </ToggleButton>
             </ToggleButtonGroup>
           </Box>

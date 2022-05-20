@@ -175,7 +175,7 @@ export default function TeamsTable({ onChanges }) {
     const [individualsOpen, setIndividualsOpen] = useState(false);
     const [teamProfileOpen, setTeamProfileOpen] = useState(false);
     const [selectedTeam, setSelectedTeam] = useState(null);
-    const t = useDependantTranslation()
+    const { t } = useDependantTranslation()
     const onTeamClick = (team) => {
         setSelectedTeam(team)
         setTeamProfileOpen(true)

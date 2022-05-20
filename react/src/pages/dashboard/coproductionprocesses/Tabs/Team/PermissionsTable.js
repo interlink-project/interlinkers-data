@@ -15,7 +15,7 @@ function Row(props) {
     const [newName, setNewName] = React.useState(role.name);
     const [newDescription, setNewDescription] = React.useState(role.description);
     const [newPermissions, setNewPermissions] = React.useState(role.permissions);
-    const t = useDependantTranslation()
+    const { t } = useDependantTranslation()
 
     const PermittedChip = () => <Chip
         color="success"
@@ -121,7 +121,7 @@ function Row(props) {
 
 export default function PermissionsTable({ onChanges }) {
     const { process, roles } = useSelector((state) => state.process);
-    const t = useDependantTranslation()
+    const { t } = useDependantTranslation()
 
     const permissions = [
         {
