@@ -1,6 +1,4 @@
-import {
-  Box, Card, CardContent, Chip, Divider, Grid, Tab, Tabs, Typography, Button, Paper, Stack, Link, Alert
-} from '@material-ui/core';
+import { Alert, Box, Button, Card, CardContent, Chip, Divider, Grid, Link, Paper, Stack, Tab, Tabs, Typography } from '@material-ui/core';
 import { NatureChip, OfficialityChip } from 'components/dashboard/assets/Icons';
 import {
   InterlinkerReference,
@@ -10,7 +8,7 @@ import SwipeableTextMobileStepper from 'components/SwipeableTextMobileStepper';
 import { useCustomTranslation } from 'hooks/useDependantTranslation';
 import { useState } from 'react';
 import { SafeHTMLElement } from 'utils/safeHTML';
-import InterlinkerBrowse from '../browse/InterlinkerBrowse';
+import InterlinkerResults from '../browse/InterlinkerResults';
 
 const InterlinkerDetails = ({ language, interlinker }) => {
   const [currentTab, setCurrentTab] = useState('overview');
@@ -27,17 +25,17 @@ const InterlinkerDetails = ({ language, interlinker }) => {
   }
 
   const isKnowledge = interlinker.nature === "knowledgeinterlinker"
-  const isExternal = interlinker.nature === "externalknowledgeinterlinker" || interlinker.nature === "externalsoftwareinterlinker"
+  const isExternal = interlinker.nature === "externalknowledgeinterlinker" || interlinker.nature === "externalsoftwareinterlinker"
 
   const common = [
-    { label: 'Overview', value: 'overview' },
-    { label: 'Instructions', value: 'instructions' },
-    { label: 'Reviews', value: 'reviews' },
-    { label: 'Related interlinkers', value: 'related' },
+    { label: t('Overview'), value: 'overview' },
+    { label: t('Instructions'), value: 'instructions' },
+    { label: t('Reviews'), value: 'reviews' },
+    { label: t('Related interlinkers'), value: 'related' },
   ]
   const tabs = isKnowledge ? [
     ...common,
-    { label: 'Preview', value: 'preview' },
+    { label: t('Preview-noun'), value: 'preview' },
   ] : [
     ...common
   ]
@@ -103,8 +101,8 @@ const InterlinkerDetails = ({ language, interlinker }) => {
                     >
                       {t("Creator")}
                     </Typography>
-                    <OfficialityChip />                    
-                    
+                    <OfficialityChip />
+
                     <Typography
                       color='textSecondary'
                       variant='overline'
@@ -116,7 +114,7 @@ const InterlinkerDetails = ({ language, interlinker }) => {
                         <Chip
                           key={tag}
                           label={tag}
-                          sx={{ m: 1 }}
+                          sx={{ mt: 1, ml: 1}}
                           variant='outlined'
                         />
                       ))}
@@ -131,10 +129,10 @@ const InterlinkerDetails = ({ language, interlinker }) => {
                       {problemprofiles.map((problem) => (
                         <Chip
                           key={problem.id}
-                          label={problem.name}
+                          label={problem.id + " - " + problem.name}
                           title={problem.id}
                           variant='outlined'
-                          sx={{ m: 1 }}
+                          sx={{ mt: 1, mr: 1 }}
                         />
                       ))}
                     </Box>
@@ -160,7 +158,7 @@ const InterlinkerDetails = ({ language, interlinker }) => {
                       </Typography>
                       <Box sx={{ mt: 1 }}>
                         <Link onClick={() => window.open(interlinker.uri)}>
-                        {interlinker.uri || <Alert severity='warning'>{t("Not available")}</Alert>}
+                          {interlinker.uri || <Alert severity='warning'>{t("Not available")}</Alert>}
                         </Link>
                       </Box>
                     </>}
@@ -262,7 +260,7 @@ const InterlinkerDetails = ({ language, interlinker }) => {
           </Box>
         )}
         {currentTab === 'related' && (
-          <InterlinkerBrowse language={language} initialFilters={{ problemprofiles: interlinker.problemprofiles.map(el => el.id) }} onInterlinkerClick={(interlinker) => {console.log(interlinker)}} />
+          <InterlinkerResults language={language} filters={{ problemprofiles: interlinker.problemprofiles.map(el => el.id) }} onInterlinkerClick={(interlinker) => { console.log(interlinker) }} />
         )}
         {currentTab === 'reviews' && (
           <InterlinkerReviews interlinker={interlinker} />

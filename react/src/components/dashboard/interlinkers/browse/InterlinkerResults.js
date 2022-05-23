@@ -13,7 +13,7 @@ const InterlinkerResults = ({ loading : propLoading = null, setLoading : propSet
   const t = useCustomTranslation(language)
 
   const [mode, setMode] = useState(defaultMode);
-  const [_loading, _setLoading] = useState(true);
+  const [_loading, _setLoading] = useState(false);
 
   const loading = propLoading || _loading
   const setLoading = propSetLoading || _setLoading

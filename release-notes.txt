@@ -9,6 +9,9 @@ IMPROVED
 • NavItems can be disabled
 • Dependencies cleaned
 • Sidebars smaller
+• Interlinker profile translated
+• Interlinkers catalogue as little components
+• Assets table search box
 
 FIXED
 • Log endpoint changed with user_id and service keys
