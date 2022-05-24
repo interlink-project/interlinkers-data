@@ -2,7 +2,7 @@ import {
   Alert, Avatar, CircularProgress, IconButton, LinearProgress, ListItemIcon, ListItemText, Menu,
   MenuItem, Skeleton, Table, TableBody, TableCell, TableHead, TableRow
 } from '@material-ui/core';
-import { CopyAll, Delete, Download, Edit, MoreVert as MoreVertIcon, Share } from '@material-ui/icons';
+import { Article, CopyAll, Delete, Download, Edit, MoreVert as MoreVertIcon, Share } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import ConfirmationButton from 'components/ConfirmationButton';
 import { InterlinkerDialog } from 'components/dashboard/interlinkers';
@@ -23,7 +23,7 @@ const MyMenuItem = ({ onClick, text, icon, id, loading }) => {
   </MenuItem>
 }
 
-const AssetRow = ({ language, asset, onChange, actions, openInterlinkerDialog }) => {
+const AssetRow = ({ addName, language, asset, onChange, actions, openInterlinkerDialog }) => {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState("data")
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -49,12 +49,16 @@ const AssetRow = ({ language, asset, onChange, actions, openInterlinkerDialog })
       assetsApi.getInternal(asset.id).then((res) => {
         if (mounted.current) {
           setData({ ...asset, ...res })
+          addName(asset.id, res.name)
           setLoading("")
         }
       })
     } else {
-      setData({ ...asset })
-      setLoading("")
+      if (mounted.current) {
+        setData({ ...asset })
+        addName(asset.id, asset.name)
+        setLoading("")
+      }
     }
 
   }, [asset, mounted])
@@ -138,7 +142,7 @@ const AssetRow = ({ language, asset, onChange, actions, openInterlinkerDialog })
   >
     {data && loading !== "info" ? <>
       <TableCell width="5%" component="th" scope="row" onClick={() => window.open(data.link + "/view", "_blank")}>
-        <Avatar src={data.icon} sx={avatarSize} />
+        <Avatar src={data.icon} sx={avatarSize} >{!data.icon && <Article />}</Avatar>
       </TableCell>
       <TableCell width="35%" style={{ cursor: "pointer" }} onClick={() => {
         if (isInternal) {
@@ -182,11 +186,7 @@ const AssetRow = ({ language, asset, onChange, actions, openInterlinkerDialog })
           {getActions(data)}
         </Menu>
       </TableCell></> : <>
-      <TableCell><Skeleton animation="wave" variant="circular" sx={avatarSize} /></TableCell>
-      <TableCell><Skeleton animation="wave" sx={{ width: "100%" }} height={60} /></TableCell>
-      <TableCell><Skeleton animation="wave" sx={{ width: "100%" }} height={60} /></TableCell>
-      <TableCell><Skeleton animation="wave" sx={{ width: "100%" }} height={60} /></TableCell>
-      <TableCell><Skeleton animation="wave" sx={{ width: "100%" }} height={60} /></TableCell>
+      <TableCell colSpan={5}><Skeleton animation="wave" sx={{ width: "100%" }} height={60} /></TableCell>
       <TableCell><IconButton aria-label="actions"> <MoreVertIcon /> </IconButton></TableCell>
     </>
     }
@@ -197,19 +197,31 @@ const AssetRow = ({ language, asset, onChange, actions, openInterlinkerDialog })
 const Assets = ({ language, loading, assets, onChange = () => { }, actions = null }) => {
   const [interlinkerDialogOpen, setInterlinkerDialogOpen] = useState(false);
   const [selectedInterlinker, setSelectedInterlinker] = useState(false);
-  const [loadingg, setLoading] = useState(true)
+  const [assetNames, setAssetNames] = useState([])
   const [inputValue, setInputValue] = useState("");
 
   const t = useCustomTranslation(language)
 
+  const addName = (id, name) => {
+    setAssetNames([...assetNames.filter(asset => asset.id !== id), {id, name}])
+  }
 
-  function find(items, text) {
+  function find(text) {
+    if(!text){
+      return assets
+    }
+    
     text = text.split(' ');
-    return items.filter(item => {
+    const result = assetNames.filter(item => {
       return text.every(el => {
-        return item.name ? item.name.includes(el) : true;
+        return item.name ? item.name.includes(el) : false;
       });
     });
+    console.log(assetNames)
+    console.log(result)
+    console.log(assets)
+
+    return assets.filter(asset => result.find(el => el.id === asset.id))
   }
 
   return <>
@@ -232,9 +244,9 @@ const Assets = ({ language, loading, assets, onChange = () => { }, actions = nul
       </TableHead>
 
       <TableBody>
-        {!loading && find(assets, inputValue).map((asset) => (
+        {!loading && find(inputValue).map((asset) => (
           <React.Fragment key={asset.id}>
-            <AssetRow language={language} openInterlinkerDialog={(id) => { setInterlinkerDialogOpen(true); setSelectedInterlinker(id) }} asset={asset} onChange={onChange} actions={actions} />
+            <AssetRow addName={addName} language={language} openInterlinkerDialog={(id) => { setInterlinkerDialogOpen(true); setSelectedInterlinker(id) }} asset={asset} onChange={onChange} actions={actions} />
           </React.Fragment>
         ))}
       </TableBody>

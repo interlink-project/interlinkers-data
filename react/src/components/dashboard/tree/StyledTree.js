@@ -1,4 +1,4 @@
-import { SvgIcon } from '@material-ui/core';
+import { Avatar, AvatarGroup, SvgIcon } from '@material-ui/core';
 import { TreeView } from '@material-ui/lab';
 import { statusIcon } from 'components/dashboard/assets/Icons';
 import { StyledTreeItem } from 'components/dashboard/tree';
@@ -93,7 +93,13 @@ const StyledTree = ({ phase, selectedTreeItem, setSelectedTreeItem, objectives_k
         {topologicalSort(objectives).map(objective =>
           <StyledTreeItem icon={showIcon && statusIcon(objective.status)} key={objective.id} nodeId={objective.id} sx={{ backgroundColor: "background.paper" }} label={<p>{objective.name}</p>} >
             {topologicalSort(objective[tasks_key]).map(task => (
-              <StyledTreeItem icon={showIcon && statusIcon(task.status)} key={task.id} nodeId={task.id} label={
+              <StyledTreeItem icon={<>
+              {/*<AvatarGroup max={4}>
+              <Avatar sx={{width: 20, height: 20}} />
+              <Avatar sx={{width: 20, height: 20}} />
+              <Avatar sx={{width: 20, height: 20}} />
+              </AvatarGroup>*/}
+              {showIcon && statusIcon(task.status)}</>} key={task.id} nodeId={task.id} label={
                 <p style={{ alignItems: "center" }}>
                   {task.name}
                 </p>} />

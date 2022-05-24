@@ -18,7 +18,7 @@ const SlashScreen = () => (
     }}
   >
     <img
-      alt='Components'
+      alt='Splash logo'
       src='/static/customization/logo-splash.svg'
       height='60px'
     />

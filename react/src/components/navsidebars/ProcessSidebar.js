@@ -1,6 +1,6 @@
 import { Avatar, Box, Button, Chip, Divider, Drawer, Skeleton, Stack, Typography } from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import { AccessTime, AccountTree, ArrowBack, Dashboard, Group as GroupIcon, Settings, Timeline } from '@material-ui/icons';
+import { AccountTree, ArrowBack, Dashboard, Folder, Group as GroupIcon, Settings, Timeline } from '@material-ui/icons';
 import useDependantTranslation from 'hooks/useDependantTranslation';
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
@@ -78,14 +78,14 @@ const ProcessSidebar = (props) => {
           direction="column"
           justifyContent="center"
           alignItems="center"
-          spacing={!loading && !updating && 1}
+          spacing={!loading && !updating ? 1 : 0}
           sx={{ p: 3 }}
         >
 
-          {!loading && !updating ? <Avatar variant="rounded" sx={{ width: "80px", height: "80px" }} src={process && process.logotype_link} /> : <Skeleton variant="rounded" sx={{ m: 1, width: "80px", height: "80px" }} />}
+          {!loading && !updating ? <Avatar variant="rounded" sx={{ width: "80px", height: "80px" }} src={process && process.logotype_link}>{(!process || !process.logotype_link) && <Folder />}  </Avatar> : <Skeleton variant="rounded" sx={{ m: 1, width: "80px", height: "80px" }} />}
           <Typography sx={{ textAlign: "center", width: "100%" }} variant="h6">{!loading && !updating && process ? process.name : <Skeleton />}</Typography>
-          {!loading && !updating && process ? <Chip color="primary" label={t("In progress")} /> : <Skeleton sx={{width: 80, height: 45, m: 0, p: 0}} />}
-          {!loading && !updating && process ? <Chip color="secondary" label={LANGUAGES.find(el => el.value === process.language).label}/> : <Skeleton sx={{width: 80, height: 45, m: 0, p: 0}} />}
+          {!loading && !updating && process ? <Chip color="primary" label={t("In progress")} /> : <Skeleton sx={{ width: 80, height: 45, m: 0, p: 0 }} />}
+          {!loading && !updating && process ? <Chip color="secondary" label={LANGUAGES.find(el => el.value === process.language).label} /> : <Skeleton sx={{ width: 80, height: 45, m: 0, p: 0 }} />}
           <Button startIcon={<ArrowBack />} variant="outlined" fullWidth size="large" onClick={() => navigate("/dashboard")} />
 
         </Stack>

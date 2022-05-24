@@ -58,9 +58,7 @@ const slice = createSlice({
     },
     setProcess(state, action) {
       state.process = action.payload;
-      // state.network = generateGraph(state.process);
       // TODO: set tab depending on progress
-      console.log('SETTING SELECTED TASK NULL');
       state.selectedTreeItem = null;
     },
     setRoles(state, action) {

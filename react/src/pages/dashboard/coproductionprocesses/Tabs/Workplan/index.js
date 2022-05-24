@@ -60,7 +60,7 @@ const Workplan = ({ setSelectedTreeItem }) => {
 
   const { t } = useDependantTranslation()
 
-  const view_modes = [t("Day"), t("Week"), t("Month"), t("Year")]
+  const view_modes = {"Day": t("Day"), "Week": t("Week"), "Month": t("Month"), "Year": t("Year")}
 
   const dispatch = useDispatch();
   const mounted = useMounted();
@@ -173,7 +173,7 @@ const Workplan = ({ setSelectedTreeItem }) => {
       header_height: 50,
       column_width: 30,
       step: 24,
-      view_modes: view_modes,
+      view_modes: Object.keys(view_modes),
       bar_height: 25,
       bar_corner_radius: 3,
       arrow_curve: 10,
@@ -214,7 +214,7 @@ const Workplan = ({ setSelectedTreeItem }) => {
           sx={{ backgroundColor: "background.paper" }}
           onChange={(event, view_mode) => view_mode && view_mode !== viewMode && setViewMode(view_mode)}
         >
-          {view_modes.map((el, i) => <ToggleButton key={`separatorButton${i}`} value={el}>{el}</ToggleButton>)}
+          {Object.keys(view_modes).map((el, i) => <ToggleButton key={`separatorButton${el}`} value={el}>{view_modes[el]}</ToggleButton>)}
 
         </ToggleButtonGroup>
       </Grid>

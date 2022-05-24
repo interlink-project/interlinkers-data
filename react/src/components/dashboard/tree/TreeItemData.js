@@ -119,13 +119,12 @@ const TreeItemData = ({ language, processId, element }) => {
       marginTop: 0
     }}>{description}</p>}
 
-    {element.problemprofiles && <><Typography variant="h6">
+    {element.problemprofiles && <>
+    <Typography variant="h6">
       {t("Problem profiles")}
     </Typography>
-    <p style={{
-      whiteSpace: 'pre-wrap',
-      marginTop: 0
-    }}>{element.problemprofiles.map(pp => <Chip sx={{mr: 1, mt: 1}} label={pp} key={`task-problemprofile-${pp}`} />)}</p></>}
+    {element.problemprofiles.map(pp => <Chip sx={{mr: 1, mt: 1}} label={pp} key={`task-problemprofile-${pp}`} />)}
+    </>}
     
     <Typography variant="h6" sx={{ mt: 2 }}>{t("Current status")}</Typography>
     {editMode ? <>

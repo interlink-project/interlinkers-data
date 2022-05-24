@@ -1,7 +1,6 @@
-import { alpha, Avatar, Box, Button, Collapse, Dialog, DialogContent, Divider, Grid, InputBase, Menu, MenuItem, Stack, TextField, Typography } from '@material-ui/core';
+import { Avatar, Box, Button, Collapse, Dialog, DialogContent, Grid, Menu, MenuItem, Stack, TextField, Typography } from '@material-ui/core';
 import { KeyboardArrowDown, KeyboardArrowUp } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
-import { styled } from '@material-ui/styles';
 import { AssetsTable } from 'components/dashboard/assets';
 import InterlinkerBrowse from 'components/dashboard/interlinkers/browse/InterlinkerBrowse';
 import { TreeItemData } from 'components/dashboard/tree';
@@ -14,53 +13,6 @@ import { information_about_translations } from 'utils/someCommonTranslations';
 import * as Yup from 'yup';
 import { assetsApi } from '__api__';
 import NewAssetModal from './NewAssetModal';
-
-const Search = styled('div')(({ theme }) => ({
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
-    '&:hover': {
-        backgroundColor: alpha(theme.palette.common.white, 0.25),
-    },
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-        marginLeft: theme.spacing(3),
-        width: 'auto',
-    },
-}));
-
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-    color: 'inherit',
-    '& .MuiInputBase-input': {
-        padding: theme.spacing(1, 1, 1, 0),
-        // vertical padding + font size from searchIcon
-        paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-        transition: theme.transitions.create('width'),
-        width: '100%',
-        [theme.breakpoints.up('md')]: {
-            width: '20ch',
-        },
-    },
-}));
-const sameHeightCards = {
-    minHeight: "200px",
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between"
-}
 
 const RightSide = ({ softwareInterlinkers }) => {
     const { process, selectedTreeItem } = useSelector((state) => state.process);
@@ -104,7 +56,6 @@ const RightSide = ({ softwareInterlinkers }) => {
         setAnchorEl(null);
     };
 
-
     const information_translations = information_about_translations(t)
 
     return (
@@ -124,18 +75,7 @@ const RightSide = ({ softwareInterlinkers }) => {
                     <Box>
                         <Box sx={{ mt: 2 }}>
 
-                            {/* <Paper>
-                  <Search>
-                    <SearchIconWrapper>
-                      <SearchIcon />
-                    </SearchIconWrapper>
-                    <StyledInputBase
-                      placeholder="Search…"
-                      inputProps={{ 'aria-label': 'search' }}
-                    />
-                  </Search>
-                </Paper>*/}
-                            <Typography sx={{ mb: 1 }} variant="h6">{t("Current resources")}:</Typography>
+                            <Typography sx={{ mb: 1 }} variant="h6"><>{t("Current resources")}:</></Typography>
 
                             <AssetsTable language={process.language} loading={loadingTaskInfo} assets={assets} onChange={updateTaskInfo} />
                             <Box sx={{ textAlign: "center", width: "100%" }}>
@@ -149,8 +89,7 @@ const RightSide = ({ softwareInterlinkers }) => {
                                         variant="contained"
                                         sx={{ mt: 2 }}
                                     >
-                                        {t("Open catalogue")}
-
+                                        <>{t("Open catalogue")}</>
                                     </Button>
                                     <Button
                                         id="basic-button"
@@ -161,17 +100,15 @@ const RightSide = ({ softwareInterlinkers }) => {
                                         variant="contained"
                                         endIcon={<KeyboardArrowDown />}
                                     >
-                                        {t("Initiate procedure")}
-
+                                        <>{t("Initiate procedure")}</>
                                     </Button>
-
                                 </Stack>
                             </Box>
                         </Box>
 
 
                         <Dialog open={catalogueOpen} onClose={() => setCatalogueOpen(false)} maxWidth="lg" fullWidth>
-                            <Box sx={{ minWidth: "70vh", p: 7, backgroundColor: 'background.default',}}>
+                            <Box sx={{ minWidth: "70vh", p: 7, backgroundColor: 'background.default', }}>
                                 <InterlinkerBrowse language={process.language} initialFilters={{ problemprofiles: selectedTreeItem.problemprofiles }} onInterlinkerClick={(interlinker) => {
                                     setCatalogueOpen(false)
                                     setStep(0);
@@ -271,8 +208,7 @@ const RightSide = ({ softwareInterlinkers }) => {
                             <MenuItem onClick={() => {
                                 setExternalAssetOpen(true)
                                 handleMenuClose()
-                            }
-                            }>
+                            }}>
                                 <Avatar src={"https://cdn-icons-png.flaticon.com/512/282/282100.png"} sx={{ mr: 2, height: "20px", width: "20px" }} />{t("Link an external resource")}
                             </MenuItem>
                             {softwareInterlinkers.map(si =>
@@ -288,26 +224,26 @@ const RightSide = ({ softwareInterlinkers }) => {
 
                         </Menu>
                     </Box>
-                    {selectedInterlinker && <NewAssetModal 
-                    handleUserClose={() => {
-                        setNewAssetDialogOpen(false)
-                        setTimeout(() => {
-                            setStep(0)
-                        }, 1000)
-                        setCatalogueOpen(true)
-                    }} 
-                    handleFinish={() => {
-                        setNewAssetDialogOpen(false)
-                        setTimeout(() => {
-                            setStep(0)
-                        }, 1000)
-                    }}
-                    open={newAssetDialogOpen} 
-                    activeStep={step} 
-                    setStep={setStep} 
-                    selectedInterlinker={selectedInterlinker} 
-                    task={selectedTreeItem} 
-                    onCreate={updateTaskInfo} />}
+                    {selectedInterlinker && <NewAssetModal
+                        handleUserClose={() => {
+                            setNewAssetDialogOpen(false)
+                            setTimeout(() => {
+                                setStep(0)
+                            }, 1000)
+                            setCatalogueOpen(true)
+                        }}
+                        handleFinish={() => {
+                            setNewAssetDialogOpen(false)
+                            setTimeout(() => {
+                                setStep(0)
+                            }, 1000)
+                        }}
+                        open={newAssetDialogOpen}
+                        activeStep={step}
+                        setStep={setStep}
+                        selectedInterlinker={selectedInterlinker}
+                        task={selectedTreeItem}
+                        onCreate={updateTaskInfo} />}
                 </>}
             </Box>
         </Grid>
