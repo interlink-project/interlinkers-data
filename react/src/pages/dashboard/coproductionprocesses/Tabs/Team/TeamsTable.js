@@ -1,20 +1,17 @@
-import { Avatar, AvatarGroup, Box, Button, Card, CardActions, Grid, IconButton, MenuItem, Select, Skeleton, Table, TableBody, TableCell, TableHead, TableRow, Typography, TableContainer, Paper } from '@material-ui/core';
+import { Alert, Avatar, AvatarGroup, Box, Button, Grid, IconButton, MenuItem, Paper, Select, Skeleton, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@material-ui/core';
 import { Add, Delete, Edit, Remove, Save } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import UserData from 'components/UserData';
+import { useCustomTranslation } from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
-import TeamProfile from './TeamProfile';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router';
 import { rolesApi, usersApi } from '__api__';
 import IndividualAdd from './IndividualAdd';
 import TeamAdd from './TeamAdd';
-import { useTranslation } from 'react-i18next';
-import useDependantTranslation from 'hooks/useDependantTranslation';
+import TeamProfile from './TeamProfile';
 
-function Row({ obj: ob, onChanges, isTeam = false, onTeamClick = () => { } }) {
-    const navigate = useNavigate()
+function Row({ obj: ob, onChanges, isTeam = false, onTeamClick = (ob) => { } }) {
     const [obj, setObj] = useState(ob)
     const { process, roles, teams } = useSelector((state) => state.process);
     const mounted = useMounted()
@@ -162,95 +159,89 @@ function Row({ obj: ob, onChanges, isTeam = false, onTeamClick = () => { } }) {
     );
 }
 
-const sameHeightCards = {
-    minHeight: "200px",
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
-}
+
 
 export default function TeamsTable({ onChanges }) {
-    const { teams, users } = useSelector((state) => state.process);
+    const { process, teams, users } = useSelector((state) => state.process);
     const [teamsOpen, setTeamsOpen] = useState(false);
     const [individualsOpen, setIndividualsOpen] = useState(false);
     const [teamProfileOpen, setTeamProfileOpen] = useState(false);
     const [selectedTeam, setSelectedTeam] = useState(null);
-    const { t } = useDependantTranslation()
+    const t = useCustomTranslation(process.language)
     const onTeamClick = (team) => {
         setSelectedTeam(team)
         setTeamProfileOpen(true)
     }
-    //         
+
+    const team_translation = t("team")
+    const individual_translation = t("individual")
 
     return <Grid container spacing={1}>
         {selectedTeam && <TeamProfile open={teamProfileOpen} setOpen={setTeamProfileOpen} teamId={selectedTeam.id} onChanges={onChanges} />}
-        <TeamAdd currentTeams={teams} open={teamsOpen} setOpen={setTeamsOpen} onChanges={onChanges} />
+        <TeamAdd language={process.language} currentTeams={teams} open={teamsOpen} setOpen={setTeamsOpen} onChanges={onChanges} />
         <IndividualAdd open={individualsOpen} setOpen={setIndividualsOpen} onChanges={onChanges} />
         <Grid item lg={6} xs={12}>
-            <TableContainer component={Paper}>
+            {teams.length > 0 ? <TableContainer component={Paper}>
                 <Table aria-label="teams-table" size='small'>
                     <TableHead>
                         <TableRow>
                             <TableCell />
-                            <TableCell align="center">{t("Name")}</TableCell>
-                            <TableCell align="center">{t("Role")}</TableCell>
-                            <TableCell align="center">{t("Members")}</TableCell>
-                            <TableCell align="center">{t("Actions")}</TableCell>
+                            <TableCell align="center"><>{t("Name")}</></TableCell>
+                            <TableCell align="center"><>{t("Role")}</></TableCell>
+                            <TableCell align="center"><>{t("Members")}</></TableCell>
+                            <TableCell align="center"><>{t("Actions")}</></TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {teams.length > 0 ? teams.map((team) => (
+                        {teams.map((team) => (
                             <Row key={team.id} obj={team} onChanges={onChanges} isTeam onTeamClick={onTeamClick} />
-                        )) : <Box sx={{ height: "53px", alignItems: "center", textAlign: "center" }}><Typography
-                            align='center'
-                            color='textSecondary'
-                            variant='h6'
-                        >
-                            {t("Empty")}
-                        </Typography></Box>}
+                        ))}
                     </TableBody>
                 </Table>
 
-            </TableContainer>
+            </TableContainer> : <Alert
+                severity='info'
+            >
+                <>{t("Empty")}</>
+            </Alert>}
             <Box sx={{ justifyContent: "center", textAlign: "center" }}>
                 <Button startIcon={<Add />} variant="contained" sx={{ my: 2 }} color='primary' onClick={() => setTeamsOpen(true)}>
-                    {t("add-new", {
-                        what: "team"
-                    })}
+                    <>{t("add-new", {
+                        what: team_translation
+                    })}</>
                 </Button>
             </Box>
         </Grid>
         <Grid item lg={6} xs={12}>
-            <TableContainer component={Paper} >
+            {users.length > 0 ? <TableContainer component={Paper} >
                 <Table aria-label="users-table" size='small'>
                     <TableHead>
                         <TableRow>
                             <TableCell />
-                            <TableCell align="center">{t("Name")}</TableCell>
-                            <TableCell align="center">{t("Role")}</TableCell>
-                            <TableCell align="center">{t("Email")}</TableCell>
-                            <TableCell align="center">{t("Actions")}</TableCell>
+                            <TableCell align="center"><>{t("Name")}</></TableCell>
+                            <TableCell align="center"><>{t("Role")}</></TableCell>
+                            <TableCell align="center"><>{t("Email")}</></TableCell>
+                            <TableCell align="center"><>{t("Actions")}</></TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {users.length > 0 ? users.map((user) => (
+                        {users.map((user) => (
                             <Row key={user.id} obj={user} onChanges={onChanges} />
-                        )) : <Typography
-                            align='center'
-                            color='textSecondary'
-                            variant='subtitle1'
-                        >
-                            {t("Empty")}
-                        </Typography>}
+                        ))}
                     </TableBody>
                 </Table>
-
             </TableContainer>
+                : <Alert
+                    severity='info'
+                >
+                    <>{t("Empty")}</>
+                </Alert>}
+
             <Box sx={{ justifyContent: "center", textAlign: "center" }}>
                 <Button startIcon={<Add />} variant="contained" sx={{ my: 2 }} color='primary' onClick={() => setIndividualsOpen(true)}>
-                    {t("add-new", {
-                        what: "individual"
-                    })}
+                    <>{t("add-new", {
+                        what: individual_translation
+                    })}</>
                 </Button>
             </Box>
         </Grid>

@@ -1,36 +1,18 @@
-import { useEffect, useState } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import {
-  Box,
-  DialogTitle,
-  DialogContentText,
-  DialogContent,
-  DialogActions,
-  Dialog,
-  TextField,
-  Button,
-  Input,
+  Alert, Avatar, Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, IconButton, Input,
   List,
   ListItem,
-  ListItemAvatar,
-  IconButton,
-  ListItemText,
-  Avatar,
-  ListItemSecondaryAction,
-  Typography,
-  useTheme,
-  MobileStepper,
-  AvatarGroup,
-  Alert
+  ListItemAvatar, ListItemSecondaryAction, ListItemText, MobileStepper, TextField, useTheme
 } from '@material-ui/core';
-import { Add, Delete, Folder, KeyboardArrowRight, KeyboardArrowLeft, CheckCircle, Cancel } from '@material-ui/icons';
+import { Cancel, CheckCircle, Delete, KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import useAuth from 'hooks/useAuth';
+import { useCustomTranslation } from 'hooks/useDependantTranslation';
+import { useEffect, useState } from 'react';
+import { getLanguage } from 'translations/i18n';
 import { teamsApi, usersApi } from '__api__';
-import { useTranslation } from 'react-i18next';
 
-const TeamCreate = ({ loading, setLoading, open, setOpen, onCreate }) => {
+const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOpen, onCreate }) => {
   const [emailValue, setEmailValue] = useState("");
   const auth = useAuth();
   const [selectedUsers, setSelectedUsers] = useState([auth.user]);
@@ -38,7 +20,7 @@ const TeamCreate = ({ loading, setLoading, open, setOpen, onCreate }) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [logotype, setLogotype] = useState(null);
-  const { t } = useTranslation()
+  const t = useCustomTranslation(language)
   const theme = useTheme();
   const [activeStep, setActiveStep] = useState(0);
 

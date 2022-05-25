@@ -1,4 +1,5 @@
 import { Avatar, Link, Skeleton, Stack } from '@material-ui/core';
+import useMounted from 'hooks/useMounted';
 import { useEffect, useState } from 'react';
 import { interlinkersApi } from '__api__';
 
@@ -6,11 +7,14 @@ import { interlinkersApi } from '__api__';
 const InterlinkerReference = ({ interlinker_id, onClick = () => { } }) => {
     const [loading, setLoading] = useState(true)
     const [data, setData] = useState(null)
+    const mounted = useMounted()
 
     useEffect(() => {
         interlinkersApi.get(interlinker_id).then((res) => {
-            setData(res)
-            setLoading(false)
+            if (mounted.current) {
+                setData(res)
+                setLoading(false)
+            }
         })
     }, [])
 

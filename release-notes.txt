@@ -6,3 +6,4 @@ IMPROVED
 
 FIXED
 • Refresh on tree item deletion or update
+• Team section fully translated

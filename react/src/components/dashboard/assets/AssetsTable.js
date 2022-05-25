@@ -228,7 +228,7 @@ const Assets = ({ language, loading, assets, onChange = () => { }, actions = nul
     <InterlinkerDialog language={language} open={interlinkerDialogOpen} setOpen={setInterlinkerDialogOpen} interlinker={selectedInterlinker} />
     <SearchBox size="small" language={language} loading={loading} inputValue={inputValue} setInputValue={setInputValue} />
 
-    <Table sx={{ minWidth: 650 }} aria-label="resources table" size="small">
+    <Table sx={{ minWidth: 300 }} aria-label="resources table" size="small">
       <TableHead>
         <TableRow>
           <TableCell width="5%"></TableCell>
