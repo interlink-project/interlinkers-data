@@ -1,11 +1,12 @@
 import { Alert, Button, Collapse, Stack, Typography } from '@material-ui/core';
-import { AccountTree, Add, Done, Edit } from '@material-ui/icons';
 import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineOppositeContent, TimelineSeparator } from '@material-ui/lab';
+import { FinishedIcon, AwaitingIcon, DoneIcon, statusIcon, StatusText } from 'components/dashboard/assets/Icons';
 import { useCustomTranslation } from 'hooks/useDependantTranslation';
 import moment from "moment";
 import * as React from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
+import { topologicalSort } from 'utils/topologicalSort';
 
 const DoneAlert = ({ t, date = null }) => {
     return <Alert sx={{ mt: 1 }} severity="success">{date ? t("Done on", { date: moment(date).fromNow() }) : t("Done")}</Alert>
@@ -22,7 +23,7 @@ const TimeItem = ({ actions = null, title, subtitle, icon }) => <TimelineItem>
     </TimelineOppositeContent>
     <TimelineSeparator>
         <TimelineConnector />
-        <TimelineDot color="primary" variant="outlined">
+        <TimelineDot variant="outlined">
             {icon}
         </TimelineDot>
         <TimelineConnector />
@@ -49,39 +50,38 @@ export default function TimeLine({ expanded = false }) {
     }
     return (
         <Timeline position="right">
-        <TimeItem
-            title={t("Coproduction process creation")}
-            subtitle={<DoneAlert t={t} date={process.created_at} />}
-            icon={<Add />} />
-        <TimeItem
-            actions={false && <Button variant="outlined">{t("Go to settings section")}</Button>}
-            title={t("Coproduction process settings")}
-            subtitle={<DoneAlert t={t} />}
-            icon={<Edit />} />
-        <TimeItem
-            actions={!hasSchema && <Button onClick={(value) => navigate(`/dashboard/coproductionprocesses/${process.id}/guide`)} variant="outlined">{t("Go to guide section")}</Button>}
-            title={t("Schema selection")}
-            subtitle={hasSchema ? <DoneAlert t={t} /> : <WarningAlert t={t} explanation={t("Schema has not been selected yet")} />}
-            icon={<AccountTree />} />
+            <TimeItem
+                title={t("Coproduction process creation")}
+                subtitle={<DoneAlert t={t} date={process.created_at} />}
+                icon={<FinishedIcon />} />
+            <TimeItem
+                actions={false && <Button variant="outlined">{t("Go to settings section")}</Button>}
+                title={t("Coproduction process settings")}
+                subtitle={<DoneAlert t={t} />}
+                icon={<FinishedIcon />} />
+            <TimeItem
+                actions={!hasSchema && <Button onClick={(value) => navigate(`/dashboard/coproductionprocesses/${process.id}/guide`)} variant="outlined">{t("Go to guide section")}</Button>}
+                title={t("Schema selection")}
+                subtitle={hasSchema ? <DoneAlert t={t} /> : <WarningAlert t={t} explanation={t("Schema has not been selected yet")} />}
+                icon={hasSchema ? <FinishedIcon /> : <AwaitingIcon />} />
 
-        {phases.map((phase, i) => <TimeItem
-            key={phase.id}
-            actions={<Button onClick={(value) => navigate(`/dashboard/coproductionprocesses/${process.id}/guide`)} size="small" variant="outlined">{t("See phase in the guide")}</Button>}
-            title={t("Complete", { what: phase.name })}
-            subtitle={<>
-                {phase.status === "finished" ? <DoneAlert t={t} /> : <WarningAlert t={t} explanation={t("Phase is not finished yet")} />}
-                {phase.objectives.map(objective =>
-                    <Collapse in={expanded} key={objective.id} timeout="auto" unmountOnExit>
-                        <Timeline position="right">
-                            <TimeItem title={objective.name} subtitle={objective.status} />
-                        </Timeline>
-                    </Collapse>)}
-            </>}
-            icon={<AccountTree />}
-        />)}
-        <TimeItem
-            title={t("Mark process as finished")}
-            subtitle={phases.length > 0 && phases.every(phase => phase.status === "finished") ? <DoneAlert t={t} /> : <WarningAlert t={t} explanation={t("All phases must be finished to mark the process as finished")} />}
-            icon={<Done />} />
-    </Timeline>);
+            {topologicalSort(phases).map((phase, i) => <TimeItem
+                key={phase.id}
+                actions={<Button onClick={(value) => navigate(`/dashboard/coproductionprocesses/${process.id}/guide`)} size="small" variant="outlined">{t("See phase in the guide")}</Button>}
+                title={t("Complete", { what: phase.name })}
+                subtitle={<>
+                    {topologicalSort(phase.objectives).map(objective =>
+                        <Collapse in={expanded} key={objective.id} timeout="auto" unmountOnExit>
+                            <Timeline position="right">
+                                <TimeItem title={objective.name} icon={statusIcon(objective.status)} subtitle={<StatusText status={objective.status} />} />
+                            </Timeline>
+                        </Collapse>)}
+                </>}
+                icon={statusIcon(phase.status)}
+            />)}
+            <TimeItem
+                title={t("Mark process as finished")}
+                subtitle={phases.length > 0 && phases.every(phase => phase.status === "finished") ? <DoneAlert t={t} /> : <WarningAlert t={t} explanation={t("All phases must be finished to mark the process as finished")} />}
+                icon={<DoneIcon />} />
+        </Timeline>);
 }

@@ -41,6 +41,7 @@ const StyledTree = ({ phase, selectedTreeItem, setSelectedTreeItem, objectives_k
   const [all, setAll] = useState([])
   const [tasks, setTasks] = useState([])
   const [objectives, setObjectives] = useState([])
+  const [expanded, setExpanded] = useState([])
 
   useEffect(() => {
     const objs = phase[objectives_key]
@@ -49,7 +50,9 @@ const StyledTree = ({ phase, selectedTreeItem, setSelectedTreeItem, objectives_k
       return [...previous, ...currentvalue[tasks_key]]
     }, [])
     setTasks(tsks)
-    setAll([phase, ...objs, ...tsks])
+    const a = [phase, ...objs, ...tsks]
+    setAll(a)
+    setExpanded(a.map(el => el.id))
   }, [phase]);
 
   const onSelectedItemChange = (event, nodeIds) => {
@@ -73,12 +76,10 @@ const StyledTree = ({ phase, selectedTreeItem, setSelectedTreeItem, objectives_k
     }
   }
 
-  const ids = useMemo(() => all.map(el => el.id), [all]);
-
   return (
     <TreeView
       aria-label="customized"
-      expanded={ids}
+      expanded={expanded}
       defaultCollapseIcon={<MinusSquare />}
       defaultExpandIcon={<PlusSquare />}
       defaultEndIcon={<CloseSquare />}
@@ -86,6 +87,9 @@ const StyledTree = ({ phase, selectedTreeItem, setSelectedTreeItem, objectives_k
       sx={{ flexGrow: 1, overflowY: 'auto', width: "100%", height: "100%" }}
       onNodeSelect={(event, nodeIds, moreinfo) => {
         onSelectedItemChange(event, nodeIds);
+      }}
+      onNodeToggle={(event, nodeIds) => {
+        setExpanded(nodeIds)
       }}
     >
       <StyledTreeItem icon={showIcon && statusIcon(phase.status)} key={phase.id} nodeId={phase.id} sx={{ backgroundColor: "background.paper" }} label={<p>{phase.name}</p>} >

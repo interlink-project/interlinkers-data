@@ -17,7 +17,7 @@ import { getTree, setSelectedTreeItem, setUpdatingTree, updateObjective, updateP
 // import { deleteObjective, deletePhase, deleteTask,  } from 'slices/process';
 import { tree_items_translations } from 'utils/someCommonTranslations';
 import { objectivesApi, phasesApi, tasksApi } from '__api__';
-import { statusIcon, StatusText } from '../assets/Icons';
+import { AwaitingIcon, statusIcon, StatusText } from '../assets/Icons';
 
 const TreeItemData = ({ language, processId, element }) => {
   const [dateRange, setDateRange] = useState([null, null]);
@@ -150,7 +150,7 @@ const TreeItemData = ({ language, processId, element }) => {
     {element.problemprofiles.map(pp => <Chip sx={{mr: 1, mt: 1}} label={pp} key={`task-problemprofile-${pp}`} />)}
     </>}
     
-    <Typography variant="h6" sx={{ mt: 2 }}>{t("Current status")}</Typography>
+    <Typography variant="h6" sx={{ mt: 2 }}><>{t("Current status")}</></Typography>
     {editMode ? <>
       {element.type === "task" ? <ToggleButtonGroup
         sx={{ mt: 1 }}
@@ -162,15 +162,17 @@ const TreeItemData = ({ language, processId, element }) => {
           setStatus(newStatus)
         }}
       >
-        <ToggleButton value="awaiting">{t("Awaiting")}</ToggleButton>
-        <ToggleButton value="in_progress">{t("In progress")}<InProgressIcon /></ToggleButton>
-        <ToggleButton value="finished">{t("Finished")} <FinishedIcon /></ToggleButton>
-      </ToggleButtonGroup> : <Alert severity="warning" sx={{mt: 1}}>{t("Status can only be set for tasks")}</Alert>}</>
+        <ToggleButton value="awaiting"><>{t("Awaiting")}<AwaitingIcon /></></ToggleButton>
+        <ToggleButton value="in_progress"><>{t("In progress")}<InProgressIcon /></></ToggleButton>
+        <ToggleButton value="finished"><>{t("Finished")} <FinishedIcon /></></ToggleButton>
+      </ToggleButtonGroup> : <Alert severity="warning" sx={{mt: 1}}><>{t("Status can only be set for tasks")}</></Alert>}</>
 
-      : <div style={{ alignItems: "center", color: "primary.main" }}>
-        <StatusText status={status} language={language} />
+      : <Stack alignItems="center" direction="row" spacing={1}>
         {statusIcon(status)}
-      </div>
+        <div>
+        <StatusText status={status} language={language} />
+        </div>
+      </Stack>
     }
     <Link
       component="button"

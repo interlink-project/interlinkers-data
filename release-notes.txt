@@ -3,6 +3,8 @@ VERSION: v1.1.4
 NEW
 
 IMPROVED
+• Awaiting icon
+• Guide tree expandable
 
 FIXED
 • Refresh on tree item deletion or update

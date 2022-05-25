@@ -2,13 +2,17 @@ import {
     Chip,
     IconButton
 } from '@material-ui/core';
-import { Check, Loop } from '@material-ui/icons';
+import { AccessTime, Check, Done, Loop } from '@material-ui/icons';
 import { useCustomTranslation } from 'hooks/useDependantTranslation';
 import i18n from 'translations/i18n';
 
 export const InProgressIcon = () => <Loop fontSize="small" sx={{ color: "#f0ad4e" }} />
 
 export const FinishedIcon = () => <Check fontSize="small" sx={{ color: "#22bb33" }} />
+
+export const AwaitingIcon = () => <AccessTime fontSize="small" sx={{ color: "#Oda2ff" }} />
+
+export const DoneIcon = () => <Done fontSize="small" sx={{ color: "#4caf50" }} />
 
 export const InProgressIconButton = ({ onClick }) => <IconButton size="small" onClick={onClick}>
     <InProgressIcon />
@@ -24,7 +28,7 @@ export const StatusText = ({status, language = null}) => {
     return <>{status === "finished" ? t("Finished") : status === "in_progress" ? t("In progress") : t("Awaiting")}</>
 }
 
-export const statusIcon = (status) => status === "finished" ? <FinishedIcon /> : status === "in_progress" && <InProgressIcon />
+export const statusIcon = (status) => status === "finished" ? <FinishedIcon /> : status === "in_progress" ? <InProgressIcon /> : <AwaitingIcon />
 
 
 export const OfficialityChip = ({ officiality = "official" }) => {
