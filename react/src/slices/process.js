@@ -78,24 +78,12 @@ const slice = createSlice({
         state.selectedTreeItem = { ...action.payload, type: 'phase' };
       }
     },
-    deletePhase(state, action) {
-      state.phases = state.phases.filter((obj) => obj.id !== action.payload);
-      if (state.selectedTreeItem && state.selectedTreeItem.id === action.payload) {
-        state.selectedTreeItem = null;
-      }
-    },
     updateObjective(state, action) {
       state.objectives = state.objectives.map((obj) => (obj.id === action.payload.id ? action.payload : obj));
       // updateDatesForObject(state, action.payload.phase_id, "phase", "objective")
       // updateProgressForObject(state, action.payload.phase_id, "phase", "objective")
       if (state.selectedTreeItem && state.selectedTreeItem.id === action.payload.id) {
         state.selectedTreeItem = { ...action.payload, type: 'objective' };
-      }
-    },
-    deleteObjective(state, action) {
-      state.objectives = state.objectives.filter((obj) => obj.id !== action.payload);
-      if (state.selectedTreeItem && state.selectedTreeItem.id === action.payload) {
-        state.selectedTreeItem = null;
       }
     },
     updateTask(state, action) {
@@ -106,12 +94,26 @@ const slice = createSlice({
         state.selectedTreeItem = { ...action.payload, type: 'task' };
       }
     },
+    /*
+    deletePhase(state, action) {
+      state.phases = state.phases.filter((obj) => obj.id !== action.payload);
+      if (state.selectedTreeItem && state.selectedTreeItem.id === action.payload) {
+        state.selectedTreeItem = null;
+      }
+    },
+    deleteObjective(state, action) {
+      state.objectives = state.objectives.filter((obj) => obj.id !== action.payload);
+      if (state.selectedTreeItem && state.selectedTreeItem.id === action.payload) {
+        state.selectedTreeItem = null;
+      }
+    },
     deleteTask(state, action) {
       state.tasks = state.tasks.filter((obj) => obj.id !== action.payload);
       if (state.selectedTreeItem && state.selectedTreeItem.id === action.payload) {
         state.selectedTreeItem = null;
       }
     },
+    */
     setLoading(state, action) {
       state.loading = action.payload;
     },
@@ -151,6 +153,19 @@ export const getProcess = (processId) => async (dispatch) => {
   dispatch(slice.actions.setProcessTree(treeData));
   dispatch(slice.actions.setMyRoles(myRoles));
   dispatch(slice.actions.setLoading(false));
+};
+
+export const setUpdatingTree = (val) => async (dispatch) => {
+  dispatch(slice.actions.setUpdatingTree(val));
+}
+
+
+export const getTree = (processId, callback) => async (dispatch) => {
+  dispatch(slice.actions.setUpdatingTree(true));
+  const treeData = await coproductionProcessesApi.getTree(processId) || [];
+  dispatch(slice.actions.setProcessTree(treeData));
+  callback && callback()
+  dispatch(slice.actions.setUpdatingTree(false));
 };
 
 export const getRoles = (processId) => async (dispatch) => {
@@ -215,6 +230,7 @@ export const updatePhase = ({ id, data, callback }) => async (dispatch) => {
   }
 };
 
+/*
 export const deleteTask = ({ id, callback }) => async (dispatch) => {
   dispatch(slice.actions.setUpdatingTree(true));
   await tasksApi.delete(id);
@@ -242,6 +258,7 @@ export const deletePhase = ({ id, callback }) => async (dispatch) => {
     callback();
   }
 };
+*/
 
 export const setselectedPhaseTabId = (data) => async (dispatch) => {
   dispatch(slice.actions.setSelectedPhase(data));

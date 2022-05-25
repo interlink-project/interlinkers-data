@@ -1,4 +1,5 @@
 import { Box, Grid } from '@material-ui/core';
+import CentricCircularProgress from 'components/CentricCircularProgress';
 import { PhaseTabs, StyledTree } from 'components/dashboard/tree';
 import useMounted from 'hooks/useMounted';
 import { useCallback, useEffect, useState } from 'react';
@@ -30,7 +31,7 @@ const Guide = ({ setSelectedTreeItem }) => {
 
   return (
     <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
-      {!updatingTree && <Grid container>
+      {updatingTree ? <CentricCircularProgress /> : <Grid container>
         <Grid item xl={12} lg={12} md={12} xs={12}>
           <PhaseTabs selectedPhaseTabId={selectedPhaseTabId} phases={phases} onSelect={setNewPhaseTab} />
         </Grid>

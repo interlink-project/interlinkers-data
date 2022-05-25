@@ -141,22 +141,22 @@ const CoproductionProcessProfile = () => {
               <>
                 <TabPanel value={tab} index="overview">
                   <Grid container spacing={2}>
-                    <Grid item xs={12} md={12} lg={4} xl={5}>
+                    <Grid item xs={12} md={12} lg={6} xl={5}>
                       <Card sx={style}>
                         <CardHeader
                           title={<Typography variant="h5" sx={{ textAlign: "center" }}>
-                            {t("Progress of the coproduction process")}
+                            <>{t("Progress of the coproduction process")}</>
                           </Typography>}
                           action={<IconButton onClick={() => setExpanded(!expanded)}>{!expanded ? <UnfoldMore /> : <UnfoldLess />}</IconButton>}
                         />
                         <TimeLine expanded={expanded} />
                       </Card>
                     </Grid>
-                    <Grid item xs={12} md={12} lg={8} xl={7}>
+                    <Grid item xs={12} md={12} lg={6} xl={7}>
                       <Card sx={style}>
                         <CardHeader
                           title={<Typography variant="h5" sx={{ textAlign: "center" }}>
-                            {t("Recent resources")}
+                            <>{t("Recent resources")}</>
                           </Typography>}
                         />
 

@@ -1,18 +1,8 @@
-VERSION: v1.1.3
+VERSION: v1.1.4
 
 NEW
-• Timeline in the overview tab
-• Interlinkers list view
 
 IMPROVED
-• Schema selection with preview and search capabilities
-• NavItems can be disabled
-• Dependencies cleaned
-• Sidebars smaller
-• Interlinker profile translated
-• Interlinkers catalogue as little components
-• Assets table search box
 
 FIXED
-• Log endpoint changed with user_id and service keys
-• Route path "/" nested path is not valid in react-router 6
+• Refresh on tree item deletion or update

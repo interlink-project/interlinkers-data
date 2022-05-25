@@ -4,8 +4,9 @@ import {
 import {
     useCustomTranslation
 } from 'hooks/useDependantTranslation';
+import { getLanguage } from 'translations/i18n';
 
-const CentricCircularProgress = ({ language, text = "", onCancel = null }) => {
+const CentricCircularProgress = ({ language = getLanguage(), text = "", onCancel = null }) => {
     const t = useCustomTranslation(language)
     return (
         <Box

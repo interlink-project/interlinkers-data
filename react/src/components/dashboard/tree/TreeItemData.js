@@ -13,8 +13,10 @@ import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
-import { deleteObjective, deletePhase, deleteTask, updateObjective, updatePhase, updateTask } from 'slices/process';
+import { getTree, setSelectedTreeItem, setUpdatingTree, updateObjective, updatePhase, updateTask } from 'slices/process';
+// import { deleteObjective, deletePhase, deleteTask,  } from 'slices/process';
 import { tree_items_translations } from 'utils/someCommonTranslations';
+import { objectivesApi, phasesApi, tasksApi } from '__api__';
 import { statusIcon, StatusText } from '../assets/Icons';
 
 const TreeItemData = ({ language, processId, element }) => {
@@ -68,12 +70,24 @@ const TreeItemData = ({ language, processId, element }) => {
 
     if (element.type === "task") {
       dispatch(updateTask({ id: element.id, data, callback }))
+      // dispatch(setUpdatingTree(true));
+      // tasksApi.update(element.id, data).then(res => {
+      //   dispatch(getTree(processId, () => setSelectedTreeItem(res)));
+      // });
     }
     else if (element.type === "objective") {
       dispatch(updateObjective({ id: element.id, data, callback }))
+      // dispatch(setUpdatingTree(true));
+      // objectivesApi.update(element.id, data).then(res => {
+      //   dispatch(getTree(processId, () => setSelectedTreeItem(res)));
+      // });
     }
     else if (element.type === "phase") {
       dispatch(updatePhase({ id: element.id, data, callback }))
+      // dispatch(setUpdatingTree(true));
+      // phasesApi.update(element.id, data).then(res => {
+      //   dispatch(getTree(processId, () => setSelectedTreeItem(res)));
+      // });
     }
 
   }
@@ -82,14 +96,24 @@ const TreeItemData = ({ language, processId, element }) => {
     
     console.log("DELETING", element.type)
     if (element.type === "task") {
-      dispatch(deleteTask({ id: element.id, callback }))
+      // dispatch(deleteTask({ id: element.id, callback }))
+      dispatch(setUpdatingTree(true));
+      tasksApi.delete(element.id,).then(() => {
+        dispatch(getTree(processId));
+      });
     }
     else if (element.type === "objective") {
-      dispatch(deleteObjective({ id: element.id, callback }))
-    }
+      // dispatch(deleteObjective({ id: element.id, callback }))
+      dispatch(setUpdatingTree(true));
+      objectivesApi.delete(element.id,).then(() => {
+        dispatch(getTree(processId));
+      });    }
     else if (element.type === "phase") {
-      dispatch(deletePhase({ id: element.id, callback }))
-    }
+      // dispatch(deletePhase({ id: element.id, callback }))
+      dispatch(setUpdatingTree(true));
+      phasesApi.delete(element.id,).then(() => {
+        dispatch(getTree(processId));
+      });    }
   }
 
   const treeitem_translations = tree_items_translations(t)
