@@ -96,7 +96,7 @@ function Row({ obj: ob, onChanges, isTeam = false, onTeamClick = (ob) => { } }) 
     if (isTeam) {
         return (<TableRow hover key={ob.id}>
             <TableCell align="center">
-                <Avatar src={obj.logotype_link} />
+                <Avatar variant={isTeam ? "rounded" : "circular"} src={obj.logotype_link} />
             </TableCell>
             <TableCell align="center">
                 <Button variant="text" fullWidth onClick={() => onTeamClick(ob)}>

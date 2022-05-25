@@ -175,14 +175,14 @@ const InterlinkerDetails = ({ language, interlinker }) => {
               color='textSecondary'
               variant='overline'
             >
-              Description
+              {t("Description")}
             </Typography>
             <SafeHTMLElement data={description} />
             <Typography
               color='textSecondary'
               variant='overline'
             >
-              Instructions
+              {t("Instructions")}
             </Typography>
             <SafeHTMLElement data={interlinker.instructions} />
           </Card>
@@ -201,7 +201,7 @@ const InterlinkerDetails = ({ language, interlinker }) => {
                 color='textPrimary'
                 variant='h5'
               >
-                This resource cannot be displayed here. Instead...
+                {t("This resource cannot be displayed here. Instead...")}
               </Typography>
             </Box>
             {softwareinterlinker.preview && <>
@@ -211,7 +211,7 @@ const InterlinkerDetails = ({ language, interlinker }) => {
                   color='textSecondary'
                   variant='subtitle1'
                 >
-                  you can preview the resource externally
+                  {t("you can preview the resource externally")}
                 </Typography>
               </Box>
               <Box
@@ -226,7 +226,7 @@ const InterlinkerDetails = ({ language, interlinker }) => {
                   variant='contained'
                   onClick={() => window.open(interlinker.link + "/preview", "_blank")}
                 >
-                  {softwareinterlinker.preview_text || "Preview resource externally"}
+                  {softwareinterlinker.preview_text || t("Preview resource externally")}
                 </Button>
               </Box>
             </>}
@@ -238,7 +238,7 @@ const InterlinkerDetails = ({ language, interlinker }) => {
                   color='textSecondary'
                   variant='subtitle1'
                 >
-                  you can download a copy of it to preview it on your machine
+                  {t("you can download a copy of it to preview it on your machine")}
                 </Typography>
               </Box>
               <Box
@@ -253,7 +253,7 @@ const InterlinkerDetails = ({ language, interlinker }) => {
                   variant='contained'
                   onClick={() => window.open(interlinker.link + "/download", "_blank")}
                 >
-                  {softwareinterlinker.download_text || "Download resource"}
+                  {softwareinterlinker.download_text || t("Download resource")}
                 </Button>
               </Box>
             </>}

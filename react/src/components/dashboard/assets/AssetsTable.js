@@ -211,16 +211,9 @@ const Assets = ({ language, loading, assets, onChange = () => { }, actions = nul
       return assets
     }
     
-    text = text.split(' ');
     const result = assetNames.filter(item => {
-      return text.every(el => {
-        return item.name ? item.name.includes(el) : false;
-      });
+      return item.name ? item.name.toLowerCase().includes(text) : false;
     });
-    console.log(assetNames)
-    console.log(result)
-    console.log(assets)
-
     return assets.filter(asset => result.find(el => el.id === asset.id))
   }
 

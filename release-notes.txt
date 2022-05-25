@@ -1,11 +1,9 @@
-VERSION: v1.1.4
+VERSION: v1.1.5
 
 NEW
 
 IMPROVED
-• Awaiting icon
-• Guide tree expandable
+• Translations
 
 FIXED
-• Refresh on tree item deletion or update
-• Team section fully translated
+• Asset table search by name
