@@ -10,13 +10,13 @@
         "en": "Run",
         "es": "Ejecuci\u00f3n",
         "it": "Esecuzione",
-        "lv": "Palaist"
+        "lv": "Palaidiet"
     },
     "description_translations": {
         "en": "Make use of instantiated co-refinement process, reviewing contribs from users of the service description, accepting or rejecting them, exporting reports with changes accepted so that they are processed for refinement.",
         "es": "Hacer uso del proceso de co-refinamiento instanciado, revisando las contribuciones de los usuarios de la descripci\u00f3n del servicio, acept\u00e1ndolas o rechaz\u00e1ndolas, exportando informes con los cambios aceptados para que sean procesados para su refinamiento.",
         "it": "Utilizza il processo di co-raffinamento effettuato, rivedi i contributi dei partecipanti alla descrizione di serviio, accetta o declina i contributi, esporta il report con i cambiamenti accettati in modo che possano essere elaborati per il raffinamento.",
-        "lv": "Izmantojiet atjaunin\u0101tu l\u012bdzpreciz\u0113\u0161anas procesu, p\u0101rskatot pakalpojuma apraksta lietot\u0101ju ieguld\u012bjumus, pie\u0146emot vai noraidot tos, eksport\u0113jot p\u0101rskatus ar pie\u0146emtaj\u0101m izmai\u0146\u0101m, lai tie tiktu apstr\u0101d\u0101ti pilnveido\u0161anai."
+        "lv": "Izmantojiet atjaunin\u0101tu koprades procesu, p\u0101rskatot pakalpojuma apraksta lietot\u0101ju ieguld\u012bjumus, pie\u0146emot vai noraidot tos, un eksport\u0113jot p\u0101rskatus ar pie\u0146emtaj\u0101m izmai\u0146\u0101m, lai tie tiktu apstr\u0101d\u0101ti un nodoti pakalpojuma pilnveido\u0161anai."
     },
     "objectives": [
         {
@@ -24,7 +24,7 @@
                 "en": "Monitor continuous crowd refinement process",
                 "es": "Supervisar el proceso de perfeccionamiento continuo de la multitud",
                 "it": "Monitora in modo continuo il processo di raffinamento collettivo",
-                "lv": "P\u0101rraugiet nep\u0101rtrauktu pilnveido\u0161anas procesu"
+                "lv": "P\u0101rraugiet past\u0101v\u012bgo pilnveido\u0161anas procesu"
             },
             "description_translations": {
                 "en": "Access to the Description Augmenter to the augmented view of service descriptions to monitor and moderate contributions from the crowd, generate intermediary reports and store them. Notice that only the creator of the process to refine a service description can moderate it, unless rights are given to other co-refinement team members through Servicepedia dashboard",
@@ -61,13 +61,13 @@
                         "en": "Review in Servicepedia dashboard user contributions",
                         "es": "Revisi\u00f3n en las contribuciones de los usuarios del tablero de Servicepedia",
                         "it": "Controlla nel pannello di controllo della Servicepedia i contributi degli utenti",
-                        "lv": "P\u0101rskatiet Servicepedia inform\u0101cijas pane\u013ca lietot\u0101ju ieguld\u012bjumu"
+                        "lv": "P\u0101rskatiet lietot\u0101ju ieguld\u012bjumu Servicepedia inform\u0101cijas panel\u012b"
                     },
                     "description_translations": {
                         "en": "Review in Servicepedia dashboard contributions from users, accept those that are good, reject the bad ones, until completing revision process",
                         "es": "Revisar en el tablero de Servicepedia las contribuciones de los usuarios, aceptar las que son buenas, rechazar las malas, hasta completar el proceso de revisi\u00f3n",
                         "it": "Controlla nel pannello di controllo della Servicepedia i contributi degli utenti, accetta quelli che sono validi, declina quelli non ottimali, fino al completamento del processo di revisione",
-                        "lv": "Servicepedia inform\u0101cijas panel\u012b p\u0101rskatiet lietot\u0101ju sniegtos ieguld\u012bjumus, pie\u0146emiet labos, noraidiet sliktos, l\u012bdz esat pabeidzis p\u0101rskat\u012b\u0161anas procesu."
+                        "lv": "P\u0101rskatiet Servicepedia inform\u0101cijas panel\u012b lietot\u0101ju sniegtos ieguld\u012bjumus, pie\u0146emiet labos un noraidiet sliktos, l\u012bdz esat pabeidzis p\u0101rskat\u012b\u0161anas procesu."
                     },
                     "problemprofiles": [],
                     "prerequisites": [
@@ -87,13 +87,13 @@
                 "en": "Publish report with descriptions accepted to be processed",
                 "es": "Publicar el informe con las descripciones admitidas a tr\u00e1mite",
                 "it": "Pubblica un report con le revisioni accettate per essere processate",
-                "lv": "Public\u0113jiet p\u0101rskatu ar aprakstiem, kurus ir at\u013cauts apstr\u0101d\u0101t"
+                "lv": "Public\u0113jiet p\u0101rskatu ar aprakstiem, kuri ir nodoti apstr\u0101dei"
             },
             "description_translations": {
                 "en": "Publish enhancement report generated from Servicepedia after having processed refinement suggestions for a given public service description",
                 "es": "Publicar el informe de mejora generado a partir de Servicepedia despu\u00e9s de haber procesado las sugerencias de mejora para una determinada descripci\u00f3n de servicio p\u00fablico",
                 "it": "Pubblica i report sui raffinamenti generati dalla componente Servicepedia dopo aver terminato di processare i suggerimenti di raffinamento su una data descrizione di servizio pubblico",
-                "lv": "Public\u0113jiet uzlabojumu p\u0101rskatu, kas \u0123ener\u0113ts no Servicepedia p\u0113c tam, kad ir apstr\u0101d\u0101ti konkr\u0113t\u0101 sabiedrisk\u0101 pakalpojuma apraksta preciz\u0113\u0161anas ieteikumi"
+                "lv": "Public\u0113jiet uzlabojumu p\u0101rskatu, kas izviedots Servicepedia p\u0113c tam, kad ir apstr\u0101d\u0101ti konkr\u0113t\u0101 publisk\u0101 pakalpojuma apraksta preciz\u0113\u0161anas ieteikumi"
             },
             "problemprofiles": [
                 "ORG_PROBLEM_13",

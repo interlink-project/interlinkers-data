@@ -479,7 +479,7 @@
             "en": "The co-production team may need guidance on how to define the interaction between the users and the service, reflecting on how a solution might be used by concrete users in a concrete context.",
             "es": "El equipo de coproducci\u00f3n puede necesitar orientaci\u00f3n sobre c\u00f3mo definir la interacci\u00f3n entre los usuarios y el servicio, reflexionando sobre c\u00f3mo una soluci\u00f3n podr\u00eda ser utilizada por usuarios concretos en un contexto concreto.",
             "it": "Il team di co-produzione pu\u00f2 necessitare di una guida nella definizione della interazione fra gli utenti ed il servizio. Possono essere utili dei momenti di riflessione su come il servizio potrebbe essere utilizzato da utenti reali in contesti reali.",
-            "lv": "Kopra\u017eojuma grupai var b\u016bt vajadz\u012bgi nor\u0101d\u012bjumi par to, k\u0101 noteikt mijiedarb\u012bbu starp lietot\u0101jiem un pakalpojumu, p\u0101rdom\u0101jot, k\u0101 konkr\u0113tie lietot\u0101ji var\u0113tu izmantot risin\u0101jumu konkr\u0113t\u0101 kontekst\u0101."
+            "lv": "Koprades komandai var b\u016bt vajadz\u012bgi nor\u0101d\u012bjumi par to, k\u0101 noteikt mijiedarb\u012bbu starp lietot\u0101jiem un pakalpojumu, p\u0101rdom\u0101jot, k\u0101 konkr\u0113ti lietot\u0101ji var\u0113tu izmantot risin\u0101jumu konkr\u0113t\u0101 kontekst\u0101."
         },
         "functionality_translations": {
             "en": "Descriptive text that \nexplains the rationale and the benefits of clearly defining the interaction among users and a service before implementing it.\nsuggest tools that can be used to reach this goal, such as \u201cScenarios\u201d, and \u201cUser  Journey\u201d\nFor each method presented:\nbenefit of using it in a design process\nhow to use it\ntemplates\nExamples",
@@ -642,7 +642,7 @@
             "en": "Engage and incentivise citizen participation to the implementation and co-delivery of public services",
             "es": "Involucrar e incentivar la participaci\u00f3n de los ciudadanos en la implementaci\u00f3n y co-prestaci\u00f3n de los servicios p\u00fablicos",
             "it": "Coinvolgimento e incentivi alla partecipazione dei cittadini nella implementazione ed esecuzione dei servizi pubblici",
-            "lv": "Iesaist\u012bt un stimul\u0113t iedz\u012bvot\u0101ju l\u012bdzdal\u012bbu publisko pakalpojumu \u012bsteno\u0161an\u0101 un koppieg\u0101d\u0113"
+            "lv": "Iesaistiet un stimul\u0113jiet iedz\u012bvot\u0101ju l\u012bdzdal\u012bbu publisko pakalpojumu \u012bsteno\u0161an\u0101 un koppieg\u0101d\u0113"
         }
     },
     {
@@ -661,7 +661,7 @@
             "en": "Cloud-ready digital public services",
             "es": "Servicios p\u00fablicos digitales preparados para la nube",
             "it": "Servizi pubblici digitali basati su Cloud",
-            "lv": "Digit\u0101lie publiskie pakalpojumi ir pieejami m\u0101ko\u0146pakalpojumos"
+            "lv": "M\u0101ko\u0146pakalpojumiem gatavi digit\u0101lie publiskie pakalpojumi"
         }
     },
     {
