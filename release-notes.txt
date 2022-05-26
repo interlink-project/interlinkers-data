@@ -1,11 +1,7 @@
-VERSION: v1.1.4
+VERSION: v1.1.5
 
 NEW
 
 IMPROVED
-• Translations
-• Remove users from teams
-• Remove teams
 
 FIXED
-• Asset table search by name
