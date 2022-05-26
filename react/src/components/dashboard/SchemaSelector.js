@@ -140,7 +140,7 @@ const CreateSchema = () => {
                         <LoadingButton sx={{ mr: 2 }} startIcon={<ArrowBack />} variant="contained" color="error" onClick={handleClose}>{t("Go back")}</LoadingButton>
                         <LoadingButton endIcon={<ArrowForward />} loading={instantiatingSchema} variant="contained" onClick={() => submit(selectedSchema.id)}>{t("use-what", { what: schemaword })}</LoadingButton>
                     </>
-                }>{t("This is a preview. Click on \'Use Schema\' to instantiate it")}</Alert>
+                }>{t("this-is-a-preview")}</Alert>
 
                 {instantiatingSchema ?
                     <CentricCircularProgress language={process.language} />

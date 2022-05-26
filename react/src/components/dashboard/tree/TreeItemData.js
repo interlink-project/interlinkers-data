@@ -223,7 +223,7 @@ const TreeItemData = ({ language, processId, element }) => {
         {t("other actions")}
         </Divider>
         <ConfirmationButton
-          Actionator={({ onClick }) => <Button size="small" variant="text" onClick={onClick} color="error">{t("Remove", {what: treeitem_translations[element.type].toLowerCase()})}</Button>}
+          Actionator={({ onClick }) => <Button size="small" variant="text" onClick={onClick} color="error">{t("Remove {{what}}", {what: treeitem_translations[element.type].toLowerCase()})}</Button>}
           ButtonComponent={({ onClick }) => <LoadingButton sx={{ mt: 1 }} fullWidth variant='contained' color="error" onClick={onClick}>{t("Confirm deletion")}</LoadingButton>}
           onClick={deleteTreeItem}
           text={t("Are you sure?")}

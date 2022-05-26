@@ -1,18 +1,43 @@
-import { Avatar, Box, CircularProgress, Dialog, DialogContent, Grid, IconButton, Input, Paper, Skeleton, Stack, Table, TableBody, TableCell, TableHead, TableRow, TextField, Typography } from '@material-ui/core';
-import { Edit, Save } from '@material-ui/icons';
+import { Alert, Avatar, Box, Button, CircularProgress, Dialog, DialogContent, Grid, IconButton, Input, ListItemIcon, ListItemText, Menu, MenuItem, Paper, Skeleton, Stack, Table, TableBody, TableCell, TableHead, TableRow, TextField, Typography } from '@material-ui/core';
+import { Delete, Edit, MoreVert, Remove, Save } from '@material-ui/icons';
+import ConfirmationButton from 'components/ConfirmationButton';
+import useAuth from 'hooks/useAuth';
 import useDependantTranslation from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
 import moment from 'moment';
 import { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useDispatch } from 'react-redux';
 import { teamsApi, usersApi } from '__api__';
 import UserSearch from './UserSearch';
 
-const UserRow = ({ user, editMode }) => {
+
+const MyMenuItem = ({ onClick, text, icon, id, loading = false }) => {
+  return <MenuItem aria-describedby={id} onClick={onClick}>
+    <ListItemIcon>
+      {loading === id ? <CircularProgress /> : icon}
+    </ListItemIcon>
+    <ListItemText>{text}</ListItemText>
+  </MenuItem>
+}
+
+
+const UserRow = ({ t, team, user, onChanges }) => {
+  const { user: auth_user } = useAuth();
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(null)
   const mounted = useMounted();
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleClick = (event) => {
+    event.stopPropagation();
+    event.preventDefault();
+    setAnchorEl(event.currentTarget);
+  };
+
 
   useEffect(() => {
     setLoading(true)
@@ -24,6 +49,8 @@ const UserRow = ({ user, editMode }) => {
     })
   }, [user])
 
+  const you = user.id === auth_user.sub
+  console.log(user, auth_user, team)
   return <TableRow
     key={user.id}
     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -31,22 +58,43 @@ const UserRow = ({ user, editMode }) => {
     <TableCell component="th" scope="row">
       {data ? <Avatar src={data.picture} /> : <Skeleton />}
     </TableCell>
-    <TableCell>{data ? data.full_name : <Skeleton />}</TableCell>
+    <TableCell>{data ? data.full_name : <Skeleton />}{you && <> ({t("you")})</>}</TableCell>
     <TableCell>{data ? data.email : <Skeleton />}</TableCell>
     <TableCell>{data ? moment(data.last_login).fromNow() : <Skeleton />}</TableCell>
-    {editMode && <TableCell></TableCell>}
+    <TableCell>
+      <IconButton aria-label="settings" id="basic-button"
+        aria-controls="basic-menu"
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
+        onClick={handleClick}
+      >
+        <MoreVert />
+      </IconButton>
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
+        }}
+      >
+        {team.creator_id !== user.id ? <MyMenuItem key={`${user.id}-remove-action`} id="remove" onClick={() => {
+          teamsApi.removeUser(team.id, user.id).then(() => {
+            onChanges()
+          })
+        }} text={t("Remove {{what}}")} icon={<Delete />} /> : <Alert severity="warning">{t("You do not have permmission to do this")}</Alert>}
+      </Menu></TableCell>
   </TableRow>
 
 }
 const TeamProfile = ({ open, setOpen, teamId, onChanges }) => {
-  const dispatch = useDispatch();
   const [editMode, setEditMode] = useState(false)
   const [name, setName] = useState("")
-  const [team, setTeam] = useState(null)
   const [description, setDescription] = useState("")
-  const [loading, setLoading] = useState(false)
-
   const [logotype, setLogotype] = useState(null);
+  const [loading, setLoading] = useState(true)
+  const [team, setTeam] = useState({})
 
   const mounted = useMounted();
   const { t } = useDependantTranslation()
@@ -58,59 +106,70 @@ const TeamProfile = ({ open, setOpen, teamId, onChanges }) => {
   const addUserToTeam = (user) => {
     teamsApi.addUser(teamId, user.sub || user.id).then(res => {
       if (mounted.current) {
-        update(res)
-        onChanges && onChanges(res)
+        update(() => {
+          onChanges && onChanges()
+        })
       }
     })
   }
 
+  const nameAndDescChanged = (name !== team.name) || (description !== team.description)
+  const somethingChanged = nameAndDescChanged || logotype !== null
+
   const handleSave = async () => {
     const calls = []
-   
+
     let send = false
-    if ((name !== team.name) || (description !== team.description)) {
-      const data = {name, description}
+    if (nameAndDescChanged) {
+      const data = { name, description }
       calls.push(teamsApi.update(team.id, data))
       send = true
     }
-    
+
     // change logotype if specified
     if (logotype) {
       calls.push(teamsApi.setFile(team.id, "logotype", logotype))
       send = true
     }
-    
+
     if (send) {
       setLoading(true)
-      const callResponses = await Promise.all(calls);
-      if (mounted.current) {
+      await Promise.all(calls);
+      update(() => {
         onChanges && onChanges()
-        update(callResponses.find(el => el !== null && Object.keys(el).length > 0))
-      }
-      setLoading(false)
+        setLoading(false)
+        setEditMode(false)
+      })
     }
-    
+
   }
 
-  const update = (data) => {
-    setTeam(data)
-    setName(data.name)
-    setLogotype(null)
-    setDescription(data.description)
+  const handleRemove = () => {
+    teamsApi.delete(teamId).then(() => {
+      onChanges && onChanges()
+      setOpen(false)
+    })
+  }
+
+  const update = (callback) => {
+    teamsApi.get(teamId).then(res => {
+      if (mounted.current) {
+        setTeam(res)
+        setName(res.name)
+        setDescription(res.description)
+        setLoading(false)
+        callback && callback(res)
+      }
+    })
   }
 
   useEffect(() => {
-    setEditMode(false)
-    if (teamId) {
-      setLoading(true)
-      teamsApi.get(teamId).then(res => {
-        if(mounted.current){
-          update(res)
-          setLoading(false)
-        }
-      })
+    if (open) {
+      update()
+    } else {
+      setEditMode(false)
     }
-  }, [open, setOpen, onChanges])
+  }, [open, editMode])
 
   const handleFileSelected = (e) => {
     const files = e.target.files
@@ -124,7 +183,9 @@ const TeamProfile = ({ open, setOpen, teamId, onChanges }) => {
     }
   }
 
-  return (<Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
+  const team_trans = t("team")
+
+  return (<Dialog open={open} onClose={handleClose} fullWidth maxWidth="lg">
     <DialogContent sx={{ minHeight: "60vh", backgroundColor: "background.default" }}>
 
       {(team && !loading) ? <Grid container>
@@ -192,12 +253,19 @@ const TeamProfile = ({ open, setOpen, teamId, onChanges }) => {
                 rows={4}
                 variant="standard"
               />}
+              {!editMode ? <Button startIcon={<Edit />} variant="contained" color="primary" onClick={() => setEditMode(true)}>{t("Edit")}</Button>
+                : <Stack direction="row" justifyContent="center" sx={{ mt: 2 }}>
+                  <Button disabled={!somethingChanged} variant="text" color="warning" onClick={() => setEditMode(false)}>{t("Discard changes")}</Button>
+                  <Button disabled={!somethingChanged} startIcon={<Save />} variant="contained" color="success" onClick={handleSave}>{t("Save")}</Button>
+                </Stack>
+              }
+              <ConfirmationButton
+                Actionator={({ onClick }) => <Button startIcon={<Delete />} disabled={!editMode} variant="text" color="error" onClick={onClick}>{t("Remove {{what}}", { what: team_trans })}</Button>}
+                ButtonComponent={({ onClick }) => <Button sx={{ mt: 1 }} fullWidth variant='contained' color="error" onClick={onClick}>{t("Confirm deletion")}</Button>}
+                onClick={handleRemove}
+                text={t("Are you sure?")}
+              />
 
-              {!editMode ? <IconButton onClick={() => setEditMode(true)}>
-                <Edit />
-              </IconButton> : <IconButton onClick={() => setEditMode(false)}>
-                <Save onClick={handleSave} />
-              </IconButton>}
             </Stack>
 
           </Paper>
@@ -211,18 +279,18 @@ const TeamProfile = ({ open, setOpen, teamId, onChanges }) => {
                 <TableCell>{t("Full name")}</TableCell>
                 <TableCell>{t("Email")}</TableCell>
                 <TableCell>{t("Last login")}</TableCell>
-                {editMode && <TableCell>{t("Actions")}</TableCell>}
+                <TableCell>{t("Actions")}</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {team.users.map((user) => (
-                <UserRow editMode={editMode} user={user} />
+                <UserRow key={user.id} t={t} team={team} user={user} onChanges={() => update()} />
               ))}
             </TableBody>
           </Table>
-          {editMode && <Box sx={{ mx: 6, textAlign: "center", justifyContent: "center" }}>
+          <Box sx={{ mx: 6, textAlign: "center", justifyContent: "center" }}>
             <UserSearch text={t("Add user to the team")} onClick={addUserToTeam} />
-          </Box>}
+          </Box>
         </Grid>
       </Grid> : <Box
         style={{

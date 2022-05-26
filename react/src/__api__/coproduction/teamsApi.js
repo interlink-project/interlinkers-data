@@ -7,12 +7,20 @@ class TeamsApi extends GeneralApi {
   }
 
   async addUser(id, user_id) {
-    console.log(`/${this.url}/${id}/add_user`, user_id);
     const res = await axiosInstance.post(
       `/${this.url}/${id}/add_user`,
       { user_id }
     );
     console.log('add user call', res.data);
+    return res.data;
+  }
+
+  async removeUser(id, user_id) {
+    const res = await axiosInstance.post(
+      `/${this.url}/${id}/remove_user`,
+      { user_id }
+    );
+    console.log('remove user call', res.data);
     return res.data;
   }
 

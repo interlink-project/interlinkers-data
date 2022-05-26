@@ -131,7 +131,7 @@ data = {
     "Salva"
   ],
   "other actions": "",
-  "Remove": "",
+  "Remove {{what}}": "",
   "Confirm deletion": "",
   "Are you sure?": "",
   "login-required": [

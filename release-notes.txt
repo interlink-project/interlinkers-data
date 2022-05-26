@@ -4,6 +4,8 @@ NEW
 
 IMPROVED
 • Translations
+• Remove users from teams
+• Remove teams
 
 FIXED
 • Asset table search by name
