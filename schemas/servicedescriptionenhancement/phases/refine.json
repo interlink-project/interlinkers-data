@@ -10,7 +10,7 @@
         "en": "Refine",
         "es": "Refinar",
         "it": "Raffinamento",
-        "lv": "Preciz\u0113jiet"
+        "lv": "Uzlabojiet"
     },
     "description_translations": {
         "en": "Apply refinements according to crowd-contributions and publish new version of service description.",
@@ -24,7 +24,7 @@
                 "en": "Apply refinements",
                 "es": "Aplicar mejoras",
                 "it": "Applica i raffinamenti",
-                "lv": "Lietojiet preciz\u0113jumus"
+                "lv": "Piem\u0113rojiet uzlabojumus"
             },
             "description_translations": {
                 "en": "You may use a changes template to trace how the refinements approved in report from Description Augmenter are applied",
@@ -45,7 +45,7 @@
                         "en": "You may clone a given Servicepedia enhancements reports and upload with the support of GoogleDrive INTERLINKER (through initiate Procedure) so that you can use such document as check list to indicate what accepted refinement suggestions have been processed.",
                         "es": "Puede clonar un determinado informe de mejoras de Servicepedia y subirlo con el apoyo de GoogleDrive INTERLINKER (a trav\u00e9s de iniciar el Procedimiento) para que pueda utilizar dicho documento como lista de comprobaci\u00f3n para indicar qu\u00e9 sugerencias de mejora aceptadas han sido procesadas.",
                         "it": "Puoi effettuare una copia del report riassuntivo delle modifiche e caricarlo nello spazio di lavoro con il supporto dell'INTERLINKER GoogleDrive (utilizzabile dal bottone \"Inizia Procedura\"). Puoi usare questo documento come lista di controllo per indicare quali suggerimenti di raffinamento sono stati accettati e processati.",
-                        "lv": "J\u016bs varat klon\u0113t noteiktus Servicepedia uzlabojumu p\u0101rskatus un aug\u0161upiel\u0101d\u0113t, izmantojot GoogleDrive INTERLINKER atbalstu (izmantojot inici\u0113\u0161anas proced\u016bru), lai j\u016bs var\u0113tu izmantot \u0161\u0101du dokumentu k\u0101 kontrolsarakstu, lai nor\u0101d\u012btu, k\u0101di pie\u0146emtie uzlabojumu ieteikumi ir apstr\u0101d\u0101ti."
+                        "lv": "J\u016bs varat klon\u0113t noteiktus Servicepedia uzlabojumu p\u0101rskatus un aug\u0161upiel\u0101d\u0113t, izmantojot GoogleDrive INTERLINKERa atbalstu (izmantojot inici\u0113\u0161anas proced\u016bru). J\u016bs varat izmantot \u0161o dokumentu k\u0101 kontrolsarakstu, lai nor\u0101d\u012btu, k\u0101di pie\u0146emtie uzlabojumu ieteikumi ir apstr\u0101d\u0101ti."
                     },
                     "problemprofiles": [
                         "ORG_PROBLEM_7"
@@ -64,7 +64,7 @@
                         "en": "Link to content management system (CMS) where changes should be applied to the public service description",
                         "es": "Enlace al sistema de gesti\u00f3n de contenidos (CMS) donde se deben aplicar los cambios a la descripci\u00f3n del servicio p\u00fablico",
                         "it": "Crea collegamenti nel Content Management System (CMS) nel punto dove dovrebbero essere applicati dei cambiamenti alla descrizione dei servizi pubblici",
-                        "lv": "Saite uz satura p\u0101rvald\u012bbas sist\u0113mu (CMS), kur j\u0101veic izmai\u0146as sabiedrisk\u0101 pakalpojuma aprakst\u0101"
+                        "lv": "Saite uz satura p\u0101rvald\u012bbas sist\u0113mu, kur j\u0101veic izmai\u0146as sabiedrisk\u0101 pakalpojuma aprakst\u0101"
                     },
                     "problemprofiles": [
                         "ORG_PROBLEM_7"
@@ -86,7 +86,7 @@
                 "en": "Publish refined version of public service description",
                 "es": "Publicar una versi\u00f3n mejorada de la descripci\u00f3n del servicio p\u00fablico",
                 "it": "Pubblica la versione raffinata della descrizione di servizio pubblico",
-                "lv": "Public\u0113jiet sabiedrisko pakalpojumu apraksta preciz\u0113tu versiju"
+                "lv": "Public\u0113jiet publisk\u0101 pakalpojuma apraksta preciz\u0113tu versiju"
             },
             "description_translations": {
                 "en": "Using the External Resource Manager (through Initiate Procedure) include link to enhanced version of public service description after changes have been applied",
@@ -101,13 +101,13 @@
                         "en": "Link with enhanced version of public service description",
                         "es": "Enlace con la versi\u00f3n mejorada de la descripci\u00f3n del servicio p\u00fablico",
                         "it": "Crea un link alla versione migliorata della descrizione di servizio pubblico",
-                        "lv": "Saite ar sabiedrisko pakalpojumu apraksta uzlaboto versiju"
+                        "lv": "Saite ar publisk\u0101 pakalpojuma apraksta uzlaboto versiju"
                     },
                     "description_translations": {
                         "en": "Leverage External Resource Manager to include reference to new public service description",
                         "es": "Incluir la referencia a la nueva descripci\u00f3n del servicio p\u00fablico",
                         "it": "Utilizza il Gestore di Risorse Esterne per includere riferimenti alla nuova descrizione di servizio pubblico",
-                        "lv": "Izmantojiet \u0101r\u0113jo resursu p\u0101rvaldnieku, lai iek\u013cautu atsauci uz jauno sabiedrisko pakalpojumu aprakstu"
+                        "lv": "Izmantojiet \u0101r\u0113jo resursu p\u0101rvaldnieku, lai iek\u013cautu atsauci uz jauno publisk\u0101 pakalpojuma aprakstu"
                     },
                     "problemprofiles": [],
                     "prerequisites": [],
@@ -118,13 +118,13 @@
                         "en": "Communicate enhancements to co-refiners",
                         "es": "Comunicar las mejoras a los co-refinadores",
                         "it": "Comunica i raffinamenti ai partecipanti",
-                        "lv": "Pazi\u0146ojiet par uzlabojumiem koppreciz\u0113\u0161anas dal\u012bbniekiem"
+                        "lv": "Pazi\u0146ojiet par uzlabojumiem koprades dal\u012bbniekiem"
                     },
                     "description_translations": {
                         "en": "Communicate the enhancements applied as result of co-refiners contributions and send update",
                         "es": "Comunicar las mejoras aplicadas como resultado de las contribuciones de los co-refinadores y enviar la actualizaci\u00f3n",
                         "it": "Comunica i miglioramenti applicati come risultato del contributo dei partecipanti e invia aggiornamenti",
-                        "lv": "Pazi\u0146ojiet par uzlabojumiem, kas ieviesti koppreciz\u0113\u0161anas rezult\u0101t\u0101 un nos\u016btiet atjaunin\u0101jumus"
+                        "lv": "Pazi\u0146ojiet par koprades rezult\u0101t\u0101 ieviestajiem uzlabojumiem un nos\u016btiet atjaunin\u0101jumus"
                     },
                     "problemprofiles": [
                         "ORG_PROBLEM_4"
