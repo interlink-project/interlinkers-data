@@ -1,44 +1,61 @@
 {
-    "targets": [
-        "all"
-    ],
-    "problem_profiles": [
-        "ORG_PROBLEM_1"
-    ],
-    "types": [
-        "enabling_services"
-    ],
     "administrative_scopes": [
         "eu"
     ],
-    "related_interlinkers": [],
-    "reference": "template-for-project-description",
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "description_translations": {
+        "en": "<p>Template for preparing a project description that synthetically summarizes the goals and major aspects of a co-production initiative. </p>",
+        "es": "<p>Plantilla para preparar una descripci\u00f3n de un proyecto que resumen de modo sint\u00e9tico los objetivos y aspectos m\u00e1s destacables de una iniciativa de co-producci\u00f3n. </p>",
+        "it": "<p>Modello per la preparazione di una descrizione del progetto che riassume sinteticamente gli obiettivi e gli aspetti principali di un'iniziativa di coproduzione. </p>",
+        "lv": "<p>Projekta raksturojuma piem\u0113rs, kas sint\u0113tiski apkopo koprades iniciat\u012bvas m\u0113r\u0137us un galvenos raksturlielumus.</p>"
+    },
+    "difficulty": "easy",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
+    "file_translations": {
+        "en": "./interlinkers/knowledge/Project-Description-Template/resource.docx"
+    },
     "form": "document_template",
     "format": "editable_source_document",
-    "softwareinterlinker": "googledrive",
-    "difficulty": "easy",
-    "licence": "permissive",
+    "id": "template-for-project-description",
     "instructions_translations": {
         "en": "./interlinkers/knowledge/Project-Description-Template/instructions.md"
     },
+    "languages": [
+        "lv",
+        "en",
+        "es",
+        "it"
+    ],
+    "licence": "permissive",
+    "name_translations": {
+        "en": "Template for project description",
+        "es": "Plantilla para describir un proyecto",
+        "it": "Modello per la descrizione del progetto",
+        "lv": "Projekta apraksta veidlapa"
+    },
+    "problemprofiles": [
+        "ORG_PROBLEM_1"
+    ],
+    "regulations_and_standards_translations": {
+        "en": ""
+    },
+    "softwareinterlinker": "googledrive",
     "tags_translations": {
         "en": [
             "project initiation"
         ]
     },
-    "name_translations": {
-        "en": "Template for project description"
-    },
-    "description_translations": {
-        "en": "<p>Template for preparing a project description that synthetically summarizes the goals and major aspects of a co-production initiative. </p>"
-    },
-    "constraints_and_limitations_translations": {
-        "en": "No special constraints apply"
-    },
-    "regulations_and_standards_translations": {
-        "en": ""
-    },
-    "file_translations": {
-        "en": "./interlinkers/knowledge/Project-Description-Template/resource.docx"
-    }
+    "targets": [
+        "all"
+    ],
+    "type": "knowledge",
+    "types": [
+        "enabling_services"
+    ]
 }

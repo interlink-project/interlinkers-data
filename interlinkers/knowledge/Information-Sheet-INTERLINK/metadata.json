@@ -1,30 +1,53 @@
 {
-    "targets": [
-        "all"
-    ],
-    "problem_profiles": [
-        "ORG_PROBLEM_14"
-    ],
-    "types": [
-        "enhancing_services"
-    ],
-    "related_interlinkers": [
-        "Consent Form for INTERLINK project"
-    ],
     "administrative_scopes": [
         "eu"
     ],
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "description_translations": {
+        "en": "<p>Information on the INTERLINK project to be distributed to participants. It provides background on research activities.</p>",
+        "es": "<p>Informaci\u00f3n sobre el proyecto INTERLINK que se distribuir\u00e1 a los participantes. Proporciona antecedentes sobre las actividades de investigaci\u00f3n.</p>",
+        "it": "<p>Informazioni sul progetto INTERLINK da distribuire ai partecipanti. Fornisce informazioni sulle attivit\u00e0 di ricerca.</p>",
+        "lv": "<p>Izplat\u012b\u0161anai dal\u012bbniekiem paredz\u0113t\u0101 inform\u0101cija par INTERLINK projektu. T\u0101 nodro\u0161ina pamatinform\u0101ciju par p\u0113tniec\u012bbas aktivit\u0101t\u0113m.</p>"
+    },
+    "difficulty": "very_easy",
     "domain": "",
-    "process": "",
-    "reference": "information-sheet-for-interlink-project",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
+    "file_translations": {
+        "en": "./interlinkers/knowledge/Information-Sheet-INTERLINK/resource.docx"
+    },
     "form": "document_template",
     "format": "editable_source_document",
-    "softwareinterlinker": "googledrive",
-    "difficulty": "very_easy",
-    "licence": "public_domain",
+    "id": "information-sheet-for-interlink-project",
     "instructions_translations": {
         "en": "./interlinkers/knowledge/Information-Sheet-INTERLINK/instructions.md"
     },
+    "languages": [
+        "lv",
+        "en",
+        "es",
+        "it"
+    ],
+    "licence": "public_domain",
+    "name_translations": {
+        "en": "Information Sheet for INTERLINK project",
+        "es": "Hoja informativa del proyecto INTERLINK",
+        "it": "Foglio informativo per il progetto INTERLINK",
+        "lv": "INTERLINK projekta inform\u0101cijas lapa"
+    },
+    "problemprofiles": [
+        "ORG_PROBLEM_14"
+    ],
+    "process": "",
+    "regulations_and_standards_translations": {
+        "en": "The information sheet is compliant to GDPR norms."
+    },
+    "softwareinterlinker": "googledrive",
     "tags_translations": {
         "en": [
             "privacy management",
@@ -33,19 +56,11 @@
             "INTERLINK"
         ]
     },
-    "name_translations": {
-        "en": "Information Sheet for INTERLINK project"
-    },
-    "description_translations": {
-        "en": "<p>Information on the INTERLINK project to be distributed to participants. It provides background on research activities.</p>"
-    },
-    "constraints_and_limitations_translations": {
-        "en": "No special constraints apply"
-    },
-    "regulations_and_standards_translations": {
-        "en": "The information sheet is compliant to GDPR norms."
-    },
-    "file_translations": {
-        "en": "./interlinkers/knowledge/Information-Sheet-INTERLINK/resource.docx"
-    }
+    "targets": [
+        "all"
+    ],
+    "type": "knowledge",
+    "types": [
+        "enhancing_services"
+    ]
 }

@@ -7,6 +7,7 @@ from colors import bcolors
 # boolean to know if an exception have occurred somewhere
 general_error = False
 
+ids = []
 # search for schemas
 for schema_path in Path("./interlinkers").glob("**/schema.py"):
     schema_error = False
@@ -29,6 +30,11 @@ for schema_path in Path("./interlinkers").glob("**/schema.py"):
             print(f"{bcolors.OKBLUE}## PROCESSING {bcolors.ENDC}{str_path}{bcolors.OKBLUE}")
             # loads data from metadata.json and validates it
             data = json.load(json_file)
+            id = data["id"]
+            if id in ids:
+                print(f"{bcolors.FAIL}ERROR DETECTED: id {id} already present")
+                raise Exception(f"id {id} already present")
+            ids.append(id)
             try:
                 Schema(**data)
             except Exception as e:

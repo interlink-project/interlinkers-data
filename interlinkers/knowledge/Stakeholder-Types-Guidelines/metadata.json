@@ -1,48 +1,65 @@
 {
-    "targets": [
-        "all"
-    ],
-    "problem_profiles": [
-        "UND_PROBLEM_2",
-        "UND_PROBLEM_4"
-    ],
-    "types": [
-        "enhancing_services"
-    ],
-    "related_interlinkers": [],
     "administrative_scopes": [
         "eu"
     ],
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "description_translations": {
+        "en": "<p>Guidelines to understand which are the different types of stakeholder, their  motivations, skills, expectations toward the project</p>",
+        "es": "<p>Directrices para entender cu\u00e1les son los diferentes tipos de interesados, sus motivaciones, habilidades, expectativas hacia el proyecto</p>",
+        "it": "<p>Linee guida per capire quali sono le diverse tipologie di stakeholder, le loro motivazioni, competenze, aspettative nei confronti del progetto</p>",
+        "lv": "<p>Vadl\u012bnijas ieinteres\u0113to pu\u0161u tipu, motiv\u0101cijas, prasmju un cer\u012bbu noteik\u0161anai projekt\u0101</p>"
+    },
+    "difficulty": "easy",
     "domain": "",
-    "process": "",
-    "reference": "stakeholder-types-guidelines",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
+    "file_translations": {
+        "en": "./interlinkers/knowledge/Stakeholder-Types-Guidelines/resource.pdf"
+    },
     "form": "guidelines",
     "format": "pdf",
-    "softwareinterlinker": "googledrive",
-    "difficulty": "easy",
-    "licence": "public_domain",
+    "id": "stakeholder-types-guidelines",
     "instructions_translations": {
         "en": "./interlinkers/knowledge/Stakeholder-Types-Guidelines/instructions.md"
     },
+    "languages": [
+        "lv",
+        "en",
+        "es",
+        "it"
+    ],
+    "licence": "public_domain",
+    "name_translations": {
+        "en": "Stakeholder types guidelines",
+        "es": "Directrices sobre los tipos de partes interesadas",
+        "it": "Linee guida sui tipi di stakeholder",
+        "lv": "Ieinteres\u0113to pu\u0161u tipu vadl\u012bnijas"
+    },
+    "problemprofiles": [
+        "UND_PROBLEM_2",
+        "UND_PROBLEM_4"
+    ],
+    "process": "",
+    "regulations_and_standards_translations": {
+        "en": ""
+    },
+    "softwareinterlinker": "googledrive",
     "tags_translations": {
         "en": [
             "services",
             "stakeholder mappping"
         ]
     },
-    "name_translations": {
-        "en": "Stakeholder types guidelines"
-    },
-    "description_translations": {
-        "en": "<p>Guidelines to understand which are the different types of stakeholder, their  motivations, skills, expectations toward the project</p>"
-    },
-    "constraints_and_limitations_translations": {
-        "en": "No special constraints apply"
-    },
-    "regulations_and_standards_translations": {
-        "en": ""
-    },
-    "file_translations": {
-        "en": "./interlinkers/knowledge/Stakeholder-Types-Guidelines/resource.pdf"
-    }
+    "targets": [
+        "all"
+    ],
+    "type": "knowledge",
+    "types": [
+        "enhancing_services"
+    ]
 }

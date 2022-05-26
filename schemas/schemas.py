@@ -1,7 +1,17 @@
-from typing import List, Optional
+import enum
+from typing import Dict, List, Optional, Union
 
-from problem_profiles import WithProblemProfiles
-from pydantic import BaseModel, Extra, validator
+from configuration import Environments, Languages
+from problemprofiles.problemprofiles import WithProblemProfiles
+from pydantic import BaseModel, Extra, conlist, validator
+
+
+class Licences(enum.Enum):
+    public_domain = "public_domain"
+    permissive = "permissive"
+    copyleft = "copyleft"
+    non_commercial = "non_commercial"
+    propietary = "propietary"
 
 
 class WithNameAndDesc(BaseModel):
@@ -16,20 +26,26 @@ class WithNameAndDesc(BaseModel):
 
 
 class Task(WithProblemProfiles, WithNameAndDesc, extra=Extra.forbid):
-    pass
+    id: str
+    prerequisites: Dict[str, str]
 
 
 class Objective(WithProblemProfiles, WithNameAndDesc, extra=Extra.forbid):
+    id: str
+    prerequisites: Dict[str, str]
     tasks: List[Task]
 
 
 class Phase(WithNameAndDesc, extra=Extra.forbid):
-    prerequisites: list
+    id: str
+    prerequisites: Dict[str, str]
     objectives: List[Objective]
 
 
 class CoproductionSchema(WithNameAndDesc, extra=Extra.forbid):
-    reference: str
-    tags: List[str]
+    id: str
+    tags_translations: Dict[str,  conlist(str, min_items=1)]
     author: str
-    licence: Optional[str]
+    licence: Licences
+    languages: Optional[List[Languages]]
+    environments: Optional[List[Environments]]

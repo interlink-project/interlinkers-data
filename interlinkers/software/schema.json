@@ -2,8 +2,8 @@
     "title": "Schema",
     "type": "object",
     "properties": {
-        "problem_profiles": {
-            "title": "Problem Profiles",
+        "problemprofiles": {
+            "title": "Problemprofiles",
             "type": "array",
             "items": {
                 "type": "string"
@@ -54,13 +54,6 @@
                 "$ref": "#/definitions/InterlinkerTypes"
             }
         },
-        "related_interlinkers": {
-            "title": "Related Interlinkers",
-            "type": "array",
-            "items": {
-                "type": "string"
-            }
-        },
         "administrative_scopes": {
             "type": "array",
             "items": {
@@ -79,9 +72,49 @@
             "title": "Overview Text",
             "type": "object"
         },
-        "reference": {
-            "title": "Reference",
+        "form": {
+            "$ref": "#/definitions/FormTypes"
+        },
+        "format": {
+            "$ref": "#/definitions/Formats"
+        },
+        "instructions_translations": {
+            "title": "Instructions Translations",
+            "type": "object",
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 2083,
+                        "format": "uri"
+                    },
+                    {
+                        "type": "string",
+                        "format": "file-path"
+                    }
+                ]
+            }
+        },
+        "id": {
+            "title": "Id",
             "type": "string"
+        },
+        "type": {
+            "title": "Type",
+            "type": "string"
+        },
+        "languages": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Languages"
+            }
+        },
+        "environments": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Environments"
+            }
         },
         "logotype": {
             "title": "Logotype",
@@ -148,21 +181,22 @@
             "type": "boolean"
         },
         "integration": {
-            "$ref": "#/definitions/Integration"
+            "$ref": "#/definitions/InternalIntegration"
         }
     },
     "required": [
-        "problem_profiles",
+        "problemprofiles",
         "name_translations",
         "description_translations",
         "constraints_and_limitations_translations",
         "tags_translations",
         "difficulty",
         "licence",
-        "reference",
+        "instructions_translations",
         "supported_by",
         "supports_internationalization",
-        "is_responsive"
+        "is_responsive",
+        "integration"
     ],
     "additionalProperties": false,
     "definitions": {
@@ -231,6 +265,52 @@
                 "local"
             ]
         },
+        "FormTypes": {
+            "title": "FormTypes",
+            "description": "An enumeration.",
+            "enum": [
+                "software",
+                "visual_template",
+                "document_template",
+                "canvas",
+                "best_practices",
+                "guidelines",
+                "checklist",
+                "survey_template",
+                "legal_agreement_template",
+                "other"
+            ]
+        },
+        "Formats": {
+            "title": "Formats",
+            "description": "An enumeration.",
+            "enum": [
+                "pdf",
+                "editable_source_document",
+                "open_document",
+                "structured_format",
+                "sofware"
+            ]
+        },
+        "Languages": {
+            "title": "Languages",
+            "description": "An enumeration.",
+            "enum": [
+                "en",
+                "es",
+                "lv",
+                "it"
+            ]
+        },
+        "Environments": {
+            "title": "Environments",
+            "description": "An enumeration.",
+            "enum": [
+                "varam",
+                "mef",
+                "zgz"
+            ]
+        },
         "Supporters": {
             "title": "Supporters",
             "description": "An enumeration.",
@@ -264,6 +344,10 @@
                     "title": "Delete",
                     "type": "boolean"
                 },
+                "preview": {
+                    "title": "Preview",
+                    "type": "boolean"
+                },
                 "open_in_modal": {
                     "title": "Open In Modal",
                     "type": "boolean"
@@ -279,6 +363,7 @@
                 "clone",
                 "edit",
                 "delete",
+                "preview",
                 "open_in_modal",
                 "shortcut"
             ]
@@ -321,6 +406,13 @@
                     "additionalProperties": {
                         "type": "string"
                     }
+                },
+                "preview_text_translations": {
+                    "title": "Preview Text Translations",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 }
             }
         },
@@ -332,8 +424,8 @@
                 "cookie"
             ]
         },
-        "Integration": {
-            "title": "Integration",
+        "InternalIntegration": {
+            "title": "InternalIntegration",
             "type": "object",
             "properties": {
                 "service_name": {

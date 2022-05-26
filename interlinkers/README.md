@@ -61,27 +61,7 @@ In the case of adding a new KNOWLEDGE INTERLINKER, the following sections must b
 
 ```yaml
 {
-    "name":                         free text
-    "description":                  free text (could be HTML formatted text)
-    "tags":                         array of free text
-    "difficulty":                   "very_easy", "easy", "medium", "difficult" or "very_difficult"
-    "licence":                      "public_domain", "permissive", "copyleft", "non_commercial" or "propietary"
-    "problem_profiles":              array of free text
-    "related_interlinkers":         array of free text
-    "constraints_and_limitations_translations":  free text
-    "regulations_and_standards_translations":    optional text
-    "representations": [
-        {
-            "title":                 optional text
-            "description":           optional text
-            "form":                  "visual_template", "document_template", "canvas", "best_practices", "guidelines", "checklist", "survey_template", "legal_agreement_template" or "other"
-            "format":                "pdf", "editable_source_document", "open_document" or "structured_format",
-            "file":                  valid path to file
-            "softwareinterlinker":   "googledrive", "survey", "ceditor"
-        }
-        ...
-    ]
-    "instructions":                 valid path to HTML or MD file
+    OUTDATED
     
 }
 ```
@@ -89,40 +69,7 @@ In the case of adding a new KNOWLEDGE INTERLINKER, the following sections must b
 For example:
 ```json
 {
-    "name": "Example knowledge interlinker",
-    "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus sapien, dapibus fringilla dolor sit amet, bibendum aliquam massa. Duis nec faucibus nunc. In sit amet vulputate justo. In dictum turpis eu dolor posuere vehicula</p>",
-    "tags": [
-        "skeleton",
-        "aim",
-        "project"
-    ],
-    "difficulty": "easy",
-    "licence": "propietary",
-    "problem_profiles": [
-        "example"
-    ],
-    "related_interlinkers": [],
-    "constraints_and_limitations_translations": "Some text here",
-    "regulations_and_standards_translations": "Optional text here",
-    "instructions": "./knowledge/example_knowledge_interlinker/instructions.md",
-    "representations": [
-        {
-            "title": "Google drive document",
-            "description": "Example interlinker but using google drive",
-            "form": "visual_template",
-            "format": "editable_source_document",
-            "file": "./knowledge/example_knowledge_interlinker/doc.docx",
-            "softwareinterlinker":  "googledrive"
-        },
-        {
-            "title": "External resource ",
-            "description": "Example interlinker but using external resource",
-            "form": "visual_template",
-            "format": "pdf",
-            "file": "./knowledge/example_knowledge_interlinker/data.json",
-            "softwareinterlinker":  "externalresourcemanager"
-        }
-    ]
+    OUTDATED
 }
 ```
 
@@ -358,9 +305,8 @@ Defines these attributes:
 * tags
 * difficulty
 * targets
-* problem_profiles
+* problemprofiles
 * types
-* related_interlinkers
 * administrative_scope
 * domain
 * process

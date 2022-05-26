@@ -1,32 +1,55 @@
 {
-    "targets": [
-        "all"
+    "administrative_scopes": [
+        "eu"
     ],
-    "problem_profiles": [
+    "constraints_and_limitations_translations": {
+        "en": "No special constraints apply"
+    },
+    "description_translations": {
+        "en": "<p>Instructions on how to set up a research activity based on focus groups, for a co-production project.</p>",
+        "es": "<p>Instrucciones sobre c\u00f3mo montar una actividad de investigaci\u00f3n basada en grupos focales, para un proyecto de coproducci\u00f3n.</p>",
+        "it": "<p>Istruzioni su come impostare un'attivit\u00e0 di ricerca basata su focus group in un progetto di coproduzione.</p>",
+        "lv": "<p>Pam\u0101c\u012bba p\u0113tniec\u012bbas aktivit\u0101\u0161u veik\u0161anai koprades projekt\u0101, izmantojot fokusgrupas.</p>"
+    },
+    "difficulty": "easy",
+    "domain": "",
+    "environments": [
+        "varam",
+        "mef",
+        "zgz"
+    ],
+    "file_translations": {
+        "en": "./interlinkers/knowledge/Focus-Group-Guidelines/resource.docx"
+    },
+    "form": "guidelines",
+    "format": "editable_source_document",
+    "id": "focus-group-guidelines",
+    "instructions_translations": {
+        "en": "./interlinkers/knowledge/Focus-Group-Guidelines/instructions.md"
+    },
+    "languages": [
+        "lv",
+        "en",
+        "es",
+        "it"
+    ],
+    "licence": "public_domain",
+    "name_translations": {
+        "en": "Focus Group Guidelines",
+        "es": "Directrices para los grupos focales",
+        "it": "Linee guida per focus group",
+        "lv": "Fokusgrupu vadl\u012bnijas"
+    },
+    "problemprofiles": [
         "UND_PROBLEM_3",
         "UND_PROBLEM_1",
         "VAL_PROBLEM_2"
     ],
-    "types": [
-        "enhancing_services"
-    ],
-    "related_interlinkers": [
-        "Focus Group Template Co-production Investigation"
-    ],
-    "administrative_scopes": [
-        "eu"
-    ],
-    "domain": "",
     "process": "",
-    "reference": "focus-group-guidelines",
-    "form": "guidelines",
-    "format": "editable_source_document",
-    "softwareinterlinker": "googledrive",
-    "difficulty": "easy",
-    "licence": "public_domain",
-    "instructions_translations": {
-        "en": "./interlinkers/knowledge/Focus-Group-Guidelines/instructions.md"
+    "regulations_and_standards_translations": {
+        "en": ""
     },
+    "softwareinterlinker": "googledrive",
     "tags_translations": {
         "en": [
             "focus group",
@@ -35,19 +58,11 @@
             "design"
         ]
     },
-    "name_translations": {
-        "en": "Focus Group Guidelines"
-    },
-    "description_translations": {
-        "en": "<p>Instructions on how to set up a research activity based on focus groups, for a co-production project.</p>"
-    },
-    "constraints_and_limitations_translations": {
-        "en": "No special constraints apply"
-    },
-    "regulations_and_standards_translations": {
-        "en": ""
-    },
-    "file_translations": {
-        "en": "./interlinkers/knowledge/Focus-Group-Guidelines/resource.docx"
-    }
+    "targets": [
+        "all"
+    ],
+    "type": "knowledge",
+    "types": [
+        "enhancing_services"
+    ]
 }

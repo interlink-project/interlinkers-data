@@ -10,10 +10,16 @@
             "title": "Description Translations",
             "type": "object"
         },
+        "id": {
+            "title": "Id",
+            "type": "string"
+        },
         "prerequisites": {
             "title": "Prerequisites",
-            "type": "array",
-            "items": {}
+            "type": "object",
+            "additionalProperties": {
+                "type": "string"
+            }
         },
         "objectives": {
             "title": "Objectives",
@@ -26,6 +32,7 @@
     "required": [
         "name_translations",
         "description_translations",
+        "id",
         "prerequisites",
         "objectives"
     ],
@@ -43,16 +50,29 @@
                     "title": "Description Translations",
                     "type": "object"
                 },
-                "problem_profiles": {
-                    "title": "Problem Profiles",
+                "problemprofiles": {
+                    "title": "Problemprofiles",
                     "type": "array",
                     "items": {}
+                },
+                "id": {
+                    "title": "Id",
+                    "type": "string"
+                },
+                "prerequisites": {
+                    "title": "Prerequisites",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 }
             },
             "required": [
                 "name_translations",
                 "description_translations",
-                "problem_profiles"
+                "problemprofiles",
+                "id",
+                "prerequisites"
             ],
             "additionalProperties": false
         },
@@ -68,10 +88,21 @@
                     "title": "Description Translations",
                     "type": "object"
                 },
-                "problem_profiles": {
-                    "title": "Problem Profiles",
+                "problemprofiles": {
+                    "title": "Problemprofiles",
                     "type": "array",
                     "items": {}
+                },
+                "id": {
+                    "title": "Id",
+                    "type": "string"
+                },
+                "prerequisites": {
+                    "title": "Prerequisites",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "tasks": {
                     "title": "Tasks",
@@ -84,7 +115,9 @@
             "required": [
                 "name_translations",
                 "description_translations",
-                "problem_profiles",
+                "problemprofiles",
+                "id",
+                "prerequisites",
                 "tasks"
             ],
             "additionalProperties": false

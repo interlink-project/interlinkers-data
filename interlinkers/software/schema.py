@@ -3,9 +3,10 @@ from enum import Enum
 from pathlib import Path
 
 from interlinkers.base import InterlinkerSchema, Difficulties, Licences
-from pydantic import FilePath, HttpUrl, BaseModel, conlist, validator
+from pydantic import FilePath, HttpUrl, BaseModel, Field
+from typing_extensions import Annotated
 
-from typing import Optional, Union, List, Dict
+from typing import Literal, Optional, Union, List, Dict
 
 parent = Path(__file__).parents[0]
 
@@ -20,13 +21,13 @@ class AuthMethods(Enum):
     header = "header"
     cookie = "cookie"
 
-
 class Capabilities(BaseModel):
     instantiate: bool
     view: bool
     clone: bool
     edit: bool
     delete: bool
+    preview: bool
     open_in_modal: bool
     shortcut: bool
 
@@ -36,8 +37,9 @@ class CapabilitiesTranslations(BaseModel):
     clone_text_translations: Optional[Dict[str, str]]
     edit_text_translations: Optional[Dict[str, str]]
     delete_text_translations: Optional[Dict[str, str]]
+    preview_text_translations: Optional[Dict[str, str]]
 
-class Integration(BaseModel):
+class InternalIntegration(BaseModel):
     service_name: str
     domain: str
     path: str
@@ -59,7 +61,7 @@ class Schema(InterlinkerSchema):
     supports_internationalization: bool
     is_responsive: bool
 
-    integration: Optional[Integration]
+    integration: InternalIntegration
 
     # INTERLINKER SPECIFIC
     difficulty: Difficulties

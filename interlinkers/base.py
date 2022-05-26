@@ -1,9 +1,32 @@
 from enum import Enum
-from typing import Dict, List, Optional
-from pydantic import BaseModel, conlist, Extra, validator
-from problem_profiles import WithProblemProfiles
+from typing import Dict, List, Optional, Union
 
+from slugify import slugify
+
+from problemprofiles.problemprofiles import WithProblemProfiles
+from pydantic import BaseModel, Extra, FilePath, HttpUrl, conlist, validator
+from configuration import Languages, Environments
 # https://docs.google.com/spreadsheets/d/1tJ2BfX4EOdbBqEbrJWg8a3MENw13vYiPZM_S4wWWgWQ/edit#gid=0
+
+class FormTypes(Enum):
+    software = "software"
+    visual_template = "visual_template"
+    document_template = "document_template"
+    canvas = "canvas"
+    best_practices = "best_practices"
+    guidelines = "guidelines"
+    checklist = "checklist"
+    survey_template = "survey_template"
+    legal_agreement_template = "legal_agreement_template"
+    other = "other"
+
+
+class Formats(Enum):
+    pdf = "pdf"
+    editable_source_document = "editable_source_document"
+    open_document = "open_document"
+    structured_format = "structured_format"
+    software = "sofware"
 
 
 class Difficulties(Enum):
@@ -92,7 +115,7 @@ class InterlinkerSchema(WithProblemProfiles, extra=Extra.forbid):
     #
     # Possible values:
     # In the initial specification of INTERLINKERS this field will be defined as textual, to allow for more freedom in the description.
-    # To be further evaluated which types of standard classifications will be used as reference for a more constrained filling of this field.
+    # To be further evaluated which types of standard classifications will be used as id for a more constrained filling of this field.
 
     tags_translations: Dict[str,  conlist(str, min_items=1)]
     # FOR 1
@@ -113,7 +136,7 @@ class InterlinkerSchema(WithProblemProfiles, extra=Extra.forbid):
     # Type of licences under which the INTERLINKER is usable.
     # The user should be provided with information that explains the meaning of the different licences, both for software and knowledge.
 
-    problem_profiles: List[ProblemProfiles]
+    problemprofiles: List[ProblemProfiles]
     # FOR 1
     # List of names of Problem Profiles associated to the INTERLINKER
     # This input will be:
@@ -125,13 +148,6 @@ class InterlinkerSchema(WithProblemProfiles, extra=Extra.forbid):
     # Either Enabling or Enhancing Service with the corresponding sub-classification.
     # This input will be:
     # - Used internally by the INTERLINK platform to describe how the INTERLINKER relates to the standard classifications introduced by the CEF Service Offering Canvas (SOC)
-
-    related_interlinkers: Optional[List[str]]
-    # FOR 1
-    # List of related INTERLINKERS and dependency INTERLINKERS.
-    # This input will be:
-    # - Shown on the platform interface in the page showing the details of the INTERLINKER
-    # - Used by the Wizard algorithms for intelligent filtering and recommendation
 
     administrative_scopes: Optional[List[AdministrativeScopes]]
     # FOR 2
@@ -150,4 +166,23 @@ class InterlinkerSchema(WithProblemProfiles, extra=Extra.forbid):
     overview_text: Optional[dict]
     # FOR 2
     # Explanation of what is made available for user interaction.
-    reference: str
+
+    form: Optional[FormTypes]
+    # FOR 1
+    # Type of knowledge INTERLINKER: e.g., visual template, document template, canvas, best practices, guidelines, checklist, survey template, legal agreement template
+    # This input will be:
+    # - Shown on the platform interface in the page showing the details of the INTERLINKER
+
+    format: Optional[Formats]
+    # FOR 1 // COULD BE INFERED
+    # Type of the format used to encode the knowledge of the INTERLINKER
+    # This input will be:
+    # - Shown on the platform interface in the page showing the details of the INTERLINKER
+    
+    instructions_translations:  Dict[str,  Union[HttpUrl, FilePath]]
+
+    # AUTOMATICALLY GENERATED
+    id: Optional[str]
+    type: Optional[str]
+    languages: Optional[List[Languages]]
+    environments: Optional[List[Environments]]
