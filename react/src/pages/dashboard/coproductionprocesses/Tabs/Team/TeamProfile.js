@@ -50,7 +50,7 @@ const UserRow = ({ t, team, user, onChanges }) => {
   }, [user])
 
   const you = user.id === auth_user.sub
-  console.log(user, auth_user, team)
+
   return <TableRow
     key={user.id}
     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -135,8 +135,8 @@ const TeamProfile = ({ open, setOpen, teamId, onChanges }) => {
     if (send) {
       setLoading(true)
       await Promise.all(calls);
+      onChanges && onChanges()
       update(() => {
-        onChanges && onChanges()
         setLoading(false)
         setEditMode(false)
       })
@@ -165,9 +165,13 @@ const TeamProfile = ({ open, setOpen, teamId, onChanges }) => {
 
   useEffect(() => {
     if (open) {
+      // If dialog open, get team from api
       update()
     } else {
+      // if dialog closed, set empty data and loading
       setEditMode(false)
+      setTeam({})
+      setLoading(true)
     }
   }, [open, editMode])
 

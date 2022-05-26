@@ -113,7 +113,7 @@ function Row({ obj: ob, onChanges, isTeam = false, onTeamClick = (ob) => { } }) 
                     justifyContent="center"
                 >
                     <AvatarGroup max={4}>
-                        {obj && obj.users.map(user => <UserData sx={{ height: "30px", width: "30px", border: "0px" }} variant="avatar" id={user.id} />)}
+                        {obj && obj.users.map(user => <UserData key={obj.id + "-avatar-group"} sx={{ height: "30px", width: "30px", border: "0px" }} variant="avatar" id={user.id} />)}
 
                     </AvatarGroup>
                     ({obj.users.length})

@@ -13,20 +13,15 @@ export default function TeamsTab() {
     const mounted = useMounted();
     const { t } = useDependantTranslation()
 
-    const init = React.useCallback(async () => {
-        try {
-
-            if (process && mounted.current) {
-                dispatch(getRoles(process.id))
-            }
-        } catch (err) {
-            console.error(err);
+    const initGetRoles = () => {
+        if (process && mounted.current) {
+            dispatch(getRoles(process.id))
         }
-    }, [mounted]);
+    };
 
     React.useEffect(() => {
-        init();
-    }, [init]);
+        initGetRoles();
+    }, []);
 
     // <TeamsTable onChanges={updateAcl} />
     // <Divider sx={{ my: 2 }} />
@@ -38,10 +33,10 @@ export default function TeamsTab() {
             <Typography variant="subtitle1" sx={{ mb: 2 }}>
                 {t("permissions-subtitle")}
             </Typography>
-            <TeamsTable onChanges={init} />
+            <TeamsTable onChanges={initGetRoles} />
             <Typography variant="h5" sx={{ my: 2 }}>
                 {t("Roles")}
             </Typography>
-            <PermissionsTable onChanges={init} />
+            <PermissionsTable onChanges={initGetRoles} />
         </React.Fragment>) : <CircularProgress />
 }
