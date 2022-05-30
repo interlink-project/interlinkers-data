@@ -14,7 +14,7 @@ import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { assetsApi } from '__api__';
 
-export default function NewAssetModal({ open, handleUserClose, handleFinish, activeStep, setStep, selectedInterlinker, task, onCreate }) {
+export default function NewAssetModal({ open, handleUserClose, handleFinish, activeStep, setStep, selectedInterlinker, treeitem, onCreate }) {
     const { process } = useSelector((state) => state.process);
     const { t } = useDependantTranslation()
 
@@ -52,9 +52,9 @@ export default function NewAssetModal({ open, handleUserClose, handleFinish, act
             setLoadingInstantiator(false)
         }
         if (code === "asset_created") {
-            //task_id, interlinker_id, external_asset_id
+            //treeitem_id, interlinker_id, external_asset_id
             const coproduction_asset = await assetsApi.create_internal(
-                task.id,
+                treeitem.id,
                 selectedInterlinker.id,
                 message.id || message._id,
             );
@@ -94,7 +94,7 @@ export default function NewAssetModal({ open, handleUserClose, handleFinish, act
                 else if (isKnowledge) {
                     // if knowledgeinterlinker
                     setLoadingKnowledgeInstantiation(true)
-                    const interlinker_asset = await assetsApi.instantiate(selectedInterlinker.id, task.id, process.language)
+                    const interlinker_asset = await assetsApi.instantiate(selectedInterlinker.id, treeitem.id, process.language)
                     setLoadingKnowledgeInstantiation(false)
 
                     // TODO: if fails

@@ -1,23 +1,20 @@
 import { AppBar, Tab, Tabs as MuiTabs } from "@material-ui/core";
-import React, { useMemo } from "react";
-import { topologicalSort } from "utils/topologicalSort";
+import React from "react";
 
-const PhaseTabs = ({ selectedPhaseTabId, phases, onSelect }) => {
-    const orderedPhases = useMemo(() => topologicalSort(phases), [phases]);
-
+const PhaseTabs = ({ selectedId, treeitems, onSelect }) => {
     return (
         <AppBar position="static" sx={{ color: "white" }}>
             <MuiTabs
                 indicatorColor="secondary"
-                onChange={(event, value) => onSelect(phases.find(el => el.id === value))}
-                value={selectedPhaseTabId || orderedPhases[0].id}
+                onChange={(event, value) => onSelect(treeitems.find(el => el.id === value))}
+                value={selectedId || treeitems[0].id}
                 centered
 
                 textColor="inherit"
-                aria-label="Coproduction phases tabs"
+                aria-label="Coproduction treeitems tabs"
             >
 
-                {orderedPhases.map((phase) => (
+                {treeitems.map((phase) => (
                     <Tab
                         key={phase.id}
                         label={<>

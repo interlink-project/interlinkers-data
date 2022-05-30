@@ -20,7 +20,7 @@ const RightSide = ({ softwareInterlinkers }) => {
     const [step, setStep] = useState(0);
 
     const [assets, setAssets] = useState([])
-    const [loadingTaskInfo, setLoadingTaskInfo] = useState(false)
+    const [loadingTreeitemInfo, setLoadingTreeitemInfo] = useState(false)
     const [treeItemInfoOpen, setTreeItemInfoOpen] = useState(true)
 
     // new asset modal
@@ -31,19 +31,19 @@ const RightSide = ({ softwareInterlinkers }) => {
     const [catalogueOpen, setCatalogueOpen] = useState(false);
     const { t } = useDependantTranslation()
 
-    const updateTaskInfo = async () => {
-        setLoadingTaskInfo(true)
-        assetsApi.getMulti({ task_id: selectedTreeItem.id }).then(assets => {
+    const updateTreeitemInfo = async () => {
+        setLoadingTreeitemInfo(true)
+        assetsApi.getMulti({ treeitem_id: selectedTreeItem.id }).then(assets => {
             if (mounted.current) {
                 setAssets(assets)
-                setLoadingTaskInfo(false)
+                setLoadingTreeitemInfo(false)
             }
         });
     }
 
     useEffect(() => {
         if (isTask && mounted.current) {
-            updateTaskInfo()
+            updateTreeitemInfo()
         }
     }, [mounted, selectedTreeItem])
 
@@ -77,7 +77,7 @@ const RightSide = ({ softwareInterlinkers }) => {
 
                             <Typography sx={{ mb: 1 }} variant="h6"><>{t("Current resources")}:</></Typography>
 
-                            <AssetsTable language={process.language} loading={loadingTaskInfo} assets={assets} onChange={updateTaskInfo} />
+                            <AssetsTable language={process.language} loading={loadingTreeitemInfo} assets={assets} onChange={updateTreeitemInfo} />
                             <Box sx={{ textAlign: "center", width: "100%" }}>
                                 <Stack spacing={2} >
                                     <Button
@@ -138,7 +138,7 @@ const RightSide = ({ softwareInterlinkers }) => {
                                         assetsApi.create_external(selectedTreeItem.id, null, values.name, values.uri).then(res => {
                                             setStatus({ success: true });
                                             setSubmitting(false);
-                                            updateTaskInfo()
+                                            updateTreeitemInfo()
                                             setExternalAssetOpen(false)
 
                                         }).catch(err => {
@@ -242,8 +242,8 @@ const RightSide = ({ softwareInterlinkers }) => {
                         activeStep={step}
                         setStep={setStep}
                         selectedInterlinker={selectedInterlinker}
-                        task={selectedTreeItem}
-                        onCreate={updateTaskInfo} />}
+                        treeitem={selectedTreeItem}
+                        onCreate={updateTreeitemInfo} />}
                 </>}
             </Box>
         </Grid>

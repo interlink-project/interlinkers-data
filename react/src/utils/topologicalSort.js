@@ -1,16 +1,16 @@
-export function topologicalSort(tasks) {
+export function topologicalSort(treeitems) {
   const visited = new Set();
-  const taskMap = new Map(tasks.map((task) => [task.id, task]));
+  const treeitemMap = new Map(treeitems.map((treeitem) => [treeitem.id, treeitem]));
 
-  function dfs(tasks) {
-    for (const task of tasks) {
-      if (!visited.has(task.id)) {
-        dfs(task.prerequisites_ids.map((id) => taskMap.get(id)));
+  function dfs(treeitems) {
+    for (const treeitem of treeitems) {
+      if (!visited.has(treeitem.id)) {
+        dfs(treeitem.prerequisites_ids.map((id) => treeitemMap.get(id)));
       }
-      visited.add(task);
+      visited.add(treeitem);
     }
   }
 
-  dfs(tasks);
+  dfs(treeitems);
   return [...visited];
 }

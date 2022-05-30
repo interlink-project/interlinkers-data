@@ -25,8 +25,8 @@ const CreateSchema = () => {
     const mounted = useMounted();
     const t = useCustomTranslation(process.language)
 
-    const [selectedPhaseTab, setSelectedPhaseTab] = React.useState(null)
     const [selectedTreeItem, setSelectedTreeItem] = React.useState(null)
+    const [selectedParent, setSelectedParent] = React.useState(null)
     const [inputValue, setInputValue] = React.useState("");
 
     const update = () => {
@@ -77,7 +77,8 @@ const CreateSchema = () => {
     const schemaword = t("schema")
 
     const handleClose = () => {
-        setSelectedPhaseTab(null)
+        setSelectedTreeItem(null)
+        setSelectedParent(null)
         setSelectedSchema(null)
     }
 
@@ -124,7 +125,8 @@ const CreateSchema = () => {
                                 </TableCell>
                                 <TableCell width="15%">
                                     <Button variant="contained" startIcon={<RemoveRedEye />} onClick={() => {
-                                        setSelectedPhaseTab(topologicalSort(row.phasemetadatas)[0]);
+                                        setSelectedParent(topologicalSort(row.treeitems)[0]);
+                                        setSelectedTreeItem(topologicalSort(row.treeitems)[0]);
                                         setSelectedSchema(row);
                                     }}>{t("Preview")}</Button>
                                 </TableCell>
@@ -146,13 +148,13 @@ const CreateSchema = () => {
                     <CentricCircularProgress language={process.language} />
                     :
                     <>
-                        <PhaseTabs phases={selectedSchema.phasemetadatas} selectedPhaseTabId={selectedPhaseTab && selectedPhaseTab.id} onSelect={(value) => {
-                            setSelectedPhaseTab(value)
+                        <PhaseTabs treeitems={selectedSchema.treeitems} selectedId={selectedParent && selectedParent.id} onSelect={(value) => {
+                            setSelectedParent(value)
                             setSelectedTreeItem(value)
                         }} />
                         <Grid container>
                             <Grid item xl={4} lg={4} md={6} xs={12}>
-                                <StyledTree phase={selectedPhaseTab} selectedTreeItem={selectedTreeItem} setSelectedTreeItem={setSelectedTreeItem} objectives_key="objectivemetadatas" tasks_key="taskmetadatas" />
+                                <StyledTree parent={selectedParent} selectedTreeItem={selectedTreeItem} setSelectedTreeItem={setSelectedTreeItem} />
 
                             </Grid>
                             <Grid item xl={8} lg={8} md={6} xs={12}>
