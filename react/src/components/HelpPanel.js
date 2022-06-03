@@ -7,31 +7,31 @@ import { getLanguage } from 'translations/i18n';
 
 const helps = {
     "/dashboard": {
-        url: (language) => `https://dev.interlink-project.eu/docs/${language}/usermanual/dashboard.html`,
+        url: (language) => `/docs/${language}/dashboard.html`,
     },
     "/dashboard/interlinkers": {
-        url: (language) => `https://dev.interlink-project.eu/docs/${language}/usermanual/catalogue-interlinkers.html`,
+        url: (language) => `/docs/${language}/catalogue-interlinkers.html`,
     },
     "/dashboard/interlinkers/(.+)": {
-        url: (language) => `https://dev.interlink-project.eu/docs/${language}/usermanual/catalogue-interlinker-profile.html`,
+        url: (language) => `/docs/${language}/catalogue-interlinker-profile.html`,
     },
     "/dashboard/coproductionprocesses/(.+)/overview": {
-        url: (language) => `https://dev.interlink-project.eu/docs/${language}/usermanual/coproductionprocess-overview.html`,
+        url: (language) => `/docs/${language}/coproductionprocess-overview.html`,
     },
     "/dashboard/coproductionprocesses/(.+)/activity": {
-        url: (language) => `https://dev.interlink-project.eu/docs/${language}/usermanual/coproductionprocess-activity.html`,
+        url: (language) => `/docs/${language}/coproductionprocess-activity.html`,
     },
     "/dashboard/coproductionprocesses/(.+)/guide": {
-        url: (language) => `https://dev.interlink-project.eu/docs/${language}/usermanual/coproductionprocess-guide.html`,
+        url: (language) => `/docs/${language}/coproductionprocess-guide.html`,
     },
     "/dashboard/coproductionprocesses/(.+)/workplan": {
-        url: (language) => `https://dev.interlink-project.eu/docs/${language}/usermanual/coproductionprocess-workplan.html`,
+        url: (language) => `/docs/${language}/coproductionprocess-workplan.html`,
     },
     "/dashboard/coproductionprocesses/(.+)/team": {
-        url: (language) => `https://dev.interlink-project.eu/docs/${language}/usermanual/coproductionprocess-team.html`,
+        url: (language) => `/docs/${language}/coproductionprocess-team.html`,
     },
     "/dashboard/coproductionprocesses/(.+)/settings": {
-        url: (language) => `https://dev.interlink-project.eu/docs/${language}/usermanual/coproductionprocess-settings.html`,
+        url: (language) => `/docs/${language}/coproductionprocess-settings.html`,
     }
 }
 

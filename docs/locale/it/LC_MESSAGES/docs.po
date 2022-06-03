@@ -1,0 +1,3585 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, Interlink team
+# This file is distributed under the same license as the Interlink package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Interlink \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-01 14:42+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../catalogue-interlinkers.md:1
+msgid "Catalogue of INTERLINKERs"
+msgstr ""
+
+#: ../../catalogue-interlinkers.md:2
+msgid ""
+"The [INTERLINKER catalogue](https://demo.interlink-project.eu/catal) "
+"provides a one-stop-shop for know-how enabling co-production. It has been"
+" populated with knowledge and software INTERLINKERs leveraging resources "
+"generated in previous EU projects, social innovation initiatives, and "
+"service design best practices like: "
+"[WeLive](https://cordis.europa.eu/project/id/645845), "
+"[Silearning.eu](https://www.silearning.eu/), "
+"[servicedesigntools.org](https://servicedesigntools.org/), "
+"[DesignersItalia](https://designers.italia.it/),  "
+"[IDEO](https://www.ideo.com/eu) or "
+"[Engage2020](http://www.engage2020.eu/)."
+msgstr ""
+
+#: ../../catalogue-interlinkers.md:4
+msgid ""
+"Some resources have been adapted to the specific needs of co-production; "
+"others are being created from scratch based on project research results."
+msgstr ""
+
+#: ../../catalogue-interlinkers.md:6
+msgid ""
+"You may access the INTERLINK catalogue by clicking on INTERLINKERs top "
+"menu option. This will give you access to a new screen where you can "
+"perform browsing, filtering and selection of INTERLINKERs."
+msgstr ""
+
+#: ../../catalogue-interlinkers.md:8
+msgid ""
+"Next some examples of the actions that you can currently carry out in the"
+" INTERLINKERs catalogue:"
+msgstr ""
+
+#: ../../catalogue-interlinkers.md:9
+msgid ""
+"Enter in the catalogue of INTERLINNKERs by clicking on INTERLINKERs top "
+"menu   ![INTERLINKERs catalogue view](images/catalogueview-main.png)"
+msgstr ""
+
+#: ../../catalogue-interlinkers.md:9
+msgid "INTERLINKERs catalogue view"
+msgstr ""
+
+#: ../../catalogue-interlinkers.md:11
+msgid ""
+"Filter by selecting options on Nature filter and select \"Internal "
+"Knowledge\" to see only those INTERLINKERs of type \"knowledge\" prepared"
+" for the project.    ![Filtered INTERLINKERs](images/catalogueview-"
+"filtering.png)"
+msgstr ""
+
+#: ../../catalogue-interlinkers.md:11 ../../catalogue-interlinkers.md:13
+#: ../../catalogue-interlinkers.md:15
+msgid "Filtered INTERLINKERs"
+msgstr ""
+
+#: ../../catalogue-interlinkers.md:13
+msgid ""
+"Review contents of an INTERLINKER by clicking on the title of one of the "
+"displayed INTERLINKERs   ![Filtered INTERLINKERs](images/catalogueview-"
+"browsing.png)"
+msgstr ""
+
+#: ../../catalogue-interlinkers.md:15
+msgid ""
+"You main review what offers the selected INTERLINKER by visiting Preview "
+"tab   ![Filtered INTERLINKERs](images/catalogueview-download.png)"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:1
+msgid "Guide view of a coproduction process"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:3
+msgid ""
+"The GUIDE view can be considered the main view of a co-production "
+"process. It is closely linked to the other available views, namely "
+"[OVERVIEW](/docs/en"
+"/coproductionprocess-overview.html) and [WORKPLAN](https://dev.interlink-"
+"project.eu/docs/en/coproductionprocess-workplan.html) views of"
+" a co-production process."
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:5
+msgid ""
+"The [GUIDE view](/docs/en"
+"/coproductionprocess-guide.html) displays a co-production tree, allowing "
+"the co-production team members to browse through the phases of a co-"
+"production process, its corresponding objectives, the tasks that help "
+"accomplishing those objectives and the INTERLINKERs that are recommended "
+"to aid team member completing certain tasks of the co-production process."
+" Very importantly, from the GUIDE view, users can instantiate the "
+"recommended INTERLINKERs for a task or create new instances from a range "
+"of generic INTERLINKERs."
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:7
+msgid ""
+"After creating a new co-production process, the user is requested to "
+"choose a co-production process guide. Notice that there is flexibility to"
+" choose the best fitting schema (you may check available co-production "
+"schemas in our [interlinkers-data/schemas](https://github.com/interlink-"
+"project/interlinkers-data/tree/master/schemas) repo). The left-hand-side "
+"\"Guide\" menu item does not appear until a schema has been chosen."
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:9
+msgid ""
+"Notice that there are several co-production trees available. Let's "
+"select, for instance, [\"Default schema\"](https://github.com/interlink-"
+"project/interlinkers-data/tree/master/schemas/default) ![Select default "
+"schema](images/guideview-defineschema.png)"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:9
+msgid "Select default schema"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:11
+msgid ""
+"As result, notice the emergence of Guide view menu item on left hand side"
+" ![Beware of emergence of Guide view menu item on left hand side](images"
+"/guideview-menuitememergence.png)"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:11
+msgid "Beware of emergence of Guide view menu item on left hand side"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:13
+msgid "Some of the actions that you may carry in the GUIDE view are:"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:14
+msgid ""
+"You may customize such tree to the specific needs of your co-production "
+"process. Currently only DELETE task allowed, soon you will be able to add"
+" new objectives & tasks. Check below how a task is removed after having "
+"clicked on the PENCIL icon which appears on the right hand side of the "
+"task visualization panel. ![About to remove a task](images/guideview-"
+"removetask.png) ![View after removal of task](images/guideview-after-"
+"taskremoval.png)"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:14
+msgid "About to remove a task"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:14
+msgid "View after removal of task"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:17
+msgid ""
+"Observe that specific co-production trees can be defined and, hence, "
+"selected (e.g. [VARAM case](https://github.com/interlink-project"
+"/interlinkers-data/tree/master/schemas/servicedescriptionenhancement))"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:18
+msgid ""
+"You may also assign durations to tasks ![Assigning duration to "
+"task](images/guideview-assignduration.png)"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:18
+#: ../../coproductionprocess-workplan.md:10
+msgid "Assigning duration to task"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:20
+msgid ""
+"Then, we can see in [WORKPLAN view](https://dev.interlink-"
+"project.eu/docs/en/coproductionprocess-workplan.html) the time"
+" span defined, by clicking on the \"Time planification\" link in the "
+"[GUIDE view](/docs/en"
+"/coproductionprocess-guide.html) or clicking on the left hand side menu "
+"option named \"Workplan\". You may return to the Guide view, to see the "
+"task details by clicking on the name of the task in the WORKPLAN view.  "
+"![Workplan view](images/workplanview-taskduration.png)"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:20
+#: ../../coproductionprocess-workplan.md:7
+msgid "Workplan view"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:24
+msgid ""
+"The GUIDE view allows to instantiate INTERLINKERs to, hence, make "
+"progress in the co-production process. For each of the tasks in the co-"
+"production phases you may select any of the recommended INTERLINKERs or "
+"instantiate a new one based on the generic software INTERLINKERs "
+"available at the bottom of the screen shown when selecting a co-"
+"production task."
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:26
+msgid ""
+"For intance, let's create a new document to collect feedback of "
+"collaboration process."
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:27
+msgid ""
+"Select a task in the GUIDE view, e.g. ENGAGE > Engage Stakeholders > "
+"Create awareness and Communication"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:28
+msgid ""
+"Notice the INTERLINKERs recommended   ![Notice INTERLINKERs "
+"recommended](images/catalogueview-recommendedinterlinkers.png)"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:28
+msgid "Notice INTERLINKERs recommended"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:30
+msgid ""
+"Select a task in the GUIDE view, e.g. ENGAGE > Define legal and ethical "
+"framework > Define a non-disclosure agreement (NDA)"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:31
+msgid ""
+"Click on the blue button at the bottom entitled \"Initiate Procedure\" to"
+" give place to a new Google Docs document   ![Creating a new Google "
+"Docs](images/guideview-genericINTERLINKERinstantiation.png)"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:31
+msgid "Creating a new Google Docs"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:33
+msgid ""
+"Select the type of document to create with the support of Google Drive "
+"INTERLINKER   ![Select and name the Google Docs](images/googledrive-"
+"interlinker-init.png)"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:33
+msgid "Select and name the Google Docs"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:35
+msgid ""
+"Realize about the new resource that appears at the bottom of the task "
+"description panel   ![New resource created](images/guideview-newresource-"
+"created.png)"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:35 ../../coproductionprocess-guide.md:37
+msgid "New resource created"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:37
+msgid ""
+"Open it in Google Drive by clicking on the newly created resource name   "
+"![New resource created](images/googledrive-viewdocument.png)"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:39
+msgid "You may repeat the process, selecting a recommended INTERLINKER instead:"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:40
+msgid ""
+"For instance, select *\"Stakeholders Mapping Canvas\"* INTERLINKER under "
+"task shown when navigating to *Engage > Identify Stakeholders*"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:41
+msgid "Click on button “Instantiate as resource to use in the project”"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:42
+msgid ""
+"Check the newly created resource appears at the bottom of the page under "
+"**“Current resources”**"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:43
+msgid ""
+"Open the generated resource in the form of a presentation and add some "
+"modifications"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:45
+msgid ""
+"Finally, you can see the progress achieved, so far, in a given co-"
+"production process by visiting the [OVERVIEW view](https://dev.interlink-"
+"project.eu/docs/en/coproductionprocess-overview.html), by "
+"clicking on \"Overview\" menu item on the left hand-side menu option. \t"
+"![Resources created so far](images/coproductionproces-overview-NDA.png)"
+msgstr ""
+
+#: ../../coproductionprocess-guide.md:45
+msgid "Resources created so far"
+msgstr ""
+
+#: ../../coproductionprocess-overview.md:1
+msgid "Overview of a co-production process"
+msgstr ""
+
+#: ../../coproductionprocess-overview.md:3
+msgid ""
+"The Overview view is one of the three co-production process visualization"
+" available, namely [Overview](https://dev.interlink-"
+"project.eu/docs/en/coproductionprocess-overview.html#), "
+"[Guide](/docs/en"
+"/coproductionprocess-guide.html) and [Workplan](https://dev.interlink-"
+"project.eu/docs/en/coproductionprocess-workplan.html) views."
+msgstr ""
+
+#: ../../coproductionprocess-overview.md:5
+msgid ""
+"The Overview view is in charge of showing the ongoing activity on a given"
+" co-production process. It displays the current set of resources "
+"instantiated. The following actions can be performed over the resources "
+"listed:"
+msgstr ""
+
+#: ../../coproductionprocess-overview.md:6
+msgid ""
+"Visit the INTERLINKER with which such resources are being created, by "
+"clicking on the link with the name of the INTERLINKER."
+msgstr ""
+
+#: ../../coproductionprocess-overview.md:7
+msgid ""
+"Visit the task a given resource has been created with, by clicking on "
+"\"See task\" button."
+msgstr ""
+
+#: ../../coproductionprocess-overview.md:8
+msgid ""
+"Open the corresponding resource by clicking on the hyperlinked name of "
+"the resource."
+msgstr ""
+
+#: ../../coproductionprocess-overview.md:10
+msgid ""
+"![Coproduction process overview](images/coproductionproces-overview.png) "
+"![INTERLINK associated to resource](images/overview-resource-"
+"interlink.png) ![Task associated to resource](images/overview-resource-"
+"task.png) ![View of a resource](images/overview-resource-view.png)"
+msgstr ""
+
+#: ../../coproductionprocess-overview.md:10
+msgid "Coproduction process overview"
+msgstr ""
+
+#: ../../coproductionprocess-overview.md:10
+msgid "INTERLINK associated to resource"
+msgstr ""
+
+#: ../../coproductionprocess-overview.md:10
+msgid "Task associated to resource"
+msgstr ""
+
+#: ../../coproductionprocess-overview.md:10
+msgid "View of a resource"
+msgstr ""
+
+#: ../../coproductionprocess-settings.md:1
+msgid "Settings a co-production process"
+msgstr ""
+
+#: ../../coproductionprocess-settings.md:3
+msgid ""
+"Once you have configured a co-production process, you can always update "
+"its details by clicking on the **Settings** menu option on the left hand-"
+"side menu. Then, click on the PENCIL icon on the top right hand side to "
+"start editing the project details. Finally, hit on the button \"Save\" to"
+" save changes or \"Cancel\" to cancel them."
+msgstr ""
+
+#: ../../coproductionprocess-settings.md:5
+msgid "The following details can be updated per project:"
+msgstr ""
+
+#: ../../coproductionprocess-settings.md:6
+msgid "Logo of the project"
+msgstr ""
+
+#: ../../coproductionprocess-settings.md:7
+msgid "Name of the project"
+msgstr ""
+
+#: ../../coproductionprocess-settings.md:8
+msgid "Short description of the project"
+msgstr ""
+
+#: ../../coproductionprocess-settings.md:9
+msgid "Actual organization of the service"
+msgstr ""
+
+#: ../../coproductionprocess-settings.md:10
+msgid "Aim of the project"
+msgstr ""
+
+#: ../../coproductionprocess-settings.md:11
+msgid "Idea of service to be codelivered"
+msgstr ""
+
+#: ../../coproductionprocess-settings.md:12
+msgid "Challenges of the project"
+msgstr ""
+
+#: ../../coproductionprocess-settings.md:14
+msgid ""
+"As we can see, this section allows for the definition of the purpose of a"
+" project, establishing how will be managed and what challenges it will "
+"need to solve."
+msgstr ""
+
+#: ../../coproductionprocess-settings.md:16
+msgid ""
+"![Main screen with co-production process settings](images/project-"
+"settings1.png) ![Co-production process setting screen after clicking on "
+"PENCIL icon](images/project-settings2.png)"
+msgstr ""
+
+#: ../../coproductionprocess-settings.md:16
+msgid "Main screen with co-production process settings"
+msgstr ""
+
+#: ../../coproductionprocess-settings.md:16
+msgid "Co-production process setting screen after clicking on PENCIL icon"
+msgstr ""
+
+#: ../../coproductionprocess-team.md:1
+msgid "Team management in co-production process"
+msgstr ""
+
+#: ../../coproductionprocess-team.md:3
+msgid ""
+"Before using the Collaborative environment, you must first login with "
+"your google credentials or create your own credentials at [https://demo"
+".interlink-project.eu/](https://demo.interlink-project.eu/), i.e. the "
+"staging server of INTERLINK. Alternatively, you may do this process in "
+"your pilot server:"
+msgstr ""
+
+#: ../../coproductionprocess-team.md:4 ../../dashboard.md:14
+msgid ""
+"[MEF pilot's deployment of Collaborative Environment](https://mef"
+".interlink-project.eu/)"
+msgstr ""
+
+#: ../../coproductionprocess-team.md:5 ../../dashboard.md:15
+msgid ""
+"[VARAM pilot's deployment of Collaborative Environment](https://varam"
+".interlink-project.eu/)"
+msgstr ""
+
+#: ../../coproductionprocess-team.md:6
+msgid ""
+"[Zaragoza pilot's deployment of Collaborative Environment](https://zgz"
+".interlink-project.eu/) **IMPORTANT**: All members of an envisaged team "
+"must logged into the platform before they can be added to a team. ![Login"
+" required screen](images/dashboard-loginrequired.PNG) ![AAC "
+"screen](images/aac-login-window.PNG)"
+msgstr ""
+
+#: ../../coproductionprocess-team.md:6 ../../dashboard.md:18
+msgid "Login required screen"
+msgstr ""
+
+#: ../../coproductionprocess-team.md:6 ../../dashboard.md:18
+msgid "AAC screen"
+msgstr ""
+
+#: ../../coproductionprocess-team.md:9
+msgid ""
+"Next, create a team for taking part in a co-production process. In the "
+"figure you can see how two members of a team first log in and then they "
+"are assigned to the same team. ![Two user sessions](images/team-"
+"management-two-users-login.png) ![Creating a team](images/dashboard-team-"
+"creation.png) ![Adding a user](images/dashboard-team-creation2.png) "
+"![Team editing window](images/teamview-edit.png)"
+msgstr ""
+
+#: ../../coproductionprocess-team.md:9
+msgid "Two user sessions"
+msgstr ""
+
+#: ../../coproductionprocess-team.md:9
+msgid "Creating a team"
+msgstr ""
+
+#: ../../coproductionprocess-team.md:9
+msgid "Adding a user"
+msgstr ""
+
+#: ../../coproductionprocess-team.md:9
+msgid "Team editing window"
+msgstr ""
+
+#: ../../coproductionprocess-team.md:11
+msgid ""
+"The main purpose of a team in the Collaborative Environment is to take "
+"part in a [co-production process](https://dev.interlink-"
+"project.eu/docs/en/coproductionprocess-overview.html). "
+"Consequently, we need to create a co-production project where the "
+"activity to co-create will be managed ![Creating a new co-production "
+"project](images/dashboard-createnewcoproductionprocess.png)"
+msgstr ""
+
+#: ../../coproductionprocess-team.md:11
+msgid "Creating a new co-production project"
+msgstr ""
+
+#: ../../coproductionprocess-team.md:13
+msgid ""
+"In order to **link the created team to the created co-production "
+"process**, you must click on \"Add new Team\" button, and then select the"
+" suitable team in the drop-down list of the pop-up window to be assigned "
+"to the currently active co-production process. ![Select Team menu option "
+"and \"Add new Team\" button](images/coproduction-team-assignment.png) "
+"![Click on pop-up window's Add team button](images/coproduction-team-"
+"assignment2.png)"
+msgstr ""
+
+#: ../../coproductionprocess-team.md:13
+msgid "Select Team menu option and \"Add new Team\" button"
+msgstr ""
+
+#: ../../coproductionprocess-team.md:13
+msgid "Click on pop-up window's Add team button"
+msgstr ""
+
+#: ../../coproductionprocess-team.md:15
+msgid ""
+"Notice that you may create new roles and new teams with different rights "
+"than the core co-producers’ team. Currently a role applies to all phases,"
+" objectives and tasks of a co-production process."
+msgstr ""
+
+#: ../../coproductionprocess-team.md:16
+msgid ""
+"Create a new team    ![Creating a new team](images/team-management-new-"
+"team.png)"
+msgstr ""
+
+#: ../../coproductionprocess-team.md:16
+msgid "Creating a new team"
+msgstr ""
+
+#: ../../coproductionprocess-team.md:18
+msgid ""
+"Create a new role, assigning it the right to \"View resources\" only   "
+"![Creation of co-observers role](images/team-management-new-role.png)"
+msgstr ""
+
+#: ../../coproductionprocess-team.md:18
+msgid "Creation of co-observers role"
+msgstr ""
+
+#: ../../coproductionprocess-team.md:20
+msgid ""
+"Assign the role of co-observers to the co-observers team   ![Assignment "
+"of co-observers role to co-observers team](images/team-management-assign-"
+"role-team.png)"
+msgstr ""
+
+#: ../../coproductionprocess-team.md:20
+msgid "Assignment of co-observers role to co-observers team"
+msgstr ""
+
+#: ../../coproductionprocess-workplan.md:1
+msgid "Workplan view of a coproduction process"
+msgstr ""
+
+#: ../../coproductionprocess-workplan.md:3
+msgid ""
+"The workplan view offers a temporal visualization of a co-production "
+"process, i.e. the period of time in which its tasks span."
+msgstr ""
+
+#: ../../coproductionprocess-workplan.md:5
+msgid ""
+"You may access the [WORKPLAN view](https://dev.interlink-"
+"project.eu/docs/en/coproductionprocess-workplan.html) by "
+"either clicking on the \"Time planification\" link in the [GUIDE "
+"view](/docs/en"
+"/coproductionprocess-guide.html) of a task or clicking on the left hand "
+"side menu option named \"Workplan\"."
+msgstr ""
+
+#: ../../coproductionprocess-workplan.md:7
+msgid ""
+"You may return to the  [GUIDE view](https://dev.interlink-"
+"project.eu/docs/en/coproductionprocess-guide.html), to see the"
+" task details by clicking on the name of the task in the [WORKPLAN "
+"view](/docs/en"
+"/coproductionprocess-workplan.html).     ![Workplan view](images"
+"/workplanview-taskduration.png)"
+msgstr ""
+
+#: ../../coproductionprocess-workplan.md:10
+msgid ""
+"Remember that you assign durations to tasks, by editing a task in [GUIDE "
+"view](/docs/en"
+"/coproductionprocess-guide.html):    ![Assigning duration to task](images"
+"/guideview-assignduration.png)"
+msgstr ""
+
+#: ../../dashboard.md:1
+msgid "Dashboard"
+msgstr ""
+
+#: ../../dashboard.md:3
+msgid ""
+"When a user accesses one to the INTERLINK collaborative front-end "
+"encounters a page informing about:"
+msgstr ""
+
+#: ../../dashboard.md:4
+msgid ""
+"[INTERLINK project](https://demo.interlink-project.eu/) (top menu option "
+"\"Project\")"
+msgstr ""
+
+#: ../../dashboard.md:5
+msgid ""
+"The [Platform](https://demo.interlink-project.eu/platform) (\"Platform\" "
+"top menu option) giving details about the Collaborative Environment made "
+"available by the project"
+msgstr ""
+
+#: ../../dashboard.md:6
+msgid ""
+"The INTERLINK [co-production methodology](https://demo.interlink-"
+"project.eu/coprod) (\"Co-production\" top menu option)"
+msgstr ""
+
+#: ../../dashboard.md:7
+msgid ""
+"The [INTERLINKERs catalogue](https://demo.interlink-project.eu/catal) "
+"(\"Catalogue\" menu option) where unregistered users can browse, filter "
+"and search over available INTERLINKERs"
+msgstr ""
+
+#: ../../dashboard.md:8
+msgid ""
+"The [About](https://demo.interlink-project.eu/about) page (\"About\" menu"
+" option\") where users can learn about the INTERLINK project.  "
+"![Dashboard landing page](images/dashboard-entry.png)"
+msgstr ""
+
+#: ../../dashboard.md:8
+msgid "Dashboard landing page"
+msgstr ""
+
+#: ../../dashboard.md:11
+msgid ""
+"When a user clicks on button [\"Go to dashboard\"](https://demo"
+".interlink-project.eu/dashboard) it will be given access to the INTERLINK"
+" Collaborative Environment front-end."
+msgstr ""
+
+#: ../../dashboard.md:13
+msgid ""
+"**IMPORTANT**. You may use INTERLINK's deployment at [Staging "
+"Server](https://demo.interlink-project.eu/), or, alternatively, you may "
+"access the Collaborative Environment's Dashboard in your pilot server:"
+msgstr ""
+
+#: ../../dashboard.md:16
+msgid ""
+"[Zaragoza pilot's deployment of Collaborative Environment](https://zgz"
+".interlink-project.eu/)"
+msgstr ""
+
+#: ../../dashboard.md:18
+msgid ""
+"Before using the Collaborative environment, for first time, you must "
+"first login with your google credentials or create your own credentials "
+"at [https://demo.interlink-project.eu/](https://demo.interlink-"
+"project.eu/), i.e. the staging server of INTERLINK. **IMPORTANT**: All "
+"members of an envisaged team must logged into the platform before they "
+"can be added to a team. ![Login required screen](images/dashboard-"
+"loginrequired.PNG) ![AAC screen](images/aac-login-window.PNG)"
+msgstr ""
+
+#: ../../dashboard.md:20
+msgid ""
+"Once logged in, you are given access to the INTERLINK Dashboard view, "
+"where the user has access to two core main functionalities:"
+msgstr ""
+
+#: ../../dashboard.md:21
+msgid ""
+"My teams: the user can see the teams s/he is part of and create new co-"
+"proction teams if needed."
+msgstr ""
+
+#: ../../dashboard.md:22
+msgid ""
+"My processes: the user can see the co-production processess where s/he is"
+" taking part in or create new co-production processes if needed."
+msgstr ""
+
+#: ../../dashboard.md:24
+msgid "![INTERLINK Dashboard view](images/dashboard-view.png)"
+msgstr ""
+
+#: ../../dashboard.md:24
+msgid "INTERLINK Dashboard view"
+msgstr ""
+
+#: ../../dashboard.md:26
+msgid ""
+"Within \"My Teams\" section, once a user hits \"+ Create new team\", s/he"
+" is shown a pop-up window where a new team details (Name, Description and"
+" list of team members) can be input. ![New team creation in "
+"dashboard](images/dashboard-team-creation.png) ![New team creation in "
+"dashboard 2](images/dashboard-team-creation2.png)"
+msgstr ""
+
+#: ../../dashboard.md:26 ../../dashboard.md:30
+msgid "New team creation in dashboard"
+msgstr ""
+
+#: ../../dashboard.md:26
+msgid "New team creation in dashboard 2"
+msgstr ""
+
+#: ../../dashboard.md:30
+msgid ""
+"Within \"My processes\" section, once a user hits \"+ Create new "
+"process\", s/he is shown a pop-up window where a new team details (Name, "
+"Language, Description) can be input. ![New team creation in "
+"dashboard](images/dashboard-createnewcoproductionprocess.png)"
+msgstr ""
+
+#: ../../dashboard.md:33
+msgid ""
+"By clicking on the name of a co-production process, the user is switched "
+"to the [\"co-production process\" view](https://dev.interlink-"
+"project.eu/docs/en/coproductionprocess-guide.html)."
+msgstr ""
+
+#: ../../index.rst:9
+msgid "Contents:"
+msgstr ""
+
+#: ../../index.rst:7
+msgid "Interlink user manual"
+msgstr ""
+
+#: ../../index.rst:23
+msgid "Indices and tables"
+msgstr ""
+
+#: ../../index.rst:25
+msgid ":ref:`genindex`"
+msgstr ""
+
+#: ../../index.rst:26
+msgid ":ref:`modindex`"
+msgstr ""
+
+#: ../../index.rst:27
+msgid ":ref:`search`"
+msgstr ""
+
+#~ msgid "Catalogue of interlinkers"
+#~ msgstr ""
+
+#~ msgid "Guide section of a coproduction process"
+#~ msgstr ""
+
+#~ msgid "Overview section of a coproduction process"
+#~ msgstr ""
+
+#~ msgid "Settings section of a coproduction process"
+#~ msgstr ""
+
+#~ msgid "Team section of a coproduction process"
+#~ msgstr ""
+
+#~ msgid "Workplan section of a coproduction process"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The GUIDE view can be considered "
+#~ "the main view of a co-production"
+#~ " process. It is closely linked to "
+#~ "the other available views, named "
+#~ "OVERVIEW and WORKPLAN views of a "
+#~ "co-production process."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The INTERLINKER catalogue provides a "
+#~ "one-stop-shop for know-how enabling"
+#~ " co-production. It has been populated"
+#~ " with knowledge and software INTERLINKERs"
+#~ " leveraging resources generated in previous"
+#~ " EU projects, social innovation "
+#~ "initiatives, and service design best "
+#~ "practices like: WeLive, Silearning.eu, "
+#~ "servicedesigntools.org, DesignersItalia,  IDEO or"
+#~ " Engage2020."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The GUIDE view can be considered "
+#~ "the main view of a co-production"
+#~ " process. It is closely linked to "
+#~ "the other available views, namely "
+#~ "OVERVIEW and WORKPLAN views of a "
+#~ "co-production process."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The GUIDE view displays a co-"
+#~ "production tree, allowing the co-"
+#~ "production team members to browse "
+#~ "through the phases of a co-"
+#~ "production process, its corresponding "
+#~ "objectives, the tasks that help "
+#~ "accomplishing those objectives and the "
+#~ "INTERLINKERs that are recommended to aid"
+#~ " team member completing certain tasks "
+#~ "of the co-production process. Very "
+#~ "importantly, from the GUIDE view, users"
+#~ " can instantiate the recommended "
+#~ "INTERLINKERs for a task or create "
+#~ "new instances from a range of "
+#~ "generic INTERLINKERs."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "After creating a new co-production "
+#~ "process, the user is requested to "
+#~ "choose a co-production process guide."
+#~ " Notice that there is flexibility to"
+#~ " choose the best fitting schema. The"
+#~ " left-hand-side \"Guide\" menu item"
+#~ " does not appear until a schema "
+#~ "has been chosen."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Notice that there are several co-"
+#~ "production trees available. Let's select, "
+#~ "for instance, \"Default schema\" ![Select "
+#~ "default schema](images/guideview-defineschema.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Then we can see in WORKPLAN view"
+#~ " the time span defined, by clicking"
+#~ " on the \"Time planification\" link "
+#~ "in the GUIDE view or clicking on"
+#~ " the left hand side menu option "
+#~ "named \"Workplan\". You may return to"
+#~ " the Workplan view, to see the "
+#~ "task details by clicking on the "
+#~ "name of the task in the WORKPLAN"
+#~ " view.  ![Workplan view](images/workplanview-"
+#~ "taskduration.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For intance, let's create a new "
+#~ "document to collect feedback of "
+#~ "collaboration process. \t- Select a task"
+#~ " in the GUIDE view, e.g. ENGAGE "
+#~ "> Engage Stakeholders > Create awareness"
+#~ " and Communication \t- Notice the "
+#~ "INTERLINKERs recommended \t![Notice INTERLINKERs "
+#~ "recommended](images/catalogueview-recommendedinterlinkers.png)"
+#~ " \t- Select a task in the GUIDE"
+#~ " view, e.g. ENGAGE > Define legal "
+#~ "and ethical framework > Define a "
+#~ "non-disclosure agreement (NDA) \t- Click"
+#~ " on the blue button at the "
+#~ "bottom entitled \"Initiate Procedure\" to "
+#~ "give place to a new Google Docs"
+#~ " document \t![Creating a new Google "
+#~ "Docs](images/guideview-genericINTERLINKERinstantiation.png)"
+#~ " \t- Select the type of document "
+#~ "to create with the support of "
+#~ "Google Drive INTERLINKER \t![Select and "
+#~ "name the Google Docs](images/googledrive-"
+#~ "interlinker-init.png) \t- Realize about the"
+#~ " new resource that appears at the "
+#~ "bottom of the task description panel"
+#~ " \t![New resource created](images/guideview-"
+#~ "newresource-created.png) \t- Open it in "
+#~ "Google Drive by clicking on the "
+#~ "newly created resource name \t![New "
+#~ "resource created](images/googledrive-viewdocument.png)"
+#~ " \t- You may repeat the process, "
+#~ "selecting a recommended INTERLINKER instead:"
+#~ " \t\t- For instance, select *\"Stakeholders"
+#~ " Mapping Canvas\"* INTERLINKER under task"
+#~ " shown when navigating to *Engage >"
+#~ " Identify Stakeholders*   \t\t- Click on"
+#~ " button “Instantiate as resource to "
+#~ "use in the project” \t\t- Check "
+#~ "the newly created resource appears at"
+#~ " the bottom of the page under "
+#~ "**“Current resources”** \t\t- Open the "
+#~ "generated resource in the form of "
+#~ "a presentation and add some "
+#~ "modifications"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Finally, you can see the progress "
+#~ "achieved, so far, in a given "
+#~ "co-production process by visiting the "
+#~ "OVERVIEW view, by clicking on "
+#~ "\"Overview\" menu item on the left "
+#~ "hand-side menu option. \t![Resources "
+#~ "created so far](images/overview-"
+#~ "resourcescreated.png)"
+#~ msgstr ""
+
+#~ msgid "Overview of a coproduction process"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The Overview view is one of the"
+#~ " three co-production process visualization"
+#~ " available, namely Overview, Guide and "
+#~ "Workplan views."
+#~ msgstr ""
+
+#~ msgid "Settings a coproduction process"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Once you have configured a co-"
+#~ "production process you can always update"
+#~ " its details by clicking on the "
+#~ "**Settings** menu option on the left "
+#~ "hand-side menu. Then, click on the"
+#~ " PENCIL icon on the top right "
+#~ "hand side to start editing the "
+#~ "project details. Finally, hit on the "
+#~ "button \"Save\" to save changes or "
+#~ "\"Cancel\" to cancel them."
+#~ msgstr ""
+
+#~ msgid "[https://mef.interlink-project.eu/](https://mef.interlink-project.eu/)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "[https://varam.interlink-project.eu/](https://varam"
+#~ ".interlink-project.eu/)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "[https://zgz.interlink-project.eu/](https://zgz.interlink-"
+#~ "project.eu/) **IMPORTANT**: All members of "
+#~ "an envisaged team must logged into "
+#~ "the platform before they can be "
+#~ "added to a team. ![Login required "
+#~ "screen](images/dashboard-loginrequired.PNG) ![AAC "
+#~ "screen](images/aac-login-window.PNG)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The main purpose of a team in "
+#~ "the Collaborative Environment is to take"
+#~ " part in a co-production process. "
+#~ "Consequently, we need to create a "
+#~ "co-production project where the activity"
+#~ " to co-create will be managed "
+#~ "![Creating a new co-production "
+#~ "project](images/dashboard-createnewcoproductionprocess.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In order to **link the created "
+#~ "team to the created co-production "
+#~ "process**, by clicking on \"Add new "
+#~ "Team\" button, and then selecting the"
+#~ " suitable team in the drop-down "
+#~ "list of the pop-up window to "
+#~ "be assigned to the currently active "
+#~ "co-production process. ![Select Team "
+#~ "menu option and \"Add new Team\" "
+#~ "button](images/coproduction-team-assignment.png) "
+#~ "![Click on pop-up window's Add "
+#~ "team button](images/coproduction-team-"
+#~ "assignment2.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Notice that you may create new "
+#~ "roles and new teams with different "
+#~ "rights than the core co-producers’ "
+#~ "team. Currently a role applies to "
+#~ "all phases, objectives and tasks of "
+#~ "a co-production process.  \t- Create "
+#~ "a new team  \t![Creating a new "
+#~ "team](images/team-management-new-team.png) \t-"
+#~ " Create a new role, assigning it "
+#~ "the right to \"View resources\" only"
+#~ " \t![Creation of co-observers role](images"
+#~ "/team-management-new-role.png) \t- Assign"
+#~ " the role of co-observers to "
+#~ "the co-observers team \t![Assignment of"
+#~ " co-observers role to co-observers"
+#~ " team](images/team-management-assign-role-"
+#~ "team.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You may access this view by either"
+#~ " clicking on the \"Time planification\" "
+#~ "link in the GUIDE view of a "
+#~ "task or clicking on the left hand"
+#~ " side menu option named \"Workplan\"."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You may return to the Workplan "
+#~ "view, to see the task details by"
+#~ " clicking on the name of the "
+#~ "task in the WORKPLAN view.     "
+#~ "![Workplan view](images/workplanview-taskduration.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Remember that you may also assign "
+#~ "durations to tasks, by editing a "
+#~ "task in Guide view:    ![Assigning "
+#~ "duration to task](images/guideview-"
+#~ "assignduration.png)"
+#~ msgstr ""
+
+#~ msgid "INTERLINK project (top menu option \"Project\")"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The platform (\"Platform\" top menu "
+#~ "option) giving details about the "
+#~ "Collaborative Environment made available by"
+#~ " the project"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The INTERLINK co-production methodology "
+#~ "(\"Co-production\" top menu option)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The INTERLINKERs catalogue (\"Catalogue\" menu"
+#~ " option) where unregistered users can "
+#~ "browse, filter and search over available"
+#~ " INTERLINKERs"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The About page (\"About\" menu option\")"
+#~ " where users can learn about the "
+#~ "INTERLINK project.  ![Dashboard landing "
+#~ "page](images/dashboard-entry.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "When a user clicks on button \"Go"
+#~ " to dashboard\" it will be given "
+#~ "access to the INTERLINK Collaborative "
+#~ "Environment front-end."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "By clicking on the name of a "
+#~ "co-production process, the user is "
+#~ "switched to the \"co-production "
+#~ "process\" view."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The above line of code calls the"
+#~ " log function (mentioned afterwards) with"
+#~ " a dictionary including relevant data "
+#~ "about the action performed (model, "
+#~ "action, phase, task_id, etc). The amount"
+#~ " of information saved in a log "
+#~ "depends on the specific action that "
+#~ "you want to record, therefore the "
+#~ "internal structure could vary from one"
+#~ " to another."
+#~ msgstr ""
+
+#~ msgid "\"user_id\""
+#~ msgstr ""
+
+#~ msgid "\"service\" (\"coproduction\", \"servicepedia\"...)"
+#~ msgstr ""
+
+#~ msgid "\"action\" (GET, CREATE, UPDATE, DELETE)"
+#~ msgstr ""
+
+#~ msgid "Send a log through a POST request to the API"
+#~ msgstr ""
+
+#~ msgid "Send a log through RabbitMQ"
+#~ msgstr ""
+
+#~ msgid "Interlinkers integration"
+#~ msgstr ""
+
+#~ msgid "Setup local development environment"
+#~ msgstr ""
+
+#~ msgid "# Environments administration ## Connect to an environment"
+#~ msgstr ""
+
+#~ msgid "HOW TO MOVE DOCKER DATA DIRECTORY TO ANOTHER LOCATION ON UBUNTU"
+#~ msgstr ""
+
+#~ msgid "# Environments administration"
+#~ msgstr ""
+
+#~ msgid "## Connect to an environment"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "ssh -i id_rsa interlink@{ENVIRONMENT}.interlink-"
+#~ "project.eu cd /datadrive/data/interlink-project"
+#~ msgstr ""
+
+#~ msgid "{ENVIRONMENT} = dev/demo/mef/zgz/varam"
+#~ msgstr ""
+
+#~ msgid "Down containers"
+#~ msgstr ""
+
+#~ msgid "Delete volumes"
+#~ msgstr ""
+
+#~ msgid "docker run sh in db container"
+#~ msgstr ""
+
+#~ msgid "psql postgresql://postgres:changethis@localhost:5432"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "DROP DATABASE catalogue_production; DROP "
+#~ "DATABASE coproduction_production; CREATE DATABASE"
+#~ " catalogue_production; CREATE DATABASE "
+#~ "coproduction_production; exit"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "psql "
+#~ "postgresql://postgres:changethis@localhost:5432/coproduction_production"
+#~ " -c 'create extension hstore;'"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "psql "
+#~ "postgresql://postgres:changethis@localhost:5432/catalogue_production"
+#~ " -c 'create extension hstore;'"
+#~ msgstr ""
+
+#~ msgid "docker-compose exec -T catalogue ./seed.sh"
+#~ msgstr ""
+
+#~ msgid "docker-compose exec -T loomio rake db:setup"
+#~ msgstr ""
+
+#~ msgid "Docker data path"
+#~ msgstr ""
+
+#~ msgid "STOP THE DOCKER DAEMON sudo service docker stop"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "ADD A CONFIGURATION FILE TO TELL "
+#~ "THE DOCKER DAEMON WHAT IS THE "
+#~ "LOCATION OF THE DATA DIRECTORY "
+#~ "/etc/docker/daemon.json { \"data-root\": "
+#~ "\"/path/to/your/docker\" }"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "COPY THE CURRENT DATA DIRECTORY TO "
+#~ "THE NEW ONE sudo rsync -aP "
+#~ "/var/lib/docker/ /path/to/your/docker"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "RENAME THE OLD DOCKER DIRECTORY sudo "
+#~ "mv /var/lib/docker /var/lib/docker.old This is"
+#~ " just a sanity check to see "
+#~ "that everything is ok and docker "
+#~ "daemon will effectively use the new "
+#~ "location for its data."
+#~ msgstr ""
+
+#~ msgid "RESTART THE DOCKER DAEMON sudo service docker start"
+#~ msgstr ""
+
+#~ msgid "Down all containers that use the volume"
+#~ msgstr ""
+
+#~ msgid "Delete volume (db-data)"
+#~ msgstr ""
+
+#~ msgid "Start db container"
+#~ msgstr ""
+
+#~ msgid "Start a shell in db container and execute:"
+#~ msgstr ""
+
+#~ msgid "Run the workflow manually from GitHub actions"
+#~ msgstr ""
+
+#~ msgid "Remove all containers that use the volume (apart from the db container)"
+#~ msgstr ""
+
+#~ msgid "LogQL [documentation] (https://grafana.com/docs/loki/latest/logql/)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "[Youtube video] "
+#~ "(https://www.youtube.com/watch?v=HDpE9v1Syz8) ilustrating "
+#~ "how to perform queries over Grafana "
+#~ "Loki with LogQL"
+#~ msgstr ""
+
+#~ msgid "Exploiting the logs"
+#~ msgstr ""
+
+#~ msgid "Go to: https://portainer.dev.interlink-project.eu/"
+#~ msgstr ""
+
+#~ msgid "Pick the required container, i.e. dev-interlink-project-eu-db"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Type in the following command to "
+#~ "connect to the database: psql "
+#~ "postgresql://postgres:changethis@localhost:5432"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Some PLSQL commands which can be "
+#~ "useful are documented in article  [\"How"
+#~ " to List Databases and Tables in "
+#~ "PostgreSQL Using "
+#~ "psql\"](https://chartio.com/resources/tutorials/how-to-"
+#~ "list-databases-and-tables-in-postgresql-"
+#~ "using-psql/):"
+#~ msgstr ""
+
+#~ msgid "\\\\describe or \\\\dt to describe the structure of a table, e.g."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\\\\list or \\\\l to view all of"
+#~ " the defined databases on the server,"
+#~ " e.g. \\\\l"
+#~ msgstr ""
+
+#~ msgid "\\\\connect or \\\\c to jump between databases, e.g. \\\\c sales"
+#~ msgstr ""
+
+#~ msgid "\\\\describe or \\\\dt to list the tables in a database, e.g. \\\\dt"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\\\\d to figure out internal structure"
+#~ " of a table in a database, e.g."
+#~ " \\\\d coproductionprocess"
+#~ msgstr ""
+
+#~ msgid "\\\\l"
+#~ msgstr ""
+
+#~ msgid "\\c coproduction_production"
+#~ msgstr ""
+
+#~ msgid "\\\\dt to list the tables of DB coproduction_production"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\\\\d coproduction_production to figure out"
+#~ " the internal structure of the table"
+#~ msgstr ""
+
+#~ msgid "SELECT * FROM coproduction_production"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Based on the [Data Model "
+#~ "diagram]((https://dev.interlink-"
+#~ "project.eu/docs/en/collaborativeenvironment/datamodel/index.html)) "
+#~ "or the tables descriptions returned by"
+#~ " Postgres issue queries"
+#~ msgstr ""
+
+#~ msgid "Introducing manually changed file translations"
+#~ msgstr ""
+
+#~ msgid "![Catalogue](catalogue.png) ![Coproduction](coproduction.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Migrations https://stackoverflow.com/questions/24612395/how-"
+#~ "do-i-execute-inserts-and-updates-in-"
+#~ "an-alembic-upgrade-script"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "https://github.com/interlink-project/backend-"
+#~ "catalogue/tree/master/catalogue/alembic/versions "
+#~ "https://github.com/interlink-project/backend-"
+#~ "catalogue/tree/master/coproduction/alembic/versions"
+#~ msgstr ""
+
+#~ msgid "Querying the INTERLINK Data Model"
+#~ msgstr ""
+
+#~ msgid "Authentication"
+#~ msgstr ""
+
+#~ msgid "Auth flow example"
+#~ msgstr ""
+
+#~ msgid "User has not logged in yet (there is no cookie)."
+#~ msgstr ""
+
+#~ msgid "![Auth1](images/auth/auth1.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "After making a GET request to "
+#~ "/auth/login, if user is not logged "
+#~ "in, browser redirects to the OIDC "
+#~ "service where the user can log in"
+#~ " with credentials or third party "
+#~ "providers, such as Google."
+#~ msgstr ""
+
+#~ msgid "![Login](images/auth/login.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "After a successful login, token is "
+#~ "stored as a \"samesite\" cookie. Now,"
+#~ " all requests made to the backend "
+#~ "microservices behind **localhost** (or the "
+#~ "site where is running the **auth** "
+#~ "microservice) send the cookie together "
+#~ "with the request."
+#~ msgstr ""
+
+#~ msgid "![Auth2](images/auth/merged.jpg)"
+#~ msgstr ""
+
+#~ msgid "### How do microservices check that a request is authenticated?"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Each endpoint checks if the access "
+#~ "token is present **as a cookie or"
+#~ " as an authorization header** (being "
+#~ "prioritized the cookie), checks its "
+#~ "validity and decodes it to set the"
+#~ " *user_data* (contained inside the access"
+#~ " token, having name, email and "
+#~ "profile image, for example) inside "
+#~ "**request** data"
+#~ msgstr ""
+
+#~ msgid "![Auth deps](images/auth/deps.png)"
+#~ msgstr ""
+
+#~ msgid "## Advantages and drawbacks of cookie authentication"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To understand the advantages of this "
+#~ "authentication we must really understand "
+#~ "how the different services are "
+#~ "integrated in the frontend. If we "
+#~ "look again at the example of how"
+#~ " the interlinker **forum** is integrated"
+#~ " into the frontend, we will see "
+#~ "that it is done through an iframe"
+#~ " that loads the path "
+#~ "\"/forum/assets/{id}/viewer/\"."
+#~ msgstr ""
+
+#~ msgid "![Forum integration](images/interlinkers/forumintegration.png)"
+#~ msgstr ""
+
+#~ msgid "<iframe src=\"/forum/assets/{id}/viewer/\" frameBorder=\"0\"></iframe>"
+#~ msgstr ""
+
+#~ msgid "### Alternatives (\"authorization\" header):"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "That each service / interlinker "
+#~ "integrate its own authentication flow "
+#~ "(being complex both to develop and "
+#~ "maintain). Likewise, it would entail "
+#~ "that the user had to perform the"
+#~ " login steps for and for each "
+#~ "of the external services that are "
+#~ "being injected into the main frontend."
+#~ " **In fact, it would not be "
+#~ "possible, because the OIDC provider does"
+#~ " not support its loading inside an"
+#~ " iframe**."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We should find a plausible way to"
+#~ " pass the access token to the "
+#~ "service contained in the iframe. One "
+#~ "way to do this would be to "
+#~ "inject it as a parameter in the"
+#~ " iframe's src, which would expose the"
+#~ " token:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "``` <iframe "
+#~ "src=\"/forum/assets/{id}/viewer?access_token={access_token}\"></iframe>"
+#~ " ```"
+#~ msgstr ""
+
+#~ msgid "### Advantages of using cookie-based auth:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Once a user has logged in once,"
+#~ " through any service (main frontend "
+#~ "or interlinker GUIs), ALL the services"
+#~ " can make authenticated requests."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Logic to implement authentication in any"
+#~ " service is trivial and **not "
+#~ "framework-dependant**. Given **forum** "
+#~ "interlinker as an example, which is "
+#~ "developed with NextJS framework, the "
+#~ "logic to authenticate an user would "
+#~ "be as simple as redirecting the "
+#~ "user to the /auth/login route (the "
+#~ "auth microservice is responsible to "
+#~ "retrieve the token and to set it"
+#~ " to a samesite cookie):"
+#~ msgstr ""
+
+#~ msgid "![Auth2](images/auth/nextjs.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "(being *auth* object an user_data "
+#~ "\"storage object\" in order to access"
+#~ " it fastly)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "By the way, **authentication through "
+#~ "authorization headers is also allowed "
+#~ "(check AuthMiddleware)**"
+#~ msgstr ""
+
+#~ msgid "### Drawbacks:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "All services MUST BE behind the "
+#~ "same sitename (being allowed subdomains). "
+#~ "In development, this is achieved by "
+#~ "the **proxy** microservice, powered by "
+#~ "Traefik (take a look in "
+#~ "[ROUTING.md](/docs/ROUTING.md))."
+#~ msgstr ""
+
+#~ msgid "Auth microservice"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Authentication is managed by **auth** "
+#~ "microservice, that exposes these endpoints:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "/auth/login: redirects to the OIDC "
+#~ "provider where the users can log "
+#~ "in. Accepts *redirect_on_callback*."
+#~ msgstr ""
+
+#~ msgid "Login endpoint implementation"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Callback code implementation Gets tokens "
+#~ "returned by the OIDC provider and "
+#~ "sets the access_token to *auth_token* "
+#~ "cookie [samesite](https://developer.mozilla.org/en-"
+#~ "US/docs/Web/HTTP/Headers/Set-Cookie/SameSite). Then, "
+#~ "redirects the browser to the path "
+#~ "specified by the *redirect_on_callback* cookie"
+#~ " after deleting it."
+#~ msgstr ""
+
+#~ msgid "/auth/logout: logouts user. Accepts *redirect_on_callback*."
+#~ msgstr ""
+
+#~ msgid "Data models"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Current data models of the main "
+#~ "components of the collaborative environment"
+#~ " backend"
+#~ msgstr ""
+
+#~ msgid "Catalogue service"
+#~ msgstr ""
+
+#~ msgid "![Catalogue](catalogue.png)"
+#~ msgstr ""
+
+#~ msgid "Catalogue"
+#~ msgstr ""
+
+#~ msgid "Coproduction service"
+#~ msgstr ""
+
+#~ msgid "![Coproduction](coproduction.png)"
+#~ msgstr ""
+
+#~ msgid "Coproduction"
+#~ msgstr ""
+
+#~ msgid "Migrations on the data models"
+#~ msgstr ""
+
+#~ msgid "Current migration files for each component"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "CATALOGUE: https://github.com/interlink-project"
+#~ "/backend-catalogue/tree/master/catalogue/alembic/versions"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "COPRODUCTION: https://github.com/interlink-project"
+#~ "/backend-catalogue/tree/master/coproduction/alembic/versions"
+#~ msgstr ""
+
+#~ msgid "How to create new migration files"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In case that changes are made to"
+#~ " the data model, the migration files"
+#~ " should implement the migration of "
+#~ "the data. For that, take this into"
+#~ " account:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "https://stackoverflow.com/questions/24612395/how-do-i"
+#~ "-execute-inserts-and-updates-in-an-"
+#~ "alembic-upgrade-script"
+#~ msgstr ""
+
+#~ msgid "Collaborative environment"
+#~ msgstr ""
+
+#~ msgid "Testing"
+#~ msgstr ""
+
+#~ msgid "Environments administration"
+#~ msgstr ""
+
+#~ msgid "Connect to an environment"
+#~ msgstr ""
+
+#~ msgid "where {ENVIRONMENT} = dev / demo / mef / zgz / varam"
+#~ msgstr ""
+
+#~ msgid "Clear databases"
+#~ msgstr ""
+
+#~ msgid "Remove all containers that creates a connection to db"
+#~ msgstr ""
+
+#~ msgid "Get db container id and execute a shell session"
+#~ msgstr ""
+
+#~ msgid "Clear the databases:"
+#~ msgstr ""
+
+#~ msgid "Run the workflow from GitHub actions"
+#~ msgstr ""
+
+#~ msgid "Restore db backup"
+#~ msgstr ""
+
+#~ msgid "Backups are stored in: /datadrive/data/db_backups in .gz file format"
+#~ msgstr ""
+
+#~ msgid "Seed data"
+#~ msgstr ""
+
+#~ msgid "It is runned automatically by the workflows"
+#~ msgstr ""
+
+#~ msgid "Set up loomio"
+#~ msgstr ""
+
+#~ msgid "In case of being the first launch"
+#~ msgstr ""
+
+#~ msgid "Docker configuration"
+#~ msgstr ""
+
+#~ msgid "Stop docker daemon"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Add a configuration file to tell "
+#~ "the docker daemon what is the "
+#~ "location of the data"
+#~ msgstr ""
+
+#~ msgid "Copy the current data directory to the new one"
+#~ msgstr ""
+
+#~ msgid "Rename the old docker directory"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This is just a sanity check to "
+#~ "see that everything is ok and "
+#~ "docker daemon will effectively use the"
+#~ " new location for its data."
+#~ msgstr ""
+
+#~ msgid "Restart docker daemon"
+#~ msgstr ""
+
+#~ msgid "SW development, CI & CD policies for INTERLINK software"
+#~ msgstr ""
+
+#~ msgid "Continuous Integration (CI)"
+#~ msgstr ""
+
+#~ msgid "Unit Tests (UT)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Every SW package should have Unit "
+#~ "Tests (UT) provided by SW package "
+#~ "authors (developers). Project DevOps (admin)"
+#~ " should configure automatic workflow to "
+#~ "execute those UT on every push to"
+#~ " master branch."
+#~ msgstr ""
+
+#~ msgid "SW Releases"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Once a SW component archieves an "
+#~ "important implementation milestone by "
+#~ "developers, its code should be TAGged."
+#~ " For SW version which are intended"
+#~ " for any deployment, a SW release "
+#~ "should be built per each SW "
+#~ "repository based on some existing TAG"
+#~ " of the code. There may be many"
+#~ " TAGs on the code (e.g. "
+#~ "function1-Monday, function2-Tuesday, etc) and "
+#~ "not all of them but some sub-"
+#~ "set are intended to become a SW"
+#~ " release."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "SW release version is usually based "
+#~ "on the TAG value as a kind "
+#~ "of extended string for example "
+#~ "\"TAG+additional_suffix\" or \"prefix+TAG\". Let's"
+#~ " establish the following convention for "
+#~ "SW release labels: *v1.X.Y-suffix* for "
+#~ "the mid-term pilot demos, where X"
+#~ " and Y are minor versions/subversions "
+#~ "and suffix may contain date of "
+#~ "functionality or configuration label."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Having built a SW release should "
+#~ "trigger automatic building of a new "
+#~ "docker image(s) for this SW repository."
+#~ " Docker images should contain TAG or"
+#~ " SW version somewhere in the name "
+#~ "of the docker image, for ex. "
+#~ "\"image-Interlink-frontend:v3.1\". The deployment"
+#~ " of a docker image should be "
+#~ "with explicit use of the image (SW"
+#~ " release) version suffix \"v3.1\" instead"
+#~ " of just \":latest\"."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "All INTERLINK SW packages should be "
+#~ "grouped into a single INTERLINK SW "
+#~ "release, with a way to configure "
+#~ "which versions (TAGs) of particular SW"
+#~ " packages should be included in given"
+#~ " version (TAG) of the INTERLINK SW"
+#~ " release. For example, INTERLINK SW "
+#~ "release version 2.1-zgz consists of the"
+#~ " following SW versions per SW "
+#~ "package:"
+#~ msgstr ""
+
+#~ msgid "Frontend v1.0.8"
+#~ msgstr ""
+
+#~ msgid "Backend v1.3.2"
+#~ msgstr ""
+
+#~ msgid "Zgz room booking module v1.2.6"
+#~ msgstr ""
+
+#~ msgid "VARAM Servicepedia module v1.4.2"
+#~ msgstr ""
+
+#~ msgid "etc."
+#~ msgstr ""
+
+#~ msgid "Integration Tests (IT)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Once the entire INTERLINK SW release "
+#~ "is tagged, this should trigger execution"
+#~ " of Integration Tests (IT) to check"
+#~ " compatibility between cross-dependent SW"
+#~ " packages within the SW release. This"
+#~ " process is still not in place "
+#~ "and pending clarification."
+#~ msgstr ""
+
+#~ msgid "Building of Docker SW images"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Once both UT and IT completed in"
+#~ " \"green\", i.e. on successfull (OK, "
+#~ "without errors) termination of UT + "
+#~ "IT pipelines, a new pipeline building"
+#~ " docker images should launch."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Having no UT/IT available, the pipelines"
+#~ " to build docker images should be "
+#~ "triggered by having built a SW "
+#~ "release per each repository."
+#~ msgstr ""
+
+#~ msgid "Continuous Deployment (CD) & Environments"
+#~ msgstr ""
+
+#~ msgid "There might be the following SIX environments:"
+#~ msgstr ""
+
+#~ msgid "Local"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "DEV: any push to master triggers "
+#~ "re-deployment of latest master code "
+#~ "for integration tests."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Staging (= DEMO): only docker images "
+#~ "built for stable SW releases deployed"
+#~ " there."
+#~ msgstr ""
+
+#~ msgid "pilot MEF"
+#~ msgstr ""
+
+#~ msgid "pilot ZGZ"
+#~ msgstr ""
+
+#~ msgid "pilot VARAM"
+#~ msgstr ""
+
+#~ msgid "Local Environment"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "It is a local computer of a "
+#~ "SW package developer. He/she can deploy"
+#~ " any versions (branches, tags) of SW"
+#~ " there in order to develop his/her"
+#~ " SW package. This environment has no"
+#~ " docker images autocompiled at GitHub "
+#~ "repository, no CI/CD pipelines, etc. and"
+#~ " it goes completely under responsibility"
+#~ " of particular developer himself/herself."
+#~ msgstr ""
+
+#~ msgid "Development Environment (DEV)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This environment is used for manual "
+#~ "tests of all the SW functionalities, "
+#~ "integrations, etc for developers of all"
+#~ " the Project SW packages. For this,"
+#~ " docker images should be re-built "
+#~ "per every new push to master "
+#~ "branches by CI pipelines once all "
+#~ "UT/IT passed. Once docker image(s) built"
+#~ " successfully, CD pipelines are started "
+#~ "to deploy those new docker images "
+#~ "into DEV server."
+#~ msgstr ""
+
+#~ msgid "Staging Environment (DEMO)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This environment is used for non-"
+#~ "developer members of the project for "
+#~ "demonstrations and GUI testing and "
+#~ "feedback purposes. For this, docker "
+#~ "images are built by CI pipeline "
+#~ "out of latest TAGs assigned per "
+#~ "every SW package, having all packages"
+#~ " passed UT/IT successfully.  The DEMO "
+#~ "server is intended for testing and "
+#~ "training sessions with business users, "
+#~ "and their work should not be "
+#~ "suddenly interrupted by a new docker "
+#~ "image deployment. That's why, once the"
+#~ " docker images with new staging SW"
+#~ " versions are built, DevOps admin "
+#~ "should announce to testing users and "
+#~ "somehow coordinate with them day and "
+#~ "time of deployment of the new SW"
+#~ " to the staging (DEMO) server."
+#~ msgstr ""
+
+#~ msgid "Pilot Servers (ZGZ, MEF, VARAM)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Deployment of INTERLINK SW to pilot "
+#~ "servers should contain the same common"
+#~ " INTERLINK base SW (web portal + "
+#~ "common interlinkers + other platform "
+#~ "type components like DBs, auth, logging,"
+#~ " etc.) and optionally pilot-specific "
+#~ "components (e.g., ZGZ room booking for"
+#~ " ZGZ pilot, Servicepedia for VARAM, "
+#~ "etc.). Functionality of the common SW"
+#~ " components (listed above) should be "
+#~ "the same, just some customizations "
+#~ "(e.g., language translations) may be "
+#~ "applied at configuration level, so no"
+#~ " need to have separate code branches,"
+#~ " but profiles of configuration files. "
+#~ "The deployment process should be similar"
+#~ " to deploying on staging (demo) "
+#~ "server, and be customized via "
+#~ "environment variables. Normally DevOps should"
+#~ " take care of customization of "
+#~ "deployment, having provided customizations of"
+#~ " SW components from developers."
+#~ msgstr ""
+
+#~ msgid "Software Updates"
+#~ msgstr ""
+
+#~ msgid "Minor updates (patches)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Minor SW updates are needed when "
+#~ "there is either a bug fix or "
+#~ "small functionality improvement which (almost)"
+#~ " does not affect (of affects very "
+#~ "little) other SW components, API "
+#~ "interfaces, Data Model, etc. Usually the"
+#~ " reason for such SW update appears"
+#~ " during SW testing and corresponding "
+#~ "issue is created in redmine for "
+#~ "corresponding SW component. Fixing the "
+#~ "SW code should start a.s.a.p. New "
+#~ "SW release with minor version "
+#~ "incremented (for ex. 3.2.1) should be"
+#~ " created. Deployment should be done "
+#~ "on first possible occasion (e.g. over"
+#~ " night or a weekend)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Such SW change may happen within "
+#~ "the same SW release, for example, "
+#~ "during the first pilot demo sessions."
+#~ " It is a good practice to have"
+#~ " accumulated several patches (bugfixes and"
+#~ " minor improvements) together to plan, "
+#~ "build, announce and deploy a new "
+#~ "minor release to the pilot servers. "
+#~ "The workflow is as follows: users "
+#~ "report bugs or propose improvements in"
+#~ " redmine, developers provide TAGged code"
+#~ " update in the GIT for them and"
+#~ " report to PM for planning the "
+#~ "deployment, then deployment goes as "
+#~ "planned by PMs."
+#~ msgstr ""
+
+#~ msgid "Major SW updates (new SW release)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Such code update corresponds to "
+#~ "implementing a new significant functionality."
+#~ " New SW release should be built "
+#~ "and deployed with new major version "
+#~ "(e.g. 3.2 or 3.2.0). Usually the "
+#~ "new SW release should keep back-"
+#~ "compatibility, the same SW design, "
+#~ "interfaces, system architecture and data "
+#~ "models should be preserved, but could"
+#~ " be extended."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Such SW change should happend per "
+#~ "different project milestones, for example, "
+#~ "there will be initial and final "
+#~ "pilot demonstrations with different SW "
+#~ "releases. Planning such milestones is "
+#~ "done by the entire project. Currently"
+#~ " we assume mid-term pilot demos "
+#~ "being v1.x.y and end of project "
+#~ "pilot demos to be v2.x.y."
+#~ msgstr ""
+
+#~ msgid "SW refactoring"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This is very rare case when system"
+#~ " architecrue, API interfaces and/or data"
+#~ " model are changed significantly or "
+#~ "recreated anew. For API this would "
+#~ "imply new documentation and testing, for"
+#~ " DB this would imply data migration"
+#~ " from old DBs into the new "
+#~ "ones, with corresponding DB data export"
+#~ " and import scriprs, etc."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Such SW changes usually should not "
+#~ "happen within the lifetime of the "
+#~ "same project. It may happend when "
+#~ "a new project is started as a "
+#~ "continuation of another one."
+#~ msgstr ""
+
+#~ msgid "Docker-compose profiling"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Docker-compose profiling is a useful "
+#~ "mechamism to structure and group lower"
+#~ " and upper level SW services within"
+#~ " docker-compose YAML file. It is "
+#~ "described in details here: "
+#~ "https://docs.docker.com/compose/profiles/"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The idea is to try to have "
+#~ "separate docker-compose files per each"
+#~ " SW service and to include (or "
+#~ "exclude) them into the deployment of "
+#~ "particular environment."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This part of configuration may still "
+#~ "be under revision and improvement by "
+#~ "DevOps. Currently it is supposed that"
+#~ " DevOps will adjust configurations per "
+#~ "pilot deployment, while package developers "
+#~ "should just provide a stable and "
+#~ "well tested version of their SW "
+#~ "code."
+#~ msgstr ""
+
+#~ msgid "Data persistency"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For the first pilot demos the "
+#~ "configuration data is read out from "
+#~ "JSON files stored in GitHub SW "
+#~ "repository. The user activity data (new"
+#~ " co-production processes, task state "
+#~ "changes and asset instances) are kept"
+#~ " as long as the DB docker "
+#~ "container is not reinstralled. On DB "
+#~ "container re-deployment these data may"
+#~ " be lost."
+#~ msgstr ""
+
+#~ msgid "Current situation"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If DB is part of the SW "
+#~ "release (e.g. web portal) and requires"
+#~ " re-deplyment on re-installation of"
+#~ " the web portal, then to allow "
+#~ "bugfix SW updates during the pilot "
+#~ "demo sessions but at the same time"
+#~ " to keep the user activity data, "
+#~ "corresponding data export and import "
+#~ "should be realized by use of "
+#~ "additional data export/import scripts."
+#~ msgstr ""
+
+#~ msgid "Separation of platfrom SW services"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Another approach would be to have "
+#~ "low level platform services like DB "
+#~ "separated from web portal and other "
+#~ "components, so re-deployment of web "
+#~ "portal (either backend and/or frontend) "
+#~ "should not re-deploy the DB "
+#~ "container. In this way, the same "
+#~ "DB continues to run keeping the "
+#~ "accumulated data."
+#~ msgstr ""
+
+#~ msgid "Data backups"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Backing up data is a goog practice"
+#~ " independently on the DB container "
+#~ "configuration and re-deployment policies. "
+#~ "Having data backed up periodically will"
+#~ " save from the global crashes at "
+#~ "the level of hosting server, as "
+#~ "well as from incidental data loss "
+#~ "during e.g. maintenance or other "
+#~ "activities. Backed up data should be "
+#~ "kept on physically different server, "
+#~ "ideally, on different hosting data "
+#~ "center location."
+#~ msgstr ""
+
+#~ msgid "Data migrations"
+#~ msgstr ""
+
+#~ msgid "Data persistence"
+#~ msgstr ""
+
+#~ msgid "Environments"
+#~ msgstr ""
+
+#~ msgid "Overview"
+#~ msgstr ""
+
+#~ msgid "Local environment (http://localhost)"
+#~ msgstr ""
+
+#~ msgid "To get a local copy up and running follow these simple example steps."
+#~ msgstr ""
+
+#~ msgid "Prerequisites"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Install [docker-"
+#~ "compose](https://docs.docker.com/compose/install/) to run"
+#~ " this project."
+#~ msgstr ""
+
+#~ msgid "Installation"
+#~ msgstr ""
+
+#~ msgid "linux or macOS:"
+#~ msgstr ""
+
+#~ msgid "To START all containers:"
+#~ msgstr ""
+
+#~ msgid "To STOP all containers:"
+#~ msgstr ""
+
+#~ msgid "![Setup](images/setup.gif)"
+#~ msgstr ""
+
+#~ msgid "Setup"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "(Optional) Seed databases with data "
+#~ "**can throw errors because we are "
+#~ "constantly making changes to the "
+#~ "database model**"
+#~ msgstr ""
+
+#~ msgid "windows: *soon*"
+#~ msgstr ""
+
+#~ msgid "Development and Demo"
+#~ msgstr ""
+
+#~ msgid ""
+#~ msgstr ""
+
+#~ msgid "https://demo.interlink-project.eu"
+#~ msgstr ""
+
+#~ msgid "Pilots (mef / varam / zgz)"
+#~ msgstr ""
+
+#~ msgid "https://mef.interlink-project.eu"
+#~ msgstr ""
+
+#~ msgid "https://varam.interlink-project.eu"
+#~ msgstr ""
+
+#~ msgid "https://zgz.interlink-project.eu"
+#~ msgstr ""
+
+#~ msgid "Welcome to Interlink's documentation!"
+#~ msgstr ""
+
+#~ msgid "External interlinkers"
+#~ msgstr ""
+
+#~ msgid "Interlinkers"
+#~ msgstr ""
+
+#~ msgid "Internal interlinkers"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This project is intended to sum up"
+#~ " the different interlinkers developed for"
+#~ " the project. But, ¿what is an "
+#~ "interlinker?"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "An *interlinker* is a tool that is"
+#~ " used to create assets by "
+#~ "*instantiating* them. These interlinkers can"
+#~ " be classified by its *nature*: "
+#~ "**software** or **knowledge**."
+#~ msgstr ""
+
+#~ msgid "**Software interlinkers**:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Are software based interlinkers that "
+#~ "create assets. For example, **forum** "
+#~ "interlinker can be instantiated to "
+#~ "create a forum where users can "
+#~ "create channels and send messages. This"
+#~ " \"forum instance\" is called an "
+#~ "\"asset\"."
+#~ msgstr ""
+
+#~ msgid "**Knowledge interlinkers**:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Refer to assets made by users that"
+#~ " can be used as templates. For "
+#~ "example, an user can create a "
+#~ "google drive word document using "
+#~ "**googledrive** interlinker and add some "
+#~ "text to it. Now, this document "
+#~ "could be reused, as if it was "
+#~ "a template."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A knowledge interlinker points to the"
+#~ " software interlinker used to create "
+#~ "an asset (softwareinterlinker_id) and the "
+#~ "id of the specific asset that "
+#~ "should be treated as the template "
+#~ "(genesis_asset_id)."
+#~ msgstr ""
+
+#~ msgid "![Interlinkers models](images/integration/model.png)"
+#~ msgstr ""
+
+#~ msgid "Interlinkers models"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This allows us to create knowledge "
+#~ "interlinkers based on any software "
+#~ "interlinker (with some conditions, as it"
+#~ " is going to be explained later):"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Survey: create survey templates for "
+#~ "specific aspects that users could reuse"
+#~ " (such us \"Survey for interlinker "
+#~ "quality assurance\")"
+#~ msgstr ""
+
+#~ msgid "Googledrive: (google apps) create document, slides or sheet templates"
+#~ msgstr ""
+
+#~ msgid "Etherpad: create document templates"
+#~ msgstr ""
+
+#~ msgid "..."
+#~ msgstr ""
+
+#~ msgid "Endpoints needed for SOFTWARE INTERLINKERS integration"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Each interlinker is treated as an "
+#~ "independent component, so they can be"
+#~ " developed with any framework or tool"
+#~ " (MEAN, MERN, django, NextJS... the "
+#~ "possibilities are infinite). But they "
+#~ "all need to expose these endpoints "
+#~ "to integrate them:"
+#~ msgstr ""
+
+#~ msgid "**Instantiate assets:**"
+#~ msgstr ""
+
+#~ msgid "**WHAT:** basic GUI por asset instantiation. This is gonna be iframed."
+#~ msgstr ""
+
+#~ msgid "**Method:** GET"
+#~ msgstr ""
+
+#~ msgid "**URL:** /assets/instantiate"
+#~ msgstr ""
+
+#~ msgid "Messages for the main frontend integration:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "When initialized, send a message to "
+#~ "the parent like { 'code': 'initialized',"
+#~ " }"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "When asset created, send a message "
+#~ "to the parent like { 'code': "
+#~ "'asset_created', 'message': data of the "
+#~ "asset }"
+#~ msgstr ""
+
+#~ msgid "Examples:"
+#~ msgstr ""
+
+#~ msgid "googledrive interlinker (left): file input"
+#~ msgstr ""
+
+#~ msgid "survey interlinker (right): form name and description"
+#~ msgstr ""
+
+#~ msgid "![Google Drive instantiate](images/integration/instantiators.png)"
+#~ msgstr ""
+
+#~ msgid "Google Drive instantiate"
+#~ msgstr ""
+
+#~ msgid "etherpad: text input for specifying a name"
+#~ msgstr ""
+
+#~ msgid "**Data of given asset:**"
+#~ msgstr ""
+
+#~ msgid "**WHAT:** returns data for given asset."
+#~ msgstr ""
+
+#~ msgid "**URL:** /assets/{id}"
+#~ msgstr ""
+
+#~ msgid "It must return these values"
+#~ msgstr ""
+
+#~ msgid "**Viewer for given asset:**"
+#~ msgstr ""
+
+#~ msgid "**WHAT:** shows GUI for given asset."
+#~ msgstr ""
+
+#~ msgid "**URL:** /assets/{id}/view"
+#~ msgstr ""
+
+#~ msgid "googledrive interlinker (left): redirects to Google Drive"
+#~ msgstr ""
+
+#~ msgid "survey (right): renders HTML"
+#~ msgstr ""
+
+#~ msgid "![Asset data](images/integration/viewers.png)"
+#~ msgstr ""
+
+#~ msgid "Asset data"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "etherpad: renders an iframe that shows"
+#~ " etherpad GUI running in a diferent"
+#~ " location (such as /etherpad/p/{padID})"
+#~ msgstr ""
+
+#~ msgid "**Delete existing asset:**"
+#~ msgstr ""
+
+#~ msgid "**WHAT:** deletes assets by id"
+#~ msgstr ""
+
+#~ msgid "**Method:** DELETE"
+#~ msgstr ""
+
+#~ msgid "**[OPTIONAL] Editor for given asset:**"
+#~ msgstr ""
+
+#~ msgid "**WHAT:** shows GUI for editing some asset."
+#~ msgstr ""
+
+#~ msgid "**URL:** /assets/{id}/edit"
+#~ msgstr ""
+
+#~ msgid "googledrive interlinker: not necessary"
+#~ msgstr ""
+
+#~ msgid "etherpad: not necessary"
+#~ msgstr ""
+
+#~ msgid "survey: renders a GUI for modifying the survey"
+#~ msgstr ""
+
+#~ msgid "![Asset data](images/integration/editor.png)"
+#~ msgstr ""
+
+#~ msgid "**[OPTIONAL] Clone given asset:**"
+#~ msgstr ""
+
+#~ msgid "**WHAT:** clones asset given an id."
+#~ msgstr ""
+
+#~ msgid "**Method:** POST"
+#~ msgstr ""
+
+#~ msgid "**URL:** /assets/{id}/clone"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":warning: If /clone not specified, the"
+#~ " interlinker can not be used to "
+#~ "generate knowledge interlinkers."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Furthermore, interlinkers can implement any"
+#~ " other endpoints needed for its "
+#~ "functionality. For example, Googledrive (left)"
+#~ " and survey (right) interlinker implements:"
+#~ msgstr ""
+
+#~ msgid "![APIS](images/integration/APIS.png)"
+#~ msgstr ""
+
+#~ msgid "APIS"
+#~ msgstr ""
+
+#~ msgid "In conclusion:"
+#~ msgstr ""
+
+#~ msgid "Example flow with Googledrive interlinker"
+#~ msgstr ""
+
+#~ msgid "VIDEO: https://youtu.be/N3jB3lwOsRo"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "When the user selects a file, a"
+#~ " POST request to /api/v1/assets **OF "
+#~ "THE INTERLINKER** (in this case "
+#~ "/googledrive/api/v1/assets) is made with the"
+#~ " data needed for the asset "
+#~ "instantiation (in this case, the file)."
+#~ " When response received, a message to"
+#~ " the parent is sent with the "
+#~ "asset data:"
+#~ msgstr ""
+
+#~ msgid "![Googledrive instantiator code](images/integration/code.png)"
+#~ msgstr ""
+
+#~ msgid "Googledrive instantiator code"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "When the **Collaborative Environment "
+#~ "frontend** receives the message, makes a"
+#~ " POST request to /coproduction/api/v1/assets/ "
+#~ "to store that asset for the task"
+#~ " where the user has pressed \"Add "
+#~ "asset\" button."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "![Collaborative environment message "
+#~ "listener](images/integration/frontend.png)"
+#~ msgstr ""
+
+#~ msgid "Collaborative environment message listener"
+#~ msgstr ""
+
+#~ msgid "Internationalization"
+#~ msgstr ""
+
+#~ msgid "Using weblate for the internationalization of the different components"
+#~ msgstr ""
+
+#~ msgid "Collaborative environment components"
+#~ msgstr ""
+
+#~ msgid "General project:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "https://demo.interlink-project.eu/weblate/projects"
+#~ "/collaborative-environment/"
+#~ msgstr ""
+
+#~ msgid "Components:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "https://demo.interlink-project.eu/weblate/projects"
+#~ "/collaborative-environment/frontend/"
+#~ msgstr ""
+
+#~ msgid "Seeding data components"
+#~ msgstr ""
+
+#~ msgid "All from https://github.com/interlink-project/interlinkers-data"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Introducing manually changed file translations"
+#~ " to \"interlinkers-data\" repository"
+#~ msgstr ""
+
+#~ msgid "First of all, there are two sets of files:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Object files: the files that represent"
+#~ " the different objects, interlinkers, "
+#~ "schemas and problemprofiles. As you can"
+#~ " see in them, there are keys "
+#~ "such as \"name_translations\" with a "
+#~ "dictionary that contains the translations. "
+#~ "Instead, these translations are not "
+#~ "supposed to be changed here, but "
+#~ "in the translation files."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Translations files: files that are "
+#~ "updated when an object is changed "
+#~ "/ added / removed. For example, if"
+#~ " I add a new interlinker, these "
+#~ "files are completely erased and "
+#~ "generated again."
+#~ msgstr ""
+
+#~ msgid "The workflow acts differently depending on the contribution type:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Push workflow: for example, someone adds"
+#~ " a new schema or changes the "
+#~ "phases of an existing one. The "
+#~ "workflow generates new translation files "
+#~ "based on the current status of the"
+#~ " schemas, interlinkers and problemprofiles. "
+#~ "So the translation files that Alessandro"
+#~ " was modifying are considered OLD, "
+#~ "because there is a need to reflect"
+#~ " the changes on the objects (even "
+#~ "if there are not)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Pull request workflow: here, the "
+#~ "workflow prevails the changes in the "
+#~ "translation files, so the content is "
+#~ "analyzed and the object files are "
+#~ "updated with the content here. In "
+#~ "fact, weblate makes pushes to a "
+#~ "branch called \"weblate\", and when "
+#~ "someone creates a pull request (usually"
+#~ " me) this process is executed and "
+#~ "then merged with the master branch. "
+#~ "This merge (push) to the master "
+#~ "branch triggers the \"push workflow\", "
+#~ "generating new translation files after "
+#~ "updating the object files with the "
+#~ "translation files generated by weblate."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "There are two possible workarounds for"
+#~ " integrating translation files manually:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Locally execute \"python3 input.py\" and "
+#~ "commit all the changes generated to "
+#~ "master."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Push the changes (only the translation"
+#~ " files) to the \"weblate\" branch and"
+#~ " open a pull request, wait for "
+#~ "the workflow to finish and delete "
+#~ "the branch."
+#~ msgstr ""
+
+#~ msgid "Instructions to retrieve data for KPIs population"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "INTERLINK needs to feed several KPIs "
+#~ "regarding how the co-production process"
+#~ " is carried out with the support "
+#~ "of the Collaborative Environment and "
+#~ "INTERLINKERs and some statistics regarding "
+#~ "the teams created, coproduction projects "
+#~ "and so on an so forth."
+#~ msgstr ""
+
+#~ msgid "There are two sources from where the designed KPIs can be fed, namely:"
+#~ msgstr ""
+
+#~ msgid "Queries to INTERLINK Data Model"
+#~ msgstr ""
+
+#~ msgid "Queries to Grafana Loki where user activity logging is stored"
+#~ msgstr ""
+
+#~ msgid "Exploiting the Data Model"
+#~ msgstr ""
+
+#~ msgid "Endpoints for KPIS"
+#~ msgstr ""
+
+#~ msgid "DEV: /coproduction/kpis"
+#~ msgstr ""
+
+#~ msgid "DEMO: https://demo.interlink-project.eu/coproduction/kpis"
+#~ msgstr ""
+
+#~ msgid "MEF: https://mef.interlink-project.eu/coproduction/kpis"
+#~ msgstr ""
+
+#~ msgid "ZARAGOZA: https://zgz.interlink-project.eu/coproduction/kpis"
+#~ msgstr ""
+
+#~ msgid "VARAM: https://varam.interlink-project.eu/coproduction/kpis"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The script is located at:  "
+#~ "https://github.com/interlink-project/backend-"
+#~ "coproduction/blob/master/coproduction/app/kpis.py"
+#~ msgstr ""
+
+#~ msgid "MANUALLY Querying the INTERLINK Data Model"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This section illustrates how to perform"
+#~ " queries to the database of co-"
+#~ "production exploiting its [data "
+#~ "model](https://dev.interlink-"
+#~ "project.eu/docs/en/collaborativeenvironment/datamodel/index.html)"
+#~ msgstr ""
+
+#~ msgid "The steps to be carried out are:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Go to [Portainer](https://www.portainer.io/) "
+#~ "front-end for the microservices "
+#~ "contenerized in INTERLINK: https://portainer.dev"
+#~ ".interlink-project.eu/. Notice that you "
+#~ "should change \"dev\" for the deployment"
+#~ " that you want to extract data "
+#~ "from."
+#~ msgstr ""
+
+#~ msgid "Log in as\tadmin / ADMIN_PASSWORD"
+#~ msgstr ""
+
+#~ msgid "Choose \"Containers\" in left hand side menu"
+#~ msgstr ""
+
+#~ msgid "Pick the required container, i.e. `dev-interlink-project-eu-db`"
+#~ msgstr ""
+
+#~ msgid "Open a >_Console"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Type in the following command to "
+#~ "connect to the database: `psql "
+#~ "postgresql://postgres:changethis@localhost:5432`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Based on the [Data Model "
+#~ "diagram](https://dev.interlink-"
+#~ "project.eu/docs/en/collaborativeenvironment/datamodel/index.html) "
+#~ "or the tables descriptions returned by"
+#~ " Postgres issue queries."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Check these other schemas to understand"
+#~ " better how entities are modelled in"
+#~ " INTERLINK:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "[Coproduction DB Schema](https://github.com/interlink-"
+#~ "project/backend-"
+#~ "coproduction/blob/master/coproduction/dbschema.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "[Catalogue DB Schema](https://github.com/interlink-"
+#~ "project/backend-catalogue/blob/master/catalogue/dbschema.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Some [PLSQL "
+#~ "commands](https://www.postgresql.org/docs/current/app-psql.html)"
+#~ " which can be useful are documented"
+#~ " in article  [\"How to List Databases"
+#~ " and Tables in PostgreSQL Using "
+#~ "psql\"](https://chartio.com/resources/tutorials/how-to-"
+#~ "list-databases-and-tables-in-postgresql-"
+#~ "using-psql/):"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`\\\\list` or `\\\\l` to view all "
+#~ "of the defined databases on the "
+#~ "server, e.g. `\\\\l`"
+#~ msgstr ""
+
+#~ msgid "`\\\\connect` or `\\\\c` to jump between databases, e.g. `\\\\c sales`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`\\\\describe` or `\\\\dt` to list the"
+#~ " tables in a database, e.g.`\\\\dt`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`\\\\d` to figure out internal structure"
+#~ " of a table in a database, e.g."
+#~ " `\\\\d coproductionprocess`"
+#~ msgstr ""
+
+#~ msgid "To run a examplary query perform the following commands:"
+#~ msgstr ""
+
+#~ msgid "`\\\\l`"
+#~ msgstr ""
+
+#~ msgid "`\\c coproduction_production`"
+#~ msgstr ""
+
+#~ msgid "`\\\\dt` to list the tables of DB coproduction_production"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`\\\\d coproduction_production` to figure out"
+#~ " the internal structure of the table"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Run different SQL commands, e.g. `SELECT"
+#~ " * FROM coproduction_production`"
+#~ msgstr ""
+
+#~ msgid "Alternatively you may execute this single command:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`psql "
+#~ "postgresql://postgres:changethis@localhost:5432/coproduction_production"
+#~ " -c 'select * from coproductionprocess';`"
+#~ msgstr ""
+
+#~ msgid "Exploiting the user behaviour logs in INTERLINK"
+#~ msgstr ""
+
+#~ msgid "Issuing queries with Grafana LogQL"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Grafana uses its own query language "
+#~ "called [LogQL](https://grafana.com/docs/loki/latest/logql/) "
+#~ "to query data from "
+#~ "[LOKI](https://grafana.com/docs/loki/latest/) o any "
+#~ "other source."
+#~ msgstr ""
+
+#~ msgid "There are many tutorials online that be followed to learn LogQL:"
+#~ msgstr ""
+
+#~ msgid "LogQL [documentation](https://grafana.com/docs/loki/latest/logql/)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "[Youtube video](https://www.youtube.com/watch?v=HDpE9v1Syz8) "
+#~ "ilustrating how to perform queries over"
+#~ " Grafana Loki with LogQL"
+#~ msgstr ""
+
+#~ msgid "Some exemplary queries are illustrated below:"
+#~ msgstr ""
+
+#~ msgid "Count the INTERLINKERs created in a time period"
+#~ msgstr ""
+
+#~ msgid "List the times that distinct knowledge interlinkers have been created"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "List the times that distinct software"
+#~ " interlinkers have been instantiated"
+#~ msgstr ""
+
+#~ msgid "Count the number of co-production processes created"
+#~ msgstr ""
+
+#~ msgid "Count the number of teams created per user"
+#~ msgstr ""
+
+#~ msgid "Notice the following regarding the above queries:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "LogQL works not over all existing "
+#~ "data (which is stream), but on a"
+#~ " data over some period of time, "
+#~ "hence the parameter $interval which is"
+#~ " used. You should also somehow have"
+#~ " it in your queries."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "[json](https://grafana.com/docs/loki/latest/logql/log_queries/#json)"
+#~ " parser allows a user to parse "
+#~ "and extract labels from the log "
+#~ "content"
+#~ msgstr ""
+
+#~ msgid "Logging Instruction for Microservices"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The microservice called \"backend-logging\","
+#~ " aims to centralize the logs that "
+#~ "resulf from user actions. Within each"
+#~ " of the deployed microservices, the "
+#~ "necessary functions for sending logs to"
+#~ " this component must be implemented."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The purpose of this short manual "
+#~ "is to describe the series of steps"
+#~ " that a microservice must perform to"
+#~ " store and access the logs."
+#~ msgstr ""
+
+#~ msgid "Run the service"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To deploy it locally in Docker, "
+#~ "two microservices are required: rabbitmq "
+#~ "and logging."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "[RabbitMQ](https://www.rabbitmq.com/) is a message"
+#~ " broker: it accepts and forwards "
+#~ "messages. You can think about it "
+#~ "as a post office: when you depot"
+#~ " the mail that you want posting "
+#~ "in a post box, you can be "
+#~ "sure that the letter carrier will "
+#~ "eventually deliver the mail to your "
+#~ "recipient. In this analogy, RabbitMQ is"
+#~ " a post box, a post office, and"
+#~ " a letter carrier."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The Logging microservice takes all "
+#~ "information in the queue (a queue "
+#~ "is the name for a post box "
+#~ "which lives inside RabbitMQ) and stores"
+#~ " it in a central storage unit."
+#~ msgstr ""
+
+#~ msgid "The service must be included within docker-compose. For example:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The variable \"RABBITMQ_DEFAULT_USER\", contains "
+#~ "the user name assigned to the "
+#~ "Rabbitmq service, while the variable "
+#~ "\"RABBITMQ_DEFAULT_PASS\" is the password used"
+#~ " at login time. All the lines "
+#~ "of code presented above have been "
+#~ "taken as a reference from the "
+#~ "[file](https://github.com/interlink-project/interlinker-"
+#~ "service-augmenter/blob/master/docker-compose.yml) used"
+#~ " for the local deployment of the "
+#~ "servicepedia."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The following are all the environment"
+#~ " variables that need to be specified,"
+#~ " during the setup of the services."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "RABBITMQ_DEFAULT_USER= RABBITMQ_DEFAULT_PASS= "
+#~ "RABBITMQ_HOST= RABBITMQ_USER= RABBITMQ_PASSWORD= "
+#~ "EXCHANGE_NAME = logging"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Another important detail is the version"
+#~ " of the backend-logging service, this"
+#~ " must correspond to the most recent"
+#~ " version of the microservice (this "
+#~ "information can be seen at the "
+#~ "[link](https://github.com/interlink-project/backend-"
+#~ "logging/tags)."
+#~ msgstr ""
+
+#~ msgid "Send or produce logs"
+#~ msgstr ""
+
+#~ msgid "Data structure"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The data sent to the registration "
+#~ "service needs to contain the information"
+#~ " relevant to the application. In the"
+#~ " case of the coproduction microservice, "
+#~ "for example, a data log could "
+#~ "contain the following information when a"
+#~ " user creates a new asset."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The above line of code calls the"
+#~ " log function (mentioned afterwards) with"
+#~ " a dictionary including relevant data "
+#~ "about the action performed (model, "
+#~ "action, phase, task_id, etc). The amount"
+#~ " of information saved in a log "
+#~ "depends on the specific action that "
+#~ "you want to record, therefore the "
+#~ "structure could vary from one service"
+#~ " to another."
+#~ msgstr ""
+
+#~ msgid "The mandatory fields are:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\"user_id\": subject of the token "
+#~ "provided by the AAC. Corresponds to "
+#~ "the user that performs the action."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\"service\" (\"coproduction\", \"servicepedia\", "
+#~ "\"loomio\", \"catalogue\", "
+#~ "\"collaborative_environment_frontend\"...)"
+#~ msgstr ""
+
+#~ msgid "Nevertheless, it is recommended to add at least these keys:"
+#~ msgstr ""
+
+#~ msgid "\"model\" (\"ASSET\", \"COPRODUCTIONPROCESS\"...)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\"action\" (GET, LIST, CREATE, UPDATE, "
+#~ "DELETE, or custom actions such as "
+#~ "\"ADD_USER\"...)"
+#~ msgstr ""
+
+#~ msgid "Send a log through a POST request to the API (Synchronous approach)"
+#~ msgstr ""
+
+#~ msgid "![API](images/api.png)"
+#~ msgstr ""
+
+#~ msgid "API"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can log an action by simply"
+#~ " creating a POST request to these "
+#~ "endpoints (depending on the environment)."
+#~ msgstr ""
+
+#~ msgid "POST http://localhost/logging/api/v1/log"
+#~ msgstr ""
+
+#~ msgid "POST /logging/api/v1/log"
+#~ msgstr ""
+
+#~ msgid "POST https://demo.interlink-project.eu/logging/api/v1/log"
+#~ msgstr ""
+
+#~ msgid "POST https://zgz.interlink-project.eu/logging/api/v1/log"
+#~ msgstr ""
+
+#~ msgid "POST https://varam.interlink-project.eu/logging/api/v1/log"
+#~ msgstr ""
+
+#~ msgid "POST https://mef.interlink-project.eu/logging/api/v1/log"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Furthermore, the calls can be made "
+#~ "internally, by replacing the DNS name"
+#~ " by the name of the logging "
+#~ "docker service:"
+#~ msgstr ""
+
+#~ msgid "POST http://logging/logging/api/v1/log"
+#~ msgstr ""
+
+#~ msgid "Send a log through RabbitMQ (Asynchronous approach)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Although it is possible to use the"
+#~ " API deployed by the \"backend-"
+#~ "logging\" microservice, another way is "
+#~ "to connect directly to the message "
+#~ "broker. The steps required to send "
+#~ "messages are as follows:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The connection to the RabbitMQ service"
+#~ " may vary depending on the libraries"
+#~ " used by the producer program. "
+#~ "RabbitMQ currently supports connection to "
+#~ "most programming languages. In order to"
+#~ " illustrate an example of how a "
+#~ "connection is made, we will describe "
+#~ "the code written in python."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Three environment variables must be "
+#~ "specified to make the connection, these"
+#~ " were specified during the configuration"
+#~ " process. These are:"
+#~ msgstr ""
+
+#~ msgid "exchange_name = os.environ.get(\"EXCHANGE_NAME\")"
+#~ msgstr ""
+
+#~ msgid "rabbitmq_host = os.environ.get(\"RABBITMQ_HOST\")"
+#~ msgstr ""
+
+#~ msgid "rabbitmq_user = os.environ.get(\"RABBITMQ_USER\")"
+#~ msgstr ""
+
+#~ msgid "rabbitmq_password = os.environ.get(\"RABBITMQ_PASSWORD\")"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The username and password and "
+#~ "exchange_name must be the same as "
+#~ "the one used for the rabbitMQ "
+#~ "microservice deployment and the hostname "
+#~ "must be the name of the service"
+#~ " within the docker-compose. In or "
+#~ "case it is \"rabbitmq\"."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Then we create the connection to "
+#~ "the server and establish a communication"
+#~ " channel and declares the exchanger "
+#~ "name and type. These parameters must "
+#~ "be defined when deploying the RabbitMQ"
+#~ " service and are defined in the "
+#~ ".env file that contains the environment"
+#~ " variables."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Finally, the message is sent through "
+#~ "the basic_publish function on the "
+#~ "previously established channel. Again, the "
+#~ "variable routing_key was defined in the"
+#~ " rabbitMQ deployment and in our case"
+#~ " it is 'logging'. The request "
+#~ "variable, (at line 9) is the "
+#~ "encoded form of the python dictionary"
+#~ " that is the input to the "
+#~ "function, we use library base64 as "
+#~ "is show in the first part of "
+#~ "the code."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The library used in this example "
+#~ "is [Aiormq Python "
+#~ "client](https://github.com/mosquito/aiormq). Aiormq is "
+#~ "a pure python AMQP client library. "
+#~ "The following function will connect to"
+#~ " the service and send a message:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The complete python file that performs"
+#~ " the sending of messages for the "
+#~ "servicepedia microservice is "
+#~ "[messages.py](https://github.com/interlink-project/backend-"
+#~ "coproduction/blob/master/coproduction/app/messages.py)."
+#~ msgstr ""
+
+#~ msgid "User Acceptance testing"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This document ilustrates the different "
+#~ "tests needed to ensure that the "
+#~ "expected functionality, from the end-"
+#~ "user's point of view, of the "
+#~ "INTERLINK Collaborative Environment is met."
+#~ " The main Purpose of UAT is to"
+#~ " validate end to end business flow."
+#~ " It does not focus on cosmetic "
+#~ "errors, spelling mistakes or system "
+#~ "testing. User Acceptance Testing is "
+#~ "carried out in a separate testing "
+#~ "environment with production-like data "
+#~ "setup. It is kind of black box "
+#~ "testing where two or more end-"
+#~ "users will be involved. User acceptance"
+#~ " testing is needed for **testing "
+#~ "whether the final product is accepted"
+#~ " by client/end-user**."
+#~ msgstr ""
+
+#~ msgid "Smoke Testing"
+#~ msgstr ""
+
+#~ msgid "The first section carries out a so-called *Smoke Testing*"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The following Smoke Testing should be"
+#~ " applied over [INTERLINK's staging "
+#~ "server](https://demo.interlink-project.eu/):"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Before using the Collaborative environment,"
+#~ " you must first login with your "
+#~ "google credentials or create your own"
+#~ " credentials at [https://demo.interlink-"
+#~ "project.eu/](https://demo.interlink-project.eu/), i.e. "
+#~ "the staging server of INTERLINK. "
+#~ "**IMPORTANT**: All members of an "
+#~ "envisaged team must logged into the "
+#~ "platform before they can be added "
+#~ "to a team. ![Login required "
+#~ "screen](images/image0.PNG) ![AAC "
+#~ "screen](images/image1.PNG)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Create a team which wants to take"
+#~ " part in a co-production process. "
+#~ "![Two user sessions](images/image2.PNG) ![Creating"
+#~ " a team](images/image3.png) ![Adding a "
+#~ "user](images/image4.png) ![Team editing "
+#~ "window](images/image5.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Create a co-production project where "
+#~ "the activity to co-create is "
+#~ "assessed ![Creating a new co-production"
+#~ " project](images/image6.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Link the created team to the "
+#~ "created co-production process. ![Select "
+#~ "Team menu option and \"Add new "
+#~ "Team\" button](images/image8.png) ![Click on "
+#~ "pop-up window's Add team "
+#~ "button](images/image9.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Choose a co-production process guide "
+#~ "(flexibility to choose the best fitting"
+#~ " schema)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Notice that there are several co-"
+#~ "production trees available. We will take"
+#~ " the one named \"Default schema\" "
+#~ "![Select default schema](images/image7.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Beware of emergence of Guide view "
+#~ "menu item on left hand side "
+#~ "![Beware of emergence of Guide view "
+#~ "menu item on left hand "
+#~ "side](images/image10.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You may customize such tree to the"
+#~ " specific needs of your co-production"
+#~ " process. Currently only DELETE task "
+#~ "allowed, soon we will be able to"
+#~ " add new objectives & tasks. Check"
+#~ " below how a task is removed "
+#~ "after having clicked on the PENCIL "
+#~ "icon which appears on the right "
+#~ "hand side of the task visualization "
+#~ "panel. ![About to remove a "
+#~ "task](images/image11.png) ![View after removal "
+#~ "of task](images/image12.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Observe that specific co-production "
+#~ "trees can be defined and, hence, "
+#~ "selected (e.g. VARAM case)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You may also assign durations to "
+#~ "tasks ![Assigning duration to "
+#~ "task](images/image13.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Then we can see in WORKPLAN view"
+#~ " the time span defined, by clicking"
+#~ " on the \"Time planification\" link "
+#~ "in the GUIDE view or clicking on"
+#~ " the left hand side menu option "
+#~ "named \"Workplan\". You may return to"
+#~ " the Workplan view, to see the "
+#~ "task details by clicking on the "
+#~ "name of the task in the WORKPLAN"
+#~ " view.  ![Workplan view](images/image14.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Create new roles and new teams "
+#~ "with different rights than the core "
+#~ "co-producers’ team. Currently a role "
+#~ "applies to all phases, objectives and"
+#~ " tasks of a co-production process."
+#~ msgstr ""
+
+#~ msgid "Create a new team  ![Creating a new team](images/image15.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Create a new role, assigning it "
+#~ "the right to \"View resources\" only "
+#~ "![Creation of co-observers "
+#~ "role](images/image16.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Assign the role of co-observers to"
+#~ " the co-observers team ![Assignment "
+#~ "of co-observers role to co-"
+#~ "observers team](images/image17.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Use the guide to co-produce "
+#~ "SOMETHING, e.g. new document to collect"
+#~ " feedback of collaboration process. For "
+#~ "each of the tasks in the co-"
+#~ "production phases you may select any "
+#~ "of the recommended INTERLINKERs or "
+#~ "instantiate a new one based on the"
+#~ " generic software INTERLINKERs available at"
+#~ " the bottom of the screen shown "
+#~ "when selecting a co-production task."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Select another task in the GUIDE "
+#~ "view, e.g. ENGAGE > Engage Stakeholders"
+#~ " > Create awareness and Communication"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Notice the INTERLINKERs recommended ![Notice"
+#~ " INTERLINKERs recommended](images/image22.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Click on the blue button at the"
+#~ " bottom entitled \"Initiate Procedure\" to"
+#~ " give place to a new Google "
+#~ "Docs document ![Creating a new Google"
+#~ " Docs](images/image18.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Select the type of document to "
+#~ "create with the support of Google "
+#~ "Drive INTERLINKER ![Select and name the"
+#~ " Google Docs](images/image19.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Realize about the new resource that "
+#~ "appears at the bottom of the task"
+#~ " description panel ![New resource "
+#~ "created](images/image20.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Open it in Google Drive by "
+#~ "clicking on the newly created resource"
+#~ " name ![New resource created](images/image21.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Review progress of project in OVERVIEW"
+#~ "  ![Resources created so far](images/image22.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Check functionality of the INTERLINK "
+#~ "catalogue by clicking on INTERLINKERs, "
+#~ "browsing, filtering and selecting "
+#~ "INTERLINKERs."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Enter in the catalogue of INTERLINNKERs"
+#~ " by clicking on INTERLINKERs top menu"
+#~ " ![INTERLINKERs catalogue view](images/image23.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Filter by selecting options on Nature"
+#~ " filter ![Filtered INTERLINKERs](images/image24.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Review contents of an INTERLINKER by "
+#~ "clicking on its title ![Filtered "
+#~ "INTERLINKERs](images/image26.png)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You main review what it offers by"
+#~ " visiting Preview tab ![Filtered "
+#~ "INTERLINKERs](images/image27.png)"
+#~ msgstr ""
+
+#~ msgid "Acceptance testing"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Next, we will illustrate how to "
+#~ "perform a more exhaustive suite of "
+#~ "manual tests that expore all currently"
+#~ " available functionalities within the "
+#~ "Collaborative Environment."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The steps to validate that the "
+#~ "miminum functionalities to allow a "
+#~ "collaborative process to be materialized "
+#~ "are listed below:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**Ensure that team members have logged"
+#~ " in at least once** at [INTERLINK's"
+#~ " staging server](https://demo.interlink-project.eu/)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Ensure that two sessions at least "
+#~ "are opened, e.g. one for user "
+#~ "user1@deusto.es and another one for user"
+#~ " user2@gmail.com, to be able to test"
+#~ " the environment's collaborative features "
+#~ "sensibly."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**Create a team** *“INTERLINK co-"
+#~ "production team for co-evaluation of "
+#~ "collaborative environment”* which will jointly"
+#~ " generate an assessment of the "
+#~ "environment and its capabilities to "
+#~ "carry out collaborative processes. Add "
+#~ "at least 2 members to the team,"
+#~ " e.g. user1@deusto.es and user2@gmail.com"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**Create a co-production project**, "
+#~ "namely *“Co-evaluation of the co-"
+#~ "production process”*"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**Go to Settings** and ensure that "
+#~ "the project has a good logo. Click"
+#~ " on the pencil icon and then "
+#~ "SAVE."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Click on **“Team” left hand side** "
+#~ "menu and **add the created Team to"
+#~ " the project**."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can modify the team composition "
+#~ "at any time by clicking on the "
+#~ "hyperlink of the Team name."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Click on **“Overview”** and **select the"
+#~ " co-production schema** (tree) to "
+#~ "use. Choose *“Default schema”*"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Hit on **“Guide” left hand side "
+#~ "menu option** and let’s start as a"
+#~ " team co-evaluating the collaborative "
+#~ "environment"
+#~ msgstr ""
+
+#~ msgid "**Browse through the different phases** of the co-production guide"
+#~ msgstr ""
+
+#~ msgid "Select different phases"
+#~ msgstr ""
+
+#~ msgid "**Select objectives** within a phase"
+#~ msgstr ""
+
+#~ msgid "**Select tasks** within an objective"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**Observe that different INTERLINKERs are "
+#~ "recommeded** for different tasks"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**Instantiate a generic INTERLINKER**, where"
+#~ " feedback with your observations can "
+#~ "be gathered in a shared Google "
+#~ "Docs with the rest of the co-"
+#~ "evaluators"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In **GUIDE view**, select *BUILD > "
+#~ "Technical Implementation > Technical "
+#~ "implementation*"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Hit on **“Initiate Procedure” > “Create"
+#~ " a Google Drive document”**, and "
+#~ "create a new asset entitled *“Feedback"
+#~ " about usage of Collaborative Environment”*"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Ensure that all team members edit "
+#~ "and insert their comments in such "
+#~ "shared document"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Notice that they all could **access "
+#~ "to feedback document when clicking on"
+#~ " Overview** menu option on the left"
+#~ " hand side."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Explore how to **navigate across the "
+#~ "different views** of the Collaborative "
+#~ "Environment."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Explore navigation between “Guide” view "
+#~ "and “Workplan” view by hitting on "
+#~ "**“Time planification”**, once **within a "
+#~ "chosen task**"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Test changing the **Time planification** "
+#~ "of a task, by hitting on the "
+#~ "**pencil** and selecting start and end"
+#~ " period, under the task screen within"
+#~ " GUIDE view"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Explore navigation between “Overview” view "
+#~ "and “Guide” view by hitting on "
+#~ "**“See Task”**"
+#~ msgstr ""
+
+#~ msgid "Use one of the **recommended INTERLINKERs**"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Check that different recommended INTERLINKERs"
+#~ " or those generic ones instantiated "
+#~ "through **\"Initiate Procedure\" button** can"
+#~ " be started"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Continue inspecting the different tasks "
+#~ "and INTERLINKERs that are recommended "
+#~ "for 5’"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "During the whole process **PLEASE GATHER"
+#~ " YOUR IMPRESSIONS / FEEDBACK on the"
+#~ " shared document entitled “Feedback about"
+#~ " usage of Collaborative Environment”**"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Remember that from **OVERVIEW**, you can"
+#~ " simply click on the resource title"
+#~ " to be able to open it."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In order to **provide direct feedback**"
+#~ " on any mistakes, bugs requested "
+#~ "please use the following two channels:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Fill in the **[ALPHA "
+#~ "QUESTIONNAIRE](https://docs.google.com/forms/d/e/1FAIpQLSei2Iful343wNa3WMwS4di4Z_cqzv0ibuFf_I41hIrUm1pUVA/viewform)"
+#~ " of INTERLINK**."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Access to the **[Redmine support "
+#~ "channel](http://redmine.interlink-project.eu/)**, log "
+#~ "in and create a new issue under"
+#~ " [proj_wp4_PLATFORM](http://redmine.interlink-"
+#~ "project.eu/projects/proj_wp4_platform)"
+#~ msgstr ""
+
+#~ msgid "User manual"
+#~ msgstr ""
+
+#~ msgid "Welcome to Interlink's user manual!"
+#~ msgstr ""
+

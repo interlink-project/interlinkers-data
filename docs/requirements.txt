@@ -1,0 +1,6 @@
+furo
+sphinx
+sphinx-togglebutton
+myst-parser
+sphinx-intl
+sphinx-rtd-theme
