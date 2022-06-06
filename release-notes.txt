@@ -1,6 +1,7 @@
 VERSION: v1.1.5
 
 NEW
+* Docs nginx docker image created on push (to be able to version them)
 
 IMPROVED
 
