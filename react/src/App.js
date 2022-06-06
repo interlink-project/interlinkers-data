@@ -1,10 +1,12 @@
+import { useMatomo } from '@datapunt/matomo-tracker-react';
 import { CssBaseline, ThemeProvider } from '@material-ui/core';
+import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Toaster } from 'react-hot-toast';
 import { Navigate, useLocation, useRoutes } from 'react-router-dom';
 import RTL from './components/RTL';
 import SplashScreen from './components/SplashScreen';
-import { env } from './configuration';
+import { PRODUCTION_MODE } from './configuration';
 import useAuth from './hooks/useAuth';
 import useScrollReset from './hooks/useScrollReset';
 import useSettings from './hooks/useSettings';
@@ -30,13 +32,20 @@ const App = () => {
 
   useScrollReset();
 
+  // ANALYTICS
+  const { enableLinkTracking, trackPageView} = useMatomo()
+  enableLinkTracking()
+  useEffect(() => {
+    trackPageView()
+  }, [])
+
   return settings.loaded ? (
     <ThemeProvider theme={settings.themeData}>
       <RTL direction={settings.direction}>
         <CssBaseline />
         <Toaster position='top-center' />
         <Helmet>
-          {env.NODE_ENV === "production" && <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"></meta>}
+          {PRODUCTION_MODE && <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"></meta>}
         </Helmet>
         <RemoveTrailingSlash />
         {auth.isInitialized ? content : <SplashScreen />}

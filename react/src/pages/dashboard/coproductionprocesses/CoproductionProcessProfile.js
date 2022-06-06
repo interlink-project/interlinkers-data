@@ -1,3 +1,4 @@
+import { useMatomo } from '@datapunt/matomo-tracker-react';
 import {
   Avatar,
   Box, Card, CardHeader, Container, Grid, IconButton, Tab, Tabs, Typography, useMediaQuery,
@@ -88,6 +89,7 @@ const CoproductionProcessProfile = () => {
   const mounted = useMounted();
   const { user } = useAuth();
   const [expanded, setExpanded] = useState(false);
+  const { trackEvent } = useMatomo()
 
   const { process, hasSchema, loading } = useSelector((state) => state.process);
 
@@ -95,6 +97,12 @@ const CoproductionProcessProfile = () => {
   const showMobileTabs = !useMediaQuery(theme.breakpoints.up('lg'));
 
   const _setSelectedTreeItem = (item, callback) => {
+    trackEvent({
+      category: 'coproductionprocess',
+      action: 'click-tree-item',
+      name: 'name',
+      value: item.name
+    })
     dispatch(setSelectedTreeItem(item, callback))
   }
 

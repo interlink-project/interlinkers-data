@@ -7,7 +7,7 @@ import { ArrowBack, Close, DoubleArrow, Download, Preview } from '@material-ui/i
 import { LoadingButton } from '@material-ui/lab';
 import CentricCircularProgress from 'components/CentricCircularProgress';
 import { InterlinkerDetails, InterlinkerHeader } from 'components/dashboard/interlinkers';
-import { env } from 'configuration';
+import { REACT_APP_DOMAIN } from 'configuration';
 import useDependantTranslation from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
 import { useEffect, useState } from 'react';
@@ -44,7 +44,7 @@ export default function NewAssetModal({ open, handleUserClose, handleFinish, act
     async function onMessage(event) {
         // Check sender origin to be trusted
         console.log(event.origin, env)
-        if (event.origin.length > 0 && event.origin.includes(env.DOMAIN)) return;
+        if (event.origin.length > 0 && event.origin.includes(REACT_APP_DOMAIN)) return;
         const { code, message } = event.data
         console.log(code, message)
 

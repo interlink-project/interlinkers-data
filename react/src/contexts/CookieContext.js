@@ -2,6 +2,7 @@ import { createContext, useEffect, useReducer } from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router';
 import { usersApi } from '__api__';
+import { useMatomo } from '@datapunt/matomo-tracker-react';
 
 export let user_id = ""
 
@@ -47,7 +48,8 @@ export const AuthProvider = (props) => {
 
   const { children } = props;
   const [state, dispatch] = useReducer(reducer, initialState);
-
+  const { pushInstruction } = useMatomo();
+  
   useEffect(() => {
     console.log("executing setUser")
     usersApi.me().then((data) => {
@@ -59,6 +61,7 @@ export const AuthProvider = (props) => {
           user: data,
         },
       });
+      pushInstruction('setUserId', data.sub);
     }).catch((e) => {
       console.error(e)
     }

@@ -9,22 +9,22 @@ services:
       target: dev
     volumes:
       - ./react:/usr/app
-      - ${FRONTEND_CUSTOMIZATION_IMAGES_PATH}:/usr/app/public/static/customization
+      - ${FRONTEND_CUSTOMIZATION_PATH}:/usr/app/public/static/customization
       - /usr/app/node_modules
     environment:
-      - REACT_APP_COMPLETE_DOMAIN=http://${DOMAIN}
-      - DOMAIN
       - PORT
       - NODE_ENV=development
-      - REACT_APP_PRIMARY_COLOR=${PRIMARY_COLOR}
+      - REACT_APP_DOMAIN=${DOMAIN}
+      - REACT_APP_PROTOCOL=http://
       - REACT_APP_DEFAULT_LANGUAGE=${DEFAULT_LANGUAGE}
       - REACT_APP_ALLOWED_LANGUAGES=${ALLOWED_LANGUAGES}
+      - REACT_APP_MATOMO_ID=1
     stdin_open: true
     labels:
       - traefik.enable=true
       - traefik.docker.network=traefik-public
-      - traefik.http.routers.${STACK_NAME?Variable not set}-frontend-http.rule=PathPrefix(`/`)
-      - traefik.http.services.${STACK_NAME?Variable not set}-frontend.loadbalancer.server.port=${PORT}
+      - traefik.http.routers.frontend-react-http.rule=PathPrefix(`/`)
+      - traefik.http.services.frontend-react.loadbalancer.server.port=${PORT}
     networks:
       - traefik-public
     logging:
@@ -43,6 +43,42 @@ services:
       - traefik.http.routers.frontend-docs.rule=Host(`${DOMAIN}`) && PathPrefix(`/docs`)
       - traefik.http.routers.frontend-docs.middlewares=frontend-docs-stripprefix
       - traefik.http.middlewares.frontend-docs-stripprefix.stripprefix.prefixes=/docs
+  
+  mariadb:
+    image: mariadb
+    command: --max-allowed-packet=64MB
+    restart: always
+    volumes:
+      - mariadb-data:/var/lib/mysql
+    env_file:
+      - ./.env
+    networks:
+      - default
+
+  matomo:
+    image: matomo
+    restart: always
+    volumes:
+      - matomo-data:/var/www/html
+    env_file:
+      - ./.env
+    ports:
+      - 8080:80
+    networks:
+      - default
+      - traefik-public
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=traefik-public
+      - traefik.http.routers.frontend-matomo-http.rule=PathPrefix(`/matomo/`)
+      - traefik.http.services.frontend-matomo.loadbalancer.server.port=80
+      - traefik.http.routers.frontend-matomo-http.middlewares=matomo-stripprefix
+      - traefik.http.middlewares.matomo-stripprefix.stripprefix.prefixes=/matomo/
+
+volumes:
+  matomo-data:
+  mariadb-data:
+  
 networks:
   traefik-public:
     external: true

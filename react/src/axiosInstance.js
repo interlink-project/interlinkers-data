@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { env } from 'configuration';
+import { REACT_APP_COMPLETE_DOMAIN } from 'configuration';
 import { getLanguage } from 'translations/i18n';
 import qs from 'qs';
 
@@ -9,7 +9,7 @@ export const getImageUrl = (micro, path) => path && `/${micro}${path}`;
 
 const axiosInstance = axios.create({
   paramsSerializer: (params) => qs.stringify(params, { arrayFormat: 'repeat' }),
-  baseURL: env.REACT_APP_COMPLETE_DOMAIN,
+  baseURL: REACT_APP_COMPLETE_DOMAIN,
   timeout: 20000,
   headers: {
     'Content-Type': 'application/json',
