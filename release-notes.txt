@@ -6,3 +6,4 @@ NEW
 IMPROVED
 
 FIXED
+* Call to coproduction "/me" endpoint

@@ -12,7 +12,8 @@ class UsersApi extends GeneralApi {
 
   async me() {
     const res = await axiosInstance.get(`/${this.url}/me`);
-    console.log('get me call', res, res.data);
+    const res2 = await axiosInstance.get(`coproduction/api/v1/users/me`);
+    console.log('get me call', res.data, res2.data);
     return res.data;
   }
 }

@@ -1,7 +1,7 @@
 import { createContext, useEffect, useReducer } from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router';
-import axiosInstance from 'axiosInstance';
+import { usersApi } from '__api__';
 
 export let user_id = ""
 
@@ -50,7 +50,7 @@ export const AuthProvider = (props) => {
 
   useEffect(() => {
     console.log("executing setUser")
-    axiosInstance.get('/auth/api/v1/users/me').then(({ data }) => {
+    usersApi.me().then((data) => {
       console.log('RESPONSE FOR ME', data);
       user_id = data.sub
       dispatch({
