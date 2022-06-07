@@ -98,9 +98,9 @@ const CoproductionProcessProfile = () => {
 
   const _setSelectedTreeItem = (item, callback) => {
     trackEvent({
-      category: 'coproductionprocess',
+      category: 'coproductionprocess-guide',
       action: 'click-tree-item',
-      name: 'name',
+      name: item.type,
       value: item.name
     })
     dispatch(setSelectedTreeItem(item, callback))
