@@ -4,7 +4,7 @@ import { PhaseTabs, StyledTree } from 'components/dashboard/tree';
 import useMounted from 'hooks/useMounted';
 import { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setselectedPhaseTabId } from 'slices/process';
+import { setSelectedPhaseTab } from 'slices/process';
 import { softwareInterlinkersApi } from '__api__';
 import RightSide from './RightSide';
 
@@ -12,8 +12,7 @@ const Guide = ({ setSelectedTreeItem }) => {
   const dispatch = useDispatch();
   const mounted = useMounted();
   const [softwareInterlinkers, setSoftwareInterlinkers] = useState([])
-  const { process, selectedPhaseTabId, selectedTreeItem, phases, updatingTree } = useSelector((state) => state.process);
-  const currentPhase = selectedPhaseTabId ? phases.find(el => el.id === selectedPhaseTabId) : phases[0]
+  const { process, tree, treeitems, selectedPhaseTab, selectedTreeItem, updatingTree } = useSelector((state) => state.process);
 
   useEffect(() => {
     softwareInterlinkersApi.getMulti({}, process.language).then(res => {
@@ -25,7 +24,7 @@ const Guide = ({ setSelectedTreeItem }) => {
 
   const setNewPhaseTab = useCallback((phase) => {
     if (mounted.current) {
-      dispatch(setselectedPhaseTabId(phase.id))
+      dispatch(setSelectedPhaseTab(phase))
     }
   }, [mounted]);
 
@@ -33,10 +32,10 @@ const Guide = ({ setSelectedTreeItem }) => {
     <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
       {updatingTree ? <CentricCircularProgress /> : <Grid container>
         <Grid item xl={12} lg={12} md={12} xs={12}>
-          <PhaseTabs selectedPhaseTabId={selectedPhaseTabId} phases={phases} onSelect={setNewPhaseTab} />
+          <PhaseTabs selectedId={selectedPhaseTab.id} treeitems={tree} onSelect={setNewPhaseTab} />
         </Grid>
         <Grid item xl={4} lg={4} md={6} xs={12}>
-          <StyledTree phase={currentPhase} selectedTreeItem={selectedTreeItem} setSelectedTreeItem={setSelectedTreeItem} objectives_key="objectives" tasks_key="tasks" showIcon />
+          <StyledTree parent={selectedPhaseTab} selectedTreeItem={selectedTreeItem} setSelectedTreeItem={setSelectedTreeItem} showIcon />
         </Grid>
         <RightSide softwareInterlinkers={softwareInterlinkers} />
       </Grid>}

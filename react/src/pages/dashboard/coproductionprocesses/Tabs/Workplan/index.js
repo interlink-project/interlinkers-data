@@ -7,7 +7,7 @@ import $ from 'jquery';
 import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from "react-router";
-import { setselectedPhaseTabId } from "slices/process";
+import { setSelectedPhaseTab } from "slices/process";
 import Gantt from "./FrappeGantt";
 import "./FrappeGantt.css";
 
@@ -55,7 +55,7 @@ const setNewGantt = (id, props, tasks, darkMode, onClick) => {
 const Workplan = ({ setSelectedTreeItem }) => {
   const { settings } = useSettings();
   const [viewMode, setViewMode] = useState("Week")
-  const { process, phases, objectives, tasks, updating, selectedPhaseTabId, selectedTreeItem } = useSelector((state) => state.process);
+  const { process, tree, treeitems, updating, selectedPhaseTab, selectedTreeItem } = useSelector((state) => state.process);
   const navigate = useNavigate()
 
   const { t } = useDependantTranslation()
@@ -68,26 +68,13 @@ const Workplan = ({ setSelectedTreeItem }) => {
   const setNewPhaseTab = useCallback((phase) => {
     try {
       if (mounted.current) {
-        dispatch(setselectedPhaseTabId(phase.id))
+        dispatch(setSelectedPhaseTab(phase))
       }
     } catch (err) {
       console.error(err);
     }
   }, [mounted]);
 
-  const getElement = (id, type) => {
-    let obj = {}
-    if (type === "phase") {
-      obj = phases.find(el => el.id === id)
-    }
-    else if (type === "objective") {
-      obj = objectives.find(el => el.id === id)
-    }
-    else if (type === "task") {
-      obj = tasks.find(el => el.id === id)
-    }
-    return { ...obj, type }
-  }
 
   const getClasses = (element) => {
     let classes = ""
@@ -116,36 +103,35 @@ const Workplan = ({ setSelectedTreeItem }) => {
   const getTasks = () => {
     const final = []
 
-    const phase = phases.find(phase => selectedPhaseTabId === phase.id)
-    if (phase) {
+    if (selectedPhaseTab) {
       final.push({
-        id: phase.id,
-        name: phase.name,
-        start: phase.start_date,
-        end: phase.end_date,
+        id: selectedPhaseTab.id,
+        name: selectedPhaseTab.name,
+        start: selectedPhaseTab.start_date,
+        end: selectedPhaseTab.end_date,
         // progress: phase.progress,
         type: "phase",
-        custom_class: 'gantt-phase' + getClasses(phase),
+        custom_class: 'gantt-phase' + getClasses(selectedPhaseTab),
         read_only: true
       })
-      objectives.filter(el => el.phase_id === phase.id).forEach(objective => {
+      treeitems.filter(el => el.type === "objective").forEach(objective => {
         final.push({
           id: objective.id,
           name: objective.name,
           dependencies: objective.prerequisites_ids && objective.prerequisites_ids.length > 0 ? [...objective.prerequisites_ids] : [objective.phase_id],
-          start: objective.start_date || phase.start_date || null,
+          start: objective.start_date || selectedPhaseTab.start_date || null,
           end: objective.end_date,
           type: "objective",
           // progress: objective.progress,
           custom_class: 'gantt-objective' + getClasses(objective),
           read_only: true
         })
-        tasks.filter(el => el.objective_id === objective.id).forEach(task => {
+        treeitems.filter(el => el.type === "task").forEach(task => {
           final.push({
             id: task.id,
             name: task.name,
             dependencies: task.prerequisites_ids && task.prerequisites_ids.length > 0 ? [...task.prerequisites_ids] : [task.objective_id],
-            start: task.start_date || objective.start_date || phase.start_date || null,
+            start: task.start_date || objective.start_date || selectedPhaseTab.start_date || null,
             end: task.end_date,
             type: "task",
             custom_class: 'gantt-task' + getClasses(task),
@@ -196,16 +182,15 @@ const Workplan = ({ setSelectedTreeItem }) => {
       }
     }
     setNewGantt(id, props, getTasks(), settings.theme === "DARK", (id, type) => {
-      setSelectedTreeItem(getElement(id, type), () => navigate(`/dashboard/coproductionprocesses/${process.id}/guide`))
-
+      setSelectedTreeItem(treeitems.find(el => el.id === id), () => navigate(`/dashboard/coproductionprocesses/${process.id}/guide`))
     })
 
-  }, [viewMode, selectedPhaseTabId, updating, phases, setNewGantt]);
+  }, [viewMode, selectedPhaseTab, updating, tree, setNewGantt]);
 
   return (
     <Grid container style={{ overflow: "hidden" }}>
       <Grid item xs={12}>
-        <PhaseTabs selectedPhaseTabId={selectedPhaseTabId} phases={phases} onSelect={setNewPhaseTab} />
+        <PhaseTabs selectedId={selectedPhaseTab.id} treeitems={tree} onSelect={setNewPhaseTab} />
         <ToggleButtonGroup
           color="primary"
           value={viewMode}

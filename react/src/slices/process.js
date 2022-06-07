@@ -8,10 +8,9 @@ const initialState = {
   updatingTree: false,
   process: null,
   hasSchema: false,
-  tasks: [],
-  objectives: [],
-  phases: [],
-  selectedPhaseTabId: '',
+  tree: [],
+  treeitems: [],
+  selectedPhaseTab: '',
   selectedTreeItem: null,
   roles: [],
   myRoles: [],
@@ -19,35 +18,34 @@ const initialState = {
   users: []
 };
 
+const getAllChildren = (children) => {
+  if (!children){
+    return []
+  }    
+  return children.reduce((prev, cur) => {
+    if(cur && cur.children){
+      return [...prev, cur, ...getAllChildren(cur.children)]
+    }else{
+      return prev
+    }
+  }, []);
+}
+
 const slice = createSlice({
   name: 'process',
   initialState,
   reducers: {
     setProcessTree(state, action) {
-      const phases = [];
-      const objectives = [];
-      const tasks = [];
-
       state.hasSchema = action.payload.length > 0;
       if (action.payload) {
         // separate tree into groups
-        action.payload.forEach((phase) => {
-          phase.objectives.forEach((objective) => {
-            objective.tasks.forEach((task) => {
-              tasks.push(task);
-            });
-            objectives.push(objective);
-          });
-          phases.push(phase);
-        });
-        const orderedTasks = topologicalSort([...tasks]);
-        state.tasks = orderedTasks;
-        const orderedObjectives = topologicalSort([...objectives]);
-        state.objectives = orderedObjectives;
-        const orderedPhases = topologicalSort([...phases]);
-        state.phases = orderedPhases;
-        state.selectedPhaseTabId = orderedPhases.length > 0 ? orderedPhases[0].id : '';
-        state.selectedTreeItem = orderedPhases.length > 0 ? { ...orderedPhases[0], type: 'phase' } : null;
+        state.tree = topologicalSort(action.payload)
+        const all = getAllChildren(action.payload)
+        const ordered = topologicalSort(all);
+        state.treeitems = ordered;
+        const found = ordered.find(el => el.type === "phase")
+        state.selectedPhaseTab =  found;
+        state.selectedTreeItem = found;
       }
     },
     setSelectedTreeItem(state, action) {
@@ -73,25 +71,19 @@ const slice = createSlice({
       );
     },
     updatePhase(state, action) {
-      state.phases = state.phases.map((obj) => (obj.id === action.payload.id ? action.payload : obj));
-      if (state.selectedTreeItem && state.selectedTreeItem.id === action.payload.id) {
-        state.selectedTreeItem = { ...action.payload, type: 'phase' };
-      }
+      
     },
     updateObjective(state, action) {
-      state.objectives = state.objectives.map((obj) => (obj.id === action.payload.id ? action.payload : obj));
-      // updateDatesForObject(state, action.payload.phase_id, "phase", "objective")
-      // updateProgressForObject(state, action.payload.phase_id, "phase", "objective")
-      if (state.selectedTreeItem && state.selectedTreeItem.id === action.payload.id) {
-        state.selectedTreeItem = { ...action.payload, type: 'objective' };
-      }
+      
     },
     updateTask(state, action) {
-      state.tasks = state.tasks.map((obj) => (obj.id === action.payload.id ? action.payload : obj));
+    },
+    updateTreeItem(state, action) {
+      state.treeitems = state.treeitems.map((obj) => (obj.id === action.payload.id ? action.payload : obj));
       // updateDatesForObject(state, action.payload.objective_id, "objective", "task")
       // updateProgressForObject(state, action.payload.objective_id, "objective", "task")
       if (state.selectedTreeItem && state.selectedTreeItem.id === action.payload.id) {
-        state.selectedTreeItem = { ...action.payload, type: 'task' };
+        state.selectedTreeItem = action.payload;
       }
     },
     /*
@@ -124,8 +116,8 @@ const slice = createSlice({
       state.updatingTree = action.payload;
     },
     setSelectedPhase(state, action) {
-      state.selectedPhaseTabId = action.payload;
-      state.selectedTreeItem = { ...state.phases.find((phase) => phase.id === action.payload), type: 'phase' };
+      state.selectedPhaseTab = action.payload;
+      state.selectedTreeItem = action.payload;
     },
   }
 });
@@ -259,7 +251,7 @@ export const deletePhase = ({ id, callback }) => async (dispatch) => {
 };
 */
 
-export const setselectedPhaseTabId = (data) => async (dispatch) => {
+export const setSelectedPhaseTab = (data) => async (dispatch) => {
   dispatch(slice.actions.setSelectedPhase(data));
 };
 

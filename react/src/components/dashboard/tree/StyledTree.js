@@ -37,45 +37,38 @@ function CloseSquare(props) {
   );
 }
 
-const StyledTree = ({ phase, selectedTreeItem, setSelectedTreeItem, objectives_key, tasks_key, showIcon = false }) => {
+const StyledTree = ({ parent, selectedTreeItem, setSelectedTreeItem, showIcon = false }) => {
   const [all, setAll] = useState([])
-  const [tasks, setTasks] = useState([])
-  const [objectives, setObjectives] = useState([])
   const [expanded, setExpanded] = useState([])
 
+  const getAllChildren = (children) => {
+    if (!children){
+      return []
+    }    
+    return children.reduce((prev, cur) => {
+      if(cur && cur.children){
+        return [...prev, cur, ...getAllChildren(cur.children)]
+      }else{
+        return prev
+      }
+    }, []);
+  }
+
   useEffect(() => {
-    const objs = phase[objectives_key]
-    setObjectives(objs)
-    const tsks = objs.reduce((previous, currentvalue, currentindex) => {
-      return [...previous, ...currentvalue[tasks_key]]
-    }, [])
-    setTasks(tsks)
-    const a = [phase, ...objs, ...tsks]
+    const a = getAllChildren([parent])
     setAll(a)
     setExpanded(a.map(el => el.id))
-  }, [phase]);
+  }, [parent]);
 
-  const onSelectedItemChange = (event, nodeIds) => {
+  const onSelectedItemChange = (event, nodeId) => {
+    const selected = all.find(el => el.id === nodeId)
     // if the selection is a phase
-    if (phase.id === nodeIds && (!selectedTreeItem || selectedTreeItem.id !== phase.id)) {
-      setSelectedTreeItem({ ...phase, type: "phase" })
-      return
-    }
-
-    const taskselected = tasks.find(el => el.id === nodeIds)
-    // if the selection is a task
-    if (taskselected && (!selectedTreeItem || selectedTreeItem.id !== taskselected.id)) {
-      setSelectedTreeItem({ ...taskselected, type: "task" })
-      return
-    }
-    const objectiveselected = objectives.find(el => el.id === nodeIds)
-    // if the selection is a task
-    if (objectiveselected && (!selectedTreeItem || selectedTreeItem.id !== objectiveselected.id)) {
-      setSelectedTreeItem({ ...objectiveselected, type: "objective" })
-      return
+    if (selected && (!selectedTreeItem || selectedTreeItem.id !== selected.id)) {
+      setSelectedTreeItem(selected)
     }
   }
 
+  console.log("buscame", parent)
   return (
     <TreeView
       aria-label="customized"
@@ -83,7 +76,7 @@ const StyledTree = ({ phase, selectedTreeItem, setSelectedTreeItem, objectives_k
       defaultCollapseIcon={<MinusSquare />}
       defaultExpandIcon={<PlusSquare />}
       defaultEndIcon={<CloseSquare />}
-      selected={selectedTreeItem && selectedTreeItem.id || null}
+      selected={selectedTreeItem ? selectedTreeItem.id : parent ? parent.id : null}
       sx={{ flexGrow: 1, overflowY: 'auto', width: "100%", height: "100%" }}
       onNodeSelect={(event, nodeIds, moreinfo) => {
         onSelectedItemChange(event, nodeIds);
@@ -92,11 +85,11 @@ const StyledTree = ({ phase, selectedTreeItem, setSelectedTreeItem, objectives_k
         setExpanded(nodeIds)
       }}
     >
-      <StyledTreeItem icon={showIcon && statusIcon(phase.status)} key={phase.id} nodeId={phase.id} sx={{ backgroundColor: "background.paper" }} label={<p>{phase.name}</p>} >
+      {parent && <StyledTreeItem icon={showIcon && statusIcon(parent.status)} key={parent.id} nodeId={parent.id} sx={{ backgroundColor: "background.paper" }} label={<p>{parent.name}</p>} >
 
-        {topologicalSort(objectives).map(objective =>
+        {topologicalSort(parent.children).map(objective =>
           <StyledTreeItem icon={showIcon && statusIcon(objective.status)} key={objective.id} nodeId={objective.id} sx={{ backgroundColor: "background.paper" }} label={<p>{objective.name}</p>} >
-            {topologicalSort(objective[tasks_key]).map(task => (
+            {topologicalSort(objective.children).map(task => (
               <StyledTreeItem icon={<>
               {/*<AvatarGroup max={4}>
               <Avatar sx={{width: 20, height: 20}} />
@@ -109,7 +102,7 @@ const StyledTree = ({ phase, selectedTreeItem, setSelectedTreeItem, objectives_k
                 </p>} />
             ))}
           </StyledTreeItem>)}
-      </StyledTreeItem>
+      </StyledTreeItem>}
     </TreeView>
   );
 };

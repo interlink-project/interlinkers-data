@@ -7,9 +7,9 @@ class InterlinkersApi extends GeneralApi {
     super('catalogue/api/v1/interlinkers', 'interlinkers_cache');
   }
 
-  async create(task_id, interlinker_id, external_representation_id) {
+  async create(treeitem_id, interlinker_id, external_representation_id) {
     const res = await axiosInstance.post(`/${this.url}`, {
-      task_id,
+      treeitem_id,
       interlinker_id,
       external_representation_id
     });
