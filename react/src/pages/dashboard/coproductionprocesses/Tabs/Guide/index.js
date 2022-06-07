@@ -12,7 +12,7 @@ const Guide = ({ setSelectedTreeItem }) => {
   const dispatch = useDispatch();
   const mounted = useMounted();
   const [softwareInterlinkers, setSoftwareInterlinkers] = useState([])
-  const { process, tree, treeitems, selectedPhaseTab, selectedTreeItem, updatingTree } = useSelector((state) => state.process);
+  const { process, tree, selectedPhaseTab, selectedTreeItem, updatingTree } = useSelector((state) => state.process);
 
   useEffect(() => {
     softwareInterlinkersApi.getMulti({}, process.language).then(res => {

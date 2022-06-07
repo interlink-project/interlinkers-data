@@ -1,9 +1,9 @@
-import { Avatar, AvatarGroup, SvgIcon } from '@material-ui/core';
+import { SvgIcon } from '@material-ui/core';
 import { TreeView } from '@material-ui/lab';
 import { statusIcon } from 'components/dashboard/assets/Icons';
 import { StyledTreeItem } from 'components/dashboard/tree';
-import { useEffect, useMemo, useState } from 'react';
-import { topologicalSort } from 'utils/topologicalSort';
+import { useEffect, useState } from 'react';
+import { getAllChildren } from 'slices/process';
 
 function MinusSquare(props) {
   return (
@@ -41,34 +41,22 @@ const StyledTree = ({ parent, selectedTreeItem, setSelectedTreeItem, showIcon = 
   const [all, setAll] = useState([])
   const [expanded, setExpanded] = useState([])
 
-  const getAllChildren = (children) => {
-    if (!children){
-      return []
-    }    
-    return children.reduce((prev, cur) => {
-      if(cur && cur.children){
-        return [...prev, cur, ...getAllChildren(cur.children)]
-      }else{
-        return prev
-      }
-    }, []);
-  }
-
   useEffect(() => {
-    const a = getAllChildren([parent])
-    setAll(a)
-    setExpanded(a.map(el => el.id))
+    const allItems = getAllChildren([parent])
+    setAll(allItems)
+    setExpanded(allItems.map(el => el.id))
   }, [parent]);
 
   const onSelectedItemChange = (event, nodeId) => {
     const selected = all.find(el => el.id === nodeId)
+    console.log("selected id", nodeId, all)
     // if the selection is a phase
     if (selected && (!selectedTreeItem || selectedTreeItem.id !== selected.id)) {
+      console.log("selected", selected)
       setSelectedTreeItem(selected)
     }
   }
 
-  console.log("buscame", parent)
   return (
     <TreeView
       aria-label="customized"
@@ -87,19 +75,19 @@ const StyledTree = ({ parent, selectedTreeItem, setSelectedTreeItem, showIcon = 
     >
       {parent && <StyledTreeItem icon={showIcon && statusIcon(parent.status)} key={parent.id} nodeId={parent.id} sx={{ backgroundColor: "background.paper" }} label={<p>{parent.name}</p>} >
 
-        {topologicalSort(parent.children).map(objective =>
+        {parent.children.map(objective =>
           <StyledTreeItem icon={showIcon && statusIcon(objective.status)} key={objective.id} nodeId={objective.id} sx={{ backgroundColor: "background.paper" }} label={<p>{objective.name}</p>} >
-            {topologicalSort(objective.children).map(task => (
+            {objective.children.map(task => (
               <StyledTreeItem icon={<>
-              {/*<AvatarGroup max={4}>
+                {/*<AvatarGroup max={4}>
               <Avatar sx={{width: 20, height: 20}} />
               <Avatar sx={{width: 20, height: 20}} />
               <Avatar sx={{width: 20, height: 20}} />
               </AvatarGroup>*/}
-              {showIcon && statusIcon(task.status)}</>} key={task.id} nodeId={task.id} label={
-                <p style={{ alignItems: "center" }}>
-                  {task.name}
-                </p>} />
+                {showIcon && statusIcon(task.status)}</>} key={task.id} nodeId={task.id} label={
+                  <p style={{ alignItems: "center" }}>
+                    {task.name}
+                  </p>} />
             ))}
           </StyledTreeItem>)}
       </StyledTreeItem>}

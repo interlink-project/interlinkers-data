@@ -10,7 +10,7 @@ import useMounted from 'hooks/useMounted';
 import { truncate } from 'lodash';
 import * as React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setProcess } from 'slices/process';
+import { cloneOrdered, setProcess } from 'slices/process';
 import { getLocalizedDate } from 'utils/moment';
 import { topologicalSort } from 'utils/topologicalSort';
 import { coproductionProcessesApi, coproductionSchemasApi } from '__api__';
@@ -33,7 +33,7 @@ const CreateSchema = () => {
         setLoading(true)
         coproductionSchemasApi.getMulti({ search: inputValue }, process.language).then(res => {
             if (mounted.current) {
-                setRows(res.items)
+                setRows(cloneOrdered(res.items))
                 setLoading(false)
             }
         });
@@ -125,8 +125,8 @@ const CreateSchema = () => {
                                 </TableCell>
                                 <TableCell width="15%">
                                     <Button variant="contained" startIcon={<RemoveRedEye />} onClick={() => {
-                                        setSelectedParent(topologicalSort(row.treeitems)[0]);
-                                        setSelectedTreeItem(topologicalSort(row.treeitems)[0]);
+                                        setSelectedParent(row.children[0]);
+                                        setSelectedTreeItem(row.children[0]);
                                         setSelectedSchema(row);
                                     }}>{t("Preview")}</Button>
                                 </TableCell>
@@ -148,7 +148,7 @@ const CreateSchema = () => {
                     <CentricCircularProgress language={process.language} />
                     :
                     <>
-                        <PhaseTabs treeitems={selectedSchema.treeitems} selectedId={selectedParent && selectedParent.id} onSelect={(value) => {
+                        <PhaseTabs treeitems={topologicalSort(selectedSchema.children)} selectedId={selectedParent && selectedParent.id} onSelect={(value) => {
                             setSelectedParent(value)
                             setSelectedTreeItem(value)
                         }} />

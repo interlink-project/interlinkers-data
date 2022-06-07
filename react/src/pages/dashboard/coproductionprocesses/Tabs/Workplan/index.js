@@ -114,7 +114,7 @@ const Workplan = ({ setSelectedTreeItem }) => {
         custom_class: 'gantt-phase' + getClasses(selectedPhaseTab),
         read_only: true
       })
-      treeitems.filter(el => el.type === "objective").forEach(objective => {
+      selectedPhaseTab.children.forEach(objective => {
         final.push({
           id: objective.id,
           name: objective.name,
@@ -126,7 +126,7 @@ const Workplan = ({ setSelectedTreeItem }) => {
           custom_class: 'gantt-objective' + getClasses(objective),
           read_only: true
         })
-        treeitems.filter(el => el.type === "task").forEach(task => {
+        objective.children.forEach(task => {
           final.push({
             id: task.id,
             name: task.name,

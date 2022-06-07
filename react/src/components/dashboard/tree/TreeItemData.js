@@ -13,12 +13,17 @@ import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
-import { getTree, setSelectedTreeItem, setUpdatingTree, updateObjective, updatePhase, updateTask } from 'slices/process';
+import { getTree, setUpdatingTree } from 'slices/process';
 // import { deleteObjective, deletePhase, deleteTask,  } from 'slices/process';
 import { tree_items_translations } from 'utils/someCommonTranslations';
 import { objectivesApi, phasesApi, tasksApi } from '__api__';
 import { AwaitingIcon, statusIcon, StatusText } from '../assets/Icons';
 
+const apis = {
+  task: tasksApi,
+  objective: objectivesApi,
+  phase: phasesApi
+}
 const TreeItemData = ({ language, processId, element }) => {
   const [dateRange, setDateRange] = useState([null, null]);
   const [status, setStatus] = useState("");
@@ -39,12 +44,12 @@ const TreeItemData = ({ language, processId, element }) => {
 
   useEffect(() => {
     restart(element)
-  }, [editMode, element])
+  }, [editMode])
 
-  const callback = () => {
-    setSaving(false)
+  useEffect(() => {
     setEditMode(false)
-  }
+    restart(element)
+  }, [element])
 
   const saveData = () => {
     setSaving(true)
@@ -67,57 +72,20 @@ const TreeItemData = ({ language, processId, element }) => {
     if (description !== element.description) {
       data.description = description
     }
-
-    if (element.type === "task") {
-      dispatch(updateTask({ id: element.id, data, callback }))
-      // dispatch(setUpdatingTree(true));
-      // tasksApi.update(element.id, data).then(res => {
-      //   dispatch(getTree(processId, () => setSelectedTreeItem(res)));
-      // });
-    }
-    else if (element.type === "objective") {
-      dispatch(updateObjective({ id: element.id, data, callback }))
-      // dispatch(setUpdatingTree(true));
-      // objectivesApi.update(element.id, data).then(res => {
-      //   dispatch(getTree(processId, () => setSelectedTreeItem(res)));
-      // });
-    }
-    else if (element.type === "phase") {
-      dispatch(updatePhase({ id: element.id, data, callback }))
-      // dispatch(setUpdatingTree(true));
-      // phasesApi.update(element.id, data).then(res => {
-      //   dispatch(getTree(processId, () => setSelectedTreeItem(res)));
-      // });
-    }
-
+    apis[element.type].update(element.id, data).then(() => {
+      dispatch(getTree(processId, element.id));
+    });
   }
 
   const deleteTreeItem = () => {
-    
     console.log("DELETING", element.type)
-    if (element.type === "task") {
-      // dispatch(deleteTask({ id: element.id, callback }))
-      dispatch(setUpdatingTree(true));
-      tasksApi.delete(element.id,).then(() => {
-        dispatch(getTree(processId));
-      });
-    }
-    else if (element.type === "objective") {
-      // dispatch(deleteObjective({ id: element.id, callback }))
-      dispatch(setUpdatingTree(true));
-      objectivesApi.delete(element.id,).then(() => {
-        dispatch(getTree(processId));
-      });    }
-    else if (element.type === "phase") {
-      // dispatch(deletePhase({ id: element.id, callback }))
-      dispatch(setUpdatingTree(true));
-      phasesApi.delete(element.id,).then(() => {
-        dispatch(getTree(processId));
-      });    }
+    dispatch(setUpdatingTree(true));
+    apis[element.type].delete(element.id).then(() => {
+      dispatch(getTree(processId));
+    });
   }
 
   const treeitem_translations = tree_items_translations(t)
-
 
   return <>
     {!editMode && <IconButton onClick={() => setEditMode(true)} sx={{
@@ -134,7 +102,7 @@ const TreeItemData = ({ language, processId, element }) => {
       setName(event.target.value);
     }} variant="standard" fullWidth value={name} /> : name}
     <Typography variant="h6" sx={{ mt: 2 }}>
-    {t("Description")}
+      {t("Description")}
     </Typography>
     {editMode ? <TextField onChange={(event) => {
       setDescription(event.target.value);
@@ -144,12 +112,12 @@ const TreeItemData = ({ language, processId, element }) => {
     }}>{description}</p>}
 
     {element.problemprofiles && <>
-    <Typography variant="h6">
-      {t("Problem profiles")}
-    </Typography>
-    {element.problemprofiles.map(pp => <Chip sx={{mr: 1, mt: 1}} label={pp} key={`task-problemprofile-${pp}`} />)}
+      <Typography variant="h6">
+        {t("Problem profiles")}
+      </Typography>
+      {element.problemprofiles.map(pp => <Chip sx={{ mr: 1, mt: 1 }} label={pp} key={`task-problemprofile-${pp}`} />)}
     </>}
-    
+
     <Typography variant="h6" sx={{ mt: 2 }}><>{t("Current status")}</></Typography>
     {editMode ? <>
       {element.type === "task" ? <ToggleButtonGroup
@@ -165,12 +133,12 @@ const TreeItemData = ({ language, processId, element }) => {
         <ToggleButton value="awaiting"><>{t("Awaiting")}<AwaitingIcon /></></ToggleButton>
         <ToggleButton value="in_progress"><>{t("In progress")}<InProgressIcon /></></ToggleButton>
         <ToggleButton value="finished"><>{t("Finished")} <FinishedIcon /></></ToggleButton>
-      </ToggleButtonGroup> : <Alert severity="warning" sx={{mt: 1}}><>{t("Status can only be set for tasks")}</></Alert>}</>
+      </ToggleButtonGroup> : <Alert severity="warning" sx={{ mt: 1 }}><>{t("Status can only be set for tasks")}</></Alert>}</>
 
       : <Stack alignItems="center" direction="row" spacing={1}>
         {statusIcon(status)}
         <div>
-        <StatusText status={status} language={language} />
+          <StatusText status={status} language={language} />
         </div>
       </Stack>
     }
@@ -203,7 +171,7 @@ const TreeItemData = ({ language, processId, element }) => {
             </Stack>
           )}
         />
-      </Box> : <Alert severity="warning" sx={{mt: 1}}>{t("Start and end dates can only be set for tasks")}</Alert>}</> : <Box sx={{ mt: 2 }}>
+      </Box> : <Alert severity="warning" sx={{ mt: 1 }}>{t("Start and end dates can only be set for tasks")}</Alert>}</> : <Box sx={{ mt: 2 }}>
       {dateRange[0] !== null ? <>
         <b>{t("Start")}:  </b>{moment(dateRange[0]).format("LL")}
         <br />
@@ -220,10 +188,10 @@ const TreeItemData = ({ language, processId, element }) => {
         </Stack>
 
         <Divider sx={{ my: 2 }}>
-        {t("other actions")}
+          {t("other actions")}
         </Divider>
         <ConfirmationButton
-          Actionator={({ onClick }) => <Button size="small" variant="text" onClick={onClick} color="error">{t("Remove {{what}}", {what: treeitem_translations[element.type].toLowerCase()})}</Button>}
+          Actionator={({ onClick }) => <Button size="small" variant="text" onClick={onClick} color="error">{t("Remove {{what}}", { what: treeitem_translations[element.type].toLowerCase() })}</Button>}
           ButtonComponent={({ onClick }) => <LoadingButton sx={{ mt: 1 }} fullWidth variant='contained' color="error" onClick={onClick}>{t("Confirm deletion")}</LoadingButton>}
           onClick={deleteTreeItem}
           text={t("Are you sure?")}

@@ -33,7 +33,7 @@ const RightSide = ({ softwareInterlinkers }) => {
 
     const updateTreeitemInfo = async () => {
         setLoadingTreeitemInfo(true)
-        assetsApi.getMulti({ treeitem_id: selectedTreeItem.id }).then(assets => {
+        assetsApi.getMulti({ task_id: selectedTreeItem.id }).then(assets => {
             if (mounted.current) {
                 setAssets(assets)
                 setLoadingTreeitemInfo(false)

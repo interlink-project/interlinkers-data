@@ -43,16 +43,14 @@ export default function NewAssetModal({ open, handleUserClose, handleFinish, act
 
     async function onMessage(event) {
         // Check sender origin to be trusted
-        console.log(event.origin, env)
-        if (event.origin.length > 0 && event.origin.includes(REACT_APP_DOMAIN)) return;
+        console.log(event.origin, REACT_APP_DOMAIN, event.origin.length <= 0 || !event.origin.includes(REACT_APP_DOMAIN), event ? event.data : "not found")
+        if (event.origin.length <= 0 || !event.origin.includes(REACT_APP_DOMAIN)) return;
         const { code, message } = event.data
-        console.log(code, message)
-
         if (code === "initialized") {
             setLoadingInstantiator(false)
         }
         if (code === "asset_created") {
-            //treeitem_id, interlinker_id, external_asset_id
+            //task_id, interlinker_id, external_asset_id
             const coproduction_asset = await assetsApi.create_internal(
                 treeitem.id,
                 selectedInterlinker.id,
