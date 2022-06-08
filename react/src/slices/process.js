@@ -204,26 +204,6 @@ export const updateProcess = ({ id, data, logotype, onSuccess }) => async (dispa
   }
 };
 
-export const updateTreeItem = ({ treeitem, phase_id, data, callback }) => async (dispatch) => {
-  dispatch(slice.actions.setUpdatingTree(true));
-  if (treeitem.type === "task") {
-    await tasksApi.update(treeitem.id, data);
-  }
-  if (treeitem.type === "objective") {
-    await objectivesApi.update(treeitem.id, data);
-  }
-  if (treeitem.type === "phase") {
-    await phasesApi.update(treeitem.id, data);
-  }
-  // update parent phase
-  const updatedData = await phasesApi.get(phase_id);
-  dispatch(slice.actions.updateTreeItem(updatedData));
-  dispatch(slice.actions.setUpdatingTree(false));
-  if (callback) {
-    callback();
-  }
-};
-
 export const setSelectedPhaseTab = (data) => async (dispatch) => {
   dispatch(slice.actions.setSelectedPhase(data));
 };

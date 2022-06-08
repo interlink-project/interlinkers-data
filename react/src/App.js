@@ -37,7 +37,7 @@ const App = () => {
   enableLinkTracking()
   useEffect(() => {
     trackPageView()
-  }, [])
+  }, [window.location.href])
 
   return settings.loaded ? (
     <ThemeProvider theme={settings.themeData}>

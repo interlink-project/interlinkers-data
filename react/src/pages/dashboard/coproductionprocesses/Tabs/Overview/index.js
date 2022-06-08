@@ -41,7 +41,7 @@ const TimeItem = ({ actions = null, title, subtitle, icon }) => <TimelineItem>
 </TimelineItem>
 
 export default function TimeLine({ expanded = false }) {
-    const { process, hasSchema, treeitems } = useSelector((state) => state.process);
+    const { process, hasSchema, tree } = useSelector((state) => state.process);
     const t = useCustomTranslation(process.language)
     const navigate = useNavigate();
 
@@ -65,7 +65,7 @@ export default function TimeLine({ expanded = false }) {
                 subtitle={hasSchema ? <DoneAlert t={t} /> : <WarningAlert t={t} explanation={t("Schema has not been selected yet")} />}
                 icon={hasSchema ? <FinishedIcon /> : <AwaitingIcon />} />
 
-            {treeitems.map((phase, i) => <TimeItem
+            {tree.map((phase, i) => <TimeItem
                 key={phase.id}
                 actions={<Button onClick={(value) => navigate(`/dashboard/coproductionprocesses/${process.id}/guide`)} size="small" variant="outlined">{t("See phase in the guide")}</Button>}
                 title={t("Complete", { what: phase.name })}
@@ -81,7 +81,7 @@ export default function TimeLine({ expanded = false }) {
             />)}
             <TimeItem
                 title={t("Mark process as finished")}
-                subtitle={treeitems.length > 0 && treeitems.every(phase => phase.status === "finished") ? <DoneAlert t={t} /> : <WarningAlert t={t} explanation={t("All phases must be finished to mark the process as finished")} />}
+                subtitle={tree.length > 0 && tree.every(phase => phase.status === "finished") ? <DoneAlert t={t} /> : <WarningAlert t={t} explanation={t("All phases must be finished to mark the process as finished")} />}
                 icon={<DoneIcon />} />
         </Timeline>);
 }

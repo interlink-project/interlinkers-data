@@ -1,3 +1,4 @@
+import { useMatomo } from '@datapunt/matomo-tracker-react';
 import { Box } from '@material-ui/core';
 import { InterlinkerBrowseFilter } from 'components/dashboard/interlinkers';
 import { useState } from 'react';
@@ -15,9 +16,18 @@ const InterlinkerBrowse = ({ language = getLanguage(), initialFilters = {}, onIn
   // const mounted = useMounted();
   // const t = useCustomTranslation(language)
 
-  const [filters, setFilters] = useState({ ...initialDefaultFilters, ...initialFilters });
+  const [filters, _setFilters] = useState({ ...initialDefaultFilters, ...initialFilters });
   const [loading, setLoading] = useState(true);
+  const { trackEvent } = useMatomo()
 
+  const setFilters = (filters) => {
+    trackEvent({
+      category: 'catalogue',
+      action: 'filter-interlinkers',
+      name: JSON.stringify(filters)
+    })
+    _setFilters(filters)
+  }
   return (
     <>
       <Box sx={{ mt: 3 }}>
