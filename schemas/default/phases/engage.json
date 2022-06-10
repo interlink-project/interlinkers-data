@@ -399,5 +399,6 @@
             ],
             "id": "objective-define-data-management-plan"
         }
-    ]
+    ],
+    "is_part_of_codelivery": false
 }

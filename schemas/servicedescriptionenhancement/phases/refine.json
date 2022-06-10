@@ -146,5 +146,6 @@
             ],
             "id": "objective-publish-refined-version-of-public-service-description"
         }
-    ]
+    ],
+    "is_part_of_codelivery": false
 }

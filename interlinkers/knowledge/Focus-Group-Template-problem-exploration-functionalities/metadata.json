@@ -27,6 +27,7 @@
     "instructions_translations": {
         "en": "./interlinkers/knowledge/Focus-Group-Template-problem-exploration-functionalities/instructions.md"
     },
+    "is_sustainability_related": false,
     "languages": [
         "lv",
         "en",

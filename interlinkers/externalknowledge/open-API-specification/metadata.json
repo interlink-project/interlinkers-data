@@ -28,6 +28,7 @@
     "instructions_translations": {
         "en": "./interlinkers/externalknowledge/it-pa-minimum-security-measures/instructions.md"
     },
+    "is_sustainability_related": false,
     "languages": [
         "lv",
         "en",

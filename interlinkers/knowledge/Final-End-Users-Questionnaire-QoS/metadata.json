@@ -27,6 +27,7 @@
     "instructions_translations": {
         "en": "./interlinkers/knowledge/Final-End-Users-Questionnaire-QoS/instructions.md"
     },
+    "is_sustainability_related": false,
     "languages": [
         "lv",
         "en",

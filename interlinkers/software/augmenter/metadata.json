@@ -57,6 +57,7 @@
         "service_name": "servicepedia"
     },
     "is_responsive": true,
+    "is_sustainability_related": false,
     "languages": [
         "lv",
         "en",

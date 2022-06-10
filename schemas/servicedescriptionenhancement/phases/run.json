@@ -135,5 +135,6 @@
             ],
             "id": "objective-publish-report-with-descriptions-accepted-to-be-processed"
         }
-    ]
+    ],
+    "is_part_of_codelivery": false
 }

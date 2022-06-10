@@ -26,6 +26,7 @@
     "instructions_translations": {
         "en": "./interlinkers/externalsoftware/w3c-markup-language-validator/instructions.md"
     },
+    "is_sustainability_related": false,
     "languages": [
         "lv",
         "en",

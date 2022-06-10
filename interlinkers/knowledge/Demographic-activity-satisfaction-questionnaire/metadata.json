@@ -27,6 +27,7 @@
     "instructions_translations": {
         "en": "./interlinkers/knowledge/Demographic-activity-satisfaction-questionnaire/instructions.md"
     },
+    "is_sustainability_related": false,
     "languages": [
         "lv",
         "en",

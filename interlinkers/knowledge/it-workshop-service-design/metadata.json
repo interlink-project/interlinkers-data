@@ -26,6 +26,7 @@
     "instructions_translations": {
         "en": "./interlinkers/knowledge/it-workshop-service-design/instructions.md"
     },
+    "is_sustainability_related": false,
     "languages": [
         "lv",
         "en",

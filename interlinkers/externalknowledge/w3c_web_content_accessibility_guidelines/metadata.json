@@ -28,6 +28,7 @@
     "instructions_translations": {
         "en": "./interlinkers/externalknowledge/w3c_web_content_accessibility_guidelines/instructions.md"
     },
+    "is_sustainability_related": false,
     "languages": [
         "lv",
         "en",

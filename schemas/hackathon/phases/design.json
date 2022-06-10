@@ -380,5 +380,6 @@
             ],
             "id": "objective-sustainability"
         }
-    ]
+    ],
+    "is_part_of_codelivery": false
 }

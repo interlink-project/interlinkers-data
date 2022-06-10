@@ -27,6 +27,7 @@
     "instructions_translations": {
         "en": "./interlinkers/knowledge/co-producers-perceptions-Questionnaire/instructions.md"
     },
+    "is_sustainability_related": false,
     "languages": [
         "lv",
         "en",

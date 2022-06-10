@@ -203,5 +203,6 @@
             ],
             "id": "objective-service-codelivery"
         }
-    ]
+    ],
+    "is_part_of_codelivery": false
 }

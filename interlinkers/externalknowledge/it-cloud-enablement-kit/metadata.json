@@ -27,6 +27,7 @@
     "instructions_translations": {
         "en": "./interlinkers/externalknowledge/it-cloud-enablement-kit/instructions.md"
     },
+    "is_sustainability_related": false,
     "languages": [
         "lv",
         "en",

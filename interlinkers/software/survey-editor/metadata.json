@@ -61,6 +61,7 @@
         "service_name": "surveyeditor"
     },
     "is_responsive": true,
+    "is_sustainability_related": false,
     "languages": [
         "lv",
         "en",

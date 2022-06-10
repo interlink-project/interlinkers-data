@@ -27,6 +27,7 @@
     "instructions_translations": {
         "en": "./interlinkers/knowledge/Guidelines-for-online-surveys/instructions.md"
     },
+    "is_sustainability_related": false,
     "languages": [
         "lv",
         "en",

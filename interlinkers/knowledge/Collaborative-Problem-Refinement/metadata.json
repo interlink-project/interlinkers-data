@@ -27,6 +27,7 @@
     "instructions_translations": {
         "en": "./interlinkers/knowledge/Collaborative-Problem-Refinement/instructions.md"
     },
+    "is_sustainability_related": false,
     "languages": [
         "lv",
         "en",

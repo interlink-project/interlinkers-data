@@ -26,6 +26,7 @@
     "instructions_translations": {
         "en": "./interlinkers/externalsoftware/keycloak/instructions.md"
     },
+    "is_sustainability_related": false,
     "languages": [
         "lv",
         "en",
