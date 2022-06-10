@@ -84,6 +84,7 @@ class AdministrativeScopes(Enum):
 
 
 class InterlinkerSchema(WithProblemProfiles, extra=Extra.forbid):
+    is_sustainability_related: bool
     name_translations: dict
     # FOR 1
     # A name for the INTERLINKER.

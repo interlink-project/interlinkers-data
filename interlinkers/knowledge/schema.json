@@ -9,6 +9,10 @@
                 "type": "string"
             }
         },
+        "is_sustainability_related": {
+            "title": "Is Sustainability Related",
+            "type": "boolean"
+        },
         "name_translations": {
             "title": "Name Translations",
             "type": "object"
@@ -130,6 +134,7 @@
     },
     "required": [
         "problemprofiles",
+        "is_sustainability_related",
         "name_translations",
         "description_translations",
         "constraints_and_limitations_translations",

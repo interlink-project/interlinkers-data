@@ -40,6 +40,7 @@ class Phase(WithNameAndDesc, extra=Extra.forbid):
     id: str
     prerequisites: Dict[str, str]
     objectives: List[Objective]
+    is_part_of_codelivery: bool
 
 
 class CoproductionSchema(WithNameAndDesc, extra=Extra.forbid):
