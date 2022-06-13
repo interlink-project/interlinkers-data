@@ -19,7 +19,8 @@
         "zgz"
     ],
     "file_translations": {
-        "en": "./interlinkers/knowledge/Consent-Form-INTERLINK/resource.docx"
+        "en": "./interlinkers/knowledge/Consent-Form-INTERLINK/resource.docx",
+        "it": "./interlinkers/knowledge/Consent-Form-INTERLINK/italian.docx"
     },
     "form": "document_template",
     "format": "editable_source_document",

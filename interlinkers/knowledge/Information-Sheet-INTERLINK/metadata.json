@@ -19,7 +19,8 @@
         "zgz"
     ],
     "file_translations": {
-        "en": "./interlinkers/knowledge/Information-Sheet-INTERLINK/resource.docx"
+        "en": "./interlinkers/knowledge/Information-Sheet-INTERLINK/resource.docx",
+        "en": "./interlinkers/knowledge/Information-Sheet-INTERLINK/italian.docx"
     },
     "form": "document_template",
     "format": "editable_source_document",
