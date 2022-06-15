@@ -69,7 +69,7 @@ i18n
     lng: getLanguage(), // if you're using a language detector, do not define the lng option
     returnEmptyString: false,
     fallbackLng: 'en',
-    debug: true,
+    debug: false,
   });
 
 export default i18n;

@@ -1,12 +1,12 @@
-import { Alert, Button, Collapse, Stack, Typography } from '@material-ui/core';
-import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineOppositeContent, TimelineSeparator } from '@material-ui/lab';
-import { FinishedIcon, AwaitingIcon, DoneIcon, statusIcon, StatusText } from 'components/dashboard/assets/Icons';
+import { Alert, Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, Paper, Stack, Step, StepContent, StepLabel, Stepper, Typography } from '@material-ui/core';
+import { TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineOppositeContent, TimelineSeparator } from '@material-ui/lab';
+import CreateSchema from 'components/dashboard/SchemaSelector';
+import { user_id } from 'contexts/CookieContext';
 import { useCustomTranslation } from 'hooks/useDependantTranslation';
 import moment from "moment";
 import * as React from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
-import { topologicalSort } from 'utils/topologicalSort';
 
 const DoneAlert = ({ t, date = null }) => {
     return <Alert sx={{ mt: 1 }} severity="success">{date ? t("Done on", { date: moment(date).fromNow() }) : t("Done")}</Alert>
@@ -16,72 +16,128 @@ const WarningAlert = ({ t, explanation }) => {
     return <Alert sx={{ mt: 1 }} severity="warning">{explanation}</Alert>
 }
 
-const TimeItem = ({ actions = null, title, subtitle, icon }) => <TimelineItem>
-    <TimelineOppositeContent
-        sx={{ m: 'auto 0', flex: 0 }}
-    >
-    </TimelineOppositeContent>
-    <TimelineSeparator>
-        <TimelineConnector />
-        <TimelineDot variant="outlined">
-            {icon}
-        </TimelineDot>
-        <TimelineConnector />
-    </TimelineSeparator>
-    <TimelineContent sx={{ py: '12px', px: 2 }}>
-        <Stack direction="column" spacing={1}>
-            <Typography variant="h6" component="span">
-                {title}
-            </Typography>
-            {subtitle}
-            {actions}
-        </Stack>
-
-    </TimelineContent>
-</TimelineItem>
-
-export default function TimeLine({ expanded = false }) {
-    const { process, hasSchema, tree } = useSelector((state) => state.process);
+export default function TimeLine({ }) {
+    const { process, isAdministrator, hasSchema, tree } = useSelector((state) => state.process);
     const t = useCustomTranslation(process.language)
     const navigate = useNavigate();
+    const [open, setOpen] = React.useState(false);
 
-    if (!process) {
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    const [activeStep, setActiveStep] = React.useState(0);
+
+    const handleNext = () => {
+        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    };
+
+    const handleBack = () => {
+        setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    };
+
+    const handleReset = () => {
+        setActiveStep(0);
+    };
+
+    if (!process || !tree) {
         return
     }
-    return (
-        <Timeline position="right">
-            <TimeItem
-                title={t("Coproduction process creation")}
-                subtitle={<DoneAlert t={t} date={process.created_at} />}
-                icon={<FinishedIcon />} />
-            <TimeItem
-                actions={false && <Button variant="outlined">{t("Go to settings section")}</Button>}
-                title={t("Coproduction process settings")}
-                subtitle={<DoneAlert t={t} />}
-                icon={<FinishedIcon />} />
-            <TimeItem
-                actions={!hasSchema && <Button onClick={(value) => navigate(`/dashboard/coproductionprocesses/${process.id}/guide`)} variant="outlined">{t("Go to guide section")}</Button>}
-                title={t("Schema selection")}
-                subtitle={hasSchema ? <DoneAlert t={t} /> : <WarningAlert t={t} explanation={t("Schema has not been selected yet")} />}
-                icon={hasSchema ? <FinishedIcon /> : <AwaitingIcon />} />
 
-            {tree.map((phase, i) => <TimeItem
-                key={phase.id}
-                actions={<Button onClick={(value) => navigate(`/dashboard/coproductionprocesses/${process.id}/guide`)} size="small" variant="outlined">{t("See phase in the guide")}</Button>}
-                title={t("Complete", { what: phase.name })}
-                subtitle={<>
-                    {phase.children.map(objective =>
-                        <Collapse in={expanded} key={objective.id} timeout="auto" unmountOnExit>
-                            <Timeline position="right">
-                                <TimeItem title={objective.name} icon={statusIcon(objective.status)} subtitle={<StatusText status={objective.status} />} />
-                            </Timeline>
-                        </Collapse>)}
-                </>}
-                icon={statusIcon(phase.status)}
-            />)}
-            <TimeItem
-                title={t("Mark process as finished")}
-                subtitle={tree.length > 0 && tree.every(phase => phase.status === "finished") ? <DoneAlert t={t} /> : <WarningAlert t={t} explanation={t("All phases must be finished to mark the process as finished")} />}
-                icon={<DoneIcon />} />
-        </Timeline>);
+    return (<Box>
+        <Paper sx={{ m: 2, p: 2, bgcolor: "background.default" }}>
+            <Stepper activeStep={activeStep} orientation="horizontal" sx={{ mx: 3 }}>
+                <Step completed={hasSchema}>
+                    <StepLabel>
+                        {t("Process initialization")}
+                    </StepLabel>
+                </Step>
+
+                {tree.map((phase) => <Step key={phase.id} completed={phase.status === "finished"}>
+                    <StepLabel>
+                        {t("Complete phase {{phase}}", { phase: phase.name })}
+                    </StepLabel>
+                </Step>)}
+
+                {(!tree || tree.length === 0) && ["1", "2", "3", "4"].map((phase) => <Step key={phase}>
+                    <StepLabel />
+
+                </Step>)}
+
+
+                <Step>
+                    <StepLabel>
+                        {t("Process completion")}
+                    </StepLabel>
+                </Step>
+            </Stepper>
+        </Paper>
+        <Box sx={{ p: 3, justifyContent: "center" }}>
+            {activeStep === 0 && <>
+                <Stepper activeStep={activeStep} orientation="vertical">
+                    <Step active completed={process.aim}>
+                        <StepLabel>
+                            <Stack spacing={1}>
+                                <Typography variant="subtitle1">
+                                    {t("Set coproduction process data")}
+                                </Typography>
+                                <Button disabled={process.aim || !isAdministrator} onClick={() => navigate(`/dashboard/coproductionprocesses/${process.id}/settings`)} size="small" variant="contained" sx={{ maxWidth: "200px" }}>{t("Go to settings")}</Button>
+                            </Stack>
+                        </StepLabel>
+                    </Step>
+                    <Step active completed={hasSchema}>
+                        <StepLabel>
+                            <Stack spacing={1}>
+                                <Typography variant="subtitle1">
+                                    {t("Select the coproduction schema")}
+                                </Typography>
+                                <Typography variant="body2">
+                                    {t("Click on the button and search for the optimal coproduction schema for your process.")}
+                                </Typography>
+                                <Button disabled={hasSchema || !isAdministrator} onClick={handleClickOpen} size="small" variant="contained" sx={{ maxWidth: "200px" }}>{t("Select an schema")}</Button>
+                            </Stack>
+                        </StepLabel>
+                    </Step>
+                    <Step active completed={process.administrators_ids !== [user_id]}>
+                        <StepLabel>
+                            <Stack spacing={1}>
+                                <Typography variant="subtitle1">
+                                    {t("Set coproduction process administrators")}
+                                </Typography>
+                                <Typography variant="body2">
+                                    {t("Administrators can update the coproduction proccess information, add permissions to the tree items or add new administrators")}
+                                </Typography>
+                                <Button disabled={!isAdministrator} onClick={() => navigate(`/dashboard/coproductionprocesses/${process.id}/settings`)} size="small" variant="contained" sx={{ maxWidth: "200px" }}>{t("Go to settings")}</Button>
+                            </Stack>
+                        </StepLabel>
+                    </Step>
+                </Stepper>
+
+                {!hasSchema && <Dialog open={open} onClose={handleClose} fullWidth maxWidth="xl">
+                    <Box sx={{minHeight: "93vh"}}>
+                    <CreateSchema />
+                    </Box>
+                </Dialog>}
+            </>
+            }
+            {activeStep === 1 && <>
+                <Stack direction="column" textAlign="center" sx={{ mt: 10 }}>
+                    <small>
+                        {t("Have you completed")}
+                    </small>
+                    <Button
+                        variant="contained"
+                        onClick={handleNext}
+                        sx={{ mt: 1, mr: 1 }}
+                    >
+                        {t("Set {{phase}} as completed", { phase: tree[activeStep - 1].name })}
+                    </Button>
+                </Stack>
+            </>}
+        </Box>
+    </Box>)
 }

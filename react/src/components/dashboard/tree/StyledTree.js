@@ -1,7 +1,8 @@
-import { SvgIcon } from '@material-ui/core';
+import { SvgIcon, Typography } from '@material-ui/core';
 import { TreeView } from '@material-ui/lab';
-import { statusIcon } from 'components/dashboard/assets/Icons';
+import { statusColor, statusIcon } from 'components/dashboard/assets/Icons';
 import { StyledTreeItem } from 'components/dashboard/tree';
+import { useCustomTranslation } from 'hooks/useDependantTranslation';
 import { useEffect, useState } from 'react';
 import { getAllChildren } from 'slices/process';
 
@@ -37,7 +38,7 @@ function CloseSquare(props) {
   );
 }
 
-const StyledTree = ({ parent, selectedTreeItem, setSelectedTreeItem, showIcon = false }) => {
+const StyledTree = ({ language, parent, selectedTreeItem, setSelectedTreeItem, showIcon = false }) => {
   const [all, setAll] = useState([])
   const [expanded, setExpanded] = useState([])
 
@@ -49,13 +50,12 @@ const StyledTree = ({ parent, selectedTreeItem, setSelectedTreeItem, showIcon = 
 
   const onSelectedItemChange = (event, nodeId) => {
     const selected = all.find(el => el.id === nodeId)
-    console.log("selected id", nodeId, all)
-    // if the selection is a phase
     if (selected && (!selectedTreeItem || selectedTreeItem.id !== selected.id)) {
-      console.log("selected", selected)
       setSelectedTreeItem(selected)
     }
   }
+
+  const t = useCustomTranslation(language)
 
   return (
     <TreeView
@@ -78,15 +78,15 @@ const StyledTree = ({ parent, selectedTreeItem, setSelectedTreeItem, showIcon = 
         {parent.children.map(objective =>
           <StyledTreeItem icon={showIcon && statusIcon(objective.status)} key={objective.id} nodeId={objective.id} sx={{ backgroundColor: "background.paper" }} label={<p>{objective.name}</p>} >
             {objective.children.map(task => (
-              <StyledTreeItem icon={<>
-                {/*<AvatarGroup max={4}>
-              <Avatar sx={{width: 20, height: 20}} />
-              <Avatar sx={{width: 20, height: 20}} />
-              <Avatar sx={{width: 20, height: 20}} />
-              </AvatarGroup>*/}
-                {showIcon && statusIcon(task.status)}</>} key={task.id} nodeId={task.id} label={
+              <StyledTreeItem icon={showIcon && statusIcon(task.status)} key={task.id} nodeId={task.id} label={
                   <p style={{ alignItems: "center" }}>
-                    {task.name}
+                    <Typography>
+                      {task.name}
+                    </Typography>
+                    {task.assets_count && <Typography variant="overline" color={statusColor(task.status)}>
+                    {`(${task.assets_count} ${t("resources")})`}
+                    </Typography>}
+                   
                   </p>} />
             ))}
           </StyledTreeItem>)}

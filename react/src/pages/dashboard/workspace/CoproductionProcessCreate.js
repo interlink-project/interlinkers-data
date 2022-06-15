@@ -1,5 +1,5 @@
 import {
-  Avatar, Box, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, IconButton, Input, InputLabel, MenuItem, Select, TextField
+  Avatar, Box, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, IconButton, Input, InputLabel, MenuItem, Select, TextField, Typography
 } from '@material-ui/core';
 import { KeyboardArrowRight } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
@@ -100,6 +100,11 @@ const CoproductionprocessCreate = ({ open, setOpen, loading, setLoading, onCreat
                     height: "60px",
                   }}
                 />
+                <Typography variant="body1">
+                {t("Click to add or edit the logo")}
+
+                </Typography>
+
               </IconButton>
             </label>
           </Box><TextField

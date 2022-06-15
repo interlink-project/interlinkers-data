@@ -2,7 +2,7 @@ import {
   Alert, Avatar, Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, IconButton, Input,
   List,
   ListItem,
-  ListItemAvatar, ListItemSecondaryAction, ListItemText, MobileStepper, TextField, useTheme
+  ListItemAvatar, ListItemSecondaryAction, ListItemText, MobileStepper, Stack, Switch, TextField, Typography, useTheme
 } from '@material-ui/core';
 import { Cancel, CheckCircle, Delete, KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
@@ -12,7 +12,7 @@ import { useEffect, useState } from 'react';
 import { getLanguage } from 'translations/i18n';
 import { teamsApi, usersApi } from '__api__';
 
-const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOpen, onCreate }) => {
+const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOpen, onCreate, organization }) => {
   const [emailValue, setEmailValue] = useState("");
   const auth = useAuth();
   const [selectedUsers, setSelectedUsers] = useState([auth.user]);
@@ -20,6 +20,8 @@ const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOp
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [logotype, setLogotype] = useState(null);
+  const [isPublic, setPublic] = useState(false);
+
   const t = useCustomTranslation(language)
   const theme = useTheme();
   const [activeStep, setActiveStep] = useState(0);
@@ -47,7 +49,9 @@ const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOp
       teamsApi.create({
         name,
         description,
-        user_ids: selectedUsers.map(user => user.sub)
+        public: isPublic,
+        user_ids: selectedUsers.map(user => user.sub),
+        organization_id: organization ? organization.id : null
       }).then(res => {
         if (!logotype) {
           sendOnCreate(res.data)
@@ -136,6 +140,9 @@ const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOp
                     height: "60px",
                   }}
                 />
+                <Typography variant="body1">
+                  {t("Click to add or edit the logo")}
+                </Typography>
               </IconButton>
             </label>
           </Box><TextField
@@ -161,6 +168,10 @@ const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOp
               rows={4}
               variant="standard"
             />
+            <Stack sx={{mt: 3}} spacing={1} direction="row" alignItems="center">
+            <Typography variant="body2">{t("Public")}</Typography>
+            <Switch checked={isPublic} onChange={(event) => setPublic(event.target.checked)} />
+          </Stack>
           </>}
 
           {activeStep === 1 && <><List dense>

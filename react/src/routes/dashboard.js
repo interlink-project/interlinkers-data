@@ -12,8 +12,10 @@ const Catalogue = Loadable(
 const InterlinkerProfile = Loadable(
   lazy(() => import('../components/dashboard/interlinkers/profile/InterlinkerProfile'))
 );
-
-const MyWorkspace = Loadable(lazy(() => import('../pages/dashboard/MyWorkspace')));
+const Organizations = Loadable(
+  lazy(() => import('../pages/dashboard/organizations/index'))
+);
+const Workspace = Loadable(lazy(() => import('../pages/dashboard/workspace')));
 
 export const routes = [
   {
@@ -24,7 +26,7 @@ export const routes = [
     children: [
       {
         path: '',
-        element: <MyWorkspace />,
+        element: <Workspace />,
       },
 
       {
@@ -55,6 +57,19 @@ export const routes = [
           {
             path: ':interlinkerId',
             element: <InterlinkerProfile />,
+          },
+        ],
+      },
+      {
+        path: 'organizations',
+        children: [
+          {
+            path: '',
+            element: <Organizations />,
+          },
+          {
+            path: ':organizationId',
+            element: <></>,
           },
         ],
       }

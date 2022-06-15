@@ -34,28 +34,22 @@ const pages = [
     path: '/dashboard',
   },
   {
-    label: i18n.t("Interlinkers"),
-    path: '/dashboard/interlinkers',
+    label: i18n.t("Organizations"),
+    path: '/dashboard/organizations',
   },
   {
-    label: i18n.t("Public Services"),
-    path: '/dashboard/publicservices',
-    disabled: true
-  }
+    label: i18n.t("Catalogue"),
+    path: '/dashboard/interlinkers',
+  },
 ]
 const DashboardNavbar = (props) => {
   const { onSidebarMobileOpen, showOpenMenuButton, ...other } = props;
   const { t } = useTranslation()
-  const { settings } = useSettings()
 
   const theme = useTheme();
   const onMobile = !useMediaQuery(theme.breakpoints.up('sm'));
   const onReduced = !useMediaQuery(theme.breakpoints.up('md'));
-  const [value, setValue] = useState(2);
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
   return (
     <DashboardNavbarRoot {...other}>
       <Toolbar sx={{ minHeight: 64 }}>

@@ -35,7 +35,7 @@ const Guide = ({ setSelectedTreeItem }) => {
           <PhaseTabs selectedId={selectedPhaseTab.id} treeitems={tree} onSelect={setNewPhaseTab} />
         </Grid>
         <Grid item xl={4} lg={4} md={6} xs={12}>
-          <StyledTree parent={selectedPhaseTab} selectedTreeItem={selectedTreeItem} setSelectedTreeItem={setSelectedTreeItem} showIcon />
+          <StyledTree language={process.language} parent={selectedPhaseTab} selectedTreeItem={selectedTreeItem} setSelectedTreeItem={setSelectedTreeItem} showIcon />
         </Grid>
         <RightSide softwareInterlinkers={softwareInterlinkers} />
       </Grid>}

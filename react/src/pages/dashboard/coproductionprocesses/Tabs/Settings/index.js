@@ -17,7 +17,7 @@ import { coproductionProcessesApi } from "__api__";
 const SettingsTab = () => {
     const [editMode, setEditMode] = useState(false)
     const [initialData, setInitialData] = useState({})
-    const { process, updating } = useSelector((state) => state.process);
+    const { process, isAdministrator, updating } = useSelector((state) => state.process);
     const [logotype, setLogotype] = useState(null);
     const mounted = useMounted()
     const { t } = useDependantTranslation()
@@ -127,7 +127,7 @@ const SettingsTab = () => {
                         <Typography variant="subtitle1"><b>{t("Created")}:</b> {moment(process.created_at).format("LL")}</Typography>
                         {process.updated_at && <Typography variant="subtitle1"><b>{t("Last update")}:</b> {moment(process.updated_at).format("LLL")}</Typography>}
                         <Stack direction="row" spacing={2}>
-                            <Button variant="contained" disabled={editMode} color="primary" onClick={() => setEditMode(true)} startIcon={<Edit />}>{t("Edit coproduction process")}</Button>
+                            <Button variant="contained" disabled={!isAdministrator || editMode} color="primary" onClick={() => setEditMode(true)} startIcon={<Edit />}>{t("Edit coproduction process")}</Button>
                             <ConfirmationButton
 
                                     Actionator={({ onClick }) => <Button disabled={!editMode} variant="contained" color="error" onClick={onClick} startIcon={<Delete />}>{t("Remove coproduction process")}</Button>}

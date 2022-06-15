@@ -56,22 +56,22 @@ services:
       - default
 
   matomo:
-    image: matomo
+    image: bitnami/matomo:4.10.1
     restart: always
     volumes:
-      - matomo-data:/var/www/html
+      - matomo-data:/bitnami/matomo
     env_file:
       - ./.env
-    ports:
-      - 8080:80
     networks:
       - default
       - traefik-public
+    depends_on:
+      - mariadb
     labels:
       - traefik.enable=true
       - traefik.docker.network=traefik-public
       - traefik.http.routers.frontend-matomo-http.rule=PathPrefix(`/matomo/`)
-      - traefik.http.services.frontend-matomo.loadbalancer.server.port=80
+      - traefik.http.services.frontend-matomo.loadbalancer.server.port=8080
       - traefik.http.routers.frontend-matomo-http.middlewares=matomo-stripprefix
       - traefik.http.middlewares.matomo-stripprefix.stripprefix.prefixes=/matomo/
 

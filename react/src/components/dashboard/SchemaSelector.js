@@ -1,3 +1,4 @@
+import { useMatomo } from '@datapunt/matomo-tracker-react';
 import { Alert, Box, Button, Chip, Grid, Rating, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@material-ui/core';
 import { ArrowBack, ArrowForward, RemoveRedEye } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
@@ -17,8 +18,9 @@ import { coproductionProcessesApi, coproductionSchemasApi } from '__api__';
 
 const CreateSchema = () => {
     const [instantiatingSchema, setInstantiatingSchema] = React.useState(null)
+    const [loadingFirst, setLoadingFirst] = React.useState(true)
     const [loading, setLoading] = React.useState(true)
-    const [selectedSchema, setSelectedSchema] = React.useState(null)
+    const [selectedSchema, _setSelectedSchema] = React.useState(null)
     const [rows, setRows] = React.useState([])
     const { process } = useSelector((state) => state.process);
     const dispatch = useDispatch()
@@ -28,6 +30,7 @@ const CreateSchema = () => {
     const [selectedTreeItem, setSelectedTreeItem] = React.useState(null)
     const [selectedParent, setSelectedParent] = React.useState(null)
     const [inputValue, setInputValue] = React.useState("");
+    const { trackEvent } = useMatomo()
 
     const update = () => {
         setLoading(true)
@@ -35,6 +38,7 @@ const CreateSchema = () => {
             if (mounted.current) {
                 setRows(cloneOrdered(res.items))
                 setLoading(false)
+                setLoadingFirst(false)
             }
         });
     }
@@ -65,10 +69,15 @@ const CreateSchema = () => {
     }, [mounted]);
 
 
-    const submit = async (coproductionschema_id) => {
+    const submit = async (coproductionschema) => {
         setInstantiatingSchema(true)
-        coproductionProcessesApi.setSchema(process.id, coproductionschema_id, process.language).then(process => {
+        coproductionProcessesApi.setSchema(process.id, coproductionschema.id, process.language).then(process => {
             if (mounted.current) {
+                trackEvent({
+                    category: process.id,
+                    action: 'use-schema',
+                    name: coproductionschema.id
+                })
                 setCoproductionProcess(process)
             }
         });
@@ -82,13 +91,27 @@ const CreateSchema = () => {
         setSelectedSchema(null)
     }
 
-    return <TableContainer sx={{ height: "100%" }}>
+    const setSelectedSchema = (schema) => {
+        if (schema && schema.hasOwnProperty("id")) {
+            trackEvent({
+                category: process.id,
+                action: 'schema-preview',
+                name: schema.id
+            })
+        }
+        _setSelectedSchema(schema)
+    }
+
+    return loadingFirst ? <Box><CentricCircularProgress /></Box> : <TableContainer sx={{ height: "100%" }}>
         {!selectedSchema ?
             <>
                 <Box sx={{ textAlign: "center", my: 3 }}>
                     <Typography variant="h5" sx={{ mb: 2 }}>{t("schema-selection-title")}</Typography>
                 </Box>
-                <SearchBox language={process.language} loading={loading} inputValue={inputValue} setInputValue={setInputValue} />
+                <Box sx={{ my: 2, mx: 10 }}>
+                    <SearchBox language={process.language} loading={loading} inputValue={inputValue} setInputValue={setInputValue} />
+
+                </Box>
 
                 <Table sx={{ minWidth: 400 }} aria-label="coproduction schemas table" >
                     <TableHead>
@@ -140,7 +163,7 @@ const CreateSchema = () => {
                 <Alert severity="warning" action={
                     <>
                         <LoadingButton sx={{ mr: 2 }} startIcon={<ArrowBack />} variant="contained" color="error" onClick={handleClose}>{t("Go back")}</LoadingButton>
-                        <LoadingButton endIcon={<ArrowForward />} loading={instantiatingSchema} variant="contained" onClick={() => submit(selectedSchema.id)}>{t("use-what", { what: schemaword })}</LoadingButton>
+                        <LoadingButton endIcon={<ArrowForward />} loading={instantiatingSchema} variant="contained" onClick={() => submit(selectedSchema)}>{t("use-what", { what: schemaword })}</LoadingButton>
                     </>
                 }>{t("this-is-a-preview")}</Alert>
 
@@ -154,8 +177,7 @@ const CreateSchema = () => {
                         }} />
                         <Grid container>
                             <Grid item xl={4} lg={4} md={6} xs={12}>
-                                <StyledTree parent={selectedParent} selectedTreeItem={selectedTreeItem} setSelectedTreeItem={setSelectedTreeItem} />
-
+                                <StyledTree language={process.language} parent={selectedParent} selectedTreeItem={selectedTreeItem} setSelectedTreeItem={setSelectedTreeItem} />
                             </Grid>
                             <Grid item xl={8} lg={8} md={6} xs={12}>
                                 {selectedTreeItem && <Box sx={{ p: 3 }}>
@@ -176,10 +198,9 @@ const CreateSchema = () => {
                                         <Typography variant="h6" sx={{ mt: 3 }}>
                                             {t("Problem profiles")}
                                         </Typography>
-                                        <p style={{
-                                            whiteSpace: 'pre-wrap',
-                                            marginTop: 0
-                                        }}>{selectedTreeItem.problemprofiles.map(pp => <Chip sx={{ mr: 1, mt: 1 }} label={pp.id + " - " + pp.name} key={`task-problemprofile-${pp.id}`} />)}</p>
+                                        <Box sx={{ mb: 1 }}>
+                                            {selectedTreeItem.problemprofiles.map(pp => <Chip sx={{ mr: 1, mt: 1 }} label={pp.id + " - " + pp.name} key={`task-problemprofile-${pp.id}`} />)}
+                                        </Box>
                                         <InterlinkerResults defaultMode="list" defaultSize={5} language={process.language} filters={{ problemprofiles: selectedTreeItem.problemprofiles.map(pp => pp.id) }} onInterlinkerClick={(interlinker) => { }} />
                                     </>}
                                 </Box>}

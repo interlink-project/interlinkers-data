@@ -42,7 +42,7 @@ const ProcessSidebar = (props) => {
           title: t('Guide'),
           path: `/dashboard/coproductionprocesses/${processId}/guide`,
           icon: <AccountTree />,
-          disabled: false
+          disabled: !hasSchema
         },
         {
           title: t('Workplan'),
@@ -54,7 +54,7 @@ const ProcessSidebar = (props) => {
           title: t('Team'),
           path: `/dashboard/coproductionprocesses/${processId}/team`,
           icon: <GroupIcon />,
-          disabled: false
+          disabled: !hasSchema
         },
         {
           title: t('Settings'),

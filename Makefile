@@ -6,7 +6,7 @@ help: ## Show this help
 
 .PHONY: down
 down: ## Stops all containers and removes volumes
-	docker-compose -f docker-compose.devintegrated.yml down --volumes --remove-orphans
+	docker-compose -f docker-compose.devintegrated.yml down --remove-orphans
 
 #######################
 ## BUILD IMAGES

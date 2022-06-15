@@ -1,15 +1,19 @@
+import { useMatomo } from '@datapunt/matomo-tracker-react';
 import {
   Alert,
-  Box, Button, Chip, Divider, IconButton, Link, Stack, TextField, ToggleButton, ToggleButtonGroup, Typography
+  Box, Button, Chip, Divider, IconButton, Link, Stack, Table, TableBody, TableCell, TableHead, TableRow, TextField, ToggleButton, ToggleButtonGroup, Typography
 } from '@material-ui/core';
-import { Edit } from '@material-ui/icons';
+import { CheckOutlined, Edit } from '@material-ui/icons';
 import {
   DesktopDateRangePicker, LoadingButton
 } from '@material-ui/lab';
 import ConfirmationButton from 'components/ConfirmationButton';
 import { FinishedIcon, InProgressIcon } from 'components/dashboard/assets';
 import { useCustomTranslation } from 'hooks/useDependantTranslation';
+import { update } from 'lodash';
 import moment from 'moment';
+import PermissionCreate from 'pages/dashboard/coproductionprocesses/Tabs/Team/PermissionCreate';
+import TeamProfile from 'pages/dashboard/organizations/TeamProfile';
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
@@ -31,9 +35,16 @@ const TreeItemData = ({ language, processId, element }) => {
   const [description, setDescription] = useState("");
   const [editMode, setEditMode] = useState(false);
   const [saving, setSaving] = useState(false);
+
+  const [selectedTeam, setSelectedTeam] = React.useState(null);
+
   const navigate = useNavigate()
   const dispatch = useDispatch();
   const t = useCustomTranslation(language)
+  const { trackEvent } = useMatomo()
+
+  const [permissionCreatorOpen, setOpenPermissionCreator] = useState(false);
+  const [creatingPermission, setCreatingPermission] = useState(false);
 
   const restart = (el) => {
     setName(el.name)
@@ -72,16 +83,45 @@ const TreeItemData = ({ language, processId, element }) => {
     if (description !== element.description) {
       data.description = description
     }
+    trackEvent({
+      category: processId,
+      action: 'update-treeitem',
+      name: element.id,
+      customDimensions: [
+        {
+          id: 1,
+          value: processId
+        },
+        {
+          id: 2,
+          value: JSON.stringify(data)
+        }
+      ]
+    })
     apis[element.type].update(element.id, data).then(() => {
-      dispatch(getTree(processId, element.id));
+      update(element.type === "phase" ? element.id : element.phase_id, element.id);
     });
   }
 
+  const update = (selectedPhaseTabId, selectedTreeItemId) => {
+    dispatch(getTree(processId, selectedPhaseTabId, selectedTreeItemId));
+  }
+
   const deleteTreeItem = () => {
-    console.log("DELETING", element.type)
+    trackEvent({
+      category: processId,
+      action: 'delete-treeitem',
+      name: element.id,
+      customDimensions: [
+        {
+          id: 1,
+          value: processId
+        }
+      ]
+    })
     dispatch(setUpdatingTree(true));
     apis[element.type].delete(element.id).then(() => {
-      dispatch(getTree(processId));
+      update(element.type === "phase" ? element.id : element.phase_id, element.type === "phase" ? element.id : element.phase_id)
     });
   }
 
@@ -111,7 +151,7 @@ const TreeItemData = ({ language, processId, element }) => {
       marginTop: 0
     }}>{description}</p>}
 
-    {element.problemprofiles && <>
+    {false && element.problemprofiles && <>
       <Typography variant="h6">
         {t("Problem profiles")}
       </Typography>
@@ -197,6 +237,60 @@ const TreeItemData = ({ language, processId, element }) => {
           text={t("Are you sure?")}
         />
       </Box>}
+
+
+    <Typography variant="h6" sx={{ mt: 2 }}>
+      {t("Permissions")}
+    </Typography>
+    {selectedTeam && <TeamProfile teamId={selectedTeam.id} open={true} setOpen={setSelectedTeam} />}
+    {element.permissions && element.permissions.length > 0 ? <Table aria-label="admins-table">
+      <TableHead>
+        <TableRow>
+          <TableCell align="center"><>{t("Team")}</></TableCell>
+          <TableCell align="center"><>{t("View resources")}</></TableCell>
+          <TableCell align="center"><>{t("Create resources")}</></TableCell>
+          <TableCell align="center"><>{t("Delete resources")}</></TableCell>
+          <TableCell align="center"><>{t("Update tree items")}</></TableCell>
+          <TableCell align="center"><>{t("Delete tree items")}</></TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        {element.permissions.map((permission) => (
+          <TableRow hover key={permission.id}>
+            <TableCell align="center">
+              
+              <Button onClick={() => setSelectedTeam(permission.team_id)} variant="contained">{permission.team_id}</Button>
+            </TableCell>
+            <TableCell align="center">
+              {permission.view_assets_permission && <CheckOutlined />}
+            </TableCell>
+            <TableCell align="center">
+              {permission.create_assets_permission && <CheckOutlined />}
+            </TableCell>
+            <TableCell align="center">
+            {permission.delete_assets_permission && <CheckOutlined />}
+            </TableCell>
+            <TableCell align="center">
+            {permission.edit_treeitem_permission && <CheckOutlined />}
+            </TableCell>
+            <TableCell align="center">
+            {permission.delete_treeitem_permission && <CheckOutlined />}
+            </TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table> : <Alert sx={{ mt: 2 }} severity="info">{t("There are no permissions for this tree item")}</Alert>}
+    <Button sx={{ mt: 2 }} onClick={() => setOpenPermissionCreator(true)} fullWidth variant="contained">{t("Add new permission")}</Button>
+    <PermissionCreate
+      open={permissionCreatorOpen}
+      setOpen={setOpenPermissionCreator}
+      onCreate={() => {
+        update(element.type === "phase" ? element.id : element.phase_id, element.id)
+      }}
+      loading={creatingPermission}
+      setLoading={setCreatingPermission}
+      treeitem={element}
+    />
   </>
 
 }

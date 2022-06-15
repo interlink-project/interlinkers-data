@@ -1,3 +1,4 @@
+import { useMatomo } from '@datapunt/matomo-tracker-react';
 import { Box, Container, Grid, Typography } from '@material-ui/core';
 import { InterlinkerDialog } from 'components/dashboard/interlinkers';
 import InterlinkerBrowse from 'components/dashboard/interlinkers/browse/InterlinkerBrowse';
@@ -11,7 +12,7 @@ const Catalogue = () => {
   const [open, setOpen] = useState(false);
   const [interlinker, setInterlinker] = useState(null);
 
-  const {t} = useTranslation()
+  const { t } = useTranslation()
   const language = getLanguage()
 
   const handleClickOpen = () => {
@@ -21,6 +22,7 @@ const Catalogue = () => {
   const handleClose = () => {
     setOpen(false);
   };
+  const { trackEvent } = useMatomo()
 
 
   return (
@@ -33,17 +35,23 @@ const Catalogue = () => {
         sx={{
           backgroundColor: 'background.default',
           minHeight: '100%',
-          py: 6
+          py: 5,
+          px: 1
         }}
       >
         <Container maxWidth="lg">
-          <Grid
-            alignItems='center'
-            container
-            justifyContent='space-between'
-            spacing={3}
-          >
+        <Grid container
+                  spacing={3}>
+          <Grid alignItems="center"
+                    container
+                    justifyContent="space-between"
+                    spacing={3}
+                    item
+                    xs={12}>
             <Grid item>
+            <Typography color='textSecondary' variant='overline'>
+                        {t("Catalogue")}
+                      </Typography>
               <Typography
                 color='textPrimary'
                 variant='h5'
@@ -52,10 +60,17 @@ const Catalogue = () => {
               </Typography>
             </Grid>
             <Grid item>
-              
+
             </Grid>
           </Grid>
+          </Grid>
+
           <InterlinkerBrowse language={language} onInterlinkerClick={(interlinker) => {
+            trackEvent({
+              category: 'catalogue',
+              action: 'interlinker-open',
+              name: interlinker.id
+            })
             setInterlinker(interlinker)
             handleClickOpen()
           }} />

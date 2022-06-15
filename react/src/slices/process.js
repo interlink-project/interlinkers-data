@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { user_id } from 'contexts/CookieContext';
 import { topologicalSort } from 'utils/topologicalSort';
-import { coproductionProcessesApi, objectivesApi, phasesApi, rolesApi, tasksApi } from '../__api__';
+import { coproductionProcessesApi } from '../__api__';
 
 const initialState = {
   loading: false,
@@ -8,12 +9,11 @@ const initialState = {
   updatingTree: false,
   process: null,
   hasSchema: false,
+  isAdministrator: false,
   tree: [],
   treeitems: [],
   selectedPhaseTab: '',
   selectedTreeItem: null,
-  roles: [],
-  myRoles: [],
   teams: [],
   users: []
 };
@@ -95,30 +95,26 @@ const slice = createSlice({
         state.selectedTreeItem = firstPhase;
       }
     },
+    setSelectedPhaseTab(state, action) {
+      state.selectedPhaseTab = action.payload;
+    },
+    setSelectedPhaseTabById(state, action) {
+      state.selectedPhaseTab = state.treeitems.find(el => el.id === action.payload);
+    },
     setSelectedTreeItem(state, action) {
       state.selectedTreeItem = action.payload;
     },
     setSelectedTreeItemById(state, action) {
       state.selectedTreeItem = state.treeitems.find(el => el.id === action.payload);
     },
-    setMyRoles(state, action) {
-      state.myRoles = action.payload;
-    },
     setProcess(state, action) {
       state.process = action.payload;
+      if(action.payload){
+        state.isAdministrator = action.payload.administrators_ids.includes(user_id)
+      }
       // TODO: set tab depending on progress
+      state.selectedPhaseTab = null;
       state.selectedTreeItem = null;
-    },
-    setRoles(state, action) {
-      state.roles = action.payload;
-      state.teams = action.payload.reduce(
-        (previousValue, currentValue) => [...previousValue, ...currentValue.teams.map((t) => ({ ...t, role_id: currentValue.id }))],
-        []
-      );
-      state.users = action.payload.reduce(
-        (previousValue, currentValue) => [...previousValue, ...currentValue.users.map((u) => ({ ...u, role_id: currentValue.id }))],
-        []
-      );
     },
     updateTreeItem(state, action) {
       // separate tree into groups
@@ -159,35 +155,29 @@ export const setProcess = (data) => async (dispatch) => {
 
 export const getProcess = (processId) => async (dispatch) => {
   dispatch(slice.actions.setLoading(true));
-  const data = await coproductionProcessesApi.get(processId);
-  const treeData = await coproductionProcessesApi.getTree(processId) || [];
-  const myRoles = await coproductionProcessesApi.myRoles(processId) || [];
-  dispatch(slice.actions.setProcess(data));
-  dispatch(slice.actions.setProcessTree(treeData));
-  dispatch(slice.actions.setMyRoles(myRoles));
-  dispatch(slice.actions.setLoading(false));
+  try {
+    const data = await coproductionProcessesApi.get(processId);
+    dispatch(slice.actions.setProcess(data));
+    const treeData = await coproductionProcessesApi.getTree(processId) || [];
+    dispatch(slice.actions.setProcessTree(treeData));
+    dispatch(slice.actions.setLoading(false));
+  } catch (err) {
+    // https://edupala.com/react-router-navigate-outside-component/
+    window.location.replace("/dashboard");
+  }
 };
 
 export const setUpdatingTree = (val) => async (dispatch) => {
   dispatch(slice.actions.setUpdatingTree(val));
 }
 
-
-export const getTree = (processId, selectedTreeItemId = null) => async (dispatch) => {
+export const getTree = (processId, selectedPhaseTabId = null, selectedTreeItemId = null) => async (dispatch) => {
   dispatch(slice.actions.setUpdatingTree(true));
   const treeData = await coproductionProcessesApi.getTree(processId) || [];
   dispatch(slice.actions.setProcessTree(treeData));
+  selectedTreeItemId && dispatch(slice.actions.setSelectedPhaseTabById(selectedPhaseTabId))
   selectedTreeItemId && dispatch(slice.actions.setSelectedTreeItemById(selectedTreeItemId))
   dispatch(slice.actions.setUpdatingTree(false));
-};
-
-export const getRoles = (processId) => async (dispatch) => {
-  // dispatch(slice.actions.setUpdating(true));
-  const data = await rolesApi.getMulti({
-    coproductionprocess_id: processId
-  });
-  dispatch(slice.actions.setRoles(data));
-  // dispatch(slice.actions.setUpdating(false));
 };
 
 export const updateProcess = ({ id, data, logotype, onSuccess }) => async (dispatch) => {

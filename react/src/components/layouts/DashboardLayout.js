@@ -1,7 +1,6 @@
 import { useMediaQuery, useTheme } from '@material-ui/core';
 import { experimentalStyled } from '@material-ui/core/styles';
 import ProcessSidebar from 'components/navsidebars/ProcessSidebar';
-import WorkspaceSidebar from 'components/navsidebars/WorkspaceSidebar';
 import useAuth from 'hooks/useAuth';
 import { useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
@@ -64,7 +63,6 @@ const DashboardLayout = () => {
   const onMobile = !useMediaQuery(theme.breakpoints.up('sm'));
 
   const coproductionProcessLocation = location.pathname.indexOf("/dashboard/coproductionprocesses/") > -1
-  const dashboardLocation = isAuthenticated && (location.pathname === "/dashboard" || location.pathname === "/dashboard/")
 
   const content = <DashboardLayoutContainer>
     <DashboardLayoutContent>
@@ -74,10 +72,6 @@ const DashboardLayout = () => {
 
   return (
     <DashboardLayoutRoot>
-      {dashboardLocation && <WorkspaceSidebar
-        onMobileClose={() => setIsSidebarMobileOpen(false)}
-        openMobile={!onMobile && isSidebarMobileOpen}
-      />}
       {coproductionProcessLocation && <ProcessSidebar
         onMobileClose={() => setIsSidebarMobileOpen(false)}
         openMobile={!onMobile && isSidebarMobileOpen}
@@ -89,8 +83,8 @@ const DashboardLayout = () => {
         </>
         :
         <>
-          <DashboardNavbar showOpenMenuButton={dashboardLocation || coproductionProcessLocation} onSidebarMobileOpen={() => setIsSidebarMobileOpen(true)} />
-          {coproductionProcessLocation || dashboardLocation ? <DashboardLayoutWrapperWithNavbar>{content}</DashboardLayoutWrapperWithNavbar> : <DashboardLayoutWrapper>{content}</DashboardLayoutWrapper>}
+          <DashboardNavbar showOpenMenuButton={coproductionProcessLocation} onSidebarMobileOpen={() => setIsSidebarMobileOpen(true)} />
+          {coproductionProcessLocation ? <DashboardLayoutWrapperWithNavbar>{content}</DashboardLayoutWrapperWithNavbar> : <DashboardLayoutWrapper>{content}</DashboardLayoutWrapper>}
           <HelpPanel />
         </>
       }

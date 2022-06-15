@@ -5,7 +5,7 @@ import useMounted from 'hooks/useMounted';
 import React, { useEffect, useState } from 'react';
 import { usersApi } from "__api__";
 
-const UserData = ({ variant, id, sx = {} }) => {
+const UserData = ({ id, sx = {} }) => {
     const mounted = useMounted();
     const [data, setData] = useState(null)
     useEffect(() => {

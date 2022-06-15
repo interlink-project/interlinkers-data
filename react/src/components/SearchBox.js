@@ -1,11 +1,12 @@
 import { Box, Card, Input, LinearProgress } from "@material-ui/core";
 import { Search } from "@material-ui/icons";
 import { useCustomTranslation } from "hooks/useDependantTranslation";
+import { getLanguage } from "translations/i18n";
 
-const SearchBox = ({ language, loading, inputValue, setInputValue, size = "medium" }) => {
+const SearchBox = ({ language = getLanguage(), loading, inputValue, setInputValue, size = "medium" }) => {
     const t = useCustomTranslation(language)
 
-    return <Card sx={{ my: 2, mx: 10 }}>
+    return <Card>
         <Box
             sx={{
                 alignItems: 'center',

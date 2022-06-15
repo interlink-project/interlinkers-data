@@ -1,5 +1,5 @@
 import {
-  Alert, Avatar, CircularProgress, IconButton, LinearProgress, ListItemIcon, ListItemText, Menu,
+  Alert, Avatar, Box, CircularProgress, IconButton, LinearProgress, ListItemIcon, ListItemText, Menu,
   MenuItem, Skeleton, Table, TableBody, TableCell, TableHead, TableRow
 } from '@material-ui/core';
 import { Article, CopyAll, Delete, Download, Edit, MoreVert as MoreVertIcon, Share } from '@material-ui/icons';
@@ -203,14 +203,14 @@ const Assets = ({ language, loading, assets, onChange = () => { }, actions = nul
   const t = useCustomTranslation(language)
 
   const addName = (id, name) => {
-    setAssetNames([...assetNames.filter(asset => asset.id !== id), {id, name}])
+    setAssetNames([...assetNames.filter(asset => asset.id !== id), { id, name }])
   }
 
   function find(text) {
-    if(!text){
+    if (!text) {
       return assets
     }
-    
+
     const result = assetNames.filter(item => {
       return item.name ? item.name.toLowerCase().includes(text) : false;
     });
@@ -219,7 +219,9 @@ const Assets = ({ language, loading, assets, onChange = () => { }, actions = nul
 
   return <>
     <InterlinkerDialog language={language} open={interlinkerDialogOpen} setOpen={setInterlinkerDialogOpen} interlinker={selectedInterlinker} />
-    <SearchBox size="small" language={language} loading={loading} inputValue={inputValue} setInputValue={setInputValue} />
+    <Box sx={{ my: 2, mx: 10 }}>
+      <SearchBox size="small" language={language} loading={loading} inputValue={inputValue} setInputValue={setInputValue} />
+    </Box>
 
     <Table sx={{ minWidth: 300 }} aria-label="resources table" size="small">
       <TableHead>

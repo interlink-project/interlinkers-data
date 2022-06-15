@@ -1,11 +1,9 @@
-import { CircularProgress, Typography } from '@material-ui/core';
+import { Box, Button, CircularProgress, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@material-ui/core';
+import UserData from 'components/UserData';
 import useDependantTranslation from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
 import * as React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getRoles } from 'slices/process';
-import PermissionsTable from './PermissionsTable';
-import TeamsTable from './TeamsTable';
 
 export default function TeamsTab() {
     const { process, updating } = useSelector((state) => state.process);
@@ -13,30 +11,58 @@ export default function TeamsTab() {
     const mounted = useMounted();
     const { t } = useDependantTranslation()
 
-    const initGetRoles = () => {
-        if (process && mounted.current) {
-            dispatch(getRoles(process.id))
-        }
-    };
-
-    React.useEffect(() => {
-        initGetRoles();
-    }, []);
-
     // <TeamsTable onChanges={updateAcl} />
     // <Divider sx={{ my: 2 }} />
     return !updating ? (
         <React.Fragment>
-            <Typography variant="h5" sx={{ mb: 2 }}>
-                {t("permissions-title")}
-            </Typography>
-            <Typography variant="subtitle1" sx={{ mb: 2 }}>
-                {t("permissions-subtitle")}
-            </Typography>
-            <TeamsTable onChanges={initGetRoles} />
-            <Typography variant="h5" sx={{ my: 2 }}>
-                {t("Roles")}
-            </Typography>
-            <PermissionsTable onChanges={initGetRoles} />
+            <TableContainer component={Paper}>
+                <Table aria-label="admins-table">
+                    <TableHead>
+                        <TableRow>
+                            <TableCell align="center"><>{t("Team")}</></TableCell>
+                            <TableCell align="center"><>{t("Tree item")}</></TableCell>
+                            <TableCell align="center"><>{t("View assets")}</></TableCell>
+                            <TableCell align="center"><>{t("Create assets")}</></TableCell>
+                            <TableCell align="center"><>{t("Delete assets")}</></TableCell>
+                            <TableCell align="center"><>{t("Update tree items")}</></TableCell>
+                            <TableCell align="center"><>{t("Delete tree items")}</></TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {process.permissions.map((permission) => (
+                            <TableRow hover key={permission.id}>
+                                <TableCell align="center">
+                                    {permission.team_id}
+                                </TableCell>
+                                <TableCell align="center">
+                                    {permission.treeitem_id}
+                                </TableCell>
+                                <TableCell align="center">
+                                    {permission.view_assets_permission}
+                                </TableCell>
+                                <TableCell align="center">
+                                    {permission.view_assets_permission}
+                                </TableCell>
+                                <TableCell align="center">
+                                    {permission.view_assets_permission}
+                                </TableCell>
+                                <TableCell align="center">
+                                    {permission.view_assets_permission}
+                                </TableCell>
+                                <TableCell align="center">
+                                    {permission.view_assets_permission}
+                                </TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+                <Box sx={{textAlign: "center", my: 4}}>
+                <Button variant="contained">
+                    {t("Add rule")}
+                </Button>
+                </Box>
+                
+
+            </TableContainer>
         </React.Fragment>) : <CircularProgress />
 }
