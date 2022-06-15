@@ -51,7 +51,7 @@ const OrganizationCreate = ({ open, setOpen, loading, setLoading, onCreate }) =>
   },
   {
     value: "members",
-    label: t("Only the members of the organization")
+    label: t("Members of at least a team of the organization")
   },
   {
     value: "anyone",

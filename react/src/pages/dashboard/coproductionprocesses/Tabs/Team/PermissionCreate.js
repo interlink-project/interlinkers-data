@@ -11,7 +11,7 @@ const PermissionCreate = ({ open, setOpen, loading, setLoading, onCreate, treeit
   const [selectedTeam, setSelectedTeam] = useState(null);
   const [permissions, setPermissions] = useState(
     {
-      "view_assets_permission": false,
+      "access_assets_permission": false,
       "create_assets_permission": false,
       "delete_assets_permission": false,
       "edit_treeitem_permission": false,

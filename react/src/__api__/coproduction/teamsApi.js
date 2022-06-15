@@ -23,14 +23,6 @@ class TeamsApi extends GeneralApi {
     console.log('remove user call', res.data);
     return res.data;
   }
-
-  async getMine() {
-    const res = await axiosInstance.get(
-      `/${this.url}/mine`
-    );
-    console.log('getMine call', res.data);
-    return res.data;
-  }
 }
 
 export const teamsApi = new TeamsApi();

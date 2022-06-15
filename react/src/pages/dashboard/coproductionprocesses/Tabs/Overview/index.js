@@ -49,7 +49,7 @@ export default function TimeLine({ }) {
     }
 
     return (<Box>
-        <Paper sx={{ m: 2, p: 2, bgcolor: "background.default" }}>
+        <Paper sx={{ m: 2, p: 2, bgcolor: "background.default", overflow: "scroll" }}>
             <Stepper activeStep={activeStep} orientation="horizontal" sx={{ mx: 3 }}>
                 <Step completed={hasSchema}>
                     <StepLabel>

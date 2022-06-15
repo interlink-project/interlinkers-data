@@ -6,6 +6,7 @@ import {
 } from '@material-ui/core';
 import { Cancel, CheckCircle, Delete, KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
+import { user_id } from 'contexts/CookieContext';
 import useAuth from 'hooks/useAuth';
 import { useCustomTranslation } from 'hooks/useDependantTranslation';
 import { useEffect, useState } from 'react';
@@ -178,7 +179,7 @@ const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOp
             {selectedUsers.map(user => {
 
               var name = user.full_name
-              const you = user.sub === auth.user.sub
+              const you = user.sub === user_id
               if (you) {
                 name += ` (${t("you")})`
               }
@@ -192,10 +193,9 @@ const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOp
                   secondary={user.email}
                 />
                 <ListItemSecondaryAction>
-                  {!you && <IconButton edge="end" aria-label="delete" onClick={() => deleteUserFromList(user.sub)}>
+                  <IconButton edge="end" aria-label="delete" onClick={() => deleteUserFromList(user.sub)}>
                     <Delete />
-                  </IconButton>}
-
+                  </IconButton>
                 </ListItemSecondaryAction>
               </ListItem>
             })}

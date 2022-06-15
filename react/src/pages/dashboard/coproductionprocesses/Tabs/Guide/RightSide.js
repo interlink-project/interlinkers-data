@@ -1,9 +1,10 @@
-import { Avatar, Box, Button, Collapse, Dialog, DialogContent, Grid, Menu, MenuItem, Stack, TextField, Typography } from '@material-ui/core';
-import { KeyboardArrowDown, KeyboardArrowUp } from '@material-ui/icons';
+import { Avatar, Box, Button, Dialog, DialogContent, Grid, Menu, MenuItem, Stack, Tab, Tabs, TextField, Typography } from '@material-ui/core';
+import { KeyboardArrowDown } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import { AssetsTable } from 'components/dashboard/assets';
 import InterlinkerBrowse from 'components/dashboard/interlinkers/browse/InterlinkerBrowse';
 import { TreeItemData } from 'components/dashboard/tree';
+import PermissionsTable from 'components/dashboard/tree/PermissionsTable';
 import { Formik } from 'formik';
 import useDependantTranslation from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
@@ -15,13 +16,12 @@ import { assetsApi } from '__api__';
 import NewAssetModal from './NewAssetModal';
 
 const RightSide = ({ softwareInterlinkers }) => {
-    const { process, selectedTreeItem } = useSelector((state) => state.process);
+    const { process, isAdministrator, selectedTreeItem } = useSelector((state) => state.process);
     const isTask = selectedTreeItem && selectedTreeItem.type === "task"
     const [step, setStep] = useState(0);
 
     const [assets, setAssets] = useState([])
     const [loadingTreeitemInfo, setLoadingTreeitemInfo] = useState(false)
-    const [treeItemInfoOpen, setTreeItemInfoOpen] = useState(true)
 
     // new asset modal
     const [selectedInterlinker, setSelectedInterlinker] = useState(null)
@@ -58,25 +58,32 @@ const RightSide = ({ softwareInterlinkers }) => {
 
     const information_translations = information_about_translations(t)
 
+    const [tabValue, setTabValue] = useState('data');
+    const handleTabChange = (event, newValue) => {
+        setTabValue(newValue);
+    };
+
     return (
 
         selectedTreeItem && <Grid item xl={8} lg={8} md={6} xs={12}>
             <Box sx={{ p: 2 }}>
-                <Button sx={{ mb: 2 }} fullWidth variant={treeItemInfoOpen ? "outlined" : "contained"} color="warning" onClick={() => setTreeItemInfoOpen(!treeItemInfoOpen)}>
-                    <Stack spacing={2} alignItems="center" direction="row">
-                        <Typography variant="h6" >{information_translations[selectedTreeItem.type]} </Typography>{!treeItemInfoOpen ? <KeyboardArrowDown /> : <KeyboardArrowUp />}
-                    </Stack>
-                </Button>
-                <Collapse in={treeItemInfoOpen} timeout="auto" unmountOnExit>
-                    <TreeItemData language={process.language} processId={process.id} element={selectedTreeItem} />
-                </Collapse>
-                {isTask && <>
+                <Tabs
+                    value={tabValue}
+                    onChange={handleTabChange}
+                    aria-label="guide-right-side-tabs"
+                    sx={{mb: 2}}
+                    centered
+                >
+                    <Tab wrapped value="data" label={information_translations[selectedTreeItem.type]} />
+                    <Tab value="permissions" label={t("Permissions")} />
+                    {isTask && <Tab value="assets" disabled={!isTask} label={isTask ? `${t("Resources")} (${selectedTreeItem.assets_count || 0})` : t("Resources")} />}
+                </Tabs>
 
+                {tabValue === "data" && <TreeItemData language={process.language} processId={process.id} element={selectedTreeItem} />}
+                {tabValue === "permissions" && <PermissionsTable language={process.language} processId={process.id} element={selectedTreeItem} isAdministrator={isAdministrator} />}
+                {tabValue === "assets" && isTask && <>
                     <Box>
                         <Box sx={{ mt: 2 }}>
-
-                            <Typography sx={{ mb: 1 }} variant="h6"><>{t("Current resources")}:</></Typography>
-
                             <AssetsTable language={process.language} loading={loadingTreeitemInfo} assets={assets} onChange={updateTreeitemInfo} />
                             <Box sx={{ textAlign: "center", width: "100%" }}>
                                 <Stack spacing={2} >

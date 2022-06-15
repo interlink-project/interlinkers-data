@@ -4,7 +4,7 @@ import { topologicalSort } from 'utils/topologicalSort';
 import { coproductionProcessesApi } from '../__api__';
 
 const initialState = {
-  loading: false,
+  loading: true,
   updating: false,
   updatingTree: false,
   process: null,

@@ -40,14 +40,6 @@ class CoproductionProcessesApi extends GeneralApi {
       return res.data;
     }
   }
-
-  async getMine() {
-    const res = await axiosInstance.get(
-      `/${this.url}/mine`
-    );
-    console.log('getMine call', res.data);
-    return res.data;
-  }
 }
 
 export const coproductionProcessesApi = new CoproductionProcessesApi();

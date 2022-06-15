@@ -21,7 +21,7 @@ export default function TeamsTab() {
                         <TableRow>
                             <TableCell align="center"><>{t("Team")}</></TableCell>
                             <TableCell align="center"><>{t("Tree item")}</></TableCell>
-                            <TableCell align="center"><>{t("View assets")}</></TableCell>
+                            <TableCell align="center"><>{t("Access to resources")}</></TableCell>
                             <TableCell align="center"><>{t("Create assets")}</></TableCell>
                             <TableCell align="center"><>{t("Delete assets")}</></TableCell>
                             <TableCell align="center"><>{t("Update tree items")}</></TableCell>
@@ -38,19 +38,19 @@ export default function TeamsTab() {
                                     {permission.treeitem_id}
                                 </TableCell>
                                 <TableCell align="center">
-                                    {permission.view_assets_permission}
+                                    {permission.access_assets_permission}
                                 </TableCell>
                                 <TableCell align="center">
-                                    {permission.view_assets_permission}
+                                    {permission.access_assets_permission}
                                 </TableCell>
                                 <TableCell align="center">
-                                    {permission.view_assets_permission}
+                                    {permission.access_assets_permission}
                                 </TableCell>
                                 <TableCell align="center">
-                                    {permission.view_assets_permission}
+                                    {permission.access_assets_permission}
                                 </TableCell>
                                 <TableCell align="center">
-                                    {permission.view_assets_permission}
+                                    {permission.access_assets_permission}
                                 </TableCell>
                             </TableRow>
                         ))}

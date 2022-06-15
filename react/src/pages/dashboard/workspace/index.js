@@ -33,7 +33,7 @@ function ProcessRow({ process }) {
       <TableCell align="center">{moment(process.created_at).fromNow()}</TableCell>
       <TableCell align="center"><StatusChip status={"in_progress"} /></TableCell>
       <TableCell align="center">
-        {process.your_participation.map(p => <Chip label={p} />)}
+        {process.user_participation.map(p => <Chip label={p} />)}
       </TableCell>
     </TableRow>
   );
@@ -129,7 +129,7 @@ const MyWorkspace = () => {
                       <TableCell align="center">{t("Name")}</TableCell>
                       <TableCell align="center">{t("Created")}</TableCell>
                       <TableCell align="center">{t("Status")}</TableCell>
-                      <TableCell align="center">{t("Your participation")}</TableCell>
+                      <TableCell align="center">{t("Your participation in the process")}</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>

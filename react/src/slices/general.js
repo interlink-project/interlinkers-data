@@ -41,7 +41,7 @@ export const { reducer } = slice;
 
 export const getMyProcesses = () => async (dispatch) => {
   dispatch(slice.actions.setLoadingProcesses(true));
-  const processes_data = await coproductionProcessesApi.getMine();
+  const processes_data = await coproductionProcessesApi.getMulti();
   dispatch(slice.actions.setProcesses(processes_data));
   dispatch(slice.actions.setLoadingProcesses(false));
 };

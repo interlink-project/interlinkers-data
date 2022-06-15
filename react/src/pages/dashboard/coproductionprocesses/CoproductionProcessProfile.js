@@ -156,12 +156,13 @@ const CoproductionProcessProfile = () => {
                 </TabPanel>
                 <TabPanel value={tab} index="guide">
                   <Card sx={{ ...style, mb: 3 }}>
-                    {process.creator_id !== user.sub && <PermissionDenied explanation={t("Only the creator of the process can select an schema")} />}
                     <Guide setSelectedTreeItem={_setSelectedTreeItem} />
                   </Card>
                 </TabPanel>
                 <TabPanel value={tab} index="team">
-                  <TeamTab />
+                  <Card sx={{ ...style, mb: 3 }}>
+                    <TeamTab />
+                  </Card>
                 </TabPanel>
                 <TabPanel value={tab} index="settings">
                   <Card >

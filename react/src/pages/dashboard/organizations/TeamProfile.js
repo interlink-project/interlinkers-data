@@ -192,7 +192,7 @@ const TeamProfile = ({ open, setOpen, teamId, onChanges }) => {
 
   const team_trans = t("team")
 
-  const isAdmin = team && team.your_participation && team.your_participation.includes('administrator')
+  const isAdmin = team && team.user_participation && team.user_participation.includes('administrator')
 
   return (<Dialog open={open} onClose={handleClose} fullWidth maxWidth="lg">
     <DialogContent sx={{ minHeight: "60vh", backgroundColor: "background.default" }}>
