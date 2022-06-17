@@ -9,6 +9,7 @@ import useDependantTranslation from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
 import moment from 'moment';
 import { useEffect, useState } from 'react';
+import { getLanguage } from 'translations/i18n';
 import { organizationsApi, usersApi } from '__api__';
 import TeamCreate from './TeamCreate';
 import TeamProfile from './TeamProfile';
@@ -98,20 +99,22 @@ const OrganizationProfile = ({ organizationId, onChanges }) => {
     const [name, setName] = useState("")
     const [description, setDescription] = useState("")
     const [logotype, setLogotype] = useState(null);
-    const [loading, setLoading] = useState(true)
-    const [organization, setOrganization] = useState({})
+    const [loadingTeams, setLoadingTeams] = useState(true)
+    const [organization, setOrganization] = useState({teams_ids: []})
     const [teams, setTeams] = useState([]);
     const [selectedTeam, setSelectedTeam] = useState(null);
     const [teamCreatorOpen, setOpenTeamCreator] = useState(false);
     const [creatingTeam, setCreatingTeam] = useState(false);
+    const [profileLanguage, setProfileLanguage] = useState(getLanguage())
 
     const mounted = useMounted();
     const { t } = useDependantTranslation()
 
     const getTeams = () => {
-        console.log("TEEAMS")
+        setLoadingTeams(true)
         organizationsApi.getOrganizationTeams(organizationId).then(res => {
             setTeams(res)
+            setLoadingTeams(false)
         })
     }
 
@@ -133,7 +136,17 @@ const OrganizationProfile = ({ organizationId, onChanges }) => {
 
         let send = false
         if (nameAndDescChanged) {
-            const data = { name, description }
+            const data = {
+                name_translations: {
+                    ...organization.name_translations,
+                    [profileLanguage]: name
+                },
+                description_translations: {
+                    ...organization.description_translations,
+                    [profileLanguage]: description
+                },
+            }
+            console.log("UPDATE", data)
             calls.push(organizationsApi.update(organization.id, data))
             send = true
         }
@@ -224,7 +237,7 @@ const OrganizationProfile = ({ organizationId, onChanges }) => {
 
 
                         </IconButton>
-                    </label> : <IconButton component="span" color="inherit" disabled>
+                        </label> : <IconButton component="span" color="inherit" disabled>
                         <Avatar
                             src={logotype ? logotype.path : organization.logotype_link}
                             variant="rounded"
@@ -290,7 +303,7 @@ const OrganizationProfile = ({ organizationId, onChanges }) => {
                             <TableCell align="center">{t("Name")}</TableCell>
                             <TableCell align="center">{t("Public")}</TableCell>
                             <TableCell align="center">{t("Created")}</TableCell>
-                            <TableCell align="center">{t("Users count")}</TableCell>
+                            <TableCell align="center">{t("Members")}</TableCell>
                             <TableCell align="center">{t("Your participation in the team")}</TableCell>
                         </TableRow>
                     </TableHead>
@@ -315,17 +328,26 @@ const OrganizationProfile = ({ organizationId, onChanges }) => {
                                 </TableCell>
                             </TableRow>
                         ))}
+                        {loadingTeams && [...Array(organization.teams_ids.length).keys()].map((i) => <TableRow key={`skeleton-${i}`}>
+                                <TableCell align="center" colSpan={5}>
+                                    <Skeleton />
+                                </TableCell>
+                            </TableRow>
+                        )}
                     </TableBody>
                 </Table>
-                {(!teams || teams.length === 0) && <Alert severity="warning">
+                
+                {(!loadingTeams && (!teams || teams.length) === 0) && <Alert severity="warning">
                     {t("No teams found in this organization")}
                 </Alert>}
-                <Stack textAlign="center" sx={{ mt: 3 }}>
-                    <LoadingButton sx={{ maxWidth: "300px", textAlign: "center" }} size="small" variant="contained" startIcon={<Add />} onClick={() => setOpenTeamCreator(true)} loading={creatingTeam} disabled={!canCreateTeams} fullWidth>{t("Create new team")}</LoadingButton>
-                </Stack>
+                <Box sx={{textAlign: "center"}}>
+                <LoadingButton loading={loadingTeams || creatingTeam} sx={{ mt:3 }} size="small" variant="contained" startIcon={<Add />} onClick={() => setOpenTeamCreator(true)} disabled={!canCreateTeams}>{t("Create new team")}</LoadingButton>
+
+                </Box>
             </Grid>
-        </Grid> : <CentricCircularProgress />}
-    </Box>
+        </Grid> : <CentricCircularProgress />
+}
+    </Box >
     );
 };
 

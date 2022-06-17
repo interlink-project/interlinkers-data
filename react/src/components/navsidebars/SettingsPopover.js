@@ -15,6 +15,7 @@ import { getLanguage, LANGUAGES } from 'translations/i18n';
 import useSettings from '../../hooks/useSettings';
 import AdjustmentsIcon from '../../icons/Adjustments';
 import { useTranslation } from 'react-i18next';
+import { OpenInNew, Settings } from '@material-ui/icons';
 
 const getValues = (settings) => ({
   direction: settings.direction,
@@ -59,7 +60,7 @@ const SettingsPopover = () => {
       {' '}
       <Tooltip title='Settings'>
         <IconButton color='inherit' ref={anchorRef} onClick={handleOpen}>
-          <AdjustmentsIcon fontSize='small' />
+          <Settings fontSize='small' />
         </IconButton>
       </Tooltip>{' '}
       <Popover
@@ -122,6 +123,15 @@ const SettingsPopover = () => {
             ))}
           </TextField>{' '}
         </Box>
+        <Box sx={{ my: 2, mx: 2 }}>
+          <Button startIcon={<OpenInNew />} fullWidth variant="text" onClick={() => window.open(`/docs/${getLanguage()}/`, "_blank")}>{t("Open user manual")}</Button>
+          </Box>
+          <Box sx={{ my: 2, mx: 2 }}>
+          <Button startIcon={<OpenInNew />} fullWidth variant="text" onClick={() => window.open(`/docs/${getLanguage()}/`, "_blank")}>{t("Contact form")}</Button>
+          </Box>
+          <Box sx={{ my: 2, mx: 2 }}>
+          <Button startIcon={<OpenInNew />} fullWidth variant="text" onClick={() => window.open(`/docs/${getLanguage()}/`, "_blank")}>{t("Usability form")}</Button>
+          </Box>
         <Box sx={{ px: 4 }}>
           <FormControlLabel
             control={
@@ -138,7 +148,7 @@ const SettingsPopover = () => {
                 }
               />
             }
-            label={t("Show help button")}
+            label={t("Show contextual help")}
           />
           </Box>
         <Box

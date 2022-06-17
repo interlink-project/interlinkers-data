@@ -1,5 +1,5 @@
 import { Avatar, Box, Chip, Container, Grid, Paper, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@material-ui/core';
-import { Add, Check, People } from '@material-ui/icons';
+import { Add, Check, KeyboardArrowDown, KeyboardArrowUp, People } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import { OrganizationChip } from 'components/dashboard/assets/Icons';
 import SearchBox from 'components/SearchBox';
@@ -28,7 +28,7 @@ function OrganizationRow({ organization, onChanges }) {
   return (
     <React.Fragment>
 
-      <TableRow hover sx={{ '& > *': { borderBottom: 'unset' }, cursor: 'pointer' }} onClick={() => {
+      <TableRow hover={!open} sx={{ '& > *': { borderBottom: 'unset' }, cursor: 'pointer' }} onClick={() => {
         console.log(`/dashboard/organizations/${organization.id}`)
         _setOpen(!open)
       }}>
@@ -44,13 +44,19 @@ function OrganizationRow({ organization, onChanges }) {
         <TableCell align="center" component="th" scope="row">
           <OrganizationChip type={organization.type} />
         </TableCell>
+        <TableCell align="center" component="th" scope="row">
+        {organization.people_involved}
+        </TableCell>
         <TableCell align="center">{moment(organization.created_at).fromNow()}</TableCell>
         <TableCell align="center">
           {organization.user_participation.length > 0 ? organization.user_participation.map(p => <Chip size="small" sx={{ ml: 1 }} key={organization.id + p} variant={p === "administrator" ? "contained" : "outlined"} label={p} />) : <Chip label={t("None")} />}
         </TableCell>
+        <TableCell align="center">
+          {open ?  <KeyboardArrowUp /> : <KeyboardArrowDown />}
+        </TableCell>
       </TableRow>
       <TableRow>
-        <TableCell style={{ border: 0, paddingTop: !open && 0, paddingBottom: !open && 0 }} sx={{ bgcolor: "background.default" }} colSpan={5}>
+        <TableCell style={{ border: 0, paddingTop: !open && 0, paddingBottom: !open && 0 }} sx={{ bgcolor: "background.default" }} colSpan={7}>
           <Paper>
             {open && <OrganizationProfile organizationId={organization.id} onChanges={onChanges} />}
           </Paper>
@@ -146,8 +152,10 @@ const Organizations = () => {
                     <TableCell align="center">{t("Name")}</TableCell>
                     <TableCell align="center">{t("Public")}</TableCell>
                     <TableCell align="center">{t("Type")}</TableCell>
+                    <TableCell align="center">{t("People involved")}</TableCell>
                     <TableCell align="center">{t("Created")}</TableCell>
                     <TableCell align="center">{t("Your participation in the organization")}</TableCell>
+                    <TableCell align="center"></TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>

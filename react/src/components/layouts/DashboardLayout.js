@@ -6,7 +6,6 @@ import { useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import DashboardMobileAppbar from '../navsidebars/DashboardMobileAppbar';
 import DashboardNavbar from '../navsidebars/DashboardNavbar';
-import HelpPanel from '../HelpPanel';
 
 const DashboardLayoutRoot = experimentalStyled('div')(({ theme }) => ({
   backgroundColor: theme.palette.background.default,
@@ -85,7 +84,6 @@ const DashboardLayout = () => {
         <>
           <DashboardNavbar showOpenMenuButton={coproductionProcessLocation} onSidebarMobileOpen={() => setIsSidebarMobileOpen(true)} />
           {coproductionProcessLocation ? <DashboardLayoutWrapperWithNavbar>{content}</DashboardLayoutWrapperWithNavbar> : <DashboardLayoutWrapper>{content}</DashboardLayoutWrapper>}
-          <HelpPanel />
         </>
       }
 

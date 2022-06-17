@@ -1,4 +1,4 @@
-import { Avatar, Box, Button, Dialog, DialogContent, Grid, Menu, MenuItem, Stack, Tab, Tabs, TextField, Typography } from '@material-ui/core';
+import { Alert, Avatar, Box, Button, Dialog, DialogContent, Grid, Menu, MenuItem, Stack, Tab, Tabs, TextField, Typography } from '@material-ui/core';
 import { KeyboardArrowDown } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import { AssetsTable } from 'components/dashboard/assets';
@@ -63,6 +63,11 @@ const RightSide = ({ softwareInterlinkers }) => {
         setTabValue(newValue);
     };
 
+    const can = {
+        create: selectedTreeItem.user_permissions_dict.create_assets_permission,
+        view: selectedTreeItem.user_permissions_dict.access_assets_permission
+    }
+
     return (
 
         selectedTreeItem && <Grid item xl={8} lg={8} md={6} xs={12}>
@@ -84,7 +89,7 @@ const RightSide = ({ softwareInterlinkers }) => {
                 {tabValue === "assets" && isTask && <>
                     <Box>
                         <Box sx={{ mt: 2 }}>
-                            <AssetsTable language={process.language} loading={loadingTreeitemInfo} assets={assets} onChange={updateTreeitemInfo} />
+                            {can.view ? <AssetsTable language={process.language} loading={loadingTreeitemInfo} assets={assets} onChange={updateTreeitemInfo} /> : <Alert severity="error">{t("You do not have access to the resources of this task")}</Alert>}
                             <Box sx={{ textAlign: "center", width: "100%" }}>
                                 <Stack spacing={2} >
                                     <Button
@@ -95,6 +100,7 @@ const RightSide = ({ softwareInterlinkers }) => {
                                         onClick={() => setCatalogueOpen(true)}
                                         variant="contained"
                                         sx={{ mt: 2 }}
+                                        disabled={!can.create}
                                     >
                                         <>{t("Open catalogue")}</>
                                     </Button>
@@ -106,6 +112,7 @@ const RightSide = ({ softwareInterlinkers }) => {
                                         onClick={handleClick}
                                         variant="contained"
                                         endIcon={<KeyboardArrowDown />}
+                                        disabled={!can.create}
                                     >
                                         <>{t("Initiate procedure")}</>
                                     </Button>

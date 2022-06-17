@@ -11,13 +11,12 @@ import { useNavigate } from 'react-router';
 import { getMyProcesses, getOrganizations } from 'slices/general';
 import useAuth from '../../../hooks/useAuth';
 import CoproductionprocessCreate from './CoproductionProcessCreate';
-
 import { Folder } from '@material-ui/icons';
-import { StatusChip } from 'components/dashboard/assets/Icons';
-import { user_id } from 'contexts/CookieContext';
-import moment from 'moment';
-import SearchBox from 'components/SearchBox';
 import CentricCircularProgress from 'components/CentricCircularProgress';
+import { StatusChip } from 'components/dashboard/assets/Icons';
+import HelpAlert from 'components/HelpAlert';
+import SearchBox from 'components/SearchBox';
+import moment from 'moment';
 
 
 function ProcessRow({ process }) {
@@ -116,6 +115,7 @@ const MyWorkspace = () => {
                 </Grid>
               </Grid>
             </Grid>
+            <HelpAlert text={t("prueba")} />
             <Box sx={{ mt: 4 }}>
               <Box sx={{ mb: 2 }}>
                 <SearchBox loading={loadingProcesses} inputValue={searchValue} setInputValue={setSearchValue} />
@@ -135,7 +135,7 @@ const MyWorkspace = () => {
                   <TableBody>
                     {processes.length > 0 && processes.map((process) => (
                       <React.Fragment key={process.id}>
-                      <ProcessRow process={process} />
+                        <ProcessRow process={process} />
 
                       </React.Fragment>
                     ))}
@@ -143,15 +143,17 @@ const MyWorkspace = () => {
                 </Table>
               </TableContainer>
               {processes.length === 0 && <>
-              {loadingProcesses ? <CentricCircularProgress /> : <Paper sx={{ p: 2, textAlign: "center" }}>
-                  <Typography sx={{ my: 2 }} variant="h5" >
-                    {t("We could not find any co-production process")}
-                  </Typography>
-                  <Button onClick={() => setCoproductionProcessCreatorOpen(true)} sx={{ my: 3, width: 400 }} variant="contained" size="small">Create a new co-production process</Button>
-                  <Divider>{t("or")}</Divider>
-                  <Button sx={{ my: 3, width: 400 }} variant="contained" color="secondary" size="small">Search for organizations and teams</Button>
+                {loadingProcesses ? <CentricCircularProgress /> : <Paper sx={{ p: 2, textAlign: "center", minHeight: "50vh" }}>
+                  <Box style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)' }}>
+                    <Typography sx={{ my: 2 }} variant="h5" >
+                      {t("We could not find any co-production process")}
+                    </Typography>
+                    <Button onClick={() => setCoproductionProcessCreatorOpen(true)} sx={{ my: 3, width: 400 }} variant="contained" size="small">{t("Create a new co-production process")}</Button>
+                    <Divider sx={{ my: 3 }}>{t("or")}</Divider>
+                    <Typography variant="subtitle2">{t("Wait or request to be added to a organization in the platform")}</Typography>
+                    <Button sx={{ mt: 2, width: 400 }} onClick={() => navigate("/dashboard/organizations")} variant="contained" color="secondary" size="small">{t("Search for organizations and teams")}</Button>
+                  </Box>
                 </Paper>}
-                
 
               </>}
               <CoproductionprocessCreate

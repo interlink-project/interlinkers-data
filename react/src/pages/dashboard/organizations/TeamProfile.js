@@ -297,7 +297,7 @@ const TeamProfile = ({ open, setOpen, teamId, onChanges }) => {
             </TableBody>
           </Table>
           {isAdmin && <Box sx={{ mx: 6, textAlign: "center", justifyContent: "center" }}>
-            <UserSearch text={t("Add user to the team")} onClick={addUserToTeam} />
+            <UserSearch exclude={team.users.map(user => user.id)} organization_id={team.organization_id} text={t("Add user to the team")} onClick={addUserToTeam} />
           </Box>}
         </Grid>
       </Grid> : <Box

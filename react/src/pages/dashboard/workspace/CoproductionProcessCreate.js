@@ -1,7 +1,7 @@
 import {
   Avatar, Box, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, IconButton, Input, InputLabel, MenuItem, Select, TextField, Typography
 } from '@material-ui/core';
-import { KeyboardArrowRight } from '@material-ui/icons';
+import { Close, KeyboardArrowRight } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import useMounted from 'hooks/useMounted';
 import { useState, useEffect } from 'react';
@@ -100,13 +100,14 @@ const CoproductionprocessCreate = ({ open, setOpen, loading, setLoading, onCreat
                     height: "60px",
                   }}
                 />
-                <Typography variant="body1">
-                {t("Click to add or edit the logo")}
-
-                </Typography>
-
+                {!logotype && <Typography variant="body1">
+                  {t("Click here to add a logo")}
+                </Typography>}
               </IconButton>
             </label>
+            {logotype && <IconButton onClick={(event) => {
+                  setLogotype(null)
+                }}><Close /></IconButton>}
           </Box><TextField
               autoFocus
               margin="dense"

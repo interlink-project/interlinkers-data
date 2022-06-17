@@ -1,23 +1,21 @@
 import {
-  Alert, Avatar, Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, IconButton, Input,
+  Alert, Avatar, Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, Input,
   List,
   ListItem,
   ListItemAvatar, ListItemSecondaryAction, ListItemText, MobileStepper, Stack, Switch, TextField, Typography, useTheme
 } from '@material-ui/core';
-import { Cancel, CheckCircle, Delete, KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
-import { LoadingButton } from '@material-ui/lab';
+import { Close, Delete, KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
 import { user_id } from 'contexts/CookieContext';
 import useAuth from 'hooks/useAuth';
 import { useCustomTranslation } from 'hooks/useDependantTranslation';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { getLanguage } from 'translations/i18n';
-import { teamsApi, usersApi } from '__api__';
+import { teamsApi } from '__api__';
+import UserSearch from '../coproductionprocesses/Tabs/Team/UserSearch';
 
 const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOpen, onCreate, organization }) => {
-  const [emailValue, setEmailValue] = useState("");
   const auth = useAuth();
   const [selectedUsers, setSelectedUsers] = useState([auth.user]);
-  const [selectedUser, setSelectedUser] = useState(null);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [logotype, setLogotype] = useState(null);
@@ -31,7 +29,6 @@ const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOp
     setName("")
     setDescription("")
     setLogotype(null)
-    setSelectedUser(null)
     setSelectedUsers([auth.user])
     setActiveStep(0)
   }
@@ -91,26 +88,6 @@ const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOp
     }, 1000);
   };
 
-  useEffect(() => {
-
-    var delayDebounceFn
-    if (emailValue) {
-      setLoading(true)
-      delayDebounceFn = setTimeout(() => {
-        usersApi.get(emailValue).then(res => {
-          if (!selectedUsers.find(user => user.sub === res.data.sub)) {
-            setSelectedUser(res.data)
-          }
-        }).catch(() => {
-          setSelectedUser(null)
-        }).finally(() => {
-          setLoading(false)
-        })
-      }, 1000)
-    }
-    return () => clearTimeout(delayDebounceFn)
-  }, [emailValue])
-
   const deleteUserFromList = (sub) => {
     setSelectedUsers(selectedUsers.filter(user => user.sub !== sub))
   }
@@ -123,12 +100,9 @@ const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOp
 
   return (
     <>
-      <Dialog open={open} onClose={handleClose}>
+      <Dialog open={open} onClose={handleClose} maxWidth="xs" fullWidth>
         <DialogTitle>{t("team-create-title")}</DialogTitle>
         <DialogContent>
-          <DialogContentText>
-            {t("team-create-description")}
-          </DialogContentText>
           {activeStep === 0 && <><Box sx={{ textAlign: "center" }}>
             <label htmlFor="contained-button-file">
               <Input inputProps={{ accept: 'image/*' }} id="contained-button-file" type="file" sx={{ display: "none" }} onChange={handleFileSelected} />
@@ -141,11 +115,14 @@ const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOp
                     height: "60px",
                   }}
                 />
-                <Typography variant="body1">
-                  {t("Click to add or edit the logo")}
-                </Typography>
+                {!logotype && <Typography variant="body1">
+                  {t("Click here to add a logo")}
+                </Typography>}
               </IconButton>
             </label>
+            {logotype && <IconButton onClick={(event) => {
+              setLogotype(null)
+            }}><Close /></IconButton>}
           </Box><TextField
               autoFocus
               margin="dense"
@@ -169,21 +146,23 @@ const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOp
               rows={4}
               variant="standard"
             />
-            <Stack sx={{mt: 3}} spacing={1} direction="row" alignItems="center">
-            <Typography variant="body2">{t("Public")}</Typography>
-            <Switch checked={isPublic} onChange={(event) => setPublic(event.target.checked)} />
-          </Stack>
+            <Stack sx={{ mt: 3 }} spacing={1} direction="row" alignItems="center">
+              <Typography variant="body1">{t("Public")}</Typography>
+              <Switch checked={isPublic} onChange={(event) => setPublic(event.target.checked)} />
+            </Stack>
+            <Alert sx={{ mt: 2 }} severity="info">{t("Public team's information (and their members information) can be accessed by any member of the organization. If the organization is public as well, the information can be accessed by any user in the platform.")}</Alert>
+
           </>}
 
           {activeStep === 1 && <><List dense>
             {selectedUsers.map(user => {
 
               var name = user.full_name
-              const you = user.sub === user_id
+              const you = user.id === user_id
               if (you) {
                 name += ` (${t("you")})`
               }
-              return <ListItem key={user.sub}
+              return <ListItem key={user.id}
               >
                 <ListItemAvatar>
                   <Avatar src={user.picture} />
@@ -201,29 +180,7 @@ const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOp
             })}
 
           </List>
-
-            <TextField
-              margin="dense"
-              label={t("Email address")}
-              type="email"
-              fullWidth
-              variant="standard"
-              value={emailValue}
-              onChange={(e) => {
-                setEmailValue(e.target.value)
-              }}
-            />
-            {emailValue && !selectedUser && <Alert severity='warning'>{t("User must have logged in first")}</Alert>}
-            <LoadingButton loading={loading} fullWidth variant="text" color='primary' onClick={() => {
-              setSelectedUsers([...selectedUsers, selectedUser])
-              setSelectedUser(null)
-              setEmailValue("")
-
-            }}
-              disabled={!selectedUser}
-              endIcon={selectedUser ? <CheckCircle /> : (emailValue && <Cancel color='error' />)}
-              sx={{ mt: 1 }}
-            >{t("Add user")}</LoadingButton>
+            <UserSearch exclude={selectedUsers.map(user => user.id)} organization_id={organization.id} onClick={(user) => setSelectedUsers([...selectedUsers, user])} />
           </>}
 
 

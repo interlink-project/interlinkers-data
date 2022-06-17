@@ -2,7 +2,7 @@ import {
   Alert, Avatar, Box, CircularProgress, IconButton, LinearProgress, ListItemIcon, ListItemText, Menu,
   MenuItem, Skeleton, Table, TableBody, TableCell, TableHead, TableRow
 } from '@material-ui/core';
-import { Article, CopyAll, Delete, Download, Edit, MoreVert as MoreVertIcon, Share } from '@material-ui/icons';
+import { Article, CopyAll, Delete, Download, Edit, MoreVert as MoreVertIcon, OpenInNew, Share } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import ConfirmationButton from 'components/ConfirmationButton';
 import { InterlinkerDialog } from 'components/dashboard/interlinkers';
@@ -63,6 +63,8 @@ const AssetRow = ({ addName, language, asset, onChange, actions, openInterlinker
 
   }, [asset, mounted])
 
+  const handleOpen = () => window.open(data.link + "/view", "_blank")
+
   const handleDelete = () => {
     setLoading("delete");
     assetsApi.delete(asset.id).then(() => {
@@ -92,20 +94,22 @@ const AssetRow = ({ addName, language, asset, onChange, actions, openInterlinker
   }
 
   const getActions = (data) => {
-    const actios = []
+    const actions = []
     if (!data) {
-      return actios
+      return actions
     }
     if (data.type === "internalasset" && data.capabilities) {
       const { id, capabilities } = data
+      actions.push(<MyMenuItem key={`${id}-open-action`} loading={loading} id="open" onClick={handleOpen} text={t("Open")} icon={<OpenInNew fontSize="small" />} />)
+
       if (capabilities.edit) {
-        actios.push(<MyMenuItem key={`${id}-edit-action`} loading={loading} id="edit" onClick={handleEdit} text={t("Edit")} icon={<Edit fontSize="small" />} />)
+        actions.push(<MyMenuItem key={`${id}-edit-action`} loading={loading} id="edit" onClick={handleEdit} text={t("Edit")} icon={<Edit fontSize="small" />} />)
       }
       if (capabilities.clone) {
-        actios.push(<MyMenuItem key={`${id}-clone-action`} loading={loading} id="clone" onClick={handleClone} text={t("Clone")} icon={<CopyAll fontSize="small" />} />)
+        actions.push(<MyMenuItem key={`${id}-clone-action`} loading={loading} id="clone" onClick={handleClone} text={t("Clone")} icon={<CopyAll fontSize="small" />} />)
       }
       if (capabilities.delete) {
-        actios.push(<ConfirmationButton
+        actions.push(<ConfirmationButton
           key={`${id}-delete-action`}
           Actionator={({ onClick }) => <MyMenuItem loading={loading} id="delete" onClick={onClick} text={t("Delete")} icon={<Delete fontSize="small" />} />}
           ButtonComponent={({ onClick }) => <LoadingButton sx={{ mt: 1 }} fullWidth variant='contained' color="error" onClick={onClick}>{t("Confirm deletion")}</LoadingButton>}
@@ -113,17 +117,17 @@ const AssetRow = ({ addName, language, asset, onChange, actions, openInterlinker
           text={t("Are you sure?")} />)
       }
       if (false && capabilities.clone) {
-        actios.push(<MyMenuItem key={`${id}-share-action`} loading={loading} id="publish" onClick={() => { }} text={t("Publish")} icon={<Share fontSize="small" />} />)
+        actions.push(<MyMenuItem key={`${id}-share-action`} loading={loading} id="publish" onClick={() => { }} text={t("Publish")} icon={<Share fontSize="small" />} />)
       }
       if (capabilities.download) {
-        actios.push(<MyMenuItem key={`${id}-download-action`} loading={loading} id="download" onClick={handleDownload} text={t("Download")} icon={<Download fontSize="small" />} />)
+        actions.push(<MyMenuItem key={`${id}-download-action`} loading={loading} id="download" onClick={handleDownload} text={t("Download")} icon={<Download fontSize="small" />} />)
       }
     }
     if (data.type === "externalasset") {
       const { id } = data
-      // actios.push(<MyMenuItem key={`${id}-edit-action`} loading={loading} id="edit" onClick={handleEdit} text="Edit" icon={<Edit fontSize="small" />} />)
-      actios.push(<MyMenuItem key={`${id}-clone-action`} loading={loading} id="clone" onClick={handleClone} text={t("Clone")} icon={<CopyAll fontSize="small" />} />)
-      actios.push(<ConfirmationButton
+      // actions.push(<MyMenuItem key={`${id}-edit-action`} loading={loading} id="edit" onClick={handleEdit} text="Edit" icon={<Edit fontSize="small" />} />)
+      actions.push(<MyMenuItem key={`${id}-clone-action`} loading={loading} id="clone" onClick={handleClone} text={t("Clone")} icon={<CopyAll fontSize="small" />} />)
+      actions.push(<ConfirmationButton
         key={`${id}-delete-action`}
         Actionator={({ onClick }) => <MyMenuItem loading={loading} id="delete" onClick={onClick} text={t("Delete")} icon={<Delete fontSize="small" />} />}
         ButtonComponent={({ onClick }) => <LoadingButton sx={{ mt: 1 }} fullWidth variant='contained' color="error" onClick={onClick}>{t("Confirm deletion")}</LoadingButton>}
@@ -132,7 +136,7 @@ const AssetRow = ({ addName, language, asset, onChange, actions, openInterlinker
 
     }
 
-    return actios
+    return actions
   }
   const avatarSize = { height: "30px", width: "30px" }
   return <TableRow
@@ -141,7 +145,7 @@ const AssetRow = ({ addName, language, asset, onChange, actions, openInterlinker
     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
   >
     {data && loading !== "info" ? <>
-      <TableCell width="5%" component="th" scope="row" onClick={() => window.open(data.link + "/view", "_blank")}>
+      <TableCell width="5%" component="th" scope="row" onClick={handleOpen}>
         <Avatar src={data.icon} sx={avatarSize} >{!data.icon && <Article />}</Avatar>
       </TableCell>
       <TableCell width="35%" style={{ cursor: "pointer" }} onClick={() => {

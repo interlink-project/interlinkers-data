@@ -1,7 +1,8 @@
 import {
+  Alert,
   Avatar, Box, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, FormControlLabel, IconButton, Input, InputLabel, MenuItem, Select, Stack, Switch, TextField, Typography
 } from '@material-ui/core';
-import { KeyboardArrowRight } from '@material-ui/icons';
+import { Close, KeyboardArrowRight } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import useMounted from 'hooks/useMounted';
 import { useEffect, useState } from 'react';
@@ -33,7 +34,7 @@ const OrganizationCreate = ({ open, setOpen, loading, setLoading, onCreate }) =>
   },
   {
     value: "public_office",
-    label: t("Public office")
+    label: t("Public administration")
   },
   {
     value: "nonprofit_organization",
@@ -146,11 +147,14 @@ const OrganizationCreate = ({ open, setOpen, loading, setLoading, onCreate }) =>
                     height: "60px",
                   }}
                 />
-                <Typography variant="body1">
-                  {t("Click to add or edit the logo")}
-                </Typography>
+                {!logotype && <Typography variant="body1">
+                  {t("Click here to add a logo")}
+                </Typography>}
               </IconButton>
             </label>
+            {logotype && <IconButton onClick={(event) => {
+                  setLogotype(null)
+                }}><Close /></IconButton>}
           </Box>
             <FormControl variant="standard" fullWidth sx={{ mt: 2 }}>
               <InputLabel id="select-type">{t("Type")}</InputLabel>
@@ -198,6 +202,8 @@ const OrganizationCreate = ({ open, setOpen, loading, setLoading, onCreate }) =>
             <Typography variant="body2">{t("Public")}</Typography>
             <Switch checked={isPublic} onChange={(event) => setPublic(event.target.checked)} />
           </Stack>
+          <Alert sx={{mt: 2}} severity="info">{t("Public organizations's information can be accessed by any user of the platform in the 'Organizations' tab")}</Alert>
+
           <FormControl variant="standard" fullWidth sx={{ mt: 2 }}>
             <InputLabel id="select-creation-permission-label">{t("Who can create teams")}</InputLabel>
             <Select
