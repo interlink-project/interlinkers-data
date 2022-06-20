@@ -42,7 +42,7 @@ function OrganizationRow({ organization, onChanges }) {
           {organization.public && <Check />}
         </TableCell>
         <TableCell align="center" component="th" scope="row">
-          <OrganizationChip type={organization.type} />
+          <OrganizationChip type={organization.default_team_type} />
         </TableCell>
         <TableCell align="center" component="th" scope="row">
         {organization.people_involved}

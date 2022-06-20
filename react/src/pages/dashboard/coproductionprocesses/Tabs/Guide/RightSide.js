@@ -81,12 +81,12 @@ const RightSide = ({ softwareInterlinkers }) => {
                 >
                     <Tab wrapped value="data" label={information_translations[selectedTreeItem.type]} />
                     <Tab value="permissions" label={t("Permissions")} />
-                    {isTask && <Tab value="assets" disabled={!isTask} label={isTask ? `${t("Resources")} (${selectedTreeItem.assets_count || 0})` : t("Resources")} />}
+                    <Tab value="assets" disabled={!isTask} label={isTask ? `${t("Resources")} (${selectedTreeItem.assets_count || 0})` : t("Resources")} />
                 </Tabs>
 
                 {tabValue === "data" && <TreeItemData language={process.language} processId={process.id} element={selectedTreeItem} />}
                 {tabValue === "permissions" && <PermissionsTable language={process.language} processId={process.id} element={selectedTreeItem} isAdministrator={isAdministrator} />}
-                {tabValue === "assets" && isTask && <>
+                {tabValue === "assets" && <>
                     <Box>
                         <Box sx={{ mt: 2 }}>
                             {can.view ? <AssetsTable language={process.language} loading={loadingTreeitemInfo} assets={assets} onChange={updateTreeitemInfo} /> : <Alert severity="error">{t("You do not have access to the resources of this task")}</Alert>}

@@ -3,6 +3,7 @@ import { Add, Check, Delete, Edit, MoreVert, People, Save } from '@material-ui/i
 import { LoadingButton } from '@material-ui/lab';
 import CentricCircularProgress from 'components/CentricCircularProgress';
 import ConfirmationButton from 'components/ConfirmationButton';
+import { OrganizationChip } from 'components/dashboard/assets/Icons';
 import { user_id } from 'contexts/CookieContext';
 import useAuth from 'hooks/useAuth';
 import useDependantTranslation from 'hooks/useDependantTranslation';
@@ -100,7 +101,7 @@ const OrganizationProfile = ({ organizationId, onChanges }) => {
     const [description, setDescription] = useState("")
     const [logotype, setLogotype] = useState(null);
     const [loadingTeams, setLoadingTeams] = useState(true)
-    const [organization, setOrganization] = useState({teams_ids: []})
+    const [organization, setOrganization] = useState({ teams_ids: [] })
     const [teams, setTeams] = useState([]);
     const [selectedTeam, setSelectedTeam] = useState(null);
     const [teamCreatorOpen, setOpenTeamCreator] = useState(false);
@@ -237,7 +238,7 @@ const OrganizationProfile = ({ organizationId, onChanges }) => {
 
 
                         </IconButton>
-                        </label> : <IconButton component="span" color="inherit" disabled>
+                    </label> : <IconButton component="span" color="inherit" disabled>
                         <Avatar
                             src={logotype ? logotype.path : organization.logotype_link}
                             variant="rounded"
@@ -301,6 +302,7 @@ const OrganizationProfile = ({ organizationId, onChanges }) => {
                     <TableHead>
                         <TableRow>
                             <TableCell align="center">{t("Name")}</TableCell>
+                            <TableCell align="center">{t("Type")}</TableCell>
                             <TableCell align="center">{t("Public")}</TableCell>
                             <TableCell align="center">{t("Created")}</TableCell>
                             <TableCell align="center">{t("Members")}</TableCell>
@@ -317,6 +319,9 @@ const OrganizationProfile = ({ organizationId, onChanges }) => {
                                     </Stack>
                                 </TableCell>
                                 <TableCell align="center" component="th" scope="row">
+                                    <OrganizationChip type={team.type} />
+                                </TableCell>
+                                <TableCell align="center" component="th" scope="row">
                                     {team.public && <Check />}
                                 </TableCell>
                                 <TableCell align="center">{moment(team.created_at).fromNow()}</TableCell>
@@ -329,24 +334,24 @@ const OrganizationProfile = ({ organizationId, onChanges }) => {
                             </TableRow>
                         ))}
                         {loadingTeams && [...Array(organization.teams_ids.length).keys()].map((i) => <TableRow key={`skeleton-${i}`}>
-                                <TableCell align="center" colSpan={5}>
-                                    <Skeleton />
-                                </TableCell>
-                            </TableRow>
+                            <TableCell align="center" colSpan={7}>
+                                <Skeleton />
+                            </TableCell>
+                        </TableRow>
                         )}
                     </TableBody>
                 </Table>
-                
+
                 {(!loadingTeams && (!teams || teams.length) === 0) && <Alert severity="warning">
                     {t("No teams found in this organization")}
                 </Alert>}
-                <Box sx={{textAlign: "center"}}>
-                <LoadingButton loading={loadingTeams || creatingTeam} sx={{ mt:3 }} size="small" variant="contained" startIcon={<Add />} onClick={() => setOpenTeamCreator(true)} disabled={!canCreateTeams}>{t("Create new team")}</LoadingButton>
+                <Box sx={{ textAlign: "center" }}>
+                    <LoadingButton loading={loadingTeams || creatingTeam} sx={{ mt: 3 }} size="small" variant="contained" startIcon={<Add />} onClick={() => setOpenTeamCreator(true)} disabled={!canCreateTeams}>{t("Create new team")}</LoadingButton>
 
                 </Box>
             </Grid>
         </Grid> : <CentricCircularProgress />
-}
+        }
     </Box >
     );
 };

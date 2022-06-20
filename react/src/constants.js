@@ -10,3 +10,21 @@ export const THEMES = {
     key: 'DARK'
   },
 };
+
+
+export const ORG_TYPES = (t) => [{
+  value: "citizen",
+  label: t("Citizens")
+},
+{
+  value: "public_administration",
+  label: t("Public administration")
+},
+{
+  value: "nonprofit_organization",
+  label: t("Non profit organization")
+},
+{
+  value: "forprofit_organization",
+  label: t("For profit organization")
+}]

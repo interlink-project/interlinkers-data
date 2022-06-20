@@ -85,7 +85,7 @@ export const OrganizationChip = ({ type }) => {
             color = "success"
             break;
 
-        case 'public_office':
+        case 'public_administration':
             label = i18n.t("Public administration")
             color = "warning"
             break;

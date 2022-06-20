@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { organizationsApi } from '__api__';
 import { getLanguage } from 'translations/i18n';
+import { ORG_TYPES } from 'constants';
 
 const OrganizationCreate = ({ open, setOpen, loading, setLoading, onCreate }) => {
   const [name, setName] = useState("");
@@ -16,7 +17,7 @@ const OrganizationCreate = ({ open, setOpen, loading, setLoading, onCreate }) =>
   const [whoCanCreate, setWhoCanCreate] = useState("administrators");
   const [isPublic, _setPublic] = useState(false);
   const setPublic = (val) => {
-    if(val === false && whoCanCreate === "anyone"){
+    if (val === false && whoCanCreate === "anyone") {
       setWhoCanCreate("administrators")
     }
     _setPublic(val)
@@ -28,22 +29,7 @@ const OrganizationCreate = ({ open, setOpen, loading, setLoading, onCreate }) =>
   const mounted = useMounted();
   const { t } = useTranslation()
 
-  const ORG_TYPES = [{
-    value: "citizen",
-    label: t("Citizens")
-  },
-  {
-    value: "public_office",
-    label: t("Public administration")
-  },
-  {
-    value: "nonprofit_organization",
-    label: t("Non profit organization")
-  },
-  {
-    value: "forprofit_organization",
-    label: t("For profit organization")
-  }]
+  const ORG_OPTIONS = ORG_TYPES(t)
 
 
   const WHO_CAN_CREATE_OPTIONS = [{
@@ -153,8 +139,8 @@ const OrganizationCreate = ({ open, setOpen, loading, setLoading, onCreate }) =>
               </IconButton>
             </label>
             {logotype && <IconButton onClick={(event) => {
-                  setLogotype(null)
-                }}><Close /></IconButton>}
+              setLogotype(null)
+            }}><Close /></IconButton>}
           </Box>
             <FormControl variant="standard" fullWidth sx={{ mt: 2 }}>
               <InputLabel id="select-type">{t("Type")}</InputLabel>
@@ -168,7 +154,7 @@ const OrganizationCreate = ({ open, setOpen, loading, setLoading, onCreate }) =>
                 }}
                 label={t("Organization type")}
               >
-                {ORG_TYPES.map(lan => <MenuItem key={lan.value} value={lan.value}>{lan.label}</MenuItem>)}
+                {ORG_OPTIONS.map(lan => <MenuItem key={lan.value} value={lan.value}>{lan.label}</MenuItem>)}
               </Select>
             </FormControl>
 
@@ -202,7 +188,7 @@ const OrganizationCreate = ({ open, setOpen, loading, setLoading, onCreate }) =>
             <Typography variant="body2">{t("Public")}</Typography>
             <Switch checked={isPublic} onChange={(event) => setPublic(event.target.checked)} />
           </Stack>
-          <Alert sx={{mt: 2}} severity="info">{t("Public organizations's information can be accessed by any user of the platform in the 'Organizations' tab")}</Alert>
+          <Alert sx={{ mt: 2 }} severity="info">{t("Public organizations's information can be accessed by any user of the platform in the 'Organizations' tab")}</Alert>
 
           <FormControl variant="standard" fullWidth sx={{ mt: 2 }}>
             <InputLabel id="select-creation-permission-label">{t("Who can create teams")}</InputLabel>

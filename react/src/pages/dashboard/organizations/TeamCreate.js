@@ -1,10 +1,12 @@
 import {
-  Alert, Avatar, Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, Input,
+  Alert, Avatar, Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, IconButton, Input,
+  InputLabel,
   List,
   ListItem,
-  ListItemAvatar, ListItemSecondaryAction, ListItemText, MobileStepper, Stack, Switch, TextField, Typography, useTheme
+  ListItemAvatar, ListItemSecondaryAction, ListItemText, MenuItem, MobileStepper, Select, Stack, Switch, TextField, Typography, useTheme
 } from '@material-ui/core';
 import { Close, Delete, KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
+import { ORG_TYPES } from 'constants';
 import { user_id } from 'contexts/CookieContext';
 import useAuth from 'hooks/useAuth';
 import { useCustomTranslation } from 'hooks/useDependantTranslation';
@@ -17,6 +19,7 @@ const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOp
   const auth = useAuth();
   const [selectedUsers, setSelectedUsers] = useState([auth.user]);
   const [name, setName] = useState("");
+  const [type, setType] = useState("");
   const [description, setDescription] = useState("");
   const [logotype, setLogotype] = useState(null);
   const [isPublic, setPublic] = useState(false);
@@ -24,6 +27,8 @@ const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOp
   const t = useCustomTranslation(language)
   const theme = useTheme();
   const [activeStep, setActiveStep] = useState(0);
+
+  const ORG_OPTIONS = ORG_TYPES(t)
 
   const clean = () => {
     setName("")
@@ -44,9 +49,19 @@ const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOp
     if (activeStep < 1) {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     } else {
+      console.log({
+        name,
+        description,
+        type,
+        public: isPublic,
+        user_ids: selectedUsers.map(user => user.sub),
+        organization_id: organization ? organization.id : null
+      })
+      
       teamsApi.create({
         name,
         description,
+        type,
         public: isPublic,
         user_ids: selectedUsers.map(user => user.sub),
         organization_id: organization ? organization.id : null
@@ -93,7 +108,7 @@ const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOp
   }
 
   const isDisabled = () => {
-    if (activeStep === 0 && (!name || !description)) {
+    if (activeStep === 0 && (!name || !description || !type)) {
       return true
     }
   }
@@ -123,7 +138,8 @@ const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOp
             {logotype && <IconButton onClick={(event) => {
               setLogotype(null)
             }}><Close /></IconButton>}
-          </Box><TextField
+          </Box>
+          <TextField
               autoFocus
               margin="dense"
               id="name"
@@ -146,6 +162,21 @@ const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOp
               rows={4}
               variant="standard"
             />
+            <FormControl variant="standard" fullWidth sx={{ mt: 2 }}>
+              <InputLabel id="select-type">{t("Type")}</InputLabel>
+              <Select
+                fullWidth
+                labelId="select-type-label"
+                id="select-type"
+                value={type}
+                onChange={(event) => {
+                  setType(event.target.value);
+                }}
+                label={t("Organization type")}
+              >
+                {ORG_OPTIONS.map(lan => <MenuItem key={lan.value} value={lan.value}>{lan.label}</MenuItem>)}
+              </Select>
+            </FormControl>
             <Stack sx={{ mt: 3 }} spacing={1} direction="row" alignItems="center">
               <Typography variant="body1">{t("Public")}</Typography>
               <Switch checked={isPublic} onChange={(event) => setPublic(event.target.checked)} />

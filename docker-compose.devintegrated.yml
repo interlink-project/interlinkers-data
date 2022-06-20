@@ -54,6 +54,7 @@ services:
       - ./.env
     networks:
       - default
+      - traefik-public
 
   matomo:
     image: bitnami/matomo:4.10.1
