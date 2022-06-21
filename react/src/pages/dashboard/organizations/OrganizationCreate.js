@@ -22,7 +22,7 @@ const OrganizationCreate = ({ open, setOpen, loading, setLoading, onCreate }) =>
     }
     _setPublic(val)
   }
-  const [type, setType] = useState("");
+  const [defaultTeamType, setDefaultTeamType] = useState("");
   const [logotype, setLogotype] = useState(null);
 
   const [activeStep, setActiveStep] = useState(0);
@@ -72,9 +72,9 @@ const OrganizationCreate = ({ open, setOpen, loading, setLoading, onCreate }) =>
         "it": description,
         "lv": description
       },
-      type,
+      default_team_type: defaultTeamType,
+      team_creation_permission: whoCanCreate,
       public: isPublic
-      // team_id: team.id
     }).then(res => {
       if (!logotype) {
         sendOnCreate(res.data)
@@ -142,22 +142,6 @@ const OrganizationCreate = ({ open, setOpen, loading, setLoading, onCreate }) =>
               setLogotype(null)
             }}><Close /></IconButton>}
           </Box>
-            <FormControl variant="standard" fullWidth sx={{ mt: 2 }}>
-              <InputLabel id="select-type">{t("Type")}</InputLabel>
-              <Select
-                fullWidth
-                labelId="select-type-label"
-                id="select-type"
-                value={type}
-                onChange={(event) => {
-                  setType(event.target.value);
-                }}
-                label={t("Organization type")}
-              >
-                {ORG_OPTIONS.map(lan => <MenuItem key={lan.value} value={lan.value}>{lan.label}</MenuItem>)}
-              </Select>
-            </FormControl>
-
             <TextField
               autoFocus
               margin="dense"
@@ -184,13 +168,14 @@ const OrganizationCreate = ({ open, setOpen, loading, setLoading, onCreate }) =>
               variant="standard"
             />
           </>}
-          <Stack sx={{ mt: 3 }} spacing={1} direction="row" alignItems="center">
+          <Alert sx={{ mt: 3 }} severity="info">{t("Public organizations's information can be accessed by any user of the platform in the 'Organizations' tab")}</Alert>
+
+          <Stack sx={{ mt: 2 }} spacing={1} direction="row" alignItems="center">
             <Typography variant="body2">{t("Public")}</Typography>
             <Switch checked={isPublic} onChange={(event) => setPublic(event.target.checked)} />
           </Stack>
-          <Alert sx={{ mt: 2 }} severity="info">{t("Public organizations's information can be accessed by any user of the platform in the 'Organizations' tab")}</Alert>
 
-          <FormControl variant="standard" fullWidth sx={{ mt: 2 }}>
+          <FormControl variant="standard" fullWidth sx={{ mt: 3 }}>
             <InputLabel id="select-creation-permission-label">{t("Who can create teams")}</InputLabel>
             <Select
               fullWidth
@@ -205,9 +190,25 @@ const OrganizationCreate = ({ open, setOpen, loading, setLoading, onCreate }) =>
               {WHO_CAN_CREATE_OPTIONS.map(lan => <MenuItem key={lan.value} disabled={lan.disabled} value={lan.value}>{lan.label}</MenuItem>)}
             </Select>
           </FormControl>
+          <FormControl variant="standard" fullWidth sx={{ mt: 3 }}>
+              <InputLabel id="select-type">{t("Default team type")}</InputLabel>
+              <Select
+                fullWidth
+                labelId="select-type-label"
+                id="select-type"
+                value={defaultTeamType}
+                onChange={(event) => {
+                  setDefaultTeamType(event.target.value);
+                }}
+                label={t("Default team type")}
+              >
+                {ORG_OPTIONS.map(lan => <MenuItem key={lan.value} value={lan.value}>{lan.label}</MenuItem>)}
+              </Select>
+            </FormControl>
+
         </DialogContent>
         <DialogActions sx={{ justifyContent: "center" }}>
-          <LoadingButton sx={{ my: 2 }} loading={loading} size="small" onClick={handleNext} disabled={!name || !type}>
+          <LoadingButton sx={{ my: 2 }} loading={loading} size="small" onClick={handleNext} disabled={!name || !defaultTeamType}>
             {t("Create")}
             <KeyboardArrowRight />
           </LoadingButton>

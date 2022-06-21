@@ -7,7 +7,6 @@ import $ from 'jquery';
 import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from "react-router";
-import { setSelectedPhaseTab } from "slices/process";
 import Gantt from "./FrappeGantt";
 import "./FrappeGantt.css";
 
@@ -64,17 +63,6 @@ const Workplan = ({ setSelectedTreeItem }) => {
 
   const dispatch = useDispatch();
   const mounted = useMounted();
-
-  const setNewPhaseTab = useCallback((phase) => {
-    try {
-      if (mounted.current) {
-        dispatch(setSelectedPhaseTab(phase))
-      }
-    } catch (err) {
-      console.error(err);
-    }
-  }, [mounted]);
-
 
   const getClasses = (element) => {
     let classes = ""
@@ -190,7 +178,7 @@ const Workplan = ({ setSelectedTreeItem }) => {
   return (
     <Grid container style={{ overflow: "hidden" }}>
       <Grid item xs={12}>
-        <PhaseTabs selectedId={selectedPhaseTab.id} treeitems={tree} onSelect={setNewPhaseTab} />
+        <PhaseTabs selectedId={selectedPhaseTab.id} treeitems={tree} onSelect={setSelectedTreeItem} />
         <ToggleButtonGroup
           color="primary"
           value={viewMode}

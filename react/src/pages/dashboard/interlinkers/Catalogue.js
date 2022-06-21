@@ -40,29 +40,29 @@ const Catalogue = () => {
         }}
       >
         <Container maxWidth="lg">
-        <Grid container
-                  spacing={3}>
-          <Grid alignItems="center"
-                    container
-                    justifyContent="space-between"
-                    spacing={3}
-                    item
-                    xs={12}>
-            <Grid item>
-            <Typography color='textSecondary' variant='overline'>
-                        {t("Catalogue")}
-                      </Typography>
-              <Typography
-                color='textPrimary'
-                variant='h5'
-              >
-                {t("interlinkers-catalogue")}
-              </Typography>
-            </Grid>
-            <Grid item>
+          <Grid container
+            spacing={3}>
+            <Grid alignItems="center"
+              container
+              justifyContent="space-between"
+              spacing={3}
+              item
+              xs={12}>
+              <Grid item>
+                <Typography color='textSecondary' variant='overline'>
+                  {t("Catalogue")}
+                </Typography>
+                <Typography
+                  color='textPrimary'
+                  variant='h5'
+                >
+                  {t("interlinkers-catalogue")}
+                </Typography>
+              </Grid>
+              <Grid item>
 
+              </Grid>
             </Grid>
-          </Grid>
           </Grid>
 
           <InterlinkerBrowse language={language} onInterlinkerClick={(interlinker) => {

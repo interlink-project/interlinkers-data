@@ -11,7 +11,7 @@ import useMounted from 'hooks/useMounted';
 import { truncate } from 'lodash';
 import * as React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { cloneOrdered, setProcess } from 'slices/process';
+import { cloneOrdered, getProcess } from 'slices/process';
 import { getLocalizedDate } from 'utils/moment';
 import { topologicalSort } from 'utils/topologicalSort';
 import { coproductionProcessesApi, coproductionSchemasApi } from '__api__';
@@ -57,18 +57,6 @@ const CreateSchema = () => {
         }
     }, [inputValue])
 
-    const setCoproductionProcess = React.useCallback(async (process) => {
-        try {
-
-            if (mounted.current) {
-                dispatch(setProcess(process))
-            }
-        } catch (err) {
-            console.error(err);
-        }
-    }, [mounted]);
-
-
     const submit = async (coproductionschema) => {
         setInstantiatingSchema(true)
         coproductionProcessesApi.setSchema(process.id, coproductionschema.id, process.language).then(process => {
@@ -78,7 +66,7 @@ const CreateSchema = () => {
                     action: 'use-schema',
                     name: coproductionschema.id
                 })
-                setCoproductionProcess(process)
+                dispatch(getProcess(process))
             }
         });
     }

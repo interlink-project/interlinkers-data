@@ -1,6 +1,6 @@
 import { SvgIcon, Typography } from '@material-ui/core';
 import { TreeView } from '@material-ui/lab';
-import { statusColor, statusIcon } from 'components/dashboard/assets/Icons';
+import { statusColor, statusIcon, StatusText } from 'components/dashboard/assets/Icons';
 import { StyledTreeItem } from 'components/dashboard/tree';
 import { useCustomTranslation } from 'hooks/useDependantTranslation';
 import { useEffect, useState } from 'react';
@@ -83,8 +83,8 @@ const StyledTree = ({ language, parent, selectedTreeItem, setSelectedTreeItem, s
                     <Typography>
                       {task.name}
                     </Typography>
-                    {task.assets_count && <Typography variant="overline" color={statusColor(task.status)}>
-                    {`(${task.assets_count} ${t("resources")})`}
+                    {task.status && <Typography variant="overline" color={statusColor(task.status)}>
+                    <StatusText status={task.status} />
                     </Typography>}
                    
                   </p>} />

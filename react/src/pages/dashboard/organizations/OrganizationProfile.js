@@ -1,4 +1,4 @@
-import { Alert, Avatar, Box, Button, Chip, CircularProgress, Grid, IconButton, Input, ListItemIcon, ListItemText, Menu, MenuItem, Skeleton, Stack, Table, TableBody, TableCell, TableHead, TableRow, TextField, Typography } from '@material-ui/core';
+import { Alert, Avatar, Box, Button, Chip, CircularProgress, Grid, IconButton, Input, ListItemIcon, ListItemText, Menu, MenuItem, Skeleton, Stack, Tab, Table, TableBody, TableCell, TableHead, TableRow, Tabs, TextField, Typography } from '@material-ui/core';
 import { Add, Check, Delete, Edit, MoreVert, People, Save } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import CentricCircularProgress from 'components/CentricCircularProgress';
@@ -203,8 +203,13 @@ const OrganizationProfile = ({ organizationId, onChanges }) => {
     }
 
     const organization_trans = t("organization")
-    const canCreateTeams = organization.team_creation_permission === "anyone" || (organization.team_creation_permission === "administrators" && organization.administrators_ids.includes(user_id))
+    const canCreateTeams = organization.team_creation_permission === "anyone" || (organization.team_creation_permission === "administrators" && organization.administrators_ids.includes(user_id)) || (organization.team_creation_permission === "members" && !organization.public)
     const isAdmin = organization && organization.user_participation && organization.user_participation.includes('administrator')
+
+    const [tabValue, setTabValue] = useState('teams');
+    const handleTabChange = (event, newValue) => {
+        setTabValue(newValue);
+    };
 
     return (<Box>
         {organization ? <Grid container>
@@ -274,7 +279,7 @@ const OrganizationProfile = ({ organizationId, onChanges }) => {
                     {isAdmin && <>
                         {!editMode ? <Button disabled={!isAdmin} startIcon={<Edit />} variant="contained" color="primary" onClick={() => setEditMode(true)}>{t("Edit")}</Button>
                             : <Stack direction="row" justifyContent="center" sx={{ mt: 2 }}>
-                                <Button disabled={!somethingChanged} variant="text" color="warning" onClick={() => setEditMode(false)}>{t("Discard changes")}</Button>
+                                <Button variant="text" color="warning" onClick={() => setEditMode(false)}>{t("Discard changes")}</Button>
                                 <Button disabled={!somethingChanged} startIcon={<Save />} variant="contained" color="success" onClick={handleSave}>{t("Save")}</Button>
                             </Stack>
                         }
@@ -288,6 +293,17 @@ const OrganizationProfile = ({ organizationId, onChanges }) => {
                 </Stack>
             </Grid>
             <Grid item md={8} sx={{ p: 2 }}>
+                <Tabs
+                    value={tabValue}
+                    onChange={handleTabChange}
+                    aria-label="organization-right-side-tabs"
+                    sx={{ mb: 2 }}
+                    centered
+                >
+                    <Tab value="teams" label={t("Teams")} />
+
+                    <Tab value="administrators" label={t("Administrators")} />
+                </Tabs>
                 <TeamCreate
                     open={teamCreatorOpen}
                     setOpen={setOpenTeamCreator}
@@ -303,7 +319,6 @@ const OrganizationProfile = ({ organizationId, onChanges }) => {
                         <TableRow>
                             <TableCell align="center">{t("Name")}</TableCell>
                             <TableCell align="center">{t("Type")}</TableCell>
-                            <TableCell align="center">{t("Public")}</TableCell>
                             <TableCell align="center">{t("Created")}</TableCell>
                             <TableCell align="center">{t("Members")}</TableCell>
                             <TableCell align="center">{t("Your participation in the team")}</TableCell>
@@ -321,9 +336,6 @@ const OrganizationProfile = ({ organizationId, onChanges }) => {
                                 <TableCell align="center" component="th" scope="row">
                                     <OrganizationChip type={team.type} />
                                 </TableCell>
-                                <TableCell align="center" component="th" scope="row">
-                                    {team.public && <Check />}
-                                </TableCell>
                                 <TableCell align="center">{moment(team.created_at).fromNow()}</TableCell>
                                 <TableCell align="center">
                                     {team.users_count}
@@ -334,7 +346,7 @@ const OrganizationProfile = ({ organizationId, onChanges }) => {
                             </TableRow>
                         ))}
                         {loadingTeams && [...Array(organization.teams_ids.length).keys()].map((i) => <TableRow key={`skeleton-${i}`}>
-                            <TableCell align="center" colSpan={7}>
+                            <TableCell align="center" colSpan={6}>
                                 <Skeleton />
                             </TableCell>
                         </TableRow>

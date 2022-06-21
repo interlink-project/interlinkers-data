@@ -1,21 +1,25 @@
-import { Box, Button, CircularProgress, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@material-ui/core';
-import UserData from 'components/UserData';
+import { Avatar, Box, Button, CircularProgress, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@material-ui/core';
+import { Check } from '@material-ui/icons';
 import useDependantTranslation from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
+import TeamProfile from 'pages/dashboard/organizations/TeamProfile';
 import * as React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { groupListBy } from 'utils/groupListBy';
+
 
 export default function TeamsTab() {
-    const { process, updating } = useSelector((state) => state.process);
+    const { process, updating, treeitems } = useSelector((state) => state.process);
     const dispatch = useDispatch();
     const mounted = useMounted();
     const { t } = useDependantTranslation()
-
-    // <TeamsTable onChanges={updateAcl} />
-    // <Divider sx={{ my: 2 }} />
+    const [selectedTeam, setSelectedTeam] = React.useState(null)
+    
+    
     return !updating ? (
         <React.Fragment>
-            <TableContainer component={Paper}>
+            {selectedTeam && <TeamProfile teamId={selectedTeam} open={selectedTeam ? true : false} setOpen={setSelectedTeam} onChanges={() => console.log("refresh")} />}
+
                 <Table aria-label="admins-table">
                     <TableHead>
                         <TableRow>
@@ -32,37 +36,29 @@ export default function TeamsTab() {
                         {process.permissions.map((permission) => (
                             <TableRow hover key={permission.id}>
                                 <TableCell align="center">
-                                    {permission.team_id}
+                                    <Button size="small" startIcon={<Avatar variant="rounded" src={permission.team.logotype_link} />} onClick={() => setSelectedTeam(permission.team_id)} variant="contained">{permission.team && permission.team.name} {t("team")}</Button>
                                 </TableCell>
                                 <TableCell align="center">
                                     {permission.treeitem_id}
                                 </TableCell>
                                 <TableCell align="center">
-                                    {permission.access_assets_permission}
+                                    {permission.access_assets_permission && <Check />}
                                 </TableCell>
                                 <TableCell align="center">
-                                    {permission.access_assets_permission}
+                                    {permission.access_assets_permission && <Check />}
                                 </TableCell>
                                 <TableCell align="center">
-                                    {permission.access_assets_permission}
+                                    {permission.access_assets_permission && <Check />}
                                 </TableCell>
                                 <TableCell align="center">
-                                    {permission.access_assets_permission}
+                                    {permission.access_assets_permission && <Check />}
                                 </TableCell>
                                 <TableCell align="center">
-                                    {permission.access_assets_permission}
+                                    {permission.access_assets_permission && <Check />}
                                 </TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
                 </Table>
-                <Box sx={{textAlign: "center", my: 4}}>
-                <Button variant="contained">
-                    {t("Add rule")}
-                </Button>
-                </Box>
-                
-
-            </TableContainer>
         </React.Fragment>) : <CircularProgress />
 }

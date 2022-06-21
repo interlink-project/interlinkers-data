@@ -61,7 +61,7 @@ const UserSearch = ({ exclude = [], onClick, organization_id = null }) => {
                 onClose={() => {
                     setOpen(false);
                 }}
-                getOptionLabel={(option) => option.full_name}
+                getOptionLabel={(option) => option.full_name || option.email}
                 options={searchResults}
                 loading={loading}
                 renderOption={(props, option, { selected }) => (

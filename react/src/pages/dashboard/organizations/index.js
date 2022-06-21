@@ -1,8 +1,8 @@
-import { Avatar, Box, Chip, Container, Grid, Paper, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@material-ui/core';
+import { Avatar, AvatarGroup, Box, Chip, Container, Grid, Paper, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@material-ui/core';
 import { Add, Check, KeyboardArrowDown, KeyboardArrowUp, People } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
-import { OrganizationChip } from 'components/dashboard/assets/Icons';
 import SearchBox from 'components/SearchBox';
+import UserAvatar from 'components/UserAvatar';
 import useAuth from 'hooks/useAuth';
 import useMounted from 'hooks/useMounted';
 import moment from 'moment';
@@ -16,21 +16,13 @@ import OrganizationCreate from './OrganizationCreate';
 import OrganizationProfile from './OrganizationProfile';
 
 function OrganizationRow({ organization, onChanges }) {
-  const navigate = useNavigate();
   const { t } = useTranslation()
-  const [open, _setOpen] = React.useState(false);
-
-  const setOpen = (event) => {
-    event.stopPropagation();
-    _setOpen(!open)
-  }
-
+  const [open, setOpen] = React.useState(false);
   return (
     <React.Fragment>
 
       <TableRow hover={!open} sx={{ '& > *': { borderBottom: 'unset' }, cursor: 'pointer' }} onClick={() => {
-        console.log(`/dashboard/organizations/${organization.id}`)
-        _setOpen(!open)
+        setOpen(!open)
       }}>
         <TableCell align="center" component="th" scope="row">
           <Stack alignItems="center" direction="row" spacing={1}>
@@ -42,17 +34,16 @@ function OrganizationRow({ organization, onChanges }) {
           {organization.public && <Check />}
         </TableCell>
         <TableCell align="center" component="th" scope="row">
-          <OrganizationChip type={organization.default_team_type} />
-        </TableCell>
-        <TableCell align="center" component="th" scope="row">
-        {organization.people_involved}
+          <AvatarGroup>
+            {organization.administrators.map(admin => <UserAvatar key={admin.id} sx={{ width: 30, height: 30 }} user={admin} />)}
+          </AvatarGroup>
         </TableCell>
         <TableCell align="center">{moment(organization.created_at).fromNow()}</TableCell>
         <TableCell align="center">
           {organization.user_participation.length > 0 ? organization.user_participation.map(p => <Chip size="small" sx={{ ml: 1 }} key={organization.id + p} variant={p === "administrator" ? "contained" : "outlined"} label={p} />) : <Chip label={t("None")} />}
         </TableCell>
         <TableCell align="center">
-          {open ?  <KeyboardArrowUp /> : <KeyboardArrowDown />}
+          {open ? <KeyboardArrowUp /> : <KeyboardArrowDown />}
         </TableCell>
       </TableRow>
       <TableRow>
@@ -78,18 +69,30 @@ const Organizations = () => {
   const dispatch = useDispatch();
   const mounted = useMounted();
 
-  const getOrganizationsData = React.useCallback(async () => {
+  const getOrganizationsData = React.useCallback(async (search) => {
     if (isAuthenticated) {
-      dispatch(getOrganizations())
+      dispatch(getOrganizations(search))
     }
   }, [isAuthenticated, mounted]);
 
   React.useEffect(() => {
-    getOrganizationsData();
-  }, [getOrganizationsData]);
+    var delayDebounceFn
+    if (mounted.current) {
+      delayDebounceFn = setTimeout(() => {
+        getOrganizationsData(searchValue)
+      }, searchValue ? 800 : 0)
+    }
+    return () => {
+      if (delayDebounceFn) {
+        clearTimeout(delayDebounceFn)
+      }
+    }
+  }, [getOrganizationsData, searchValue])
+
 
   const onOrganizationCreate = (res) => {
-    getOrganizationsData()
+    setSearchValue("")
+    getOrganizationsData("")
   }
 
   return (
@@ -151,8 +154,7 @@ const Organizations = () => {
                   <TableRow>
                     <TableCell align="center">{t("Name")}</TableCell>
                     <TableCell align="center">{t("Public")}</TableCell>
-                    <TableCell align="center">{t("Type")}</TableCell>
-                    <TableCell align="center">{t("People involved")}</TableCell>
+                    <TableCell align="center">{t("Administrators")}</TableCell>
                     <TableCell align="center">{t("Created")}</TableCell>
                     <TableCell align="center">{t("Your participation in the organization")}</TableCell>
                     <TableCell align="center"></TableCell>
@@ -160,7 +162,9 @@ const Organizations = () => {
                 </TableHead>
                 <TableBody>
                   {organizations.length > 0 && organizations.map((organization) => (
-                    <OrganizationRow key={organization.id} organization={organization} onChanges={getOrganizationsData} />
+                    <React.Fragment key={organization.id} >
+                      <OrganizationRow organization={organization} onChanges={onOrganizationCreate} />
+                    </React.Fragment>
                   ))}
                 </TableBody>
               </Table>

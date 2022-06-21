@@ -39,17 +39,17 @@ const slice = createSlice({
 
 export const { reducer } = slice;
 
-export const getMyProcesses = () => async (dispatch) => {
+export const getCoproductionProcesses = (search) => async (dispatch) => {
   dispatch(slice.actions.setLoadingProcesses(true));
-  const processes_data = await coproductionProcessesApi.getMulti();
+  const processes_data = await coproductionProcessesApi.getMulti({search: search});
   dispatch(slice.actions.setProcesses(processes_data));
   dispatch(slice.actions.setLoadingProcesses(false));
 };
 
 
-export const getOrganizations = () => async (dispatch) => {
+export const getOrganizations = (search) => async (dispatch) => {
   dispatch(slice.actions.setLoadingOrganizations(true));
-  const organizations_data = await organizationsApi.getMulti();
+  const organizations_data = await organizationsApi.getMulti({search: search});
   dispatch(slice.actions.setOrganizations(organizations_data));
   dispatch(slice.actions.setLoadingOrganizations(false));
 };

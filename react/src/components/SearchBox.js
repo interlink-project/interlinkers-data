@@ -23,12 +23,12 @@ const SearchBox = ({ language = getLanguage(), loading, inputValue, setInputValu
                 }}
             >
                 <Input
-                    disabled={loading}
+                    autoFocus={!loading}
                     disableUnderline
                     size={size}
                     fullWidth
                     onChange={(event) => {
-                        setInputValue(event.target.value);
+                        !loading && setInputValue(event.target.value);
                     }}
                     placeholder={t('Search')}
                     value={inputValue}

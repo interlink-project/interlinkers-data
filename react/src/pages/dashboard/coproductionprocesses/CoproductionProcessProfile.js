@@ -86,10 +86,9 @@ const CoproductionProcessProfile = () => {
   let { processId, tab = "overview" } = useParams();
   const dispatch = useDispatch();
   const mounted = useMounted();
-  const { user } = useAuth();
-  const { trackEvent, trackPageView } = useMatomo()
+  const { trackEvent } = useMatomo()
 
-  const { process, hasSchema, loading } = useSelector((state) => state.process);
+  const { process, loading } = useSelector((state) => state.process);
 
   const theme = useTheme();
   const showMobileTabs = !useMediaQuery(theme.breakpoints.up('lg'));

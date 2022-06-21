@@ -86,35 +86,32 @@ const slice = createSlice({
     setProcessTree(state, action) {
       state.hasSchema = action.payload.length > 0;
       if (action.payload) {
-        // separate tree into groups
         state.tree = topologicalSort(cloneOrdered(action.payload))
         state.treeitems = getAllChildren(state.tree);
-        // get first phase
-        const firstPhase = state.treeitems.find(el => el.type === "phase")
-        state.selectedPhaseTab = firstPhase;
-        state.selectedTreeItem = firstPhase;
+        if (action.payload.setFirstPhaseAsSelectedTreeItem) {
+          const firstPhase = state.treeitems.find(el => el.type === "phase")
+          state.selectedPhaseTab = firstPhase;
+          state.selectedTreeItem = firstPhase;
+        }
       }
-    },
-    setSelectedPhaseTab(state, action) {
-      state.selectedPhaseTab = action.payload;
-    },
-    setSelectedPhaseTabById(state, action) {
-      state.selectedPhaseTab = state.treeitems.find(el => el.id === action.payload);
     },
     setSelectedTreeItem(state, action) {
       state.selectedTreeItem = action.payload;
+      state.selectedPhaseTab = action.payload.type === "phase" ? action.payload : state.treeitems.find(el => el.id === action.payload.phase_id);
     },
     setSelectedTreeItemById(state, action) {
       state.selectedTreeItem = state.treeitems.find(el => el.id === action.payload);
+      state.selectedPhaseTab = state.selectedTreeItem === "phase" ? state.selectedTreeItem : state.treeitems.find(el => el.id === state.selectedTreeItem.phase_id);
     },
     setProcess(state, action) {
       state.process = action.payload;
-      if(action.payload){
+      if (action.payload) {
         state.isAdministrator = action.payload.administrators_ids.includes(user_id)
+      } else {
+        // TODO: set tab depending on progress
+        state.selectedPhaseTab = null;
+        state.selectedTreeItem = null;
       }
-      // TODO: set tab depending on progress
-      state.selectedPhaseTab = null;
-      state.selectedTreeItem = null;
     },
     updateTreeItem(state, action) {
       // separate tree into groups
@@ -133,24 +130,14 @@ const slice = createSlice({
     setUpdatingTree(state, action) {
       state.updatingTree = action.payload;
     },
-    setSelectedPhase(state, action) {
-      state.selectedPhaseTab = action.payload;
-      state.selectedTreeItem = action.payload;
-    },
   }
 });
 
 export const { reducer } = slice;
 
-export const setSelectedTreeItem = (data, callback) => async (dispatch) => {
-  dispatch(slice.actions.setSelectedTreeItem(data));
-  callback && callback();
-};
 
-export const setProcess = (data) => async (dispatch) => {
-  const treeData = await coproductionProcessesApi.getTree(data.id);
-  dispatch(slice.actions.setProcess(data));
-  dispatch(slice.actions.setProcessTree(treeData));
+export const cleanProcess = () => async (dispatch) => {
+  dispatch(slice.actions.setProcess(null));
 };
 
 export const getProcess = (processId) => async (dispatch) => {
@@ -159,6 +146,7 @@ export const getProcess = (processId) => async (dispatch) => {
     const data = await coproductionProcessesApi.get(processId);
     dispatch(slice.actions.setProcess(data));
     const treeData = await coproductionProcessesApi.getTree(processId) || [];
+    treeData.setFirstPhaseAsSelectedTreeItem = true
     dispatch(slice.actions.setProcessTree(treeData));
     dispatch(slice.actions.setLoading(false));
   } catch (err) {
@@ -171,11 +159,10 @@ export const setUpdatingTree = (val) => async (dispatch) => {
   dispatch(slice.actions.setUpdatingTree(val));
 }
 
-export const getTree = (processId, selectedPhaseTabId = null, selectedTreeItemId = null) => async (dispatch) => {
+export const getTree = (processId, selectedTreeItemId = null) => async (dispatch) => {
   dispatch(slice.actions.setUpdatingTree(true));
   const treeData = await coproductionProcessesApi.getTree(processId) || [];
   dispatch(slice.actions.setProcessTree(treeData));
-  selectedTreeItemId && dispatch(slice.actions.setSelectedPhaseTabById(selectedPhaseTabId))
   selectedTreeItemId && dispatch(slice.actions.setSelectedTreeItemById(selectedTreeItemId))
   dispatch(slice.actions.setUpdatingTree(false));
 };
@@ -194,8 +181,14 @@ export const updateProcess = ({ id, data, logotype, onSuccess }) => async (dispa
   }
 };
 
-export const setSelectedPhaseTab = (data) => async (dispatch) => {
-  dispatch(slice.actions.setSelectedPhase(data));
+export const setSelectedTreeItem = (data, callback) => async (dispatch) => {
+  dispatch(slice.actions.setSelectedTreeItem(data));
+  callback && callback();
+};
+
+export const setSelectedTreeItemById = (data, callback) => async (dispatch) => {
+  dispatch(slice.actions.setSelectedTreeItemById(data));
+  callback && callback();
 };
 
 export default slice;

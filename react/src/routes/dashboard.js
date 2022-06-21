@@ -30,22 +30,17 @@ export const routes = [
       },
 
       {
-        path: 'coproductionprocesses',
+        path: 'coproductionprocesses/:processId',
         children: [
           {
-            path: ':processId',
-            children: [
-              {
-                path: '',
-                element: <CoproductionProcessProfile />,
-              },
-              {
-                path: ':tab',
-                element: <CoproductionProcessProfile />,
-              },
-            ]
+            path: '',
+            element: <CoproductionProcessProfile />,
           },
-        ],
+          {
+            path: ':tab',
+            element: <CoproductionProcessProfile />,
+          },
+        ]
       },
       {
         path: 'interlinkers',
@@ -66,10 +61,6 @@ export const routes = [
           {
             path: '',
             element: <Organizations />,
-          },
-          {
-            path: ':organizationId',
-            element: <></>,
           },
         ],
       }

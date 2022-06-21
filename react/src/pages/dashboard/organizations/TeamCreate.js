@@ -10,7 +10,7 @@ import { ORG_TYPES } from 'constants';
 import { user_id } from 'contexts/CookieContext';
 import useAuth from 'hooks/useAuth';
 import { useCustomTranslation } from 'hooks/useDependantTranslation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getLanguage } from 'translations/i18n';
 import { teamsApi } from '__api__';
 import UserSearch from '../coproductionprocesses/Tabs/Team/UserSearch';
@@ -30,6 +30,9 @@ const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOp
 
   const ORG_OPTIONS = ORG_TYPES(t)
 
+  useEffect(() => {
+    setType(organization.default_team_type)
+  }, [organization])
   const clean = () => {
     setName("")
     setDescription("")
@@ -54,7 +57,7 @@ const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOp
         description,
         type,
         public: isPublic,
-        user_ids: selectedUsers.map(user => user.sub),
+        user_ids: selectedUsers.map(user => user.id),
         organization_id: organization ? organization.id : null
       })
       
@@ -63,7 +66,7 @@ const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOp
         description,
         type,
         public: isPublic,
-        user_ids: selectedUsers.map(user => user.sub),
+        user_ids: selectedUsers.map(user => user.id),
         organization_id: organization ? organization.id : null
       }).then(res => {
         if (!logotype) {

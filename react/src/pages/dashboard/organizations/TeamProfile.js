@@ -1,6 +1,7 @@
-import { Alert, Avatar, Box, Button, CircularProgress, Dialog, DialogContent, Grid, IconButton, Input, ListItemIcon, ListItemText, Menu, MenuItem, Paper, Skeleton, Stack, Table, TableBody, TableCell, TableHead, TableRow, TextField, Typography } from '@material-ui/core';
-import { Delete, Edit, MoreVert, Remove, Save } from '@material-ui/icons';
+import { Avatar, Box, Button, CircularProgress, Dialog, DialogContent, DialogTitle, Grid, IconButton, Input, ListItemIcon, ListItemText, Menu, MenuItem, Paper, Skeleton, Stack, Table, TableBody, TableCell, TableHead, TableRow, TextField, Typography } from '@material-ui/core';
+import { Close, Delete, Edit, MoreVert, Save } from '@material-ui/icons';
 import ConfirmationButton from 'components/ConfirmationButton';
+import { OrganizationChip } from 'components/dashboard/assets/Icons';
 import useAuth from 'hooks/useAuth';
 import useDependantTranslation from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
@@ -195,6 +196,21 @@ const TeamProfile = ({ open, setOpen, teamId, onChanges }) => {
   const isAdmin = team && team.user_participation && team.user_participation.includes('administrator')
 
   return (<Dialog open={open} onClose={handleClose} fullWidth maxWidth="lg">
+    <DialogTitle sx={{ m: 0, p: 2, backgroundColor: "background.default" }}>
+      {t("Team profile")}
+      <IconButton
+        aria-label="close"
+        onClick={handleClose}
+        sx={{
+          position: 'absolute',
+          right: 8,
+          top: 8,
+          color: (theme) => theme.palette.grey[500],
+        }}
+      >
+        <Close />
+      </IconButton>
+    </DialogTitle>
     <DialogContent sx={{ minHeight: "60vh", backgroundColor: "background.default" }}>
 
       {(team && !loading) ? <Grid container>
@@ -262,19 +278,20 @@ const TeamProfile = ({ open, setOpen, teamId, onChanges }) => {
                 rows={4}
                 variant="standard"
               />}
+              <OrganizationChip type={team.type} />
               {isAdmin && <>
                 {!editMode ? <Button disabled={!isAdmin} startIcon={<Edit />} variant="contained" color="primary" onClick={() => setEditMode(true)}>{t("Edit")}</Button>
-                : <Stack direction="row" justifyContent="center" sx={{ mt: 2 }}>
-                  <Button disabled={!somethingChanged} variant="text" color="warning" onClick={() => setEditMode(false)}>{t("Discard changes")}</Button>
-                  <Button disabled={!somethingChanged} startIcon={<Save />} variant="contained" color="success" onClick={handleSave}>{t("Save")}</Button>
-                </Stack>
-              }
-              <ConfirmationButton
-                Actionator={({ onClick }) => <Button startIcon={<Delete />} disabled={!editMode} variant="text" color="error" onClick={onClick}>{t("Remove {{what}}", { what: team_trans })}</Button>}
-                ButtonComponent={({ onClick }) => <Button sx={{ mt: 1 }} fullWidth variant='contained' color="error" onClick={onClick}>{t("Confirm deletion")}</Button>}
-                onClick={handleRemove}
-                text={t("Are you sure?")}
-              />
+                  : <Stack direction="row" justifyContent="center" sx={{ mt: 2 }}>
+                    <Button variant="text" color="warning" onClick={() => setEditMode(false)}>{t("Discard changes")}</Button>
+                    <Button disabled={!somethingChanged} startIcon={<Save />} variant="contained" color="success" onClick={handleSave}>{t("Save")}</Button>
+                  </Stack>
+                }
+                <ConfirmationButton
+                  Actionator={({ onClick }) => <Button startIcon={<Delete />} disabled={!editMode} variant="text" color="error" onClick={onClick}>{t("Remove {{what}}", { what: team_trans })}</Button>}
+                  ButtonComponent={({ onClick }) => <Button sx={{ mt: 1 }} fullWidth variant='contained' color="error" onClick={onClick}>{t("Confirm deletion")}</Button>}
+                  onClick={handleRemove}
+                  text={t("Are you sure?")}
+                />
               </>}
             </Stack>
           </Paper>

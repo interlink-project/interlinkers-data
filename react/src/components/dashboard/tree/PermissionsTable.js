@@ -1,5 +1,5 @@
 import {
-  Alert, Avatar, Button, IconButton, Stack, Switch, Table, TableBody, TableCell, TableHead, TableRow, Typography
+  Alert, Avatar, Box, Button, IconButton, Stack, Switch, Table, TableBody, TableCell, TableHead, TableRow, Typography
 } from '@material-ui/core';
 import { green, red } from '@material-ui/core/colors';
 import { CheckOutlined, Close, Delete } from '@material-ui/icons';
@@ -14,6 +14,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { getTree } from 'slices/process';
 import { tree_items_translations } from 'utils/someCommonTranslations';
+import { OrganizationChip } from '../assets/Icons';
 
 const PermissionRow = ({ permission, showOnlyMine, setSelectedTeam, userIsAdmin = false, admin = false }) => {
   const { user } = useAuth()
@@ -41,6 +42,9 @@ const PermissionRow = ({ permission, showOnlyMine, setSelectedTeam, userIsAdmin 
     </TableCell>}
     <TableCell align="center">
       {!admin && <Button size="small" startIcon={<Avatar src={permission.team.logotype_link} />} onClick={() => setSelectedTeam(permission.team_id)} variant="contained">{permission.team && permission.team.name} {t("team")}</Button>}
+    </TableCell>
+    <TableCell align="center">
+      {!admin && permission.team && <OrganizationChip type={permission.team.type} />}
     </TableCell>
     <TableCell align="center">
       {admin || permission.access_assets_permission ? <CheckOutlined style={{ color: green[500] }} /> : <Close style={{ color: red[500] }} />}
@@ -73,8 +77,8 @@ const PermissionsTable = ({ language, processId, element, isAdministrator }) => 
 
   const [permissionCreatorOpen, setOpenPermissionCreator] = useState(false);
   const [creatingPermission, setCreatingPermission] = useState(false);
-  const update = (selectedPhaseTabId, selectedTreeItemId) => {
-    dispatch(getTree(processId, selectedPhaseTabId, selectedTreeItemId));
+  const update = (selectedTreeItemId) => {
+    dispatch(getTree(processId, selectedTreeItemId));
   }
 
   const isTask = element.type === "task"
@@ -102,10 +106,11 @@ const PermissionsTable = ({ language, processId, element, isAdministrator }) => 
     _setShowOnlyMine(val)
   }
 
-  const colSpan = 8
+  const colSpan = 9
+
   return <>
     {selectedTeam && <TeamProfile teamId={selectedTeam} open={true} setOpen={setSelectedTeam} />}
-    {!isAdministrator && <Alert severity="info" action={<Switch checked={showOnlyMine} onChange={(event) => setShowOnlyMine(event.target.checked)} />}>{t("Show the sum of the permissions that affect me")}</Alert>}
+    {!isAdministrator && <Alert severity="info" action={<Switch checked={!showOnlyMine} onChange={(event) => setShowOnlyMine(!event.target.checked)} />}>{t("Show all the permissions for this tree item, including those ones that do not affect you")}</Alert>}
 
     <Table aria-label="admins-table" size="small">
       <TableHead>
@@ -113,6 +118,7 @@ const PermissionsTable = ({ language, processId, element, isAdministrator }) => 
           <TableCell align="center"><>{t("Actions")}</></TableCell>
           {!showOnlyMine && <TableCell align="center"><>{t("Affects you")}       </></TableCell>}
           <TableCell align="center"><>{t("Team")}</></TableCell>
+          <TableCell align="center"><>{t("Team role")}</></TableCell>
           <TableCell align="center"><>{t("View resources")}</></TableCell>
           <TableCell align="center"><>{t("Create resources")}</></TableCell>
           <TableCell align="center"><>{t("Delete resources")}</></TableCell>
@@ -182,6 +188,7 @@ const PermissionsTable = ({ language, processId, element, isAdministrator }) => 
             <TableCell align="center">
             </TableCell>
             <TableCell align="center">
+            {element.user_roles.map(role => <Box key={role} sx={{ml: 1}}><OrganizationChip type={role} /></Box>)}
             </TableCell>
             <TableCell align="center">
               {element.user_permissions_dict.access_assets_permission ? <CheckOutlined style={{ color: green[500] }} /> : <Close style={{ color: red[500] }} />}
@@ -208,7 +215,7 @@ const PermissionsTable = ({ language, processId, element, isAdministrator }) => 
       open={permissionCreatorOpen}
       setOpen={setOpenPermissionCreator}
       onCreate={() => {
-        update(element.type === "phase" ? element.id : element.phase_id, element.id)
+        update(element.id)
       }}
       loading={creatingPermission}
       setLoading={setCreatingPermission}

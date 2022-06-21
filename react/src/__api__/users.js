@@ -19,7 +19,9 @@ class UsersApi extends GeneralApi {
   }
 
   async me() {
-    const res = await axiosInstance.get(`/${this.url}/me`);
+    // Call auth microservice first in order to create an account if it does not exist
+    const res = await axiosInstance.get(`/auth/api/v1/users/me`);
+    // Coproduction service gets user data from the auth service
     const res2 = await axiosInstance.get(`/coproduction/api/v1/users/me`);
     const me = {...res.data, ...res2.data}
     console.log('get me call', me);

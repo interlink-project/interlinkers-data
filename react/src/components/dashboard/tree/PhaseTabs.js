@@ -1,7 +1,7 @@
-import { AppBar, Tab, Tabs as MuiTabs } from "@material-ui/core";
+import { AppBar, LinearProgress, Tab, Tabs as MuiTabs } from "@material-ui/core";
 import React from "react";
 
-const PhaseTabs = ({ selectedId, treeitems, onSelect }) => {
+const PhaseTabs = ({ loading = false, selectedId, treeitems, onSelect }) => {
     return (
         <AppBar position="static" sx={{ color: "white" }}>
             <MuiTabs
@@ -24,6 +24,7 @@ const PhaseTabs = ({ selectedId, treeitems, onSelect }) => {
                     />
                 ))}
             </MuiTabs>
+            {loading && <LinearProgress />}
         </AppBar>
     );
 };

@@ -8,7 +8,8 @@ import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
-import { getMyProcesses, getOrganizations } from 'slices/general';
+import { getCoproductionProcesses } from 'slices/general';
+import { cleanProcess } from 'slices/process';
 import useAuth from '../../../hooks/useAuth';
 import CoproductionprocessCreate from './CoproductionProcessCreate';
 import { Folder } from '@material-ui/icons';
@@ -32,7 +33,7 @@ function ProcessRow({ process }) {
       <TableCell align="center">{moment(process.created_at).fromNow()}</TableCell>
       <TableCell align="center"><StatusChip status={"in_progress"} /></TableCell>
       <TableCell align="center">
-        {process.user_participation.map(p => <Chip label={p} />)}
+        {process.user_participation.map(p => <Chip key={p} label={p} />)}
       </TableCell>
     </TableRow>
   );
@@ -50,24 +51,26 @@ const MyWorkspace = () => {
   const mounted = useMounted();
   const { user, isAuthenticated } = useAuth();
 
-  const getProcessesData = React.useCallback(async () => {
+  const getCoproductionProcessesData = React.useCallback(async (search) => {
     if (isAuthenticated) {
-      dispatch(getMyProcesses())
-
-    }
-  }, [isAuthenticated, mounted]);
-
-  const getOrganizationsData = React.useCallback(async () => {
-    if (isAuthenticated) {
-      dispatch(getOrganizations())
-
+      dispatch(cleanProcess())
+      dispatch(getCoproductionProcesses(search))
     }
   }, [isAuthenticated, mounted]);
 
   React.useEffect(() => {
-    getProcessesData();
-    getOrganizationsData();
-  }, [getProcessesData, getOrganizationsData]);
+    var delayDebounceFn
+    if (mounted.current) {
+      delayDebounceFn = setTimeout(() => {
+        getCoproductionProcessesData(searchValue)
+      }, searchValue ? 800 : 0)
+    }
+    return () => {
+      if (delayDebounceFn) {
+        clearTimeout(delayDebounceFn)
+      }
+    }
+  }, [getCoproductionProcessesData, searchValue])
 
   const onProcessCreate = (res) => {
     navigate(`/dashboard/coproductionprocesses/${res.id}/overview`)
@@ -119,7 +122,6 @@ const MyWorkspace = () => {
             <Box sx={{ mt: 4 }}>
               <Box sx={{ mb: 2 }}>
                 <SearchBox loading={loadingProcesses} inputValue={searchValue} setInputValue={setSearchValue} />
-
               </Box>
               <TableContainer component={Paper}>
                 <Table>
@@ -136,7 +138,6 @@ const MyWorkspace = () => {
                     {processes.length > 0 && processes.map((process) => (
                       <React.Fragment key={process.id}>
                         <ProcessRow process={process} />
-
                       </React.Fragment>
                     ))}
                   </TableBody>
@@ -146,12 +147,10 @@ const MyWorkspace = () => {
                 {loadingProcesses ? <CentricCircularProgress /> : <Paper sx={{ p: 2, textAlign: "center", minHeight: "50vh" }}>
                   <Box style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)' }}>
                     <Typography sx={{ my: 2 }} variant="h5" >
-                      {t("We could not find any co-production process")}
+                      {t("Empty")}
                     </Typography>
                     <Button onClick={() => setCoproductionProcessCreatorOpen(true)} sx={{ my: 3, width: 400 }} variant="contained" size="small">{t("Create a new co-production process")}</Button>
-                    <Divider sx={{ my: 3 }}>{t("or")}</Divider>
-                    <Typography variant="subtitle2">{t("Wait or request to be added to a organization in the platform")}</Typography>
-                    <Button sx={{ mt: 2, width: 400 }} onClick={() => navigate("/dashboard/organizations")} variant="contained" color="secondary" size="small">{t("Search for organizations and teams")}</Button>
+                    
                   </Box>
                 </Paper>}
 

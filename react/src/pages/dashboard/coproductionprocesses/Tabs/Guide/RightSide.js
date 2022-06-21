@@ -9,7 +9,8 @@ import { Formik } from 'formik';
 import useDependantTranslation from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { getTree } from 'slices/process';
 import { information_about_translations } from 'utils/someCommonTranslations';
 import * as Yup from 'yup';
 import { assetsApi } from '__api__';
@@ -21,7 +22,7 @@ const RightSide = ({ softwareInterlinkers }) => {
     const [step, setStep] = useState(0);
 
     const [assets, setAssets] = useState([])
-    const [loadingTreeitemInfo, setLoadingTreeitemInfo] = useState(false)
+    const [loadingAssets, setLoadingAssets] = useState(false)
 
     // new asset modal
     const [selectedInterlinker, setSelectedInterlinker] = useState(null)
@@ -30,20 +31,21 @@ const RightSide = ({ softwareInterlinkers }) => {
     const [externalAssetOpen, setExternalAssetOpen] = useState(false);
     const [catalogueOpen, setCatalogueOpen] = useState(false);
     const { t } = useDependantTranslation()
+    const dispatch = useDispatch();
 
-    const updateTreeitemInfo = async () => {
-        setLoadingTreeitemInfo(true)
+    const getAssets = async () => {
+        setLoadingAssets(true)
         assetsApi.getMulti({ task_id: selectedTreeItem.id }).then(assets => {
             if (mounted.current) {
                 setAssets(assets)
-                setLoadingTreeitemInfo(false)
+                setLoadingAssets(false)
             }
         });
     }
 
     useEffect(() => {
         if (isTask && mounted.current) {
-            updateTreeitemInfo()
+            getAssets()
         }
     }, [mounted, selectedTreeItem])
 
@@ -63,6 +65,12 @@ const RightSide = ({ softwareInterlinkers }) => {
         setTabValue(newValue);
     };
 
+    useEffect(() => {
+        if(!isTask && tabValue === "assets"){
+            setTabValue('data')
+        }
+    }, [selectedTreeItem, tabValue])
+
     const can = {
         create: selectedTreeItem.user_permissions_dict.create_assets_permission,
         view: selectedTreeItem.user_permissions_dict.access_assets_permission
@@ -76,12 +84,12 @@ const RightSide = ({ softwareInterlinkers }) => {
                     value={tabValue}
                     onChange={handleTabChange}
                     aria-label="guide-right-side-tabs"
-                    sx={{mb: 2}}
+                    sx={{ mb: 2 }}
                     centered
                 >
                     <Tab wrapped value="data" label={information_translations[selectedTreeItem.type]} />
-                    <Tab value="permissions" label={t("Permissions")} />
-                    <Tab value="assets" disabled={!isTask} label={isTask ? `${t("Resources")} (${selectedTreeItem.assets_count || 0})` : t("Resources")} />
+                    <Tab value="permissions" label={t("Permissions") + " (" + selectedTreeItem.permissions.length + ")"} />
+                    <Tab value="assets" disabled={!isTask} label={t("Resources")} />
                 </Tabs>
 
                 {tabValue === "data" && <TreeItemData language={process.language} processId={process.id} element={selectedTreeItem} />}
@@ -89,7 +97,7 @@ const RightSide = ({ softwareInterlinkers }) => {
                 {tabValue === "assets" && <>
                     <Box>
                         <Box sx={{ mt: 2 }}>
-                            {can.view ? <AssetsTable language={process.language} loading={loadingTreeitemInfo} assets={assets} onChange={updateTreeitemInfo} /> : <Alert severity="error">{t("You do not have access to the resources of this task")}</Alert>}
+                            {can.view ? <AssetsTable language={process.language} loading={loadingAssets} assets={assets} onChange={getAssets} /> : <Alert severity="error">{t("You do not have access to the resources of this task")}</Alert>}
                             <Box sx={{ textAlign: "center", width: "100%" }}>
                                 <Stack spacing={2} >
                                     <Button
@@ -152,7 +160,7 @@ const RightSide = ({ softwareInterlinkers }) => {
                                         assetsApi.create_external(selectedTreeItem.id, null, values.name, values.uri).then(res => {
                                             setStatus({ success: true });
                                             setSubmitting(false);
-                                            updateTreeitemInfo()
+                                            getAssets()
                                             setExternalAssetOpen(false)
 
                                         }).catch(err => {
@@ -257,7 +265,7 @@ const RightSide = ({ softwareInterlinkers }) => {
                         setStep={setStep}
                         selectedInterlinker={selectedInterlinker}
                         treeitem={selectedTreeItem}
-                        onCreate={updateTreeitemInfo} />}
+                        onCreate={() => dispatch(getTree(process.id, selectedTreeItem.id))} />}
                 </>}
             </Box>
         </Grid>

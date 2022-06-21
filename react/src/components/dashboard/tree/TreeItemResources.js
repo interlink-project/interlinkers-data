@@ -92,12 +92,12 @@ const TreeItemData = ({ language, processId, element }) => {
       ]
     })
     apis[element.type].update(element.id, data).then(() => {
-      update(element.type === "phase" ? element.id : element.phase_id, element.id);
+      update(element.id);
     });
   }
 
-  const update = (selectedPhaseTabId, selectedTreeItemId) => {
-    dispatch(getTree(processId, selectedPhaseTabId, selectedTreeItemId));
+  const update = (selectedTreeItemId) => {
+    dispatch(getTree(processId, selectedTreeItemId));
   }
 
   const deleteTreeItem = () => {
@@ -114,7 +114,7 @@ const TreeItemData = ({ language, processId, element }) => {
     })
     dispatch(setUpdatingTree(true));
     apis[element.type].delete(element.id).then(() => {
-      update(element.type === "phase" ? element.id : element.phase_id, element.type === "phase" ? element.id : element.phase_id)
+      update(element.phase_id)
     });
   }
 

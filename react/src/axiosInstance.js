@@ -18,4 +18,10 @@ const axiosInstance = axios.create({
   },
 });
 
+axios.interceptors.response.use(
+  response => response,
+  error => {
+    window.location.href = '/500';
+  });
+
 export default axiosInstance;

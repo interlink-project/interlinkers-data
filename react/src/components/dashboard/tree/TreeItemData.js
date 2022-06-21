@@ -11,7 +11,7 @@ import ConfirmationButton from 'components/ConfirmationButton';
 import { FinishedIcon, InProgressIcon } from 'components/dashboard/assets';
 import { useCustomTranslation } from 'hooks/useDependantTranslation';
 import moment from 'moment';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { getTree, setUpdatingTree } from 'slices/process';
@@ -38,7 +38,7 @@ const TreeItemData = ({ language, processId, element }) => {
   const dispatch = useDispatch();
   const t = useCustomTranslation(language)
   const { trackEvent } = useMatomo()
-  
+
   const restart = (el) => {
     setName(el.name)
     setDescription(el.description)
@@ -92,12 +92,13 @@ const TreeItemData = ({ language, processId, element }) => {
       ]
     })
     apis[element.type].update(element.id, data).then(() => {
-      update(element.type === "phase" ? element.id : element.phase_id, element.id);
+      update(element.id);
+      setSaving(false)
     });
   }
 
-  const update = (selectedPhaseTabId, selectedTreeItemId) => {
-    dispatch(getTree(processId, selectedPhaseTabId, selectedTreeItemId));
+  const update = (selectedTreeItemId) => {
+    dispatch(getTree(processId, selectedTreeItemId));
   }
 
   const deleteTreeItem = () => {
@@ -114,7 +115,7 @@ const TreeItemData = ({ language, processId, element }) => {
     })
     dispatch(setUpdatingTree(true));
     apis[element.type].delete(element.id).then(() => {
-      update(element.type === "phase" ? element.id : element.phase_id, element.type === "phase" ? element.id : element.phase_id)
+      update(element.phase_id)
     });
   }
 

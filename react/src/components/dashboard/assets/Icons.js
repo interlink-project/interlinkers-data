@@ -65,7 +65,7 @@ export const StatusChip = ({ status }) => {
             label = i18n.t("In progress")
             color = "warning"
             break;
-        
+
         case 'finished':
             label = i18n.t("Finished")
             color = "primary"
@@ -89,7 +89,7 @@ export const OrganizationChip = ({ type }) => {
             label = i18n.t("Public administration")
             color = "warning"
             break;
-        
+
         case 'nonprofit_organization':
             label = i18n.t("Non profit organization")
             color = "primary"
@@ -97,6 +97,15 @@ export const OrganizationChip = ({ type }) => {
 
         case 'forprofit_organization':
             label = i18n.t("For profit organization")
+            color = "secondary"
+            break;
+
+        case 'administrator':
+            label = i18n.t("Administrator")
+            color = "primary"
+            break;
+        default:
+            label = i18n.t("Unknown")
             color = "secondary"
             break;
     }
