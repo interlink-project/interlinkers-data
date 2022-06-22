@@ -59,14 +59,14 @@ const CreateSchema = () => {
 
     const submit = async (coproductionschema) => {
         setInstantiatingSchema(true)
-        coproductionProcessesApi.setSchema(process.id, coproductionschema.id, process.language).then(process => {
+        coproductionProcessesApi.setSchema(process.id, coproductionschema.id, process.language).then(res => {
             if (mounted.current) {
                 trackEvent({
                     category: process.id,
                     action: 'use-schema',
                     name: coproductionschema.id
                 })
-                dispatch(getProcess(process))
+                dispatch(getProcess(process.id))
             }
         });
     }
