@@ -1,26 +1,17 @@
-import { useEffect, useState, useRef } from 'react';
 import {
   Box,
-  Button,
-  FormControlLabel,
-  Switch,
-  TextField,
-  Tooltip,
-  Typography,
-  Popover,
-  IconButton,
+  Button, IconButton, Popover, TextField, Tooltip
 } from '@material-ui/core';
-import { THEMES } from '../../constants';
-import { getLanguage, LANGUAGES } from 'translations/i18n';
-import useSettings from '../../hooks/useSettings';
-import AdjustmentsIcon from '../../icons/Adjustments';
+import { Settings } from '@material-ui/icons';
+import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { OpenInNew, Settings } from '@material-ui/icons';
+import { getLanguage, LANGUAGES } from 'translations/i18n';
+import { THEMES } from '../../constants';
+import useSettings from '../../hooks/useSettings';
 
 const getValues = (settings) => ({
-  direction: settings.direction,
+  // direction: settings.direction,
   theme: settings.theme,
-  showHelp: settings.showHelp,
   language: getLanguage()
 });
 
@@ -28,8 +19,12 @@ const SettingsPopover = () => {
   const anchorRef = useRef(null);
   const { settings, saveSettings } = useSettings();
   const [open, setOpen] = useState(false);
+  const [openDialog, setOpenDialog] = useState(null);
   const [values, setValues] = useState(getValues(settings));
-  const {t} = useTranslation()
+
+  const ENVIRONMENT = window.location
+
+  const { t } = useTranslation()
 
   useEffect(() => {
     setValues(getValues(settings));
@@ -55,10 +50,14 @@ const SettingsPopover = () => {
     setOpen(false);
   };
 
+  const onLoad = function () {
+    console.log("Iframe refreshed", openDialog, this)
+  }
+
   return (
     <>
       {' '}
-      <Tooltip title='Settings'>
+      <Tooltip title={t('Settings')}>
         <IconButton color='inherit' ref={anchorRef} onClick={handleOpen}>
           <Settings fontSize='small' />
         </IconButton>
@@ -123,34 +122,6 @@ const SettingsPopover = () => {
             ))}
           </TextField>{' '}
         </Box>
-        <Box sx={{ my: 2, mx: 2 }}>
-          <Button startIcon={<OpenInNew />} fullWidth variant="text" onClick={() => window.open(`/docs/${getLanguage()}/`, "_blank")}>{t("Open user manual")}</Button>
-          </Box>
-          <Box sx={{ my: 2, mx: 2 }}>
-          <Button startIcon={<OpenInNew />} fullWidth variant="text" onClick={() => window.open(`/docs/${getLanguage()}/`, "_blank")}>{t("Contact form")}</Button>
-          </Box>
-          <Box sx={{ my: 2, mx: 2 }}>
-          <Button startIcon={<OpenInNew />} fullWidth variant="text" onClick={() => window.open(`/docs/${getLanguage()}/`, "_blank")}>{t("Usability form")}</Button>
-          </Box>
-        <Box sx={{ px: 4 }}>
-          <FormControlLabel
-            control={
-              <Switch
-                checked={values.showHelp}
-                color='primary'
-                edge='start'
-                name='showHelp'
-                onChange={(event) =>
-                  handleChange(
-                    'showHelp',
-                    event.target.checked
-                  )
-                }
-              />
-            }
-            label={t("Show contextual help")}
-          />
-          </Box>
         <Box
           sx={{
             p: 2,

@@ -89,7 +89,7 @@ const slice = createSlice({
         state.tree = topologicalSort(cloneOrdered(action.payload))
         state.treeitems = getAllChildren(state.tree);
         if (action.payload.setFirstPhaseAsSelectedTreeItem) {
-          const firstPhase = state.treeitems.find(el => el.type === "phase")
+          const firstPhase = state.treeitems.find(el => el.type === "phase" && !el.is_disabled)
           state.selectedPhaseTab = firstPhase;
           state.selectedTreeItem = firstPhase;
         }
@@ -101,7 +101,7 @@ const slice = createSlice({
     },
     setSelectedTreeItemById(state, action) {
       state.selectedTreeItem = state.treeitems.find(el => el.id === action.payload);
-      state.selectedPhaseTab = state.selectedTreeItem === "phase" ? state.selectedTreeItem : state.treeitems.find(el => el.id === state.selectedTreeItem.phase_id);
+      state.selectedPhaseTab = state.selectedTreeItem.type === "phase" ? state.selectedTreeItem : state.treeitems.find(el => el.id === state.selectedTreeItem.phase_id);
     },
     setProcess(state, action) {
       state.process = action.payload;

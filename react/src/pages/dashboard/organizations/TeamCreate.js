@@ -1,11 +1,12 @@
 import {
-  Alert, Avatar, Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, IconButton, Input,
+  Avatar, Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, IconButton, Input,
   InputLabel,
   List,
   ListItem,
-  ListItemAvatar, ListItemSecondaryAction, ListItemText, MenuItem, MobileStepper, Select, Stack, Switch, TextField, Typography, useTheme
+  ListItemAvatar, ListItemSecondaryAction, ListItemText, MenuItem, MobileStepper, Select, TextField, Typography, useTheme
 } from '@material-ui/core';
 import { Close, Delete, KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
+import { LoadingButton } from '@material-ui/lab';
 import { ORG_TYPES } from 'constants';
 import { user_id } from 'contexts/CookieContext';
 import useAuth from 'hooks/useAuth';
@@ -17,12 +18,12 @@ import UserSearch from '../coproductionprocesses/Tabs/Team/UserSearch';
 
 const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOpen, onCreate, organization }) => {
   const auth = useAuth();
+  const [_loading, _setLoading] = useState(false);
   const [selectedUsers, setSelectedUsers] = useState([auth.user]);
   const [name, setName] = useState("");
   const [type, setType] = useState("");
   const [description, setDescription] = useState("");
   const [logotype, setLogotype] = useState(null);
-  const [isPublic, setPublic] = useState(false);
 
   const t = useCustomTranslation(language)
   const theme = useTheme();
@@ -30,9 +31,13 @@ const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOp
 
   const ORG_OPTIONS = ORG_TYPES(t)
 
+  const final_loading = loading || _loading
+  const final_set_loading = setLoading || _setLoading
+
   useEffect(() => {
     setType(organization.default_team_type)
   }, [organization])
+
   const clean = () => {
     setName("")
     setDescription("")
@@ -52,34 +57,30 @@ const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOp
     if (activeStep < 1) {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     } else {
-      console.log({
-        name,
-        description,
-        type,
-        public: isPublic,
-        user_ids: selectedUsers.map(user => user.id),
-        organization_id: organization ? organization.id : null
-      })
-      
+      final_set_loading(true)
       teamsApi.create({
         name,
         description,
         type,
-        public: isPublic,
         user_ids: selectedUsers.map(user => user.id),
         organization_id: organization ? organization.id : null
       }).then(res => {
         if (!logotype) {
           sendOnCreate(res.data)
+          final_set_loading(false)
         } else {
           teamsApi.setFile(res.data.id, "logotype", logotype).then(res2 => {
             sendOnCreate(res2.data)
           }).catch(() => {
             sendOnCreate(res.data)
+          }).finally(() => {
+            final_set_loading(false)
           })
         }
-
-      }).catch(err => console.log(err))
+      }).catch(err => {
+        console.log(err)
+        final_set_loading(false)
+      })
     }
   };
 
@@ -142,7 +143,7 @@ const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOp
               setLogotype(null)
             }}><Close /></IconButton>}
           </Box>
-          <TextField
+            <TextField
               autoFocus
               margin="dense"
               id="name"
@@ -180,12 +181,6 @@ const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOp
                 {ORG_OPTIONS.map(lan => <MenuItem key={lan.value} value={lan.value}>{lan.label}</MenuItem>)}
               </Select>
             </FormControl>
-            <Stack sx={{ mt: 3 }} spacing={1} direction="row" alignItems="center">
-              <Typography variant="body1">{t("Public")}</Typography>
-              <Switch checked={isPublic} onChange={(event) => setPublic(event.target.checked)} />
-            </Stack>
-            <Alert sx={{ mt: 2 }} severity="info">{t("Public team's information (and their members information) can be accessed by any member of the organization. If the organization is public as well, the information can be accessed by any user in the platform.")}</Alert>
-
           </>}
 
           {activeStep === 1 && <><List dense>
@@ -227,10 +222,10 @@ const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOp
             activeStep={activeStep}
             sx={{ flexGrow: 1 }}
             nextButton={
-              <Button size="small" onClick={handleNext} disabled={isDisabled()}>
+              <LoadingButton size="small" onClick={handleNext} disabled={isDisabled()} loading={final_loading}>
                 {activeStep === 1 ? t("Create") : t("Next")}
                 <KeyboardArrowRight />
-              </Button>
+              </LoadingButton>
             }
             backButton={
               <Button size="small" onClick={handleBack} disabled={activeStep === 0}>

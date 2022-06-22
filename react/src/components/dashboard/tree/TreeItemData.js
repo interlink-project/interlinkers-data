@@ -12,10 +12,9 @@ import { FinishedIcon, InProgressIcon } from 'components/dashboard/assets';
 import { useCustomTranslation } from 'hooks/useDependantTranslation';
 import moment from 'moment';
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { getTree, setUpdatingTree } from 'slices/process';
-// import { deleteObjective, deletePhase, deleteTask,  } from 'slices/process';
 import { tree_items_translations } from 'utils/someCommonTranslations';
 import { objectivesApi, phasesApi, tasksApi } from '__api__';
 import { AwaitingIcon, statusIcon, StatusText } from '../assets/Icons';
@@ -32,7 +31,7 @@ const TreeItemData = ({ language, processId, element }) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [editMode, setEditMode] = useState(false);
-  const [saving, setSaving] = useState(false);
+  const { updatingTree, treeitems } = useSelector((state) => state.process);
 
   const navigate = useNavigate()
   const dispatch = useDispatch();
@@ -56,8 +55,8 @@ const TreeItemData = ({ language, processId, element }) => {
   }, [element])
 
   const saveData = () => {
-    setSaving(true)
     const data = {}
+    dispatch(setUpdatingTree(true));
 
     const start_date = dateRange[0] && dateRange[0].toISOString().slice(0, 10)
     const end_date = dateRange[1] && dateRange[1].toISOString().slice(0, 10)
@@ -80,20 +79,9 @@ const TreeItemData = ({ language, processId, element }) => {
       category: processId,
       action: 'update-treeitem',
       name: element.id,
-      customDimensions: [
-        {
-          id: 1,
-          value: processId
-        },
-        {
-          id: 2,
-          value: JSON.stringify(data)
-        }
-      ]
     })
     apis[element.type].update(element.id, data).then(() => {
       update(element.id);
-      setSaving(false)
     });
   }
 
@@ -106,16 +94,20 @@ const TreeItemData = ({ language, processId, element }) => {
       category: processId,
       action: 'delete-treeitem',
       name: element.id,
-      customDimensions: [
-        {
-          id: 1,
-          value: processId
-        }
-      ]
     })
     dispatch(setUpdatingTree(true));
     apis[element.type].delete(element.id).then(() => {
-      update(element.phase_id)
+      let setSelectedTreeItem = null
+      if (element.type === "task") {
+        setSelectedTreeItem = element.objective_id
+      }
+      else if (element.type === "objective") {
+        setSelectedTreeItem = element.phase_id
+      } else {
+        const nextPhase = treeitems.find(el => el.id != element.id && el.type === "phase")
+        setSelectedTreeItem = nextPhase.id
+      }
+      update(setSelectedTreeItem)
     });
   }
 
@@ -216,7 +208,7 @@ const TreeItemData = ({ language, processId, element }) => {
       <Box sx={{ width: "100%", justifyContent: "center", textAlign: "center" }}>
         <Stack sx={{ mt: 2 }} justifyContent="center" direction="row" spacing={2}>
           <Button size="small" variant="outlined" onClick={() => setEditMode(false)} color="warning">{t("Discard changes")}</Button>
-          <LoadingButton loading={saving} sx={{ width: "200px" }} variant="contained" onClick={saveData} color="primary" size="small">{t("Save")}</LoadingButton>
+          <LoadingButton loading={updatingTree} sx={{ width: "200px" }} variant="contained" onClick={saveData} color="primary" size="small">{t("Save")}</LoadingButton>
 
         </Stack>
 

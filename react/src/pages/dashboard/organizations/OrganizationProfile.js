@@ -359,7 +359,6 @@ const OrganizationProfile = ({ organizationId, onChanges }) => {
                 </Alert>}
                 <Box sx={{ textAlign: "center" }}>
                     <LoadingButton loading={loadingTeams || creatingTeam} sx={{ mt: 3 }} size="small" variant="contained" startIcon={<Add />} onClick={() => setOpenTeamCreator(true)} disabled={!canCreateTeams}>{t("Create new team")}</LoadingButton>
-
                 </Box>
             </Grid>
         </Grid> : <CentricCircularProgress />

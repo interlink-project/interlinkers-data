@@ -10,6 +10,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import i18n from 'translations/i18n';
 import MenuIcon from '../../icons/Menu';
 import AccountPopover from './AccountPopover';
+import HelpPopover from './HelpPopover';
 import SearchAppBar from './Search';
 import SettingsPopover from './SettingsPopover';
 
@@ -77,6 +78,9 @@ const DashboardNavbar = (props) => {
             ml: 2,
           }}
         />
+        <Box sx={{ ml: 1 }}>
+          <HelpPopover />
+        </Box>
         <Box sx={{ ml: 1 }}>
           <SettingsPopover />
         </Box>

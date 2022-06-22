@@ -14,7 +14,7 @@ const PhaseTabs = ({ loading = false, selectedId, treeitems, onSelect }) => {
                 aria-label="Coproduction treeitems tabs"
             >
 
-                {treeitems.map((phase) => (
+                {treeitems.map((phase) => !phase.is_disabled &&(
                     <Tab
                         key={phase.id}
                         label={<>

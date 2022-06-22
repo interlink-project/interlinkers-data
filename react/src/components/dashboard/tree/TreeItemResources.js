@@ -80,16 +80,6 @@ const TreeItemData = ({ language, processId, element }) => {
       category: processId,
       action: 'update-treeitem',
       name: element.id,
-      customDimensions: [
-        {
-          id: 1,
-          value: processId
-        },
-        {
-          id: 2,
-          value: JSON.stringify(data)
-        }
-      ]
     })
     apis[element.type].update(element.id, data).then(() => {
       update(element.id);
@@ -105,12 +95,6 @@ const TreeItemData = ({ language, processId, element }) => {
       category: processId,
       action: 'delete-treeitem',
       name: element.id,
-      customDimensions: [
-        {
-          id: 1,
-          value: processId
-        }
-      ]
     })
     dispatch(setUpdatingTree(true));
     apis[element.type].delete(element.id).then(() => {

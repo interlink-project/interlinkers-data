@@ -1,4 +1,4 @@
-import { SvgIcon, Typography } from '@material-ui/core';
+import { Avatar, AvatarGroup, SvgIcon, Typography } from '@material-ui/core';
 import { TreeView } from '@material-ui/lab';
 import { statusColor, statusIcon, StatusText } from 'components/dashboard/assets/Icons';
 import { StyledTreeItem } from 'components/dashboard/tree';
@@ -73,21 +73,31 @@ const StyledTree = ({ language, parent, selectedTreeItem, setSelectedTreeItem, s
         setExpanded(nodeIds)
       }}
     >
-      {parent && <StyledTreeItem icon={showIcon && statusIcon(parent.status)} key={parent.id} nodeId={parent.id} sx={{ backgroundColor: "background.paper" }} label={<p>{parent.name}</p>} >
+      {parent && !parent.is_disabled &&<StyledTreeItem icon={showIcon && statusIcon(parent.status)} key={parent.id} nodeId={parent.id} sx={{ backgroundColor: "background.paper" }} label={
+      <p>
+        {parent.name}
+        {parent.teams && parent.teams.length > 0 && <AvatarGroup spacing="medium" sx={{ mt: 1, justifyContent: "left" }} variant="rounded" max={5}>{parent.teams.map(team => <Avatar key={parent.id + "-" + team.id} title={team.name} src={team.logotype_link} sx={{ height: 20, width: 20, bgcolor: "background.paper" }} />)}</AvatarGroup>}
+      </p>} >
 
-        {parent.children.map(objective =>
-          <StyledTreeItem icon={showIcon && statusIcon(objective.status)} key={objective.id} nodeId={objective.id} sx={{ backgroundColor: "background.paper" }} label={<p>{objective.name}</p>} >
-            {objective.children.map(task => (
+        {parent.children.map(objective => !objective.is_disabled &&
+          <StyledTreeItem icon={showIcon && statusIcon(objective.status)} key={objective.id} nodeId={objective.id} sx={{ backgroundColor: "background.paper" }} label={
+          <p>
+            {objective.name}
+            {objective.teams && objective.teams.length > 0 && <AvatarGroup spacing="medium" sx={{ mt: 1, justifyContent: "left" }} variant="rounded" max={5}>{objective.teams.map(team => <Avatar key={objective.id + "-" + team.id} title={team.name} src={team.logotype_link} sx={{ height: 20, width: 20, bgcolor: "background.paper" }} />)}</AvatarGroup>}
+
+            </p>
+          } >
+            {objective.children.map(task => !task.is_disabled &&(
               <StyledTreeItem icon={showIcon && statusIcon(task.status)} key={task.id} nodeId={task.id} label={
-                  <p style={{ alignItems: "center" }}>
-                    <Typography>
-                      {task.name}
-                    </Typography>
-                    {task.status && <Typography variant="overline" color={statusColor(task.status)}>
+                <p style={{ alignItems: "center" }}>
+                  <Typography>
+                    {task.name}
+                  </Typography>
+                  {task.teams && task.teams.length > 0 && <AvatarGroup spacing="medium" sx={{ mt: 1, justifyContent: "left" }} variant="rounded" max={5}>{task.teams.map(team => <Avatar key={task.id + "-" + team.id} title={team.name} src={team.logotype_link} sx={{ height: 20, width: 20, bgcolor: "background.paper" }} />)}</AvatarGroup>}
+                  {task.status && <Typography variant="overline" color={statusColor(task.status)}>
                     <StatusText status={task.status} />
-                    </Typography>}
-                   
-                  </p>} />
+                  </Typography>}
+                </p>} />
             ))}
           </StyledTreeItem>)}
       </StyledTreeItem>}

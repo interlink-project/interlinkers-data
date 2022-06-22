@@ -6,8 +6,7 @@ import { getLanguage, setLanguage } from '../translations/i18n';
 
 const initialSettings = {
   loaded: false,
-  showHelp: true,
-  helpOpen: false,
+  showHelp: false,
   direction: 'ltr',
   theme: THEMES.LIGHT.key,
   themeData: createCustomTheme({
@@ -128,7 +127,6 @@ export const SettingsProvider = (props) => {
 
   useEffect(() => {
     const newSettings = restoreSettings() || initialSettings;
-    newSettings.helpOpen = false
     fetch("/static/customization/settings.json")
       .then(r => r.json())
       .then(json => {
@@ -154,12 +152,6 @@ export const SettingsProvider = (props) => {
         paletteCustomData: settings.themeData.paletteCustomData
       })
       newSettings.loaded = true
-      setSettings(newSettings);
-      storeSettings(newSettings);
-    }
-
-    if ("helpOpen" in updatedSettings && settings.helpOpen !== updatedSettings.helpOpen) {
-      newSettings.helpOpen = updatedSettings.helpOpen
       setSettings(newSettings);
       storeSettings(newSettings);
     }
