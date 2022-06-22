@@ -1,4 +1,4 @@
-import { Avatar, Box, Button, Chip, Container, Divider, Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@material-ui/core';
+import { Avatar, AvatarGroup, Box, Button, Chip, Container, Divider, Grid, Paper, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@material-ui/core';
 import { Add } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import AuthGuardSkeleton from 'components/guards/AuthGuardSkeleton';
@@ -14,24 +14,32 @@ import useAuth from '../../../hooks/useAuth';
 import CoproductionprocessCreate from './CoproductionProcessCreate';
 import { Folder } from '@material-ui/icons';
 import CentricCircularProgress from 'components/CentricCircularProgress';
-import { StatusChip } from 'components/dashboard/assets/Icons';
+import { StatusChip, WarningIcon } from 'components/dashboard/assets/Icons';
 import HelpAlert from 'components/HelpAlert';
 import SearchBox from 'components/SearchBox';
 import moment from 'moment';
+import TeamAvatar from 'components/TeamAvatar';
 
 
-function ProcessRow({ process }) {
+function ProcessRow({ process, t }) {
   const navigate = useNavigate();
   return (
     <TableRow key={process.id} hover sx={{ '& > *': { borderBottom: 'unset' }, cursor: 'pointer' }} onClick={() => navigate(`/dashboard/coproductionprocesses/${process.id}/overview`)}>
-      <TableCell align="center">
-        {process.logotype_link ? <Avatar sx={{ height: "25px", width: "25px" }} variant="rounded" src={process.logotype_link} /> : <Folder />}
+      <TableCell align="center" >
+        <Box style={{ justifyContent: "center", display: "flex", }}>
+          {process.logotype_link ? <Avatar sx={{ height: "25px", width: "25px" }} variant="rounded" src={process.logotype_link} /> : <Folder />}
+        </Box>
       </TableCell>
       <TableCell align="center" component="th" scope="row">
         <b>{process.name}</b>
       </TableCell>
       <TableCell align="center">{moment(process.created_at).fromNow()}</TableCell>
       <TableCell align="center"><StatusChip status={"in_progress"} /></TableCell>
+      <TableCell align="center">
+        <AvatarGroup max={5} variant="rounded">
+          {process.teams.length > 0 ? process.teams.map(team => <TeamAvatar sx={{height: 25, width: 25}} key={team.id} team={team} />) : <Stack direction="row" alignItems="center"><WarningIcon /><Typography sx={{ml: 2}}>{t("No teams")}</Typography></Stack>}
+        </AvatarGroup>
+      </TableCell>
       <TableCell align="center">
         {process.user_participation.map(p => <Chip key={p} label={p} />)}
       </TableCell>
@@ -131,13 +139,14 @@ const MyWorkspace = () => {
                       <TableCell align="center">{t("Name")}</TableCell>
                       <TableCell align="center">{t("Created")}</TableCell>
                       <TableCell align="center">{t("Status")}</TableCell>
+                      <TableCell align="center">{t("Teams")}</TableCell>
                       <TableCell align="center">{t("Your participation in the process")}</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
                     {processes.length > 0 && processes.map((process) => (
                       <React.Fragment key={process.id}>
-                        <ProcessRow process={process} />
+                        <ProcessRow process={process} t={t} />
                       </React.Fragment>
                     ))}
                   </TableBody>
@@ -150,7 +159,7 @@ const MyWorkspace = () => {
                       {t("Empty")}
                     </Typography>
                     <Button onClick={() => setCoproductionProcessCreatorOpen(true)} sx={{ my: 3, width: 400 }} variant="contained" size="small">{t("Create a new co-production process")}</Button>
-                    
+
                   </Box>
                 </Paper>}
 

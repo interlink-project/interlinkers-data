@@ -69,17 +69,17 @@ const HelpPopover = () => {
       <Popover
         anchorEl={anchorRef.current}
         anchorOrigin={{
-          horizontal: 'center',
+          horizontal: 'left',
           vertical: 'bottom',
         }}
         keepMounted
         onClose={handleClose}
         open={open}
         PaperProps={{
-          sx: { width: 320 },
+          sx: { width: 200 },
         }}
       >
-        <Box sx={{ px: 4, justifyContent: "center", my: 2 }}>
+        {/*<Box sx={{ px: 4, justifyContent: "center", my: 2 }}>
           <FormControlLabel
             control={
               <Switch
@@ -93,7 +93,7 @@ const HelpPopover = () => {
             label={t("Show contextual help")}
           />
         </Box>
-        <Divider sx={{my: 1}}>{t("or")}</Divider>
+          <Divider sx={{my: 1}}>{t("or")}</Divider>*/}
 
         <Box sx={{ my: 2, mx: 2 }}>
           <Button startIcon={<OpenInNew />} fullWidth variant="text" onClick={() => window.open(`/docs/${getLanguage()}/`, "_blank")}>{t("Open user manual")}</Button>

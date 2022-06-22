@@ -1,6 +1,7 @@
 import { Avatar, Box, Button, Chip, Divider, Drawer, Skeleton, Stack, Typography } from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { AccountTree, ArrowBack, Dashboard, Folder, Group as GroupIcon, Settings, Timeline } from '@material-ui/icons';
+import { StatusChip } from 'components/dashboard/assets/Icons';
 import useDependantTranslation from 'hooks/useDependantTranslation';
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
@@ -74,6 +75,8 @@ const ProcessSidebar = (props) => {
       }}
     >
       <Scrollbar options={{ suppressScrollX: true }}>
+        {false && <Button startIcon={<ArrowBack />} variant="outlined" fullWidth size="large" onClick={() => navigate("/dashboard")} />}
+
         <Stack
           direction="column"
           justifyContent="center"
@@ -84,9 +87,8 @@ const ProcessSidebar = (props) => {
 
           {!loading && !updating ? <Avatar variant="rounded" sx={{ width: "80px", height: "80px" }} src={process && process.logotype_link}>{(!process || !process.logotype_link) && <Folder />}  </Avatar> : <Skeleton variant="rounded" sx={{ m: 1, width: "80px", height: "80px" }} />}
           <Typography sx={{ textAlign: "center", width: "100%" }} variant="h6">{!loading && !updating && process ? process.name : <Skeleton />}</Typography>
-          {!loading && !updating && process ? <Chip color="primary" label={t("In progress")} /> : <Skeleton sx={{ width: 80, height: 45, m: 0, p: 0 }} />}
-          {!loading && !updating && process ? <Chip color="secondary" label={LANGUAGES.find(el => el.value === process.language).label} /> : <Skeleton sx={{ width: 80, height: 45, m: 0, p: 0 }} />}
-          <Button startIcon={<ArrowBack />} variant="outlined" fullWidth size="large" onClick={() => navigate("/dashboard")} />
+          {!loading && !updating && process ? <StatusChip status={"in_progress"} /> : <Skeleton sx={{ width: 80, height: 45, m: 0, p: 0 }} />}
+          {!loading && !updating && process ? <Chip size="small" color="default" label={LANGUAGES.find(el => el.value === process.language).label} /> : <Skeleton sx={{ width: 80, height: 45, m: 0, p: 0 }} />}
 
         </Stack>
         <Divider />

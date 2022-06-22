@@ -3,26 +3,26 @@ import {
 } from '@material-ui/core';
 import useMounted from 'hooks/useMounted';
 import { useEffect, useState } from 'react';
-import { usersApi } from "__api__";
+import { teamsApi } from "__api__";
 
-const UserAvatar = ({ id = null, user = null, sx = {} }) => {
+const TeamAvatar = ({ id = null, team = null, sx = {} }) => {
     const mounted = useMounted();
     const [data, setData] = useState(null)
 
     useEffect(() => {
-        if (id && !user) {
-            usersApi.get(id).then(res => {
+        if (id && !team) {
+            teamsApi.get(id).then(res => {
                 if (mounted.current) {
                     setData(res.data)
                 }
             })
         }
-        if (user) {
-            setData(user)
+        if (team) {
+            setData(team)
         }
 
-    }, [id, user])
+    }, [id, team])
 
-    return <Avatar title={data ? data.full_name : "..."} src={data ? data.picture : ""} sx={sx} />
+    return <Avatar title={data ? data.name : "..."} src={data ? data.logotype_link : ""} sx={sx} />
 }
-export default UserAvatar;
+export default TeamAvatar;

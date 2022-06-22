@@ -2,7 +2,7 @@ import {
     Chip,
     IconButton
 } from '@material-ui/core';
-import { AccessTime, Check, Done, Loop } from '@material-ui/icons';
+import { AccessTime, Check, Done, Loop, Warning } from '@material-ui/icons';
 import { useCustomTranslation } from 'hooks/useDependantTranslation';
 import i18n from 'translations/i18n';
 
@@ -11,6 +11,8 @@ export const InProgressIcon = () => <Loop fontSize="small" sx={{ color: statusCo
 export const FinishedIcon = () => <Check fontSize="small" sx={{ color: statusColor("finished") }} />
 
 export const AwaitingIcon = () => <AccessTime fontSize="small" sx={{ color: statusColor("awaiting") }} />
+
+export const WarningIcon = () => <Warning fontSize="small" sx={{ color: "#f0ad4e" }} />
 
 export const DoneIcon = () => <Done fontSize="small" sx={{ color: "#4caf50" }} />
 
