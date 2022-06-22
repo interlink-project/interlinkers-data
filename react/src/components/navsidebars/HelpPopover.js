@@ -134,7 +134,7 @@ const HelpPopover = () => {
           <Button startIcon={<OpenInNew />} fullWidth variant="text" onClick={() => setOpenDialog({ url: `https://docs.google.com/forms/d/e/1FAIpQLSdUnVLnP_OB9_ITUZavoaJc_Z4JGBAdd1A_-3b9RMyVTJKLAQ/viewform?embedded=true&entry.1527029454=${ENVIRONMENTS[window.location.host]}`, title: t("Feedback form") })}>{t("Feedback form")}</Button>
         </Box>
         <Box sx={{ my: 2, mx: 2 }}>
-          <Button startIcon={<OpenInNew />} fullWidth variant="text" onClick={() => setOpenDialog({ url: `https://docs.google.com/forms/d/e/1FAIpQLScCTd6PaaryBFllDuc4Y389UkLai5YHAm55ClezXW466C89WA/viewform?embedded=true&entry.1527029454=${ENVIRONMENTS[window.location.host]}`, title: t("Support form") })}>{t("Support form")}</Button>
+          <Button startIcon={<OpenInNew />} fullWidth variant="text" onClick={() => window.open(`https://docs.google.com/forms/d/e/1FAIpQLScCTd6PaaryBFllDuc4Y389UkLai5YHAm55ClezXW466C89WA/viewform?usp=pp_url&entry.1527029454=${ENVIRONMENTS[window.location.host]}`, "_blank")}>{t("Support form")}</Button>
         </Box>
         
       </Popover>

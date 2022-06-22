@@ -65,15 +65,15 @@ const Organizations = () => {
   const [organizationLoading, setOrganizationLoading] = React.useState(false);
   const [searchValue, setSearchValue] = React.useState("");
 
-  const { isAuthenticated } = useAuth();
   const dispatch = useDispatch();
   const mounted = useMounted();
 
+  const {isAuthenticated} = useAuth()
+
   const getOrganizationsData = React.useCallback(async (search) => {
-    if (isAuthenticated) {
-      dispatch(getOrganizations(search))
-    }
-  }, [isAuthenticated, mounted]);
+    dispatch(getOrganizations(search))
+
+  }, [mounted]);
 
   React.useEffect(() => {
     var delayDebounceFn
@@ -137,7 +137,7 @@ const Organizations = () => {
                 </Typography>
               </Grid>
               <Grid item>
-                <LoadingButton onClick={() => setOrganizationCreatorOpen(true)} loading={loadingOrganizations} fullWidth variant="contained" sx={{ textAlign: "center", mt: 1, mb: 2 }} startIcon={<Add />} size="small">
+                <LoadingButton onClick={() => setOrganizationCreatorOpen(true)} disabled={!isAuthenticated} loading={loadingOrganizations} fullWidth variant="contained" sx={{ textAlign: "center", mt: 1, mb: 2 }} startIcon={<Add />} size="small">
                   {t("Create new organization")}
                 </LoadingButton>
               </Grid>

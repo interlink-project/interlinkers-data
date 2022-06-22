@@ -108,6 +108,7 @@ const OrganizationProfile = ({ organizationId, onChanges }) => {
     const [creatingTeam, setCreatingTeam] = useState(false);
     const [profileLanguage, setProfileLanguage] = useState(getLanguage())
 
+    const { isAuthenticated } = useAuth()
     const mounted = useMounted();
     const { t } = useDependantTranslation()
 
@@ -326,7 +327,7 @@ const OrganizationProfile = ({ organizationId, onChanges }) => {
                     </TableHead>
                     <TableBody>
                         {teams && teams.map((team) => (
-                            <TableRow sx={{ cursor: 'pointer' }} key={team.id} onClick={() => setSelectedTeam(team)} hover>
+                            <TableRow sx={{ cursor: isAuthenticated ? 'pointer': '' }} key={team.id} onClick={() => isAuthenticated && setSelectedTeam(team)} hover={isAuthenticated}>
                                 <TableCell align="center">
                                     <Stack alignItems="center" direction="row" spacing={1}>
                                         {team.logotype_link ? <Avatar sx={{ height: "25px", width: "25px" }} variant="rounded" src={team.logotype_link} /> : <People />}
