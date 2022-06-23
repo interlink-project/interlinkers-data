@@ -46,7 +46,6 @@ const SettingsTab = () => {
             aim: process.aim || "",
             idea: process.idea || "",
             challenges: process.challenges || "",
-            submit: null
         })
     }, [editMode, process]);
 

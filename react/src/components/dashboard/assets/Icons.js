@@ -60,7 +60,7 @@ export const StatusChip = ({ status }) => {
     switch (status) {
         case 'awaiting':
             label = i18n.t("Awaiting")
-            color = "light"
+            color = "default"
             break;
 
         case 'in_progress':
@@ -72,6 +72,10 @@ export const StatusChip = ({ status }) => {
             label = i18n.t("Finished")
             color = "primary"
             break;
+        
+        default:
+            label = status
+            color = "default"
     }
 
     return <Chip label={label} color={color} size="small" />
