@@ -4,9 +4,9 @@ import UserSearch from '../coproductionprocesses/Tabs/Team/UserSearch';
 import UserRow from './UserRow';
 
 
-const UsersList = ({ users, searchOnOrganization = null, onSearchResultClick = null, getActions = null, disableContainer = true, disableHeader = true, showLastLogin = true}) => {
+const UsersList = ({ users, size = "medium", searchOnOrganization = null, onSearchResultClick = null, getActions = null, disableContainer = true, disableHeader = true, showLastLogin = true}) => {
     const { t } = useTranslation()
-    const table = <Table>
+    const table = <Table size={size}>
         {!disableHeader && <TableHead>
             <TableRow>
                 <TableCell align="center"></TableCell>

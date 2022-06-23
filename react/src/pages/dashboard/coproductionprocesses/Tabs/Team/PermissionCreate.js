@@ -3,6 +3,7 @@ import { KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import useMounted from 'hooks/useMounted';
 import OrganizationsList from 'pages/dashboard/organizations/OrganizationsList';
+import UsersList from 'pages/dashboard/organizations/UsersList';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { permissionsList } from 'utils/someCommonTranslations';
@@ -42,16 +43,27 @@ const PermissionCreate = ({ open, setOpen, loading, setLoading, onCreate, treeit
     })
   };
 
+  const getOrganizations = () => {
+    setLoadingOrganizations(true)
+    organizationsApi.getMulti({ search: searchValue }).then(res => {
+      setOrganizations(res)
+      setLoadingOrganizations(false)
+    })
+  }
+
   useEffect(() => {
-    _setSelectedTeam(null)
-    if (open && mounted) {
-      setLoadingOrganizations(true)
-      organizationsApi.getMulti().then(res => {
-        setOrganizations(res)
-        setLoadingOrganizations(false)
-      })
+    var delayDebounceFn
+    if (open && mounted.current) {
+      delayDebounceFn = setTimeout(() => {
+        getOrganizations()
+      }, searchValue ? 800 : 0)
     }
-  }, [open, mounted])
+    return () => {
+      if (delayDebounceFn) {
+        clearTimeout(delayDebounceFn)
+      }
+    }
+  }, [open, mounted, searchValue])
 
   const handleClose = () => {
     setOpen(false);
@@ -78,28 +90,30 @@ const PermissionCreate = ({ open, setOpen, loading, setLoading, onCreate, treeit
           {activeStep === 0 && <OrganizationsList searchValue={searchValue} setSearchValue={setSearchValue} organizations={organizations} loading={loadingOrganizations} onTeamClick={setSelectedTeam} />}
 
           {activeStep === 1 && selectedTeam && <>
-          <Card sx={{p: 1}}>
-          <CardHeader
-              avatar={<Avatar
-                alt={t("Team logotype")}
-                src={selectedTeam.logotype_link}
-                variant='rounded'
-              >
-                {selectedTeam.name}
-              </Avatar>}
-              title={selectedTeam.name}
-              subheader={selectedTeam.description}
-            />
-          </Card>
-            
+            <Card sx={{ p: 1 }}>
+              <CardHeader
+                avatar={<Avatar
+                  alt={t("Team logotype")}
+                  src={selectedTeam.logotype_link}
+                  variant='rounded'
+                >
+                  {selectedTeam.name}
+                </Avatar>}
+                title={selectedTeam.name}
+                subheader={selectedTeam.description}
+              />
+            </Card>
+            <UsersList size="small" disableContainer={false} users={selectedTeam.users} showLastLogin={false} />
+
 
             {Object.keys(permissions).map(key => <Stack key={key} sx={{ mt: 3 }} spacing={1} direction="row" alignItems="center">
-              <Typography variant="body2">{another(key)}</Typography>
-              <Switch checked={permissions[key]} onChange={(event) => setPermissions({
+            <Switch checked={permissions[key]} onChange={(event) => setPermissions({
                 ...permissions,
                 [key]: event.target.checked
               })
               } />
+              <Typography variant="body2">{another(key)}</Typography>
+              
             </Stack>)}
           </>}
 

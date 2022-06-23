@@ -45,8 +45,7 @@ const PhaseStep = ({ processId, phase, t }) => {
                         <br />
                         
                         <StatusChip status={objective.status} />
-
-                        </Box>
+                    </Box>
                 </StepLabel>
             </Step>)}
             </Stepper>
