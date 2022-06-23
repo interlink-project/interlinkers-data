@@ -1,5 +1,5 @@
-import { Avatar, Box, Button, CircularProgress, Dialog, DialogContent, DialogTitle, Grid, IconButton, Input, ListItemIcon, ListItemText, Menu, MenuItem, Paper, Stack, Tab, Tabs, TextField, Typography } from '@material-ui/core';
-import { Close, Delete, Edit, MoreVert, Save } from '@material-ui/icons';
+import { Avatar, Box, Button, CircularProgress, Dialog, DialogContent, DialogTitle, Grid, IconButton, Input, Paper, Stack, Tab, Tabs, TextField, Typography } from '@material-ui/core';
+import { Close, Delete, Edit, Save } from '@material-ui/icons';
 import ConfirmationButton from 'components/ConfirmationButton';
 import { OrganizationChip } from 'components/dashboard/assets/Icons';
 import useDependantTranslation from 'hooks/useDependantTranslation';
@@ -7,16 +7,6 @@ import useMounted from 'hooks/useMounted';
 import { useEffect, useState } from 'react';
 import { teamsApi } from '__api__';
 import UsersList from './UsersList';
-
-
-const MyMenuItem = ({ onClick, text, icon, id, loading = false }) => {
-  return <MenuItem aria-describedby={id} onClick={onClick}>
-    <ListItemIcon>
-      {loading === id ? <CircularProgress /> : icon}
-    </ListItemIcon>
-    <ListItemText>{text}</ListItemText>
-  </MenuItem>
-}
 
 const TeamProfile = ({ open, setOpen, teamId, onChanges }) => {
   const [editMode, setEditMode] = useState(false)
@@ -156,19 +146,6 @@ const TeamProfile = ({ open, setOpen, teamId, onChanges }) => {
     setTabValue(newValue);
   };
 
-  const [anchorEl, setAnchorEl] = useState(null);
-  const actionsOpen = Boolean(anchorEl);
-
-  const handleActionClose = () => {
-    setAnchorEl(null);
-  };
-
-  const handleActionsClick = (event) => {
-    event.stopPropagation();
-    event.preventDefault();
-    setAnchorEl(event.currentTarget);
-  };
-
   return (<Dialog open={open} onClose={handleClose} fullWidth maxWidth="lg">
     <DialogTitle sx={{ m: 0, p: 2, backgroundColor: "background.default" }}>
       <IconButton
@@ -280,48 +257,30 @@ const TeamProfile = ({ open, setOpen, teamId, onChanges }) => {
             <Tab value="members" label={t("Members") + ` (${team.users.length})`} />
             <Tab value="administrators" label={t("Administrators") + ` (${team.administrators_ids.length})`} />
           </Tabs>
-          {tabValue === "members" && <UsersList users={team.users} searchOnOrganization={isAdmin && team.organization_id} useContainer={false} onSearchResultClick={addUserToTeam} getActions={(user) => (isAdmin && <>
-            <IconButton aria-label="settings" id="basic-button"
-              aria-controls="basic-menu"
-              aria-haspopup="true"
-              aria-expanded={open ? 'true' : undefined}
-              onClick={handleActionsClick}
-            >
-              <MoreVert />
-            </IconButton>
-            <Menu
-              id="basic-menu"
-              anchorEl={anchorEl}
-              open={actionsOpen}
-              onClose={handleActionClose}
-              MenuListProps={{
-                'aria-labelledby': 'basic-button',
-              }}
-            >
-              <MyMenuItem key={`${user.id}-remove-action`} id="remove" onClick={() => removeUserFromTeam(user)} text={t("Remove {{what}}")} icon={<Delete />} />
-            </Menu>
-          </>)} />}
-          {tabValue === "administrators" && <UsersList users={team.administrators} searchOnOrganization={isAdmin && team.organization_id} useContainer={false} onSearchResultClick={handleAdministratorAdd} getActions={(user) => (isAdmin && <>
-            <IconButton aria-label="settings" id="basic-button"
-              aria-controls="basic-menu"
-              aria-haspopup="true"
-              aria-expanded={open ? 'true' : undefined}
-              onClick={handleActionsClick}
-            >
-              <MoreVert />
-            </IconButton>
-            <Menu
-              id="basic-menu"
-              anchorEl={anchorEl}
-              open={actionsOpen}
-              onClose={handleActionClose}
-              MenuListProps={{
-                'aria-labelledby': 'basic-button',
-              }}
-            >
-              <MyMenuItem key={`${user.id}-remove-admin-action`} id="remove" onClick={handleAdministratorRemove} text={t("Remove {{what}}")} icon={<Delete />} />
-            </Menu>
-          </>)} />}
+          {tabValue === "members" && <UsersList users={team.users} searchOnOrganization={isAdmin && team.organization_id} disableHeader={false} onSearchResultClick={addUserToTeam} getActions={(user) => isAdmin && (
+            [
+              {
+                id: `${user.id}-remove-action`,
+                onClick: removeUserFromTeam,
+                text: t("Remove {{what}}"),
+                icon: <Delete />
+              }
+            ]
+          )} />}
+
+          {tabValue === "administrators" && <UsersList users={team.administrators} searchOnOrganization={isAdmin && team.organization_id} disableHeader={false} onSearchResultClick={handleAdministratorAdd} getActions={(user) => isAdmin && (
+            [
+              {
+                id: `${user.id}-remove-admin-action`,
+                onClick: handleAdministratorRemove,
+                text: t("Remove {{what}}"),
+                icon: <Delete />,
+                disabled: team.administrators_ids.length === 1
+              }
+            ]
+          )} />}
+
+
 
         </Grid>
       </Grid> : <Box

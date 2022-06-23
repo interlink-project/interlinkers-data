@@ -2,7 +2,7 @@
 import { Box, Popover, Typography } from '@material-ui/core';
 import React, { useState } from 'react';
 
-const ConfirmationButton = ({ text, Actionator, ButtonComponent, onClick }) => {
+const ConfirmationButton = ({ text, Actionator, ButtonComponent, onClick}) => {
 
     const [popoverAnchorEl, setPopoverAnchorEl] = useState(null);
 

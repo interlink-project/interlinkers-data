@@ -1,5 +1,5 @@
-import { Alert, Avatar, Box, Button, Chip, CircularProgress, Grid, IconButton, Input, ListItemIcon, ListItemText, Menu, MenuItem, Skeleton, Stack, Tab, Table, TableBody, TableCell, TableHead, TableRow, Tabs, TextField, Typography } from '@material-ui/core';
-import { Add, Delete, Edit, MoreVert, People, Save } from '@material-ui/icons';
+import { Alert, Avatar, Box, Button, Chip, Grid, IconButton, Input, Skeleton, Stack, Tab, Table, TableBody, TableCell, TableHead, TableRow, Tabs, TextField, Typography } from '@material-ui/core';
+import { Add, Delete, Edit, People, Save } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import CentricCircularProgress from 'components/CentricCircularProgress';
 import ConfirmationButton from 'components/ConfirmationButton';
@@ -15,14 +15,6 @@ import { organizationsApi } from '__api__';
 import TeamCreate from './TeamCreate';
 import UsersList from './UsersList';
 
-const MyMenuItem = ({ onClick, text, icon, id, loading = false }) => {
-    return <MenuItem aria-describedby={id} onClick={onClick}>
-        <ListItemIcon>
-            {loading === id ? <CircularProgress /> : icon}
-        </ListItemIcon>
-        <ListItemText>{text}</ListItemText>
-    </MenuItem>
-}
 
 const OrganizationProfile = ({ organizationId, onChanges = null, onTeamClick = null }) => {
     const [editMode, setEditMode] = useState(false)
@@ -147,21 +139,7 @@ const OrganizationProfile = ({ organizationId, onChanges = null, onTeamClick = n
     const handleTabChange = (event, newValue) => {
         setTabValue(newValue);
     };
-
-
-    const [anchorEl, setAnchorEl] = useState(null);
-    const open = Boolean(anchorEl);
-
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
-
-    const handleActionsClick = (event) => {
-        event.stopPropagation();
-        event.preventDefault();
-        setAnchorEl(event.currentTarget);
-    };
-
+    
     const WHOCAN_TRANSLATIONS = whoCanCreateTeams(t)
 
     return (<Box>
@@ -328,28 +306,16 @@ const OrganizationProfile = ({ organizationId, onChanges = null, onTeamClick = n
                         <LoadingButton loading={loadingTeams || creatingTeam} sx={{ mt: 3 }} size="small" variant="contained" startIcon={<Add />} onClick={() => setOpenTeamCreator(true)} disabled={!canCreateTeams}>{t("Create new team")}</LoadingButton>
                     </Box>
                 </>}
-                {tabValue === "administrators" && <UsersList useContainer={false} useHeader={false} searchOnOrganization={isAdmin && organization.id} users={organization.administrators} onSearchResultClick={isAdmin && handleAdministratorAdd} getActions={(user) => (
-                    isAdmin && <>
-                        <IconButton aria-label="settings" id="basic-button"
-                            aria-controls="basic-menu"
-                            aria-haspopup="true"
-                            aria-expanded={open ? 'true' : undefined}
-                            onClick={handleActionsClick}
-                        >
-                            <MoreVert />
-                        </IconButton>
-                        <Menu
-                            id="basic-menu"
-                            anchorEl={anchorEl}
-                            open={open}
-                            onClose={handleClose}
-                            MenuListProps={{
-                                'aria-labelledby': 'basic-button',
-                            }}
-                        >
-                            <MyMenuItem key={`${user.id}-remove-action`} id="remove" onClick={handleAdministratorRemove} text={t("Remove {{what}}")} icon={<Delete />} />
-                        </Menu>
-                    </>
+                {tabValue === "administrators" && <UsersList searchOnOrganization={isAdmin && organization.id} users={organization.administrators} onSearchResultClick={isAdmin && handleAdministratorAdd} getActions={(user) => isAdmin && (
+                    [
+                        {
+                            id: `${user.id}-remove-action`,
+                            onClick: handleAdministratorRemove,
+                            text: t("Remove {{what}}"),
+                            icon: <Delete />,
+                            disabled: organization.administrators_ids.length === 1
+                        }
+                    ]
                 )} />}
             </Grid>
         </Grid> : <CentricCircularProgress />

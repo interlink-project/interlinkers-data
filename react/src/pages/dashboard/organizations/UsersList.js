@@ -4,28 +4,28 @@ import UserSearch from '../coproductionprocesses/Tabs/Team/UserSearch';
 import UserRow from './UserRow';
 
 
-const UsersList = ({ users, searchOnOrganization = null, onSearchResultClick = null, getActions, useContainer = true, useHeader = true }) => {
+const UsersList = ({ users, searchOnOrganization = null, onSearchResultClick = null, getActions = null, disableContainer = true, disableHeader = true, showLastLogin = true}) => {
     const { t } = useTranslation()
     const table = <Table>
-        {useHeader && <TableHead>
+        {!disableHeader && <TableHead>
             <TableRow>
                 <TableCell align="center"></TableCell>
                 <TableCell align="center">{t("Name")}</TableCell>
                 <TableCell align="center">{t("Email")}</TableCell>
-                <TableCell align="center">{t("Last login")}</TableCell>
-                <TableCell align="center"></TableCell>
+                {showLastLogin && <TableCell align="center">{t("Last login")}</TableCell>}
+                {getActions && <TableCell align="center"></TableCell>}
             </TableRow>
         </TableHead>}
         <TableBody>
-            {users.length > 0 && users.map((user) => <UserRow key={user.id} user={user} t={t} actions={getActions(user)} />)}
+            {users.length > 0 && users.map((user) => <UserRow key={user.id} user={user} t={t} actions={getActions && getActions(user)} showLastLogin={showLastLogin}/>)}
         </TableBody>
     </Table>
 
     return <>
-        {useContainer ? <TableContainer component={Paper}>
+        {!disableContainer ? <TableContainer component={Paper}>
             {table}
         </TableContainer> : table}
-        {searchOnOrganization && onSearchResultClick && <UserSearch exclude={users.map(user => user.id)} organization_id={searchOnOrganization} onClick={onSearchResultClick} />}
+        {onSearchResultClick && <UserSearch exclude={users.map(user => user.id)} organization_id={searchOnOrganization} onClick={onSearchResultClick} />}
     </>
 };
 

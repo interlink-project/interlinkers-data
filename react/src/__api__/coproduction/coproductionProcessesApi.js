@@ -40,6 +40,16 @@ class CoproductionProcessesApi extends GeneralApi {
       return res.data;
     }
   }
+
+  async clearSchema(id) {
+    if (id) {
+      const res = await axiosInstance.post(`/${this.url}/${id}/clear_schema`);
+      console.log('clear schema', res.data);
+      return res.data;
+    }
+  }
+
+  
 }
 
 export const coproductionProcessesApi = new CoproductionProcessesApi();
