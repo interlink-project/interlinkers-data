@@ -12,60 +12,63 @@ import PermissionCreate from 'pages/dashboard/coproductionprocesses/Tabs/Team/Pe
 import TeamProfile from 'pages/dashboard/organizations/TeamProfile';
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { getTree } from 'slices/process';
+import { getProcess, getTree } from 'slices/process';
 import { tree_items_translations } from 'utils/someCommonTranslations';
+import { permissionsApi } from '__api__';
 import { OrganizationChip } from '../assets/Icons';
 
-const PermissionRow = ({ permission, showOnlyMine, setSelectedTeam, userIsAdmin = false, admin = false }) => {
+const PermissionRow = ({ permission, showOnlyMine, setSelectedTeam, isAdministrator = false, onChanges }) => {
   const { user } = useAuth()
   const { t } = useDependantTranslation()
+  const dispatch = useDispatch()
 
   const handleDelete = () => {
     console.log("DELETE", permission.id)
+    permissionsApi.delete(permission.id).then(onChanges)
   }
 
   return <TableRow hover>
-    <TableCell align="center">
-      {!admin && userIsAdmin && <ConfirmationButton
+    {isAdministrator && <TableCell align="center">
+      <ConfirmationButton
         key={`${permission.id}-delete-action`}
         Actionator={({ onClick }) => <IconButton onClick={onClick}>
           <Delete />
         </IconButton>}
         ButtonComponent={({ onClick }) => <LoadingButton sx={{ mt: 1 }} fullWidth variant='contained' color="error" onClick={onClick}>{t("Confirm deletion")}</LoadingButton>}
         onClick={handleDelete}
-        text={t("Are you sure?")} />}
+        text={t("Are you sure?")} />
 
-    </TableCell>
+    </TableCell>}
 
-    {!showOnlyMine && <TableCell align="center">
-      {!admin && <>{permission.user_id == user_id || user.teams_ids.includes(permission.team_id) ? <CheckOutlined style={{ color: green[500] }} /> : <Close style={{ color: red[500] }} />}</>}
+    {!showOnlyMine && !isAdministrator && <TableCell align="center">
+      {permission.user_id == user_id || user.teams_ids.includes(permission.team_id) ? <CheckOutlined style={{ color: green[500] }} /> : <Close style={{ color: red[500] }} />}
     </TableCell>}
     <TableCell align="center">
-      {!admin && <Button size="small" startIcon={<Avatar src={permission.team.logotype_link} />} onClick={() => setSelectedTeam(permission.team_id)} variant="contained">{permission.team && permission.team.name} {t("team")}</Button>}
+      <Button size="small" startIcon={<Avatar src={permission.team.logotype_link} />} onClick={() => setSelectedTeam(permission.team_id)} variant="contained">{permission.team && permission.team.name} {t("team")}</Button>
     </TableCell>
     <TableCell align="center">
-      {!admin && permission.team && <OrganizationChip type={permission.team.type} />}
+      {permission.team && <OrganizationChip type={permission.team.type} />}
     </TableCell>
     <TableCell align="center">
-      {admin || permission.access_assets_permission ? <CheckOutlined style={{ color: green[500] }} /> : <Close style={{ color: red[500] }} />}
+      {permission.access_assets_permission ? <CheckOutlined style={{ color: green[500] }} /> : <Close style={{ color: red[500] }} />}
     </TableCell>
     <TableCell align="center">
-      {admin || permission.create_assets_permission ? <CheckOutlined style={{ color: green[500] }} /> : <Close style={{ color: red[500] }} />}
+      {permission.create_assets_permission ? <CheckOutlined style={{ color: green[500] }} /> : <Close style={{ color: red[500] }} />}
     </TableCell>
     <TableCell align="center">
-      {admin || permission.delete_assets_permission ? <CheckOutlined style={{ color: green[500] }} /> : <Close style={{ color: red[500] }} />}
+      {permission.delete_assets_permission ? <CheckOutlined style={{ color: green[500] }} /> : <Close style={{ color: red[500] }} />}
     </TableCell>
     <TableCell align="center">
-      {admin || permission.edit_treeitem_permission ? <CheckOutlined style={{ color: green[500] }} /> : <Close style={{ color: red[500] }} />}
+      {permission.edit_treeitem_permission ? <CheckOutlined style={{ color: green[500] }} /> : <Close style={{ color: red[500] }} />}
     </TableCell>
     <TableCell align="center">
-      {admin || permission.delete_treeitem_permission ? <CheckOutlined style={{ color: green[500] }} /> : <Close style={{ color: red[500] }} />}
+      {permission.delete_treeitem_permission ? <CheckOutlined style={{ color: green[500] }} /> : <Close style={{ color: red[500] }} />}
     </TableCell>
 
   </TableRow>
 }
 
-const PermissionsTable = ({ language, processId, element, isAdministrator }) => {
+const PermissionsTable = ({ language, processId, onChanges, element, isAdministrator }) => {
   const [permissions, setPermissions] = React.useState([])
   const [selectedTeam, setSelectedTeam] = React.useState(null);
   const [showOnlyMine, _setShowOnlyMine] = React.useState(!isAdministrator);
@@ -115,8 +118,8 @@ const PermissionsTable = ({ language, processId, element, isAdministrator }) => 
       <Table aria-label="admins-table" size="small">
         <TableHead>
           <TableRow>
-            <TableCell align="center"><>{t("Actions")}</></TableCell>
-            {!showOnlyMine && <TableCell align="center"><>{t("Affects you")}       </></TableCell>}
+            {isAdministrator && <TableCell align="center"><>{t("Actions")}</></TableCell>}
+            {!showOnlyMine && !isAdministrator && <TableCell align="center"><>{t("Affects you")}       </></TableCell>}
             <TableCell align="center"><>{t("Team")}</></TableCell>
             <TableCell align="center"><>{t("Team role")}</></TableCell>
             <TableCell align="center"><>{t("access_assets_permission")}</></TableCell>
@@ -135,7 +138,7 @@ const PermissionsTable = ({ language, processId, element, isAdministrator }) => 
             </TableCell>
           </TableRow>
           {phasePermissions.length > 0 && phasePermissions.map((permission) => (
-            <PermissionRow showOnlyMine={showOnlyMine} key={permission.id} setSelectedTeam={setSelectedTeam} permission={permission} />
+            <PermissionRow showOnlyMine={showOnlyMine} key={permission.id} setSelectedTeam={setSelectedTeam} permission={permission} isAdministrator={isAdministrator} onChanges={onChanges} />
           ))}
           {(isObjective || isTask) && <>
             <TableRow>
@@ -146,7 +149,7 @@ const PermissionsTable = ({ language, processId, element, isAdministrator }) => 
               </TableCell>
             </TableRow>
             {objectivePermissions.length > 0 && objectivePermissions.map((permission) => (
-              <PermissionRow showOnlyMine={showOnlyMine} key={permission.id} setSelectedTeam={setSelectedTeam} permission={permission} />
+              <PermissionRow showOnlyMine={showOnlyMine} key={permission.id} setSelectedTeam={setSelectedTeam} permission={permission} isAdministrator={isAdministrator} onChanges={onChanges} />
             ))}
           </>}
           {isTask && <>
@@ -158,21 +161,11 @@ const PermissionsTable = ({ language, processId, element, isAdministrator }) => 
               </TableCell>
             </TableRow>
             {taskPermissions.length > 0 && taskPermissions.map((permission) => (
-              <PermissionRow showOnlyMine={showOnlyMine} key={permission.id} setSelectedTeam={setSelectedTeam} permission={permission} />
+              <PermissionRow showOnlyMine={showOnlyMine} key={permission.id} setSelectedTeam={setSelectedTeam} permission={permission} isAdministrator={isAdministrator} onChanges={onChanges} />
             ))}
           </>}
 
           {showOnlyMine && <>
-            {isAdministrator && <>
-              <TableRow>
-                <TableCell align="center" colSpan={colSpan}>
-                  <Typography variant="subtitle2" sx={{ my: 1 }}>
-                    {t("Permissions as administrator")}
-                  </Typography>
-                </TableCell>
-              </TableRow>
-              <PermissionRow setSelectedTeam={setSelectedTeam} admin />
-            </>}
             <TableRow>
               <TableCell align="center" colSpan={colSpan}>
                 <Typography variant="subtitle2" sx={{ my: 1, fontWeight: "bold" }}>
@@ -181,8 +174,6 @@ const PermissionsTable = ({ language, processId, element, isAdministrator }) => 
               </TableCell>
             </TableRow>
             <TableRow hover>
-              <TableCell align="center">
-              </TableCell>
               <TableCell align="center">
               </TableCell>
               <TableCell align="center">

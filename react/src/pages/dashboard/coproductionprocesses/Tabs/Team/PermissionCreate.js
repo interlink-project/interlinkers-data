@@ -1,4 +1,4 @@
-import { Button, Dialog, DialogActions, DialogContent, DialogTitle, MobileStepper, Stack, Switch, Typography } from '@material-ui/core';
+import { Avatar, Button, Card, CardHeader, Dialog, DialogActions, DialogContent, DialogTitle, MobileStepper, Stack, Switch, Typography } from '@material-ui/core';
 import { KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import useMounted from 'hooks/useMounted';
@@ -14,7 +14,7 @@ const PermissionCreate = ({ open, setOpen, loading, setLoading, onCreate, treeit
   const [selectedTeam, _setSelectedTeam] = useState(null);
   const [searchValue, setSearchValue] = useState("");
   const [activeStep, setActiveStep] = useState(0);
-  const [permissions, setPermissions] = useState(permissionsList.reduce((current, element) => ({...current, [element]: false}), {}));
+  const [permissions, setPermissions] = useState(permissionsList.reduce((current, element) => ({ ...current, [element]: false }), {}));
 
   const setSelectedTeam = (team) => {
     _setSelectedTeam(team)
@@ -70,14 +70,29 @@ const PermissionCreate = ({ open, setOpen, loading, setLoading, onCreate, treeit
 
   return (
     <>
-      <Dialog open={open} onClose={handleClose} fullWidth maxWidth="xl">
-        <DialogTitle sx={{bgcolor: "background.default"}}>
-          {activeStep === 0 ? t("Select the team to apply the permission") : t("Select the permissions for the team {{team_name}}", {team_name: selectedTeam && selectedTeam.name})}
+      <Dialog open={open} onClose={handleClose} fullWidth maxWidth={activeStep === 0 ? "xl" : "md"}>
+        <DialogTitle sx={{ bgcolor: "background.default" }}>
+          {activeStep === 0 ? t("Select the team to apply the permission") : t("Select the permissions for the team {{team_name}}", { team_name: selectedTeam && selectedTeam.name })}
         </DialogTitle>
-        <DialogContent sx={{bgcolor: "background.default"}}>
+        <DialogContent sx={{ bgcolor: "background.default" }}>
           {activeStep === 0 && <OrganizationsList searchValue={searchValue} setSearchValue={setSearchValue} organizations={organizations} loading={loadingOrganizations} onTeamClick={setSelectedTeam} />}
 
-          {activeStep === 1 && <>
+          {activeStep === 1 && selectedTeam && <>
+          <Card sx={{p: 1}}>
+          <CardHeader
+              avatar={<Avatar
+                alt={t("Team logotype")}
+                src={selectedTeam.logotype_link}
+                variant='rounded'
+              >
+                {selectedTeam.name}
+              </Avatar>}
+              title={selectedTeam.name}
+              subheader={selectedTeam.description}
+            />
+          </Card>
+            
+
             {Object.keys(permissions).map(key => <Stack key={key} sx={{ mt: 3 }} spacing={1} direction="row" alignItems="center">
               <Typography variant="body2">{another(key)}</Typography>
               <Switch checked={permissions[key]} onChange={(event) => setPermissions({
@@ -89,7 +104,7 @@ const PermissionCreate = ({ open, setOpen, loading, setLoading, onCreate, treeit
           </>}
 
         </DialogContent>
-        <DialogActions sx={{bgcolor: "background.default"}}>
+        <DialogActions sx={{ bgcolor: "background.default" }}>
           <MobileStepper
             variant="dots"
             steps={2}

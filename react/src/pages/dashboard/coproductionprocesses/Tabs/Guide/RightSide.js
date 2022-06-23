@@ -10,7 +10,7 @@ import useDependantTranslation from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getTree } from 'slices/process';
+import { getProcess, getTree } from 'slices/process';
 import { information_about_translations } from 'utils/someCommonTranslations';
 import * as Yup from 'yup';
 import { assetsApi } from '__api__';
@@ -66,7 +66,7 @@ const RightSide = ({ softwareInterlinkers }) => {
     };
 
     useEffect(() => {
-        if(!isTask && tabValue === "assets"){
+        if (!isTask && tabValue === "assets") {
             setTabValue('data')
         }
     }, [selectedTreeItem, tabValue])
@@ -76,6 +76,9 @@ const RightSide = ({ softwareInterlinkers }) => {
         view: selectedTreeItem.user_permissions_dict.access_assets_permission
     }
 
+    const updateProcess = () => {
+        dispatch(getProcess(process.id, false))
+    }
     return (
 
         selectedTreeItem && <Grid item xl={8} lg={8} md={6} xs={12}>
@@ -93,7 +96,7 @@ const RightSide = ({ softwareInterlinkers }) => {
                 </Tabs>
 
                 {tabValue === "data" && <TreeItemData language={process.language} processId={process.id} element={selectedTreeItem} />}
-                {tabValue === "permissions" && <PermissionsTable language={process.language} processId={process.id} element={selectedTreeItem} isAdministrator={isAdministrator} />}
+                {tabValue === "permissions" && <PermissionsTable onChanges={updateProcess} language={process.language} processId={process.id} element={selectedTreeItem} isAdministrator={isAdministrator} />}
                 {tabValue === "assets" && <>
                     <Box>
                         <Box sx={{ mt: 2 }}>
