@@ -1,23 +1,25 @@
-import { Dialog, DialogActions, DialogContent, DialogTitle, FormControl, InputLabel, MenuItem, Select, Stack, Switch, Typography } from '@material-ui/core';
-import { KeyboardArrowRight } from '@material-ui/icons';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, MobileStepper, Stack, Switch, Typography } from '@material-ui/core';
+import { KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import useMounted from 'hooks/useMounted';
+import OrganizationsList from 'pages/dashboard/organizations/OrganizationsList';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { permissionsApi, teamsApi } from '__api__';
+import { permissionsList } from 'utils/someCommonTranslations';
+import { organizationsApi, permissionsApi } from '__api__';
 
 const PermissionCreate = ({ open, setOpen, loading, setLoading, onCreate, treeitem }) => {
-  const [teams, setTeams] = useState([]);
-  const [selectedTeam, setSelectedTeam] = useState(null);
-  const [permissions, setPermissions] = useState(
-    {
-      "access_assets_permission": false,
-      "create_assets_permission": false,
-      "delete_assets_permission": false,
-      "edit_treeitem_permission": false,
-      "delete_treeitem_permission": false,
-    }
-  );
+  const [organizations, setOrganizations] = useState([]);
+  const [loadingOrganizations, setLoadingOrganizations] = useState(false);
+  const [selectedTeam, _setSelectedTeam] = useState(null);
+  const [searchValue, setSearchValue] = useState("");
+  const [activeStep, setActiveStep] = useState(0);
+  const [permissions, setPermissions] = useState(permissionsList.reduce((current, element) => ({...current, [element]: false}), {}));
+
+  const setSelectedTeam = (team) => {
+    _setSelectedTeam(team)
+    setActiveStep(1)
+  }
 
   const mounted = useMounted();
   const { t } = useTranslation()
@@ -41,10 +43,12 @@ const PermissionCreate = ({ open, setOpen, loading, setLoading, onCreate, treeit
   };
 
   useEffect(() => {
+    _setSelectedTeam(null)
     if (open && mounted) {
-      setSelectedTeam(null)
-      teamsApi.getMulti().then(res => {
-        setTeams(res)
+      setLoadingOrganizations(true)
+      organizationsApi.getMulti().then(res => {
+        setOrganizations(res)
+        setLoadingOrganizations(false)
       })
     }
   }, [open, mounted])
@@ -53,40 +57,59 @@ const PermissionCreate = ({ open, setOpen, loading, setLoading, onCreate, treeit
     setOpen(false);
   };
 
+  const handleNext = () => {
+    if (activeStep === 0) {
+      setActiveStep(1)
+    }
+    else {
+      handleSubmit()
+    }
+  }
+
+  const another = t
 
   return (
     <>
-      <Dialog open={open} onClose={handleClose} fullWidth>
-        <DialogTitle>{t("Create a permission for the tree item")}</DialogTitle>
-        <DialogContent>
-          <FormControl variant="standard" fullWidth sx={{ mt: 2 }}>
-            <InputLabel id="select-team">{t("Team")}</InputLabel>
-            <Select
-              fullWidth
-              labelId="select-team-label"
-              id="select-team"
-              value={selectedTeam && selectedTeam.id}
-              onChange={(event) => {
-                setSelectedTeam(teams.find(team => team.id === event.target.value));
-              }}
-            >
-              {teams.map(team => <MenuItem key={team.id} value={team.id}>{team.name}</MenuItem>)}
-            </Select>
-          </FormControl>
-              {Object.keys(permissions).map(key => <Stack key={key} sx={{mt: 3}} spacing={1} direction="row" alignItems="center">
-            <Typography variant="body2">{key}</Typography>
-            <Switch checked={permissions[key]} onChange={(event) => setPermissions({
-                ...permissions, 
+      <Dialog open={open} onClose={handleClose} fullWidth maxWidth="xl">
+        <DialogTitle sx={{bgcolor: "background.default"}}>
+          {activeStep === 0 ? t("Select the team to apply the permission") : t("Select the permissions for the team {{team_name}}", {team_name: selectedTeam && selectedTeam.name})}
+        </DialogTitle>
+        <DialogContent sx={{bgcolor: "background.default"}}>
+          {activeStep === 0 && <OrganizationsList searchValue={searchValue} setSearchValue={setSearchValue} organizations={organizations} loading={loadingOrganizations} onTeamClick={setSelectedTeam} />}
+
+          {activeStep === 1 && <>
+            {Object.keys(permissions).map(key => <Stack key={key} sx={{ mt: 3 }} spacing={1} direction="row" alignItems="center">
+              <Typography variant="body2">{another(key)}</Typography>
+              <Switch checked={permissions[key]} onChange={(event) => setPermissions({
+                ...permissions,
                 [key]: event.target.checked
               })
               } />
-          </Stack>)}
+            </Stack>)}
+          </>}
+
         </DialogContent>
-        <DialogActions sx={{ justifyContent: "center" }}>
-          <LoadingButton sx={{ my: 2 }} loading={loading} size="small" onClick={handleSubmit} disabled={!selectedTeam}>
-            {t("Create")}
-            <KeyboardArrowRight />
-          </LoadingButton>
+        <DialogActions sx={{bgcolor: "background.default"}}>
+          <MobileStepper
+            variant="dots"
+            steps={2}
+            position="static"
+            activeStep={activeStep}
+            sx={{ flexGrow: 1 }}
+            nextButton={
+              <LoadingButton size="small" onClick={handleNext} disabled={!selectedTeam} loading={loading}>
+                {activeStep === 1 ? t("Create") : t("Next")}
+                <KeyboardArrowRight />
+              </LoadingButton>
+            }
+            backButton={
+              <Button size="small" onClick={() => setActiveStep(0)} disabled={activeStep === 0}>
+                <KeyboardArrowLeft />
+                {t("Back")}
+              </Button>
+            }
+          />
+
         </DialogActions>
       </Dialog>
     </>

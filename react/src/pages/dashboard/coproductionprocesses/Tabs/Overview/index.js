@@ -1,4 +1,4 @@
-import { Alert, Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, Paper, Stack, Step, StepContent, StepLabel, Stepper, Typography } from '@material-ui/core';
+import { Alert, Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, Paper, Stack, Step, StepButton, StepContent, StepLabel, Stepper, Typography } from '@material-ui/core';
 import { TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineOppositeContent, TimelineSeparator } from '@material-ui/lab';
 import CreateSchema from 'components/dashboard/SchemaSelector';
 import { user_id } from 'contexts/CookieContext';
@@ -32,17 +32,12 @@ export default function TimeLine({ }) {
 
     const [activeStep, setActiveStep] = React.useState(0);
 
-    const handleNext = () => {
-        setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    };
-
-    const handleBack = () => {
-        setActiveStep((prevActiveStep) => prevActiveStep - 1);
-    };
-
-    const handleReset = () => {
-        setActiveStep(0);
-    };
+    React.useEffect(() => {
+        if(activeStep === 0 && process.aim && hasSchema)
+        {
+            setActiveStep(1)
+        }
+    }, [process])
 
     if (!process || !tree) {
         return
@@ -50,18 +45,20 @@ export default function TimeLine({ }) {
 
     return (<Box>
         <Paper sx={{ m: 2, p: 2, bgcolor: "background.default", overflow: "scroll" }}>
-            <Stepper activeStep={activeStep} orientation="horizontal" sx={{ mx: 3 }}>
+            <Stepper nonLinear activeStep={activeStep} orientation="horizontal" sx={{ mx: 3 }}>
                 <Step completed={hasSchema}>
-                    <StepLabel>
+                <StepButton color="inherit" onClick={() => setActiveStep(0)}>
                         {t("Process initialization")}
-                    </StepLabel>
+                    </StepButton>
                 </Step>
 
-                {tree.map((phase) => <Step key={phase.id} completed={phase.status === "finished"}>
-                    <StepLabel>
+                {tree.map((phase, index) => !phase.is_disabled && (
+                <Step key={phase.id} completed={phase.status === "finished"}>
+                    <StepButton color="inherit" onClick={() => setActiveStep(1 + index)}>
                         {t("Complete phase {{phase}}", { phase: phase.name })}
-                    </StepLabel>
-                </Step>)}
+                    </StepButton>
+                </Step>)
+                )}
 
                 {(!tree || tree.length === 0) && ["1", "2", "3", "4"].map((phase) => <Step key={phase}>
                     <StepLabel />
@@ -124,18 +121,11 @@ export default function TimeLine({ }) {
                 </Dialog>}
             </>
             }
-            {activeStep === 1 && <>
+            {activeStep > 1 && <>
                 <Stack direction="column" textAlign="center" sx={{ mt: 10 }}>
-                    <small>
-                        {t("Have you completed")}
-                    </small>
-                    <Button
-                        variant="contained"
-                        onClick={handleNext}
-                        sx={{ mt: 1, mr: 1 }}
-                    >
-                        {t("Set {{phase}} as completed", { phase: tree[activeStep - 1].name })}
-                    </Button>
+                    {tree[activeStep - 1].children.map(objective => {
+                        return objective.name
+                    })}
                 </Stack>
             </>}
         </Box>

@@ -41,7 +41,7 @@ function ProcessRow({ process, t }) {
         </AvatarGroup>
       </TableCell>
       <TableCell align="center">
-        {process.user_participation.map(p => <Chip key={p} label={p} />)}
+        {process.current_user_participation.map(p => <Chip key={p} label={p} />)}
       </TableCell>
     </TableRow>
   );

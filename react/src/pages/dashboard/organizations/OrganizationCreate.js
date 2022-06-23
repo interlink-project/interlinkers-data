@@ -10,6 +10,7 @@ import { useTranslation } from 'react-i18next';
 import { organizationsApi } from '__api__';
 import { getLanguage } from 'translations/i18n';
 import { ORG_TYPES } from 'constants';
+import { whoCanCreateTeams } from 'utils/someCommonTranslations';
 
 const OrganizationCreate = ({ open, setOpen, loading, setLoading, onCreate }) => {
   const [name, setName] = useState("");
@@ -31,18 +32,19 @@ const OrganizationCreate = ({ open, setOpen, loading, setLoading, onCreate }) =>
 
   const ORG_OPTIONS = ORG_TYPES(t)
 
+  const whocan_translations = whoCanCreateTeams(t)
 
   const WHO_CAN_CREATE_OPTIONS = [{
     value: "administrators",
-    label: t("Only the administrators of the organization")
+    label: whocan_translations["administrators"]
   },
   {
     value: "members",
-    label: t("Members of at least a team of the organization")
+    label: whocan_translations["members"]
   },
   {
     value: "anyone",
-    label: t("Anyone (the organization must be public)"),
+    label: whocan_translations["anyone"],
     disabled: !isPublic
   },
   ]
@@ -191,20 +193,20 @@ const OrganizationCreate = ({ open, setOpen, loading, setLoading, onCreate }) =>
             </Select>
           </FormControl>
           <FormControl variant="standard" fullWidth sx={{ mt: 3 }}>
-              <InputLabel id="select-type">{t("Default team type")}</InputLabel>
-              <Select
-                fullWidth
-                labelId="select-type-label"
-                id="select-type"
-                value={defaultTeamType}
-                onChange={(event) => {
-                  setDefaultTeamType(event.target.value);
-                }}
-                label={t("Default team type")}
-              >
-                {ORG_OPTIONS.map(lan => <MenuItem key={lan.value} value={lan.value}>{lan.label}</MenuItem>)}
-              </Select>
-            </FormControl>
+            <InputLabel id="select-type">{t("Default team type")}</InputLabel>
+            <Select
+              fullWidth
+              labelId="select-type-label"
+              id="select-type"
+              value={defaultTeamType}
+              onChange={(event) => {
+                setDefaultTeamType(event.target.value);
+              }}
+              label={t("Default team type")}
+            >
+              {ORG_OPTIONS.map(lan => <MenuItem key={lan.value} value={lan.value}>{lan.label}</MenuItem>)}
+            </Select>
+          </FormControl>
 
         </DialogContent>
         <DialogActions sx={{ justifyContent: "center" }}>

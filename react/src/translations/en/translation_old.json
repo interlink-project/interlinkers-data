@@ -84,5 +84,15 @@
   "Email address": "Email address",
   "User must have logged in first": "User must have logged in first",
   "Add user": "Add user",
-  "Add myself": "Add myself"
+  "Add myself": "Add myself",
+  "View resources": "View resources",
+  "Create resources": "Create resources",
+  "Delete resources": "Delete resources",
+  "Contact form": "Contact form",
+  "Usability form": "Usability form",
+  "Show contextual help": "Show contextual help",
+  "Have you completed": "Have you completed",
+  "Set {{phase}} as completed": "Set {{phase}} as completed",
+  "Create a permission for the tree item": "Create a permission for the tree item",
+  "Public team's information (and their members information) can be accessed by any member of the organization. If the organization is public as well, the information can be accessed by any user in the platform.": "Public team's information (and their members information) can be accessed by any member of the organization. If the organization is public as well, the information can be accessed by any user in the platform."
 }

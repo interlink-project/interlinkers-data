@@ -1,14 +1,12 @@
-import { Avatar, Box, Button, CircularProgress, Dialog, DialogContent, DialogTitle, Grid, IconButton, Input, ListItemIcon, ListItemText, Menu, MenuItem, Paper, Skeleton, Stack, Table, TableBody, TableCell, TableHead, TableRow, TextField, Typography } from '@material-ui/core';
+import { Avatar, Box, Button, CircularProgress, Dialog, DialogContent, DialogTitle, Grid, IconButton, Input, ListItemIcon, ListItemText, Menu, MenuItem, Paper, Stack, Tab, Tabs, TextField, Typography } from '@material-ui/core';
 import { Close, Delete, Edit, MoreVert, Save } from '@material-ui/icons';
 import ConfirmationButton from 'components/ConfirmationButton';
 import { OrganizationChip } from 'components/dashboard/assets/Icons';
-import useAuth from 'hooks/useAuth';
 import useDependantTranslation from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
-import moment from 'moment';
 import { useEffect, useState } from 'react';
-import { teamsApi, usersApi } from '__api__';
-import UserSearch from '../coproductionprocesses/Tabs/Team/UserSearch';
+import { teamsApi } from '__api__';
+import UsersList from './UsersList';
 
 
 const MyMenuItem = ({ onClick, text, icon, id, loading = false }) => {
@@ -20,78 +18,6 @@ const MyMenuItem = ({ onClick, text, icon, id, loading = false }) => {
   </MenuItem>
 }
 
-
-const UserRow = ({ isAdmin, t, team, user, onChanges }) => {
-  const { user: auth_user } = useAuth();
-  const [data, setData] = useState(null)
-  const [loading, setLoading] = useState(null)
-  const mounted = useMounted();
-  const [anchorEl, setAnchorEl] = useState(null);
-  const open = Boolean(anchorEl);
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  const handleClick = (event) => {
-    event.stopPropagation();
-    event.preventDefault();
-    setAnchorEl(event.currentTarget);
-  };
-
-
-  useEffect(() => {
-    setLoading(true)
-    usersApi.get(user.id).then(res => {
-      if (mounted.current) {
-        setData(res.data)
-        setLoading(false)
-      }
-    })
-  }, [user])
-
-  const you = user.id === auth_user.sub
-
-  return <TableRow
-    key={user.id}
-    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-  >
-    <TableCell component="th" scope="row">
-      {data ? <Avatar src={data.picture} /> : <Skeleton />}
-    </TableCell>
-    <TableCell>{data ? data.full_name : <Skeleton />}{you && <> ({t("you")})</>}</TableCell>
-    <TableCell>{data ? data.email : <Skeleton />}</TableCell>
-    <TableCell>{data ? moment(data.last_login).fromNow() : <Skeleton />}</TableCell>
-    <TableCell>
-      {isAdmin && <>
-        <IconButton aria-label="settings" id="basic-button"
-          aria-controls="basic-menu"
-          aria-haspopup="true"
-          aria-expanded={open ? 'true' : undefined}
-          onClick={handleClick}
-        >
-          <MoreVert />
-        </IconButton>
-        <Menu
-          id="basic-menu"
-          anchorEl={anchorEl}
-          open={open}
-          onClose={handleClose}
-          MenuListProps={{
-            'aria-labelledby': 'basic-button',
-          }}
-        >
-          <MyMenuItem key={`${user.id}-remove-action`} id="remove" onClick={() => {
-            teamsApi.removeUser(team.id, user.id).then(() => {
-              onChanges()
-            })
-          }} text={t("Remove {{what}}")} icon={<Delete />} />
-        </Menu>
-      </>}
-    </TableCell>
-  </TableRow>
-
-}
 const TeamProfile = ({ open, setOpen, teamId, onChanges }) => {
   const [editMode, setEditMode] = useState(false)
   const [name, setName] = useState("")
@@ -109,6 +35,36 @@ const TeamProfile = ({ open, setOpen, teamId, onChanges }) => {
 
   const addUserToTeam = (user) => {
     teamsApi.addUser(teamId, user.sub || user.id).then(res => {
+      if (mounted.current) {
+        update(() => {
+          onChanges && onChanges()
+        })
+      }
+    })
+  }
+
+  const removeUserFromTeam = (user) => {
+    teamsApi.removeUser(teamId, user.id).then(() => {
+      if (mounted.current) {
+        update(() => {
+          onChanges && onChanges()
+        })
+      }
+    })
+  }
+
+
+  const handleAdministratorAdd = (user) => {
+    teamsApi.addAdministrator(teamId, user.id).then(res => {
+      if (mounted.current) {
+        update(() => {
+          onChanges && onChanges()
+        })
+      }
+    })
+  }
+  const handleAdministratorRemove = (user) => {
+    teamsApi.removeAdministrator(teamId, user.id).then(res => {
       if (mounted.current) {
         update(() => {
           onChanges && onChanges()
@@ -193,11 +149,28 @@ const TeamProfile = ({ open, setOpen, teamId, onChanges }) => {
 
   const team_trans = t("team")
 
-  const isAdmin = team && team.user_participation && team.user_participation.includes('administrator')
+  const isAdmin = team && team.current_user_participation && team.current_user_participation.includes('administrator')
+
+  const [tabValue, setTabValue] = useState('members');
+  const handleTabChange = (event, newValue) => {
+    setTabValue(newValue);
+  };
+
+  const [anchorEl, setAnchorEl] = useState(null);
+  const actionsOpen = Boolean(anchorEl);
+
+  const handleActionClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleActionsClick = (event) => {
+    event.stopPropagation();
+    event.preventDefault();
+    setAnchorEl(event.currentTarget);
+  };
 
   return (<Dialog open={open} onClose={handleClose} fullWidth maxWidth="lg">
     <DialogTitle sx={{ m: 0, p: 2, backgroundColor: "background.default" }}>
-      {t("Team profile")}
       <IconButton
         aria-label="close"
         onClick={handleClose}
@@ -297,25 +270,59 @@ const TeamProfile = ({ open, setOpen, teamId, onChanges }) => {
           </Paper>
         </Grid>
         < Grid item md={8} sx={{ p: 2 }}>
-          <Table sx={{ minWidth: 300 }} aria-label="simple table">
-            <TableHead>
-              <TableRow>
-                <TableCell></TableCell>
-                <TableCell>{t("Full name")}</TableCell>
-                <TableCell>{t("Email")}</TableCell>
-                <TableCell>{t("Last login")}</TableCell>
-                <TableCell>{t("Actions")}</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {team.users.map((user) => (
-                <UserRow isAdmin={isAdmin} key={user.id} t={t} team={team} user={user} onChanges={() => update()} />
-              ))}
-            </TableBody>
-          </Table>
-          {isAdmin && <Box sx={{ mx: 6, textAlign: "center", justifyContent: "center" }}>
-            <UserSearch exclude={team.users.map(user => user.id)} organization_id={team.organization_id} text={t("Add user to the team")} onClick={addUserToTeam} />
-          </Box>}
+          <Tabs
+            value={tabValue}
+            onChange={handleTabChange}
+            aria-label="organization-right-side-tabs"
+            sx={{ mb: 2 }}
+            centered
+          >
+            <Tab value="members" label={t("Members") + ` (${team.users.length})`} />
+            <Tab value="administrators" label={t("Administrators") + ` (${team.administrators_ids.length})`} />
+          </Tabs>
+          {tabValue === "members" && <UsersList users={team.users} searchOnOrganization={isAdmin && team.organization_id} useContainer={false} onSearchResultClick={addUserToTeam} getActions={(user) => (isAdmin && <>
+            <IconButton aria-label="settings" id="basic-button"
+              aria-controls="basic-menu"
+              aria-haspopup="true"
+              aria-expanded={open ? 'true' : undefined}
+              onClick={handleActionsClick}
+            >
+              <MoreVert />
+            </IconButton>
+            <Menu
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={actionsOpen}
+              onClose={handleActionClose}
+              MenuListProps={{
+                'aria-labelledby': 'basic-button',
+              }}
+            >
+              <MyMenuItem key={`${user.id}-remove-action`} id="remove" onClick={() => removeUserFromTeam(user)} text={t("Remove {{what}}")} icon={<Delete />} />
+            </Menu>
+          </>)} />}
+          {tabValue === "administrators" && <UsersList users={team.administrators} searchOnOrganization={isAdmin && team.organization_id} useContainer={false} onSearchResultClick={handleAdministratorAdd} getActions={(user) => (isAdmin && <>
+            <IconButton aria-label="settings" id="basic-button"
+              aria-controls="basic-menu"
+              aria-haspopup="true"
+              aria-expanded={open ? 'true' : undefined}
+              onClick={handleActionsClick}
+            >
+              <MoreVert />
+            </IconButton>
+            <Menu
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={actionsOpen}
+              onClose={handleActionClose}
+              MenuListProps={{
+                'aria-labelledby': 'basic-button',
+              }}
+            >
+              <MyMenuItem key={`${user.id}-remove-admin-action`} id="remove" onClick={handleAdministratorRemove} text={t("Remove {{what}}")} icon={<Delete />} />
+            </Menu>
+          </>)} />}
+
         </Grid>
       </Grid> : <Box
         style={{

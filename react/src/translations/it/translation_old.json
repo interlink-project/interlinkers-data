@@ -89,5 +89,15 @@
   "Email address": "Indirizzo email",
   "User must have logged in first": "L'utente deve prima aver effettuato il login",
   "Add user": "Aggiungi singolo individuo",
-  "Add myself": ""
+  "Add myself": "",
+  "View resources": "",
+  "Create resources": "",
+  "Delete resources": "",
+  "Contact form": "",
+  "Usability form": "",
+  "Show contextual help": "",
+  "Have you completed": "",
+  "Set {{phase}} as completed": "",
+  "Create a permission for the tree item": "",
+  "Public team's information (and their members information) can be accessed by any member of the organization. If the organization is public as well, the information can be accessed by any user in the platform.": ""
 }
