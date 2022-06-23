@@ -73,8 +73,8 @@ export default function TimeLine({ }) {
         return
     }
 
-    const dataFulfilled = process.aim || process.description || process.idea || process.challenges
-    const administratorsFulfilled = process.administrators_ids.length > 0
+    const dataFulfilled = process.aim || process.idea || process.challenges
+    const administratorsFulfilled = process.administrators_ids.length > 1
 
     return <Box sx={{ pb: 3, justifyContent: "center" }}>
 
@@ -117,7 +117,7 @@ export default function TimeLine({ }) {
                             {t("Set coproduction process administrators")}
                         </Typography>
                         {administratorsFulfilled ?
-                            <Alert severity="success">{t("The administrators of the coproduction process data has been defined.")}</Alert> :
+                            <Alert severity="success">{t("The administrators of the coproduction process data has been defined.")} ({process.administrators_ids.length} {t("administrators")})</Alert> :
                             <Alert severity="info">{t("Administrators can update the coproduction proccess information, add permissions to the tree items or add new administrators")}</Alert>}
                         {!administratorsFulfilled && <Button disabled={!isAdministrator} onClick={() => navigate(`/dashboard/coproductionprocesses/${process.id}/settings`)} size="small" variant="contained" sx={{ maxWidth: "200px" }}>{t("Go to settings")}</Button>}
                     </Stack>
