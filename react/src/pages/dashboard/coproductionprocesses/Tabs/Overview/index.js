@@ -20,7 +20,7 @@ export default function Overview({ }) {
                 {t("Coproduction process overview")}
             </Typography>
         </AppBar>
-        {false ?
+        {isAdministrator ?
             <TimeLine />
             :
             <NoAdmins />
