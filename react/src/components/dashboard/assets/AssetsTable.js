@@ -1,10 +1,8 @@
 import {
-  Alert, Avatar, Box, CircularProgress, IconButton, LinearProgress, ListItemIcon, ListItemText, Menu,
-  MenuItem, Skeleton, Table, TableBody, TableCell, TableHead, TableRow
+  Alert, Avatar, Box, CircularProgress, Fade, Grow, IconButton, LinearProgress, ListItemIcon, ListItemText, Menu,
+  MenuItem, Skeleton, Table, TableBody, TableCell, TableHead, TableRow, Zoom
 } from '@material-ui/core';
-import { Article, CopyAll, Delete, Download, Edit, MoreVert as MoreVertIcon, OpenInNew, Share } from '@material-ui/icons';
-import { LoadingButton } from '@material-ui/lab';
-import ConfirmationButton from 'components/ConfirmationButton';
+import { Article, MoreVert as MoreVertIcon, ShowChart } from '@material-ui/icons';
 import { InterlinkerDialog } from 'components/dashboard/interlinkers';
 import SearchBox from 'components/SearchBox';
 import { useCustomTranslation } from 'hooks/useDependantTranslation';
@@ -23,7 +21,7 @@ const MyMenuItem = ({ onClick, text, icon, id, loading }) => {
   </MenuItem>
 }
 
-const AssetRow = ({ addName, language, asset, onChange, actions, openInterlinkerDialog }) => {
+const AssetRow = ({ inputValue, language, asset, actions, openInterlinkerDialog }) => {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState("data")
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -32,6 +30,8 @@ const AssetRow = ({ addName, language, asset, onChange, actions, openInterlinker
   const t = useCustomTranslation(language)
   const showInterlinkerId = data && (data.externalinterlinker_id || data.knowledgeinterlinker_id || data.softwareinterlinker_id)
   const isInternal = asset.type === "internalasset"
+
+  const show = inputValue ? data ? data.name.toLowerCase().includes(inputValue) : false : true
 
   const handleClick = (event) => {
     event.stopPropagation();
@@ -49,112 +49,37 @@ const AssetRow = ({ addName, language, asset, onChange, actions, openInterlinker
       assetsApi.getInternal(asset.id).then((res) => {
         if (mounted.current) {
           setData({ ...asset, ...res })
-          addName(asset.id, res.name)
           setLoading("")
         }
       })
     } else {
       if (mounted.current) {
         setData({ ...asset })
-        addName(asset.id, asset.name)
         setLoading("")
       }
     }
 
   }, [asset, mounted])
 
-  const handleOpen = () => window.open(data.link + "/view", "_blank")
-
-  const handleDelete = () => {
-    setLoading("delete");
-    assetsApi.delete(asset.id).then(() => {
-      setLoading("");
-      onChange && onChange();
-      setAnchorEl(null);
-    });
-  }
-
-  const handleClone = () => {
-    setLoading("clone");
-    assetsApi.clone(asset.id).then(() => {
-      setLoading("");
-      onChange && onChange();
-      setAnchorEl(null);
-    })
-  }
-
-  const handleDownload = () => {
-    window.open(asset.link + "/download", "_blank");
-    setAnchorEl(null);
-  }
-
-  const handleEdit = () => {
-    window.open(asset.link + "/edit", "_blank");
-    setAnchorEl(null);
-  }
-
-  const getActions = (data) => {
-    const actions = []
-    if (!data) {
-      return actions
+  const handleOpen = () => {
+    if (isInternal) {
+      window.open(data.link + "/view", "_blank")
+    } else {
+      window.open(data.uri)
     }
-    if (data.type === "internalasset" && data.capabilities) {
-      const { id, capabilities } = data
-      actions.push(<MyMenuItem key={`${id}-open-action`} loading={loading} id="open" onClick={handleOpen} text={t("Open")} icon={<OpenInNew fontSize="small" />} />)
-
-      if (capabilities.edit) {
-        actions.push(<MyMenuItem key={`${id}-edit-action`} loading={loading} id="edit" onClick={handleEdit} text={t("Edit")} icon={<Edit fontSize="small" />} />)
-      }
-      if (capabilities.clone) {
-        actions.push(<MyMenuItem key={`${id}-clone-action`} loading={loading} id="clone" onClick={handleClone} text={t("Clone")} icon={<CopyAll fontSize="small" />} />)
-      }
-      if (capabilities.delete) {
-        actions.push(<ConfirmationButton
-          key={`${id}-delete-action`}
-          Actionator={({ onClick }) => <MyMenuItem loading={loading} id="delete" onClick={onClick} text={t("Delete")} icon={<Delete fontSize="small" />} />}
-          ButtonComponent={({ onClick }) => <LoadingButton sx={{ mt: 1 }} fullWidth variant='contained' color="error" onClick={onClick}>{t("Confirm deletion")}</LoadingButton>}
-          onClick={handleDelete}
-          text={t("Are you sure?")} />)
-      }
-      if (false && capabilities.clone) {
-        actions.push(<MyMenuItem key={`${id}-share-action`} loading={loading} id="publish" onClick={() => { }} text={t("Publish")} icon={<Share fontSize="small" />} />)
-      }
-      if (capabilities.download) {
-        actions.push(<MyMenuItem key={`${id}-download-action`} loading={loading} id="download" onClick={handleDownload} text={t("Download")} icon={<Download fontSize="small" />} />)
-      }
-    }
-    if (data.type === "externalasset") {
-      const { id } = data
-      // actions.push(<MyMenuItem key={`${id}-edit-action`} loading={loading} id="edit" onClick={handleEdit} text="Edit" icon={<Edit fontSize="small" />} />)
-      actions.push(<MyMenuItem key={`${id}-clone-action`} loading={loading} id="clone" onClick={handleClone} text={t("Clone")} icon={<CopyAll fontSize="small" />} />)
-      actions.push(<ConfirmationButton
-        key={`${id}-delete-action`}
-        Actionator={({ onClick }) => <MyMenuItem loading={loading} id="delete" onClick={onClick} text={t("Delete")} icon={<Delete fontSize="small" />} />}
-        ButtonComponent={({ onClick }) => <LoadingButton sx={{ mt: 1 }} fullWidth variant='contained' color="error" onClick={onClick}>{t("Confirm deletion")}</LoadingButton>}
-        onClick={handleDelete}
-        text={t("Are you sure?")} />)
-
-    }
-
-    return actions
   }
+
   const avatarSize = { height: "30px", width: "30px" }
-  return <TableRow
+  return <Grow in={show}><TableRow
     hover
     key={asset.id}
-    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+    sx={{ display: !show && "none", '&:last-child td, &:last-child th': { border: 0 }, '& > *': { borderBottom: 'unset' }, cursor: 'pointer' }} onClick={handleOpen}
   >
     {data && loading !== "info" ? <>
-      <TableCell width="5%" component="th" scope="row" onClick={handleOpen}>
+      <TableCell width="5%" component="th" scope="row">
         <Avatar src={data.icon} sx={avatarSize} >{!data.icon && <Article />}</Avatar>
       </TableCell>
-      <TableCell width="35%" style={{ cursor: "pointer" }} onClick={() => {
-        if (isInternal) {
-          window.open(data.link + "/view", "_blank")
-        } else {
-          window.open(data.uri)
-        }
-      }} align="left">{data.name}</TableCell>
+      <TableCell width="35%" style={{ cursor: "pointer" }} align="left">{data.name}</TableCell>
       <TableCell width="15%" align="left">
         {moment(data.created_at).format("LL")}
       </TableCell>
@@ -162,14 +87,16 @@ const AssetRow = ({ addName, language, asset, onChange, actions, openInterlinker
         {moment(data.updated_at || data.created_at).fromNow()}
       </TableCell>
       <TableCell width="20%" align="center">
-        {showInterlinkerId ? <InterlinkerReference onClick={() => {
+        {showInterlinkerId ? <InterlinkerReference onClick={(event) => {
+          event.stopPropagation();
+          event.preventDefault();
           openInterlinkerDialog(showInterlinkerId)
         }}
           interlinker_id={showInterlinkerId}
         /> : t("external-resource")}
       </TableCell>
       <TableCell width="10%" align="center">
-        {actions ? actions(data) : <IconButton aria-label="settings" id="basic-button"
+        {actions && <IconButton aria-label="settings" id="basic-button"
           aria-controls="basic-menu"
           aria-haspopup="true"
           aria-expanded={open ? 'true' : undefined}
@@ -187,39 +114,26 @@ const AssetRow = ({ addName, language, asset, onChange, actions, openInterlinker
             'aria-labelledby': 'basic-button',
           }}
         >
-          {getActions(data)}
+          {actions && actions.map(({ id, loading, onClick, text, icon }) => <MyMenuItem key={id} loading={loading} id={id} onClick={(event) => {
+            event.stopPropagation();
+            event.preventDefault();
+            onClick(handleClose)
+          }} text={text} icon={icon} />)}
         </Menu>
       </TableCell></> : <>
-      <TableCell colSpan={5}><Skeleton animation="wave" sx={{ width: "100%" }} height={60} /></TableCell>
-      <TableCell><IconButton aria-label="actions"> <MoreVertIcon /> </IconButton></TableCell>
+      <TableCell colSpan={6}><Skeleton animation="wave" sx={{ width: "100%" }} height={60} /></TableCell>
     </>
     }
-  </TableRow>
+  </TableRow></Grow>
 
 }
 
-const Assets = ({ language, loading, assets, onChange = () => { }, actions = null }) => {
+const Assets = ({ language, loading, assets, getActions = null }) => {
   const [interlinkerDialogOpen, setInterlinkerDialogOpen] = useState(false);
   const [selectedInterlinker, setSelectedInterlinker] = useState(false);
-  const [assetNames, setAssetNames] = useState([])
   const [inputValue, setInputValue] = useState("");
 
   const t = useCustomTranslation(language)
-
-  const addName = (id, name) => {
-    setAssetNames([...assetNames.filter(asset => asset.id !== id), { id, name }])
-  }
-
-  function find(text) {
-    if (!text) {
-      return assets
-    }
-
-    const result = assetNames.filter(item => {
-      return item.name ? item.name.toLowerCase().includes(text) : false;
-    });
-    return assets.filter(asset => result.find(el => el.id === asset.id))
-  }
 
   return <>
     <InterlinkerDialog language={language} open={interlinkerDialogOpen} setOpen={setInterlinkerDialogOpen} interlinker={selectedInterlinker} />
@@ -243,9 +157,9 @@ const Assets = ({ language, loading, assets, onChange = () => { }, actions = nul
       </TableHead>
 
       <TableBody>
-        {!loading && find(inputValue).map((asset) => (
+        {!loading && assets.map((asset) => (
           <React.Fragment key={asset.id}>
-            <AssetRow addName={addName} language={language} openInterlinkerDialog={(id) => { setInterlinkerDialogOpen(true); setSelectedInterlinker(id) }} asset={asset} onChange={onChange} actions={actions} />
+            <AssetRow inputValue={inputValue} language={language} openInterlinkerDialog={(id) => { setInterlinkerDialogOpen(true); setSelectedInterlinker(id) }} asset={asset} actions={getActions && getActions(asset)} />
           </React.Fragment>
         ))}
       </TableBody>

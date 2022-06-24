@@ -243,7 +243,7 @@ const SettingsTab = () => {
                         {t("Administrators of the coproduction process")}
                     </Typography>
                     <Alert severity="error" sx={{ my: 3 }}>{t("Administrators of a co-production process can edit the co-production tree, assign new permissions to teams and even delete the co-production process. Be careful who you assign as an administrator.")}</Alert>
-                    <UsersList onSearchResultClick={handleAdministratorAdd} users={process.administrators} getActions={user => (
+                    <UsersList size="small" onSearchResultClick={handleAdministratorAdd} users={process.administrators} getActions={user => (
                         [
                             {
                                 id: `${user.id}-remove-action`,
@@ -270,7 +270,7 @@ const SettingsTab = () => {
                             text={t("Are you sure?")}
                         />}
                     >
-                        {t("The cleaning of the co-production tree is irreversible. All resources created in it will disappear. However, the co-production process will not be deleted.")}
+                        {t("The clearing of the co-production tree is irreversible. All resources created in it will disappear. However, the co-production process will not be deleted.")}
                     </Alert>
 
                     <Box sx={{ mt: 2 }}>

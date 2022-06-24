@@ -17,7 +17,7 @@ const UsersList = ({ users, size = "medium", searchOnOrganization = null, onSear
             </TableRow>
         </TableHead>}
         <TableBody>
-            {users.length > 0 && users.map((user) => <UserRow key={user.id} user={user} t={t} actions={getActions && getActions(user)} showLastLogin={showLastLogin}/>)}
+            {users.length > 0 && users.map((user) => <UserRow size={size==="small" ? 30 : 50} key={user.id} user={user} t={t} actions={getActions && getActions(user)} showLastLogin={showLastLogin}/>)}
         </TableBody>
     </Table>
 

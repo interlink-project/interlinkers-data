@@ -1,14 +1,12 @@
 import { useMatomo } from '@datapunt/matomo-tracker-react';
 import {
   Avatar,
-  Box, Card, CardHeader, Container, IconButton, Tab, Tabs, Typography, useMediaQuery,
+  Box, Card, CardHeader, Container, IconButton, Tab, Tabs, useMediaQuery,
   useTheme
 } from '@material-ui/core';
 import { red } from '@material-ui/core/colors';
 import { MoreVert } from '@material-ui/icons';
 import MainSkeleton from 'components/MainSkeleton';
-import PermissionDenied from 'components/PermissionDenied';
-import useAuth from 'hooks/useAuth';
 import { useCustomTranslation } from 'hooks/useDependantTranslation';
 import { useCallback, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
@@ -16,10 +14,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { useParams } from 'react-router-dom';
 import { getProcess, setSelectedTreeItem } from 'slices/process';
-import SchemaSelector from '../../../components/dashboard/SchemaSelector';
 import useMounted from '../../../hooks/useMounted';
 import Guide from './Tabs/Guide';
-import TimeLine from './Tabs/Overview';
+import Overview from './Tabs/Overview';
 import SettingsTab from './Tabs/Settings';
 import TeamTab from './Tabs/Team';
 import Workplan from './Tabs/Workplan';
@@ -145,7 +142,7 @@ const CoproductionProcessProfile = () => {
               <>
                 <TabPanel value={tab} index="overview">
                   <Card sx={style}>
-                    <TimeLine />
+                    <Overview />
                   </Card>
                 </TabPanel>
                 <TabPanel value={tab} index="workplan">

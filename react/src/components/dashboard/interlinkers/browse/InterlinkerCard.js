@@ -1,6 +1,6 @@
 import {
   Avatar,
-  Box, Card, CardActionArea, CardHeader, Chip, Grid, Link,
+  Box, Card, CardActionArea, CardHeader, Chip, Grid, Grow, Link,
   Rating, Typography
 } from '@material-ui/core';
 import { NatureChip } from 'components/dashboard/assets/Icons';
@@ -314,10 +314,10 @@ const ListMode = ({ interlinker, t, linkProps }) => <>
         {t("Rating")}
       </Typography>
       <Rating
-          readOnly
-          size='small'
-          value={interlinker.rating || 0}
-        />
+        readOnly
+        size='small'
+        value={interlinker.rating || 0}
+      />
     </Grid>
     <Grid item xs={12} md={12} lg={6} xl={6}>
       <Typography

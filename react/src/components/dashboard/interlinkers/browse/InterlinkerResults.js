@@ -1,5 +1,5 @@
 import { useMatomo } from '@datapunt/matomo-tracker-react';
-import { Box, Grid, ToggleButton, ToggleButtonGroup, Typography } from '@material-ui/core';
+import { Box, Collapse, Grid, ToggleButton, ToggleButtonGroup, Typography } from '@material-ui/core';
 import { List, ViewModule } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import { InterlinkerCard } from 'components/dashboard/interlinkers';
@@ -8,6 +8,7 @@ import useMounted from 'hooks/useMounted';
 import { useEffect, useState } from 'react';
 import { getLanguage } from 'translations/i18n';
 import { interlinkersApi } from '__api__';
+import { TransitionGroup } from 'react-transition-group';
 
 const InterlinkerResults = ({ loading: propLoading = null, setLoading: propSetLoading = null, language = getLanguage(), filters = {}, onInterlinkerClick, defaultMode = 'list', defaultSize = 9 }) => {
   const mounted = useMounted();
@@ -42,7 +43,7 @@ const InterlinkerResults = ({ loading: propLoading = null, setLoading: propSetLo
           setPage(page + 1)
           setTotal(res.total)
           setLoadedRows([...loadedRows, ...res.items].filter((element, index, self) => self.indexOf(el => el.id === element.id) !== index))
-          if(filters.search){
+          if (filters.search) {
             trackSiteSearch({
               keyword: filters.hasOwnProperty("search") ? filters.search : "",
               category: "interlinkers",
@@ -125,17 +126,26 @@ const InterlinkerResults = ({ loading: propLoading = null, setLoading: propSetLo
         container
         spacing={3}
       >
+        {mode === 'grid' ? <>
         {loadedRows.map((interlinker, i) => (
-          <Grid
-            item
-            key={interlinker.id}
-            md={mode === 'grid' ? 4 : 12}
-            sm={mode === 'grid' ? 6 : 12}
-            xs={12}
-          >
-            <InterlinkerCard language={language} interlinker={interlinker} onInterlinkerClick={onInterlinkerClick} mode={mode} />
-          </Grid>
-        ))}
+              <Grid
+                item
+                key={interlinker.id}
+                md={4}
+                sm={6}
+                xs={12}
+              >
+                <InterlinkerCard language={language} interlinker={interlinker} onInterlinkerClick={onInterlinkerClick} mode={mode} />
+              </Grid>
+          ))}
+          </> : <TransitionGroup>
+          {loadedRows.map((interlinker, i) => (
+            <Collapse sx={{mt: 4, ml: 3}}>
+                <InterlinkerCard language={language} interlinker={interlinker} onInterlinkerClick={onInterlinkerClick} mode={mode} />
+            </Collapse>
+          ))}
+
+        </TransitionGroup>}
 
         <Grid item xs={12} sx={{ justifyContent: "center", textAlign: "center" }}>
           {hasNextPage && <LoadingButton loading={loading} variant="contained" onClick={handleLoadMore}>{t("Load more")}</LoadingButton>}

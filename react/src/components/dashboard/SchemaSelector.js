@@ -66,7 +66,7 @@ const CreateSchema = () => {
                     action: 'use-schema',
                     name: coproductionschema.id
                 })
-                dispatch(getProcess(process.id))
+                dispatch(getProcess(process.id, false))
             }
         });
     }

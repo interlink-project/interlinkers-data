@@ -1,4 +1,4 @@
-import { Alert, Autocomplete, Avatar, CircularProgress, Menu, MenuItem, TextField } from '@material-ui/core';
+import { Alert, Autocomplete, Avatar, CircularProgress, LinearProgress, Menu, MenuItem, TextField } from '@material-ui/core';
 import useDependantTranslation from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
 import React, { useEffect, useState } from 'react';
@@ -86,6 +86,7 @@ const UserSearch = ({ exclude = [], onClick, organization_id = null }) => {
                     }}
                 />}
             />
+            {loading && <LinearProgress />}
         </>
     );
 };

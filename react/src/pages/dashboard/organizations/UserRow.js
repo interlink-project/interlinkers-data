@@ -14,7 +14,7 @@ const MyMenuItem = ({ onClick, text, icon, id, disabled = false, loading = false
         <ListItemText>{text}</ListItemText>
     </MenuItem>
 }
-const UserRow = ({ t, user, actions, showLastLogin }) => {
+const UserRow = ({ t, user, actions, showLastLogin, size=30 }) => {
     const { user: auth_user } = useAuth();
     const [data, setData] = useState(null)
     const [loading, setLoading] = useState(null)
@@ -55,7 +55,7 @@ const UserRow = ({ t, user, actions, showLastLogin }) => {
             </TableCell>
         </> : <>
             <TableCell component="th" scope="row">
-                <Avatar src={data.picture} />
+                <Avatar sx={{height: size, width: size}} src={data.picture} />
             </TableCell>
             <TableCell>{data.full_name}{you && <> ({t("you")})</>}</TableCell>
             <TableCell>{data.email}</TableCell>

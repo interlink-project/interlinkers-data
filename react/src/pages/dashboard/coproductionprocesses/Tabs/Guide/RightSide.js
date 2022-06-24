@@ -1,5 +1,5 @@
-import { Alert, Avatar, Box, Button, Dialog, DialogContent, Grid, Menu, MenuItem, Stack, Tab, Tabs, TextField, Typography } from '@material-ui/core';
-import { KeyboardArrowDown } from '@material-ui/icons';
+import { Alert, Avatar, Box, Button, Dialog, DialogContent, Grid, Menu, MenuItem, Paper, Stack, Tab, Tabs, TextField, Typography } from '@material-ui/core';
+import { CopyAll, Delete, Download, Edit, KeyboardArrowDown, OpenInNew } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import { AssetsTable } from 'components/dashboard/assets';
 import InterlinkerBrowse from 'components/dashboard/interlinkers/browse/InterlinkerBrowse';
@@ -23,7 +23,7 @@ const RightSide = ({ softwareInterlinkers }) => {
 
     const [assets, setAssets] = useState([])
     const [loadingAssets, setLoadingAssets] = useState(false)
-
+    const [loading, setLoading] = useState("")
     // new asset modal
     const [selectedInterlinker, setSelectedInterlinker] = useState(null)
     const [newAssetDialogOpen, setNewAssetDialogOpen] = useState(false)
@@ -76,6 +76,157 @@ const RightSide = ({ softwareInterlinkers }) => {
         view: selectedTreeItem.user_permissions_dict.access_assets_permission
     }
 
+
+    const handleOpen = (asset) => {
+        if (asset.type === "internalasset") {
+          window.open(asset.link + "/view", "_blank")
+        } else {
+          window.open(asset.uri)
+        }
+      }
+
+    const handleDelete = (asset, callback) => {
+        setLoading("delete");
+        assetsApi.delete(asset.id).then(() => {
+            setLoading("");
+            callback && callback();
+            setAnchorEl(null);
+        });
+    }
+
+    const handleClone = (asset, callback) => {
+        setLoading("clone");
+        assetsApi.clone(asset.id).then(() => {
+            setLoading("");
+            callback && callback();
+            setAnchorEl(null);
+        })
+    }
+
+    const handleDownload = (asset) => {
+        window.open(asset.link + "/download", "_blank");
+        setAnchorEl(null);
+    }
+
+    const handleEdit = (asset) => {
+        window.open(asset.link + "/edit", "_blank");
+        setAnchorEl(null);
+    }
+
+    const getAssetsActions = (asset) => {
+        const actions = []
+        console.log(asset)
+        if (asset.type === "internalasset" && asset.capabilities) {
+            const { id, capabilities } = asset
+
+            actions.push({
+                id: `${id}-open-action`,
+                loading: loading === "open",
+                onClick: (closeMenuItem) => {
+                    handleOpen(asset)
+                    closeMenuItem()
+                },
+                text: t("Open"),
+                icon: <OpenInNew fontSize="small" />
+            })
+
+            if (capabilities.edit) {
+                actions.push({
+                    id: `${id}-edit-action`,
+                    loading: loading === "edit",
+                    onClick: (closeMenuItem) => {
+                        handleEdit(asset)
+                        closeMenuItem()
+                        getAssets()
+                    },
+                    text: t("Edit"),
+                    icon: <Edit fontSize="small" />
+                })
+            }
+            if (capabilities.clone) {
+                actions.push({
+                    id: `${id}-clone-action`,
+                    loading: loading === "clone",
+                    onClick: (closeMenuItem) => {
+                        handleClone(asset, () => {
+                            closeMenuItem()
+                            getAssets()
+                        })
+                        getAssets()
+                    },
+                    text: t("Clone"),
+                    icon: <CopyAll fontSize="small" />
+                })
+            }
+            if (capabilities.delete) {
+                actions.push({
+                    id: `${id}-delete-action`,
+                    loading: loading === "delete",
+                    onClick: (closeMenuItem) => {
+                        handleDelete(asset, () => {
+                            closeMenuItem()
+                            getAssets()
+                        })
+                        getAssets()
+                    },
+                    text: t("Delete"),
+                    icon: <Delete fontSize="small" />
+                })
+                /*
+              actions.push(<ConfirmationButton
+                key={`${id}-delete-action`}
+                Actionator={({ onClick }) => <MyMenuItem loading={loading} id="delete" onClick={onClick} text={t("Delete")} icon={<Delete fontSize="small" />} />}
+                ButtonComponent={({ onClick }) => <LoadingButton sx={{ mt: 1 }} fullWidth variant='contained' color="error" onClick={onClick}>{t("Confirm deletion")}</LoadingButton>}
+                onClick={handleDelete}
+                text={t("Are you sure?")} />)
+                */
+            }
+            if (capabilities.download) {
+                actions.push({
+                    id: `${id}-download-action`,
+                    loading: loading === "download",
+                    onClick: (closeMenuItem) => {
+                        handleDownload(asset)
+                        closeMenuItem()
+                    },
+                    text: t("Download"),
+                    icon: <Download fontSize="small" />
+                })
+            }
+        }
+        if (asset.type === "externalasset") {
+            const { id } = asset
+            actions.push({
+                id: `${id}-clone-action`,
+                loading: loading === "clone",
+                onClick: (closeMenuItem) => {
+                    handleClone(asset, () => {
+                        closeMenuItem()
+                        getAssets()
+                    })
+                    
+                },
+                text: t("Clone"),
+                icon: <CopyAll fontSize="small" />
+            })
+
+            actions.push({
+                id: `${id}-delete-action`,
+                loading: loading === "delete",
+                onClick: (closeMenuItem) => {
+                    handleDelete(asset, () => {
+                        closeMenuItem()
+                        getAssets()
+                    })
+                },
+                text: t("Delete"),
+                icon: <Delete fontSize="small" />
+            })
+        }
+
+        return actions
+    }
+
     const updateProcess = () => {
         dispatch(getProcess(process.id, false))
     }
@@ -83,24 +234,27 @@ const RightSide = ({ softwareInterlinkers }) => {
 
         selectedTreeItem && <Grid item xl={8} lg={8} md={6} xs={12}>
             <Box sx={{ p: 2 }}>
-                <Tabs
-                    value={tabValue}
-                    onChange={handleTabChange}
-                    aria-label="guide-right-side-tabs"
-                    sx={{ mb: 2 }}
-                    centered
-                >
-                    <Tab wrapped value="data" label={information_translations[selectedTreeItem.type]} />
-                    <Tab value="permissions" label={t("Permissions") + " (" + selectedTreeItem.permissions.length + ")"} />
-                    <Tab value="assets" disabled={!isTask} label={t("Resources")} />
-                </Tabs>
+                <Paper sx={{ bgcolor: "background.default" }}>
+                    <Tabs
+                        value={tabValue}
+                        onChange={handleTabChange}
+                        aria-label="guide-right-side-tabs"
+                        sx={{ mb: 2 }}
+                        centered
+                    >
+                        <Tab wrapped value="data" label={information_translations[selectedTreeItem.type]} />
+                        <Tab value="permissions" label={t("Permissions") + " (" + selectedTreeItem.permissions.length + ")"} />
+                        <Tab value="assets" disabled={!isTask} label={t("Resources")} />
+                    </Tabs>
+                </Paper>
+
 
                 {tabValue === "data" && <TreeItemData language={process.language} processId={process.id} element={selectedTreeItem} />}
                 {tabValue === "permissions" && <PermissionsTable onChanges={updateProcess} language={process.language} processId={process.id} element={selectedTreeItem} isAdministrator={isAdministrator} />}
                 {tabValue === "assets" && <>
                     <Box>
                         <Box sx={{ mt: 2 }}>
-                            {can.view ? <AssetsTable language={process.language} loading={loadingAssets} assets={assets} onChange={getAssets} /> : <Alert severity="error">{t("You do not have access to the resources of this task")}</Alert>}
+                            {can.view ? <AssetsTable language={process.language} loading={loadingAssets} assets={assets} getActions={getAssetsActions} /> : <Alert severity="error">{t("You do not have access to the resources of this task")}</Alert>}
                             <Box sx={{ textAlign: "center", width: "100%" }}>
                                 <Stack spacing={2} >
                                     <Button

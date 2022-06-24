@@ -1,5 +1,5 @@
 import {
-  Avatar, Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, IconButton, Input,
+  Avatar, Box, Button, Collapse, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, IconButton, Input,
   InputLabel,
   List,
   ListItem,
@@ -12,6 +12,7 @@ import { user_id } from 'contexts/CookieContext';
 import useAuth from 'hooks/useAuth';
 import { useCustomTranslation } from 'hooks/useDependantTranslation';
 import { useEffect, useState } from 'react';
+import { TransitionGroup } from 'react-transition-group';
 import { getLanguage } from 'translations/i18n';
 import { teamsApi } from '__api__';
 import UserSearch from '../coproductionprocesses/Tabs/Team/UserSearch';
@@ -184,29 +185,31 @@ const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOp
           </>}
 
           {activeStep === 1 && <><List dense>
-            {selectedUsers.map(user => {
+            <TransitionGroup>
+              {selectedUsers.map(user => {
 
-              var name = user.full_name
-              const you = user.id === user_id
-              if (you) {
-                name += ` (${t("you")})`
-              }
-              return <ListItem key={user.id}
-              >
-                <ListItemAvatar>
-                  <Avatar src={user.picture} />
-                </ListItemAvatar>
-                <ListItemText
-                  primary={name}
-                  secondary={user.email}
-                />
-                <ListItemSecondaryAction>
-                  <IconButton edge="end" aria-label="delete" onClick={() => deleteUserFromList(user.sub)}>
-                    <Delete />
-                  </IconButton>
-                </ListItemSecondaryAction>
-              </ListItem>
-            })}
+                var name = user.full_name
+                const you = user.id === user_id
+                if (you) {
+                  name += ` (${t("you")})`
+                }
+                return <Collapse key={user.id}><ListItem
+                >
+                  <ListItemAvatar>
+                    <Avatar src={user.picture} />
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary={name}
+                    secondary={user.email}
+                  />
+                  <ListItemSecondaryAction>
+                    <IconButton edge="end" aria-label="delete" onClick={() => deleteUserFromList(user.sub)}>
+                      <Delete />
+                    </IconButton>
+                  </ListItemSecondaryAction>
+                </ListItem></Collapse>
+              })}
+            </TransitionGroup>
 
           </List>
             <UserSearch exclude={selectedUsers.map(user => user.id)} organization_id={organization.id} onClick={(user) => setSelectedUsers([...selectedUsers, user])} />
