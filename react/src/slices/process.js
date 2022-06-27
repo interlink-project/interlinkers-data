@@ -151,7 +151,7 @@ export const getProcess = (processId, setLoading = true) => async (dispatch) => 
   } catch (err) {
     // https://edupala.com/react-router-navigate-outside-component/
     console.error(err)
-    window.location.replace("/dashboard");
+    // window.location.replace("/dashboard");
   }
   if(setLoading) {dispatch(slice.actions.setLoading(false))}
 

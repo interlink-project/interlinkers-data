@@ -41,21 +41,7 @@ export default function TeamsTab() {
                                 <TableCell align="center">
                                     {permission.treeitem_id}
                                 </TableCell>
-                                <TableCell align="center">
-                                    {permission.access_assets_permission && <Check />}
-                                </TableCell>
-                                <TableCell align="center">
-                                    {permission.access_assets_permission && <Check />}
-                                </TableCell>
-                                <TableCell align="center">
-                                    {permission.access_assets_permission && <Check />}
-                                </TableCell>
-                                <TableCell align="center">
-                                    {permission.access_assets_permission && <Check />}
-                                </TableCell>
-                                <TableCell align="center">
-                                    {permission.access_assets_permission && <Check />}
-                                </TableCell>
+                                
                             </TableRow>
                         ))}
                     </TableBody>

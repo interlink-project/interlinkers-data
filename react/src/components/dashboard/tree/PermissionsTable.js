@@ -58,12 +58,6 @@ const PermissionRow = ({ permission, showOnlyMine, setSelectedTeam, isAdministra
     <TableCell align="center">
       {permission.delete_assets_permission ? <CheckOutlined style={{ color: green[500] }} /> : <Close style={{ color: red[500] }} />}
     </TableCell>
-    <TableCell align="center">
-      {permission.edit_treeitem_permission ? <CheckOutlined style={{ color: green[500] }} /> : <Close style={{ color: red[500] }} />}
-    </TableCell>
-    <TableCell align="center">
-      {permission.delete_treeitem_permission ? <CheckOutlined style={{ color: green[500] }} /> : <Close style={{ color: red[500] }} />}
-    </TableCell>
 
   </TableRow>
 }
@@ -125,8 +119,6 @@ const PermissionsTable = ({ language, processId, onChanges, element, isAdministr
             <TableCell align="center"><>{t("access_assets_permission")}</></TableCell>
             <TableCell align="center"><>{t("create_assets_permission")}</></TableCell>
             <TableCell align="center"><>{t("delete_assets_permission")}</></TableCell>
-            <TableCell align="center"><>{t("edit_treeitem_permission")}</></TableCell>
-            <TableCell align="center"><>{t("delete_treeitem_permission")}</></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -188,13 +180,6 @@ const PermissionsTable = ({ language, processId, onChanges, element, isAdministr
               <TableCell align="center">
                 {element.user_permissions_dict.delete_assets_permission ? <CheckOutlined style={{ color: green[500] }} /> : <Close style={{ color: red[500] }} />}
               </TableCell>
-              <TableCell align="center">
-                {element.user_permissions_dict.edit_treeitem_permission ? <CheckOutlined style={{ color: green[500] }} /> : <Close style={{ color: red[500] }} />}
-              </TableCell>
-              <TableCell align="center">
-                {element.user_permissions_dict.delete_treeitem_permission ? <CheckOutlined style={{ color: green[500] }} /> : <Close style={{ color: red[500] }} />}
-              </TableCell>
-
             </TableRow>
           </>}
         </TableBody>

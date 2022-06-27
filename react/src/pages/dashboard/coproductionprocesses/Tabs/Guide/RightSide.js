@@ -1,6 +1,7 @@
 import { Alert, Avatar, Box, Button, Dialog, DialogContent, Grid, Menu, MenuItem, Paper, Stack, Tab, Tabs, TextField, Typography } from '@material-ui/core';
 import { CopyAll, Delete, Download, Edit, KeyboardArrowDown, OpenInNew } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
+import CentricCircularProgress from 'components/CentricCircularProgress';
 import { AssetsTable } from 'components/dashboard/assets';
 import InterlinkerBrowse from 'components/dashboard/interlinkers/browse/InterlinkerBrowse';
 import { TreeItemData } from 'components/dashboard/tree';
@@ -13,7 +14,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getProcess, getTree } from 'slices/process';
 import { information_about_translations } from 'utils/someCommonTranslations';
 import * as Yup from 'yup';
-import { assetsApi } from '__api__';
+import { assetsApi, permissionsApi } from '__api__';
 import NewAssetModal from './NewAssetModal';
 
 const RightSide = ({ softwareInterlinkers }) => {
@@ -32,6 +33,15 @@ const RightSide = ({ softwareInterlinkers }) => {
     const [catalogueOpen, setCatalogueOpen] = useState(false);
     const { t } = useDependantTranslation()
     const dispatch = useDispatch();
+
+    const [permissions, setPermissions] = useState(null)
+
+    useEffect(() => {
+        setPermissions(null)
+        permissionsApi.for(selectedTreeItem.id).then(res => {
+            setPermissions(res)
+        })
+    }, [selectedTreeItem])
 
     const getAssets = async () => {
         setLoadingAssets(true)
@@ -72,8 +82,9 @@ const RightSide = ({ softwareInterlinkers }) => {
     }, [selectedTreeItem, tabValue])
 
     const can = {
-        create: selectedTreeItem.user_permissions_dict.create_assets_permission,
-        view: selectedTreeItem.user_permissions_dict.access_assets_permission
+        delete: isAdministrator || (permissions && permissions.your_permissions.delete_assets_permission),
+        create: isAdministrator || (permissions && permissions.your_permissions.create_assets_permission),
+        view: isAdministrator || (permissions && permissions.your_permissions.access_assets_permission),
     }
 
 
@@ -169,6 +180,7 @@ const RightSide = ({ softwareInterlinkers }) => {
                         })
                         getAssets()
                     },
+                    disabled: !can.delete,
                     text: t("Delete"),
                     icon: <Delete fontSize="small" />
                 })
@@ -244,7 +256,7 @@ const RightSide = ({ softwareInterlinkers }) => {
                     >
                         <Tab wrapped value="data" label={information_translations[selectedTreeItem.type]} />
                         <Tab value="permissions" label={t("Permissions") + " (" + selectedTreeItem.permissions.length + ")"} />
-                        <Tab value="assets" disabled={!isTask} label={t("Resources")} />
+                        <Tab value="assets" disabled={!isTask} label={t("Resources") + " (" + assets.length + ")"} />
                     </Tabs>
                 </Paper>
 
@@ -253,7 +265,7 @@ const RightSide = ({ softwareInterlinkers }) => {
                 {tabValue === "permissions" && <PermissionsTable onChanges={updateProcess} language={process.language} processId={process.id} element={selectedTreeItem} isAdministrator={isAdministrator} />}
                 {tabValue === "assets" && <>
                     <Box>
-                        <Box sx={{ mt: 2 }}>
+                        {permissions ? <Box sx={{ mt: 2 }}>
                             {can.view ? <AssetsTable language={process.language} loading={loadingAssets} assets={assets} getActions={getAssetsActions} /> : <Alert severity="error">{t("You do not have access to the resources of this task")}</Alert>}
                             <Box sx={{ textAlign: "center", width: "100%" }}>
                                 <Stack spacing={2} >
@@ -283,7 +295,7 @@ const RightSide = ({ softwareInterlinkers }) => {
                                     </Button>
                                 </Stack>
                             </Box>
-                        </Box>
+                        </Box> : <CentricCircularProgress />}
 
 
                         <Dialog open={catalogueOpen} onClose={() => setCatalogueOpen(false)} maxWidth="lg" fullWidth>

@@ -6,8 +6,13 @@ import OrganizationsList from 'pages/dashboard/organizations/OrganizationsList';
 import UsersList from 'pages/dashboard/organizations/UsersList';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { permissionsList } from 'utils/someCommonTranslations';
 import { organizationsApi, permissionsApi } from '__api__';
+
+const initial = {
+  access_assets_permission: true,
+  delete_assets_permission: false,
+  create_assets_permission: false,
+}
 
 const PermissionCreate = ({ open, setOpen, loading, setLoading, onCreate, treeitem }) => {
   const [organizations, setOrganizations] = useState([]);
@@ -15,7 +20,7 @@ const PermissionCreate = ({ open, setOpen, loading, setLoading, onCreate, treeit
   const [selectedTeam, _setSelectedTeam] = useState(null);
   const [searchValue, setSearchValue] = useState("");
   const [activeStep, setActiveStep] = useState(0);
-  const [permissions, setPermissions] = useState(permissionsList.reduce((current, element) => ({ ...current, [element]: false }), {}));
+  const [permissions, setPermissions] = useState(initial);
 
   const setSelectedTeam = (team) => {
     _setSelectedTeam(team)
@@ -109,7 +114,8 @@ const PermissionCreate = ({ open, setOpen, loading, setLoading, onCreate, treeit
             {Object.keys(permissions).map(key => <Stack key={key} sx={{ mt: 3 }} spacing={1} direction="row" alignItems="center">
             <Switch checked={permissions[key]} onChange={(event) => setPermissions({
                 ...permissions,
-                [key]: event.target.checked
+                [key]: event.target.checked,
+                access_assets_permission: true
               })
               } />
               <Typography variant="body2">{another(key)}</Typography>

@@ -10,19 +10,10 @@ export const tree_items_translations = (t) => ({
     "task": t("Task"),
 })
 
-export const permissionsList = [
-    "access_assets_permission",
-    "create_assets_permission",
-    "delete_assets_permission",
-    "edit_treeitem_permission",
-    "delete_treeitem_permission"
-]
 export const getPermissionTranslations = (t) => ({
     "access_assets_permission": t("access_assets_permission"),
     "create_assets_permission": t("create_assets_permission"),
     "delete_assets_permission": t("delete_assets_permission"),
-    "edit_treeitem_permission": t("edit_treeitem_permission"),
-    "delete_treeitem_permission": t("delete_treeitem_permission"),
 })
 
 export const whoCanCreateTeams = (t) => ({

@@ -31,7 +31,7 @@ const TreeItemData = ({ language, processId, element }) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [editMode, setEditMode] = useState(false);
-  const { updatingTree, treeitems } = useSelector((state) => state.process);
+  const { updatingTree, treeitems, isAdministrator } = useSelector((state) => state.process);
 
   const navigate = useNavigate()
   const dispatch = useDispatch();
@@ -113,7 +113,7 @@ const TreeItemData = ({ language, processId, element }) => {
 
   const treeitem_translations = tree_items_translations(t)
   return <>
-    {!editMode && <IconButton onClick={() => setEditMode(true)} sx={{
+    {isAdministrator && !editMode && <IconButton onClick={() => setEditMode(true)} sx={{
       position: "relative",
       right: 0,
       float: "right"
@@ -209,9 +209,7 @@ const TreeItemData = ({ language, processId, element }) => {
         <Stack sx={{ mt: 2 }} justifyContent="center" direction="row" spacing={2}>
           <Button size="small" variant="outlined" onClick={() => setEditMode(false)} color="warning">{t("Discard changes")}</Button>
           <LoadingButton loading={updatingTree} sx={{ width: "200px" }} variant="contained" onClick={saveData} color="primary" size="small">{t("Save")}</LoadingButton>
-
         </Stack>
-
         <Divider sx={{ my: 2 }}>
           {t("other actions")}
         </Divider>
