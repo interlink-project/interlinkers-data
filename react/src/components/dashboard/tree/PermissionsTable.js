@@ -50,7 +50,7 @@ const PermissionRow = ({ permission, showOnlyMine, setSelectedTeam, isAdministra
       {permission.team && <OrganizationChip type={permission.team.type} />}
     </TableCell>
     <TableCell align="center">
-      {permission.access_assets_permission ? <CheckOutlined style={{ color: green[500] }} /> : <Close style={{ color: red[500] }} />}
+      <CheckOutlined style={{ color: green[500] }} />
     </TableCell>
     <TableCell align="center">
       {permission.create_assets_permission ? <CheckOutlined style={{ color: green[500] }} /> : <Close style={{ color: red[500] }} />}
@@ -62,7 +62,7 @@ const PermissionRow = ({ permission, showOnlyMine, setSelectedTeam, isAdministra
   </TableRow>
 }
 
-const PermissionsTable = ({ language, processId, onChanges, element, isAdministrator }) => {
+const PermissionsTable = ({ your_permissions, your_roles, language, processId, onChanges, element, isAdministrator }) => {
   const [permissions, setPermissions] = React.useState([])
   const [selectedTeam, setSelectedTeam] = React.useState(null);
   const [showOnlyMine, _setShowOnlyMine] = React.useState(!isAdministrator);
@@ -169,16 +169,16 @@ const PermissionsTable = ({ language, processId, onChanges, element, isAdministr
               <TableCell align="center">
               </TableCell>
               <TableCell align="center">
-                {element.user_roles.map(role => <Box key={role} sx={{ ml: 1 }}><OrganizationChip type={role} /></Box>)}
+                {your_roles && your_roles.map(role => <Box key={role} sx={{ m: 1 }}><OrganizationChip type={role} /></Box>)}
               </TableCell>
               <TableCell align="center">
-                {element.user_permissions_dict.access_assets_permission ? <CheckOutlined style={{ color: green[500] }} /> : <Close style={{ color: red[500] }} />}
+                {your_permissions && your_permissions.access_assets_permission ? <CheckOutlined style={{ color: green[500] }} /> : <Close style={{ color: red[500] }} />}
               </TableCell>
               <TableCell align="center">
-                {element.user_permissions_dict.create_assets_permission ? <CheckOutlined style={{ color: green[500] }} /> : <Close style={{ color: red[500] }} />}
+                {your_permissions && your_permissions.create_assets_permission ? <CheckOutlined style={{ color: green[500] }} /> : <Close style={{ color: red[500] }} />}
               </TableCell>
               <TableCell align="center">
-                {element.user_permissions_dict.delete_assets_permission ? <CheckOutlined style={{ color: green[500] }} /> : <Close style={{ color: red[500] }} />}
+                {your_permissions && your_permissions.delete_assets_permission ? <CheckOutlined style={{ color: green[500] }} /> : <Close style={{ color: red[500] }} />}
               </TableCell>
             </TableRow>
           </>}

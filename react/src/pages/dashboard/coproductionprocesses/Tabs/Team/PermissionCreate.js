@@ -10,8 +10,8 @@ import { organizationsApi, permissionsApi } from '__api__';
 
 const initial = {
   access_assets_permission: true,
-  delete_assets_permission: false,
   create_assets_permission: false,
+  delete_assets_permission: false,
 }
 
 const PermissionCreate = ({ open, setOpen, loading, setLoading, onCreate, treeitem }) => {

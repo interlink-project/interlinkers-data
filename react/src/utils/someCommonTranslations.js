@@ -16,8 +16,16 @@ export const getPermissionTranslations = (t) => ({
     "delete_assets_permission": t("delete_assets_permission"),
 })
 
-export const whoCanCreateTeams = (t) => ({
+export const teamCreationPermissionTranslations = (t) => ({
     "administrators": t("Only the administrators of the organization"),
     "members": t("Members of at least a team of the organization"),
     "anyone": t("Anyone (the organization must be public)"),
+})
+
+
+export const defaultTeamTypesTranslations = (t) => ({
+    "citizens": t("Citizens"),
+    "public_administration": t("Public administration"),
+    "nonprofit_organization": t("Non profit organization"),
+    "forprofit_organization": t("For profit organization"),
 })

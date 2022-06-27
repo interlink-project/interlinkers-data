@@ -14,7 +14,8 @@ export default function TeamsTab() {
     const mounted = useMounted();
     const { t } = useDependantTranslation()
     const [selectedTeam, setSelectedTeam] = React.useState(null)
-    
+
+    console.log(groupListBy(process.permissions, "team_id"))
     
     return !updating ? (
         <React.Fragment>

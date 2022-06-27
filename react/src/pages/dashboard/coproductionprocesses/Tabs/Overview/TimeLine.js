@@ -34,7 +34,7 @@ export default function TimeLine({ }) {
                         {dataFulfilled ?
                             <Alert severity="success">{t("The coproduction process data has been defined.")}</Alert> :
                             <Alert severity="info">{t("The co-production process data are a set of attributes that serve to define the process to be carried out.")}</Alert>}
-                        {!dataFulfilled && <Button onClick={() => navigate(`/dashboard/coproductionprocesses/${process.id}/settings`)} size="small" variant="contained" sx={{ maxWidth: "200px" }}>{t("Go to settings section")}</Button>}
+                        <Button onClick={() => navigate(`/dashboard/coproductionprocesses/${process.id}/settings`)} size="small" variant="contained" sx={{ maxWidth: "200px" }}>{t("Go to settings section")}</Button>
                     </Stack>
                 </StepLabel>
             </Step>
@@ -47,7 +47,7 @@ export default function TimeLine({ }) {
                         {administratorsFulfilled ?
                             <Alert severity="success">{t("The administrators of the coproduction process data has been defined.")} ({process.administrators_ids.length} {t("administrators")})</Alert> :
                             <Alert severity="info">{t("Administrators can update the coproduction proccess information, add permissions to the tree items or add new administrators")}</Alert>}
-                        {!administratorsFulfilled && <Button onClick={() => navigate(`/dashboard/coproductionprocesses/${process.id}/settings`)} size="small" variant="contained" sx={{ maxWidth: "200px" }}>{t("Go to settings section")}</Button>}
+                        <Button onClick={() => navigate(`/dashboard/coproductionprocesses/${process.id}/settings`)} size="small" variant="contained" sx={{ maxWidth: "200px" }}>{t("Go to settings section")}</Button>
                     </Stack>
                 </StepLabel>
             </Step>

@@ -1,25 +1,23 @@
 import {
   Alert,
-  Avatar, Box, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, FormControlLabel, IconButton, Input, InputLabel, MenuItem, Select, Stack, Switch, TextField, Typography
+  Avatar, Box, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, IconButton, Input, InputLabel, MenuItem, Select, Stack, Switch, TextField, Typography
 } from '@material-ui/core';
 import { Close, KeyboardArrowRight } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
+import { TEAM_TYPES, WHO_CAN_CREATE_OPTIONS } from 'constants';
 import useMounted from 'hooks/useMounted';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { organizationsApi } from '__api__';
-import { getLanguage } from 'translations/i18n';
-import { ORG_TYPES } from 'constants';
-import { whoCanCreateTeams } from 'utils/someCommonTranslations';
 
 const OrganizationCreate = ({ open, setOpen, loading, setLoading, onCreate }) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [whoCanCreate, setWhoCanCreate] = useState("administrators");
+  const [teamCreationPermission, setTeamCreationPermission] = useState("administrators");
   const [isPublic, _setPublic] = useState(false);
   const setPublic = (val) => {
-    if (val === false && whoCanCreate === "anyone") {
-      setWhoCanCreate("administrators")
+    if (val === false && teamCreationPermission === "anyone") {
+      setTeamCreationPermission("administrators")
     }
     _setPublic(val)
   }
@@ -29,25 +27,6 @@ const OrganizationCreate = ({ open, setOpen, loading, setLoading, onCreate }) =>
   const [activeStep, setActiveStep] = useState(0);
   const mounted = useMounted();
   const { t } = useTranslation()
-
-  const ORG_OPTIONS = ORG_TYPES(t)
-
-  const whocan_translations = whoCanCreateTeams(t)
-
-  const WHO_CAN_CREATE_OPTIONS = [{
-    value: "administrators",
-    label: whocan_translations["administrators"]
-  },
-  {
-    value: "members",
-    label: whocan_translations["members"]
-  },
-  {
-    value: "anyone",
-    label: whocan_translations["anyone"],
-    disabled: !isPublic
-  },
-  ]
 
   const sendOnCreate = (data) => {
     if (mounted.current) {
@@ -75,7 +54,7 @@ const OrganizationCreate = ({ open, setOpen, loading, setLoading, onCreate }) =>
         "lv": description
       },
       default_team_type: defaultTeamType,
-      team_creation_permission: whoCanCreate,
+      team_creation_permission: teamCreationPermission,
       public: isPublic
     }).then(res => {
       if (!logotype) {
@@ -183,13 +162,13 @@ const OrganizationCreate = ({ open, setOpen, loading, setLoading, onCreate }) =>
               fullWidth
               labelId="select-creation-permission-label"
               id="select-creation-permission"
-              value={whoCanCreate}
+              value={teamCreationPermission}
               onChange={(event) => {
-                setWhoCanCreate(event.target.value);
+                setTeamCreationPermission(event.target.value);
               }}
               label={t("Who can create teams")}
             >
-              {WHO_CAN_CREATE_OPTIONS.map(lan => <MenuItem key={lan.value} disabled={lan.disabled} value={lan.value}>{lan.label}</MenuItem>)}
+              {WHO_CAN_CREATE_OPTIONS(t, isPublic).map(lan => <MenuItem key={lan.value} disabled={lan.disabled} value={lan.value}>{lan.label}</MenuItem>)}
             </Select>
           </FormControl>
           <FormControl variant="standard" fullWidth sx={{ mt: 3 }}>
@@ -204,7 +183,7 @@ const OrganizationCreate = ({ open, setOpen, loading, setLoading, onCreate }) =>
               }}
               label={t("Default team type")}
             >
-              {ORG_OPTIONS.map(lan => <MenuItem key={lan.value} value={lan.value}>{lan.label}</MenuItem>)}
+              {TEAM_TYPES(t).map(lan => <MenuItem key={lan.value} value={lan.value}>{lan.label}</MenuItem>)}
             </Select>
           </FormControl>
 

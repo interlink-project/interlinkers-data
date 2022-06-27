@@ -7,7 +7,7 @@ import {
 } from '@material-ui/core';
 import { Close, Delete, KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
-import { ORG_TYPES } from 'constants';
+import { TEAM_TYPES } from 'constants';
 import { user_id } from 'contexts/CookieContext';
 import useAuth from 'hooks/useAuth';
 import { useCustomTranslation } from 'hooks/useDependantTranslation';
@@ -30,7 +30,7 @@ const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOp
   const theme = useTheme();
   const [activeStep, setActiveStep] = useState(0);
 
-  const ORG_OPTIONS = ORG_TYPES(t)
+  const ORG_OPTIONS = TEAM_TYPES(t)
 
   const final_loading = loading || _loading
   const final_set_loading = setLoading || _setLoading

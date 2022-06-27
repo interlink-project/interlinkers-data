@@ -11,7 +11,6 @@ function OrganizationRow({ organization, onChanges = null, onTeamClick = null })
     const [open, setOpen] = React.useState(false);
     return (
         <React.Fragment>
-
             <TableRow hover={!open} sx={{ '& > *': { borderBottom: 'unset' }, cursor: 'pointer' }} onClick={() => {
                 setOpen(!open)
             }}>

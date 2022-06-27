@@ -1,3 +1,4 @@
+import { defaultTeamTypesTranslations, teamCreationPermissionTranslations } from 'utils/someCommonTranslations';
 import i18n from './translations/i18n';
 
 export const THEMES = {
@@ -12,19 +13,44 @@ export const THEMES = {
 };
 
 
-export const ORG_TYPES = (t) => [{
-  value: "citizen",
-  label: t("Citizens")
-},
-{
-  value: "public_administration",
-  label: t("Public administration")
-},
-{
-  value: "nonprofit_organization",
-  label: t("Non profit organization")
-},
-{
-  value: "forprofit_organization",
-  label: t("For profit organization")
-}]
+export const TEAM_TYPES = (t) => {
+  const translations = defaultTeamTypesTranslations(t)
+
+  return [{
+
+    value: "citizen",
+    label: translations["citizens"]
+  },
+  {
+    value: "public_administration",
+    label: translations["public_administration"]
+  },
+  {
+    value: "nonprofit_organization",
+    label: translations["nonprofit_organization"]
+  },
+  {
+    value: "forprofit_organization",
+    label: translations["forprofit_organization"]
+  }]
+}
+
+
+export const WHO_CAN_CREATE_OPTIONS = (t, isPublic) => {
+  const translations = teamCreationPermissionTranslations(t)
+
+  return [{
+    value: "administrators",
+    label: translations["administrators"]
+  },
+  {
+    value: "members",
+    label: translations["members"]
+  },
+  {
+    value: "anyone",
+    label: translations["anyone"],
+    disabled: !isPublic
+  },
+  ]
+}

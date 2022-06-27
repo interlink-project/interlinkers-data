@@ -54,10 +54,10 @@ const RightSide = ({ softwareInterlinkers }) => {
     }
 
     useEffect(() => {
-        if (isTask && mounted.current) {
+        if (isTask && mounted.current && permissions && permissions.your_permissions.access_assets_permission) {
             getAssets()
         }
-    }, [mounted, selectedTreeItem])
+    }, [mounted, selectedTreeItem, permissions])
 
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
@@ -262,7 +262,7 @@ const RightSide = ({ softwareInterlinkers }) => {
 
 
                 {tabValue === "data" && <TreeItemData language={process.language} processId={process.id} element={selectedTreeItem} />}
-                {tabValue === "permissions" && <PermissionsTable onChanges={updateProcess} language={process.language} processId={process.id} element={selectedTreeItem} isAdministrator={isAdministrator} />}
+                {tabValue === "permissions" && <PermissionsTable your_permissions={permissions && permissions.your_permissions} your_roles={permissions && permissions.your_roles} onChanges={updateProcess} language={process.language} processId={process.id} element={selectedTreeItem} isAdministrator={isAdministrator} />}
                 {tabValue === "assets" && <>
                     <Box>
                         {permissions ? <Box sx={{ mt: 2 }}>

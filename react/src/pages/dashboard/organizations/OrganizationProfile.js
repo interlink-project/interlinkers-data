@@ -1,16 +1,17 @@
-import { Alert, Avatar, Box, Button, Chip, Grid, IconButton, Input, Skeleton, Stack, Tab, Table, TableBody, TableCell, TableHead, TableRow, Tabs, TextField, Typography } from '@material-ui/core';
+import { Alert, Avatar, Box, Button, Chip, FormControl, Grid, IconButton, Input, InputLabel, MenuItem, Select, Skeleton, Stack, Switch, Tab, Table, TableBody, TableCell, TableHead, TableRow, Tabs, TextField, Typography } from '@material-ui/core';
 import { Add, Delete, Edit, People, Save } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import CentricCircularProgress from 'components/CentricCircularProgress';
 import ConfirmationButton from 'components/ConfirmationButton';
 import { OrganizationChip } from 'components/dashboard/assets/Icons';
+import { TEAM_TYPES, WHO_CAN_CREATE_OPTIONS } from 'constants';
 import { user_id } from 'contexts/CookieContext';
 import useDependantTranslation from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
 import moment from 'moment';
 import { useEffect, useState } from 'react';
 import { getLanguage } from 'translations/i18n';
-import { whoCanCreateTeams } from 'utils/someCommonTranslations';
+import { defaultTeamTypesTranslations, teamCreationPermissionTranslations } from 'utils/someCommonTranslations';
 import { organizationsApi } from '__api__';
 import TeamCreate from './TeamCreate';
 import UsersList from './UsersList';
@@ -19,6 +20,9 @@ import UsersList from './UsersList';
 const OrganizationProfile = ({ organizationId, onChanges = null, onTeamClick = null }) => {
     const [editMode, setEditMode] = useState(false)
     const [name, setName] = useState("")
+    const [isPublic, _setPublic] = useState(false);
+    const [defaultTeamType, setDefaultTeamType] = useState("");
+    const [teamCreationPermission, setTeamCreationPermission] = useState("administrators");
     const [description, setDescription] = useState("")
     const [logotype, setLogotype] = useState(null);
     const [loadingTeams, setLoadingTeams] = useState(true)
@@ -30,6 +34,13 @@ const OrganizationProfile = ({ organizationId, onChanges = null, onTeamClick = n
 
     const mounted = useMounted();
     const { t } = useDependantTranslation()
+
+    const setPublic = (val) => {
+        if (val === false && teamCreationPermission === "anyone") {
+            setTeamCreationPermission("administrators")
+        }
+        _setPublic(val)
+    }
 
     const getTeams = () => {
         setLoadingTeams(true)
@@ -58,7 +69,7 @@ const OrganizationProfile = ({ organizationId, onChanges = null, onTeamClick = n
         })
     }
 
-    const nameAndDescChanged = (name !== organization.name) || (description !== organization.description)
+    const nameAndDescChanged = (name !== organization.name) || (description !== organization.description) || (isPublic !== organization.public) || (teamCreationPermission !== organization.team_creation_permission) || (defaultTeamType !== organization.default_team_type)
     const somethingChanged = nameAndDescChanged || logotype !== null
 
     const handleSave = async () => {
@@ -75,6 +86,9 @@ const OrganizationProfile = ({ organizationId, onChanges = null, onTeamClick = n
                     ...organization.description_translations,
                     [profileLanguage]: description
                 },
+                default_team_type: defaultTeamType,
+                public: isPublic,
+                team_creation_permission: teamCreationPermission,
             }
             console.log("UPDATE", data)
             calls.push(organizationsApi.update(organization.id, data))
@@ -94,7 +108,6 @@ const OrganizationProfile = ({ organizationId, onChanges = null, onTeamClick = n
                 setEditMode(false)
             })
         }
-
     }
 
     const handleRemove = () => {
@@ -109,6 +122,9 @@ const OrganizationProfile = ({ organizationId, onChanges = null, onTeamClick = n
                 setOrganization(res)
                 setName(res.name)
                 setDescription(res.description)
+                setTeamCreationPermission(res.team_creation_permission)
+                setDefaultTeamType(res.default_team_type)
+                setPublic(res.public)
                 getTeams()
                 callback && callback(res)
             }
@@ -139,8 +155,6 @@ const OrganizationProfile = ({ organizationId, onChanges = null, onTeamClick = n
     const handleTabChange = (event, newValue) => {
         setTabValue(newValue);
     };
-    
-    const WHOCAN_TRANSLATIONS = whoCanCreateTeams(t)
 
     return (<Box>
         {organization ? <Grid container>
@@ -207,22 +221,48 @@ const OrganizationProfile = ({ organizationId, onChanges = null, onTeamClick = n
                         rows={4}
                         variant="standard"
                     />}
-                    
+                    {!editMode ? <></> : <Stack sx={{ mt: 2 }} spacing={1} direction="row" alignItems="center">
+                        <Typography variant="body2">{t("Public")}</Typography>
+                        <Switch checked={isPublic} onChange={(event) => setPublic(event.target.checked)} />
+                    </Stack>}
                     {!editMode ? <>
                         <Typography variant="overline">{t("Who can create teams in this organization?")}</Typography>
-                        <Typography variant="body1">{WHOCAN_TRANSLATIONS[organization.team_creation_permission]}</Typography>
-                        </> : <TextField
-                        margin="dense"
-                        id="description"
-                        label="Description"
-                        type="text"
-                        value={description}
-                        onChange={(e) => setDescription(e.target.value)}
-                        fullWidth
-                        multiline
-                        rows={4}
-                        variant="standard"
-                    />}
+                        <Typography variant="body1">{teamCreationPermissionTranslations(t)[organization.team_creation_permission]}</Typography>
+                    </> : <FormControl variant="standard" fullWidth sx={{ mt: 3 }}>
+                        <InputLabel id="select-creation-permission-label">{t("Who can create teams")}</InputLabel>
+                        <Select
+                            fullWidth
+                            labelId="select-creation-permission-label"
+                            id="select-creation-permission"
+                            value={teamCreationPermission}
+                            onChange={(event) => {
+                                setTeamCreationPermission(event.target.value);
+                            }}
+                            label={t("Who can create teams")}
+                        >
+                            {WHO_CAN_CREATE_OPTIONS(t, isPublic).map(lan => <MenuItem
+                                key={lan.value} disabled={lan.disabled} value={lan.value}>{lan.label}</MenuItem>)}
+                        </Select>
+                    </FormControl>}
+                    {!editMode ? <>
+                        <Typography variant="overline">{t("Default team type")}</Typography>
+                        <Typography variant="body1">{defaultTeamTypesTranslations(t)[organization.default_team_type]}</Typography>
+                    </> : <FormControl variant="standard" fullWidth sx={{ mt: 3 }}>
+                        <InputLabel id="select-type">{t("Default team type")}</InputLabel>
+                        <Select
+                            fullWidth
+                            labelId="select-type-label"
+                            id="select-type"
+                            value={defaultTeamType}
+                            onChange={(event) => {
+                                setDefaultTeamType(event.target.value);
+                            }}
+                            label={t("Default team type")}
+                        >
+                            {TEAM_TYPES(t).map(lan => <MenuItem
+                                key={lan.value} disabled={lan.disabled} value={lan.value}>{lan.label}</MenuItem>)}
+                        </Select>
+                    </FormControl>}
                     {isAdmin && <>
                         {!editMode ? <Button disabled={!isAdmin} startIcon={<Edit />} variant="contained" color="primary" onClick={() => onChanges && setEditMode(true)}>{t("Edit")}</Button>
                             : <Stack direction="row" justifyContent="center" sx={{ mt: 2 }}>
