@@ -9,6 +9,7 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { getOrganizations } from 'slices/general';
 import OrganizationCreate from './OrganizationCreate';
+import OrganizationProfile from './OrganizationProfile';
 import OrganizationsList from './OrganizationsList';
 import TeamProfile from './TeamProfile';
 
@@ -100,7 +101,9 @@ const Organizations = () => {
             </Grid>
           </Grid>
           {selectedTeam && <TeamProfile teamId={selectedTeam.id} open={selectedTeam ? true : false} setOpen={setSelectedTeam} onChanges={updateOrganizations} />}
-          <OrganizationsList searchValue={searchValue} setSearchValue={setSearchValue} organizations={organizations} loading={loadingOrganizations} onChanges={updateOrganizations} onTeamClick={setSelectedTeam} />
+          <Box sx={{ mt: 4 }}>
+            <OrganizationsList getCollapseElement={(organization) => <OrganizationProfile organizationId={organization.id} onChanges={updateOrganizations} onTeamClick={setSelectedTeam} />} searchValue={searchValue} setSearchValue={setSearchValue} organizations={organizations} loading={loadingOrganizations} />
+          </Box>
         </Container>
       </Box>
     </>

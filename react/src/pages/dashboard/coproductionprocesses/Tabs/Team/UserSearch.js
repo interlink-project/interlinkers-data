@@ -1,7 +1,7 @@
 import { Alert, Avatar, LinearProgress, Menu, MenuItem, Paper, TextField } from '@material-ui/core';
 import useDependantTranslation from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { usersApi } from '__api__';
 
 const UserSearch = ({ exclude = [], onClick, organization_id = null }) => {
@@ -12,6 +12,7 @@ const UserSearch = ({ exclude = [], onClick, organization_id = null }) => {
     const [open, setOpen] = useState(false);
     const { t } = useDependantTranslation()
     const [anchorEl, setAnchorEl] = useState(null);
+    const textInput = useRef(null);
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -20,6 +21,12 @@ const UserSearch = ({ exclude = [], onClick, organization_id = null }) => {
         setAnchorEl(null);
         setOpen(false)
     };
+
+    useEffect(() => {
+        if (open && textInput.current) {
+            textInput.current.focus();
+        }
+    }, [open])
 
     useEffect(() => {
         var delayDebounceFn
@@ -51,7 +58,7 @@ const UserSearch = ({ exclude = [], onClick, organization_id = null }) => {
     return (
         <>
             <Alert severity='warning' sx={{ my: 2 }}>{t("Only registered users can be added")}</Alert>
-            <TextField fullWidth value={inputValue} autoFocus onChange={(event) => {
+            <TextField fullWidth value={inputValue} inputRef={textInput} onChange={(event) => {
                 setOpen(false)
                 setInputValue(event.target.value);
                 handleClick(event)

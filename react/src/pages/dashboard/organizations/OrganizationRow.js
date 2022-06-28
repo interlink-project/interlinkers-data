@@ -4,9 +4,8 @@ import UserAvatar from 'components/UserAvatar';
 import moment from 'moment';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import OrganizationProfile from './OrganizationProfile';
 
-function OrganizationRow({ organization, onChanges = null, onTeamClick = null }) {
+function OrganizationRow({ organization, collapseElement }) {
     const { t } = useTranslation()
     const [open, setOpen] = React.useState(false);
     return (
@@ -40,7 +39,7 @@ function OrganizationRow({ organization, onChanges = null, onTeamClick = null })
             <TableRow>
                 <TableCell style={{ border: 0, paddingTop: !open && 0, paddingBottom: !open && 0 }} sx={{ bgcolor: "background.default" }} colSpan={7}>
                     <Paper>
-                        {open && <OrganizationProfile organizationId={organization.id} onChanges={onChanges} onTeamClick={onTeamClick} />}
+                        {open && collapseElement}
                     </Paper>
                 </TableCell>
             </TableRow >
