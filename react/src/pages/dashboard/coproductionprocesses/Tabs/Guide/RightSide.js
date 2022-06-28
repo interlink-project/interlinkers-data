@@ -40,6 +40,10 @@ const RightSide = ({ softwareInterlinkers }) => {
         setPermissions(null)
         permissionsApi.for(selectedTreeItem.id).then(res => {
             setPermissions(res)
+            if(isTask && mounted.current && res && res.your_permissions && res.your_permissions.access_assets_permission){
+                getAssets()
+            }
+            
         })
     }, [selectedTreeItem])
 
@@ -52,13 +56,6 @@ const RightSide = ({ softwareInterlinkers }) => {
             }
         });
     }
-
-    useEffect(() => {
-        console.log(permissions)
-        if (isTask && mounted.current && permissions && permissions.your_permissions.access_assets_permission) {
-            getAssets()
-        }
-    }, [mounted, selectedTreeItem, permissions])
 
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
