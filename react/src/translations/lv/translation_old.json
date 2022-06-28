@@ -119,5 +119,10 @@
   "Team profile": "",
   "Full name": "Pilns vārds",
   "Add user to the team": "Pievienot lietotāju komandai",
-  "prueba": ""
+  "prueba": "",
+  "Create the first permission": "",
+  "Now you can permit teams to work on the coproduction process. For that, navigate to the Team section and add a new permission (or do it from the guide view)": "",
+  "Go to team section": "",
+  "Number of permissions": "",
+  "Select the permissions for the team {{team_name}}": ""
 }

@@ -1,11 +1,12 @@
-import { Alert, AppBar, Avatar, Card, CardActions, CardHeader, Grid, List, ListItem, Typography } from '@material-ui/core';
+import { Alert, AppBar, Avatar, Button, Card, CardActions, CardHeader, Grid, List, ListItem, Typography } from '@material-ui/core';
 import { LoadingButton } from '@material-ui/lab';
 import useDependantTranslation from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
 import TeamProfile from 'pages/dashboard/organizations/TeamProfile';
 import * as React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProcess } from 'slices/process';
+import { useNavigate } from 'react-router';
+import { getProcess, setSelectedTreeItem, setSelectedTreeItemById } from 'slices/process';
 import { groupListBy } from 'utils/groupListBy';
 import PermissionCreate from './PermissionCreate';
 
@@ -17,6 +18,7 @@ export default function TeamsTab() {
     const [selectedTeam, setSelectedTeam] = React.useState(null)
     const [permissionCreatorOpen, setOpenPermissionCreator] = React.useState(false);
     const [creatingPermission, setCreatingPermission] = React.useState(false);
+    const navigate = useNavigate()
 
     const update = () => {
         dispatch(getProcess(process.id, false));
@@ -33,7 +35,7 @@ export default function TeamsTab() {
         {process.teams.length > 0 ? <>
             <Grid container spacing={3} sx={{ p: 3 }}>
 
-                {process.teams.map(team => <Grid item key={team.id} xs={6} md={4} lg={3} xl={2} sx={{ textAlign: "center" }}>
+                {process.teams.map(team => <Grid item key={team.id} xs={6} md={6} lg={4} xl={4} sx={{ textAlign: "center" }}>
                     <Card sx={{ p: 1 }}>
                         <CardHeader
                             avatar={
@@ -41,17 +43,18 @@ export default function TeamsTab() {
                             }
                             title={team.name}
                             subheader={team.description}
+                            action={<Button onClick={() => setSelectedTeam(team.id)}>{t("See profile")}</Button>}
                         />
                         <List>
                             {permissions_grouped[team.id].map(permission => {
                                 const treeitem = treeitems.find(el => el.id === permission.treeitem_id)
                                 return <ListItem>
-                                    {treeitem && <>
-                                        {treeitem.type}
-                                        -
+                                    <Button variant="text" fullWidth onClick={() => {
+                                        dispatch(setSelectedTreeItem(treeitem, () =>  navigate(`/dashboard/coproductionprocesses/${process.id}/guide`)))
+                                    
+                                    }}>
                                         {treeitem.name}
-
-                                    </>}
+                                    </Button>
                                 </ListItem>
                             })}
                         </List>

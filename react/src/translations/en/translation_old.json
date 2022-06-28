@@ -114,5 +114,10 @@
   "Team profile": "Team profile",
   "Full name": "Full name",
   "Add user to the team": "Add user to the team",
-  "prueba": ""
+  "prueba": "",
+  "Create the first permission": "",
+  "Now you can permit teams to work on the coproduction process. For that, navigate to the Team section and add a new permission (or do it from the guide view)": "",
+  "Go to team section": "Go to team section",
+  "Number of permissions": "Number of permissions",
+  "Select the permissions for the team {{team_name}}": "Select the permissions for the team {{team_name}}"
 }

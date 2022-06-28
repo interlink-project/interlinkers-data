@@ -43,7 +43,7 @@ const PermissionRow = ({ permission, showOnlyMine, setSelectedTeam, isAdministra
       {permission.user_id == user_id || user.teams_ids.includes(permission.team_id) ? <CheckOutlined style={{ color: green[500] }} /> : <Close style={{ color: red[500] }} />}
     </TableCell>}
     <TableCell align="center">
-      <Button size="small" startIcon={<Avatar src={permission.team.logotype_link} />} onClick={() => setSelectedTeam(permission.team_id)} variant="contained">{permission.team && permission.team.name} {t("team")}</Button>
+      <Button size="small" startIcon={<Avatar src={permission.team.logotype_link} />} onClick={() => setSelectedTeam(permission.team_id)} variant="text">{permission.team && permission.team.name} {t("team")}</Button>
     </TableCell>
     <TableCell align="center">
       {permission.team && <OrganizationChip type={permission.team.type} />}
@@ -110,6 +110,7 @@ const PermissionsTable = ({ your_permissions, your_roles, language, processId, o
   return <>
     {selectedTeam && <TeamProfile teamId={selectedTeam} open={true} setOpen={setSelectedTeam} onChanges={() => update(element.id)} />}
     {!isAdministrator && <Alert severity="info" action={<Switch checked={!showOnlyMine} onChange={(event) => setShowOnlyMine(!event.target.checked)} />}>{t("Show all the permissions for this tree item, including those ones that do not affect you")}</Alert>}
+    {isAdministrator && <Alert severity="info">{t("Permissions set at lower levels prevail over others. That is, if you set a permission on a task, it will overwrite the permission, if any, assigned to the same team at higher levels (objectives and phases).")}</Alert>}
     <Box sx={{ overflowX: "scroll" }}>
       <Table aria-label="admins-table" size="small">
         <TableHead>
