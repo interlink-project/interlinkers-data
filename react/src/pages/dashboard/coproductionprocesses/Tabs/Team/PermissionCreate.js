@@ -47,20 +47,17 @@ const PermissionCreate = ({ open, setOpen, loading, setLoading, onCreate, treeit
 
   const handleSubmit = async () => {
     setLoading(true)
-    const data = {
+    const dataToSend = {
       team_id: selectedTeam.id,
       ...permissions
     }
     if (treeitem) {
-      data.treeitem_id = treeitem.id
+      dataToSend["treeitem_id"] = treeitem.id
     }
     if (coproductionprocess) {
-      data.coproductionprocess_id = coproductionprocess.id
+      dataToSend["coproductionprocess_id"] = coproductionprocess.id
     }
-    permissionsApi.create({
-      team_id: selectedTeam.id,
-      ...permissions
-    }).then(res => {
+    permissionsApi.create(dataToSend).then(res => {
       setLoading(false)
       handleClose()
       setSelectedTeam(null)
