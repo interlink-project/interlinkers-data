@@ -12,7 +12,7 @@ import PermissionCreate from 'pages/dashboard/coproductionprocesses/Tabs/Team/Pe
 import TeamProfile from 'pages/dashboard/organizations/TeamProfile';
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { getProcess, getTree } from 'slices/process';
+import { getTree } from 'slices/process';
 import { tree_items_translations } from 'utils/someCommonTranslations';
 import { permissionsApi } from '__api__';
 import { OrganizationChip } from '../assets/Icons';
@@ -23,7 +23,6 @@ const PermissionRow = ({ permission, showOnlyMine, setSelectedTeam, isAdministra
   const dispatch = useDispatch()
 
   const handleDelete = () => {
-    console.log("DELETE", permission.id)
     permissionsApi.delete(permission.id).then(onChanges)
   }
 

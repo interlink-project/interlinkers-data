@@ -6,6 +6,20 @@ import { useCustomTranslation } from 'hooks/useDependantTranslation';
 import { useEffect, useState } from 'react';
 import { getAllChildren } from 'slices/process';
 
+function arrayUnique(array) {
+  const ids = []
+  const newA = []
+  
+  array.forEach(element => {
+    if(!ids.includes(element.id)){
+      ids.push(element.id)
+      newA.push(element)
+    }
+  });
+  
+  return newA
+}
+
 function MinusSquare(props) {
   return (
     <SvgIcon fontSize="inherit" style={{ width: 14, height: 14 }} {...props}>
@@ -73,27 +87,27 @@ const StyledTree = ({ language, parent, selectedTreeItem, setSelectedTreeItem, s
         setExpanded(nodeIds)
       }}
     >
-      {parent && !parent.is_disabled &&<StyledTreeItem icon={showIcon && statusIcon(parent.status)} key={parent.id} nodeId={parent.id} sx={{ backgroundColor: "background.paper" }} label={
-      <p>
-        {parent.name}
-        {parent.teams && parent.teams.length > 0 && <AvatarGroup spacing="medium" sx={{ mt: 1, justifyContent: "left" }} variant="rounded" max={5}>{parent.teams.map(team => <Avatar key={parent.id + "-" + team.id} title={team.name} src={team.logotype_link} sx={{ height: 20, width: 20, bgcolor: "background.paper" }} />)}</AvatarGroup>}
-      </p>} >
+      {parent && !parent.is_disabled && <StyledTreeItem icon={showIcon && statusIcon(parent.status)} key={parent.id} nodeId={parent.id} sx={{ backgroundColor: "background.paper" }} label={
+        <p>
+          {parent.name}
+          {parent.teams && <AvatarGroup spacing="medium" sx={{ mt: 1, justifyContent: "left" }} variant="rounded" max={5}>{parent.teams.map(team => <Avatar key={parent.id + "-" + team.id} title={team.name} src={team.logotype_link} sx={{ height: 20, width: 20, bgcolor: "background.paper" }} />)}</AvatarGroup>}
+        </p>} >
 
         {parent.children.map(objective => !objective.is_disabled &&
           <StyledTreeItem icon={showIcon && statusIcon(objective.status)} key={objective.id} nodeId={objective.id} sx={{ backgroundColor: "background.paper" }} label={
-          <p>
-            {objective.name}
-            {objective.teams && objective.teams.length > 0 && <AvatarGroup spacing="medium" sx={{ mt: 1, justifyContent: "left" }} variant="rounded" max={5}>{objective.teams.map(team => <Avatar key={objective.id + "-" + team.id} title={team.name} src={team.logotype_link} sx={{ height: 20, width: 20, bgcolor: "background.paper" }} />)}</AvatarGroup>}
+            <p>
+              {objective.name}
+              {objective.teams && <AvatarGroup spacing="medium" sx={{ mt: 1, justifyContent: "left" }} variant="rounded" max={5}>{arrayUnique(objective.teams.concat(parent.teams)).map(team => <Avatar key={objective.id + "-" + team.id} title={team.name} src={team.logotype_link} sx={{ height: 20, width: 20, bgcolor: "background.paper" }} />)}</AvatarGroup>}
 
             </p>
           } >
-            {objective.children.map(task => !task.is_disabled &&(
+            {objective.children.map(task => !task.is_disabled && (
               <StyledTreeItem icon={showIcon && statusIcon(task.status)} key={task.id} nodeId={task.id} label={
                 <p style={{ alignItems: "center" }}>
                   <Typography>
                     {task.name}
                   </Typography>
-                  {task.teams && task.teams.length > 0 && <AvatarGroup spacing="medium" sx={{ mt: 1, justifyContent: "left" }} variant="rounded" max={5}>{task.teams.map(team => <Avatar key={task.id + "-" + team.id} title={team.name} src={team.logotype_link} sx={{ height: 20, width: 20, bgcolor: "background.paper" }} />)}</AvatarGroup>}
+                  {task.teams && <AvatarGroup spacing="medium" sx={{ mt: 1, justifyContent: "left" }} variant="rounded" max={5}>{arrayUnique(task.teams.concat(objective.teams).concat(parent.teams)).map(team => <Avatar key={task.id + "-" + team.id} title={team.name} src={team.logotype_link} sx={{ height: 20, width: 20, bgcolor: "background.paper" }} />)}</AvatarGroup>}
                   {task.status && <Typography variant="overline" color={statusColor(task.status)}>
                     <StatusText status={task.status} />
                   </Typography>}

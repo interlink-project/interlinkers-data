@@ -246,7 +246,7 @@ const OrganizationProfile = ({ organizationId, onChanges = null, onTeamClick = n
                     </FormControl>}
                     {!editMode ? <>
                         <Typography variant="overline">{t("Default team type")}</Typography>
-                        <Typography variant="body1">{defaultTeamTypesTranslations(t)[organization.default_team_type]}</Typography>
+                        <OrganizationChip type={organization.default_team_type} />
                     </> : <FormControl variant="standard" fullWidth sx={{ mt: 3 }}>
                         <InputLabel id="select-type">{t("Default team type")}</InputLabel>
                         <Select
@@ -346,7 +346,7 @@ const OrganizationProfile = ({ organizationId, onChanges = null, onTeamClick = n
                         <LoadingButton loading={loadingTeams || creatingTeam} sx={{ mt: 3 }} size="small" variant="contained" startIcon={<Add />} onClick={() => setOpenTeamCreator(true)} disabled={!canCreateTeams}>{t("Create new team")}</LoadingButton>
                     </Box>
                 </>}
-                {tabValue === "administrators" && <UsersList searchOnOrganization={isAdmin && organization.id} users={organization.administrators} onSearchResultClick={isAdmin && handleAdministratorAdd} getActions={(user) => isAdmin && (
+                {tabValue === "administrators" && <UsersList size="small" searchOnOrganization={isAdmin && organization.id} users={organization.administrators} onSearchResultClick={isAdmin && handleAdministratorAdd} getActions={(user) => isAdmin && (
                     [
                         {
                             id: `${user.id}-remove-action`,

@@ -1,5 +1,5 @@
-import { Alert, Avatar, Box, Button, Dialog, DialogContent, Grid, Menu, MenuItem, Paper, Stack, Tab, Tabs, TextField, Typography } from '@material-ui/core';
-import { CopyAll, Delete, Download, Edit, KeyboardArrowDown, OpenInNew } from '@material-ui/icons';
+import { Alert, Avatar, Box, Button, Dialog, DialogContent, Grid, IconButton, Menu, MenuItem, Paper, Stack, Tab, Tabs, TextField, Typography } from '@material-ui/core';
+import { Close, CopyAll, Delete, Download, Edit, KeyboardArrowDown, OpenInNew } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
 import CentricCircularProgress from 'components/CentricCircularProgress';
 import { AssetsTable } from 'components/dashboard/assets';
@@ -54,6 +54,7 @@ const RightSide = ({ softwareInterlinkers }) => {
     }
 
     useEffect(() => {
+        console.log(permissions)
         if (isTask && mounted.current && permissions && permissions.your_permissions.access_assets_permission) {
             getAssets()
         }
@@ -90,11 +91,11 @@ const RightSide = ({ softwareInterlinkers }) => {
 
     const handleOpen = (asset) => {
         if (asset.type === "internalasset") {
-          window.open(asset.link + "/view", "_blank")
+            window.open(asset.link + "/view", "_blank")
         } else {
-          window.open(asset.uri)
+            window.open(asset.uri)
         }
-      }
+    }
 
     const handleDelete = (asset, callback) => {
         setLoading("delete");
@@ -216,7 +217,7 @@ const RightSide = ({ softwareInterlinkers }) => {
                         closeMenuItem()
                         getAssets()
                     })
-                    
+
                 },
                 text: t("Clone"),
                 icon: <CopyAll fontSize="small" />
@@ -239,9 +240,6 @@ const RightSide = ({ softwareInterlinkers }) => {
         return actions
     }
 
-    const updateProcess = () => {
-        dispatch(getProcess(process.id, false))
-    }
     return (
 
         selectedTreeItem && <Grid item xl={8} lg={8} md={6} xs={12}>
@@ -255,14 +253,14 @@ const RightSide = ({ softwareInterlinkers }) => {
                         centered
                     >
                         <Tab wrapped value="data" label={information_translations[selectedTreeItem.type]} />
+                        <Tab value="assets" disabled={!isTask} label={t("Resources") + (isTask ? " (" + assets.length + ")" : "")} />
                         <Tab value="permissions" label={t("Permissions") + " (" + selectedTreeItem.permissions.length + ")"} />
-                        <Tab value="assets" disabled={!isTask} label={t("Resources") + " (" + assets.length + ")"} />
                     </Tabs>
                 </Paper>
 
 
                 {tabValue === "data" && <TreeItemData language={process.language} processId={process.id} element={selectedTreeItem} />}
-                {tabValue === "permissions" && <PermissionsTable your_permissions={permissions && permissions.your_permissions} your_roles={permissions && permissions.your_roles} onChanges={updateProcess} language={process.language} processId={process.id} element={selectedTreeItem} isAdministrator={isAdministrator} />}
+                {tabValue === "permissions" && <PermissionsTable your_permissions={permissions && permissions.your_permissions} your_roles={permissions && permissions.your_roles} onChanges={() => dispatch(getTree(process.id, selectedTreeItem.id))} language={process.language} processId={process.id} element={selectedTreeItem} isAdministrator={isAdministrator} />}
                 {tabValue === "assets" && <>
                     <Box>
                         {permissions ? <Box sx={{ mt: 2 }}>
@@ -299,6 +297,18 @@ const RightSide = ({ softwareInterlinkers }) => {
 
 
                         <Dialog open={catalogueOpen} onClose={() => setCatalogueOpen(false)} maxWidth="lg" fullWidth>
+                            <IconButton
+                                aria-label="close"
+                                onClick={() => setCatalogueOpen(false)}
+                                sx={{
+                                    position: 'absolute',
+                                    right: 8,
+                                    top: 8,
+                                    color: (theme) => theme.palette.grey[500],
+                                }}
+                            >
+                                <Close />
+                            </IconButton>
                             <Box sx={{ minWidth: "70vh", p: 7, backgroundColor: 'background.default', }}>
                                 <InterlinkerBrowse language={process.language} initialFilters={{ problemprofiles: selectedTreeItem.problemprofiles }} onInterlinkerClick={(interlinker) => {
                                     setCatalogueOpen(false)

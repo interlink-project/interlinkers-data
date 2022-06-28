@@ -257,7 +257,7 @@ const TeamProfile = ({ open, setOpen, teamId, onChanges }) => {
             <Tab value="members" label={t("Members") + ` (${team.users.length})`} />
             <Tab value="administrators" label={t("Administrators") + ` (${team.administrators_ids.length})`} />
           </Tabs>
-          {tabValue === "members" && <UsersList users={team.users} searchOnOrganization={isAdmin && team.organization_id} disableHeader={false} onSearchResultClick={addUserToTeam} getActions={(user) => isAdmin && (
+          {tabValue === "members" && <UsersList size="small" users={team.users} searchOnOrganization={isAdmin && team.organization_id} disableHeader={false} onSearchResultClick={addUserToTeam} getActions={(user) => isAdmin && (
             [
               {
                 id: `${user.id}-remove-action`,
@@ -268,7 +268,7 @@ const TeamProfile = ({ open, setOpen, teamId, onChanges }) => {
             ]
           )} />}
 
-          {tabValue === "administrators" && <UsersList users={team.administrators} searchOnOrganization={isAdmin && team.organization_id} disableHeader={false} onSearchResultClick={handleAdministratorAdd} getActions={(user) => isAdmin && (
+          {tabValue === "administrators" && <UsersList size="small" users={team.administrators} searchOnOrganization={isAdmin && team.organization_id} disableHeader={false} onSearchResultClick={handleAdministratorAdd} getActions={(user) => isAdmin && (
             [
               {
                 id: `${user.id}-remove-admin-action`,

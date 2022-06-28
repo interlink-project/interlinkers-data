@@ -126,7 +126,6 @@ const MyWorkspace = () => {
                 </Grid>
               </Grid>
             </Grid>
-            <HelpAlert text={t("prueba")} />
             <Box sx={{ mt: 4 }}>
               <Box sx={{ mb: 2 }}>
                 <SearchBox loading={loadingProcesses} inputValue={searchValue} setInputValue={setSearchValue} />

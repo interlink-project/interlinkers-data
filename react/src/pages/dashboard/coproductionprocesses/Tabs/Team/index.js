@@ -15,37 +15,35 @@ export default function TeamsTab() {
     const { t } = useDependantTranslation()
     const [selectedTeam, setSelectedTeam] = React.useState(null)
 
-    console.log(groupListBy(process.permissions, "team_id"))
-    
+    const permissions_grouped = groupListBy(process.permissions, "team_id")
+    //                                     <Button size="small" startIcon={<Avatar variant="rounded" src={permission.team.logotype_link} />} onClick={() => setSelectedTeam(permission.team_id)} variant="contained">{permission.team && permission.team.name} {t("team")}</Button>
+
     return !updating ? (
         <React.Fragment>
             {selectedTeam && <TeamProfile teamId={selectedTeam} open={selectedTeam ? true : false} setOpen={setSelectedTeam} onChanges={() => console.log("refresh")} />}
 
-                <Table aria-label="admins-table">
-                    <TableHead>
-                        <TableRow>
-                            <TableCell align="center"><>{t("Team")}</></TableCell>
-                            <TableCell align="center"><>{t("Tree item")}</></TableCell>
-                            <TableCell align="center"><>{t("Access to resources")}</></TableCell>
-                            <TableCell align="center"><>{t("Create assets")}</></TableCell>
-                            <TableCell align="center"><>{t("Delete assets")}</></TableCell>
-                            <TableCell align="center"><>{t("Update tree items")}</></TableCell>
-                            <TableCell align="center"><>{t("Delete tree items")}</></TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {process.permissions.map((permission) => (
-                            <TableRow hover key={permission.id}>
+            <Table aria-label="admins-table">
+                <TableHead>
+                    <TableRow>
+                        <TableCell align="center"><>{t("Team")}</></TableCell>
+                        <TableCell align="center"><>{t("Number of permissions")}</></TableCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    {Object.keys(permissions_grouped).map((team_id) => {
+                        const permissions = permissions_grouped[team_id]
+                        return (
+                            <TableRow hover key={team_id}>
                                 <TableCell align="center">
-                                    <Button size="small" startIcon={<Avatar variant="rounded" src={permission.team.logotype_link} />} onClick={() => setSelectedTeam(permission.team_id)} variant="contained">{permission.team && permission.team.name} {t("team")}</Button>
                                 </TableCell>
                                 <TableCell align="center">
-                                    {permission.treeitem_id}
+                                    {permissions.length}
                                 </TableCell>
-                                
+
                             </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
+                        )
+                    })}
+                </TableBody>
+            </Table>
         </React.Fragment>) : <CircularProgress />
 }
