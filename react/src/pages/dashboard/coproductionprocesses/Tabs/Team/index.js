@@ -1,5 +1,4 @@
-import { Avatar, Box, Button, CircularProgress, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@material-ui/core';
-import { Check } from '@material-ui/icons';
+import { Alert, AppBar, Avatar, Card, CardActions, CardHeader, Grid, List, ListItem, Typography } from '@material-ui/core';
 import { LoadingButton } from '@material-ui/lab';
 import useDependantTranslation from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
@@ -10,56 +9,75 @@ import { getProcess } from 'slices/process';
 import { groupListBy } from 'utils/groupListBy';
 import PermissionCreate from './PermissionCreate';
 
-
 export default function TeamsTab() {
-    const { process, updating, treeitems } = useSelector((state) => state.process);
+    const { process, treeitems } = useSelector((state) => state.process);
     const dispatch = useDispatch();
     const mounted = useMounted();
     const { t } = useDependantTranslation()
     const [selectedTeam, setSelectedTeam] = React.useState(null)
     const [permissionCreatorOpen, setOpenPermissionCreator] = React.useState(false);
     const [creatingPermission, setCreatingPermission] = React.useState(false);
+
     const update = () => {
         dispatch(getProcess(process.id, false));
     }
     const permissions_grouped = groupListBy(process.permissions, "team_id")
-    //                                     <Button size="small" startIcon={<Avatar variant="rounded" src={permission.team.logotype_link} />} onClick={() => setSelectedTeam(permission.team_id)} variant="contained">{permission.team && permission.team.name} {t("team")}</Button>
 
-    return !updating ? (
-        <React.Fragment>
-            {selectedTeam && <TeamProfile teamId={selectedTeam} open={selectedTeam ? true : false} setOpen={setSelectedTeam} onChanges={() => console.log("refresh")} />}
+    return <>
+        <AppBar sx={{ position: 'relative' }}>
+            <Typography variant="h6" sx={{ p: 2 }}>
+                {t("Coproduction process team")}
+            </Typography>
+        </AppBar>
+        {selectedTeam && <TeamProfile teamId={selectedTeam} open={selectedTeam ? true : false} setOpen={setSelectedTeam} onChanges={() => console.log("refresh")} />}
+        {process.teams.length > 0 ? <>
+            <Grid container spacing={3} sx={{ p: 3 }}>
 
-            <Table aria-label="admins-table">
-                <TableHead>
-                    <TableRow>
-                        <TableCell align="center"><>{t("Team")}</></TableCell>
-                        <TableCell align="center"><>{t("Number of permissions")}</></TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {Object.keys(permissions_grouped).map((team_id) => {
-                        const permissions = permissions_grouped[team_id]
-                        return (
-                            <TableRow hover key={team_id}>
-                                <TableCell align="center">
-                                </TableCell>
-                                <TableCell align="center">
-                                    {permissions.length}
-                                </TableCell>
+                {process.teams.map(team => <Grid item key={team.id} xs={6} md={4} lg={3} xl={2} sx={{ textAlign: "center" }}>
+                    <Card sx={{ p: 1 }}>
+                        <CardHeader
+                            avatar={
+                                <Avatar src={team.logotype_link} />
+                            }
+                            title={team.name}
+                            subheader={team.description}
+                        />
+                        <List>
+                            {permissions_grouped[team.id].map(permission => {
+                                const treeitem = treeitems.find(el => el.id === permission.treeitem_id)
+                                return <ListItem>
+                                    {treeitem && <>
+                                        {treeitem.type}
+                                        -
+                                        {treeitem.name}
 
-                            </TableRow>
-                        )
-                    })}
-                </TableBody>
-            </Table>
-            <PermissionCreate
-                open={permissionCreatorOpen}
-                setOpen={setOpenPermissionCreator}
-                onCreate={update}
-                loading={creatingPermission}
-                setLoading={setCreatingPermission}
-                coproductionprocess={process}
-            />
-            <LoadingButton loading={creatingPermission} variant="contained" fullWidth onClick={() => setOpenPermissionCreator(true)}>{t("Create new permission")}</LoadingButton>
-        </React.Fragment>) : <CircularProgress />
+                                    </>}
+                                </ListItem>
+                            })}
+                        </List>
+
+                    </Card>
+                </Grid>
+                )}
+
+            </Grid>
+        </> : <>
+            <Alert severity='warning' sx={{p: 3, m: 3}}>
+                {t("There are no teams working on the coproduction process yet. To add a new team, navigate to the guide section, select a tree item and add a new permission.")}
+            </Alert></>}
+
+        <PermissionCreate
+            open={permissionCreatorOpen}
+            setOpen={setOpenPermissionCreator}
+            onCreate={update}
+            loading={creatingPermission}
+            setLoading={setCreatingPermission}
+            coproductionprocess={process}
+        />
+        <div className={"flex-grow"} />
+        <CardActions>
+            {false && <LoadingButton loading={creatingPermission} variant="contained" fullWidth onClick={() => setOpenPermissionCreator(true)}>{t("Create new permission")}</LoadingButton>}
+
+        </CardActions>
+    </>
 }

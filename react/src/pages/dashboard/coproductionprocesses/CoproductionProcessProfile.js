@@ -38,7 +38,9 @@ function TabPanel(props) {
 }
 
 const style = {
-  minHeight: '90vh'
+  minHeight: '90vh',
+  display: "flex",
+  flexDirection: "column",
 }
 
 

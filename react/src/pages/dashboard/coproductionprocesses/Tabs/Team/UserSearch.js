@@ -36,6 +36,7 @@ const UserSearch = ({ exclude = [], onClick, organization_id = null }) => {
                 usersApi.search(inputValue, organization_id).then(res => {
                     if (mounted.current) {
                         setSearchResults(res)
+                        setOpen(true)
                     }
                 }).catch(() => {
                     if (mounted.current) {
@@ -45,7 +46,6 @@ const UserSearch = ({ exclude = [], onClick, organization_id = null }) => {
                     if (mounted.current) {
                         setLoading(false)
                     }
-                    setOpen(true)
                 })
             }, 1000)
         }
@@ -57,12 +57,12 @@ const UserSearch = ({ exclude = [], onClick, organization_id = null }) => {
 
     return (
         <>
-            <Alert severity='warning' sx={{ my: 2 }}>{t("Only registered users can be added")}</Alert>
-            <TextField fullWidth value={inputValue} inputRef={textInput} onChange={(event) => {
+            <Alert severity='warning' >{t("Only registered users can be added")}</Alert>
+            <TextField sx={{mt:1 }} variant="standard" fullWidth value={inputValue} inputRef={textInput} onChange={(event) => {
                 setOpen(false)
                 setInputValue(event.target.value);
                 handleClick(event)
-            }} id="outlined-basic" variant="outlined" />
+            }} id="outlined-basic" label={t("Type here to add users")} />
             {loading && <LinearProgress />}
             {open && <Paper>
                 <Menu

@@ -1,7 +1,6 @@
-import { Alert, Avatar, Box, Button, Dialog, DialogContent, Grid, IconButton, Menu, MenuItem, Paper, Stack, Tab, Tabs, TextField, Typography } from '@material-ui/core';
+import { Alert, Avatar, Box, Button, Dialog, DialogContent, Grid, IconButton, Menu, MenuItem, Paper, Stack, Tab, Tabs, TextField } from '@material-ui/core';
 import { Close, CopyAll, Delete, Download, Edit, KeyboardArrowDown, OpenInNew } from '@material-ui/icons';
 import { LoadingButton } from '@material-ui/lab';
-import CentricCircularProgress from 'components/CentricCircularProgress';
 import { AssetsTable } from 'components/dashboard/assets';
 import InterlinkerBrowse from 'components/dashboard/interlinkers/browse/InterlinkerBrowse';
 import { TreeItemData } from 'components/dashboard/tree';
@@ -11,7 +10,7 @@ import useDependantTranslation from 'hooks/useDependantTranslation';
 import useMounted from 'hooks/useMounted';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProcess, getTree } from 'slices/process';
+import { getTree } from 'slices/process';
 import { information_about_translations } from 'utils/someCommonTranslations';
 import * as Yup from 'yup';
 import { assetsApi, permissionsApi } from '__api__';
@@ -40,10 +39,10 @@ const RightSide = ({ softwareInterlinkers }) => {
         setPermissions(null)
         permissionsApi.for(selectedTreeItem.id).then(res => {
             setPermissions(res)
-            if(isTask && mounted.current && res && res.your_permissions && res.your_permissions.access_assets_permission){
+            if (isTask && mounted.current && res && res.your_permissions && res.your_permissions.access_assets_permission) {
                 getAssets()
             }
-            
+
         })
     }, [selectedTreeItem])
 
@@ -260,7 +259,7 @@ const RightSide = ({ softwareInterlinkers }) => {
                 {tabValue === "permissions" && <PermissionsTable your_permissions={permissions && permissions.your_permissions} your_roles={permissions && permissions.your_roles} onChanges={() => dispatch(getTree(process.id, selectedTreeItem.id))} language={process.language} processId={process.id} element={selectedTreeItem} isAdministrator={isAdministrator} />}
                 {tabValue === "assets" && <>
                     <Box>
-                        {permissions ? <Box sx={{ mt: 2 }}>
+                        <Box sx={{ mt: 2 }}>
                             {can.view ? <AssetsTable language={process.language} loading={loadingAssets} assets={assets} getActions={getAssetsActions} /> : <Alert severity="error">{t("You do not have access to the resources of this task")}</Alert>}
                             <Box sx={{ textAlign: "center", width: "100%" }}>
                                 <Stack spacing={2} >
@@ -290,7 +289,7 @@ const RightSide = ({ softwareInterlinkers }) => {
                                     </Button>
                                 </Stack>
                             </Box>
-                        </Box> : <CentricCircularProgress />}
+                        </Box>
 
 
                         <Dialog open={catalogueOpen} onClose={() => setCatalogueOpen(false)} maxWidth="lg" fullWidth>

@@ -140,7 +140,7 @@ export const cleanProcess = () => async (dispatch) => {
   dispatch(slice.actions.setProcess(null));
 };
 
-export const getProcess = (processId, setLoading = true) => async (dispatch) => {
+export const getProcess = (processId, setLoading = true, selectedTreeItemId = null) => async (dispatch) => {
   if(setLoading) {dispatch(slice.actions.setLoading(true))}
   try {
     const data = await coproductionProcessesApi.get(processId);
@@ -148,6 +148,7 @@ export const getProcess = (processId, setLoading = true) => async (dispatch) => 
     const treeData = await coproductionProcessesApi.getTree(processId) || [];
     treeData.setFirstPhaseAsSelectedTreeItem = true
     dispatch(slice.actions.setProcessTree(treeData));
+    selectedTreeItemId && dispatch(slice.actions.setSelectedTreeItemById(selectedTreeItemId))
   } catch (err) {
     // https://edupala.com/react-router-navigate-outside-component/
     console.error(err)

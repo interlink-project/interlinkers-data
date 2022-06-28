@@ -12,7 +12,7 @@ import PermissionCreate from 'pages/dashboard/coproductionprocesses/Tabs/Team/Pe
 import TeamProfile from 'pages/dashboard/organizations/TeamProfile';
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { getTree } from 'slices/process';
+import { getProcess, getTree } from 'slices/process';
 import { tree_items_translations } from 'utils/someCommonTranslations';
 import { permissionsApi } from '__api__';
 import { OrganizationChip } from '../assets/Icons';
@@ -35,7 +35,7 @@ const PermissionRow = ({ permission, showOnlyMine, setSelectedTeam, isAdministra
         </IconButton>}
         ButtonComponent={({ onClick }) => <LoadingButton sx={{ mt: 1 }} fullWidth variant='contained' color="error" onClick={onClick}>{t("Confirm deletion")}</LoadingButton>}
         onClick={handleDelete}
-        text={t("Are you sure?")} />
+        text={t("Are you sure you want to remove this permission?")} />
 
     </TableCell>}
 
@@ -75,6 +75,9 @@ const PermissionsTable = ({ your_permissions, your_roles, language, processId, o
   const [creatingPermission, setCreatingPermission] = useState(false);
   const update = (selectedTreeItemId) => {
     dispatch(getTree(processId, selectedTreeItemId));
+  }
+  const updateProcess = (selectedTreeItemId) => {
+    dispatch(getProcess(processId, false, selectedTreeItemId));
   }
 
   const isTask = element.type === "task"
@@ -188,9 +191,7 @@ const PermissionsTable = ({ your_permissions, your_roles, language, processId, o
     <PermissionCreate
       open={permissionCreatorOpen}
       setOpen={setOpenPermissionCreator}
-      onCreate={() => {
-        update(element.id)
-      }}
+      onCreate={() => updateProcess(element.id)}
       loading={creatingPermission}
       setLoading={setCreatingPermission}
       treeitem={element}

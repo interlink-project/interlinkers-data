@@ -40,6 +40,7 @@ const PermissionCreate = ({ open, setOpen, loading, setLoading, onCreate, treeit
   const [organizations, setOrganizations] = useState([]);
   const [loadingOrganizations, setLoadingOrganizations] = useState(false);
   const [selectedTeam, setSelectedTeam] = useState(null);
+  const [selectedTreeItem, setSelectedTreeItem] = useState(null);
   const [searchValue, setSearchValue] = useState("");
   const [permissions, setPermissions] = useState(initial);
   const mounted = useMounted();
@@ -52,7 +53,7 @@ const PermissionCreate = ({ open, setOpen, loading, setLoading, onCreate, treeit
       ...permissions
     }
     if (treeitem) {
-      dataToSend["treeitem_id"] = treeitem.id
+      dataToSend["treeitem_id"] = selectedTreeItem.id
     }
     if (coproductionprocess) {
       dataToSend["coproductionprocess_id"] = coproductionprocess.id
@@ -79,6 +80,12 @@ const PermissionCreate = ({ open, setOpen, loading, setLoading, onCreate, treeit
   }
 
   useEffect(() => {
+    if (treeitem && mounted.current) {
+      setSelectedTreeItem(treeitem)
+    }
+  }, [treeitem])
+
+  useEffect(() => {
     var delayDebounceFn
     if (open && mounted.current) {
       delayDebounceFn = setTimeout(() => {
@@ -98,8 +105,8 @@ const PermissionCreate = ({ open, setOpen, loading, setLoading, onCreate, treeit
 
   const another = t
 
-  const repeated = selectedTeam && (treeitem ? treeitem.permissions.find(el => {
-    return el.team_id === selectedTeam.id && el.treeitem_id === treeitem.id
+  const repeated = selectedTeam && (selectedTreeItem ? selectedTreeItem.permissions.find(el => {
+    return el.team_id === selectedTeam.id && el.treeitem_id === selectedTreeItem.id
   }) !== undefined : coproductionprocess.permissions.find(el => {
     return el.team_id === selectedTeam.id && el.coproductionprocess_id === coproductionprocess.id && !el.treeitem_id
   }) !== undefined)
@@ -108,7 +115,7 @@ const PermissionCreate = ({ open, setOpen, loading, setLoading, onCreate, treeit
     <>
       <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
         <DialogTitle sx={{ bgcolor: "background.default" }}>
-          {!selectedTeam ? t("Select the team to apply the permission") : t("Select the permissions for the team {{team_name}}", { team_name: selectedTeam && selectedTeam.name })}
+          {!selectedTeam ? t("Select the team to apply the permission") : coproductionprocess ?  t("Select the permissions for the overall coproduction process for the team {{team_name}}", { team_name: selectedTeam && selectedTeam.name }) : t("Select the permissions for {{treeitem_name}} and for the team {{team_name}}", { treeitem_name: selectedTreeItem && selectedTreeItem.name, team_name: selectedTeam && selectedTeam.name })}
           <IconButton
             aria-label="close"
             onClick={() => setOpen(false)}
@@ -154,7 +161,7 @@ const PermissionCreate = ({ open, setOpen, loading, setLoading, onCreate, treeit
               } />
               <Typography variant="body2">{another(key)}</Typography>
 
-            </Stack>) : <Alert severity='error' sx={{ mt: 2 }}>{t("There is already a permission for this team and treeitem")}</Alert>}
+            </Stack>) : <Alert severity='error' sx={{ mt: 2 }}>{t("There is already a permission for this team")}</Alert>}
           </>}
 
         </DialogContent>

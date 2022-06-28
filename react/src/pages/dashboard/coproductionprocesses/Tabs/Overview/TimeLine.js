@@ -72,9 +72,8 @@ export default function TimeLine({ }) {
                         </Typography>
                         {permissionsFullfilled ?
                             <Alert severity="success">{t("At least a permission has been created.")}</Alert> :
-                            <Alert severity="info">{t("Now you can permit teams to work on the coproduction process. For that, navigate to the Team section and add a new permission (or do it from the guide view)")}</Alert>}
-                        {!permissionsFullfilled && <Button disabled={!hasSchema} onClick={() => navigate(`/dashboard/coproductionprocesses/${process.id}/team`)} size="small" variant="contained" sx={{ maxWidth: "400px" }}>{t("Grant general permissions to team in the team section")}</Button>}
-                        {!permissionsFullfilled && <Button disabled={!hasSchema} onClick={() => navigate(`/dashboard/coproductionprocesses/${process.id}/guide`)} size="small" variant="contained" sx={{ maxWidth: "400px" }}>{t("Grant permissions to team for treeitem in the guide section")}</Button>}
+                            <Alert severity="info">{t("Now you can permit teams to work on the coproduction process. For that, navigate to the Guide section and add new permission for the tree items.")}</Alert>}
+                        {!permissionsFullfilled && <Button disabled={!hasSchema} onClick={() => navigate(`/dashboard/coproductionprocesses/${process.id}/guide`)} size="small" variant="contained" sx={{ maxWidth: "400px" }}>{t("Grant permissions to teams in the guide section")}</Button>}
                     </Stack>
                 </StepLabel>
             </Step>

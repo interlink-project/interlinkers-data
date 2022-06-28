@@ -1,5 +1,5 @@
 import {
-  Avatar, Box, Button, Collapse, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, IconButton, Input,
+  Avatar, Box, Button, Collapse, Dialog, DialogActions, DialogContent, DialogTitle, Divider, FormControl, IconButton, Input,
   InputLabel,
   List,
   ListItem,
@@ -212,6 +212,7 @@ const TeamCreate = ({ language = getLanguage(), loading, setLoading, open, setOp
             </TransitionGroup>
 
           </List>
+          <Divider sx={{my: 3}} />
             <UserSearch exclude={selectedUsers.map(user => user.id)} organization_id={organization.id} onClick={(user) => setSelectedUsers([...selectedUsers, user])} />
           </>}
 
