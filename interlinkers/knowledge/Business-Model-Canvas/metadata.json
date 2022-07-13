@@ -27,7 +27,7 @@
     "instructions_translations": {
         "en": "./interlinkers/knowledge/Business-Model-Canvas/instructions.md"
     },
-    "is_sustainability_related": false,
+    "is_sustainability_related": true,
     "languages": [
         "lv",
         "en",

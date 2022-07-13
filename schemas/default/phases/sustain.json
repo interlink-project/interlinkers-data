@@ -191,5 +191,5 @@
             "id": "objective-monitoring"
         }
     ],
-    "is_part_of_codelivery": false
+    "is_part_of_codelivery": true
 }

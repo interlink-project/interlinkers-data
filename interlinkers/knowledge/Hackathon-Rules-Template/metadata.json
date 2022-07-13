@@ -27,7 +27,7 @@
     "instructions_translations": {
         "en": "./interlinkers/knowledge/Hackathon-Rules-Template/instructions.md"
     },
-    "is_sustainability_related": false,
+    "is_sustainability_related": true,
     "languages": [
         "lv",
         "en",
